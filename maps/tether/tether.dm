@@ -13,13 +13,30 @@
 	#include "../offmap_vr/common_offmaps.dm"
 
 	#if !AWAY_MISSION_TEST //Don't include these for just testing away missions
+//"../tether_old/" refers to the incredibly old version of the newer maps.
+
 		#include "tether-01-surface1.dmm"
 		#include "tether-02-surface2.dmm"
 		#include "tether-03-surface3.dmm"
 		#include "tether-04-transit.dmm"
 		#include "tether-05-station1.dmm"
+
 		#include "tether-06-mining.dmm"
 		#include "tether-07-solars.dmm"
+/*
+		#include "../tether_old/tether-01-surface1.dmm"
+		#include "../tether_old/tether-02-surface2.dmm"
+		#include "../tether_old/tether-03-surface3.dmm"
+		#include "../tether_old/tether-04-transit.dmm"
+		#include "../tether_old/tether-05-station1.dmm"
+		#include "../tether_old/tether-06-station2.dmm"
+		#include "../tether_old/tether-07-station3.dmm"
+
+		#include "../tether_old/tether-08-mining.dmm"
+		#include "../tether_old/tether-09-solars.dmm"
+*/
+
+
 	#endif
 
 	#include "submaps/_tether_submaps.dm"
