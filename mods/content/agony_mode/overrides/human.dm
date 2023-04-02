@@ -54,7 +54,9 @@
 	..()
 	var/use_original_cone = TRUE
 
-	if(istype(src.head, /obj/item/clothing/head))
+	var/obj/item/clothing/head/helmet = get_equipped_item(slot_wear_head_str)
+	if(istype(helmet))
+		update_helmet_vision(helmet)
 		update_helmet_vision(head)
 		use_original_cone = FALSE
 
