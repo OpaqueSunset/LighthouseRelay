@@ -59,7 +59,6 @@
 		update_helmet_vision(head)
 		use_original_cone = FALSE
 
-
 	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
 	if(istype(mask))
 		update_mask_vision(mask)
