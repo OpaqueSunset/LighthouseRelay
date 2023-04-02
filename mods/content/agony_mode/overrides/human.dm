@@ -60,8 +60,9 @@
 		update_helmet_vision(head)
 		use_original_cone = FALSE
 
-	if(istype(src.wear_mask, /obj/item/clothing/mask))
-		update_mask_vision(wear_mask)
+	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
+	if(istype(mask))
+		update_mask_vision(mask)
 		use_original_cone = FALSE
 
 	if(use_original_cone)
