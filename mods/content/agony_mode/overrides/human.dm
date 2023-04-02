@@ -1,0 +1,87 @@
+/datum/hud/human/FinalizeInstantiation()
+	..()
+	var/list/hud_elements = list()
+	if(ishuman(mymob))
+		var/mob/living/carbon/human/H = mymob
+		H.fov = new /obj/screen()
+		H.fov.icon = 'mods/content/agony_mode/icons/mob/hide.dmi'
+		H.fov.icon_state = "combat"
+		H.fov.name = " "
+		H.fov.screen_loc = "1,1"
+		H.fov.mouse_opacity = 0
+		H.fov.plane = VISION_CONE_PLANE
+		hud_elements |= H.fov
+
+		H.fov_mask = new /obj/screen()
+		H.fov_mask.icon = 'mods/content/agony_mode/icons/mob/hide.dmi'
+		H.fov_mask.icon_state = "combat_mask"
+		H.fov_mask.name = " "
+		H.fov_mask.screen_loc = "1,1"
+		H.fov_mask.mouse_opacity = 0
+		H.fov_mask.plane = HIDDEN_SHIT_PLANE
+		hud_elements |= H.fov_mask
+
+		mymob.client.screen += hud_elements
+
+/mob/living/Move()
+	..()
+	for(var/mob/M in oview(src))
+		M.update_vision_cone()
+	update_vision_cone()
+
+/mob/living/set_dir()
+	..()
+	update_vision_cone()
+
+/client/Move(n, direct)
+	..()
+	if(isturf(mob.loc))
+		if(mob.grabbed_by)
+			mob.dir = turn(mob.dir, 180)//Not needed, as it's already a thing, but just in case this gets screwed.
+			mob.update_vision_cone()
+
+/mob/UpdateLyingBuckledAndVerbStatus()
+	..()
+	update_vision_cone()
+
+/mob/living/carbon/human
+	..()
+	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/obj/screen/fov_mask = null
+	var/usefov = TRUE
+
+/mob/living/carbon/human/update_equipment_vision()
+	..()
+	var/use_original_cone = TRUE
+
+	if(istype(src.head, /obj/item/clothing/head))
+		update_helmet_vision(head)
+		use_original_cone = FALSE
+
+	if(istype(src.wear_mask, /obj/item/clothing/mask))
+		update_mask_vision(wear_mask)
+		use_original_cone = FALSE
+
+	if(use_original_cone)
+		fov_mask.icon_state = "combat_mask"
+		fov.icon_state = "combat"
+
+/mob/living/carbon/human/proc/update_helmet_vision(var/obj/item/clothing/head/H)
+	if(H.helmet_vision)
+		fov_mask.icon_state = "helmet_mask"
+		fov.icon_state = "helmet"
+	else
+		fov_mask.icon_state = "combat_mask"
+		fov.icon_state = "combat"
+
+/mob/living/carbon/human/proc/update_mask_vision(var/obj/item/clothing/mask/M)
+	if(M.helmet_vision)
+		fov_mask.icon_state = "helmet_mask"
+		fov.icon_state = "helmet"
+	else
+		fov_mask.icon_state = "combat_mask"
+		fov.icon_state = "combat"
+
+/obj/item/clothing
+	..()
+	var/helmet_vision = FALSE

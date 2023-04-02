@@ -1,0 +1,6 @@
+#ifndef MODPACK_CHARACTER_BUILDING
+#define MODPACK_CHARACTER_BUILDING
+#include "_character_building.dm"
+#include "skills.dm"
+#include "stats.dm"
+#endif
