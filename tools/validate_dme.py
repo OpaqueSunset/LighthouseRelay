@@ -18,6 +18,8 @@ IGNORE_INCLUDE = [
     # Deity species, TODO: include or remove
     r'code/modules/species/outsider/shadow.dm',
     r'code/modules/species/outsider/starlight.dm',
+    # TGS handles importing itself due to API security reasons
+    r'code/modules/tgs/**/*.dm'
 ]
 
 lines = []
