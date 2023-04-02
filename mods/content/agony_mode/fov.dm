@@ -12,7 +12,6 @@
 // Refer to some earlier revision or interbay 2.0 for the original code."
 // ~Chaoko99
 
-
 /mob/proc/update_vision_cone()
 	return
 
