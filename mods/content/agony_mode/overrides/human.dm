@@ -86,5 +86,4 @@
 		fov.icon_state = "combat"
 
 /obj/item/clothing
-	..()
 	var/helmet_vision = FALSE
