@@ -1,9 +1,0 @@
-#ifndef MODPACK_AGONY_MODE
-#define MODPACK_AGONY_MODE
-// BEGIN_INCLUDE
-#include "_agony_mode.dm"
-#include "fov.dm"
-#include "overrides\human.dm"
-//#include "overrides\special.dm"
-// END_INCLUDE
-#endif

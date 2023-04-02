@@ -4,7 +4,7 @@
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
 		H.fov = new /obj/screen()
-		H.fov.icon = 'mods/content/agony_mode/icons/mob/hide.dmi'
+		H.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
 		H.fov.screen_loc = "1,1"
@@ -13,7 +13,7 @@
 		hud_elements |= H.fov
 
 		H.fov_mask = new /obj/screen()
-		H.fov_mask.icon = 'mods/content/agony_mode/icons/mob/hide.dmi'
+		H.fov_mask.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov_mask.icon_state = "combat_mask"
 		H.fov_mask.name = " "
 		H.fov_mask.screen_loc = "1,1"
@@ -54,11 +54,15 @@
 	..()
 	var/use_original_cone = TRUE
 
-	if(istype(src.head, /obj/item/clothing/head))
+	var/obj/item/clothing/head/helmet = get_equipped_item(slot_head_str)
+	if(istype(helmet))
 		update_helmet_vision(head)
 		use_original_cone = FALSE
 
-	if(istype(src.wear_mask, /obj/item/clothing/mask))
+
+	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
+	if(istype(mask))
+		update_mask_vision(mask)
 		update_mask_vision(wear_mask)
 		use_original_cone = FALSE
 
@@ -83,5 +87,4 @@
 		fov.icon_state = "combat"
 
 /obj/item/clothing
-	..()
 	var/helmet_vision = FALSE
