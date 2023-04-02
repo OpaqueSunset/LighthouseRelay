@@ -3,13 +3,14 @@ name: Make changelogs
 on:
   push:
     branches:
+    - master
     - dev
   workflow_dispatch:
 
 jobs:
   MakeCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'NebulaSS13/Nebula' # to prevent this running on forks
+    if: github.repository == 'OpaqueSunset/LighthouseRelay' # to prevent this running on forks
     steps:
       - name: Checkout
         uses: actions/checkout@v3

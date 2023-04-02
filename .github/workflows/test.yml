@@ -3,11 +3,13 @@ name: Run Tests
 on:
   push:
     branches:
+      - master
       - dev
       - stable
       - staging
   pull_request:
     branches:
+      - master
       - dev
       - stable
       - staging
