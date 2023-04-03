@@ -32,7 +32,7 @@
 
 /proc/items_in_cone(atom/center = usr, dir = NORTH, radius)
 	. = list()
-	for(var/obj/items/candidate_item in view(center, radius))
+	for(var/obj/item/candidate_item in view(center, radius))
 		if(!candidate_item.InCone(center, dir))
 			. += candidate_item
 
@@ -54,9 +54,12 @@
 	src.client.hidden_atoms = list()
 	src.client.hidden_mobs = list()
 	src.fov.dir = src.dir
+
 	if(fov.alpha != 0)
+
 		for(var/mob/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", M)
+			I.mouse_opacity = 0
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I
@@ -66,6 +69,7 @@
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", O)
+			I.mouse_opacity = 0
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I
