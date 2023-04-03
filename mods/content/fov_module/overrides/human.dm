@@ -31,13 +31,13 @@
 	var/list/in_vision_cones = list()
 
 /mob/living/Move()
-	..()
+	. = ..()
 	for(var/mob/M in oview(src))
 		M.update_vision_cone()
 	update_vision_cone()
 
 /mob/living/Move(var/client/C)
-	..()
+	. = ..()
 	for(C in in_vision_cones)
 		if(src in C.hidden_mobs)
 			var/turf/T = get_turf(src)
@@ -48,7 +48,6 @@
 					C.images -= I
 		else
 			in_vision_cones.Remove(C)
-//	. = ..()
 
 /mob/living/set_dir()
 	..()
