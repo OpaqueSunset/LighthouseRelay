@@ -64,7 +64,6 @@
 	update_vision_cone()
 
 /mob/living/carbon/human
-	..()
 	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
 	var/obj/screen/fov_mask = null
 	var/usefov = TRUE
