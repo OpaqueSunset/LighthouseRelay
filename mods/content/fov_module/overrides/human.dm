@@ -23,6 +23,12 @@
 
 		mymob.client.screen += hud_elements
 
+/client
+	..()
+	var/list/in_vision_cones = list()
+	var/list/hidden_atoms = list()
+	var/list/hidden_mobs = list()
+
 /mob/living/Move()
 	..()
 	for(var/mob/M in oview(src))
@@ -39,6 +45,19 @@
 		if(mob.grabbed_by)
 			mob.dir = turn(mob.dir, 180)//Not needed, as it's already a thing, but just in case this gets screwed.
 			mob.update_vision_cone()
+
+	for(var/client/C in in_vision_cones)
+		if(src in C.hidden_mobs)
+			var/turf/T = get_turf(src)
+			var/image/I = image('mods/content/fov_module/icons/mob/footstepsound.dmi', loc = T, icon_state = "default", layer = 18)
+			C.images += I
+			spawn(4)
+				if(C)
+					C.images -= I
+
+		else
+			in_vision_cones.Remove(C)
+	. = ..()
 
 /mob/UpdateLyingBuckledAndVerbStatus()
 	..()
