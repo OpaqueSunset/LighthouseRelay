@@ -26,14 +26,14 @@
 
 /proc/mobs_in_cone(atom/center = usr, dir = NORTH, radius)
 	. = list()
-	for(var/mob/candidate_mob in view(center, radius))
-		if(!candidate_mob.InCone(center, dir))
+	for(var/mob/candidate_mob in oview(center, radius))
+		if(candidate_mob.InCone(center, dir))
 			. += candidate_mob
 
 /proc/items_in_cone(atom/center = usr, dir = NORTH, radius)
 	. = list()
-	for(var/obj/item/candidate_item in view(center, radius))
-		if(!candidate_item.InCone(center, dir))
+	for(var/obj/item/candidate_item in oview(center, radius))
+		if(candidate_item.InCone(center, dir))
 			. += candidate_item
 
 /proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
@@ -64,7 +64,7 @@
 			src.client.images += I
 			src.client.hidden_atoms += I
 			src.client.hidden_mobs += M
-			if(LAZYISIN(M.grabbed_by, src))//If we're pulling them we don't want them to be invisible, too hard to play like that.
+			if(LAZYISIN(M.grabbed_by, src))//If we're pulling them we don't want them to be invisible.
 				I.override = 0
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))

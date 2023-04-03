@@ -14,7 +14,6 @@
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
 
 	#include "../../mods/content/fov_module/_fov_module.dme"
-//	#include "../../mods/content/character_building/_character_building.dme"
 
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"

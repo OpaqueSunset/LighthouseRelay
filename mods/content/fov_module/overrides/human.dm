@@ -43,7 +43,7 @@
 	..()
 	if(isturf(mob.loc))
 		if(mob.grabbed_by)
-			mob.dir = turn(mob.dir, 180)//Not needed, as it's already a thing, but just in case this gets screwed.
+			mob.dir = turn(mob.dir, 180)
 			mob.update_vision_cone()
 
 	for(var/client/C in in_vision_cones)
@@ -51,20 +51,20 @@
 			var/turf/T = get_turf(src)
 			var/image/I = image('mods/content/fov_module/icons/mob/footstepsound.dmi', loc = T, icon_state = "default", layer = 18)
 			C.images += I
+			playsound(mob, 'sound/effects/ding.ogg', 50, 1, -1)
 			spawn(4)
 				if(C)
 					C.images -= I
 
 		else
 			in_vision_cones.Remove(C)
-//	. = ..()
 
 /mob/UpdateLyingBuckledAndVerbStatus()
 	..()
 	update_vision_cone()
 
 /mob/living/carbon/human
-	var/obj/screen/fov = null//The screen object because I can't figure out how the hell TG does their screen objects so I'm just using legacy code.
+	var/obj/screen/fov = null
 	var/obj/screen/fov_mask = null
 	var/usefov = TRUE
 

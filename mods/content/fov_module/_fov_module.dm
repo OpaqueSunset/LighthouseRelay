@@ -1,3 +1,9 @@
+/////////////VISION CONE///////////////
+//Vision cone code originally by Matt, Honkertron and Chaoko99. Chaoko99 for rewrites.
+//This is a repurposed version of an earlier system. See PR#6 for the evolution of this.
+//Credits to 'in_phaze/out-of-phaze' for substantial corrections and Carl for initial port work.
+///////////////////////////////////////
+
 #define HIDDEN_SHIT_PLANE	-101 //Used for the hiding of the vision cone masking object.
 #define VISION_CONE_PLANE	7 // For the vision cone.
 #define OPPOSITE_DIR(D) turn(D, 180)
