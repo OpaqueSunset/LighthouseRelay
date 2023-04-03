@@ -30,6 +30,8 @@
 
 /mob/living/carbon/human/update_vision_cone()
 	. = ..()
+	if(!src.client) //Same as in module. Hate to look for this twice, but it's needed, short of mashing everything together.
+		return
 	var/delay = 10
 	var/image/I = null
 	for(I in src.client.hidden_atoms)

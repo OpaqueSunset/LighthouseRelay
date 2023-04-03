@@ -24,7 +24,7 @@
 		mymob.client.screen += hud_elements
 
 /client
-	..()
+//	..()
 	var/list/in_vision_cones = list()
 	var/list/hidden_atoms = list()
 	var/list/hidden_mobs = list()
@@ -57,7 +57,7 @@
 
 		else
 			in_vision_cones.Remove(C)
-	. = ..()
+//	. = ..()
 
 /mob/UpdateLyingBuckledAndVerbStatus()
 	..()

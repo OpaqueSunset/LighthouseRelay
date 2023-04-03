@@ -19,9 +19,17 @@
 	if(!src.client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
 		return
 	check_fov()
-	src.fov.dir = src.dir
-	src.fov_mask.dir = src.dir
+	fov.dir = dir
+	fov_mask.dir = dir
+	var/list/viewsize = getviewsize(client.view)
+	var/matrix/scaling_matrix = new()
+	scaling_matrix.Scale(viewsize[1]/15, viewsize[2]/15)
+	fov.transform = scaling_matrix
+	fov_mask.transform = scaling_matrix
 
+/mob/living/carbon/human/reload_fullscreen()
+	update_vision_cone()
+	return ..()
 
 /mob/living/carbon/human/proc/SetFov(var/show)
 	if(!show)
