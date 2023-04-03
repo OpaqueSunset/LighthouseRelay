@@ -61,7 +61,7 @@
 			src.client.images += I
 			src.client.hidden_atoms += I
 			src.client.hidden_mobs += M
-			if(src.grabbed_by == M)//If we're pulling them we don't want them to be invisible, too hard to play like that.
+			if(LAZYISIN(M.grabbed_by, src))//If we're pulling them we don't want them to be invisible, too hard to play like that.
 				I.override = 0
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
