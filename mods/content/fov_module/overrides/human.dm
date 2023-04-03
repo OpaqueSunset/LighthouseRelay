@@ -1,5 +1,5 @@
 /datum/hud/human/FinalizeInstantiation()
-	..()
+	. = ..()
 	var/list/hud_elements = list()
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
@@ -50,18 +50,18 @@
 			in_vision_cones.Remove(C)
 
 /mob/living/set_dir()
-	..()
+	. = ..()
 	update_vision_cone()
 
 /client/Move(n, direct)
-	..()
+	. = ..()
 	if(isturf(mob.loc))
 		if(mob.grabbed_by)
 			mob.dir = turn(mob.dir, 180)
 			mob.update_vision_cone()
 
 /mob/UpdateLyingBuckledAndVerbStatus()
-	..()
+	. = ..()
 	update_vision_cone()
 
 /mob/living/carbon/human
@@ -70,7 +70,7 @@
 	var/usefov = TRUE
 
 /mob/living/carbon/human/update_equipment_vision()
-	..()
+	. = ..()
 	if(!client)
 		return
 	var/use_original_cone = TRUE
