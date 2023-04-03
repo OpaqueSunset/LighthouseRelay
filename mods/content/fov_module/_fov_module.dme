@@ -1,14 +1,9 @@
 #ifndef MODPACK_FOV_MODULE
 #define MODPACK_FOV_MODULE
 // BEGIN_INCLUDE
+#include "_fov_module.dm"
 #include "fov.dm"
 #include "overrides\human.dm"
+//#include "overrides\special.dm"
 // END_INCLUDE
 #endif
-// BEGIN_INTERNALS
-// END_INTERNALS
-// BEGIN_FILE_DIR
-#define FILE_DIR .
-// END_FILE_DIR
-// BEGIN_PREFERENCES
-// END_PREFERENCES

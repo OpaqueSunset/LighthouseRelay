@@ -56,13 +56,12 @@
 
 	var/obj/item/clothing/head/helmet = get_equipped_item(slot_head_str)
 	if(istype(helmet))
-		update_helmet_vision(head)
+		update_helmet_vision(helmet)
 		use_original_cone = FALSE
 
 	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
 	if(istype(mask))
 		update_mask_vision(mask)
-		update_mask_vision(wear_mask)
 		use_original_cone = FALSE
 
 	if(use_original_cone)
