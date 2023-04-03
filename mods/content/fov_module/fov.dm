@@ -16,14 +16,15 @@
 	return
 
 /mob/living/carbon/human/update_vision_cone()
-	if(!src.client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
+	if(!client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
 		return
 	check_fov()
 	fov.dir = dir
 	fov_mask.dir = dir
-	var/list/viewsize = getviewsize(client.view)
+	if(!client.prefs) // Needed to get the selected icon size
+		return
 	var/matrix/scaling_matrix = new()
-	scaling_matrix.Scale(viewsize[1]/15, viewsize[2]/15)
+	scaling_matrix.Scale(client.prefs.icon_size/32, client.prefs.icon_size/32)
 	fov.transform = scaling_matrix
 	fov_mask.transform = scaling_matrix
 

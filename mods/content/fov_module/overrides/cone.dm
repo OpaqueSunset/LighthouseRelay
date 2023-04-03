@@ -24,6 +24,18 @@
 		else
 			return .
 
+/proc/mobs_in_cone(atom/center = usr, dir = NORTH, radius)
+	. = list()
+	for(var/mob/candidate_mob in view(center, radius))
+		if(!candidate_mob.InCone(center, dir))
+			. += candidate_mob
+
+/proc/items_in_cone(atom/center = usr, dir = NORTH, radius)
+	. = list()
+	for(var/obj/items/candidate_item in view(center, radius))
+		if(!candidate_item.InCone(center, dir))
+			. += candidate_item
+
 /proc/cone(atom/center = usr, dir = NORTH, list/list = oview(center))
 	for(var/atom/O in list) if(!O.InCone(center, dir)) list -= O
 	return list
@@ -43,8 +55,7 @@
 	src.client.hidden_mobs = list()
 	src.fov.dir = src.dir
 	if(fov.alpha != 0)
-		var/mob/living/M
-		for(M in cone(src, OPPOSITE_DIR(src.dir), view(10, src)))
+		for(var/mob/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", M)
 			I.override = 1
 			src.client.images += I
@@ -53,8 +64,7 @@
 			if(src.grabbed_by == M)//If we're pulling them we don't want them to be invisible, too hard to play like that.
 				I.override = 0
 
-		var/obj/item/O
-		for(O in cone(src, OPPOSITE_DIR(src.dir), oview(src)))
+		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", O)
 			I.override = 1
 			src.client.images += I

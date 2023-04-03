@@ -7,7 +7,7 @@
 		H.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
-		H.fov.screen_loc = "1,1"
+		H.fov.screen_loc = "LEFT+50%,BOTTOM+50%"
 		H.fov.mouse_opacity = 0
 		H.fov.plane = VISION_CONE_PLANE
 		hud_elements |= H.fov
@@ -16,7 +16,7 @@
 		H.fov_mask.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov_mask.icon_state = "combat_mask"
 		H.fov_mask.name = " "
-		H.fov_mask.screen_loc = "1,1"
+		H.fov_mask.screen_loc = "LEFT+50%,BOTTOM+50%"
 		H.fov_mask.mouse_opacity = 0
 		H.fov_mask.plane = HIDDEN_SHIT_PLANE
 		hud_elements |= H.fov_mask
