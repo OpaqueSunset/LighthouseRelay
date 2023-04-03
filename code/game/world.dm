@@ -77,6 +77,9 @@ GLOBAL_PROTECTED_UNTYPED(game_id, null)
 	//logs
 	SetupLogs()
 
+	TgsNew()
+	TgsInitializationComplete()
+
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
 
 	if(config && config.server_name != null && config.server_suffix && world.port > 0)
@@ -115,6 +118,8 @@ var/global/world_topic_last = world.timeofday
 /world/Topic(T, addr, master, key)
 	direct_output(diary, "TOPIC: \"[T]\", from:[addr], master:[master], key:[key][log_end]")
 
+	TGS_TOPIC
+
 	if (global.world_topic_last > world.timeofday)
 		global.world_topic_throttle = list() //probably passed midnight
 	global.world_topic_last = world.timeofday
@@ -132,6 +137,8 @@ var/global/world_topic_last = world.timeofday
 	return TC.try_use(T, addr, master, key)
 
 /world/Reboot(var/reason)
+	TgsReboot()
+
 	if(global.using_map.reboot_sound)
 		sound_to(world, sound(pick(global.using_map.reboot_sound)))// random end sounds!! - LastyBatsy
 
