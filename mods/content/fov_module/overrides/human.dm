@@ -24,16 +24,31 @@
 		mymob.client.screen += hud_elements
 
 /client
-//	..()
-	var/list/in_vision_cones = list()
 	var/list/hidden_atoms = list()
 	var/list/hidden_mobs = list()
+
+/mob/living
+	var/list/in_vision_cones = list()
 
 /mob/living/Move()
 	..()
 	for(var/mob/M in oview(src))
 		M.update_vision_cone()
 	update_vision_cone()
+
+/mob/living/Move(var/client/C)
+	..()
+	for(C in in_vision_cones)
+		if(src in C.hidden_mobs)
+			var/turf/T = get_turf(src)
+			var/image/I = image('mods/content/fov_module/icons/mob/footstepsound.dmi', loc = T, icon_state = "default", layer = 18)
+			C.images += I
+			spawn(4)
+				if(C)
+					C.images -= I
+		else
+			in_vision_cones.Remove(C)
+//	. = ..()
 
 /mob/living/set_dir()
 	..()
@@ -46,19 +61,6 @@
 			mob.dir = turn(mob.dir, 180)
 			mob.update_vision_cone()
 
-	for(var/client/C in in_vision_cones)
-		if(src in C.hidden_mobs)
-			var/turf/T = get_turf(src)
-			var/image/I = image('mods/content/fov_module/icons/mob/footstepsound.dmi', loc = T, icon_state = "default", layer = 18)
-			C.images += I
-			playsound(mob, 'sound/effects/ding.ogg', 50, 1, -1)
-			spawn(4)
-				if(C)
-					C.images -= I
-
-		else
-			in_vision_cones.Remove(C)
-
 /mob/UpdateLyingBuckledAndVerbStatus()
 	..()
 	update_vision_cone()
@@ -70,6 +72,8 @@
 
 /mob/living/carbon/human/update_equipment_vision()
 	..()
+	if(!client)
+		return
 	var/use_original_cone = TRUE
 
 	var/obj/item/clothing/head/helmet = get_equipped_item(slot_head_str)

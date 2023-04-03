@@ -26,7 +26,7 @@
 
 /proc/mobs_in_cone(atom/center = usr, dir = NORTH, radius)
 	. = list()
-	for(var/mob/candidate_mob in oview(center, radius))
+	for(var/mob/living/candidate_mob in oview(center, radius))
 		if(candidate_mob.InCone(center, dir))
 			. += candidate_mob
 
@@ -57,7 +57,7 @@
 
 	if(fov.alpha != 0)
 
-		for(var/mob/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
+		for(var/mob/living/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", M)
 			I.mouse_opacity = 0
 			I.override = 1
@@ -66,6 +66,8 @@
 			src.client.hidden_mobs += M
 			if(LAZYISIN(M.grabbed_by, src))//If we're pulling them we don't want them to be invisible.
 				I.override = 0
+
+			M.in_vision_cones[src.client] = 1
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
 			I = image("split", O)

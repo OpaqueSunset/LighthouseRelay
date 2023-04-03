@@ -2,7 +2,7 @@
 	return
 
 /mob/living/carbon/human/update_vision_cone()
-	if(!client) //This doesn't actually hide shit from clientless mobs, so just keep them from running this.
+	if(!client)
 		return
 	check_fov()
 	fov.dir = dir
