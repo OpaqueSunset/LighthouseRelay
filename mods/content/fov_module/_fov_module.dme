@@ -1,0 +1,10 @@
+#ifndef MODPACK_FOV_MODULE
+#define MODPACK_FOV_MODULE
+// BEGIN_INCLUDE
+#include "_fov_module.dm"
+#include "fov.dm"
+#include "overrides\human.dm"
+//#include "overrides\special.dm"
+#include "overrides\cone.dm"
+// END_INCLUDE
+#endif
