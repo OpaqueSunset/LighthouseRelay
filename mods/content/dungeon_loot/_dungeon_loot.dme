@@ -1,0 +1,7 @@
+#ifndef MODPACK_DUNGEON_LOOT
+#define MODPACK_DUNGEON_LOOT
+// BEGIN INCLUDE
+#include "_dungeon_loot.dm"
+#include "loot_parent.dm"
+#include "loot_structures.dm"
+#endif
