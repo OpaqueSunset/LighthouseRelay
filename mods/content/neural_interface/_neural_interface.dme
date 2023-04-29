@@ -1,0 +1,4 @@
+#ifndef CONTENT_PACK_NEURAL_INTERFACE
+#define CONTENT_PACK_NEURAL_INTERFACE
+#include "neural_interface.dm"
+#endif
