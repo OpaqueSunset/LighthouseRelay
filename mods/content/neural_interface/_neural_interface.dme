@@ -1,4 +1,9 @@
 #ifndef CONTENT_PACK_NEURAL_INTERFACE
 #define CONTENT_PACK_NEURAL_INTERFACE
 #include "neural_interface.dm"
+#include "implant.dm"
+#include "disks/nifsoft_disk.dm"
+#include "programs/_nifsoft.dm"
+#include "programs/nifsoft_hud.dm"
+#include "programs/nifsoft_vitals.dm"
 #endif
