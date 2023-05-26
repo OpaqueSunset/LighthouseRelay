@@ -14,6 +14,7 @@
 	#include "../../mods/content/scaling_descriptors.dm"
 	#include "../../mods/content/xenobiology/_xenobiology.dme"
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
+	#include "../../mods/content/neural_interface/_neural_interface.dme"
 
 	#include "../../mods/content/fov_module/_fov_module.dme"
 
