@@ -96,7 +96,7 @@ They sell generic supplies and ask for generic supplies.
 	)
 
 /datum/trader/trading_beacon/manufacturing
-	origin = "Manifacturing Beacon"
+	origin = "Manufacturing Beacon"
 
 	possible_trading_items = list(
 		/obj/structure/aicore            = TRADER_THIS_TYPE,
