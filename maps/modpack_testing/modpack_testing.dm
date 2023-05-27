@@ -5,9 +5,11 @@
 
 	#include "../../mods/content/mundane.dm"
 	#include "../../mods/content/scaling_descriptors.dm"
+	#include "../../mods/content/baychems/_baychems.dme"
 	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/byond_membership/_byond_membership.dm"
 	#include "../../mods/content/corporate/_corporate.dme"
+	#include "../../mods/content/genemodding/_genemodding.dme"
 	#include "../../mods/content/generic_shuttles/_generic_shuttles.dme"
 	#include "../../mods/content/government/_government.dme"
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
@@ -25,6 +27,9 @@
 	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/bayliens/_bayliens.dme"
 	#include "../../mods/species/vox/_vox.dme"
+
+	#include "../../mods/utility/centcomdb/_centcomdb.dme"
+	#include "../../mods/verbs/antighost/_subtle_antighost.dme"
 
 	#define USING_MAP_DATUM /datum/map/modpack_testing
 
