@@ -13,6 +13,7 @@
 	maximum_temperature = -50 CELSIUS
 
 /decl/chemical_reaction/oxy_meds
+	name = "Dexalin"
 	result_amount = 1
 	required_reagents = list(/decl/material/liquid/acetone = 1, /decl/material/liquid/acid = 0.1)
 	catalysts = list(/decl/material/solid/metal/tungsten = 5)
