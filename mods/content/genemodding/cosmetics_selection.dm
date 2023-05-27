@@ -13,9 +13,9 @@
 	. += " Style: <a href='?src=\ref[src];ear_style=1'>[ear_display]</a><br>"
 	if(ear)
 		if (ear.do_colouration)
-			. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> <font face='fixedsys' size='3' color='[pref.ear_color]'><table style='display:inline;' bgcolor='[pref.ear_color]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> [COLORED_SQUARE(pref.ear_color)]<br>"
 		if (ear.extra_overlay)
-			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> <font face='fixedsys' size='3' color='[pref.ear_color_extra]'><table style='display:inline;' bgcolor='[pref.ear_color_extra]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.ear_color_extra)]<br>"
 
 	var/tail_display = "Normal"
 	var/decl/sprite_accessory/tail/tails = (pref.tail_style in tail_styles) ? tail_styles[pref.tail_style] : null
@@ -27,9 +27,9 @@
 	. += " Style: <a href='?src=\ref[src];tail_style=1'>[tail_display]</a><br>"
 
 	if (tails?.do_colouration)
-		. += "<a href='?src=\ref[src];tail_color=1'>Change Color</a> <font face='fixedsys' size='3' color='[pref.tail_color]'><table style='display:inline;' bgcolor='[pref.tail_color]'><tr><td>__</td></tr></table> </font><br>"
+		. += "<a href='?src=\ref[src];tail_color=1'>Change Color</a> [COLORED_SQUARE(pref.tail_color)]<br>"
 		if (tails.extra_overlay) // only show the secondary color prompt if we can change color to begin with
-			. += "<a href='?src=\ref[src];tail_color2=1'>Change Secondary Color</a> <font face='fixedsys' size='3' color='[pref.tail_color_extra]'><table style='display:inline;' bgcolor='[pref.tail_color_extra]'><tr><td>__</td></tr></table> </font><br>"
+			. += "<a href='?src=\ref[src];tail_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.tail_color_extra)]<br>"
 
 
 /datum/category_item/player_setup_item/physical/cosmetics/OnTopic(var/href,var/list/href_list, var/mob/user)

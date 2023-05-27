@@ -60,7 +60,7 @@
 	if(pref.tail_style)
 		pref.tail_style	= sanitize_inlist(pref.tail_style, decls_repository.get_decls_of_subtype(/decl/sprite_accessory/tail), initial(pref.tail_style))
 
-/mob/living/carbon/human/proc/sync_tail_to_style(var/decl/sprite_accessory/tail/tail_style, var/tail_color, var/tail_color_extra)
+/mob/living/carbon/human/proc/sync_tail_to_style(update_icon = TRUE)
 	var/obj/item/organ/external/tail/tail_organ = get_organ(BP_TAIL)
 	if(!tail_style)
 		if(!tail_organ)
@@ -71,11 +71,11 @@
 		if(!tail_path)
 			return
 		tail_organ = new tail_path(src)
-		tail_organ.owner = src
+		add_organ(tail_organ)
 		return
 	if(!tail_organ)
 		tail_organ = new(src)
-		tail_organ.owner = src
+		add_organ(tail_organ)
 		// everything with adding the tail organ will be handled in its Initialize
 	tail_organ.tail_icon = tail_style.icon
 	tail_organ.tail = tail_style.icon_state
@@ -93,6 +93,7 @@
 		tail_organ.tail_hair = tail_style.extra_overlay
 	else
 		tail_organ.tail_hair = null
+	update_tail_showing(update_icon)
 
 /datum/preferences/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
 	. = ..() // must be after species and such are set
@@ -101,4 +102,11 @@
 	character.ear_style = ear_styles[ear_style]
 	character.ear_color = ear_color
 	character.ear_color_extra = ear_color_extra
-	character.sync_tail_to_style(tail_styles[tail_style], tail_color, tail_color_extra)
+	character.tail_style = tail_styles[tail_style]
+	character.tail_color = tail_color
+	character.tail_color_extra = tail_color_extra
+	character.sync_tail_to_style(update_icon = TRUE)
+
+/decl/species/create_missing_organs(mob/living/carbon/human/H, fully_replace)
+	. = ..()
+	H.sync_tail_to_style(update_icon = TRUE)

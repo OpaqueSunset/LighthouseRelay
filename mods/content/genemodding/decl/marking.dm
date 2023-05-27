@@ -7,6 +7,7 @@
 */
 
 /decl/sprite_accessory/marking/genemodder
+	abstract_type = /decl/sprite_accessory/marking/genemodder
 	icon = 'mods/content/genemodding/icons/mob/human_races/markings.dmi'
 	blend = ICON_MULTIPLY
 	species_allowed = null
