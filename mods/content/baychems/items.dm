@@ -26,10 +26,11 @@
 
 /obj/item/chems/glass/bottle/opium
 	desc = "A small bottle of opium."
-	initial_reagents = list(/decl/material/liquid/opium = 60)
 
-/obj/item/chems/chem_disp_cartridge/opium
-	spawn_reagent = /decl/material/liquid/opium
+/obj/item/chems/glass/bottle/opium/populate_reagents()
+	reagents.add_reagent(/decl/material/liquid/opium, volume)
+
+DEFINE_CARTRIDGE_FOR_CHEM(opium, /decl/material/liquid/opium)
 
 /obj/machinery/chemical_dispenser/full
 	spawn_cartridges = list(

@@ -1,7 +1,8 @@
 var/global/list/ear_icon_cache = list() //key is "\ref[ear_style]", if colorable plus "[ear_color]" and potentially "[ear_color_extra]"
 /obj/item/organ/external/head/get_hair_icon()
 	var/image/res = ..()
-	if(!owner.ear_style || (owner.head?.flags_inv & BLOCKHEADHAIR))
+	var/obj/item/headwear = owner.get_equipped_item(slot_head_str)
+	if(!owner.ear_style || (headwear?.flags_inv & BLOCK_HEAD_HAIR))
 		return res
 	var/icon_key
 	if(owner.ear_style.do_colouration)
