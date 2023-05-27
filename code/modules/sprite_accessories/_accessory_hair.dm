@@ -387,6 +387,10 @@
 	name = "Mulder"
 	icon_state = "hair_mulder"
 
+/decl/sprite_accessory/hair/wheeler
+	name = "Wheeler"
+	icon_state = "hair_wheeler"
+
 /decl/sprite_accessory/hair/scully
 	name = "Scully"
 	icon_state = "hair_scully"
