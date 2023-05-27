@@ -426,8 +426,10 @@
 	name = "Cobra Hood"
 	icon_state = "unathihood"
 	body_parts = list(BP_HEAD)
+	mask_to_bodypart = FALSE
 
 /decl/sprite_accessory/marking/genemodder/unathidoublehorns
 	name = "Double Unathi Horns"
 	icon_state = "unathidoublehorns"
 	body_parts = list(BP_HEAD)
+	mask_to_bodypart = FALSE
