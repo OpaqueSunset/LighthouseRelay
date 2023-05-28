@@ -1,0 +1,6 @@
+#ifndef MODPACK_ANTIGHOST
+#define MODPACK_ANTIGHOST
+#include "antighost.dm"
+#include "verb.dm"
+#include "prefs.dm"
+#endif

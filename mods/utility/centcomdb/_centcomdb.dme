@@ -1,0 +1,4 @@
+#ifndef MODPACK_CENTCOMDB
+#define MODPACK_CENTCOMDB
+#include "centcomdb.dm"
+#endif
