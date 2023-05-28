@@ -27,7 +27,7 @@
 	. = ..()
 	air_contents.volume = volume
 	air_contents.temperature = T20C
-	
+
 	if(filling)
 		var/list/gases = list()
 		for(var/gas in filling)
@@ -73,6 +73,11 @@
 	icon_state = "co2"
 	filling = list(/decl/material/gas/carbon_dioxide = 1)
 
+/obj/machinery/atmospherics/unary/tank/phoron
+	name = "Pressure Tank (Phoron)"
+	icon_state = "phoron"
+	filling = list(/decl/material/solid/phoron = 1)
+
 /obj/machinery/atmospherics/unary/tank/nitrous_oxide
 	name = "Pressure Tank (Nitrous Oxide)"
 	icon_state = "n2o"
@@ -89,7 +94,7 @@
 	name =  "Pressure Tank"
 	desc = "A large vessel containing pressurized gas."
 	color =  PIPE_COLOR_WHITE
-	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_REGULAR|CONNECT_TYPE_SCRUBBER|CONNECT_TYPE_FUEL	
+	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_REGULAR|CONNECT_TYPE_SCRUBBER|CONNECT_TYPE_FUEL
 	w_class = ITEM_SIZE_STRUCTURE
 	density = 1
 	level = 1

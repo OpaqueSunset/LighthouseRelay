@@ -64,6 +64,12 @@
 	canister_color = "purple"
 	can_label = 0
 
+/obj/machinery/portable_atmospherics/canister/phoron
+	name = "\improper Canister \[Phoron\]"
+	icon_state = "orange"
+	canister_color = "orange"
+	can_label = 0
+
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide
 	name = "\improper Canister \[CO2\]"
 	icon_state = "black"
@@ -96,6 +102,9 @@
 /obj/machinery/portable_atmospherics/canister/empty/oxygen
 	icon_state = "blue"
 	canister_type = /obj/machinery/portable_atmospherics/canister/oxygen
+/obj/machinery/portable_atmospherics/canister/empty/phoron
+	icon_state = "orange"
+	canister_type = /obj/machinery/portable_atmospherics/canister/phoron
 /obj/machinery/portable_atmospherics/canister/empty/nitrogen
 	icon_state = "red"
 	canister_type = /obj/machinery/portable_atmospherics/canister/nitrogen
@@ -350,12 +359,12 @@ update_flag
 		var/list/colors = list(
 			"\[N2O\]" =       "redws",
 			"\[N2\]" =        "red",
+			"\[Phoron\]" =    "orange",
 			"\[O2\]" =        "blue",
 			"\[CO2\]" =       "black",
 			"\[H2\]" =        "purple",
 			"\[Air\]" =       "grey",
-			"\[CAUTION\]" =   "yellow",
-			"\[Explosive\]" = "orange"
+			"\[CAUTION\]" =   "yellow"
 		)
 		var/label = input(user, "Choose canister label", "Gas canister") as null|anything in colors
 		if (label && CanUseTopic(user, state))
@@ -369,6 +378,11 @@ update_flag
 	if(destroyed)
 		return STATUS_CLOSE
 	return ..()
+
+/obj/machinery/portable_atmospherics/canister/phoron/Initialize()
+	. = ..()
+	air_contents.adjust_gas(/decl/material/solid/phoron, MolesForPressure())
+	queue_icon_update()
 
 /obj/machinery/portable_atmospherics/canister/oxygen/Initialize()
 	. = ..()
@@ -422,6 +436,11 @@ update_flag
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup/Initialize()
 	. = ..()
 	src.air_contents.adjust_gas(/decl/material/gas/carbon_dioxide, MolesForPressure())
+	queue_icon_update()
+
+/obj/machinery/portable_atmospherics/canister/phoron/engine_setup/Initialize()
+	. = ..()
+	src.air_contents.adjust_gas(/decl/material/solid/phoron, MolesForPressure())
 	queue_icon_update()
 
 /obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup/Initialize()
