@@ -426,6 +426,7 @@ send an additional command to open the door again.
 
 
 #undef STATE_IDLE
+#undef STATE_PREPARE
 #undef STATE_DEPRESSURIZE
 #undef STATE_PRESSURIZE
 
