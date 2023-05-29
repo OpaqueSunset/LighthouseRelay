@@ -162,7 +162,7 @@
 	cable_color = COLOR_GREEN
 
 /obj/item/twohanded/spear/supermatter
-	material = /decl/material/solid/exotic_matter
+	material = /decl/material/solid/supermatter
 	shaft_material = /decl/material/solid/wood/ebony
 	cable_color = COLOR_INDIGO
 

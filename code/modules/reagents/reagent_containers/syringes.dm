@@ -387,7 +387,7 @@
 	icon_state = "bs"
 	material = /decl/material/solid/glass
 	matter = list(
-		/decl/material/solid/metal/uranium = MATTER_AMOUNT_TRACE,
+		/decl/material/solid/phoron = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/gemstone/diamond = MATTER_AMOUNT_TRACE
 	)
 	origin_tech = "{'biotech':3,'materials':4,'exoticmatter':2}"

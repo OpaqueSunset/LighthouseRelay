@@ -93,6 +93,10 @@
 	if(pickednum >= 10)
 		SSmaterials.create_object(/decl/material/solid/metal/plasteel, src, rand(common_min, common_max))
 
+	//Phoron (rare ore)
+	if(pickednum >= 15)
+		SSmaterials.create_object(/decl/material/solid/phoron, src, rand(common_min, common_max))
+
 	//Silver (rare ore)
 	if(pickednum >= 15)
 		SSmaterials.create_object(/decl/material/solid/metal/silver, src, rand(rare_min, rare_max))
@@ -124,6 +128,7 @@
 		/obj/item/stack/material/pane/mapped/glass/fifty,
 		/obj/item/stack/material/ingot/mapped/gold/fifty,
 		/obj/item/stack/material/ingot/mapped/silver/fifty,
+		/obj/item/stack/material/crystal/mapped/phoron/fifty,
 		/obj/item/stack/material/puck/mapped/uranium/fifty,
 		/obj/item/stack/material/gemstone/mapped/diamond/fifty,
 		/obj/item/stack/material/reinforced/mapped/plasteel/fifty,

@@ -57,6 +57,11 @@
 	icon_state = "metal"
 	material = /decl/material/solid/metal/iron
 
+/turf/simulated/wall/phoron
+	color = "#e37108"
+	icon_state = "stone"
+	material = /decl/material/solid/phoron
+
 /turf/simulated/wall/sandstone
 	color = COLOR_GOLD
 	icon_state = "stone"

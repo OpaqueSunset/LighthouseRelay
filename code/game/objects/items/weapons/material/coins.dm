@@ -112,3 +112,6 @@
 
 /obj/item/coin/platinum
 	material = /decl/material/solid/metal/platinum
+
+/obj/item/coin/phoron
+	material = /decl/material/solid/phoron
