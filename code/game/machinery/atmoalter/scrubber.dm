@@ -22,12 +22,12 @@
 	var/list/scrubbing_gas
 
 /obj/machinery/portable_atmospherics/powered/scrubber/Initialize()
-	. = ..()
 	if(!scrubbing_gas)
-		scrubbing_gas = list()
+		scrubbing_gas = list(/decl/material/solid/phoron)
 		for(var/g in decls_repository.get_decl_paths_of_subtype(/decl/material/gas))
 			if(g != /decl/material/gas/oxygen && g != /decl/material/gas/nitrogen)
 				scrubbing_gas += g
+	. = ..()
 
 /obj/machinery/portable_atmospherics/powered/scrubber/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
