@@ -10,9 +10,10 @@
 	// must have at least one nifpak to install
 	for(var/pak_name in stored_files)
 		var/datum/computer_file/data/nifpak/pak = stored_files[pak_name]
-		// todo: add metadata and configuration checks here
-		// mainly for stuff like compliance disk laws
-		if(pak.get_packed_program())
+		var/decl/nifsoft_config_handler/config_handler = pak.get_config_handler()
+		if(!pak.get_packed_program())
+			continue
+		if(!config_handler || config_handler.install_ready(pak, user, loud))
 			return TRUE
 	// no nifpaks, no installation
 	if(loud)
@@ -58,20 +59,19 @@
 		var/packed_program = pak.get_packed_program()
 		if(!ispath(packed_program, /datum/computer_file/program/nifsoft))
 			continue
-		var/datum/computer_file/program/nifsoft/packed_nifsoft = new packed_program() // Now we have the actual file.
+		var/datum/computer_file/program/nifsoft/packed_nifsoft = new packed_program(pak.metadata) // Now we have the actual file.
 		if(destination.store_file(packed_nifsoft, programs_directory, FALSE) == OS_FILE_SUCCESS)
 			delete_file(pak_name) // Basic anti-piracy measure. Can be circumvented by adding write-protection.
+			packed_nifsoft.on_install()
 	// todo: name/icon change when all files are deleted
 	// also some way to jailbreak/reuse it to either copy files or let you add new ones
 	return TRUE
 
-/obj/item/disk/nifsoft/afterattack(atom/target, mob/user, adjacent, click_parameters)
-	if(!adjacent)
-		return
-	if(can_install(user) && can_install_to(target, user))
+/obj/item/disk/nifsoft/attack(atom/target, mob/user)
+	if(user.Adjacent(target) && can_install(user) && can_install_to(target, user))
 		do_install(target, user)
-		return
-	return ..()
+		return // don't smack 'em!
+	return ..() // smack 'em!
 
 var/global/nifsoft_salt = rand(1111, 9999)
 var/global/list/nifsoft_hash_lookup = list()
@@ -98,12 +98,49 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 /datum/computer_file/data/nifpak/proc/get_packed_program()
 	return global.nifsoft_reverse_hash_lookup[stored_data]
 
+/datum/computer_file/data/nifpak/proc/get_config_handler()
+	RETURN_TYPE(/decl/nifsoft_config_handler)
+	var/datum/computer_file/program/nifsoft/packed_program = get_packed_program()
+	if(!packed_program)
+		return null
+	var/config_path = initial(packed_program.config_handler)
+	if(!config_path)
+		return null
+	return GET_DECL(config_path)
+
 /obj/item/disk/nifsoft/proc/make_nifpak(datum/computer_file/program/nifsoft/prog_to_pack)
+	RETURN_TYPE(/datum/computer_file/data/nifpak)
 	return new /datum/computer_file/data/nifpak(null, prog_to_pack)
 
 /obj/item/disk/nifsoft/Initialize(ml, material_key)
 	. = ..()
 	load_programs()
+
+/obj/item/disk/nifsoft/attack_self(mob/user)
+	if(!user.has_dexterity(DEXTERITY_KEYBOARDS)) // Have to type to configure it.
+		return ..()
+	var/list/configurable_programs = list()
+	for(var/pak_name in stored_files)
+		var/datum/computer_file/data/nifpak/pak = stored_files[pak_name]
+		var/datum/computer_file/program/nifsoft/packed_program = pak.get_packed_program()
+		if(!packed_program)
+			continue
+		var/decl/nifsoft_config_handler/config_handler = pak.get_config_handler()
+		if(!config_handler)
+			continue
+		configurable_programs[initial(packed_program.filedesc)] = pak_name
+	if(!length(configurable_programs))
+		return ..()
+	var/choice = (length(configurable_programs) == 1) ? configurable_programs[1] : (input(user, "Configure which NIFsoft?", "NIFsoft Configuration") as null|anything in configurable_programs)
+	if(!choice)
+		return TRUE // canceled, no further action
+	var/datum/computer_file/data/nifpak/configuring_pak = stored_files[configurable_programs[choice]]
+	var/decl/nifsoft_config_handler/pak_config_handler = configuring_pak.get_config_handler()
+	var/option = (length(pak_config_handler.options) == 1) ? pak_config_handler.options[1] : (input(user, "Configure which option?", "NIFsoft Configuration") as null|anything in pak_config_handler.options)
+	if(!option)
+		return TRUE // canceled
+	if(!pak_config_handler.prompt_user(configuring_pak, user, option)) // something broke, notify the user
+		to_chat(user, SPAN_WARNING("\The [src] reports an unspecified configuration error."))
 
 /// Loads the default programs (bundle or single) onto the disk.
 /// If exact_fit is true, the disk will be resized to have exactly enough capacity to hold the starting programs.
@@ -139,27 +176,8 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 		write_file(make_nifpak(nifsoft_to_install))
 	..()
 
-// TODO: add disk configuration based on contained programs rather than the type of the disk
-// maybe use file metadata for it?
-// until then, replacing other install disk contents with compliance programs won't work properly
 /obj/item/disk/nifsoft/single/compliance
-	installed_nifsoft = null // todo: add compliance disk program
-	var/laws
-
-// TODO: move checks and configuration to compliance disk program
-/obj/item/disk/nifsoft/single/compliance/can_install(mob/user, loud = TRUE)
-	if(!length(laws))
-		if(loud)
-			to_chat(user, SPAN_WARNING("You haven't set any laws yet!"))
-		return FALSE
-	return ..()
-
-/obj/item/disk/nifsoft/single/compliance/attack_self(mob/user)
-	var/newlaws = input(user,"Input laws:","Compliance Laws",laws) as message
-	newlaws = sanitize(newlaws, MAX_PAPER_MESSAGE_LEN)
-	if(newlaws)
-		to_chat(user,"You set the laws to:<br>[SPAN_NOTICE(newlaws)]")
-		laws = newlaws
+	installed_nifsoft = /datum/computer_file/program/nifsoft/compliance
 
 /obj/item/disk/nifsoft/single/sechud
 	installed_nifsoft = /datum/computer_file/program/nifsoft/nif_hud/sec_hud
