@@ -88,14 +88,13 @@
 	var/receive_tag = signal.data["tag"]
 	if(!receive_tag) return
 
-	if(receive_tag==tag_chamber_sensor)
-		if(signal.data["pressure"])
-			memory["chamber_sensor_pressure"] = text2num(signal.data["pressure"])
+	if(receive_tag==tag_chamber_sensor && ("pressure" in signal.data))
+		memory["chamber_sensor_pressure"] = text2num(signal.data["pressure"])
 
-	else if(receive_tag==tag_exterior_sensor)
+	else if(receive_tag==tag_exterior_sensor && ("pressure" in signal.data))
 		memory["external_sensor_pressure"] = text2num(signal.data["pressure"])
 
-	else if(receive_tag==tag_interior_sensor)
+	else if(receive_tag==tag_interior_sensor && ("pressure" in signal.data))
 		memory["internal_sensor_pressure"] = text2num(signal.data["pressure"])
 
 	else if(receive_tag==tag_exterior_door)
@@ -136,6 +135,15 @@
 					else
 						receive_user_command("cycle_int")
 
+#define SIDE_EXTERIOR "exterior"
+#define SIDE_INTERIOR "interior"
+/datum/computer/file/embedded_program/airlock/proc/is_side_safe(side)
+	switch(side)
+		if(SIDE_EXTERIOR)
+			return IsInRange(memory["external_sensor_pressure"], memory["chamber_sensor_pressure"] - SENSOR_TOLERANCE, memory["chamber_sensor_pressure"] + SENSOR_TOLERANCE)
+		if(SIDE_INTERIOR)
+			return IsInRange(memory["internal_sensor_pressure"], memory["chamber_sensor_pressure"] - SENSOR_TOLERANCE, memory["chamber_sensor_pressure"] + SENSOR_TOLERANCE)
+	return FALSE // side does not exist, cannot be safe
 
 /datum/computer/file/embedded_program/airlock/receive_user_command(command)
 	var/shutdown_pump = 0
@@ -143,7 +151,7 @@
 	switch(command)
 		if("cycle_ext")
 			//If airlock is already cycled in this direction, just toggle the doors.
-			if(!memory["purge"] && IsInRange(memory["external_sensor_pressure"], memory["chamber_sensor_pressure"] - SENSOR_TOLERANCE, memory["chamber_sensor_pressure"] + SENSOR_TOLERANCE))
+			if(!memory["purge"] && is_side_safe(SIDE_EXTERIOR))
 				toggleDoor(memory["exterior_status"], tag_exterior_door, memory["secure"], "toggle")
 			//only respond to these commands if the airlock isn't already doing something
 			//prevents the controller from getting confused and doing strange things
@@ -151,10 +159,13 @@
 				begin_cycle_out()
 
 		if("cycle_int")
-			if(!memory["purge"] && IsInRange(memory["internal_sensor_pressure"], memory["chamber_sensor_pressure"] - SENSOR_TOLERANCE, memory["chamber_sensor_pressure"] + SENSOR_TOLERANCE))
+			if(!memory["purge"] && is_side_safe(SIDE_INTERIOR))
 				toggleDoor(memory["interior_status"], tag_interior_door, memory["secure"], "toggle")
 			else if(state == target_state)
 				begin_cycle_in()
+
+#undef SIDE_EXTERIOR
+#undef SIDE_INTERIOR
 
 		if("cycle_ext_door")
 			cycleDoors(TARGET_OUTOPEN)
@@ -426,6 +437,7 @@ send an additional command to open the door again.
 
 
 #undef STATE_IDLE
+#undef STATE_PREPARE
 #undef STATE_DEPRESSURIZE
 #undef STATE_PRESSURIZE
 

@@ -14,6 +14,7 @@
 
 	power_rating = 7500 //7500 W ~ 10 HP
 	power_losses = 150
+	var/power_efficiency = 1 /// Modifies power consumption. 0.25 -> uses only 25% the power, 1.25 -> uses 125% the power
 
 	var/minrate = 0
 	var/maxrate = 10 * ONE_ATMOSPHERE
@@ -21,12 +22,12 @@
 	var/list/scrubbing_gas
 
 /obj/machinery/portable_atmospherics/powered/scrubber/Initialize()
-	. = ..()
 	if(!scrubbing_gas)
-		scrubbing_gas = list()
+		scrubbing_gas = list(/decl/material/solid/phoron)
 		for(var/g in decls_repository.get_decl_paths_of_subtype(/decl/material/gas))
 			if(g != /decl/material/gas/oxygen && g != /decl/material/gas/nitrogen)
 				scrubbing_gas += g
+	. = ..()
 
 /obj/machinery/portable_atmospherics/powered/scrubber/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
@@ -69,7 +70,7 @@
 
 		var/transfer_moles = min(1, volume_rate/environment.volume)*environment.total_moles
 
-		power_draw = scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating)
+		power_draw = scrub_gas(src, scrubbing_gas, environment, air_contents, transfer_moles, power_rating) * power_efficiency
 
 	if (power_draw < 0)
 		last_flow_rate = 0
