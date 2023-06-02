@@ -2,7 +2,7 @@
 	name = "\improper NIFsoft install disk"
 	desc = "An install disk for compatible nanite-based software hosts. \
 	When brought within 5cm of the skull, the disk's payload is automatically transferred."
-	color = COLOR_OLIVE
+	color = "#b7a317"
 	label = "label_up"
 
 /// Checks if we have packed NIFsofts to install.
@@ -147,6 +147,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 /obj/item/disk/nifsoft/proc/load_programs(exact_fit = TRUE)
 	if(exact_fit)
 		block_capacity = initial(block_capacity) - free_blocks
+		free_blocks = 0
 
 // NIFsoft disks come in single and bundle formats.
 /obj/item/disk/nifsoft/single
@@ -175,18 +176,3 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	for(var/nifsoft_to_install in installed_nifsofts)
 		write_file(make_nifpak(nifsoft_to_install))
 	..()
-
-/obj/item/disk/nifsoft/single/compliance
-	installed_nifsoft = /datum/computer_file/program/nifsoft/compliance
-
-/obj/item/disk/nifsoft/single/sechud
-	installed_nifsoft = /datum/computer_file/program/nifsoft/nif_hud/sec_hud
-
-/obj/item/disk/nifsoft/bundle/medical
-	name = "\improper NIFsoft install disk - Medical"
-	bundle_desc = "A bundle of useful medical-related NIF software."
-	installed_nifsofts = list(
-		/datum/computer_file/program/nifsoft/nif_hud/med_hud,
-		/datum/computer_file/program/nifsoft/suit_sensors,
-		// todo: self-body-scanner
-	)

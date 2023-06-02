@@ -2,7 +2,12 @@
 #define CONTENT_PACK_NEURAL_INTERFACE
 #include "neural_interface.dm"
 #include "implant.dm"
+#include "nifsoft_vending.dm"
 #include "disks/nifsoft_disk.dm"
+#include "disks/premade/civilian_disks.dm"
+#include "disks/premade/illegal_disks.dm"
+#include "disks/premade/medical_disks.dm"
+#include "disks/premade/security_disks.dm"
 #include "programs/_nifsoft.dm"
 #include "programs/nifsoft_compliance.dm"
 #include "programs/nifsoft_hud.dm"
