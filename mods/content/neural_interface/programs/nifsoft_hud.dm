@@ -1,5 +1,4 @@
 /datum/computer_file/program/nifsoft/nif_hud
-	abstract_type = /datum/computer_file/program/nifsoft/nif_hud
 	filename = "nifar"
 	filedesc = "AR Overlay"
 	program_icon_state = "hostile"
@@ -9,9 +8,14 @@
 	size = 2
 	usage_flags = PROGRAM_NIF
 
-/datum/computer_file/program/nifsoft/nif_hud/on_startup(var/mob/living/user, var/datum/extension/interactive/os/new_host)
+/datum/computer_file/program/nifsoft/nif_hud/on_startup(mob/living/user, datum/extension/interactive/os/new_host)
 	. = ..()
 	computer.minimize_program(user)
+	get_owner()?.update_ar_state(TRUE)
+
+/datum/computer_file/program/nifsoft/nif_hud/on_shutdown(forced = FALSE)
+	. = ..()
+	get_owner()?.update_ar_state(FALSE)
 
 /datum/computer_file/program/nifsoft/nif_hud/process_tick()
 	var/obj/item/organ/internal/augment/active/nif/holder = computer.holder

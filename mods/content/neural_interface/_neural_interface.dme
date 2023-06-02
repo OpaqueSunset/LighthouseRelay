@@ -3,6 +3,7 @@
 #include "neural_interface.dm"
 #include "implant.dm"
 #include "nifsoft_vending.dm"
+#include "planes.dm"
 #include "disks/nifsoft_disk.dm"
 #include "disks/premade/civilian_disks.dm"
 #include "disks/premade/illegal_disks.dm"
