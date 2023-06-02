@@ -183,7 +183,11 @@ What is the naming convention for planes or layers?
   #define BLIND_LAYER              3
   #define CRIT_LAYER               4
 
-#define HUD_PLANE                6
+// LIGHTHOUSE EDIT START
+// VISION_CONE_PLANE 6 - defined in fov_module
+// AR_PLANE 8 - defined in neural_interface module
+#define HUD_PLANE                7
+// LIGHTHOUSE EDIT END
   #define UNDER_HUD_LAYER          0
   #define HUD_BASE_LAYER           2
   #define HUD_ITEM_LAYER           3
