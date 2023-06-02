@@ -68,10 +68,10 @@
 	return TRUE
 
 /obj/item/disk/nifsoft/attack(atom/target, mob/user)
-	if(user.Adjacent(target) && can_install(user) && can_install_to(target, user))
+	if(!user.Adjacent(target))
+		return ..()
+	if(can_install(user) && can_install_to(target, user))
 		do_install(target, user)
-		return // don't smack 'em!
-	return ..() // smack 'em!
 
 var/global/nifsoft_salt = rand(1111, 9999)
 var/global/list/nifsoft_hash_lookup = list()
