@@ -8,16 +8,23 @@
 /// Checks if we have packed NIFsofts to install.
 /obj/item/disk/nifsoft/proc/can_install(mob/user, loud = TRUE)
 	// must have at least one nifpak to install
+	var/configuration_failure = FALSE // whether or not we're failing because of configuration
 	for(var/pak_name in stored_files)
 		var/datum/computer_file/data/nifpak/pak = stored_files[pak_name]
 		var/decl/nifsoft_config_handler/config_handler = pak.get_config_handler()
 		if(!pak.get_packed_program())
 			continue
-		if(!config_handler || config_handler.install_ready(pak, user, loud))
+		if(!config_handler) // No configuration necessary.
 			return TRUE
+		if(config_handler.install_ready(pak, user, loud))
+			return TRUE
+		configuration_failure = TRUE // If we fail, it's only because of configuration.
 	// no nifpaks, no installation
 	if(loud)
-		to_chat(user, "[src] has no programs to install!")
+		if(configuration_failure)
+			to_chat(user, "\The [src] must be configured before it can be installed!")
+		else
+			to_chat(user, "\The [src] has no programs to install!")
 	return FALSE
 
 /// Checks if the target has a NIF that can have programs installed.

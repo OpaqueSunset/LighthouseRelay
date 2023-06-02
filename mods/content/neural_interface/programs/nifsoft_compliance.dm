@@ -39,3 +39,9 @@
 		if(loud)
 			to_chat(user, SPAN_WARNING("You haven't set any laws yet!"))
 		return FALSE
+
+/decl/nifsoft_config_handler/compliance/prompt_user(datum/computer_file/data/nifpak/pak, mob/user, option_name)
+	. = ..()
+	if(. && (option_name == "Laws"))
+		to_chat(user, SPAN_NOTICE("You set the laws to:"))
+		to_chat(user, read_pak(pak, option_name))
