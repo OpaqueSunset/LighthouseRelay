@@ -6,7 +6,7 @@
 	desc = "A large vessel containing pressurized gas."
 
 	var/volume = 10000 //in liters, 1 meters by 1 meters by 2 meters ~tweaked it a little to simulate a pressure tank without needing to recode them yet
-	var/start_pressure = 25*ONE_ATMOSPHERE
+	var/start_pressure = 25 ATM
 	var/filling // list of gas ratios to use.
 
 	level = 1
@@ -49,7 +49,7 @@
 	return air_contents
 
 /obj/machinery/atmospherics/unary/tank/deconstruction_pressure_check()
-	if (air_contents.return_pressure() > 2*ONE_ATMOSPHERE)
+	if (air_contents.return_pressure() > (2 ATM))
 		return FALSE
 	return TRUE
 

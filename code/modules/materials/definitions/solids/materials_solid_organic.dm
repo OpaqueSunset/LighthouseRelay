@@ -21,7 +21,7 @@
 	fuel_value = 0.6
 	burn_product = /decl/material/gas/carbon_monoxide // placeholder for more appropriate toxins
 	dooropen_noise = 'sound/effects/doorcreaky.ogg'
-	default_solid_form = /obj/item/stack/material/sheet
+	default_solid_form = /obj/item/stack/material/panel
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
@@ -258,6 +258,7 @@
 	default_solid_form = /obj/item/stack/material/slab
 	sound_manipulate = 'sound/foley/meat1.ogg'
 	sound_dropped = 'sound/foley/meat2.ogg'
+	hitsound = 'sound/effects/squelch1.ogg'
 
 /decl/material/solid/skin
 	name = "skin"
@@ -279,6 +280,7 @@
 	default_solid_form = /obj/item/stack/material/skin
 	sound_manipulate = 'sound/foley/meat1.ogg'
 	sound_dropped = 'sound/foley/meat2.ogg'
+	hitsound = "punch"
 	var/tans_to = /decl/material/solid/leather
 
 /decl/material/solid/skin/generate_recipes(var/reinforce_material)

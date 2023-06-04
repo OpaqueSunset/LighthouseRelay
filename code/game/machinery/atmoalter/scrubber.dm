@@ -17,7 +17,7 @@
 	var/power_efficiency = 1 /// Modifies power consumption. 0.25 -> uses only 25% the power, 1.25 -> uses 125% the power
 
 	var/minrate = 0
-	var/maxrate = 10 * ONE_ATMOSPHERE
+	var/maxrate = 10 ATM
 
 	var/list/scrubbing_gas
 
@@ -173,18 +173,14 @@
 	name = "[name] (ID [id])"
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/attack_hand(mob/user)
-	if((. = ..()))
-		return
-	to_chat(user, "<span class='notice'>You can't directly interact with this machine. Use the scrubber control console.</span>")
-	return TRUE
+	. = ..() // Buckling, climbers, grab interactions, component attack_hand; unlikely to return true.
+	if(!.)
+		to_chat(user, SPAN_WARNING("You can't directly interact with this machine. Use the scrubber control console."))
+		return TRUE
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/on_update_icon()
-	overlays.Cut()
-
-	if((use_power == POWER_USE_ACTIVE) && !(stat & (NOPOWER|BROKEN)))
-		icon_state = "scrubber:1"
-	else
-		icon_state = "scrubber:0"
+	cut_overlays()
+	icon_state = "scrubber:[!!((use_power == POWER_USE_ACTIVE) && !(stat & (NOPOWER|BROKEN)))]"
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/attackby(var/obj/item/I, var/mob/user)
 	if(IS_WRENCH(I))

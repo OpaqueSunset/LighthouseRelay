@@ -16,7 +16,7 @@
 	density = 0
 	interact_offline = 1
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
-	directional_offset = "{'NORTH':{'y':-24}, 'SOUTH':{'y':32}, 'EAST':{'x':24}, 'WEST':{'x':-24}}"
+	directional_offset = "{'NORTH':{'y':-24}, 'SOUTH':{'y':32}, 'EAST':{'x':-24}, 'WEST':{'x':24}}"
 
 	//Used for logging people entering cryosleep and important items they are carrying.
 	var/list/frozen_crew = list()
@@ -217,7 +217,7 @@
 		var/obj/effect/overmap/visitable/O = global.overmap_sectors[num2text(z)]
 		if(istype(O))
 			for(var/obj/effect/overmap/visitable/OO in range(O,2))
-				if((OO.sector_flags & OVERMAP_SECTOR_IN_SPACE) || istype(OO,/obj/effect/overmap/visitable/sector/exoplanet))
+				if((OO.sector_flags & OVERMAP_SECTOR_IN_SPACE) || istype(OO,/obj/effect/overmap/visitable/sector/planetoid))
 					LAZYDISTINCTADD(possible_locations, text2num(level))
 		if(length(possible_locations))
 			newz = pick(possible_locations)
@@ -393,8 +393,7 @@
 		control_computer._admin_logs += "[key_name(occupant)] ([role_alt_title]) at [stationtime2text()]"
 	log_and_message_admins("[key_name(occupant)] ([role_alt_title]) entered cryostorage.")
 
-	var/obj/item/radio/announcer = get_global_announcer()
-	announcer.autosay("[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
+	do_telecomms_announcement(src, "[occupant.real_name], [role_alt_title], [on_store_message]", "[on_store_name]")
 
 	//This should guarantee that ghosts don't spawn.
 	occupant.ckey = null
@@ -559,11 +558,14 @@
 	var/remains_type = /obj/item/remains/human
 
 /obj/structure/broken_cryo/attack_hand(mob/user)
-	..()
-	if (closed)
-		to_chat(user, SPAN_NOTICE("You tug at the glass but can't open it with your hands alone."))
+	. = ..()
+	if(.)
+		return
+	if(closed)
+		to_chat(user, SPAN_NOTICE("You tug at the glass, but can't open it further without a crowbar."))
 	else
 		to_chat(user, SPAN_NOTICE("The glass is already open."))
+	return TRUE
 
 /obj/structure/broken_cryo/attackby(obj/item/W, mob/user)
 	if (busy)

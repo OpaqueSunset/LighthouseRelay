@@ -462,8 +462,7 @@ var/global/list/damage_icon_parts = list()
 	if(update_icons)
 		queue_icon_update()
 
-//HAIR OVERLAY
-/mob/living/carbon/human/proc/update_hair(var/update_icons=1)
+/mob/living/carbon/human/update_hair(var/update_icons=1)
 	//Reset our hair
 	overlays_standing[HO_HAIR_LAYER]	= null
 
@@ -698,9 +697,9 @@ var/global/list/damage_icon_parts = list()
 
 /mob/living/carbon/human/update_inv_hands(var/update_icons=1)
 	overlays_standing[HO_INHAND_LAYER] = null
-	for(var/hand_slot in held_item_slots)
-		var/datum/inventory_slot/inv_slot = held_item_slots[hand_slot]
-		var/obj/item/held = inv_slot?.holding
+	for(var/hand_slot in get_held_item_slots())
+		var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(hand_slot)
+		var/obj/item/held = inv_slot?.get_equipped_item()
 		if(istype(held))
 			// This should be moved out of icon code
 			if(get_equipped_item(slot_handcuffed_str))
