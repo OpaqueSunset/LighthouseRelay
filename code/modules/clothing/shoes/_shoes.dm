@@ -23,6 +23,13 @@
 	var/obj/item/hidden_item = null
 	var/shine = -1 // if material should apply shine overlay. Set to -1 for it to not do that
 
+	/// A multiplier applied to footstep volume.
+	var/footstep_volume_mod = 1
+	/// A multiplier applied to footstep range.
+	var/footstep_range_mod  = 1
+	/// A modifier applied to move delay when walking on snow.
+	var/snow_slowdown_mod   = 0
+
 /obj/item/clothing/shoes/Destroy()
 	. = ..()
 	if (hidden_item)
@@ -41,9 +48,9 @@
 			to_chat(user, SPAN_ITALIC("Something is hidden inside."))
 
 /obj/item/clothing/shoes/attack_hand(var/mob/user)
-	if (remove_hidden(user))
-		return
-	..()
+	if(user.check_dexterity(DEXTERITY_GRIP, TRUE) && remove_hidden(user))
+		return TRUE
+	return ..()
 
 /obj/item/clothing/shoes/attack_self(var/mob/user)
 	remove_cuffs(user)

@@ -29,13 +29,8 @@
 		ACCESSORY_SLOT_OVER
 		)
 
-	var/has_sensor = SUIT_HAS_SENSORS //For the crew computer 2 = unable to change mode
-	var/sensor_mode = 0
-		/*
-		1 = Report living/dead
-		2 = Report detailed damages
-		3 = Report location
-		*/
+	var/has_sensor = SUIT_HAS_SENSORS
+	var/sensor_mode = SUIT_SENSOR_OFF
 	var/displays_id = 1
 	var/rolled_down = FALSE
 	var/rolled_sleeves = FALSE
@@ -87,13 +82,6 @@
 		rolled_sleeves = !rolled_sleeves
 		to_chat(usr, SPAN_NOTICE("You roll [rolled_sleeves ? "up" : "down"] the sleeves of \the [src]."))
 		update_clothing_icon()
-
-/obj/item/clothing/under/attack_hand(var/mob/user)
-	if(accessories && accessories.len)
-		..()
-	if ((ishuman(usr) || issmall(usr)) && src.loc == user)
-		return
-	..()
 
 /obj/item/clothing/under/update_clothing_icon()
 	if(ismob(src.loc))
