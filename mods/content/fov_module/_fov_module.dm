@@ -5,7 +5,7 @@
 ///////////////////////////////////////
 
 #define HIDDEN_SHIT_PLANE	-101 //Used for the hiding of the vision cone masking object.
-#define VISION_CONE_PLANE	7 // For the vision cone.
+#define VISION_CONE_PLANE	6 // For the vision cone.
 #define OPPOSITE_DIR(D) turn(D, 180)
 
 /decl/modpack/fov_module

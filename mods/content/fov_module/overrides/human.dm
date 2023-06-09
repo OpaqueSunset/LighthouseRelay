@@ -73,37 +73,24 @@
 	. = ..()
 	if(!client)
 		return
+	var/obj/item/clothing/headwear = get_equipped_item(slot_head_str)
+	var/obj/item/clothing/maskwear = get_equipped_item(slot_head_str)
+	var/obj/item/clothing/eyeswear = get_equipped_item(slot_head_str)
 	var/use_original_cone = TRUE
-
-	var/obj/item/clothing/head/helmet = get_equipped_item(slot_head_str)
-	if(istype(helmet))
-		update_helmet_vision(helmet)
-		use_original_cone = FALSE
-
-	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
-	if(istype(mask))
-		update_mask_vision(mask)
+	if(istype(headwear) && headwear.helmet_vision \
+	|| istype(maskwear) && maskwear.helmet_vision \
+	|| istype(eyeswear) && eyeswear.helmet_vision)
 		use_original_cone = FALSE
 
 	if(use_original_cone)
 		fov_mask.icon_state = "combat_mask"
 		fov.icon_state = "combat"
-
-/mob/living/carbon/human/proc/update_helmet_vision(var/obj/item/clothing/head/H)
-	if(H.helmet_vision)
+	else
 		fov_mask.icon_state = "helmet_mask"
 		fov.icon_state = "helmet"
-	else
-		fov_mask.icon_state = "combat_mask"
-		fov.icon_state = "combat"
-
-/mob/living/carbon/human/proc/update_mask_vision(var/obj/item/clothing/mask/M)
-	if(M.helmet_vision)
-		fov_mask.icon_state = "helmet_mask"
-		fov.icon_state = "helmet"
-	else
-		fov_mask.icon_state = "combat_mask"
-		fov.icon_state = "combat"
 
 /obj/item/clothing
 	var/helmet_vision = FALSE
+
+/obj/item/clothing/needs_vision_update()
+	return ..() || helmet_vision
