@@ -160,7 +160,7 @@
 		if(DMAPI5_TOPIC_COMMAND_CHANGE_PORT)
 			var/new_port = topic_parameters[DMAPI5_TOPIC_PARAMETER_NEW_PORT]
 			if (!isnum(new_port) || !(new_port > 0))
-				return TopicResponse("Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_PORT]]")
+				return TopicResponse("Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_PORT]")
 
 			if(event_handler != null)
 				event_handler.HandleEvent(TGS_EVENT_PORT_SWAP, new_port)
@@ -201,7 +201,7 @@
 		if(DMAPI5_TOPIC_COMMAND_SERVER_PORT_UPDATE)
 			var/new_port = topic_parameters[DMAPI5_TOPIC_PARAMETER_NEW_PORT]
 			if (!isnum(new_port) || !(new_port > 0))
-				return TopicResponse("Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_PORT]]")
+				return TopicResponse("Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_PORT]")
 
 			server_port = new_port
 			return TopicResponse()
@@ -212,7 +212,7 @@
 			var/error_message = null
 			if (new_port != null)
 				if (!isnum(new_port) || !(new_port > 0))
-					error_message = "Invalid [DMAPI5_TOPIC_PARAMETER_NEW_PORT]]"
+					error_message = "Invalid [DMAPI5_TOPIC_PARAMETER_NEW_PORT]"
 				else
 					server_port = new_port
 
@@ -220,7 +220,7 @@
 			if (!istext(new_version_string))
 				if(error_message != null)
 					error_message += ", "
-				error_message += "Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_SERVER_VERSION]]"
+				error_message += "Invalid or missing [DMAPI5_TOPIC_PARAMETER_NEW_SERVER_VERSION]"
 			else
 				var/datum/tgs_version/new_version = new(new_version_string)
 				if (event_handler)
