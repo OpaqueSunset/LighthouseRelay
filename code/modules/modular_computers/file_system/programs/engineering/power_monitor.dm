@@ -89,7 +89,7 @@
 	grid_sensors = list()
 	var/connected_z_levels = SSmapping.get_connected_levels(get_host_z())
 	for(var/obj/machinery/power/sensor/S in SSmachines.machinery)
-		if(get_z(S) in connected_z_levels) // Consoles have range on their Z-Level. Sensors with long_range var will work between Z levels.
+		if(S.long_range || (get_z(S) in connected_z_levels)) // Consoles have range on their Z-Level. Sensors with long_range var will work between Z levels.
 			grid_sensors += S
 			events_repository.register(/decl/observ/destroyed, S, src, /datum/nano_module/program/power_monitor/proc/remove_sensor)
 
