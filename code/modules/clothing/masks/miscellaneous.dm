@@ -68,7 +68,7 @@
 	var/turf/source_turf = get_turf(src)
 	// Is our turf completely full of water?
 	// If the turf is raised, it needs less water to be full; if the turf is lowered it needs more.
-	if (source_turf.check_fluid_depth(min(FLUID_DEEP - source_turf.get_physical_height(), FLUID_MAX_DEPTH))
+	if (source_turf.check_fluid_depth(min(FLUID_DEEP - source_turf.get_physical_height(), FLUID_MAX_DEPTH)))
 		// Can't breathe if there's nothing but water!
 		return FALSE
 	return TRUE
