@@ -93,6 +93,12 @@
 	if(os)
 		. += os.get_header_data()
 
+/obj/item/organ/internal/augment/active/nif/get_contained_matter()
+	. = ..()
+	var/datum/extension/assembly/assembly = get_extension(src, /datum/extension/assembly)
+	for(var/obj/part in assembly?.parts)
+		. = MERGE_ASSOCS_WITH_NUM_VALUES(., part.get_contained_matter())
+
 /*
  *
  * Section for assembly override for the NIF.
