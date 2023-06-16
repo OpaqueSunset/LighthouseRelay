@@ -1,7 +1,7 @@
 /obj/structure/loot_pile
 	name = "base loot pile"
 	desc = "If you can read me, this is bugged."
-	icon = 'icons/obj/loot_piles.dmi'
+	icon = 'mods/content/dungeon_loot/icons/obj/loot_piles.dmi'
 	icon_state = "randompile"
 	density = FALSE
 	anchored = TRUE
@@ -35,29 +35,29 @@
 		var/mob/living/L = user
 
 		if(busy)
-			to_chat(L, "<span class='warning'>\The [src] is already being searched.</span>")
+			to_chat(L, SPAN_WARNING("\The [src] is already being searched."))
 			return
 
-		L.visible_message("[user] searches through \the [src].","<span class='notice'>You search through \the [src].</span>")
+		L.visible_message("\The [user] searches through \the [src].", SPAN_NOTICE("You search through \the [src]."), SPAN_NOTICE("You hear some rustling."))
 
 		//Do the searching
 		busy = TRUE
 		if(do_after(user,rand(4 SECONDS,6 SECONDS),src))
 			// The loot's all gone.
 			if(loot_depletion && loot_left <= 0)
-				to_chat(L, "<span class='warning'>\The [src] has been picked clean.</span>")
+				to_chat(L, SPAN_WARNING("\The [src] has been picked clean."))
 				busy = FALSE
 				return
 
 			//You already searched this one
 			if( (user.ckey in searched_by) && !allow_multiple_looting)
-				to_chat(L, "<span class='warning'>You can't find anything else vaguely useful in \the [src].  Another set of eyes might, however.</span>")
+				to_chat(L, SPAN_WARNING("You can't find anything else vaguely useful in \the [src].  Another set of eyes might, however."))
 				busy = FALSE
 				return
 
 			// You got unlucky.
 			if(chance_nothing && prob(chance_nothing))
-				to_chat(L, "<span class='warning'>Nothing in this pile really catches your eye...</span>")
+				to_chat(L, SPAN_WARNING("Nothing in this pile really catches your eye..."))
 				searched_by |= user.ckey
 				busy = FALSE
 				return
@@ -80,11 +80,11 @@
 			if(loot)
 				searched_by |= user.ckey
 				loot.forceMove(get_turf(src))
-				to_chat(L, "<span class='[span]'>You found \a [loot]!</span>")
+				to_chat(L, SPAN_CLASS(span, "You found \a [loot]!"))
 				if(loot_depletion)
 					loot_left--
 					if(loot_left <= 0)
-						to_chat(L, "<span class='warning'>You seem to have gotten the last of the spoils inside \the [src].</span>")
+						to_chat(L, SPAN_WARNING("You seem to have gotten the last of the spoils inside \the [src]."))
 						if(delete_on_depletion)
 							qdel(src)
 
