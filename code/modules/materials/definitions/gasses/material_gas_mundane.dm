@@ -28,7 +28,7 @@
 	metabolism = 0.05
 	value = 0.3
 
-/decl/material/gas/helium/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
+/decl/material/gas/helium/affect_inhale(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
 	M.add_chemical_effect(CE_SQUEAKY, 1)
 
