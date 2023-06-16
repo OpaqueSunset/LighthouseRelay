@@ -50,6 +50,8 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 
 	// These modifiers are used in relation to the origin
 	// to place the system control panels and doors.
+	var/make_walls = isnull(wall_type) ? FALSE : TRUE
+	var/wall_offset = make_walls ? 1 : 0 // The thickness of the walls in tiles. Currently just 1 or 0.
 	var/int_panel_x
 	var/int_panel_y
 	var/ext_panel_x
@@ -73,70 +75,70 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 		if(NORTH)
 
 			int_panel_x = ux + FLOOR(lift_size_x/2)
-			int_panel_y = uy + 1
+			int_panel_y = uy + wall_offset
 			ext_panel_x = ux
 			ext_panel_y = ey + 2
 
 			door_x1 = ux + 1
-			door_y1 = ey
+			door_y1 = ey + 1 - wall_offset
 			door_x2 = ex - 1
 			door_y2 = ey + 1
 
-			light_x1 = ux + 1
-			light_y1 = uy + 1
-			light_x2 = ux + lift_size_x - 1
-			light_y2 = uy + 1
+			light_x1 = ux + wall_offset
+			light_y1 = uy + wall_offset
+			light_x2 = ux + lift_size_x - wall_offset
+			light_y2 = uy + wall_offset
 
 		if(SOUTH)
 
 			int_panel_x = ux + FLOOR(lift_size_x/2)
-			int_panel_y = ey - 1
+			int_panel_y = ey - wall_offset
 			ext_panel_x = ex
 			ext_panel_y = uy - 2
 
 			door_x1 = ux + 1
 			door_y1 = uy - 1
 			door_x2 = ex - 1
-			door_y2 = uy
+			door_y2 = uy + 1 - wall_offset
 
-			light_x1 = ux + 1
-			light_y1 = uy + 2
-			light_x2 = ux + lift_size_x - 1
-			light_y2 = uy + lift_size_y - 1
+			light_x1 = ux + wall_offset
+			light_y1 = uy + 1 + wall_offset
+			light_x2 = ux + lift_size_x - wall_offset
+			light_y2 = uy + lift_size_y - wall_offset
 
 		if(EAST)
 
-			int_panel_x = ux+1
+			int_panel_x = ux+wall_offset
 			int_panel_y = uy + FLOOR(lift_size_y/2)
 			ext_panel_x = ex+2
 			ext_panel_y = ey
 
-			door_x1 = ex
+			door_x1 = ex + 1 - wall_offset
 			door_y1 = uy + 1
 			door_x2 = ex + 1
 			door_y2 = ey - 1
 
-			light_x1 = ux + 1
-			light_y1 = uy + 1
-			light_x2 = ux + 1
-			light_y2 = uy + lift_size_x - 1
+			light_x1 = ux + wall_offset
+			light_y1 = uy + wall_offset
+			light_x2 = ux + wall_offset
+			light_y2 = uy + lift_size_x - wall_offset
 
 		if(WEST)
 
-			int_panel_x = ex-1
+			int_panel_x = ex-wall_offset
 			int_panel_y = uy + FLOOR(lift_size_y/2)
 			ext_panel_x = ux-2
 			ext_panel_y = uy
 
 			door_x1 = ux - 1
 			door_y1 = uy + 1
-			door_x2 = ux
+			door_x2 = ux + 1 - wall_offset
 			door_y2 = ey - 1
 
-			light_x1 = ux + lift_size_x - 1
-			light_y1 = uy + 1
-			light_x2 = ux + lift_size_x - 1
-			light_y2 = uy + lift_size_y - 1
+			light_x1 = ux + lift_size_x - wall_offset
+			light_y1 = uy + wall_offset
+			light_x2 = ux + lift_size_x - wall_offset
+			light_y2 = uy + lift_size_y - wall_offset
 
 	// Generate each floor and store it in the controller datum.
 	for(var/cz = uz;cz<=ez;cz++)
