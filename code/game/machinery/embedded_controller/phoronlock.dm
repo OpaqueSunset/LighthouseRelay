@@ -349,19 +349,16 @@
 				//the airlock will not allow itself to continue to cycle when any of the doors are forced open.
 				stop_cycling()
 			else if(memory["chamber_sensor_pressure"] >= memory["target_pressure"] * 0.95)
-				signalPump(tag_airpump, 0)	// send a signal to stop pumping. No need to wait for it tho.
 				cycleDoors(target_state)
+				stop_cycling()
 				// TODO: VIRGO AIRLOCK TTS
 				// playsound(master, 'sound/AI/airlockdone.ogg', 100, 0)
-				state = STATE_IDLE
-				target_state = TARGET_NONE
 
 	memory["processing"] = (state != target_state)
 	return 1
 
 /datum/computer/file/embedded_program/airlock/phoron/stop_cycling()
-	state = STATE_IDLE
-	target_state = TARGET_NONE
+	. = ..()
 	signalPump(tag_airpump, 0)
 	signalScrubber(tag_scrubber, 0)
 
