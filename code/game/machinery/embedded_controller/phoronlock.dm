@@ -286,7 +286,7 @@
 		if(SIDE_EXTERIOR)
 			return FALSE // Just always cycle for exterior, it's dangerous.
 		if(SIDE_INTERIOR)
-			return memory["chamber_sensor_phoron"] <= memory["target_phoron"]
+			return check_doors_secured() && memory["chamber_sensor_phoron"] <= memory["target_phoron"]
 #undef SIDE_EXTERIOR
 #undef SIDE_INTERIOR
 
