@@ -1,3 +1,5 @@
+/@SUBTYPES {layer = @SET} : @OLD {@OLD; layer = @SKIP}
+/obj/structure/cable/@SUBTYPES : @OLD {@OLD; d1 = @SKIP;d2 = @SKIP}
 /obj/machinery/dnaforensics : /obj/machinery/forensic/dnascanner
 /obj/item/tvcamera : /obj/item/camera/tvcamera
 /obj/machinery/computer/security/@SUBTYPES : /obj/machinery/computer/modular/preset/civilian
