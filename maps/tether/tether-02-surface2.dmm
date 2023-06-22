@@ -24879,14 +24879,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/janitor)
-"aVy" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/janitor)
 "aVz" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Custodial Maintenance"
