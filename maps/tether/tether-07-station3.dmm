@@ -8632,7 +8632,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 5
 	},
-/obj/machinery/computer/security,
+/obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/camera/network/security{
 	dir = 8
 	},
@@ -9154,9 +9154,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 10
 	},
-/obj/machinery/computer/security{
-	dir = 1
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled,
 /area/security/observation)
 "awT" = (
@@ -9729,9 +9727,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 6
 	},
-/obj/machinery/computer/security{
-	dir = 1
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -10987,7 +10983,7 @@
 	pixel_x = 32;
 	pixel_y = 30
 	},
-/obj/machinery/computer/security/mining,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/wood,
 /area/quartermaster/qm)
 "aAK" = (
@@ -12022,7 +12018,7 @@
 /obj/item/disk/nuclear{
 	name = "authentication disk"
 	},
-/obj/item/moneybag/vault,
+/obj/item/storage/bag/cash/filled,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/security/nuke_storage)
@@ -17774,7 +17770,6 @@
 /turf/simulated/floor,
 /area/maintenance/station/cargo)
 "aQr" = (
-/obj/machinery/mineral/input,
 /obj/structure/sign/warning/moving_parts{
 	pixel_y = 32
 	},
@@ -17826,7 +17821,7 @@
 /turf/simulated/floor,
 /area/maintenance/cargo)
 "aQA" = (
-/obj/machinery/mineral/unloading_machine,
+/obj/machinery/material_processing/unloader,
 /turf/simulated/floor/tiled/dark,
 /area/quartermaster/belterdock/refinery)
 "aQB" = (
@@ -18231,7 +18226,6 @@
 /turf/simulated/floor,
 /area/maintenance/station/ai)
 "aRL" = (
-/obj/machinery/mineral/output,
 /obj/machinery/conveyor{
 	dir = 4;
 	id_tag = "miningops"
@@ -18581,13 +18575,6 @@
 /area/maintenance/station/sec_upper)
 "aSR" = (
 /obj/structure/plasticflaps/mining,
-/obj/machinery/conveyor{
-	dir = 4;
-	id_tag = "miningops"
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/belterdock/refinery)
-"aSS" = (
 /obj/machinery/conveyor{
 	dir = 4;
 	id_tag = "miningops"
@@ -20043,7 +20030,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "aXV" = (
-/obj/machinery/mineral/processing_unit,
+/obj/machinery/material_processing/smeltery,
 /turf/simulated/floor/plating,
 /area/quartermaster/belterdock/refinery)
 "aXX" = (
@@ -20168,13 +20155,6 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock/refinery)
-"aYG" = (
-/obj/machinery/mineral/input,
-/obj/machinery/conveyor{
-	id_tag = "miningops"
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/belterdock/refinery)
 "aYH" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
@@ -20247,13 +20227,6 @@
 	},
 /turf/simulated/floor/airless,
 /area/mine/explored/upper_level)
-"aZh" = (
-/obj/machinery/mineral/output,
-/obj/machinery/conveyor{
-	id_tag = "miningops"
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/belterdock/refinery)
 "aZi" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -20265,7 +20238,7 @@
 /turf/simulated/floor/grass,
 /area/quartermaster/qm)
 "aZj" = (
-/obj/machinery/mineral/stacking_machine,
+/obj/machinery/material_processing/stacker,
 /turf/simulated/floor/plating,
 /area/quartermaster/belterdock/refinery)
 "aZl" = (
@@ -20348,7 +20321,6 @@
 	dir = 5;
 	id_tag = "miningops"
 	},
-/obj/machinery/mineral/input,
 /turf/simulated/floor/plating,
 /area/quartermaster/belterdock/refinery)
 "aZD" = (
@@ -20358,15 +20330,6 @@
 /turf/simulated/wall/r_wall/prepainted,
 /area/shuttle/excursion/cargo)
 "aZH" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id_tag = "miningops";
-	movedir = null
-	},
-/turf/simulated/floor/plating,
-/area/quartermaster/belterdock/refinery)
-"aZI" = (
-/obj/machinery/mineral/output,
 /obj/machinery/conveyor{
 	dir = 8;
 	id_tag = "miningops";
@@ -20808,7 +20771,7 @@
 /turf/space,
 /area/space)
 "bFX" = (
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/port_gen/pacman/mrs,
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
@@ -21913,7 +21876,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
-/obj/machinery/station_map{
+/obj/machinery/holomap{
 	pixel_y = 32
 	},
 /obj/machinery/status_display{
@@ -39989,7 +39952,7 @@ aWK
 aXI
 aYI
 aYR
-aZI
+aZH
 adD
 aVz
 bab
@@ -40125,7 +40088,7 @@ aae
 aae
 bFB
 baS
-aSS
+aRL
 aUe
 aUe
 aYR
@@ -40269,9 +40232,9 @@ ioI
 baS
 aTH
 aWO
-aYG
+aWO
 aXV
-aZh
+aWO
 aWO
 aZC
 adD

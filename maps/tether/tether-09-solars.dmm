@@ -1252,7 +1252,7 @@
 	},
 /obj/structure/table,
 /obj/item/folder,
-/obj/item/pen/fountain,
+/obj/item/pen/fancy,
 /turf/simulated/floor/tiled,
 /area/rnd/outpost/testing)
 "cR" = (

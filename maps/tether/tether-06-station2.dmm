@@ -456,7 +456,8 @@
 /obj/item/stock_parts/manipulator,
 /obj/item/stock_parts/console_screen,
 /obj/item/stock_parts/circuitboard/autolathe,
-/obj/item/stock_parts/circuitboard/partslathe,
+/obj/item/stock_parts/circuitboard/autolathe/micro,
+/obj/item/stock_parts/circuitboard/textilesfab,
 /turf/simulated/floor,
 /area/storage/tech)
 "aX" = (
@@ -7068,7 +7069,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
-/obj/machinery/station_map{
+/obj/machinery/holomap{
 	pixel_y = 32
 	},
 /obj/machinery/status_display{
@@ -7430,12 +7431,12 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/stock_parts/circuitboard/security/mining{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 1;
 	pixel_y = 3
 	},
 /obj/item/stock_parts/circuitboard/autolathe,
-/obj/item/stock_parts/circuitboard/scan_consolenew{
+/obj/item/stock_parts/circuitboard/bioprinter{
 	pixel_x = 6;
 	pixel_y = -3
 	},
@@ -7909,15 +7910,15 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/stock_parts/circuitboard/secure_data{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stock_parts/circuitboard/security{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 1;
 	pixel_y = -1
 	},
-/obj/item/stock_parts/circuitboard/skills{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 4;
 	pixel_y = -3
 	},
@@ -7998,14 +7999,14 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/stock_parts/circuitboard/powermonitor{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_y = 3
 	},
-/obj/item/stock_parts/circuitboard/stationalert_engineering{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 2;
 	pixel_y = 1
 	},
-/obj/item/stock_parts/circuitboard/security/engineering{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 5;
 	pixel_y = -1
 	},
@@ -8150,15 +8151,15 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/stock_parts/circuitboard/crew{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = -1;
 	pixel_y = 1
 	},
-/obj/item/stock_parts/circuitboard/card{
+/obj/item/stock_parts/item_holder/card_reader/buildable{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/item/stock_parts/circuitboard/communications{
+/obj/item/stock_parts/item_holder/disk_reader/buildable{
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -8792,7 +8793,7 @@
 	pixel_x = 1;
 	pixel_y = -1
 	},
-/obj/item/stock_parts/circuitboard/med_data{
+/obj/item/stock_parts/circuitboard/modular_computer{
 	pixel_x = 5;
 	pixel_y = -3
 	},
@@ -10877,7 +10878,7 @@
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/rig/breacher,
+/obj/item/rig/industrial,
 /obj/item/clothing/mask/breath,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
@@ -17198,7 +17199,7 @@
 /area/medical/ward)
 "Fe" = (
 /obj/structure/table/glass,
-/obj/item/surgical/scalpel,
+/obj/item/scalpel,
 /obj/random/maintenance/medical,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
@@ -19454,7 +19455,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/port)
 "Tq" = (
-/obj/item/surgical/cautery,
+/obj/item/cautery,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Tw" = (

@@ -1,0 +1,9 @@
+/obj/machinery/dnaforensics : /obj/machinery/forensic/dnascanner
+/obj/item/tvcamera : /obj/item/camera/tvcamera
+/obj/machinery/computer/security/@SUBTYPES : /obj/machinery/computer/modular/preset/civilian
+/obj/machinery/message_server : /obj/machinery/network/message_server
+/obj/machinery/microscope : /obj/machinery/forensic/microscope
+/obj/machinery/mineral/processing_unit : /obj/machinery/material_processing/smeltery
+/obj/machinery/mineral/stacking_machine : /obj/machinery/material_processing/stacker
+/obj/machinery/mineral/unloading_machine : /obj/machinery/material_processing/unloader
+/obj/machinery/station_map : /obj/machinery/holomap

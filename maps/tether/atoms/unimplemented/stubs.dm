@@ -34,19 +34,6 @@
 /obj/effect/floor_decal/corner/purple/border/shifted
 /obj/effect/floor_decal/corner/red/border/shifted
 /obj/effect/floor_decal/corner/white/border/shifted
-
-/obj/effect/floor_decal/sign
-	name = "floor sign"
-/obj/effect/floor_decal/sign/dock
-	icon = 'maps/tether/icons/decals_vr.dmi'
-	icon_state = "white_d"
-/obj/effect/floor_decal/sign/dock/one
-	icon_state = "white_d1"
-/obj/effect/floor_decal/sign/dock/two
-	icon_state = "white_d2"
-/obj/effect/floor_decal/sign/dock/three
-	icon_state = "white_d3"
-
 /obj/effect/map_effect/portal
 	var/portal_id
 /obj/effect/map_effect/portal/line/side_a
@@ -91,37 +78,15 @@
 /obj/item/chems/glass/bottle/biomass
 /obj/item/chems/syringe/antiviral
 /obj/item/stock_parts/circuitboard/body_designer
-/obj/item/stock_parts/circuitboard/card
-/obj/item/stock_parts/circuitboard/communications
-/obj/item/stock_parts/circuitboard/crew
 /obj/item/stock_parts/circuitboard/mecha_control
-/obj/item/stock_parts/circuitboard/med_data
-/obj/item/stock_parts/circuitboard/ntnet_relay
-/obj/item/stock_parts/circuitboard/partslathe
 /obj/item/stock_parts/circuitboard/powermonitor
 /obj/item/stock_parts/circuitboard/rdconsole
 /obj/item/stock_parts/circuitboard/rdserver
 /obj/item/stock_parts/circuitboard/resleeving_control
-/obj/item/stock_parts/circuitboard/scan_consolenew
-/obj/item/stock_parts/circuitboard/secure_data
-/obj/item/stock_parts/circuitboard/security
-/obj/item/stock_parts/circuitboard/security/engineering
-/obj/item/stock_parts/circuitboard/security/mining
-/obj/item/stock_parts/circuitboard/skills
-/obj/item/stock_parts/circuitboard/stationalert_engineering
-/obj/item/stock_parts/circuitboard/telecomms/broadcaster
-/obj/item/stock_parts/circuitboard/telecomms/bus
-/obj/item/stock_parts/circuitboard/telecomms/exonet_node
-/obj/item/stock_parts/circuitboard/telecomms/processor
-/obj/item/stock_parts/circuitboard/telecomms/receiver
-/obj/item/stock_parts/circuitboard/telecomms/relay
-/obj/item/stock_parts/circuitboard/telecomms/server
 /obj/item/stock_parts/circuitboard/teleporter
 /obj/item/stock_parts/circuitboard/transhuman_clonepod
 /obj/item/stock_parts/circuitboard/transhuman_resleever
 /obj/item/stock_parts/circuitboard/transhuman_synthprinter
-/obj/item/stock_parts/circuitboard/unary_atmos/cooler
-/obj/item/stock_parts/circuitboard/unary_atmos/heater
 /obj/item/clothing/accessory/armor/armguards/bulletproof
 /obj/item/clothing/accessory/armor/armguards/laserproof
 /obj/item/clothing/accessory/armor/armguards/riot
@@ -200,23 +165,14 @@
 /obj/item/handcuffs/fuzzy
 /obj/item/handcuffs/legcuffs/fuzzy
 /obj/item/mech_component/part/durand_left_leg
-/obj/item/minihoe
-/obj/item/mmi/digital/posibrain
 /obj/item/module/power_control
-/obj/item/moneybag
-/obj/item/moneybag/vault
 /obj/item/multitool/station_buffered
 /obj/item/nif/bad
 /obj/item/paper/dockingcodes
 /obj/item/paper/rogueminer
 /obj/item/pen/blade/red
-/obj/item/pen/fountain
 /obj/item/perfect_tele
-/obj/item/phone
-/obj/item/pickaxe/hand
-/obj/item/pipe_painter
 /obj/item/pizzavoucher
-/obj/item/radio/electropack
 /obj/item/radio/intercom/department/medbay
 /obj/item/radio/intercom/department/security
 /obj/item/radio/intercom/entertainment
@@ -224,11 +180,7 @@
 /obj/item/radio/phone/medbay
 /obj/item/retail_scanner/civilian
 /obj/item/retail_scanner/security
-/obj/item/rig/breacher
-/obj/item/scanner/health
 /obj/item/sleevemate
-/obj/item/slime_extract/grey
-/obj/item/slime_scanner
 /obj/item/soap/deluxe
 /obj/item/soap/nanotrasen
 /obj/item/soap/syndie
@@ -250,9 +202,6 @@
 /obj/item/storage/pill_bottle/tramadol
 /obj/item/storage/secure/briefcase/ml3m_pack_cmo
 /obj/item/storage/secure/briefcase/ml3m_pack_med
-/obj/item/surgical/cautery
-/obj/item/surgical/scalpel
-/obj/item/tank/oxygen/red
 /obj/item/tape/random
 /obj/item/taperoll/atmos
 /obj/item/taperoll/engineering
@@ -271,7 +220,6 @@
 /obj/item/toy/stickhorse
 /obj/item/trash/unajerky
 /obj/item/tvcamera
-/obj/item/twohanded/baseballbat
 /obj/item/twohanded/fireaxe/foam
 /obj/item/twohanded/spear/foam
 /obj/item/universal_translator
@@ -320,10 +268,6 @@
 /obj/machinery/computer/cryopod/gateway
 /obj/machinery/computer/diseasesplicer
 /obj/machinery/computer/air_control/large_tank_control
-/obj/machinery/computer/HolodeckControl/holodorm/five
-/obj/machinery/computer/HolodeckControl/holodorm/one
-/obj/machinery/computer/HolodeckControl/holodorm/seven
-/obj/machinery/computer/HolodeckControl/holodorm/three
 /obj/machinery/computer/id_restorer
 /obj/machinery/computer/looking_glass
 	var/lg_id = null
@@ -335,7 +279,6 @@
 /obj/machinery/computer/security/engineering
 /obj/machinery/computer/security/mining
 /obj/machinery/computer/security/wooden_tv
-/obj/machinery/computer/security/xenobio
 /obj/machinery/computer/shuttle_control/belter
 /obj/machinery/computer/shuttle_control/explore/excursion
 /obj/machinery/computer/shuttle_control/explore/medivac
@@ -343,9 +286,6 @@
 /obj/machinery/computer/shuttle_control/explore/tourbus
 /obj/machinery/computer/shuttle_control/surface_mining_outpost
 /obj/machinery/computer/shuttle_control/tether_backup
-/obj/machinery/computer/skills
-/obj/machinery/computer/supplycomp
-/obj/machinery/computer/supplycomp/control
 /obj/machinery/computer/timeclock/premade/east
 /obj/machinery/computer/timeclock/premade/north
 /obj/machinery/computer/timeclock/premade/south
@@ -357,7 +297,6 @@
 /obj/machinery/disease2/diseaseanalyser
 /obj/machinery/disease2/incubator
 /obj/machinery/disease2/isolator
-/obj/machinery/dnaforensics
 /obj/machinery/door/airlock/glass/medical/polarized
 	var/id_tint
 /obj/machinery/door/airlock/glass/security/polarized
@@ -384,22 +323,12 @@
 /obj/machinery/librarypubliccomp
 /obj/machinery/libraryscanner
 /obj/machinery/light/flamp/noshade
-/obj/machinery/message_server
-/obj/machinery/microscope
 /obj/machinery/mineral/equipment_vendor
 /obj/machinery/mineral/equipment_vendor/survey
-/obj/machinery/mineral/input
-/obj/machinery/mineral/output
-/obj/machinery/mineral/processing_unit
-/obj/machinery/mineral/processing_unit_console
-/obj/machinery/mineral/stacking_machine
-/obj/machinery/mineral/stacking_unit_console
-/obj/machinery/mineral/unloading_machine
 /obj/machinery/mining/drill/loaded
 /obj/machinery/network/requests_console/preset/engineering
 /obj/machinery/network/requests_console/preset/hos
 /obj/machinery/network/requests_console/preset/research
-/obj/machinery/newscaster/security_unit
 /obj/machinery/ntnet_relay
 /obj/machinery/organ_printer/flesh
 /obj/machinery/oxygen_pump/anesthetic
@@ -408,45 +337,19 @@
 /obj/machinery/portable_atmospherics/powered/pump/huge/stationary/purge
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram
 /obj/machinery/power/grid_checker
-/obj/machinery/power/port_gen/pacman
-/obj/machinery/power/port_gen/pacman/mrs
 /obj/machinery/power/smes/buildable/point_of_interest
 /obj/machinery/power/thermoregulator
 /obj/machinery/processor
 /obj/machinery/scale
 /obj/machinery/seed_storage/brig
-/obj/machinery/shield_capacitor
-/obj/machinery/shield_gen
-/obj/machinery/shield_gen/external
+/obj/machinery/shield_generator/external
 /obj/machinery/shuttle_sensor
 /obj/machinery/sleep_console
 /obj/machinery/smartfridge/chemistry/chemvator/down
 /obj/machinery/smartfridge/secure/virology
-/obj/machinery/station_map
 /obj/machinery/suit_cycler/captain
 /obj/machinery/suit_cycler/exploration
 /obj/machinery/suit_cycler/prototype
-/obj/machinery/telecomms/broadcaster/preset_right/tether
-/obj/machinery/telecomms/bus/preset_four
-/obj/machinery/telecomms/bus/preset_one
-/obj/machinery/telecomms/bus/preset_three
-/obj/machinery/telecomms/bus/preset_two/tether
-/obj/machinery/telecomms/hub/preset/tether
-/obj/machinery/telecomms/processor/preset_four
-/obj/machinery/telecomms/processor/preset_one
-/obj/machinery/telecomms/processor/preset_three
-/obj/machinery/telecomms/processor/preset_two
-/obj/machinery/telecomms/receiver/preset_right/tether
-/obj/machinery/telecomms/relay/preset/mining
-/obj/machinery/telecomms/server/presets/command
-/obj/machinery/telecomms/server/presets/common
-/obj/machinery/telecomms/server/presets/engineering
-/obj/machinery/telecomms/server/presets/medical
-/obj/machinery/telecomms/server/presets/science
-/obj/machinery/telecomms/server/presets/security
-/obj/machinery/telecomms/server/presets/service/tether
-/obj/machinery/telecomms/server/presets/supply
-/obj/machinery/telecomms/server/presets/unused
 /obj/machinery/transhuman/resleever
 /obj/machinery/transhuman/synthprinter
 /obj/machinery/vending/blood
@@ -463,33 +366,9 @@
 /obj/machinery/vending/loadout/overwear
 /obj/machinery/vending/loadout/uniform
 /obj/machinery/vending/phoronresearch
-/obj/machinery/vending/wallmed2/airlock
-	markup = 0
-/obj/machinery/vending/wallmed1/public
-	markup = 0
 /obj/random/carp_plushie
 /obj/random/cigarettes
 /obj/random/cutout
-/obj/random/medical/pillbottle
-	name = "Random pill bottle"
-	desc = "This is a random pill bottle item."
-	icon = 'icons/obj/items/storage/pillbottle.dmi'
-	icon_state = "pill_canister"
-
-/obj/random/medical/pillbottle/spawn_choices()
-	var/static/list/spawnable_choices = list(
-		/obj/item/storage/pill_bottle =                 4,
-		/obj/item/storage/pill_bottle/antibiotics =     4,
-		/obj/item/storage/pill_bottle/painkillers =     2,
-		/obj/item/storage/pill_bottle/antidepressants = 4,
-		/obj/item/storage/pill_bottle/oxygen =          2,
-		/obj/item/storage/pill_bottle/stabilizer =      2,
-		/obj/item/storage/pill_bottle/antitox =         4,
-		/obj/item/storage/pill_bottle/burn_meds =       2,
-		/obj/item/storage/pill_bottle/brute_meds =      2,
-		/obj/item/storage/pill_bottle/assorted =        1
-	)
-	return spawnable_choices
 
 /obj/random/mob/mouse
 /obj/random/mouseremains
@@ -545,53 +424,6 @@
 /obj/structure/reagent_dispensers/foam
 /obj/structure/reagent_dispensers/virusfood
 /obj/structure/reagent_dispensers/water_cooler/full
-/obj/structure/sign/biohazard
-/obj/structure/sign/deathsposal
-/obj/structure/sign/deck1
-/obj/structure/sign/deck2
-/obj/structure/sign/deck3
-/obj/structure/sign/department/ai
-/obj/structure/sign/department/anomaly
-/obj/structure/sign/department/armory
-/obj/structure/sign/department/bar
-/obj/structure/sign/department/biblio
-/obj/structure/sign/department/cargo
-/obj/structure/sign/department/chapel
-/obj/structure/sign/department/chem
-/obj/structure/sign/department/eng
-/obj/structure/sign/department/engine
-/obj/structure/sign/department/gene
-/obj/structure/sign/department/gravi
-/obj/structure/sign/department/mail
-/obj/structure/sign/department/medbay
-/obj/structure/sign/department/morgue
-/obj/structure/sign/department/operational
-/obj/structure/sign/department/robo
-/obj/structure/sign/department/sci
-/obj/structure/sign/department/telecoms
-/obj/structure/sign/department/toxins
-/obj/structure/sign/department/xenolab
-/obj/structure/sign/directions/command
-/obj/structure/sign/directions/elevator
-/obj/structure/sign/directions/supply
-/obj/structure/sign/electricshock
-/obj/structure/sign/mining
-/obj/structure/sign/nanotrasen
-/obj/structure/sign/science
-/obj/structure/sign/signnew/secure
-/obj/structure/sign/xenobio
-/obj/structure/symbol/da
-/obj/structure/symbol/em
-/obj/structure/symbol/es
-/obj/structure/symbol/gu
-/obj/structure/symbol/lo
-/obj/structure/symbol/pr
-/obj/structure/symbol/sa
-/obj/structure/table/bench/padded
-/obj/structure/table/bench/sifwooden/padded
-/obj/structure/table/bench/standard
-/obj/structure/table/bench/steel
-/obj/structure/table/bench/wooden
 /obj/structure/table/borosilicate
 /obj/structure/table/fancyblack
 
@@ -645,38 +477,3 @@
 /obj/machinery/light/small/fixture/Initialize(mapload, d, populate_parts)
 	. = ..(mapload, d, populate_parts = FALSE)
 	construct_state.post_construct(src)
-
-/obj/random/loot_pile/maintenance
-	name = "random maintenance loot pile"
-	desc = "This is a random maintenance loot pile."
-	icon = 'mods/content/dungeon_loot/icons/obj/loot_piles.dmi'
-	icon_state = "randompile"
-	spawn_nothing_percentage = 20
-
-/obj/random/loot_pile/maintenance/spawn_choices()
-	var/static/list/spawnable_choices = list(
-		/obj/structure/loot_pile/maint/junk      = 5,
-		/obj/structure/loot_pile/maint/trash     = 4,
-		/obj/structure/loot_pile/maint/boxfort   = 3,
-		/obj/structure/loot_pile/maint/technical = 2
-	)
-	return spawnable_choices
-
-// Decal icon edits
-/obj/effect/floor_decal/steeldecal
-	icon = 'maps/tether/icons/decals_vr.dmi'
-	color = null
-
-// Turf changes
-/turf/simulated/floor/tiled
-	name = "steel floor"
-	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "steel"
-	color = null
-
-/decl/flooring/tiling
-	name = "floor"
-	desc = "A solid, heavy set of flooring plates."
-	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_base = "steel"
-	color = null

@@ -735,7 +735,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/pipe_painter,
+/obj/item/paint_sprayer,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -1807,7 +1807,7 @@
 /turf/simulated/floor,
 /area/maintenance/substation/engineering)
 "adJ" = (
-/obj/machinery/computer/security,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
 "adK" = (
@@ -2131,7 +2131,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
-/obj/machinery/station_map{
+/obj/machinery/holomap{
 	pixel_y = 32
 	},
 /obj/machinery/status_display{
@@ -2146,9 +2146,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/computer/security/engineering{
-	dir = 4
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -5292,7 +5290,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/shield_gen/external,
+/obj/machinery/shield_generator/external,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -5481,7 +5479,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/shield_gen/external,
+/obj/machinery/shield_generator/external,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -5501,7 +5499,6 @@
 /obj/item/radio/intercom{
 	pixel_y = -24
 	},
-/obj/machinery/shield_capacitor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -5533,7 +5530,7 @@
 /area/engineering/storage)
 "akn" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -8231,7 +8228,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "apN" = (
-/obj/machinery/computer/security/engineering,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/wood,
 /area/engineering/break_room)
 "apO" = (
@@ -14716,9 +14713,7 @@
 /turf/simulated/floor/carpet,
 /area/engineering/foyer)
 "aCb" = (
-/obj/machinery/computer/security/engineering{
-	dir = 1
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
@@ -16604,12 +16599,11 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/sleep/engi_wash)
 "aLh" = (
-/obj/machinery/shield_gen,
+/obj/machinery/shield_generator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
 "aLi" = (
-/obj/machinery/shield_capacitor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -17352,9 +17346,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/obj/machinery/computer/security/engineering{
-	dir = 4
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/light{
 	dir = 8
 	},

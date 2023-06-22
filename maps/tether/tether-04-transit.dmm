@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/open/sky/virgo3b,
+/turf/exterior/open/sky,
 /area/tether/transit)
 "b" = (
 /turf/simulated/wall/r_wall/prepainted,
@@ -126,7 +126,7 @@
 /area/tether/midpoint)
 "l" = (
 /obj/abstract/level_data_spawner/virgo3b/player,
-/turf/exterior/open/sky/virgo3b,
+/turf/exterior/open/sky,
 /area/tether/transit)
 "m" = (
 /obj/structure/cable{
@@ -205,7 +205,7 @@
 /area/maintenance/tether_midpoint)
 "u" = (
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b,
-/turf/exterior/open/sky/virgo3b,
+/turf/exterior/open/sky,
 /area/tether/transit)
 "v" = (
 /obj/structure/grille,
@@ -394,7 +394,7 @@
 "Q" = (
 /obj/effect/blocker,
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b,
-/turf/exterior/open/sky/virgo3b,
+/turf/exterior/open/sky,
 /area/tether/transit)
 "R" = (
 /obj/structure/table/woodentable,

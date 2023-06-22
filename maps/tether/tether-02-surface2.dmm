@@ -1876,7 +1876,7 @@
 /area/tether/surfacebase/security/detective)
 "acP" = (
 /obj/structure/table/reinforced,
-/obj/machinery/microscope,
+/obj/machinery/forensic/microscope,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -2706,7 +2706,7 @@
 /area/tether/surfacebase/medical/patient_c)
 "aed" = (
 /obj/structure/window/reinforced,
-/obj/machinery/dnaforensics,
+/obj/machinery/forensic/dnascanner,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -4914,7 +4914,7 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/centralhall)
 "ahR" = (
-/obj/machinery/computer/security/wooden_tv,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/carpet,
 /area/tether/surfacebase/security/detective/officea)
 "ahS" = (
@@ -4970,7 +4970,7 @@
 /turf/simulated/floor/carpet,
 /area/tether/surfacebase/security/detective/officeb)
 "ahX" = (
-/obj/machinery/computer/security/wooden_tv,
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/carpet,
 /area/tether/surfacebase/security/detective/officeb)
 "ahY" = (
@@ -7385,9 +7385,9 @@
 /area/tether/surfacebase/medical/morgue)
 "alL" = (
 /obj/structure/table/steel,
-/obj/item/surgical/scalpel,
+/obj/item/scalpel,
 /obj/item/scanner/autopsy,
-/obj/item/surgical/cautery,
+/obj/item/cautery,
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/medical/morgue)
@@ -8745,7 +8745,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "aob" = (
-/obj/item/pickaxe/hand,
+/obj/item/pickaxe/xeno/hand,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
 /area/maintenance/lower/north)
@@ -20373,7 +20373,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/station_map{
+/obj/machinery/holomap{
 	pixel_y = 32
 	},
 /obj/machinery/door/firedoor/border{
@@ -21247,7 +21247,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "aMc" = (
-/turf/simulated/floor/outdoors/rocks/virgo3b,
+/turf/exterior/rocks,
 /area/tether/surfacebase/outside/outside2)
 "aMd" = (
 /turf/exterior/dirt,
@@ -23748,9 +23748,7 @@
 /obj/machinery/light_switch{
 	pixel_y = -28
 	},
-/obj/machinery/computer/security/engineering{
-	dir = 4
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/lower/breakroom)
 "aQT" = (
@@ -28191,9 +28189,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 6
 	},
-/obj/machinery/computer/security/engineering{
-	dir = 1
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/monitoring)
 "baj" = (
@@ -31877,7 +31873,7 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/reading_room)
 "bjk" = (
-/obj/item/slime_extract/grey,
+/obj/item/slime_extract,
 /turf/simulated/floor/reinforced,
 /area/rnd/outpost/xenobiology/outpost_slimepens)
 "bjl" = (
