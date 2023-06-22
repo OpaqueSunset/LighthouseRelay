@@ -1655,7 +1655,7 @@
 /area/mine/explored)
 "Cx" = (
 /turf/exterior{
-	color = "#AAAAAA"
+	color = "#aaaaaa"
 	},
 /area/mine/explored)
 "Cy" = (

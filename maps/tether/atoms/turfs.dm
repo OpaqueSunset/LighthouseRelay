@@ -33,13 +33,13 @@
 	var/stripe_color = null // If set, generates a colored stripe overlay.  Accepts #XXXXXX as input.
 
 /turf/simulated/shuttle/wall/voidcraft/red
-	stripe_color = "#FF0000"
+	stripe_color = "#ff0000"
 
 /turf/simulated/shuttle/wall/voidcraft/blue
-	stripe_color = "#0000FF"
+	stripe_color = "#0000ff"
 
 /turf/simulated/shuttle/wall/voidcraft/green
-	stripe_color = "#00FF00"
+	stripe_color = "#00ff00"
 
 /turf/simulated/shuttle/wall/voidcraft/Initialize()
 	. = ..()
