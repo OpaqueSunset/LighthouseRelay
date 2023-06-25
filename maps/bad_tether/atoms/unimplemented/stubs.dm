@@ -7,9 +7,9 @@
 /mob/living/simple_animal/gaslamp
 /mob/living/simple_animal/mouse/white/apple
 /mob/living/simple_animal/slime/rainbow/kendrick
-/mob/living/simple_mob/animal/sif/fluffy
-/mob/living/simple_mob/animal/sif/fluffy/silky
-/mob/living/simple_mob/animal/sif/shantak/scruffy
+/mob/living/simple_animal/sif/fluffy
+/mob/living/simple_animal/sif/fluffy/silky
+/mob/living/simple_animal/sif/shantak/scruffy
 
 // OBJECTS
 /obj/abstract/landmark/engine_loader
@@ -46,6 +46,8 @@
 /obj/effect/overmap/visitable/ship/landable/securiship
 /obj/effect/overmap/visitable/ship/landable/tourbus
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b
+/obj/effect/step_trigger/teleporter/to_mining
+/obj/effect/step_trigger/teleporter/to_solars
 /obj/effect/step_trigger/teleporter/to_underdark
 /obj/item/ammo_casing/a12g/beanbag
 /obj/item/ammo_casing/a12g/pellet
@@ -101,6 +103,9 @@
 /obj/item/clothing/accessory/holster/leg
 /obj/item/clothing/accessory/permit/gun
 	var/owner
+/obj/item/clothing/accessory/permit/gun/bar
+/obj/item/clothing/accessory/permit/gun/planetside
+/obj/item/clothing/accessory/permit/gun/paramedic
 /obj/item/clothing/accessory/poncho/roles/medical
 /obj/item/clothing/accessory/scarf/stripedred
 /obj/item/clothing/accessory/shiny/gloves
@@ -158,6 +163,7 @@
 /obj/item/gps/engineering
 /obj/item/gps/security
 /obj/item/gun/energy/taser/xeno
+/obj/item/gun/energy/phasegun/pistol
 /obj/item/gun/projectile/revolver/consul
 /obj/item/gun/projectile/revolver/detective45
 /obj/item/gun/projectile/shotgun/pump/combat
@@ -394,7 +400,9 @@
 /obj/structure/closet/emergsuit_wall
 /obj/structure/closet/firecloset/full/double
 /obj/structure/closet/l3closet/medical
+/obj/structure/closet/l3closet/scientist/double
 /obj/structure/closet/secure_closet/explorer
+/obj/structure/closet/secure_closet/guncabinet/phase
 /obj/structure/closet/secure_closet/guncabinet/excursion
 /obj/structure/closet/secure_closet/hos2
 /obj/structure/closet/secure_closet/hydroponics/sci
@@ -426,54 +434,7 @@
 /obj/structure/reagent_dispensers/water_cooler/full
 /obj/structure/table/borosilicate
 /obj/structure/table/fancyblack
+/obj/item/gun/energy/frontier/locked
+/obj/item/gun/energy/frontier/locked/holdout
 
-/obj/abstract/turbolift_spawner/tether
-	name = "Lighthouse Climber"
-	depth = 7
-	lift_size_x = 3
-	lift_size_y = 3
-	icon = 'icons/obj/turbolift_preview_nowalls_4x4.dmi'
-	wall_type = null // Don't make walls
-
-	areas_to_use = list(
-		/area/turbolift/t_surface/level1,
-		/area/turbolift/t_surface/level2,
-		/area/turbolift/t_surface/level3,
-		/area/turbolift/tether/transit,
-		/area/turbolift/t_station/level1,
-		/area/turbolift/t_station/level2,
-		/area/turbolift/t_station/level3,
-		)
-
-/obj/structure/closet/wardrobe/grey/viva/WillContain()
-	return list(
-		/obj/structure/barricade/cutout/viva,
-		/obj/item/clothing/under/color/grey = 3,
-		/obj/item/clothing/shoes/black = 3,
-		/obj/item/clothing/head/soft/grey = 3,
-		/obj/item/clothing/mask/gas/wwii = 3,
-		/obj/item/storage/toolbox/mechanical = 3,
-		/obj/item/clothing/gloves/insulated/cheap = 3,
-		/obj/item/card/id/captains_spare/fakespare = 3,
-		/obj/item/soap/syndie = 3,
-		/obj/item/storage/box/mousetraps = 3)
-
-/obj/item/storage/box/beakers/measuring
-	name = "box of measuring cups"
-
-/obj/item/storage/box/beakers/measuring/WillContain()
-	return list(/obj/item/chems/glass/beaker/measuring_cup = 7)
-
-/obj/machinery/light/fixture
-	icon_state = "tube-construct-stage1"
-
-/obj/machinery/light/fixture/Initialize(mapload, d, populate_parts)
-	. = ..(mapload, d, populate_parts = FALSE)
-	construct_state.post_construct(src)
-
-/obj/machinery/light/small/fixture
-	icon_state = "bulb-construct-stage1"
-
-/obj/machinery/light/small/fixture/Initialize(mapload, d, populate_parts)
-	. = ..(mapload, d, populate_parts = FALSE)
-	construct_state.post_construct(src)
+/obj/structure/hygiene/urinal

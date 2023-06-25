@@ -66,3 +66,66 @@
 	icon = 'icons/turf/flooring/tiles.dmi'
 	icon_base = "steel"
 	color = null
+
+/turf/unsimulated/floor/wood
+	icon = 'icons/turf/flooring/wood.dmi'
+	icon_state = "wood"
+	color = WOOD_COLOR_GENERIC
+
+//Unsimulated
+/turf/unsimulated/wall/planetary/virgo3b
+	name = "facility wall"
+	desc = "An eight-meter tall carbyne wall. For when the wildlife on your planet is mostly militant megacorps."
+	alpha = 0xFF
+
+/turf/unsimulated/mineral/virgo3b
+	blocks_air = TRUE
+
+/turf/unsimulated/floor/steel
+	icon = 'icons/turf/flooring/tiles.dmi'
+	icon_state = "steel"
+
+/turf/unsimulated/wall
+	blocks_air = 1
+
+/turf/unsimulated/wall/planetary
+	blocks_air = 0
+
+// Some turfs to make floors look better in centcom tram station.
+
+
+
+/turf/unsimulated/floor/techfloor_grid
+	name = "floor"
+	icon = 'icons/turf/flooring/tiles.dmi'
+	icon_state = "techfloor_grid"
+
+/turf/unsimulated/floor/maglev
+	name = "maglev track"
+	desc = "Magnetic levitation tram tracks. Caution! Electrified!"
+	// icon = 'icons/turf/flooring/maglevs.dmi'
+	icon_state = "maglevup"
+
+/turf/unsimulated/wall/transit
+	// icon = 'icons/turf/transit_vr.dmi'
+
+/turf/unsimulated/floor/transit
+	// icon = 'icons/turf/transit_vr.dmi'
+
+/obj/effect/floor_decal/transit/orange
+	// icon = 'icons/turf/transit_vr.dmi'
+	icon_state = "transit_techfloororange_edges"
+
+/obj/effect/transit/light
+	// icon = 'icons/turf/transit_128.dmi'
+	icon_state = "tube1-2"
+
+// Bluespace jump turf!
+/turf/space/infinity/bluespace
+	name = "bluespace"
+
+// Desert jump turf!
+/turf/space/sandyscroll
+	name = "sand transit"
+	// icon = 'icons/turf/transit_vr.dmi' // DOES NOT EXIST CURRENTLY
+	icon_state = "desert_ns"

@@ -1,6 +1,9 @@
 /obj/item/book/codex
 /obj/item/book/codex/lore/news
+/obj/item/book/codex/lore/vir
 /obj/item/book/codex/lore/robutt
+/obj/item/book/manual/tesla_engine
+/obj/item/book/manual/the_humanized_mice
 /obj/item/book/custom_library/fiction/blacksmithandkinglybloke
 /obj/item/book/custom_library/fiction/irishairmanforseesdeath
 /obj/item/book/custom_library/fiction/myrock

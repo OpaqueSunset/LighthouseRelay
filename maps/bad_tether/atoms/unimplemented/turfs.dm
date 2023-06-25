@@ -27,7 +27,10 @@
 /turf/simulated/floor/water/deep/indoors
 /turf/simulated/floor/water/indoors
 /turf/simulated/floor/wood/broken
+/turf/simulated/shuttle/floor/airless
 /turf/simulated/shuttle/floor/black
+/turf/simulated/shuttle/floor/darkred
+/turf/simulated/shuttle/floor/white
 /turf/simulated/shuttle/floor/yellow
 /turf/simulated/shuttle/plating/airless
 /turf/simulated/shuttle/plating/airless/carry
@@ -35,3 +38,4 @@
 /turf/simulated/wall/shull
 /turf/space/cracked_asteroid
 /turf/unsimulated/wall/planetary/virgo3b
+/turf/simulated/floor/wood/sif

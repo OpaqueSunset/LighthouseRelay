@@ -26,7 +26,7 @@ default_map_directory = "../../_maps"
 replacement_re = re.compile(r'\s*(?P<path>[^{]*)\s*(\{(?P<props>.*)\})?')
 
 #urgent todo: replace with actual parser, this is slow as janitor in crit
-split_re = re.compile(r'((?:[A-Za-z0-9_\-$]+)\s*=\s*(?:"(?:.+?)"|[^";]*)|@OLD)')
+split_re = re.compile(r'((?:[A-Za-z0-9_\-$]+)\s*=\s*(?:"(?:.+?)"|list\([^;]*\)|[^";]*)|@OLD)')
 
 
 def props_to_string(props):
@@ -70,7 +70,7 @@ def update_path(dmm_data, replacement_string, verbose=False):
         old_path = old_path[:-len("/@SUBTYPES")]
         if verbose:
             print("Looking for subtypes of", old_path)
-        subtypes = r"(?:/\w+)*"
+        subtypes = r"(?P<subpath>(?:/\w+)*)"
 
     replacement_pattern = re.compile(rf"(?P<path>{re.escape(old_path)}{subtypes})\s*(:?{{(?P<props>.*)}})?$")
 
@@ -96,6 +96,8 @@ def update_path(dmm_data, replacement_string, verbose=False):
         for new_path, new_props in new_paths:
             if new_path == "@OLD":
                 out = match.group('path')
+            elif new_path.endswith("/@SUBTYPE"):
+                out = new_path[:-len("/@SUBTYPE")] + str(match.group('subpath') or '')
             else:
                 out = new_path
             out_props = dict()
@@ -108,8 +110,7 @@ def update_path(dmm_data, replacement_string, verbose=False):
                     continue
                 if prop_value.startswith("@OLD"):
                     params = prop_value.split(":")
-                    if prop_name in old_props:
-                        out_props[prop_name] = old_props[params[1]] if len(params) > 1 else old_props[prop_name]
+                    out_props[prop_name] = old_props[params[1]] if len(params) > 1 else old_props[prop_name]
                     continue
                 out_props[prop_name] = prop_value
             if out_props:

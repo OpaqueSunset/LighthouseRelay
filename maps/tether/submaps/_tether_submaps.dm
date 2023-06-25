@@ -43,7 +43,7 @@
 /datum/map_z_level/tether_lateload/underdark
 	name = "Underdark"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	base_turf = /turf/simulated/mineral/floor/virgo3b
+	base_turf = /turf/exterior/barren
 	z = Z_LEVEL_UNDERDARK
 
 /datum/map_template/tether_lateload/tether_underdark/on_map_loaded(z)
@@ -62,7 +62,7 @@
 /datum/map_z_level/tether_lateload/tether_plains
 	name = "Away Mission - Plains"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	base_turf = /turf/simulated/mineral/floor/virgo3b
+	base_turf = /turf/exterior/barren
 	z = Z_LEVEL_PLAINS
 
 /datum/map_template/tether_lateload/tether_plains/on_map_loaded(z)
@@ -72,7 +72,7 @@
 
 //////////////////////////////////////////////////////////////////////////////
 /// Away Missions
-#if AWAY_MISSION_TEST
+#ifdef AWAY_MISSION_TEST
 #include "beach/beach.dmm"
 #include "beach/cave.dmm"
 #include "alienship/alienship.dmm"
@@ -236,7 +236,7 @@
 */
 //////////////////////////////////////////////////////////////////////////////////////
 // Admin-use z-levels for loading whenever an admin feels like
-#if AWAY_MISSION_TEST
+#ifdef AWAY_MISSION_TEST
 #include "admin_use/spa.dmm"
 #endif
 

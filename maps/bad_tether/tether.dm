@@ -49,7 +49,9 @@
 	#include "tether_leveldata.dm"
 
 	#include "atoms/areas.dm"
+	#include "atoms/cryo.dm"
 	#include "atoms/decals.dm"
+	#include "atoms/props.dm"
 	#include "atoms/random.dm"
 	#include "atoms/stacks.dm"
 	#include "atoms/turfs.dm"
@@ -62,16 +64,18 @@
 	#include "atoms/unimplemented/signs.dm"
 	#include "atoms/unimplemented/turfs.dm"
 	#include "atoms/unimplemented/turfs_eris.dm"
+	#include "datums/tether_access.dm"
 
-	#include "tether-01-surface1.dmm"
-	#include "tether-02-surface2.dmm"
-	#include "tether-03-surface3.dmm"
-	#include "tether-04-transit.dmm"
-	#include "tether-05-station1.dmm"
-	#include "tether-06-station2.dmm"
-	#include "tether-07-station3.dmm"
-	#include "tether-08-mining.dmm"
-	#include "tether-09-solars.dmm"
+	#include "../tether/main_dmms/tether-01-surface1.dmm"
+	#include "../tether/main_dmms/tether-02-surface2.dmm"
+	#include "../tether/main_dmms/tether-03-surface3.dmm"
+	#include "../tether/main_dmms/tether-04-transit.dmm"
+	#include "../tether/main_dmms/tether-05-station1.dmm"
+	#include "../tether/main_dmms/tether-06-station2.dmm"
+	#include "../tether/main_dmms/tether-07-station3.dmm"
+	#include "../tether/main_dmms/tether-08-mining.dmm"
+	#include "../tether/main_dmms/tether-09-solars.dmm"
+	#include "../tether/main_dmms/tether-10-colony.dmm"
 
 	#define USING_MAP_DATUM /datum/map/tether
 
