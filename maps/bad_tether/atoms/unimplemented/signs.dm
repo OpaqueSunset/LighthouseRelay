@@ -34,3 +34,10 @@
 /obj/structure/sign/signnew/secure
 /obj/structure/sign/xenobio
 /obj/structure/sign/atmos_air
+/obj/structure/sign/department/bridge
+/obj/structure/sign/department/conference_room
+/obj/structure/sign/department/virology
+/obj/structure/sign/department/prison
+/obj/structure/sign/department/interrogation
+/obj/structure/sign/department/commander
+/obj/structure/sign/department/eva

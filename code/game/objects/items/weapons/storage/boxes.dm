@@ -181,6 +181,11 @@
 /obj/item/storage/box/ammo/beanbags/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/beanbag = 2)
 
+/obj/item/storage/box/ammo/beanbags/large
+	name = "box of beanbag shells"
+/obj/item/storage/box/ammo/beanbags/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/beanbag = 4)
+
 /obj/item/storage/box/ammo/shotgunammo
 	name = "box of shotgun slugs"
 /obj/item/storage/box/ammo/shotgunammo/WillContain()
@@ -193,11 +198,22 @@
 	name = "box of shotgun shells"
 /obj/item/storage/box/ammo/shotgunshells/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/shell = 2)
+/obj/item/storage/box/ammo/shotgunshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/shell = 4)
 
 /obj/item/storage/box/ammo/flashshells
 	name = "box of illumination shells"
 /obj/item/storage/box/ammo/flashshells/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/flash = 2)
+/obj/item/storage/box/ammo/flashshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/flash = 4)
+
+/obj/item/storage/box/ammo/empshells
+	name = "box of haywire slugs"
+/obj/item/storage/box/ammo/empshells/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/emp = 2)
+/obj/item/storage/box/ammo/empshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/emp = 4)
 
 /obj/item/storage/box/ammo/stunshells
 	name = "box of stun shells"

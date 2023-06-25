@@ -99,6 +99,13 @@
 	matter = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
 	marking_color = COLOR_MUZZLE_FLASH
 
+/obj/item/ammo_magazine/shotholder/emp
+	name = "haywire slug holder"
+	ammo_type = /obj/item/ammo_casing/shotgun/emp
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
+	marking_color = COLOR_SKY_BLUE
+
 /obj/item/ammo_magazine/shotholder/empty
 	name = "shotgun ammunition holder"
 	material = /decl/material/solid/metal/steel

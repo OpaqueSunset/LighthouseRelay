@@ -128,3 +128,7 @@
 /obj/machinery/light/small/fixture/Initialize(mapload, d, populate_parts)
 	. = ..(mapload, d, populate_parts = FALSE)
 	construct_state.post_construct(src)
+
+/obj/item/card/id/captains_spare/fakespare/Initialize()
+	. = ..()
+	access = null

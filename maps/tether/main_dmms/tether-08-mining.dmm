@@ -3,7 +3,7 @@
 /turf/unsimulated/wall/planetary/virgo3b,
 /area/mine/explored)
 "ab" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "ac" = (
 /obj/structure/sign/mining,
@@ -11,18 +11,16 @@
 /area/mine/explored)
 "ad" = (
 /obj/structure/railing,
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "ae" = (
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "af" = (
-/turf/simulated/mineral/floor/virgo3b{
-	color = "#AAAAAA"
-	},
+/turf/exterior/barren,
 /area/mine/explored)
 "ag" = (
 /obj/effect/step_trigger/teleporter/to_underdark{
@@ -30,26 +28,26 @@
 	icon_state = "";
 	pixel_x = -16
 	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "ah" = (
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "ai" = (
-/mob/living/simple_mob/animal/passive/gaslamp,
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/mob/living/simple_animal/gaslamp,
+/turf/exterior/sif_growth,
 /area/mine/explored)
 "aj" = (
-/turf/simulated/mineral/virgo3b,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "ak" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/shuttle/tether/crash2)
 "al" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/shuttle/antag_ground/mining)
 "am" = (
 /obj/effect/floor_decal/rust,
@@ -148,9 +146,9 @@
 /area/outpost/mining_main/storage)
 "aC" = (
 /obj/structure/table/steel,
-/obj/item/tool/screwdriver,
-/obj/item/tool/crowbar,
-/obj/item/tool/wrench,
+/obj/item/screwdriver,
+/obj/item/crowbar,
+/obj/item/wrench,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
@@ -179,15 +177,12 @@
 	pixel_y = -32
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/outpost/mining_main/storage)
 "aH" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -204,8 +199,6 @@
 /area/outpost/mining_main/break_room)
 "aL" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/wall/r_wall,
@@ -244,9 +237,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
 "aP" = (
-/obj/machinery/atmospherics/pipe/tank/air{
-	dir = 4
-	},
+/obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
@@ -256,9 +247,8 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
 	},
-/obj/machinery/meter{
-	frequency = 1443;
-	id = "mair_mining_meter";
+/obj/machinery/portable_atmospherics/powered/scrubber{
+	id_tag = "mair_mining_meter";
 	name = "Mixed Air Tank"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -387,12 +377,9 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	layer = 3.3;
 	pixel_y = 26
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled,
@@ -461,7 +448,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bf" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
+/obj/machinery/atmospherics/omni/filter{
 	tag_east = 1;
 	tag_north = 3;
 	tag_south = 2
@@ -469,7 +456,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bg" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
+/obj/machinery/atmospherics/omni/filter{
 	tag_east = 1;
 	tag_north = 4;
 	tag_west = 2
@@ -478,24 +465,18 @@
 /area/outpost/mining_main/maintenance)
 "bh" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bi" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/supply{
@@ -508,8 +489,6 @@
 /area/outpost/mining_main/maintenance)
 "bj" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -526,8 +505,6 @@
 /area/outpost/mining_main/maintenance)
 "bk" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -540,13 +517,9 @@
 /area/outpost/mining_main/break_room)
 "bl" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -559,8 +532,6 @@
 /area/outpost/mining_main/break_room)
 "bm" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -570,8 +541,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -610,9 +579,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/tank/air{
-	dir = 4
-	},
+/obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bq" = (
@@ -636,8 +603,6 @@
 /area/outpost/mining_main/maintenance)
 "bt" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
@@ -708,8 +673,6 @@
 /area/outpost/mining_main/break_room)
 "by" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/borderfloor/corner{
@@ -794,30 +757,24 @@
 	},
 /obj/machinery/power/sensor{
 	long_range = 1;
-	name = "Powernet Sensor - Mining Station";
-	name_tag = "Mining Station"
+	name = "Powernet Sensor - Mining Station"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bH" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bI" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -836,8 +793,6 @@
 /area/outpost/mining_main/dorms)
 "bL" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
@@ -889,8 +844,7 @@
 /area/outpost/mining_main/break_room)
 "bN" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
-	frequency = 1379;
-	scrub_id = "mining_outpost_airlock_scrubber"
+	id_tag = "mining_outpost_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/outpost/mining_main/airlock)
@@ -913,8 +867,7 @@
 /area/outpost/mining_main/airlock)
 "bQ" = (
 /obj/structure/closet/firecloset,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1379;
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "mining_outpost_airlock_pump"
 	},
 /turf/simulated/floor/bluegrid,
@@ -937,7 +890,6 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -947,12 +899,9 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -962,7 +911,6 @@
 	RCon_tag = "Substation - Mining Outpost"
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/structure/cable/green,
@@ -972,7 +920,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bX" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/briefcase/inflatable,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -1019,8 +967,6 @@
 	name = "Quarters"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -1034,13 +980,9 @@
 /area/outpost/mining_main/dorms)
 "cb" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -1051,8 +993,6 @@
 /area/outpost/mining_main/break_room)
 "cc" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1062,23 +1002,17 @@
 /area/outpost/mining_main/break_room)
 "cd" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/access_button{
+/obj/machinery/button/access{
 	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "mining_outpost_airlock";
 	name = "Mining Outpost Access Button";
-	pixel_y = 24;
-	req_access = list(48,54)
+	pixel_y = 24
 	},
-/obj/machinery/door/airlock/glass_external{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/glass{
 	icon_state = "door_locked";
 	id_tag = "mining_outpost_airlock_inner";
 	locked = 1
@@ -1087,8 +1021,6 @@
 /area/outpost/mining_main/airlock)
 "ce" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/borderfloorblack/cee{
@@ -1104,8 +1036,6 @@
 /area/outpost/mining_main/airlock)
 "cf" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/borderfloorblack,
@@ -1125,8 +1055,6 @@
 /area/outpost/mining_main/airlock)
 "cg" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/borderfloorblack,
@@ -1170,16 +1098,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/outpost/mining_main/airlock)
 "cj" = (
-/obj/machinery/access_button{
+/obj/machinery/button/access{
 	command = "cycle_exterior";
-	frequency = 1379;
-	master_tag = "mining_outpost_airlock";
 	name = "Mining Outpost Access Button";
-	pixel_y = 24;
-	req_access = list(48,54)
+	pixel_y = 24
 	},
-/obj/machinery/door/airlock/glass_external/public{
-	frequency = 1379;
+/obj/machinery/door/airlock/external/glass{
 	icon_state = "door_locked";
 	id_tag = "mining_outpost_airlock_outer";
 	locked = 1
@@ -1208,8 +1132,6 @@
 "cm" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1229,7 +1151,6 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/telecomms/relay/preset/mining,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "cq" = (
@@ -1295,9 +1216,8 @@
 	pixel_x = 12;
 	pixel_y = -26
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 1;
-	frequency = 1379;
 	id_tag = "mining_outpost_airlock_pump";
 	power_rating = 15000
 	},
@@ -1472,12 +1392,12 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/outpost/mining_main/passage)
 "cQ" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/outpost/mining_main/passage)
 "cR" = (
 /obj/structure/cable/ender{
 	icon_state = "1-2";
-	id = "surface-solars"
+	id_tag = "surface-solars"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored)
@@ -1492,11 +1412,10 @@
 /obj/effect/step_trigger/teleporter/from_mining,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/outpost/mining_main/passage)
-"sc" = (
-/obj/effect/floor_decal/techfloor,
-/obj/machinery/telecomms/relay/preset/underdark,
-/turf/simulated/floor/tiled/techfloor,
-/area/outpost/mining_main/maintenance)
+"pl" = (
+/obj/abstract/level_data_spawner/virgo3b/mining,
+/turf/exterior/sif_growth,
+/area/mine/explored)
 
 (1,1,1) = {"
 aa
@@ -1779,7 +1698,7 @@ ab
 ab
 ab
 ab
-ab
+pl
 aa
 "}
 (3,1,1) = {"
@@ -4038,7 +3957,7 @@ bg
 bs
 bH
 bW
-sc
+co
 cD
 ab
 cH

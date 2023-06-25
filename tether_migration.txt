@@ -91,7 +91,7 @@
 # /table/standard -> /table
 /obj/structure/table/standard : /obj/structure/table{@OLD}
 
-/obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced
+/obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced{@OLD}
 
 # TOOL TYPE REMOVAL
 /obj/item/tool/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}
@@ -115,10 +115,13 @@
 /obj/item/phone : /obj/item/radio/phone{@OLD}
 
 # VIRGO MAPEDIT JANK
+/obj/structure/closet{name = "tactical equipment"} : /obj/structure/closet/wardrobe/tactical
+/obj/item/camera{name = "detectives camera"} : /obj/item/camera{pixel_x = @OLD; pixel_y = @OLD}
 /turf/unsimulated/floor/steel{icon = 'icons/turf/floors_vr.dmi'; icon_state = "wood"} : /turf/unsimulated/floor/wood
 /turf/unsimulated/floor/steel{icon = 'icons/turf/outdoors.dmi';	icon_state = "grass"} : /turf/exterior/grass
 /obj/machinery/cryopod/robot/door/dorms{icon = 'icons/obj/doors/Door2x1glass.dmi'} : /obj/machinery/cryopod/robot/door/dorms/colony
 /obj/structure/closet{icon_closed = "cabinet_closed";icon_opened = "cabinet_open";icon_state = "cabinet_closed";name = "Clothing Storage"} : /obj/structure/closet/wardrobe{name = "clothing storage"}
+/obj/structure/closet/secure_closet{icon_broken = "medicalbroken";icon_closed = "medical";icon_locked = "medical1";icon_off = "medicaloff";icon_opened = "medicalopen";icon_state = "medical1";name = "Surgical Pressure Gear"} : /obj/structure/closet/secure_closet{name = "surgical pressure gear"; req_access = list(access_medical_equip); closet_appearance = /decl/closet_appearance/secure_closet/medical/alt}
 /area/shuttle/large_escape_pod1/station{base_turf = @SET} : /area/shuttle/large_escape_pod1/station
 # TODO: remove impure areas altogether!
 /area/syndicate_station/mining{base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b} : /area/syndicate_station/mining{base_turf = /turf/exterior/dirt}
@@ -136,6 +139,7 @@
 
 /obj/item/circuitboard/@SUBTYPES : /obj/item/stock_parts/circuitboard/@SUBTYPES{@OLD}
 /obj/item/airlock_electronics : /obj/item/stock_parts/circuitboard/airlock_electronics{@OLD}
+/obj/item/stock_parts/circuitboard/partslathe : /obj/item/stock_parts/circuitboard/textilesfab{@OLD}
 
 /obj/item/chems/blood/empty : /obj/item/chems/ivbag{@OLD}
 /obj/item/chems/blood/@SUBTYPES : /obj/item/chems/ivbag/blood/@SUBTYPES{@OLD}
@@ -161,7 +165,11 @@
 /mob/living/simple_mob/animal/passive/dog/pug/SirPogsley : /mob/living/simple_animal/corgi/pug/SirPogsley{@OLD}
 /mob/living/simple_mob/animal/passive/@SUBTYPES : /mob/living/simple_animal/@SUBTYPES{@OLD}
 /mob/living/simple_mob/animal/@SUBTYPES : /mob/living/simple_animal/@SUBTYPES{@OLD}
+/mob/living/simple_mob/vore/aggressive/@SUBTYPES : /mob/living/simple_animal/hostile/@SUBTYPES{@OLD}
 /mob/living/simple_mob/slime/xenobio/@SUBTYPES : /mob/living/simple_animal/slime/@SUBTYPES{@OLD}
+/mob/living/simple_animal/cat/runtime : /mob/living/simple_animal/cat/fluff/runtime{@OLD}
+# oh you think you're so clever don't you
+/mob/living/simple_animal/bird/parrot/polly : /mob/living/simple_animal/hostile/retaliate/parrot/Poly
 
 /obj/effect/decal/remains/@SUBTYPES : /obj/item/remains/@SUBTYPES{@OLD}
 
@@ -198,7 +206,13 @@
 
 /obj/machinery/iv_drip : /obj/structure/iv_drip{@OLD}
 
+/obj/machinery/power/sensor{name_tag = @SET} : /obj/machinery/power/sensor{@OLD; name_tag = @SKIP}
+/obj/machinery/power/emitter/@SUBTYPES : /obj/machinery/emitter/@SUBTYPES{@OLD}
+/obj/machinery/power/port_gen/@SUBTYPES : /obj/machinery/port_gen/@SUBTYPES{@OLD}
+/obj/item/smes_coil/@SUBTYPES : /obj/item/stock_parts/smes_coil/@SUBTYPES{@OLD}
+
 # id -> id_tag
+/obj/machinery/door_timer/@SUBTYPES{id = @SET} : /obj/machinery/door_timer/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/conveyor/@SUBTYPES{id = @SET} : /obj/machinery/conveyor/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/conveyor_switch/@SUBTYPES{id = @SET} : /obj/machinery/conveyor_switch/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/door/@SUBTYPES{id = @SET} : /obj/machinery/door/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
@@ -206,8 +220,17 @@
 /obj/machinery/atmospherics/@SUBTYPES{id = @SET} : /obj/machinery/atmospherics/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/structure/cable/ender{id = @SET} : /obj/structure/cable/ender{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/holosign/bar{id = @SET} : /obj/machinery/holosign/bar{@OLD; id_tag = @OLD:id; id = @SKIP}
+/obj/machinery/meter/@SUBTYPES{id = @SET} : /obj/machinery/meter/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
+/obj/machinery/flasher/@SUBTYPES{id = @SET} : /obj/machinery/flasher/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
+/obj/machinery/sparker/@SUBTYPES{id = @SET} : /obj/machinery/sparker/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
+/obj/machinery/mass_driver/@SUBTYPES{id = @SET} : /obj/machinery/mass_driver/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
+/obj/machinery/emitter/@SUBTYPES{id = @SET} : /obj/machinery/emitter/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
 
-/obj/machinery/airlock_sensor{master_tag = @SET} : /obj/machinery/airlock_sensor{@OLD; master_tag = @SKIP}
+/@SUBTYPES{join_group = @SET} : /@SUBTYPES{@OLD; join_group = @SKIP}
+
+/obj/machinery/camera/network/@SUBTYPES{network = @SET} : /obj/machinery/camera/network/@SUBTYPES{@OLD; network = @SKIP; preset_channels = @OLD:network}
+
+/obj/machinery/airlock_sensor/@SUBTYPES{master_tag = @SET} : /obj/machinery/airlock_sensor/@SUBTYPES{@OLD; master_tag = @SKIP}
 /obj/machinery/button/access/@SUBTYPES{master_tag = @SET} : /obj/machinery/button/access/@SUBTYPES{@OLD; master_tag = @SKIP}
 
 # removes item/material
@@ -217,11 +240,6 @@
 
 # stubs, but repathed to make sense here
 /obj/structure/urinal : /obj/structure/hygiene/urinal{@OLD}
-
-/obj/machinery/power/sensor{name_tag = @SET} : /obj/machinery/power/sensor{@OLD; name_tag = @SKIP}
-/obj/machinery/power/emitter/@SUBTYPES : /obj/machinery/emitter/@SUBTYPES{@OLD}
-/obj/machinery/power/port_gen/@SUBTYPES : /obj/machinery/port_gen/@SUBTYPES{@OLD}
-/obj/item/smes_coil/@SUBTYPES : /obj/item/stock_parts/smes_coil/@SUBTYPES{@OLD}
 
 /obj/item/deck/cah : /obj/item/deck/cag/white{@OLD}
 /obj/item/deck/cah/black : /obj/item/deck/cag/black{@OLD}
@@ -246,10 +264,16 @@
 /obj/machinery/computer/power_monitor : /obj/machinery/computer/modular/preset/engineering/power{@OLD}
 /obj/machinery/computer/supplycomp/control : /obj/machinery/computer/modular/preset/dock{@OLD}
 /obj/machinery/computer/supplycomp : /obj/machinery/computer/modular/preset/supply_public{@OLD}
+/obj/machinery/computer/communications : /obj/machinery/computer/modular/preset/cardslot/command{@OLD}
+/obj/machinery/computer/med_data : /obj/machinery/computer/modular/preset/civilian{@OLD}
+
+/obj/machinery/computer/aiupload : /obj/machinery/computer/upload/ai{@OLD}
+/obj/machinery/computer/borgupload : /obj/machinery/computer/upload/robot{@OLD}
 
 # removes item/melee
 /obj/item/melee/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}
 
+/obj/item/card/id/gold/captain/spare : /obj/item/card/id/captains_spare{@OLD}
 /obj/item/chainofcommand : /obj/item/whip/chainofcommand{@OLD}
 /obj/item/chems/drinks/bottle/specialwhiskey : /obj/item/chems/drinks/bottle/agedwhiskey{@OLD}
 
@@ -264,6 +288,11 @@
 /obj/machinery/pros_fabricator : /obj/machinery/fabricator/robotics{@OLD}
 /obj/machinery/mecha_part_fabricator : /obj/machinery/fabricator/industrial{@OLD}
 /obj/machinery/r_n_d/protolathe : /obj/machinery/fabricator/protolathe{@OLD}
+/obj/machinery/bookbinder : /obj/machinery/fabricator/book{@OLD}
+
+/obj/machinery/fabricator/@SUBTYPES : /obj/machinery/fabricator/@SUBTYPES{@OLD; res_max_amount = @SKIP; speed = @SKIP}
+
+/obj/item/radio/headset/headset_sec/alt : /obj/item/radio/headset/headset_sec/bowman{@OLD}
 
 /obj/item/storage/firstaid/regular{empty = 1} : /obj/item/storage/firstaid/empty{@OLD; empty = @SKIP; name = @SKIP}
 
@@ -303,7 +332,7 @@
 /obj/item/clothing/accessory/storage/brown_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/brown{@OLD}
 /obj/item/clothing/accessory/storage/brown_vest : /obj/item/clothing/accessory/storage/vest/brown{@OLD}
 /obj/item/clothing/accessory/storage/white_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/white{@OLD}
-/obj/item/clothing/accessory/storage/white_vest : /obj/item/clothing/accessory/storage/vest/white{@OLD}
+/obj/item/clothing/accessory/storage/white_vest : /obj/item/clothing/accessory/storage/vest{@OLD}
 /obj/item/clothing/ears/earmuffs : /obj/item/clothing/head/earmuffs{@OLD}
 /obj/item/clothing/gloves/black : /obj/item/clothing/gloves/thick{@OLD}
 /obj/item/clothing/gloves/combat : /obj/item/clothing/gloves/thick/combat{@OLD}
@@ -335,8 +364,14 @@
 /obj/item/clothing/shoes/boots/swat : /obj/item/clothing/shoes/jackboots/swat{@OLD}
 /obj/item/clothing/shoes/boots/tactical : /obj/item/clothing/shoes/jackboots/tactical{@OLD}
 /obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/under/avian_smock/@SUBTYPES{@OLD}
+/obj/item/clothing/under/avian_smock/medical : /obj/item/clothing/under/avian_smock/utility{@OLD}
 /obj/item/clothing/accessory/legguards/combat : /obj/item/clothing/accessory/legguards/riot{@OLD}
 /obj/item/clothing/accessory/armguards/combat : /obj/item/clothing/accessory/armguards/riot{@OLD}
+/obj/item/clothing/accessory/armguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
+/obj/item/clothing/accessory/armguards/laserproof : /obj/item/clothing/accessory/armguards/ablative{@OLD}
+/obj/item/clothing/accessory/legguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
+/obj/item/clothing/accessory/legguards/laserproof : /obj/item/clothing/accessory/legguards/ablative{@OLD}
+/obj/item/clothing/accessory/armor/helmcover/nt : /obj/item/clothing/accessory/armor/helmcover/corp{@OLD}
 
 /obj/item/knife/machete : /obj/item/hatchet/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}
@@ -366,6 +401,7 @@
 /obj/machinery/air_sensor/@SUBTYPES : /obj/machinery/air_sensor/@SUBTYPES{@OLD; frequency = @SKIP; output = @SKIP}
 /obj/machinery/embedded_controller/radio/@SUBTYPES{frequency = @SET} : /obj/machinery/embedded_controller/radio/@SUBTYPES{@OLD; frequency = @SKIP}
 /obj/machinery/button/@SUBTYPES{frequency = @SET} : /obj/machinery/button/@SUBTYPES{@OLD; frequency = @SKIP}
+/obj/machinery/meter/@SUBTYPES{frequency = @SET} : /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{@OLD; frequency = @SKIP}
 
 /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{scrub_id = @SET} : /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{@OLD; scrub_id = @SKIP; id_tag = @OLD:scrub_id}
 /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{scrubbing_gas = list("phoron")} : /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{@OLD; scrubbing_gas = list(/decl/material/solid/phoron)}
@@ -378,8 +414,11 @@
 /turf/simulated/floor/bluegrid{initial_gas_mix = "n2=100;TEMP=80"} : /turf/simulated/floor/bluegrid{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 100); temperature = 80}
 /turf/simulated/floor/bluegrid{initial_gas_mix = "n2=500;TEMP=80"} : /turf/simulated/floor/bluegrid{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 500); temperature = 80}
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "nitrogen=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
+/turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "n2=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
 
 /obj/item/stock_parts/subspace/sub_filter : /obj/item/stock_parts/subspace/filter
+
+/obj/machinery/suit_storage_unit/standard_unit : /obj/machinery/suit_cycler/generic/prepared
 
 /obj/structure/dispenser{phorontanks = 0} : /obj/structure/tank_rack/oxygen{@OLD; phorontanks = @SKIP}
 /obj/structure/dispenser/oxygen : /obj/structure/tank_rack/oxygen
@@ -436,6 +475,24 @@
 /obj/machinery/mineral/unloading_machine : /obj/machinery/material_processing/unloader
 /obj/machinery/station_map : /obj/machinery/holomap{@OLD}
 /obj/machinery/requests_console/@SUBTYPES : /obj/machinery/network/requests_console/@SUBTYPES{@OLD; departmentType = @SKIP}
+/obj/machinery/camera/network/research{network = list("Xenobiology")} : /obj/machinery/camera/network/research/xenobio{@OLD; network = @SKIP}
+
+/obj/item/duct_tape_piece : /obj/item/duct_tape{@OLD}
+/obj/item/toy/syndicateballoon : /obj/item/toy/balloon{@OLD}
+/obj/item/rig_module/device/plasmacutter : /obj/item/rig_module/mounted/plasmacutter{@OLD}
+
+/obj/item/FixOVein : /obj/item/sutures{@OLD}
+
+/obj/structure/closet/secure_closet/psych : /obj/structure/closet/secure_closet/psychiatry{@OLD}
+/obj/machinery/suit_cycler/headofsecurity : /obj/machinery/suit_cycler/security/alt{@OLD}
+/obj/machinery/account_database : /obj/machinery/computer/account_database{@OLD}
+/obj/machinery/shield_gen/@SUBTYPES : /obj/machinery/shield_generator/@SUBTYPES{@OLD}
+
+/obj/item/book/tome/imbued : /obj/item/book/tome{@OLD}
+
+/obj/machinery/computer/rdconsole/core : /obj/machinery/computer/design_console{@OLD}
+/obj/machinery/computer/rdconsole/robotics : /obj/machinery/computer/design_console{@OLD}
+/obj/machinery/computer/rdservercontrol : /obj/machinery/computer/design_console{@OLD; name = @SKIP; badmin = @SKIP}
 
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
@@ -444,3 +501,20 @@
 /obj/machinery/mineral/processing_unit_console : @DELETE
 /obj/item/storage/box/seccarts : @DELETE
 /obj/item/cartridge/@SUBTYPES : @DELETE
+# these need to be replaced with new circuits in tech storage
+/obj/item/stock_parts/circuitboard/crew : @DELETE
+/obj/item/stock_parts/circuitboard/card : @DELETE
+/obj/item/stock_parts/circuitboard/communications : @DELETE
+/obj/item/stock_parts/circuitboard/med_data : @DELETE
+/obj/item/stock_parts/circuitboard/secure_data : @DELETE
+/obj/item/stock_parts/circuitboard/security/@SUBTYPES : @DELETE
+/obj/item/stock_parts/circuitboard/skills : @DELETE
+/obj/item/stock_parts/circuitboard/stationalert_engineering : @DELETE
+/obj/item/stock_parts/circuitboard/scan_consolenew : @DELETE
+/mob/living/silicon/decoy : @DELETE
+/obj/machinery/computer/pod : @DELETE
+/obj/item/rig_module/sprinter : @DELETE
+/obj/item/survivalcapsule : @DELETE
+/obj/item/multitool/tether_buffered : @DELETE
+# sorry, but we don't have shuttle webs
+/obj/machinery/computer/shuttle_control/web/excursion : @DELETE

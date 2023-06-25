@@ -39,3 +39,7 @@
 /turf/space/cracked_asteroid
 /turf/unsimulated/wall/planetary/virgo3b
 /turf/simulated/floor/wood/sif
+/turf/simulated/shuttle/wall/dark
+/turf/simulated/shuttle/wall/voidcraft/hard_corner
+/turf/simulated/wall/durasteel
+/turf/simulated/wall/r_lead
