@@ -1,6 +1,7 @@
 // MOBS
 /mob/living/bot/secbot/slime/slimesky
 /mob/living/simple_animal/bird/azure_tit/tweeter
+/mob/living/simple_animal/bird/black_bird
 /mob/living/simple_animal/fish/bass
 /mob/living/simple_animal/fish/koi/poisonous
 /mob/living/simple_animal/fox/renault
@@ -10,6 +11,7 @@
 /mob/living/simple_animal/sif/fluffy
 /mob/living/simple_animal/sif/fluffy/silky
 /mob/living/simple_animal/sif/shantak/scruffy
+/mob/living/simple_animal/corgi/pug/SirPogsley // TODO: add /dog/ parent type
 
 // OBJECTS
 /obj/abstract/landmark/engine_loader
@@ -48,6 +50,8 @@
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b
 /obj/effect/step_trigger/teleporter/to_mining
 /obj/effect/step_trigger/teleporter/to_solars
+/obj/effect/step_trigger/teleporter/from_mining
+/obj/effect/step_trigger/teleporter/from_solars
 /obj/effect/step_trigger/teleporter/to_underdark
 /obj/item/ammo_casing/a12g/beanbag
 /obj/item/ammo_casing/a12g/pellet
@@ -162,12 +166,33 @@
 /obj/item/gps/command
 /obj/item/gps/engineering
 /obj/item/gps/security
-/obj/item/gun/energy/taser/xeno
+/obj/item/gun/energy/gun/burst
+/obj/item/gun/energy/gun/martin
+/obj/item/gun/energy/ionrifle/pistol
+/obj/item/gun/energy/netgun
 /obj/item/gun/energy/phasegun/pistol
+/obj/item/gun/energy/sizegun
+/obj/item/gun/energy/stunrevolver
+/obj/item/gun/energy/taser/xeno
+/obj/item/gun/projectile/automatic/advanced_smg
+/obj/item/gun/projectile/automatic/battlerifle
+/obj/item/gun/projectile/automatic/bullpup
+/obj/item/gun/projectile/automatic/l6_saw
+/obj/item/gun/projectile/automatic/p90
+/obj/item/gun/projectile/automatic/pdw
+/obj/item/gun/projectile/automatic/sts35
+/obj/item/gun/projectile/automatic/wt550
+/obj/item/gun/projectile/automatic/wt550/lethal
+/obj/item/gun/projectile/automatic/z8
+/obj/item/gun/projectile/deagle
+/obj/item/gun/projectile/heavysniper
+/obj/item/gun/projectile/nsfw
+/obj/item/gun/projectile/p92x
 /obj/item/gun/projectile/revolver/consul
 /obj/item/gun/projectile/revolver/detective45
 /obj/item/gun/projectile/shotgun/pump/combat
 /obj/item/gun/projectile/shotgun/pump/rifle/practice
+/obj/item/gun/projectile/shotgun/pump/USDF
 /obj/item/handcuffs/fuzzy
 /obj/item/handcuffs/legcuffs/fuzzy
 /obj/item/mech_component/part/durand_left_leg
@@ -438,3 +463,33 @@
 /obj/item/gun/energy/frontier/locked/holdout
 
 /obj/structure/hygiene/urinal
+/obj/item/bedsheet/purpledouble
+/obj/machinery/computer/HolodeckControl/holodorm
+/obj/machinery/computer/HolodeckControl/holodorm/one
+/obj/machinery/computer/HolodeckControl/holodorm/three
+/obj/machinery/computer/HolodeckControl/holodorm/five
+/obj/machinery/computer/HolodeckControl/holodorm/seven
+/obj/machinery/computer/HolodeckControl/holosurgery
+/obj/item/scanner/health/advanced
+/obj/item/scanner/health/improved
+/obj/item/roller/adv
+
+/obj/item/ammo_casing/nsfw_batt
+/obj/item/ammo_casing/nsfw_batt/net
+/obj/item/ammo_casing/nsfw_batt/stun
+/obj/item/ammo_magazine/m44
+/obj/item/ammo_magazine/m545
+/obj/item/ammo_magazine/m545/ap
+/obj/item/ammo_magazine/m545saw
+/obj/item/ammo_magazine/m545saw/ap
+/obj/item/ammo_magazine/m762
+/obj/item/ammo_magazine/m762/ap
+/obj/item/ammo_magazine/m95
+/obj/item/ammo_magazine/m9mm/large/preban
+/obj/item/ammo_magazine/m9mml
+/obj/item/ammo_magazine/m9mml/ap
+/obj/item/ammo_magazine/m9mmp90
+/obj/item/ammo_magazine/m9mmR/saber
+/obj/item/ammo_magazine/m9mmt/rubber
+/obj/item/ammo_magazine/nsfw_mag
+/obj/item/ammo_magazine/s4

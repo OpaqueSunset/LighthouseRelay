@@ -33,3 +33,4 @@
 /obj/structure/sign/science
 /obj/structure/sign/signnew/secure
 /obj/structure/sign/xenobio
+/obj/structure/sign/atmos_air
