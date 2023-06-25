@@ -12,5 +12,6 @@
 #include "programs/_nifsoft.dm"
 #include "programs/nifsoft_compliance.dm"
 #include "programs/nifsoft_hud.dm"
+#include "programs/nifsoft_rearview.dm"
 #include "programs/nifsoft_vitals.dm"
 #endif

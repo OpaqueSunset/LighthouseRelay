@@ -39,7 +39,7 @@
 	ignition_point = FLAMMABLE_GAS_MINIMUM_BURN_TEMPERATURE
 	icon_base = 'icons/turf/walls/stone.dmi'
 	table_icon_base = "stone"
-	color = "#e37108"
+	color = "#c408ba"
 	shard_type = SHARD_SHARD
 	hardness = MAT_VALUE_RIGID
 	stack_origin_tech = "{'materials':2,'exoticmatter':2}"

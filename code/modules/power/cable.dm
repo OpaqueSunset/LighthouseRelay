@@ -843,6 +843,9 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/item/stack/cable_coil/lime
 	color = COLOR_LIME
 
+/obj/item/stack/cable_coil/black
+	color = COLOR_BLACK
+
 /obj/item/stack/cable_coil/random/Initialize(mapload, c_length, param_color)
 	var/list/possible_cable_colours = get_global_cable_colors()
 	color = possible_cable_colours[pick(possible_cable_colours)]

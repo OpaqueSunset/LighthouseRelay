@@ -7,6 +7,7 @@
 	extended_desc = "This program orders nanites to deliver augmented sensory information directly to your visual cortex. In other words, it lets you see a heads-up display."
 	size = 2
 	usage_flags = PROGRAM_NIF
+	var/hudtype = null
 
 /datum/computer_file/program/nifsoft/nif_hud/on_startup(mob/living/user, datum/extension/interactive/os/new_host)
 	. = ..()
@@ -39,14 +40,17 @@
 /datum/computer_file/program/nifsoft/nif_hud/med_hud
 	filename = "nifmedihud"
 	filedesc = "AR Overlay (Medical)"
+	hudtype = HUD_MEDICAL
 
 /datum/computer_file/program/nifsoft/nif_hud/sec_hud
 	filename = "nifsechud"
 	filedesc = "AR Overlay (Security)"
+	hudtype = HUD_SECURITY
 
 /datum/computer_file/program/nifsoft/nif_hud/jani_hud
 	filename = "nifjanihud"
 	filedesc = "AR Overlay (Janitorial)"
+	hudtype = HUD_JANITOR
 
 /datum/computer_file/program/nifsoft/nif_hud/med_hud/process_hud(mob/owner, datum/network)
 	process_med_hud(owner, TRUE, network = network)

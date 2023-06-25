@@ -177,9 +177,9 @@
 //Tiled floor + sub-types
 
 /turf/simulated/floor/tiled
-	name = "steel floor"
+	name = "floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "steel"
+	icon_state = "tiled"
 	initial_flooring = /decl/flooring/tiling
 
 /turf/simulated/floor/tiled/dark
@@ -392,3 +392,9 @@
 	icon = 'icons/turf/flooring/pool.dmi'
 	icon_state = "pool"
 	initial_flooring = /decl/flooring/pool
+
+/turf/simulated/floor/pool/deep
+	name = "deep pool floor"
+	icon = 'icons/turf/flooring/pool.dmi'
+	icon_state = "pool"
+	initial_flooring = /decl/flooring/pool/deep

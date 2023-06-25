@@ -15,6 +15,7 @@
 	level = 1
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon" // If anyone wants to make better sprite, feel free to do so without asking me.
+	var/long_range = FALSE /// If this is TRUE, it can be seen regardless of Z-level.
 
 	uncreated_component_parts = null
 	stat_immune = NOINPUT | NOSCREEN | NOPOWER

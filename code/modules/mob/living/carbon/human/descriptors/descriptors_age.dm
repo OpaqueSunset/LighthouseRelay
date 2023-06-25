@@ -5,7 +5,7 @@
 		"a toddler" =      3,
 		"a child" =        7,
 		"a teenager" =    13,
-		"a young adult" = 17,
+		"a young adult" = 18,
 		"an adult" =      25,
 		"middle-aged" =   40,
 		"aging" =         55,

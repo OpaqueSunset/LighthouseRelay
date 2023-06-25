@@ -28,7 +28,7 @@
 	metabolism = 0.05
 	value = 0.3
 
-/decl/material/gas/helium/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
+/decl/material/gas/helium/affect_inhale(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
 	M.add_chemical_effect(CE_SQUEAKY, 1)
 
@@ -42,6 +42,7 @@
 	boiling_point = -78 CELSIUS
 	gas_symbol_html = "CO<sub>2</sub>"
 	gas_symbol = "CO2"
+	gas_metabolically_inert = TRUE
 
 /decl/material/gas/carbon_monoxide
 	name = "carbon monoxide"
