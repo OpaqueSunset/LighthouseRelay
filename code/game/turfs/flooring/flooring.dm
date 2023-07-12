@@ -237,9 +237,10 @@
 	icon_base = "techmaint"
 	build_type = /obj/item/stack/tile/techmaint
 
+// todo: recolorable variant
 /decl/flooring/tiling/new_tile/monofloor
-	icon_base = "monofloor"
-	color = COLOR_GUNMETAL
+	icon_base = "steel_monofloor"
+	color = null
 
 /decl/flooring/tiling/new_tile/steel_grid
 	icon_base = "grid"
