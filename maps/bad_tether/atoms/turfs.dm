@@ -67,6 +67,14 @@
 	icon_base = "steel"
 	color = null
 
+/turf/simulated/floor/tiled/dark
+	icon_state = "dark"
+	color = null
+
+/decl/flooring/tiling/dark
+	icon_base = "dark"
+	color = null
+
 /turf/unsimulated/floor/wood
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_state = "wood"

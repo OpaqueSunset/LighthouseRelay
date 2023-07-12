@@ -25,6 +25,7 @@
 /obj/item/chems/glass/bottle/stoxin : /obj/item/chems/glass/bottle/sedatives{@OLD}
 
 # TRASHPILE -> LOOTPILE
+/obj/structure/trash_pile : /obj/random/loot_pile
 /obj/random/trash_pile : /obj/random/loot_pile
 
 # DOUBLE DOORS
