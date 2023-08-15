@@ -1,3 +1,5 @@
+#define AMBIENCE_AI list('sound/ambience/ambimalf.ogg')
+#define AMBIENCE_ENGINEERING list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg')
 // Lighthouse areas.
 
 /area/assembly/chargebay
@@ -94,21 +96,30 @@
 	name = "\improper Abandoned Observation Lounge"
 	icon_state = "yellow"
 
+/area/crew_quarters/heads/hop
+	name = "\improper Command - HoP's Office"
+	icon_state = "head_quarters"
+	req_access = list(access_hop)
+
 /area/crew_quarters/heads/hor
 	name = "Research - RD's Office"
 	icon_state = "head_quarters"
+	req_access = list(access_rd)
 
 /area/crew_quarters/heads/chief
 	name = "Engineering - CE's Office"
 	icon_state = "head_quarters"
+	req_access = list(access_ce)
 
 /area/crew_quarters/heads/hos
 	name = "Security - HoS' Office"
 	icon_state = "head_quarters"
+	req_access = list(access_hos)
 
 /area/crew_quarters/heads/cmo
 	name = "Medbay - CMO's Office"
 	icon_state = "head_quarters"
+	req_access = list(access_cmo)
 
 /area/crew_quarters/lounge
 	name = "\improper Lounge"
@@ -164,6 +175,67 @@
 /area/rnd/research_foyer
 	name = "\improper Research Foyer"
 	icon_state = "research_foyer"
+
+/area/security/breakroom
+	name = "\improper Security Breakroom"
+	icon_state = "security"
+
+/area/security/brig
+	name = "\improper Security - Brig"
+	icon_state = "brig"
+
+/area/security/brig/bathroom
+	name = "\improper Brig Bathroom"
+	icon_state = "security"
+
+/area/security/brig/visitation
+	name = "\improper Visitation"
+	icon_state = "security"
+
+/area/security/checkpoint
+	name = "\improper Security Checkpoint"
+	icon_state = "checkpoint1"
+
+/area/security/eva
+	name = "\improper Security EVA"
+	icon_state = "security_equip_storage"
+
+/area/security/evidence_storage
+	name = "\improper Security - Evidence Storage"
+	icon_state = "evidence_storage"
+
+/area/security/interrogation
+	name = "\improper Security - Interrogation"
+	icon_state = "interrogation"
+
+/area/security/lobby
+	name = "\improper Security Lobby"
+	icon_state = "security"
+
+/area/security/riot_control
+	name = "\improper Security - Riot Control"
+	icon_state = "riot_control"
+
+/area/security/security_bathroom
+	name = "\improper Security - Restroom"
+	icon_state = "security_bathroom"
+	sound_env = SMALL_ENCLOSED
+
+/area/security/security_cell_hallway
+	name = "\improper Security - Cell Hallway"
+	icon_state = "security_cell_hallway"
+
+/area/security/security_equiptment_storage
+	name = "\improper Security - Equipment Storage"
+	icon_state = "security_equip_storage"
+
+/area/security/security_lockerroom
+	name = "\improper Security - Locker Room"
+	icon_state = "security_lockerroom"
+
+/area/security/security_processing
+	name = "\improper Security - Security Processing"
+	icon_state = "security_processing"
 
 /area/security/briefing_room
 	name = "\improper Security - Briefing Room"
@@ -433,6 +505,19 @@
 /area/tether/surfacebase/east_stairs_two
 	name = "\improper East Stairwell Second Floor"
 	icon_state = "dk_yellow"
+
+/area/vacant/vacant_shop
+	name = "\improper Vacant Shop"
+	icon_state = "vacant_shop"
+
+/area/vacant/vacant_site
+	name = "\improper Vacant Site"
+	icon_state = "vacant_site"
+
+/area/vacant/vacant_site2
+	name = "\improper Abandoned Locker Room"
+	icon_state = "vacant_site"
+
 /area/vacant/vacant_site/east
 	name = "\improper East Base Vacant Site"
 /area/vacant/vacant_library
@@ -540,11 +625,21 @@
 /area/tether/surfacebase/security/hallway
 	name = "\improper Surface Checkpoint Hallway"
 
+/area/engineering/atmos
+	name = "\improper Atmospherics"
+	icon_state = "atmos"
+	sound_env = LARGE_ENCLOSED
+	req_access = list(access_atmospherics)
 
 /area/engineering/atmos/processing
 	name = "Atmospherics Processing"
 	icon_state = "atmos"
 	sound_env = LARGE_ENCLOSED
+
+/area/engineering/atmos/storage
+	name = "\improper Atmospherics Storage"
+	icon_state = "atmos_storage"
+	sound_env = SMALL_ENCLOSED
 
 /area/engineering/atmos/intake
 	name = "\improper Atmospherics Intake"
@@ -620,6 +715,8 @@
 /area/rnd/external
 	name = "\improper Research External Access"
 	icon_state = "research"
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = TRUE
 /area/rnd/hallway
 	name = "\improper Research Lower Hallway"
 	icon_state = "research"
@@ -757,6 +854,52 @@
 /area/crew_quarters/panic_shelter
 	name = "\improper Panic Shelter"
 
+/area/server
+	name = "\improper Research Server Room"
+	icon_state = "server"
+
+/area/storage/art
+	name = "Art Supply Storage"
+	icon_state = "storage"
+
+/area/storage/emergency_storage
+	req_access = list(access_emergency_storage)
+	icon_state = "emergencystorage"
+
+/area/storage/emergency_storage/emergency
+	name = "Starboard Emergency Storage"
+
+/area/storage/emergency_storage/emergency2
+	name = "Port Emergency Storage"
+
+/area/storage/emergency_storage/emergency3
+	name = "Central Emergency Storage"
+
+/area/storage/emergency_storage/emergency4
+	name = "Civilian Emergency Storage"
+
+/area/storage/emergency_storage/emergency5
+	name = "Dock Emergency Storage"
+
+/area/storage/emergency_storage/emergency6
+	name = "Cargo Emergency Storage"
+
+/area/storage/primary
+	name = "Primary Tool Storage"
+	icon_state = "primarystorage"
+
+/area/storage/surface_eva
+/area/storage/surface_eva/external
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = TRUE
+
+/area/storage/tech
+	name = "Technical Storage"
+	icon_state = "auxstorage"
+
+/area/storage/tools
+	name = "Auxiliary Tool Storage"
+	icon_state = "storage"
 
 
 //
@@ -852,8 +995,52 @@
 	name = "\improper Zaddat Suite"
 	icon_state = "Holodeck"
 
+// station
+
+/area/ai
+	name = "\improper AI Chamber"
+	icon_state = "ai_chamber"
+	ambience = AMBIENCE_AI
+
 /area/ai/foyer
 	name = "\improper AI Core Access"
+
+/area/ai_cyborg_station
+	name = "\improper Cyborg Station"
+	icon_state = "ai_cyborg"
+	sound_env = SMALL_ENCLOSED
+	ambience = AMBIENCE_AI
+
+/area/ai_monitored/storage/eva
+	name = "EVA Storage"
+	icon_state = "eva"
+
+/area/ai_server_room
+	name = "Messaging Server Room"
+	icon_state = "ai_server"
+	sound_env = SMALL_ENCLOSED
+	ambience = AMBIENCE_AI
+
+/area/ai_upload
+	name = "\improper AI Upload Chamber"
+	icon_state = "ai_upload"
+	ambience = AMBIENCE_AI
+
+/area/ai_upload_foyer
+	name = "AI Upload Access"
+	icon_state = "ai_foyer"
+	sound_env = SMALL_ENCLOSED
+	ambience = AMBIENCE_AI
+
+/area/bridge_hallway
+	name = "\improper Bridge Hallway"
+	icon_state = "bridge"
+
+/area/bridge/meeting_room
+	name = "\improper Heads of Staff Meeting Room"
+	icon_state = "bridge"
+	music = null
+	sound_env = MEDIUM_SOFTFLOOR
 
 /area/medical/virologyisolation
 	name = "\improper Virology Isolation"
@@ -895,13 +1082,48 @@
 /area/security/recstorage
 	name = "\improper Brig Recreation Storage"
 	icon_state = "brig"
+/area/security/nuke_storage
+	name = "\improper Vault"
+	icon_state = "nuke_storage"
 
 /area/engineering/atmos/backup
 	name = "\improper Backup Atmospherics"
+/area/engineering/break_room
+	name = "\improper Engineering Break Room"
+	icon_state = "engineering_break"
+	sound_env = MEDIUM_SOFTFLOOR
+/area/engineering/drone_fabrication
+	name = "\improper Engineering Drone Fabrication"
+	icon_state = "drone_fab"
+	sound_env = SMALL_ENCLOSED
+/area/engineering/engine_airlock
+	name = "\improper Engine Room Airlock"
+	icon_state = "engine"
+	holomap_color = HOLOMAP_AREACOLOR_AIRLOCK
 /area/engineering/engine_balcony
 	name = "\improper Engine Room Balcony"
+/area/engineering/engine_eva
+	name = "\improper Engine EVA"
+	icon_state = "engine_eva"
+/area/engineering/engine_room
+	name = "\improper Engine Room"
+	icon_state = "engine"
+	sound_env = LARGE_ENCLOSED
+/area/engineering/engine_smes
+	name = "\improper Engineering SMES"
+	icon_state = "engine_smes"
+	sound_env = SMALL_ENCLOSED
+/area/engineering/engineering_monitoring
+	name = "\improper Engineering Monitoring Room"
+	icon_state = "engine_monitoring"
+/area/engineering/foyer
+	name = "\improper Engineering Foyer"
+	icon_state = "engineering_foyer"
 /area/engineering/foyer_mezzenine
 	name = "\improper Engineering Mezzenine"
+/area/engineering/workshop
+	name = "\improper Engineering Workshop"
+	icon_state = "engineering_workshop"
 
 /area/hallway/station
 	icon_state = "hallC1"
@@ -1063,3 +1285,56 @@
 	name = "\improper Syndicate LC - Mining"
 	icon_state = "shuttle2"
 	base_turf = /turf/exterior/dirt
+
+// Telecommunications Satellite
+/area/tether/surfacebase/tcomms
+	name = "\improper Telecomms"
+	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg')
+
+/area/tether/surfacebase/tcomms/entrance
+	name = "\improper Telecomms Teleporter"
+	icon_state = "tcomsatentrance"
+
+/area/tether/surfacebase/tcomms/foyer
+	name = "\improper Telecomms Foyer"
+	icon_state = "tcomsatfoyer"
+
+/area/tether/surfacebase/tcomms/storage
+	name = "\improper Telecomms Storage"
+	icon_state = "tcomsatwest"
+
+/area/tether/surfacebase/tcomms/computer
+	name = "\improper Telecomms Control Room"
+	icon_state = "tcomsatcomp"
+
+/area/tether/surfacebase/tcomms/chamber
+	name = "\improper Telecomms Central Compartment"
+	icon_state = "tcomsatcham"
+
+/area/maintenance/substation/tcomms
+	name = "\improper Telecomms Substation"
+
+/area/maintenance/station/tcomms
+	name = "\improper Telecoms Maintenance"
+
+// Telecomms areas.
+/area/tcomfoyer
+	name = "\improper Telecomms Foyer"
+	icon_state = "tcomsatfoyer"
+	ambience = AMBIENCE_ENGINEERING
+
+/area/tcommsat
+	ambience = AMBIENCE_ENGINEERING
+
+/area/tcommsat/entrance
+	name = "\improper Telecomms Teleporter"
+	icon_state = "tcomsatentrance"
+
+/area/tcommsat/chamber
+	name = "\improper Telecomms Central Compartment"
+	icon_state = "tcomsatcham"
+
+/area/tcomsat
+	name = "\improper Telecomms Satellite"
+	icon_state = "tcomsatlob"
+	ambience = AMBIENCE_ENGINEERING
