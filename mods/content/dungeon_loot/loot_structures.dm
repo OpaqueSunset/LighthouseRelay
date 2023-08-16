@@ -27,7 +27,7 @@
 		/obj/item/storage/box,
 		/obj/item/storage/wallet,
 		/obj/item/clothing/shoes/galoshes,
-		/obj/item/clothing/shoes/black,
+		/obj/item/clothing/shoes/color/black,
 		/obj/item/clothing/shoes/dress,
 		/obj/item/clothing/shoes/dress/white,
 		/obj/item/clothing/gloves/thick/botany,

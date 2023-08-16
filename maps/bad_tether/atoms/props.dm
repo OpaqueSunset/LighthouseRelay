@@ -60,16 +60,29 @@
 #define CAMERA_CHANNEL_OUTSIDE "Outside"
 #define CAMERA_CHANNEL_EXPLORATION "Exploration"
 #define CAMERA_CHANNEL_XENOBIO "Xenobiology"
+#define CAMERA_CHANNEL_COMMAND "Command"
+#define CAMERA_CHANNEL_ENGINE  "Engine"
 
 //Tether-unique network cameras
 /obj/machinery/camera/network/tether
 	preset_channels =  list(CAMERA_CHANNEL_TETHER)
 
+/obj/machinery/camera/network/engine
+	preset_channels = list(CAMERA_CHANNEL_ENGINE)
+	initial_access = list(access_engine)
+
 /obj/machinery/camera/network/telecom
 	preset_channels =  list(CAMERA_CHANNEL_TCOMMS)
 
-/obj/machinery/camera/network/outside
-	preset_channels =  list(CAMERA_CHANNEL_OUTSIDE)
+/obj/machinery/camera/network/cargo
+	preset_channels = list(CAMERA_CHANNEL_SECURITY)
+
+/obj/machinery/camera/network/civilian
+	preset_channels = list(CAMERA_CHANNEL_SECURITY)
+
+/obj/machinery/camera/network/command
+	preset_channels = list(CAMERA_CHANNEL_COMMAND)
+	initial_access = list(access_heads)
 
 /obj/machinery/camera/network/exploration
 	preset_channels =  list(CAMERA_CHANNEL_EXPLORATION)
@@ -95,19 +108,6 @@
 		/area/turbolift/t_station/level2,
 		/area/turbolift/t_station/level3,
 		)
-
-/obj/structure/closet/wardrobe/grey/viva/WillContain()
-	return list(
-		/obj/structure/barricade/cutout/viva,
-		/obj/item/clothing/under/color/grey = 3,
-		/obj/item/clothing/shoes/black = 3,
-		/obj/item/clothing/head/soft/grey = 3,
-		/obj/item/clothing/mask/gas/wwii = 3,
-		/obj/item/storage/toolbox/mechanical = 3,
-		/obj/item/clothing/gloves/insulated/cheap = 3,
-		/obj/item/card/id/captains_spare/fakespare = 3,
-		/obj/item/soap/syndie = 3,
-		/obj/item/storage/box/mousetraps = 3)
 
 /obj/item/storage/box/beakers/measuring
 	name = "box of measuring cups"

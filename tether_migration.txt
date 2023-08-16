@@ -112,6 +112,8 @@
 
 /obj/item/chems/bucket : /obj/item/chems/glass/bucket{@OLD}
 /obj/item/tape_recorder : /obj/item/taperecorder{@OLD}
+/obj/item/tape/@SUBTYPES : /obj/item/magnetic_tape/@SUBTYPES{@OLD}
+/obj/item/tape/random : /obj/item/magnetic_tape/random{@OLD}
 
 /obj/item/phone : /obj/item/radio/phone{@OLD}
 
@@ -148,6 +150,7 @@
 /obj/item/cassette_tape/random : /obj/item/magnetic_tape/random{@OLD}
 
 /obj/item/autopsy_scanner : /obj/item/scanner/autopsy{@OLD}
+/obj/item/antibody_scanner : /obj/item/scanner/antibody{@OLD}
 /obj/item/analyzer/plant_analyzer : /obj/item/scanner/plant{@OLD}
 /obj/item/analyzer : /obj/item/scanner/gas{@OLD}
 /obj/item/healthanalyzer/@SUBTYPES : /obj/item/scanner/health/@SUBTYPES{@OLD}
@@ -290,8 +293,11 @@
 /obj/machinery/mecha_part_fabricator : /obj/machinery/fabricator/industrial{@OLD}
 /obj/machinery/r_n_d/protolathe : /obj/machinery/fabricator/protolathe{@OLD}
 /obj/machinery/bookbinder : /obj/machinery/fabricator/book{@OLD}
+/obj/machinery/organ_printer/flesh : /obj/machinery/fabricator/bioprinter{@OLD}
 
 /obj/machinery/fabricator/@SUBTYPES : /obj/machinery/fabricator/@SUBTYPES{@OLD; res_max_amount = @SKIP; speed = @SKIP}
+
+/obj/structure/reagent_dispensers/water_cooler/full : /obj/structure/reagent_dispensers/water_cooler
 
 /obj/item/radio/headset/headset_sec/alt : /obj/item/radio/headset/headset_sec/bowman{@OLD}
 
@@ -336,12 +342,16 @@
 /obj/item/clothing/accessory/storage/white_vest : /obj/item/clothing/accessory/storage/vest{@OLD}
 /obj/item/clothing/ears/earmuffs : /obj/item/clothing/head/earmuffs{@OLD}
 /obj/item/clothing/gloves/black : /obj/item/clothing/gloves/thick{@OLD}
+/obj/item/clothing/gloves/swat : /obj/item/clothing/gloves/thick/swat{@OLD}
 /obj/item/clothing/gloves/combat : /obj/item/clothing/gloves/thick/combat{@OLD}
 /obj/item/clothing/gloves/fyellow : /obj/item/clothing/gloves/insulated/cheap{@OLD}
 /obj/item/clothing/gloves/sterile/latex : /obj/item/clothing/gloves/latex{@OLD}
 /obj/item/clothing/gloves/sterile/nitrile : /obj/item/clothing/gloves/latex/nitrile{@OLD}
 /obj/item/clothing/gloves/yellow : /obj/item/clothing/gloves/insulated{@OLD}
+/obj/item/clothing/head/greenbandana : /obj/item/clothing/head/bandana/green{@OLD}
 /obj/item/clothing/head/helmet/space/anomaly : /obj/item/clothing/head/helmet/space/void/excavation{@OLD}
+/obj/item/clothing/head/helmet/bulletproof : /obj/item/clothing/head/helmet/ballistic{@OLD}
+/obj/item/clothing/head/helmet/laserproof : /obj/item/clothing/head/helmet/ablative{@OLD}
 /obj/item/clothing/suit/space/anomaly : /obj/item/clothing/suit/space/void/excavation{@OLD}
 /obj/item/clothing/suit/storage/hooded/wintercoat/@SUBTYPES : /obj/item/clothing/suit/storage/toggle/wintercoat/@SUBTYPES{@OLD}
 /obj/item/clothing/suit/storage/teshari/cloak/standard/rainbow : /obj/item/clothing/accessory/cloak/random{@OLD}
@@ -351,6 +361,7 @@
 /obj/item/clothing/suit/varsity/@SUBTYPES : /obj/item/clothing/suit/letterman/@SUBTYPES{@OLD}
 /obj/item/clothing/glasses/sunglasses/blindfold/@SUBTYPES : /obj/item/clothing/glasses/blindfold/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/tie/horrible : /obj/item/clothing/accessory/horrible{@OLD}
+/obj/item/clothing/shoes/black : /obj/item/clothing/shoes/color/black{@OLD}
 /obj/item/clothing/shoes/brown : /obj/item/clothing/shoes/color/brown{@OLD}
 /obj/item/clothing/shoes/white : /obj/item/clothing/shoes/color/white{@OLD}
 /obj/item/clothing/suit/armor/vest/alt : /obj/item/clothing/suit/armor/pcarrier/light{@OLD}
@@ -362,10 +373,13 @@
 /obj/item/clothing/gloves/arm_guard/@SUBTYPES : /obj/item/clothing/accessory/armguards/@SUBTYPES{@OLD}
 /obj/item/clothing/suit/armor/bulletproof/alt : /obj/item/clothing/suit/armor/bulletproof/prepared{@OLD}
 /obj/item/clothing/mask/gas/commando : /obj/item/clothing/mask/gas/syndicate{@OLD}
+/obj/item/clothing/shoes/boots/jackboots : /obj/item/clothing/shoes/jackboots{@OLD}
 /obj/item/clothing/shoes/boots/swat : /obj/item/clothing/shoes/jackboots/swat{@OLD}
 /obj/item/clothing/shoes/boots/tactical : /obj/item/clothing/shoes/jackboots/tactical{@OLD}
+/obj/item/clothing/shoes/boots/winter/@SUBTYPES : /obj/item/clothing/shoes/winterboots/@SUBTYPES{@OLD}
 /obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/under/avian_smock/@SUBTYPES{@OLD}
 /obj/item/clothing/under/avian_smock/medical : /obj/item/clothing/under/avian_smock/utility{@OLD}
+/obj/item/clothing/under/rank/@SUBTYPES : /obj/item/clothing/under/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/legguards/combat : /obj/item/clothing/accessory/legguards/riot{@OLD}
 /obj/item/clothing/accessory/armguards/combat : /obj/item/clothing/accessory/armguards/riot{@OLD}
 /obj/item/clothing/accessory/armguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
@@ -477,8 +491,12 @@
 /obj/machinery/station_map : /obj/machinery/holomap{@OLD}
 /obj/machinery/requests_console/@SUBTYPES : /obj/machinery/network/requests_console/@SUBTYPES{@OLD; departmentType = @SKIP}
 /obj/machinery/camera/network/research{network = list("Xenobiology")} : /obj/machinery/camera/network/research/xenobio{@OLD; network = @SKIP}
+/obj/machinery/camera/network/northern_star : /obj/machinery/camera/network/tether{@OLD}
 
 /obj/item/duct_tape_piece : /obj/item/duct_tape{@OLD}
+/obj/item/toy/katana : /obj/item/sword/katana/toy{@OLD}
+/obj/item/toy/cultsword : /obj/item/sword/cult_toy{@OLD}
+/obj/item/toy/nanotrasenballoon : /obj/item/toy/balloon/nanotrasen{@OLD}
 /obj/item/toy/syndicateballoon : /obj/item/toy/balloon{@OLD}
 /obj/item/rig_module/device/plasmacutter : /obj/item/rig_module/mounted/plasmacutter{@OLD}
 

@@ -11,15 +11,11 @@
 		LAZYADD(decals, image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]"))
 	. = ..()
 
-/turf/exterior/open/sky/virgo3b
 /turf/simulated/floor/carpet/bcarpet
 /turf/simulated/floor/carpet/oracarpet
 /turf/simulated/floor/carpet/purcarpet
 /turf/simulated/floor/carpet/sblucarpet
 /turf/simulated/floor/carpet/turcarpet
-/turf/simulated/floor/looking_glass
-/turf/simulated/floor/looking_glass/center
-/turf/simulated/floor/looking_glass/optional
 /turf/simulated/floor/maglev
 /turf/simulated/floor/tiled/asteroid_steel/airless
 /turf/simulated/floor/tiled/steel

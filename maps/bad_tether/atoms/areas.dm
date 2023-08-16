@@ -1039,7 +1039,7 @@
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
-	music = null
+	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/medical/virologyisolation
@@ -1333,6 +1333,10 @@
 /area/tcommsat/chamber
 	name = "\improper Telecomms Central Compartment"
 	icon_state = "tcomsatcham"
+
+/area/tcommsat/computer
+	name = "\improper Telecomms Control Room"
+	icon_state = "tcomsatcomp"
 
 /area/tcomsat
 	name = "\improper Telecomms Satellite"
