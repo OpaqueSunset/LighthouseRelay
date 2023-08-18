@@ -138,6 +138,13 @@
 	name = "\improper Internal Affairs"
 	icon_state = "law"
 
+/area/maintenance
+	area_flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = TUNNEL_ENCLOSED
+	turf_initializer = /decl/turf_initializer/maintenance
+	forced_ambience = list('sound/ambience/maintambience.ogg')
+	req_access = list(access_maint_tunnels)
+	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
 /area/maintenance/bar
 	name = "Bar Maintenance"
 	icon_state = "maint_bar"

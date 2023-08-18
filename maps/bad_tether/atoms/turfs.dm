@@ -137,3 +137,16 @@
 	name = "sand transit"
 	// icon = 'icons/turf/transit_vr.dmi' // DOES NOT EXIST CURRENTLY
 	icon_state = "desert_ns"
+
+// originally /turf/simulated/floor/outdoors/rocks.
+// todo: port polaris rock turf sprite
+// pr this upstream
+/turf/exterior/rocks
+	name = "ground"
+	icon = 'icons/turf/exterior/barren.dmi'
+	icon_edge_layer = EXT_EDGE_BARREN
+
+/turf/exterior/rocks/Initialize()
+	if(prob(20))
+		LAZYADD(decals, image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]"))
+	. = ..()
