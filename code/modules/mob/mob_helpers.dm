@@ -126,7 +126,7 @@ var/global/list/global/organ_rel_size = list(
 		. = BP_HEAD
 	if(ishuman(target) && !base_zone_only)
 		var/mob/living/carbon/human/H = target
-		. = H.species.get_limb_from_zone(.)
+		. = H.get_bodytype().get_limb_from_zone(.)
 
 // Returns zone with a certain probability. If the probability fails, or no zone is specified, then a random body part is chosen.
 // Do not use this if someone is intentionally trying to hit a specific body part.
@@ -400,13 +400,6 @@ var/global/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			else
 				hud_used.action_intent.icon_state = I_HELP
 
-/proc/is_blind(A)
-	if(istype(A, /mob/living/carbon))
-		var/mob/living/carbon/C = A
-		if(C.sdisabilities & BLINDED|| C.blinded)
-			return 1
-	return 0
-
 /mob/proc/welding_eyecheck()
 	return
 
@@ -471,7 +464,7 @@ var/global/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 		communicate(/decl/communication_channel/dsay, C || O, message, /decl/dsay_communication/direct)
 
 /mob/proc/switch_to_camera(var/obj/machinery/camera/C)
-	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || blinded))
+	if (!C.can_use() || stat || (get_dist(C, src) > 1 || machine != src || is_blind()))
 		return 0
 	check_eye(src)
 	return 1
@@ -721,17 +714,19 @@ var/global/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	var/obj/item/I = get_active_hand()
 	if(IS_PEN(I))
 		return I
-
 	//Look if we're holding a pen elsewhere
 	for(I in get_held_items())
 		if(IS_PEN(I))
 			return I
-
 	//Try looking if we got a rig module with integrated pen
-	var/obj/item/rig/R = get_equipped_item(slot_back_str)
-	if(istype(R))
-		var/obj/item/rig_module/device/pen/P = locate(/obj/item/rig_module/device/pen) in R.installed_modules
-		if(!R.offline && P)
-			return P.device
-
-	//Base mob only has slot_back and slot_wear_mask, so not much else to check
+	var/obj/item/rig/rig = get_rig()
+	if(rig && !rig.offline)
+		var/pen = locate(/obj/item/rig_module/device/pen) in rig.installed_modules
+		if(pen)
+			return pen
+	//Look for other slots
+	var/static/list/PEN_CHECK_SLOTS = list(slot_l_ear_str, slot_r_ear_str, slot_l_store_str, slot_r_store_str, slot_s_store_str)
+	for(var/slot in PEN_CHECK_SLOTS)
+		I = get_equipped_item(slot)
+		if(IS_PEN(I))
+			return I

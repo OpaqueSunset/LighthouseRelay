@@ -1,4 +1,10 @@
 /mob/living/Initialize()
+
+	original_fingerprint_seed = sequential_id(/mob)
+	fingerprint               = md5(num2text(original_fingerprint_seed))
+	original_genetic_seed     = sequential_id(/mob)
+	unique_enzymes            = md5(num2text(original_genetic_seed))
+
 	. = ..()
 	if(stat == DEAD)
 		add_to_dead_mob_list()
@@ -330,7 +336,7 @@ default behaviour is:
 
 /mob/living/proc/get_organ_target()
 	var/mob/shooter = src
-	var/t = shooter.zone_sel?.selecting
+	var/t = shooter.get_target_zone()
 	if ((t in list( BP_EYES, BP_MOUTH )))
 		t = BP_HEAD
 	var/obj/item/organ/external/def_zone = ran_zone(t, target = src)
@@ -400,12 +406,11 @@ default behaviour is:
 
 	// shut down ongoing problems
 	radiation = 0
-	bodytemperature = T20C
+	bodytemperature = get_species()?.body_temperature || initial(bodytemperature)
 	sdisabilities = 0
 	disabilities = 0
 
-	// fix blindness and deafness
-	blinded =     0
+	// fix all status conditions including blind/deaf
 	clear_status_effects()
 
 	heal_overall_damage(getBruteLoss(), getFireLoss())
@@ -734,6 +739,9 @@ default behaviour is:
 	if(auras)
 		for(var/a in auras)
 			remove_aura(a)
+	// done in this order so that icon updates aren't triggered once all our organs are obliterated
+	delete_inventory(TRUE)
+	delete_organs()
 	return ..()
 
 /mob/living/proc/melee_accuracy_mods()
@@ -763,7 +771,13 @@ default behaviour is:
 		. -= 3
 
 /mob/living/can_drown()
-	return TRUE
+	if(get_internals())
+		return FALSE
+	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
+	if(istype(mask) && mask.filters_water())
+		return FALSE
+	var/obj/item/organ/internal/lungs/L = get_organ(BP_LUNGS, /obj/item/organ/internal/lungs)
+	return (!L || L.can_drown())
 
 /mob/living/handle_drowning()
 	var/turf/T = get_turf(src)
@@ -788,19 +802,23 @@ default behaviour is:
 	return TRUE // Presumably chemical smoke can't be breathed while you're underwater.
 
 /mob/living/fluid_act(var/datum/reagents/fluids)
-	for(var/thing in get_equipped_items(TRUE))
-		if(isnull(thing)) continue
-		var/atom/movable/A = thing
-		if(A.simulated)
-			A.fluid_act(fluids)
-	if(fluids.total_volume)
-		var/datum/reagents/touching_reagents = get_contact_reagents()
-		if(touching_reagents)
-			var/saturation =  min(fluids.total_volume, round(mob_size * 1.5 * reagent_permeability()) - touching_reagents.total_volume)
-			if(saturation > 0)
-				fluids.trans_to_holder(touching_reagents, saturation)
-	if(fluids.total_volume)
-		. = ..()
+	..()
+	if(QDELETED(src) || !fluids?.total_volume)
+		return
+	fluids.touch_mob(src)
+	if(QDELETED(src) || !fluids.total_volume)
+		return
+	for(var/atom/movable/A as anything in get_equipped_items(TRUE))
+		if(!A.simulated)
+			continue
+		A.fluid_act(fluids)
+		if(QDELETED(src) || !fluids.total_volume)
+			return
+	var/datum/reagents/touching_reagents = get_contact_reagents()
+	if(touching_reagents)
+		var/saturation =  min(fluids.total_volume, round(mob_size * 1.5 * reagent_permeability()) - touching_reagents.total_volume)
+		if(saturation > 0)
+			fluids.trans_to_holder(touching_reagents, saturation)
 
 /mob/living/proc/nervous_system_failure()
 	return FALSE
@@ -829,20 +847,26 @@ default behaviour is:
 /mob/living/proc/get_max_nutrition()
 	return 500
 
-/mob/living/proc/get_nutrition()
-	return get_max_nutrition()
+/mob/living/proc/set_nutrition(var/amt)
+	nutrition = clamp(amt, 0, get_max_nutrition())
+
+/mob/living/proc/get_nutrition(var/amt)
+	return nutrition
 
 /mob/living/proc/adjust_nutrition(var/amt)
-	return
+	set_nutrition(get_nutrition() + amt)
 
 /mob/living/proc/get_max_hydration()
 	return 500
 
-/mob/living/proc/get_hydration()
-	return get_max_hydration()
+/mob/living/proc/get_hydration(var/amt)
+	return hydration
+
+/mob/living/proc/set_hydration(var/amt)
+	hydration = clamp(amt, 0, get_max_hydration())
 
 /mob/living/proc/adjust_hydration(var/amt)
-	return
+	set_hydration(get_hydration() + amt)
 
 /mob/living/proc/has_chemical_effect(var/chem, var/threshold_over, var/threshold_under)
 	var/val = GET_CHEMICAL_EFFECT(src, chem)
@@ -861,9 +885,6 @@ default behaviour is:
 	if(!isnull(old_magnitude))
 		magnitude = min(old_magnitude, magnitude)
 	LAZYSET(chem_effects, effect, magnitude)
-
-/mob/living/proc/adjust_immunity(var/amt)
-	return
 
 /mob/living/handle_reading_literacy(var/mob/user, var/text_content, var/skip_delays, var/digital = FALSE)
 	if(skill_check(SKILL_LITERACY, SKILL_ADEPT))
@@ -1104,4 +1125,51 @@ default behaviour is:
 
 /mob/living/get_speech_bubble_state_modifier()
 	return isSynthetic() ? "synth" : ..()
+
+/mob/living/proc/is_on_special_ability_cooldown()
+	return world.time < next_special_ability
+
+/mob/living/proc/set_special_ability_cooldown(var/amt)
+	next_special_ability = max(next_special_ability, world.time+amt)
+
+/mob/living/proc/get_seconds_until_next_special_ability_string()
+	return ticks2readable(next_special_ability - world.time)
+
+//Get species or synthetic temp if the mob is a FBP/robot. Used when a synthetic mob is exposed to a temp check.
+//Essentially, used when a synthetic mob should act diffferently than a normal type mob.
+/mob/living/get_temperature_threshold(var/threshold)
+	if(isSynthetic())
+		switch(threshold)
+			if(COLD_LEVEL_1)
+				return SYNTH_COLD_LEVEL_1
+			if(COLD_LEVEL_2)
+				return SYNTH_COLD_LEVEL_2
+			if(COLD_LEVEL_3)
+				return SYNTH_COLD_LEVEL_3
+			if(HEAT_LEVEL_1)
+				return SYNTH_HEAT_LEVEL_1
+			if(HEAT_LEVEL_2)
+				return SYNTH_HEAT_LEVEL_2
+			if(HEAT_LEVEL_3)
+				return SYNTH_HEAT_LEVEL_3
+			else
+				CRASH("synthetic get_temperature_threshold() called with invalid threshold value.")
+	var/decl/species/my_species = get_species()
+	if(my_species)
+		return my_species.get_species_temperature_threshold(threshold)
+	return ..()
+
+/mob/living/proc/handle_some_updates()
+	//We are long dead, or we're junk mobs spawned like the clowns on the clown shuttle
+	return life_tick <= 5 || !timeofdeath || (timeofdeath >= 5 && (world.time-timeofdeath) <= 10 MINUTES)
+
+/mob/living/get_unique_enzymes()
+	return unique_enzymes
+
+/mob/living/get_blood_type()
+	return blood_type
+
+/mob/living/proc/get_mob_footstep(var/footstep_type)
+	var/decl/species/my_species = get_species()
+	return my_species?.get_footstep(src, footstep_type)
 

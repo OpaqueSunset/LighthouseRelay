@@ -24,11 +24,26 @@
 		ARMOR_BULLET = ARMOR_BALLISTIC_PISTOL
 		)
 	ability_cooldown = 2 MINUTES
+	ai = /datum/ai/giant_crab
+
 	var/mob/living/carbon/human/victim //the human we're grabbing
 	var/grab_duration = 3 //duration of disable in life ticks to simulate a grab
 	var/grab_damage = 6 //brute damage before reductions, per crab's life tick
 	var/list/grab_desc = list("thrashes", "squeezes", "crushes")
 	var/continue_grab_prob = 35 //probability that a successful grab will be extended by one life tick
+
+/datum/ai/giant_crab
+	expected_type = /mob/living/simple_animal/hostile/retaliate/giant_crab
+
+/datum/ai/giant_crab/do_process(time_elapsed)
+	. = ..()
+	var/mob/living/simple_animal/hostile/retaliate/giant_crab/crab = body
+	if((crab.health > crab.maxHealth / 1.5) && length(crab.enemies) && prob(10))
+		if(crab.victim)
+			crab.release_grab()
+		crab.enemies = list()
+		crab.LoseTarget()
+		crab.visible_message(SPAN_NOTICE("\The [crab] lowers its pincer."))
 
 /obj/item/natural_weapon/pincers/giant
 	force = 15
@@ -46,18 +61,6 @@
 	. = ..()
 	if(. && ishuman(user))
 		reflect_unarmed_damage(user, BRUTE, "armoured carapace")
-
-/mob/living/simple_animal/hostile/retaliate/giant_crab/Life()
-	. = ..()
-	if(!.)
-		return
-
-	if((health > maxHealth / 1.5) && enemies.len && prob(10))
-		if(victim)
-			release_grab()
-		enemies = list()
-		LoseTarget()
-		visible_message("<span class='notice'>\The [src] lowers its pincer.</span>")
 
 /mob/living/simple_animal/hostile/retaliate/giant_crab/do_delayed_life_action()
 	..()
@@ -77,20 +80,13 @@
 				visible_message(SPAN_MFAUNA("\The [src] tightens its grip on \the [victim]!"))
 				return
 
-		if(!victim && can_perform_ability(H))
+		if(!victim && can_act() && !is_on_special_ability_cooldown() && Adjacent(H))
 			events_repository.register(/decl/observ/destroyed, victim, src, .proc/release_grab)
 			victim = H
 			SET_STATUS_MAX(H, STAT_WEAK, grab_duration)
 			SET_STATUS_MAX(H, STAT_STUN, grab_duration)
 			visible_message(SPAN_MFAUNA("\The [src] catches \the [victim] in its powerful pincer!"))
 			stop_automation = TRUE
-
-/mob/living/simple_animal/hostile/retaliate/giant_crab/can_perform_ability(mob/living/carbon/human/H)
-	. = ..()
-	if(!.)
-		return FALSE
-	if(!Adjacent(H))
-		return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/giant_crab/proc/process_grab()
 	if(victim && !incapacitated())
@@ -105,6 +101,6 @@
 		visible_message(SPAN_NOTICE("\The [src] releases its grip on \the [victim]!"))
 		events_repository.unregister(/decl/observ/destroyed, victim)
 		victim = null
-	cooldown_ability(ability_cooldown)
+	set_special_ability_cooldown(ability_cooldown)
 	stop_automation = FALSE
 	grab_damage = initial(grab_damage)

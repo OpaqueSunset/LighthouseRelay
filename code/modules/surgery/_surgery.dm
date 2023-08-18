@@ -205,16 +205,15 @@ var/global/list/surgery_tool_exception_cache = list()
 		return FALSE
 
 	// Check for multi-surgery drifting.
-	var/zone = user.zone_sel?.selecting
+	var/zone = user.get_target_zone()
 	if(!zone)
 		return FALSE // Erroneous mob interaction
 
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		if(length(LAZYACCESS(H.species.limb_mapping, zone)) > 1)
-			zone = input("Which bodypart do you wish to operate on?", "Non-standard surgery") as null|anything in H.species.limb_mapping[zone]
-			if(!zone)
-				return FALSE
+	var/decl/bodytype/root_bodytype = M.get_bodytype()
+	if(root_bodytype && length(LAZYACCESS(root_bodytype.limb_mapping, zone)) > 1)
+		zone = input("Which bodypart do you wish to operate on?", "Non-standard surgery") as null|anything in root_bodytype.limb_mapping[zone]
+		if(!zone)
+			return FALSE
 
 	if(zone in global.surgeries_in_progress["\ref[M]"])
 		to_chat(user, SPAN_WARNING("You can't operate on this area while surgery is already in progress."))
@@ -304,7 +303,7 @@ var/global/list/surgery_tool_exception_cache = list()
 	else
 		. = OPERATE_DENY
 	if(. != OPERATE_DENY && M == user)
-		var/hitzone = check_zone(user.zone_sel.selecting, M)
+		var/hitzone = check_zone(user.get_target_zone(), M)
 		var/list/badzones = list(BP_HEAD)
 		var/obj/item/organ/external/E = GET_EXTERNAL_ORGAN(M, M.get_active_held_item_slot())
 		if(E)

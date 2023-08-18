@@ -3,12 +3,12 @@
 	desc = "Stick 'em up!"
 	icon = 'icons/effects/Targeted.dmi'
 	icon_state = "locking"
-	anchored = 1
-	density = 0
-	opacity = 0
+	anchored = TRUE
+	density = FALSE
+	opacity = FALSE
 	layer = ABOVE_HUMAN_LAYER
 	simulated = 0
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 
 	var/mob/living/aiming_at   // Who are we currently targeting, if anyone?
 	var/obj/item/aiming_with   // What are we targeting with?
@@ -173,7 +173,7 @@
 	LAZYDISTINCTADD(aiming_at.aimed_at_by, src)
 	toggle_active(1)
 	locked = 0
-	
+
 	update_icon()
 	lock_time = world.time + 35
 	events_repository.register(/decl/observ/moved, owner, src, /obj/aiming_overlay/proc/update_aiming)

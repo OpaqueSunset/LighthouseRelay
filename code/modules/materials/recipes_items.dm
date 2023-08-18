@@ -222,13 +222,13 @@
 /datum/stack_recipe/prosthetic
 	difficulty = 0
 	var/prosthetic_species = SPECIES_HUMAN
-	var/prosthetic_model = /decl/prosthetics_manufacturer/wooden
+	var/prosthetic_model = /decl/bodytype/prosthetic/wooden
 
 /datum/stack_recipe/prosthetic/spawn_result(mob/user, location, amount)
 	var/obj/item/organ/external/limb = ..()
 	if(limb)
 		limb.set_species(prosthetic_species)
-		limb.robotize(prosthetic_model, apply_material = use_material, check_species = prosthetic_species)
+		limb.set_bodytype(prosthetic_model, override_material = use_material)
 		limb.status |= ORGAN_CUT_AWAY
 	return limb
 
@@ -267,6 +267,10 @@
 /datum/stack_recipe/cloak
 	title = "cloak"
 	result_type = /obj/item/clothing/accessory/cloak/hide
+
+/datum/stack_recipe/banner
+	title = "banner"
+	result_type = /obj/item/banner
 
 /datum/stack_recipe/shoes
 	title = "shoes"

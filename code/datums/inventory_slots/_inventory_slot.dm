@@ -133,12 +133,14 @@
 		return FALSE
 	return TRUE
 
-/datum/inventory_slot/proc/can_equip_to_slot(var/mob/user, var/obj/item/prop, var/disable_warning)
-	return (!_holding && prop && slot_id && prop_can_fit_in_slot(prop))
+/datum/inventory_slot/proc/can_equip_to_slot(var/mob/user, var/obj/item/prop, var/disable_warning, var/ignore_equipped)
+	return ((!_holding || (ignore_equipped || _holding == prop)) && prop && slot_id && prop_can_fit_in_slot(prop))
 
 /datum/inventory_slot/proc/prop_can_fit_in_slot(var/obj/item/prop)
 	return (isnull(requires_slot_flags) || (requires_slot_flags & prop.slot_flags))
 
 /datum/inventory_slot/proc/get_examined_string(mob/owner, mob/user, distance, hideflags, decl/pronouns/pronouns)
 	if(_holding)
+		if(user == owner)
+			return "You are wearing [_holding.get_examine_line()]."
 		return "[pronouns.He] [pronouns.is] wearing [_holding.get_examine_line()]."

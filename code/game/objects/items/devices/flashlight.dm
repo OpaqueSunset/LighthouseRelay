@@ -93,7 +93,7 @@
 
 /obj/item/flashlight/attack(mob/living/M, mob/living/user)
 	add_fingerprint(user)
-	if(on && user.zone_sel.selecting == BP_EYES)
+	if(on && user.get_target_zone() == BP_EYES)
 
 		if((MUTATION_CLUMSY in user.mutations) && prob(50))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
@@ -107,13 +107,14 @@
 					return
 
 			var/obj/item/organ/vision
-			if(!H.species.vision_organ || !H.should_have_organ(H.species.vision_organ))
+			var/decl/bodytype/root_bodytype = H.get_bodytype()
+			if(!root_bodytype.vision_organ || !H.should_have_organ(root_bodytype.vision_organ))
 				to_chat(user, "<span class='warning'>You can't find anything on [H] to direct [src] into!</span>")
 				return
 
-			vision = GET_INTERNAL_ORGAN(H, H.species.vision_organ)
+			vision = GET_INTERNAL_ORGAN(H, root_bodytype.vision_organ)
 			if(!vision)
-				vision = H.species.has_organ[H.species.vision_organ]
+				vision = root_bodytype.has_organ[root_bodytype.vision_organ]
 				var/decl/pronouns/G = H.get_pronouns()
 				to_chat(user, "<span class='warning'>\The [H] is missing [G.his] [initial(vision.name)]!</span>")
 				return
@@ -136,7 +137,7 @@
 
 	if(!BP_IS_PROSTHETIC(vision))
 
-		if(vision.owner.stat == DEAD || H.blinded)	//mob is dead or fully blind
+		if(vision.owner.stat == DEAD || H.is_blind())	//mob is dead or fully blind
 			to_chat(user, "<span class='warning'>\The [H]'s pupils do not react to the light!</span>")
 			return
 		if(MUTATION_XRAY in H.mutations)
@@ -149,7 +150,7 @@
 			to_chat(user, "<span class='notice'>There's visible lag between left and right pupils' reactions.</span>")
 
 		var/static/list/pinpoint = list(
-			/decl/material/liquid/painkillers = 5,
+			/decl/material/liquid/painkillers/strong = 5,
 			/decl/material/liquid/amphetamines = 1
 		)
 		var/static/list/dilating = list(

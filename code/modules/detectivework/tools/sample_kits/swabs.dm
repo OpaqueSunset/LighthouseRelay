@@ -6,7 +6,7 @@
 	evidence_type = "trace"
 	evidence_path = /obj/item/forensics/sample/swab
 	possible_evidence_types = list(
-		/datum/forensics/gunshot_residue, 
+		/datum/forensics/gunshot_residue,
 		/datum/forensics/trace_dna,
 		/datum/forensics/blood_dna
 	)
@@ -26,13 +26,14 @@
 		user.visible_message(SPAN_WARNING("\The [user] tried to take a swab sample from \the [H], but they moved away."))
 		return
 
-	if(user.zone_sel.selecting == BP_MOUTH)
+	if(user.get_target_zone() == BP_MOUTH)
 		var/cover = H.get_covering_equipped_item(SLOT_FACE)
 		if(cover)
 			to_chat(user, SPAN_WARNING("\The [H]'s [cover] is in the way."))
 			return
 
-		if(!H.dna || !H.dna.unique_enzymes)
+		var/unique_enzymes = H.get_unique_enzymes()
+		if(!unique_enzymes)
 			to_chat(user, SPAN_WARNING("They don't seem to have DNA!"))
 			return
 
@@ -42,13 +43,13 @@
 
 		user.visible_message(SPAN_NOTICE("[user] swabs \the [H]'s mouth for a saliva sample."))
 		var/datum/forensics/trace_dna/trace = new()
-		trace.data = list(H.dna.unique_enzymes)
+		trace.data = list(unique_enzymes)
 		var/obj/item/forensics/sample/swab/S = new(get_turf(user))
 		S.merge_evidence_list(list(trace))
 		S.update_icon()
 		user.put_in_hands(S)
 	else
-		var/zone = user.zone_sel.selecting
+		var/zone = user.get_target_zone()
 		if(!H.has_organ(zone))
 			to_chat(user, SPAN_WARNING("They don't have that part!"))
 			return
@@ -79,7 +80,7 @@
 	icon = 'icons/obj/forensics.dmi'
 	icon_state = "swab"
 	possible_evidence_types = list(
-		/datum/forensics/gunshot_residue, 
+		/datum/forensics/gunshot_residue,
 		/datum/forensics/trace_dna,
 		/datum/forensics/blood_dna
 	)

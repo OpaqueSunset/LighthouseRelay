@@ -9,11 +9,7 @@
 // External organ procs:
 // Does this bodypart count as a modular limb, and if so, what kind?
 /obj/item/organ/external/proc/get_modular_limb_category()
-	. = MODULAR_BODYPART_INVALID
-	if(BP_IS_PROSTHETIC(src) && model)
-		var/decl/prosthetics_manufacturer/manufacturer = GET_DECL(model)
-		if(!isnull(manufacturer?.modular_prosthetic_tier))
-			. = manufacturer.modular_prosthetic_tier
+	return isnull(bodytype.modular_limb_tier) ? MODULAR_BODYPART_INVALID : bodytype.modular_limb_tier
 
 // Checks if a limb could theoretically be removed.
 // Note that this does not currently bother checking if a child or internal organ is vital.
@@ -31,7 +27,7 @@
 
 // Note that this proc is checking if the organ can be attached -to-, not attached itself.
 /obj/item/organ/external/proc/can_attach_modular_limb_here(var/mob/living/carbon/human/user)
-	var/list/limb_data = user?.species?.has_limbs[organ_tag]
+	var/list/limb_data = user?.get_bodytype()?.has_limbs[organ_tag]
 	if(islist(limb_data) && limb_data["has_children"] > 0)
 		. = (LAZYLEN(children) < limb_data["has_children"])
 
@@ -70,7 +66,7 @@
 		if(length(limb.children))
 			. -= limb.children
 
-// Called in robotize(), replaced() and removed() to update our modular limb verbs.
+// Called in bodytype.apply_bodytype_organ_modifications(), replaced() and removed() to update our modular limb verbs.
 /mob/living/carbon/human/proc/refresh_modular_limb_verbs()
 	if(length(get_modular_limbs(return_first_found = TRUE, validate_proc = /obj/item/organ/external/proc/can_attach_modular_limb_here)))
 		verbs |= .proc/attach_limb_verb
@@ -83,7 +79,7 @@
 
 // Proc helper for attachment verb.
 /mob/living/carbon/human/proc/check_can_attach_modular_limb(var/obj/item/organ/external/E)
-	if(world.time < last_special + (2 SECONDS) || get_active_hand() != E)
+	if(is_on_special_ability_cooldown() || get_active_hand() != E)
 		return FALSE
 	if(incapacitated() || restrained())
 		to_chat(src, SPAN_WARNING("You can't do that in your current state!"))
@@ -114,7 +110,7 @@
 
 // Proc helper for detachment verb.
 /mob/living/carbon/human/proc/check_can_detach_modular_limb(var/obj/item/organ/external/E)
-	if(world.time < last_special + (2 SECONDS))
+	if(is_on_special_ability_cooldown())
 		return FALSE
 	if(incapacitated() || restrained())
 		to_chat(src, SPAN_WARNING("You can't do that in your current state!"))
@@ -148,7 +144,7 @@
 	if(!check_can_attach_modular_limb(E))
 		return FALSE
 
-	last_special = world.time
+	set_special_ability_cooldown(2 SECONDS)
 	drop_from_inventory(E)
 	src.add_organ(E)
 
@@ -182,8 +178,8 @@
 	if(!check_can_detach_modular_limb(E))
 		return FALSE
 
-	last_special = world.time
-	remove_organ(E)
+	set_special_ability_cooldown(2 SECONDS)
+	remove_organ(E, update_icon = TRUE)
 	E.dropInto(loc)
 	put_in_hands(E)
 	var/decl/pronouns/G = get_pronouns()

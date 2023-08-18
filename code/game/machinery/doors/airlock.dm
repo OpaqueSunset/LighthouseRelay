@@ -91,9 +91,6 @@ var/global/list/airlock_overlays = list()
 /obj/machinery/door/airlock/proc/get_window_material()
 	return GET_DECL(window_material)
 
-/obj/machinery/door/airlock/get_codex_value()
-	return "airlock"
-
 /obj/machinery/door/airlock/Process()
 	if(main_power_lost_until > 0 && world.time >= main_power_lost_until)
 		regainMainPower()
@@ -804,7 +801,7 @@ About the new airlock wires panel:
 	else if((stat & (BROKEN|NOPOWER)) && istype(user, /mob/living/simple_animal))
 		var/mob/living/simple_animal/A = user
 		var/obj/item/I = A.get_natural_weapon()
-		if(I.force >= 10)
+		if(I?.force >= 10)
 			if(density)
 				visible_message(SPAN_DANGER("\The [A] forces \the [src] open!"))
 				open(1)
@@ -869,7 +866,7 @@ About the new airlock wires panel:
 	if(moved)
 		spark_at(da, amount=5, cardinal_only = TRUE)
 	else
-		da.anchored = 1
+		da.anchored = TRUE
 	da.state = 1
 	da.created_name = name
 	da.update_icon()

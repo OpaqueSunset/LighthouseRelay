@@ -87,7 +87,7 @@ var/global/list/time_prefs_fixed = list()
 	real_name = get_random_name()
 
 	var/decl/species/species = get_species_by_key(global.using_map.default_species)
-	b_type = pickweight(species.blood_types)
+	blood_type = pickweight(species.blood_types)
 
 	if(client)
 		if(IsGuestKey(client.key))
@@ -344,8 +344,11 @@ var/global/list/time_prefs_fixed = list()
 	// Sanitizing rather than saving as someone might still be editing when copy_to occurs.
 	player_setup.sanitize_setup()
 	character.personal_aspects = list()
-	character.change_species(species)
-	character.set_bodytype((character.species.get_bodytype_by_name(bodytype) || character.species.default_bodytype), FALSE)
+	var/decl/bodytype/new_bodytype = get_bodytype_decl()
+	if(species == character.get_species_name())
+		character.set_bodytype(new_bodytype)
+	else
+		character.change_species(species, new_bodytype)
 
 	if(be_random_name)
 		var/decl/cultural_info/culture = GET_DECL(cultural_info[TAG_CULTURE])
@@ -362,7 +365,7 @@ var/global/list/time_prefs_fixed = list()
 	character.fully_replace_character_name(real_name)
 
 	character.set_gender(gender)
-	character.b_type = b_type
+	character.blood_type = blood_type
 
 	character.eye_colour = eye_colour
 
@@ -409,6 +412,11 @@ var/global/list/time_prefs_fixed = list()
 
 	if(LAZYLEN(appearance_descriptors))
 		character.appearance_descriptors = appearance_descriptors.Copy()
+
+	if(character.dna)
+		character.dna.ready_dna(character)
+		if(client.prefs?.blood_type)
+			character.dna.b_type = client.prefs.blood_type
 
 	character.force_update_limbs()
 	character.update_mutations(0)

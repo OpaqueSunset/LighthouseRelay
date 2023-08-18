@@ -100,7 +100,7 @@
 
 /obj/structure/fire_source/fluid_act(datum/reagents/fluids)
 	. = ..()
-	if(fluids.total_volume > 0)
+	if(!QDELETED(src) && fluids?.total_volume)
 		take_reagents(fluids)
 
 /obj/structure/fire_source/explosion_act()
@@ -139,7 +139,7 @@
 
 /obj/structure/fire_source/attack_hand(var/mob/user)
 
-	if(length(contents) && user.check_dexterity(DEXTERITY_GRIP, TRUE))
+	if(length(contents) && user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		var/obj/item/removing = pick(contents)
 		removing.dropInto(loc)
 		user.put_in_hands(removing)

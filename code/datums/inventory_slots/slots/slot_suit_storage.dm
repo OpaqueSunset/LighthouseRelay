@@ -8,7 +8,7 @@
 /datum/inventory_slot/suit_storage/update_overlay(var/mob/living/user, var/obj/item/prop, var/redraw_mob = TRUE)
 	user.update_inv_s_store(redraw_mob)
 
-/datum/inventory_slot/suit_storage/can_equip_to_slot(var/mob/user, var/obj/item/prop, var/disable_warning)
+/datum/inventory_slot/suit_storage/can_equip_to_slot(var/mob/user, var/obj/item/prop, var/disable_warning, var/ignore_equipped)
 	. = ..()
 	if(.)
 		// They need a suit to use suit storage.
@@ -24,4 +24,6 @@
 
 /datum/inventory_slot/suit_storage/get_examined_string(mob/owner, mob/user, distance, hideflags, decl/pronouns/pronouns)
 	if(_holding && !(hideflags & HIDESUITSTORAGE))
+		if(user == owner)
+			return "[.]\nYou are carrying [_holding.get_examine_line()] on your [_holding.name]."
 		return "[.]\n[pronouns.He] [pronouns.is] carrying [_holding.get_examine_line()] on [pronouns.his] [_holding.name]."

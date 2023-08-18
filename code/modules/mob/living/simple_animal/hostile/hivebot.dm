@@ -63,7 +63,7 @@ Teleporter beacon, and its subtypes
 	health = 200
 	maxHealth = 200
 	status_flags = 0
-	anchored = 1
+	anchored = TRUE
 	stop_automated_movement = 1
 
 	var/bot_type = /mob/living/simple_animal/hostile/hivebot
@@ -175,7 +175,7 @@ The megabot
 	if(!.)
 		return
 
-	if(time_last_used_ability < world.time)
+	if(!is_on_special_ability_cooldown())
 		switch_mode(ATTACK_MODE_ROCKET)
 
 /mob/living/simple_animal/hostile/hivebot/mega/emp_act(severity)
@@ -225,7 +225,7 @@ The megabot
 			projectilesound = 'sound/effects/Explosion1.ogg'
 			projectiletype = /obj/item/projectile/bullet/gyro/megabot
 			num_shots = 4
-			cooldown_ability(ability_cooldown)
+			set_special_ability_cooldown(ability_cooldown)
 			fire_desc = "launches a microrocket"
 			visible_message(SPAN_MFAUNA("\The [src]'s missile pod rumbles!"))
 

@@ -86,8 +86,8 @@
 		return STATUS_INTERACTIVE
 	return ..()
 
-/mob/living/exosuit/has_dexterity(dex_level)
-	return TRUE
+/mob/living/exosuit/get_dexterity(var/silent = FALSE)
+	return DEXTERITY_FULL
 
 /mob/living/exosuit/ClickOn(var/atom/A, var/params, var/mob/user)
 
@@ -135,7 +135,7 @@
 	if(user != src)
 		a_intent = user.a_intent
 		if(user.zone_sel)
-			zone_sel.set_selected_zone(user.zone_sel.selecting)
+			zone_sel.set_selected_zone(user.get_target_zone())
 		else
 			zone_sel.set_selected_zone(BP_CHEST)
 	// You may attack the target with your exosuit FIST if you're malfunctioning.

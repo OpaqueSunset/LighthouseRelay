@@ -3,8 +3,8 @@
 	name = "web"
 	desc = "It's stringy and sticky."
 	icon = 'icons/effects/effects.dmi'
-	anchored = 1
-	density = 0
+	anchored = TRUE
+	density = FALSE
 	var/health = 15
 
 //similar to weeds, but only barfed out by nurses manually
@@ -26,7 +26,7 @@
 		var/mob/living/carbon/human/H = user
 		var/decl/natural_attack/attack = H.get_unarmed_attack(src)
 		if(istype(attack))
-			attack.show_attack(H, src, H.zone_sel.selecting, 1)
+			attack.show_attack(H, src, H.get_target_zone(), 1)
 			showed_msg = TRUE
 	if(!showed_msg)
 		visible_message(SPAN_DANGER("\The [user] squashes \the [src] flat!"))
@@ -141,7 +141,7 @@
 	name = "spiderling"
 	desc = "It never stays still for long."
 	icon_state = "lesser"
-	anchored = 0
+	anchored = FALSE
 	layer = BELOW_OBJ_LAYER
 	health = 3
 	var/mob/living/simple_animal/hostile/giant_spider/greater_form
@@ -324,7 +324,7 @@
 	desc = "Green squishy mess."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "greenshatter"
-	anchored = 1
+	anchored = TRUE
 	layer = BLOOD_LAYER
 
 /obj/effect/spider/cocoon

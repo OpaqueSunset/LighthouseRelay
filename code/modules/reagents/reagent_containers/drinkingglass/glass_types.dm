@@ -136,12 +136,6 @@
 	rim_pos = @"{'y':22,'x_left':12,'x_right':20}"
 	filling_overlayed = TRUE
 
-/obj/item/chems/drinks/glass2/coffeecup/foundation
-	name = "\improper Foundation coffee cup"
-	desc = "A white coffee cup with the Cuchulain Foundation logo stencilled onto it."
-	icon_state = "coffeecup_foundation"
-	base_name = "\improper Foundation cup"
-
 /obj/item/chems/drinks/glass2/coffeecup/black
 	name = "black coffee cup"
 	desc = "A sleek black coffee cup."

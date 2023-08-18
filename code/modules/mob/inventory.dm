@@ -18,7 +18,7 @@
 /mob/proc/equip_to_slot_if_possible(obj/item/W, slot, del_on_fail = 0, disable_warning = 0, redraw_mob = 1, force = FALSE, delete_old_item = TRUE)
 	if(!istype(W) || !slot)
 		return FALSE
-	. = (canUnEquip(W) && can_equip_anything_to_slot(slot) && has_organ_for_slot(slot) && W.mob_can_equip(src, slot, disable_warning, force))
+	. = (canUnEquip(W) && can_equip_anything_to_slot(slot) && has_organ_for_slot(slot) && W.mob_can_equip(src, slot, disable_warning, force, ignore_equipped = TRUE))
 	if(.)
 		equip_to_slot(W, slot, redraw_mob, delete_old_item = delete_old_item) //This proc should not ever fail.
 	else if(del_on_fail)
@@ -35,6 +35,23 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(W) || isnull(slot))
 		return FALSE
+
+	// Handle some special slots.
+	if(slot == slot_in_backpack_str)
+		remove_from_mob(W)
+		var/obj/item/back = get_equipped_item(slot_back_str)
+		if(back)
+			W.forceMove(back)
+		else
+			W.dropInto(loc)
+		return TRUE
+
+	if(slot == slot_tie_str)
+		var/obj/item/clothing/under/uniform = get_equipped_item(slot_w_uniform_str)
+		if(istype(uniform))
+			uniform.try_attach_accessory(W, src)
+		return TRUE
+
 	unequip(W)
 	if(!isnum(slot))
 		var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(slot)
@@ -158,13 +175,11 @@
 
 // Removes an item from inventory and places it in the target atom.
 // If canremove or other conditions need to be checked then use unEquip instead.
-/mob/proc/drop_from_inventory(var/obj/item/W, var/atom/target = null, var/play_dropsound = TRUE)
-	if(W)
-		remove_from_mob(W, target, play_dropsound)
-		if(!(W && W.loc)) return 1 // self destroying objects (tk, grabs)
-		update_icon()
-		return 1
-	return 0
+/mob/proc/drop_from_inventory(var/obj/item/dropping_item, var/atom/target = null, var/play_dropsound = TRUE)
+	if(dropping_item)
+		remove_from_mob(dropping_item, target, play_dropsound)
+		return TRUE
+	return FALSE
 
 // Drops a held item from a given slot.
 /mob/proc/drop_from_hand(var/slot, var/atom/Target)
@@ -231,7 +246,7 @@
 	if(!length(slots))
 		return
 	for(var/slot in slots)
-		if(slots[slot] == I)
+		if(get_equipped_item(slot) == I)
 			return slot
 
 /mob/proc/get_inventory_slot_datum(var/slot)

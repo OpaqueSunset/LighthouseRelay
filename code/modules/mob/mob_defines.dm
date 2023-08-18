@@ -1,11 +1,11 @@
 /mob
-	density = 1
+	density = TRUE
 	plane = DEFAULT_PLANE
 	layer = MOB_LAYER
 	abstract_type = /mob
 	is_spawnable_type = TRUE
 
-	appearance_flags = PIXEL_SCALE | LONG_GLIDE
+	appearance_flags = DEFAULT_APPEARANCE_FLAGS | LONG_GLIDE
 	animate_movement = 2
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 
@@ -42,7 +42,6 @@
 	var/obj/screen/cells = null
 
 	var/obj/screen/hands = null
-	var/obj/screen/purged = null
 	var/obj/screen/internals = null
 	var/obj/screen/oxygen = null
 	var/obj/screen/toxin = null
@@ -68,7 +67,7 @@
 	I'll make some notes on where certain variable defines should probably go.
 	Changing this around would probably require a good look-over the pre-existing code.
 	*/
-	var/obj/screen/zone_sel/zone_sel = null
+	var/obj/screen/zone_selector/zone_sel = null
 
 	/// Cursor icon used when holding shift over things.
 	var/examine_cursor_icon = 'icons/effects/mouse_pointers/examine_pointer.dmi'
@@ -130,7 +129,6 @@
 	var/voice_name = "unidentifiable voice"
 
 	var/faction = MOB_FACTION_NEUTRAL //Used for checking whether hostile simple animals will attack you, possibly more stuff later
-	var/blinded = null
 
 	//The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
 	var/weakref/last_handled_by_mob

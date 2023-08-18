@@ -42,11 +42,12 @@
 	icon_deny = "wallmed-deny"
 	icon_vend = "wallmed-vend"
 	base_type = /obj/machinery/vending/wallmed1
-	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
+	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(
 		/obj/item/stack/medical/bruise_pack = 3,
 		/obj/item/stack/medical/ointment = 3,
-		/obj/item/chems/pill/painkillers = 4,
+		/obj/item/chems/pill/painkillers = 2,
+		/obj/item/chems/pill/strong_painkillers = 2,
 		/obj/item/storage/med_pouch/trauma,
 		/obj/item/storage/med_pouch/burn,
 		/obj/item/storage/med_pouch/oxyloss,
@@ -63,7 +64,7 @@
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
 	icon_vend = "wallmed-vend"
-	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
+	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	base_type = /obj/machinery/vending/wallmed2
 	products = list(
 		/obj/item/chems/hypospray/autoinjector = 5,

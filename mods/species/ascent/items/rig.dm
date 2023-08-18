@@ -193,10 +193,10 @@
 	icon = 'mods/species/ascent/icons/ascent.dmi'
 	icon_state = "injector"
 	charges = list(
-		list("bromide",             "bromide",             /decl/material/liquid/bromide, 80),
-		list("crystallizing agent", "crystallizing agent", /decl/material/liquid/crystal_agent,       80),
-		list("antibiotics",         "antibiotics",         /decl/material/liquid/antibiotics,   80),
-		list("painkillers",         "painkillers",         /decl/material/liquid/painkillers,   80)
+		list("bromide",             "bromide",             /decl/material/liquid/bromide,            80),
+		list("crystallizing agent", "crystallizing agent", /decl/material/liquid/crystal_agent,      80),
+		list("antibiotics",         "antibiotics",         /decl/material/liquid/antibiotics,        80),
+		list("painkillers",         "painkillers",         /decl/material/liquid/painkillers/strong, 80)
 	)
 
 // Rig definitions.
@@ -228,7 +228,7 @@
 		/obj/item/rig_module/maneuvering_jets
 	)
 
-/obj/item/rig/mantid/mob_can_equip(var/mob/M, var/slot)
+/obj/item/rig/mantid/mob_can_equip(var/mob/M, var/slot, ignore_equipped = FALSE)
 	. = ..()
 	if(. && slot == slot_back_str)
 		var/mob/living/carbon/human/H = M

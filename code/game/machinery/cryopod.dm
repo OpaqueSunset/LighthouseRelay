@@ -13,7 +13,7 @@
 	desc = "An interface between crew and the cryogenic storage oversight systems."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "cellconsole"
-	density = 0
+	density = FALSE
 	interact_offline = 1
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
 	directional_offset = "{'NORTH':{'y':-24}, 'SOUTH':{'y':32}, 'EAST':{'x':-24}, 'WEST':{'x':24}}"
@@ -133,7 +133,7 @@
 	desc = "A bewildering tangle of machinery and pipes."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "cryo_rear"
-	anchored = 1
+	anchored = TRUE
 	dir = WEST
 
 //Cryopods themselves.
@@ -142,8 +142,8 @@
 	desc = "A man-sized pod for entering suspended animation."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scanner_0"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	dir = WEST
 
 	var/base_icon_state = "body_scanner_0"
@@ -154,7 +154,7 @@
 	var/allow_occupant_types = list(/mob/living/carbon/human)
 	var/disallow_occupant_types = list()
 
-	var/mob/occupant = null       // Person waiting to be despawned.
+	var/mob/living/occupant       // Person waiting to be despawned.
 	var/time_till_despawn = 9000  // Down to 15 minutes //30 minutes-ish is too long
 	var/time_entered = 0          // Used to keep track of the safe period.
 
@@ -291,9 +291,8 @@
 //Lifted from Unity stasis.dm and refactored.
 /obj/machinery/cryopod/Process()
 	if(occupant)
-		if(applies_stasis && iscarbon(occupant) && (world.time > time_entered + 20 SECONDS))
-			var/mob/living/carbon/C = occupant
-			C.SetStasis(2)
+		if(applies_stasis && (world.time > time_entered + 20 SECONDS))
+			occupant.set_stasis(2)
 
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		// Only provide the gap if the occupant hasn't ghosted
@@ -551,8 +550,8 @@
 	desc = "Whoever was inside isn't going to wake up now. It looks like you could pry it open with a crowbar."
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "broken_cryo"
-	anchored = 1
-	density = 1
+	anchored = TRUE
+	density = TRUE
 	var/closed = 1
 	var/busy = 0
 	var/remains_type = /obj/item/remains/human

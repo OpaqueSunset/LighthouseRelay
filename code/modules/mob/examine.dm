@@ -29,7 +29,11 @@
 				. += slot_desc
 
 	if(buckled)
-		. += SPAN_WARNING("[pronouns.He] [pronouns.is] [html_icon(buckled)] buckled to [buckled]!")
+		if(user == src)
+			. += SPAN_WARNING("You are [html_icon(buckled)] buckled to [buckled]!")
+		else
+			. += SPAN_WARNING("[pronouns.He] [pronouns.is] [html_icon(buckled)] buckled to [buckled]!")
+
 	if(length(.))
 		to_chat(user, jointext(., "\n"))
 
@@ -57,8 +61,8 @@
 
 	// Update our target dolly.
 	if(user.zone_sel)
-		var/decl/species/target_species = get_species()
-		if(target_species && (BP_TAIL in target_species.has_limbs))
+		var/decl/bodytype/target_bodytype = get_bodytype()
+		if(target_bodytype && (BP_TAIL in target_bodytype.has_limbs))
 			user.zone_sel.icon_state = "zone_sel_tail"
 		else
 			user.zone_sel.icon_state = "zone_sel"

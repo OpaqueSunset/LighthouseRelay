@@ -286,7 +286,7 @@ meteor_act
 	return 0
 
 /mob/living/carbon/human/emag_act(var/remaining_charges, mob/user, var/emag_source)
-	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, user.zone_sel.selecting)
+	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, user.get_target_zone())
 	if(!affecting || !affecting.is_robotic())
 		to_chat(user, "<span class='warning'>That limb isn't robotic.</span>")
 		return -1
@@ -400,8 +400,8 @@ meteor_act
 	if(damtype != BURN && damtype != BRUTE) return
 
 	// The rig might soak this hit, if we're wearing one.
-	var/obj/item/rig/rig = get_equipped_item(slot_back_str)
-	if(istype(rig))
+	var/obj/item/rig/rig = get_rig()
+	if(rig)
 		rig.take_hit(damage)
 
 	// We may also be taking a suit breach.
@@ -528,8 +528,9 @@ meteor_act
 ///Returns a number between -1 to 2
 /mob/living/carbon/human/eyecheck()
 	var/total_protection = flash_protection
-	if(species.has_organ[species.vision_organ])
-		var/obj/item/organ/internal/eyes/I = get_organ(species.vision_organ, /obj/item/organ/internal/eyes)
+	var/decl/bodytype/root_bodytype = get_bodytype()
+	if(root_bodytype.has_organ[root_bodytype.vision_organ])
+		var/obj/item/organ/internal/eyes/I = get_organ(root_bodytype.vision_organ, /obj/item/organ/internal/eyes)
 		if(!I?.is_usable())
 			return FLASH_PROTECTION_MAJOR
 		total_protection = I.get_total_protection(flash_protection)
@@ -538,15 +539,17 @@ meteor_act
 	return total_protection
 
 /mob/living/carbon/human/flash_eyes(var/intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
-	if(species.has_organ[species.vision_organ])
-		var/obj/item/organ/internal/eyes/I = get_organ(species.vision_organ, /obj/item/organ/internal/eyes)
+	var/decl/bodytype/root_bodytype = get_bodytype()
+	if(root_bodytype.has_organ[root_bodytype.vision_organ])
+		var/obj/item/organ/internal/eyes/I = get_organ(root_bodytype.vision_organ, /obj/item/organ/internal/eyes)
 		if(I)
 			I.additional_flash_effects(intensity)
 	return ..()
 
 /mob/living/carbon/human/proc/getFlashMod()
-	if(species.vision_organ)
-		var/obj/item/organ/internal/eyes/I = get_organ(species.vision_organ, /obj/item/organ/internal/eyes)
-		if(istype(I))
-			return I.flash_mod
-	return species.flash_mod
+	var/decl/bodytype/root_bodytype = get_bodytype()
+	if(root_bodytype.vision_organ)
+		var/obj/item/organ/internal/eyes/I = get_organ(root_bodytype.vision_organ, /obj/item/organ/internal/eyes)
+		if(I) // get_organ with a type passed already does a typecheck
+			return I.get_flash_mod()
+	return root_bodytype.eye_flash_mod

@@ -8,12 +8,9 @@
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 
-	src.blinded = null
-
 	//Status updates, death etc.
 	clamp_values()
 	handle_regular_status_updates()
-	handle_status_effects()
 	handle_actions()
 
 	if(client)
@@ -25,6 +22,8 @@
 		process_locks()
 		process_queued_alarms()
 		process_os()
+
+	handle_status_effects()
 	UpdateLyingBuckledAndVerbStatus()
 
 /mob/living/silicon/robot/proc/clamp_values()
@@ -83,31 +82,19 @@
 	if (src.stat != DEAD) //Alive.
 		if (incapacitated(INCAPACITATION_DISRUPTED) || !has_power)
 			src.set_stat(UNCONSCIOUS)
-			if (HAS_STATUS(src, STAT_STUN))
-				ADJ_STATUS(src, STAT_STUN, -1)
-			if(HAS_STATUS(src, STAT_WEAK))
-				ADJ_STATUS(src, STAT_WEAK, -1)
-			if (HAS_STATUS(src, STAT_PARA) > 0)
-				ADJ_STATUS(src, STAT_PARA, -1)
-				src.blinded = 1
-			else
-				src.blinded = 0
-
+			SET_STATUS_MAX(src, STAT_BLIND, 2)
 		else	//Not stunned.
 			src.set_stat(CONSCIOUS)
 
 	else //Dead.
 		cameranet.update_visibility(src, FALSE)
-		src.blinded = 1
+		SET_STATUS_MAX(src, STAT_BLIND, 2)
 		src.set_stat(DEAD)
-
-	if(HAS_STATUS(src, STAT_BLIND))
-		ADJ_STATUS(src, STAT_BLIND, -1)
-		src.blinded = 1
 
 	src.set_density(!src.lying)
 	if(src.sdisabilities & BLINDED)
-		src.blinded = 1
+		SET_STATUS_MAX(src, STAT_BLIND, 2)
+
 	if(src.sdisabilities & DEAFENED)
 		src.set_status(STAT_DEAF, 1)
 
@@ -121,10 +108,8 @@
 		else
 			silicon_radio.on = 1
 
-	if(isnull(components["camera"]) || is_component_functioning("camera"))
-		src.blinded = 0
-	else
-		src.blinded = 1
+	if(!isnull(components["camera"]) && !is_component_functioning("camera"))
+		SET_STATUS_MAX(src, STAT_BLIND, 2)
 		cameranet.update_visibility(src, FALSE)
 
 	return 1
@@ -237,7 +222,7 @@
 			src.oxygen.icon_state = "oxy1"
 
 	if(stat != DEAD)
-		if(blinded)
+		if(is_blind())
 			overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
 		else
 			clear_fullscreen("blind")

@@ -7,7 +7,7 @@ var/global/list/materials_by_gas_symbol = list()
 	icon_state = "generic"
 	layer = FIRE_LAYER
 	appearance_flags = RESET_COLOR
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 	var/decl/material/material
 
 INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
@@ -113,8 +113,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/list/stack_origin_tech = "{'materials':1}" // Research level for stacks.
 
 	// Attributes
-	/// How rare is this material generally?
-	var/exoplanet_rarity = MAT_RARITY_MUNDANE
+	/// How rare is this material in exoplanet xenoflora?
+	var/exoplanet_rarity_plant = MAT_RARITY_MUNDANE
+	/// How rare is this material in exoplanet atmospheres?
+	var/exoplanet_rarity_gas = MAT_RARITY_MUNDANE
 	/// Delay in ticks when cutting through this wall.
 	var/cut_delay = 0
 	/// Radiation var. Used in wall and object processing to irradiate surroundings.
@@ -136,7 +138,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	/// General-use HP value for products.
 	var/integrity = 150
 	/// Is the material transparent? 0.5< makes transparent walls/doors.
-	var/opacity = 1
+	var/opacity = TRUE
 	/// Only used by walls currently.
 	var/explosion_resistance = 5
 	/// Objects with this var add CONDUCTS to flags on spawn.
@@ -428,7 +430,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 //Clausius–Clapeyron relation
 /decl/material/proc/get_boiling_temp(var/pressure = ONE_ATMOSPHERE)
-	return (1 / (1/max(boiling_point, TCMB)) - ((R_IDEAL_GAS_EQUATION * log(pressure / ONE_ATMOSPHERE)) / (latent_heat * molar_mass)))
+	var/pressure_ratio = (pressure > 0)? log(pressure / ONE_ATMOSPHERE) : 0
+	return (1 / (1/max(boiling_point, TCMB)) - ((R_IDEAL_GAS_EQUATION * pressure_ratio) / (latent_heat * molar_mass)))
 
 /// Returns the phase of the matterial at the given temperature and pressure
 /// Defaults to standard temperature and pressure (20c at one atmosphere)
@@ -436,7 +439,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	//#TODO: implement plasma temperature and do pressure checks
 	if(!isnull(boiling_point) && temperature >= get_boiling_temp(pressure))
 		return MAT_PHASE_GAS
-	else if(!isnull(heating_point) && temperature >= heating_point)
+	else if(!isnull(heating_point) && temperature >= heating_point || \
+			!isnull(melting_point) && temperature >= melting_point)
 		return MAT_PHASE_LIQUID
 	return MAT_PHASE_SOLID
 
@@ -445,7 +449,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	name = "placeholder"
 	uid = "mat_placeholder"
 	hidden_from_codex = TRUE
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /// Generic material product (sheets, bricks, etc). Used ALL THE TIME.
 /// May return an instance list, a single instance, or nothing if there is no instance produced.
@@ -577,7 +582,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			for(var/obj/effect/overlay/wallrot/E in W)
 				W.visible_message(SPAN_NOTICE("\The [E] is completely dissolved by the solution!"))
 				qdel(E)
-		if(slipperiness != 0)
+		if(slipperiness != 0 && !T.check_fluid_depth()) // Don't make floors slippery if they have an active fluid on top of them please.
 			if(slipperiness < 0)
 				W.unwet_floor(TRUE)
 			else

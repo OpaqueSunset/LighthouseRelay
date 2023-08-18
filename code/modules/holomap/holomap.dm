@@ -57,8 +57,6 @@
 	small_station_map = image(icon = SSminimap.holomaps[original_zLevel].holomap_small)
 	small_station_map.plane = ABOVE_LIGHTING_PLANE
 	small_station_map.layer = ABOVE_LIGHTING_LAYER
-	small_station_map.pixel_x = 10
-	small_station_map.pixel_y = 10
 
 	update_icon()
 
@@ -210,7 +208,7 @@
 	maptext_width = 128
 	layer = HUD_ITEM_LAYER
 	pixel_x = HOLOMAP_LEGEND_X
-	appearance_flags = PIXEL_SCALE | RESET_COLOR
+	appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR
 	var/saved_color
 	var/datum/station_holomap/owner = null
 	var/has_areas = FALSE
@@ -240,8 +238,8 @@
 	for(var/area/A in SSminimap.holomaps[z_level].holomap_areas)
 		if(A.holomap_color == saved_color)
 			var/image/area = image(SSminimap.holomaps[z_level].holomap_areas[A])
-			area.pixel_x = ((HOLOMAP_ICON_SIZE / 2) - world.maxx / 2) - pixel_x
-			area.pixel_y = ((HOLOMAP_ICON_SIZE / 2) - world.maxy / 2) - pixel_y
+			area.pixel_x = ((HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_X) - pixel_x
+			area.pixel_y = ((HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_Y) - pixel_y
 			overlays += area
 			has_areas = TRUE
 
@@ -320,8 +318,8 @@
 	if(length(global.using_map.overmap_ids))
 		var/obj/effect/overmap/visitable/O = global.overmap_sectors["[z]"]
 
-		var/current_z_offset_x = (HOLOMAP_ICON_SIZE / 2) - world.maxx / 2
-		var/current_z_offset_y = (HOLOMAP_ICON_SIZE / 2) - world.maxy / 2
+		cursor.pixel_x = (T.x - 6 + (HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_X) * PIXEL_MULTIPLIER + HOLOMAP_PIXEL_OFFSET_X(z)
+		cursor.pixel_y = (T.y - 6 + (HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_Y) * PIXEL_MULTIPLIER + HOLOMAP_PIXEL_OFFSET_Y(z)
 
 		//For the given z level fetch the related map sector and build the list
 		if(istype(O))
@@ -350,8 +348,8 @@
 				map_image.color = COLOR_HOLOMAP_HOLOFIER
 				map_image.layer = HUD_BASE_LAYER
 
-				map_image.pixel_x = (HOLOMAP_ICON_SIZE / 2) - world.maxx / 2
-				map_image.pixel_y = (HOLOMAP_ICON_SIZE / 2) - world.maxy / 2
+				map_image.pixel_x = (HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_X
+				map_image.pixel_y = (HOLOMAP_ICON_SIZE / 2) - WORLD_CENTER_Y
 
 				//Store the image for future use
 				//LAZYADD(levels, map_image)
@@ -360,7 +358,7 @@
 				var/obj/screen/maptext_overlay = new(null)
 				maptext_overlay.icon = null
 				maptext_overlay.layer = HUD_ITEM_LAYER
-				maptext_overlay.appearance_flags |= RESET_COLOR | PIXEL_SCALE
+				maptext_overlay.appearance_flags |= RESET_COLOR
 				maptext_overlay.maptext = STYLE_SMALLFONTS_OUTLINE("<center>LEVEL [level-1]</center>", 7, COLOR_WHITE, COLOR_BLACK)
 				maptext_overlay.maptext_width = 96
 				maptext_overlay.pixel_x = (HOLOMAP_ICON_SIZE / 2) - (maptext_overlay.maptext_width / 2)
@@ -372,8 +370,6 @@
 			set_level(current_z_index)
 		if(isAI)
 			T = get_turf(user.client.eye)
-		cursor.pixel_x = (T.x - 6 + current_z_offset_x) * PIXEL_MULTIPLIER
-		cursor.pixel_y = (T.y - 6 + current_z_offset_y) * PIXEL_MULTIPLIER
 
 
 /datum/station_holomap/proc/set_level(level)
