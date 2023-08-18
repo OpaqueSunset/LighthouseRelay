@@ -158,9 +158,6 @@
 	name = "\improper Operating Theatre 2"
 	icon_state = "surgery"
 
-/area/outpost/mining_main/storage
-	name = "Mining Outpost Gear Storage"
-
 /area/outpost/research/longtermstorage
 	name = "Research Outpost Long-Term Storage"
 
@@ -566,6 +563,12 @@
 /area/quartermaster/belterdock
 	name = "\improper Cargo Belter Access"
 	icon_state = "mining"
+/area/mine/explored/upper_level
+	name = "Upper Level Mine"
+	icon_state = "explored"
+/area/mine/unexplored/upper_level
+	name = "Upper Level Mine"
+	icon_state = "unexplored"
 
 // Mining Underdark
 /area/mine/unexplored/underdark
@@ -578,6 +581,16 @@
 // Mining outpost areas
 /area/outpost/mining_main/passage
 	name = "\improper Mining Outpost Passage"
+/area/outpost/mining_main/airlock
+	name = "\improper Mining Outpost Airlock"
+/area/outpost/mining_main/break_room
+	name = "\improper Mining Outpost Crew Area"
+/area/outpost/mining_main/dorms
+	name = "\improper Mining Outpost Dormitory"
+/area/outpost/mining_main/maintenance
+	name = "\improper Mining Outpost Maintenance"
+/area/outpost/mining_main/storage
+	name = "\improper Mining Outpost Gear Storage"
 
 // Solars map areas
 /area/tether/outpost/solars_outside
@@ -631,6 +644,11 @@
 	sound_env = LARGE_ENCLOSED
 	req_access = list(access_atmospherics)
 
+/area/engineering/atmos/monitoring
+	name = "\improper Atmospherics Monitoring Room"
+	icon_state = "atmos_monitoring"
+	sound_env = STANDARD_STATION
+
 /area/engineering/atmos/processing
 	name = "Atmospherics Processing"
 	icon_state = "atmos"
@@ -650,6 +668,10 @@
 
 /area/engineering/atmos/hallway
 	name = "\improper Atmospherics Main Hallway"
+
+/area/engineering/engine_gas
+	name = "\improper Engine Gas Storage"
+	icon_state = "engine_waste"
 /area/engineering/lower/lobby
 	name = "\improper Enginering Surface Lobby"
 /area/engineering/lower/breakroom
@@ -699,8 +721,23 @@
 	name = "\improper Mining EVA Maintenance"
 /area/maintenance/lower/public_garden_maintenence
 	name = "\improper Public Garden Maintenance"
+/area/maintenance/lower/public_garden_maintenence/upper
+	name = "\improper Upper Public Garden Maintenence"
 
 // Research
+/area/rnd/rdoffice
+	name = "\improper Research Director's Office"
+	icon_state = "head_quarters"
+	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
+/area/rnd/research_storage
+	name = "\improper Research Storage"
+	icon_state = "research_storage"
+/area/rnd/research/testingrange
+	name = "\improper Weapons Testing Range"
+	icon_state = "firingrange"
+/area/rnd/workshop
+	name = "\improper Workshop"
+	icon_state = "sci_workshop"
 /area/rnd/xenobiology/xenoflora/lab_atmos
 	name = "\improper Xenoflora Atmospherics Lab"
 /area/rnd/breakroom
@@ -1342,3 +1379,304 @@
 	name = "\improper Telecomms Satellite"
 	icon_state = "tcomsatlob"
 	ambience = AMBIENCE_ENGINEERING
+
+// TODO: REPATH ALL THESE TO /area/tether
+/area/chapel
+	area_flags = AREA_FLAG_HOLY
+/area/chapel/main
+	name = "\improper Chapel"
+	icon_state = "chapel"
+	sound_env = LARGE_ENCLOSED
+	ambience = list(
+		'sound/ambience/ambicha1.ogg',
+		'sound/ambience/ambicha2.ogg',
+		'sound/ambience/ambicha3.ogg',
+		'sound/ambience/ambicha4.ogg',
+		'sound/music/traitor.ogg'
+	)
+/area/chapel/office
+	name = "\improper Chapel Office"
+	icon_state = "chapeloffice"
+	req_access = list(access_chapel_office)
+/area/crew_quarters/bar
+	name = "\improper Bar"
+	icon_state = "bar"
+	sound_env = LARGE_SOFTFLOOR
+/area/crew_quarters/captain
+	name = "\improper Command - Captain's Office"
+	icon_state = "captain"
+	sound_env = MEDIUM_SOFTFLOOR
+	req_access = list(access_captain)
+/area/crew_quarters/kitchen
+	name = "\improper Kitchen"
+	icon_state = "kitchen"
+	req_access = list(access_kitchen)
+/area/crew_quarters/locker
+	name = "\improper Locker Room"
+	icon_state = "locker"
+/area/crew_quarters/medbreak
+	name = "\improper Break Room"
+	icon_state = "medbay3"
+	ambience = list('sound/ambience/signal.ogg')
+	req_access = list(access_medical)
+/area/crew_quarters/sleep
+	name = "\improper Dormitories"
+	icon_state = "Sleep"
+/area/crew_quarters/sleep/cryo
+	name = "\improper Cryogenic Storage"
+	icon_state = "Sleep"
+/area/crew_quarters/sleep/engi_wash
+	name = "\improper Engineering Washroom"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
+/area/crew_quarters/toilet
+	name = "\improper Dormitory Toilets"
+	icon_state = "toilet"
+	sound_env = SMALL_ENCLOSED
+/area/engineering/engine_monitoring
+	name = "\improper Engine Monitoring Room"
+	icon_state = "engine_monitoring"
+/area/engineering/locker_room
+	name = "\improper Engineering Locker Room"
+	icon_state = "engineering_locker"
+/area/engineering/storage
+	name = "\improper Engineering Storage"
+	icon_state = "engineering_storage"
+/area/gateway
+	name = "\improper Gateway"
+	icon_state = "teleporter"
+/area/hydroponics
+	name = "\improper Hydroponics"
+	icon_state = "hydro"
+	req_access = list(access_hydroponics)
+/area/hydroponics/cafegarden
+	name = "\improper Cafe Garden"
+	icon_state = "garden"
+	req_access = list()
+/area/janitor
+	name = "\improper Custodial Closet"
+	icon_state = "janitor"
+	req_access = list(access_janitor)
+/area/library
+	name = "\improper Library"
+	icon_state = "library"
+	sound_env = LARGE_SOFTFLOOR
+/area/maintenance/asmaint2
+	name = "Science Maintenance"
+	icon_state = "asmaint"
+/area/maintenance/cargo
+	name = "\improper Cargo Maintenance"
+	icon_state = "maint_cargo"
+	req_access = list(list(access_cargo, access_maint_tunnels))
+/area/maintenance/engineering
+	name = "\improper Engineering Maintenance"
+	icon_state = "maint_engineering"
+/area/maintenance/engineering/pumpstation
+	name = "Engineering Pump Station"
+	icon_state = "maint_pumpstation"
+/area/maintenance/evahallway
+	name = "\improper EVA Maintenance"
+	icon_state = "maint_eva"
+	req_access = list(list(access_eva, access_maint_tunnels))
+/area/maintenance/substation/cargo
+	name = "Cargo Substation"
+/area/maintenance/substation/civilian
+/area/maintenance/substation/command
+/area/maintenance/substation/engineering
+	name = "Engineering Substation"
+/area/maintenance/substation/medical
+	name = "Medical Substation"
+/area/maintenance/substation/research
+	name = "Research Substation"
+/area/maintenance/substation/security
+	name = "Security Substation"
+/area/medical/biostorage
+	name = "\improper Secondary Storage"
+	icon_state = "medbay4"
+	ambience = list('sound/ambience/signal.ogg')
+/area/medical/chemistry
+	name = "\improper Chemistry"
+	icon_state = "chem"
+	req_access = list(access_chemistry)
+/area/medical/morgue
+	name = "\improper Morgue"
+	icon_state = "morgue"
+	ambience = list('sound/ambience/ambimo1.ogg','sound/ambience/ambimo2.ogg','sound/music/main.ogg')
+	req_access = list(access_morgue)
+/area/medical/medbay_primary_storage
+	name = "\improper Medbay Primary Storage"
+	icon_state = "medbay_primary_storage"
+	ambience = list('sound/ambience/signal.ogg')
+
+/area/medical/ward
+	name = "\improper Recovery Ward"
+	icon_state = "patients"
+
+/area/medical/patient_a
+	name = "\improper Patient A"
+	icon_state = "medbay_patient_room_a"
+
+/area/medical/patient_b
+	name = "\improper Patient B"
+	icon_state = "medbay_patient_room_b"
+
+/area/medical/patient_c
+	name = "\improper Patient C"
+	icon_state = "medbay_patient_room_c"
+/area/medical/psych
+	name = "\improper Psych Room"
+	icon_state = "medbay3"
+	ambience = list('sound/ambience/signal.ogg')
+	req_access = list(access_psychiatrist)
+/area/medical/reception
+	name = "\improper Medbay Reception"
+	icon_state = "medbay"
+	ambience = list('sound/ambience/signal.ogg')
+/area/medical/sleeper
+	name = "\improper Emergency Treatment Centre"
+	icon_state = "exam_room"
+/area/medical/surgery
+	name = "\improper Operating Theatre"
+	icon_state = "surgery"
+/area/medical/surgery_hallway
+	name = "\improper Surgery Hallway"
+	icon_state = "surgery_hallway"
+/area/medical/surgeryobs
+	name = "\improper Operation Observation Room"
+	icon_state = "surgery"
+/area/medical/virology
+	name = "\improper Virology"
+	icon_state = "virology"
+/area/medical/virologyaccess
+	name = "\improper Virology Access"
+	icon_state = "virology"
+
+/area/medical/resleeving
+	name = "Resleeving Lab"
+	icon_state = "genetics"
+
+/area/hallway/secondary/escape/medical_escape_pod_hallway
+	name = "\improper Medical Escape Pod Hallway"
+	icon_state = "medical_escape_pod_hallway"
+
+/area/quartermaster
+	name = "\improper Quartermasters"
+	icon_state = "quart"
+	req_access = list(access_cargo)
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
+/area/quartermaster/office
+	name = "\improper Supply Office"
+	icon_state = "quartoffice"
+	req_access = list(list(access_cargo, access_mining))
+/area/quartermaster/qm
+	name = "\improper Cargo - Quartermaster's Office"
+	icon_state = "quart"
+	req_access = list(access_qm)
+/area/quartermaster/storage
+	name = "\improper Cargo Bay"
+	icon_state = "quartstorage"
+	sound_env = LARGE_ENCLOSED
+/area/quartermaster/delivery
+	name = "\improper Cargo - Delivery Office"
+	icon_state = "quart"
+	area_flags = AREA_FLAG_IS_NOT_PERSISTENT //So trash doesn't pile up too hard.
+/area/quartermaster/foyer
+	name = "\improper Cargo Bay Foyer"
+	icon_state = "quartstorage"
+/area/quartermaster/warehouse
+	name = "\improper Cargo Warehouse"
+	icon_state = "quartstorage"
+/area/rnd/xenobiology
+	name = "\improper Xenobiology Lab"
+	icon_state = "xeno_lab"
+	req_access = list(access_xenobiology, access_research)
+	secure = TRUE
+/area/rnd/xenobiology/xenoflora
+	name = "\improper Xenoflora Lab"
+	icon_state = "xeno_f_lab"
+/area/rnd/xenobiology/xenoflora_storage
+	name = "\improper Xenoflora Storage"
+	icon_state = "xeno_f_store"
+/area/teleporter
+	name = "\improper Teleporter"
+	icon_state = "teleporter"
+	req_access = list(access_teleporter)
+/area/teleporter/departing
+	name = "\improper Long-Range Teleporter"
+	icon_state = "teleporter"
+	ambience = list('sound/ambience/signal.ogg')
+
+// Holodeck
+/area/holodeck_control
+	name = "\improper Holodeck Control"
+	icon_state = "holodeck_control"
+/area/holodeck
+	name = "\improper Holodeck"
+	icon_state = "Holodeck"
+	dynamic_lighting = 0
+	sound_env = LARGE_ENCLOSED
+	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
+/area/holodeck/alphadeck
+	name = "\improper Holodeck Alpha"
+
+// Visitor/crew amenities
+/area/bridge/secondary
+	name = "\improper Secondary Command Office"
+/area/chapel/chapel_morgue
+	name = "\improper Chapel Morgue"
+	icon_state = "chapel_morgue"
+/area/crew_quarters/barrestroom
+	name = "\improper Cafeteria Restroom"
+	icon_state = "bar"
+	sound_env = SMALL_ENCLOSED
+/area/crew_quarters/medical_restroom
+	name = "\improper Medbay Restroom"
+	icon_state = "medbay_restroom"
+	sound_env = SMALL_ENCLOSED
+/area/crew_quarters/pool
+	name = "\improper Pool"
+	icon_state = "pool"
+
+/area/crew_quarters/recreation_area
+	name = "\improper Recreation Area"
+	icon_state = "recreation_area"
+
+/area/crew_quarters/recreation_area_restroom
+	name = "\improper Recreation Area Restroom"
+	icon_state = "recreation_area_restroom"
+	sound_env = SMALL_ENCLOSED
+/area/crew_quarters/sleep/Dorm_1
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_2
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_3
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_4
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_5
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_6
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_7
+	area_flags = AREA_FLAG_RAD_SHIELDED
+
+/area/crew_quarters/sleep/Dorm_8
+	area_flags = AREA_FLAG_RAD_SHIELDED
+/area/crew_quarters/visitor_lodging
+	name = "\improper Visitor Lodging"
+	icon_state = "visitor_lodging"
+
+/area/crew_quarters/visitor_dining
+	name = "\improper Visitor Dining"
+	icon_state = "visitor_dinning"
+
+/area/crew_quarters/visitor_laundry
+	name = "\improper Visitor Laundry"
+	icon_state = "visitor_laundry"

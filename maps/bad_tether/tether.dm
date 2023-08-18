@@ -57,7 +57,6 @@
 	#include "atoms/stacks.dm"
 	#include "atoms/turfs.dm"
 	#include "atoms/tether_presets.dm"
-	#include "atoms/unimplemented/areas.dm"
 	#include "atoms/unimplemented/stubs.dm"
 	#include "atoms/unimplemented/books.dm"
 	#include "atoms/unimplemented/benches.dm"
