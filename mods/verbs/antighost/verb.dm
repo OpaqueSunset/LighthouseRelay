@@ -16,8 +16,8 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		to_chat(src, "You are unable to emote.")
 		return
 
-	var/muzzled = is_muzzled()
-	if(m_type == 2 && muzzled) return
+	var/muzzled = is_silenced()
+	if(m_type == AUDIBLE_MESSAGE && muzzled) return
 
 	var/input
 	if(!message)
@@ -42,13 +42,13 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		for(var/vismob in vis_mobs)
 			var/mob/M = vismob
 			if(isobserver(M) && (get_preference_value(/datum/client_preference/show_subtle) == PREF_HIDE) && !M.client?.holder)
-				M.show_message(undisplayed_message, 2)
+				M.show_message(undisplayed_message, AUDIBLE_MESSAGE)
 			else
-				M.show_message(message, 2)
+				M.show_message(message, AUDIBLE_MESSAGE)
 
 		for(var/visobj in vis_objs)
 			var/obj/O = visobj
-			O.see_emote(src, message, 2)
+			O.see_emote(src, message, AUDIBLE_MESSAGE)
 
 
 #define MAX_HUGE_MESSAGE_LEN 8192

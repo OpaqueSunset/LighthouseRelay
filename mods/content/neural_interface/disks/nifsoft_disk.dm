@@ -124,7 +124,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	load_programs()
 
 /obj/item/disk/nifsoft/attack_self(mob/user)
-	if(!user.has_dexterity(DEXTERITY_KEYBOARDS)) // Have to type to configure it.
+	if(!user.check_dexterity(DEXTERITY_KEYBOARDS)) // Have to type to configure it.
 		return ..()
 	var/list/configurable_programs = list()
 	for(var/pak_name in stored_files)

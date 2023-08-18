@@ -62,11 +62,12 @@
 
 /mob/living/carbon/human/proc/sync_tail_to_style(update_icon = TRUE)
 	var/obj/item/organ/external/tail/tail_organ = get_organ(BP_TAIL)
+	var/decl/bodytype/root_bodytype = get_bodytype()
 	if(!tail_style)
 		if(!tail_organ)
 			return
 		qdel(tail_organ)
-		var/list/tail_data = LAZYACCESS(species?.has_limbs, BP_TAIL)
+		var/list/tail_data = LAZYACCESS(root_bodytype?.has_limbs, BP_TAIL)
 		var/tail_path = LAZYACCESS(tail_data, "path")
 		if(!tail_path)
 			return
@@ -107,6 +108,6 @@
 	character.tail_color_extra = tail_color_extra
 	character.sync_tail_to_style(update_icon = TRUE)
 
-/decl/species/create_missing_organs(mob/living/carbon/human/H, fully_replace)
+/decl/bodytype/create_missing_organs(mob/living/carbon/human/H, fully_replace)
 	. = ..()
 	H.sync_tail_to_style(update_icon = TRUE)
