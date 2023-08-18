@@ -28,6 +28,16 @@
 /obj/structure/trash_pile : /obj/random/loot_pile
 /obj/random/trash_pile : /obj/random/loot_pile
 
+# RANDOM SPAWNERS
+/obj/random/cigarettes : /obj/random/smokes{@OLD}
+/obj/random/slimecore : /obj/item/slime_extract/random{@OLD}
+
+/obj/item/retail_scanner : /obj/item/eftpos{@OLD}
+/obj/item/retail_scanner/civilian : /obj/item/eftpos/departmental/service{@OLD}
+/obj/item/retail_scanner/security : /obj/item/eftpos/departmental/security{@OLD}
+
+/obj/machinery/processor : /obj/machinery/optable{@OLD}
+
 # DOUBLE DOORS
 /obj/machinery/door/airlock/multi_tile/@SUBTYPES : /obj/machinery/door/airlock/double/@SUBTYPES{@OLD}
 
@@ -334,6 +344,7 @@
 # CLOTHING REPATHS
 /obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/accessory/toggleable/hawaii/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/holster/@SUBTYPES : /obj/item/clothing/accessory/storage/holster/@SUBTYPES{@OLD}
+/obj/item/storage/belt/security/tactical : /obj/item/storage/belt/holster/security/tactical{@OLD}
 /obj/item/clothing/accessory/storage/black_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/black{@OLD}
 /obj/item/clothing/accessory/storage/black_vest : /obj/item/clothing/accessory/storage/vest/black{@OLD}
 /obj/item/clothing/accessory/storage/brown_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/brown{@OLD}
@@ -537,3 +548,7 @@
 /obj/item/multitool/tether_buffered : @DELETE
 # sorry, but we don't have shuttle webs
 /obj/machinery/computer/shuttle_control/web/excursion : @DELETE
+# we don't need this since we just have sky turfs
+/obj/effect/step_trigger/teleporter/planetary_fall/virgo3b : @DELETE
+# we don't have shieldcaps anymore
+/obj/machinery/shield_capacitor : @DELETE

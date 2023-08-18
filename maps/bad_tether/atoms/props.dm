@@ -41,12 +41,11 @@
 	name = "expedition weaponry cabinet"
 	req_access = list(list(access_explorer),list(access_armory))
 
-/obj/structure/closet/secure_closet/guncabinet/excursion/New()
-	..()
-	for(var/i = 1 to 4)
-		new /obj/item/gun/energy/frontier/locked(src)
-	for(var/i = 1 to 4)
-		new /obj/item/gun/energy/frontier/locked/holdout(src)
+/obj/structure/closet/secure_closet/guncabinet/excursion/WillContain()
+	return list(
+		/obj/item/gun/energy/frontier/locked = 4,
+		/obj/item/gun/energy/frontier/locked/holdout = 4
+	)
 
 // Used at centcomm for the elevator
 /obj/machinery/cryopod/robot/door/dorms
@@ -132,3 +131,67 @@
 /obj/item/card/id/captains_spare/fakespare/Initialize()
 	. = ..()
 	access = null
+
+//
+// TRAM STATION
+//
+
+// The tram's electrified maglev tracks
+/turf/simulated/floor/maglev
+	name = "maglev track"
+	desc = "Magnetic levitation tram tracks. Caution! Electrified!"
+	icon = 'maps/tether/icons/maglevs.dmi'
+	icon_state = "maglevup"
+
+	var/area/shock_area = /area/tether/surfacebase/tram
+
+/turf/simulated/floor/maglev/Initialize()
+	. = ..()
+	shock_area = locate(shock_area)
+
+// Walking on maglev tracks will shock you! Horray!
+/turf/simulated/floor/maglev/Entered(var/atom/movable/AM, var/atom/old_loc)
+	..()
+	if(isliving(AM) && prob(50))
+		track_zap(AM)
+
+/turf/simulated/floor/maglev/attack_hand(var/mob/user)
+	if(prob(75))
+		track_zap(user)
+
+/turf/simulated/floor/maglev/proc/track_zap(var/mob/living/user)
+	if (!istype(user)) return
+	if (electrocute_mob(user, shock_area, src))
+		spark_at(src, 5, TRUE, src)
+
+// Tram air scrubbers for keeping arrivals clean - they work even with no area power
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram
+	name = "\improper Tram Air Scrubber"
+	icon_state = "scrubber:1"
+	use_power = POWER_USE_ACTIVE
+
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram/powered()
+	return TRUE // Always be powered
+
+//Chemistry 'chemavator'
+/obj/machinery/smartfridge/chemistry/chemvator
+	name = "\improper Smart Chemavator - Upper"
+	desc = "A refrigerated storage unit for medicine and chemical storage. Now sporting a fancy system of pulleys to lift bottles up and down."
+	var/obj/machinery/smartfridge/chemistry/chemvator/attached
+
+/obj/machinery/smartfridge/chemistry/chemvator/down/Destroy()
+	attached = null
+	return ..()
+
+/obj/machinery/smartfridge/chemistry/chemvator/down
+	name = "\improper Smart Chemavator - Lower"
+
+/obj/machinery/smartfridge/chemistry/chemvator/down/Initialize()
+	. = ..()
+	var/obj/machinery/smartfridge/chemistry/chemvator/above = locate(/obj/machinery/smartfridge/chemistry/chemvator,get_zstep(src,UP))
+	if(istype(above))
+		above.attached = src
+		attached = above
+		item_records = attached.item_records
+	else
+		to_chat(world,"<span class='danger'>[src] at [x],[y],[z] cannot find the unit above it!</span>")

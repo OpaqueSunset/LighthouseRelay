@@ -16,7 +16,6 @@
 /turf/simulated/floor/carpet/purcarpet
 /turf/simulated/floor/carpet/sblucarpet
 /turf/simulated/floor/carpet/turcarpet
-/turf/simulated/floor/maglev
 /turf/simulated/floor/tiled/asteroid_steel/airless
 /turf/simulated/floor/tiled/steel
 /turf/simulated/floor/tiled/steel_dirty
