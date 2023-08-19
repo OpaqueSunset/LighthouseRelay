@@ -18,6 +18,9 @@
 /obj/structure/sign/securearea : /obj/structure/sign/warning{@OLD}
 /obj/structure/sign/warning/securearea : /obj/structure/sign/warning{@OLD}
 /obj/structure/sign/directions/cargo : /obj/structure/sign/directions/supply{@OLD}
+/obj/structure/sign/greencross : /obj/structure/sign/department/greencross{@OLD}
+/obj/structure/sign/redcross : /obj/structure/sign/department/greencross{@OLD}
+/obj/structure/sign/goldenplaque : /obj/structure/sign/plaque/golden{@OLD}
 
 # reagent_containers -> chems
 /obj/item/reagent_containers/@SUBTYPES : /obj/item/chems/@SUBTYPES{@OLD}
