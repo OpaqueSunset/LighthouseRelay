@@ -31,6 +31,9 @@
 /obj/structure/trash_pile : /obj/random/loot_pile
 /obj/random/trash_pile : /obj/random/loot_pile
 
+/obj/item/storage/pill_bottle/tramadol : /obj/item/storage/pill_bottle/strong_painkillers{@OLD}
+/obj/item/chems/pill/tramadol : /obj/item/chems/pill/strong_painkillers{@OLD}
+
 # RANDOM SPAWNERS
 /obj/random/cigarettes : /obj/random/smokes{@OLD}
 /obj/random/slimecore : /obj/item/slime_extract/random{@OLD}

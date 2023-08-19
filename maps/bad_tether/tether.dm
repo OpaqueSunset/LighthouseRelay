@@ -54,6 +54,7 @@
 	#include "atoms/effects.dm"
 	#include "atoms/props.dm"
 	#include "atoms/random.dm"
+	#include "atoms/reagents.dm"
 	#include "atoms/stacks.dm"
 	#include "atoms/turfs.dm"
 	#include "atoms/tether_presets.dm"

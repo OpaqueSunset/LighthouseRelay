@@ -33,7 +33,6 @@
 /obj/item/chems/glass/beaker/cryoxadone
 /obj/item/chems/glass/beaker/measuring_cup
 /obj/item/chems/glass/bottle/biomass
-/obj/item/chems/glass/bottle/tramadol
 /obj/item/closet_painter
 /obj/item/cmo_disk_holder
 /obj/item/communicator
@@ -98,7 +97,6 @@
 /obj/item/storage/fancy/cigar/havana
 /obj/item/storage/pill_bottle/iron
 /obj/item/storage/pill_bottle/nutriment
-/obj/item/storage/pill_bottle/tramadol
 /obj/item/storage/secure/briefcase/ml3m_pack_cmo
 /obj/item/storage/secure/briefcase/ml3m_pack_med
 /obj/item/storage/secure/briefcase/nsfw_pack

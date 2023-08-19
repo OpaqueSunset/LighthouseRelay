@@ -8,6 +8,9 @@
 	name = "kelotane (15u)"
 
 /obj/item/chems/pill/painkillers
+	name = "paracetamol (15u)"
+
+/obj/item/chems/pill/strong_painkillers
 	name = "tramadol (15u)"
 
 /obj/item/chems/pill/stabilizer
