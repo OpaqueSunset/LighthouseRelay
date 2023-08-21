@@ -84,6 +84,9 @@
 	name = "\improper Engineering Electrical Shaft"
 	icon_state = "substation"
 
+/area/vacant
+	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
+
 /area/vacant/vacant_office
 	name = "\improper Vacant Office"
 	icon_state = "vacant_site"
@@ -92,6 +95,8 @@
 	name = "\improper Psych Ward"
 	icon_state = "psych_ward"
 
+/area/construction
+	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
 /area/construction/observation
 	name = "\improper Abandoned Observation Lounge"
 	icon_state = "yellow"
@@ -137,6 +142,7 @@
 /area/lawoffice
 	name = "\improper Internal Affairs"
 	icon_state = "law"
+	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
 /area/maintenance
 	area_flags = AREA_FLAG_RAD_SHIELDED
@@ -145,6 +151,7 @@
 	forced_ambience = list('sound/ambience/maintambience.ogg')
 	req_access = list(access_maint_tunnels)
 	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
+
 /area/maintenance/bar
 	name = "Bar Maintenance"
 	icon_state = "maint_bar"
@@ -165,6 +172,8 @@
 	name = "\improper Operating Theatre 2"
 	icon_state = "surgery"
 
+/area/outpost/research
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 /area/outpost/research/longtermstorage
 	name = "Research Outpost Long-Term Storage"
 
@@ -412,6 +421,9 @@
 // Surface Base Z Levels
 //
 
+/area
+	holomap_color = HOLOMAP_AREACOLOR_CREW
+
 /area/tether/surfacebase
 	// icon = 'icons/turf/areas_vr.dmi'
 
@@ -535,6 +547,7 @@
 
 /area/tether/surfacebase/emergency_storage
 	icon_state = "emergencystorage"
+	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
 /area/tether/surfacebase/emergency_storage/panic_shelter
 	name = "\improper Panic Shelter Emergency Storage"
 /area/tether/surfacebase/emergency_storage/rnd
@@ -547,6 +560,7 @@
 // Main mining area
 /area/tether/surfacebase/mining_main
 	icon_state = "outpost_mine_main"
+	holomap_color = HOLOMAP_AREACOLOR_CARGO
 /area/tether/surfacebase/mining_main/airlock
 	name = "\improper Mining Airlock"
 /area/tether/surfacebase/mining_main/storage
@@ -602,10 +616,14 @@
 // Solars map areas
 /area/tether/outpost/solars_outside
 	name = "\improper Solar Farm"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 /area/tether/outpost/solars_shed
 	name = "\improper Solar Farm Shed"
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 
+/area/maintenance/substation
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 /area/maintenance/substation/medsec
 	name = "\improper MedSec Substation"
 /area/maintenance/substation/mining
@@ -622,6 +640,7 @@
 
 /area/tether/surfacebase/medical
 	icon_state = "medical"
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 /area/tether/surfacebase/medical/lobby
 	name = "\improper Surface Medical Lobby"
 /area/tether/surfacebase/medical/triage
@@ -632,6 +651,7 @@
 
 /area/tether/surfacebase/security
 	icon_state = "security"
+	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 /area/tether/surfacebase/security/breakroom
 	name = "\improper Surface Security Break Room"
 /area/tether/surfacebase/security/lobby
@@ -897,11 +917,15 @@
 	name = "\improper Kitchen Freezer"
 /area/crew_quarters/panic_shelter
 	name = "\improper Panic Shelter"
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/server
 	name = "\improper Research Server Room"
 	icon_state = "server"
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
+/area/storage
+	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
 /area/storage/art
 	name = "Art Supply Storage"
 	icon_state = "storage"
@@ -954,18 +978,23 @@
 /area/tether/station/stairs_one
 	name = "\improper Station Stairwell First Floor"
 	icon_state = "dk_yellow"
+	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 /area/tether/station/stairs_two
 	name = "\improper Station Stairwell Second Floor"
 	icon_state = "dk_yellow"
+	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 /area/tether/station/stairs_three
 	name = "\improper Station Stairwell Third Floor"
 	icon_state = "dk_yellow"
+	holomap_color = HOLOMAP_AREACOLOR_HALLWAYS
 /area/tether/station/dock_one
 	name = "\improper Dock One"
 	icon_state = "dk_yellow"
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 /area/tether/station/dock_two
 	name = "\improper Dock Two"
 	icon_state = "dk_yellow"
+	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/crew_quarters/showers
 	name = "\improper Unisex Showers"
@@ -1045,6 +1074,7 @@
 	name = "\improper AI Chamber"
 	icon_state = "ai_chamber"
 	ambience = AMBIENCE_AI
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/ai/foyer
 	name = "\improper AI Core Access"
@@ -1054,37 +1084,46 @@
 	icon_state = "ai_cyborg"
 	sound_env = SMALL_ENCLOSED
 	ambience = AMBIENCE_AI
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/ai_monitored/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 
 /area/ai_server_room
 	name = "Messaging Server Room"
 	icon_state = "ai_server"
 	sound_env = SMALL_ENCLOSED
 	ambience = AMBIENCE_AI
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/ai_upload
 	name = "\improper AI Upload Chamber"
 	icon_state = "ai_upload"
 	ambience = AMBIENCE_AI
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/ai_upload_foyer
 	name = "AI Upload Access"
 	icon_state = "ai_foyer"
 	sound_env = SMALL_ENCLOSED
 	ambience = AMBIENCE_AI
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 
 /area/bridge_hallway
 	name = "\improper Bridge Hallway"
 	icon_state = "bridge"
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 
 /area/bridge/meeting_room
 	name = "\improper Heads of Staff Meeting Room"
 	icon_state = "bridge"
 	ambience = list()
 	sound_env = MEDIUM_SOFTFLOOR
+
+/area/medical
+	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
 /area/medical/virologyisolation
 	name = "\improper Virology Isolation"
@@ -1093,6 +1132,8 @@
 	name = "\improper Recovery Room Restroom"
 	icon_state = "virology"
 
+/area/security
+	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 /area/security/hallway
 	name = "\improper Security Hallway"
 	icon_state = "security"
@@ -1130,6 +1171,8 @@
 	name = "\improper Vault"
 	icon_state = "nuke_storage"
 
+/area/engineering
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 /area/engineering/atmos/backup
 	name = "\improper Backup Atmospherics"
 /area/engineering/break_room
@@ -1334,6 +1377,7 @@
 /area/tether/surfacebase/tcomms
 	name = "\improper Telecomms"
 	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg')
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/tether/surfacebase/tcomms/entrance
 	name = "\improper Telecomms Teleporter"
@@ -1366,9 +1410,11 @@
 	name = "\improper Telecomms Foyer"
 	icon_state = "tcomsatfoyer"
 	ambience = AMBIENCE_ENGINEERING
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/tcommsat
 	ambience = AMBIENCE_ENGINEERING
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/tcommsat/entrance
 	name = "\improper Telecomms Teleporter"
@@ -1386,6 +1432,7 @@
 	name = "\improper Telecomms Satellite"
 	icon_state = "tcomsatlob"
 	ambience = AMBIENCE_ENGINEERING
+	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 // TODO: REPATH ALL THESE TO /area/tether
 /area/chapel
@@ -1594,6 +1641,8 @@
 /area/quartermaster/warehouse
 	name = "\improper Cargo Warehouse"
 	icon_state = "quartstorage"
+/area/rnd
+	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 /area/rnd/xenobiology
 	name = "\improper Xenobiology Lab"
 	icon_state = "xeno_lab"
@@ -1628,6 +1677,8 @@
 	name = "\improper Holodeck Alpha"
 
 // Visitor/crew amenities
+/area/bridge
+	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 /area/bridge/secondary
 	name = "\improper Secondary Command Office"
 /area/chapel/chapel_morgue
