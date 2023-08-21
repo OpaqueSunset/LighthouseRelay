@@ -21,6 +21,7 @@
 /obj/structure/sign/greencross : /obj/structure/sign/department/greencross{@OLD}
 /obj/structure/sign/redcross : /obj/structure/sign/department/greencross{@OLD}
 /obj/structure/sign/goldenplaque : /obj/structure/sign/plaque/golden{@OLD}
+/obj/structure/sign/botany : /obj/structure/sign/department/botany{@OLD}
 
 # reagent_containers -> chems
 /obj/item/reagent_containers/@SUBTYPES : /obj/item/chems/@SUBTYPES{@OLD}
@@ -102,13 +103,15 @@
 # RACKS ARE NOT TABLES
 /obj/structure/table/rack/@SUBTYPES : /obj/structure/rack/@SUBTYPES
 
+###################################################################
+# THESE HAVE ALREADY BEEN RUN ON TETHER, RE-ENABLE FOR OTHER MAPS #
+###################################################################
 # /table -> /table/frame
-/obj/structure/table : /obj/structure/table/frame{@OLD}
-
+# /obj/structure/table : /obj/structure/table/frame{@OLD}
 # /table/standard -> /table
-/obj/structure/table/standard : /obj/structure/table{@OLD}
-
-/obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced{@OLD}
+# /obj/structure/table/standard : /obj/structure/table{@OLD}
+# /obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced{@OLD}
+###################################################################
 
 # TOOL TYPE REMOVAL
 /obj/item/tool/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}
