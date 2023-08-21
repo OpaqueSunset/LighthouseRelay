@@ -326,7 +326,7 @@
 		if(S == src)
 			continue
 		S.update_connections()
-		S.update_icon()
+		S.queue_icon_update()
 
 /obj/structure/window/Move()
 	var/ini_dir = dir

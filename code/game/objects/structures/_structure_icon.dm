@@ -58,7 +58,7 @@ var/global/list/default_noblend_objects = list(/obj/machinery/door/window, /obj/
 				if(can_visually_connect_to(S) && S.can_visually_connect())
 					if(propagate)
 						S.update_connections()
-						S.update_icon()
+						S.queue_icon_update()
 					LAZYADD(dirs, direction)
 			if((direction in global.cardinal) && find_blendable_obj_in_turf(T, propagate))
 				LAZYDISTINCTADD(dirs, direction)
