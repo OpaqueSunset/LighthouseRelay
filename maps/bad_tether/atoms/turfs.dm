@@ -96,9 +96,6 @@
 /turf/unsimulated/wall
 	blocks_air = 1
 
-/turf/unsimulated/wall/planetary
-	blocks_air = 0
-
 // Some turfs to make floors look better in centcom tram station.
 
 

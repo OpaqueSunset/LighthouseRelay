@@ -18,6 +18,8 @@
 
 /datum/level_data/virgo3b
 	abstract_type = /datum/level_data/virgo3b // use the main or player subtypes instead please
+	base_area = /area/tether/surfacebase/outside/outside1
+	base_turf = /turf/exterior/open
 	use_global_exterior_ambience = FALSE
 	ambient_light_level = 0.5
 	ambient_light_color = COLOR_WHITE
@@ -31,6 +33,7 @@
 	)
 
 // cached typepaths to ensure different levels are consistent with each other
+// todo: consider giving virgo3b planetoid data instead??
 var/global/decl/strata/virgo3b_stratum
 var/global/decl/material/virgo3b_stratum_base_material
 /datum/level_data/virgo3b/setup_strata()
@@ -44,6 +47,9 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /datum/level_data/virgo3b/main
 	level_flags = (ZLEVEL_STATION|ZLEVEL_CONTACT|ZLEVEL_PLAYER)
+
+/datum/level_data/virgo3b/main/lowest
+	base_turf = /turf/exterior/rocks
 
 /datum/level_data/virgo3b/player
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER)
@@ -70,6 +76,9 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /obj/abstract/level_data_spawner/virgo3b/main
 	level_data_type = /datum/level_data/virgo3b/main
+
+/obj/abstract/level_data_spawner/virgo3b/main/lowest
+	level_data_type = /datum/level_data/virgo3b/main/lowest
 
 /obj/abstract/level_data_spawner/virgo3b/player
 	level_data_type = /datum/level_data/virgo3b/player

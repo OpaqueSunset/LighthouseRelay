@@ -343,7 +343,6 @@
 	})
 "aE" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "specops_shuttle_fore_hatch";
 	locked = 1;
 	name = "Forward Docking Hatch"
@@ -744,7 +743,6 @@
 	})
 "bi" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "specops_shuttle_port_hatch";
 	locked = 1;
 	name = "Port Docking Hatch"
@@ -757,19 +755,19 @@
 	})
 "bj" = (
 /obj/structure/rack,
-/obj/item/clothing/gloves/swat{
+/obj/item/clothing/gloves/thick/swat{
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 80, "bio" = 80, "rad" = 80)
 	},
-/obj/item/clothing/gloves/swat{
+/obj/item/clothing/gloves/thick/swat{
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 80, "bio" = 80, "rad" = 80)
 	},
-/obj/item/clothing/gloves/swat{
+/obj/item/clothing/gloves/thick/swat{
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 80, "bio" = 80, "rad" = 80)
 	},
-/obj/item/clothing/gloves/swat{
+/obj/item/clothing/gloves/thick/swat{
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 80, "bio" = 80, "rad" = 80)
 	},
-/obj/item/clothing/gloves/swat{
+/obj/item/clothing/gloves/thick/swat{
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 80, "energy" = 80, "bomb" = 80, "bio" = 80, "rad" = 80)
 	},
 /obj/item/clothing/shoes/jackboots/swat,
@@ -993,12 +991,12 @@
 /area/centcom/specops)
 "bv" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/belt/security/tactical,
-/obj/item/storage/belt/security/tactical,
-/obj/item/storage/belt/security/tactical,
-/obj/item/storage/belt/security/tactical,
-/obj/item/storage/belt/security/tactical,
-/obj/item/storage/belt/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1027,7 +1025,6 @@
 /area/centcom/specops)
 "by" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "specops_centcom_dock_door";
 	locked = 1
 	},
@@ -1267,7 +1264,7 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "bX" = (
-/obj/structure/sign/redcross{
+/obj/structure/sign/department/redcross{
 	pixel_y = 32
 	},
 /turf/unsimulated/floor{
@@ -1411,7 +1408,7 @@
 /obj/item/handcuffs,
 /obj/item/flash,
 /obj/item/baton/loaded,
-/obj/item/storage/belt/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/item/gun/energy/stunrevolver,
 /obj/item/clothing/glasses/sunglasses/sechud/tactical,
 /obj/item/knife/combat,
@@ -3324,7 +3321,7 @@
 	},
 /area/tdome)
 "fX" = (
-/obj/structure/sign/science,
+/obj/structure/sign/department/science_2,
 /turf/unsimulated/wall,
 /area/centcom/control)
 "fY" = (
@@ -3355,7 +3352,7 @@
 	},
 /area/centcom/control)
 "gb" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -3517,7 +3514,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "gs" = (
-/obj/structure/sign/department/armory,
+/obj/structure/sign/warning/armory,
 /turf/unsimulated/wall,
 /area/centcom/control)
 "gt" = (
@@ -3556,10 +3553,10 @@
 /area/centcom/evac)
 "gx" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -3567,7 +3564,7 @@
 /area/centcom/evac)
 "gy" = (
 /obj/effect/floor_decal/industrial/warning/dust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -3575,7 +3572,7 @@
 "gz" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning/dust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -3584,13 +3581,13 @@
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gB" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
@@ -3760,7 +3757,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -4147,7 +4144,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "hU" = (
-/obj/structure/sign/department/armory,
+/obj/structure/sign/warning/armory,
 /turf/unsimulated/wall,
 /area/centcom/security)
 "hV" = (
@@ -4179,7 +4176,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -4478,7 +4475,7 @@
 /obj/item/clothing/accessory/armguards/ablative,
 /obj/item/clothing/accessory/legguards/ablative,
 /obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/head/helmet/laserproof,
+/obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/crescent,
 /turf/unsimulated/floor{
@@ -4491,7 +4488,7 @@
 /obj/item/clothing/accessory/armguards/ablative,
 /obj/item/clothing/accessory/legguards/ablative,
 /obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/head/helmet/laserproof,
+/obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4544,7 +4541,7 @@
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -4864,7 +4861,7 @@
 /area/centcom/security)
 "jk" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -5008,7 +5005,7 @@
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/tactical,
 /obj/item/clothing/under/tactical,
-/obj/item/storage/belt/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/storage/backpack/dufflebag/syndie/ammo,
@@ -5026,7 +5023,7 @@
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/tactical,
 /obj/item/clothing/under/tactical,
-/obj/item/storage/belt/security/tactical,
+/obj/item/storage/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/item/storage/backpack/dufflebag/syndie/med,
@@ -5063,7 +5060,7 @@
 /obj/item/clothing/accessory/legguards/ballistic,
 /obj/item/clothing/accessory/legguards/ballistic,
 /obj/item/clothing/suit/armor/bulletproof/prepared,
-/obj/item/clothing/head/helmet/bulletproof,
+/obj/item/clothing/head/helmet/ballistic,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5607,7 +5604,7 @@
 /area/centcom/medical)
 "kC" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/sign/department/telecoms,
+/obj/structure/sign/department/telecomms,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "kD" = (
@@ -5890,8 +5887,8 @@
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 4
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -5901,7 +5898,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lk" = (
@@ -5911,7 +5908,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 9
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ll" = (
@@ -5919,18 +5916,18 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lm" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ln" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light/flamp/noshade,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
@@ -6821,7 +6818,7 @@
 /area/centcom/security)
 "mP" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/sign/department/armory,
+/obj/structure/sign/warning/armory,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "mQ" = (
@@ -7033,7 +7030,7 @@
 /area/centcom/evac)
 "nn" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -7559,7 +7556,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /obj/machinery/camera/network/crescent,
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
@@ -7664,7 +7661,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "op" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -9466,7 +9463,7 @@
 	},
 /area/centcom/medical)
 "rQ" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "rR" = (
@@ -9543,12 +9540,6 @@
 /obj/structure/closet/athletic_mixed,
 /turf/unsimulated/floor{
 	icon_state = "steel"
-	},
-/area/centcom/bathroom)
-"sd" = (
-/obj/machinery/scale,
-/turf/unsimulated/floor{
-	icon_state = "freezerfloor"
 	},
 /area/centcom/bathroom)
 "se" = (
@@ -9830,7 +9821,7 @@
 	},
 /area/centcom/medical)
 "sJ" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
 	},
@@ -10347,7 +10338,6 @@
 /area/centcom/terminal)
 "tB" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "escape_shuttle_hatch_station";
 	locked = 1;
 	name = "Shuttle Hatch"
@@ -10358,7 +10348,6 @@
 	})
 "tC" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "escape_shuttle_hatch_offsite";
 	locked = 1;
 	name = "Shuttle Hatch"
@@ -10456,14 +10445,14 @@
 	},
 /area/centcom/bathroom)
 "tN" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor"
 	},
 /area/centcom/bathroom)
 "tO" = (
 /obj/structure/table/steel,
-/obj/item/clothing/shoes/boots/jackboots{
+/obj/item/clothing/shoes/jackboots{
 	armor = list("melee" = 69, "bullet" = 69, "laser" = 69, "energy" = 69, "bomb" = 69, "bio" = 69, "rad" = 69);
 	desc = "This pair of Jackboots look worn and freshly used. They have several claw markings inside and you can read the initials D and M at the bottom";
 	name = "Dhaeleena's Jackboots"
@@ -10632,7 +10621,7 @@
 	},
 /area/centcom/medical)
 "uh" = (
-/obj/structure/sign/greencross,
+/obj/structure/sign/department/greencross,
 /turf/unsimulated/wall,
 /area/centcom/medical)
 "ui" = (
@@ -10727,7 +10716,6 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "FrontlockC";
 	name = "Security Doors";
 	opacity = 0
@@ -10793,7 +10781,6 @@
 "uC" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -10824,7 +10811,6 @@
 "uE" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -10905,7 +10891,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals9,
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -10934,7 +10920,6 @@
 "uR" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -10954,7 +10939,6 @@
 "uT" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -11012,7 +10996,7 @@
 /area/centcom/living)
 "uZ" = (
 /obj/machinery/door/airlock/double/glass{
-	dir = 1
+	dir = 8
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
@@ -11042,7 +11026,6 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "FrontlockBD";
 	name = "Security Doors";
 	opacity = 0
@@ -11052,7 +11035,6 @@
 "ve" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -11081,7 +11063,6 @@
 "vg" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "CentComPort";
 	name = "Security Doors";
 	opacity = 0
@@ -11221,7 +11202,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "turrets";
 	name = "Security Door";
 	opacity = 0
@@ -11233,7 +11213,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "FrontlockC2";
 	name = "Security Door";
 	opacity = 0
@@ -11268,7 +11247,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "FrontlockC2";
 	name = "Security Door";
 	opacity = 0
@@ -11301,7 +11279,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "FrontlockC2";
 	name = "Security Door";
 	opacity = 0
@@ -13520,7 +13497,7 @@
 /area/centcom/security)
 "yZ" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/head/greenbandana,
+/obj/item/clothing/head/bandana/green,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -13717,7 +13694,9 @@
 /area/centcom/security)
 "zr" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/double/glass,
+/obj/machinery/door/airlock/double/glass{
+	dir = 8
+	},
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "zs" = (
@@ -13726,7 +13705,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/restaurant)
 "zt" = (
-/obj/machinery/door/airlock/double/glass,
+/obj/machinery/door/airlock/double/glass{
+	dir = 8
+	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "zu" = (
@@ -14285,7 +14266,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "residential";
 	name = "Security Door";
 	opacity = 0
@@ -14956,7 +14936,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Doors";
 	opacity = 0
@@ -15166,7 +15145,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Doors";
 	opacity = 0
@@ -15238,7 +15216,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "residential";
 	name = "Security Door";
 	opacity = 0
@@ -15251,7 +15228,6 @@
 "Cc" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Doors";
 	opacity = 0
@@ -15265,7 +15241,6 @@
 "Ce" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Doors";
 	opacity = 0
@@ -15423,7 +15398,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Doors";
 	opacity = 0
@@ -15466,7 +15440,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Door";
 	opacity = 0
@@ -15486,7 +15459,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "TelelockdownC";
 	name = "Security Door";
 	opacity = 0
@@ -16027,8 +15999,8 @@
 /turf/unsimulated/floor/techfloor_grid,
 /area/centcom/terminal)
 "MJ" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel,
@@ -16049,7 +16021,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/unsimulated/floor/techfloor_grid,
@@ -29111,7 +29083,7 @@ qf
 qD
 oq
 ry
-sd
+st
 st
 st
 st
@@ -29679,7 +29651,7 @@ qg
 qD
 oq
 ry
-sd
+st
 st
 st
 st

@@ -79,7 +79,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_airlock_outer";
 	locked = 1
 	},
@@ -87,7 +86,6 @@
 /area/tether/surfacebase/mining_main/airlock)
 "aaq" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_airlock_outer";
 	locked = 1
 	},
@@ -151,7 +149,7 @@
 /area/tether/surfacebase/mining_main/airlock)
 "aaw" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
@@ -322,7 +320,7 @@
 /area/tether/surfacebase/mining_main/airlock)
 "aaP" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -385,8 +383,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -411,7 +409,6 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_airlock_inner";
 	locked = 1
 	},
@@ -421,7 +418,6 @@
 "aaZ" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_airlock_inner";
 	locked = 1
 	},
@@ -468,7 +464,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4-8"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "abg" = (
@@ -511,7 +507,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -844,7 +840,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -998,7 +994,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1046,7 +1042,7 @@
 /area/tether/surfacebase/mining_main/eva)
 "aci" = (
 /obj/structure/bed/chair,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -1143,7 +1139,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1168,7 +1164,7 @@
 /obj/structure/window/basic{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2160,7 +2156,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2173,7 +2169,7 @@
 /area/maintenance/lower/trash_pit)
 "aej" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2185,7 +2181,7 @@
 /area/maintenance/lower/trash_pit)
 "aek" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2194,7 +2190,7 @@
 /area/maintenance/lower/trash_pit)
 "ael" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2206,7 +2202,7 @@
 /area/maintenance/lower/trash_pit)
 "aem" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2218,8 +2214,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2299,8 +2295,8 @@
 /turf/simulated/wall,
 /area/maintenance/substation/mining)
 "aey" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_grid,
@@ -2317,7 +2313,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
@@ -2704,7 +2700,7 @@
 /area/storage/primary)
 "afs" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -2775,13 +2771,13 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/window/basic{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -3045,7 +3041,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4,
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -3197,7 +3193,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/lightgrey/border,
@@ -3225,7 +3221,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "agr" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/brown/border,
 /turf/simulated/floor/tiled,
@@ -3274,7 +3270,7 @@
 	pixel_y = -30
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -3389,7 +3385,7 @@
 "agE" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "agF" = (
@@ -3491,10 +3487,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "agQ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3505,10 +3501,10 @@
 /turf/simulated/wall/r_wall,
 /area/maintenance/lower/research)
 "agS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3636,7 +3632,7 @@
 "ahg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/tool,
@@ -3706,10 +3702,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/storage/primary)
 "ahp" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3717,14 +3713,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "ahq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "ahr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3734,21 +3730,21 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "ahs" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "aht" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ahu" = (
 /obj/structure/grille,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_one)
 "ahv" = (
@@ -3784,10 +3780,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "ahz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
@@ -3803,8 +3799,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "ahB" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -3975,7 +3971,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ahR" = (
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -4183,7 +4179,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
@@ -4331,7 +4327,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
@@ -4437,7 +4433,7 @@
 "aix" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
@@ -4551,7 +4547,7 @@
 /area/maintenance/lower/research)
 "aiJ" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4707,7 +4703,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
 "aiW" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4844,21 +4840,21 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "ajf" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ajg" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ajh" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
@@ -4886,7 +4882,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/eva)
 "ajj" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/item/clothing/accessory/suspenders,
 /obj/machinery/light/small{
@@ -4896,7 +4892,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ajk" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet/crate,
 /obj/item/camera,
 /obj/item/magnetic_tape/random,
@@ -4910,10 +4906,10 @@
 /area/maintenance/lower/trash_pit)
 "ajm" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4925,7 +4921,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "ajn" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ajo" = (
@@ -4966,7 +4962,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "ajr" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -5044,8 +5040,8 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "ajw" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -5104,12 +5100,12 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "ajA" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet/crate,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
@@ -5168,7 +5164,7 @@
 /area/hallway/lower/first_west)
 "ajE" = (
 /obj/random/loot_pile,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
@@ -5215,7 +5211,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "ajH" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
@@ -5859,7 +5855,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
@@ -5931,7 +5927,7 @@
 /area/vacant/vacant_site)
 "alb" = (
 /obj/structure/rack,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/random/maintenance/cargo,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/medical,
@@ -6019,26 +6015,38 @@
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/atrium_one)
 "aln" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alo" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alp" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
@@ -6260,7 +6268,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "alM" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
@@ -6311,17 +6319,29 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "alR" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alS" = (
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
@@ -6437,14 +6457,14 @@
 "amf" = (
 /obj/effect/floor_decal/rust,
 /obj/random/loot_pile,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "amg" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/closet/crate,
@@ -6465,7 +6485,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/storage/surface_eva)
 "ami" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/rack,
@@ -6500,10 +6520,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "amk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6582,6 +6602,10 @@
 /area/tether/surfacebase/north_stairs_one)
 "amu" = (
 /mob/living/simple_animal/fish/koi/poisonous,
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "amv" = (
@@ -6601,7 +6625,7 @@
 /area/tether/surfacebase/atrium_one)
 "amw" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -6763,7 +6787,7 @@
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/atrium_one)
 "amP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6780,7 +6804,7 @@
 /turf/simulated/floor,
 /area/maintenance/substation/mining)
 "amR" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6789,16 +6813,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance)
 "amS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance)
 "amT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/loot_pile,
@@ -6886,7 +6910,7 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/first_aid_west)
 "anf" = (
-/obj/structure/sign/redcross{
+/obj/structure/sign/department/redcross{
 	name = "FirstAid"
 	},
 /turf/simulated/wall,
@@ -6922,16 +6946,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "anj" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet,
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ank" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/loot_pile,
@@ -6944,7 +6968,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
@@ -6959,14 +6983,18 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "anm" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "ann" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
@@ -7001,7 +7029,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/surface_atmos)
 "anq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -7065,10 +7093,10 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/tether/surfacebase/mining_main/ore)
 "anz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
@@ -7087,17 +7115,17 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site)
 "anC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "anD" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/random/loot_pile,
@@ -7139,7 +7167,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance)
 "anJ" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet/crate,
 /obj/item/clothing/head/that,
 /obj/random/maintenance/clean,
@@ -7169,7 +7197,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "anM" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
@@ -7268,7 +7296,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "anY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
@@ -7460,7 +7488,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/clothing/shoes/black,
+/obj/item/clothing/shoes/color/black,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/crew_quarters/locker)
 "aox" = (
@@ -7739,7 +7767,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site)
 "aoV" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
@@ -7890,7 +7918,7 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/locker)
 "apl" = (
-/obj/abstract/level_data_spawner/virgo3b/main,
+/obj/abstract/level_data_spawner/virgo3b/main/lowest,
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/outside1)
 "apm" = (
@@ -7917,7 +7945,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
 "app" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -7997,7 +8025,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site)
 "apy" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
@@ -8005,30 +8033,30 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "apz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "apA" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "apB" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/random/loot_pile,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "apC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/closet/crate,
@@ -8367,14 +8395,14 @@
 /turf/simulated/wall,
 /area/maintenance/substation/civ_west)
 "aqk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "aql" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/atmospherics/binary/passive_gate{
@@ -8398,7 +8426,7 @@
 /area/maintenance/lower/xenoflora)
 "aqo" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -8558,7 +8586,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/airlock/double/glass,
+/obj/machinery/door/airlock/double/glass{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "aqC" = (
@@ -8713,7 +8743,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/civ_west)
 "aqY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -8735,7 +8765,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "ara" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow,
@@ -8790,7 +8820,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
 "arf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor/shifted,
@@ -9109,13 +9139,13 @@
 /turf/simulated/wall,
 /area/maintenance/lower/solars)
 "arH" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "arI" = (
@@ -9145,16 +9175,24 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "arK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "arL" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
+	},
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
@@ -9165,7 +9203,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -9222,7 +9260,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "arS" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -9333,7 +9371,7 @@
 "ash" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/table,
 /obj/random/maintenance/engineering,
 /obj/item/stack/cable_coil/random_belt,
@@ -9362,7 +9400,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/solars)
 "ask" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -9405,7 +9443,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -9415,7 +9453,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "asr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/lightgrey{
@@ -9485,7 +9523,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
@@ -9608,7 +9646,7 @@
 	dir = 8
 	},
 /obj/item/clothing/suit/storage/toggle/wintercoat,
-/obj/item/clothing/shoes/black,
+/obj/item/clothing/shoes/color/black,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/crew_quarters/locker)
 "asG" = (
@@ -9642,7 +9680,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -9698,7 +9736,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -9717,7 +9755,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "2-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -9750,7 +9788,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "asV" = (
-/obj/structure/sign/department/anomaly,
+/obj/structure/sign/warning/anomalous_materials,
 /turf/simulated/wall,
 /area/hallway/lower/first_west)
 "asW" = (
@@ -9794,7 +9832,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "asZ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -9839,13 +9877,13 @@
 /turf/simulated/wall,
 /area/rnd/xenobiology/xenoflora/lab_atmos)
 "atg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -9896,7 +9934,7 @@
 	},
 /obj/item/clothing/suit/storage/toggle/wintercoat,
 /obj/machinery/light,
-/obj/item/clothing/shoes/black,
+/obj/item/clothing/shoes/color/black,
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/crew_quarters/locker)
 "atm" = (
@@ -10113,7 +10151,7 @@
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/atmospherics/binary/pump/on{
@@ -10227,7 +10265,7 @@
 	dir = 1;
 	name = "Air to Ports"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -10667,7 +10705,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/xenoflora/lab_atmos)
 "auB" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/scrubbers{
@@ -10783,7 +10821,7 @@
 /area/tether/surfacebase/atrium_one)
 "auN" = (
 /obj/effect/floor_decal/borderfloor,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/lightgrey/border,
@@ -10993,7 +11031,7 @@
 /turf/simulated/floor/airless,
 /area/engineering/atmos)
 "avh" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/cable,
@@ -11137,7 +11175,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "avy" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
@@ -11713,8 +11751,8 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "awv" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
@@ -12396,7 +12434,7 @@
 /area/tether/surfacebase/atrium_one)
 "axK" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -12946,7 +12984,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/xenoflora)
 "ayK" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
 	},
 /obj/machinery/power/apc{
@@ -12979,7 +13017,7 @@
 /turf/simulated/wall,
 /area/tether/surfacebase/atrium_one)
 "ayN" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
 	},
 /obj/structure/sign/warning/nosmoking_2{
@@ -13608,7 +13646,7 @@
 /area/engineering/atmos)
 "azS" = (
 /obj/machinery/vending/cola,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -14015,7 +14053,7 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/locker/laundry_arrival)
 "aAF" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -14035,7 +14073,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/processing)
 "aAH" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/grille,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "civ_airlock_pump"
@@ -14761,7 +14799,6 @@
 /area/engineering/atmos/processing)
 "aCb" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "civ_airlock_outer";
 	locked = 1
 	},
@@ -14819,7 +14856,6 @@
 "aCg" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "civ_airlock_inner";
 	locked = 1
 	},
@@ -15096,7 +15132,7 @@
 "aCB" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/double/glass{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/processing)
@@ -15196,7 +15232,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "aCM" = (
-/obj/structure/sign/electricshock,
+/obj/structure/sign/warning/shock,
 /turf/simulated/wall,
 /area/maintenance/lower/solars)
 "aCN" = (
@@ -15495,10 +15531,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor,
@@ -15565,7 +15601,6 @@
 	pixel_y = -25
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "civ_airlock_outer";
 	locked = 1
 	},
@@ -15588,7 +15623,6 @@
 "aDF" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "civ_airlock_inner";
 	locked = 1
 	},
@@ -15773,7 +15807,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor,
-/obj/structure/sign/department/anomaly,
+/obj/structure/sign/warning/anomalous_materials,
 /turf/simulated/floor/plating,
 /area/rnd/anomaly_lab)
 "aEb" = (
@@ -15838,10 +15872,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "aEl" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -15856,10 +15890,10 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos/processing)
 "aEn" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
 	},
 /obj/structure/sign/warning/fire{
@@ -15964,10 +15998,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "aEv" = (
@@ -15975,7 +16009,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/catwalk,
@@ -15994,7 +16028,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/catwalk,
@@ -16620,7 +16654,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -16680,7 +16714,7 @@
 /area/rnd/xenobiology/xenoflora_storage)
 "aFR" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -16749,7 +16783,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos/processing)
 "aGb" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/cable,
@@ -17100,7 +17134,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "aGM" = (
-/obj/machinery/processor,
+/obj/machinery/optable,
 /obj/effect/floor_decal/borderfloor,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
@@ -17465,7 +17499,7 @@
 /area/hallway/lower/first_west)
 "aHC" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -17535,7 +17569,7 @@
 /area/engineering/atmos)
 "aHH" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -17772,7 +17806,7 @@
 /area/engineering/atmos/intake)
 "aIh" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -17825,7 +17859,7 @@
 "aIs" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
@@ -17865,7 +17899,7 @@
 	dir = 9
 	},
 /obj/structure/undies_wardrobe,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/showers)
 "aIy" = (
@@ -18756,7 +18790,7 @@
 	pixel_y = 22
 	},
 /obj/structure/table/bench/steel,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
@@ -20564,7 +20598,7 @@
 /area/tether/surfacebase/tram)
 "aPm" = (
 /obj/machinery/vending/fitness,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -21061,7 +21095,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -21232,8 +21266,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/rack,
@@ -21246,7 +21280,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/medical,
 /obj/random/maintenance/research,
@@ -21257,8 +21291,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -21289,10 +21323,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/solars)
 "aXZ" = (
@@ -21444,7 +21478,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "aZz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
@@ -22308,7 +22342,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
@@ -22492,7 +22526,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/lightgrey/border,
@@ -22895,7 +22929,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -23151,7 +23184,6 @@
 "bmn" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -23370,7 +23402,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio1";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -23880,7 +23911,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -24169,7 +24199,6 @@
 "bum" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -24333,7 +24362,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio2";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -24791,8 +24819,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor,
@@ -25021,7 +25049,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25103,7 +25130,6 @@
 "bDU" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25227,7 +25253,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio3";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25502,7 +25527,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25587,7 +25611,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "bLY" = (
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -25600,7 +25624,6 @@
 "bMb" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25642,7 +25665,6 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "rnd_s_airlock_inner";
 	locked = 1
 	},
@@ -25655,7 +25677,6 @@
 	pixel_y = 24
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "rnd_s_airlock_inner";
 	locked = 1
 	},
@@ -25697,7 +25718,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio4";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -25830,9 +25850,8 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "bOo" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
-	id_tag = "rnd_s_airlock_scrubber";
-	scrubbing_gas = list(/decl/material/solid/phoron)
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
+	id_tag = "rnd_s_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/external)
@@ -26240,7 +26259,6 @@
 "bSr" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26266,7 +26284,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26290,7 +26307,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio5";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26300,7 +26316,6 @@
 "bSy" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26328,7 +26343,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26352,7 +26366,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "xenobio6";
 	name = "Containment Blast Doors";
 	opacity = 0
@@ -26361,7 +26374,6 @@
 /area/rnd/xenobiology)
 "bSJ" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "rnd_s_airlock_outer";
 	locked = 1
 	},
@@ -26373,7 +26385,6 @@
 	pixel_y = -8
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "rnd_s_airlock_outer";
 	locked = 1
 	},
@@ -26614,7 +26625,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -26694,7 +26705,6 @@
 /area/crew_quarters/sleep/Dorm_6)
 "bVO" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "paramed_airlock_outer";
 	locked = 1
 	},
@@ -27152,7 +27162,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /obj/structure/disposalpipe/junction{
@@ -27648,7 +27658,7 @@
 /area/rnd/xenobiology)
 "cdp" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
@@ -28258,6 +28268,7 @@
 /area/crew_quarters/visitor_dining)
 "cgw" = (
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Laundry"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
@@ -29149,7 +29160,7 @@
 "cjp" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/grey/border,
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/visitor_laundry)
 "cjr" = (
@@ -29409,7 +29420,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "clA" = (
-/obj/structure/sign/atmos_air,
+/obj/structure/sign/warning/compressed_gas,
 /turf/simulated/wall,
 /area/tether/surfacebase/mining_main/external)
 "cmB" = (
@@ -29561,7 +29572,6 @@
 	pixel_y = 8
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "paramed_airlock_outer";
 	locked = 1
 	},
@@ -29600,7 +29610,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/medical/triage)
 "deS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -29883,7 +29893,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "fel" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/loot_pile,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
@@ -29900,7 +29910,7 @@
 "fgu" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/double/metal/mait{
-	dir = 1;
+	dir = 8;
 	name = "Maintenance Access"
 	},
 /turf/simulated/floor/wood,
@@ -29941,10 +29951,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -29986,10 +29996,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -30110,7 +30120,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/surfacebase/medical/triage)
 "gaK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -30219,7 +30229,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
 "gxP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -30279,7 +30289,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos/processing)
 "gRx" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "mining_airlock_scrubber"
 	},
 /obj/structure/sign/warning/nosmoking_2{
@@ -30294,16 +30304,16 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/engineering/atmos)
 "gUy" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/public_garden_maintenence)
 "gUX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -30526,10 +30536,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/public_garden_one)
 "ijX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -30596,7 +30606,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/mining_main/airlock)
 "iEb" = (
-/obj/structure/sign/greencross,
+/obj/structure/sign/department/greencross,
 /turf/simulated/wall,
 /area/tether/surfacebase/medical/triage)
 "iIB" = (
@@ -30804,7 +30814,6 @@
 "jup" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "paramed_airlock_inner";
 	locked = 1
 	},
@@ -30901,7 +30910,7 @@
 /area/tether/surfacebase/medical/triage)
 "jZV" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -30919,10 +30928,10 @@
 	icon_state = "1-2";
 	id_tag = "surface-solars"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -31044,7 +31053,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
 "kZc" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -31094,7 +31103,7 @@
 /area/maintenance/lower/public_garden_maintenence)
 "lFg" = (
 /obj/structure/grille,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/public_garden_one)
 "lHO" = (
@@ -31583,7 +31592,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
 "oAC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/junk,
@@ -32001,8 +32010,8 @@
 	},
 /area/tether/surfacebase/medical/triage)
 "qHh" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -32033,10 +32042,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside1)
 "qMQ" = (
@@ -32120,7 +32129,6 @@
 "ray" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "paramed_airlock_inner";
 	locked = 1
 	},
@@ -32554,7 +32562,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "sMO" = (
@@ -32745,7 +32753,7 @@
 /area/tether/surfacebase/public_garden_one)
 "tNF" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/sign/warning/nosmoking_2{
@@ -32968,7 +32976,7 @@
 /area/tether/surfacebase/public_garden)
 "uME" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -33009,7 +33017,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/surfacebase/medical/triage)
 "uVV" = (
-/obj/structure/sign/atmos_air,
+/obj/structure/sign/warning/compressed_gas,
 /turf/simulated/wall,
 /area/storage/surface_eva/external)
 "uWj" = (
@@ -33157,7 +33165,7 @@
 /area/tether/surfacebase/medical/triage)
 "vNR" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/sign/warning/fire{
@@ -33249,7 +33257,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "wzH" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/rack,
@@ -33479,7 +33487,7 @@
 /obj/random/junk,
 /obj/random/maintenance/engineering,
 /obj/random/maintenance/engineering,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
 "yho" = (

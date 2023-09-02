@@ -47,10 +47,6 @@
 		/obj/item/gun/energy/frontier/locked/holdout = 4
 	)
 
-// Used at centcomm for the elevator
-/obj/machinery/cryopod/robot/door/dorms
-	// spawnpoint_type = /datum/spawnpoint/tram
-
 /obj/machinery/camera/network/crescent
 	preset_channels = list(CAMERA_CHANNEL_CRESCENT)
 

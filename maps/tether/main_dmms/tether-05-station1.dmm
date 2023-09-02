@@ -149,6 +149,7 @@
 "aaw" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Exploration Briefing"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
@@ -588,7 +589,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/hatch{
-	icon_state = "door_locked";
 	id_tag = "engine_electrical_maintenance";
 	locked = 1;
 	name = "Electrical Maintenance"
@@ -703,7 +703,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/hatch{
-	icon_state = "door_locked";
 	id_tag = "engine_electrical_maintenance";
 	locked = 1;
 	name = "Electrical Maintenance"
@@ -886,14 +885,14 @@
 	id_tag = "expshuttle_dock";
 	pixel_x = 32
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/tiled,
 /area/tether/station/excursion_dock)
 "abV" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -1159,7 +1158,7 @@
 	frequency = 1441;
 	pixel_y = 22
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/structure/table,
 /obj/item/chems/glass/beaker/large,
 /obj/item/chems/glass/beaker/large,
@@ -1170,23 +1169,23 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)
 "acD" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/hallway/station/atrium)
 "acE" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/hallway/station/atrium)
 "acF" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/brflowers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/grass,
 /area/hallway/station/atrium)
 "acG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/flora/bush/ppflowers,
@@ -1206,7 +1205,7 @@
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "acK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/flora/bush/ppflowers,
@@ -1329,7 +1328,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "acY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/light/flamp/noshade,
@@ -1344,7 +1343,7 @@
 /turf/simulated/floor/wood,
 /area/hallway/station/atrium)
 "adb" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -1377,7 +1376,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "EngineBlast";
 	name = "Engine Monitoring Room Blast Doors";
 	opacity = 0
@@ -1553,14 +1551,14 @@
 /turf/simulated/floor,
 /area/construction/observation)
 "adx" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/hallway/station/atrium)
 "ady" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/flora/bush/ppflowers,
@@ -1597,7 +1595,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -1661,7 +1658,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -1953,7 +1949,6 @@
 /area/engineering/workshop)
 "aeo" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	icon_state = "door_locked";
 	id_tag = "expshuttle_door_L";
 	locked = 1
 	},
@@ -1996,7 +1991,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "aes" = (
@@ -2074,7 +2069,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "EngineBlast";
 	name = "Engine Monitoring Room Blast Doors";
 	opacity = 0
@@ -2455,7 +2449,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/grey/diagonal,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/structure/reagent_dispensers/cookingoil,
@@ -2575,7 +2569,7 @@
 /area/engineering/storage)
 "afu" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -2612,7 +2606,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/lounge/kitchen)
 "afy" = (
-/obj/structure/sign/deck1,
+/obj/structure/sign/deck/first,
 /turf/simulated/shuttle/wall/voidcraft/green{
 	hard_corner = 1
 	},
@@ -2708,7 +2702,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/structure/closet/chefcloset,
 /obj/item/glass_jar,
-/obj/item/retail_scanner/civilian,
+/obj/item/eftpos/departmental/service,
 /obj/item/soap/nanotrasen,
 /obj/item/destTagger{
 	pixel_x = 4;
@@ -2894,7 +2888,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "agb" = (
-/obj/structure/sign/department/eng,
+/obj/structure/sign/department/engineering,
 /turf/simulated/wall/r_wall,
 /area/hallway/station/atrium)
 "agc" = (
@@ -3379,7 +3373,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -3463,7 +3457,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "ahn" = (
-/obj/structure/bed/sofa/left,
+/obj/structure/bed/sofa/right/black{
+	icon_state = "sofa_r_preview"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "aho" = (
@@ -3481,7 +3477,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "ahr" = (
-/obj/structure/bed/sofa/right,
+/obj/structure/bed/sofa/left,
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "ahs" = (
@@ -3649,7 +3645,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/double/glass,
+/obj/machinery/door/airlock/double/glass{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "ahJ" = (
@@ -4101,7 +4099,6 @@
 /obj/structure/bookcase{
 	name = "bookcase (Religious)"
 	},
-/obj/item/book/custom_library/religious,
 /turf/simulated/floor/wood,
 /area/library)
 "aiF" = (
@@ -4237,7 +4234,6 @@
 	},
 /obj/item/book/manual/robotics_cyborgs,
 /obj/item/book/manual/engineering_singularity_safety,
-/obj/item/book/custom_library/nonfiction,
 /turf/simulated/floor/wood,
 /area/library)
 "ajc" = (
@@ -4254,7 +4250,6 @@
 	name = "bookcase (Non-Fiction)"
 	},
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/custom_library/nonfiction,
 /obj/item/book/codex/lore/vir,
 /turf/simulated/floor/wood,
 /area/library)
@@ -4271,7 +4266,6 @@
 /obj/structure/bookcase{
 	name = "bookcase (Fiction)"
 	},
-/obj/item/book/custom_library/fiction,
 /turf/simulated/floor/wood,
 /area/library)
 "aji" = (
@@ -4372,7 +4366,6 @@
 /obj/structure/bookcase{
 	name = "bookcase (Reference)"
 	},
-/obj/item/book/manual/hydroponics_pod_people,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/engineering_guide,
 /turf/simulated/floor/wood,
@@ -4648,7 +4641,6 @@
 /obj/item/radio/intercom{
 	pixel_y = -24
 	},
-/obj/machinery/shield_capacitor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -4814,7 +4806,7 @@
 /obj/structure/table/woodentable,
 /obj/item/duct_tape,
 /obj/item/camera,
-/obj/item/retail_scanner/civilian{
+/obj/item/eftpos/departmental/service{
 	dir = 1
 	},
 /obj/item/taperecorder,
@@ -5875,7 +5867,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -5981,7 +5972,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -6260,7 +6250,6 @@
 	pixel_x = -32
 	},
 /obj/machinery/door/airlock/double/metal{
-	icon_state = "door_locked";
 	id_tag = "expshuttle_door_cargo";
 	locked = 1
 	},
@@ -6698,7 +6687,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -6862,7 +6850,7 @@
 /area/maintenance/station/eng_lower)
 "aqt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor,
@@ -6920,7 +6908,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -7442,7 +7430,7 @@
 "asc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor,
@@ -7782,7 +7770,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/workshop)
 "ato" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet,
@@ -7946,7 +7934,7 @@
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
 "atH" = (
-/obj/structure/sign/department/eng,
+/obj/structure/sign/department/engineering,
 /turf/simulated/wall/r_wall,
 /area/engineering/foyer)
 "atI" = (
@@ -8183,6 +8171,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Exploration Medbay"
 	},
 /turf/simulated/floor/tiled,
@@ -8637,7 +8626,7 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -8761,6 +8750,10 @@
 /turf/simulated/floor/plating,
 /area/hallway/station/docks)
 "axc" = (
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/bridge)
 "axe" = (
@@ -9030,7 +9023,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/workshop)
 "axQ" = (
-/obj/structure/sign/deck1,
+/obj/structure/sign/deck/first,
 /turf/simulated/wall,
 /area/tether/station/stairs_one)
 "axR" = (
@@ -9548,7 +9541,7 @@
 /area/storage/tools)
 "azQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -9735,7 +9728,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -9918,7 +9911,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -10156,7 +10149,7 @@
 /area/crew_quarters/sleep/engi_wash)
 "aAX" = (
 /obj/structure/bed/chair,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/hallway/station/docks)
 "aAZ" = (
@@ -10495,7 +10488,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "aCc" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
@@ -10632,7 +10625,6 @@
 /area/holodeck_control)
 "aCB" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "eng_starboard_outer";
 	locked = 1;
 	name = "Engineering Starboard External Access"
@@ -11068,7 +11060,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -11501,7 +11493,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -11869,7 +11861,7 @@
 "aHs" = (
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -11966,7 +11958,6 @@
 /area/teleporter)
 "aHQ" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "eng_starboard_inner";
 	locked = 1;
 	name = "Engineering Starboard Internal Access"
@@ -11989,7 +11980,6 @@
 "aHT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "eng_starboard_inner";
 	locked = 1;
 	name = "Engineering Starboard Internal Access"
@@ -12195,7 +12185,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "aIS" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /turf/simulated/floor/tiled,
@@ -12307,7 +12297,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -12496,6 +12485,7 @@
 /area/crew_quarters/sleep/engi_wash)
 "aLc" = (
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Holodeck"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -12508,7 +12498,6 @@
 /turf/simulated/floor,
 /area/engineering/storage)
 "aLi" = (
-/obj/machinery/shield_capacitor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -12588,7 +12577,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -13090,7 +13078,7 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "aMu" = (
@@ -13106,7 +13094,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_lower)
 "aMx" = (
@@ -13222,7 +13210,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "ce_office"
 	},
 /turf/simulated/floor,
@@ -13275,7 +13262,7 @@
 /area/engineering/foyer)
 "aOj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13408,7 +13395,7 @@
 /turf/simulated/floor/carpet,
 /area/engineering/foyer)
 "aPG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/rack,
@@ -13420,7 +13407,7 @@
 /area/maintenance/station/eng_lower)
 "aPH" = (
 /obj/machinery/atmospherics/valve/digital/open,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13458,7 +13445,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -13622,7 +13608,7 @@
 /area/maintenance/station/eng_lower)
 "aRr" = (
 /obj/machinery/atmospherics/valve/open,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
@@ -14035,7 +14021,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "aUE" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/disposalpipe/segment,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
@@ -14333,7 +14319,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -14359,7 +14344,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -14373,7 +14357,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -14385,7 +14368,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -14419,7 +14401,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -14777,8 +14758,6 @@
 /obj/structure/bookcase{
 	name = "bookcase (Non-Fiction)"
 	},
-/obj/item/book/manual/tesla_engine,
-/obj/item/book/custom_library/nonfiction,
 /turf/simulated/floor/wood,
 /area/library)
 "bch" = (
@@ -14961,7 +14940,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15277,7 +15256,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/airlock/double/glass,
+/obj/machinery/door/airlock/double/glass{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "bej" = (
@@ -15660,7 +15641,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_one)
 "bfJ" = (
-/obj/structure/sign/directions/command{
+/obj/structure/sign/directions/bridge{
 	dir = 4
 	},
 /obj/structure/sign/directions/elevator{
@@ -15690,7 +15671,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -15704,7 +15684,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -15865,7 +15844,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -16137,7 +16116,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "hop_office"
 	},
 /obj/structure/window/reinforced/polarized{
@@ -16157,7 +16135,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "hop_office"
 	},
 /obj/structure/window/reinforced/polarized{
@@ -16202,7 +16179,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "hop_office"
 	},
 /obj/structure/window/reinforced/polarized{
@@ -16371,7 +16347,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -16395,7 +16370,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -16419,7 +16393,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -16854,7 +16827,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -16892,7 +16864,6 @@
 	},
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "hop_office"
 	},
 /turf/simulated/floor/plating,
@@ -16968,7 +16939,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -17109,7 +17080,6 @@
 	},
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "hop_office"
 	},
 /turf/simulated/floor/plating,
@@ -17435,7 +17405,7 @@
 /obj/machinery/firealarm{
 	pixel_y = 26
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/hallway/station/docks)
 "bsv" = (
@@ -17828,7 +17798,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "bridge blast";
 	name = "Bridge Blast Doors";
 	opacity = 0
@@ -18616,7 +18585,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "cd-blast";
 	name = "Facility Director Lockdown";
 	opacity = 0
@@ -18781,7 +18749,6 @@
 	pixel_y = -26
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "d1a2_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -18791,7 +18758,6 @@
 /area/tether/station/dock_one)
 "bHu" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "d1a2_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -18847,7 +18813,6 @@
 /area/tether/station/dock_one)
 "bHG" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "specops_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -18863,7 +18828,6 @@
 /area/tether/station/dock_two)
 "bHN" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "specops_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -18905,7 +18869,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bHY" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -19187,7 +19151,6 @@
 	pixel_y = -26
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "d1a1_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19200,7 +19163,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "d1a1_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19235,7 +19197,6 @@
 	pixel_y = -26
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "tether_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19245,7 +19206,6 @@
 /area/tether/station/dock_two)
 "bPx" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "tether_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19340,7 +19300,7 @@
 	pixel_y = -26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -19368,7 +19328,6 @@
 /area/tether/station/dock_two)
 "bPX" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "trade_shuttle_dock_inner";
 	locked = 1;
 	name = "Dock One Internal Access"
@@ -19377,7 +19336,6 @@
 /area/tether/station/dock_one)
 "bPY" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "trade_shuttle_dock_inner";
 	locked = 1;
 	name = "Dock One Internal Access"
@@ -19390,7 +19348,6 @@
 /area/tether/station/stairs_one)
 "bQc" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "nuke_shuttle_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19400,7 +19357,6 @@
 /area/tether/station/dock_two)
 "bQd" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "nuke_shuttle_dock_inner";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19480,7 +19436,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -19535,7 +19491,6 @@
 	pixel_y = -6
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "trade_shuttle_dock_outer";
 	locked = 1;
 	name = "Dock One External Access"
@@ -19545,7 +19500,6 @@
 /area/tether/station/dock_one)
 "bQz" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "trade_shuttle_dock_outer";
 	locked = 1;
 	name = "Dock One External Access"
@@ -19555,7 +19509,6 @@
 /area/tether/station/dock_one)
 "bQC" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "nuke_shuttle_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19586,7 +19539,6 @@
 /area/tether/station/dock_two)
 "bQF" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "nuke_shuttle_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -19909,7 +19861,7 @@
 /turf/simulated/floor,
 /area/vacant/vacant_restaurant_lower)
 "bZY" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled,
 /area/hallway/station/docks)
 "bZZ" = (
@@ -19921,7 +19873,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/machinery/newscaster{
@@ -20013,7 +19965,7 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_showers)
 "cuT" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -20152,7 +20104,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/structure/window/reinforced/polarized,
@@ -20496,7 +20447,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /obj/item/book/manual/standard_operating_procedure,
@@ -20671,7 +20622,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/tether/station/excursion_dock)
 "jag" = (
@@ -20708,7 +20659,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/lounge)
 "jki" = (
@@ -20745,7 +20696,7 @@
 /obj/item/clothing/shoes/magboots,
 /obj/item/clothing/suit/space/void/exploration,
 /obj/item/clothing/head/helmet/space/void/exploration,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -20756,7 +20707,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -20854,6 +20804,7 @@
 /area/tether/station/explorer_meeting)
 "kvA" = (
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Exploration Prep"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
@@ -20969,7 +20920,7 @@
 /area/tether/station/explorer_showers)
 "kZI" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -21421,7 +21372,7 @@
 /turf/simulated/floor,
 /area/construction/observation)
 "nov" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/engineering,
 /obj/random/maintenance/engineering,
@@ -21532,6 +21483,10 @@
 /area/tether/station/excursion_dock)
 "nZS" = (
 /mob/living/simple_animal/fish/koi/poisonous,
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /turf/simulated/floor/pool,
 /area/bridge)
 "oaO" = (
@@ -21658,7 +21613,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21787,7 +21742,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -21907,7 +21862,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -22143,7 +22097,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/tether/station/excursion_dock)
 "rNH" = (
@@ -22173,7 +22127,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/structure/closet/crate/secure/science,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/station/explorer_entry)
@@ -22201,7 +22155,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
@@ -22378,7 +22332,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/structure/window/reinforced/polarized{
@@ -22539,7 +22492,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -22763,7 +22715,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "pathfinder_office"
 	},
 /obj/structure/window/reinforced/polarized,
@@ -22842,7 +22793,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "wbr" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 5
 	},
 /obj/structure/table/bench/steel,
@@ -22978,7 +22929,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "wJa" = (
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "wLj" = (
@@ -23056,7 +23007,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10{
@@ -23101,7 +23052,7 @@
 /area/tether/station/explorer_meeting)
 "xva" = (
 /obj/machinery/washing_machine,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -23145,10 +23096,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor,
 /area/engineering/shaft)
 "xMl" = (

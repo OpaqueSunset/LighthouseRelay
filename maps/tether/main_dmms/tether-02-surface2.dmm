@@ -242,13 +242,13 @@
 /obj/structure/cable/green{
 	icon_state = "16-0"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
@@ -262,10 +262,10 @@
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "aQ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -331,7 +331,7 @@
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "aX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/random/tool,
@@ -525,7 +525,7 @@
 	},
 /area/maintenance/lower/mining)
 "bw" = (
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/random/toy,
 /obj/random/tech_supply,
 /obj/random/junk,
@@ -607,11 +607,11 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "bE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -773,7 +773,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "cb" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -926,7 +926,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/gateway)
 "cr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1053,7 +1053,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "cI" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -1147,7 +1147,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "cY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
@@ -1280,17 +1280,17 @@
 /area/maintenance/lower/mining)
 "di" = (
 /obj/structure/catwalk,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
 /area/tether/surfacebase/outside/outside2)
 "dj" = (
 /obj/structure/catwalk,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -1328,7 +1328,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dp" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/lattice,
@@ -1355,17 +1355,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "ds" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1410,18 +1410,18 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dz" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dA" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dB" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -1429,7 +1429,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dC" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1437,10 +1437,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dD" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1472,7 +1472,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "dG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1543,7 +1543,7 @@
 /area/maintenance/lower/bar)
 "dO" = (
 /obj/structure/catwalk,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
@@ -1555,7 +1555,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/gateway)
 "dQ" = (
@@ -1762,7 +1762,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "ep" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light/small,
@@ -1770,10 +1770,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "eq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1792,26 +1792,26 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "et" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "eu" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "ev" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/loot_pile,
@@ -1838,20 +1838,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "ez" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/lower/bar)
 "eA" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
@@ -1865,7 +1865,7 @@
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "eC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -1874,20 +1874,20 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "eD" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "eE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
 "eF" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/random/junk,
@@ -1927,7 +1927,7 @@
 /area/tether/surfacebase/atrium_two)
 "eK" = (
 /obj/structure/grille,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "eL" = (
@@ -1956,7 +1956,7 @@
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1988,7 +1988,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "eS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/orange{
@@ -1997,7 +1997,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "eT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
@@ -2098,7 +2098,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "fe" = (
@@ -2275,7 +2275,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "fr" = (
@@ -2325,7 +2325,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -2344,7 +2344,7 @@
 /turf/simulated/open,
 /area/maintenance/lower/bar)
 "fy" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/orange{
@@ -2353,7 +2353,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "fz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2466,7 +2466,7 @@
 /turf/simulated/open,
 /area/maintenance/lower/bar)
 "fO" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -2627,7 +2627,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -2685,25 +2685,25 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "gi" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "gj" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "gk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -2733,7 +2733,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -2760,7 +2760,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "gr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor/orange{
@@ -2787,7 +2787,7 @@
 /turf/simulated/floor,
 /area/tether/surfacebase/north_staires_two)
 "gv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -2796,7 +2796,7 @@
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "gx" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -2825,14 +2825,14 @@
 /area/tether/surfacebase/atrium_two)
 "gA" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "gB" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -2856,7 +2856,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "gE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -2898,33 +2898,33 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "gI" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/lower/bar)
 "gJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/random/loot_pile,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/lower/bar)
 "gK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/water/deep/indoors,
 /area/tether/surfacebase/fishing_garden)
 "gL" = (
 /obj/structure/flora/bush/reedbush,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/water/deep/indoors,
@@ -3041,7 +3041,7 @@
 /turf/simulated/wall,
 /area/tether/surfacebase/north_staires_two)
 "hd" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -3079,7 +3079,7 @@
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -3091,7 +3091,7 @@
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 6
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -3264,14 +3264,14 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/north_staires_two)
 "hE" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/fullgrass,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "hF" = (
 /obj/structure/flora/bush/grassybush,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "hG" = (
@@ -3425,7 +3425,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "hT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -3526,7 +3526,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "ig" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
@@ -3683,7 +3683,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "iz" = (
@@ -3779,7 +3779,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "iJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -3832,7 +3832,7 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -3853,7 +3853,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -4011,7 +4011,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -4143,7 +4143,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "jC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4152,7 +4152,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "jD" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor/hole/right{
 	dir = 4
 	},
@@ -4202,7 +4202,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "jJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4278,7 +4278,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "jU" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4394,7 +4394,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -4403,7 +4403,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 9
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -4415,10 +4415,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kj" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -4429,14 +4429,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kl" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4486,7 +4486,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
 "kr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4567,7 +4567,7 @@
 /area/maintenance/lower/rnd)
 "kz" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -4586,7 +4586,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "kC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/light/small{
@@ -4598,7 +4598,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kD" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -4612,7 +4612,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kF" = (
-/obj/item/clothing/shoes/boots/jackboots{
+/obj/item/clothing/shoes/jackboots{
 	desc = "Very old and worn baseball cleats.";
 	name = "baseball cleats"
 	},
@@ -4668,7 +4668,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "kN" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4680,10 +4680,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kO" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4691,13 +4691,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kP" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "kQ" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -4717,7 +4717,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/bar)
 "kT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4734,7 +4734,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "kV" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4757,7 +4757,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "kX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -4827,7 +4827,7 @@
 /turf/simulated/wall/r_wall,
 /area/tether/surfacebase/atrium_two)
 "le" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -4844,7 +4844,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "lg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
@@ -4973,7 +4973,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "lv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -5038,7 +5038,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "lB" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -5260,21 +5260,21 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/atrium_two)
 "lU" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "lV" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "lW" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/tether/surfacebase/atrium_two)
 "lX" = (
@@ -5416,7 +5416,7 @@
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable{
 	icon_state = "16-0"
 	},
@@ -5456,7 +5456,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/machinery/status_display{
 	pixel_y = 30
 	},
@@ -5570,13 +5570,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/lower/bar)
 "mE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
@@ -5877,7 +5877,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -6139,7 +6139,7 @@
 /area/tether/surfacebase/atrium_two)
 "nG" = (
 /obj/effect/floor_decal/borderfloor,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -6202,13 +6202,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "nO" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -6286,7 +6286,7 @@
 /area/tether/surfacebase/atrium_two)
 "nW" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -6358,7 +6358,7 @@
 /area/engineering/lower/breakroom)
 "og" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -6376,7 +6376,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "oi" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -6390,7 +6390,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "oj" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -6741,7 +6741,7 @@
 /area/tether/surfacebase/east_stairs_two)
 "oO" = (
 /obj/structure/grille,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -6818,7 +6818,7 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/emergency_storage/atmos)
 "oW" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7630,7 +7630,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/lower/lobby)
 "qt" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -7675,16 +7675,16 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "qw" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
 /area/rnd/hallway)
 "qx" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
@@ -7869,7 +7869,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "qU" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -7880,7 +7880,6 @@
 	dir = 4;
 	pixel_x = -28
 	},
-/obj/item/book/manual/the_humanized_mice,
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "qW" = (
@@ -7968,7 +7967,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/lower/lobby)
 "rf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -7998,7 +7997,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/lower/south)
 "rj" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -8251,7 +8250,7 @@
 /turf/simulated/wall,
 /area/tether/surfacebase/east_stairs_two)
 "rP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_techfloor_grid/full{
@@ -8282,7 +8281,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "rS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner_techfloor_grid/full{
@@ -8299,7 +8298,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "rU" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -8521,7 +8520,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -8567,10 +8566,10 @@
 /area/maintenance/asmaint2)
 "ss" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor/corner,
@@ -8752,7 +8751,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "sI" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -8774,7 +8773,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "sL" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -8786,7 +8785,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "sM" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -8804,7 +8803,7 @@
 "sN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor/hole,
@@ -8813,7 +8812,7 @@
 "sO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
@@ -8824,7 +8823,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
@@ -8905,7 +8904,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/alarm{
@@ -9132,7 +9131,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "tz" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -9145,7 +9144,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "tB" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -9154,7 +9153,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "tC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -9168,7 +9167,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "tD" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -9432,7 +9431,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "uk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -9563,7 +9562,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -9850,7 +9849,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
 "va" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -9865,19 +9864,19 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "vc" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "vd" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/techfloor,
@@ -9891,7 +9890,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "vf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -9904,7 +9903,7 @@
 /area/maintenance/asmaint2)
 "vg" = (
 /obj/structure/flora/bush/grassybush,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/firealarm{
 	pixel_y = 26
 	},
@@ -9925,13 +9924,13 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_staires_two)
 "vj" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "vk" = (
 /obj/structure/flora/bush/grassybush,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/grass,
@@ -10223,18 +10222,18 @@
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "vM" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "vN" = (
@@ -10306,7 +10305,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "vU" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -10335,7 +10334,7 @@
 /turf/simulated/floor/wood,
 /area/maintenance/lower/atmos)
 "vY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /mob/living/simple_animal/fish/koi,
@@ -10519,25 +10518,25 @@
 /area/tether/surfacebase/fishing_garden)
 "wu" = (
 /obj/structure/flora/bush/brflowers,
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "wv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "ww" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/grass,
@@ -10553,7 +10552,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -10579,7 +10578,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
@@ -10588,10 +10587,10 @@
 /area/maintenance/asmaint2)
 "wA" = (
 /obj/structure/flora/bush/grassybush,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light/flamp/noshade,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
@@ -10609,7 +10608,7 @@
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
 "wE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/water/deep/indoors,
@@ -11068,23 +11067,23 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xh" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner_techfloor_grid,
@@ -11115,20 +11114,20 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "xm" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "xn" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/grass,
@@ -11142,7 +11141,7 @@
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "xp" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "xq" = (
@@ -11188,7 +11187,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "xu" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -11237,13 +11236,13 @@
 "xx" = (
 /obj/machinery/light/small,
 /obj/effect/floor_decal/corner_techfloor_grid/full,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xy" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -11254,7 +11253,7 @@
 	pixel_y = -28
 	},
 /obj/structure/cable,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -11321,7 +11320,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -11345,7 +11344,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "xJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor{
@@ -11384,7 +11383,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -11415,14 +11414,14 @@
 /area/tether/surfacebase/fishing_garden)
 "xP" = (
 /obj/structure/flora/bush/lavendergrass,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "xQ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
@@ -11430,7 +11429,7 @@
 /area/tether/surfacebase/fishing_garden)
 "xR" = (
 /obj/structure/flora/bush/brflowers,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "xS" = (
@@ -11719,7 +11718,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "yq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor,
@@ -11756,15 +11755,15 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "yu" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/flora/bush/sparsegrass,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "yv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/light/flamp/noshade,
@@ -11857,7 +11856,7 @@
 /area/janitor)
 "yD" = (
 /obj/structure/flora/bush/brflowers,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/grass,
@@ -11894,7 +11893,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "yJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
@@ -11904,7 +11903,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/red,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
 "yL" = (
@@ -11928,7 +11927,7 @@
 /area/engineering/atmos/monitoring)
 "yN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techmaint,
@@ -11943,7 +11942,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "yP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -12139,7 +12138,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "zf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -12260,7 +12259,7 @@
 /turf/simulated/open,
 /area/engineering/atmos)
 "zn" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -12441,8 +12440,8 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -12553,7 +12552,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
 "zV" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
@@ -12562,7 +12561,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "zW" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -12573,14 +12572,14 @@
 	frequency = 1441;
 	pixel_y = 22
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "zY" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -12588,12 +12587,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "zZ" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
 "Aa" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
 "Ab" = (
@@ -12727,7 +12726,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "Ap" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -13019,7 +13018,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "AT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
@@ -13107,8 +13106,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "Bf" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -13160,7 +13159,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
 "Bm" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13177,7 +13176,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/drone_fabrication)
 "Bo" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/flora/bush/sparsegrass,
@@ -13289,10 +13288,10 @@
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "BE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/random/loot_pile,
@@ -13300,7 +13299,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BF" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/closet,
@@ -13309,14 +13308,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BH" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
@@ -13324,32 +13323,32 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BI" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "BL" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13387,7 +13386,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/rnd/research_storage)
 "BP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -13396,7 +13395,7 @@
 /turf/simulated/open,
 /area/engineering/atmos)
 "BR" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -13409,8 +13408,8 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/rnd/research_storage)
 "BT" = (
-/obj/structure/railing,
-/obj/machinery/camera/network/northern_star,
+/obj/structure/railing/mapped,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "BU" = (
@@ -13425,7 +13424,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "BX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -13492,10 +13491,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Cg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
@@ -13503,13 +13502,13 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Ci" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/research,
@@ -13518,7 +13517,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Cj" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet,
 /obj/random/maintenance/clean,
 /obj/random/junk,
@@ -13527,7 +13526,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Ck" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
@@ -13564,7 +13563,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "Cq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet,
@@ -13628,7 +13627,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/rnd/research_storage)
 "Cw" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
@@ -13645,27 +13644,27 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Cz" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/open,
 /area/engineering/atmos)
 "CA" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/open,
 /area/engineering/atmos)
 "CB" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/fullgrass,
 /obj/structure/flora/tree/jungle_small,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "CC" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet,
@@ -13695,8 +13694,8 @@
 /turf/simulated/open,
 /area/engineering/atmos)
 "CH" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -13734,12 +13733,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "CM" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/engineering/atmos)
 "CN" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -13760,7 +13759,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "CP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -13846,10 +13845,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Dc" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13892,7 +13891,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "Dj" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13927,10 +13926,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Do" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13941,16 +13940,16 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Dp" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Dq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -13961,8 +13960,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "Ds" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -13974,11 +13973,11 @@
 /turf/simulated/floor/wood,
 /area/maintenance/lower/atmos)
 "Du" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Dv" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
@@ -13986,7 +13985,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
@@ -13994,7 +13993,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "Dy" = (
@@ -14004,7 +14003,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
@@ -14012,11 +14011,11 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/closet/crate,
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
@@ -14024,7 +14023,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/random/loot_pile,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
@@ -14056,7 +14055,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "DF" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable{
@@ -14072,7 +14071,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "DH" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable{
@@ -14129,7 +14128,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "DQ" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -14142,7 +14141,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "DR" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -14158,7 +14157,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "DS" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -14180,10 +14179,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "DU" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -14242,7 +14241,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "DY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor,
@@ -14266,7 +14265,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Ea" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor,
@@ -14333,24 +14332,24 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Eh" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Ei" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Ej" = (
 /obj/machinery/light/small,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -14360,7 +14359,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/random/junk,
@@ -14370,17 +14369,17 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "Em" = (
 /obj/effect/floor_decal/techfloor,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -14396,10 +14395,10 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/random/loot_pile,
@@ -14433,14 +14432,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Et" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Eu" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
@@ -14449,16 +14448,16 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Ev" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -14469,7 +14468,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Ew" = (
-/obj/structure/sign/department/telecoms,
+/obj/structure/sign/department/telecomms,
 /turf/simulated/wall,
 /area/maintenance/substation/tcomms)
 "Ex" = (
@@ -14494,7 +14493,7 @@
 /turf/simulated/wall,
 /area/maintenance/substation/tcomms)
 "EA" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -14548,7 +14547,7 @@
 /turf/simulated/wall/r_wall,
 /area/tcommsat/computer)
 "EG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -14744,10 +14743,10 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /obj/structure/rack,
@@ -14758,7 +14757,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Ff" = (
-/obj/structure/sign/department/telecoms,
+/obj/structure/sign/department/telecomms,
 /turf/simulated/wall,
 /area/tcommsat/entrance{
 	name = "\improper Telecomms Entrance"
@@ -14812,7 +14811,7 @@
 	})
 "Fk" = (
 /obj/machinery/camera/network/telecom,
-/obj/structure/sign/electricshock{
+/obj/structure/sign/warning/shock{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
@@ -15195,7 +15194,7 @@
 /turf/simulated/wall/r_wall,
 /area/tcommsat/chamber)
 "FS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -15204,7 +15203,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "FT" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
@@ -15312,7 +15311,7 @@
 	},
 /obj/structure/table,
 /obj/item/multitool,
-/obj/structure/sign/electricshock{
+/obj/structure/sign/warning/shock{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark,
@@ -15344,7 +15343,6 @@
 /area/tcommsat/computer)
 "Gi" = (
 /obj/machinery/door/airlock/hatch/maintenance{
-	icon_state = "door_locked";
 	id_tag = "server_access_outer";
 	locked = 1;
 	name = "Telecoms Server Access"
@@ -15483,7 +15481,6 @@
 /area/tcommsat/chamber)
 "Gt" = (
 /obj/machinery/door/airlock/hatch/maintenance{
-	icon_state = "door_locked";
 	id_tag = "server_access_inner";
 	locked = 1;
 	name = "Telecoms Server Access"
@@ -15507,7 +15504,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Gv" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -15517,7 +15514,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -16001,7 +15998,7 @@
 	},
 /area/tcommsat/chamber)
 "HM" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -16017,7 +16014,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "HN" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -16070,10 +16067,10 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/lower/atmos)
 "HS" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -16126,7 +16123,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "HY" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/loot_pile,
@@ -16147,11 +16144,10 @@
 /obj/structure/table/steel,
 /obj/item/stack/medical/splint/ghetto,
 /obj/random/technology_scanner,
-/obj/item/book/manual/the_humanized_mice,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "Ic" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16175,7 +16171,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Ig" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
@@ -16207,7 +16203,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "Il" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16223,7 +16219,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Io" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/techfloor{
@@ -16235,8 +16231,8 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "Ip" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16272,7 +16268,7 @@
 /area/maintenance/lower/atmos)
 "Iv" = (
 /obj/random/loot_pile,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -16369,7 +16365,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "IJ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/random/junk,
@@ -16400,7 +16396,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "IO" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /mob/living/simple_animal/fish/bass,
@@ -16413,7 +16409,7 @@
 /turf/simulated/floor/water/deep/indoors,
 /area/tether/surfacebase/fishing_garden)
 "IQ" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/water/deep/indoors,
@@ -16513,10 +16509,10 @@
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar_upper)
 "Jh" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16545,7 +16541,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/junk,
@@ -16553,7 +16549,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Jn" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
@@ -16579,8 +16575,8 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "Jr" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -16636,7 +16632,7 @@
 /obj/structure/catwalk,
 /obj/structure/table/steel,
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /obj/item/flame/lighter/random,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
@@ -16672,10 +16668,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "JE" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/closet/crate,
@@ -16685,7 +16681,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "JF" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/closet,
@@ -16696,10 +16692,10 @@
 /area/maintenance/lower/atmos)
 "JG" = (
 /obj/machinery/light/small,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16900,7 +16896,7 @@
 "Kd" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/vending/snack,
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "Ke" = (
@@ -16920,7 +16916,7 @@
 /area/tether/surfacebase/fishing_garden)
 "Kh" = (
 /obj/structure/flora/bush/lavendergrass,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light/flamp/noshade,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
@@ -16929,7 +16925,7 @@
 	dir = 1;
 	pixel_y = 24
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
@@ -16942,14 +16938,14 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
 "Kk" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
 "Kl" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
@@ -16988,7 +16984,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "Kq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/table/bench/wooden,
@@ -17010,7 +17006,7 @@
 /area/tether/surfacebase/public_garden_two)
 "Ku" = (
 /obj/structure/flora/bush/leafybush,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/grass,
@@ -17022,13 +17018,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/fishing_garden)
 "Kw" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
@@ -17042,7 +17038,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "Ky" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 26
@@ -17906,7 +17902,7 @@
 /area/tether/surfacebase/public_garden_two)
 "Zx" = (
 /obj/effect/floor_decal/borderfloor,
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/yellow/border,

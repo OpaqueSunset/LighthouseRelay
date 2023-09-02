@@ -273,10 +273,10 @@
 /area/security/riot_control)
 "aF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -390,7 +390,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/structure/table/steel,
 /obj/item/deck/cards,
-/obj/item/toy/nanotrasenballoon,
+/obj/item/toy/balloon/nanotrasen,
 /obj/item/twohanded/fireaxe/foam,
 /turf/simulated/floor/tiled/dark,
 /area/security/recstorage)
@@ -405,13 +405,13 @@
 /turf/simulated/floor/tiled/freezer,
 /area/security/brig/bathroom)
 "aU" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/spline/plain,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "aV" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -586,10 +586,10 @@
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "be" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor,
@@ -667,7 +667,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor/shifted,
@@ -724,7 +724,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -748,7 +747,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor/shifted,
@@ -1029,7 +1028,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -1173,10 +1171,10 @@
 /area/engineering/shaft)
 "bX" = (
 /obj/random/trash,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "bY" = (
@@ -1331,7 +1329,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -1348,7 +1345,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -1736,7 +1732,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -1795,7 +1790,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -1985,7 +1979,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -2333,7 +2326,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "security_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -2612,7 +2604,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -2841,7 +2832,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/sign/deathsposal{
+/obj/structure/sign/warning/deathsposal{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
@@ -2931,7 +2922,6 @@
 	dir = 4
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/manual/the_humanized_mice,
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "ff" = (
@@ -3192,7 +3182,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
@@ -3254,7 +3244,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
+	icon_state = "rwindow_full";
 	id = "chapel"
 	},
 /turf/simulated/floor/plating,
@@ -3279,7 +3269,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
+	icon_state = "rwindow_full";
 	id = "chapel"
 	},
 /turf/simulated/floor/plating,
@@ -3346,7 +3336,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -3594,7 +3583,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
 "gv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -3930,7 +3919,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -4077,7 +4065,7 @@
 "hs" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -4104,7 +4092,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -4321,18 +4309,18 @@
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
 "hN" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/engineering/locker_room)
 "hO" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/engineering/locker_room)
 "hP" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -4922,7 +4910,6 @@
 "jc" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -5011,7 +4998,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -5789,13 +5775,13 @@
 	pixel_y = 22
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
 "kW" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/powered/pump/filled,
@@ -5846,7 +5832,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "la" = (
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -6127,7 +6113,7 @@
 	dir = 5
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -6147,7 +6133,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
 "lF" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -6459,7 +6445,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "mo" = (
-/obj/structure/sign/department/eng,
+/obj/structure/sign/department/engineering,
 /turf/simulated/wall,
 /area/engineering/foyer_mezzenine)
 "mp" = (
@@ -6471,14 +6457,14 @@
 /turf/simulated/open,
 /area/maintenance/station/eng_upper)
 "mq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
 "mr" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6557,7 +6543,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor/plating,
@@ -6567,7 +6552,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor/plating,
@@ -6799,7 +6783,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "mR" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/reagent_dispensers/watertank,
@@ -6813,7 +6797,7 @@
 "mT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7015,7 +6999,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -7353,7 +7337,6 @@
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -7373,7 +7356,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -7390,7 +7373,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
 "nI" = (
-/obj/structure/sign/deck2,
+/obj/structure/sign/deck/second,
 /turf/simulated/shuttle/wall/voidcraft/green{
 	hard_corner = 1
 	},
@@ -7582,7 +7565,7 @@
 /turf/simulated/floor,
 /area/storage/tech)
 "oe" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -7591,16 +7574,16 @@
 /turf/simulated/open,
 /area/engineering/foyer_mezzenine)
 "of" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
 /area/engineering/foyer_mezzenine)
 "og" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/open,
@@ -7636,7 +7619,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "ok" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/rack,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/engineering,
@@ -7665,7 +7648,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -7688,7 +7671,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "op" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/structure/cable{
@@ -7789,7 +7772,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "ow" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -8043,7 +8026,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
 "oP" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -8225,7 +8208,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "pg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet,
@@ -8497,7 +8480,7 @@
 /area/vacant/vacant_restaurant_upper)
 "pI" = (
 /obj/effect/floor_decal/rust,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/plating,
 /area/vacant/vacant_restaurant_upper)
 "pJ" = (
@@ -8514,7 +8497,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -8535,7 +8517,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -8550,7 +8531,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	opacity = 0
@@ -8997,7 +8977,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/northern_star,
+/obj/machinery/camera/network/tether,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -9603,7 +9583,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyisolation)
 "rD" = (
-/obj/structure/reagent_dispensers/water_cooler/full,
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyisolation)
 "rE" = (
@@ -9791,7 +9771,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -10035,16 +10015,16 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_restaurant_upper)
 "su" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
 /area/vacant/vacant_restaurant_upper)
 "sv" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/open,
@@ -10132,7 +10112,7 @@
 "sG" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/structure/sign/deathsposal{
+/obj/structure/sign/warning/deathsposal{
 	pixel_x = 32
 	},
 /obj/structure/disposalpipe/trunk{
@@ -10282,7 +10262,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_restaurant_upper)
 "ta" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/open,
@@ -10978,11 +10958,11 @@
 /area/medical/virology)
 "uw" = (
 /obj/structure/table/glass,
-/obj/item/antibody_scanner{
+/obj/item/scanner/antibody{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/antibody_scanner,
+/obj/item/scanner/antibody,
 /obj/structure/reagent_dispensers/virusfood{
 	pixel_x = -30
 	},
@@ -11114,7 +11094,6 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "eva_port_inner";
 	locked = 1;
 	name = "EVA Internal Access"
@@ -11156,7 +11135,6 @@
 /area/ai_monitored/storage/eva)
 "uO" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "eva_port_outer";
 	locked = 1;
 	name = "EVA External Access"
@@ -11175,7 +11153,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
 "uQ" = (
-/obj/structure/sign/deck2,
+/obj/structure/sign/deck/second,
 /turf/simulated/wall,
 /area/tether/station/stairs_two)
 "uR" = (
@@ -11355,7 +11333,7 @@
 "vh" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/warning/full,
-/obj/structure/sign/deathsposal{
+/obj/structure/sign/warning/deathsposal{
 	pixel_x = 32
 	},
 /obj/structure/disposalpipe/trunk{
@@ -11591,7 +11569,6 @@
 "vE" = (
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
-	icon_state = "door_locked";
 	id_tag = "virologyq_airlock_exterior";
 	locked = 1;
 	name = "Virology Quarantine Airlock"
@@ -11708,7 +11685,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
 "vQ" = (
-/obj/machinery/camera/network/northern_star{
+/obj/machinery/camera/network/tether{
 	dir = 1
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -11721,6 +11698,7 @@
 /area/tether/station/stairs_two)
 "vR" = (
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Stairwell"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
@@ -12301,7 +12279,6 @@
 "wL" = (
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
-	icon_state = "door_locked";
 	id_tag = "virologyq_airlock_interior";
 	locked = 1;
 	name = "Virology Quarantine Airlock"
@@ -12553,7 +12530,6 @@
 "xm" = (
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
-	icon_state = "door_locked";
 	id_tag = "virology_airlock_interior";
 	locked = 1;
 	name = "Virology Interior Airlock"
@@ -13453,14 +13429,12 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "virologyquar";
 	name = "Virology Emergency Quarantine Blast Doors";
 	opacity = 0
 	},
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
-	icon_state = "door_locked";
 	id_tag = "virology_airlock_exterior";
 	locked = 1;
 	name = "Virology Exterior Airlock"
@@ -15027,7 +15001,6 @@
 /area/mine/explored/upper_level)
 "BL" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "large_escape_pod_1_berth_hatch";
 	locked = 1;
 	name = "Large Escape Pod 1"
@@ -15057,7 +15030,6 @@
 /area/shuttle/large_escape_pod1/station)
 "BX" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "large_escape_pod_1_hatch";
 	locked = 1;
 	name = "Emergency Airlock"
@@ -15065,7 +15037,7 @@
 /turf/simulated/shuttle/floor,
 /area/shuttle/large_escape_pod1/station)
 "BY" = (
-/obj/structure/sign/redcross,
+/obj/structure/sign/department/redcross,
 /turf/simulated/shuttle/wall,
 /area/shuttle/large_escape_pod1/station)
 "BZ" = (
@@ -15426,7 +15398,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "DA" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/random/junk,
@@ -15500,7 +15472,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "Et" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -15656,7 +15628,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -15695,10 +15666,10 @@
 "Ft" = (
 /obj/structure/closet,
 /obj/item/clothing/accessory/poncho/roles/medical,
-/obj/item/clothing/shoes/boots/winter/medical,
-/obj/item/clothing/shoes/boots/winter/medical,
+/obj/item/clothing/shoes/winterboots/medical,
+/obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/suit/storage/toggle/wintercoat/medical,
-/obj/item/clothing/under/rank/medical,
+/obj/item/clothing/under/medical,
 /obj/item/clothing/under/avian_smock/utility,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
@@ -15753,7 +15724,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "FA" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/random/junk,
@@ -15917,11 +15888,10 @@
 	dir = 1
 	},
 /obj/item/ashtray/plastic,
-/obj/item/book/manual/the_humanized_mice,
 /turf/simulated/floor/plating,
 /area/maintenance/station/micro)
 "GO" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -16028,7 +15998,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/security/brig)
 "HK" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -16103,12 +16073,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown";
 	opacity = 0
@@ -16217,7 +16185,7 @@
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "Jf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/computer/arcade,
@@ -16240,10 +16208,10 @@
 	icon_state = "32-2"
 	},
 /obj/structure/lattice,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/open,
 /area/engineering/shaft)
 "Jp" = (
@@ -16411,7 +16379,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "Ko" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/vending/snack,
@@ -16611,12 +16579,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown";
 	opacity = 0
@@ -16682,8 +16648,8 @@
 /obj/structure/cable/green{
 	icon_state = "16-0"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor,
@@ -16716,7 +16682,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/public_meeting_room)
 "LN" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/vending/fitness,
@@ -16828,12 +16794,12 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "MC" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/monotile,
 /area/security/brig)
 "MI" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/computer/arcade/orion_trail,
@@ -17105,7 +17071,7 @@
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "Oe" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -17118,7 +17084,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -17226,7 +17191,7 @@
 	name = "Prisoner's Locker"
 	},
 /obj/item/flame/lighter/zippo,
-/obj/item/clothing/head/greenbandana,
+/obj/item/clothing/head/bandana/green,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -17257,7 +17222,7 @@
 /obj/random/junk,
 /obj/structure/rack,
 /obj/random/maintenance/engineering,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -17523,7 +17488,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/port)
 "QG" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/closet/crate,
@@ -17553,9 +17518,9 @@
 /area/maintenance/station/micro)
 "QN" = (
 /obj/structure/closet,
-/obj/item/clothing/shoes/boots/winter/medical,
+/obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/suit/storage/toggle/wintercoat/medical,
-/obj/item/clothing/under/rank/medical,
+/obj/item/clothing/under/medical,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/station/sec_lower)
 "QO" = (
@@ -17624,7 +17589,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "QZ" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
@@ -17681,7 +17646,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "Rq" = (
-/obj/structure/sign/electricshock,
+/obj/structure/sign/warning/shock,
 /turf/simulated/wall/r_wall,
 /area/security/brig)
 "Rr" = (
@@ -17977,7 +17942,7 @@
 /obj/structure/closet,
 /obj/random/maintenance/security,
 /obj/random/contraband,
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/plating,
@@ -18082,7 +18047,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "Uf" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor,
@@ -18614,7 +18579,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "Xx" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -18833,7 +18798,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown";
 	opacity = 0
@@ -18871,12 +18835,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized{
 	dir = 10;
-	icon_state = "fwindow";
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular{
 	density = 0;
-	icon_state = "pdoor0";
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown";
 	opacity = 0
@@ -18904,7 +18866,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0
@@ -18989,7 +18950,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Zd" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -19013,7 +18974,6 @@
 /obj/machinery/door/blast/regular{
 	density = 0;
 	dir = 4;
-	icon_state = "pdoor0";
 	id_tag = "brig_lockdown";
 	name = "Security Blast Doors";
 	opacity = 0

@@ -1,6 +1,4 @@
 /obj/structure/window/reinforced/polarized/full
-	dir = SOUTHWEST
-	icon_state = "fwindow"
 	maxhealth = 80
 
 //Special map objects

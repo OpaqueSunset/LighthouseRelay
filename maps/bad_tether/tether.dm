@@ -46,10 +46,12 @@
 	#include "../away/yacht/yacht.dm"
 	#include "../away/liberia/liberia.dm"
 
+	// Loaded after other modpacks to override everything where needed.
+	#include "../../mods/content/lighthouse/_lighthouse.dme"
+
 	#include "tether_leveldata.dm"
 
 	#include "atoms/areas.dm"
-	#include "atoms/cryo.dm"
 	#include "atoms/decals.dm"
 	#include "atoms/effects.dm"
 	#include "atoms/props.dm"
@@ -65,7 +67,6 @@
 	#include "atoms/unimplemented/decals.dm"
 	#include "atoms/unimplemented/signs.dm"
 	#include "atoms/unimplemented/turfs.dm"
-	#include "atoms/unimplemented/turfs_eris.dm"
 	#include "atoms/unimplemented/weapons.dm"
 	#include "datums/tether_access.dm"
 	#include "datums/tether_departments.dm"

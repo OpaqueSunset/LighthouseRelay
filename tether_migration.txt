@@ -19,9 +19,27 @@
 /obj/structure/sign/warning/securearea : /obj/structure/sign/warning{@OLD}
 /obj/structure/sign/directions/cargo : /obj/structure/sign/directions/supply{@OLD}
 /obj/structure/sign/greencross : /obj/structure/sign/department/greencross{@OLD}
-/obj/structure/sign/redcross : /obj/structure/sign/department/greencross{@OLD}
+/obj/structure/sign/redcross : /obj/structure/sign/department/redcross{@OLD}
 /obj/structure/sign/goldenplaque : /obj/structure/sign/plaque/golden{@OLD}
 /obj/structure/sign/botany : /obj/structure/sign/department/botany{@OLD}
+/obj/structure/sign/department/mail : /obj/structure/sign/department/mail_delivery{@OLD}
+/obj/structure/sign/atmos_air : /obj/structure/sign/warning/compressed_gas{@OLD}
+/obj/structure/sign/biohazard : /obj/structure/sign/warning/biohazard{@OLD}
+/obj/structure/sign/deathsposal : /obj/structure/sign/warning/deathsposal{@OLD}
+/obj/structure/sign/deck1 : /obj/structure/sign/deck/first{@OLD}
+/obj/structure/sign/deck2 : /obj/structure/sign/deck/second{@OLD}
+/obj/structure/sign/deck3 : /obj/structure/sign/deck/third{@OLD}
+/obj/structure/sign/department/anomaly : /obj/structure/sign/warning/anomalous_materials{@OLD}
+/obj/structure/sign/department/armory : /obj/structure/sign/warning/armory{@OLD}
+/obj/structure/sign/department/chem : /obj/structure/sign/department/chemistry{@OLD}
+/obj/structure/sign/department/eng : /obj/structure/sign/department/engineering{@OLD}
+/obj/structure/sign/department/sci : /obj/structure/sign/department/science_1{@OLD}
+/obj/structure/sign/department/telecoms : /obj/structure/sign/department/telecomms{@OLD}
+/obj/structure/sign/directions/command : /obj/structure/sign/directions/bridge{@OLD}
+/obj/structure/sign/electricshock : /obj/structure/sign/warning/shock{@OLD}
+/obj/structure/sign/science : /obj/structure/sign/department/science_2{@OLD}
+/obj/structure/sign/signnew/secure : /obj/structure/sign/warning/secure_area{@OLD}
+/obj/structure/sign/xenobio : /obj/structure/sign/department/xenobio_3{@OLD}
 
 # reagent_containers -> chems
 /obj/item/reagent_containers/@SUBTYPES : /obj/item/chems/@SUBTYPES{@OLD}
@@ -111,6 +129,9 @@
 # /table/standard -> /table
 # /obj/structure/table/standard : /obj/structure/table{@OLD}
 # /obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced{@OLD}
+# /bench variants
+# /obj/structure/table/bench : /obj/structure/table/bench/frame{@OLD}
+# /obj/structure/table/bench/standard : /obj/structure/table/bench{@OLD}
 ###################################################################
 
 # TOOL TYPE REMOVAL
@@ -118,6 +139,8 @@
 
 # ATMOS REPATHS
 /obj/machinery/atmospherics/pipe/tank/@SUBTYPES : /obj/machinery/atmospherics/unary/tank/@SUBTYPES
+
+/obj/structure/plasticflaps/mining : /obj/structure/plasticflaps/airtight{@OLD}
 
 # MISC. ITEMS
 /obj/item/moneybag/vault : /obj/item/storage/bag/cash/filled{@OLD}
@@ -561,3 +584,12 @@
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b : @DELETE
 # we don't have shieldcaps anymore
 /obj/machinery/shield_capacitor : @DELETE
+# these don't fit our lore
+/obj/item/book/custom_library/@SUBTYPES : @DELETE
+# no tesla
+/obj/item/book/manual/tesla_engine : @DELETE
+# what
+/obj/item/book/manual/the_humanized_mice : @DELETE
+# we don't have these
+/obj/item/book/manual/hydroponics_pod_people : @DELETE
+/obj/machinery/scale : @DELETE

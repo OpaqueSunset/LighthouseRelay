@@ -394,7 +394,7 @@
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
 "aY" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
@@ -419,7 +419,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -500,14 +500,14 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
 "bn" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/cable/heavyduty{
@@ -521,8 +521,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -532,8 +532,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -559,10 +559,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "2-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -683,10 +683,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -700,10 +700,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
@@ -731,10 +731,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
@@ -756,7 +756,7 @@
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
 "bT" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/heavyduty{
@@ -768,10 +768,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /obj/structure/cable/heavyduty{
 	icon_state = "2-4"
 	},
@@ -799,10 +799,10 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "bX" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
@@ -896,7 +896,6 @@
 	pixel_y = -5
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_airlock_inner";
 	locked = 1
 	},
@@ -914,7 +913,6 @@
 /area/outpost/research/storage/surface_eva_storage)
 "ci" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_airlock_inner";
 	locked = 1
 	},
@@ -1479,6 +1477,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = " Western Outpost Hallway"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -2102,10 +2101,10 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "eg" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -2843,7 +2842,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "gt" = (
-/obj/structure/sign/department/sci{
+/obj/structure/sign/department/science_1{
 	name = "TELE-SCIENCE"
 	},
 /obj/structure/disposalpipe/segment,
@@ -3271,7 +3270,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/obj/structure/table,
 /obj/structure/table,
 /obj/item/folder/blue{
 	pixel_x = 4;
@@ -4287,7 +4285,6 @@
 	light_range = 12
 	},
 /obj/structure/table,
-/obj/structure/table,
 /obj/item/wrench,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
@@ -4569,7 +4566,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/substation)
 "mM" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -4634,8 +4631,8 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/substation)
 "nb" = (
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
@@ -4875,7 +4872,6 @@
 /area/rnd/breakroom)
 "oH" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_airlock_outer";
 	locked = 1
 	},
@@ -4997,7 +4993,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_materialvent_inner";
 	locked = 1;
 	name = "Internal Airlock"
@@ -5078,6 +5073,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Eastern Outpost Hallway"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -5982,6 +5978,7 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/double/glass{
+	dir = 8;
 	name = "Unisex Restrooms"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -6091,7 +6088,7 @@
 /turf/exterior/sif_growth,
 /area/tether/outpost/solars_outside)
 "vc" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -6520,7 +6517,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "yc" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
@@ -8242,7 +8239,6 @@
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "HR" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_materialvent_outer";
 	locked = 1
 	},
@@ -8372,7 +8368,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/engineering/eva_atmospherics)
 "IT" = (
-/obj/structure/sign/department/sci{
+/obj/structure/sign/department/science_1{
 	name = "PARTICLE SMASHER"
 	},
 /turf/simulated/wall,
@@ -8632,7 +8628,7 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "Ko" = (
-/obj/structure/sign/redcross{
+/obj/structure/sign/department/redcross{
 	name = "FirstAid"
 	},
 /turf/simulated/wall,
@@ -9452,7 +9448,6 @@
 /turf/simulated/floor/tiled/airless,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "OO" = (
-/obj/structure/table,
 /obj/structure/table,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -10578,7 +10573,6 @@
 /area/outpost/research/substation)
 "Wb" = (
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "scioutpost_airlock_outer";
 	locked = 1
 	},
@@ -10910,7 +10904,7 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/solars_outside)
 "Yd" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
@@ -11039,7 +11033,7 @@
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "Zq" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump{

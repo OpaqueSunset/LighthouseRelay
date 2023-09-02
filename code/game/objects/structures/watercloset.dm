@@ -280,11 +280,19 @@ var/global/list/hygiene_props = list()
 	layer = MOB_LAYER + 1
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
+	var/delete_self = TRUE
 
 /obj/effect/mist/Initialize()
 	. = ..()
-	if(. != INITIALIZE_HINT_QDEL)
+	if(delete_self && . != INITIALIZE_HINT_QDEL)
 		addtimer(CALLBACK(src, /datum/proc/qdel_self), 25 SECONDS)
+
+/obj/effect/mist/permanent
+	delete_self = FALSE
+
+/obj/effect/mist/permanent/explosion_act(severity)
+	. = ..()
+	qdel(src)
 
 /obj/structure/hygiene/shower/attackby(obj/item/I, var/mob/user)
 	if(istype(I, /obj/item/scanner/gas))

@@ -2,10 +2,10 @@
 	//This inherits from the robot cryo, so synths can be properly cryo'd.  If a non-synth enters and is cryo'd, ..() is called and it'll still work.
 	name = "Airlock of Wonders"
 	desc = "An airlock that isn't an airlock, and shouldn't exist.  Yell at a coder/mapper."
-	icon = 'icons/obj/doors/Doorint.dmi'
-	icon_state = "door_open"
-	base_icon_state = "door_open"
-	occupied_icon_state = "door_closed"
+	icon = 'mods/content/lighthouse/icons/obj/tramdoors.dmi'
+	icon_state = "door_closed"
+	base_icon_state = "door_closed"
+	occupied_icon_state = "door_locked"
 	// on_enter_visible_message = "steps into the"
 
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
@@ -44,12 +44,11 @@
 	// on_store_visible_message_1 = "'s portal disappears just after"
 	// on_store_visible_message_2 = "finishes walking across it."
 
-	time_till_despawn = 60 //1 second, because gateway.
+	time_till_despawn = 1 SECOND //1 second, because gateway.
 
 // Tram departure cryo doors that turn into ordinary airlock doors at round end
 /obj/machinery/cryopod/robot/door/tram
 	name = "\improper Tram Station"
-	// icon = 'icons/obj/doors/Doorextglass.dmi' // FUCK YOU
 	icon_state = "door_closed"
 	atmos_canpass = CANPASS_NEVER
 	base_icon_state = "door_closed"
@@ -62,6 +61,9 @@
 	// on_store_visible_message_2 = "to the colony"
 	time_till_despawn = 10 SECONDS
 	// spawnpoint_type = /datum/spawnpoint/tram
+	/// A debounce variable to prevent the doors from opening multiple alerts in a row,
+	/// or multiple people entering the same one.
+	var/mob/living/carbon/human/in_choice = null
 
 /obj/machinery/cryopod/robot/door/tram/Process()
 	if(SSevac.evacuation_controller.is_evacuating())
@@ -81,26 +83,26 @@
 
 	var/mob/living/carbon/human/user = AM
 
-	var/choice = alert(user, "Do you want to depart via the tram? Your character will leave the round.","Departure","No","Yes")
-	if(user && Adjacent(user) && choice == "Yes")
-		set_occupant(user)
-		despawn_occupant()
-
-// Used at centcomm for the elevator
-/obj/machinery/cryopod/robot/door/dorms
-	// spawnpoint_type = /datum/spawnpoint/tram
+	if(!in_choice)
+		in_choice = user
+		var/choice = alert(user, "Do you want to depart via the tram? Your character will leave the round.","Departure","No","Yes")
+		in_choice = null
+		if(user && Adjacent(user) && choice == "Yes")
+			set_occupant(user)
+			despawn_occupant()
+	else if(user != in_choice)
+		to_chat(user, SPAN_NOTICE("[in_choice] is already entering [src]!"))
 
 // I hate this.
 /obj/machinery/cryopod/robot/door/dorms/colony
 	name = "elevator"
-	desc = "A small elevator";
-	dir = 2;
-	// icon = 'icons/obj/doors/Door2x1glass.dmi';
+	desc = "A passenger elevator to the other floors of the colony."
+	icon = 'mods/content/lighthouse/icons/obj/elevatordoors.dmi'
 	icon_state = "door_closed"
 	base_icon_state = "door_closed"
-	occupied_icon_state = "door_bolted"
+	occupied_icon_state = "door_locked"
 	on_enter_occupant_message = "The elevator doors close slowly. You can now head off for the residential, commercial, and other floors."
 	on_store_message = "has departed for one of the various colony floors"
 	on_store_name = "Colony Oversight"
 	// on_store_visible_message_2 = "to the colony districts."
-	time_till_despawn = 5
+	time_till_despawn = 1 SECOND

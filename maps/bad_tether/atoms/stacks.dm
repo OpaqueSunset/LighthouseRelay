@@ -39,6 +39,7 @@
 	amount = 50;                                                           \
 }
 
+// Placeholder material until actual algae is added.
 STACK_SUBTYPES(algae, "algae", solid/plantmatter, puck, null)
 
 #undef STACK_SUBTYPES

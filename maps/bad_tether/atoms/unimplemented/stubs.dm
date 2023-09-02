@@ -187,9 +187,7 @@
 /obj/machinery/power/grid_checker
 /obj/machinery/power/smes/buildable/point_of_interest
 /obj/machinery/power/thermoregulator
-/obj/machinery/scale
 /obj/machinery/seed_storage/brig
-/obj/machinery/shield_capacitor
 /obj/machinery/shield_generator/external
 /obj/machinery/shuttle_sensor
 /obj/machinery/sleep_console

@@ -10,11 +10,11 @@
 /turf/simulated/wall/r_wall,
 /area/mine/explored)
 "ad" = (
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/exterior/sif_growth,
 /area/mine/explored)
 "ae" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/exterior/sif_growth,
@@ -31,7 +31,7 @@
 /turf/exterior/sif_growth,
 /area/mine/explored)
 "ah" = (
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/exterior/sif_growth,
@@ -1013,7 +1013,6 @@
 	pixel_y = 24
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_outpost_airlock_inner";
 	locked = 1
 	},
@@ -1104,7 +1103,6 @@
 	pixel_y = 24
 	},
 /obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
 	id_tag = "mining_outpost_airlock_outer";
 	locked = 1
 	},
@@ -1289,10 +1287,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -1301,8 +1299,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -1311,8 +1309,8 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing,
-/obj/structure/railing{
+/obj/structure/railing/mapped,
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -1321,7 +1319,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /obj/structure/catwalk,
@@ -1338,7 +1336,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/catwalk,
@@ -1348,10 +1346,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "2-8"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -1360,10 +1358,10 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -1372,13 +1370,13 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/railing{
+/obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing,
+/obj/structure/railing/mapped,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored)
 "cO" = (
