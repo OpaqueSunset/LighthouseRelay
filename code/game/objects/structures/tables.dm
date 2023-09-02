@@ -425,7 +425,7 @@
 	if(istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 		return 1
 	var/obj/structure/table/T = (locate() in get_turf(mover))
-	return T && !T.is_flipped && (T.mob_offset <= mob_offset)
+	return T && !T.is_flipped && (mob_offset <= T.mob_offset)
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
 /obj/structure/table/proc/check_cover(obj/item/projectile/P, turf/from)
