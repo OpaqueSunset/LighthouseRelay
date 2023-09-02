@@ -12,7 +12,9 @@
 	var/hard_corner = FALSE
 /turf/simulated/shuttle/wall/hard_corner
 	hard_corner = TRUE
-/turf/simulated/shuttle/floor/yellow/airless
+/turf/simulated/floor/shuttle/airless
+	initial_gas = null
+/turf/simulated/floor/shuttle/yellow/airless
 	initial_gas = null
 /turf/simulated/floor/reinforced/virgo3b
 	initial_gas = null

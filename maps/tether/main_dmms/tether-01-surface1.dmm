@@ -185,7 +185,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/airlock)
 "aay" = (
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/machinery/conveyor{
 	dir = 1;
 	id_tag = "mining_inbound"
@@ -193,7 +193,7 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/mining_main/refinery)
 "aaz" = (
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/machinery/conveyor{
 	dir = 1;
 	id_tag = "mining_outbound"
@@ -479,7 +479,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/refinery)
 "abj" = (
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/machinery/conveyor{
 	dir = 8;
 	id_tag = "mining_inbound"
@@ -655,7 +655,7 @@
 /turf/simulated/floor/plating,
 /area/tether/surfacebase/tram)
 "abC" = (
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/machinery/conveyor{
 	dir = 8;
 	id_tag = "mining_outbound"
@@ -703,7 +703,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	dir = 1;
+	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/refinery)
@@ -1550,8 +1551,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/machinery/washing_machine,
 /turf/simulated/floor/tiled,
@@ -3056,6 +3056,10 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
+/obj/structure/sign/warning{
+	name = "\improper STAND AWAY FROM TRACK EDGE";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/tether/surfacebase/tram)
 "agb" = (
@@ -3740,6 +3744,10 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "ahu" = (
@@ -4087,17 +4095,26 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/north_stairs_one)
 "ahZ" = (
-/obj/structure/sign/directions/supply{
-	dir = 4
+/obj/structure/railing/mapped{
+	dir = 1
 	},
-/turf/simulated/wall,
-/area/tether/surfacebase/north_stairs_one)
-"aia" = (
+/obj/abstract/fluid_mapped{
+	fluid_initial = 300;
+	name = "mapped shallow pool"
+	},
 /obj/structure/sign/directions/evac{
-	dir = 4
+	pixel_y = 32
 	},
-/turf/simulated/wall,
-/area/tether/surfacebase/north_stairs_one)
+/turf/simulated/floor/pool,
+/area/tether/surfacebase/atrium_one)
+"aia" = (
+/obj/structure/catwalk,
+/obj/structure/sign/directions/evac{
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/xenoflora)
 "aib" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4332,6 +4349,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/sign/directions/evac{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "aip" = (
@@ -4598,6 +4618,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/glass,
+/obj/structure/sign/directions/evac{
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/monofloor{
 	dir = 1
 	},
@@ -4700,6 +4724,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
 "aiW" = (
@@ -4724,6 +4752,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
 "aiY" = (
@@ -5636,11 +5668,17 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "akw" = (
-/obj/structure/sign/directions/evac{
-	name = "\improper Secondary Evacuation Route"
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/simulated/wall,
-/area/tether/surfacebase/north_stairs_one)
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/xenoflora)
 "akx" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/glass,
@@ -6568,8 +6606,7 @@
 "amq" = (
 /obj/machinery/hologram/holopad,
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/storage/primary)
@@ -7330,9 +7367,16 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "aod" = (
-/obj/structure/sign/directions/evac,
-/turf/simulated/wall,
-/area/crew_quarters/locker)
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/sign/directions/evac{
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/xenoflora)
 "aoe" = (
 /turf/simulated/wall,
 /area/crew_quarters/locker)
@@ -7499,8 +7543,7 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
@@ -8082,11 +8125,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
 "apE" = (
-/obj/structure/sign/directions/evac{
-	name = "\improper Secondary Evacuation Route"
+/obj/structure/sign/warning/docking_area{
+	dir = 1;
+	pixel_y = -32
 	},
-/turf/simulated/wall,
-/area/maintenance/lower/xenoflora)
+/turf/exterior/sif_growth,
+/area/tether/surfacebase/outside/outside1)
 "apF" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/maintenance,
@@ -8210,11 +8254,12 @@
 /turf/simulated/wall,
 /area/tether/surfacebase/tram)
 "apQ" = (
-/obj/structure/sign/warning{
-	name = "\improper STAND AWAY FROM TRACK EDGE"
+/obj/structure/sign/directions/evac{
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
 	},
-/turf/simulated/wall,
-/area/tether/surfacebase/tram)
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/xenoflora)
 "apR" = (
 /obj/machinery/door/blast/regular,
 /turf/simulated/wall,
@@ -8228,9 +8273,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tether/surfacebase/tram)
 "apU" = (
-/obj/structure/sign/warning/docking_area,
-/turf/simulated/wall,
-/area/tether/surfacebase/tram)
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = 32
+	},
+/turf/simulated/floor/grass,
+/area/tether/surfacebase/atrium_one)
 "apV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -9416,8 +9464,7 @@
 /area/hallway/lower/first_west)
 "asm" = (
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
@@ -9721,10 +9768,9 @@
 "asO" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/fabricator/pipe,
-/obj/item/radio/intercom,
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
@@ -10084,8 +10130,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
@@ -10581,8 +10627,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/anomaly_lab)
@@ -11302,6 +11348,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/sign/directions/evac{
+	name = "\improper Secondary Evacuation Route";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "avK" = (
@@ -11330,6 +11380,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass,
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "avM" = (
@@ -11375,11 +11429,21 @@
 /turf/simulated/wall,
 /area/crew_quarters/locker/laundry_arrival)
 "avQ" = (
-/obj/structure/sign/directions/evac{
+/obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
-/turf/simulated/wall,
-/area/crew_quarters/locker/laundry_arrival)
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	dir = 8;
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_x = 34
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/tether/surfacebase/tram)
 "avR" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -11394,8 +11458,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled,
@@ -11440,8 +11504,17 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "avW" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 4
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	dir = 8;
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_x = 34
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/tether/surfacebase/tram)
 "avX" = (
 /obj/effect/floor_decal/borderfloor,
@@ -11633,8 +11706,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -12388,7 +12460,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "axD" = (
-/obj/abstract/turbolift_spawner/tether,
+/obj/abstract/turbolift_spawner/tether{
+	dir = 4
+	},
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/tether/surfacebase/atrium_one)
 "axE" = (
@@ -12449,8 +12523,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
@@ -13011,11 +13084,11 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "ayM" = (
-/obj/structure/sign/directions/evac{
-	name = "\improper Secondary Evacuation Route"
+/obj/structure/sign/warning/docking_area{
+	pixel_y = 32
 	},
-/turf/simulated/wall,
-/area/tether/surfacebase/atrium_one)
+/turf/exterior/sif_growth,
+/area/tether/surfacebase/outside/outside1)
 "ayN" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
@@ -13026,11 +13099,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/storage/surface_eva/external)
 "ayO" = (
-/obj/structure/sign/directions/evac{
-	dir = 4
-	},
-/turf/simulated/wall,
-/area/tether/surfacebase/atrium_one)
+/obj/effect/overmap/visitable/sector/virgo3b,
+/turf/exterior/sif_growth,
+/area/tether/surfacebase/outside/outside1)
 "ayP" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -13645,7 +13716,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "azS" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 4
+	},
 /obj/machinery/camera/network/tether{
 	dir = 4
 	},
@@ -14107,8 +14180,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 5;
-	pixel_y = 28
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/dark,
 /area/storage/surface_eva)
@@ -14155,7 +14227,7 @@
 /obj/item/clothing/suit/storage/toggle/wintercoat,
 /obj/item/tank/emergency/oxygen/engi,
 /obj/structure/sign/warning/nosmoking_2{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/storage/surface_eva)
@@ -14199,8 +14271,7 @@
 /obj/item/shovel,
 /obj/item/soap,
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/storage/surface_eva)
@@ -16736,8 +16807,8 @@
 	dir = 6
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -16893,8 +16964,8 @@
 /obj/item/clothing/gloves/latex,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/anomaly_lab)
@@ -17788,8 +17859,8 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -18213,7 +18284,8 @@
 /area/crew_quarters/showers)
 "aJp" = (
 /obj/item/radio/intercom{
-	pixel_y = -24
+	dir = 1;
+	pixel_y = -30
 	},
 /obj/machinery/camera/network/medbay{
 	dir = 1
@@ -20068,13 +20140,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/maintDorm1)
-"aNI" = (
-/obj/structure/sign/directions/evac{
-	dir = 4;
-	name = "\improper Secondary Evacuation Route"
-	},
-/turf/simulated/wall,
-/area/maintenance/lower/xenoflora)
 "aNM" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/decal/cleanable/dirt,
@@ -20471,13 +20536,19 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "aPg" = (
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -20541,7 +20612,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -20594,10 +20667,16 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "aPm" = (
-/obj/machinery/vending/fitness,
+/obj/machinery/vending/fitness{
+	dir = 4
+	},
 /obj/machinery/camera/network/tether{
 	dir = 5
 	},
@@ -20759,6 +20838,11 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lightgrey/border,
+/obj/structure/sign/warning{
+	dir = 1;
+	name = "\improper STAND AWAY FROM TRACK EDGE";
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/tether/surfacebase/tram)
 "aQE" = (
@@ -21388,14 +21472,6 @@
 	},
 /turf/simulated/wall,
 /area/security/checkpoint)
-"aYN" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
-	},
-/turf/simulated/wall,
-/area/tether/surfacebase/tram)
 "aZd" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -21586,8 +21662,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden)
@@ -21722,7 +21798,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	dir = 1;
+	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -22351,8 +22428,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -22396,8 +22472,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/structure/table/glass,
 /obj/machinery/chemical_dispenser/full,
@@ -22715,7 +22790,8 @@
 	dir = 10
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	dir = 1;
+	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/xenoflora/lab_atmos)
@@ -23019,8 +23095,7 @@
 	dir = 5
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
@@ -24811,8 +24886,12 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "byo" = (
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/visitor_dining)
 "bys" = (
@@ -24930,7 +25009,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	dir = 1;
+	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
@@ -25571,9 +25651,13 @@
 /area/rnd/hallway)
 "bKm" = (
 /obj/effect/floor_decal/industrial/warning/dust,
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/rnd/xenobiology/xenoflora_storage)
@@ -27377,8 +27461,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -31015,8 +31099,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -32891,8 +32974,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -33129,8 +33212,8 @@
 /area/tether/surfacebase/mining_main/external)
 "vHM" = (
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/table/bench/steel,
 /obj/effect/floor_decal/borderfloor{
@@ -33943,7 +34026,7 @@ aad
 aad
 aad
 aad
-aad
+ayO
 aaa
 "}
 (4,1,1) = {"
@@ -43223,7 +43306,7 @@ abT
 ahX
 aiP
 azu
-akw
+ahX
 alg
 alg
 alg
@@ -43512,7 +43595,7 @@ ahX
 ahX
 alg
 alg
-alO
+aia
 anD
 anY
 alg
@@ -43800,8 +43883,8 @@ alg
 alg
 alg
 alg
-apa
-aNI
+akw
+alg
 aah
 aah
 aah
@@ -44072,7 +44155,7 @@ aah
 abT
 afA
 ahs
-ahZ
+ahX
 aiV
 ajM
 aBx
@@ -44226,8 +44309,8 @@ aah
 aah
 aah
 alg
-apa
-apE
+aod
+alg
 alg
 alg
 alg
@@ -44356,7 +44439,7 @@ aqW
 asv
 asv
 avh
-aia
+ahX
 aiX
 azO
 ahX
@@ -44380,7 +44463,7 @@ ahu
 avI
 avB
 axM
-ayM
+agM
 aEU
 aiH
 aEU
@@ -44514,7 +44597,7 @@ apa
 alg
 agM
 agM
-aqn
+apQ
 aqn
 agM
 agM
@@ -44664,7 +44747,7 @@ apF
 avK
 aua
 bgI
-ayO
+agM
 aht
 aiJ
 aiW
@@ -46064,7 +46147,7 @@ awl
 axY
 ajU
 atj
-alo
+ahZ
 alS
 alS
 alS
@@ -46078,7 +46161,7 @@ alS
 alS
 anm
 atj
-ajU
+apU
 aub
 auO
 avP
@@ -46507,7 +46590,7 @@ akE
 ajU
 sRi
 auM
-avQ
+avP
 awI
 axX
 ayU
@@ -47348,7 +47431,7 @@ amw
 agM
 agM
 agM
-aod
+aoe
 aoe
 aph
 aoe
@@ -48925,7 +49008,7 @@ aYA
 awY
 aua
 azf
-ayO
+agM
 agM
 aFc
 bqg
@@ -49773,11 +49856,11 @@ asI
 arm
 azo
 azS
-avW
+apP
 aPg
 aPi
 aPj
-avW
+apP
 aPm
 aPr
 arm
@@ -50191,7 +50274,7 @@ alr
 alr
 alr
 alr
-apQ
+apP
 aga
 aqC
 aqC
@@ -50211,7 +50294,7 @@ aqC
 aqC
 aqC
 aPB
-apQ
+apP
 aad
 aad
 aad
@@ -51616,17 +51699,17 @@ aqG
 aTI
 aqG
 asK
-aTI
+avQ
 aqG
 aqG
 aTI
 aqG
-aqG
-aqG
-aTI
-aqG
+avW
 aqG
 aTI
+aqG
+aqG
+avQ
 asK
 aqG
 aTI
@@ -51752,29 +51835,29 @@ aad
 aad
 aad
 aad
-aad
-apU
+apE
 apP
 apP
 apP
 apP
-aYN
 apP
 apP
 apP
 apP
-aYN
 apP
 apP
 apP
 apP
-aYN
 apP
 apP
 apP
 apP
-apU
-aad
+apP
+apP
+apP
+apP
+apP
+ayM
 aad
 aad
 aad

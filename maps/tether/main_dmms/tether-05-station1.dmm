@@ -144,7 +144,7 @@
 /area/shuttle/excursion/tether)
 "aav" = (
 /obj/structure/flight_left,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aaw" = (
 /obj/machinery/door/firedoor/glass,
@@ -160,7 +160,7 @@
 /area/tether/station/explorer_meeting)
 "aax" = (
 /obj/structure/flight_right,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aay" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -211,7 +211,7 @@
 /turf/simulated/floor,
 /area/engineering/engine_smes)
 "aaD" = (
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aaE" = (
 /obj/machinery/firealarm{
@@ -267,7 +267,7 @@
 /area/shuttle/excursion/tether)
 "aaK" = (
 /obj/machinery/door/airlock/voidcraft,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aaL" = (
 /obj/structure/cable{
@@ -283,7 +283,7 @@
 /area/engineering/engine_smes)
 "aaM" = (
 /obj/structure/bed/chair/shuttle,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aaN" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
@@ -495,7 +495,6 @@
 "abh" = (
 /obj/structure/shuttle/engine/propulsion,
 /turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/airless/carry,
 /area/shuttle/excursion/tether)
 "abi" = (
 /obj/effect/decal/cleanable/dirt,
@@ -769,7 +768,7 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "abL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -1580,13 +1579,13 @@
 "adA" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /obj/effect/floor_decal/industrial/outline/blue,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "adB" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram{
 	name = "\improper Shuttle Scrubber"
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "adC" = (
 /obj/structure/cable/green{
@@ -1666,7 +1665,7 @@
 /area/maintenance/substation/engineering)
 "adJ" = (
 /obj/machinery/recharge_station,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "adK" = (
 /obj/structure/cable{
@@ -1942,7 +1941,7 @@
 "aem" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/space_heater,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "aen" = (
 /turf/simulated/floor/tiled,
@@ -1958,7 +1957,7 @@
 	name = "hatch bolt control";
 	pixel_y = -28
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aep" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
@@ -1973,7 +1972,7 @@
 	pixel_x = 4;
 	pixel_y = 28
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aeq" = (
 /turf/simulated/shuttle/wall/voidcraft/green{
@@ -2083,7 +2082,7 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aey" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -2237,7 +2236,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -24
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aeI" = (
 /obj/structure/table,
@@ -4243,7 +4242,7 @@
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_x = -32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "ajd" = (
 /obj/structure/bookcase{
@@ -4260,7 +4259,7 @@
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_x = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "ajh" = (
 /obj/structure/bookcase{
@@ -4517,7 +4516,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "ajQ" = (
 /obj/structure/bed/chair/shuttle{
@@ -4526,7 +4525,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -24
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "ajR" = (
 /obj/structure/table/woodentable,
@@ -5022,7 +5021,7 @@
 "alg" = (
 /obj/machinery/mineral/equipment_vendor/survey,
 /obj/effect/floor_decal/industrial/outline/blue,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "alh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -5055,7 +5054,7 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "all" = (
 /obj/machinery/light/small{
@@ -5500,7 +5499,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "amG" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -5523,7 +5522,7 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "amJ" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
@@ -5536,7 +5535,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "amL" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -5546,7 +5545,7 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "amM" = (
 /obj/structure/grille,
@@ -5919,7 +5918,7 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "anZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -5942,7 +5941,7 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aoe" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -6253,7 +6252,7 @@
 	id_tag = "expshuttle_door_cargo";
 	locked = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "api" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6344,7 +6343,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "apu" = (
 /obj/structure/cable/green{
@@ -8208,7 +8207,7 @@
 /area/tether/station/excursion_dock)
 "auT" = (
 /obj/machinery/sleep_console,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "auU" = (
 /obj/structure/cable/green{
@@ -8443,7 +8442,7 @@
 /area/engineering/break_room)
 "avG" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "avI" = (
 /obj/structure/bed/chair/comfy/beige{
@@ -8964,7 +8963,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "axM" = (
 /obj/structure/closet,
@@ -17500,7 +17499,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "bto" = (
 /obj/structure/cable/green,
@@ -17872,7 +17871,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "bxE" = (
 /obj/structure/grille,
@@ -17997,7 +17996,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "byV" = (
 /obj/machinery/light_switch{
@@ -19983,7 +19982,7 @@
 	pixel_x = -29;
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "cDQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -20020,7 +20019,7 @@
 	dir = 4
 	},
 /obj/machinery/meter,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "dkC" = (
 /obj/machinery/power/apc/super,
@@ -20418,7 +20417,7 @@
 "gUt" = (
 /obj/structure/table/steel,
 /obj/item/clothing/head/pilot,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "heA" = (
 /obj/effect/floor_decal/borderfloor{
@@ -21465,7 +21464,7 @@
 "nYp" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /obj/structure/closet/secure_closet/guncabinet/excursion,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "nYM" = (
 /turf/simulated/wall/r_wall,
@@ -22019,7 +22018,7 @@
 /obj/item/tank/emergency/oxygen/engi,
 /obj/item/tank/emergency/oxygen/engi,
 /obj/item/tank/emergency/oxygen/engi,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "qSW" = (
 /obj/structure/table/bench/steel,
@@ -22420,7 +22419,7 @@
 /area/tether/station/explorer_prep)
 "tIi" = (
 /obj/machinery/atmospherics/unary/tank/air,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "tNS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -22486,7 +22485,7 @@
 	dir = 1
 	},
 /obj/structure/rack/shelf,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "ugj" = (
 /obj/structure/grille,
@@ -22528,7 +22527,7 @@
 	gps_tag = "SHUTTLE";
 	name = "shuttle beacon"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "uzc" = (
 /obj/structure/table,
@@ -23087,7 +23086,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "xMk" = (
 /obj/structure/cable/green{

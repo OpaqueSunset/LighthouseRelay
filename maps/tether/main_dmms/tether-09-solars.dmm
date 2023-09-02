@@ -2316,7 +2316,7 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "eO" = (
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /obj/machinery/conveyor{
 	dir = 1;
 	id_tag = "canister_out"
@@ -7310,7 +7310,7 @@
 	dir = 1;
 	id_tag = "outpost_canisters"
 	},
-/obj/structure/plasticflaps/mining,
+/obj/structure/plasticflaps/airtight,
 /turf/simulated/floor/plating,
 /area/outpost/research/toxins_misc_lab)
 "BD" = (
