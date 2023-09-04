@@ -18,6 +18,7 @@
 		. = id.GetAccess()
 
 /atom/movable/proc/GetIdCard()
+	RETURN_TYPE(/obj/item/card/id)
 	var/list/cards = GetIdCards()
 	return LAZYACCESS(cards, LAZYLEN(cards))
 
@@ -210,10 +211,17 @@ var/global/list/priv_region_access
 		"Emergency Response Team",
 		"Emergency Response Team Leader")
 
+/mob/GetIdCard(exceptions = null)
+	RETURN_TYPE(/obj/item/card/id)
+	return ..()
+
+/mob/GetIdCards(exceptions = null)
+	return ..()
+
 /mob/observer/ghost
 	var/static/obj/item/card/id/all_access/ghost_all_access
 
-/mob/observer/ghost/GetIdCards()
+/mob/observer/ghost/GetIdCards(exceptions = null)
 	. = ..()
 	if (!is_admin(src))
 		return .
@@ -222,7 +230,7 @@ var/global/list/priv_region_access
 		ghost_all_access = new()
 	LAZYDISTINCTADD(., ghost_all_access)
 
-/mob/living/bot/GetIdCards()
+/mob/living/bot/GetIdCards(exceptions = null)
 	. = ..()
 	if(istype(botcard))
 		LAZYDISTINCTADD(., botcard)
@@ -247,7 +255,7 @@ var/global/list/priv_region_access
 /mob/living/carbon/human/GetAccess(var/union = TRUE)
 	. = ..(union)
 
-/mob/living/silicon/GetIdCards()
+/mob/living/silicon/GetIdCards(exceptions = null)
 	. = ..()
 	if(stat || (ckey && !client))
 		return // Unconscious, dead or once possessed but now client-less silicons are not considered to have id access.
