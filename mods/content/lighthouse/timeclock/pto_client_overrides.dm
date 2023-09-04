@@ -5,7 +5,7 @@
 /client/log_client_to_db()
 	. = ..()
 	var/DBQuery/query_hours = global.dbcon.NewQuery(
-		"SELECT department, hours FROM `vr_player_hours` WHERE ckey = [sql_sanitize_text(src.ckey)]"
+		"SELECT department, hours FROM `player_hours` WHERE ckey = [sql_sanitize_text(src.ckey)]"
 	)
 	while(query_hours.NextRow())
 		LAZYINITLIST(department_hours)

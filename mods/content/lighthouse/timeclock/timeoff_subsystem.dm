@@ -57,7 +57,7 @@ SUBSYSTEM_DEF(timeoff)
 		var/sql_dpt = sql_sanitize_text(department_earning)
 		var/sql_bal = text2num("[C.department_hours[department_earning]]")
 		global.dbcon.NewQuery(
-			"INSERT INTO `vr_player_hours` (ckey, department, hours) VALUES ([sql_ckey], [sql_dpt]], [sql_bal]]) ON DUPLICATE KEY UPDATE hours = VALUES(hours)"
+			"INSERT INTO `player_hours` (ckey, department, hours) VALUES ([sql_ckey], [sql_dpt]], [sql_bal]]) ON DUPLICATE KEY UPDATE hours = VALUES(hours)"
 		).Execute()
 
 		if (MC_TICK_CHECK)
