@@ -345,7 +345,7 @@
 	locked = 1;
 	name = "Forward Docking Hatch"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -9580,7 +9580,7 @@
 "sj" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})

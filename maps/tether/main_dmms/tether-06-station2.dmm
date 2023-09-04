@@ -15226,7 +15226,7 @@
 "CM" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/large_escape_pod1/station)
 "CN" = (
 /obj/structure/grille,

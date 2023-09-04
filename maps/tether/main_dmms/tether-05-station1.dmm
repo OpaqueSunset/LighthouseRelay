@@ -263,7 +263,7 @@
 "aaJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/excursion/tether)
 "aaK" = (
 /obj/machinery/door/airlock/voidcraft,
@@ -20536,7 +20536,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/excursion/tether)
 "ico" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -21263,7 +21263,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/excursion/tether)
 "mUH" = (
 /obj/structure/disposalpipe/segment{
@@ -21428,7 +21428,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/excursion/tether)
 "nTE" = (
 /obj/effect/floor_decal/borderfloor,
@@ -22829,7 +22829,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/shuttle/excursion/tether)
 "wfy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
