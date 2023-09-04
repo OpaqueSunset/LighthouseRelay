@@ -74,8 +74,8 @@
 	if(!client)
 		return
 	var/obj/item/clothing/headwear = get_equipped_item(slot_head_str)
-	var/obj/item/clothing/maskwear = get_equipped_item(slot_head_str)
-	var/obj/item/clothing/eyeswear = get_equipped_item(slot_head_str)
+	var/obj/item/clothing/maskwear = get_equipped_item(slot_wear_mask_str)
+	var/obj/item/clothing/eyeswear = get_equipped_item(slot_glasses_str)
 	var/use_original_cone = TRUE
 	if(istype(headwear) && headwear.helmet_vision \
 	|| istype(maskwear) && maskwear.helmet_vision \
