@@ -13,6 +13,7 @@
 /turf/simulated/floor/water/pool : /turf/simulated/floor/pool
 /turf/simulated/shuttle/plating/airless : /turf/simulated/floor/airless{@OLD}
 /turf/simulated/shuttle/plating/airless/carry : @DELETE
+/turf/simulated/shuttle/plating/@SUBTYPES : /turf/simulated/floor/@SUBTYPES{@OLD}
 /turf/simulated/shuttle/floor/@SUBTYPES : /turf/simulated/floor/shuttle/@SUBTYPES{@OLD}
 # POLARIS SIGNS
 /obj/structure/sign/nosmoking_1 : /obj/structure/sign/warning/nosmoking_1{@OLD}
@@ -318,6 +319,9 @@
 
 /obj/machinery/computer/aiupload : /obj/machinery/computer/upload/ai{@OLD}
 /obj/machinery/computer/borgupload : /obj/machinery/computer/upload/robot{@OLD}
+
+# timeclocks are not computer subtypes
+/obj/machinery/computer/timeclock/@SUBTYPES : /obj/machinery/timeclock/@SUBTYPES{@OLD}
 
 # removes item/melee
 /obj/item/melee/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}

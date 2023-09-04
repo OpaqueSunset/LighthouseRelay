@@ -912,7 +912,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
-/obj/machinery/computer/timeclock/premade/west,
+/obj/machinery/timeclock/premade/west,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "abW" = (
@@ -968,7 +968,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "acd" = (
@@ -6722,7 +6722,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "aqh" = (
@@ -9388,7 +9388,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
-/obj/machinery/computer/timeclock/premade/east,
+/obj/machinery/timeclock/premade/east,
 /turf/simulated/floor/tiled,
 /area/storage/tools)
 "azj" = (

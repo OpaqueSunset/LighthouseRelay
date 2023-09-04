@@ -485,3 +485,9 @@
 	if(primary_department)
 		var/decl/department/dept = GET_DECL(primary_department)
 		. += dept.display_priority
+
+/datum/job/proc/get_department_names()
+	. = list()
+	for(var/department_type in department_types)
+		. += GET_DECL(department_type)
+	return english_list(.)

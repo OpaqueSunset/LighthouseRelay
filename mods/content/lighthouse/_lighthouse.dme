@@ -2,4 +2,9 @@
 #define CONTENT_PACK_LIGHTHOUSE
 #include "lighthouse.dm"
 #include "machinery/cryo.dm"
+#include "timeclock/pto_client_overrides.dm"
+#include "timeclock/pto_id_overrides.dm"
+#include "timeclock/pto_job_overrides.dm"
+#include "timeclock/timeclock.dm"
+#include "timeclock/timeoff_subsystem.dm"
 #endif

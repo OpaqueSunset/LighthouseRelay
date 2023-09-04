@@ -12954,7 +12954,7 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
 	},
-/obj/machinery/computer/timeclock/premade/west,
+/obj/machinery/timeclock/premade/west,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
 "AO" = (
@@ -16534,7 +16534,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "Jl" = (
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
 "Jm" = (
@@ -16818,14 +16818,14 @@
 /area/tether/surfacebase/fishing_garden)
 "JT" = (
 /obj/effect/floor_decal/borderfloor,
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "JU" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/machinery/computer/timeclock/premade/west,
+/obj/machinery/timeclock/premade/west,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
 "JV" = (

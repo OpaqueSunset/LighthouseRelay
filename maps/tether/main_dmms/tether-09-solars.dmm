@@ -6492,7 +6492,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
 	},
-/obj/machinery/computer/timeclock/premade/north,
+/obj/machinery/timeclock/premade/north,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "xU" = (
@@ -9750,7 +9750,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel,
-/obj/machinery/computer/timeclock/premade/north,
+/obj/machinery/timeclock/premade/north,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "Rq" = (

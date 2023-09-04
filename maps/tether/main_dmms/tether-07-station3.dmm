@@ -16430,7 +16430,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)

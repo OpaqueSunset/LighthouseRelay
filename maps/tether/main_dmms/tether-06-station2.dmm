@@ -2769,7 +2769,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "eP" = (
@@ -2784,7 +2784,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/hallway/station/port)
 "eQ" = (

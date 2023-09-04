@@ -4174,7 +4174,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
-/obj/machinery/computer/timeclock/premade/north,
+/obj/machinery/timeclock/premade/north,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "jd" = (
@@ -8059,7 +8059,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
-/obj/machinery/computer/timeclock/premade/north,
+/obj/machinery/timeclock/premade/north,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "qC" = (
@@ -8526,7 +8526,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "rp" = (
@@ -12989,7 +12989,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
-/obj/machinery/computer/timeclock/premade/east,
+/obj/machinery/timeclock/premade/east,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "zs" = (
@@ -13042,7 +13042,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/machinery/computer/timeclock/premade/east,
+/obj/machinery/timeclock/premade/east,
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "zv" = (
@@ -21177,7 +21177,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/machinery/computer/timeclock/premade/south,
+/obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "RE" = (
@@ -21580,7 +21580,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "TP" = (
-/obj/machinery/computer/timeclock/premade/west,
+/obj/machinery/timeclock/premade/west,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
