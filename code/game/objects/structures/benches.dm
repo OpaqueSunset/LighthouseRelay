@@ -5,6 +5,7 @@
 	desc = "It's a bench, for putting things on. Or standing on, if you really want to."
 	top_surface_noun = "seat"
 	can_flip = FALSE
+	can_place_items = FALSE
 	density = FALSE
 	mob_offset = 0
 

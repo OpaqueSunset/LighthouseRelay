@@ -33,7 +33,7 @@
 	var/list/connections
 
 	/// Whether items can be placed on this table via clicking.
-	var/can_place_items
+	var/can_place_items = TRUE
 
 /obj/structure/table/clear_connections()
 	connections = null
