@@ -274,8 +274,6 @@
 /obj/structure/reagent_dispensers/virusfood
 
 // PARTIALLY STUBBED
-/obj/abstract/landmark/engine_loader
-	var/list/list/clean_turfs
 /obj/structure/cable/ender
 	var/id_tag
 /obj/item/clothing/accessory/permit/gun

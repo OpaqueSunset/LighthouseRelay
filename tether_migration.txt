@@ -104,6 +104,7 @@
 
 # LANDMARKS
 /obj/effect/landmark/@SUBTYPES : /obj/abstract/landmark/@SUBTYPES{@OLD}
+/obj/abstract/landmark/engine_loader : /obj/abstract/landmark/map_load_mark/engine_loader{@OLD}
 
 # BUTTONS
 /obj/machinery/access_button/airlock_exterior : /obj/machinery/button/access/exterior{@OLD}
@@ -259,6 +260,7 @@
 /obj/machinery/power/sensor{name_tag = @SET} : /obj/machinery/power/sensor{@OLD; name_tag = @SKIP}
 /obj/machinery/power/emitter/@SUBTYPES : /obj/machinery/emitter/@SUBTYPES{@OLD}
 /obj/machinery/power/port_gen/@SUBTYPES : /obj/machinery/port_gen/@SUBTYPES{@OLD}
+/obj/machinery/power/generator : /obj/machinery/generator{@OLD}
 /obj/item/smes_coil/@SUBTYPES : /obj/item/stock_parts/smes_coil/@SUBTYPES{@OLD}
 
 # id -> id_tag
@@ -282,6 +284,12 @@
 
 /obj/machinery/airlock_sensor/@SUBTYPES{master_tag = @SET} : /obj/machinery/airlock_sensor/@SUBTYPES{@OLD; master_tag = @SKIP}
 /obj/machinery/button/access/@SUBTYPES{master_tag = @SET} : /obj/machinery/button/access/@SUBTYPES{@OLD; master_tag = @SKIP}
+
+/obj/machinery/door/blast/regular{icon_state = @SET} : /obj/machinery/door/blast/regular{@OLD; icon_state = @SKIP}
+/obj/structure/window/borosilicate_reinforced/@SUBTYPES{icon_state = @SET} : /obj/structure/window/borosilicate_reinforced/@SUBTYPES{@OLD; icon_state = @SKIP}
+/obj/machinery/door/blast/regular{p_open = 1} : /obj/machinery/door/blast/regular/open{@OLD; p_open = @SKIP}
+/obj/machinery/door/blast/regular{p_open = 0} : /obj/machinery/door/blast/regular{@OLD; p_open = @SKIP}
+/obj/machinery/door/blast/regular{density = 0} : /obj/machinery/door/blast/regular/open{@OLD; density = @SKIP; opacity = @SKIP}
 
 # removes item/material
 /obj/item/material/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}
@@ -449,7 +457,8 @@
 
 /obj/machinery/computer/general_air_control/@SUBTYPES : /obj/machinery/computer/air_control/@SUBTYPES{@OLD}
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide : /obj/machinery/portable_atmospherics/canister/sleeping_agent{@OLD}
-/obj/machinery/atmospherics/omni/atmos_filter : /obj/machinery/atmospherics/omni/filter{@OLD}
+/obj/machinery/atmospherics/trinary/atmos_filter/@SUBTYPES : /obj/machinery/atmospherics/omni/filter{@OLD}
+/obj/machinery/atmospherics/omni/atmos_filter/@SUBTYPES : /obj/machinery/atmospherics/omni/filter{@OLD}
 
 /obj/machinery/computer/air_control/@SUBTYPES{sensors = @SET} : /obj/machinery/computer/air_control/@SUBTYPES{@OLD; sensors = @SKIP}
 
@@ -480,6 +489,7 @@
 /turf/simulated/floor/bluegrid{initial_gas_mix = "n2=500;TEMP=80"} : /turf/simulated/floor/bluegrid{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 500); temperature = 80}
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "nitrogen=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "n2=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
+/turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "n2=82.1472;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.1472)}
 
 /obj/item/stock_parts/subspace/sub_filter : /obj/item/stock_parts/subspace/filter
 

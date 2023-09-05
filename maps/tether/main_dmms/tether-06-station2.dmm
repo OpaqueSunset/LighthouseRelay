@@ -6167,7 +6167,7 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/hallway/station/starboard)
 "lI" = (
-/obj/abstract/level_data_spawner/virgo3b/main,
+/obj/abstract/level_data_spawner/virgo3b/main/space,
 /turf/space,
 /area/space)
 "lJ" = (

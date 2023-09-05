@@ -1689,9 +1689,7 @@
 /obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
 	},
@@ -1703,9 +1701,7 @@
 /area/outpost/research/mixing)
 "dg" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
@@ -2250,9 +2246,7 @@
 /area/outpost/research/mixing)
 "eG" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
@@ -3845,9 +3839,7 @@
 /area/outpost/research/mixing)
 "jO" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
@@ -5719,9 +5711,7 @@
 /area/outpost/research/toxins_misc_lab)
 "tf" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
@@ -6430,9 +6420,7 @@
 /area/outpost/research/materials_chamber)
 "xC" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced,
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
@@ -7966,9 +7954,7 @@
 /area/outpost/research/materials_lab)
 "GA" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
@@ -8716,9 +8702,7 @@
 /area/outpost/research/crew_quarters/showers)
 "KO" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},

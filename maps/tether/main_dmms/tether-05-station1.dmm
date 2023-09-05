@@ -299,7 +299,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "aaO" = (
-/obj/abstract/landmark/engine_loader{
+/obj/abstract/landmark/map_load_mark/engine_loader{
 	clean_turfs = list(list(20,93,30,118),list(31,94,35,96),list(29,97,43,118),list(44,113,46,118))
 	},
 /turf/space,
@@ -5229,7 +5229,7 @@
 /turf/simulated/floor,
 /area/engineering/shaft)
 "alL" = (
-/obj/abstract/level_data_spawner/virgo3b/main,
+/obj/abstract/level_data_spawner/virgo3b/main/space,
 /turf/space,
 /area/space)
 "alN" = (

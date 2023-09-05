@@ -11068,9 +11068,7 @@
 /area/rnd/anomaly_lab)
 "avg" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
 	},
@@ -12046,9 +12044,7 @@
 /area/engineering/atmos)
 "awR" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /turf/simulated/floor/airless,
 /area/engineering/atmos)
 "awS" = (
@@ -12787,9 +12783,7 @@
 /area/engineering/atmos)
 "ayi" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
@@ -14818,9 +14812,7 @@
 /area/tether/surfacebase/emergency_storage/rnd)
 "aBW" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
@@ -17757,17 +17749,13 @@
 /area/rnd/anomaly_lab)
 "aHX" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/airless,
 /area/engineering/atmos)
 "aHY" = (
 /obj/structure/grille,
-/obj/structure/window/borosilicate_reinforced/full{
-	icon_state = "phoronwindow0"
-	},
+/obj/structure/window/borosilicate_reinforced/full,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/airless,
 /area/engineering/atmos)

@@ -72,6 +72,9 @@
 	#include "datums/tether_departments.dm"
 	#include "datums/tether_spawnpoints.dm"
 
+	#include "../tether/submaps/engine/engine_areas.dm"
+	#include "../tether/submaps/engine/engine.dm"
+
 	#include "../tether/main_dmms/tether-01-surface1.dmm"
 	#include "../tether/main_dmms/tether-02-surface2.dmm"
 	#include "../tether/main_dmms/tether-03-surface3.dmm"
