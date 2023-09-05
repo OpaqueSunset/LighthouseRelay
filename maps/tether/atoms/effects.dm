@@ -154,7 +154,7 @@
 	icon = 'maps/tether/icons/wall_masks.dmi'
 	icon_state = "rdebug"
 	anchored = TRUE
-	opacity = 0
+	opacity = FALSE
 	density = TRUE
 	unacidable = TRUE
 
