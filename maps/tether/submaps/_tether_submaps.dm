@@ -325,8 +325,8 @@
 	icon_state = "x"
 	invisibility = 101
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
-	density = 0
-	anchored = 1
+	density = FALSE
+	anchored = TRUE
 
 	//Weighted with values (not %chance, but relative weight)
 	//Can be left value-less for all equally likely

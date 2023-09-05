@@ -956,7 +956,7 @@
 /area/awaymission/snow_outpost/outside)
 "dz" = (
 /obj/machinery/light/small{
-	brightness_color = "#DA0205";
+	brightness_color = "#da0205";
 	brightness_power = 1;
 	brightness_range = 5;
 	dir = 8

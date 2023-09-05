@@ -69,11 +69,11 @@
 //Sky stuff!
 // A simple turf to fake the appearance of flying.
 /turf/simulated/sky/virgo3b
-	color = "#FFBBBB"
+	color = "#ffbbbb"
 
 /turf/simulated/sky/virgo3b/Initialize()
 	SSplanets.addTurf(src)
-	set_light(2, 2, "#FFBBBB")
+	set_light(2, 2, "#ffbbbb")
 
 /turf/simulated/sky/virgo3b/north
 	dir = NORTH

@@ -1,4 +1,4 @@
-var/datum/planet/virgo3b/planet_virgo3b = null
+var/global/datum/planet/virgo3b/planet_virgo3b = null
 
 /datum/time/virgo3b
 	seconds_in_day = 3 HOURS
@@ -45,31 +45,31 @@ var/datum/planet/virgo3b/planet_virgo3b = null
 			low_color = "#000066"
 
 			high_brightness = 0.5
-			high_color = "#66004D"
+			high_color = "#66004d"
 			min = 0
 
 		if(0.40 to 0.50) // Twilight
 			low_brightness = 0.6
-			low_color = "#66004D"
+			low_color = "#66004d"
 
 			high_brightness = 0.8
-			high_color = "#CC3300"
+			high_color = "#cc3300"
 			min = 0.40
 
 		if(0.50 to 0.70) // Sunrise/set
 			low_brightness = 0.8
-			low_color = "#CC3300"
+			low_color = "#cc3300"
 
 			high_brightness = 0.9
-			high_color = "#FF9933"
+			high_color = "#ff9933"
 			min = 0.50
 
 		if(0.70 to 1.00) // Noon
 			low_brightness = 0.9
-			low_color = "#DDDDDD"
+			low_color = "#dddddd"
 
 			high_brightness = 1.0
-			high_color = "#FFFFFF"
+			high_color = "#ffffff"
 			min = 0.70
 
 	var/lerp_weight = (abs(min - sun_position)) * 4
@@ -474,7 +474,7 @@ var/datum/planet/virgo3b/planet_virgo3b = null
 /datum/weather/virgo3b/blood_moon
 	name = "blood moon"
 	light_modifier = 0.5
-	light_color = "#FF0000"
+	light_color = "#ff0000"
 	flight_failure_modifier = 25
 	transition_chances = list(
 		WEATHER_BLOODMOON = 100

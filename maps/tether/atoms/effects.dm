@@ -131,7 +131,7 @@
 // Invisible object that blocks z transfer to/from its turf and the turf above.
 /obj/effect/ceiling
 	invisibility = 101 // nope cant see this
-	anchored = 1
+	anchored = TRUE
 
 /obj/effect/ceiling/Initialize(mapload)
 	. = ..()
@@ -157,3 +157,8 @@
 	opacity = 0
 	density = TRUE
 	unacidable = TRUE
+
+/obj/effect/blocker/Initialize(mapload) // For non-gateway maps.
+	. = ..()
+	icon = null
+	icon_state = null
