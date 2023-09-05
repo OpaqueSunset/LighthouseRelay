@@ -6,7 +6,11 @@
 
 INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 /obj/abstract/landmark/map_load_mark/Initialize()
-	. = ..()
+	..()
+	return INITIALIZE_HINT_LATELOAD
+
+// Cheap hack to get around not being able to use waitfor=FALSE in load_subtemplate.
+/obj/abstract/landmark/map_load_mark/LateInitialize()
 	if(SSmapping.initialized)
 		load_subtemplate()
 	else
@@ -16,9 +20,9 @@ INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 	. = LAZYLEN(map_template_names) && pick(map_template_names)
 
 /obj/abstract/landmark/map_load_mark/proc/load_subtemplate()
-	// DMMS may break when asychronously loading overlapping map templates.
-	// TODO: more robust queuing behavior
-	set waitfor = FALSE
+	// Commenting this out temporarily as DMMS breaks when asychronously
+	// loading overlapping map templates. TODO: more robust queuing behavior
+	//set waitfor = FALSE
 
 	var/datum/map_template/template = get_subtemplate()
 	var/turf/spawn_loc = get_turf(src)
