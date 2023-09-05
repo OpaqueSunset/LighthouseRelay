@@ -722,11 +722,9 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -1026,11 +1024,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -1326,12 +1322,10 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/machinery/door/airlock/glass/security{
 	id_tag = "briginner";
@@ -1342,12 +1336,10 @@
 "cn" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/green,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/glass/security{
@@ -1730,11 +1722,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -1788,11 +1778,9 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -1977,11 +1965,9 @@
 	dir = 6
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/westleft,
@@ -2323,12 +2309,10 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "security_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/machinery/door/airlock/maintenance{
 	name = "Riot Control"
@@ -2602,11 +2586,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -3334,11 +3316,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/brigdoor/southleft{
@@ -4908,11 +4888,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
 "jc" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/disposalpipe/segment{
@@ -4996,11 +4974,9 @@
 /area/engineering/foyer_mezzenine)
 "jh" = (
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /obj/machinery/door/airlock/maintenance{
 	name = "Riot Control"
@@ -7332,11 +7308,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
@@ -8491,12 +8465,10 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/foyer_mezzenine)
@@ -8511,12 +8483,10 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/foyer_mezzenine)
@@ -8525,12 +8495,10 @@
 	name = "Engineering Mezzenine"
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+	name = "Engineering Lockdown"
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/foyer_mezzenine)
@@ -13423,12 +13391,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "virologyquar";
-	name = "Virology Emergency Quarantine Blast Doors";
-	opacity = 0
+	name = "Virology Emergency Quarantine Blast Doors"
 	},
 /obj/machinery/door/airlock/medical{
 	autoclose = 0;
@@ -16072,11 +16038,9 @@
 	dir = 10;
 	id = "wardobv"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
-	name = "Riot Control Lockdown";
-	opacity = 0
+	name = "Riot Control Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/medical/psych_ward)
@@ -16578,11 +16542,9 @@
 	dir = 10;
 	id = "wardobv"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
-	name = "Riot Control Lockdown";
-	opacity = 0
+	name = "Riot Control Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/medical/psych_ward)
@@ -18793,11 +18755,9 @@
 /area/maintenance/station/sec_lower)
 "Yl" = (
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
-	name = "Riot Control Lockdown";
-	opacity = 0
+	name = "Riot Control Lockdown"
 	},
 /obj/machinery/door/airlock/glass/medical{
 	name = "Staff Access"
@@ -18834,11 +18794,9 @@
 	dir = 10;
 	id = "wardobv"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
-	name = "Riot Control Lockdown";
-	opacity = 0
+	name = "Riot Control Lockdown"
 	},
 /turf/simulated/floor/plating,
 /area/medical/psych_ward)
@@ -18860,12 +18818,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -18968,12 +18924,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "brig_lockdown";
-	name = "Security Blast Doors";
-	opacity = 0
+	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,

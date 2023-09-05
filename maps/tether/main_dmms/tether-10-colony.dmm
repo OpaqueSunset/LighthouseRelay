@@ -10711,11 +10711,9 @@
 /area/centcom/main_hall)
 "uv" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "FrontlockC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
@@ -10776,11 +10774,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "uC" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
@@ -10806,11 +10802,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "uE" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -10915,11 +10909,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "uR" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -10934,11 +10926,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "uT" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -11021,20 +11011,16 @@
 	})
 "vd" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "FrontlockBD";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "ve" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -11058,11 +11044,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "vg" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "CentComPort";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -11196,23 +11180,19 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/bathroom)
 "vv" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "turrets";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "vw" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "FrontlockC2";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -11241,12 +11221,10 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "FrontlockC2";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "FrontlockBD";
@@ -11273,12 +11251,10 @@
 	dir = 5
 	},
 /obj/machinery/door/window/brigdoor/northright,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "FrontlockC2";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /obj/machinery/computer/modular/preset/civilian,
 /turf/unsimulated/floor{
@@ -14260,12 +14236,10 @@
 /area/centcom/bar)
 "AC" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "residential";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security{
@@ -14931,11 +14905,9 @@
 	dir = 8;
 	health = 1e+006
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -15140,11 +15112,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -15210,12 +15180,10 @@
 	},
 /area/centcom/bar)
 "Cb" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "residential";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /obj/machinery/door/firedoor,
 /turf/unsimulated/floor/steel,
@@ -15223,11 +15191,9 @@
 	name = "\improper CentCom Residential Security"
 	})
 "Cc" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/living)
@@ -15236,11 +15202,9 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/living)
 "Ce" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -15393,11 +15357,9 @@
 	dir = 8;
 	health = 1e+006
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
-	name = "Security Doors";
-	opacity = 0
+	name = "Security Doors"
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -15434,12 +15396,10 @@
 	pixel_x = 6;
 	pixel_y = -5
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "TelelockdownC";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /obj/machinery/door/window/brigdoor/northleft,
 /obj/effect/floor_decal/borderfloorblack,
@@ -15453,12 +15413,10 @@
 	})
 "CB" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "TelelockdownC";
-	name = "Security Door";
-	opacity = 0
+	name = "Security Door"
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/command)

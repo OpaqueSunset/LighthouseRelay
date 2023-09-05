@@ -118,6 +118,7 @@
 
 # REMOVE BAD VAREDITS
 /@SUBTYPES {layer = @SET} : @OLD {@OLD; layer = @SKIP}
+/@SUBTYPES {plane = @SET} : @OLD {@OLD; plane = @SKIP}
 /obj/structure/cable/@SUBTYPES : @OLD {@OLD; d1 = @SKIP;d2 = @SKIP}
 # we use a completely different access format
 /@SUBTYPES {req_access = @SET}: @OLD {@OLD; req_access = @SKIP;}

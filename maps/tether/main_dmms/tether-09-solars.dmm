@@ -5196,8 +5196,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner{
-	dir = 4;
-	plane = -42
+	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
@@ -7867,8 +7866,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner{
-	dir = 4;
-	plane = -42
+	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10351,8 +10349,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner{
-	dir = 4;
-	plane = -42
+	dir = 4
 	},
 /obj/structure/disposalpipe/junction{
 	dir = 8

@@ -22991,11 +22991,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio1";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -23245,11 +23243,9 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
 "bmn" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio1";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "Containment Pen"
@@ -23463,11 +23459,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio1";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -23972,11 +23966,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio2";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -24260,11 +24252,9 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/visitor_dining)
 "bum" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio2";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "Containment Pen"
@@ -24423,11 +24413,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio2";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -25115,11 +25103,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio3";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -25196,11 +25182,9 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "bDU" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio3";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "Containment Pen"
@@ -25319,11 +25303,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio3";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -25593,11 +25575,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio4";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -25694,11 +25674,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "bMb" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio4";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/westright{
 	name = "Containment Pen"
@@ -25788,11 +25766,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio4";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -26329,11 +26305,9 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/sleep/Dorm_8)
 "bSr" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio5";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/southright{
 	name = "Containment Pen"
@@ -26354,11 +26328,9 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio5";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
@@ -26377,20 +26349,16 @@
 	dir = 1
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio5";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
 "bSy" = (
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio6";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /obj/machinery/door/window/brigdoor/southright{
 	name = "Containment Pen"
@@ -26413,11 +26381,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio6";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
@@ -26436,11 +26402,9 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/blast/regular{
-	density = 0;
+/obj/machinery/door/blast/regular/open{
 	id_tag = "xenobio6";
-	name = "Containment Blast Doors";
-	opacity = 0
+	name = "Containment Blast Doors"
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
