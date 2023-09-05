@@ -7,7 +7,6 @@ SUBSYSTEM_DEF(timeoff)
 	var/list/currentrun
 
 /datum/controller/subsystem/timeoff/fire(resumed)
-	. = ..()
 	if(!establish_db_connection())
 		return
 	/* TODO: readd check when modular config is implemented
