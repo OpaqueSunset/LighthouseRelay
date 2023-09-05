@@ -1,6 +1,7 @@
 //Load a random map template from the list. Maploader handles it to avoid order of init madness
 /obj/abstract/landmark/map_load_mark
 	name = "map loader landmark"
+	var/centered = TRUE
 	var/list/map_template_names	//list of template names to pick from
 
 INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
@@ -29,7 +30,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 		if(istext(template))
 			template = SSmapping.get_template(template)
 		if(istype(template))
-			template.load(spawn_loc, TRUE)
+			template.load(spawn_loc, centered = centered)
 
 //Throw things in the area around randomly
 /obj/abstract/landmark/carnage_mark

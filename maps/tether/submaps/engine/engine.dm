@@ -1,10 +1,15 @@
 /datum/map_template/engine
 	abstract_type = /datum/map_template/engine
 	template_flags = null
+	modify_tag_vars = FALSE
 
 /datum/map_template/engine/rust
 	name = "R-UST Engine"
 	mappaths = list("maps/tether/submaps/engine/engine_rust.dmm")
+
+/datum/map_template/engine/singularity
+	name = "Singularity Engine"
+	mappaths = list("maps/tether/submaps/engine/engine_singulo.dmm")
 
 /datum/map_template/engine/supermatter
 	name = "Supermatter Engine"
@@ -13,9 +18,12 @@
 /// Landmark for where to load in the engine on the map
 /obj/abstract/landmark/map_load_mark/engine_loader
 	map_template_names = list(
-		"R-UST Engine",
+		// "R-UST Engine",
+		// "Singularity Engine",
+		// ^^ both of those are defunct atm
 		"Supermatter Engine"
 	)
+	centered = FALSE
 	/// A list of lists, where each list is a rectangle of turfs to clear in the form of (x1, y1, x2, y2)
 	var/list/list/clean_turfs
 
