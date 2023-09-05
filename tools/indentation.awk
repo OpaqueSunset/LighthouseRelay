@@ -16,8 +16,10 @@
 		}
 	}
 
-	if ( $0 !~ /^[\t ]+\/[\/*]/ ) # Current line is not a comment, update comma state.
-	{
+	if ($0 !~ /^[\t ]+\/\// && # Current line is not a single-line comment
+		$0 !~ /^[\t ]+\/\*/ && # and not an opening multi-line comment
+		$0 !~ /^[\t ]+\*\// ) # or a closing multi-line comment
+	{ # update comma state.
 		if ($0 ~ /,[\t ]*(\/[\/*].*)?\\?\\?\r?$/ || # comma at EOL
 			$0 ~ /list[\t ]*\([\t ]*(\/[\/*].*)?\\?\r?$/ || # start of a list()
 			$0 ~ /typesof[\t ]*\([\t ]*(\/[\/*].*)?\\?\r?$/ || # start of a typesof()
