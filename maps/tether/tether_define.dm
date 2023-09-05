@@ -1,10 +1,10 @@
 /datum/map/tether
-	name = "Tether"
-	full_name = "Tether"
+	name = "Lighthouse"
+	full_name = "NRS Lighthouse"
 	path = "tether"
 	ground_noun = "deck"
 
-	station_name  = "NSR Lighthouse"
+	station_name  = "NRS Lighthouse"
 	station_short = "Lighthouse"
 
 	dock_name     = "Lighthouse Colony"
@@ -49,8 +49,8 @@
 	)
 
 /datum/map/tether/get_map_info()
-	return "You're aboard the <b>[station_name],</b> a survey and mercantile vessel affiliated with the Free Trade Union. \
-	No meaningful authorities can claim the planets and resources in this uncharted sector, so their exploitation is entirely up to you - mine, poach and deforest all you want."
+	return "You're aboard the <b>[station_name],</b> a backwater communications relay propping up the entire Frontier telecommunications network. \
+	No meaningful government can claim the resources in this distant sector, leaving NanoTrasen the only real influence on its denizens."
 
 /datum/map/tether/create_trade_hubs()
 	new /datum/trade_hub/singleton/tether
@@ -65,3 +65,13 @@
 		/datum/trader/mining,
 		/datum/trader/books
 	)
+
+// Overmap represetation of tether
+/obj/effect/overmap/visitable/sector/virgo3b
+	name = "Virgo 3B"
+	desc = "Full of phoron, and home to the NSR Lighthouse, the backwater backbone of the Frontier telecommunications network."
+	icon = 'maps/tether/icons/obj/overmap_vr.dmi'
+	icon_state = "virgo3b"
+
+/obj/effect/overmap/visitable/sector/virgo3b/generate_skybox()
+	return overlay_image('maps/tether/icons/skybox/virgo3b.dmi', "small", null, RESET_COLOR)

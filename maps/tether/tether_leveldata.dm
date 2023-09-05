@@ -51,6 +51,10 @@ var/global/decl/material/virgo3b_stratum_base_material
 /datum/level_data/virgo3b/main/lowest
 	base_turf = /turf/exterior/rocks
 
+/datum/level_data/virgo3b/main/space
+	base_turf = /turf/space
+	exterior_atmosphere = null // vacuum
+
 /datum/level_data/virgo3b/player
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER)
 
@@ -79,6 +83,9 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /obj/abstract/level_data_spawner/virgo3b/main/lowest
 	level_data_type = /datum/level_data/virgo3b/main/lowest
+
+/obj/abstract/level_data_spawner/virgo3b/main/space
+	level_data_type = /datum/level_data/virgo3b/main/space
 
 /obj/abstract/level_data_spawner/virgo3b/player
 	level_data_type = /datum/level_data/virgo3b/player
