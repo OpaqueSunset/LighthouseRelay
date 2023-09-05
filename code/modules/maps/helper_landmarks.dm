@@ -3,21 +3,21 @@
 	name = "map loader landmark"
 	var/list/map_template_names	//list of template names to pick from
 
-/obj/abstract/landmark/map_load_mark/Initialize(var/mapload)
+INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
+/obj/abstract/landmark/map_load_mark/Initialize()
 	. = ..()
-	if(!mapload)
-		return INITIALIZE_HINT_LATELOAD
-
-/obj/abstract/landmark/map_load_mark/LateInitialize()
-	load_subtemplate()
+	if(SSmapping.initialized)
+		load_subtemplate()
+	else
+		SSmapping.queued_markers += src
 
 /obj/abstract/landmark/map_load_mark/proc/get_subtemplate()
 	. = LAZYLEN(map_template_names) && pick(map_template_names)
 
 /obj/abstract/landmark/map_load_mark/proc/load_subtemplate()
-	// Commenting this out temporarily as DMMS breaks when asychronously
-	// loading overlapping map templates. TODO: more robust queuing behavior
-	//set waitfor = FALSE
+	// DMMS may break when asychronously loading overlapping map templates.
+	// TODO: more robust queuing behavior
+	set waitfor = FALSE
 
 	var/datum/map_template/template = get_subtemplate()
 	var/turf/spawn_loc = get_turf(src)
