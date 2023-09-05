@@ -57,7 +57,7 @@
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "ah" = (
-/obj/machinery/computer/fusion_fuel_control{
+/obj/machinery/computer/fusion/fuel_control{
 	id_tag = "engine"
 	},
 /turf/simulated/floor,
@@ -114,7 +114,7 @@
 /area/engineering/engine_room)
 "as" = (
 /obj/structure/table/reinforced,
-/obj/fiftyspawner/deuterium,
+/obj/item/stack/material/aerogel/mapped/deuterium/fifty,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "at" = (
@@ -226,7 +226,7 @@
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "aL" = (
-/obj/machinery/computer/gyrotron_control{
+/obj/machinery/computer/fusion/gyrotron{
 	id_tag = "engine"
 	},
 /turf/simulated/floor,
@@ -250,14 +250,14 @@
 /turf/space,
 /area/space)
 "aP" = (
-/obj/machinery/power/fusion_core/mapped{
+/obj/machinery/fusion_core/mapped{
 	id_tag = "engine"
 	},
 /obj/structure/cable/cyan,
 /turf/simulated/floor/reinforced,
 /area/engineering/engine_room)
 "aQ" = (
-/obj/machinery/computer/fusion_core_control{
+/obj/machinery/computer/fusion/core_control{
 	id_tag = "engine"
 	},
 /turf/simulated/floor,

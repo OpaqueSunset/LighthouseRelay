@@ -2207,7 +2207,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "aen" = (
@@ -2223,7 +2223,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "aeo" = (
@@ -3083,7 +3083,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/xenoflora)
 "agd" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "age" = (
@@ -3498,7 +3498,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "agR" = (
@@ -3629,7 +3629,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "ahf" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
@@ -5195,7 +5195,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "ajE" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /obj/structure/railing/mapped,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -6494,7 +6494,7 @@
 /area/maintenance/substation/surface_atmos)
 "amf" = (
 /obj/effect/floor_decal/rust,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
@@ -6862,7 +6862,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance)
 "amU" = (
@@ -6995,7 +6995,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "anl" = (
@@ -7165,7 +7165,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "anE" = (
@@ -8095,7 +8095,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "apC" = (
@@ -10702,7 +10702,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "auu" = (
@@ -11225,7 +11225,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/visible/supply,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "avz" = (
@@ -18545,7 +18545,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos/processing)
 "aJP" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "aJQ" = (
@@ -20888,7 +20888,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "aQK" = (

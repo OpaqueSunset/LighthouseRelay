@@ -1728,7 +1728,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/vacant/vacant_site2)
 "eD" = (

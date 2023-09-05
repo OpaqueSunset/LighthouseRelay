@@ -1,3 +1,6 @@
+/obj/random/loot_pile
+	abstract_type = /obj/random/loot_pile
+
 /obj/random/loot_pile/maintenance
 	name = "random maintenance loot pile"
 	desc = "This is a random maintenance loot pile."

@@ -51,8 +51,8 @@
 /obj/item/chems/glass/bottle/stoxin : /obj/item/chems/glass/bottle/sedatives{@OLD}
 
 # TRASHPILE -> LOOTPILE
-/obj/structure/trash_pile : /obj/random/loot_pile
-/obj/random/trash_pile : /obj/random/loot_pile
+/obj/structure/trash_pile : /obj/random/loot_pile/maintenance
+/obj/random/trash_pile : /obj/random/loot_pile/maintenance
 
 /obj/item/storage/pill_bottle/tramadol : /obj/item/storage/pill_bottle/strong_painkillers{@OLD}
 /obj/item/chems/pill/tramadol : /obj/item/chems/pill/strong_painkillers{@OLD}
@@ -211,6 +211,7 @@
 /obj/fiftyspawner/wood : /obj/item/stack/material/plank/mapped/wood/fifty
 /obj/fiftyspawner/steel : /obj/item/stack/material/sheet/mapped/steel/fifty
 /obj/fiftyspawner/glass : /obj/item/stack/material/pane/mapped/glass/fifty
+/obj/fiftyspawner/deuterium : /obj/item/stack/material/aerogel/mapped/deuterium/fifty
 
 # MOB CONVERSIONS
 /mob/living/simple_mob/animal/passive/dog/corgi/Ian : /mob/living/simple_animal/corgi/Ian{@OLD}
@@ -262,6 +263,7 @@
 /obj/machinery/power/emitter/@SUBTYPES : /obj/machinery/emitter/@SUBTYPES{@OLD}
 /obj/machinery/power/port_gen/@SUBTYPES : /obj/machinery/port_gen/@SUBTYPES{@OLD}
 /obj/machinery/power/generator : /obj/machinery/generator{@OLD}
+/obj/machinery/power/fusion_core/@SUBTYPES : /obj/machinery/fusion_core/@SUBTYPES{@OLD}
 /obj/item/smes_coil/@SUBTYPES : /obj/item/stock_parts/smes_coil/@SUBTYPES{@OLD}
 
 # id -> id_tag
@@ -328,6 +330,9 @@
 
 /obj/machinery/computer/aiupload : /obj/machinery/computer/upload/ai{@OLD}
 /obj/machinery/computer/borgupload : /obj/machinery/computer/upload/robot{@OLD}
+/obj/machinery/computer/fusion_fuel_control : /obj/machinery/computer/fusion/fuel_control{@OLD}
+/obj/machinery/computer/fusion_core_control : /obj/machinery/computer/fusion/core_control{@OLD}
+/obj/machinery/computer/gyrotron_control : /obj/machinery/computer/fusion/gyrotron{@OLD}
 
 # timeclocks are not computer subtypes
 /obj/machinery/computer/timeclock/@SUBTYPES : /obj/machinery/timeclock/@SUBTYPES{@OLD}

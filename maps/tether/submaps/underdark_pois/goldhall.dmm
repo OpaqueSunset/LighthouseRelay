@@ -52,7 +52,7 @@
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "U" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 

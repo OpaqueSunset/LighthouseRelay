@@ -373,7 +373,7 @@
 /area/maintenance/station/sec_lower)
 "aO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "aP" = (
@@ -3218,7 +3218,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "fN" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "fO" = (
@@ -8316,7 +8316,7 @@
 /area/medical/virology)
 "pu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/medical/virology)
 "pv" = (
@@ -13224,7 +13224,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/medbay)
 "yJ" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/maintenance/station/medbay)
@@ -18873,7 +18873,7 @@
 /area/engineering/foyer_mezzenine)
 "YU" = (
 /obj/effect/floor_decal/rust,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/station/sec_lower)
 "YW" = (

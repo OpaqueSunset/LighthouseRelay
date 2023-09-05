@@ -3464,7 +3464,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "ahq" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "ahr" = (
@@ -6244,7 +6244,7 @@
 /area/shuttle/excursion/tether)
 "api" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "apn" = (
@@ -8801,7 +8801,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/bridge)
 "axl" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/maintenance/station/bridge)
@@ -8813,7 +8813,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_entry)
 "axt" = (
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/crew_quarters/sleep/cryo)
 "axu" = (
@@ -9831,7 +9831,7 @@
 /area/hallway/station/docks)
 "aAq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
 /area/hallway/station/docks)
 "aAs" = (
