@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(skybox)
 		var/mutable_appearance/MA = new(normal_space)
 		var/image/im = image('icons/turf/space_dust.dmi', "[i]")
 		im.plane = DUST_PLANE
-		im.alpha = 128
+		im.alpha = 80
 		im.blend_mode = BLEND_ADD
 
 		MA.overlays = list(im)
