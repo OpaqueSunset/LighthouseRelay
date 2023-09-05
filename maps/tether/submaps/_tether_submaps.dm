@@ -324,7 +324,7 @@
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "x"
 	invisibility = 101
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 	density = 0
 	anchored = 1
 

@@ -25,7 +25,7 @@
 	name = "away mission initializer - alienship"
 	icon = 'alienship.dmi'
 	icon_state = null
-	mouse_opacity = 0
+	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 	invisibility = 101
 
 	//Shared!

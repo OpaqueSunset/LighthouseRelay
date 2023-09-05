@@ -56,7 +56,7 @@
 
 		for(var/mob/living/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
 			var/image/I = image("split", M)
-			I.mouse_opacity = 0
+			I.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I
@@ -68,7 +68,7 @@
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
 			var/image/I = image("split", O)
-			I.mouse_opacity = 0
+			I.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I
