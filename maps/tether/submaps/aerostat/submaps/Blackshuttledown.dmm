@@ -6,7 +6,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Blackshuttledown)
 "ac" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/template_noop,
 /area/submap/virgo2/Blackshuttledown)
 "ad" = (
@@ -17,18 +17,18 @@
 /turf/template_noop,
 /area/submap/virgo2/Blackshuttledown)
 "af" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 "ag" = (
-/obj/effect/decal/remains/human,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains/human,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 "ah" = (
 /obj/effect/decal/cleanable/blood,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 "ai" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
@@ -41,7 +41,7 @@
 	},
 /area/submap/virgo2/Blackshuttledown)
 "ak" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
@@ -50,10 +50,8 @@
 "al" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
-	frequency = 1331;
 	id_tag = "merc_shuttle_outer";
-	name = "Ship External Access";
-	req_access = list(150)
+	name = "Ship External Access"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
@@ -72,13 +70,13 @@
 	dir = 4;
 	icon_state = "propulsion_l"
 	},
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 "ao" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
@@ -90,7 +88,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "ap" = (
-/obj/structure/dispenser/oxygen,
+/obj/structure/tank_rack/oxygen,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aq" = (
@@ -110,11 +108,11 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "at" = (
-/obj/machinery/organ_printer/flesh,
+/obj/machinery/fabricator/bioprinter,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "au" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
@@ -141,14 +139,14 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "az" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},
 /area/submap/virgo2/Blackshuttledown)
 "aA" = (
-/obj/machinery/computer/communications{
+/obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
@@ -185,29 +183,29 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aG" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aH" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/tank/anesthetic,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aI" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/clothing/gloves/sterile,
 /obj/item/clothing/gloves/sterile,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aJ" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/spray/sterilizine,
-/obj/item/reagent_containers/spray/sterilizine,
+/obj/structure/table,
+/obj/item/chems/spray/sterilizine,
+/obj/item/chems/spray/sterilizine,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aK" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/masks,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
@@ -235,12 +233,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aP" = (
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/hyper;
-	dir = 4;
-	name = "Unknown APC";
-	pixel_x = -24
-	},
+/obj/machinery/power/apc/hyper,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aQ" = (
@@ -255,7 +248,7 @@
 /area/submap/virgo2/Blackshuttledown)
 "aS" = (
 /obj/structure/table/steel,
-/obj/item/material/knife,
+/obj/item/knife,
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "aU" = (
@@ -344,7 +337,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "bj" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
@@ -396,14 +389,14 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "bs" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel,
 /area/submap/virgo2/Blackshuttledown)
 "bt" = (
 /obj/machinery/light,
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
@@ -428,11 +421,11 @@
 /area/submap/virgo2/Blackshuttledown)
 "by" = (
 /obj/structure/table/steel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 "bz" = (
 /mob/living/simple_mob/humanoid/merc/ranged/space,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Blackshuttledown)
 
 (1,1,1) = {"

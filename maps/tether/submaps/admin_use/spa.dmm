@@ -55,7 +55,7 @@
 /turf/simulated/floor/water,
 /area/submap/spa)
 "ak" = (
-/mob/living/simple_mob/animal/passive/fox,
+/mob/living/simple_animal/fox,
 /turf/simulated/floor/grass,
 /area/submap/spa)
 "al" = (
@@ -63,11 +63,11 @@
 	icon_state = "railing0";
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/water,
 /area/submap/spa)
 "am" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/grass,
 /area/submap/spa)
 "an" = (
@@ -107,7 +107,7 @@
 /turf/simulated/floor/water,
 /area/submap/spa)
 "as" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 4
@@ -119,11 +119,11 @@
 	icon_state = "railing0";
 	dir = 8
 	},
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/water,
 /area/submap/spa)
 "au" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/submap/spa)
 "av" = (
@@ -140,7 +140,7 @@
 /area/submap/spa)
 "ax" = (
 /obj/structure/railing,
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/submap/spa)
 "ay" = (
@@ -161,7 +161,7 @@
 /area/submap/spa)
 "aB" = (
 /obj/structure/railing,
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/water,
 /area/submap/spa)
 "aC" = (
@@ -208,7 +208,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/submap/spa)
 "aJ" = (
-/obj/machinery/door/airlock/multi_tile/glass,
+/obj/machinery/door/airlock/double/glass,
 /turf/simulated/floor/carpet,
 /area/submap/spa)
 "aK" = (
@@ -220,9 +220,7 @@
 /turf/simulated/floor/wood,
 /area/submap/spa)
 "aM" = (
-/obj/machinery/vending/boozeomat{
-	req_access = list()
-	},
+/obj/machinery/vending/boozeomat,
 /turf/simulated/floor/wood,
 /area/submap/spa)
 "aN" = (
@@ -268,12 +266,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "spadorm1";
 	name = "door bolt control";
 	pixel_x = 26;
-	specialfunctions = 4
+	id_tag = "spadorm1"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
@@ -296,7 +293,7 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/spa)
 "ba" = (
-/obj/structure/toilet,
+/obj/structure/hygiene/toilet,
 /turf/simulated/floor/tiled/white,
 /area/submap/spa)
 "bb" = (
@@ -328,17 +325,16 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	id = "spadorm3";
 	name = "door bolt control";
 	pixel_x = -26;
-	specialfunctions = 4
+	id_tag = "spadorm3"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bg" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 8;
 	icon_state = "sink";
 	pixel_x = -16
@@ -418,12 +414,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "spadorm5";
 	name = "door bolt control";
 	pixel_x = 26;
-	specialfunctions = 4
+	id_tag = "spadorm5"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
@@ -443,7 +438,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bw" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	icon_state = "toilet00";
 	dir = 1
 	},
@@ -483,12 +478,11 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	id = "spadorm7";
 	name = "door bolt control";
 	pixel_x = -26;
-	specialfunctions = 4
+	id_tag = "spadorm7"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
@@ -507,9 +501,7 @@
 /turf/simulated/floor/reinforced,
 /area/submap/spa)
 "bF" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	req_one_access = list(160)
-	},
+/obj/machinery/door/airlock/double/metal/mait,
 /turf/simulated/floor/reinforced,
 /area/submap/spa)
 "bG" = (
@@ -525,7 +517,7 @@
 /turf/simulated/floor/holofloor/wood,
 /area/submap/spa)
 "bI" = (
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/space)
 "bJ" = (
 /obj/machinery/door/airlock{
@@ -565,45 +557,41 @@
 /area/submap/spa)
 "bP" = (
 /obj/structure/table/woodentable,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "spadorm2";
 	name = "door bolt control";
 	pixel_x = 26;
-	specialfunctions = 4
+	id_tag = "spadorm2"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bQ" = (
 /obj/structure/table/woodentable,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	id = "spadorm4";
 	name = "door bolt control";
 	pixel_x = -26;
-	specialfunctions = 4
+	id_tag = "spadorm4"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bR" = (
 /obj/structure/table/woodentable,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 8;
-	id = "spadorm6";
 	name = "door bolt control";
 	pixel_x = 26;
-	specialfunctions = 4
+	id_tag = "spadorm6"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bS" = (
 /obj/structure/table/woodentable,
-/obj/machinery/button/remote/airlock{
+/obj/machinery/button/alternate/door/bolts{
 	dir = 4;
-	id = "spadorm8";
 	name = "door bolt control";
 	pixel_x = -26;
-	specialfunctions = 4
+	id_tag = "spadorm8"
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)

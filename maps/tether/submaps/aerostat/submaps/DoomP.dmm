@@ -6,46 +6,46 @@
 /turf/template_noop,
 /area/submap/virgo2/DoomP)
 "ac" = (
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "ad" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "ae" = (
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "af" = (
 /turf/simulated/floor/lava,
 /area/submap/virgo2/DoomP)
 "ah" = (
 /obj/random/landmine,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "ai" = (
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "al" = (
-/obj/effect/decal/remains/mouse,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains/mouse,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "am" = (
 /obj/random/landmine,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "an" = (
-/obj/effect/decal/remains/deer,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains/deer,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "ao" = (
-/obj/effect/decal/remains/mouse,
+/obj/item/remains/mouse,
 /obj/random/landmine,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "aq" = (
 /obj/machinery/light/small,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "as" = (
 /obj/machinery/porta_turret/poi{
@@ -119,7 +119,6 @@
 "aE" = (
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -127,12 +126,9 @@
 "aF" = (
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -145,27 +141,25 @@
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/virgo2/DoomP)
 "aH" = (
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /turf/simulated/floor/plating,
 /area/submap/virgo2/DoomP)
 "aI" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/virgo2/DoomP)
 "aJ" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/phoron{
+/obj/structure/table,
+/obj/item/stack/material/crystal/mapped/phoron{
 	amount = 25
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -176,7 +170,7 @@
 /area/submap/virgo2/DoomP)
 "aL" = (
 /obj/structure/lattice,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "aM" = (
 /obj/structure/bed/chair{
@@ -188,11 +182,11 @@
 /turf/simulated/floor/tiled,
 /area/submap/virgo2/DoomP)
 "aN" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled,
 /area/submap/virgo2/DoomP)
 "aO" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/pizzabox,
 /turf/simulated/floor/tiled,
 /area/submap/virgo2/DoomP)
@@ -212,8 +206,7 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/virgo2/DoomP)
@@ -223,12 +216,9 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -236,8 +226,6 @@
 /area/submap/virgo2/DoomP)
 "aT" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -246,8 +234,6 @@
 /area/submap/virgo2/DoomP)
 "aU" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -279,7 +265,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/virgo2/DoomP)
 "bc" = (
-/obj/structure/sign/electricshock,
+/obj/structure/sign/warning/shock,
 /turf/simulated/wall/r_wall,
 /area/submap/virgo2/DoomP)
 "bd" = (
@@ -336,36 +322,36 @@
 /turf/simulated/floor/tiled,
 /area/submap/virgo2/DoomP)
 "bn" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/syndie_kit/spy,
 /obj/item/card/id/syndicate,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bo" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/box/smokes,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bp" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/box/handcuffs,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bq" = (
-/obj/structure/table/rack,
-/obj/item/cell/device/weapon,
-/obj/item/cell/device/weapon,
-/obj/item/cell/device/weapon,
-/obj/item/cell/device/weapon,
+/obj/structure/rack,
+/obj/item/cell/gun,
+/obj/item/cell/gun,
+/obj/item/cell/gun,
+/obj/item/cell/gun,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "br" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/energy,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bs" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/projectile/contender,
 /obj/item/ammo_magazine/s357,
 /obj/item/ammo_magazine/s357,
@@ -381,7 +367,7 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bu" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/effect/floor_decal/corner/lime{
 	dir = 5
 	},
@@ -396,7 +382,7 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bw" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/flashlight/lamp,
 /obj/effect/floor_decal/corner/lime{
 	dir = 5
@@ -404,7 +390,7 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bx" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/structure/bedsheetbin,
 /obj/effect/floor_decal/corner/lime{
 	dir = 1
@@ -421,7 +407,7 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bA" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -459,14 +445,14 @@
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bF" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 1
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
 /area/submap/virgo2/DoomP)
 "bG" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -521,23 +507,23 @@
 /area/submap/virgo2/DoomP)
 "bM" = (
 /obj/structure/lattice,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "bN" = (
 /obj/machinery/crystal/lava,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "bO" = (
 /obj/machinery/crystal/lava,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "mi" = (
 /obj/structure/barricade,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DoomP)
 "El" = (
 /obj/structure/barricade,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DoomP)
 "Hh" = (
 /obj/effect/floor_decal/industrial/warning,

@@ -28,13 +28,13 @@
 /turf/simulated/wall,
 /area/awaymission/listeningpost)
 "h" = (
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "i" = (
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "j" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper/monitorkey,
 /obj/item/radio/intercom{
 	desc = "Talk through this. Evilly";
@@ -48,11 +48,11 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "k" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "l" = (
-/turf/simulated/mineral/floor/vacuum,
+/turf/exterior/barren,
 /area/mine/explored)
 "m" = (
 /obj/machinery/computer/message_monitor{
@@ -71,7 +71,7 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "o" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	info = "Nothing of interest to report.";
 	name = "november report"
@@ -91,7 +91,7 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "q" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/space/syndicate,
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/head/helmet/space/syndicate,
@@ -112,13 +112,13 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "t" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "u" = (
 /obj/structure/disposaloutlet{
@@ -135,7 +135,7 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "w" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/flashlight/lamp,
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
@@ -145,7 +145,7 @@
 /area/awaymission/listeningpost)
 "y" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "z" = (
 /obj/machinery/vending/cola,
@@ -157,7 +157,7 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "B" = (
-/obj/structure/filingcabinet,
+/obj/structure/filing_cabinet,
 /obj/item/paper{
 	info = "A good start to the operation: intercepted Nanotrasen military communications. A convoy is scheduled to transfer nuclear warheads to a new military base. This is as good a chance as any to get our hands on some heavy weaponry, I suggest we take it.";
 	name = "april report"
@@ -193,7 +193,7 @@
 /turf/simulated/floor,
 /area/awaymission/listeningpost)
 "C" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	info = "<b>Mission Details</b>: You have been assigned to a newly constructed listening post constructed within an asteroid in Nanotrasen space to monitor their plasma mining operations. Accurate intel is crucial to the success of our operatives onboard, do not fail us.";
 	name = "mission briefing"
@@ -218,7 +218,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "G" = (
 /obj/machinery/door/airlock{
@@ -230,27 +230,24 @@
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/listeningpost)
 "I" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	icon_state = "shower";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/listeningpost)
 "J" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	icon_state = "toilet00";
 	dir = 8
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/listeningpost)
 "K" = (
-/turf/simulated/mineral/floor,
+/turf/exterior/barren,
 /area/mine/unexplored)
 "L" = (
 /turf/simulated/floor/greengrid,
-/area/mine/explored)
-"M" = (
-/turf/simulated/mineral/floor,
 /area/mine/explored)
 "N" = (
 /obj/machinery/gateway{
@@ -7645,12 +7642,12 @@ h
 h
 K
 L
-M
+l
 h
 h
 h
 h
-M
+l
 h
 h
 h
@@ -7791,8 +7788,8 @@ L
 L
 h
 L
-M
-M
+l
+l
 h
 h
 h
@@ -8212,7 +8209,7 @@ h
 h
 h
 h
-M
+l
 L
 P
 S
@@ -8354,13 +8351,13 @@ h
 h
 h
 h
-M
+l
 L
 L
 L
 L
 L
-M
+l
 h
 h
 h
@@ -8496,13 +8493,13 @@ h
 h
 h
 h
-M
-M
+l
+l
 L
-M
-M
-M
-M
+l
+l
+l
+l
 h
 h
 h

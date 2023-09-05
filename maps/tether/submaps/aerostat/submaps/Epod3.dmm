@@ -6,7 +6,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Epod3)
 "c" = (
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/submap/virgo2/Epod3)
 "d" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -17,7 +17,7 @@
 /area/submap/virgo2/Epod3)
 "f" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/submap/virgo2/Epod3)
 "g" = (
 /obj/effect/spider/stickyweb,
@@ -33,7 +33,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -26
 	},
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/submap/virgo2/Epod3)
 "i" = (
 /obj/structure/bed/chair{
@@ -45,12 +45,11 @@
 	},
 /obj/machinery/light,
 /obj/item/weldingtool/largetank,
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/submap/virgo2/Epod3)
 "j" = (
 /obj/machinery/status_display{
 	density = 0;
-	layer = 4;
 	pixel_x = 0;
 	pixel_y = -32
 	},
@@ -58,7 +57,7 @@
 	icon_state = "chair_preview";
 	dir = 8
 	},
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/ammo_casing/spent,
 /obj/item/clothing/under/suit_jacket/really_black,
@@ -66,7 +65,7 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/random/multiple/gun/projectile/handgun,
 /obj/effect/spider/eggcluster/small/frost,
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/submap/virgo2/Epod3)
 "k" = (
 /obj/structure/shuttle/engine/propulsion/burst{
@@ -77,14 +76,14 @@
 /area/submap/virgo2/Epod3)
 "l" = (
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/submap/virgo2/Epod3)
 "m" = (
 /obj/machinery/door/airlock/external{
 	name = "Escape Pod Hatch";
 	welded = 1
 	},
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/submap/virgo2/Epod3)
 "p" = (
 /obj/effect/spider/stickyweb,
@@ -94,7 +93,7 @@
 "r" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/submap/virgo2/Epod3)
 
 (1,1,1) = {"

@@ -17,7 +17,7 @@
 /turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "f" = (
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

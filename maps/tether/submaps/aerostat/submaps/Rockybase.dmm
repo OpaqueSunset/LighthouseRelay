@@ -4,14 +4,14 @@
 	maxbodytemp = 900;
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive/returnhome
 	},
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/template_noop)
 "ab" = (
 /turf/template_noop,
 /area/template_noop)
 "ac" = (
-/obj/effect/decal/remains,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains,
+/turf/exterior/barren,
 /area/submap/virgo2/Rockybase)
 "ad" = (
 /turf/template_noop,
@@ -27,7 +27,7 @@
 	maxbodytemp = 900;
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/threatening/returnhome
 	},
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Rockybase)
 "ag" = (
 /turf/simulated/mineral/ignore_mapgen/virgo2,
@@ -45,7 +45,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ak" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 4;
 	icon_state = "shower";
 	pixel_x = 5;
@@ -61,7 +61,7 @@
 /turf/simulated/wall/virgo2,
 /area/submap/virgo2/Rockybase)
 "am" = (
-/obj/structure/sign/securearea,
+/obj/structure/sign/warning,
 /turf/simulated/wall/virgo2,
 /area/submap/virgo2/Rockybase)
 "an" = (
@@ -71,7 +71,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ap" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -5;
@@ -132,25 +132,25 @@
 /area/submap/virgo2/Rockybase)
 "az" = (
 /obj/item/storage/belt/janitor,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aA" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aB" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aC" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/projectile/pistol,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aD" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/energy/gun/taser,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -165,7 +165,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aG" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/projectile/shotgun/pump/combat,
 /obj/item/gun/projectile/shotgun/pump/combat,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -179,7 +179,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aJ" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 4;
 	icon_state = "shower";
 	pixel_x = 5;
@@ -189,7 +189,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aK" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -5;
@@ -203,7 +203,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aM" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
@@ -220,7 +220,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aO" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	info = "Carl's absolutly fucked in the head. He's trying to squeeze as much drone production out as he can since he's worried we're gonna get found out but he's getting sloppier with each batch. Now's he's telling us he can speed the time on the IFF encoding. I already have a hard enough time getting these damn things not to stare at walls and now he's gonna shortchange the only part of these tincans that tells em not to turn us into paste on a wall. I told Richter to get out while he can, We're counting days before either some Sif task force shows up at our door or these things decide we aren't there friends anymore.";
 	name = "Note"
@@ -238,17 +238,17 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aR" = (
-/obj/structure/table/rack,
-/obj/item/storage/box/shotgunshells,
-/obj/item/storage/box/shotgunshells,
-/obj/item/storage/box/shotgunshells,
+/obj/structure/rack,
+/obj/item/storage/box/ammo/shotgunshells,
+/obj/item/storage/box/ammo/shotgunshells,
+/obj/item/storage/box/ammo/shotgunshells,
 /obj/item/ammo_magazine/m10mm,
 /obj/item/ammo_magazine/m10mm,
 /obj/item/ammo_magazine/m10mm,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aS" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -257,7 +257,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aT" = (
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	dir = 8;
 	icon_state = "shower";
 	pixel_x = -5;
@@ -293,24 +293,24 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aZ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ba" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper_bin,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bb" = (
 /obj/machinery/light,
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/pen,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bc" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/gun/projectile/automatic/c20r,
 /obj/item/gun/projectile/automatic/c20r,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -370,7 +370,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bn" = (
-/obj/effect/decal/remains,
+/obj/item/remains,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bo" = (
@@ -378,7 +378,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bp" = (
-/obj/item/stack/rods,
+/obj/item/stack/material/rods,
 /obj/structure/girder,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -386,7 +386,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "br" = (
-/obj/structure/sign/securearea{
+/obj/structure/sign/warning{
 	desc = "A warning sign which reads 'HIGH VOLTAGE'";
 	icon_state = "shock";
 	name = "HIGH VOLTAGE";
@@ -399,12 +399,12 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bt" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/kit/paint/gygax/darkgygax,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bu" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	info = "I've decided to go forward and start some small scale tests of the Vicerator delivery grenades, Might as wall make sure they work like the real ones. There are a few Fauna areas nearbye and we're working to make sure the kinks in the code are worked out. Once we've made sure they stay flying we'll work on the IFF signals.";
 	name = "V-Grenade Notice 2"
@@ -412,7 +412,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bv" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/toolbox,
 /obj/machinery/light{
 	dir = 1
@@ -420,12 +420,12 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bw" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bx" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	info = "We've finally been able to get the Vicerator delivery grenades working, Took awhile to make sure the latching mechanism didn't fail but we're sure we've got it this time. Vel'Shem's worried about the miners having there own drone fab now but I say it's a small price to pay to keep the metal flowing, Especially since there telling us NT's starting to monopolize the metal rich parts.";
 	name = "V-Grenade Notice 1"
@@ -437,10 +437,10 @@
 /turf/simulated/floor/tiled,
 /area/submap/virgo2/Rockybase)
 "bz" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/template_noop)
 "bA" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/stack/material/diamond,
 /obj/item/stack/material/diamond,
 /obj/item/stack/material/diamond,
@@ -452,31 +452,31 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bB" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/grenade/spawnergrenade/manhacks,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bC" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/steel,
+/obj/structure/table,
+/obj/item/stack/material/sheet/mapped/steel,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bD" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/circuitboard/mecha/gygax/main,
-/obj/item/circuitboard/mecha/gygax/peripherals,
-/obj/item/circuitboard/mecha/gygax/targeting,
+/obj/item/stock_parts/circuitboard/mecha/gygax/main,
+/obj/item/stock_parts/circuitboard/mecha/gygax/peripherals,
+/obj/item/stock_parts/circuitboard/mecha/gygax/targeting,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bE" = (
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bF" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/fiftyspawner/rods,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -489,12 +489,12 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bI" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bJ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -510,13 +510,13 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bM" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/hypospray/autoinjector/biginjector/burn,
+/obj/item/chems/hypospray/autoinjector/biginjector/burn,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bN" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/clothing/mask/breath/medical,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -530,7 +530,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bQ" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 4
 	},
 /obj/machinery/light/small{
@@ -539,12 +539,12 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bR" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/mmi/digital/robot,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bS" = (
-/obj/item/stack/rods,
+/obj/item/stack/material/rods,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -560,7 +560,7 @@
 /area/submap/virgo2/Rockybase)
 "bV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
+/obj/structure/table/frame,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bW" = (
@@ -585,30 +585,26 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ca" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/fabricator/industrial,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cb" = (
-/obj/machinery/pros_fabricator,
+/obj/machinery/fabricator/robotics,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cc" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/mecha_parts/mecha_equipment/repair_droid,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cd" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ce" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -616,7 +612,6 @@
 /area/submap/virgo2/Rockybase)
 "cf" = (
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/buildable/point_of_interest,
@@ -639,7 +634,7 @@
 "cj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ck" = (
@@ -678,35 +673,23 @@
 /area/submap/virgo2/Rockybase)
 "cq" = (
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/super;
-	dir = 8;
-	name = "Unknown APC";
-	pixel_x = -24
-	},
+/obj/machinery/power/apc/super,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "cr" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating/virgo2,
@@ -717,7 +700,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/buildable/point_of_interest,
@@ -735,7 +717,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cv" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -750,8 +732,6 @@
 /area/submap/virgo2/Rockybase)
 "cx" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating/virgo2,
@@ -776,19 +756,19 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cD" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/plasteel,
-/obj/item/stack/material/glass/reinforced,
+/obj/structure/table,
+/obj/item/stack/material/reinforced/mapped/plasteel,
+/obj/item/stack/material/pane/mapped/rglass,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "cE" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/glass,
-/obj/item/stack/material/steel,
+/obj/structure/table,
+/obj/item/stack/material/pane/mapped/glass,
+/obj/item/stack/material/sheet/mapped/steel,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "cF" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/mecha_parts/part/gygax_head,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -801,7 +781,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cI" = (
-/obj/item/surgical/surgicaldrill,
+/obj/item/surgicaldrill,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -828,11 +808,11 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cO" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Rockybase)
 "cT" = (
-/obj/effect/decal/remains,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains,
+/turf/exterior/barren,
 /area/template_noop)
 
 (1,1,1) = {"

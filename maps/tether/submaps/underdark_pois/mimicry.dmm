@@ -6,33 +6,33 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "c" = (
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "e" = (
 /obj/structure/closet/crate/mimic/cointoss,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "g" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/structure/closet/crate/mimic/safe,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "i" = (
-/obj/effect/decal/remains/deer,
+/obj/item/remains/deer,
 /obj/effect/decal/cleanable/blood,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "j" = (
-/obj/effect/decal/remains/tajaran,
+/obj/item/remains/tajaran,
 /obj/effect/decal/cleanable/blood,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

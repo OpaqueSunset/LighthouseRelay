@@ -4,35 +4,35 @@
 /area/template_noop)
 "b" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "c" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "d" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "e" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "f" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "g" = (
-/obj/effect/decal/remains/mouse,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains/mouse,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "h" = (
-/obj/effect/decal/remains/mouse,
+/obj/item/remains/mouse,
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "i" = (
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -43,21 +43,21 @@
 /area/submap/virgo2/Mudpit)
 "k" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "l" = (
 /obj/machinery/portable_atmospherics/canister/empty/phoron,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "m" = (
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/item/clothing/suit/space/void/merc/fire,
 /obj/item/clothing/head/helmet/space/void/merc/fire,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 "n" = (
 /obj/effect/decal/mecha_wreckage/ripley/firefighter,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
 
 (1,1,1) = {"

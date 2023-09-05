@@ -10,40 +10,40 @@
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "ad" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "ae" = (
-/obj/item/extinguisher,
+/obj/item/chems/spray/extinguisher,
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "af" = (
-/obj/item/material/shard/phoron,
+/obj/item/shard/phoron,
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "ag" = (
 /obj/machinery/power/rad_collector,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "ah" = (
 /obj/item/arrow/rod,
-/obj/item/stack/material/steel,
-/turf/simulated/floor/outdoors/rocks,
+/obj/item/stack/material/sheet/mapped/steel,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ai" = (
-/obj/item/stack/material/steel,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/stack/material/sheet/mapped/steel,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "aj" = (
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ak" = (
 /obj/structure/lattice,
 /obj/structure/girder/displaced,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "al" = (
 /obj/item/projectile/bullet/magnetic/fuelrod,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "am" = (
 /obj/item/arrow/rod,
@@ -54,7 +54,7 @@
 /area/submap/virgo2/DecoupledEngine)
 "ao" = (
 /obj/structure/lattice,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ap" = (
 /obj/effect/floor_decal/rust,
@@ -89,17 +89,17 @@
 /area/submap/virgo2/DecoupledEngine)
 "aw" = (
 /obj/structure/girder,
-/obj/item/stack/material/steel,
+/obj/item/stack/material/sheet/mapped/steel,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "ax" = (
 /obj/structure/lattice,
 /obj/structure/grille/broken,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ay" = (
 /obj/effect/floor_decal/rust,
-/obj/item/stack/material/steel,
+/obj/item/stack/material/sheet/mapped/steel,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "az" = (
@@ -131,7 +131,7 @@
 /area/submap/virgo2/DecoupledEngine)
 "aC" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "aD" = (
 /obj/structure/lattice,
@@ -190,11 +190,10 @@
 /area/submap/virgo2/DecoupledEngine)
 "aL" = (
 /obj/structure/grille/broken,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
-/obj/item/material/shard/phoron,
+/obj/item/shard/phoron,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
@@ -226,11 +225,10 @@
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "aQ" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+/obj/machinery/door/airlock/hatch/maintenance{
 	icon_state = "door_closed";
 	locked = 0;
-	name = "Engine Access";
-	req_one_access = list(11)
+	name = "Engine Access"
 	},
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
@@ -270,12 +268,10 @@
 /area/submap/virgo2/DecoupledEngine)
 "aV" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
 /turf/simulated/floor,
@@ -299,12 +295,12 @@
 /turf/simulated/floor/lava,
 /area/submap/virgo2/DecoupledEngine)
 "aZ" = (
-/obj/item/stack/material/steel,
-/turf/simulated/floor/outdoors/rocks,
+/obj/item/stack/material/sheet/mapped/steel,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ba" = (
-/obj/item/stack/rods,
-/turf/simulated/floor/outdoors/rocks,
+/obj/item/stack/material/rods,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bb" = (
 /obj/structure/lattice,
@@ -332,7 +328,7 @@
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "bd" = (
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide,
+/obj/machinery/atmospherics/unary/tank/carbon_dioxide,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
@@ -343,9 +339,8 @@
 /area/submap/virgo2/DecoupledEngine)
 "bf" = (
 /obj/machinery/power/rad_collector,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced,
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
@@ -356,18 +351,17 @@
 /area/submap/virgo2/DecoupledEngine)
 "bg" = (
 /obj/machinery/power/rad_collector,
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/borosilicate_reinforced,
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bh" = (
 /obj/machinery/power/rad_collector,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/borosilicate_reinforced,
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -378,7 +372,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bj" = (
 /obj/machinery/atmospherics/tvalve/digital{
@@ -404,13 +398,11 @@
 	dir = 4
 	},
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced,
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
 /turf/simulated/floor,
@@ -420,7 +412,7 @@
 	icon_state = "propulsion_l";
 	dir = 4
 	},
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bo" = (
 /obj/effect/floor_decal/rust,
@@ -444,37 +436,32 @@
 /area/submap/virgo2/DecoupledEngine)
 "bs" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1
 	},
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8
 	},
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/borosilicate_reinforced,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bt" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1
 	},
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/borosilicate_reinforced,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bu" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1
 	},
-/obj/structure/window/phoronreinforced{
-	icon_state = "phoronrwindow";
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},
-/obj/structure/window/phoronreinforced,
+/obj/structure/window/borosilicate_reinforced,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bv" = (
@@ -487,34 +474,34 @@
 /area/submap/virgo2/DecoupledEngine)
 "bx" = (
 /obj/structure/girder,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "by" = (
 /obj/structure/girder/displaced,
-/turf/simulated/floor/outdoors/rocks,
+/turf/exterior/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bz" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/template_noop)
 "bA" = (
 /obj/item/arrow/rod,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bB" = (
 /obj/item/fuel_assembly/deuterium,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bC" = (
-/obj/item/material/shard/phoron,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/shard/phoron,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bD" = (
 /obj/structure/lattice,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bE" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 
 (1,1,1) = {"

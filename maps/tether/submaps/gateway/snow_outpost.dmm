@@ -104,9 +104,8 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "ax" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
-	frequency = 1379;
 	id_tag = "sec_fore_pump"
 	},
 /obj/structure/grille,
@@ -158,7 +157,7 @@
 /turf/simulated/wall,
 /area/awaymission/snow_outpost/outpost)
 "aF" = (
-/obj/structure/table/standard{
+/obj/structure/table{
 	name = "plastic table frame"
 	},
 /obj/machinery/door/firedoor,
@@ -194,7 +193,8 @@
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	initial_gas_mix = "n2=100;TEMP=80"
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
 	},
 /area/awaymission/snow_outpost/outpost)
 "aL" = (
@@ -219,14 +219,16 @@
 "aQ" = (
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	initial_gas_mix = "n2=100;TEMP=80"
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
 	},
 /area/awaymission/snow_outpost/outpost)
 "aR" = (
 /obj/structure/AIcore,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	initial_gas_mix = "n2=100;TEMP=80"
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
 	},
 /area/awaymission/snow_outpost/outpost)
 "aS" = (
@@ -254,7 +256,6 @@
 "aX" = (
 /obj/machinery/firealarm{
 	dir = 2;
-	layer = 3.3;
 	pixel_x = 0;
 	pixel_y = 26
 	},
@@ -279,14 +280,6 @@
 /area/awaymission/snow_outpost/outpost)
 "bc" = (
 /obj/machinery/optable,
-/turf/simulated/floor/tiled/white,
-/area/awaymission/snow_outpost/outpost)
-"bd" = (
-/obj/machinery/telecomms/relay,
-/turf/simulated/floor/tiled/white,
-/area/awaymission/snow_outpost/outpost)
-"be" = (
-/obj/machinery/telecomms/broadcaster,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "bf" = (
@@ -336,9 +329,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "bm" = (
-/obj/machinery/atmospherics/pipe/tank/air{
-	dir = 1
-	},
+/obj/machinery/atmospherics/unary/tank/air,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "bn" = (
@@ -361,7 +352,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outpost)
 "br" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/southright,
 /obj/machinery/door/window/northleft,
@@ -471,7 +462,6 @@
 "bJ" = (
 /obj/machinery/firealarm{
 	dir = 2;
-	layer = 3.3;
 	pixel_x = 0;
 	pixel_y = 26
 	},
@@ -547,7 +537,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "bR" = (
-/obj/structure/table/standard{
+/obj/structure/table{
 	name = "plastic table frame"
 	},
 /obj/machinery/door/firedoor,
@@ -568,7 +558,8 @@
 /mob/living/simple_mob/humanoid/merc/ranged/space,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
-	initial_gas_mix = "n2=100;TEMP=80"
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
 	},
 /area/awaymission/snow_outpost/outpost)
 "bV" = (
@@ -600,7 +591,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cc" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cd" = (
@@ -649,15 +640,15 @@
 /turf/simulated/floor/tiled/kafel_full/yellow,
 /area/awaymission/snow_outpost/outside)
 "cp" = (
-/mob/living/simple_mob/animal/passive/tindalos,
+/mob/living/simple_animal/tindalos,
 /turf/simulated/floor/tiled/kafel_full/yellow,
 /area/awaymission/snow_outpost/outside)
 "cq" = (
 /obj/structure/closet/crate/secure/loot,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "cr" = (
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "cs" = (
 /obj/item/ore,
@@ -669,7 +660,7 @@
 /area/awaymission/snow_outpost/outside)
 "cu" = (
 /obj/structure/anomaly_container,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "cv" = (
 /turf/simulated/wall,
@@ -692,16 +683,14 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cz" = (
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/port_gen/pacman/super,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/external,
 /area/awaymission/snow_outpost/outside)
 "cA" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/external,
@@ -718,7 +707,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cD" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/pickaxe,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
@@ -736,7 +725,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cH" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/shovel,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
@@ -755,7 +744,7 @@
 /area/awaymission/snow_outpost/outside)
 "cL" = (
 /obj/structure/table/steel,
-/obj/item/tool/wrench,
+/obj/item/wrench,
 /obj/item/storage/box/samplebags,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
@@ -800,7 +789,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "cW" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "cX" = (
@@ -813,7 +802,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "cY" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/structure/bedsheetbin,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
@@ -849,7 +838,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "dd" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/flashlight/lamp,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
@@ -871,12 +860,12 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "dh" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/cell_charger,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "di" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/cell/high,
 /obj/item/cell/high,
 /turf/simulated/floor,
@@ -923,7 +912,7 @@
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "ds" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/pickaxe/drill,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
@@ -971,7 +960,7 @@
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/awaymission/snow_outpost/outside)
 "dB" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/pizzabox,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
@@ -1005,7 +994,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/restricted)
 "dJ" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/restricted)
 "dK" = (
@@ -1065,7 +1054,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
@@ -1080,7 +1069,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "dU" = (
-/obj/structure/dispenser/oxygen,
+/obj/structure/tank_rack/oxygen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -1089,10 +1078,8 @@
 "dV" = (
 /obj/machinery/door/airlock/external{
 	density = 1;
-	frequency = 1331;
 	id_tag = "merc_shuttle_outer";
-	name = "Ship External Access";
-	req_access = list(150)
+	name = "Ship External Access"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
@@ -1190,7 +1177,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "el" = (
-/obj/machinery/organ_printer/flesh,
+/obj/machinery/fabricator/bioprinter,
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
 	dir = 5
@@ -1293,7 +1280,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "eB" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/firstaid/surgery,
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1302,7 +1289,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eC" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/tank/anesthetic,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/white,
@@ -1312,21 +1299,21 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eE" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/clothing/gloves/sterile,
 /obj/item/clothing/gloves/sterile,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eF" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/spray/sterilizine,
-/obj/item/reagent_containers/spray/sterilizine,
+/obj/structure/table,
+/obj/item/chems/spray/sterilizine,
+/obj/item/chems/spray/sterilizine,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eG" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/masks,
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
@@ -1371,7 +1358,7 @@
 	},
 /area/awaymission/snow_outpost/restricted)
 "eM" = (
-/obj/machinery/computer/communications,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -1395,7 +1382,7 @@
 /area/awaymission/snow_outpost/restricted)
 "eQ" = (
 /obj/structure/table/steel,
-/obj/item/material/knife,
+/obj/item/knife,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "eR" = (
@@ -1455,7 +1442,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "eZ" = (
-/mob/living/simple_mob/animal/giant_spider/ion,
+/mob/living/simple_animal/giant_spider/ion,
 /turf/simulated/floor/outdoors/ice{
 	outdoors = 0
 	},
@@ -1610,7 +1597,7 @@
 /turf/simulated/floor/tiled/yellow,
 /area/awaymission/snow_outpost/restricted)
 "fz" = (
-/obj/machinery/atmospherics/pipe/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen,
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
@@ -1720,14 +1707,14 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "fQ" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/awaymission/snow_outpost/restricted)
 "fR" = (
 /obj/machinery/light,
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
 /obj/item/clothing/head/helmet/space,
@@ -1742,7 +1729,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snow_outpost/restricted)
 "fS" = (
-/obj/structure/dispenser/oxygen,
+/obj/structure/tank_rack/oxygen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -1773,15 +1760,15 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "fY" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "fZ" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "ga" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gb" = (
@@ -1789,11 +1776,11 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gc" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gd" = (
-/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/bush/stalkybush,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "ge" = (
@@ -1806,7 +1793,7 @@
 /area/awaymission/snow_outpost/outside)
 "gg" = (
 /obj/item/ammo_casing/a45,
-/obj/item/reagent_containers/food/snacks/xenomeat/spidermeat,
+/obj/item/chems/food/xenomeat/spidermeat,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gh" = (
@@ -1826,15 +1813,11 @@
 /area/awaymission/snow_outpost/outside)
 "gk" = (
 /obj/random/landmine,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gl" = (
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gm" = (
 /obj/item/ammo_casing/a45,
@@ -1842,67 +1825,45 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gn" = (
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "go" = (
-/obj/item/reagent_containers/food/snacks/xenomeat/spidermeat,
+/obj/item/chems/food/xenomeat/spidermeat,
 /turf/simulated/floor/snow/snow2,
-/area/awaymission/snow_outpost/outside)
-"gp" = (
-/obj/effect/spider/stickyweb,
-/turf/simulated/floor/outdoors/dirt,
 /area/awaymission/snow_outpost/outside)
 "gq" = (
 /obj/item/clothing/accessory/storage/webbing,
-/obj/item/material/knife/tacknife/combatknife,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/obj/item/knife/combat,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gr" = (
-/mob/living/simple_mob/animal/giant_spider,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/mob/living/simple_animal/giant_spider,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gs" = (
 /obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gt" = (
 /obj/random/mob/spider,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gu" = (
-/mob/living/simple_mob/animal/giant_spider/lurker,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/mob/living/simple_animal/giant_spider/lurker,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gv" = (
 /obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gw" = (
-/mob/living/simple_mob/animal/giant_spider/webslinger,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/mob/living/simple_animal/giant_spider/webslinger,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gx" = (
 /obj/effect/decal/cleanable/cobweb2,
-/mob/living/simple_mob/animal/giant_spider/lurker,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/mob/living/simple_animal/giant_spider/lurker,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gy" = (
 /obj/random/landmine,
@@ -1910,13 +1871,7 @@
 /area/awaymission/snow_outpost/outside)
 "gz" = (
 /obj/random/mob/spider/mutant,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
-/area/awaymission/snow_outpost/outside)
-"gA" = (
-/mob/living/simple_mob/animal/giant_spider/lurker,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gB" = (
 /obj/structure/flora/tree/pine{
@@ -1950,29 +1905,26 @@
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gG" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gH" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/hypospray,
-/obj/item/reagent_containers/glass/bottle/stoxin,
-/obj/item/reagent_containers/glass/bottle/antitoxin,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/paracetamol,
+/obj/item/chems/hypospray,
+/obj/item/chems/glass/bottle/sedatives,
+/obj/item/chems/glass/bottle/antitoxin,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/paracetamol,
 /obj/random/firstaid,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gI" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2";
 	pixel_y = 0
 	},
@@ -1984,41 +1936,34 @@
 /obj/random/contraband,
 /obj/random/contraband,
 /obj/random/energy,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gK" = (
 /obj/effect/spider/stickyweb,
-/mob/living/simple_mob/animal/giant_spider/lurker,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/mob/living/simple_animal/giant_spider/lurker,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "gL" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gM" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "gN" = (
-/obj/machinery/computer/communications,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor,
@@ -2031,42 +1976,42 @@
 /obj/structure/flora/tree/pine{
 	icon_state = "pine_2"
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gQ" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gR" = (
 /obj/structure/flora/tree/dead,
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gS" = (
 /obj/structure/flora/tree/pine{
 	icon_state = "pine_2"
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gT" = (
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gU" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/sparsegrass,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gV" = (
 /obj/structure/flora/tree/pine{
 	icon_state = "pine_2"
 	},
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/sparsegrass,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gW" = (
@@ -2076,7 +2021,7 @@
 /turf/simulated/floor/outdoors/ice,
 /area/awaymission/snow_outpost/outside)
 "gX" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/outdoors/ice,
 /area/awaymission/snow_outpost/outside)
 "gY" = (
@@ -2100,7 +2045,7 @@
 /area/awaymission/snow_outpost/outside)
 "hc" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/pill/happy{
+/obj/item/chems/pill/happy{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2117,7 +2062,7 @@
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hg" = (
-/obj/effect/decal/remains/mouse,
+/obj/item/remains/mouse,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "hh" = (
@@ -2126,7 +2071,7 @@
 /area/awaymission/snow_outpost/outside)
 "hi" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/pill/methylphenidate{
+/obj/item/chems/pill/methylphenidate{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2139,7 +2084,7 @@
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hk" = (
-/obj/item/reagent_containers/pill/citalopram{
+/obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2160,12 +2105,12 @@
 "ho" = (
 /obj/structure/table/woodentable,
 /obj/item/flashlight/lamp,
-/obj/item/reagent_containers/syringe/drugs,
+/obj/item/chems/syringe/drugs,
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hp" = (
 /obj/structure/bed/chair/comfy/beige,
-/obj/item/reagent_containers/pill/citalopram{
+/obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2175,51 +2120,51 @@
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "hr" = (
-/obj/item/reagent_containers/pill/citalopram{
+/obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
-/obj/item/reagent_containers/pill/citalopram{
+/obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hs" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/pill_bottle/happy,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "ht" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/stack/medical/splint,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hu" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/pill/citalopram,
-/obj/item/reagent_containers/pill/citalopram,
+/obj/structure/table,
+/obj/item/chems/pill/citalopram,
+/obj/item/chems/pill/citalopram,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hv" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/pill/tramadol,
-/obj/item/reagent_containers/pill/tramadol,
+/obj/structure/table,
+/obj/item/chems/pill/strong_painkillers,
+/obj/item/chems/pill/strong_painkillers,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hw" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/accessory/jacket,
-/obj/item/material/butterfly/switchblade,
+/obj/item/butterfly/switchblade,
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hx" = (
-/obj/item/reagent_containers/pill/zoom{
+/obj/item/chems/pill/zoom{
 	name = "pill"
 	},
 /obj/random/trash,
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hy" = (
-/obj/item/reagent_containers/pill/zoom{
+/obj/item/chems/pill/zoom{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2229,8 +2174,8 @@
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hA" = (
-/obj/structure/table/standard,
-/obj/item/surgical/scalpel,
+/obj/structure/table,
+/obj/item/scalpel,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hB" = (
@@ -2238,7 +2183,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hC" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/firstaid,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
@@ -2248,18 +2193,18 @@
 /area/awaymission/snow_outpost/outside)
 "hE" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "hF" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/pill/zoom,
-/obj/item/reagent_containers/pill/zoom,
+/obj/structure/table,
+/obj/item/chems/pill/zoom,
+/obj/item/chems/pill/zoom,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "hG" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/pill/tramadol{
+/obj/item/chems/pill/strong_painkillers{
 	name = "pill"
 	},
 /turf/simulated/floor/carpet,
@@ -2273,7 +2218,7 @@
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "hJ" = (
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "hK" = (
@@ -2283,89 +2228,86 @@
 /area/awaymission/snow_outpost/outside)
 "hL" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/syringe/drugs,
+/obj/item/chems/syringe/drugs,
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hM" = (
 /obj/effect/spider/stickyweb,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hN" = (
 /obj/effect/spider/spiderling/frost,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hO" = (
 /obj/item/spacecash/c100,
 /obj/item/spacecash/c100,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hP" = (
 /obj/random/mob/spider/mutant,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hQ" = (
 /obj/item/spacecash/c100,
 /obj/item/spacecash/c100,
 /obj/item/spacecash/c100,
-/obj/effect/decal/remains,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/obj/item/remains,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hR" = (
 /obj/random/mob/spider,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hS" = (
 /obj/item/grenade/spawnergrenade/spider,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hT" = (
 /obj/random/toolbox,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hU" = (
 /obj/effect/decal/mecha_wreckage/ripley,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hV" = (
 /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hW" = (
-/mob/living/simple_mob/animal/giant_spider/frost,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/mob/living/simple_animal/giant_spider/frost,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hX" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hY" = (
-/mob/living/simple_mob/animal/giant_spider/frost,
+/mob/living/simple_animal/giant_spider/frost,
 /turf/simulated/floor/outdoors/ice{
 	outdoors = 0
 	},
 /area/awaymission/snow_outpost/outside)
 "hZ" = (
-/mob/living/simple_mob/animal/giant_spider/frost,
+/mob/living/simple_animal/giant_spider/frost,
 /turf/simulated/floor/snow/snow2,
-/area/awaymission/snow_outpost/outside)
-"ia" = (
-/turf/simulated/floor/outdoors/dirt,
 /area/awaymission/snow_outpost/outside)
 "ib" = (
 /obj/structure/flora/tree/pine,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "ic" = (
 /obj/structure/flora/grass/green,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "id" = (
 /turf/simulated/floor/water,
 /area/awaymission/snow_outpost/outside)
 "ie" = (
 /obj/structure/flora/tree/dead,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "if" = (
 /turf/simulated/shuttle/wall,
@@ -2373,11 +2315,11 @@
 "ig" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/snow_outpost/outside)
 "ih" = (
 /obj/structure/flora/grass/both,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "ii" = (
 /obj/structure/bed/chair{
@@ -2386,7 +2328,6 @@
 	},
 /obj/machinery/status_display{
 	density = 0;
-	layer = 4;
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -2398,19 +2339,18 @@
 	icon_state = "chair_preview";
 	dir = 1
 	},
-/obj/effect/decal/remains/posi,
+/obj/item/remains/posi,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
 	},
 /obj/machinery/vending/wallmed1{
-	layer = 3.3;
 	name = "Emergency NanoMed";
 	pixel_x = 28;
 	pixel_y = 0
 	},
-/obj/item/clothing/shoes/brown,
+/obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/under/mbill,
 /obj/item/clothing/head/soft/mbill,
 /turf/simulated/floor/water,
@@ -2448,14 +2388,14 @@
 /area/awaymission/snow_outpost/outside)
 "io" = (
 /obj/structure/flora/grass/brown,
-/turf/simulated/floor/outdoors/dirt,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "ip" = (
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "iq" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "ir" = (
@@ -2463,7 +2403,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "is" = (
-/turf/simulated/mineral,
+/turf/exterior/wall,
 /area/awaymission/snow_outpost/outside)
 "it" = (
 /obj/structure/flora/grass/brown,
@@ -2485,7 +2425,7 @@
 	name = "Escape Pod Hatch";
 	welded = 1
 	},
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/awaymission/snow_outpost/outside)
 "ix" = (
 /obj/structure/bed/chair{
@@ -2497,7 +2437,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -26
 	},
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/awaymission/snow_outpost/outside)
 "iy" = (
 /obj/structure/bed/chair{
@@ -2509,12 +2449,11 @@
 	},
 /obj/machinery/light,
 /obj/item/weldingtool/largetank,
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/awaymission/snow_outpost/outside)
 "iz" = (
 /obj/machinery/status_display{
 	density = 0;
-	layer = 4;
 	pixel_x = 0;
 	pixel_y = -32
 	},
@@ -2522,23 +2461,23 @@
 	icon_state = "chair_preview";
 	dir = 8
 	},
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/ammo_casing/spent,
 /obj/item/clothing/under/suit_jacket/really_black,
 /obj/item/clothing/shoes/dress,
 /obj/item/clothing/glasses/sunglasses,
 /obj/random/multiple/gun/projectile/handgun,
-/turf/simulated/shuttle/floor,
+/turf/simulated/floor/shuttle,
 /area/awaymission/snow_outpost/outside)
 "iA" = (
-/mob/living/simple_mob/animal/giant_spider/frost/sif{
+/mob/living/simple_animal/giant_spider/frost/sif{
 	ai_holder_type = /datum/ai_holder/simple_mob/guard/give_chase
 	},
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "iB" = (
-/mob/living/simple_mob/animal/giant_spider/carrier{
+/mob/living/simple_animal/giant_spider/carrier{
 	ai_holder_type = /datum/ai_holder/simple_mob/guard/give_chase
 	},
 /turf/simulated/floor/snow/snow2,
@@ -2550,27 +2489,19 @@
 /area/awaymission/snow_outpost/outside)
 "iD" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "iE" = (
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iF" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "iG" = (
 /obj/structure/closet/grave,
 /obj/structure/gravemarker,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iH" = (
 /obj/structure/closet/crate/mimic/dangerous,
@@ -2592,7 +2523,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "iM" = (
-/obj/effect/decal/remains/deer,
+/obj/item/remains/deer,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "iN" = (
@@ -2626,7 +2557,7 @@
 	pressure_checks_default = 1;
 	use_power = 1
 	},
-/obj/item/stack/material/phoron,
+/obj/item/stack/material/crystal/mapped/phoron,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "iS" = (
@@ -2654,34 +2585,24 @@
 	},
 /area/awaymission/snow_outpost/restricted)
 "iW" = (
-/obj/effect/decal/remains/deer,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/obj/item/remains/deer,
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iX" = (
 /obj/structure/bonfire/permanent,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iY" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iZ" = (
 /obj/structure/dogbed,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "ja" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
+/turf/exterior/dirt,
 /area/awaymission/snow_outpost/restricted)
 "jb" = (
 /obj/structure/flora/tree/sif,
@@ -2836,17 +2757,17 @@ in
 (2,1,1) = {"
 in
 hZ
-ia
-ia
+gn
+gn
 ic
 id
 id
 id
 id
 ib
-ia
+gn
 ih
-ia
+gn
 ab
 ab
 ab
@@ -2978,7 +2899,7 @@ in
 (3,1,1) = {"
 in
 ab
-ia
+gn
 ic
 id
 id
@@ -2987,8 +2908,8 @@ ar
 ar
 id
 id
-ia
-ia
+gn
+gn
 ab
 ab
 ab
@@ -3262,7 +3183,7 @@ in
 (5,1,1) = {"
 in
 ab
-ia
+gn
 id
 ig
 ii
@@ -3272,7 +3193,7 @@ im
 ar
 ar
 id
-ia
+gn
 ab
 ab
 ab
@@ -3404,7 +3325,7 @@ in
 (6,1,1) = {"
 in
 ab
-ia
+gn
 ie
 if
 if
@@ -3546,17 +3467,17 @@ in
 (7,1,1) = {"
 in
 ab
-ia
-ia
+gn
+gn
 ih
-ia
+gn
 id
 id
 id
 id
-ia
+gn
 io
-ia
+gn
 ab
 ab
 ab
@@ -9248,9 +9169,9 @@ aO
 aO
 aO
 as
-bd
-be
-bd
+at
+at
+at
 as
 bL
 bM
@@ -13757,7 +13678,7 @@ cd
 gn
 gn
 cd
-gA
+gu
 cd
 cd
 cd
@@ -14743,7 +14664,7 @@ cd
 gs
 gn
 gn
-gA
+gu
 cd
 cd
 iF
@@ -15300,7 +15221,7 @@ ab
 ab
 gk
 gn
-gp
+gl
 cd
 cd
 cd
@@ -15443,7 +15364,7 @@ cd
 gl
 gn
 gn
-gp
+gl
 cd
 cd
 cd
@@ -16012,7 +15933,7 @@ cd
 cd
 cd
 cd
-gp
+gl
 gn
 gn
 gn

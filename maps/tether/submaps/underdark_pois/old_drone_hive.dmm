@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "b" = (
 /turf/template_noop,
@@ -9,24 +9,24 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "d" = (
-/obj/effect/decal/remains/tajaran,
+/obj/item/remains/tajaran,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "e" = (
-/obj/effect/decal/remains/tajaran,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/obj/item/remains/tajaran,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/random/underdark,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "g" = (
-/obj/effect/decal/remains/deer,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/obj/item/remains/deer,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/structure/ore_box,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "i" = (
 /turf/simulated/wall,
@@ -45,10 +45,10 @@
 /area/mine/explored/underdark)
 "m" = (
 /obj/structure/barricade,
-/turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "n" = (
-/obj/machinery/door/airlock/multi_tile/glass,
+/obj/machinery/door/airlock/double/glass,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 

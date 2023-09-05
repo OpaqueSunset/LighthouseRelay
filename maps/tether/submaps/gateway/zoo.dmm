@@ -73,7 +73,7 @@
 /obj/item/stolenpackage,
 /obj/item/plastique,
 /obj/item/plastique,
-/obj/item/melee/energy/sword/pirate,
+/obj/item/energy_blade/sword/pirate,
 /turf/space,
 /area/awaymission/zoo)
 "aj" = (
@@ -126,7 +126,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "ar" = (
-/obj/item/surgical/scalpel,
+/obj/item/scalpel,
 /obj/structure/closet/crate,
 /obj/item/tank/anesthetic,
 /turf/simulated/floor/plating,
@@ -156,8 +156,8 @@
 /area/awaymission/zoo/pirateship)
 "ax" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/chems/food/meat,
+/obj/item/chems/food/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -165,7 +165,7 @@
 /area/awaymission/zoo/pirateship)
 "ay" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/chems/food/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -173,7 +173,7 @@
 /area/awaymission/zoo/pirateship)
 "az" = (
 /obj/structure/table/reinforced,
-/obj/item/packageWrap,
+/obj/item/stack/package_wrap/twenty_five,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -239,7 +239,7 @@
 /obj/structure/table/woodentable,
 /obj/item/spacecash/c500,
 /obj/item/spacecash/c100,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/wood,
 /area/awaymission/zoo/pirateship)
 "aK" = (
@@ -248,7 +248,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo/pirateship)
 "aL" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/tank/oxygen/yellow,
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
@@ -273,8 +273,8 @@
 /area/awaymission/zoo/pirateship)
 "aP" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "aQ" = (
@@ -299,7 +299,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/landmark/loot_spawn{
+/obj/abstract/landmark/loot_spawn{
 	live_cargo = 0
 	},
 /turf/simulated/floor/plating,
@@ -353,9 +353,9 @@
 /turf/simulated/shuttle/wall,
 /area/awaymission/zoo/pirateship)
 "be" = (
-/obj/machinery/button/remote/airlock{
-	id = "packerMed";
-	pixel_y = -24
+/obj/machinery/button/alternate/door{
+	pixel_y = -24;
+	id_tag = "packerMed"
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
@@ -376,7 +376,7 @@
 /area/awaymission/zoo/pirateship)
 "bi" = (
 /obj/machinery/door/blast/shutters{
-	id = "packerMed"
+	id_tag = "packerMed"
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
@@ -384,7 +384,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/effect/landmark/loot_spawn{
+/obj/abstract/landmark/loot_spawn{
 	live_cargo = 0
 	},
 /turf/simulated/floor/plating,
@@ -396,15 +396,15 @@
 /area/awaymission/zoo/pirateship)
 "bl" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/effect/landmark/loot_spawn{
+/obj/abstract/landmark/loot_spawn{
 	live_cargo = 0
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "bm" = (
-/obj/machinery/button/remote/airlock{
-	id = "packerCargo";
-	pixel_y = -24
+/obj/machinery/button/alternate/door{
+	pixel_y = -24;
+	id_tag = "packerCargo"
 	},
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning,
@@ -418,20 +418,20 @@
 	icon_state = "door_locked";
 	locked = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "bp" = (
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/pirateship)
 "bq" = (
 /obj/structure/table/reinforced,
-/obj/item/tool/screwdriver,
-/obj/item/tool/screwdriver,
+/obj/item/screwdriver,
+/obj/item/screwdriver,
 /obj/item/paper{
 	info = "The next person who takes one of my screwdrivers gets stabbed with one. They are MINE. - Love, Madsen";
 	name = "scribbled note"
 	},
-/obj/item/tool/screwdriver,
+/obj/item/screwdriver,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -447,7 +447,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "bt" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 2
 	},
 /obj/effect/floor_decal/corner/beige{
@@ -480,13 +480,13 @@
 /area/awaymission/zoo/pirateship)
 "bx" = (
 /obj/structure/table/reinforced,
-/obj/item/material/knife/butch,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/knife/kitchen/cleaver,
+/obj/item/chems/drinks/bottle/small/beer,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
@@ -510,13 +510,13 @@
 /area/awaymission/zoo/pirateship)
 "bB" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "bC" = (
 /obj/structure/table/reinforced,
-/obj/item/material/knife,
+/obj/item/knife,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -536,7 +536,7 @@
 /area/awaymission/zoo/pirateship)
 "bF" = (
 /obj/machinery/door/blast/shutters{
-	id = "packerCargo"
+	id_tag = "packerCargo"
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
@@ -549,7 +549,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "bH" = (
 /obj/structure/window/reinforced,
@@ -557,7 +557,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "bI" = (
 /obj/structure/window/reinforced,
@@ -568,17 +568,17 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "bJ" = (
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "bK" = (
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "bL" = (
 /obj/structure/shuttle/engine/heater{
@@ -595,7 +595,7 @@
 /turf/space,
 /area/awaymission/zoo/tradeship)
 "bN" = (
-/obj/item/reagent_containers/food/snacks/hugemushroomslice,
+/obj/item/chems/food/hugemushroomslice,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -603,7 +603,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "bP" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "bQ" = (
@@ -640,9 +640,9 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "bY" = (
-/obj/machinery/button/remote/airlock{
-	id = "packerCargo";
-	pixel_y = 24
+/obj/machinery/button/alternate/door{
+	pixel_y = 24;
+	id_tag = "packerCargo"
 	},
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -652,21 +652,21 @@
 	icon_opened = "cabinet_open";
 	icon_state = "cabinet_closed"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ca" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/rd,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cb" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/chemical_dispenser/bar_alc/full,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cc" = (
-/obj/structure/table/standard,
-/turf/simulated/shuttle/floor/black,
+/obj/structure/table,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cd" = (
 /obj/machinery/light{
@@ -688,13 +688,13 @@
 /obj/machinery/sleep_console{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ch" = (
 /obj/machinery/sleeper{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ci" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -703,7 +703,7 @@
 /turf/space,
 /area/awaymission/zoo/tradeship)
 "cj" = (
-/obj/item/reagent_containers/food/snacks/hugemushroomslice,
+/obj/item/chems/food/hugemushroomslice,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "ck" = (
@@ -731,7 +731,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "co" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -745,18 +745,18 @@
 /obj/structure/closet/secure_closet/freezer/meat{
 	opened = 1
 	},
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "cr" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/meat,
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/meat,
+/obj/item/chems/food/meat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "cs" = (
@@ -764,7 +764,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "ct" = (
-/obj/item/tool/crowbar,
+/obj/item/crowbar,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "cu" = (
@@ -790,23 +790,23 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "cx" = (
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cy" = (
 /obj/machinery/door/airlock/silver,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cz" = (
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "cA" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/tradeship)
@@ -820,21 +820,21 @@
 /obj/machinery/atm{
 	pixel_x = -32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cD" = (
 /obj/machinery/suit_cycler/syndicate,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cE" = (
 /obj/machinery/bodyscanner{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cF" = (
 /obj/machinery/body_scanconsole,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cG" = (
 /obj/item/storage/firstaid/regular{
@@ -852,7 +852,6 @@
 	pixel_x = 5
 	},
 /obj/item/storage/firstaid/o2{
-	layer = 2.8;
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -866,29 +865,28 @@
 	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
 /obj/item/storage/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/reagent_containers/blood/empty,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
+/obj/item/chems/ivbag,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cH" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cI" = (
 /obj/structure/table/reinforced,
@@ -897,7 +895,7 @@
 /area/awaymission/zoo/pirateship)
 "cJ" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/pirateship)
 "cK" = (
@@ -931,7 +929,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "cP" = (
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/chems/food/meat,
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "cQ" = (
@@ -973,11 +971,11 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "cV" = (
 /obj/structure/closet/wardrobe/pjs,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cW" = (
 /obj/item/paper_bin{
@@ -989,12 +987,12 @@
 	},
 /obj/machinery/light,
 /obj/structure/table/glass,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cX" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/hos,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cY" = (
 /obj/structure/bed/chair{
@@ -1003,7 +1001,7 @@
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "cZ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/glasses/square,
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/tradeship)
@@ -1011,15 +1009,12 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
-	pixel_x = 32
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "db" = (
 /obj/structure/table/steel_reinforced,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dc" = (
 /obj/structure/window/reinforced{
@@ -1032,7 +1027,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "dd" = (
 /obj/machinery/light{
@@ -1040,20 +1035,19 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "de" = (
-/obj/machinery/door/airlock/glass_medical{
-	name = "Medical Bay";
-	req_access = list(160)
+/obj/machinery/door/airlock/glass/medical{
+	name = "Medical Bay"
 	},
-/turf/simulated/shuttle/floor{
+/turf/simulated/floor/shuttle{
 	icon_state = "floor7"
 	},
 /area/awaymission/zoo/tradeship)
 "df" = (
 /obj/machinery/optable,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dg" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -1107,26 +1101,26 @@
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_y = -32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dp" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dq" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dr" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ds" = (
 /obj/structure/window/reinforced{
@@ -1136,18 +1130,17 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "dt" = (
 /obj/machinery/light,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "du" = (
 /obj/machinery/vending/medical{
-	pixel_y = -32;
-	req_access = null
+	pixel_y = -32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dv" = (
 /obj/structure/grille,
@@ -1172,17 +1165,17 @@
 "dz" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey1"
+	id_tag = "meatConvey1"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "dA" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey1"
+	id_tag = "meatConvey1"
 	},
 /obj/structure/plasticflaps,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "dB" = (
 /obj/structure/disposalpipe/trunk{
@@ -1191,7 +1184,7 @@
 /obj/machinery/disposal/deliveryChute{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "dC" = (
 /obj/structure/disposalpipe/segment{
@@ -1236,11 +1229,11 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "dI" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/box/lights,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -1268,21 +1261,21 @@
 /turf/space,
 /area/awaymission/zoo/tradeship)
 "dN" = (
-/obj/machinery/door/airlock/multi_tile/glass,
-/turf/simulated/shuttle/floor/black,
+/obj/machinery/door/airlock/double/glass,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dO" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/steel_reinforced,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dP" = (
 /obj/machinery/door/window/southleft,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dQ" = (
 /obj/machinery/door/window/southright,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dR" = (
 /obj/structure/window/reinforced{
@@ -1293,41 +1286,41 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "dS" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/clothing/gloves/sterile,
 /obj/item/clothing/mask/surgical,
-/obj/item/surgical/retractor{
+/obj/item/retractor{
 	pixel_x = 0;
 	pixel_y = 6
 	},
-/obj/item/surgical/scalpel,
-/obj/item/surgical/surgicaldrill,
-/obj/item/surgical/circular_saw,
+/obj/item/scalpel,
+/obj/item/surgicaldrill,
+/obj/item/circular_saw,
 /obj/item/stack/nanopaste,
-/obj/item/surgical/hemostat{
+/obj/item/hemostat{
 	pixel_y = 4
 	},
-/obj/item/surgical/cautery{
+/obj/item/cautery{
 	pixel_y = 4
 	},
-/obj/item/surgical/FixOVein{
+/obj/item/sutures{
 	pixel_x = -6;
 	pixel_y = 1
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/surgical/bonesetter,
-/obj/item/surgical/bonegel{
+/obj/item/bonesetter,
+/obj/item/bonegel{
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dT" = (
-/obj/machinery/iv_drip,
-/turf/simulated/shuttle/floor/black,
+/obj/structure/iv_drip,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "dU" = (
 /obj/structure/table/reinforced,
@@ -1350,7 +1343,7 @@
 /area/awaymission/zoo/pirateship)
 "dY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "dZ" = (
@@ -1360,13 +1353,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "ea" = (
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/chems/glass/bucket,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "eb" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "meatConvey1"
+	id_tag = "meatConvey1"
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
@@ -1412,7 +1405,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eh" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/belt/utility/full,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -1428,7 +1421,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "ej" = (
 /obj/structure/window/reinforced{
@@ -1439,21 +1432,21 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "ek" = (
 /obj/machinery/vending/coffee,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "el" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "em" = (
 /obj/structure/closet/crate/secure/weapon,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "en" = (
 /obj/machinery/light/small{
@@ -1466,7 +1459,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "ep" = (
@@ -1478,7 +1471,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eq" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/cell/high,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -1494,52 +1487,51 @@
 /obj/item/pen{
 	pixel_y = 4
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "es" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/newscaster{
 	pixel_x = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "et" = (
-/obj/structure/toilet,
+/obj/structure/hygiene/toilet,
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eu" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
 	pixel_y = 2
 	},
 /obj/machinery/light/small,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ev" = (
 /obj/structure/mirror{
 	pixel_x = 0;
 	pixel_y = 28
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ew" = (
 /obj/structure/curtain/open/shower,
-/obj/machinery/shower{
+/obj/structure/hygiene/shower{
 	pixel_y = 3
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ex" = (
 /obj/machinery/vending/snack{
-	name = "hacked Getmore Chocolate Corp";
-	prices = list()
+	name = "hacked Getmore Chocolate Corp"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ey" = (
 /obj/structure/window/reinforced,
@@ -1553,7 +1545,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ez" = (
 /obj/effect/floor_decal/corner/red/diagonal,
@@ -1568,7 +1560,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eB" = (
-/mob/living/simple_mob/animal/space/alien{
+/mob/living/simple_animal/space/alien{
 	faction = "pirate"
 	},
 /turf/simulated/floor/plating,
@@ -1579,7 +1571,7 @@
 	dir = 4;
 	icon_state = "right"
 	},
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eD" = (
@@ -1589,11 +1581,11 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eE" = (
-/obj/item/reagent_containers/food/snacks/xenomeat,
+/obj/item/chems/food/xenomeat,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eF" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -1610,60 +1602,58 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "eH" = (
 /obj/machinery/computer,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eI" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eJ" = (
 /obj/machinery/door/airlock/silver{
 	name = "Toilet"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eK" = (
 /obj/machinery/door/airlock/silver{
 	name = "Restroom"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eL" = (
 /obj/structure/undies_wardrobe,
-/turf/simulated/shuttle/floor{
+/turf/simulated/floor/shuttle{
 	icon_state = "floor7"
 	},
 /area/awaymission/zoo/tradeship)
 "eM" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	prices = list();
 	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eN" = (
 /obj/machinery/door/window/westright{
-	name = "Storefront";
-	req_access = list(160)
+	name = "Storefront"
 	},
 /obj/structure/table/marble,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eO" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eP" = (
-/obj/item/tool/wrench,
+/obj/item/wrench,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eQ" = (
@@ -1682,7 +1672,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/material/knife,
+/obj/item/knife,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eT" = (
@@ -1698,71 +1688,70 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "eV" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eW" = (
 /obj/machinery/door/airlock/command,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eX" = (
 /obj/structure/noticeboard{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eY" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eZ" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fa" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fb" = (
 /obj/machinery/door/window/westleft{
-	name = "Storefront";
-	req_access = list(160)
+	name = "Storefront"
 	},
 /obj/structure/window/reinforced,
 /obj/structure/table/marble,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fc" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	id_tag = "meatConvey2"
 	},
-/obj/item/material/knife,
-/turf/simulated/shuttle/plating,
+/obj/item/knife,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "fd" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	id_tag = "meatConvey2"
 	},
 /obj/structure/plasticflaps,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "fe" = (
 /obj/machinery/conveyor{
 	dir = 4;
-	id = "meatConvey2"
+	id_tag = "meatConvey2"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "ff" = (
 /obj/structure/disposalpipe/segment{
@@ -1796,7 +1785,7 @@
 /area/awaymission/zoo/pirateship)
 "fk" = (
 /obj/machinery/computer/arcade/battle,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fl" = (
 /obj/structure/table/steel_reinforced,
@@ -1805,7 +1794,7 @@
 	name = "Esteban";
 	pixel_y = 8
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fm" = (
 /obj/machinery/vending/assist{
@@ -1813,57 +1802,57 @@
 	name = "Old Vending Machine";
 	products = list(/obj/item/assembly/prox_sensor = 5, /obj/item/assembly/signaler = 4, /obj/item/assembly/infra = 4, /obj/item/assembly/prox_sensor = 4, /obj/item/handcuffs = 8, /obj/item/flash = 4, /obj/item/cartridge/signal = 4, /obj/item/clothing/glasses/sunglasses = 4)
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fn" = (
 /obj/structure/closet{
 	name = "custodial"
 	},
-/obj/item/reagent_containers/spray/cleaner,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/chems/spray/cleaner,
+/obj/item/chems/glass/bucket,
 /obj/item/mop,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fo" = (
 /obj/machinery/vending/sovietsoda,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fp" = (
 /obj/machinery/light,
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/soap,
 /obj/item/towel{
 	color = "#0000ff"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fq" = (
-/obj/machinery/door/airlock/multi_tile/glass{
+/obj/machinery/door/airlock/double/glass{
 	dir = 2
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fr" = (
 /obj/machinery/door/window/westright,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fs" = (
-/obj/machinery/button/remote/blast_door{
-	id = "trade";
+/obj/machinery/button/blast_door{
 	name = "Shop Shutters";
 	pixel_x = 0;
-	pixel_y = -26
+	pixel_y = -26;
+	id_tag = "trade"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "ft" = (
-/obj/item/material/knife,
+/obj/item/knife,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fu" = (
 /obj/machinery/conveyor_switch/oneway{
-	id = "meatConvey2"
+	id_tag = "meatConvey2"
 	},
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled,
@@ -1880,17 +1869,15 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fx" = (
-/obj/machinery/vending/boozeomat{
-	req_access = null
-	},
-/turf/simulated/shuttle/floor{
+/obj/machinery/vending/boozeomat,
+/turf/simulated/floor/shuttle{
 	icon_state = "floor7"
 	},
 /area/awaymission/zoo/tradeship)
 "fy" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fz" = (
 /obj/item/stool,
@@ -1898,11 +1885,11 @@
 /area/awaymission/zoo/pirateship)
 "fA" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/chems/food/meat,
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "fB" = (
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/chems/glass/bucket,
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "fC" = (
@@ -1914,39 +1901,35 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fE" = (
 /obj/machinery/door/window/northleft,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fF" = (
 /obj/machinery/door/window/northright,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fG" = (
-/obj/machinery/atmospherics/pipe/tank/air{
-	dir = 2;
-	start_pressure = 740.5
-	},
-/turf/simulated/shuttle/floor/black,
+/obj/machinery/atmospherics/unary/tank/air,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fH" = (
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fI" = (
-/obj/machinery/autolathe{
+/obj/machinery/fabricator/hacked{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
-	hacked = 1;
 	name = "Unlocked Autolathe"
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fJ" = (
-/obj/structure/frame{
+/obj/machinery/constructable_frame/machine_frame{
 	anchored = 1
 	},
 /turf/simulated/floor/plating,
@@ -1967,14 +1950,13 @@
 /area/awaymission/zoo/pirateship)
 "fN" = (
 /obj/structure/largecrate/animal/cat,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fO" = (
-/obj/machinery/door/airlock/glass_engineering{
-	name = "Engineering";
-	req_access = list(160)
+/obj/machinery/door/airlock/glass/engineering{
+	name = "Engineering"
 	},
-/turf/simulated/shuttle/floor{
+/turf/simulated/floor/shuttle{
 	icon_state = "floor7"
 	},
 /area/awaymission/zoo/tradeship)
@@ -1996,7 +1978,7 @@
 "fS" = (
 /obj/structure/table/reinforced,
 /obj/item/pen/red,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/zoo/pirateship)
 "fT" = (
@@ -2015,22 +1997,22 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "fV" = (
 /obj/structure/closet/wardrobe/captain,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fW" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/bookcase,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fX" = (
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fY" = (
 /obj/structure/bed/chair/office/dark,
@@ -2047,7 +2029,7 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gb" = (
 /obj/machinery/light/small{
@@ -2087,7 +2069,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "gh" = (
 /obj/structure/table/woodentable,
@@ -2118,7 +2100,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "gl" = (
 /obj/structure/window/reinforced{
@@ -2126,7 +2108,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "gm" = (
 /obj/structure/window/reinforced{
@@ -2137,7 +2119,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/tradeship)
 "gn" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2176,11 +2158,11 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	icon_state = "shutter0";
-	id = "syndieshutters";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "gt" = (
 /obj/structure/grille,
@@ -2191,11 +2173,11 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	icon_state = "shutter0";
-	id = "syndieshutters";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "gu" = (
 /obj/structure/grille,
@@ -2209,27 +2191,25 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	icon_state = "shutter0";
-	id = "syndieshutters";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "gv" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/captain,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gw" = (
 /obj/structure/table/glass,
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = -35
-	},
-/turf/simulated/shuttle/floor/black,
+/obj/machinery/computer/modular/preset/civilian,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gx" = (
-/obj/structure/filingcabinet/filingcabinet,
-/turf/simulated/shuttle/floor/black,
+/obj/structure/filing_cabinet/tall,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gy" = (
 /obj/machinery/light,
@@ -2249,15 +2229,15 @@
 /area/awaymission/zoo/tradeship)
 "gB" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gC" = (
 /obj/machinery/vending/engivend,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gD" = (
 /obj/machinery/vending/tool,
-/turf/simulated/shuttle/floor/black,
+/turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "gE" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2266,7 +2246,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "gF" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/tank/oxygen/yellow,
 /obj/item/clothing/suit/space/emergency,
 /obj/item/clothing/head/helmet/space/emergency,
@@ -2274,17 +2254,17 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "gG" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/recharger,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gH" = (
 /obj/machinery/computer,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gI" = (
-/obj/structure/table/standard,
-/turf/simulated/shuttle/floor/darkred,
+/obj/structure/table,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gJ" = (
 /obj/structure/bed,
@@ -2302,7 +2282,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/zoo/pirateship)
 "gM" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 8
 	},
 /obj/machinery/light/small{
@@ -2311,13 +2291,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/zoo/pirateship)
 "gN" = (
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gO" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gP" = (
 /turf/simulated/wall,
@@ -2351,7 +2331,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/zoo/pirateship)
 "gW" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -2367,7 +2347,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "gY" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/box/donkpockets{
 	pixel_x = 2;
 	pixel_y = 3
@@ -2377,42 +2357,39 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gZ" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ha" = (
 /obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/computer,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hb" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2429,15 +2406,15 @@
 /turf/simulated/floor,
 /area/awaymission/zoo/pirateship)
 "he" = (
-/obj/structure/table/standard,
-/obj/item/stack/material/glass{
+/obj/structure/table,
+/obj/item/stack/material/pane/mapped/glass{
 	amount = 15
 	},
 /obj/item/cell{
 	charge = 100;
 	maxcharge = 15000
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hf" = (
 /obj/item/radio/intercom{
@@ -2449,10 +2426,10 @@
 	syndie = 1
 	},
 /obj/machinery/light,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hg" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 8
@@ -2460,22 +2437,20 @@
 /obj/item/pen{
 	pixel_y = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hh" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2483,13 +2458,12 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "hi" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2497,19 +2471,17 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "hj" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2527,25 +2499,22 @@
 /area/awaymission/zoo/pirateship)
 "hm" = (
 /obj/machinery/door/window/northright,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hn" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2565,7 +2534,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "hr" = (
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "hs" = (
@@ -2575,8 +2544,7 @@
 "ht" = (
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = -32;
-	pixel_y = 0;
-	req_access = list(150)
+	pixel_y = 0
 	},
 /obj/item/stack/medical/splint,
 /obj/item/stack/medical/ointment,
@@ -2586,13 +2554,13 @@
 /obj/item/stack/medical/bruise_pack,
 /obj/item/storage/belt/medical/emt,
 /obj/item/storage/belt/medical/emt,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hu" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hv" = (
 /obj/structure/bed/chair{
@@ -2601,17 +2569,17 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hw" = (
 /obj/structure/closet/hydrant{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hx" = (
-/obj/structure/table/rack,
-/turf/simulated/shuttle/floor/darkred,
+/obj/structure/rack,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hy" = (
 /obj/structure/flora/pottedplant{
@@ -2639,15 +2607,13 @@
 /area/awaymission/zoo)
 "hC" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2669,7 +2635,7 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_x = -25
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hG" = (
 /obj/structure/bed/chair{
@@ -2678,27 +2644,25 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hH" = (
 /obj/structure/closet,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hI" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -2713,43 +2677,43 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hK" = (
 /obj/structure/closet,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
-/obj/item/reagent_containers/food/snacks/liquidfood,
+/obj/item/chems/food/liquidfood,
+/obj/item/chems/food/liquidfood,
+/obj/item/chems/food/liquidfood,
+/obj/item/chems/food/liquidfood,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hL" = (
 /obj/structure/closet,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/obj/item/reagent_containers/food/snacks/tastybread,
-/turf/simulated/shuttle/floor/darkred,
+/obj/item/chems/food/tastybread,
+/obj/item/chems/food/tastybread,
+/obj/item/chems/food/tastybread,
+/obj/item/chems/food/tastybread,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hM" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hN" = (
 /obj/machinery/flasher{
-	id = "syndieflash";
 	pixel_x = 0;
-	pixel_y = 28
+	pixel_y = 28;
+	id_tag = "syndieflash"
 	},
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hO" = (
 /obj/item/radio/intercom{
@@ -2761,23 +2725,23 @@
 	subspace_transmission = 1;
 	syndie = 1
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hP" = (
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_x = 28
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hQ" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hR" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hS" = (
 /obj/structure/window/reinforced{
@@ -2791,19 +2755,19 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "hT" = (
 /obj/machinery/door/window/southleft,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hU" = (
 /obj/machinery/door/window/southright,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hV" = (
 /obj/machinery/door/window/northleft,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hW" = (
 /obj/machinery/light{
@@ -2811,7 +2775,7 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hX" = (
 /obj/machinery/vending/assist{
@@ -2822,7 +2786,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hY" = (
 /obj/structure/grille,
@@ -2836,54 +2800,53 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "hZ" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	prices = list();
 	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ia" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /obj/machinery/button/flasher{
-	id = "syndieflash";
 	name = "Flasher";
 	pixel_x = 27;
-	pixel_y = 0
+	pixel_y = 0;
+	id_tag = "syndieflash"
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ib" = (
-/mob/living/simple_mob/animal/passive/cat/kitten{
+/mob/living/simple_animal/cat/kitten{
 	name = "Enola"
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ic" = (
 /obj/machinery/suit_cycler/syndicate{
 	locked = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "id" = (
-/obj/structure/table/standard,
-/obj/item/material/knife{
+/obj/structure/table,
+/obj/item/knife{
 	pixel_x = -6
 	},
-/obj/item/reagent_containers/syringe/drugs{
+/obj/item/chems/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = -1
 	},
-/obj/item/reagent_containers/syringe/drugs{
+/obj/item/chems/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/syringe/drugs{
+/obj/item/chems/syringe/drugs{
 	pixel_x = 3;
 	pixel_y = 9
 	},
@@ -2892,15 +2855,15 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ie" = (
 /obj/machinery/door/window/eastleft,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "if" = (
 /obj/machinery/door/window/westright,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ig" = (
 /obj/structure/closet/syndicate/suit{
@@ -2909,7 +2872,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ih" = (
 /obj/structure/bed/chair{
@@ -2921,14 +2884,14 @@
 /obj/structure/closet{
 	name = "custodial"
 	},
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/chems/glass/bucket,
 /obj/item/mop,
-/obj/item/reagent_containers/spray/cleaner,
-/turf/simulated/shuttle/floor/darkred,
+/obj/item/chems/spray/cleaner,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ij" = (
 /obj/machinery/door/window/eastright,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ik" = (
 /mob/living/simple_mob/humanoid/merc/ranged{
@@ -2937,11 +2900,11 @@
 	friendly = "hugs";
 	name = "Mercenary"
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "il" = (
 /obj/machinery/door/window/westleft,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "im" = (
 /obj/machinery/light{
@@ -2952,75 +2915,74 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "in" = (
 /obj/machinery/sleep_console,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "io" = (
-/obj/structure/sign/nosmoking_1{
+/obj/structure/sign/warning/nosmoking_1{
 	pixel_y = 32
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ip" = (
-/obj/structure/table/standard,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/turf/simulated/shuttle/floor/darkred,
+/obj/structure/table,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iq" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/structure/closet/secure_closet/medical_wall{
-	pixel_y = 32;
-	req_access = list(150)
+	pixel_y = 32
 	},
 /obj/item/bodybag,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/glass/bottle/antitoxin{
+/obj/item/chems/syringe/antiviral,
+/obj/item/chems/syringe/antiviral,
+/obj/item/chems/syringe/antiviral,
+/obj/item/chems/glass/bottle/antitoxin{
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/reagent_containers/glass/bottle/inaprovaline{
+/obj/item/chems/glass/bottle/inaprovaline{
 	pixel_x = 4;
 	pixel_y = 7
 	},
-/obj/item/reagent_containers/syringe,
+/obj/item/chems/syringe,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ir" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "is" = (
-/obj/structure/table/standard,
-/obj/item/clothing/gloves/yellow,
+/obj/structure/table,
+/obj/item/clothing/gloves/insulated,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "it" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/borg/sight/thermal,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iu" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/table/standard,
-/turf/simulated/shuttle/floor/darkred,
+/obj/structure/table,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iv" = (
 /obj/structure/window/reinforced{
@@ -3037,11 +2999,11 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "syndieshutters_infirmary";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_infirmary"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iw" = (
 /obj/structure/window/reinforced{
@@ -3058,11 +3020,11 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "syndieshutters_workshop";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_workshop"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "ix" = (
 /obj/structure/window/reinforced{
@@ -3076,25 +3038,25 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "syndieshutters_infirmary";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_infirmary"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iy" = (
 /obj/machinery/bodyscanner{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iz" = (
 /obj/machinery/body_scanconsole,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iA" = (
 /obj/item/stool/padded,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iB" = (
 /obj/structure/window/reinforced{
@@ -3108,11 +3070,11 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "syndieshutters_workshop";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_workshop"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iC" = (
 /obj/structure/window/reinforced,
@@ -3127,11 +3089,11 @@
 	density = 0;
 	dir = 8;
 	icon_state = "shutter0";
-	id = "syndieshutters_infirmary";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_infirmary"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iD" = (
 /obj/structure/window/reinforced,
@@ -3146,11 +3108,11 @@
 	density = 0;
 	dir = 4;
 	icon_state = "shutter0";
-	id = "syndieshutters_workshop";
 	name = "Blast Shutters";
-	opacity = 0
+	opacity = 0;
+	id_tag = "syndieshutters_workshop"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iE" = (
 /obj/structure/grille,
@@ -3164,44 +3126,44 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iF" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/multitool,
 /obj/machinery/light{
 	dir = 8;
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iG" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/surgical/surgicaldrill,
-/obj/item/surgical/cautery,
-/obj/item/surgical/retractor,
+/obj/structure/table,
+/obj/item/surgicaldrill,
+/obj/item/cautery,
+/obj/item/retractor,
 /obj/item/stack/nanopaste,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iH" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/surgical/circular_saw,
-/obj/item/surgical/FixOVein{
+/obj/structure/table,
+/obj/item/circular_saw,
+/obj/item/sutures{
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/obj/item/surgical/hemostat,
-/turf/simulated/shuttle/floor/darkred,
+/obj/item/hemostat,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iI" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -3220,14 +3182,14 @@
 	pixel_y = 3
 	},
 /obj/item/storage/firstaid/regular,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iJ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/roller,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iK" = (
 /obj/item/weldingtool,
@@ -3236,10 +3198,10 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iL" = (
-/obj/structure/sign/securearea{
+/obj/structure/sign/warning{
 	name = "CAUTION";
 	pixel_x = 32
 	},
@@ -3247,33 +3209,29 @@
 	dir = 4
 	},
 /obj/structure/mopbucket,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iM" = (
-/obj/machinery/telecomms/allinone{
-	intercept = 1
-	},
 /obj/machinery/door/window/northright{
-	name = "Telecoms Mainframe";
-	req_access = list(150)
+	name = "Telecoms Mainframe"
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iN" = (
 /obj/machinery/door/blast/regular{
-	id = "syndieshutters_telebay";
-	name = "Outer Airlock"
+	name = "Outer Airlock";
+	id_tag = "syndieshutters_telebay"
 	},
-/turf/simulated/shuttle/plating,
+/turf/simulated/floor,
 /area/awaymission/zoo/syndieship)
 "iO" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iP" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -3281,50 +3239,49 @@
 	},
 /obj/structure/closet/secure_closet/medical_wall{
 	pixel_x = 32;
-	pixel_y = 0;
-	req_access = list(150)
+	pixel_y = 0
 	},
 /obj/item/tank/anesthetic,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/gloves/sterile,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/glass/bottle/stoxin,
-/obj/item/reagent_containers/glass/bottle/stoxin,
-/turf/simulated/shuttle/floor/darkred,
+/obj/item/chems/syringe,
+/obj/item/chems/glass/bottle/sedatives,
+/obj/item/chems/glass/bottle/sedatives,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iQ" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iR" = (
-/obj/item/tool/crowbar,
-/turf/simulated/shuttle/floor/darkred,
+/obj/item/crowbar,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iS" = (
-/obj/structure/sign/nosmoking_2{
+/obj/structure/sign/warning/nosmoking_2{
 	pixel_x = 32
 	},
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iT" = (
-/obj/machinery/iv_drip,
-/turf/simulated/shuttle/floor/darkred,
+/obj/structure/iv_drip,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iU" = (
 /obj/machinery/optable,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iV" = (
-/obj/structure/table/standard,
-/obj/item/surgical/scalpel,
-/obj/item/surgical/bonesetter,
-/obj/item/surgical/bonegel{
+/obj/structure/table,
+/obj/item/scalpel,
+/obj/item/bonesetter,
+/obj/item/bonegel{
 	pixel_x = 4;
 	pixel_y = 3
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/turf/simulated/shuttle/floor/darkred,
+/turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iW" = (
 /obj/structure/shuttle/engine/heater,
@@ -3351,15 +3308,13 @@
 /area/awaymission/zoo/syndieship)
 "ja" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3367,19 +3322,17 @@
 /area/awaymission/zoo)
 "jb" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3393,19 +3346,17 @@
 /area/awaymission/zoo)
 "jd" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3413,15 +3364,13 @@
 /area/awaymission/zoo)
 "je" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3435,13 +3384,12 @@
 /area/awaymission/zoo)
 "jg" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3449,13 +3397,12 @@
 /area/awaymission/zoo)
 "jh" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3463,19 +3410,17 @@
 /area/awaymission/zoo)
 "ji" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3483,19 +3428,17 @@
 /area/awaymission/zoo)
 "jj" = (
 /obj/structure/grille,
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -3514,7 +3457,7 @@
 	icon_state = "spline_fancy";
 	dir = 9
 	},
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "jn" = (
@@ -3527,7 +3470,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "jp" = (
@@ -3576,7 +3519,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/bush/reedbush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "jv" = (
@@ -3690,7 +3633,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/bush/reedbush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "jM" = (
@@ -3700,7 +3643,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "jO" = (
@@ -3712,7 +3655,7 @@
 	icon_state = "spline_fancy";
 	dir = 10
 	},
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "jQ" = (
@@ -3746,7 +3689,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "jT" = (
-/mob/living/simple_mob/animal/passive/chicken{
+/mob/living/simple_animal/chicken{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -3754,13 +3697,13 @@
 	},
 /area/awaymission/zoo)
 "jU" = (
-/mob/living/simple_mob/animal/passive/chick,
+/mob/living/simple_animal/chick,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "jV" = (
-/mob/living/simple_mob/animal/passive/dog/corgi/puppy{
+/mob/living/simple_animal/dog/corgi/puppy{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -3772,7 +3715,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/bush/reedbush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "jX" = (
@@ -3795,7 +3738,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/bush/reedbush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "ka" = (
@@ -3827,7 +3770,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "kf" = (
-/obj/structure/sink/kitchen{
+/obj/structure/hygiene/sink/kitchen{
 	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/white,
@@ -3859,28 +3802,28 @@
 	},
 /area/awaymission/zoo)
 "kk" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/storage/hooded/ian_costume,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kl" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/storage/hooded/carp_costume,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "km" = (
-/obj/structure/table/rack,
-/obj/effect/landmark/costume,
+/obj/structure/rack,
+/obj/abstract/landmark/costume,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kn" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/chickensuit,
 /obj/item/clothing/head/chicken,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "ko" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/head/sombrero,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
@@ -3900,31 +3843,31 @@
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "ks" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/monkeysuit,
 /obj/item/clothing/mask/gas/monkeymask,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kt" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
 /obj/item/clothing/head/plaguedoctorhat,
 /obj/item/clothing/mask/gas/plaguedoctor,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "ku" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/clothing/under/owl,
 /obj/item/clothing/mask/gas/owl_mask,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kv" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/toy/waterflower,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kw" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/toy/sword,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
@@ -3974,58 +3917,58 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "kD" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kE" = (
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kF" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kG" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kH" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/mob/living/simple_mob/animal/passive/bird/parrot/kea{
+/obj/structure/flora/bush/ywflowers,
+/mob/living/simple_animal/bird/parrot/kea{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kI" = (
-/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/flora/bush/pointybush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kJ" = (
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kK" = (
-/obj/structure/flora/ausbushes/pointybush,
-/mob/living/simple_mob/animal/passive/bird/parrot/pink_cockatoo{
+/obj/structure/flora/bush/pointybush,
+/mob/living/simple_animal/bird/parrot/pink_cockatoo{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kL" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kM" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "kN" = (
-/obj/structure/urinal{
+/obj/structure/hygiene/urinal{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "kO" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -4038,7 +3981,7 @@
 /turf/simulated/wall,
 /area/awaymission/zoo)
 "kQ" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	icon_state = "sink";
 	dir = 8;
 	pixel_x = -12;
@@ -4053,7 +3996,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "kS" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
@@ -4079,7 +4022,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "kV" = (
-/mob/living/simple_mob/animal/passive/cat{
+/mob/living/simple_animal/cat{
 	faction = "zoo"
 	},
 /turf/simulated/floor/wood,
@@ -4123,40 +4066,40 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "ld" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "le" = (
-/mob/living/simple_mob/animal/passive/bird/parrot/white_cockatoo{
+/mob/living/simple_animal/bird/parrot/white_cockatoo{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lf" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lg" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel/grey{
+/obj/structure/flora/bush/fullgrass,
+/mob/living/simple_animal/bird/parrot/cockatiel/grey{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lh" = (
-/obj/structure/flora/ausbushes,
+/obj/structure/flora/bush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "li" = (
-/obj/structure/flora/ausbushes/brflowers,
-/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel/yellowish{
+/obj/structure/flora/bush/brflowers,
+/mob/living/simple_animal/bird/parrot/cockatiel/yellowish{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lj" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_mob/animal/passive/bird/parrot/budgerigar/bluegreen{
+/obj/structure/flora/bush/ppflowers,
+/mob/living/simple_animal/bird/parrot/budgerigar/bluegreen{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
@@ -4182,7 +4125,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "ln" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "lo" = (
@@ -4194,23 +4137,23 @@
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lp" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/action_figure,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lq" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/fancy/crayons,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lr" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/plushie,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "ls" = (
 /obj/structure/table/marble,
-/obj/item/toy/nanotrasenballoon,
+/obj/item/toy/balloon/nanotrasen,
 /turf/simulated/floor/holofloor/lino,
 /area/awaymission/zoo)
 "lt" = (
@@ -4222,17 +4165,17 @@
 /turf/simulated/floor/holofloor/lino,
 /area/awaymission/zoo)
 "lu" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/camera_film,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lv" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/photo_album,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lw" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/camera_film,
 /obj/item/camera,
 /turf/simulated/floor/holofloor/carpet,
@@ -4275,10 +4218,10 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "lB" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 8
 	},
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "lC" = (
@@ -4296,7 +4239,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "lE" = (
-/mob/living/simple_mob/animal/passive/chick,
+/mob/living/simple_animal/chick,
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "lF" = (
@@ -4323,20 +4266,20 @@
 	},
 /area/awaymission/zoo)
 "lI" = (
-/mob/living/simple_mob/animal/passive/bird/parrot/budgerigar{
+/mob/living/simple_animal/bird/parrot/budgerigar{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lJ" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel{
+/obj/structure/flora/bush/sunnybush,
+/mob/living/simple_animal/bird/parrot/cockatiel{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lK" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "lL" = (
@@ -4344,7 +4287,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "lM" = (
-/mob/living/simple_mob/animal/passive/cow{
+/mob/living/simple_animal/cow{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -4352,52 +4295,52 @@
 	},
 /area/awaymission/zoo)
 "lN" = (
-/obj/structure/table/rack,
-/obj/item/toy/nanotrasenballoon,
+/obj/structure/rack,
+/obj/item/toy/balloon/nanotrasen,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lO" = (
-/obj/structure/table/rack,
-/obj/item/toy/cultsword,
+/obj/structure/rack,
+/obj/item/sword/cult_toy,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lP" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/toy/crossbow,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lQ" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/toy/bosunwhistle,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lR" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/wallet/poly,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lS" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/pill_bottle/dice_nerd,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lT" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/beach_ball,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lU" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/soap/deluxe,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lV" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/binoculars,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lW" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/backpack/clown,
 /obj/item/clothing/shoes/rainbow,
 /obj/item/clothing/under/color/rainbow,
@@ -4439,19 +4382,19 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "mb" = (
-/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel/yellowish{
+/mob/living/simple_animal/bird/parrot/cockatiel/yellowish{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "mc" = (
-/mob/living/simple_mob/animal/passive/bird/parrot/white_caique{
+/mob/living/simple_animal/bird/parrot/white_caique{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "md" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -4520,7 +4463,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "mo" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
@@ -4536,21 +4479,18 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "mr" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4636,21 +4576,18 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "my" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4658,13 +4595,12 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mz" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4672,15 +4608,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mA" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4749,19 +4683,17 @@
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "mK" = (
-/obj/structure/flora/ausbushes/reedbush,
+/obj/structure/flora/bush/reedbush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "mL" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4769,13 +4701,12 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mM" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4783,19 +4714,17 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mN" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 4;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4827,51 +4756,49 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mQ" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass2"
 	},
 /area/awaymission/zoo)
 "mR" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass2"
 	},
 /area/awaymission/zoo)
 "mS" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "mT" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "mU" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "mV" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "mW" = (
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 8;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	dir = 1;
-	icon_state = "phoronrwindow";
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
-/obj/structure/window/phoronreinforced{
+/obj/structure/window/borosilicate_reinforced{
 	maxhealth = 10000;
 	name = "robust borosilicate window"
 	},
@@ -4887,13 +4814,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "mY" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "mZ" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
@@ -4910,7 +4837,7 @@
 	},
 /area/awaymission/zoo)
 "nc" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
@@ -4921,7 +4848,7 @@
 	},
 /area/awaymission/zoo)
 "ne" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
@@ -4933,7 +4860,7 @@
 	},
 /area/awaymission/zoo)
 "ng" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
@@ -4945,13 +4872,13 @@
 	},
 /area/awaymission/zoo)
 "ni" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass2"
 	},
 /area/awaymission/zoo)
 "nj" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "nk" = (
@@ -4959,7 +4886,7 @@
 /turf/simulated/wall,
 /area/awaymission/zoo)
 "nl" = (
-/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/bush/stalkybush,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "nm" = (
@@ -4969,7 +4896,7 @@
 	},
 /area/awaymission/zoo)
 "nn" = (
-/obj/structure/flora/ausbushes,
+/obj/structure/flora/bush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
@@ -5010,7 +4937,7 @@
 	},
 /area/awaymission/zoo)
 "nt" = (
-/mob/living/simple_mob/animal/passive/tindalos{
+/mob/living/simple_animal/tindalos{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5018,13 +4945,13 @@
 	},
 /area/awaymission/zoo)
 "nu" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
 /area/awaymission/zoo)
 "nv" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
@@ -5046,7 +4973,7 @@
 	},
 /area/awaymission/zoo)
 "nz" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
@@ -5058,13 +4985,13 @@
 	},
 /area/awaymission/zoo)
 "nB" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "nC" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
@@ -5077,14 +5004,14 @@
 	},
 /area/awaymission/zoo)
 "nE" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "nF" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
@@ -5175,13 +5102,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "nQ" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "nR" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
@@ -5201,13 +5128,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "nT" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass2"
 	},
 /area/awaymission/zoo)
 "nU" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
@@ -5219,25 +5146,25 @@
 	},
 /area/awaymission/zoo)
 "nW" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass3"
 	},
 /area/awaymission/zoo)
 "nX" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "nY" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "nZ" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass2"
 	},
@@ -5249,7 +5176,7 @@
 	},
 /area/awaymission/zoo)
 "ob" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
@@ -5283,14 +5210,14 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "oe" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "of" = (
-/mob/living/simple_mob/vore/aggressive/frog{
+/mob/living/simple_animal/hostile/frog{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass{
@@ -5322,7 +5249,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "oj" = (
-/mob/living/simple_mob/animal/passive/tindalos{
+/mob/living/simple_animal/tindalos{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5330,7 +5257,7 @@
 	},
 /area/awaymission/zoo)
 "ok" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
@@ -5341,19 +5268,19 @@
 	},
 /area/awaymission/zoo)
 "om" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "on" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
 /area/awaymission/zoo)
 "oo" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
@@ -5365,21 +5292,21 @@
 	},
 /area/awaymission/zoo)
 "oq" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "or" = (
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "os" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
@@ -5395,13 +5322,13 @@
 	},
 /area/awaymission/zoo)
 "ov" = (
-/mob/living/simple_mob/animal/passive/dog/corgi{
+/mob/living/simple_animal/dog/corgi{
 	faction = "zoo"
 	},
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "ow" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
@@ -5419,14 +5346,14 @@
 	},
 /area/awaymission/zoo)
 "oz" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "oA" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/mob/living/simple_mob/animal/passive/cat{
+/obj/structure/flora/bush/lavendergrass,
+/mob/living/simple_animal/cat{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5444,14 +5371,14 @@
 	},
 /area/awaymission/zoo)
 "oC" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "oD" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
@@ -5472,22 +5399,22 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/mineral/floor/ignore_mapgen,
+/turf/exterior/barren,
 /area/awaymission/zoo)
 "oG" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
 /area/awaymission/zoo)
 "oH" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
 /area/awaymission/zoo)
 "oI" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass2"
 	},
@@ -5499,13 +5426,13 @@
 	},
 /area/awaymission/zoo)
 "oK" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "oL" = (
-/mob/living/simple_mob/vore/aggressive/giant_snake{
+/mob/living/simple_animal/hostile/giant_snake{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5513,7 +5440,7 @@
 	},
 /area/awaymission/zoo)
 "oM" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass2"
 	},
@@ -5523,7 +5450,7 @@
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "oO" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
@@ -5532,7 +5459,7 @@
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "oQ" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
@@ -5561,7 +5488,7 @@
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "oU" = (
-/mob/living/simple_mob/animal/space/bats{
+/mob/living/simple_animal/space/bats{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -5587,7 +5514,7 @@
 	},
 /area/awaymission/zoo)
 "oX" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
@@ -5631,7 +5558,7 @@
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "pd" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 10
@@ -5673,7 +5600,7 @@
 /turf/simulated/floor/holofloor/beach/water,
 /area/awaymission/zoo)
 "ph" = (
-/mob/living/simple_mob/animal/passive/tindalos{
+/mob/living/simple_animal/tindalos{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5681,7 +5608,7 @@
 	},
 /area/awaymission/zoo)
 "pi" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass3"
 	},
@@ -5693,7 +5620,7 @@
 	},
 /area/awaymission/zoo)
 "pk" = (
-/mob/living/simple_mob/vore/aggressive/giant_snake{
+/mob/living/simple_animal/hostile/giant_snake{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5701,13 +5628,13 @@
 	},
 /area/awaymission/zoo)
 "pl" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "pm" = (
-/mob/living/simple_mob/animal/passive/cat{
+/mob/living/simple_animal/cat{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5727,50 +5654,50 @@
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "pp" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "pq" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
 /area/awaymission/zoo)
 "pr" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "ps" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
 /area/awaymission/zoo)
 "pt" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass1"
 	},
 /area/awaymission/zoo)
 "pu" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "pv" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "pw" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
@@ -5782,27 +5709,27 @@
 	},
 /area/awaymission/zoo)
 "py" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "pz" = (
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "pA" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass2"
 	},
 /area/awaymission/zoo)
 "pB" = (
-/mob/living/simple_mob/animal/passive/tindalos{
+/mob/living/simple_animal/tindalos{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5816,13 +5743,13 @@
 	},
 /area/awaymission/zoo)
 "pD" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
 /area/awaymission/zoo)
 "pE" = (
-/mob/living/simple_mob/animal/passive/cat{
+/mob/living/simple_animal/cat{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -5842,7 +5769,7 @@
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "pH" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /obj/effect/floor_decal/spline/fancy/wood{
 	icon_state = "spline_fancy";
 	dir = 9
@@ -5850,26 +5777,26 @@
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "pI" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "pJ" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
 /area/awaymission/zoo)
 "pK" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
 /area/awaymission/zoo)
 "pL" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
@@ -5931,25 +5858,25 @@
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "pR" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass0"
 	},
 /area/awaymission/zoo)
 "pS" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "pT" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass3"
 	},
 /area/awaymission/zoo)
 "pU" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
@@ -5987,23 +5914,23 @@
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "pZ" = (
-/obj/structure/filingcabinet/chestdrawer,
+/obj/structure/filing_cabinet/chestdrawer,
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "qa" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "qb" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
 /area/awaymission/zoo)
 "qc" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass3"
 	},
@@ -6069,19 +5996,19 @@
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "qk" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
 /area/awaymission/zoo)
 "ql" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass3"
 	},
 /area/awaymission/zoo)
 "qm" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
@@ -6104,7 +6031,7 @@
 /turf/simulated/floor/lino,
 /area/awaymission/zoo)
 "qq" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass4"
 	},
@@ -6120,7 +6047,7 @@
 	},
 /area/awaymission/zoo)
 "qt" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass4"
 	},
@@ -6138,7 +6065,7 @@
 	},
 /area/awaymission/zoo)
 "qw" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
@@ -6156,7 +6083,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "qy" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
@@ -6227,21 +6154,21 @@
 	icon_state = "spline_fancy";
 	dir = 9
 	},
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "qF" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "qG" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 5
 	},
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "qH" = (
@@ -6263,18 +6190,18 @@
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "qL" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "qM" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "qN" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 1
 	},
@@ -6293,7 +6220,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "qR" = (
-/mob/living/simple_mob/animal/passive/mouse{
+/mob/living/simple_animal/mouse{
 	faction = "zoo"
 	},
 /turf/simulated/floor/plating,
@@ -6307,15 +6234,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "qU" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/item/storage/box/lights/mixed,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "qV" = (
-/obj/structure/table/rack{
-	dir = 1
-	},
-/obj/item/extinguisher,
+/obj/structure/rack,
+/obj/item/chems/spray/extinguisher,
 /obj/item/clothing/head/hardhat/red,
 /obj/item/flashlight,
 /turf/simulated/floor/plating,
@@ -6325,11 +6250,11 @@
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "qX" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "qY" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "qZ" = (
@@ -6353,20 +6278,18 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "rd" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "re" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/disposalpipe/segment{
@@ -6381,7 +6304,7 @@
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "rf" = (
-/mob/living/simple_mob/animal/sif/diyaab{
+/mob/living/simple_animal/sif/diyaab{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
@@ -6391,18 +6314,18 @@
 	icon_state = "spline_fancy";
 	dir = 10
 	},
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "rh" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 8
 	},
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "ri" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /obj/effect/floor_decal/spline/fancy/wood/corner,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
@@ -6410,7 +6333,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
-/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/bush/ppflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "rk" = (
@@ -6450,7 +6373,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 2
 	},
-/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/bush/brflowers,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "rs" = (
@@ -6621,7 +6544,7 @@
 	},
 /area/awaymission/zoo)
 "rH" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "rI" = (
@@ -6664,7 +6587,7 @@
 	},
 /area/awaymission/zoo)
 "rL" = (
-/mob/living/simple_mob/animal/space/alien{
+/mob/living/simple_animal/space/alien{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -6730,7 +6653,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "rS" = (
-/mob/living/simple_mob/animal/space/alien/drone{
+/mob/living/simple_animal/space/alien/drone{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -6772,7 +6695,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "rW" = (
-/mob/living/simple_mob/animal/passive/penguin{
+/mob/living/simple_animal/penguin{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
@@ -6796,7 +6719,7 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "rZ" = (
-/mob/living/simple_mob/animal/passive/snake{
+/mob/living/simple_animal/snake{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -6814,7 +6737,7 @@
 	icon_state = "asteroid_edge_s";
 	name = "rocky edge"
 	},
-/mob/living/simple_mob/animal/space/alien/drone{
+/mob/living/simple_animal/space/alien/drone{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -6837,28 +6760,28 @@
 /area/awaymission/zoo)
 "sc" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/mob/living/simple_mob/vore/aggressive/mimic{
+/mob/living/simple_animal/hostile/mimic{
 	faction = "zoo"
 	},
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/zoo)
 "sd" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/mob/living/simple_mob/animal/passive/penguin{
+/obj/structure/flora/bush/fullgrass,
+/mob/living/simple_animal/penguin{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "se" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_mob/animal/space/bear{
+/mob/living/simple_animal/space/bear{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sf" = (
 /obj/structure/flora/grass/both,
-/mob/living/simple_mob/animal/passive/penguin{
+/mob/living/simple_animal/penguin{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
@@ -6892,7 +6815,7 @@
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "sl" = (
-/mob/living/simple_mob/animal/space/carp{
+/mob/living/simple_animal/space/carp{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/space,
@@ -6934,7 +6857,7 @@
 	icon_state = "asteroid_edge_e";
 	name = "rocky edge"
 	},
-/mob/living/simple_mob/animal/space/alien/drone{
+/mob/living/simple_animal/space/alien/drone{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -6959,7 +6882,7 @@
 /area/awaymission/zoo)
 "sq" = (
 /obj/effect/spider/stickyweb,
-/mob/living/simple_mob/animal/giant_spider/hunter{
+/mob/living/simple_animal/giant_spider/hunter{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -6968,14 +6891,14 @@
 /obj/effect/spider/cocoon{
 	icon_state = "cocoon_large2"
 	},
-/mob/living/simple_mob/animal/giant_spider/hunter{
+/mob/living/simple_animal/giant_spider/hunter{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "ss" = (
 /obj/effect/spider/stickyweb,
-/mob/living/simple_mob/animal/giant_spider{
+/mob/living/simple_animal/giant_spider{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7062,7 +6985,7 @@
 	icon_state = "asteroid_edge_w";
 	name = "rocky edge"
 	},
-/mob/living/simple_mob/animal/space/alien{
+/mob/living/simple_animal/space/alien{
 	faction = "zoo";
 	name = "invisible alien hunter"
 	},
@@ -7079,7 +7002,7 @@
 /obj/effect/spider/cocoon{
 	icon_state = "cocoon3"
 	},
-/mob/living/simple_mob/animal/giant_spider/hunter{
+/mob/living/simple_animal/giant_spider/hunter{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7088,7 +7011,7 @@
 /obj/effect/spider/stickyweb{
 	icon_state = "cobweb1"
 	},
-/mob/living/simple_mob/animal/giant_spider/hunter{
+/mob/living/simple_animal/giant_spider/hunter{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7097,7 +7020,7 @@
 /obj/effect/spider/cocoon{
 	icon_state = "cocoon2"
 	},
-/mob/living/simple_mob/animal/giant_spider/nurse{
+/mob/living/simple_animal/giant_spider/nurse{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7106,7 +7029,7 @@
 /obj/effect/spider/stickyweb{
 	icon_state = "cobweb2"
 	},
-/mob/living/simple_mob/animal/giant_spider{
+/mob/living/simple_animal/giant_spider{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7118,7 +7041,7 @@
 /obj/effect/spider/cocoon{
 	icon_state = "cocoon_large1"
 	},
-/mob/living/simple_mob/animal/giant_spider{
+/mob/living/simple_animal/giant_spider{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7129,7 +7052,7 @@
 	icon_state = "asteroid_edge_e";
 	name = "rocky edge"
 	},
-/mob/living/simple_mob/animal/space/alien/queen{
+/mob/living/simple_animal/space/alien/queen{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -7139,42 +7062,40 @@
 	},
 /area/awaymission/zoo)
 "sG" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/zoo)
 "sH" = (
 /obj/effect/spider/cocoon{
 	icon_state = "cocoon_large3"
 	},
-/mob/living/simple_mob/animal/giant_spider/hunter{
+/mob/living/simple_animal/giant_spider/hunter{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sI" = (
-/mob/living/simple_mob/animal/giant_spider{
+/mob/living/simple_animal/giant_spider{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sJ" = (
-/mob/living/simple_mob/animal/passive/bird/parrot/polly{
-	faction = "zoo"
-	},
+/mob/living/simple_animal/hostile/retaliate/parrot/Poly,
 /turf/simulated/floor/holofloor/grass,
 /area/awaymission/zoo)
 "sK" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "sL" = (
-/mob/living/simple_mob/animal/space/bear{
+/mob/living/simple_animal/space/bear{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sM" = (
-/mob/living/simple_mob/animal/space/alien{
+/mob/living/simple_animal/space/alien{
 	faction = "zoo";
 	name = "invisible alien hunter"
 	},
@@ -7185,7 +7106,7 @@
 	},
 /area/awaymission/zoo)
 "sN" = (
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/effect/gibspawner/generic,
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/zoo)
@@ -7194,7 +7115,7 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sP" = (
-/mob/living/simple_mob/animal/passive/snake{
+/mob/living/simple_animal/snake{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand{
@@ -7289,7 +7210,7 @@
 /area/awaymission/zoo)
 "ta" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_mob/animal/space/alien{
+/mob/living/simple_animal/space/alien{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -7347,14 +7268,14 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "tf" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tg" = (
-/obj/structure/flora/ausbushes/genericbush,
+/obj/structure/flora/bush/genericbush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
@@ -7367,7 +7288,7 @@
 	},
 /area/awaymission/zoo)
 "ti" = (
-/mob/living/simple_mob/animal/passive/yithian{
+/mob/living/simple_animal/yithian{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/wood{
@@ -7390,7 +7311,7 @@
 /turf/simulated/floor/cult,
 /area/awaymission/zoo)
 "tm" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tn" = (
@@ -7401,14 +7322,14 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "to" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tp" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
@@ -7431,33 +7352,33 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tt" = (
-/obj/structure/sink/puddle,
+/obj/structure/hygiene/sink/puddle,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tu" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tv" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tw" = (
-/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/bush/ywflowers,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tx" = (
-/obj/structure/flora/ausbushes/sunnybush,
-/mob/living/simple_mob/animal/passive/yithian{
+/obj/structure/flora/bush/sunnybush,
+/mob/living/simple_animal/yithian{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/wood{
@@ -7485,26 +7406,26 @@
 /turf/simulated/floor/cult,
 /area/awaymission/zoo)
 "tB" = (
-/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/bush/fullgrass,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tC" = (
-/obj/structure/flora/ausbushes/leafybush,
+/obj/structure/flora/bush/leafybush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
 	},
 /area/awaymission/zoo)
 "tD" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/cult,
 /area/awaymission/zoo)
 "tE" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tF" = (
-/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/bush/grassybush,
 /turf/simulated/floor/holofloor/wood{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "diona"
@@ -7559,7 +7480,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "tK" = (
-/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/bush/sparsegrass,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tL" = (
@@ -7577,7 +7498,7 @@
 /area/awaymission/zoo)
 "tO" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_mob/vore/aggressive/dino{
+/mob/living/simple_animal/hostile/dino{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7643,7 +7564,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "tU" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/holofloor/desert{
 	icon = 'icons/turf/floors.dmi';
 	icon_state = "asteroidplating";
@@ -7666,7 +7587,7 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "tX" = (
-/mob/living/simple_mob/vore/aggressive/dragon{
+/mob/living/simple_animal/hostile/dragon{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert{
@@ -7676,7 +7597,7 @@
 	},
 /area/awaymission/zoo)
 "tY" = (
-/mob/living/simple_mob/animal/passive/lizard{
+/mob/living/simple_animal/lizard{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7709,7 +7630,7 @@
 /area/awaymission/zoo)
 "uc" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_mob/vore/aggressive/deathclaw{
+/mob/living/simple_animal/hostile/deathclaw{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7729,7 +7650,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "ue" = (
-/mob/living/simple_mob/animal/space/goose{
+/mob/living/simple_animal/space/goose{
 	faction = "zoo"
 	},
 /turf/simulated/floor/beach/water,
@@ -7777,7 +7698,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "ui" = (
-/mob/living/simple_mob/vore/aggressive/deathclaw{
+/mob/living/simple_animal/hostile/deathclaw{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
@@ -7789,34 +7710,34 @@
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "uk" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/mob/living/simple_mob/vore/aggressive/dino{
+/obj/structure/flora/bush/sparsegrass,
+/mob/living/simple_animal/hostile/dino{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "ul" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/simple_mob/animal/passive/lizard{
+/mob/living/simple_animal/lizard{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "um" = (
-/obj/effect/landmark/away,
-/mob/living/simple_mob/animal/space/goose{
+/obj/abstract/landmark/away,
+/mob/living/simple_animal/space/goose{
 	faction = "zoo"
 	},
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
 "un" = (
-/mob/living/simple_mob/animal/wolf{
+/mob/living/simple_animal/wolf{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "uo" = (
-/mob/living/simple_mob/animal/space/goose{
+/mob/living/simple_animal/space/goose{
 	faction = "zoo"
 	},
 /turf/simulated/floor/wood,
@@ -7872,7 +7793,7 @@
 	},
 /area/awaymission/zoo)
 "uv" = (
-/obj/structure/flora/ausbushes/palebush,
+/obj/structure/flora/bush/palebush,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "dgrass1"
 	},
@@ -7884,7 +7805,7 @@
 	},
 /area/awaymission/zoo)
 "ux" = (
-/obj/structure/sink/puddle,
+/obj/structure/hygiene/sink/puddle,
 /turf/simulated/floor/holofloor/beach/sand{
 	icon_state = "fullgrass0"
 	},
@@ -7905,7 +7826,7 @@
 	},
 /area/awaymission/zoo)
 "uA" = (
-/mob/living/simple_mob/animal/space/bear/brown{
+/mob/living/simple_animal/space/bear/brown{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
@@ -7937,7 +7858,7 @@
 	},
 /area/awaymission/zoo)
 "uF" = (
-/mob/living/simple_mob/animal/passive/dog/tamaskan{
+/mob/living/simple_animal/dog/tamaskan{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
@@ -7962,7 +7883,7 @@
 	locked = 1;
 	name = "Exhibit Airlock"
 	},
-/obj/item/tape/engineering{
+/obj/item/magnetic_tape/engineering{
 	icon_state = "engineering_door_0"
 	},
 /turf/simulated/floor/plating,
@@ -7990,8 +7911,8 @@
 	},
 /area/awaymission/zoo)
 "uN" = (
-/obj/structure/flora/ausbushes/genericbush,
-/mob/living/simple_mob/animal/space/bear/brown{
+/obj/structure/flora/bush/genericbush,
+/mob/living/simple_animal/space/bear/brown{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass,
@@ -8038,7 +7959,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "uS" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
@@ -8098,13 +8019,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "uZ" = (
-/mob/living/simple_mob/animal/space/carp/large{
+/mob/living/simple_animal/space/carp/large{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "va" = (
-/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/bush/fernybush,
 /mob/living/carbon/human/monkey{
 	faction = "zoo"
 	},
@@ -8120,14 +8041,14 @@
 	},
 /area/awaymission/zoo)
 "vc" = (
-/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/flora/bush/sunnybush,
 /turf/simulated/floor/holofloor/grass{
 	icon = 'icons/jungle.dmi';
 	icon_state = "grass2"
 	},
 /area/awaymission/zoo)
 "vd" = (
-/mob/living/simple_mob/animal/passive/crab{
+/mob/living/simple_animal/crab{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/beach/sand,
@@ -8141,7 +8062,7 @@
 	},
 /area/awaymission/zoo)
 "vf" = (
-/mob/living/simple_mob/vore/aggressive/panther{
+/mob/living/simple_animal/hostile/panther{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/grass{
@@ -8178,7 +8099,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "vi" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/holofloor/desert,
 /area/awaymission/zoo)
 "vj" = (
@@ -8210,7 +8131,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "vl" = (
-/mob/living/simple_mob/animal/passive/crab{
+/mob/living/simple_animal/crab{
 	faction = "zoo";
 	icon_dead = "evilcrab_dead";
 	icon_living = "evilcrab";
@@ -8250,7 +8171,7 @@
 /turf/simulated/floor/holofloor/snow,
 /area/awaymission/zoo)
 "vq" = (
-/mob/living/simple_mob/animal/space/tree{
+/mob/living/simple_animal/space/tree{
 	faction = "zoo"
 	},
 /turf/simulated/floor/holofloor/snow,
@@ -8271,7 +8192,7 @@
 	},
 /area/awaymission/zoo)
 "vt" = (
-/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/bush/lavendergrass,
 /mob/living/carbon/human/monkey{
 	faction = "zoo"
 	},
@@ -8294,7 +8215,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "vw" = (
-/obj/effect/landmark/loot_spawn,
+/obj/abstract/landmark/loot_spawn,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "vx" = (
@@ -8314,13 +8235,13 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "vz" = (
-/mob/living/simple_mob/animal/space/bear/polar{
+/mob/living/simple_animal/space/bear/polar{
 	faction = "zoo"
 	},
 /turf/simulated/floor/beach/water,
 /area/awaymission/zoo)
 "vA" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/grass,
 /area/awaymission/zoo)
 "vB" = (
@@ -8329,7 +8250,7 @@
 /area/awaymission/zoo)
 "vC" = (
 /obj/effect/blocker,
-/obj/structure/sign/securearea,
+/obj/structure/sign/warning,
 /turf/simulated/wall/r_wall,
 /area/awaymission/zoo)
 "vD" = (
@@ -8352,7 +8273,7 @@
 /turf/simulated/wall/durasteel,
 /area/awaymission/zoo)
 "vH" = (
-/obj/structure/sign/redcross,
+/obj/structure/sign/department/redcross,
 /turf/simulated/wall/durasteel,
 /area/awaymission/zoo)
 "vI" = (
@@ -8382,7 +8303,6 @@
 	pixel_x = 5
 	},
 /obj/item/storage/firstaid/o2{
-	layer = 2.8;
 	pixel_x = 4;
 	pixel_y = 6
 	},
@@ -8396,18 +8316,17 @@
 	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/fire{
-	layer = 2.9;
 	pixel_x = 2;
 	pixel_y = 3
 	},
 /obj/item/storage/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/reagent_containers/blood/empty,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/OMinus,
+/obj/item/chems/ivbag,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/OMinus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
@@ -8445,41 +8364,41 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "vS" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/clothing/gloves/sterile,
 /obj/item/clothing/mask/surgical,
-/obj/item/surgical/retractor{
+/obj/item/retractor{
 	pixel_x = 0;
 	pixel_y = 6
 	},
-/obj/item/surgical/scalpel,
-/obj/item/surgical/surgicaldrill,
-/obj/item/surgical/circular_saw,
+/obj/item/scalpel,
+/obj/item/surgicaldrill,
+/obj/item/circular_saw,
 /obj/item/stack/nanopaste,
-/obj/item/surgical/hemostat{
+/obj/item/hemostat{
 	pixel_y = 4
 	},
-/obj/item/surgical/cautery{
+/obj/item/cautery{
 	pixel_y = 4
 	},
-/obj/item/surgical/FixOVein{
+/obj/item/sutures{
 	pixel_x = -6;
 	pixel_y = 1
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
-/obj/item/surgical/bonesetter,
-/obj/item/surgical/bonegel{
+/obj/item/bonesetter,
+/obj/item/bonegel{
 	pixel_x = 4;
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "vT" = (
-/obj/machinery/iv_drip,
+/obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "vU" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "vV" = (
@@ -8496,22 +8415,22 @@
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "vY" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper/zoo/pirate/haveyouseen,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "vZ" = (
-/obj/machinery/shield_gen/external,
+/obj/machinery/shield_generator/external,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "wa" = (
-/obj/machinery/shield_gen/external,
+/obj/machinery/shield_generator/external,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "wb" = (
-/obj/machinery/shield_gen,
+/obj/machinery/shield_generator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/awaymission/zoo)
@@ -8532,12 +8451,12 @@
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "wf" = (
-/obj/machinery/autolathe,
+/obj/machinery/fabricator,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wg" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/landmark/loot_spawn,
+/obj/abstract/landmark/loot_spawn,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "wh" = (
@@ -8564,7 +8483,7 @@
 	dir = 8;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/weapon,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
@@ -8576,7 +8495,7 @@
 	dir = 1;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/machinery/door/window/brigdoor/southright,
 /obj/random/weapon,
 /turf/simulated/floor/tiled/dark,
@@ -8595,27 +8514,27 @@
 	dir = 1;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/weapon,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wn" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/action_figure,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wo" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/plushie,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wp" = (
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/contraband,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wq" = (
-/obj/machinery/door/airlock/glass_medical,
+/obj/machinery/door/airlock/glass/medical,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "wr" = (
@@ -8626,7 +8545,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/zoo)
 "wt" = (
-/obj/structure/sign/securearea{
+/obj/structure/sign/warning{
 	desc = "A warning sign which reads 'EMPLOYEES ONLY'.";
 	name = "EMPLOYEES ONLY";
 	pixel_x = -32
@@ -8646,21 +8565,15 @@
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "ww" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper/zoo/pirate/warning,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wx" = (
-/obj/structure/sign/electricshock,
+/obj/structure/sign/warning/shock,
 /turf/simulated/wall/durasteel,
 /area/awaymission/zoo)
-"wy" = (
-/obj/machinery/shield_capacitor,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/awaymission/zoo)
 "wz" = (
-/obj/machinery/shield_capacitor,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/awaymission/zoo)
@@ -8678,7 +8591,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wC" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/tiled/red,
 /area/awaymission/zoo)
 "wD" = (
@@ -8692,7 +8605,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wF" = (
-/obj/effect/landmark/away,
+/obj/abstract/landmark/away,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wG" = (
@@ -8706,7 +8619,7 @@
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
 "wI" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wJ" = (
@@ -8717,13 +8630,12 @@
 /obj/machinery/door/airlock/security{
 	icon_state = "door_locked";
 	locked = 1;
-	name = "Security";
-	req_one_access = list(1)
+	name = "Security"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wL" = (
-/obj/structure/sign/securearea{
+/obj/structure/sign/warning{
 	desc = "A warning sign which reads 'EMPLOYEES ONLY'.";
 	name = "EMPLOYEES ONLY";
 	pixel_x = 32
@@ -8744,12 +8656,12 @@
 /area/awaymission/zoo)
 "wO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/emitter,
+/obj/machinery/emitter,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "wP" = (
-/obj/machinery/power/port_gen/pacman{
+/obj/machinery/port_gen/pacman{
 	anchored = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -8757,7 +8669,7 @@
 /area/awaymission/zoo)
 "wQ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/clothing/under/rank/engineer/skirt,
+/obj/item/clothing/under/engineer/skirt,
 /obj/structure/closet/crate/mimic/guaranteed,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
@@ -8772,7 +8684,7 @@
 /area/awaymission/zoo)
 "wT" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/effect/landmark/loot_spawn,
+/obj/abstract/landmark/loot_spawn,
 /obj/structure/symbol/da{
 	pixel_x = -32
 	},
@@ -8789,14 +8701,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wW" = (
-/obj/structure/filingcabinet/filingcabinet,
+/obj/structure/filing_cabinet/tall,
 /obj/item/paper/zoo,
 /obj/item/paper/zoo,
 /obj/item/paper/zoo,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "wX" = (
-/obj/structure/filingcabinet/filingcabinet,
+/obj/structure/filing_cabinet/tall,
 /obj/item/paper/zoo,
 /obj/item/paper/zoo,
 /obj/item/paper/zoo,
@@ -8815,13 +8727,13 @@
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "xa" = (
-/obj/machinery/power/emitter,
+/obj/machinery/emitter,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/awaymission/zoo)
 "xb" = (
 /obj/structure/closet/crate,
-/obj/item/stack/material/phoron{
+/obj/item/stack/material/crystal/mapped/phoron{
 	amount = 25
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -8853,7 +8765,7 @@
 	dir = 8;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/ammo_all,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
@@ -8866,7 +8778,7 @@
 	dir = 2;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/ammo_all,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
@@ -8880,7 +8792,7 @@
 	dir = 8;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/weapon,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
@@ -8893,27 +8805,24 @@
 	dir = 2;
 	health = 1e+006
 	},
-/obj/structure/table/rack,
+/obj/structure/rack,
 /obj/random/weapon,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "xj" = (
-/obj/effect/landmark/loot_spawn{
+/obj/abstract/landmark/loot_spawn{
 	live_cargo = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
 "xk" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xl" = (
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2";
 	pixel_y = 0
 	},
@@ -8924,50 +8833,34 @@
 /area/awaymission/zoo/solars)
 "xm" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xn" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xo" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -8975,36 +8868,24 @@
 /area/awaymission/zoo/solars)
 "xp" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xq" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -9012,32 +8893,22 @@
 /area/awaymission/zoo/solars)
 "xr" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xs" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/airless,
@@ -9051,13 +8922,9 @@
 /area/awaymission/zoo/solars)
 "xu" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -9065,26 +8932,18 @@
 /area/awaymission/zoo/solars)
 "xv" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/airless,
 /area/awaymission/zoo/solars)
 "xw" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -42807,7 +42666,7 @@ hq
 hq
 vG
 vZ
-wy
+wS
 vI
 wN
 wZ
@@ -43114,7 +42973,7 @@ hq
 hq
 vG
 wa
-wy
+wS
 vI
 wO
 wO

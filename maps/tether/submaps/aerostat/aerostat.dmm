@@ -19,8 +19,6 @@
 /area/tether_away/aerostat/inside)
 "ae" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -31,7 +29,6 @@
 /area/tether_away/aerostat/solars)
 "af" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -43,8 +40,6 @@
 /area/tether_away/aerostat/solars)
 "ag" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -119,7 +114,6 @@
 /area/tether_away/aerostat/inside)
 "aq" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/solar,
@@ -143,15 +137,15 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/solars)
 "at" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/fiftyspawner/osmium,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "au" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/fiftyspawner/phoron,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "av" = (
@@ -170,7 +164,6 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -181,8 +174,6 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -209,8 +200,6 @@
 	dir = 5
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -234,13 +223,9 @@
 /area/tether_away/aerostat/solars)
 "aE" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -259,7 +244,6 @@
 /area/tether_away/aerostat/inside)
 "aG" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/solar,
@@ -268,13 +252,9 @@
 /area/tether_away/aerostat/solars)
 "aH" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -299,14 +279,6 @@
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
 "aL" = (
-/turf/simulated/floor/bluegrid/virgo2,
-/area/tether_away/aerostat/inside)
-"aM" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
 "aN" = (
@@ -363,7 +335,6 @@
 "aU" = (
 /obj/machinery/power/solar,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -371,13 +342,9 @@
 /area/tether_away/aerostat/solars)
 "aV" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -403,13 +370,9 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -417,8 +380,6 @@
 /area/tether_away/aerostat/solars)
 "aZ" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -426,13 +387,9 @@
 /area/tether_away/aerostat/solars)
 "ba" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -440,8 +397,6 @@
 /area/tether_away/aerostat/solars)
 "bb" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -449,13 +404,9 @@
 /area/tether_away/aerostat/solars)
 "bc" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -476,11 +427,11 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "bg" = (
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "bh" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "bi" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
@@ -534,7 +485,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "bs" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
@@ -544,13 +495,9 @@
 /area/tether_away/aerostat/inside)
 "bt" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -558,8 +505,6 @@
 /area/tether_away/aerostat/solars)
 "bu" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -590,7 +535,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/maintenance/common,
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "bA" = (
@@ -604,7 +549,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "bC" = (
-/obj/machinery/door/airlock/maintenance/common,
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "bD" = (
@@ -632,14 +577,14 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "bI" = (
 /obj/structure/closet/emcloset,
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "bJ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/cargopod,
 /obj/random/junk,
 /obj/random/maintenance,
@@ -765,7 +710,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/machinery/door/airlock/maintenance/common,
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "ce" = (
@@ -783,7 +728,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "cg" = (
-/obj/machinery/door/airlock/multi_tile/metal{
+/obj/machinery/door/airlock/double/metal{
 	icon_state = "door_closed";
 	dir = 1
 	},
@@ -807,14 +752,14 @@
 	icon_state = "tube1";
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "ck" = (
 /turf/unsimulated/floor/sky/virgo2_sky,
 /area/shuttle/excursion/away_aerostat)
 "cl" = (
 /obj/machinery/light,
-/turf/simulated/shuttle/floor/yellow,
+/turf/simulated/floor/shuttle/yellow,
 /area/shuttle/aerostat/docked)
 "cm" = (
 /obj/structure/cable/heavyduty{
@@ -823,9 +768,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "cn" = (
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = 10;
 	pixel_y = 25
@@ -842,7 +785,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/multi_tile/metal{
+/obj/machinery/door/airlock/double/metal{
 	icon_state = "door_closed";
 	dir = 1
 	},
@@ -892,8 +835,6 @@
 /area/tether_away/aerostat/inside)
 "cx" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -992,13 +933,12 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "cN" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "cO" = (
 /obj/machinery/door/airlock/external{
-	frequency = 1089;
 	icon_state = "door_locked";
 	id_tag = "aerostat_door_inner";
 	locked = 1
@@ -1008,8 +948,6 @@
 "cP" = (
 /obj/tether_away_spawner/aerostat_inside,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
@@ -1089,8 +1027,6 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1098,13 +1034,9 @@
 /area/tether_away/aerostat/solars)
 "dc" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1115,13 +1047,9 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1129,13 +1057,9 @@
 /area/tether_away/aerostat/solars)
 "de" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1166,7 +1090,6 @@
 	},
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/rust,
@@ -1205,7 +1128,6 @@
 	},
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/rust,
@@ -1219,16 +1141,12 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
 "do" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -1242,8 +1160,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1251,8 +1167,6 @@
 /area/tether_away/aerostat/solars)
 "dq" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1271,13 +1185,11 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/door/airlock/maintenance/common,
+/obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "dt" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -1285,13 +1197,9 @@
 /area/tether_away/aerostat/solars)
 "du" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1302,8 +1210,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1315,13 +1221,9 @@
 /area/tether_away/aerostat/solars)
 "dx" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -1339,13 +1241,9 @@
 /area/tether_away/aerostat/inside)
 "dz" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -1358,13 +1256,9 @@
 /area/tether_away/aerostat/solars)
 "dB" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1375,13 +1269,9 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1404,8 +1294,6 @@
 /area/tether_away/aerostat/solars)
 "dF" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -1416,7 +1304,6 @@
 /area/tether_away/aerostat/solars)
 "dG" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/warning/dust,
@@ -1426,8 +1313,6 @@
 /area/tether_away/aerostat/solars)
 "dH" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust,
@@ -1436,7 +1321,6 @@
 /area/tether_away/aerostat/solars)
 "dI" = (
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/solar,
@@ -1465,8 +1349,6 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/bluegrid/virgo2,
@@ -1474,8 +1356,7 @@
 "dM" = (
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
@@ -1491,16 +1372,6 @@
 	},
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
-"dP" = (
-/obj/effect/floor_decal/rust,
-/obj/machinery/door/airlock/external{
-	frequency = 1089;
-	icon_state = "door_locked";
-	id_tag = "aerostat_door_outer";
-	locked = 1
-	},
-/turf/simulated/floor/plating/virgo2,
-/area/tether_away/aerostat/inside)
 "dQ" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
@@ -1512,7 +1383,6 @@
 /obj/machinery/power/solar,
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/rust,
@@ -1521,8 +1391,6 @@
 "dS" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1533,8 +1401,6 @@
 	dir = 6
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/rust,
@@ -1546,9 +1412,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/solars)
 "dV" = (
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = 25;
 	pixel_y = -5
@@ -1557,9 +1421,7 @@
 /area/tether_away/aerostat/inside)
 "dW" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = 10;
 	pixel_y = 25
@@ -1568,9 +1430,7 @@
 /area/tether_away/aerostat/inside)
 "dX" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = 10;
 	pixel_y = -25
@@ -1580,7 +1440,6 @@
 "dY" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1089;
 	id_tag = "aerostat_doors";
 	name = "Aerostat Airlock Controller";
 	pixel_y = 25;
@@ -1607,9 +1466,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = -25;
 	pixel_y = 25
@@ -1619,9 +1476,7 @@
 "ec" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/effect/floor_decal/rust,
-/obj/machinery/access_button{
-	frequency = 1089;
-	master_tag = "aerostat_doors";
+/obj/machinery/button/access{
 	name = "Aerostat Shuttle Dock";
 	pixel_x = -25;
 	pixel_y = -25
@@ -1655,15 +1510,15 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "tZ" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/powercell,
 /obj/random/contraband,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "uU" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/gun/energy/taser/xeno,
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "xA" = (
@@ -1681,7 +1536,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/obj/random/cigarettes,
+/obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "DF" = (
@@ -1693,7 +1548,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "Gs" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/material,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
@@ -1710,7 +1565,7 @@
 /turf/unsimulated/floor/sky/virgo2_sky,
 /area/tether_away/aerostat)
 "Lw" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/powercell,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
@@ -1723,13 +1578,13 @@
 /turf/simulated/floor/bluegrid/virgo2,
 /area/tether_away/aerostat/inside)
 "Qe" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/effect/decal/cleanable/cobweb2,
 /obj/random/contraband,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "UC" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/powercell,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -1739,7 +1594,7 @@
 /turf/simulated/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "Ym" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/gun/energy/taser/xeno,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
@@ -11757,7 +11612,7 @@ aw
 bq
 be
 ac
-aM
+aQ
 cP
 dK
 dM
@@ -16018,7 +15873,7 @@ aw
 aa
 ac
 bv
-dP
+ea
 ea
 bv
 ac

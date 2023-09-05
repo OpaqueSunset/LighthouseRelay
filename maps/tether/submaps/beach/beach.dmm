@@ -14,7 +14,7 @@
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "ae" = (
-/obj/structure/frame,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/tether_away/beach)
 "af" = (
@@ -31,7 +31,7 @@
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "ai" = (
-/obj/machinery/power/port_gen/pacman/mrs,
+/obj/machinery/port_gen/pacman/mrs,
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "aj" = (
@@ -84,14 +84,12 @@
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "au" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 32
-	},
+/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "av" = (
-/obj/item/reagent_containers/food/drinks/bottle/wine,
-/obj/item/reagent_containers/food/drinks/bottle/rum,
+/obj/item/chems/drinks/bottle/wine,
+/obj/item/chems/drinks/bottle/rum,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
@@ -99,19 +97,18 @@
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "ax" = (
-/obj/machinery/button/remote/airlock{
-	id = "BaristoLoveShack";
+/obj/machinery/button/alternate/door/bolts{
 	name = "Door Bolt Control";
 	pixel_x = 25;
 	pixel_y = 0;
-	specialfunctions = 4
+	id_tag = "BaristoLoveShack"
 	},
 /obj/item/bedsheet/rainbow,
 /obj/structure/bed,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "ay" = (
-/obj/structure/toilet{
+/obj/structure/hygiene/toilet{
 	pixel_y = 8
 	},
 /turf/simulated/floor/wood,
@@ -130,26 +127,24 @@
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aB" = (
-/obj/structure/simple_door/wood,
+/obj/structure/door/wood,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aC" = (
-/obj/machinery/button/remote/airlock{
-	id = "Changing1";
+/obj/machinery/button/alternate/door/bolts{
 	name = "Door Bolt Control";
 	pixel_x = 25;
 	pixel_y = 0;
-	specialfunctions = 4
+	id_tag = "Changing1"
 	},
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aD" = (
-/obj/machinery/button/remote/airlock{
-	id = "Changing2";
+/obj/machinery/button/alternate/door/bolts{
 	name = "Door Bolt Control";
 	pixel_x = 25;
 	pixel_y = 0;
-	specialfunctions = 4
+	id_tag = "Changing2"
 	},
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
@@ -207,24 +202,23 @@
 /area/tether_away/beach)
 "aN" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/chems/drinks/shaker,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aO" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aP" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+/obj/item/chems/drinks/bottle/small/beer,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aQ" = (
 /obj/machinery/vending/boozeomat{
-	emagged = 1;
-	req_access = newlist()
+	emagged = 1
 	},
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
@@ -242,7 +236,7 @@
 /area/tether_away/beach)
 "aU" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/bottle/small/ale,
+/obj/item/chems/drinks/bottle/small/ale,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aV" = (
@@ -251,7 +245,7 @@
 /area/tether_away/beach)
 "aW" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/chems/drinks/cans/waterbottle,
 /turf/simulated/floor/wood,
 /area/tether_away/beach)
 "aX" = (
@@ -274,7 +268,7 @@
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "bc" = (
-/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+/obj/item/chems/drinks/cans/waterbottle,
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "bd" = (

@@ -10,27 +10,23 @@
 	pixel_y = 24;
 	alarms_hidden = 1
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "b" = (
 /obj/tether_away_spawner/shadekin{
 	faction = "underdark"
 	},
-/turf/simulated/mineral/floor/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "c" = (
-/turf/simulated/mineral/floor/virgo3b{
-	ignore_mapgen = 1
-	},
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "d" = (
-/obj/effect/decal/remains/deer,
-/turf/simulated/mineral/floor/virgo3b{
-	ignore_mapgen = 1
-	},
+/obj/item/remains/deer,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "e" = (
-/turf/unsimulated/mineral/virgo3b,
+/turf/unsimulated/mineral,
 /area/mine/explored/underdark)
 "f" = (
 /turf/simulated/mineral/virgo3b/rich,
@@ -45,14 +41,14 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "j" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "k" = (
 /obj/structure/cable/green{
@@ -62,38 +58,38 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "l" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "n" = (
 /obj/structure/railing,
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "o" = (
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "p" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "q" = (
 /obj/structure/cable/green{
 	icon_state = "5-8"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "r" = (
 /obj/structure/cable/green{
 	icon_state = "1-5"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "s" = (
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -121,21 +117,21 @@
 	icon_state = "railing0";
 	dir = 8
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "w" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 8
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "x" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 1
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "y" = (
 /turf/simulated/wall/iron,
@@ -153,11 +149,11 @@
 	icon_state = "bulb1";
 	dir = 8
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "C" = (
-/obj/machinery/door/airlock/maintenance/cargo,
-/turf/simulated/floor/virgo3b,
+/obj/machinery/door/airlock/maintenance,
+/turf/simulated/floor,
 /area/mine/explored/underdark)
 "D" = (
 /obj/machinery/light/small{
@@ -167,15 +163,15 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "E" = (
-/obj/item/tool/wrench,
+/obj/item/wrench,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "F" = (
-/obj/structure/frame,
+/obj/machinery/constructable_frame/machine_frame,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "G" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
+/obj/machinery/door/airlock/double/metal/mait{
 	dir = 2
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -185,14 +181,14 @@
 	icon_state = "bulb1";
 	dir = 4
 	},
-/turf/simulated/mineral/floor/virgo3b,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "I" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "J" = (
-/turf/simulated/mineral/floor/virgo3b,
+/turf/exterior/barren,
 /area/mine/unexplored/underdark)
 "K" = (
 /obj/structure/sign/graffiti/pisoff{
@@ -206,22 +202,20 @@
 /turf/simulated/wall/r_wall,
 /area/mine/explored/underdark)
 "N" = (
-/obj/effect/decal/remains/posi,
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/obj/item/remains/posi,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "R" = (
 /obj/item/bone,
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "S" = (
 /obj/item/bone,
-/turf/simulated/mineral/floor/virgo3b{
-	ignore_mapgen = 1
-	},
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "T" = (
-/obj/effect/decal/remains/mouse,
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/obj/item/remains/mouse,
+/turf/exterior/dirt,
 /area/mine/explored/underdark)
 "U" = (
 /obj/machinery/mineral/equipment_vendor/survey,
@@ -229,15 +223,11 @@
 /area/mine/explored/underdark)
 "W" = (
 /obj/item/bone/skull,
-/turf/simulated/mineral/floor/virgo3b{
-	ignore_mapgen = 1
-	},
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 "Z" = (
-/obj/effect/decal/remains/ribcage,
-/turf/simulated/mineral/floor/virgo3b{
-	ignore_mapgen = 1
-	},
+/obj/item/remains/ribcage,
+/turf/exterior/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

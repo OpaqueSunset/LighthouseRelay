@@ -3,7 +3,7 @@
 /turf/template_noop,
 /area/template_noop)
 "b" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/template_noop)
 "c" = (
 /turf/simulated/wall/virgo2,
@@ -57,7 +57,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "k" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox,
 /obj/random/tool,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -67,7 +67,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "m" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/tool,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
@@ -80,9 +80,9 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "o" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/hooded/wintercoat,
-/obj/item/clothing/shoes/boots/winter,
+/obj/structure/rack,
+/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/shoes/winterboots,
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
@@ -90,13 +90,13 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "p" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/hooded/wintercoat,
-/obj/item/clothing/shoes/boots/winter,
+/obj/structure/rack,
+/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/shoes/winterboots,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "q" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/random/toolbox,
 /obj/item/cell/super,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -117,23 +117,14 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "u" = (
-/obj/machinery/power/apc{
-	cell_type = /obj/item/cell/hyper;
-	dir = 8;
-	name = "Unknown APC";
-	operating = 0;
-	pixel_x = -24
-	},
+/obj/machinery/power/apc/hyper,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "v" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
@@ -142,20 +133,19 @@
 "w" = (
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "x" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/paper{
 	desc = "Gladstone for the last fucking time, We have crowbars for a REASON. Stop breaking in through the goddamn windows! We big red shiny doors for god's sakes!"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "y" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/flashlight/lamp,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
@@ -174,18 +164,18 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "C" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "D" = (
-/obj/structure/table/standard,
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/glass,
+/obj/structure/table,
+/obj/item/stack/material/sheet/mapped/steel/fifty,
+/obj/item/stack/material/pane/mapped/glass/fifty,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "E" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -195,7 +185,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "G" = (
-/obj/structure/sink{
+/obj/structure/hygiene/sink{
 	dir = 4;
 	icon_state = "sink";
 	pixel_x = 11;
@@ -215,7 +205,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "J" = (
-/obj/machinery/pros_fabricator,
+/obj/machinery/fabricator/robotics,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "K" = (
@@ -235,7 +225,7 @@
 /area/submap/virgo2/Lab1)
 "M" = (
 /obj/item/storage/bag/circuits,
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "N" = (
@@ -259,7 +249,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "R" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "S" = (
@@ -267,7 +257,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "T" = (
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
@@ -276,7 +266,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "V" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Lab1)
 "W" = (
 /turf/simulated/floor/plating/virgo2,

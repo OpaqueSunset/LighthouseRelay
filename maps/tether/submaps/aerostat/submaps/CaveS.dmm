@@ -14,11 +14,11 @@
 /area/submap/virgo2/CaveS)
 "f" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "g" = (
 /obj/effect/spider/stickyweb,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "h" = (
 /obj/item/ammo_casing/a45,
@@ -27,8 +27,8 @@
 /area/submap/virgo2/CaveS)
 "j" = (
 /obj/item/clothing/accessory/storage/webbing,
-/obj/item/material/knife/tacknife/combatknife,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/knife/combat,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "k" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -36,18 +36,18 @@
 /area/submap/virgo2/CaveS)
 "l" = (
 /obj/effect/decal/cleanable/cobweb,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "n" = (
 /obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "o" = (
 /obj/effect/mine,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "r" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "u" = (
 /turf/simulated/floor,
@@ -66,14 +66,12 @@
 /area/submap/virgo2/CaveS)
 "x" = (
 /obj/structure/table/woodentable,
-/obj/item/survivalcapsule,
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
 "y" = (
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
@@ -82,21 +80,19 @@
 /area/submap/virgo2/CaveS)
 "A" = (
 /obj/structure/closet/crate,
-/obj/item/reagent_containers/hypospray,
-/obj/item/reagent_containers/glass/bottle/stoxin,
-/obj/item/reagent_containers/glass/bottle/antitoxin,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/antitox,
-/obj/item/reagent_containers/pill/paracetamol,
+/obj/item/chems/hypospray,
+/obj/item/chems/glass/bottle/sedatives,
+/obj/item/chems/glass/bottle/antitoxin,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/antitox,
+/obj/item/chems/pill/paracetamol,
 /obj/random/firstaid,
 /obj/item/storage/firstaid/combat,
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
 "B" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2";
 	pixel_y = 0
 	},
@@ -108,34 +104,29 @@
 /obj/random/contraband,
 /obj/random/contraband,
 /obj/random/energy,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
-/obj/item/material/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
+/obj/item/star,
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
 "E" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
 "F" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	pixel_x = 0
 	},
 /turf/simulated/floor,
 /area/submap/virgo2/CaveS)
 "G" = (
-/obj/machinery/computer/communications,
+/obj/machinery/computer/modular/preset/cardslot/command,
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor,

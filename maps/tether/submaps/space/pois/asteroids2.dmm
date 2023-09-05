@@ -3,7 +3,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "b" = (
-/turf/simulated/mineral/vacuum,
+/turf/exterior/wall,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

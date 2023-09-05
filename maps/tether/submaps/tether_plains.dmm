@@ -1,12 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/tether/outpost/exploration_plains)
 "ac" = (
-/turf/unsimulated/mineral/virgo3b,
+/turf/unsimulated/mineral,
 /area/mine/explored)
 "ad" = (
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/tether/outpost/exploration_plains)
 "ae" = (
 /turf/simulated/mineral/virgo3b/rich,
@@ -25,12 +25,12 @@
 /area/tether/outpost/exploration_shed)
 "ai" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 1;
-	id = "wilderness";
 	name = "Anti-Fauna shutters";
 	pixel_x = 0;
-	pixel_y = -25
+	pixel_y = -25;
+	id_tag = "wilderness"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
@@ -58,7 +58,6 @@
 	pixel_x = 24
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
@@ -66,17 +65,17 @@
 "am" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/green,
-/obj/machinery/power/port_gen/pacman,
+/obj/machinery/port_gen/pacman,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "an" = (
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/tether/outpost/exploration_shed)
 "ao" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "wilderness";
-	name = "Anti-Fauna Shutters"
+	name = "Anti-Fauna Shutters";
+	id_tag = "wilderness"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
@@ -84,23 +83,23 @@
 /obj/effect/floor_decal/rust,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
-	id = "wilderness";
-	name = "Anti-Fauna Shutters"
+	name = "Anti-Fauna Shutters";
+	id_tag = "wilderness"
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "aq" = (
-/obj/machinery/button/remote/blast_door{
+/obj/machinery/button/blast_door{
 	dir = 2;
-	id = "wilderness";
 	name = "Anti-Fauna shutters";
 	pixel_x = -1;
-	pixel_y = 25
+	pixel_y = 25;
+	id_tag = "wilderness"
 	},
-/turf/simulated/floor/outdoors/dirt/virgo3b,
+/turf/exterior/dirt,
 /area/tether/outpost/exploration_shed)
 "ar" = (
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/exterior/sif_growth,
 /area/tether/outpost/exploration_shed)
 "as" = (
 /turf/unsimulated/wall/planetary/virgo3b,
@@ -113,15 +112,15 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "bF" = (
-/turf/simulated/mineral/virgo3b,
+/turf/exterior/wall,
 /area/mine/unexplored)
 "BE" = (
-/mob/living/simple_mob/animal/space/goose/virgo3b,
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/mob/living/simple_animal/space/goose/virgo3b,
+/turf/exterior/sif_growth,
 /area/tether/outpost/exploration_plains)
 "Em" = (
-/mob/living/simple_mob/animal/passive/gaslamp,
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/mob/living/simple_animal/gaslamp,
+/turf/exterior/sif_growth,
 /area/tether/outpost/exploration_plains)
 
 (1,1,1) = {"

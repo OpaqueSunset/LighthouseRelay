@@ -9,16 +9,16 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
 	},
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "ad" = (
 /obj/structure/closet/crate/secure/engineering,
-/obj/item/tool/screwdriver/power,
-/obj/item/tool/crowbar/power,
-/obj/item/tool/screwdriver/power,
-/obj/item/tool/crowbar/power,
+/obj/item/screwdriver/power,
+/obj/item/crowbar/power,
+/obj/item/screwdriver/power,
+/obj/item/crowbar/power,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "ae" = (
 /obj/structure/closet/crate/trashcart,
@@ -31,31 +31,31 @@
 /area/tether_away/debrisfield/explored)
 "ag" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "ah" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "ai" = (
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aj" = (
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "ak" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/material/shard/shrapnel,
-/turf/simulated/shuttle/plating/airless,
+/obj/item/shard/shrapnel,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "al" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "am" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/oil,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "an" = (
 /obj/structure/girder/displaced,
@@ -63,70 +63,70 @@
 /area/tether_away/debrisfield/explored)
 "ao" = (
 /obj/structure/girder/displaced,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "ap" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aq" = (
-/obj/item/stack/material/steel,
+/obj/item/stack/material/sheet/mapped/steel,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "ar" = (
 /obj/item/inflatable/torn,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "as" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "at" = (
 /obj/item/inflatable/door/torn,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "au" = (
 /obj/structure/inflatable,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "av" = (
 /obj/structure/door_assembly/door_assembly_com,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aw" = (
 /obj/structure/lattice,
-/obj/item/stack/material/steel,
+/obj/item/stack/material/sheet/mapped/steel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "ax" = (
 /obj/structure/lattice,
-/obj/item/stack/material/steel,
-/obj/item/material/shard/shrapnel,
+/obj/item/stack/material/sheet/mapped/steel,
+/obj/item/shard/shrapnel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "ay" = (
-/obj/item/stack/rods,
+/obj/item/stack/material/rods,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "az" = (
 /obj/structure/girder,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aA" = (
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aB" = (
 /obj/structure/girder,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aD" = (
 /obj/structure/girder/displaced,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aE" = (
 /obj/structure/lattice,
@@ -141,7 +141,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "aG" = (
-/obj/item/material/shard/shrapnel,
+/obj/item/shard/shrapnel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "aH" = (
@@ -152,110 +152,108 @@
 /area/tether_away/debrisfield/explored)
 "aJ" = (
 /obj/structure/grille,
-/obj/item/material/shard,
+/obj/item/shard,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aK" = (
-/obj/item/material/shard,
+/obj/item/shard,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/plating/airless,
+/turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aL" = (
 /obj/item/inflatable/torn,
-/obj/effect/decal/remains,
-/obj/item/clothing/under/rank/cargotech,
+/obj/item/remains,
+/obj/item/clothing/under/cargotech,
 /obj/item/clothing/head/soft,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aM" = (
 /obj/structure/closet/secure_closet/cargotech{
-	name = "cargotech locker";
-	req_access = list()
+	name = "cargotech locker"
 	},
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aN" = (
 /obj/structure/closet/emcloset,
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aO" = (
 /obj/item/inflatable/door/torn,
-/obj/effect/decal/remains,
-/obj/item/clothing/under/rank/cargotech,
+/obj/item/remains,
+/obj/item/clothing/under/cargotech,
 /obj/item/clothing/head/soft,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aP" = (
 /obj/machinery/computer/shuttle{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aQ" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aR" = (
 /obj/structure/closet/secure_closet/quartermaster{
-	name = "quartermaster locker";
-	req_access = list()
+	name = "quartermaster locker"
 	},
 /obj/item/clothing/under/mbill,
 /obj/item/clothing/head/soft/mbill,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aS" = (
 /obj/structure/closet/crate/secure/bin,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aT" = (
 /obj/structure/closet/emcloset,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aU" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aV" = (
 /obj/machinery/computer/shuttle{
 	dir = 8
 	},
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aW" = (
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/item/clothing/under/mbill,
 /obj/item/clothing/head/soft/mbill,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aX" = (
 /obj/structure/bed/chair,
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "aY" = (
 /obj/structure/bed/chair/comfy/teal,
-/turf/simulated/shuttle/floor/white/airless,
+/turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aZ" = (
 /obj/machinery/computer/shuttle{
 	dir = 1
 	},
-/turf/simulated/shuttle/floor/airless,
+/turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "bb" = (
 /obj/structure/lattice,
-/obj/item/material/shard/shrapnel,
+/obj/item/shard/shrapnel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "bc" = (
 /obj/structure/lattice,
 /obj/effect/decal/cleanable/molten_item,
-/obj/item/material/shard/shrapnel,
+/obj/item/shard/shrapnel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "bd" = (

@@ -3,27 +3,27 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "b" = (
-/turf/simulated/mineral/vacuum,
+/turf/exterior/wall,
 /area/tether_away/debrisfield/explored)
 "c" = (
-/turf/simulated/mineral/floor/vacuum,
+/turf/exterior/barren,
 /area/tether_away/debrisfield/explored)
 "d" = (
 /turf/simulated/wall/wood,
 /area/tether_away/debrisfield/explored)
 "e" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
-/obj/item/reagent_containers/food/snacks/carpmeat,
+/obj/item/chems/food/carpmeat,
+/obj/item/chems/food/carpmeat,
+/obj/item/chems/food/carpmeat,
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "f" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/condiment/coldsauce,
-/obj/item/reagent_containers/food/condiment/ketchup,
-/obj/item/reagent_containers/food/condiment/hotsauce,
-/obj/item/reagent_containers/food/condiment/soysauce,
+/obj/item/chems/condiment/coldsauce,
+/obj/item/chems/condiment/ketchup,
+/obj/item/chems/condiment/hotsauce,
+/obj/item/chems/condiment/soysauce,
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "g" = (
@@ -32,7 +32,7 @@
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "h" = (
-/obj/structure/simple_door/wood,
+/obj/structure/door/wood,
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "i" = (
@@ -40,13 +40,13 @@
 /area/tether_away/debrisfield/explored)
 "j" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/food/snacks/taco,
-/obj/item/reagent_containers/food/snacks/taco,
-/obj/item/reagent_containers/food/snacks/taco,
-/obj/item/reagent_containers/food/snacks/hotdog,
-/obj/item/reagent_containers/food/snacks/hotdog,
-/obj/item/reagent_containers/food/snacks/cheeseburrito,
-/obj/item/reagent_containers/food/snacks/cheeseburrito,
+/obj/item/chems/food/taco,
+/obj/item/chems/food/taco,
+/obj/item/chems/food/taco,
+/obj/item/chems/food/hotdog,
+/obj/item/chems/food/hotdog,
+/obj/item/chems/food/cheeseburrito,
+/obj/item/chems/food/cheeseburrito,
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "k" = (
@@ -55,7 +55,7 @@
 /area/tether_away/debrisfield/explored)
 "l" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/snacks/taco,
+/obj/item/chems/food/taco,
 /turf/simulated/floor/wood,
 /area/tether_away/debrisfield/explored)
 "m" = (

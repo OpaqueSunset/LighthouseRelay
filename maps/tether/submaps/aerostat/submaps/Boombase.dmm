@@ -6,12 +6,12 @@
 /turf/template_noop,
 /area/submap/virgo2/BoomBase)
 "ac" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/template_noop,
 /area/submap/virgo2/BoomBase)
 "ad" = (
-/obj/item/material/shard,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/shard,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "ae" = (
 /turf/simulated/floor/plating/virgo2,
@@ -22,7 +22,7 @@
 /area/submap/virgo2/BoomBase)
 "ag" = (
 /obj/structure/girder,
-/obj/item/stack/rods,
+/obj/item/stack/material/rods,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "ah" = (
@@ -50,14 +50,14 @@
 "am" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spider,
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "an" = (
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "ao" = (
-/mob/living/simple_mob/animal/space/jelly,
+/mob/living/simple_animal/space/jelly,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "ap" = (
@@ -66,15 +66,15 @@
 /area/submap/virgo2/BoomBase)
 "aq" = (
 /obj/machinery/portable_atmospherics/canister/empty/phoron,
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "ar" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "as" = (
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "at" = (
@@ -96,30 +96,30 @@
 /area/submap/virgo2/BoomBase)
 "ax" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/animal/space/jelly,
+/mob/living/simple_animal/space/jelly,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "ay" = (
-/obj/structure/table,
+/obj/structure/table/frame,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "az" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/standard,
+/obj/structure/table,
 /obj/item/tank/phoron,
 /obj/item/fuel_assembly/phoron,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "aA" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "aB" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aC" = (
-/obj/item/material/shard,
+/obj/item/shard,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "aD" = (
@@ -128,7 +128,7 @@
 /area/submap/virgo2/BoomBase)
 "aE" = (
 /obj/item/transfer_valve,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -136,8 +136,8 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "aG" = (
-/obj/effect/decal/remains/human,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/remains/human,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -146,7 +146,7 @@
 /area/submap/virgo2/BoomBase)
 "aI" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aJ" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
@@ -154,16 +154,16 @@
 /area/submap/virgo2/BoomBase)
 "aT" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aU" = (
 /obj/effect/decal/cleanable/ash,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aV" = (
 /obj/effect/spider/stickyweb,
-/obj/item/material/shard,
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/obj/item/shard,
+/turf/exterior/barren,
 /area/submap/virgo2/BoomBase)
 "aY" = (
 /obj/effect/spider/stickyweb,
@@ -171,12 +171,12 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "aZ" = (
-/obj/effect/decal/remains/human,
+/obj/item/remains/human,
 /obj/effect/decal/cleanable/ash,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "ba" = (
-/obj/item/stack/rods,
+/obj/item/stack/material/rods,
 /turf/simulated/wall/virgo2,
 /area/submap/virgo2/BoomBase)
 

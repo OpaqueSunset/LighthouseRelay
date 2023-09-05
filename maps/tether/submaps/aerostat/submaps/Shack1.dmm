@@ -9,7 +9,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Shack1)
 "d" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/submap/virgo2/Shack1)
 "e" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -18,7 +18,7 @@
 	},
 /area/submap/virgo2/Shack1)
 "f" = (
-/obj/structure/table/wooden_reinforced,
+/obj/structure/table/woodentable_reinforced,
 /turf/simulated/floor/wood,
 /area/submap/virgo2/Shack1)
 "g" = (
@@ -60,14 +60,14 @@
 /area/submap/virgo2/Shack1)
 "p" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wooden_reinforced,
+/obj/structure/table/woodentable_reinforced,
 /obj/item/storage/toolbox,
 /turf/simulated/floor/wood,
 /area/submap/virgo2/Shack1)
 "q" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wooden_reinforced,
-/obj/item/material/twohanded/fireaxe/scythe,
+/obj/structure/table/woodentable_reinforced,
+/obj/item/twohanded/fireaxe/scythe,
 /turf/simulated/floor/wood,
 /area/submap/virgo2/Shack1)
 "r" = (
@@ -81,12 +81,12 @@
 /area/submap/virgo2/Shack1)
 "t" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wooden_reinforced,
+/obj/structure/table/woodentable_reinforced,
 /obj/item/flashlight/lamp,
 /turf/simulated/floor/wood,
 /area/submap/virgo2/Shack1)
 "v" = (
-/turf/simulated/mineral/floor/ignore_mapgen/virgo2,
+/turf/exterior/barren,
 /area/template_noop)
 "O" = (
 /obj/effect/decal/cleanable/dirt,

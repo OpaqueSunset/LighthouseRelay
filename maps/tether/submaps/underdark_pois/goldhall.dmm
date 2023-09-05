@@ -13,7 +13,7 @@
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "e" = (
-/obj/item/reagent_containers/food/condiment/ketchup,
+/obj/item/chems/condiment/ketchup,
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "f" = (
@@ -22,7 +22,7 @@
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "g" = (
-/obj/effect/decal/remains,
+/obj/item/remains,
 /obj/item/ore/bluespace_crystal,
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
@@ -52,7 +52,7 @@
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "U" = (
-/obj/structure/trash_pile,
+/obj/random/loot_pile,
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 
