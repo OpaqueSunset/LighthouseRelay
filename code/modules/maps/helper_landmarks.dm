@@ -4,17 +4,13 @@
 	var/centered = TRUE
 	var/list/map_template_names	//list of template names to pick from
 
-INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 /obj/abstract/landmark/map_load_mark/Initialize()
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
 // Cheap hack to get around not being able to use waitfor=FALSE in load_subtemplate.
 /obj/abstract/landmark/map_load_mark/LateInitialize()
-	if(SSmapping.initialized)
-		load_subtemplate()
-	else
-		SSmapping.queued_markers += src
+	load_subtemplate()
 
 /obj/abstract/landmark/map_load_mark/proc/get_subtemplate()
 	. = LAZYLEN(map_template_names) && pick(map_template_names)
