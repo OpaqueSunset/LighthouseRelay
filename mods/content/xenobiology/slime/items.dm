@@ -126,5 +126,4 @@
 				to_chat(G, "Golem rune created in [A.proper_name].")
 
 /obj/item/slime_extract/random/Initialize(ml, material)
-	var/list/slime_colours = decls_repository.get_decls_of_subtype(/decl/slime_colour)
-	. = ..(ml, material, _stype = slime_colours[pick(slime_colours)])
+	. = ..(ml, material, _stype = pick(decls_repository.get_decls_of_subtype(/decl/slime_colour)))
