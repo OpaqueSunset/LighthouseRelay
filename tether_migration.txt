@@ -177,6 +177,10 @@
 # TODO: remove impure areas altogether!
 /area/syndicate_station/mining{base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b} : /area/syndicate_station/mining{base_turf = /turf/exterior/dirt}
 
+/obj/structure/window/@SUBTYPES{icon_state = "fwindow"} : /obj/structure/window/@SUBTYPES{@OLD; icon_state = @SKIP}
+/obj/structure/window/reinforced/reinforced/polarized/full{dir = 10} : /obj/structure/window/reinforced/polarized/full{@OLD; dir = @SKIP}
+/obj/structure/window/reinforced/reinforced/polarized/full{dir = 10} : /obj/structure/window/reinforced/polarized/full{@OLD; dir = @SKIP}
+
 /obj/machinery/vending/wallmed_airlock : /obj/machinery/vending/wallmed1/airlock{@OLD}
 
 /turf/space/bluespace : /turf/space/infinity/bluespace{@OLD}
@@ -557,6 +561,7 @@
 /obj/machinery/station_map : /obj/machinery/holomap{@OLD}
 /obj/machinery/requests_console/@SUBTYPES : /obj/machinery/network/requests_console/@SUBTYPES{@OLD; departmentType = @SKIP}
 /obj/machinery/camera/network/research{network = list("Xenobiology")} : /obj/machinery/camera/network/research/xenobio{@OLD; network = @SKIP}
+/obj/machinery/camera/network/research{network = list("Xenobiology")} : /obj/machinery/camera/network/research/xenobio{@OLD; network = @SKIP}
 /obj/machinery/camera/network/northern_star : /obj/machinery/camera/network/tether{@OLD}
 
 /obj/item/duct_tape_piece : /obj/item/duct_tape{@OLD}
@@ -616,3 +621,4 @@
 # we don't have these
 /obj/item/book/manual/hydroponics_pod_people : @DELETE
 /obj/machinery/scale : @DELETE
+/obj/machinery/sleep_console : @DELETE

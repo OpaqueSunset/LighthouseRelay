@@ -190,7 +190,6 @@
 /obj/machinery/seed_storage/brig
 /obj/machinery/shield_generator/external
 /obj/machinery/shuttle_sensor
-/obj/machinery/sleep_console
 /obj/machinery/smartfridge/chemistry/chemvator/down
 /obj/machinery/suit_cycler/director
 /obj/machinery/suit_cycler/exploration

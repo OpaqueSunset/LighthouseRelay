@@ -2824,7 +2824,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "eU" = (
-/obj/machinery/computer/modular/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "eV" = (
@@ -3015,7 +3017,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
-/obj/machinery/vending/fitness,
+/obj/machinery/vending/fitness{
+	dir = 8
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "fr" = (
@@ -3143,7 +3147,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "fG" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 8
+	},
 /obj/effect/floor_decal/steeldecal/steel_decals9,
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 4
@@ -3224,8 +3230,7 @@
 "fO" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "rwindow_full";
 	id = "chapel"
 	},
@@ -3249,8 +3254,7 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/disposalpipe/segment,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "rwindow_full";
 	id = "chapel"
 	},
@@ -3591,7 +3595,9 @@
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "gz" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 8
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -3897,8 +3903,7 @@
 "ha" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -5523,7 +5528,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor,
@@ -5569,7 +5574,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/techfloor,
@@ -6514,8 +6519,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/disposalpipe/segment,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor/plating,
@@ -6523,8 +6527,7 @@
 "mA" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor/plating,
@@ -8881,7 +8884,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -11507,7 +11510,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -11560,7 +11563,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -14532,7 +14535,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/medbay_emt_bay)
@@ -15040,7 +15043,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -15279,10 +15282,6 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle,
-/area/shuttle/large_escape_pod1/station)
-"Da" = (
-/obj/machinery/sleep_console,
 /turf/simulated/floor/shuttle,
 /area/shuttle/large_escape_pod1/station)
 "Db" = (
@@ -15589,8 +15588,7 @@
 "Fj" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -16034,8 +16032,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -16538,8 +16535,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -16680,7 +16676,9 @@
 /turf/simulated/floor/bluegrid,
 /area/ai_upload)
 "Mg" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 8
+	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
@@ -17041,8 +17039,7 @@
 "Of" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "chapel"
 	},
 /obj/structure/window/reinforced/tinted,
@@ -18790,8 +18787,7 @@
 "Yv" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	id = "wardobv"
 	},
 /obj/machinery/door/blast/regular/open{
@@ -30358,7 +30354,7 @@ BL
 BX
 Ct
 Ct
-Da
+Ct
 BW
 yY
 ac

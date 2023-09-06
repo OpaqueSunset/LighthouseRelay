@@ -1353,8 +1353,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "hos_office"
 	},
@@ -1378,8 +1377,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "hos_office"
 	},
@@ -1795,8 +1793,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/cable/green,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "hos_office"
 	},
@@ -3279,8 +3276,8 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -3791,7 +3788,7 @@
 "hc" = (
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -21
 	},
 /turf/simulated/floor,
 /area/maintenance/station/ai)
@@ -6855,8 +6852,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/table/steel,
 /obj/item/storage/box/nifsofts_security,
@@ -7768,8 +7765,7 @@
 	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "sec_processing"
 	},
@@ -8454,8 +8450,8 @@
 	dir = 10
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/machinery/camera/network/security{
 	dir = 4
@@ -9250,8 +9246,7 @@
 "qQ" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "sec_processing"
 	},
@@ -10724,8 +10719,7 @@
 "tc" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
@@ -11778,8 +11772,7 @@
 	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
@@ -11799,8 +11792,7 @@
 	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
@@ -11839,8 +11831,7 @@
 	name = "Security Blast Doors"
 	},
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
@@ -12553,8 +12544,7 @@
 "wf" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
@@ -13363,7 +13353,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /obj/item/book/manual/standard_operating_procedure,
 /turf/simulated/floor/tiled,
@@ -15432,8 +15422,7 @@
 /area/hallway/station/upper)
 "AA" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "psych-tint"
 	},
@@ -16046,7 +16035,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/wood,
 /area/medical/psych)
@@ -17514,6 +17503,9 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
+/obj/machinery/gateway{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "EC" = (
@@ -17521,6 +17513,9 @@
 	name = "JoinLateGateway"
 	},
 /obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/gateway{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -17531,6 +17526,9 @@
 	},
 /obj/machinery/computer/cryopod/gateway{
 	pixel_x = 32
+	},
+/obj/machinery/gateway{
+	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
@@ -17854,6 +17852,9 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
 	},
+/obj/machinery/gateway{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Fq" = (
@@ -17861,6 +17862,12 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Fr" = (
+/obj/machinery/gateway{
+	dir = 4
+	},
+/obj/machinery/gateway{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Fs" = (
@@ -17868,6 +17875,9 @@
 	dir = 4
 	},
 /obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/gateway{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -18336,20 +18346,31 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 10
 	},
+/obj/machinery/gateway{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Gg" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/machinery/gateway,
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Gh" = (
 /obj/effect/floor_decal/techfloor/orange,
+/obj/machinery/gateway{
+	dir = 10
+	},
+/obj/machinery/gateway{
+	dir = 6
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Gi" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/effect/floor_decal/techfloor/hole/right,
+/obj/machinery/gateway,
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Gj" = (
@@ -18359,6 +18380,9 @@
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
+	},
+/obj/machinery/gateway{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
@@ -19875,8 +19899,7 @@
 "Jg" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "resleeving-tint"
 	},
@@ -20325,8 +20348,7 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "resleeving-tint"
 	},
@@ -20538,8 +20560,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
@@ -20969,7 +20991,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Lk" = (
-/obj/machinery/sleep_console,
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
@@ -21101,8 +21122,7 @@
 "Lw" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "surgeryobs2"
 	},
@@ -21480,8 +21500,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -21499,7 +21519,9 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Mi" = (
-/obj/machinery/body_scanconsole,
+/obj/machinery/body_scanconsole{
+	dir = 8
+	},
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
@@ -21751,10 +21773,6 @@
 	pixel_y = 22
 	},
 /obj/structure/table/glass,
-/obj/machinery/computer/modular/preset/civilian{
-	pixel_x = -6;
-	pixel_y = -3
-	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "MA" = (
@@ -21831,8 +21849,7 @@
 "ME" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "cmooffice"
 	},
@@ -22169,7 +22186,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Na" = (
-/obj/machinery/sleep_console,
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
@@ -22469,8 +22485,7 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "cmooffice_b"
 	},
@@ -23012,8 +23027,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "cmooffice_b"
 	},
@@ -23026,8 +23040,7 @@
 "Ox" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "mrecovery-tint"
 	},
@@ -23060,8 +23073,7 @@
 "Oz" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "exam_room"
 	},
@@ -23573,8 +23585,7 @@
 "Pe" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr1_window_tint"
 	},
@@ -23608,8 +23619,7 @@
 "Ph" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr2_window_tint"
 	},
@@ -23643,8 +23653,7 @@
 "Pk" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr3_window_tint"
 	},
@@ -23775,8 +23784,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -24143,8 +24152,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_a)
@@ -24180,8 +24189,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_b)
@@ -24217,8 +24226,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_c)
@@ -24619,8 +24628,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr1_window_tint"
 	},
@@ -24630,8 +24638,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr2_window_tint"
 	},
@@ -24641,8 +24648,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "pr3_window_tint"
 	},
@@ -24694,7 +24700,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -21
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/white,
@@ -24709,6 +24715,12 @@
 	dir = 9
 	},
 /obj/structure/bed/chair{
+	dir = 1
+	},
+/obj/machinery/button/access{
+	command = "cycle_exterior";
+	name = "Psychiatric Ward Access";
+	pixel_y = -22;
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -24730,6 +24742,7 @@
 	})
 "QT" = (
 /obj/abstract/map_data{
+	UT_turf_exceptions_by_door_type = list(/obj/machinery/door/firedoor/glass = list(/turf/simulated/open));
 	height = 7
 	},
 /turf/space,
@@ -25188,8 +25201,7 @@
 /area/medical/psych_ward)
 "RH" = (
 /obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "exam_room"
 	},
@@ -25212,6 +25224,9 @@
 	},
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 6
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -25341,8 +25356,7 @@
 "Sk" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "exam_room"
 	},
@@ -25405,7 +25419,7 @@
 	c_tag = "MED - Psych Ward Center"
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -25684,6 +25698,12 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
 	},
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	name = "Psychiatric Ward Interior";
+	pixel_y = 24;
+	directional_offset = "{'NORTH':{'y':-22}, 'SOUTH':{'y':24}, 'sEAST':{'x':-20}, 'WEST':{'x':20}}"
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "TA" = (
@@ -25844,7 +25864,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -21
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 9
@@ -25876,10 +25896,10 @@
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	id_tag = "psych_airlock_control";
 	name = "Psychiatric Ward Access Console";
-	pixel_x = 8;
 	pixel_y = -22;
 	tag_exterior_door = "psych_airlock_exterior";
-	tag_interior_door = "psych_airlock_interior"
+	tag_interior_door = "psych_airlock_interior";
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -26042,7 +26062,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -21
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 8
@@ -26165,12 +26185,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	name = "Psychiatric Ward Interior";
-	pixel_x = 28;
-	pixel_y = -8
-	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown"
@@ -26307,10 +26321,15 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/button/access{
+	command = "cycle_exterior";
+	name = "Psychiatric Ward Access";
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -26322,12 +26341,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "Psychiatric Ward Access";
-	pixel_x = -28;
-	pixel_y = 8
-	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
 	name = "Riot Control Lockdown"
@@ -26674,7 +26687,7 @@
 /obj/structure/table,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /obj/item/storage/box/gloves{
 	pixel_x = 4;
@@ -26769,7 +26782,7 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	pixel_x = -23
+	pixel_x = -21
 	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -27131,6 +27144,21 @@
 /obj/structure/bed/chair/comfy/brown,
 /turf/simulated/floor/wood,
 /area/medical/psych)
+"YB" = (
+/obj/abstract/landmark{
+	name = "JoinLateGateway"
+	},
+/obj/effect/floor_decal/techfloor/orange{
+	dir = 1
+	},
+/obj/machinery/gateway{
+	dir = 5
+	},
+/obj/machinery/gateway{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/teleporter/departing)
 "YC" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -27165,6 +27193,13 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	name = "Psychiatric Ward Interior";
+	pixel_y = -22;
+	directional_offset = "{'NORTH':{'y':-22}, 'SOUTH':{'y':24}, 'sEAST':{'x':-20}, 'WEST':{'x':20}}";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "YK" = (
@@ -27476,8 +27511,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced,
-/obj/structure/window/reinforced/polarized{
-	dir = 10;
+/obj/structure/window/reinforced/polarized/full{
 	icon_state = "fwindow";
 	id = "exam_room"
 	},
@@ -33729,7 +33763,7 @@ Bn
 Ce
 Dc
 DH
-EC
+YB
 Fr
 Gh
 GT
@@ -36030,7 +36064,7 @@ Ug
 Wq
 Yn
 RK
-Se
+Ug
 Ug
 UL
 UL

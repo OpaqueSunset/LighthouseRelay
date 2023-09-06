@@ -2448,7 +2448,9 @@
 /turf/simulated/floor/tiled,
 /area/security/checkpoint)
 "aeP" = (
-/obj/machinery/cryopod/robot/door/tram,
+/obj/machinery/cryopod/robot/door/tram{
+	dir = 2
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "aeQ" = (
@@ -3271,7 +3273,7 @@
 	},
 /obj/machinery/computer/cryopod{
 	name = "asset retention console";
-	pixel_y = -30
+	pixel_y = -32
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram,
 /obj/structure/railing/mapped{
@@ -4578,14 +4580,18 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site/east)
 "aiL" = (
-/obj/machinery/cryopod/robot/door/tram,
+/obj/machinery/cryopod/robot/door/tram{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "aiM" = (
-/obj/machinery/cryopod/robot/door/tram,
+/obj/machinery/cryopod/robot/door/tram{
+	dir = 1
+	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
@@ -6937,7 +6943,6 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/first_aid_west)
 "and" = (
-/obj/machinery/sleep_console,
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
@@ -32394,7 +32399,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/public_garden_one)
 "snt" = (
-/obj/machinery/sleep_console,
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},

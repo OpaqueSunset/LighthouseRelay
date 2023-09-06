@@ -5804,9 +5804,6 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
 "tG" = (
-/obj/machinery/sleep_console{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},

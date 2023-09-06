@@ -46,6 +46,16 @@
 
 	time_till_despawn = 1 SECOND //1 second, because gateway.
 
+/obj/machinery/cryopod/robot/door/gateway/move_inside()
+	. = ..()
+	for(var/obj/machinery/gateway/G in range(1,src))
+		G.update_icon()
+
+/obj/machinery/cryopod/robot/door/gateway/go_out()
+	. = ..()
+	for(var/obj/machinery/gateway/G in range(1,src))
+		G.update_icon()
+
 // Tram departure cryo doors that turn into ordinary airlock doors at round end
 /obj/machinery/cryopod/robot/door/tram
 	name = "\improper Tram Station"

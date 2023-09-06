@@ -77,6 +77,12 @@
 	icon_base = "dark"
 	color = null
 
+/turf/simulated/floor/tiled/monotile
+	initial_flooring = /decl/flooring/tiling/mono/steel
+
+/decl/flooring/tiling/mono/steel
+	icon_base = "steel_monotile"
+
 /turf/unsimulated/floor/wood
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_state = "wood"
