@@ -1742,6 +1742,7 @@
 /area/outpost/research/toxins_misc_lab)
 "dk" = (
 /obj/machinery/atmospherics/binary/pump,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "dl" = (
@@ -1896,9 +1897,13 @@
 	dir = 1;
 	target_pressure = 200
 	},
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
 	},
 /turf/exterior/sif_growth,
 /area/outpost/research/mixing)
@@ -1940,12 +1945,15 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "dK" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/omni/filter,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "dL" = (
@@ -3930,8 +3938,8 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
 "kl" = (
-/obj/structure/bed/sofa/right,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/bed/sofa/left/red,
 /turf/simulated/floor/carpet/bcarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "km" = (
@@ -4303,6 +4311,7 @@
 	dir = 4
 	},
 /obj/machinery/meter,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "lG" = (
@@ -4744,7 +4753,9 @@
 /turf/exterior/sif_growth,
 /area/tether/outpost/solars_outside)
 "nS" = (
-/obj/machinery/atmospherics/unary/tank/nitrogen,
+/obj/machinery/atmospherics/unary/tank/nitrogen{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "nU" = (
@@ -4936,8 +4947,10 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "pi" = (
-/obj/structure/bed/sofa/left,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/bed/sofa/right/red{
+	icon_state = "sofa_r_preview"
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "pk" = (
@@ -4991,10 +5004,6 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
-	},
-/obj/machinery/button/access/interior{
-	pixel_x = -29;
-	pixel_y = -28
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -5169,6 +5178,7 @@
 	name = "Restroom"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
 "qn" = (
@@ -5258,6 +5268,7 @@
 	},
 /obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "qS" = (
@@ -5321,6 +5332,7 @@
 	},
 /obj/machinery/meter,
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "rl" = (
@@ -5391,20 +5403,10 @@
 /turf/simulated/floor/reinforced/airless,
 /area/outpost/research/mixing)
 "rE" = (
-/obj/machinery/embedded_controller/radio/airlock/phoron{
-	id_tag = "outpost_mv_airlock";
-	name = "Airlock Control";
-	pixel_x = 30;
-	tag_airpump = "scioutpost_materialvent_pump";
-	tag_chamber_sensor = "outpost_mv_airlock_sensor";
-	tag_exterior_door = "scioutpost_materialvent_outer";
-	tag_interior_door = "scioutpost_materialvent_inner";
-	tag_scrubber = "scioutpost_matieral_scrub"
-	},
 /obj/machinery/airlock_sensor/phoron{
 	id_tag = "outpost_mv_airlock_sensor";
-	pixel_x = 30;
-	pixel_y = -10
+	pixel_x = 22;
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
@@ -5634,7 +5636,9 @@
 	id_tag = "burn_chamber_v";
 	name = "Burn Chamber Vent"
 	},
-/obj/machinery/atmospherics/pipe/manifold4w/visible,
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 4
+	},
 /turf/simulated/floor/reinforced/airless,
 /area/outpost/research/mixing)
 "sP" = (
@@ -5697,17 +5701,29 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_storage_hallway)
 "tc" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/window/reinforced{
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
 	},
-/obj/machinery/conveyor{
-	dir = 1;
-	id_tag = "canister_conveyors"
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/access/interior{
+	pixel_y = -22;
+	dir = 1
+	},
+/obj/machinery/embedded_controller/radio/airlock/phoron{
+	id_tag = "outpost_mv_airlock";
+	name = "Airlock Control";
+	tag_airpump = "scioutpost_materialvent_pump";
+	tag_chamber_sensor = "outpost_mv_airlock_sensor";
+	tag_exterior_door = "scioutpost_materialvent_outer";
+	tag_interior_door = "scioutpost_materialvent_inner";
+	tag_scrubber = "scioutpost_matieral_scrub";
+	pixel_y = 24
 	},
 /turf/simulated/floor/plating,
-/area/outpost/research/toxins_misc_lab)
+/area/outpost/research/materials_chamber)
 "tf" = (
 /obj/structure/grille,
 /obj/structure/window/borosilicate_reinforced/full,
@@ -5766,7 +5782,9 @@
 /area/outpost/research/simulator)
 "tz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/bed/sofa/left,
+/obj/structure/bed/sofa/right/red{
+	icon_state = "sofa_r_preview"
+	},
 /turf/simulated/floor/carpet/oracarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "tA" = (
@@ -5932,6 +5950,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "ul" = (
@@ -5951,7 +5970,7 @@
 /area/outpost/research/longtermstorage)
 "up" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/bed/sofa/right,
+/obj/structure/bed/sofa/left/red,
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "us" = (
@@ -6120,6 +6139,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "vr" = (
@@ -6350,6 +6370,7 @@
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "xh" = (
@@ -6450,6 +6471,7 @@
 "xO" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/effect/floor_decal/rust,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "xR" = (
@@ -6539,9 +6561,6 @@
 /turf/exterior/dirt,
 /area/tether/outpost/solars_outside)
 "yi" = (
-/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
 	},
@@ -6805,8 +6824,6 @@
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "zt" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -6818,6 +6835,12 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -7656,7 +7679,9 @@
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "DV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/bed/sofa/left,
+/obj/structure/bed/sofa/right/red{
+	icon_state = "sofa_r_preview"
+	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "DY" = (
@@ -7754,7 +7779,9 @@
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "EJ" = (
-/obj/machinery/atmospherics/unary/tank/oxygen,
+/obj/machinery/atmospherics/unary/tank/oxygen{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "EN" = (
@@ -7796,6 +7823,7 @@
 	tag_west = 3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "Fe" = (
@@ -7805,7 +7833,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/conveyor{
 	dir = 1;
@@ -8398,7 +8425,9 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "Jl" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "Jo" = (
@@ -8605,6 +8634,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 5
+	},
+/obj/machinery/button/access/interior{
+	pixel_y = -22;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
@@ -8817,9 +8850,7 @@
 "Lr" = (
 /obj/machinery/computer/air_control/large_tank_control{
 	frequency = 1550;
-	input_tag = null;
 	name = "Burn Chamber Air Control";
-	output_tag = null;
 	pressure_setting = 0
 	},
 /turf/simulated/floor/tiled/white,
@@ -8870,6 +8901,7 @@
 	dir = 5
 	},
 /obj/effect/floor_decal/rust,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "LC" = (
@@ -9160,18 +9192,13 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "Nm" = (
@@ -9279,6 +9306,7 @@
 	tag_west = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "NP" = (
@@ -9550,6 +9578,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 8
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "Qb" = (
@@ -9622,7 +9651,9 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/substation)
 "QA" = (
-/obj/machinery/atmospherics/unary/tank,
+/obj/machinery/atmospherics/unary/tank{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "QC" = (
@@ -9653,7 +9684,7 @@
 /area/outpost/research/atmospherics)
 "QI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/bed/sofa/right,
+/obj/structure/bed/sofa/left/red,
 /turf/simulated/floor/carpet/oracarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "QN" = (
@@ -10102,17 +10133,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
-"Tw" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/machinery/conveyor{
-	id_tag = "canister_conveyors"
-	},
-/turf/simulated/floor/plating,
-/area/outpost/research/toxins_misc_lab)
 "Tz" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/firedoor/glass,
@@ -10798,6 +10818,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/storage/tools)
 "XH" = (
@@ -29002,7 +29025,7 @@ hC
 Ss
 pR
 pR
-tc
+pR
 Fp
 Oa
 GT
@@ -29144,7 +29167,7 @@ hC
 Iu
 Qk
 Qk
-Tw
+Qk
 ce
 RG
 wU
@@ -29707,7 +29730,7 @@ Mk
 rf
 ab
 AF
-MR
+tc
 Js
 oa
 oa

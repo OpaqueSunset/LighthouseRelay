@@ -237,7 +237,9 @@
 /turf/simulated/floor/plating,
 /area/outpost/mining_main/maintenance)
 "aP" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
@@ -263,6 +265,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "aS" = (
@@ -272,6 +275,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 1
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "aT" = (
@@ -445,6 +449,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bf" = (
@@ -453,6 +458,7 @@
 	tag_north = 3;
 	tag_south = 2
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bg" = (
@@ -461,6 +467,7 @@
 	tag_north = 4;
 	tag_west = 2
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bh" = (
@@ -473,6 +480,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bi" = (
@@ -579,7 +587,9 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bq" = (
@@ -591,6 +601,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/outpost/mining_main/maintenance)
 "bs" = (

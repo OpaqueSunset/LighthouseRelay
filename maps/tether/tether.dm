@@ -50,6 +50,7 @@
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
 
 	#include "tether_leveldata.dm"
+	#include "tether_unit_testing.dm"
 
 	#include "atoms/areas.dm"
 	#include "atoms/decals.dm"

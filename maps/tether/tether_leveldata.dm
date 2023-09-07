@@ -31,6 +31,11 @@
 		/decl/material/gas/carbon_dioxide = VIRGO3B_MOL_CO2,
 		/decl/material/solid/phoron       = VIRGO3B_MOL_PHORON,
 	)
+	UT_turf_exceptions_by_door_type = list(
+		/obj/machinery/door/firedoor/glass = list(
+			/turf/simulated/open
+		)
+	)
 
 // cached typepaths to ensure different levels are consistent with each other
 // todo: consider giving virgo3b planetoid data instead??

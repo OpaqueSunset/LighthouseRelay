@@ -462,7 +462,7 @@
 /area/tether/surfacebase/mining_main/refinery)
 "abf" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-4-8"
+	icon_state = "1-4"
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor,
@@ -1386,7 +1386,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/tether/surfacebase/mining_main/eva)
 "acQ" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/mining_eva)
 "acR" = (
@@ -1901,7 +1903,9 @@
 /turf/simulated/wall,
 /area/tether/surfacebase/outside/outside1)
 "adL" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/mining_eva)
@@ -6580,6 +6584,9 @@
 "amm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/cap/hidden/supply{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site)
 "amn" = (
@@ -10114,7 +10121,6 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
@@ -17254,7 +17260,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "aGR" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
 "aGS" = (
@@ -20943,9 +20951,6 @@
 /obj/item/clothing/suit/space/void/excavation,
 /obj/item/clothing/head/helmet/space/void/excavation,
 /obj/item/clothing/mask/breath,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
@@ -21017,7 +21022,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/civ_west)
 "aSR" = (
-/obj/machinery/atmospherics/unary/tank/phoron,
+/obj/machinery/atmospherics/unary/tank/phoron{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/xenoflora)
 "aSS" = (
@@ -24525,11 +24532,11 @@
 /obj/machinery/status_display{
 	pixel_y = 30
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -24940,7 +24947,6 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
@@ -25225,7 +25231,6 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/structure/closet/hydrant{
 	pixel_x = -32
 	},
@@ -25332,10 +25337,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	icon_state = "1-2"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
@@ -31037,6 +31038,12 @@
 /obj/structure/table/bench/padded,
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar)
+"kCg" = (
+/obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/vacant/vacant_site)
 "kCO" = (
 /obj/machinery/light{
 	dir = 8
@@ -31089,7 +31096,9 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "kYw" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
 "kZc" = (
@@ -33435,7 +33444,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden)
 "xEV" = (
-/obj/machinery/atmospherics/unary/tank/air,
+/obj/machinery/atmospherics/unary/tank/air{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
@@ -39177,7 +39188,7 @@ bvP
 aEG
 azr
 aFL
-aDB
+aAb
 aAb
 azr
 aHe
@@ -40142,7 +40153,7 @@ akr
 akY
 alK
 amm
-akX
+kCg
 akX
 akX
 akX

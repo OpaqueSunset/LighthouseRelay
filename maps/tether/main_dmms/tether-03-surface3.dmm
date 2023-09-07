@@ -2715,10 +2715,12 @@
 /area/tether/surfacebase/security/lobby)
 "gO" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/structure/disposalpipe/junction{
 	dir = 4;
 	icon_state = "pipe-j2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/security/lobby)
@@ -9745,7 +9747,6 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/rnd/breakroom)
 "tG" = (
@@ -10847,12 +10848,8 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "vH" = (
@@ -14568,9 +14565,6 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/glass,
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -20405,7 +20399,6 @@
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/lounge)
 "On" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -20925,6 +20918,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hydroponics)
+"QA" = (
+/obj/structure/disposalpipe/broken,
+/turf/simulated/floor/tiled/old_tile,
+/area/vacant/vacant_site2)
 "QC" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -35646,7 +35643,7 @@ aw
 aw
 ax
 aq
-aq
+QA
 ii
 iV
 jY

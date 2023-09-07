@@ -308,7 +308,7 @@
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "aH" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -430,7 +430,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
 "aP" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
@@ -840,7 +840,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
 "bE" = (
-/obj/machinery/the_singularitygen,
+/obj/machinery/singularity_generator,
 /turf/simulated/floor/airless,
 /area/space)
 "bF" = (
@@ -1197,7 +1197,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
 "cm" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},

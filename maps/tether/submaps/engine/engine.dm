@@ -7,9 +7,11 @@
 	name = "R-UST Engine"
 	mappaths = list("maps/tether/submaps/engine/engine_rust.dmm")
 
+/* Not ready for prime-time just yet. TODO: Phoron tanks, phoron tank racks.
 /datum/map_template/engine/singularity
 	name = "Singularity Engine"
 	mappaths = list("maps/tether/submaps/engine/engine_singulo.dmm")
+*/
 
 /datum/map_template/engine/supermatter
 	name = "Supermatter Engine"

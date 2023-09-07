@@ -218,6 +218,12 @@
 /obj/fiftyspawner/steel : /obj/item/stack/material/sheet/mapped/steel/fifty
 /obj/fiftyspawner/glass : /obj/item/stack/material/pane/mapped/glass/fifty
 /obj/fiftyspawner/deuterium : /obj/item/stack/material/aerogel/mapped/deuterium/fifty
+/obj/fiftyspawner/tritium : /obj/item/stack/material/aerogel/mapped/tritium/fifty
+/obj/fiftyspawner/osmium : /obj/item/stack/material/aerogel/mapped/tritium/fifty
+/obj/fiftyspawner/phoron : /obj/item/stack/material/aerogel/mapped/tritium/fifty
+/obj/fiftyspawner/rods : /obj/item/stack/material/aerogel/mapped/tritium/fifty
+/obj/fiftyspawner/grass : /obj/item/stack/tile/grass{amount = 50}
+/obj/fiftyspawner/plasteel : /obj/item/stack/material/aerogel/mapped/tritium/fifty
 
 # MOB CONVERSIONS
 /mob/living/simple_mob/animal/passive/dog/corgi/Ian : /mob/living/simple_animal/corgi/Ian{@OLD}
@@ -270,6 +276,9 @@
 /obj/machinery/power/port_gen/@SUBTYPES : /obj/machinery/port_gen/@SUBTYPES{@OLD}
 /obj/machinery/power/generator : /obj/machinery/generator{@OLD}
 /obj/machinery/power/fusion_core/@SUBTYPES : /obj/machinery/fusion_core/@SUBTYPES{@OLD}
+/obj/machinery/the_singularitygen : /obj/machinery/singularity_generator{@OLD}
+/obj/machinery/power/rad_collector : /obj/machinery/rad_collector{@OLD}
+/obj/machinery/fusion_fuel_compressor : /obj/machinery/fuel_compressor{@OLD}
 /obj/item/smes_coil/@SUBTYPES : /obj/item/stock_parts/smes_coil/@SUBTYPES{@OLD}
 
 # id -> id_tag

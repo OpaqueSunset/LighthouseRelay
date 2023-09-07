@@ -528,12 +528,14 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
 	dir = 8
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "bo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 10
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "bp" = (
@@ -627,6 +629,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 1
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "bw" = (
@@ -634,6 +637,7 @@
 	dir = 1;
 	use_power = 0
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "bx" = (
@@ -1502,6 +1506,11 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
+"rb" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/engineering/engine_room)
 "wm" = (
 /obj/effect/floor_decal/industrial/warning/cee{
 	dir = 1;
@@ -1509,6 +1518,13 @@
 	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced/airless,
+/area/engineering/engine_room)
+"Ka" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
 /area/engineering/engine_room)
 "YT" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
@@ -2114,7 +2130,7 @@ aR
 bc
 bn
 bw
-bI
+rb
 bW
 ci
 cu
@@ -2146,7 +2162,7 @@ aS
 bd
 bo
 bw
-bI
+rb
 bX
 cj
 cv
@@ -2177,7 +2193,7 @@ aA
 aS
 bd
 aE
-bx
+Ka
 bI
 bY
 ck

@@ -22,6 +22,7 @@
 /obj/effect/floor_decal/derelict/d7
 /obj/effect/floor_decal/derelict/d8
 /obj/effect/floor_decal/derelict/d9
+/obj/effect/floor_decal/rust/mono_rusted1
 /obj/effect/floor_decal/rust/mono_rusted3
 /obj/effect/floor_decal/rust/part_rusted3
 /obj/effect/floor_decal/rust/part_rusted3

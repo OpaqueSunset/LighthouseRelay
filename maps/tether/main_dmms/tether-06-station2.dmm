@@ -1631,6 +1631,7 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "cL" = (
@@ -3231,7 +3232,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "rwindow_full";
 	id = "chapel"
 	},
 /turf/simulated/floor/plating,
@@ -3239,7 +3239,6 @@
 "fP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -3255,7 +3254,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/disposalpipe/segment,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "rwindow_full";
 	id = "chapel"
 	},
 /turf/simulated/floor/plating,
@@ -5233,7 +5231,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "jK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5506,7 +5504,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -5623,9 +5621,7 @@
 /area/vacant/vacant_office)
 "kD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/cap/hidden/supply{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/cap/hidden/supply,
 /turf/simulated/floor,
 /area/vacant/vacant_office)
 "kF" = (
@@ -6269,6 +6265,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
+	},
+/obj/structure/cable/green{
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/vacant/vacant_office)
@@ -9735,6 +9734,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/port)
+"rV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/evahallway)
 "rW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -15297,12 +15306,25 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/large_escape_pod1/station)
+"De" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "Dl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/evahallway)
 "Do" = (
@@ -15355,6 +15377,14 @@
 /obj/machinery/computer/arcade/battle,
 /turf/simulated/floor/plating,
 /area/maintenance/station/micro)
+"Dw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "Dy" = (
 /obj/structure/rack,
 /turf/simulated/floor,
@@ -15405,6 +15435,7 @@
 	dir = 10
 	},
 /obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Ek" = (
@@ -16122,6 +16153,11 @@
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/airless,
 /area/space)
+"IR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/broken,
+/turf/simulated/floor,
+/area/vacant/vacant_office)
 "IX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -16207,6 +16243,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
+"Jx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "JD" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
@@ -16294,6 +16338,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
+"JX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "Ke" = (
 /obj/structure/rack,
 /obj/item/suit_cooling_unit{
@@ -16434,6 +16484,15 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
+"KT" = (
+/obj/effect/floor_decal/rust,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "KU" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/gloves{
@@ -16802,6 +16861,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "MW" = (
@@ -16921,6 +16981,7 @@
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 8
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "NA" = (
@@ -17167,6 +17228,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Pa" = (
@@ -17501,6 +17563,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "QR" = (
@@ -17533,6 +17596,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "QX" = (
@@ -18370,6 +18434,7 @@
 	dir = 9
 	},
 /obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Wk" = (
@@ -18488,7 +18553,9 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "Xp" = (
-/obj/machinery/atmospherics/unary/tank/nitrous_oxide,
+/obj/machinery/atmospherics/unary/tank/nitrous_oxide{
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/security/riot_control)
 "Xq" = (
@@ -18555,6 +18622,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
+"Xz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "XA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -18748,6 +18822,7 @@
 	report_danger_level = 0
 	},
 /obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/airless,
 /area/maintenance/station/sec_lower)
 "Yl" = (
@@ -18784,6 +18859,13 @@
 "Yr" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/station/micro)
+"Ys" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/catwalk,
+/obj/abstract/landmark/allowed_leak,
+/turf/simulated/floor,
+/area/maintenance/station/sec_lower)
 "Yv" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
@@ -18837,7 +18919,7 @@
 /area/medical/psych_ward)
 "YH" = (
 /obj/machinery/atmospherics/pipe/cap/hidden/scrubbers{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/vacant/vacant_office)
@@ -19029,6 +19111,7 @@
 	},
 /obj/effect/floor_decal/techfloor,
 /obj/effect/decal/cleanable/dirt,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "ZX" = (
@@ -23360,7 +23443,7 @@ Ob
 LW
 Yh
 IX
-IX
+Dw
 Or
 ZW
 at
@@ -23622,22 +23705,22 @@ at
 DR
 Ty
 PA
-IX
+Dw
 Yd
 Yd
-Or
+JX
 XM
 WJ
-ST
-IX
-Yd
+Xz
+Dw
+Ys
 ST
 ST
 ST
 Lf
 QW
 Jh
-IX
+Dw
 Yd
 Yd
 Yd
@@ -23647,9 +23730,9 @@ Qs
 at
 WJ
 Uk
-IX
-Yd
-Or
+Dw
+Ys
+JX
 XM
 GV
 pG
@@ -24046,7 +24129,7 @@ RS
 RS
 at
 TW
-UV
+De
 at
 Os
 SY
@@ -25040,7 +25123,7 @@ Ug
 KG
 at
 Fs
-UV
+De
 at
 Ww
 RS
@@ -27880,7 +27963,7 @@ ac
 ac
 at
 Fs
-YM
+Jx
 RS
 aj
 aj
@@ -28306,7 +28389,7 @@ ac
 ac
 at
 TW
-PV
+KT
 RS
 aj
 cy
@@ -31877,7 +31960,7 @@ OQ
 OQ
 OQ
 WI
-JK
+rV
 Dl
 KV
 Pl
@@ -32449,7 +32532,7 @@ jt
 js
 kz
 js
-jx
+IR
 mz
 nm
 nP
