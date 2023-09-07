@@ -73,7 +73,6 @@
 /obj/item/soap/deluxe
 /obj/item/soap/nanotrasen
 /obj/item/soap/syndie
-/obj/item/stack/cable_coil/random_belt
 /obj/item/stack/marker_beacon/thirty
 /obj/item/stock_parts/circuitboard/body_designer
 /obj/item/stock_parts/circuitboard/mecha_control

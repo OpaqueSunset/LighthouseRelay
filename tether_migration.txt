@@ -45,6 +45,8 @@
 /obj/structure/sign/signnew/secure : /obj/structure/sign/warning/secure_area{@OLD}
 /obj/structure/sign/xenobio : /obj/structure/sign/department/xenobio_3{@OLD}
 
+/obj/item/stack/cable_coil/random_belt : /obj/item/stack/cable_coil/random
+
 # reagent_containers -> chems
 /obj/item/reagent_containers/@SUBTYPES : /obj/item/chems/@SUBTYPES{@OLD}
 

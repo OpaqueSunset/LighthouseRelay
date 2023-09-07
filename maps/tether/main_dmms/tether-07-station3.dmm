@@ -1354,7 +1354,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "hos_office"
 	},
 /turf/simulated/floor,
@@ -1378,7 +1377,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "hos_office"
 	},
 /turf/simulated/floor,
@@ -1794,7 +1792,6 @@
 /obj/structure/cable/green,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "hos_office"
 	},
 /turf/simulated/floor,
@@ -7766,7 +7763,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "sec_processing"
 	},
 /turf/simulated/floor,
@@ -9247,7 +9243,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "sec_processing"
 	},
 /turf/simulated/floor,
@@ -10720,7 +10715,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /obj/structure/window/reinforced{
@@ -11773,7 +11767,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor,
@@ -11793,7 +11786,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor,
@@ -11832,7 +11824,6 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor,
@@ -12545,7 +12536,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "lawyer_blast"
 	},
 /turf/simulated/floor,
@@ -15423,7 +15413,6 @@
 "AA" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "psych-tint"
 	},
 /obj/machinery/door/firedoor/glass,
@@ -19900,7 +19889,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "resleeving-tint"
 	},
 /turf/simulated/floor/plating,
@@ -20349,7 +20337,6 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "resleeving-tint"
 	},
 /turf/simulated/floor/plating,
@@ -21123,7 +21110,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "surgeryobs2"
 	},
 /turf/simulated/floor/plating,
@@ -21850,7 +21836,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "cmooffice"
 	},
 /turf/simulated/floor/plating,
@@ -22486,7 +22471,6 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "cmooffice_b"
 	},
 /turf/simulated/floor/plating,
@@ -23028,7 +23012,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "cmooffice_b"
 	},
 /turf/simulated/floor/plating,
@@ -23041,7 +23024,6 @@
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "mrecovery-tint"
 	},
 /turf/simulated/floor/plating,
@@ -23074,7 +23056,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "exam_room"
 	},
 /turf/simulated/floor,
@@ -23586,7 +23567,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr1_window_tint"
 	},
 /turf/simulated/floor,
@@ -23620,7 +23600,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr2_window_tint"
 	},
 /turf/simulated/floor,
@@ -23654,7 +23633,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr3_window_tint"
 	},
 /turf/simulated/floor,
@@ -24629,7 +24607,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr1_window_tint"
 	},
 /turf/simulated/floor/plating,
@@ -24639,7 +24616,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr2_window_tint"
 	},
 /turf/simulated/floor/plating,
@@ -24649,7 +24625,6 @@
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "pr3_window_tint"
 	},
 /turf/simulated/floor/plating,
@@ -25199,7 +25174,6 @@
 "RH" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "exam_room"
 	},
 /obj/structure/grille,
@@ -25354,7 +25328,6 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "exam_room"
 	},
 /obj/structure/window/reinforced,
@@ -27509,7 +27482,6 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced/polarized/full{
-	icon_state = "fwindow";
 	id = "exam_room"
 	},
 /obj/structure/window/reinforced,

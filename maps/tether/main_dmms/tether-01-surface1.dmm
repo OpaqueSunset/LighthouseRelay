@@ -8859,8 +8859,8 @@
 	pixel_x = 26
 	},
 /obj/structure/table,
-/obj/item/stack/cable_coil/random_belt,
-/obj/item/stack/cable_coil/random_belt,
+/obj/item/stack/cable_coil/random,
+/obj/item/stack/cable_coil/random,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -8868,7 +8868,7 @@
 	dir = 4
 	},
 /obj/item/stack/tape_roll/barricade_tape/atmos,
-/obj/item/stack/cable_coil/random_belt,
+/obj/item/stack/cable_coil/random,
 /obj/random/tech_supply,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
@@ -9427,7 +9427,7 @@
 /obj/structure/railing/mapped,
 /obj/structure/table,
 /obj/random/maintenance/engineering,
-/obj/item/stack/cable_coil/random_belt,
+/obj/item/stack/cable_coil/random,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
