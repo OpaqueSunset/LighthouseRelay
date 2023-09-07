@@ -256,7 +256,7 @@
 // Easy mapping
 //
 /obj/machinery/timeclock
-	directional_offset = @'{"NORTH":{"y":-26"}, "SOUTH":{"y":26}, "EAST":{"x":-26}, "WEST":{"x":26}}'
+	directional_offset = @'{"NORTH":{"y":-26}, "SOUTH":{"y":26}, "EAST":{"x":-26}, "WEST":{"x":26}}'
 /obj/machinery/timeclock/premade/north
 	dir = SOUTH
 	pixel_y = 26
