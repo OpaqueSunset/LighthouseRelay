@@ -17460,9 +17460,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "EC" = (
-/obj/abstract/landmark{
-	name = "JoinLateGateway"
-	},
+/obj/abstract/landmark/latejoin/gateway,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},
@@ -27080,9 +27078,7 @@
 /turf/simulated/floor/wood,
 /area/medical/psych)
 "YB" = (
-/obj/abstract/landmark{
-	name = "JoinLateGateway"
-	},
+/obj/abstract/landmark/latejoin/gateway,
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 1
 	},

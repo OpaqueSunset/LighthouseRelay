@@ -12534,8 +12534,7 @@
 	dir = 8
 	},
 /obj/structure/bed/sofa/right{
-	dir = 4;
-	icon_state = "sofa_r_preview"
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
@@ -17825,6 +17824,7 @@
 	pixel_x = -26;
 	pixel_y = -26
 	},
+/obj/abstract/landmark/latejoin/cyborg,
 /turf/simulated/floor/tiled/steel_grid,
 /area/assembly/chargebay)
 "Hr" = (
@@ -17878,6 +17878,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/abstract/landmark/latejoin/cyborg,
 /turf/simulated/floor/tiled/steel_grid,
 /area/assembly/chargebay)
 "Hx" = (
@@ -21615,8 +21616,7 @@
 	dir = 4
 	},
 /obj/structure/bed/sofa/right{
-	dir = 4;
-	icon_state = "sofa_r_preview"
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
@@ -21635,8 +21635,7 @@
 	dir = 8
 	},
 /obj/structure/bed/sofa/right{
-	dir = 8;
-	icon_state = "sofa_r_preview"
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
@@ -22065,8 +22064,7 @@
 	dir = 4
 	},
 /obj/structure/bed/sofa/right{
-	dir = 8;
-	icon_state = "sofa_r_preview"
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)

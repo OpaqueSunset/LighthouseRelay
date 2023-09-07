@@ -107,6 +107,9 @@
 # LANDMARKS
 /obj/effect/landmark/@SUBTYPES : /obj/abstract/landmark/@SUBTYPES{@OLD}
 /obj/abstract/landmark/engine_loader : /obj/abstract/landmark/map_load_mark/engine_loader{@OLD}
+/obj/abstract/landmark/tram : /obj/abstract/landmark/latejoin/tram
+/obj/abstract/landmark{name = "JoinLateCryo"} : /obj/abstract/landmark/latejoin/cryo
+/obj/abstract/landmark{name = "JoinLateGateway"} : /obj/abstract/landmark/latejoin/gateway
 
 # BUTTONS
 /obj/machinery/access_button/airlock_exterior : /obj/machinery/button/access/exterior{@OLD}

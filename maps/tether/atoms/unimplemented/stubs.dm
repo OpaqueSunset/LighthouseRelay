@@ -12,7 +12,6 @@
 /mob/living/simple_animal/slime/rainbow/kendrick
 
 // OBJECTS
-/obj/abstract/landmark/tram
 /obj/item/backup_implanter
 /obj/item/baton/slime/loaded
 /obj/item/bedsheet/bluedouble

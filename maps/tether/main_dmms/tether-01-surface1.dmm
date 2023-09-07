@@ -2620,7 +2620,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "afh" = (
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "afi" = (
@@ -2685,7 +2685,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "afp" = (
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -3006,7 +3006,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 1
 	},
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -3031,7 +3031,7 @@
 	dir = 4
 	},
 /obj/machinery/hologram/holopad,
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -3244,7 +3244,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "agt" = (
@@ -3257,7 +3257,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/abstract/landmark/tram,
+/obj/abstract/landmark/latejoin/tram,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},

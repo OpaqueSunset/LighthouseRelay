@@ -9947,6 +9947,7 @@
 /area/tether/surfacebase/fishing_garden)
 "vo" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/abstract/landmark/latejoin/cyborg,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/drone_fabrication)
 "vp" = (
@@ -17982,6 +17983,11 @@
 /obj/effect/floor_decal/corner/yellow/border,
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
+"ZE" = (
+/obj/item/stool,
+/obj/abstract/landmark/latejoin/cyborg,
+/turf/simulated/floor/tiled/techmaint,
+/area/engineering/drone_fabrication)
 "ZF" = (
 /obj/machinery/seed_extractor,
 /obj/effect/floor_decal/borderfloor{
@@ -27343,7 +27349,7 @@ zA
 Ad
 AF
 AW
-zA
+ZE
 BA
 yG
 Ci

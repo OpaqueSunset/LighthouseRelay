@@ -3471,9 +3471,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "ahn" = (
-/obj/structure/bed/sofa/right/black{
-	icon_state = "sofa_r_preview"
-	},
+/obj/structure/bed/sofa/right/black,
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "aho" = (
@@ -8305,6 +8303,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
+/obj/abstract/landmark/latejoin/cyborg,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "avc" = (
@@ -15599,6 +15598,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/abstract/landmark/latejoin/cyborg,
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "bfk" = (
