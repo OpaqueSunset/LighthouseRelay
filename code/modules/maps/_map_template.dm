@@ -195,7 +195,7 @@
 		T = locate(CEILING(T.x - width/2), CEILING(T.y - height/2), T.z)
 	if(!T)
 		CRASH("Can't load '[src]' (size: [width]x[height]) onto a null turf! Current world size ([WORLD_SIZE_TO_STRING]).")
-	if(!IS_WITHIN_WORLD((T.x + width), (T.y + height)))
+	if(!IS_WITHIN_WORLD((T.x + width - 1), (T.y + height - 1))) // the first row/column begins with T, so subtract 1
 		CRASH("Couldn't fit the entire template '[src]' (size: [width]x[height]) between lower left corner ([T.x], [T.y])[centered?"(WORLD CENTER)":""] and upper right corner ([T.x + width], [T.y + height]) in current world size ([WORLD_SIZE_TO_STRING]).")
 
 	var/list/atoms_to_initialise = list()
