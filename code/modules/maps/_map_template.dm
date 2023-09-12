@@ -151,8 +151,8 @@
 /// * If centered is TRUE, the template's center will be aligned to the world's center. Otherwise, the template will load at pos 1,1.
 /datum/map_template/proc/load_new_z(no_changeturf = TRUE, centered = TRUE)
 	//When we're set to centered we're aligning the center of the template to the center of the map
-	var/x = max(round((world.maxx - width)  / 2), 1)
-	var/y = max(round((world.maxy - height) / 2), 1)
+	var/x = max(CEILING((WORLD_CENTER_X - width/2)), 1)
+	var/y = max(CEILING((WORLD_CENTER_Y - height/2)), 1)
 	if(!centered)
 		x = 1
 		y = 1
