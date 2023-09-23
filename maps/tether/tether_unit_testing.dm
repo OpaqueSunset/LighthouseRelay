@@ -19,3 +19,5 @@
 		/area/vacant/vacant_site/east = NO_APC,
 		/area/tether/surfacebase/emergency_storage/rnd = NO_SCRUBBER|NO_VENT,
 	)
+	disconnected_wires_test_exempt_turfs = list(list(71, 139, 1, NORTH))
+	disconnected_disposals_tags = list("Trash") // just spits it into the garbage pile
