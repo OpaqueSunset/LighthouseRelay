@@ -1747,8 +1747,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/tether/station/excursion_dock)
@@ -3536,9 +3536,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/engine_airlock)
 "ahx" = (
@@ -4090,7 +4087,8 @@
 "aiD" = (
 /obj/machinery/airlock_sensor/airlock_exterior{
 	id_tag = "eng_al_ext_snsr";
-	pixel_x = -22
+	pixel_x = -22;
+	dir = 4
 	},
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 9
@@ -20384,6 +20382,12 @@
 /obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
+"gRe" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/tether/station/excursion_dock)
 "gUt" = (
 /obj/structure/table/steel,
 /obj/item/clothing/head/pilot,
@@ -35914,7 +35918,7 @@ abU
 kFA
 abc
 adP
-aah
+gRe
 fmN
 aad
 soc

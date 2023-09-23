@@ -906,6 +906,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "ce" = (
@@ -1483,6 +1484,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/steel_grid,
 /area/template_noop)
 "dy" = (

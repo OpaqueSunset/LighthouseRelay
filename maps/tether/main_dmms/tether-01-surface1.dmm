@@ -318,20 +318,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/airlock)
-"aaP" = (
-/obj/structure/grille,
-/obj/structure/railing/mapped{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 5
-	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	dir = 4;
-	id_tag = "mining_airlock_pump"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/tether/surfacebase/mining_main/airlock)
 "aaQ" = (
 /obj/machinery/embedded_controller/radio/airlock/phoron{
 	dir = 8;
@@ -16328,9 +16314,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
@@ -21559,7 +21542,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/machinery/power/apc/super,
+/obj/machinery/power/apc/super{
+	dir = 8
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -22206,9 +22191,6 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/xenoflora/lab_atmos)
 "bew" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -32386,9 +32368,6 @@
 /area/hallway/lower/first_west)
 "sbC" = (
 /obj/machinery/door/firedoor/glass,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 4
-	},
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/atmospherics/pipe/manifold/visible/black,
@@ -44245,7 +44224,7 @@ aao
 aaw
 aaw
 aaw
-aaP
+aaw
 aao
 abo
 abn
