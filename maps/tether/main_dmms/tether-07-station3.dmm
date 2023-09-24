@@ -9745,7 +9745,6 @@
 	dir = 5
 	},
 /obj/machinery/camera/network/security{
-	c_tag = "SEC - Vault Exterior West";
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -26805,7 +26804,7 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/medbay{
-	c_tag = "MED - Rec Room 1";
+	c_tag = "MED - Psych Ward 2";
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{

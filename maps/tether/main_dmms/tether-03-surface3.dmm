@@ -11677,7 +11677,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
 "xj" = (
-/obj/machinery/camera/network/command,
+/obj/machinery/camera/network/command{
+	c_tag = "Secondary Command Office North"
+	},
 /obj/machinery/status_display{
 	pixel_y = 30
 	},
@@ -12113,7 +12115,7 @@
 /area/maintenance/lower/atrium)
 "xV" = (
 /obj/machinery/camera/network/command{
-	c_tag = "Bridge Northeast";
+	c_tag = "Secondary Command Office Northeast";
 	dir = 9
 	},
 /obj/machinery/firealarm{
