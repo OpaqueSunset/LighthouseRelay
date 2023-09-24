@@ -125,6 +125,11 @@
 /@SUBTYPES {layer = @SET} : @OLD {@OLD; layer = @SKIP}
 /@SUBTYPES {plane = @SET} : @OLD {@OLD; plane = @SKIP}
 /obj/structure/cable/@SUBTYPES : @OLD {@OLD; d1 = @SKIP;d2 = @SKIP}
+# Simple pipes shall not face north or west
+/obj/machinery/atmospherics/pipe/simple/hidden@SUBTYPES {dir = 1} : @OLD {@OLD; dir = 2}
+/obj/machinery/atmospherics/pipe/simple/visible@SUBTYPES {dir = 1} : @OLD {@OLD; dir = 2}
+/obj/machinery/atmospherics/pipe/simple/hidden@SUBTYPES {dir = 8} : @OLD {@OLD; dir = 4}
+/obj/machinery/atmospherics/pipe/simple/visible@SUBTYPES {dir = 8} : @OLD {@OLD; dir = 4}
 # we use a completely different access format
 /@SUBTYPES {req_access = @SET}: @OLD {@OLD; req_access = @SKIP;}
 /@SUBTYPES {req_one_access = @SET}: @OLD {@OLD; req_one_access = @SKIP;}

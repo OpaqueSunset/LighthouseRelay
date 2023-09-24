@@ -1735,9 +1735,6 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
 "adP" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -7647,9 +7644,7 @@
 /obj/machinery/alarm{
 	pixel_y = 21
 	},
-/obj/abstract/landmark{
-	name = "JoinLateCryo"
-	},
+/obj/abstract/landmark/latejoin/cryo,
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
@@ -7877,18 +7872,14 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "atx" = (
-/obj/abstract/landmark{
-	name = "JoinLateCryo"
-	},
+/obj/abstract/landmark/latejoin/cryo,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/sleep/cryo)
 "aty" = (
-/obj/abstract/landmark{
-	name = "JoinLateCryo"
-	},
+/obj/abstract/landmark/latejoin/cryo,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -13713,9 +13704,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/crew_quarters/heads/chief)
 "aSo" = (
-/obj/abstract/landmark{
-	name = "JoinLateCryo"
-	},
+/obj/abstract/landmark/latejoin/cryo,
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},

@@ -4487,7 +4487,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -4719,7 +4719,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -4736,7 +4736,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -4762,7 +4762,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/random/tool,
 /obj/effect/floor_decal/industrial/danger/corner{
@@ -4846,7 +4846,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -5043,7 +5043,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/random/loot_pile/maintenance,
 /obj/abstract/landmark/allowed_leak,
@@ -6370,7 +6370,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /obj/random/junk,
 /obj/abstract/landmark/allowed_leak,
@@ -6385,7 +6385,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/random/junk,
 /obj/abstract/landmark/allowed_leak,
@@ -7993,7 +7993,7 @@
 	},
 /obj/effect/floor_decal/rust,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -8297,7 +8297,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -8784,7 +8784,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -9149,7 +9149,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
@@ -9166,7 +9166,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -9428,7 +9428,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -11343,7 +11343,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -17425,7 +17425,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -17667,7 +17667,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 1
+	dir = 2
 	},
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -17880,7 +17880,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+	dir = 2
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"

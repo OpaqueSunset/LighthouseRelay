@@ -26883,7 +26883,7 @@
 /area/medical/psych_ward)
 "Ya" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock)
