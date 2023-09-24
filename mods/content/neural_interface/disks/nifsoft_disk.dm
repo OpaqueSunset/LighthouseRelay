@@ -158,6 +158,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 
 // NIFsoft disks come in single and bundle formats.
 /obj/item/disk/nifsoft/single
+	abstract_type = /obj/item/disk/nifsoft/single
 	/// The path of the NIFsoft this disk installs.
 	var/datum/computer_file/program/nifsoft/installed_nifsoft
 
@@ -171,6 +172,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	desc = "[initial(desc)]\n[initial(installed_nifsoft.extended_desc)]"
 
 /obj/item/disk/nifsoft/bundle
+	abstract_type = /obj/item/disk/nifsoft/bundle
 	var/bundle_desc
 	/// The paths of the NIFsofts this disk installs.
 	var/list/datum/computer_file/program/nifsoft/installed_nifsofts
