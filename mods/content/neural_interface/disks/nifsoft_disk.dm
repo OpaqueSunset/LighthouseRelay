@@ -152,7 +152,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 /// Loads the default programs (bundle or single) onto the disk.
 /// If exact_fit is true, the disk will be resized to have exactly enough capacity to hold the starting programs.
 /obj/item/disk/nifsoft/proc/load_programs(exact_fit = TRUE)
-	if(exact_fit)
+	if(exact_fit && length(stored_files))
 		block_capacity = initial(block_capacity) - free_blocks
 		free_blocks = 0
 
