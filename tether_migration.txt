@@ -130,6 +130,8 @@
 /obj/machinery/atmospherics/pipe/simple/visible@SUBTYPES {dir = 1} : @OLD {@OLD; dir = 2}
 /obj/machinery/atmospherics/pipe/simple/hidden@SUBTYPES {dir = 8} : @OLD {@OLD; dir = 4}
 /obj/machinery/atmospherics/pipe/simple/visible@SUBTYPES {dir = 8} : @OLD {@OLD; dir = 4}
+# Do not change air alarm frequency on base type
+/obj/machinery/alarm {frequency = @SET} : @OLD {@OLD; frequency = @SKIP}
 # we use a completely different access format
 /@SUBTYPES {req_access = @SET}: @OLD {@OLD; req_access = @SKIP;}
 /@SUBTYPES {req_one_access = @SET}: @OLD {@OLD; req_one_access = @SKIP;}

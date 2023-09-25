@@ -7157,7 +7157,6 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
@@ -8623,7 +8622,6 @@
 	},
 /obj/structure/closet/secure_closet/atmos_personal,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
@@ -9227,7 +9225,6 @@
 /obj/machinery/washing_machine,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/white,
@@ -9515,7 +9512,6 @@
 /area/rnd/breakroom)
 "uv" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/white,
@@ -10147,7 +10143,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
@@ -10654,7 +10649,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
@@ -11012,7 +11006,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -12548,7 +12541,6 @@
 /area/maintenance/asmaint2)
 "zX" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/structure/railing/mapped,
@@ -13189,7 +13181,6 @@
 /area/maintenance/lower/south)
 "Bu" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/structure/catwalk,
@@ -13766,7 +13757,6 @@
 /area/maintenance/lower/atmos)
 "CV" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/carpet,
@@ -16426,7 +16416,6 @@
 /area/maintenance/lower/atmos)
 "IX" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/item/bananapeel,
@@ -16445,7 +16434,6 @@
 /area/vacant/vacant_bar_upper)
 "Jb" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -16561,7 +16549,6 @@
 /area/maintenance/lower/atmos)
 "Jt" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/wood,
@@ -17384,7 +17371,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/shieldgen,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/plating,

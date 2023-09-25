@@ -1156,7 +1156,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/machinery/camera/network/tether,
@@ -2370,7 +2369,6 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/effect/floor_decal/corner/grey/diagonal,
@@ -2669,7 +2667,6 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
@@ -3106,7 +3103,6 @@
 "agC" = (
 /obj/machinery/light/flamp,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/machinery/power/apc{
@@ -5283,7 +5279,6 @@
 	dir = 8
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/vehicle/train/cargo/engine,
@@ -12289,7 +12284,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{

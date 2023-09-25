@@ -612,7 +612,6 @@
 /area/tether/surfacebase/mining_main/storage)
 "abx" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/plating,
@@ -1630,7 +1629,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
@@ -7049,7 +7047,6 @@
 /area/maintenance)
 "anp" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/machinery/power/apc{
@@ -14146,7 +14143,6 @@
 /area/storage/surface_eva/external)
 "aAI" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -14399,7 +14395,6 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -17932,7 +17927,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -17969,7 +17963,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/item/towel/random,
@@ -18842,7 +18835,6 @@
 /area/maintenance/lower/atmos)
 "aKM" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/structure/table/bench/steel,
@@ -18996,7 +18988,6 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/structure/cable/green{

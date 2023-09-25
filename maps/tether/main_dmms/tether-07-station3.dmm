@@ -1277,7 +1277,6 @@
 /area/security/hallwayaux)
 "ck" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -2615,7 +2614,6 @@
 "eU" = (
 /obj/structure/closet/crate,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/item/clothing/accessory/horrible,
@@ -4372,7 +4370,6 @@
 "ic" = (
 /obj/structure/catwalk,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor,
@@ -5997,7 +5994,6 @@
 /area/maintenance/station/ai)
 "kR" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor,
@@ -10940,7 +10936,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -25076,7 +25071,6 @@
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,

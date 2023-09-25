@@ -4481,7 +4481,6 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/steel,
@@ -4781,7 +4780,6 @@
 	},
 /obj/machinery/vending/nifsofts,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/white,
@@ -5853,7 +5851,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
@@ -8065,7 +8062,6 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/plating,
@@ -10404,7 +10400,6 @@
 	dir = 1
 	},
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /obj/structure/disposalpipe/segment{

@@ -4016,7 +4016,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -18543,7 +18542,6 @@
 /area/rnd/hallway)
 "IO" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /turf/simulated/floor/tiled,
@@ -19100,7 +19098,6 @@
 /area/tether/surfacebase/shuttle_pad)
 "Kg" = (
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 21
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
