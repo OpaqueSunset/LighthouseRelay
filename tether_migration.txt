@@ -51,6 +51,8 @@
 /obj/item/reagent_containers/@SUBTYPES : /obj/item/chems/@SUBTYPES{@OLD}
 
 /obj/item/chems/glass/bottle/stoxin : /obj/item/chems/glass/bottle/sedatives{@OLD}
+/obj/item/chems/glass/bottle/inaprovaline : /obj/item/chems/glass/bottle/stabilizer{@OLD}
+/obj/item/chems/syringe/inaprovaline : /obj/item/chems/syringe/stabilizer{@OLD}
 
 # TRASHPILE -> LOOTPILE
 /obj/structure/trash_pile : /obj/random/loot_pile/maintenance
@@ -147,6 +149,7 @@
 # /table/standard -> /table
 # /obj/structure/table/standard : /obj/structure/table{@OLD}
 # /obj/structure/table/wooden_reinforced : /obj/structure/table/woodentable_reinforced{@OLD}
+# /obj/structure/table/woodentable/holotable : /obj/structure/table/holo_woodentable{@OLD}
 # /bench variants
 # /obj/structure/table/bench : /obj/structure/table/bench/frame{@OLD}
 # /obj/structure/table/bench/standard : /obj/structure/table/bench{@OLD}
@@ -186,8 +189,15 @@
 /obj/structure/closet{icon_closed = "cabinet_closed";icon_opened = "cabinet_open";icon_state = "cabinet_closed";name = "Clothing Storage"} : /obj/structure/closet/wardrobe{name = "clothing storage"}
 /obj/structure/closet/secure_closet{icon_broken = "medicalbroken";icon_closed = "medical";icon_locked = "medical1";icon_off = "medicaloff";icon_opened = "medicalopen";icon_state = "medical1";name = "Surgical Pressure Gear"} : /obj/structure/closet/secure_closet{name = "surgical pressure gear"; req_access = list(access_medical_equip); closet_appearance = /decl/closet_appearance/secure_closet/medical/alt}
 /area/shuttle/large_escape_pod1/station{base_turf = @SET} : /area/shuttle/large_escape_pod1/station
-# TODO: remove impure areas altogether!
-/area/syndicate_station/mining{base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b} : /area/syndicate_station/mining{base_turf = /turf/exterior/dirt}
+# impure areas
+/area/syndicate_station/mining{base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b} : /area/syndicate_station/mining
+/area/tcomfoyer{name = "\improper Telecomms Storage"} : /area/tcomstorage
+/area/tcommsat/entrance{name = @SET} : /area/tcommsat/entrance
+/area/tcomsat{name = @SET} : /area/tcomlobby
+/area/maintenance/substation/bar : /area/maintenance/substation/surface_civ
+/area/crew_quarters/recreation_area_restroom{name = "\improper Recreation Area Showers"} : /area/crew_quarters/recreation_area_restroom/showers
+/area/centcom/security{name = "\improper CentCom Security Arrivals"} : /area/centcom/security/arrivals
+/area/centcom/security{name = "\improper CentCom Residential Security"} : /area/centcom/security/residential
 
 /obj/structure/window/@SUBTYPES{icon_state = "fwindow"} : /obj/structure/window/@SUBTYPES{@OLD; icon_state = @SKIP}
 /obj/structure/window/reinforced/reinforced/polarized/full{dir = 10} : /obj/structure/window/reinforced/polarized/full{@OLD; dir = @SKIP}
@@ -476,6 +486,11 @@
 /obj/item/clothing/accessory/legguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
 /obj/item/clothing/accessory/legguards/laserproof : /obj/item/clothing/accessory/legguards/ablative{@OLD}
 /obj/item/clothing/accessory/armor/helmcover/nt : /obj/item/clothing/accessory/armor/helmcover/corp{@OLD}
+/obj/item/clothing/head/pin/flower : /obj/item/clothing/head/hairflower
+/obj/item/clothing/head/pin/flower/violet : /obj/item/clothing/head/hairflower/pink
+/obj/item/clothing/head/pin/flower/blue : /obj/item/clothing/head/hairflower/blue
+/obj/item/clothing/head/pin/flower/orange : /obj/item/clothing/head/hairflower/yellow
+/obj/item/clothing/head/pin/flower/pink : /obj/item/clothing/head/hairflower/pink
 
 /obj/item/knife/machete : /obj/item/hatchet/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}
@@ -533,8 +548,6 @@
 /obj/structure/disposalpipe/sortjunction/@SUBTYPES{sortType = @SET} : /obj/structure/disposalpipe/sortjunction/@SUBTYPES{@OLD; sort_type = @OLD:sortType; sortType = @SKIP}
 
 /obj/machinery/floor_light/prebuilt{on = 1} : /obj/machinery/floor_light/prebuilt{@OLD; use_power = 2; on = @SKIP}
-
-/obj/item/chems/syringe/inaprovaline : /obj/item/chems/syringe/stabilizer{@OLD}
 
 /obj/item/surgical/@SUBTYPES : /obj/item/@SUBTYPES{@OLD}
 

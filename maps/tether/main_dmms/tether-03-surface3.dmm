@@ -7145,9 +7145,7 @@
 /area/crew_quarters/recreation_area)
 "oX" = (
 /turf/simulated/wall,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "oY" = (
 /obj/machinery/power/apc/super{
 	dir = 8
@@ -7426,22 +7424,16 @@
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "pw" = (
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "px" = (
 /obj/machinery/light_switch{
 	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "py" = (
 /obj/structure/hygiene/shower{
 	dir = 8;
@@ -7449,9 +7441,7 @@
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "pz" = (
 /obj/structure/rack,
 /obj/random/maintenance/research,
@@ -7697,25 +7687,19 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "pV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "pW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "pX" = (
 /obj/structure/cable{
 	icon_state = "32-4"
@@ -8190,9 +8174,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "qK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -8210,17 +8192,13 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "qL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "qM" = (
 /obj/machinery/light{
 	dir = 4
@@ -8229,9 +8207,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "qN" = (
 /obj/structure/closet/crate,
 /obj/random/maintenance/engineering,
@@ -8478,18 +8454,14 @@
 "rl" = (
 /obj/item/bikehorn/rubberducky,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "rm" = (
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -21
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/recreation_area_restroom{
-	name = "\improper Recreation Area Showers"
-	})
+/area/crew_quarters/recreation_area_restroom/showers)
 "rn" = (
 /obj/machinery/camera/network/tether{
 	dir = 4
@@ -13654,9 +13626,7 @@
 /area/bridge/secondary)
 "AB" = (
 /turf/simulated/wall,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "AC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -14700,9 +14670,7 @@
 	name = "Bar Substation"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "Cd" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -15019,9 +14987,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CG" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -15038,9 +15004,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CH" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -15064,9 +15028,7 @@
 	RCon_tag = "Surface Civilian Substation Bypass"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
@@ -15091,9 +15053,7 @@
 	RCon_tag = "Substation - Surface Civilian"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -15105,9 +15065,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CR" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
@@ -15157,9 +15115,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "CW" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -15333,9 +15289,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "Dk" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -15346,18 +15300,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "Dl" = (
 /obj/random/tech_supply,
 /obj/structure/table/steel,
 /obj/random/maintenance/engineering,
 /obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "Dm" = (
 /obj/effect/floor_decal/spline/plain,
 /obj/machinery/alarm{
@@ -15731,9 +15681,7 @@
 	name = "Bar Substation"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/bar{
-	name = "\improper Surface Civilian Substation"
-	})
+/area/maintenance/substation/surface_civ)
 "DN" = (
 /obj/structure/table/marble,
 /obj/item/chems/condiment/small/saltshaker{

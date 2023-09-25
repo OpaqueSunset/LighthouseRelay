@@ -37,23 +37,23 @@
 
 /obj/machinery/computer/HolodeckControl/holodorm/one
 	name = "dorm one holodeck control"
-	projection_area = /area/crew_quarters/sleep/Dorm_1/holo
+	linkedholodeck_area = /area/crew_quarters/sleep/Dorm_1/holo
 
 /obj/machinery/computer/HolodeckControl/holodorm/three
 	name = "dorm three holodeck control"
-	projection_area = /area/crew_quarters/sleep/Dorm_3/holo
+	linkedholodeck_area = /area/crew_quarters/sleep/Dorm_3/holo
 
 /obj/machinery/computer/HolodeckControl/holodorm/five
 	name = "dorm five holodeck control"
-	projection_area = /area/crew_quarters/sleep/Dorm_5/holo
+	linkedholodeck_area = /area/crew_quarters/sleep/Dorm_5/holo
 
 /obj/machinery/computer/HolodeckControl/holodorm/seven
 	name = "dorm seven holodeck control"
-	projection_area = /area/crew_quarters/sleep/Dorm_7/holo
+	linkedholodeck_area = /area/crew_quarters/sleep/Dorm_7/holo
 
 // Small Ship Holodeck
 /obj/machinery/computer/HolodeckControl/houseboat
-	projection_area = /area/houseboat/holodeck_area
+	linkedholodeck_area = /area/houseboat/holodeck_area
 	powerdown_program = "Turn Off"
 	default_program = "Empty Court"
 
@@ -116,7 +116,7 @@
 
 /obj/machinery/computer/HolodeckControl/holosurgery
 	name = "holosurgery control"
-	projection_area = /area/medical/surgery/holosurgery
+	linkedholodeck_area = /area/medical/surgery/holosurgery
 
 // Our map is small, if the supermatter is ejected lets not have it just blow up somewhere else
 /obj/machinery/power/supermatter/touch_map_edge()

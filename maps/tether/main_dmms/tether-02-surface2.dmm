@@ -4486,9 +4486,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
@@ -4718,9 +4716,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "kU" = (
@@ -4735,9 +4731,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "kW" = (
@@ -4761,9 +4755,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/random/tool,
 /obj/effect/floor_decal/industrial/danger/corner{
 	dir = 4
@@ -4845,9 +4837,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "lh" = (
@@ -5042,9 +5032,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/random/loot_pile/maintenance,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -6369,9 +6357,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /obj/random/junk,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -6384,9 +6370,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/random/junk,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
@@ -7991,9 +7975,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "rk" = (
@@ -8295,9 +8277,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "rV" = (
@@ -8781,9 +8761,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "sN" = (
@@ -9146,9 +9124,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /obj/random/loot_pile/maintenance,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -9163,9 +9139,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "tE" = (
@@ -9424,9 +9398,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -11335,9 +11307,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "xK" = (
@@ -14573,9 +14543,7 @@
 /area/maintenance/substation/tcomms)
 "EM" = (
 /turf/simulated/wall/r_wall,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EO" = (
 /obj/machinery/status_display{
 	pixel_y = 30
@@ -14617,9 +14585,7 @@
 /area/tcommsat/computer)
 "ET" = (
 /turf/simulated/wall,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "EU" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -14628,15 +14594,11 @@
 	name = "Telecomms Substation"
 	},
 /turf/simulated/floor/plating,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EV" = (
 /obj/structure/sign/warning,
 /turf/simulated/wall/r_wall,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EW" = (
 /obj/machinery/porta_turret{
 	dir = 6
@@ -14645,15 +14607,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EX" = (
 /obj/machinery/camera/network/telecom,
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EY" = (
 /obj/machinery/turretid/lethal{
 	ailock = 1;
@@ -14669,9 +14627,7 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "EZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -14725,9 +14681,7 @@
 "Ff" = (
 /obj/structure/sign/department/telecomms,
 /turf/simulated/wall,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "Fg" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/decal/cleanable/cobweb,
@@ -14735,9 +14689,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "Fh" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -14748,14 +14700,12 @@
 	pixel_y = 28
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "Fi" = (
 /obj/machinery/turretid/stun{
 	ailock = 1;
 	check_synth = 1;
-	control_area = /area/tcomsat;
+	control_area = /area/tcomlobby;
 	desc = "A firewall prevents AIs from interacting with this device.";
 	name = "Telecoms Foyer turret control";
 	pixel_x = 29
@@ -14764,26 +14714,20 @@
 	pixel_y = 26
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "Fj" = (
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fk" = (
 /obj/machinery/camera/network/telecom,
 /obj/structure/sign/warning/shock{
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fl" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -14792,17 +14736,13 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fn" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/grille,
@@ -14811,20 +14751,14 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fo" = (
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Fq" = (
 /obj/machinery/camera/network/telecom{
 	dir = 4
@@ -14893,18 +14827,14 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "Fz" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FA" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -14917,9 +14847,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FB" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -14931,9 +14859,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FC" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -14949,9 +14875,7 @@
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FD" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -14963,9 +14887,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FE" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -14977,9 +14899,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FF" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -14996,9 +14916,7 @@
 	},
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FG" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -15011,9 +14929,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -15033,9 +14949,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -15047,9 +14961,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FJ" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -15064,9 +14976,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FK" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -15077,9 +14987,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FL" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Telecoms Control Room"
@@ -15174,9 +15082,7 @@
 "FU" = (
 /obj/structure/sign/warning,
 /turf/simulated/wall,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -15186,26 +15092,20 @@
 	pixel_y = -30
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FW" = (
 /obj/machinery/camera/network/telecom{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FX" = (
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -25
 	},
 /turf/simulated/floor/tiled,
-/area/tcommsat/entrance{
-	name = "\improper Telecomms Entrance"
-	})
+/area/tcommsat/entrance)
 "FY" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -15214,9 +15114,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "FZ" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -15224,26 +15122,20 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Ga" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor,
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Gb" = (
 /obj/machinery/porta_turret{
 	dir = 6
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Gc" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -15251,9 +15143,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Gd" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -15263,9 +15153,7 @@
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Ge" = (
 /obj/machinery/light{
 	dir = 8
@@ -15351,14 +15239,10 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Gm" = (
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Gn" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -15366,9 +15250,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
-/area/tcomsat{
-	name = "\improper Telecomms Lobby"
-	})
+/area/tcomlobby)
 "Go" = (
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -15482,17 +15364,13 @@
 /area/maintenance/lower/south)
 "Gw" = (
 /turf/simulated/wall/r_wall,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Gx" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Gy" = (
 /obj/machinery/door/airlock/glass{
 	name = "Telecomms Storage"
@@ -15504,9 +15382,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Gz" = (
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
@@ -15637,18 +15513,14 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/molten_item,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GM" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -15660,9 +15532,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GN" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/ansible,
@@ -15676,9 +15546,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/tiled/dark{
@@ -15702,25 +15570,19 @@
 	},
 /obj/machinery/power/apc/super,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GR" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GS" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GT" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/analyzer,
@@ -15731,30 +15593,22 @@
 	pixel_x = 26
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "GZ" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/treatment,
 /obj/item/stock_parts/subspace/treatment,
 /obj/item/stock_parts/subspace/treatment,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Ha" = (
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Hb" = (
 /obj/structure/rack,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Hc" = (
 /obj/machinery/camera/network/telecom{
 	dir = 4
@@ -15798,9 +15652,7 @@
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/micro_laser/high,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Hg" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/filter,
@@ -15812,18 +15664,14 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Hh" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/crystal,
 /obj/item/stock_parts/subspace/crystal,
 /obj/item/stock_parts/subspace/crystal,
 /turf/simulated/floor/tiled/techmaint,
-/area/tcomfoyer{
-	name = "\improper Telecomms Storage"
-	})
+/area/tcomstorage)
 "Hi" = (
 /obj/structure/sign/warning/nosmoking_2{
 	pixel_x = -32
@@ -17410,9 +17258,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -17652,9 +17498,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/purple,
 /obj/abstract/landmark/allowed_leak,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -17865,9 +17709,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 2
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
@@ -32259,7 +32101,7 @@ dY
 my
 nc
 dY
-rO
+dY
 rg
 rg
 rg

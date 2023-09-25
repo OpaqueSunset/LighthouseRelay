@@ -12,9 +12,11 @@
 
 // CENTCOM
 /area/centcom
-	name = "\improper CentCom"
+	name = "\improper Centcom"
 	icon_state = "centcom"
-	requires_power = 0
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	req_access = list(access_cent_general)
 
 /area/centcom/control
 	name = "\improper CentCom Control"
@@ -38,6 +40,12 @@
 /area/centcom/security
 	name = "\improper CentCom Security"
 	icon_state = "centcom_security"
+
+/area/centcom/security/arrivals
+	name = "\improper CentCom Security Arrivals"
+
+/area/centcom/security/residential
+	name = "\improper CentCom Residential Security"
 
 /area/centcom/medical
 	name = "\improper CentCom Medical"
@@ -323,6 +331,10 @@
 	name = "Tether Shuttle Transit"
 	icon_state = "shuttle2"
 
+/area/shuttle/trade/centcom
+	name = "\improper Trade Shuttle CentCom"
+	icon_state = "shuttlered"
+
 /area/shuttle/trade/station
 	name = "\improper Trade Shuttle"
 	icon_state = "shuttlered"
@@ -336,11 +348,15 @@
 	icon_state = "shuttle3"
 	requires_power = FALSE
 
+// Thunderdome
+
 /area/tdome
 	name = "\improper Thunderdome"
 	icon_state = "thunder"
 	requires_power = 0
+	dynamic_lighting = 0
 	sound_env = ARENA
+	req_access = list(access_cent_thunder)
 
 /area/tdome/tdome1
 	name = "\improper Thunderdome (Team 1)"
@@ -358,9 +374,14 @@
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
 
+/area/syndicate_station/start
+	name = "\improper Mercenary Forward Operating Base"
+	icon_state = "yellow"
+
 /area/syndicate_station/mining
 	name = "\improper northeast of the mining station"
 	icon_state = "north"
+	base_turf = /turf/exterior/dirt
 
 /area/syndicate_station/arrivals_dock
 	name = "\improper docked with station"
@@ -628,8 +649,8 @@
 	name = "\improper MedSec Substation"
 /area/maintenance/substation/mining
 	name = "\improper Mining Substation"
-/area/maintenance/substation/bar
-	name = "\improper Bar Substation"
+/area/maintenance/substation/surface_civ
+	name = "\improper Surface Civilian Substation"
 /area/maintenance/substation/surface_atmos
 	name = "\improper Surface Atmos Substation"
 /area/maintenance/substation/civ_west
@@ -677,7 +698,7 @@
 	sound_env = STANDARD_STATION
 
 /area/engineering/atmos/processing
-	name = "Atmospherics Processing"
+	name = "\improper Atmospherics Processing"
 	icon_state = "atmos"
 	sound_env = LARGE_ENCLOSED
 
@@ -770,6 +791,8 @@
 /area/rnd/breakroom
 	name = "\improper Research Break Room"
 	icon_state = "research"
+/area/rnd/breakroom/outpost
+	name = "\improper Research Outpost Break Room"
 /area/rnd/reception_desk
 	name = "\improper Research Reception Desk"
 	icon_state = "research"
@@ -1406,9 +1429,9 @@
 	name = "\improper Telecoms Maintenance"
 
 // Telecomms areas.
-/area/tcomfoyer
-	name = "\improper Telecomms Foyer"
-	icon_state = "tcomsatfoyer"
+/area/tcomstorage
+	name = "\improper Telecomms Storage"
+	icon_state = "tcomstorage"
 	ambience = AMBIENCE_ENGINEERING
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
@@ -1417,7 +1440,7 @@
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/tcommsat/entrance
-	name = "\improper Telecomms Teleporter"
+	name = "\improper Telecomms Entrance"
 	icon_state = "tcomsatentrance"
 
 /area/tcommsat/chamber
@@ -1428,8 +1451,8 @@
 	name = "\improper Telecomms Control Room"
 	icon_state = "tcomsatcomp"
 
-/area/tcomsat
-	name = "\improper Telecomms Satellite"
+/area/tcomlobby
+	name = "\improper Telecomms Lobby"
 	icon_state = "tcomsatlob"
 	ambience = AMBIENCE_ENGINEERING
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
@@ -1579,10 +1602,12 @@
 	name = "\improper Patient C"
 	icon_state = "medbay_patient_room_c"
 /area/medical/psych
-	name = "\improper Psych Room"
+	name = "\improper Walk-in Psychiatry Clinic"
 	icon_state = "medbay3"
 	ambience = list('sound/ambience/signal.ogg')
 	req_access = list(access_psychiatrist)
+/area/medical/psych/inside
+	name = "\improper Psychiatry Office"
 /area/medical/reception
 	name = "\improper Medbay Reception"
 	icon_state = "medbay"
@@ -1676,6 +1701,68 @@
 /area/holodeck/alphadeck
 	name = "\improper Holodeck Alpha"
 
+/area/holodeck/source_plating
+	name = "\improper Holodeck - Off"
+
+/area/holodeck/source_emptycourt
+	name = "\improper Holodeck - Empty Court"
+	sound_env = ARENA
+
+/area/holodeck/source_boxingcourt
+	name = "\improper Holodeck - Boxing Court"
+	sound_env = ARENA
+
+/area/holodeck/source_basketball
+	name = "\improper Holodeck - Basketball Court"
+	sound_env = ARENA
+
+/area/holodeck/source_thunderdomecourt
+	name = "\improper Holodeck - Thunderdome Court"
+	requires_power = 0
+	sound_env = ARENA
+
+/area/holodeck/source_courtroom
+	name = "\improper Holodeck - Courtroom"
+	sound_env = AUDITORIUM
+
+/area/holodeck/source_beach
+	name = "\improper Holodeck - Beach"
+	sound_env = PLAIN
+
+/area/holodeck/source_burntest
+	name = "\improper Holodeck - Atmospheric Burn Test"
+
+/area/holodeck/source_wildlife
+	name = "\improper Holodeck - Wildlife Simulation"
+
+/area/holodeck/source_meetinghall
+	name = "\improper Holodeck - Meeting Hall"
+	sound_env = AUDITORIUM
+
+/area/holodeck/source_theatre
+	name = "\improper Holodeck - Theatre"
+	sound_env = CONCERT_HALL
+
+/area/holodeck/source_picnicarea
+	name = "\improper Holodeck - Picnic Area"
+	sound_env = PLAIN
+
+/area/holodeck/source_snowfield
+	name = "\improper Holodeck - Snow Field"
+	sound_env = FOREST
+
+/area/holodeck/source_desert
+	name = "\improper Holodeck - Desert"
+	sound_env = PLAIN
+
+/area/holodeck/source_space
+	name = "\improper Holodeck - Space"
+	has_gravity = 0
+	sound_env = SPACE
+
+/area/holodeck/source_chess
+	name = "\improper Holodeck - Chessboard"
+
 // Visitor/crew amenities
 /area/bridge
 	holomap_color = HOLOMAP_AREACOLOR_COMMAND
@@ -1704,6 +1791,10 @@
 	name = "\improper Recreation Area Restroom"
 	icon_state = "recreation_area_restroom"
 	sound_env = SMALL_ENCLOSED
+
+/area/crew_quarters/recreation_area_restroom/showers
+	name = "\improper Recreation Area Showers"
+
 /area/crew_quarters/sleep/Dorm_1
 	area_flags = AREA_FLAG_RAD_SHIELDED
 

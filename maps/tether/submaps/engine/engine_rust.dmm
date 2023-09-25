@@ -96,9 +96,6 @@
 /obj/structure/grille,
 /turf/simulated/floor,
 /area/engineering/engine_room)
-"ap" = (
-/turf/space,
-/area/engineering/engine_smes)
 "aq" = (
 /turf/simulated/floor,
 /area/engineering/engine_room)
@@ -1567,7 +1564,7 @@ aa
 ab
 ab
 ai
-ap
+ab
 aw
 ax
 aw

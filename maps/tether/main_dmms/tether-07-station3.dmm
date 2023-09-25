@@ -15548,11 +15548,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
-"AY" = (
-/turf/space,
-/area/supply/station{
-	dynamic_lighting = 0
-	})
 "AZ" = (
 /obj/machinery/camera/network/security{
 	c_tag = "SEC - Vault Exterior West";
@@ -16598,10 +16593,7 @@
 /area/quartermaster/storage)
 "CS" = (
 /turf/space,
-/area/supply/station{
-	base_turf = /turf/simulated/floor/airless;
-	dynamic_lighting = 0
-	})
+/area/supply/station)
 "CT" = (
 /obj/structure/safe,
 /obj/item/clothing/under/color/yellow,
@@ -19608,6 +19600,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
+"IM" = (
+/turf/simulated/floor/carpet/blue,
+/area/medical/psych/inside)
 "IO" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Cargo Substation Bypass"
@@ -23417,7 +23412,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Pa" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -23437,7 +23432,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Pb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -23460,7 +23455,7 @@
 	pixel_y = 6
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Pc" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -23482,7 +23477,7 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Pd" = (
 /turf/simulated/wall,
 /area/medical/patient_a)
@@ -23699,7 +23694,7 @@
 	},
 /obj/structure/closet/secure_closet/psychiatry,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Px" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -23708,13 +23703,13 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/blue,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Py" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Pz" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -23729,7 +23724,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "PA" = (
 /obj/structure/table/glass,
 /obj/item/modular_computer/laptop/preset/records,
@@ -24022,11 +24017,11 @@
 /obj/structure/table/woodentable,
 /obj/item/toy/plushie/therapy/orange,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "PR" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet/blue,
-/area/medical/psych)
+/area/medical/psych/inside)
 "PT" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -24040,7 +24035,7 @@
 	},
 /obj/structure/bed/psych,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "PU" = (
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24318,7 +24313,7 @@
 	name = "Psychiatrist"
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Qs" = (
 /obj/machinery/status_display{
 	pixel_x = 32
@@ -24333,7 +24328,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Qt" = (
 /obj/structure/table/glass,
 /obj/item/clipboard,
@@ -24524,7 +24519,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "QJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -24634,10 +24629,7 @@
 /area/medical/ward)
 "QS" = (
 /turf/simulated/floor/airless,
-/area/supply/station{
-	base_turf = /turf/simulated/floor/airless;
-	dynamic_lighting = 0
-	})
+/area/supply/station)
 "QT" = (
 /obj/abstract/map_data/tether,
 /turf/space,
@@ -25257,7 +25249,7 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/plating,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Sn" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -25437,7 +25429,7 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/medical/psych)
+/area/medical/psych/inside)
 "ST" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -25568,7 +25560,7 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/pink/border,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Tu" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/steeldecal/steel_decals4,
@@ -25588,7 +25580,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Tz" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
@@ -26187,7 +26179,7 @@
 	name = "Medical Records"
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "VC" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -26198,6 +26190,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock)
+"VD" = (
+/turf/simulated/wall,
+/area/medical/psych/inside)
 "VE" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
@@ -26753,7 +26748,7 @@
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "XG" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
@@ -26931,7 +26926,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Yn" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -27038,7 +27033,7 @@
 	},
 /obj/structure/bed/chair/comfy/brown,
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "YB" = (
 /obj/abstract/landmark/latejoin/gateway,
 /obj/effect/floor_decal/techfloor/orange{
@@ -27260,7 +27255,7 @@
 	pixel_y = -4
 	},
 /turf/simulated/floor/wood,
-/area/medical/psych)
+/area/medical/psych/inside)
 "Zk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -27409,7 +27404,7 @@
 	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/plating,
-/area/medical/psych)
+/area/medical/psych/inside)
 "ZO" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -36235,7 +36230,7 @@ QI
 Yk
 VA
 Tx
-zD
+VD
 vs
 vs
 vs
@@ -36373,9 +36368,9 @@ OA
 Pa
 Px
 PR
-Ef
-Ef
-Ef
+IM
+IM
+IM
 Tt
 Sk
 vs
@@ -36514,9 +36509,9 @@ Of
 Oz
 Pb
 Py
-Ef
-Ef
-Ef
+IM
+IM
+IM
 SP
 Qr
 ZL
@@ -36801,9 +36796,9 @@ Pd
 Pd
 Pd
 Pd
-zD
-zD
-zD
+VD
+VD
+VD
 vt
 vt
 vt
@@ -37345,7 +37340,7 @@ zA
 Av
 BB
 Ck
-TJ
+RL
 RL
 EX
 Vs
@@ -37487,7 +37482,7 @@ zB
 Ay
 xX
 Ck
-TJ
+RL
 Ec
 EY
 FN
@@ -37629,7 +37624,7 @@ zC
 Az
 BD
 Cv
-TJ
+RL
 Ed
 EZ
 WA
@@ -38059,7 +38054,7 @@ Ss
 Eg
 Fa
 FQ
-TJ
+RL
 Hl
 Hl
 Hl
@@ -38201,7 +38196,7 @@ BF
 Eh
 Fb
 FR
-TJ
+RL
 RL
 RL
 RL
@@ -42170,17 +42165,17 @@ vt
 vt
 vt
 vt
-AY
-AY
+CS
+CS
 CS
 QS
 QS
 QS
 QS
 QS
-AY
-AY
-AY
+CS
+CS
+CS
 ae
 ae
 aa
@@ -42312,18 +42307,18 @@ aa
 aa
 aa
 ae
-AY
-AY
+CS
+CS
 CS
 QS
 QS
 QS
 QS
 QS
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
 ae
 aa
 aa
@@ -42454,18 +42449,18 @@ aa
 aa
 aa
 ae
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
 ae
 aa
 aa
@@ -42596,18 +42591,18 @@ aa
 aa
 aa
 ae
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
 ae
 aa
 aa
@@ -42738,18 +42733,18 @@ aa
 aa
 aa
 aa
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
 ae
 aa
 aa
@@ -42880,18 +42875,18 @@ aa
 aa
 aa
 aa
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
 ae
 aa
 aa
@@ -43022,17 +43017,17 @@ aa
 aa
 aa
 aa
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
-AY
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
+CS
 ae
 ae
 aa

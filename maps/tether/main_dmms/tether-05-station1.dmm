@@ -5362,9 +5362,6 @@
 	name = "Holodeck Projector Floor"
 	},
 /area/holodeck/alphadeck)
-"amh" = (
-/turf/simulated/wall,
-/area/holodeck/alphadeck)
 "ami" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -5638,6 +5635,7 @@
 	name = "Engine Room Blast Doors";
 	pixel_x = 25
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
 "amY" = (
@@ -6026,9 +6024,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
-	dir = 4
-	},
+/obj/machinery/atmospherics/pipe/manifold/visible/scrubbers,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
 "aom" = (
@@ -6045,14 +6041,14 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
 "aon" = (
-/obj/machinery/atmospherics/pipe/simple/visible/supply{
-	dir = 4
-	},
 /obj/item/radio/intercom{
 	pixel_y = 20
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/supply{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
@@ -6318,6 +6314,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
@@ -19852,7 +19851,8 @@
 /area/space)
 "cbY" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
+	dir = 4;
+	controlled = 0
 	},
 /turf/simulated/floor/airless,
 /area/engineering/atmos/backup)
@@ -31129,7 +31129,7 @@ aIA
 bXl
 bPx
 bXl
-aCF
+aCK
 aCK
 aaa
 aaa
@@ -37758,16 +37758,16 @@ aat
 aat
 aac
 aac
-amh
-amh
-amh
-amh
+alA
+alA
+alA
+alA
 aac
 aac
-amh
-amh
-amh
-amh
+alA
+alA
+alA
+alA
 aac
 aac
 aac

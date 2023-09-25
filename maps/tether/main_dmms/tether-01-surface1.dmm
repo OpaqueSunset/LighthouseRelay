@@ -9489,7 +9489,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "asq" = (
 /obj/structure/stairs/long,
 /turf/simulated/floor/tiled,
@@ -10287,9 +10287,8 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "atL" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/turf/simulated/wall,
+/area/maintenance/lower/vacant_site)
 "atM" = (
 /obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/tiled,
@@ -11116,7 +11115,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "avn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -13460,6 +13459,11 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/solars)
 "azq" = (
@@ -18828,7 +18832,7 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aKL" = (
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/plating,
@@ -18907,7 +18911,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aKY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -18923,7 +18927,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aKZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -18942,7 +18946,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLa" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -18961,7 +18965,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -18976,7 +18980,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -18995,7 +18999,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLd" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4
@@ -19013,7 +19017,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLe" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19031,7 +19035,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLf" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19047,7 +19051,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -19063,7 +19067,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLh" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -19081,8 +19085,11 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLi" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -19102,8 +19109,16 @@
 "aLj" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 22
+	},
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLk" = (
 /obj/random/cash,
 /turf/simulated/floor/plating,
@@ -19275,7 +19290,7 @@
 "aLC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLD" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19285,7 +19300,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLE" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19295,10 +19310,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLF" = (
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLG" = (
 /obj/structure/catwalk,
 /obj/structure/disposalpipe/segment{
@@ -19345,18 +19360,18 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLL" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/action_figure,
 /obj/random/action_figure,
 /obj/random/action_figure,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "aLN" = (
 /obj/structure/window/reinforced,
 /obj/structure/closet/masks,
@@ -21165,7 +21180,7 @@
 	name = "HIGH VOLTAGE"
 	},
 /turf/simulated/wall,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aVl" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -21175,7 +21190,7 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aVs" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -21185,7 +21200,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aVt" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -21193,14 +21208,14 @@
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aVu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aVw" = (
 /obj/machinery/air_sensor{
 	id_tag = "n2_sensor"
@@ -21333,7 +21348,7 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXF" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -21344,7 +21359,7 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -21354,7 +21369,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXH" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -21364,17 +21379,14 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXQ" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -21386,7 +21398,7 @@
 	},
 /obj/structure/railing/mapped,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aXZ" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -21476,16 +21488,11 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aZj" = (
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -28
-	},
-/obj/structure/cable,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "aZl" = (
 /obj/machinery/atmospherics/unary/freezer{
 	icon_state = "freezer"
@@ -21672,7 +21679,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "bbL" = (
 /obj/structure/flora/pottedplant,
 /turf/simulated/floor/lino,
@@ -21837,7 +21844,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "bcX" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable{
@@ -21845,7 +21852,7 @@
 	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
-/area/maintenance/lower/solars)
+/area/maintenance/lower/xenoflora)
 "bcY" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -29929,7 +29936,7 @@
 	name = "Maintenance Access"
 	},
 /turf/simulated/floor/wood,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "fgG" = (
 /obj/structure/disposalpipe/junction,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -31471,7 +31478,7 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/wood,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "nUu" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -32254,6 +32261,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar)
+"rwp" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/maintenance/lower/vacant_site)
 "ryd" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -32268,6 +32280,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"rCL" = (
+/turf/simulated/floor/plating,
+/area/maintenance/lower/vacant_site)
 "rEC" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -32414,7 +32429,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "stX" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 6
@@ -32475,6 +32490,10 @@
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/engineering/atmos/intake)
+"sxf" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating,
+/area/maintenance/lower/vacant_site)
 "sxm" = (
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline,
@@ -33098,7 +33117,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/oil,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/maintenance/lower/atmos)
+/area/maintenance/lower/vacant_site)
 "vyR" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
@@ -38858,7 +38877,7 @@ arA
 apt
 asU
 ars
-arG
+alg
 bcW
 auu
 auu
@@ -39000,7 +39019,7 @@ ahl
 aUI
 asV
 atG
-arG
+alg
 aVu
 auu
 axj
@@ -39142,7 +39161,7 @@ arB
 asl
 asW
 atH
-arG
+alg
 aVu
 auu
 bfR
@@ -39284,7 +39303,7 @@ ako
 ako
 aqM
 atI
-arG
+alg
 aVu
 auu
 bfP
@@ -39426,7 +39445,7 @@ arC
 aUK
 asY
 atJ
-arG
+alg
 aVu
 auu
 azV
@@ -39565,10 +39584,10 @@ ahl
 aQF
 aSG
 aqj
-arG
-arG
-arG
-arG
+alg
+alg
+alg
+alg
 bcX
 auu
 axl
@@ -39707,7 +39726,7 @@ apw
 aqj
 aSP
 aTY
-arG
+alg
 aXF
 aZh
 bbv
@@ -39851,7 +39870,7 @@ aoJ
 aTX
 aVa
 aXE
-atL
+aZj
 auu
 auu
 auu
@@ -39993,7 +40012,7 @@ aqX
 aUd
 aVl
 aXH
-atL
+aZj
 auu
 avn
 awj
@@ -40133,9 +40152,9 @@ alJ
 aqj
 aqj
 aqj
-arG
+alg
 aXG
-atL
+aZj
 auu
 bcY
 bei
@@ -40274,10 +40293,10 @@ alJ
 apx
 akV
 akV
-arG
+alg
 asp
 aXS
-atL
+aZj
 auu
 bcZ
 bek
@@ -40416,7 +40435,7 @@ alJ
 akV
 akV
 akV
-arG
+alg
 aVs
 aXQ
 aZj
@@ -40558,7 +40577,7 @@ aoU
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atf
@@ -40700,7 +40719,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVt
 atf
 aZl
@@ -40842,7 +40861,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 aZo
@@ -40984,7 +41003,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atP
@@ -41126,7 +41145,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atQ
@@ -41268,7 +41287,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atR
@@ -41410,7 +41429,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 tec
@@ -41552,7 +41571,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atR
@@ -41694,7 +41713,7 @@ akV
 akV
 akV
 akV
-arG
+alg
 aVu
 atf
 atS
@@ -43932,7 +43951,7 @@ aao
 aao
 aao
 aao
-abn
+aao
 aah
 aah
 abT
@@ -46145,7 +46164,7 @@ aKc
 aKs
 aIm
 aKY
-aIk
+rCL
 aLZ
 aMp
 aMK
@@ -46429,7 +46448,7 @@ aIn
 aKt
 aIm
 aLb
-aLj
+rwp
 aLZ
 aLZ
 aMN
@@ -46571,7 +46590,7 @@ aKb
 aKt
 aIm
 aKX
-aIk
+rCL
 aLZ
 aMr
 aMO
@@ -46713,7 +46732,7 @@ aKc
 aKu
 aIm
 aLc
-aIk
+rCL
 aLZ
 aMs
 aMP
@@ -46997,7 +47016,7 @@ aJE
 aKv
 aIm
 aKX
-aIB
+sxf
 aMb
 aMt
 aMQ
@@ -47423,7 +47442,7 @@ aKd
 aKw
 aIm
 aLf
-aIk
+rCL
 aMb
 aMv
 aMU
@@ -47565,7 +47584,7 @@ aKe
 aKx
 aIm
 aLg
-aIB
+sxf
 aMb
 aMw
 aMV
@@ -47707,7 +47726,7 @@ aKg
 aKy
 aIm
 aKY
-aIB
+sxf
 aMb
 aMb
 aMb
@@ -47849,7 +47868,7 @@ aIm
 aIm
 aIm
 aKX
-aLj
+rwp
 aMd
 aMx
 aMW
@@ -48131,7 +48150,7 @@ cgi
 cha
 chD
 aKC
-azI
+atL
 aLj
 aLL
 aMd
@@ -48273,9 +48292,9 @@ cgw
 ceM
 chQ
 chQ
-azI
-azI
-azI
+atL
+atL
+atL
 aMd
 aMz
 aMZ
@@ -48416,7 +48435,7 @@ chl
 rEC
 chO
 cje
-azI
+atL
 aLM
 aMd
 aMA
@@ -48558,8 +48577,8 @@ chm
 cfv
 cfv
 vAe
-azI
-azI
+atL
+atL
 aMd
 aMd
 aMd

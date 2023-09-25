@@ -720,9 +720,7 @@
 /area/shuttle/tether/crash1)
 "bO" = (
 /turf/exterior/dirt,
-/area/syndicate_station/mining{
-	base_turf = /turf/exterior/dirt
-	})
+/area/syndicate_station/mining)
 "bP" = (
 /obj/structure/symbol/em,
 /turf/simulated/wall,
@@ -4054,7 +4052,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "kF" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 9
@@ -4083,7 +4081,7 @@
 	pixel_x = -4
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "kK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -4298,7 +4296,7 @@
 /obj/structure/table/woodentable,
 /obj/item/toy/plushie/marble_fox,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "lI" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -4493,7 +4491,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "mD" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -4653,7 +4651,7 @@
 	pixel_y = 1
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "nz" = (
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -4764,7 +4762,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "oe" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -4847,7 +4845,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "oH" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "scioutpost_airlock_outer";
@@ -5282,7 +5280,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "rf" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 9
@@ -5309,7 +5307,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/machinery/power/terminal,
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -5442,8 +5439,11 @@
 	name = "Science Outpost Breakroom"
 	},
 /obj/machinery/door/firedoor/glass,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "rP" = (
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -5713,7 +5713,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "th" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -5727,7 +5727,7 @@
 /obj/structure/table/woodentable,
 /obj/item/ashtray/glass,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "tl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -5839,7 +5839,7 @@
 "tT" = (
 /obj/machinery/vending/snack,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "tV" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -5900,7 +5900,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "uf" = (
 /obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 8
@@ -5991,6 +5991,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "uz" = (
@@ -6004,8 +6007,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "uG" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -6076,7 +6082,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "vi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -6115,7 +6121,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "vA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -6136,7 +6142,7 @@
 	},
 /obj/item/pen,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "vG" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/mauve/border,
@@ -6333,7 +6339,7 @@
 /area/outpost/research/toxins_misc_lab)
 "xh" = (
 /turf/simulated/wall,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "xj" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -6382,7 +6388,7 @@
 /obj/structure/table/woodentable,
 /obj/item/flashlight/lamp/green,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "xy" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /obj/effect/floor_decal/industrial/warning{
@@ -6514,7 +6520,8 @@
 "yh" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8;
-	pixel_y = -4
+	pixel_y = -4;
+	controlled = 0
 	},
 /turf/exterior/dirt,
 /area/tether/outpost/solars_outside)
@@ -6644,7 +6651,7 @@
 /obj/structure/table/bench/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "yW" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -6676,7 +6683,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "ze" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -6688,8 +6695,11 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "zf" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -6745,7 +6755,7 @@
 /obj/item/ashtray/glass,
 /obj/item/ashtray/glass,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "zp" = (
 /obj/structure/hygiene/sink{
 	dir = 4;
@@ -6820,8 +6830,11 @@
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "zH" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -6982,7 +6995,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Aj" = (
 /turf/simulated/wall,
 /area/outpost/research/engineering/eva_atmospherics)
@@ -7106,7 +7119,7 @@
 "AP" = (
 /obj/structure/table/bench/padded,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "AT" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 8;
@@ -7167,7 +7180,7 @@
 "Ba" = (
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Bb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
@@ -7225,7 +7238,7 @@
 	pixel_y = 24
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Bv" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -7732,8 +7745,15 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -28
+	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "EJ" = (
 /obj/machinery/atmospherics/unary/tank/oxygen{
 	dir = 1
@@ -7969,7 +7989,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
-/area/outpost/research/hallway/resarch_outpost_northern_hallway)
+/area/outpost/research/hallway/resarch_outpost_western_hallway)
 "GT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -8010,7 +8030,7 @@
 	pixel_x = 30
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Hk" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -8355,7 +8375,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Jj" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -8395,6 +8415,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "Js" = (
@@ -8483,7 +8506,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "JX" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -8523,6 +8546,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -9044,6 +9070,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "MF" = (
@@ -9066,7 +9095,7 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "MR" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -9190,6 +9219,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "Np" = (
@@ -9499,7 +9531,7 @@
 /obj/structure/table/bench/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Pr" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 9
@@ -9515,7 +9547,7 @@
 	pixel_x = 24
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Pw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -9630,8 +9662,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "QH" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -9892,6 +9927,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "Sq" = (
@@ -9931,7 +9969,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Sv" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -9940,7 +9978,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Sz" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/grille,
@@ -9975,7 +10013,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "SC" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -10026,7 +10064,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Th" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -10415,7 +10453,7 @@
 	pixel_y = -15
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Vm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10591,7 +10629,7 @@
 	pixel_x = 2
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Wt" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -10751,7 +10789,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "XB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10984,7 +11022,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/rnd/breakroom)
+/area/rnd/breakroom/outpost)
 "Zq" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -25413,7 +25451,7 @@ ad
 Lz
 ZA
 cL
-Ak
+Lz
 On
 Lz
 Lz
@@ -27961,7 +27999,7 @@ xh
 xh
 xh
 xh
-FN
+xh
 Qs
 MB
 Jv
@@ -28129,7 +28167,7 @@ Xo
 TX
 jj
 jr
-VG
+Ne
 Ne
 Ne
 Ne
@@ -28552,10 +28590,10 @@ Lz
 Lz
 Lz
 Lz
-TX
+XB
 WX
 yf
-XZ
+XH
 Um
 XH
 XH
