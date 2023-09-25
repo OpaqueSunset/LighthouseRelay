@@ -25,6 +25,7 @@
 /obj/structure/sign/greencross : /obj/structure/sign/department/greencross{@OLD}
 /obj/structure/sign/redcross : /obj/structure/sign/department/redcross{@OLD}
 /obj/structure/sign/goldenplaque : /obj/structure/sign/plaque/golden{@OLD}
+/obj/structure/sign/kiddieplaque : /obj/structure/sign/plaque/ai_dev{@OLD}
 /obj/structure/sign/botany : /obj/structure/sign/department/botany{@OLD}
 /obj/structure/sign/department/mail : /obj/structure/sign/department/mail_delivery{@OLD}
 /obj/structure/sign/atmos_air : /obj/structure/sign/warning/compressed_gas{@OLD}
@@ -173,6 +174,9 @@
 
 /obj/item/radio{icon_state = "red_phone"} : /obj/item/radio/phone {@OLD; icon = @SKIP; icon_state = @SKIP}
 
+/obj/item/radio/@SUBTYPES{subspace_transmission = @SET} : @OLD {@OLD; subspace_transmission = @SKIP}
+/obj/item/radio/@SUBTYPES{syndie = @SET} : @OLD {@OLD; syndie = @SKIP}
+
 /obj/item/chems/bucket : /obj/item/chems/glass/bucket{@OLD}
 /obj/item/tape_recorder : /obj/item/taperecorder{@OLD}
 /obj/item/tape/@SUBTYPES : /obj/item/magnetic_tape/@SUBTYPES{@OLD}
@@ -188,6 +192,7 @@
 /obj/machinery/cryopod/robot/door/dorms{icon = 'icons/obj/doors/Door2x1glass.dmi'} : /obj/machinery/cryopod/robot/door/dorms/colony
 /obj/structure/closet{icon_closed = "cabinet_closed";icon_opened = "cabinet_open";icon_state = "cabinet_closed";name = "Clothing Storage"} : /obj/structure/closet/wardrobe{name = "clothing storage"}
 /obj/structure/closet/secure_closet{icon_broken = "medicalbroken";icon_closed = "medical";icon_locked = "medical1";icon_off = "medicaloff";icon_opened = "medicalopen";icon_state = "medical1";name = "Surgical Pressure Gear"} : /obj/structure/closet/secure_closet{name = "surgical pressure gear"; req_access = list(access_medical_equip); closet_appearance = /decl/closet_appearance/secure_closet/medical/alt}
+/turf/unsimulated/mineral{icon = 'icons/turf/transit_vr.dmi'; icon_state = "rock"} : /turf/unsimulated/mineral
 /area/shuttle/large_escape_pod1/station{base_turf = @SET} : /area/shuttle/large_escape_pod1/station
 # impure areas
 /area/syndicate_station/mining{base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b} : /area/syndicate_station/mining
@@ -392,12 +397,15 @@
 /obj/machinery/r_n_d/protolathe : /obj/machinery/fabricator/protolathe{@OLD}
 /obj/machinery/bookbinder : /obj/machinery/fabricator/book{@OLD}
 /obj/machinery/organ_printer/flesh : /obj/machinery/fabricator/bioprinter{@OLD}
+/obj/machinery/vending/food : /obj/machinery/fabricator/replicator
 
 /obj/machinery/fabricator/@SUBTYPES : /obj/machinery/fabricator/@SUBTYPES{@OLD; res_max_amount = @SKIP; speed = @SKIP}
 
 /obj/structure/reagent_dispensers/water_cooler/full : /obj/structure/reagent_dispensers/water_cooler
 
 /obj/item/radio/headset/headset_sec/alt : /obj/item/radio/headset/headset_sec/bowman{@OLD}
+/obj/item/radio/headset/syndicate : /obj/item/radio/headset/hacked
+/obj/item/radio/headset/syndicate/alt : /obj/item/radio/headset/hacked
 
 /obj/item/storage/firstaid/regular{empty = 1} : /obj/item/storage/firstaid/empty{@OLD; empty = @SKIP; name = @SKIP}
 
@@ -405,8 +413,18 @@
 
 /obj/item/energy/@SUBTYPES : /obj/item/energy_blade/@SUBTYPES{@OLD}
 
+/obj/item/clothing/accessory/medal/bronze_heart : /obj/item/clothing/accessory/medal/nanotrasen/bronze
+/obj/item/clothing/accessory/medal/nobel_science : /obj/item/clothing/accessory/medal/nanotrasen/silver
+/obj/item/clothing/accessory/scarf/white : /obj/item/clothing/accessory/scarf
+/obj/item/clothing/accessory/storage/webbing : /obj/item/clothing/accessory/storage/vest
+
+/obj/item/knife/plastic : /obj/item/knife/table/plastic
+
 # MATERIALS
 /obj/item/stack/material/plastic : /obj/item/stack/material/panel/mapped/plastic{@OLD}
+/obj/item/stack/material/sandstone : /obj/item/stack/material/brick/mapped/sandstone{@OLD}
+/obj/item/stack/material/mhydrogen : /obj/item/stack/material/segment/mapped/mhydrogen{@OLD}
+/obj/item/stack/material/diamond : /obj/item/stack/material/gemstone/mapped/diamond{@OLD}
 /obj/item/stack/material/wood : /obj/item/stack/material/plank/mapped/wood{@OLD}
 /obj/item/stack/material/steel : /obj/item/stack/material/sheet/mapped/steel{@OLD}
 /obj/item/stack/material/glass : /obj/item/stack/material/pane/mapped/glass{@OLD}
@@ -536,6 +554,8 @@
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "nitrogen=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "n2=82.17;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.17)}
 /turf/simulated/floor/reinforced/nitrogen{initial_gas_mix = "n2=82.1472;TEMP=293.15"} : /turf/simulated/floor/reinforced/nitrogen{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/nitrogen = 82.1472)}
+/turf/simulated/floor/tiled/steel{initial_gas_mix = "o2=410;TEMP=293.15"} : /turf/simulated/floor/tiled/steel{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/gas/oxygen = 410)}
+/turf/simulated/floor/tiled/white{initial_gas_mix = "phoron=101;TEMP=293.15"} : /turf/simulated/floor/tiled/white{@OLD; initial_gas_mix=@SKIP; initial_gas = list(/decl/material/solid/phoron = 101)}
 
 /obj/item/stock_parts/subspace/sub_filter : /obj/item/stock_parts/subspace/filter
 
@@ -603,7 +623,46 @@
 /obj/item/toy/cultsword : /obj/item/sword/cult_toy{@OLD}
 /obj/item/toy/nanotrasenballoon : /obj/item/toy/balloon/nanotrasen{@OLD}
 /obj/item/toy/syndicateballoon : /obj/item/toy/balloon{@OLD}
+/obj/item/toy/sword : /obj/item/energy_blade/sword/toy{@OLD}
+/obj/item/lipstick/jade : /obj/item/lipstick/green{@OLD}
 /obj/item/rig_module/device/plasmacutter : /obj/item/rig_module/mounted/plasmacutter{@OLD}
+/obj/item/storage/box/syndie_kit/ewar_voice : /obj/item/storage/backpack/satchel/syndie_kit/ewar_voice
+/obj/item/tray : /obj/item/storage/tray{@OLD}
+/obj/item/weldpack : /obj/item/chems/weldpack{@OLD}
+/obj/machinery/crystal : /obj/structure/crystal{@OLD}
+/obj/item/ore/@SUBTYPES : /obj/item/stack/material/ore/@SUBTYPES{@OLD}
+/obj/item/organ/internal/stack : /obj/item/organ/internal/voxstack{@OLD}
+/obj/item/lipstick/random : /obj/random/lipstick
+/obj/item/radio_jammer : /obj/item/suit_sensor_jammer
+
+/obj/item/kit/paint/durand : @DELETE
+/obj/item/kit/paint/durand/phazon : @DELETE
+/obj/item/kit/paint/durand/seraph : @DELETE
+/obj/item/kit/paint/gygax/darkgygax : @DELETE
+/obj/item/kit/paint/gygax/recitence : @DELETE
+/obj/item/kit/paint/ripley : /obj/item/kit/paint/camouflage
+/obj/item/kit/paint/ripley/death : /obj/item/kit/paint/camouflage/forest
+/obj/item/kit/paint/ripley/flames_blue : /obj/item/kit/paint/flames_blue
+/obj/item/kit/paint/ripley/flames_red : /obj/item/kit/paint/flames_red
+
+/obj/item/clothing/head/technomancer : @DELETE
+/obj/item/clothing/under/technomancer : @DELETE
+/obj/item/antag_spawner/technomancer_apprentice : @DELETE
+# todo: port the psi-amp
+/obj/item/clothing/head/wizard/amp : @DELETE
+
+/obj/item/firstaid_arm_assembly : @DELETE
+/obj/item/bucket_sensor : @DELETE
+/obj/item/broken_device : @DELETE
+/obj/item/clothing/gloves/blue : /obj/item/clothing/gloves/color/blue
+/obj/item/clothing/gloves/brown : /obj/item/clothing/gloves/color/brown
+/obj/item/clothing/gloves/green : /obj/item/clothing/gloves/color/green
+/obj/item/clothing/gloves/grey : /obj/item/clothing/gloves/color/grey
+/obj/item/clothing/gloves/light_brown : /obj/item/clothing/gloves/color/light_brown
+/obj/item/clothing/gloves/purple : /obj/item/clothing/gloves/color/purple
+/obj/item/clothing/gloves/white : /obj/item/clothing/gloves/color/white
+
+/obj/item/spacecash/@SUBTYPES : /obj/item/cash/@SUBTYPES{@OLD}
 
 /obj/item/FixOVein : /obj/item/sutures{@OLD}
 
@@ -617,6 +676,14 @@
 /obj/machinery/computer/rdconsole/core : /obj/machinery/computer/design_console{@OLD}
 /obj/machinery/computer/rdconsole/robotics : /obj/machinery/computer/design_console{@OLD}
 /obj/machinery/computer/rdservercontrol : /obj/machinery/computer/design_console{@OLD; name = @SKIP; badmin = @SKIP}
+
+/obj/structure/AIcore : /obj/structure/aicore
+/obj/item/tank/vox : /obj/item/tank/nitrogen
+
+/obj/mecha/working/ripley/firefighter : /mob/living/exosuit/premade/firefighter
+/obj/mecha/working/ripley/mining : /mob/living/exosuit/premade/powerloader
+
+/area/wizard_station : /area/map_template/wizard_station
 
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
@@ -656,3 +723,5 @@
 /obj/item/book/manual/hydroponics_pod_people : @DELETE
 /obj/machinery/scale : @DELETE
 /obj/machinery/sleep_console : @DELETE
+# different mech system
+/obj/effect/decal/mecha_wreckage/@SUBTYPES : @DELETE

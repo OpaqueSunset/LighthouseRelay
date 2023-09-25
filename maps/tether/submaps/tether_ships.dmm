@@ -56,38 +56,28 @@
 /turf/space/infinity/bluespace,
 /area/space)
 "gW" = (
-/turf/unsimulated/wall{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/wall,
 /area/space)
 "gX" = (
 /obj/effect/floor_decal/transit/orange{
 	dir = 8
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "gY" = (
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "gZ" = (
 /obj/effect/floor_decal/transit/orange{
 	dir = 4
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "ha" = (
 /turf/space/transit/south,
 /area/shuttle/antag_space/transit)
 "hb" = (
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/shuttle/antag_ground/transit)
 "hc" = (
 /turf/simulated/sky/virgo3b/south,
@@ -108,9 +98,7 @@
 /obj/effect/transit/light{
 	dir = 8
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "hi" = (
 /obj/effect/floor_decal/transit/orange{
@@ -119,9 +107,7 @@
 /obj/effect/transit/light{
 	dir = 4
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "hj" = (
 /obj/effect/step_trigger/thrower{

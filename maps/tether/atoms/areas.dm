@@ -72,6 +72,9 @@
 	icon_state = "centcom_crew"
 	sound_env = SMALL_ENCLOSED
 
+/area/centcom/ferry
+	name = "\improper CentCom Transport Shuttle"
+
 /area/vacant/vacant_restaurant_upper
 	name = "\improper Vacant Restaurant"
 	icon_state = "vacant_site"
@@ -347,6 +350,18 @@
 	name = "Supply Shuttle"
 	icon_state = "shuttle3"
 	requires_power = FALSE
+
+/area/supply/dock
+	name = "Supply Shuttle"
+	icon_state = "shuttle3"
+	requires_power = 0
+	base_turf = /turf/space
+
+/area/syndicate_mothership
+	name = "\improper Mercenary Base"
+	icon_state = "syndie-ship"
+	requires_power = 0
+	dynamic_lighting = 0
 
 // Thunderdome
 
@@ -638,6 +653,9 @@
 /area/tether/outpost/solars_outside
 	name = "\improper Solar Farm"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = TRUE
+
 /area/tether/outpost/solars_shed
 	name = "\improper Solar Farm Shed"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING

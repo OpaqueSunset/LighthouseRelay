@@ -3,6 +3,8 @@
 /obj/item/ammo_casing/nsfw_batt/net
 /obj/item/ammo_casing/nsfw_batt/stun
 /obj/item/ammo_magazine/clip/c762/practice
+/obj/item/ammo_magazine/m10mm
+/obj/item/ammo_magazine/m380
 /obj/item/ammo_magazine/m44
 /obj/item/ammo_magazine/m45/practice
 /obj/item/ammo_magazine/m45/rubber
@@ -36,6 +38,7 @@
 /obj/item/gun/projectile/automatic/advanced_smg
 /obj/item/gun/projectile/automatic/battlerifle
 /obj/item/gun/projectile/automatic/bullpup
+/obj/item/gun/projectile/automatic/c20r
 /obj/item/gun/projectile/automatic/l6_saw
 /obj/item/gun/projectile/automatic/p90
 /obj/item/gun/projectile/automatic/pdw
@@ -44,7 +47,10 @@
 /obj/item/gun/projectile/automatic/wt550/lethal
 /obj/item/gun/projectile/automatic/z8
 /obj/item/gun/projectile/deagle
+/obj/item/gun/projectile/giskard
 /obj/item/gun/projectile/heavysniper
+/obj/item/gun/projectile/luger
+/obj/item/gun/projectile/luger/brown
 /obj/item/gun/projectile/nsfw
 /obj/item/gun/projectile/p92x
 /obj/item/gun/projectile/revolver/consul
@@ -52,6 +58,7 @@
 /obj/item/gun/projectile/shotgun/pump/combat
 /obj/item/gun/projectile/shotgun/pump/rifle/practice
 /obj/item/gun/projectile/shotgun/pump/USDF
+/obj/item/gun/projectile/silenced
 /obj/item/gunbox
 /obj/item/knife/tacknife/survival
 /obj/item/twohanded/fireaxe/foam

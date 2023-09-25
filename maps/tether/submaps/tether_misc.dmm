@@ -881,7 +881,7 @@
 	pixel_x = -4;
 	pixel_y = 8
 	},
-/obj/item/chems/glass/bottle/inaprovaline{
+/obj/item/chems/glass/bottle/stabilizer{
 	pixel_x = 4;
 	pixel_y = 7
 	},
@@ -1153,7 +1153,7 @@
 /turf/simulated/shuttle/wall/dark,
 /area/syndicate_station/start)
 "cY" = (
-/obj/machinery/vending/food,
+/obj/machinery/fabricator/replicator,
 /turf/simulated/shuttle/wall/dark,
 /area/syndicate_station/start)
 "cZ" = (
@@ -1164,9 +1164,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /turf/simulated/floor/shuttle/white,
 /area/syndicate_station/start)
@@ -1938,9 +1936,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = -32
 	},
 /obj/structure/closet,
 /turf/simulated/floor/shuttle{
@@ -2433,9 +2429,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/structure/table,
 /obj/item/scalpel,
@@ -2535,10 +2529,7 @@
 	name = "\improper Trader Base"
 	})
 "gX" = (
-/turf/unsimulated/mineral{
-	icon = 'icons/turf/transit_vr.dmi';
-	icon_state = "rock"
-	},
+/turf/unsimulated/mineral,
 /area/centcom/ferry)
 "gY" = (
 /obj/machinery/recharger,
@@ -2658,35 +2649,25 @@
 	name = "\improper Trader Base"
 	})
 "hl" = (
-/turf/unsimulated/wall{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/wall,
 /area/centcom/ferry)
 "hm" = (
 /obj/effect/floor_decal/transit/orange{
 	dir = 8
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "hn" = (
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ho" = (
-/turf/unsimulated/floor/maglev{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/maglev,
 /area/centcom/ferry)
 "hp" = (
 /obj/effect/floor_decal/transit/orange{
 	dir = 4
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "hq" = (
 /obj/structure/bed/chair{
@@ -2749,9 +2730,7 @@
 /obj/effect/transit/light{
 	dir = 8
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "hw" = (
 /obj/effect/floor_decal/rust,
@@ -2841,9 +2820,7 @@
 /obj/effect/transit/light{
 	dir = 4
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "hJ" = (
 /obj/structure/bed/chair/holochair{
@@ -2964,9 +2941,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/structure/closet,
 /turf/simulated/floor/shuttle{
@@ -3000,9 +2975,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ib" = (
 /obj/effect/step_trigger/thrower{
@@ -3011,9 +2984,7 @@
 	name = "thrower_escapeshuttletop(left)";
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ic" = (
 /obj/effect/step_trigger/thrower{
@@ -3022,9 +2993,7 @@
 	name = "thrower_escapeshuttletop(left)";
 	tiles = 0
 	},
-/turf/unsimulated/floor/maglev{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/maglev,
 /area/centcom/ferry)
 "id" = (
 /obj/effect/step_trigger/thrower{
@@ -3033,9 +3002,7 @@
 	name = "thrower_escapeshuttletop(right)";
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ie" = (
 /obj/effect/step_trigger/thrower{
@@ -3044,9 +3011,7 @@
 	name = "thrower_escapeshuttletop(right)";
 	tiles = 0
 	},
-/turf/unsimulated/floor/maglev{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/maglev,
 /area/centcom/ferry)
 "if" = (
 /obj/effect/floor_decal/transit/orange{
@@ -3059,9 +3024,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ig" = (
 /turf/simulated/floor/shuttle{
@@ -3131,19 +3094,13 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "io" = (
-/turf/unsimulated/floor/maglev{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/maglev,
 /area/shuttle/escape/transit)
 "ip" = (
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/shuttle/escape/transit)
 "iq" = (
 /obj/effect/floor_decal/transit/orange{
@@ -3159,9 +3116,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "ir" = (
 /obj/structure/closet,
@@ -3177,9 +3132,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_y = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_y = -32
 	},
 /obj/structure/bed/chair{
 	dir = 1
@@ -3210,9 +3163,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_y = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_y = -32
 	},
 /obj/machinery/light{
 	dir = 8
@@ -3370,9 +3321,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/structure/table/reinforced,
 /obj/item/assembly/prox_sensor{
@@ -4330,7 +4279,7 @@
 /obj/machinery/vending/assist{
 	contraband = null;
 	name = "Old Vending Machine";
-	products = list(/obj/item/assembly/prox_sensor = 5, /obj/item/assembly/signaler = 4, /obj/item/assembly/infra = 4, /obj/item/assembly/prox_sensor = 4, /obj/item/handcuffs = 8, /obj/item/flash = 4, /obj/item/cartridge/signal = 4, /obj/item/clothing/glasses/sunglasses = 4)
+	products = list(/obj/item/assembly/prox_sensor = 5, /obj/item/assembly/signaler = 4, /obj/item/assembly/infra = 4, /obj/item/assembly/prox_sensor = 4, /obj/item/handcuffs = 8, /obj/item/flash = 4, /obj/item/clothing/glasses/sunglasses = 4)
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/trade/centcom)
@@ -4441,9 +4390,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/techfloor_grid{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "lp" = (
 /obj/structure/window/reinforced{
@@ -4525,9 +4472,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/unsimulated/floor/maglev{
-	icon = 'icons/turf/transit_vr.dmi'
-	},
+/turf/unsimulated/floor/maglev,
 /area/centcom/ferry)
 "ly" = (
 /obj/machinery/button/blast_door{
@@ -5034,10 +4979,7 @@
 /obj/effect/transit/light{
 	dir = 8
 	},
-/turf/unsimulated/mineral{
-	icon = 'icons/turf/transit_vr.dmi';
-	icon_state = "rock"
-	},
+/turf/unsimulated/mineral,
 /area/centcom/ferry)
 "mv" = (
 /obj/effect/step_trigger/thrower{
@@ -5209,9 +5151,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = -32
 	},
 /turf/unsimulated/floor{
 	dir = 8;
@@ -5256,9 +5196,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -5601,17 +5539,13 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/item/radio/intercom{
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5684,9 +5618,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/machinery/computer/station_alert/all,
 /turf/unsimulated/floor{
@@ -5716,9 +5648,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = -32
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5864,9 +5794,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5900,9 +5828,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";
-	pixel_x = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = -32
 	},
 /obj/item/target,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -6400,7 +6326,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "px" = (
@@ -6502,7 +6428,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "pI" = (
@@ -8900,7 +8826,7 @@
 	},
 /area/antag/antag_base)
 "tN" = (
-/obj/machinery/vending/food,
+/obj/machinery/fabricator/replicator,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -9152,9 +9078,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/machinery/vending/cola{
 	name = "hacked Robust Softdrinks"
@@ -9291,9 +9215,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_y = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_y = -32
 	},
 /obj/structure/closet/syndicate,
 /obj/item/clothing/mask/gas/wwii,
@@ -9354,9 +9276,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = -32
 	},
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
@@ -9394,9 +9314,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_y = -32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_y = -32
 	},
 /obj/machinery/light{
 	dir = 8
@@ -9454,7 +9372,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "wg" = (
@@ -9472,7 +9390,7 @@
 "wk" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "wr" = (
@@ -9502,7 +9420,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "xe" = (
@@ -9527,7 +9445,7 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "ya" = (
@@ -9541,7 +9459,7 @@
 /obj/item/tank/oxygen,
 /obj/item/tank/oxygen,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "yH" = (
@@ -9553,7 +9471,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "yS" = (
@@ -9565,7 +9483,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "yU" = (
@@ -9587,7 +9505,7 @@
 	pixel_y = 8
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "yZ" = (
@@ -9601,7 +9519,7 @@
 /obj/item/tank/vox,
 /obj/item/tank/vox,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Aa" = (
@@ -9640,20 +9558,20 @@
 	},
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Az" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "AK" = (
 /obj/effect/floor_decal/industrial/loading,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "AP" = (
@@ -9689,7 +9607,7 @@
 	pixel_y = 21
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Cy" = (
@@ -9700,7 +9618,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "CF" = (
@@ -9711,7 +9629,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "CK" = (
@@ -9733,7 +9651,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Dj" = (
@@ -9776,7 +9694,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Fl" = (
@@ -9794,7 +9712,7 @@
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Fo" = (
@@ -9860,7 +9778,7 @@
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "IE" = (
@@ -9871,7 +9789,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "IX" = (
@@ -9889,7 +9807,7 @@
 	},
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "JF" = (
@@ -9902,7 +9820,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "JI" = (
@@ -9920,7 +9838,7 @@
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Ke" = (
@@ -9928,7 +9846,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "KJ" = (
@@ -9936,7 +9854,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "KN" = (
@@ -9949,7 +9867,7 @@
 /obj/structure/table/borosilicate,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "LD" = (
@@ -9978,7 +9896,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "MA" = (
@@ -9998,7 +9916,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "NP" = (
@@ -10028,7 +9946,7 @@
 	pixel_x = 0
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Oa" = (
@@ -10065,7 +9983,7 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Rq" = (
@@ -10086,7 +10004,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Sm" = (
@@ -10094,14 +10012,14 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "SC" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/optable,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Td" = (
@@ -10123,13 +10041,13 @@
 	},
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Tz" = (
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Ul" = (
@@ -10152,13 +10070,13 @@
 	pixel_y = 21
 	},
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Uq" = (
 /obj/effect/floor_decal/industrial/loading,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Uz" = (
@@ -10167,7 +10085,7 @@
 /obj/structure/table/borosilicate,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 "Va" = (
@@ -10176,7 +10094,7 @@
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/tiled/steel{
-	initial_gas_mix = "o2=410;TEMP=293.15"
+	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Vy" = (
@@ -10240,7 +10158,7 @@
 	},
 /obj/item/storage/box/syringes,
 /turf/simulated/floor/tiled/white{
-	initial_gas_mix = "phoron=101;TEMP=293.15"
+	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
 /area/holodeck/holodorm/source_phoron)
 
