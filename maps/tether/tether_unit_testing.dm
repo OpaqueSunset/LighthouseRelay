@@ -76,5 +76,5 @@
 		/area/tether/surfacebase/emergency_storage/atmos = NO_SCRUBBER|NO_VENT,
 		/area/outpost/mining_main/storage = NO_SCRUBBER|NO_VENT,
 	)
-	disconnected_wires_test_exempt_turfs = list(list(71, 139, 1, NORTH))
+	disconnected_wires_test_exempt_turfs = list(list(78, 147, 1, NORTH), list(8, 71, 1, WEST))
 	disconnected_disposals_tags = list("Trash") // just spits it into the garbage pile

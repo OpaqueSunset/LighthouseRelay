@@ -20,6 +20,7 @@
 	abstract_type = /datum/level_data/virgo3b // use the main or player subtypes instead please
 	base_area = /area/tether/surfacebase/outside/outside1
 	base_turf = /turf/exterior/open
+	transition_turf_type = /turf/exterior/mimic_edge/transition
 	use_global_exterior_ambience = FALSE
 	ambient_light_level = 0.5
 	ambient_light_color = COLOR_WHITE
@@ -55,15 +56,33 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /datum/level_data/virgo3b/main/lowest
 	base_turf = /turf/exterior/rocks
+	level_id = "virgo3bsurface1"
+	connected_levels = list(
+		"virgo3bsolars" = WEST,
+		"virgo3bmining" = NORTH
+	)
 
 /datum/level_data/virgo3b/main/space
 	base_turf = /turf/space
 	exterior_atmosphere = null // vacuum
+	border_filler = null // space
 
 /datum/level_data/virgo3b/player
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER)
 
+/datum/level_data/virgo3b/player/solars
+	level_id = "virgo3bsolars"
+	transition_turf_type = /turf/exterior/mimic_edge/transition
+	connected_levels = list(
+		"virgo3bsurface1" = EAST
+	)
+
 /datum/level_data/mining_level/virgo3b
+	level_id = "virgo3bmining"
+	transition_turf_type = /turf/exterior/mimic_edge/transition
+	connected_levels = list(
+		"virgo3bsurface1" = SOUTH
+	)
 	exterior_atmos_temp = VIRGO3B_AVG_TEMP
 	exterior_atmosphere = list(
 		/decl/material/gas/nitrogen       = VIRGO3B_MOL_N2,
@@ -72,6 +91,10 @@ var/global/decl/material/virgo3b_stratum_base_material
 		/decl/material/gas/carbon_dioxide = VIRGO3B_MOL_CO2,
 		/decl/material/solid/phoron       = VIRGO3B_MOL_PHORON,
 	)
+	use_global_exterior_ambience = FALSE
+	ambient_light_level = 0.5
+	ambient_light_color = COLOR_WHITE
+	exterior_atmos_temp = VIRGO3B_AVG_TEMP
 
 // AWFUL AWFUL AWFUL code duplication. Please remove this when mining_level is unified with generic level_data.
 /datum/level_data/mining_level/virgo3b/setup_strata()
@@ -94,6 +117,9 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /obj/abstract/level_data_spawner/virgo3b/player
 	level_data_type = /datum/level_data/virgo3b/player
+
+/obj/abstract/level_data_spawner/virgo3b/player/solars
+	level_data_type = /datum/level_data/virgo3b/player/solars
 
 /obj/abstract/level_data_spawner/virgo3b/mining
 	level_data_type = /datum/level_data/mining_level/virgo3b
