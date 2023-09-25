@@ -113,7 +113,7 @@
 				if(isnull(V_freq))
 					logtext += " The vent had no frequency set."
 				else if(V_freq != found_alarm.frequency)
-					logtext += " Frequencies did not match (alarm: [found_alarm.frequency], scrubber: [V_freq])."
+					logtext += " Frequencies did not match (alarm: [found_alarm.frequency], vent: [V_freq])."
 				log_bad(logtext)
 				failed = TRUE
 		for(var/tag in scrubbers_in_area)
