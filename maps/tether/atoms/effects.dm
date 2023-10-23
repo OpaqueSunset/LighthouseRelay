@@ -156,7 +156,6 @@
 	anchored = TRUE
 	opacity = FALSE
 	density = TRUE
-	unacidable = TRUE
 
 /obj/effect/blocker/Initialize(mapload) // For non-gateway maps.
 	. = ..()

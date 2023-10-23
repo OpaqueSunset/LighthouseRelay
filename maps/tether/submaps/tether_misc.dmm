@@ -1158,8 +1158,8 @@
 /area/syndicate_station/start)
 "cZ" = (
 /obj/structure/table,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/item/radio/intercom{
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
@@ -3542,10 +3542,10 @@
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
@@ -8590,11 +8590,11 @@
 	},
 /area/antag/antag_base)
 "tp" = (
-/obj/item/chems/ivbag/blood/AMinus,
-/obj/item/chems/ivbag/blood/APlus,
-/obj/item/chems/ivbag/blood/BMinus,
-/obj/item/chems/ivbag/blood/BPlus,
-/obj/item/chems/ivbag/blood/OPlus,
+/obj/item/chems/ivbag/blood/aminus,
+/obj/item/chems/ivbag/blood/aplus,
+/obj/item/chems/ivbag/blood/bminus,
+/obj/item/chems/ivbag/blood/bplus,
+/obj/item/chems/ivbag/blood/oplus,
 /obj/structure/closet/crate/freezer,
 /turf/unsimulated/floor{
 	icon_state = "white"
@@ -8602,12 +8602,12 @@
 /area/antag/antag_base)
 "tq" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},
@@ -9891,7 +9891,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -9911,7 +9911,7 @@
 	dir = 1
 	},
 /obj/structure/table/borosilicate,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -9957,7 +9957,7 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
 	},
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},

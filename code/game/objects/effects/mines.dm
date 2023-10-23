@@ -14,13 +14,14 @@
 	icon_state = "uglyminearmed"
 
 /obj/effect/mine/Crossed(atom/movable/AM)
-	Bumped(AM)
+	if(!isobserver(AM))
+		Bumped(AM)
 
 /obj/effect/mine/Bumped(mob/M)
 
 	if(triggered) return
 
-	if(istype(M, /mob/living/carbon/human))
+	if(ishuman(M))
 		visible_message(SPAN_DANGER("\The [M] triggered \the [src]!"))
 		triggered = 1
 		call(src,triggerproc)(M)

@@ -10,7 +10,6 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	name = "effect"
 	icon = 'icons/effects/effects.dmi'
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
-	unacidable = 1//So effect are not targeted by alien acid.
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 
 /datum/effect/effect/system
@@ -188,19 +187,16 @@ steam.start() -- spawns the effect
 	if(!QDELETED(src))
 		qdel(src)
 
-/obj/effect/effect/smoke/Crossed(mob/living/carbon/M)
+/obj/effect/effect/smoke/Crossed(atom/movable/AM)
 	..()
-	if(istype(M))
-		affect(M)
+	if(iscarbon(AM))
+		affect(AM)
 
 /obj/effect/effect/smoke/proc/affect(var/mob/living/carbon/M)
 	if (!istype(M))
 		return 0
-	if(M.internal != null)
-		for(var/slot in global.airtight_slots)
-			var/obj/item/gear = M.get_equipped_item(slot)
-			if(gear && (gear.item_flags & ITEM_FLAG_AIRTIGHT))
-				return FALSE
+	if(M.internal != null && M.check_for_airtight_internals(FALSE))
+		return FALSE
 	return TRUE
 
 /////////////////////////////////////////////

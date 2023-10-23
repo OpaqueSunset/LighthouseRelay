@@ -12,8 +12,7 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		game_log("SUBTLE", text)
 
 /mob/proc/custom_emote_subtle(var/m_type=VISIBLE_MESSAGE, var/message = null) //This would normally go in emote.dm
-	if(stat || !use_me && usr == src)
-		to_chat(src, "You are unable to emote.")
+	if(!can_emote(m_type))
 		return
 
 	var/muzzled = is_silenced()

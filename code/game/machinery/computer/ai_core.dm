@@ -150,7 +150,7 @@ var/global/list/empty_playable_ai_cores = list()
 						if(!B)
 							to_chat(user, SPAN_WARNING("Sticking an empty [P] into the frame would sort of defeat the purpose."))
 							return
-						if(B.stat == 2)
+						if(B.stat == DEAD)
 							to_chat(user, SPAN_WARNING("Sticking a dead [P] into the frame would sort of defeat the purpose."))
 							return
 						if(jobban_isbanned(B, "AI"))
@@ -215,7 +215,7 @@ var/global/list/deactivated_ai_cores = list()
 
 /obj/structure/aicore/deactivated/proc/load_ai(var/mob/living/silicon/ai/transfer, var/obj/item/aicard/card, var/mob/user)
 
-	if(!istype(transfer) || locate(/mob/living/silicon/ai) in src)
+	if(!isAI(transfer) || locate(/mob/living/silicon/ai) in src)
 		return
 
 	transfer.aiRestorePowerRoutine = 0

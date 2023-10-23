@@ -1620,9 +1620,9 @@
 	name = "O- Blood Locker";
 	pixel_y = -32
 	},
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/structure/iv_drip,
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)

@@ -6,9 +6,8 @@ var/global/list/shuttle_landmarks = list()
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "energynet"
 	anchored = TRUE
-	unacidable = 1
-	simulated = 0
-	invisibility = 101
+	simulated = FALSE
+	invisibility = INVISIBILITY_ABSTRACT
 
 	var/landmark_tag
 	//ID of the controller on the dock side

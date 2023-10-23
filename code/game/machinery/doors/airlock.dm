@@ -292,9 +292,9 @@ About the new airlock wires panel:
 /obj/machinery/door/airlock/on_update_icon(state=0, override=0)
 
 	if(set_dir_on_update)
-		if(connections & (NORTH|SOUTH))
+		if(connections & (NORTH|SOUTH) == (NORTH|SOUTH))
 			set_dir(EAST)
-		else
+		else if (connections & (EAST|WEST) == (EAST|WEST))
 			set_dir(SOUTH)
 
 	switch(state)
@@ -543,7 +543,7 @@ About the new airlock wires panel:
 	return ..()
 
 /obj/machinery/door/airlock/physical_attack_hand(mob/user)
-	if(!istype(usr, /mob/living/silicon))
+	if(!issilicon(usr))
 		if(src.isElectrified())
 			if(src.shock(user, 100))
 				return TRUE
@@ -724,7 +724,7 @@ About the new airlock wires panel:
 			update_icon()
 		return TRUE
 
-	if(!istype(user, /mob/living/silicon))
+	if(!issilicon(user))
 		if(src.isElectrified())
 			if(src.shock(user, 75))
 				return TRUE
@@ -798,7 +798,7 @@ About the new airlock wires panel:
 		return TRUE
 
 
-	else if((stat & (BROKEN|NOPOWER)) && istype(user, /mob/living/simple_animal))
+	else if((stat & (BROKEN|NOPOWER)) && isanimal(user))
 		var/mob/living/simple_animal/A = user
 		var/obj/item/I = A.get_natural_weapon()
 		if(I?.force >= 10)

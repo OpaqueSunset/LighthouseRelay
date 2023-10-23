@@ -8,7 +8,6 @@
 	var/list/req_access
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
-	var/unacidable = 0 //universal "unacidabliness" var, here so you can use it in any obj.
 	var/throwforce = 1
 	var/sharp = 0		// whether this object cuts
 	var/edge = 0		// whether this object is more likely to dismember
@@ -35,7 +34,7 @@
 	return ..()
 
 /obj/proc/get_matter_amount_modifier()
-	. = CEILING(w_class * BASE_OBJECT_MATTER_MULTPLIER)
+	. = w_class * BASE_OBJECT_MATTER_MULTPLIER
 
 /obj/assume_air(datum/gas_mixture/giver)
 	return loc?.assume_air(giver)
@@ -87,7 +86,7 @@
 	set_invisibility(hide ? INVISIBILITY_MAXIMUM : initial(invisibility))
 
 /obj/proc/hides_under_flooring()
-	return level == 1
+	return level == LEVEL_BELOW_PLATING
 
 /obj/proc/hear_talk(mob/M, text, verb, decl/language/speaking)
 	if(talking_atom)
@@ -323,3 +322,10 @@
 	..()
 	if(!QDELETED(src) && fluids?.total_volume)
 		fluids.touch_obj(src)
+
+// TODO: maybe iterate the entire matter list or do some partial damage handling
+/obj/proc/solvent_can_melt(var/solvent_power = MAT_SOLVENT_STRONG)
+	if(!simulated)
+		return FALSE
+	var/decl/material/mat = get_material()
+	return !mat || mat.dissolves_in <= solvent_power

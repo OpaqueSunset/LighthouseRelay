@@ -3,8 +3,10 @@
 	desc = "You're not sure what this is. You should probably ahelp it."
 	icon = 'icons/clothing/mask/smokables/cigarette.dmi'
 	body_parts_covered = 0
+	bodytype_equip_flags = null
 	z_flags = ZMM_MANGLE_PLANES
-	var/lit = 0
+
+	var/lit = FALSE
 	var/waterproof = FALSE
 	var/type_butt = null
 	var/chem_volume = 0
@@ -32,7 +34,7 @@
 
 /obj/item/clothing/mask/smokable/Initialize()
 	. = ..()
-	atom_flags |= ATOM_FLAG_NO_REACT // so it doesn't react until you light it
+	atom_flags |= ATOM_FLAG_NO_CHEM_CHANGE // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
 
 /obj/item/clothing/mask/smokable/Destroy()
@@ -104,8 +106,8 @@
 
 	if(ismob(loc))
 		var/mob/living/M = loc
-		M.update_inv_wear_mask(0)
-		M.update_inv_hands()
+		M.update_equipment_overlay(slot_wear_mask_str, FALSE)
+		M.update_inhand_overlays()
 
 /obj/item/clothing/mask/smokable/adjust_mob_overlay(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
 	if(overlay && lit && check_state_in_icon("[overlay.icon_state]-on", overlay.icon))
@@ -129,7 +131,7 @@
 		if(submerged())
 			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
-		lit = 1
+		lit = TRUE
 		damtype = BURN
 		var/explosive_power = round(REAGENT_VOLUME(reagents, /decl/material/solid/phoron) / 2.5 + REAGENT_VOLUME(reagents, /decl/material/liquid/fuel) / 5, 1)
 		if(explosive_power > 0)
@@ -138,7 +140,7 @@
 			e.start()
 			qdel(src)
 			return
-		atom_flags &= ~ATOM_FLAG_NO_REACT // allowing reagents to react after being lit
+		atom_flags &= ~ATOM_FLAG_NO_CHEM_CHANGE // allowing reagents to react after being lit
 		HANDLE_REACTIONS(reagents)
 		update_icon()
 		if(flavor_text)
@@ -148,7 +150,7 @@
 		START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/mask/smokable/proc/extinguish(var/mob/user, var/no_message)
-	lit = 0
+	lit = FALSE
 	damtype = BRUTE
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)
@@ -468,8 +470,8 @@
 
 /obj/item/clothing/mask/smokable/cigarette/cigar/attackby(var/obj/item/W, var/mob/user)
 	..()
-	user.update_inv_wear_mask(0)
-	user.update_inv_hands()
+	user.update_equipment_overlay(slot_wear_mask_str, FALSE)
+	user.update_inhand_overlays()
 
 //Bizarre
 /obj/item/clothing/mask/smokable/cigarette/rolled/sausage
@@ -517,15 +519,15 @@
 		if(submerged())
 			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
-		lit = 1
+		lit = TRUE
 		damtype = BURN
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
 		START_PROCESSING(SSobj, src)
 		if(ismob(loc))
 			var/mob/living/M = loc
-			M.update_inv_wear_mask(0)
-			M.update_inv_hands()
+			M.update_equipment_overlay(slot_wear_mask_str, FALSE)
+			M.update_inhand_overlays()
 		set_scent_by_reagents(src)
 		update_icon()
 
@@ -541,7 +543,7 @@
 /obj/item/clothing/mask/smokable/pipe/attack_self(var/mob/user)
 	if(lit == 1)
 		user.visible_message(SPAN_NOTICE("[user] puts out [src]."), SPAN_NOTICE("You put out [src]."))
-		lit = 0
+		lit = FALSE
 		update_icon()
 		STOP_PROCESSING(SSobj, src)
 		remove_extension(src, /datum/extension/scent)
@@ -586,8 +588,8 @@
 	else if(istype(W, /obj/item/assembly/igniter))
 		light(SPAN_NOTICE("[user] fiddles with [W], and manages to light their [name] with the power of science."))
 
-	user.update_inv_wear_mask(0)
-	user.update_inv_hands()
+	user.update_equipment_overlay(slot_wear_mask_str, FALSE)
+	user.update_inhand_overlays()
 
 /obj/item/clothing/mask/smokable/pipe/cobpipe
 	name = "corn cob pipe"

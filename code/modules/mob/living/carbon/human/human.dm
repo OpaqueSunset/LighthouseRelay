@@ -135,16 +135,6 @@
 		var/obj/item/underwear/UW = entry
 		LAZYADD(., "<BR><a href='?src=\ref[src];item=\ref[UW]'>Remove \the [UW]</a>")
 
-// called when something steps onto a human
-// this handles mulebots and vehicles
-/mob/living/carbon/human/Crossed(var/atom/movable/AM)
-	if(istype(AM, /mob/living/bot/mulebot))
-		var/mob/living/bot/mulebot/MB = AM
-		MB.runOver(src)
-
-	if(istype(AM, /obj/vehicle))
-		var/obj/vehicle/V = AM
-		V.RunOver(src)
 
 // TODO: remove when is_husked is moved to a parent type (or if husking is removed)
 /mob/living/carbon/human/identity_is_visible()
@@ -200,10 +190,10 @@
 
 					spawn()
 						BITSET(hud_updateflag, WANTED_HUD)
-						if(istype(user,/mob/living/carbon/human))
+						if(ishuman(user))
 							var/mob/living/carbon/human/U = user
 							U.handle_regular_hud_updates()
-						if(istype(user,/mob/living/silicon/robot))
+						if(isrobot(user))
 							var/mob/living/silicon/robot/U = user
 							U.handle_regular_hud_updates()
 
@@ -258,10 +248,10 @@
 					modified = 1
 
 					spawn()
-						if(istype(user,/mob/living/carbon/human))
+						if(ishuman(user))
 							var/mob/living/carbon/human/U = user
 							U.handle_regular_hud_updates()
-						if(istype(user,/mob/living/silicon/robot))
+						if(isrobot(user))
 							var/mob/living/silicon/robot/U = user
 							U.handle_regular_hud_updates()
 
@@ -441,7 +431,7 @@
 	for(var/obj/item/organ/external/grabber in get_hands_organs())
 		bloodied |= grabber.add_blood(M, amount, blood_data)
 	if(bloodied)
-		update_inv_gloves()	//handles bloody hands overlays and updating
+		update_equipment_overlay(slot_gloves_str)	//handles bloody hands overlays and updating
 		verbs += /mob/living/carbon/human/proc/bloody_doodle
 	return 1 //we applied blood to the item
 
@@ -458,8 +448,8 @@
 		//TODO check that organ is not covered
 		if(clean_feet || (organ.organ_tag in list(BP_L_HAND,BP_R_HAND)))
 			organ.clean()
-	update_inv_gloves(1)
-	update_inv_shoes(1)
+	update_equipment_overlay(slot_gloves_str, FALSE)
+	update_equipment_overlay(slot_shoes_str)
 	return TRUE
 
 /mob/living/carbon/human/get_visible_implants(var/class = 0)
@@ -524,8 +514,19 @@
 		new_bodytype.create_missing_organs(src, TRUE) // actually rebuild the body
 		apply_bodytype_appearance()
 		force_update_limbs()
-		update_hair(update_icons = FALSE)
+
+		// Check and clear hair.
+		var/decl/sprite_accessory/hair/hairstyle = GET_DECL(h_style)
+		if(!hairstyle?.accessory_is_available(src, species, new_bodytype))
+			change_hair(new_bodytype.default_h_style, FALSE)
+		var/decl/sprite_accessory/hair/facialhairstyle = GET_DECL(f_style)
+		if(!facialhairstyle?.accessory_is_available(src, species, new_bodytype))
+			change_facial_hair(new_bodytype.default_f_style, FALSE)
+		// TODO: check markings.
+
 		update_eyes()
+		return TRUE
+	return FALSE
 
 //set_species should not handle the entirety of initing the mob, and should not trigger deep updates
 //It focuses on setting up species-related data, without force applying them uppon organs and the mob's appearance.
@@ -844,10 +845,6 @@
 	if(stomach)
 		victim.forceMove(stomach)
 
-/mob/living/carbon/human/should_have_organ(var/organ_check)
-	var/decl/bodytype/root_bodytype = get_bodytype()
-	return root_bodytype?.has_organ[organ_check]
-
 /mob/living/carbon/human/get_adjusted_metabolism(metabolism)
 	return ..() * (species ? species.metabolism_mod : 1)
 
@@ -1041,10 +1038,10 @@
 			if(damage && P.damtype == BRUTE)
 				var/hit_dir = get_dir(P.starting, src)
 				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
-				B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-				var/scale = min(1, round(P.damage / 50, 0.2))
-				B.set_scale(scale)
-
+				if(!QDELETED(B))
+					B.icon_state = pick("dir_splatter_1","dir_splatter_2")
+					var/scale = min(1, round(P.damage / 50, 0.2))
+					B.set_scale(scale)
 				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.get_blood_color(src))
 
 /mob/living/carbon/human/get_dexterity(var/silent = FALSE)

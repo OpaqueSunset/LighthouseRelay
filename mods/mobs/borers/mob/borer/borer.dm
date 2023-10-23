@@ -155,7 +155,7 @@
 
 	if(!host || !controlling) return
 
-	if(istype(host,/mob/living/carbon/human))
+	if(ishuman(host))
 		var/mob/living/carbon/human/H = host
 		var/obj/item/organ/external/head = GET_EXTERNAL_ORGAN(H, BP_HEAD)
 		LAZYREMOVE(head.implants, src)
@@ -217,8 +217,8 @@
 	var/datum/hud/borer/borer_hud = hud_used
 	if(istype(borer_hud))
 		for(var/obj/thing in borer_hud.borer_hud_elements)
-			thing.alpha =        0
-			thing.invisibility = INVISIBILITY_MAXIMUM
+			thing.alpha = 0
+			thing.set_invisibility(INVISIBILITY_ABSTRACT)
 
 	if(!host) return
 

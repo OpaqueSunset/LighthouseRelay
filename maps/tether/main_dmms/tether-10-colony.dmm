@@ -486,12 +486,12 @@
 /area/centcom/specops)
 "aP" = (
 /obj/structure/table/reinforced,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/item/defib_kit/compact/combat/loaded,
 /obj/item/defib_kit/compact/combat/loaded,
 /turf/unsimulated/floor{
@@ -8125,11 +8125,11 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/chems/ivbag/blood/OPlus{
+/obj/item/chems/ivbag/blood/oplus{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/chems/ivbag/blood/OMinus{
+/obj/item/chems/ivbag/blood/ominus{
 	pixel_x = -5;
 	pixel_y = -1
 	},
@@ -8766,9 +8766,9 @@
 /area/centcom/medical)
 "qx" = (
 /obj/structure/table/glass,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -8781,15 +8781,15 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 8
 	},
-/obj/item/chems/ivbag/blood/OPlus{
+/obj/item/chems/ivbag/blood/oplus{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/chems/ivbag/blood/OPlus{
+/obj/item/chems/ivbag/blood/oplus{
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/chems/ivbag/blood/OPlus{
+/obj/item/chems/ivbag/blood/oplus{
 	pixel_x = 4;
 	pixel_y = 2
 	},

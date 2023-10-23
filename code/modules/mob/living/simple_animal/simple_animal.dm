@@ -545,11 +545,12 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 			if(P.damtype == BRUTE)
 				var/hit_dir = get_dir(P.starting, src)
 				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
-				B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-				B.basecolor = bleed_colour
-				var/scale = min(1, round(mob_size / MOB_SIZE_MEDIUM, 0.1))
-				B.set_scale(scale)
-				B.update_icon()
+				if(!QDELETED(B))
+					B.icon_state = pick("dir_splatter_1","dir_splatter_2")
+					B.basecolor = bleed_colour
+					var/scale = min(1, round(mob_size / MOB_SIZE_MEDIUM, 0.1))
+					B.set_scale(scale)
+					B.update_icon()
 
 /mob/living/simple_animal/handle_fire()
 	return
@@ -653,3 +654,37 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 
 /mob/living/simple_animal/get_hydration()
 	return get_max_hydration()
+
+
+/// Adapts our temperature and atmos thresholds to our current z-level.
+/mob/living/simple_animal/proc/adapt_to_current_level()
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+
+	var/datum/level_data/level_data = SSmapping.levels_by_z[T.z]
+	if(!level_data)
+		return
+
+	bodytemperature = level_data.exterior_atmos_temp
+	minbodytemp     = bodytemperature - 20
+	maxbodytemp     = bodytemperature + 20
+
+	// Adapt atmosphere if necessary.
+	if(!min_gas && !max_gas)
+		return
+
+	if(min_gas)
+		min_gas.Cut()
+	if(max_gas)
+		max_gas.Cut()
+	if(!level_data.exterior_atmosphere)
+		return
+
+	for(var/gas in level_data.exterior_atmosphere.gas)
+		var/gas_amt = level_data.exterior_atmosphere[gas]
+		if(min_gas)
+			min_gas[gas] = round(gas_amt * 0.5)
+		if(max_gas)
+			min_gas[gas] = round(gas_amt * 1.5)
+

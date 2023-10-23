@@ -85,7 +85,7 @@
 	if(!anchored)
 		to_chat(user, "<span class='warning'>The shield generator needs to be firmly secured to the floor first.</span>")
 		return STATUS_CLOSE
-	if(src.locked && !istype(user, /mob/living/silicon))
+	if(src.locked && !issilicon(user))
 		to_chat(user, "<span class='warning'>The controls are locked!</span>")
 		return STATUS_CLOSE
 	if(power != 1)
@@ -258,13 +258,12 @@
 
 //////////////Containment Field START
 /obj/machinery/shieldwall
-	name = "Shield"
+	name = "shield"
 	desc = "An energy shield."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "shieldwall"
 	anchored = TRUE
 	density = TRUE
-	unacidable = 1
 	light_range = 3
 	var/needs_power = 0
 	var/obj/machinery/shieldwallgen/gen_primary

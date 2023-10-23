@@ -108,7 +108,7 @@
 	if(W == A) // Handle attack_self
 		W.attack_self(src)
 		trigger_aiming(TARGET_CAN_CLICK)
-		update_inv_hands(0)
+		usr.update_inhand_overlays(FALSE)
 		return 1
 
 	//Atoms on your person
@@ -365,7 +365,7 @@ var/global/list/click_catchers
 
 /obj/screen/click_catcher/Click(location, control, params)
 	var/list/modifiers = params2list(params)
-	if(modifiers["middle"] && istype(usr, /mob/living/carbon))
+	if(modifiers["middle"] && iscarbon(usr))
 		var/mob/living/carbon/C = usr
 		C.swap_hand()
 	else

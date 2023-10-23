@@ -872,10 +872,10 @@
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
@@ -2929,8 +2929,8 @@
 /area/awaymission/zoo/syndieship)
 "ip" = (
 /obj/structure/table,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iq" = (
@@ -8323,10 +8323,10 @@
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},

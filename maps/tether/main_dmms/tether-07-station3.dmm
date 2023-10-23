@@ -19928,10 +19928,10 @@
 	name = "O- Blood Locker";
 	pixel_y = 32
 	},
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Jn" = (
@@ -21029,9 +21029,9 @@
 /area/medical/medbay_primary_storage)
 "Lv" = (
 /obj/structure/table,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -21561,11 +21561,11 @@
 /area/medical/medbay_primary_storage)
 "Mp" = (
 /obj/structure/table,
-/obj/item/chems/ivbag/blood/AMinus,
-/obj/item/chems/ivbag/blood/APlus,
-/obj/item/chems/ivbag/blood/BMinus,
-/obj/item/chems/ivbag/blood/BPlus,
-/obj/item/chems/ivbag/blood/OPlus,
+/obj/item/chems/ivbag/blood/aminus,
+/obj/item/chems/ivbag/blood/aplus,
+/obj/item/chems/ivbag/blood/bminus,
+/obj/item/chems/ivbag/blood/bplus,
+/obj/item/chems/ivbag/blood/oplus,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -22370,8 +22370,8 @@
 /obj/structure/table,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/white/border,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
 "Nt" = (

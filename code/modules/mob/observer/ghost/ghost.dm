@@ -15,6 +15,8 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 	mob_flags = MOB_FLAG_HOLY_BAD
 	movement_handlers = list(/datum/movement_handler/mob/multiz_connected, /datum/movement_handler/mob/incorporeal)
 
+	var/static/obj/item/card/id/all_access/ghost_all_access
+
 	var/can_reenter_corpse
 	var/started_as_observer //This variable is set to 1 when you enter the game as an observer.
 							//If you died in the game and are a ghost - this will remain as null.
@@ -92,7 +94,7 @@ var/global/list/image/ghost_sightless_images = list() //this is a list of images
 
 /mob/observer/ghost/OnSelfTopic(href_list)
 	if (href_list["track"])
-		if(istype(href_list["track"],/mob))
+		if(ismob(href_list["track"]))
 			var/mob/target = locate(href_list["track"]) in SSmobs.mob_list
 			if(target)
 				ManualFollow(target)
@@ -141,7 +143,7 @@ Works together with spawning an observer, noted above.
 
 /mob/proc/ghostize(var/can_reenter_corpse = CORPSE_CAN_REENTER)
 	// Are we the body of an aghosted admin? If so, don't make a ghost.
-	if(teleop && istype(teleop, /mob/observer/ghost))
+	if(isghost(teleop))
 		var/mob/observer/ghost/G = teleop
 		if(G.admin_ghosted)
 			return
@@ -594,3 +596,13 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/mob/new_player/M = new /mob/new_player()
 	M.key = key
 	log_and_message_admins("has respawned.", M)
+
+/mob/observer/ghost/GetIdCards(exceptions = null)
+	. = ..()
+	if (!is_admin(src))
+		return .
+
+	if (!ghost_all_access)
+		ghost_all_access = new()
+	LAZYDISTINCTADD(., ghost_all_access)
+

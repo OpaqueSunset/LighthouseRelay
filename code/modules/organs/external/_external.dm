@@ -9,6 +9,7 @@
 	organ_tag = "limb"
 	appearance_flags = DEFAULT_APPEARANCE_FLAGS | LONG_GLIDE
 	scale_max_damage_to_species_health = TRUE
+	abstract_type = /obj/item/organ/external
 
 	var/slowdown = 0
 	var/tmp/icon_cache_key
@@ -899,7 +900,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	var/clamped = 0
 
 	var/mob/living/carbon/human/H
-	if(istype(owner,/mob/living/carbon/human))
+	if(ishuman(owner))
 		H = owner
 
 	//update damage counts

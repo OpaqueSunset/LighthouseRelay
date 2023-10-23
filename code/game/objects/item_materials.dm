@@ -8,7 +8,7 @@
 	if(blood_overlay)
 		add_overlay(blood_overlay)
 	if(global.contamination_overlay && contaminated)
-		overlays += global.contamination_overlay
+		add_overlay(global.contamination_overlay)
 
 /obj/item/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	. = ..()
@@ -57,7 +57,8 @@
 		if(M.burn_product)
 			environment.adjust_gas(M.burn_product, M.fuel_value * (matter[mat] / SHEET_MATERIAL_AMOUNT))
 
-	new /obj/effect/decal/cleanable/molten_item(src)
+	var/obj/effect/decal/cleanable/molten_item/I = new(loc)
+	I.desc = "It looks like it was \a [src] some time ago."
 	qdel(src)
 
 /obj/item/proc/shatter(var/consumed)

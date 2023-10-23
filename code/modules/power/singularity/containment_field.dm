@@ -7,7 +7,6 @@
 	icon_state = "Contain_F"
 	anchored = TRUE
 	density = FALSE
-	unacidable = 1
 	light_range = 4
 	movable_flags = MOVABLE_FLAG_PROXMOVE
 	var/obj/machinery/field_generator/FG1 = null
@@ -32,10 +31,10 @@
 /obj/effect/containment_field/HasProximity(atom/movable/AM)
 	. = ..()
 	if(.)
-		if(istype(AM,/mob/living/silicon) && prob(40))
+		if(issilicon(AM) && prob(40))
 			shock(AM)
 			return TRUE
-		if(istype(AM,/mob/living/carbon) && prob(50))
+		if(iscarbon(AM) && prob(50))
 			shock(AM)
 			return TRUE
 		return FALSE

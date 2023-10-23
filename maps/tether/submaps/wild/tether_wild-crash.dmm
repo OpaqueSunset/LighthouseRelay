@@ -277,10 +277,10 @@
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
-/obj/item/chems/ivbag/blood/OMinus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
+/obj/item/chems/ivbag/blood/ominus,
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
@@ -723,7 +723,7 @@
 	icon_state = "plant-09";
 	name = "Esteban";
 	pixel_y = 8;
-	
+
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)

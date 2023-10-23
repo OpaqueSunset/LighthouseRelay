@@ -2,7 +2,7 @@
 
 	SHOULD_CALL_PARENT(FALSE)
 
-	set invisibility = 0
+	set invisibility = FALSE
 	set background = 1
 
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
@@ -76,7 +76,7 @@
 	if(src.resting)
 		SET_STATUS_MAX(src, STAT_WEAK, 5)
 
-	if(health < config.health_threshold_dead && src.stat != 2) //die only once
+	if(health < config.health_threshold_dead && src.stat != DEAD) //die only once
 		death()
 
 	if (src.stat != DEAD) //Alive.
@@ -128,15 +128,15 @@
 				process_med_hud(src,0,network = get_computer_network())
 
 	if(length(get_active_grabs()))
-		ui_drop_grab.invisibility = 0
+		ui_drop_grab.set_invisibility(INVISIBILITY_NONE)
 		ui_drop_grab.alpha = 255
 	else
-		ui_drop_grab.invisibility = INVISIBILITY_MAXIMUM
+		ui_drop_grab.set_invisibility(INVISIBILITY_ABSTRACT)
 		ui_drop_grab.alpha = 0
 
 	if (src.healths)
-		if (src.stat != 2)
-			if(istype(src,/mob/living/silicon/robot/drone))
+		if (src.stat != DEAD)
+			if(isdrone(src))
 				switch(health)
 					if(35 to INFINITY)
 						src.healths.icon_state = "health0"

@@ -321,9 +321,11 @@
 
 /obj/item/organ/proc/rejuvenate(var/ignore_organ_aspects)
 	SHOULD_CALL_PARENT(TRUE)
+	if(!owner)
+		PRINT_STACK_TRACE("rejuvenate() called on organ of type [type] with no owner.")
 	damage = 0
 	reset_status()
-	if(!ignore_organ_aspects)
+	if(!ignore_organ_aspects && length(owner?.personal_aspects))
 		for(var/decl/aspect/aspect as anything in owner.personal_aspects)
 			if(aspect.applies_to_organ(organ_tag))
 				aspect.apply(owner)
@@ -513,6 +515,15 @@ var/global/list/ailment_reference_cache = list()
 			LAZYADD(., ailment.replace_tokens(message = ailment.manual_diagnosis_string, user = user))
 		else if(ailment.scanner_diagnosis_string && scanner)
 			LAZYADD(., ailment.replace_tokens(message = ailment.scanner_diagnosis_string, user = user))
+
+/obj/item/organ/proc/get_ailment_of_type(ailment_type)
+	for(var/datum/ailment/ext_ailment in ailments)
+		if(ailment_type == ext_ailment.type)
+			return ext_ailment
+	return null
+
+/obj/item/organ/proc/has_ailment_of_type(ailment_type)
+	return !!get_ailment_of_type(ailment_type)
 
 //Handles only the installation of the organ, without triggering any callbacks.
 //if we're an internal organ, having a null "target" is legal if we have an "affected"

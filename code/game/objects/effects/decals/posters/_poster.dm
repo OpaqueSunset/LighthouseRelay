@@ -8,7 +8,7 @@
 	icon_state         = "poster0"
 	anchored           = TRUE
 	directional_offset = "{'NORTH':{'y':32}, 'SOUTH':{'y':-32}, 'EAST':{'x':32}, 'WEST':{'x':-32}}"
-	material           = /decl/material/solid/cardboard
+	material           = /decl/material/solid/paper
 	maxhealth          = 10
 	parts_type         = /obj/item/contraband/poster
 	parts_amount       = 1
@@ -36,7 +36,7 @@
 /obj/structure/sign/poster/Initialize(var/ml, var/_mat, var/_reinf_mat, var/placement_dir = null, var/given_poster_type = null)
 	. = ..(ml, _mat, _reinf_mat)
 	set_design(given_poster_type || poster_design || pick(decls_repository.get_decl_paths_of_subtype(/decl/poster_design)))
-	set_dir   (placement_dir     || dir)
+	set_dir(placement_dir || dir)
 
 /obj/structure/sign/poster/physically_destroyed(skip_qdel)
 	playsound(src, sound_destroyed, 80, TRUE)

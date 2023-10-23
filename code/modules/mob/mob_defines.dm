@@ -72,7 +72,6 @@
 	/// Cursor icon used when holding shift over things.
 	var/examine_cursor_icon = 'icons/effects/mouse_pointers/examine_pointer.dmi'
 
-	var/use_me = 1 //Allows all mobs to use the me verb by default, will have to manually specify they cannot
 	var/damageoverlaytemp = 0
 	var/obj/machinery/machine = null
 
@@ -87,7 +86,6 @@
 
 	var/radio_interrupt_cooldown = 0    // TODO move this to /human
 
-	var/unacidable = 0
 	var/list/pinned                     // Lazylist of things pinning this creature to walls (see living_defense.dm)
 	var/list/embedded                   // Embedded items, since simple mobs don't have organs.
 	var/list/languages = list()         // TODO: lazylist this var. For speaking/listening.
@@ -176,3 +174,7 @@
 
 	/// Used for darksight, required on all mobs to ensure lighting renders properly.
 	var/obj/screen/lighting_plane_master/lighting_master
+
+	// Offset the overhead text if necessary.
+	var/offset_overhead_text_x = 0
+	var/offset_overhead_text_y = 0

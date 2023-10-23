@@ -251,25 +251,25 @@
 	name = "Zorren Male Face"
 	icon_state = "zorren_face"
 	body_parts = list(BP_HEAD)
-	gender = MALE
+	required_gender = MALE
 
 /decl/sprite_accessory/marking/genemodder/zorren_face_female
 	name = "Zorren Female Face"
 	icon_state = "zorren_face_female"
 	body_parts = list(BP_HEAD)
-	gender = FEMALE
+	required_gender = FEMALE
 
 /decl/sprite_accessory/marking/genemodder/zorren_muzzle_male
 	name = "Zorren Male Muzzle"
 	icon_state = "zorren_muzzle"
 	body_parts = list(BP_HEAD)
-	gender = MALE
+	required_gender = MALE
 
 /decl/sprite_accessory/marking/genemodder/zorren_muzzle_female
 	name = "Zorren Female Muzzle"
 	icon_state = "zorren_muzzle_female"
 	body_parts = list(BP_HEAD)
-	gender = FEMALE
+	required_gender = FEMALE
 
 /decl/sprite_accessory/marking/genemodder/zorren_socks
 	name = "Zorren Socks"

@@ -61,6 +61,16 @@
 	QDEL_NULL(click_eater) //Make sure we get rid of it if the turf is somehow replaced by map gen to prevent them accumulating.
 	return ..()
 
+/turf/simulated/mimic_edge/Crossed(atom/movable/O)
+	. = ..()
+	if(isobserver(O))
+		var/turf/drop_turf = get_mimic_turf()
+		if(drop_turf)
+			O.forceMove(drop_turf)
+
+/turf/simulated/mimic_edge/resolve_to_actual_turf()
+	return get_mimic_turf()
+
 //Properly install itself, and allow overriding how the target turf is picked
 /turf/simulated/mimic_edge/proc/setup_mimic()
 	return
@@ -126,6 +136,16 @@
 /turf/unsimulated/mimic_edge/Destroy()
 	QDEL_NULL(click_eater)
 	return ..()
+
+/turf/unsimulated/mimic_edge/Crossed(atom/movable/O)
+	. = ..()
+	if(isobserver(O))
+		var/turf/drop_turf = get_mimic_turf()
+		if(drop_turf)
+			O.forceMove(drop_turf)
+
+/turf/unsimulated/mimic_edge/resolve_to_actual_turf()
+	return get_mimic_turf()
 
 //Properly install itself, and allow overriding how the target turf is picked
 /turf/unsimulated/mimic_edge/proc/setup_mimic()

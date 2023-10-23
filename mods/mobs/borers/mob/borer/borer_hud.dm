@@ -22,7 +22,7 @@
 		hud_inject_chemicals,
 		hud_leave_host
 	)
-	if(istype(mymob, /mob/living/simple_animal/borer))
+	if(isborer(mymob))
 		var/mob/living/simple_animal/borer/borer = mymob
 		if(!borer.neutered)
 			hud_toggle_control = new
@@ -33,7 +33,7 @@
 		if(istype(borer) && borer.host)
 			for(var/obj/thing in borer_hud_elements)
 				thing.alpha =        255
-				thing.invisibility = 0
+				thing.set_invisibility(INVISIBILITY_NONE)
 		if(mymob.client)
 			mymob.client.screen |= adding
 
@@ -53,7 +53,7 @@
 	invisibility = INVISIBILITY_MAXIMUM
 
 /obj/screen/borer/Click(location, control, params)
-	if(!istype(usr, /mob/living/simple_animal/borer))
+	if(!isborer(usr))
 		return FALSE
 	if(usr.stat == DEAD)
 		return FALSE

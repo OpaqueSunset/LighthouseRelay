@@ -4,7 +4,6 @@
 	icon                = 'icons/clothing/head/softcap.dmi'
 	blood_overlay_type  = "helmetblood"
 	w_class             = ITEM_SIZE_SMALL
-	flags_inv           = BLOCK_HEAD_HAIR
 	slot_flags          = SLOT_HEAD
 	body_parts_covered  = SLOT_HEAD
 
@@ -92,7 +91,6 @@
 		overlay.overlays += light_overlay
 	. = ..()
 
-/obj/item/clothing/head/update_clothing_icon()
-	if (ismob(src.loc))
-		var/mob/M = src.loc
-		M.update_inv_head()
+/obj/item/clothing/head/get_associated_equipment_slots()
+	. = ..()
+	LAZYDISTINCTADD(., slot_head_str)

@@ -186,7 +186,7 @@ var/global/list/hygiene_props = list()
 				playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
 		return
 
-	if(cistern && !istype(user,/mob/living/silicon/robot)) //STOP PUTTING YOUR MODULES IN THE TOILET.
+	if(cistern && !isrobot(user)) //STOP PUTTING YOUR MODULES IN THE TOILET.
 		if(I.w_class > ITEM_SIZE_NORMAL)
 			to_chat(user, SPAN_WARNING("\The [I] does not fit."))
 			return
@@ -534,7 +534,7 @@ var/global/list/hygiene_props = list()
 		return
 
 	if(can_use(1))
-		visible_message(SPAN_NOTICE("\The [usr] tears a sheet from \the [src]."), SPAN_NOTICE("You tear a sheet from \the [src]."))
+		usr.visible_message(SPAN_NOTICE("\The [usr] tears a sheet from \the [src]."), SPAN_NOTICE("You tear a sheet from \the [src]."))
 		var/obj/item/paper/crumpled/bog/C =  new(loc)
 		usr.put_in_hands(C)
 

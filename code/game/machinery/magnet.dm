@@ -12,7 +12,7 @@ var/global/list/magnetic_modules = list()
 	icon_state = "floor_magnet-f"
 	name = "Electromagnetic Generator"
 	desc = "A device that uses powernet to create points of magnetic energy."
-	level = 1		// underfloor
+	level = LEVEL_BELOW_PLATING
 	layer = ABOVE_WIRE_LAYER
 	anchored = TRUE
 	idle_power_usage = 50
@@ -169,7 +169,7 @@ var/global/list/magnetic_modules = list()
 					step_towards(M, center)
 
 			for(var/mob/living/silicon/S in orange(magnetic_field, center))
-				if(istype(S, /mob/living/silicon/ai)) continue
+				if(isAI(S)) continue
 				step_towards(S, center)
 
 		use_power_oneoff(electricity_level * 5)

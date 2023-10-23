@@ -5,7 +5,6 @@
 	icon_state = "randompile"
 	density = FALSE
 	anchored = TRUE
-	unacidable = TRUE
 
 	var/list/icon_states_to_use = list() // List of icon states the pile can choose from on initialization. If empty or null, it will stay the initial icon_state.
 

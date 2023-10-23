@@ -129,12 +129,12 @@
 		var/mob/tmob = AM
 
 		if(is_adult)
-			if(istype(tmob, /mob/living/carbon/human))
+			if(ishuman(tmob))
 				if(prob(90))
 					now_pushing = 0
 					return
 		else
-			if(istype(tmob, /mob/living/carbon/human))
+			if(ishuman(tmob))
 				now_pushing = 0
 				return
 
@@ -213,7 +213,7 @@
 			adjust_friendship(user, rand(2,3))
 		return TRUE
 
-	var/prey = feeding_on.resolve()
+	var/prey = feeding_on?.resolve()
 	if(prey)
 		if(prey == user)
 			if(prob(60))

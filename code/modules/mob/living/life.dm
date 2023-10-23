@@ -1,5 +1,5 @@
 /mob/living/Life()
-	set invisibility = 0
+	set invisibility = FALSE
 	set background = BACKGROUND_ENABLED
 
 	..()
@@ -214,7 +214,7 @@
 	// If we're standing in the rain, use the turf weather.
 	. = istype(actual_loc) && actual_loc.weather
 	if(!.) // If we're under or inside shelter, use the z-level rain (for ambience)
-		. = SSweather.get_weather_for_level(my_turf.z)
+		. = SSweather.weather_by_z[my_turf.z]
 
 /mob/living/proc/handle_environment(var/datum/gas_mixture/environment)
 
@@ -319,7 +319,7 @@
 	if(stat == DEAD)
 		return
 
-	if(GET_STATUS(src, STAT_BLIND))
+	if(is_blind())
 		overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
 	else
 		clear_fullscreen("blind")

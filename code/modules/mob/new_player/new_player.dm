@@ -1,15 +1,12 @@
 /mob/new_player
 	universal_speak = TRUE
 	mob_sort_value = 10
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	simulated = FALSE
-
 	density = FALSE
 	stat = DEAD
-
 	movement_handlers = list()
 	anchored = TRUE	//  don't get pushed around
-
 	virtual_mob = null // Hear no evil, speak no evil
 
 	var/ready = 0
@@ -19,7 +16,6 @@
 	var/totalPlayers = 0
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
-
 	var/datum/browser/panel
 
 INITIALIZE_IMMEDIATE(/mob/new_player)
@@ -374,7 +370,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	new_character.lastarea = get_area(spawn_turf)
 
 	if(global.random_players)
-		var/decl/species/current_species = get_species_by_key(client.prefs.species || global.using_map.default_species)
+		var/decl/species/current_species = client.prefs.get_species_decl()
 		var/decl/pronouns/pronouns = pick(current_species.available_pronouns)
 		client.prefs.gender = pronouns.name
 		client.prefs.real_name = client.prefs.get_random_name()
@@ -442,7 +438,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 /mob/new_player/hear_say(var/message, var/verb = "says", var/decl/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	return
 
-/mob/new_player/hear_radio(var/message, var/verb="says", var/decl/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/new_player/hear_radio(var/message, var/verb="says", var/decl/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/vname, var/vsource)
 	return
 
 /mob/new_player/show_message(msg, type, alt, alt_type)

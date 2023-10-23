@@ -191,7 +191,7 @@
 		cell = null
 
 	//stuns people who are thrown off a train that has been blown up
-	if(istype(load, /mob/living))
+	if(isliving(load))
 		var/mob/living/M = load
 		M.apply_effects(5, 5)
 
@@ -241,9 +241,6 @@
 	H.put_in_hands(cell)
 	cell = null
 	powercheck()
-
-/obj/vehicle/proc/RunOver(var/mob/living/carbon/human/H)
-	return		//write specifics for different vehicles
 
 //-------------------------------------------
 // Loading/unloading procs
