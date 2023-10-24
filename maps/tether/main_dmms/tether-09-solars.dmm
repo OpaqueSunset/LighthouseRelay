@@ -4307,7 +4307,7 @@
 	pixel_x = 4
 	},
 /obj/structure/table/woodentable,
-/obj/item/toy/plushie/marble_fox,
+/obj/item/toy/plushie/fox/marble,
 /turf/simulated/floor/wood,
 /area/rnd/breakroom/outpost)
 "lI" = (
@@ -9736,7 +9736,7 @@
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "Rb" = (
 /obj/structure/table,
-/obj/item/ore/bluespace_crystal/artificial,
+/obj/item/stack/material/ore/bluespace_crystal/artificial,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/telescience_lab)
 "Ri" = (

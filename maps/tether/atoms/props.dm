@@ -37,16 +37,6 @@
 		return FALSE
 	return ..(user)
 
-/obj/structure/closet/secure_closet/guncabinet/excursion
-	name = "expedition weaponry cabinet"
-	req_access = list(list(access_explorer),list(access_armory))
-
-/obj/structure/closet/secure_closet/guncabinet/excursion/WillContain()
-	return list(
-		/obj/item/gun/energy/frontier/locked = 4,
-		/obj/item/gun/energy/frontier/locked/holdout = 4
-	)
-
 /obj/machinery/camera/network/crescent
 	preset_channels = list(CAMERA_CHANNEL_CRESCENT)
 

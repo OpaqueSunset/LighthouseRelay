@@ -467,8 +467,6 @@
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/item/ammo_magazine/clip/c762/practice,
-/obj/item/ammo_magazine/clip/c762/practice,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = -28
@@ -488,14 +486,8 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/ammo_magazine/m9mmt/practice,
-/obj/item/ammo_magazine/m9mmt/practice,
-/obj/item/ammo_magazine/m45/practice,
-/obj/item/ammo_magazine/m45/practice,
-/obj/item/ammo_magazine/m45/practice,
-/obj/item/ammo_magazine/m45/practice,
-/obj/item/ammo_magazine/m45/practice,
-/obj/item/ammo_magazine/m45/practice,
+/obj/item/ammo_magazine/smg/practice,
+/obj/item/ammo_magazine/smg/practice,
 /turf/simulated/floor/tiled,
 /area/security/range)
 "aS" = (
@@ -1086,18 +1078,18 @@
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
 /obj/item/storage/box/ammo/stunshells/large,
 /obj/item/storage/box/ammo/stunshells/large,
 /obj/item/storage/box/ammo/stunshells/large,
@@ -3354,14 +3346,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
-"go" = (
-/obj/structure/rack/shelf/steel,
-/obj/item/gunbox,
-/obj/item/gunbox,
-/obj/item/gunbox,
-/obj/item/gunbox,
-/turf/simulated/floor/tiled/dark,
-/area/security/armory/red)
 "gp" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -3406,11 +3390,6 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/warden,
-/obj/item/gun/projectile/shotgun/pump/combat{
-	ammo_type = /obj/item/ammo_casing/a12g/beanbag;
-	desc = "Built for close quarters combat, the Hesphaistos Industries KS-40 is widely regarded as a weapon of choice for repelling boarders. This one has 'Property of the Warden' inscribed on the stock.";
-	name = "warden's shotgun"
-	},
 /obj/item/book/manual/security_space_law,
 /obj/machinery/light{
 	dir = 1
@@ -3791,10 +3770,6 @@
 /area/maintenance/station/ai)
 "hd" = (
 /obj/structure/rack/shelf/steel,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -3850,10 +3825,10 @@
 /area/security/armory/red)
 "hh" = (
 /obj/structure/rack/shelf/steel,
-/obj/item/gun/projectile/automatic/wt550,
-/obj/item/gun/projectile/automatic/wt550,
-/obj/item/gun/projectile/automatic/wt550,
-/obj/item/gun/projectile/automatic/wt550,
+/obj/item/gun/projectile/automatic/smg,
+/obj/item/gun/projectile/automatic/smg,
+/obj/item/gun/projectile/automatic/smg,
+/obj/item/gun/projectile/automatic/smg,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -3921,10 +3896,6 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/gun/projectile/shotgun/pump/rifle/practice,
-/obj/item/ammo_magazine/clip/c762/practice,
-/obj/item/ammo_magazine/clip/c762/practice,
-/obj/item/ammo_magazine/clip/c762/practice,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -24
@@ -16612,9 +16583,8 @@
 	desc = "A hefty, reinforced metal crate with an electronic locking system. It's securely bolted to the floor and cannot be moved.";
 	name = "gun safe"
 	},
-/obj/item/gun/projectile/revolver/consul,
-/obj/item/ammo_magazine/s44,
-/obj/item/ammo_magazine/s44,
+/obj/item/ammo_magazine/speedloader,
+/obj/item/ammo_magazine/speedloader,
 /turf/simulated/floor/tiled/dark,
 /area/security/nuke_storage)
 "CV" = (
@@ -17036,7 +17006,7 @@
 	pixel_x = -24
 	},
 /obj/structure/dogbed,
-/obj/item/toy/plushie/coffee_fox,
+/obj/item/toy/plushie/fox/coffee,
 /turf/simulated/floor/wood/sif,
 /area/medical/reception)
 "DN" = (
@@ -18236,7 +18206,7 @@
 /area/quartermaster/warehouse)
 "Gb" = (
 /obj/structure/rack,
-/obj/item/module/power_control,
+/obj/item/stock_parts/circuitboard/apc,
 /obj/item/cell{
 	maxcharge = 2000
 	},
@@ -20981,7 +20951,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 8
 	},
-/obj/item/storage/box/nifsofts_medical,
+/obj/item/disk/nifsoft/bundle/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "Lr" = (
@@ -25503,12 +25473,6 @@
 "Tf" = (
 /turf/exterior/barren,
 /area/space)
-"Th" = (
-/obj/machinery/computer/roguezones{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/quartermaster/belterdock)
 "Tj" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "belt_dock_exterior";
@@ -26461,12 +26425,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
-"Ws" = (
-/obj/machinery/computer/shuttle_control/belter{
-	dir = 4
-	},
-/turf/simulated/floor/shuttle/airless,
-/area/shuttle/belter/station)
 "Wv" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/grille,
@@ -35463,7 +35421,7 @@ gz
 gG
 hI
 gC
-go
+bR
 hH
 ij
 dI
@@ -42387,14 +42345,14 @@ Yg
 TI
 Yd
 Yd
-Th
+Yd
 XU
 ab
 aa
 aa
 Go
 TM
-Ws
+VP
 TM
 Go
 aa

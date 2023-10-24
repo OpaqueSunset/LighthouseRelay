@@ -2635,7 +2635,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/storage/fancy/candle_box,
+/obj/item/storage/candle_box,
 /turf/simulated/floor/lino,
 /area/chapel/office)
 "eB" = (
@@ -6310,10 +6310,6 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stock_parts/circuitboard/mecha_control{
-	pixel_x = 1;
-	pixel_y = -1
-	},
 /turf/simulated/floor/tiled/dark,
 /area/storage/tech)
 "mf" = (
@@ -6344,7 +6340,7 @@
 	pixel_x = -3;
 	pixel_y = 4
 	},
-/obj/item/stock_parts/circuitboard/rdconsole{
+/obj/item/stock_parts/circuitboard/design_console{
 	pixel_y = 2
 	},
 /obj/item/stock_parts/circuitboard/destructive_analyzer,
@@ -6352,7 +6348,7 @@
 	pixel_x = 3;
 	pixel_y = -2
 	},
-/obj/item/stock_parts/circuitboard/rdserver{
+/obj/item/stock_parts/circuitboard/design_database{
 	pixel_x = 6;
 	pixel_y = -4
 	},
@@ -7226,9 +7222,6 @@
 /area/storage/tech)
 "ny" = (
 /obj/structure/rack,
-/obj/item/stock_parts/circuitboard/powermonitor{
-	pixel_y = 3
-	},
 /obj/item/stock_parts/circuitboard/atmos_alert{
 	pixel_x = 6;
 	pixel_y = -3
@@ -7956,7 +7949,7 @@
 /area/storage/tech)
 "oK" = (
 /obj/structure/table/steel,
-/obj/item/module/power_control,
+/obj/item/stock_parts/circuitboard/apc,
 /obj/item/stock_parts/circuitboard/airlock_electronics,
 /obj/machinery/light/small,
 /turf/simulated/floor,
@@ -9641,7 +9634,6 @@
 /area/ai_monitored/storage/eva)
 "rN" = (
 /obj/structure/rack,
-/obj/item/rig/breacher,
 /obj/item/clothing/mask/breath,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)

@@ -117,7 +117,7 @@
 		/obj/item/trash/tastybread,
 		/obj/item/chems/drinks/sillycup,
 		/obj/item/trash/tray,
-		/obj/item/trash/unajerky,
+		/obj/item/trash/sosjerky,
 		/obj/item/trash/waffles,
 		/obj/item/chems/food/spider,
 		/obj/item/chems/food/mysterysoup,

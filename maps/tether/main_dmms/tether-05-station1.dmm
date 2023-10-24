@@ -565,7 +565,7 @@
 /turf/simulated/floor,
 /area/construction/observation)
 "abp" = (
-/obj/machinery/shuttle_sensor{
+/obj/machinery/airlock_sensor/shuttle{
 	dir = 6;
 	id_tag = "shuttlesens_exp_int"
 	},
@@ -2037,7 +2037,7 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "aeu" = (
-/obj/machinery/shuttle_sensor{
+/obj/machinery/airlock_sensor/shuttle{
 	dir = 5;
 	id_tag = "shuttlesens_exp"
 	},
@@ -12165,12 +12165,6 @@
 /obj/item/radio/beacon,
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
-"aIA" = (
-/obj/machinery/computer/shuttle_control/tether_backup{
-	dir = 4
-	},
-/turf/simulated/floor/tiled,
-/area/tether/station/dock_two)
 "aIM" = (
 /obj/effect/floor_decal/sign/dock/one,
 /turf/simulated/floor/tiled,
@@ -18361,7 +18355,7 @@
 "bEa" = (
 /obj/structure/table/woodentable,
 /obj/machinery/computer/modular/preset/civilian,
-/obj/item/perfect_tele{
+/obj/prefab/hand_teleporter{
 	desc = "Seems absurd, doesn't it? Yet, here we are. This handheld device is capable of producing bluespace teleportation beacons, and can be activated to translocate the user or a target of their choice to any linked beacon. This one is the Facility Director's.";
 	name = "director's translocator"
 	},
@@ -19779,7 +19773,7 @@
 /area/vacant/vacant_restaurant_lower)
 "bZK" = (
 /obj/item/bananapeel,
-/obj/item/trash/unajerky,
+/obj/item/trash/sosjerky,
 /turf/simulated/floor,
 /area/vacant/vacant_restaurant_lower)
 "bZO" = (
@@ -21416,7 +21410,6 @@
 /area/tether/station/explorer_prep)
 "nYp" = (
 /obj/effect/floor_decal/industrial/outline/red,
-/obj/structure/closet/secure_closet/guncabinet/excursion,
 /turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "nYM" = (
@@ -22342,7 +22335,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "twv" = (
-/obj/machinery/shuttle_sensor{
+/obj/machinery/airlock_sensor/shuttle{
 	id_tag = "shuttlesens_exp_psg"
 	},
 /turf/simulated/shuttle/wall/voidcraft,
@@ -33008,7 +33001,7 @@ aCK
 bzq
 bzq
 aFZ
-aIA
+aDL
 bXl
 bPx
 bXl

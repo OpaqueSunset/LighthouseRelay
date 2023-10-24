@@ -673,9 +673,10 @@
 
 /obj/item/book/tome/imbued : /obj/item/book/tome{@OLD}
 
-/obj/machinery/computer/rdconsole/core : /obj/machinery/computer/design_console{@OLD}
-/obj/machinery/computer/rdconsole/robotics : /obj/machinery/computer/design_console{@OLD}
+/obj/machinery/computer/rdconsole/@SUBTYPES : /obj/machinery/computer/design_console{@OLD}
 /obj/machinery/computer/rdservercontrol : /obj/machinery/computer/design_console{@OLD; name = @SKIP; badmin = @SKIP}
+/obj/item/stock_parts/circuitboard/rdconsole : /obj/item/stock_parts/circuitboard/design_console{@OLD}
+/obj/item/stock_parts/circuitboard/rdserver : /obj/item/stock_parts/circuitboard/design_database{@OLD}
 
 /obj/structure/AIcore : /obj/structure/aicore
 /obj/item/tank/vox : /obj/item/tank/nitrogen
@@ -684,6 +685,39 @@
 /obj/mecha/working/ripley/mining : /mob/living/exosuit/premade/powerloader
 
 /area/wizard_station : /area/map_template/wizard_station
+
+# firearm repaths
+/obj/item/gun/energy/stunrevolver : /obj/item/gun/projectile/revolver/stun
+/obj/item/gun/projectile/automatic/wt550 : /obj/item/gun/projectile/automatic/smg
+/obj/item/gun/projectile/automatic/wt550/lethal : /obj/item/gun/projectile/automatic/smg/lethal
+/obj/item/gun/projectile/automatic/z8 : /obj/item/gun/projectile/automatic/assault_rifle
+/obj/item/gun/projectile/heavysniper : /obj/item/gun/projectile/bolt_action/sniper
+/obj/item/gun/projectile/silenced : /obj/item/gun/pistol/holdout/silenced
+/obj/item/gun/projectile/automatic/bullpup : /obj/item/gun/projectile/automatic/assault_rifle
+/obj/item/ammo_magazine/m762/@SUBTYPES : /obj/item/ammo_magazine/rifle
+/obj/item/ammo_magazine/m9mmt/rubber : /obj/item/ammo_magazine/smg/rubber
+/obj/item/ammo_magazine/m9mmt/practice : /obj/item/ammo_magazine/smg/practice
+/obj/item/ammo_magazine/m9mmt/@SUBTYPES : /obj/item/ammo_magazine/smg
+/obj/item/ammo_magazine/s44/@SUBTYPES : /obj/item/ammo_magazine/speedloader
+/obj/item/ammo_magazine/s45/@SUBTYPES : /obj/item/ammo_magazine/speedloader
+
+/obj/structure/table/borosilicate : /obj/structure/table/glass/pglass
+/obj/machinery/shuttle_sensor : /obj/machinery/airlock_sensor/shuttle{@OLD}
+/obj/machinery/door/unpowered/shuttle : /obj/structure/door/shuttle
+# our hand teleporters are different
+/obj/item/perfect_tele : /obj/prefab/hand_teleporter{@OLD}
+/obj/item/module/power_control : /obj/item/stock_parts/circuitboard/apc{@OLD}
+
+/obj/item/storage/box/nifsofts_medical : /obj/item/disk/nifsoft/bundle/medical
+/obj/item/storage/fancy/candle_box : /obj/item/storage/candle_box
+/obj/item/storage/fancy/cigar/havana : /obj/item/clothing/mask/smokable/cigarette/cigar/havana
+/obj/item/toy/plushie/coffee_fox : /obj/item/toy/plushie/fox/coffee
+/obj/item/toy/plushie/marble_fox : /obj/item/toy/plushie/fox/marble
+/obj/item/toy/plushie/mouse/fluff : /obj/item/toy/plushie/mouse
+/obj/item/toy/plushie/purple_fox : /obj/item/toy/plushie/fox/purple
+/obj/item/trash/unajerky : /obj/item/trash/sosjerky
+/obj/item/toy/eight_ball/conch : /obj/item/toy/eightball/conch
+
 
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
@@ -702,13 +736,20 @@
 /obj/item/stock_parts/circuitboard/skills : @DELETE
 /obj/item/stock_parts/circuitboard/stationalert_engineering : @DELETE
 /obj/item/stock_parts/circuitboard/scan_consolenew : @DELETE
+/obj/item/stock_parts/circuitboard/powermonitor : @DELETE
 /mob/living/silicon/decoy : @DELETE
 /obj/machinery/computer/pod : @DELETE
+# our RIGs are different
+/obj/item/rig_module/rescue_pharm : @DELETE
+/obj/item/rig/breacher : @DELETE
 /obj/item/rig_module/sprinter : @DELETE
 /obj/item/survivalcapsule : @DELETE
 /obj/item/multitool/tether_buffered : @DELETE
 # sorry, but we don't have shuttle webs
 /obj/machinery/computer/shuttle_control/web/excursion : @DELETE
+/obj/machinery/computer/roguezones : @DELETE
+/obj/machinery/computer/shuttle_control/belter : @DELETE
+/obj/machinery/computer/shuttle_control/tether_backup : @DELETE
 # we don't need this since we just have sky turfs
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b : @DELETE
 # we don't have shieldcaps anymore
@@ -725,3 +766,48 @@
 /obj/machinery/sleep_console : @DELETE
 # different mech system
 /obj/effect/decal/mecha_wreckage/@SUBTYPES : @DELETE
+/obj/item/stock_parts/circuitboard/mecha_control/@SUBTYPES : @DELETE
+/obj/machinery/computer/mecha : @DELETE
+# no fluff guns
+/obj/item/ammo_casing/nsfw_batt/@SUBTYPES : @DELETE
+/obj/item/gun/projectile/giskard : @DELETE
+/obj/item/gun/projectile/nsfw : @DELETE
+/obj/item/ammo_magazine/nsfw_mag : @DELETE
+/obj/item/gun/energy/netgun : @DELETE
+/obj/item/gun/energy/frontier/locked : @DELETE
+/obj/item/gun/energy/frontier/locked/holdout : @DELETE
+/obj/structure/closet/secure_closet/guncabinet/excursion : @DELETE
+/obj/item/ammo_casing/a12g/beanbag : @DELETE
+/obj/item/ammo_magazine/clip/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m10mm : @DELETE
+/obj/item/ammo_magazine/m380 : @DELETE
+/obj/item/ammo_magazine/m44 : @DELETE
+/obj/item/ammo_magazine/m45/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m545/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m545saw/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m95 : @DELETE
+/obj/item/ammo_magazine/m9mm/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m9mml/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m9mmp90/@SUBTYPES : @DELETE
+/obj/item/ammo_magazine/m9mmR/@SUBTYPES : @DELETE
+/obj/item/gun/energy/gun/martin : @DELETE
+/obj/item/gun/energy/phasegun/pistol : @DELETE
+/obj/item/gun/projectile/automatic/advanced_smg : @DELETE
+/obj/item/gun/projectile/automatic/battlerifle : @DELETE
+/obj/item/gun/projectile/automatic/c20r : @DELETE
+/obj/item/gun/projectile/automatic/l6_saw : @DELETE
+/obj/item/gun/projectile/automatic/p90 : @DELETE
+/obj/item/gun/projectile/automatic/pdw : @DELETE
+/obj/item/gun/projectile/automatic/sts35 : @DELETE
+/obj/item/gun/projectile/deagle : @DELETE
+/obj/item/gun/projectile/luger : @DELETE
+/obj/item/gun/projectile/luger/brown : @DELETE
+/obj/item/gun/projectile/p92x : @DELETE
+/obj/item/gun/projectile/revolver/consul : @DELETE
+/obj/item/gun/projectile/revolver/detective45 : @DELETE
+/obj/item/gun/projectile/shotgun/pump/combat : @DELETE
+/obj/item/gun/projectile/shotgun/pump/rifle/practice : @DELETE
+/obj/item/gun/projectile/shotgun/pump/USDF : @DELETE
+/obj/item/gunbox : @DELETE
+# our NIFs are different
+/obj/item/nif/bad : @DELETE

@@ -364,7 +364,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/fancy/candle_box,
+/obj/item/storage/candle_box,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "ba" = (
@@ -4232,7 +4232,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "jP" = (
-/obj/item/storage/fancy/cigar/havana,
+/obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/mimic,
 /turf/simulated/floor/plating,
@@ -4765,16 +4765,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
-"kY" = (
-/obj/machinery/computer/mecha,
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/mauve/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled,
-/area/rnd/rdoffice)
 "kZ" = (
 /obj/machinery/computer/robotics,
 /obj/effect/floor_decal/borderfloor{
@@ -16191,7 +16181,6 @@
 /area/maintenance/lower/atmos)
 "IL" = (
 /obj/structure/table/steel,
-/obj/item/nif/bad,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
@@ -27109,7 +27098,7 @@ ac
 il
 iw
 ks
-kY
+kK
 lj
 lE
 md

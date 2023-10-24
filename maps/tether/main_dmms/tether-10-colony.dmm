@@ -137,7 +137,6 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/gun/energy/netgun,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -199,36 +198,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/ammo_magazine/m545/ap,
-/obj/item/ammo_magazine/m545/ap,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/gun/projectile/automatic/sts35,
-/obj/item/gun/projectile/automatic/sts35,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"aw" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/structure/rack,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m545/ap,
-/obj/item/ammo_magazine/m545/ap,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/ammo_magazine/m545,
-/obj/item/gun/projectile/automatic/sts35,
-/obj/item/gun/projectile/automatic/sts35,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -277,10 +246,10 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/gun/energy/stunrevolver,
-/obj/item/gun/energy/stunrevolver,
-/obj/item/gun/energy/stunrevolver,
-/obj/item/gun/energy/stunrevolver,
+/obj/item/gun/projectile/revolver/stun,
+/obj/item/gun/projectile/revolver/stun,
+/obj/item/gun/projectile/revolver/stun,
+/obj/item/gun/projectile/revolver/stun,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -359,16 +328,6 @@
 /obj/item/ammo_casing/rocket,
 /obj/item/gun/launcher/rocket,
 /obj/item/gun/launcher/rocket,
-/obj/item/gun/projectile/automatic/l6_saw,
-/obj/item/gun/projectile/automatic/l6_saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw/ap,
-/obj/item/ammo_magazine/m545saw/ap,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -588,8 +547,6 @@
 /obj/item/clothing/accessory/storage/drop_pouches/black,
 /obj/item/clothing/accessory/storage/drop_pouches/black,
 /obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/gun/energy/gun/martin,
-/obj/item/gun/energy/gun/martin,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -629,15 +586,6 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
-"ba" = (
-/obj/structure/rack,
-/obj/structure/window/reinforced,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
 "bb" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -666,11 +614,6 @@
 "bd" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/item/gun/projectile/automatic/advanced_smg,
-/obj/item/ammo_magazine/m9mmR/saber,
-/obj/item/ammo_magazine/m9mmR/saber,
-/obj/item/ammo_magazine/m9mmR/saber,
-/obj/item/ammo_magazine/m9mmR/saber,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -689,24 +632,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/gun/projectile/revolver/detective45,
-/obj/item/gun/projectile/revolver/detective45,
-/obj/item/ammo_magazine/s45,
-/obj/item/ammo_magazine/s45,
-/obj/item/ammo_magazine/s45,
-/obj/item/ammo_magazine/s45,
-/obj/item/gun/projectile/p92x,
-/obj/item/gun/projectile/p92x,
-/obj/item/gun/projectile/p92x,
-/obj/item/gun/projectile/p92x,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
-/obj/item/ammo_magazine/m9mm/large/preban,
+/obj/item/ammo_magazine/speedloader,
+/obj/item/ammo_magazine/speedloader,
+/obj/item/ammo_magazine/speedloader,
+/obj/item/ammo_magazine/speedloader,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1248,16 +1177,6 @@
 /area/centcom/specops)
 "bW" = (
 /obj/structure/table/reinforced,
-/obj/item/ammo_casing/nsfw_batt/stun,
-/obj/item/ammo_casing/nsfw_batt/stun,
-/obj/item/ammo_casing/nsfw_batt/stun,
-/obj/item/ammo_casing/nsfw_batt,
-/obj/item/ammo_casing/nsfw_batt,
-/obj/item/ammo_casing/nsfw_batt,
-/obj/item/ammo_casing/nsfw_batt/net,
-/obj/item/ammo_casing/nsfw_batt/net,
-/obj/item/ammo_magazine/nsfw_mag,
-/obj/item/gun/projectile/nsfw,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "bX" = (
@@ -1303,9 +1222,6 @@
 "cd" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/ammo_magazine/m44,
-/obj/item/ammo_magazine/m44,
-/obj/item/gun/projectile/deagle,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "ce" = (
@@ -1406,7 +1322,7 @@
 /obj/item/flash,
 /obj/item/baton/loaded,
 /obj/item/storage/belt/holster/security/tactical,
-/obj/item/gun/energy/stunrevolver,
+/obj/item/gun/projectile/revolver/stun,
 /obj/item/clothing/glasses/sunglasses/sechud/tactical,
 /obj/item/knife/combat,
 /turf/unsimulated/floor/wood,
@@ -1816,8 +1732,6 @@
 /obj/item/clothing/accessory/storage/drop_pouches/brown,
 /obj/item/clothing/accessory/storage/drop_pouches/brown,
 /obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/gun/energy/gun/martin,
-/obj/item/gun/energy/gun/martin,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1928,7 +1842,6 @@
 "dc" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/item/rig_module/rescue_pharm,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -4201,28 +4114,6 @@
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
-"id" = (
-/obj/structure/rack,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m545saw/ap,
-/obj/item/ammo_magazine/m545saw/ap,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
-"ie" = (
-/obj/structure/rack,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/gun/projectile/automatic/l6_saw,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
 "if" = (
 /obj/machinery/door/blast/regular{
 	id_tag = "HEAVY";
@@ -4242,16 +4133,6 @@
 "ih" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml,
-/obj/item/ammo_magazine/m9mml/ap,
-/obj/item/ammo_magazine/m9mml/ap,
-/obj/item/ammo_magazine/m9mml/ap,
-/obj/item/ammo_magazine/m9mml/ap,
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC4";
 	name = "Armoury Access";
@@ -4265,26 +4146,7 @@
 "ii" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
 /obj/machinery/camera/network/crescent,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
-"ij" = (
-/obj/structure/rack,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m95,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4696,7 +4558,7 @@
 "iZ" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/gun/projectile/heavysniper,
+/obj/item/gun/projectile/bolt_action/sniper,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4705,16 +4567,16 @@
 "ja" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
-/obj/item/ammo_magazine/m9mmt,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
+/obj/item/ammo_magazine/smg,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4723,18 +4585,18 @@
 "jb" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4743,16 +4605,16 @@
 "jc" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
-/obj/item/ammo_magazine/m9mmt/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
+/obj/item/ammo_magazine/smg/rubber,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4778,8 +4640,6 @@
 "je" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/gun/energy/netgun,
-/obj/item/gun/energy/netgun,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4949,16 +4809,16 @@
 "jA" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
-/obj/item/ammo_magazine/m762/ap,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
+/obj/item/ammo_magazine/rifle,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4967,8 +4827,8 @@
 "jB" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/gun/projectile/automatic/z8,
-/obj/item/gun/projectile/automatic/z8,
+/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/projectile/automatic/assault_rifle,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -5275,26 +5135,13 @@
 	icon_state = "vault"
 	},
 /area/centcom/security)
-"kc" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/automatic/p90,
-/obj/item/gun/projectile/automatic/p90,
-/obj/item/gun/projectile/automatic/p90,
-/obj/item/gun/projectile/automatic/p90,
-/obj/item/gun/projectile/automatic/p90,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
 "kd" = (
 /obj/structure/rack,
-/obj/item/gun/projectile/automatic/bullpup,
-/obj/item/gun/projectile/automatic/bullpup,
-/obj/item/gun/projectile/automatic/bullpup,
-/obj/item/gun/projectile/automatic/bullpup,
-/obj/item/gun/projectile/automatic/bullpup,
+/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/projectile/automatic/assault_rifle,
+/obj/item/gun/projectile/automatic/assault_rifle,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5303,26 +5150,13 @@
 /area/centcom/security)
 "ke" = (
 /obj/structure/rack,
-/obj/item/gun/projectile/automatic/wt550/lethal,
-/obj/item/gun/projectile/automatic/wt550/lethal,
-/obj/item/gun/projectile/automatic/wt550/lethal,
-/obj/item/gun/projectile/automatic/wt550/lethal,
-/obj/item/gun/projectile/automatic/wt550/lethal,
+/obj/item/gun/projectile/automatic/smg/lethal,
+/obj/item/gun/projectile/automatic/smg/lethal,
+/obj/item/gun/projectile/automatic/smg/lethal,
+/obj/item/gun/projectile/automatic/smg/lethal,
+/obj/item/gun/projectile/automatic/smg/lethal,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/crescent,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
-"kf" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -5623,19 +5457,6 @@
 "kG" = (
 /obj/structure/sign/department/eva,
 /turf/unsimulated/wall,
-/area/centcom/security)
-"kH" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/shotgun/pump/USDF,
-/obj/item/gun/projectile/shotgun/pump/USDF,
-/obj/item/gun/projectile/shotgun/pump/USDF,
-/obj/item/gun/projectile/shotgun/pump/USDF,
-/obj/item/gun/projectile/shotgun/pump/USDF,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
 /area/centcom/security)
 "kI" = (
 /obj/structure/rack,
@@ -6039,19 +5860,6 @@
 	icon_state = "vault"
 	},
 /area/centcom/security)
-"lw" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/item/gun/projectile/automatic/battlerifle,
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
 "lx" = (
 /obj/structure/table,
 /obj/machinery/recharger,
@@ -6356,19 +6164,6 @@
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/security)
-"md" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/automatic/pdw,
-/obj/item/gun/projectile/automatic/pdw,
-/obj/item/gun/projectile/automatic/pdw,
-/obj/item/gun/projectile/automatic/pdw,
-/obj/item/gun/projectile/automatic/pdw,
-/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -11475,9 +11270,6 @@
 	pixel_y = 30
 	},
 /obj/structure/table/reinforced,
-/obj/item/gun/projectile/shotgun/pump/combat{
-	name = "Discipline"
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -15883,7 +15675,7 @@
 /area/centcom/medical)
 "Re" = (
 /obj/structure/table/reinforced,
-/obj/item/perfect_tele,
+/obj/prefab/hand_teleporter,
 /obj/item/binoculars,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -33017,7 +32809,7 @@ gP
 gP
 hx
 ho
-id
+je
 iD
 iY
 iD
@@ -33173,7 +32965,7 @@ gP
 gP
 gP
 ho
-ie
+je
 ig
 iZ
 ig
@@ -33613,7 +33405,7 @@ ac
 ah
 as
 aG
-ba
+bd
 br
 aG
 bR
@@ -33647,11 +33439,11 @@ ja
 ig
 ig
 ho
-kH
+je
 kI
 ig
 kd
-lw
+je
 mp
 mI
 mI
@@ -33803,7 +33595,7 @@ jb
 ig
 ig
 ho
-kf
+je
 ig
 ig
 ig
@@ -34079,7 +33871,7 @@ ac
 ac
 ac
 ah
-aw
+ar
 aG
 bd
 bu
@@ -34109,7 +33901,7 @@ gS
 gT
 hA
 ho
-ij
+je
 ig
 ig
 ig
@@ -34427,8 +34219,8 @@ jd
 ig
 jD
 ho
-kc
-md
+je
+je
 ig
 lx
 me

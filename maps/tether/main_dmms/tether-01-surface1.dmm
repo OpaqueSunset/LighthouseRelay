@@ -918,8 +918,6 @@
 	},
 /obj/item/clothing/accessory/permit/gun/planetside,
 /obj/item/clothing/accessory/permit/gun/planetside,
-/obj/item/gun/energy/phasegun/pistol,
-/obj/item/gun/energy/phasegun/pistol,
 /obj/item/cell/gun,
 /obj/item/cell/gun,
 /obj/structure/closet/secure_closet/guncabinet/phase{
@@ -18572,11 +18570,11 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/engineering/atmos/intake)
 "aJX" = (
-/obj/structure/table/borosilicate,
+/obj/structure/table/glass/pglass,
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar)
 "aJY" = (
-/obj/structure/table/borosilicate,
+/obj/structure/table/glass/pglass,
 /obj/structure/dancepole,
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar)

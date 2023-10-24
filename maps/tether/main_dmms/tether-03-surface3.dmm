@@ -405,11 +405,11 @@
 /area/gateway/prep_room)
 "bD" = (
 /obj/structure/rack,
-/obj/item/gun/energy/stunrevolver,
+/obj/item/gun/projectile/revolver/stun,
 /obj/machinery/firealarm{
 	pixel_y = 21
 	},
-/obj/item/gun/energy/stunrevolver,
+/obj/item/gun/projectile/revolver/stun,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/tether/surfacebase/security/armory)
@@ -18704,10 +18704,6 @@
 /obj/structure/closet/firecloset,
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/tether/surface)
-"Jo" = (
-/obj/machinery/computer/shuttle_control/tether_backup,
-/turf/simulated/floor/shuttle/black,
-/area/shuttle/tether/surface)
 "Jp" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/shuttle/black,
@@ -18761,12 +18757,6 @@
 /area/shuttle/tether/surface)
 "Jx" = (
 /turf/simulated/floor/tiled/monofloor,
-/area/tether/surfacebase/shuttle_pad)
-"Jy" = (
-/obj/machinery/computer/shuttle_control/tether_backup{
-	dir = 8
-	},
-/turf/simulated/floor/tiled,
 /area/tether/surfacebase/shuttle_pad)
 "Jz" = (
 /obj/structure/bed/chair/shuttle{
@@ -38175,7 +38165,7 @@ Je
 GN
 Jk
 Jq
-Jy
+GR
 Jk
 GN
 IR
@@ -39107,7 +39097,7 @@ HT
 Gj
 IY
 Jj
-Jo
+Js
 Js
 Js
 Jz

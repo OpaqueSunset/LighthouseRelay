@@ -1,4 +1,4 @@
-// MOBS
+// MOBS (MOTHBALLED)
 /mob/living/simple_animal/bird/black_bird
 /mob/living/simple_animal/corgi/pug/SirPogsley // TODO: add /dog/ parent type
 /mob/living/simple_animal/fish/bass
@@ -11,9 +11,8 @@
 /mob/living/simple_animal/sif/fluffy
 /mob/living/simple_animal/slime/rainbow/kendrick
 
-// OBJECTS
-/obj/item/backup_implanter
-/obj/item/baton/slime/loaded
+// OBJECTS (MOTHBALLED)
+// double bed items
 /obj/item/bedsheet/bluedouble
 /obj/item/bedsheet/browndouble
 /obj/item/bedsheet/captaindouble
@@ -25,20 +24,17 @@
 /obj/item/bedsheet/rddouble
 /obj/item/bedsheet/reddouble
 /obj/item/bedsheet/yellowdouble
-/obj/item/bone/ribs
-/obj/item/bone/skull/unathi
-/obj/item/chems/drinks/bottle/lemonjuice
-/obj/item/chems/drinks/metaglass
-/obj/item/chems/glass/beaker/cryoxadone
-/obj/item/chems/glass/beaker/measuring_cup
-/obj/item/chems/glass/bottle/biomass
-/obj/item/closet_painter
-/obj/item/cmo_disk_holder
-/obj/item/communicator
+/obj/structure/bed/double/padded
+/obj/item/closet_painter // will get rolled into paint sprayer eventually
+/obj/item/communicator // needs to be made a type of modular computer
+// all these defibs need to be redone and i don't have time for that
 /obj/item/defib_kit/compact/combat/loaded
 /obj/item/defib_kit/compact/loaded
 /obj/item/defib_kit/jumper_kit
 /obj/item/defib_kit/loaded
+// fluff
+/obj/item/bone/ribs
+/obj/item/bone/skull/unathi
 /obj/item/flame/candle/candelabra
 /obj/item/flame/candle/candelabra/everburn
 /obj/item/flame/lighter/zippo/gonzo
@@ -49,78 +45,83 @@
 /obj/item/folder/white_cmo
 /obj/item/folder/white_rd
 /obj/item/folder/yellow_ce
-/obj/item/glasses_kit
-/obj/item/gps/internal
-/obj/item/gps/internal/base
-/obj/item/handcuffs/fuzzy
-/obj/item/handcuffs/legcuffs/fuzzy
-/obj/item/modular_computer/pda/captain
-/obj/item/module/power_control
-/obj/item/nif/bad
-/obj/item/ore/bluespace_crystal
-/obj/item/ore/bluespace_crystal/artificial
-/obj/item/perfect_tele
-/obj/item/radio/intercom/department/security
-/obj/item/radio/intercom/locked/ai_private
-/obj/item/rig_module/rescue_pharm
-/obj/item/rig/breacher
-/obj/item/roller/adv
-/obj/item/scanner/barcode
-/obj/item/scanner/health/advanced
-/obj/item/scanner/health/improved
-/obj/item/sleevemate
-/obj/item/soap/deluxe
+/obj/item/soap/deluxe // currently soaps don't handle special decals like this very well :(
 /obj/item/soap/nanotrasen
 /obj/item/soap/syndie
+// probably unnecessary?
+/obj/item/gps/internal
+/obj/item/gps/internal/base
+// i'm too lazy to deal with this
+/obj/item/stack/material/ore/bluespace_crystal
+/obj/item/stack/material/ore/bluespace_crystal/artificial
+
+// we don't need t2 or t3 medical stuff at this point in development
+/obj/item/roller/adv
+/obj/item/scanner/health/advanced
+/obj/item/scanner/health/improved
+// mothballed: polaris/virgo mining features
 /obj/item/stack/marker_beacon/thirty
+/obj/machinery/mineral/equipment_vendor
+/obj/machinery/mineral/equipment_vendor/survey
+// mothballed: exercise
+/obj/machinery/fitness/heavy/lifter
+/obj/machinery/fitness/punching_bag/clown
+
+// resleeving and transcore
+/obj/item/backup_implanter
+/obj/item/chems/glass/bottle/biomass
+/obj/item/cmo_disk_holder
+/obj/item/sleevemate
 /obj/item/stock_parts/circuitboard/body_designer
-/obj/item/stock_parts/circuitboard/mecha_control
-/obj/item/stock_parts/circuitboard/powermonitor
-/obj/item/stock_parts/circuitboard/rdconsole
-/obj/item/stock_parts/circuitboard/rdserver
 /obj/item/stock_parts/circuitboard/resleeving_control
 /obj/item/stock_parts/circuitboard/transhuman_clonepod
 /obj/item/stock_parts/circuitboard/transhuman_resleever
 /obj/item/stock_parts/circuitboard/transhuman_synthprinter
-/obj/item/storage/bag/chemistry
-/obj/item/storage/bag/circuits/basic
 /obj/item/storage/box/backup_kit
 /obj/item/storage/box/body_record_disk
-/obj/item/storage/box/firingpins
-/obj/item/storage/box/nifsofts_engineering
-/obj/item/storage/box/nifsofts_medical
-/obj/item/storage/box/nifsofts_mining
-/obj/item/storage/box/nifsofts_security
-/obj/item/storage/fancy/candle_box
-/obj/item/storage/fancy/cigar/havana
+/obj/machinery/clonepod/transhuman
+/obj/machinery/clonepod/transhuman/full
+/obj/machinery/computer/transhuman/resleeving
+/obj/machinery/transhuman/resleever
+/obj/machinery/transhuman/synthprinter
+// note: cryo is technically part of resleeving now
+/obj/machinery/atmospherics/unary/cryo_cell
+/obj/item/chems/glass/beaker/cryoxadone
+
+// medical QOL
+/obj/item/glasses_kit
+/obj/item/storage/bag/chemistry
 /obj/item/storage/pill_bottle/iron
 /obj/item/storage/pill_bottle/nutriment
+
+// fluff weapons (CUT ENTIRELY)
 /obj/item/storage/secure/briefcase/ml3m_pack_cmo
 /obj/item/storage/secure/briefcase/ml3m_pack_med
 /obj/item/storage/secure/briefcase/nsfw_pack
+
+// OBJECTS
+/obj/item/baton/slime/loaded
+/obj/item/chems/drinks/bottle/lemonjuice
+/obj/item/chems/drinks/metaglass
+/obj/item/chems/glass/beaker/measuring_cup
+/obj/item/handcuffs/fuzzy
+/obj/item/handcuffs/legcuffs/fuzzy
+/obj/item/modular_computer/pda/captain
+/obj/item/radio/intercom/department/security
+/obj/item/radio/intercom/locked/ai_private
+/obj/item/storage/bag/circuits/basic
+/obj/item/storage/box/firingpins
+/obj/item/storage/box/nifsofts_engineering
+// todo: maybe readd trash/unajerky? we'd need lore first...
+/obj/item/storage/box/nifsofts_mining
+/obj/item/storage/box/nifsofts_security
 /obj/item/t_scanner/advanced
-/obj/item/toy/eight_ball/conch
-/obj/item/toy/plushie/coffee_fox
-/obj/item/toy/plushie/farwa
-/obj/item/toy/plushie/marble_fox
-/obj/item/toy/plushie/mouse/fluff
-/obj/item/toy/plushie/purple_fox
-/obj/item/toy/plushie/squid/blue
-/obj/item/toy/plushie/squid/pink
-/obj/item/toy/plushie/teshari
-/obj/item/toy/plushie/therapy/blue
-/obj/item/toy/plushie/therapy/orange
+
+/obj/item/toy/eightball/conch
+/obj/item/toy/plushie/teshari // todo: refluff to neo-avian
 /obj/item/toy/stickhorse
-/obj/item/trash/unajerky
 /obj/item/universal_translator
-/obj/machinery/airlock_sensor/airlock_exterior
-/obj/machinery/airlock_sensor/airlock_exterior/shuttle
-/obj/machinery/airlock_sensor/airlock_interior
-/obj/machinery/atmospherics/binary/algae_farm/filled
-/obj/machinery/atmospherics/pipe/vent
-/obj/machinery/atmospherics/pipe/vent/high_volume
-/obj/machinery/atmospherics/unary/cryo_cell
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/wall_mounted
+
 /obj/machinery/blackbox_recorder
 /obj/machinery/bomb_tester
 /obj/machinery/button/remote/emitter
@@ -129,9 +130,6 @@
 /obj/machinery/camera/network/thunder
 /obj/machinery/cash_register
 /obj/machinery/cash_register/civilian
-/obj/machinery/clonepod/transhuman
-/obj/machinery/clonepod/transhuman/full
-/obj/machinery/computer/air_control/large_tank_control
 /obj/machinery/computer/cryopod/dorms
 /obj/machinery/computer/cryopod/gateway
 /obj/machinery/computer/HolodeckControl/holodorm
@@ -140,16 +138,8 @@
 /obj/machinery/computer/HolodeckControl/holodorm/seven
 /obj/machinery/computer/HolodeckControl/holodorm/three
 /obj/machinery/computer/HolodeckControl/holosurgery
-/obj/machinery/computer/mecha
-/obj/machinery/computer/roguezones
-/obj/machinery/computer/shuttle_control/belter
-/obj/machinery/computer/shuttle_control/tether_backup
-/obj/machinery/computer/shuttle_control/web/excursion
-/obj/machinery/computer/timeclock/premade/east
-/obj/machinery/computer/timeclock/premade/north
-/obj/machinery/computer/timeclock/premade/south
-/obj/machinery/computer/timeclock/premade/west
-/obj/machinery/computer/transhuman/resleeving
+
+
 /obj/machinery/door/airlock/double/metal
 /obj/machinery/door/airlock/double/metal/mait
 /obj/machinery/door/airlock/silver
@@ -159,48 +149,62 @@
 /obj/machinery/door/firedoor/glass
 /obj/machinery/door/firedoor/glass/hidden/steel
 /obj/machinery/door/firedoor/multi_tile
-/obj/machinery/door/unpowered/shuttle
+
 /obj/machinery/exonet_node
-/obj/machinery/fitness/heavy/lifter
-/obj/machinery/fitness/punching_bag/clown
 /obj/machinery/gear_painter
+// Station decor
 /obj/machinery/holoplant
 /obj/machinery/holosign/bar
+
+// Our libraries are different
 /obj/machinery/librarycomp
 /obj/machinery/librarypubliccomp
 /obj/machinery/libraryscanner
-/obj/machinery/light/flamp/noshade
-/obj/machinery/light/flicker
-/obj/machinery/mineral/equipment_vendor
-/obj/machinery/mineral/equipment_vendor/survey
-/obj/machinery/navbeacon/delivery/south
-/obj/machinery/network/requests_console/preset/engineering
-/obj/machinery/ntnet_relay
-/obj/machinery/oxygen_pump/anesthetic
-/obj/machinery/particle_smasher
-/obj/machinery/pda_multicaster/prebuilt
-/obj/machinery/porta_turret/ai_defense
+/obj/item/scanner/barcode
+
+// Atmospherics
+/obj/machinery/airlock_sensor/airlock_exterior
+/obj/machinery/airlock_sensor/airlock_exterior/shuttle
+/obj/machinery/airlock_sensor/airlock_interior
+/obj/machinery/atmospherics/binary/algae_farm/filled
+/obj/machinery/atmospherics/pipe/vent
+/obj/machinery/atmospherics/pipe/vent/high_volume
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/wall_mounted
 /obj/machinery/portable_atmospherics/powered/pump/huge/stationary/purge
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram
+/obj/machinery/computer/air_control/large_tank_control
+
+// Power
 /obj/machinery/power/grid_checker
 /obj/machinery/power/smes/buildable/point_of_interest
+/obj/machinery/particle_smasher
 /obj/machinery/power/thermoregulator
-/obj/machinery/seed_storage/brig
 /obj/machinery/shield_generator/external
-/obj/machinery/shuttle_sensor
-/obj/machinery/smartfridge/chemistry/chemvator/down
+/obj/structure/cable/heavyduty
+
+// Medical
+/obj/machinery/oxygen_pump/anesthetic
+
+
+/obj/machinery/light/flicker
+/obj/machinery/navbeacon/delivery/south
+/obj/machinery/network/requests_console/preset/engineering
+	department = "Engineering"
+/obj/machinery/ntnet_relay
+/obj/machinery/pda_multicaster/prebuilt
+/obj/machinery/porta_turret/ai_defense
+/obj/machinery/seed_storage/brig
+
 /obj/machinery/suit_cycler/director
 /obj/machinery/suit_cycler/exploration
-/obj/machinery/transhuman/resleever
-/obj/machinery/transhuman/synthprinter
 /obj/machinery/vending/fishing
 /obj/machinery/vending/giftvendor
 /obj/machinery/vending/hydronutrients/brig
 /obj/machinery/vending/phoronresearch
 /obj/random/unidentified_medicine
-/obj/structure/bed/double/padded
 /obj/structure/bookcase/manuals/research_and_development
-/obj/structure/cable/heavyduty
+
+// Closets
 /obj/structure/closet/crate/secure/science
 /obj/structure/closet/firecloset/full/double
 /obj/structure/closet/l3closet/medical
@@ -220,24 +224,25 @@
 /obj/structure/closet/walllocker/emerglocker
 /obj/structure/closet/wardrobe/captain
 /obj/structure/closet/wardrobe/ert
-/obj/structure/fence
-/obj/structure/fence/door
-/obj/structure/fence/post
+
 /obj/structure/flight_left
 /obj/structure/flight_right
+/obj/structure/ladder/up
+/obj/structure/musician/piano
+/obj/structure/rack/shelf/steel
+/obj/structure/rack/steel
+/obj/structure/reagent_dispensers/coolanttank
+
+// planet decoration and flora
 /obj/structure/flora/sif/eyes
 /obj/structure/flora/sif/tendrils
 /obj/structure/flora/skeleton
 /obj/structure/flora/tree/jungle
 /obj/structure/flora/tree/jungle_small
 /obj/structure/flora/tree/sif
-/obj/structure/ladder/up
-/obj/structure/musician/piano
-/obj/structure/plasticflaps/mining
-/obj/structure/rack/shelf/steel
-/obj/structure/rack/steel
-/obj/structure/reagent_dispensers/coolanttank
-/obj/structure/table/borosilicate
+/obj/structure/fence
+/obj/structure/fence/door
+/obj/structure/fence/post
 
 // COOKING
 /obj/item/chems/condiment/spacespice
