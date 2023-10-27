@@ -354,6 +354,7 @@
 
 # MODULAR COMPUTER PRESETS
 /obj/item/pda/@SUBTYPES : /obj/item/modular_computer/pda/@SUBTYPES{@OLD}
+/obj/item/modular_computer/pda/captain : /obj/item/modular_computer/pda/heads/captain
 /obj/machinery/computer/card : /obj/machinery/computer/modular/preset/cardslot/personnel{@OLD}
 /obj/machinery/computer/secure_data : /obj/machinery/computer/modular/preset/civilian{@OLD}
 /obj/machinery/computer/skills : /obj/machinery/computer/modular/preset/civilian{@OLD}
@@ -447,6 +448,10 @@
 
 /obj/item/storage/box/survival/comp : /obj/item/storage/box/survival{@OLD}
 
+/obj/structure/musician/piano : /obj/structure/synthesized_instrument/synthesizer/piano
+
+/obj/item/backup_implanter : /obj/item/implanter/backup
+
 # CLOTHING REPATHS
 /obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/accessory/toggleable/hawaii/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/holster/@SUBTYPES : /obj/item/clothing/accessory/storage/holster/@SUBTYPES{@OLD}
@@ -497,6 +502,8 @@
 /obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/under/avian_smock/@SUBTYPES{@OLD}
 /obj/item/clothing/under/avian_smock/medical : /obj/item/clothing/under/avian_smock/utility{@OLD}
 /obj/item/clothing/under/rank/@SUBTYPES : /obj/item/clothing/under/@SUBTYPES{@OLD}
+/obj/item/clothing/accessory/armor/armguards : /obj/item/clothing/accessory/armguards
+/obj/item/clothing/accessory/armor/legguards : /obj/item/clothing/accessory/legguards
 /obj/item/clothing/accessory/legguards/combat : /obj/item/clothing/accessory/legguards/riot{@OLD}
 /obj/item/clothing/accessory/armguards/combat : /obj/item/clothing/accessory/armguards/riot{@OLD}
 /obj/item/clothing/accessory/armguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
@@ -509,6 +516,28 @@
 /obj/item/clothing/head/pin/flower/blue : /obj/item/clothing/head/hairflower/blue
 /obj/item/clothing/head/pin/flower/orange : /obj/item/clothing/head/hairflower/yellow
 /obj/item/clothing/head/pin/flower/pink : /obj/item/clothing/head/hairflower/pink
+/obj/item/clothing/head/helmet/space/deathsquad : /obj/item/clothing/suit/space/void/swat
+/obj/item/clothing/glasses/sunglasses/sechud/tactical : /obj/item/clothing/glasses/sunglasses/sechud/goggles
+/obj/item/clothing/head/beret/centcom : /obj/item/clothing/head/beret/corp/centcom/officer
+/obj/item/clothing/head/beret/nanotrasen : /obj/item/clothing/head/beret/corp
+/obj/item/clothing/head/helmet/space/skrell/black : /obj/item/clothing/head/helmet/space/void/skrell/black
+/obj/item/clothing/head/helmet/space/skrell/white : /obj/item/clothing/head/helmet/space/void/skrell
+/obj/item/clothing/suit/armor/combat : /obj/item/clothing/suit/armor/vest/heavy
+/obj/item/clothing/suit/armor/riot/alt : /obj/item/clothing/suit/armor/riot
+/obj/item/clothing/suit/armor/swat : /obj/item/clothing/suit/armor/vest/heavy
+/obj/item/clothing/suit/armor/tactical : /obj/item/clothing/suit/armor/pcarrier/tactical
+/obj/item/clothing/suit/armor/vest/ert/command : /obj/item/clothing/suit/armor/vest/heavy/hos
+/obj/item/clothing/suit/fire/firefighter : /obj/item/clothing/suit/fire
+/obj/item/clothing/suit/space/skrell/black : /obj/item/clothing/suit/space/void/skrell/black
+/obj/item/clothing/suit/space/skrell/white : /obj/item/clothing/suit/space/void/skrell
+/obj/item/clothing/mask/gas/wwii : /obj/item/clothing/mask/gas/budget
+/obj/item/clothing/shoes/magboots/adv : /obj/item/clothing/shoes/magboots
+/obj/item/clothing/shoes/mime : /obj/item/clothing/shoes/color/white
+/obj/item/clothing/head/pilot : /obj/item/clothing/head/helmet/tactical/pilot
+/obj/item/clothing/accessory/poncho/roles/medical : /obj/item/clothing/suit/poncho/roles/medical
+/obj/item/clothing/accessory/scarf/stripedred : /obj/item/clothing/accessory/scarf/christmas
+/obj/item/clothing/glasses/gglasses : /obj/item/clothing/glasses/prescription/gglasses
+/obj/item/clothing/mask/smokable/cigarette/joint : /obj/item/clothing/mask/smokable/cigarette/rolled
 
 /obj/item/knife/machete : /obj/item/hatchet/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}
@@ -582,6 +611,7 @@
 # SMES bullshit
 /obj/machinery/power/smes/buildable/engine : /obj/machinery/power/smes/buildable/preset{_fully_charged = 1; _input_maxed = 1; _input_on = 1; _output_maxed = 1; _output_on = 1; uncreated_component_parts = list(/obj/item/stock_parts/smes_coil = 1)}
 /obj/machinery/power/smes/buildable/main : /obj/machinery/power/smes/buildable/preset{_fully_charged = 1; _input_maxed = 1; _input_on = 1; _output_maxed = 1; _output_on = 1; uncreated_component_parts = list(/obj/item/stock_parts/smes_coil = 4)}
+/obj/machinery/power/smes/buildable/point_of_interest : /obj/machinery/power/smes/buildable/preset/hidden
 
 # AMMO BOXES
 /obj/item/storage/box/beanbags/@SUBTYPES : /obj/item/storage/box/ammo/beanbags/@SUBTYPES{@OLD}
@@ -669,7 +699,8 @@
 /obj/structure/closet/secure_closet/psych : /obj/structure/closet/secure_closet/psychiatry{@OLD}
 /obj/machinery/suit_cycler/headofsecurity : /obj/machinery/suit_cycler/security/alt{@OLD}
 /obj/machinery/account_database : /obj/machinery/computer/account_database{@OLD}
-/obj/machinery/shield_gen/@SUBTYPES : /obj/machinery/shield_generator/@SUBTYPES{@OLD}
+/obj/machinery/shield_gen/@SUBTYPES : /obj/machinery/shield_generator
+/obj/machinery/shield_generator/@SUBTYPES : /obj/machinery/shield_generator
 
 /obj/item/book/tome/imbued : /obj/item/book/tome{@OLD}
 
@@ -718,6 +749,10 @@
 /obj/item/trash/unajerky : /obj/item/trash/sosjerky
 /obj/item/toy/eight_ball/conch : /obj/item/toy/eightball/conch
 
+/obj/structure/bookcase/manuals/research_and_development : /obj/structure/bookcase/manuals/xenoarchaeology
+/obj/item/book/manual/security_space_law : /obj/item/book/manual/nt_regs
+
+/obj/machinery/fitness/heavy/lifter : /obj/structure/fitness/weightlifter
 
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
@@ -809,5 +844,17 @@
 /obj/item/gun/projectile/shotgun/pump/rifle/practice : @DELETE
 /obj/item/gun/projectile/shotgun/pump/USDF : @DELETE
 /obj/item/gunbox : @DELETE
+/obj/item/storage/secure/briefcase/ml3m_pack_cmo : @DELETE
+/obj/item/storage/secure/briefcase/nsfw_pack : @DELETE
 # our NIFs are different
 /obj/item/nif/bad : @DELETE
+# our books are different
+/obj/item/book/custom_library/@SUBTYPES : @DELETE
+/obj/item/book/codex/@SUBTYPES : @DELETE
+/obj/item/book/manual/tesla_engine : @DELETE
+/obj/item/clothing/head/helmet/combat : @DELETE
+/obj/item/clothing/suit/armor/vest/wolftaur : @DELETE
+/obj/machinery/blackbox_recorder : @DELETE
+/obj/machinery/exonet_node : @DELETE
+/obj/machinery/ntnet_relay : @DELETE
+/obj/machinery/pda_multicaster/prebuilt : @DELETE

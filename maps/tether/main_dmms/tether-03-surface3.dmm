@@ -1820,7 +1820,6 @@
 /area/tether/surfacebase/reading_room)
 "eU" = (
 /obj/structure/table/glass,
-/obj/item/book/codex,
 /obj/machinery/recharger,
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/reading_room)
@@ -5647,7 +5646,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/recreation_area)
 "lN" = (
-/obj/machinery/fitness/heavy/lifter,
+/obj/structure/fitness/weightlifter,
 /turf/simulated/floor/wood,
 /area/crew_quarters/recreation_area)
 "lO" = (
@@ -11685,7 +11684,7 @@
 /area/bridge/secondary)
 "xm" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/suit/fire,
 /obj/item/tank/oxygen,
 /obj/item/clothing/mask/gas,
 /obj/item/chems/spray/extinguisher,
@@ -17832,7 +17831,7 @@
 /area/assembly/chargebay)
 "Hx" = (
 /obj/item/clothing/under/color/grey,
-/obj/item/clothing/mask/gas/wwii,
+/obj/item/clothing/mask/gas/budget,
 /obj/item/storage/belt/utility/full,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -19574,7 +19573,6 @@
 /obj/structure/table/reinforced,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/codex,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
 "Ln" = (

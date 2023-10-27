@@ -4250,7 +4250,6 @@
 	name = "bookcase (Non-Fiction)"
 	},
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/codex/lore/vir,
 /turf/simulated/floor/wood,
 /area/library)
 "ajf" = (
@@ -4453,7 +4452,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/shield_generator/external,
+/obj/machinery/shield_generator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -4615,7 +4614,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/machinery/shield_generator/external,
+/obj/machinery/shield_generator,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
 /area/engineering/storage)
@@ -4635,7 +4634,6 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/codex,
 /turf/simulated/floor/wood,
 /area/library)
 "akj" = (
@@ -4850,12 +4848,6 @@
 "akL" = (
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
-"akM" = (
-/obj/structure/table/woodentable,
-/obj/item/book/codex/lore/news,
-/obj/machinery/recharger,
-/turf/simulated/floor/wood,
-/area/library)
 "akN" = (
 /obj/structure/table/woodentable,
 /obj/machinery/librarycomp,
@@ -10415,7 +10407,6 @@
 /area/bridge)
 "aBL" = (
 /obj/structure/table/reinforced,
-/obj/item/book/codex,
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "aBM" = (
@@ -11005,7 +10996,7 @@
 /area/crew_quarters/captain)
 "aDP" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/suit/fire,
 /obj/item/tank/oxygen,
 /obj/item/clothing/mask/gas,
 /obj/item/chems/spray/extinguisher,
@@ -19505,7 +19496,7 @@
 /obj/structure/bookcase,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bXl" = (
@@ -19685,7 +19676,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/crew_quarters/heads/chief)
 "bYN" = (
-/obj/structure/musician/piano,
+/obj/structure/synthesized_instrument/synthesizer/piano,
 /turf/simulated/floor,
 /area/vacant/vacant_restaurant_lower)
 "bYP" = (
@@ -20367,7 +20358,7 @@
 /area/tether/station/excursion_dock)
 "gUt" = (
 /obj/structure/table/steel,
-/obj/item/clothing/head/pilot,
+/obj/item/clothing/head/helmet/tactical/pilot,
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "heA" = (
@@ -38610,7 +38601,7 @@ ajO
 ajY
 aki
 akD
-akM
+wns
 ait
 ali
 pNC

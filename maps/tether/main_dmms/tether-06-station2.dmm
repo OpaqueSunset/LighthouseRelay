@@ -2652,7 +2652,7 @@
 /obj/item/toy/figure/mime,
 /obj/item/clothing/head/soft/mime,
 /obj/item/clothing/mask/gas/mime,
-/obj/item/clothing/shoes/mime,
+/obj/item/clothing/shoes/color/white,
 /obj/item/clothing/under/mime,
 /obj/item/pen/crayon/mime,
 /obj/effect/decal/cleanable/dirt,
@@ -6183,7 +6183,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "lN" = (
-/obj/machinery/blackbox_recorder,
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_server_room)
 "lO" = (
@@ -9624,12 +9623,12 @@
 /area/ai_monitored/storage/eva)
 "rM" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/space/skrell/black,
+/obj/item/clothing/head/helmet/space/void/skrell/black,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/skrell/black,
-/obj/item/clothing/head/helmet/space/skrell/white,
+/obj/item/clothing/suit/space/void/skrell/black,
+/obj/item/clothing/head/helmet/space/void/skrell,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/skrell/white,
+/obj/item/clothing/suit/space/void/skrell,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
 "rN" = (
@@ -13019,7 +13018,7 @@
 /area/bridge/meeting_room)
 "yp" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -15633,7 +15632,7 @@
 /area/maintenance/station/sec_lower)
 "Ft" = (
 /obj/structure/closet,
-/obj/item/clothing/accessory/poncho/roles/medical,
+/obj/item/clothing/suit/poncho/roles/medical,
 /obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/suit/storage/toggle/wintercoat/medical,

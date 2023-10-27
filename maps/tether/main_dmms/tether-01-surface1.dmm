@@ -6522,9 +6522,9 @@
 	dir = 1
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/suit/fire,
 /obj/item/tank/emergency/oxygen/double/red,
-/obj/item/clothing/mask/gas/wwii,
+/obj/item/clothing/mask/gas/budget,
 /obj/item/clothing/head/hardhat/red,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -8972,9 +8972,9 @@
 /area/tether/surfacebase/tram)
 "arn" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/suit/fire,
 /obj/item/tank/emergency/oxygen/double/red,
-/obj/item/clothing/mask/gas/wwii,
+/obj/item/clothing/mask/gas/budget,
 /obj/item/clothing/head/hardhat/red,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
@@ -20151,9 +20151,7 @@
 /area/crew_quarters/sleep/maintDorm3)
 "aNS" = (
 /obj/structure/table/woodentable,
-/obj/item/clothing/mask/smokable/cigarette/joint{
-	desc = "Ever been to orbit?"
-	},
+/obj/item/clothing/mask/smokable/cigarette/rolled,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/maintDorm3)
@@ -29947,7 +29945,7 @@
 	dir = 4
 	},
 /obj/machinery/door/window/southright,
-/obj/item/backup_implanter,
+/obj/item/implanter/backup,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "fkU" = (
@@ -31679,13 +31677,9 @@
 /area/tether/surfacebase/medical/triage)
 "pev" = (
 /obj/structure/table/glass,
-/obj/item/backup_implanter{
-	pixel_y = 8
-	},
-/obj/item/backup_implanter{
-	pixel_y = -8
-	},
-/obj/item/backup_implanter,
+/obj/item/implanter/backup,
+/obj/item/implanter/backup,
+/obj/item/implanter/backup,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},

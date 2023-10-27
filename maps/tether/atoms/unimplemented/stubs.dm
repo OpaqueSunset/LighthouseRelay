@@ -54,6 +54,7 @@
 // i'm too lazy to deal with this
 /obj/item/stack/material/ore/bluespace_crystal
 /obj/item/stack/material/ore/bluespace_crystal/artificial
+/obj/machinery/bomb_tester
 
 // we don't need t2 or t3 medical stuff at this point in development
 /obj/item/roller/adv
@@ -64,26 +65,32 @@
 /obj/machinery/mineral/equipment_vendor
 /obj/machinery/mineral/equipment_vendor/survey
 // mothballed: exercise
-/obj/machinery/fitness/heavy/lifter
 /obj/machinery/fitness/punching_bag/clown
+// also mothballed: weird polaris research stuff
+/obj/machinery/particle_smasher
 
 // resleeving and transcore
-/obj/item/backup_implanter
-/obj/item/chems/glass/bottle/biomass
-/obj/item/cmo_disk_holder
+/obj/item/book/manual/resleeving
+/obj/item/disk/transcore
+/obj/item/implanter/backup
+/obj/item/implant/backup
 /obj/item/sleevemate
 /obj/item/stock_parts/circuitboard/body_designer
 /obj/item/stock_parts/circuitboard/resleeving_control
 /obj/item/stock_parts/circuitboard/transhuman_clonepod
 /obj/item/stock_parts/circuitboard/transhuman_resleever
 /obj/item/stock_parts/circuitboard/transhuman_synthprinter
-/obj/item/storage/box/backup_kit
-/obj/item/storage/box/body_record_disk
 /obj/machinery/clonepod/transhuman
-/obj/machinery/clonepod/transhuman/full
 /obj/machinery/computer/transhuman/resleeving
+/obj/machinery/computer/transhuman/designer
 /obj/machinery/transhuman/resleever
 /obj/machinery/transhuman/synthprinter
+
+/obj/item/cmo_disk_holder
+/obj/item/chems/glass/bottle/biomass
+/obj/item/storage/box/backup_kit
+/obj/item/storage/box/body_record_disk
+/obj/machinery/clonepod/transhuman/full
 // note: cryo is technically part of resleeving now
 /obj/machinery/atmospherics/unary/cryo_cell
 /obj/item/chems/glass/beaker/cryoxadone
@@ -94,19 +101,10 @@
 /obj/item/storage/pill_bottle/iron
 /obj/item/storage/pill_bottle/nutriment
 
-// fluff weapons (CUT ENTIRELY)
-/obj/item/storage/secure/briefcase/ml3m_pack_cmo
-/obj/item/storage/secure/briefcase/ml3m_pack_med
-/obj/item/storage/secure/briefcase/nsfw_pack
-
 // OBJECTS
 /obj/item/baton/slime/loaded
-/obj/item/chems/drinks/bottle/lemonjuice
-/obj/item/chems/drinks/metaglass
-/obj/item/chems/glass/beaker/measuring_cup
 /obj/item/handcuffs/fuzzy
 /obj/item/handcuffs/legcuffs/fuzzy
-/obj/item/modular_computer/pda/captain
 /obj/item/radio/intercom/department/security
 /obj/item/radio/intercom/locked/ai_private
 /obj/item/storage/bag/circuits/basic
@@ -115,15 +113,14 @@
 // todo: maybe readd trash/unajerky? we'd need lore first...
 /obj/item/storage/box/nifsofts_mining
 /obj/item/storage/box/nifsofts_security
-/obj/item/t_scanner/advanced
 
+// Toys
 /obj/item/toy/eightball/conch
 /obj/item/toy/plushie/teshari // todo: refluff to neo-avian
 /obj/item/toy/stickhorse
+
 /obj/item/universal_translator
 
-/obj/machinery/blackbox_recorder
-/obj/machinery/bomb_tester
 /obj/machinery/button/remote/emitter
 /obj/machinery/camera/motion/security
 /obj/machinery/camera/network/research_outpost
@@ -150,7 +147,6 @@
 /obj/machinery/door/firedoor/glass/hidden/steel
 /obj/machinery/door/firedoor/multi_tile
 
-/obj/machinery/exonet_node
 /obj/machinery/gear_painter
 // Station decor
 /obj/machinery/holoplant
@@ -176,22 +172,18 @@
 
 // Power
 /obj/machinery/power/grid_checker
-/obj/machinery/power/smes/buildable/point_of_interest
-/obj/machinery/particle_smasher
+
 /obj/machinery/power/thermoregulator
-/obj/machinery/shield_generator/external
 /obj/structure/cable/heavyduty
 
 // Medical
 /obj/machinery/oxygen_pump/anesthetic
 
-
 /obj/machinery/light/flicker
 /obj/machinery/navbeacon/delivery/south
 /obj/machinery/network/requests_console/preset/engineering
 	department = "Engineering"
-/obj/machinery/ntnet_relay
-/obj/machinery/pda_multicaster/prebuilt
+
 /obj/machinery/porta_turret/ai_defense
 /obj/machinery/seed_storage/brig
 
@@ -202,7 +194,6 @@
 /obj/machinery/vending/hydronutrients/brig
 /obj/machinery/vending/phoronresearch
 /obj/random/unidentified_medicine
-/obj/structure/bookcase/manuals/research_and_development
 
 // Closets
 /obj/structure/closet/crate/secure/science
@@ -228,7 +219,6 @@
 /obj/structure/flight_left
 /obj/structure/flight_right
 /obj/structure/ladder/up
-/obj/structure/musician/piano
 /obj/structure/rack/shelf/steel
 /obj/structure/rack/steel
 /obj/structure/reagent_dispensers/coolanttank
@@ -257,6 +247,9 @@
 /obj/item/chems/food/roastbeef
 /obj/item/chems/food/kitsuneudon
 /obj/item/chems/food/lasagna
+/obj/item/chems/drinks/bottle/lemonjuice
+/obj/item/chems/drinks/metaglass
+/obj/item/chems/glass/beaker/measuring_cup
 
 // TELESCI
 /obj/machinery/computer/telescience
@@ -282,7 +275,3 @@
 	var/owner
 /obj/machinery/computer/area_atmos/tag
 	var/scrub_id
-// RADIO
-/obj/item/radio/intercom/locked/confessional
-	name = "confessional intercom"
-	locked_frequency = 1480

@@ -526,7 +526,6 @@
 /obj/item/gun/energy/pulse_rifle,
 /obj/item/gun/energy/pulse_rifle,
 /obj/item/gun/energy/pulse_rifle,
-/obj/item/storage/secure/briefcase/nsfw_pack,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -702,12 +701,12 @@
 /obj/item/clothing/shoes/jackboots/swat,
 /obj/item/clothing/shoes/jackboots/swat,
 /obj/item/clothing/shoes/jackboots/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/armor/vest/heavy,
 /obj/item/clothing/mask/gas/syndicate{
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 75, "rad" = 0);
 	name = "Commando Mask"
@@ -728,30 +727,12 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 75, "rad" = 0);
 	name = "Commando Mask"
 	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 60, "energy" = 70, "bomb" = 50, "bio" = 100, "rad" = 60);
-	name = "swat helmet"
-	},
+/obj/item/clothing/suit/space/void/swat,
+/obj/item/clothing/suit/space/void/swat,
+/obj/item/clothing/suit/space/void/swat,
+/obj/item/clothing/suit/space/void/swat,
+/obj/item/clothing/suit/space/void/swat,
+/obj/item/clothing/suit/space/void/swat,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -929,10 +910,10 @@
 /area/centcom/specops)
 "bw" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1170,7 +1151,7 @@
 /area/centcom/specops)
 "bV" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/vest/ert/command,
+/obj/item/clothing/suit/armor/vest/heavy/hos,
 /obj/item/clothing/head/helmet/ert/command,
 /obj/item/storage/backpack/ert/commander,
 /turf/unsimulated/floor/wood,
@@ -1323,7 +1304,7 @@
 /obj/item/baton/loaded,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/item/gun/projectile/revolver/stun,
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 /obj/item/knife/combat,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
@@ -2548,9 +2529,7 @@
 	},
 /area/centcom/control)
 "ey" = (
-/obj/structure/musician/piano{
-	dir = 4
-	},
+/obj/structure/synthesized_instrument/synthesizer/piano,
 /obj/effect/floor_decal/corner/yellow/diagonal,
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -4038,7 +4017,7 @@
 /area/centcom/control)
 "hR" = (
 /obj/structure/table/reinforced,
-/obj/item/modular_computer/pda/captain,
+/obj/item/modular_computer/pda/heads/captain,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "hS" = (
@@ -4708,8 +4687,8 @@
 /obj/structure/rack,
 /obj/item/clothing/accessory/armguards/riot,
 /obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/suit/armor/combat,
-/obj/item/clothing/head/helmet/combat,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/head/helmet/riot,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4855,12 +4834,12 @@
 	},
 /area/centcom/security)
 "jE" = (
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 /obj/item/clothing/gloves/tactical,
 /obj/item/clothing/head/helmet/tactical,
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/clothing/shoes/jackboots/tactical,
-/obj/item/clothing/suit/armor/tactical,
+/obj/item/clothing/suit/armor/pcarrier/tactical,
 /obj/item/clothing/under/tactical,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
@@ -4873,12 +4852,12 @@
 	},
 /area/centcom/security)
 "jF" = (
-/obj/item/clothing/glasses/sunglasses/sechud/tactical,
+/obj/item/clothing/glasses/sunglasses/sechud/goggles,
 /obj/item/clothing/gloves/tactical,
 /obj/item/clothing/head/helmet/tactical,
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/clothing/shoes/jackboots/tactical,
-/obj/item/clothing/suit/armor/tactical,
+/obj/item/clothing/suit/armor/pcarrier/tactical,
 /obj/item/clothing/under/tactical,
 /obj/item/storage/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
@@ -5189,10 +5168,8 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/nanotrasen_commander,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
+/obj/item/clothing/suit/armor/vest/heavy,
+/obj/item/clothing/suit/space/void/swat,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -6287,7 +6264,7 @@
 	},
 /obj/item/clothing/accessory/armguards/riot,
 /obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/suit/armor/riot/alt,
+/obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/shield/riot,
 /obj/item/baton/loaded,
@@ -6546,7 +6523,7 @@
 /obj/structure/rack,
 /obj/item/clothing/accessory/armguards/riot,
 /obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/suit/armor/riot/alt,
+/obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/shield/riot,
 /obj/item/baton/loaded,
@@ -7589,7 +7566,6 @@
 "oE" = (
 /obj/structure/table,
 /obj/machinery/recharger,
-/obj/item/book/codex,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 26
@@ -9042,7 +9018,7 @@
 /area/centcom/holding)
 "rl" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "rm" = (
@@ -9335,7 +9311,7 @@
 	},
 /area/centcom/bathroom)
 "se" = (
-/obj/machinery/fitness/heavy/lifter,
+/obj/structure/fitness/weightlifter,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor"
 	},
@@ -9581,13 +9557,9 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/item/backup_implanter{
-	pixel_y = -8
-	},
-/obj/item/backup_implanter{
-	pixel_y = 8
-	},
-/obj/item/backup_implanter,
+/obj/item/implanter/backup,
+/obj/item/implanter/backup,
+/obj/item/implanter/backup,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -10046,7 +10018,7 @@
 /area/centcom/security)
 "tu" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -10290,7 +10262,7 @@
 /area/centcom/security)
 "tT" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /obj/item/gun/energy/taser,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
@@ -10788,7 +10760,7 @@
 /area/centcom/living)
 "vb" = (
 /obj/structure/table,
-/obj/item/clothing/head/beret/nanotrasen,
+/obj/item/clothing/head/beret/corp,
 /turf/simulated/floor/shuttle/white{
 	color = "#cccccc"
 	},
@@ -11971,8 +11943,8 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
+/obj/item/book/manual/nt_regs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -13168,7 +13140,7 @@
 	},
 /area/centcom/security)
 "yW" = (
-/obj/machinery/fitness/heavy/lifter,
+/obj/structure/fitness/weightlifter,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -14033,7 +14005,7 @@
 /area/centcom/security)
 "AJ" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -14685,7 +14657,7 @@
 /area/centcom/security/residential)
 "BL" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/nt_regs,
 /obj/item/taperecorder,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,

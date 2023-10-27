@@ -53,6 +53,7 @@
 	#include "tether_unit_testing.dm"
 
 	#include "atoms/areas.dm"
+	#include "atoms/clothing.dm"
 	#include "atoms/decals.dm"
 	#include "atoms/effects.dm"
 	#include "atoms/props.dm"

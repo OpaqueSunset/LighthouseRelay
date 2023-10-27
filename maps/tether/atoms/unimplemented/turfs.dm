@@ -9,8 +9,6 @@
 /turf/simulated/floor/water/deep/indoors
 /turf/simulated/floor/water/indoors
 /turf/simulated/floor/wood/broken
-/turf/simulated/shuttle/floor/airless
-/turf/simulated/wall/shull
 /turf/space/cracked_asteroid
 /turf/unsimulated/wall/planetary/virgo3b
 /turf/simulated/floor/wood/sif

@@ -2831,14 +2831,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
-"gC" = (
-/obj/machinery/ntnet_relay,
-/turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
-	temperature = 80
-	},
-/area/tcommsat/chamber)
 "gD" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -7528,7 +7520,7 @@
 /area/rnd/breakroom)
 "qm" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/fire/firefighter,
+/obj/item/clothing/suit/fire,
 /obj/item/tank/oxygen,
 /obj/item/clothing/mask/gas,
 /obj/item/chems/spray/extinguisher,
@@ -8877,7 +8869,7 @@
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "td" = (
-/obj/structure/bookcase/manuals/research_and_development,
+/obj/structure/bookcase/manuals/xenoarchaeology,
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "te" = (
@@ -13832,7 +13824,7 @@
 "Dm" = (
 /obj/structure/table/steel,
 /obj/random/coin,
-/obj/item/clothing/accessory/scarf/stripedred,
+/obj/item/clothing/accessory/scarf/christmas,
 /turf/simulated/floor/wood,
 /area/maintenance/lower/atmos)
 "Dn" = (
@@ -15609,16 +15601,6 @@
 	temperature = 80
 	},
 /area/tcommsat/chamber)
-"Hd" = (
-/obj/machinery/exonet_node{
-	anchored = 1
-	},
-/turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
-	temperature = 80
-	},
-/area/tcommsat/chamber)
 "He" = (
 /obj/machinery/camera/network/telecom{
 	dir = 8
@@ -15712,13 +15694,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/dark{
-	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	temperature = 80
-	},
-/area/tcommsat/chamber)
-"HD" = (
-/obj/machinery/pda_multicaster/prebuilt,
 /turf/simulated/floor/tiled/dark{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -34791,12 +34766,12 @@ Gg
 Gq
 GD
 GP
-gC
-Hd
 Gz
 Gz
 Gz
-HD
+Gz
+Gz
+GI
 HK
 FR
 ac

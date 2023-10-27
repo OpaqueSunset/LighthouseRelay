@@ -181,3 +181,27 @@
 		item_records = attached.item_records
 	else
 		to_chat(world,"<span class='danger'>[src] at [x],[y],[z] cannot find the unit above it!</span>")
+
+/obj/item/t_scanner/advanced
+	name = "Advanced T-ray Scanner"
+	desc = "An advanced version of the terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes."
+	material = /decl/material/solid/metal/aluminium
+	matter = list(
+		/decl/material/solid/phoron = MATTER_AMOUNT_TRACE * 2,
+		/decl/material/solid/metal/silver = MATTER_AMOUNT_TRACE
+	)
+	origin_tech = "{'magnets':7,'engineering':7,'materials':6}"
+	scan_range = 7
+
+// RADIO
+/obj/item/radio/intercom/locked/confessional
+	name = "confessional intercom"
+	locked_frequency = 1480
+
+// Pre-installed and pre-charged SMES hidden from the station, for use in submaps.
+/obj/machinery/power/smes/buildable/preset/hidden
+	_fully_charged = TRUE
+	_input_on = TRUE
+	_input_maxed = TRUE
+	_output_maxed = TRUE
+	RCon = FALSE
