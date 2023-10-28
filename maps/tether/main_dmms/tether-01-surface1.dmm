@@ -29905,7 +29905,7 @@
 /area/engineering/atmos)
 "fel" = (
 /obj/structure/railing/mapped,
-/obj/structure/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
 "fft" = (

@@ -1,4 +1,5 @@
 /obj/structure/loot_pile
+	abstract_type = /obj/structure/loot_pile
 	name = "base loot pile"
 	desc = "If you can read me, this is bugged."
 	icon = 'mods/content/dungeon_loot/icons/obj/loot_piles.dmi'

@@ -56,6 +56,8 @@
 	#include "atoms/clothing.dm"
 	#include "atoms/decals.dm"
 	#include "atoms/effects.dm"
+	#include "atoms/kink.dm"
+	#include "atoms/permits.dm"
 	#include "atoms/props.dm"
 	#include "atoms/random.dm"
 	#include "atoms/reagents.dm"

@@ -273,7 +273,6 @@
 /obj/vehicle/train/trolley : /obj/vehicle/train/cargo/trolley{@OLD}
 /obj/turbolift_map_holder/tether : /obj/abstract/turbolift_spawner/tether
 /obj/structure/toilet : /obj/structure/hygiene/toilet{@OLD}
-/obj/structure/trash_pile : /obj/structure/loot_pile{@OLD}
 /obj/structure/sink/@SUBTYPES : /obj/structure/hygiene/sink/@SUBTYPES{@OLD}
 
 /obj/structure/filingcabinet : /obj/structure/filing_cabinet{@OLD}
@@ -538,6 +537,7 @@
 /obj/item/clothing/accessory/scarf/stripedred : /obj/item/clothing/accessory/scarf/christmas
 /obj/item/clothing/glasses/gglasses : /obj/item/clothing/glasses/prescription/gglasses
 /obj/item/clothing/mask/smokable/cigarette/joint : /obj/item/clothing/mask/smokable/cigarette/rolled
+/obj/item/clothing/under/fluff/latexmaid : /obj/item/clothing/under/dress/maid/latex
 
 /obj/item/knife/machete : /obj/item/hatchet/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}
@@ -858,3 +858,4 @@
 /obj/machinery/exonet_node : @DELETE
 /obj/machinery/ntnet_relay : @DELETE
 /obj/machinery/pda_multicaster/prebuilt : @DELETE
+/obj/item/handcuffs/legcuffs/@SUBTYPES : @DELETE

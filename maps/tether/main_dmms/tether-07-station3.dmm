@@ -5370,7 +5370,7 @@
 /obj/item/clothing/accessory/permit/gun{
 	desc = "An example of a card indicating that the owner is allowed to carry a firearm. There's a note saying to fax CentCom if you want to order more blank permits.";
 	name = "sample weapon permit";
-	owner = 1
+	hand_name_used = 1
 	},
 /obj/item/paper{
 	desc = "";

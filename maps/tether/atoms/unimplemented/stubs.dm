@@ -103,8 +103,6 @@
 
 // OBJECTS
 /obj/item/baton/slime/loaded
-/obj/item/handcuffs/fuzzy
-/obj/item/handcuffs/legcuffs/fuzzy
 /obj/item/radio/intercom/department/security
 /obj/item/radio/intercom/locked/ai_private
 /obj/item/storage/bag/circuits/basic
@@ -271,7 +269,5 @@
 // PARTIALLY STUBBED
 /obj/structure/cable/ender
 	var/id_tag
-/obj/item/clothing/accessory/permit/gun
-	var/owner
 /obj/machinery/computer/area_atmos/tag
 	var/scrub_id

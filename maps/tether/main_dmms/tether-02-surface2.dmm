@@ -346,14 +346,13 @@
 /obj/structure/closet/wardrobe/pjs,
 /obj/item/handcuffs/fuzzy,
 /obj/item/handcuffs/fuzzy,
-/obj/item/handcuffs/legcuffs/fuzzy,
 /obj/item/handcuffs/fuzzy,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/gloves/thick/combat{
 	desc = "These gloves are insulated with rubber.";
 	name = "black insulated gloves"
 	},
-/obj/item/clothing/under/fluff/latexmaid,
+/obj/item/clothing/under/dress/maid/latex,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "aZ" = (
@@ -13641,7 +13640,6 @@
 "CK" = (
 /obj/structure/table/steel,
 /obj/item/handcuffs/fuzzy,
-/obj/item/handcuffs/legcuffs/fuzzy,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
@@ -15822,7 +15820,7 @@
 	name = "Robotics Operating Table"
 	},
 /obj/item/bone/ribs,
-/obj/item/handcuffs/legcuffs,
+/obj/item/handcuffs,
 /obj/item/handcuffs,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/blood,

@@ -205,7 +205,7 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site2)
 "aP" = (
-/obj/structure/loot_pile,
+/obj/random/loot_pile/maintenance,
 /turf/simulated/floor/plating,
 /area/vacant/vacant_site2)
 "aQ" = (
