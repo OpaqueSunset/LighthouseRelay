@@ -33,6 +33,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
 	level = LEVEL_BELOW_PLATING
 
+	var/cable_type = /obj/item/stack/cable_coil
 	var/d1
 	var/d2
 	var/datum/powernet/powernet
@@ -199,7 +200,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if (shock(user, 50))
 		return
 
-	new/obj/item/stack/cable_coil(T, (src.d1 ? 2 : 1), color)
+	new cable_type(T, (src.d1 ? 2 : 1), color)
 
 	visible_message(SPAN_WARNING("[user] cuts \the [src]."))
 
@@ -495,6 +496,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stack_merge_type = /obj/item/stack/cable_coil
 	matter_multiplier = 0.15
+	var/cable_type = /obj/structure/cable
 
 /obj/item/stack/cable_coil/single
 	amount = 1
@@ -777,7 +779,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(!istype(F))
 		return FALSE
 
-	var/obj/structure/cable/C = new(F)
+	var/obj/structure/cable/C = new cable_type(F)
 	C.cableColor(color)
 	C.d1 = d1
 	C.d2 = d2

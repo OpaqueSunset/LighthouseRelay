@@ -613,6 +613,7 @@
 	name = "\improper Mining Refinery"
 /area/tether/surfacebase/mining_main/external
 	name = "\improper Mining Refinery"
+	is_outside = TRUE
 /area/tether/surfacebase/mining_main/bathroom
 	name = "\improper Mining Bathroom"
 /area/tether/surfacebase/mining_main/lobby

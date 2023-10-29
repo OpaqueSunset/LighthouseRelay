@@ -128,6 +128,8 @@
 /@SUBTYPES {layer = @SET} : @OLD {@OLD; layer = @SKIP}
 /@SUBTYPES {plane = @SET} : @OLD {@OLD; plane = @SKIP}
 /obj/structure/cable/@SUBTYPES : @OLD {@OLD; d1 = @SKIP;d2 = @SKIP}
+# unacidable removed
+/@SUBTYPES {unacidable = @SET} : @OLD{@OLD; unacidable = @SKIP}
 # Simple pipes shall not face north or west
 /obj/machinery/atmospherics/pipe/simple/hidden@SUBTYPES {dir = 1} : @OLD {@OLD; dir = 2}
 /obj/machinery/atmospherics/pipe/simple/visible@SUBTYPES {dir = 1} : @OLD {@OLD; dir = 2}
@@ -312,13 +314,15 @@
 /obj/machinery/door/@SUBTYPES{id = @SET} : /obj/machinery/door/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/button/@SUBTYPES{id = @SET} : /obj/machinery/button/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/atmospherics/@SUBTYPES{id = @SET} : /obj/machinery/atmospherics/@SUBTYPES{@OLD; id_tag = @OLD:id; id = @SKIP}
-/obj/structure/cable/ender{id = @SET} : /obj/structure/cable/ender{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/holosign/bar{id = @SET} : /obj/machinery/holosign/bar{@OLD; id_tag = @OLD:id; id = @SKIP}
 /obj/machinery/meter/@SUBTYPES{id = @SET} : /obj/machinery/meter/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
 /obj/machinery/flasher/@SUBTYPES{id = @SET} : /obj/machinery/flasher/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
 /obj/machinery/sparker/@SUBTYPES{id = @SET} : /obj/machinery/sparker/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
 /obj/machinery/mass_driver/@SUBTYPES{id = @SET} : /obj/machinery/mass_driver/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
 /obj/machinery/emitter/@SUBTYPES{id = @SET} : /obj/machinery/emitter/@SUBTYPES{@OLD; id = @SKIP; id_tag = @OLD:id}
+
+# We just connect through mimic tiles
+/obj/structure/cable/ender : /obj/structure/cable/heavyduty
 
 /@SUBTYPES{join_group = @SET} : /@SUBTYPES{@OLD; join_group = @SKIP}
 

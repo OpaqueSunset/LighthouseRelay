@@ -267,7 +267,5 @@
 /obj/structure/reagent_dispensers/virusfood
 
 // PARTIALLY STUBBED
-/obj/structure/cable/ender
-	var/id_tag
 /obj/machinery/computer/area_atmos/tag
 	var/scrub_id
