@@ -101,6 +101,10 @@ SUBSYSTEM_DEF(mapping)
 	for(var/obj/abstract/turbolift_spawner/turbolift as anything in turbolifts_to_initialize)
 		turbolift.build_turbolift()
 
+	for(var/obj/abstract/landmark/map_load_mark/mark in queued_markers)
+		mark.load_subtemplate()
+	queued_markers.Cut()
+
 	// Resize the world to the max template size to fix a BYOND bug with world resizing breaking events.
 	// REMOVE WHEN THIS IS FIXED: https://www.byond.com/forum/post/2833191
 	var/new_maxx = world.maxx
