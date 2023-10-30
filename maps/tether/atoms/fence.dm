@@ -25,7 +25,7 @@
 	tool_interaction_flags = TOOL_INTERACTION_DECONSTRUCT
 
 	var/cuttable = TRUE
-	var/hole_size= NO_HOLE
+	var/hole_size = NO_HOLE
 
 /obj/structure/fence/Initialize(mapload)
 	update_cut_status()
@@ -36,12 +36,12 @@
 
 	switch(hole_size)
 		if(MEDIUM_HOLE)
-			. += "There is a large hole in \the [src]."
+			to_chat(user, "There is a large hole in \the [src].")
 		if(LARGE_HOLE)
-			. += "\The [src] has been completely cut through."
+			to_chat(user, "\The [src] has been completely cut through.")
 
 	if(cuttable && hole_size < MAX_HOLE_SIZE)
-		. += "Use wirecutters to [hole_size > NO_HOLE ? "expand the":"cut a"] hole into the fence, allowing passage."
+		to_chat(user, "Use wirecutters to [hole_size > NO_HOLE ? "expand the":"cut a"] hole into the fence, allowing passage.")
 
 /obj/structure/fence/end
 	icon_state = "end"
