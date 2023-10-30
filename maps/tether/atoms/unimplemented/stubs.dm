@@ -1,74 +1,3 @@
-// MOBS (MOTHBALLED)
-/mob/living/simple_animal/bird/black_bird
-/mob/living/simple_animal/corgi/pug/SirPogsley // TODO: add /dog/ parent type
-/mob/living/simple_animal/fish/bass
-/mob/living/simple_animal/fish/koi/poisonous
-/mob/living/simple_animal/fish/rockfish
-/mob/living/simple_animal/fish/solarfish
-/mob/living/simple_animal/fish/trout
-/mob/living/simple_animal/fox/renault
-/mob/living/simple_animal/gaslamp
-/mob/living/simple_animal/sif/fluffy
-/mob/living/simple_animal/slime/rainbow/kendrick
-
-// OBJECTS (MOTHBALLED)
-// double bed items
-/obj/item/bedsheet/bluedouble
-/obj/item/bedsheet/browndouble
-/obj/item/bedsheet/captaindouble
-/obj/item/bedsheet/double
-/obj/item/bedsheet/iandouble
-/obj/item/bedsheet/mimedouble
-/obj/item/bedsheet/orangedouble
-/obj/item/bedsheet/purpledouble
-/obj/item/bedsheet/rddouble
-/obj/item/bedsheet/reddouble
-/obj/item/bedsheet/yellowdouble
-/obj/structure/bed/double/padded
-/obj/item/closet_painter // will get rolled into paint sprayer eventually
-/obj/item/communicator // needs to be made a type of modular computer
-// all these defibs need to be redone and i don't have time for that
-/obj/item/defib_kit/compact/combat/loaded
-/obj/item/defib_kit/compact/loaded
-/obj/item/defib_kit/jumper_kit
-/obj/item/defib_kit/loaded
-// fluff
-/obj/item/bone/ribs
-/obj/item/bone/skull/unathi
-/obj/item/flame/candle/candelabra
-/obj/item/flame/candle/candelabra/everburn
-/obj/item/flame/lighter/zippo/gonzo
-/obj/item/folder/blue_captain
-/obj/item/folder/blue_hop
-/obj/item/folder/red_hos
-/obj/item/folder/white
-/obj/item/folder/white_cmo
-/obj/item/folder/white_rd
-/obj/item/folder/yellow_ce
-/obj/item/soap/deluxe // currently soaps don't handle special decals like this very well :(
-/obj/item/soap/nanotrasen
-/obj/item/soap/syndie
-// probably unnecessary?
-/obj/item/gps/internal
-/obj/item/gps/internal/base
-// i'm too lazy to deal with this
-/obj/item/stack/material/ore/bluespace_crystal
-/obj/item/stack/material/ore/bluespace_crystal/artificial
-/obj/machinery/bomb_tester
-
-// we don't need t2 or t3 medical stuff at this point in development
-/obj/item/roller/adv
-/obj/item/scanner/health/advanced
-/obj/item/scanner/health/improved
-// mothballed: polaris/virgo mining features
-/obj/item/stack/marker_beacon/thirty
-/obj/machinery/mineral/equipment_vendor
-/obj/machinery/mineral/equipment_vendor/survey
-// mothballed: exercise
-/obj/machinery/fitness/punching_bag/clown
-// also mothballed: weird polaris research stuff
-/obj/machinery/particle_smasher
-
 // resleeving and transcore
 /obj/item/book/manual/resleeving
 /obj/item/disk/transcore
@@ -222,12 +151,6 @@
 /obj/structure/reagent_dispensers/coolanttank
 
 // planet decoration and flora
-/obj/structure/flora/sif/eyes
-/obj/structure/flora/sif/tendrils
-/obj/structure/flora/skeleton
-/obj/structure/flora/tree/jungle
-/obj/structure/flora/tree/jungle_small
-/obj/structure/flora/tree/sif
 /obj/structure/fence
 /obj/structure/fence/door
 /obj/structure/fence/post
@@ -269,3 +192,76 @@
 // PARTIALLY STUBBED
 /obj/machinery/computer/area_atmos/tag
 	var/scrub_id
+
+/*
+// MOBS (MOTHBALLED)
+/mob/living/simple_animal/bird/black_bird
+/mob/living/simple_animal/corgi/pug/SirPogsley // TODO: add /dog/ parent type
+/mob/living/simple_animal/fish/bass
+/mob/living/simple_animal/fish/koi/poisonous
+/mob/living/simple_animal/fish/rockfish
+/mob/living/simple_animal/fish/solarfish
+/mob/living/simple_animal/fish/trout
+/mob/living/simple_animal/fox/renault
+/mob/living/simple_animal/gaslamp
+/mob/living/simple_animal/sif/fluffy
+/mob/living/simple_animal/slime/rainbow/kendrick
+
+// OBJECTS (MOTHBALLED)
+// double bed items
+/obj/item/bedsheet/bluedouble
+/obj/item/bedsheet/browndouble
+/obj/item/bedsheet/captaindouble
+/obj/item/bedsheet/double
+/obj/item/bedsheet/iandouble
+/obj/item/bedsheet/mimedouble
+/obj/item/bedsheet/orangedouble
+/obj/item/bedsheet/purpledouble
+/obj/item/bedsheet/rddouble
+/obj/item/bedsheet/reddouble
+/obj/item/bedsheet/yellowdouble
+/obj/structure/bed/double/padded
+/obj/item/closet_painter // will get rolled into paint sprayer eventually
+/obj/item/communicator // needs to be made a type of modular computer
+// all these defibs need to be redone and i don't have time for that
+/obj/item/defib_kit/compact/combat/loaded
+/obj/item/defib_kit/compact/loaded
+/obj/item/defib_kit/jumper_kit
+/obj/item/defib_kit/loaded
+// fluff
+/obj/item/bone/ribs
+/obj/item/bone/skull/unathi
+/obj/item/flame/candle/candelabra
+/obj/item/flame/candle/candelabra/everburn
+/obj/item/flame/lighter/zippo/gonzo
+/obj/item/folder/blue_captain
+/obj/item/folder/blue_hop
+/obj/item/folder/red_hos
+/obj/item/folder/white
+/obj/item/folder/white_cmo
+/obj/item/folder/white_rd
+/obj/item/folder/yellow_ce
+/obj/item/soap/deluxe // currently soaps don't handle special decals like this very well :(
+/obj/item/soap/nanotrasen
+/obj/item/soap/syndie
+// probably unnecessary?
+/obj/item/gps/internal
+/obj/item/gps/internal/base
+// i'm too lazy to deal with this
+/obj/item/stack/material/ore/bluespace_crystal
+/obj/item/stack/material/ore/bluespace_crystal/artificial
+/obj/machinery/bomb_tester
+
+// we don't need t2 or t3 medical stuff at this point in development
+/obj/item/roller/adv
+/obj/item/scanner/health/advanced
+/obj/item/scanner/health/improved
+// mothballed: polaris/virgo mining features
+/obj/item/stack/marker_beacon/thirty
+/obj/machinery/mineral/equipment_vendor
+/obj/machinery/mineral/equipment_vendor/survey
+// mothballed: exercise
+/obj/machinery/fitness/punchingbag/clown
+// also mothballed: weird polaris research stuff
+/obj/machinery/particle_smasher
+*/

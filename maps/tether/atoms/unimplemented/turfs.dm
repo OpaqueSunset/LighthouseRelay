@@ -6,8 +6,6 @@
 /turf/simulated/floor/tiled/asteroid_steel/airless
 /turf/simulated/floor/tiled/steel
 /turf/simulated/floor/tiled/steel_dirty
-/turf/simulated/floor/water/deep/indoors
-/turf/simulated/floor/water/indoors
 /turf/simulated/floor/wood/broken
 /turf/space/cracked_asteroid
 /turf/unsimulated/wall/planetary/virgo3b

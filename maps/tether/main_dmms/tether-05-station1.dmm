@@ -674,7 +674,7 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/rack,
 /obj/random/maintenance/medical,
-/obj/item/flame/lighter/zippo/gonzo,
+/obj/item/flame/lighter/zippo,
 /turf/simulated/floor,
 /area/construction/observation)
 "abB" = (
@@ -2707,7 +2707,7 @@
 /obj/structure/closet/chefcloset,
 /obj/item/glass_jar,
 /obj/item/eftpos/departmental/service,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/item/destTagger{
 	pixel_x = 4;
 	pixel_y = 3
@@ -3420,7 +3420,7 @@
 /area/crew_quarters/lounge)
 "ahh" = (
 /obj/structure/table/woodentable,
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
 "ahi" = (
@@ -5029,7 +5029,6 @@
 /turf/simulated/floor/wood,
 /area/library)
 "alg" = (
-/obj/machinery/mineral/equipment_vendor/survey,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
@@ -7188,7 +7187,7 @@
 /area/hallway/station/atrium)
 "arh" = (
 /obj/structure/table,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -7589,7 +7588,6 @@
 	pixel_x = 5
 	},
 /obj/item/chems/spray/cleaner,
-/obj/item/closet_painter,
 /turf/simulated/floor/tiled,
 /area/engineering/workshop)
 "asD" = (
@@ -10872,7 +10870,7 @@
 /obj/structure/hygiene/shower{
 	pixel_y = 8
 	},
-/obj/item/soap/deluxe,
+/obj/item/soap,
 /obj/structure/curtain/open/shower,
 /obj/item/bikehorn/rubberducky,
 /turf/simulated/floor/tiled/white,
@@ -13282,7 +13280,7 @@
 /area/crew_quarters/sleep/engi_wash)
 "aOO" = (
 /obj/structure/table,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 21
@@ -13885,7 +13883,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/folder/yellow_ce,
+/obj/item/folder/yellow,
 /obj/item/pen/multi,
 /turf/simulated/floor/carpet/oracarpet,
 /area/crew_quarters/heads/chief)
@@ -16409,7 +16407,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/folder/blue_hop,
+/obj/item/folder/blue,
 /obj/item/pen,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -18630,7 +18628,6 @@
 	desc = "A bed made just for the Facility Director's fox.";
 	name = "Renault's Bed"
 	},
-/mob/living/simple_animal/fox/renault,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bHe" = (
@@ -18643,7 +18640,7 @@
 	dir = 1;
 	pixel_y = -21
 	},
-/obj/item/folder/blue_captain,
+/obj/item/folder/blue,
 /obj/item/stamp/captain,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
@@ -21067,7 +21064,7 @@
 /obj/structure/hygiene/shower{
 	dir = 1
 	},
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_showers)
@@ -21342,7 +21339,6 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/defib_kit/loaded,
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)
 "nOF" = (
@@ -21417,14 +21413,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/excursion_dock)
-"nZS" = (
-/mob/living/simple_animal/fish/koi/poisonous,
-/obj/abstract/fluid_mapped{
-	fluid_initial = 300;
-	name = "mapped shallow pool"
-	},
-/turf/simulated/floor/pool,
-/area/bridge)
 "oaO" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -22457,14 +22445,6 @@
 /obj/machinery/camera/network/civilian,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/lounge/kitchen_freezer)
-"uyv" = (
-/obj/item/gps/internal/base{
-	desc = "A tracking beacon embedded in the shuttle systems, to help explorers find where they landed.";
-	gps_tag = "SHUTTLE";
-	name = "shuttle beacon"
-	},
-/turf/simulated/floor/shuttle/black,
-/area/shuttle/excursion/tether)
 "uzc" = (
 /obj/structure/table,
 /obj/effect/floor_decal/corner/grey/diagonal,
@@ -22708,8 +22688,8 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
 "vWQ" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/captaindouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/captain,
 /obj/machinery/light,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
@@ -22771,7 +22751,7 @@
 /obj/structure/hygiene/shower{
 	dir = 1
 	},
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_showers)
@@ -22811,14 +22791,12 @@
 	pixel_x = 5;
 	pixel_y = -4
 	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_x = 5;
-	pixel_y = 4
-	},
+/obj/item/stack/flag,
+/obj/item/stack/flag,
+/obj/item/stack/flag,
+/obj/item/stack/flag,
+/obj/item/stack/flag,
+/obj/item/stack/flag,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -34373,7 +34351,7 @@ ahH
 aiq
 beh
 awz
-nZS
+axc
 axc
 bkS
 ayK
@@ -35310,7 +35288,7 @@ acp
 beg
 awz
 axc
-nZS
+axc
 bkS
 azp
 azn
@@ -36983,7 +36961,7 @@ aaa
 sut
 aap
 ibX
-uyv
+aaD
 cAJ
 aaK
 aaD

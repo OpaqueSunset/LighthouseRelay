@@ -1007,10 +1007,6 @@
 /area/tether/surfacebase/reading_room)
 "cV" = (
 /obj/structure/table/reinforced,
-/obj/item/communicator,
-/obj/item/communicator,
-/obj/item/communicator,
-/obj/item/communicator,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -1296,10 +1292,6 @@
 /area/tether/surfacebase/outside/outside3)
 "dK" = (
 /obj/structure/table/reinforced,
-/obj/item/communicator,
-/obj/item/communicator,
-/obj/item/communicator,
-/obj/item/communicator,
 /turf/simulated/floor/tiled/dark,
 /area/gateway/prep_room)
 "dL" = (
@@ -2123,7 +2115,7 @@
 /obj/structure/closet/chefcloset,
 /obj/item/glass_jar,
 /obj/item/eftpos/departmental/service,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/item/destTagger{
 	pixel_x = 4;
 	pixel_y = 3
@@ -5641,7 +5633,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/recreation_area)
 "lL" = (
-/obj/machinery/fitness/punching_bag/clown,
+/obj/structure/fitness/punchingbag,
 /turf/simulated/floor/wood,
 /area/crew_quarters/recreation_area)
 "lM" = (
@@ -5941,9 +5933,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/recreation_area)
-"my" = (
-/turf/exterior/sif_growth,
-/area/tether/surfacebase/north_stairs_three)
 "mz" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -6573,7 +6562,7 @@
 "nG" = (
 /obj/structure/flora/tree/sif,
 /turf/exterior/sif_growth,
-/area/tether/surfacebase/north_stairs_three)
+/area/tether/surfacebase/outside/outside3)
 "nH" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/tiled,
@@ -12538,7 +12527,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "yH" = (
-/obj/abstract/level_data_spawner/virgo3b/main,
+/obj/abstract/level_data_spawner/virgo3b/main/top,
 /turf/exterior/open,
 /area/tether/surfacebase/outside/outside3)
 "yI" = (
@@ -17962,7 +17951,6 @@
 /area/assembly/robotics)
 "HM" = (
 /obj/structure/table,
-/obj/item/defib_kit/jumper_kit,
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks{
 	pixel_y = 5
@@ -21809,16 +21797,6 @@
 /obj/machinery/vending/fitness,
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/sauna)
-"VA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/mob/living/simple_animal/bird/black_bird{
-	desc = "The Bartenders beloved pet bird.";
-	name = "Fried Chicken"
-	},
-/turf/simulated/floor/wood,
-/area/tether/surfacebase/bar_backroom)
 "VD" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
@@ -23799,17 +23777,17 @@ aa
 aa
 hZ
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
+hZ
 aa
 aa
 aa
@@ -34062,11 +34040,11 @@ jz
 kA
 la
 gw
-my
-my
-my
-my
-my
+ac
+ac
+ac
+ac
+ac
 ik
 pt
 pS
@@ -34218,11 +34196,11 @@ jz
 kA
 la
 lP
-my
-my
-my
-my
-my
+ac
+ac
+ac
+ac
+ac
 ik
 pu
 pT
@@ -34374,11 +34352,11 @@ jz
 kA
 la
 lP
-my
-my
+ac
+ac
 nG
-my
-my
+ac
+ac
 oX
 oX
 oX
@@ -34530,11 +34508,11 @@ jz
 kA
 lb
 gw
-my
-my
-my
-my
-my
+ac
+ac
+ac
+ac
+ac
 oX
 pv
 pU
@@ -35265,7 +35243,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -35421,7 +35399,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -35577,7 +35555,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -35733,7 +35711,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -35889,7 +35867,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -36045,7 +36023,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -36201,7 +36179,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -36357,7 +36335,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -36513,7 +36491,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -36669,7 +36647,7 @@ MF
 MF
 MF
 aJ
-aa
+hZ
 hZ
 hZ
 hZ
@@ -42193,7 +42171,7 @@ ac
 ac
 Px
 Vq
-VA
+Rt
 YY
 RB
 Yj

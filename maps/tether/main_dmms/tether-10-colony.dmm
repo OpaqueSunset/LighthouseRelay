@@ -451,8 +451,6 @@
 /obj/item/chems/ivbag/blood/ominus,
 /obj/item/chems/ivbag/blood/ominus,
 /obj/item/chems/ivbag/blood/ominus,
-/obj/item/defib_kit/compact/combat/loaded,
-/obj/item/defib_kit/compact/combat/loaded,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -777,10 +775,10 @@
 /area/centcom/specops)
 "bn" = (
 /obj/structure/table/reinforced,
-/obj/item/scanner/health/advanced,
-/obj/item/scanner/health/advanced,
-/obj/item/scanner/health/advanced,
-/obj/item/scanner/health/advanced,
+/obj/item/scanner/health,
+/obj/item/scanner/health,
+/obj/item/scanner/health,
+/obj/item/scanner/health,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -952,13 +950,9 @@
 /area/centcom/specops)
 "bA" = (
 /obj/structure/table/glass,
-/obj/item/roller/adv,
-/obj/item/roller/adv{
-	pixel_y = 6
-	},
-/obj/item/roller/adv{
-	pixel_y = 12
-	},
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -2798,7 +2792,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "fk" = (
-/obj/item/folder/white,
+/obj/item/folder,
 /obj/structure/table,
 /obj/item/disk/tech_disk,
 /obj/item/disk/tech_disk,
@@ -3947,7 +3941,6 @@
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/storage/box/gloves,
-/obj/item/defib_kit/jumper_kit,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -6219,7 +6212,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/folder/red_hos,
+/obj/item/folder/red,
 /obj/item/pen/multi,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -8065,7 +8058,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/folder/red_hos,
+/obj/item/folder/red,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -8116,16 +8109,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/folder/blue_captain,
-/turf/unsimulated/floor{
-	icon_state = "carpet"
-	},
-/area/centcom/command)
-"pG" = (
-/obj/structure/table/woodentable{
-	dir = 5
-	},
-/obj/item/folder/blue_hop,
+/obj/item/folder/blue,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -8321,7 +8305,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/folder/white_cmo,
+/obj/item/folder,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -8334,15 +8318,6 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/turf/unsimulated/floor{
-	icon_state = "carpet"
-	},
-/area/centcom/command)
-"qf" = (
-/obj/structure/table/woodentable{
-	dir = 5
-	},
-/obj/item/folder/white_rd,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -8374,7 +8349,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/folder/yellow_ce,
+/obj/item/folder/yellow,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -8460,11 +8435,6 @@
 /obj/machinery/camera/network/crescent{
 	dir = 4
 	},
-/turf/unsimulated/floor/steel,
-/area/centcom/security)
-"qp" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/red_hos,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "qq" = (
@@ -8564,7 +8534,7 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/item/scanner/health/advanced,
+/obj/item/scanner/health,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -8739,13 +8709,9 @@
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/item/roller/adv,
-/obj/item/roller/adv{
-	pixel_y = 6
-	},
-/obj/item/roller/adv{
-	pixel_y = 12
-	},
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -9396,7 +9362,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/item/scanner/health/advanced,
+/obj/item/scanner/health,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -9960,7 +9926,7 @@
 	},
 /area/centcom/bathroom)
 "to" = (
-/obj/machinery/fitness/punching_bag/clown,
+/obj/structure/fitness/punchingbag,
 /turf/unsimulated/floor{
 	icon_state = "freezerfloor"
 	},
@@ -13120,7 +13086,7 @@
 	},
 /area/centcom/security)
 "yU" = (
-/obj/machinery/fitness/punching_bag/clown,
+/obj/structure/fitness/punchingbag,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -15539,7 +15505,7 @@
 /area/centcom/security)
 "DC" = (
 /obj/structure/table/glass,
-/obj/item/scanner/health/advanced,
+/obj/item/scanner/health,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -15638,13 +15604,6 @@
 	icon_state = "vault"
 	},
 /area/tdome/tdome2)
-"Rc" = (
-/obj/structure/table/glass,
-/obj/item/defib_kit/compact/loaded,
-/turf/unsimulated/floor/steel{
-	icon_state = "white"
-	},
-/area/centcom/medical)
 "Re" = (
 /obj/structure/table/reinforced,
 /obj/prefab/hand_teleporter,
@@ -26247,7 +26206,7 @@ jK
 jK
 nV
 oR
-Rc
+po
 kv
 kv
 qM
@@ -31084,7 +31043,7 @@ nK
 os
 pd
 pB
-qf
+qd
 qD
 oq
 ry
@@ -32019,7 +31978,7 @@ dk
 nK
 or
 pd
-pG
+pF
 qh
 qD
 oq
@@ -36076,7 +36035,7 @@ nM
 oH
 kp
 pN
-qp
+qJ
 kp
 rl
 rB

@@ -1,3 +1,10 @@
+/turf/exterior/water/indoors
+	temperature = T20C
+	initial_gas = list(
+		/decl/material/gas/oxygen = MOLES_O2STANDARD,
+		/decl/material/gas/nitrogen = MOLES_N2STANDARD
+	)
+
 // STUBS DEFINED FOR FUTURE IMPLEMENTATION
 // THESE NEED NAMES, ICONS, AND FUNCTIONALITY ADDED!
 /turf/simulated/floor/asteroid/cave
@@ -26,6 +33,10 @@
 	desc = "A natural moss that has adapted to the sheer cold climate."
 	icon = 'maps/tether/icons/sif_grass.dmi'
 	possible_states = 1
+
+/turf/exterior/sif_growth/thick
+	name = "thick growth"
+	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 
 // Voidcraft Shuttle Walls
 /turf/simulated/shuttle/wall/voidcraft

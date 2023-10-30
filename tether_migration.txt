@@ -758,6 +758,11 @@
 
 /obj/machinery/fitness/heavy/lifter : /obj/structure/fitness/weightlifter
 
+/obj/structure/flora/skeleton : /obj/structure/skele_stand{@OLD}
+
+/turf/simulated/floor/water/deep/indoors : /turf/exterior/water
+/turf/simulated/floor/water/indoors : /turf/exterior/water
+
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
 /obj/machinery/mineral/input : @DELETE
@@ -863,3 +868,54 @@
 /obj/machinery/ntnet_relay : @DELETE
 /obj/machinery/pda_multicaster/prebuilt : @DELETE
 /obj/item/handcuffs/legcuffs/@SUBTYPES : @DELETE
+# MOTHBALLED
+/mob/living/simple_animal/bird/black_bird : @DELETE
+/mob/living/simple_animal/corgi/pug/SirPogsley : @DELETE
+/mob/living/simple_animal/fish/bass : @DELETE
+/mob/living/simple_animal/fish/koi/@SUBTYPES : @DELETE
+/mob/living/simple_animal/fish/rockfish : @DELETE
+/mob/living/simple_animal/fish/solarfish : @DELETE
+/mob/living/simple_animal/fish/trout : @DELETE
+/mob/living/simple_animal/fox/renault : @DELETE
+/mob/living/simple_animal/gaslamp : @DELETE
+/mob/living/simple_animal/sif/fluffy : @DELETE
+/mob/living/simple_animal/slime/rainbow/kendrick : @DELETE
+/obj/item/bedsheet/bluedouble : /obj/item/bedsheet/blue
+/obj/item/bedsheet/browndouble : /obj/item/bedsheet/brown
+/obj/item/bedsheet/captaindouble : /obj/item/bedsheet/captain
+/obj/item/bedsheet/double : /obj/item/bedsheet
+/obj/item/bedsheet/iandouble : /obj/item/bedsheet/ian
+/obj/item/bedsheet/mimedouble : /obj/item/bedsheet/mime
+/obj/item/bedsheet/orangedouble : /obj/item/bedsheet/orange
+/obj/item/bedsheet/purpledouble : /obj/item/bedsheet/purple
+/obj/item/bedsheet/rddouble : /obj/item/bedsheet/rd
+/obj/item/bedsheet/reddouble : /obj/item/bedsheet/red
+/obj/item/bedsheet/yellowdouble : /obj/item/bedsheet/yellow
+/obj/structure/bed/double/padded : /obj/structure/bed/padded
+/obj/item/closet_painter : @DELETE
+/obj/item/communicator : @DELETE
+/obj/item/defib_kit/@SUBTYPES : @DELETE
+/obj/item/bone/ribs : /obj/item/bone/skull
+/obj/item/bone/skull/unathi : /obj/item/bone/skull/deer
+/obj/item/flame/candle/candelabra/@SUBTYPES : /obj/item/flame/candle
+/obj/item/flame/lighter/zippo/gonzo : /obj/item/flame/lighter/zippo
+/obj/item/folder/blue_captain : /obj/item/folder/blue
+/obj/item/folder/blue_hop : /obj/item/folder/blue
+/obj/item/folder/red_hos : /obj/item/folder/red
+/obj/item/folder/white : /obj/item/folder
+/obj/item/folder/white_cmo : /obj/item/folder
+/obj/item/folder/white_rd : /obj/item/folder
+/obj/item/folder/yellow_ce : /obj/item/folder/yellow
+/obj/item/soap/deluxe : /obj/item/soap
+/obj/item/soap/nanotrasen : /obj/item/soap
+/obj/item/soap/syndie : /obj/item/soap
+/obj/item/gps/internal/@SUBTYPES : @DELETE
+/obj/item/stack/material/ore/bluespace_crystal/@SUBTYPES : @DELETE
+/obj/machinery/bomb_tester : @DELETE
+/obj/item/roller/adv : /obj/item/roller
+/obj/item/scanner/health/advanced : /obj/item/scanner/health
+/obj/item/scanner/health/improved : /obj/item/scanner/health
+/obj/item/stack/marker_beacon/thirty : /obj/item/stack/flag, /obj/item/stack/flag, /obj/item/stack/flag
+/obj/machinery/mineral/equipment_vendor/@SUBTYPES : @DELETE
+/obj/machinery/fitness/punching_bag/clown : /obj/structure/fitness/punchingbag
+/obj/machinery/particle_smasher : @DELETE

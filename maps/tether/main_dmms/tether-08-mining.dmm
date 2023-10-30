@@ -36,10 +36,6 @@
 	},
 /turf/exterior/sif_growth,
 /area/mine/explored)
-"ai" = (
-/mob/living/simple_animal/gaslamp,
-/turf/exterior/sif_growth,
-/area/mine/explored)
 "aj" = (
 /turf/exterior/wall,
 /area/mine/unexplored)
@@ -1304,7 +1300,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cG" = (
@@ -1315,7 +1311,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cH" = (
@@ -1326,7 +1322,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cI" = (
@@ -1336,16 +1332,14 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/catwalk,
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cJ" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cK" = (
@@ -1355,8 +1349,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/structure/catwalk,
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cL" = (
@@ -1369,7 +1362,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
 "cM" = (
@@ -1382,27 +1375,19 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/mine/explored)
-"cN" = (
+"cO" = (
+/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
-	},
-/obj/structure/railing/mapped{
-	dir = 4
 	},
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/structure/railing/mapped,
-/obj/effect/catwalk_plated,
-/turf/simulated/floor,
-/area/mine/explored)
-"cO" = (
-/obj/effect/catwalk_plated,
-/obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+/obj/structure/railing/mapped{
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/mine/explored)
@@ -1417,7 +1402,13 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
+/obj/structure/railing/mapped{
+	dir = 4
+	},
+/obj/structure/railing/mapped{
+	dir = 8
+	},
 /turf/simulated/floor,
 /area/mine/explored)
 "cS" = (
@@ -4785,7 +4776,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -4896,7 +4887,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -5149,7 +5140,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -13594,7 +13585,7 @@ cM
 cM
 cM
 cM
-cN
+cM
 cR
 cR
 cO
@@ -13941,7 +13932,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -14517,7 +14508,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -21071,7 +21062,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -21430,7 +21421,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab
@@ -21944,7 +21935,7 @@ ab
 ab
 ab
 ab
-ai
+ab
 ab
 ab
 ab

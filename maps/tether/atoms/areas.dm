@@ -639,6 +639,7 @@
 // Mining outpost areas
 /area/outpost/mining_main/passage
 	name = "\improper Mining Outpost Passage"
+	is_outside = TRUE
 /area/outpost/mining_main/airlock
 	name = "\improper Mining Outpost Airlock"
 /area/outpost/mining_main/break_room

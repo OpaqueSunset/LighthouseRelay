@@ -2327,7 +2327,7 @@
 "dS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "dT" = (
@@ -2376,7 +2376,7 @@
 /area/security/recstorage)
 "dW" = (
 /obj/structure/disposalpipe/segment,
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "dX" = (
@@ -2453,7 +2453,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "eg" = (
@@ -2461,7 +2461,7 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "eh" = (
@@ -4701,7 +4701,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "iG" = (
-/obj/structure/flora/skeleton{
+/obj/structure/skele_stand{
 	name = "\proper Wilhelm"
 	},
 /obj/machinery/camera/network/medbay{
@@ -10159,7 +10159,7 @@
 /area/medical/virologyisolation)
 "sO" = (
 /obj/structure/table,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/machinery/camera/network/medbay{
 	dir = 8
 	},
@@ -11206,7 +11206,7 @@
 /area/medical/morgue)
 "uY" = (
 /obj/structure/table/glass,
-/obj/item/folder/white,
+/obj/item/folder,
 /obj/item/hand_labeler,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
@@ -13099,7 +13099,7 @@
 /area/medical/biostorage)
 "yy" = (
 /obj/structure/closet/secure_closet/medical3,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -13345,7 +13345,7 @@
 /area/medical/biostorage)
 "yU" = (
 /obj/structure/closet/secure_closet/medical3,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -13465,7 +13465,6 @@
 /obj/structure/table,
 /obj/item/clothing/gloves/latex/nitrile,
 /obj/item/clothing/gloves/latex/nitrile,
-/obj/item/defib_kit/loaded,
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "ze" = (
@@ -14564,7 +14563,6 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/item/defib_kit/compact/loaded,
 /turf/simulated/floor/tiled/dark,
 /area/medical/medbay_emt_bay)
 "AD" = (
@@ -15259,7 +15257,6 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
-/obj/item/defib_kit/loaded,
 /turf/simulated/floor/shuttle,
 /area/shuttle/large_escape_pod1/station)
 "CZ" = (
@@ -18962,7 +18959,7 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/steel,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /turf/simulated/floor/tiled/freezer,
 /area/security/brig/bathroom)
 "Zb" = (

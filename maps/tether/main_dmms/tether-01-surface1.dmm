@@ -15,7 +15,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/heavyduty{
 	icon_state = "1-2"
 	},
@@ -452,7 +452,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "abg" = (
@@ -1606,7 +1606,6 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/machinery/mineral/equipment_vendor,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/eva)
 "adg" = (
@@ -6634,14 +6633,6 @@
 /obj/item/mop,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
-"amu" = (
-/mob/living/simple_animal/fish/koi/poisonous,
-/obj/abstract/fluid_mapped{
-	fluid_initial = 300;
-	name = "mapped shallow pool"
-	},
-/turf/simulated/floor/pool,
-/area/tether/surfacebase/atrium_one)
 "amv" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -15393,7 +15384,7 @@
 "aCZ" = (
 /obj/structure/table/glass,
 /obj/item/clipboard,
-/obj/item/folder/white,
+/obj/item/folder,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/mauve/border,
 /turf/simulated/floor/tiled,
@@ -16046,7 +16037,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
@@ -16060,7 +16051,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "aEw" = (
@@ -16068,7 +16059,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "aEx" = (
@@ -16079,7 +16070,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "aEy" = (
@@ -16564,10 +16555,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
-"aFv" = (
-/mob/living/simple_animal/gaslamp,
-/turf/exterior/sif_growth,
-/area/tether/surfacebase/outside/outside1)
 "aFw" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -17474,7 +17461,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/item/defib_kit/loaded,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/first_aid_west)
 "aHx" = (
@@ -17968,8 +17954,6 @@
 	dir = 5
 	},
 /obj/structure/table,
-/obj/item/communicator,
-/obj/item/communicator,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/showers)
 "aIA" = (
@@ -20346,9 +20330,9 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/maintDorm3)
 "aOz" = (
-/obj/structure/bed/double/padded,
+/obj/structure/bed/padded,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bedsheet/double,
+/obj/item/bedsheet,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/maintDorm3)
 "aOA" = (
@@ -20362,8 +20346,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/maintDorm2)
 "aOC" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/iandouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/ian,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/maintDorm2)
 "aOD" = (
@@ -20382,8 +20366,8 @@
 	},
 /area/security/checkpoint)
 "aOG" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/mimedouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/mime,
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/maintDorm1)
 "aOK" = (
@@ -24856,7 +24840,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "byu" = (
@@ -28673,8 +28657,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_8)
 "chF" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/reddouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/red,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_8)
 "chG" = (
@@ -28882,8 +28866,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_6)
 "cit" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/yellowdouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/yellow,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_6)
 "ciu" = (
@@ -29088,8 +29072,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_4)
 "cjg" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/bluedouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/blue,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_4)
 "cjh" = (
@@ -29332,8 +29316,8 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_2)
 "cjR" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/purpledouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/purple,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_2)
 "cjS" = (
@@ -29646,7 +29630,7 @@
 /area/tether/surfacebase/medical/triage)
 "dyb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/bone/skull/unathi,
+/obj/item/bone/skull/deer,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "dAk" = (
@@ -29966,7 +29950,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "frE" = (
@@ -30931,7 +30915,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "kdT" = (
@@ -31861,7 +31845,6 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/item/defib_kit/compact/loaded,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -31958,7 +31941,7 @@
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
 	},
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "qyw" = (
@@ -32058,7 +32041,7 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped,
-/obj/effect/catwalk_plated,
+/obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/surfacebase/outside/outside1)
 "qMQ" = (
@@ -37031,7 +37014,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -37068,7 +37051,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -37472,7 +37455,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -37734,7 +37717,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -38965,7 +38948,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -45534,7 +45517,7 @@ aah
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -46049,7 +46032,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -47955,7 +47938,6 @@ ajU
 akE
 alo
 alS
-amu
 alS
 alS
 alS
@@ -47963,7 +47945,8 @@ alS
 alS
 alS
 alS
-amu
+alS
+alS
 alS
 anm
 akE
@@ -48891,7 +48874,6 @@ ajU
 akE
 alo
 alS
-amu
 alS
 alS
 alS
@@ -48899,7 +48881,8 @@ alS
 alS
 alS
 alS
-amu
+alS
+alS
 alS
 anm
 akE
@@ -53381,7 +53364,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad
@@ -53802,7 +53785,7 @@ aad
 aad
 aad
 aad
-aFv
+aad
 aad
 aad
 aad

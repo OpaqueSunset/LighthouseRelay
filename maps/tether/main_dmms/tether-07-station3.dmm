@@ -2270,7 +2270,7 @@
 	pixel_x = -3;
 	pixel_y = 7
 	},
-/obj/item/folder/red_hos,
+/obj/item/folder/red,
 /obj/item/pen/multi,
 /obj/item/radio/intercom/department/security{
 	dir = 4;
@@ -5234,10 +5234,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/security/hallwayaux)
-"jB" = (
-/mob/living/simple_animal/corgi/pug/SirPogsley,
-/turf/simulated/floor/wood,
-/area/crew_quarters/heads/hos)
 "jC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6745,7 +6741,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/obj/item/folder/red_hos,
+/obj/item/folder/red,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
@@ -16414,7 +16410,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/mob/living/simple_animal/sif/fluffy,
 /turf/simulated/floor/tiled,
 /area/quartermaster/qm)
 "CG" = (
@@ -17620,7 +17615,7 @@
 /area/medical/psych)
 "Fb" = (
 /obj/structure/table/woodentable,
-/obj/item/folder/white,
+/obj/item/folder,
 /turf/simulated/floor/carpet/blue,
 /area/medical/psych)
 "Fc" = (
@@ -20004,7 +19999,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/medical3,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /obj/machinery/light_switch{
 	name = "light switch ";
 	pixel_y = 26
@@ -20354,7 +20349,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/medical3,
-/obj/item/soap/nanotrasen,
+/obj/item/soap,
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "Kk" = (
@@ -20906,7 +20901,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 6
 	},
-/obj/item/defib_kit/loaded,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Lp" = (
@@ -21698,9 +21692,8 @@
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/defib_kit/compact/combat/loaded,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/scanner/health/improved,
+/obj/item/scanner/health,
 /obj/item/storage/fancy/vials,
 /obj/item/clothing/mask/surgical,
 /turf/simulated/floor/tiled/white,
@@ -21891,7 +21884,7 @@
 /obj/structure/table/glass,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/item/folder/white_cmo,
+/obj/item/folder,
 /obj/item/stamp/cmo,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -25779,10 +25772,6 @@
 	},
 /turf/simulated/floor,
 /area/security/eva)
-"Uq" = (
-/obj/machinery/mineral/equipment_vendor,
-/turf/simulated/floor/tiled,
-/area/quartermaster/belterdock)
 "Ur" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -38216,7 +38205,7 @@ bu
 iR
 cq
 jp
-jB
+ds
 jO
 cO
 eE
@@ -42005,7 +41994,7 @@ JH
 Fj
 Vj
 XU
-Uq
+Yd
 Yd
 Sh
 YI
