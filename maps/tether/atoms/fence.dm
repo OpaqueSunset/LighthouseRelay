@@ -82,6 +82,7 @@
 		to_chat(user, SPAN_NOTICE("You fit [stack.get_string_for_amount(1)] to damaged areas of \the [src]."))
 		stack.use(1)
 		hole_size = NO_HOLE
+		update_cut_status()
 		return TRUE
 	return ..()
 
