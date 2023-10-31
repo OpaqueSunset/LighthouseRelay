@@ -21,7 +21,6 @@
 	smoothing_iterations = 3
 	target_turf_type = /turf/unsimulated/mask
 	smooth_single_tiles = TRUE
-	var/refresh_icons_post_apply = TRUE
 
 /datum/random_map/noise/virgo3b/cleanup()
 	..()
@@ -31,15 +30,6 @@
 			var/current_cell = TRANSLATE_COORD(x,y)
 			var/current_val = map[current_cell]
 			map[current_cell] = min(9,max(0,round((current_val/cell_range)*10)))
-
-/datum/random_map/noise/virgo3b/apply_to_map()
-	..()
-	if(refresh_icons_post_apply)
-		for(var/x = 1, x <= limit_x, x++)
-			for(var/y = 1, y <= limit_y, y++)
-				var/turf/exterior/T = locate((origin_x-1)+x,(origin_y-1)+y,origin_z)
-				if(istype(T))
-					T.update_icon()
 
 /datum/random_map/noise/virgo3b/get_appropriate_path(var/value)
 	switch(value)
