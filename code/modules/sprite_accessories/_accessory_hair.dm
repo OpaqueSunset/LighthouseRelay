@@ -476,6 +476,7 @@
 /decl/sprite_accessory/hair/wheeler
 	name = "Wheeler"
 	icon_state = "hair_wheeler"
+	uid = "acc_hair_wheeler"
 
 /decl/sprite_accessory/hair/scully
 	name = "Scully"
