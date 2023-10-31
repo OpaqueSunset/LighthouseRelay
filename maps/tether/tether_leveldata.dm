@@ -28,7 +28,7 @@
 	// Round down to 1-9.
 	for(var/x = 1, x <= limit_x, x++)
 		for(var/y = 1, y <= limit_y, y++)
-			var/current_cell = get_map_cell(x,y)
+			var/current_cell = TRANSLATE_COORD(x,y)
 			var/current_val = map[current_cell]
 			map[current_cell] = min(9,max(0,round((current_val/cell_range)*10)))
 
