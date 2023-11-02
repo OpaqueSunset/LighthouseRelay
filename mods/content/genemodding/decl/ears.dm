@@ -7,6 +7,7 @@
 */
 
 /decl/sprite_accessory/ears
+	abstract_type = /decl/sprite_accessory/ears
 	name = "You should not see this..."
 	icon = 'mods/content/genemodding/icons/mob/ears.dmi'
 	do_colouration = TRUE // Set to 1 to blend (ICON_ADD) hair color

@@ -7,6 +7,7 @@
 */
 
 /decl/sprite_accessory/tail
+	abstract_type = /decl/sprite_accessory/tail
 	name = "You should not see this..."
 	icon = 'mods/content/genemodding/icons/mob/tails.dmi'
 	do_colouration = TRUE //Set to 1 to enable coloration using the tail color.
@@ -14,11 +15,16 @@
 	blend = ICON_MULTIPLY // Only appliciable if do_coloration = 1
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
+/decl/sprite_accessory/tail/get_validatable_icon_state()
+	return "[icon_state]_s"
+
+/* // This needs to be done in a better way. It probably doesn't even work currently?
 /decl/sprite_accessory/tail/invisible
 	name = "hide species-sprite tail"
 	icon = null
 	icon_state = null
 	uid = "acc_tail_hide"
+*/
 
 /decl/sprite_accessory/tail/squirrel
 	name = "squirrel, colorable"
