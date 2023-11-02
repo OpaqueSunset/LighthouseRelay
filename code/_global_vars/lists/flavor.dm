@@ -115,16 +115,13 @@ GLOBAL_GETTER(cable_colors, /list, SetupCableColors())
 /proc/SetupCableColors()
 	. = list()
 
-	var/list/valid_cable_coils = typesof(/obj/item/stack/cable_coil)
-	for(var/ctype in list(
+	var/list/valid_cable_coils = typesof(/obj/item/stack/cable_coil) - typesof(
 		/obj/item/stack/cable_coil/single,
 		/obj/item/stack/cable_coil/cut,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/cable_coil/fabricator,
-		/obj/item/stack/cable_coil/random,
-		/obj/item/stack/cable_coil/heavyduty
-	))
-		valid_cable_coils -= typesof(ctype)
+		/obj/item/stack/cable_coil/random
+	)
 
 	var/special_name_mappings = list(/obj/item/stack/cable_coil = "Red")
 	for(var/coil_type in valid_cable_coils)
@@ -132,6 +129,7 @@ GLOBAL_GETTER(cable_colors, /list, SetupCableColors())
 
 		var/obj/item/stack/cable_coil/C = coil_type
 		var/color = initial(C.color)
-
+		if(!color) // uncolored cable type
+			continue
 		.[name] = color
 	. = sortTim(., /proc/cmp_text_asc)
