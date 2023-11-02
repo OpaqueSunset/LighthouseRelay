@@ -33,7 +33,11 @@ By design, d1 is the smallest direction and d2 is the highest
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
 	level = LEVEL_BELOW_PLATING
 
+	/// The base cable stack that should be produced, not including color.
+	/// cable_type.stack_merge_type should equal cable_type, ideally
 	var/cable_type = /obj/item/stack/cable_coil
+	/// Whether this cable type can be (re)colored.
+	var/can_have_color = TRUE
 	var/d1
 	var/d2
 	var/datum/powernet/powernet
@@ -242,6 +246,8 @@ By design, d1 is the smallest direction and d2 is the highest
 	. = ..()
 
 /obj/structure/cable/proc/cableColor(var/colorC)
+	if(!can_have_color)
+		return
 	var/color_n = "#dd0000"
 	if(colorC)
 		color_n = colorC
@@ -496,6 +502,8 @@ By design, d1 is the smallest direction and d2 is the highest
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stack_merge_type = /obj/item/stack/cable_coil
 	matter_multiplier = 0.15
+	/// Whether or not this cable coil can even have a color in the first place.
+	var/can_have_color = TRUE
 	var/cable_type = /obj/structure/cable
 
 /obj/item/stack/cable_coil/single
@@ -517,7 +525,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		TOOL_CABLECOIL = TOOL_QUALITY_DEFAULT,
 		TOOL_SUTURES =   TOOL_QUALITY_MEDIOCRE
 	))
-	if (param_color) // It should be red by default, so only recolor it if parameter was specified.
+	if (can_have_color && param_color) // It should be red by default, so only recolor it if parameter was specified.
 		color = param_color
 	update_icon()
 	update_wclass()
@@ -549,7 +557,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/item/stack/cable_coil/on_update_icon()
 	. = ..()
-	if (!color)
+	if (!color && can_have_color)
 		var/list/possible_cable_colours = get_global_cable_colors()
 		color = possible_cable_colours[pick(possible_cable_colours)]
 	if(amount == 1)
@@ -566,7 +574,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		SetName(initial(name))
 
 /obj/item/stack/cable_coil/proc/set_cable_color(var/selected_color, var/user)
-	if(!selected_color)
+	if(!selected_color || !can_have_color)
 		return
 
 	var/list/possible_cable_colours = get_global_cable_colors()
