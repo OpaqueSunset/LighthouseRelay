@@ -121,7 +121,8 @@ GLOBAL_GETTER(cable_colors, /list, SetupCableColors())
 		/obj/item/stack/cable_coil/cut,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/cable_coil/fabricator,
-		/obj/item/stack/cable_coil/random
+		/obj/item/stack/cable_coil/random,
+		/obj/item/stack/cable_coil/heavyduty
 	))
 		valid_cable_coils -= typesof(ctype)
 
