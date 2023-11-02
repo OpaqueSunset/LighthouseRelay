@@ -2293,9 +2293,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/tiled/techfloor/grid
-	})
+/area/tether/surfacebase/tram)
 "aeA" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -9319,16 +9317,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
-"arV" = (
-/turf/simulated/floor/maglev,
-/area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/tiled/techfloor/grid
-	})
-"arW" = (
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/tiled/techfloor/grid
-	})
 "arX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/supply,
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
@@ -12016,12 +12004,13 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "awQ" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 1443;
 	input_tag = "air_in";
-	name = "Mixed Air Supply Control";
+	name = "mixed air supply control";
 	output_tag = "air_out";
-	pressure_setting = 2000
+	pressure_setting = 2000;
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techmaint,
@@ -14055,10 +14044,11 @@
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "aAy" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	input_tag = "o2_in";
 	name = "Oxygen Supply Control";
-	output_tag = "o2_out"
+	output_tag = "o2_out";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techmaint,
@@ -15849,10 +15839,11 @@
 /turf/simulated/floor/plating,
 /area/rnd/anomaly_lab)
 "aEb" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	input_tag = "n2_in";
-	name = "Nitrogen Supply Control";
-	output_tag = "n2_out"
+	name = "nitrogen supply control";
+	output_tag = "n2_out";
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/techmaint,
@@ -16448,7 +16439,7 @@
 /turf/unsimulated/wall/planetary/virgo3b,
 /area/tether/surfacebase/outside/outside1)
 "aFf" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
 	output_tag = "co2_out"
@@ -22218,7 +22209,7 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/xenoflora/lab_atmos)
 "beR" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	input_tag = "tox_in";
 	name = "Phoron Supply Control";
 	output_tag = "tox_out"
@@ -25216,7 +25207,7 @@
 	},
 /obj/machinery/computer/area_atmos/tag{
 	dir = 4;
-	scrub_id = "rnd_can_store"
+	id_tag = "rnd_can_store"
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology/xenoflora_storage)
@@ -25781,7 +25772,7 @@
 	},
 /obj/machinery/computer/area_atmos/tag{
 	dir = 1;
-	scrub_id = "rnd_xeno_vent"
+	id_tag = "rnd_xeno_vent"
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
@@ -30363,7 +30354,7 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "hjD" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
 	output_tag = "n2o_out"
@@ -53253,20 +53244,20 @@ apR
 aqE
 aqE
 aqE
-arW
-arW
-arW
+aqE
+aqE
+aqE
 aez
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aez
-arW
-arW
-arW
+aqE
+aqE
+aqE
 aqE
 aqE
 apR
@@ -53408,22 +53399,22 @@ aad
 apS
 aqF
 aqF
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
 aqF
 apS
 aad
@@ -53564,22 +53555,22 @@ aad
 apT
 aqE
 aqE
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aqE
 apT
 aad
@@ -53720,22 +53711,22 @@ aad
 apT
 aqE
 aqE
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aqE
 apT
 aad
@@ -53876,22 +53867,22 @@ aad
 apT
 aqE
 aqE
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aqE
 apT
 aad
@@ -54032,22 +54023,22 @@ aad
 apT
 aqE
 aqE
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aqE
 apT
 aad
@@ -54188,22 +54179,22 @@ aad
 apS
 aqF
 aqF
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
-arV
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
+aqF
 aqF
 apS
 aad
@@ -54345,20 +54336,20 @@ apR
 aqE
 aqE
 aqE
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
-arW
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
+aqE
 aqE
 aqE
 apR

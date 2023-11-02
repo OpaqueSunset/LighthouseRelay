@@ -2704,7 +2704,7 @@
 "eJ" = (
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-8"
@@ -3515,7 +3515,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5145,7 +5145,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
@@ -6177,8 +6177,8 @@
 	dir = 10
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -7667,7 +7667,7 @@
 "or" = (
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -9497,8 +9497,8 @@
 /area/medical/virology)
 "rx" = (
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /obj/structure/table/glass,
 /obj/item/modular_computer/laptop/preset/records{
@@ -10164,8 +10164,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyisolation)
@@ -10898,7 +10898,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -11691,7 +11691,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -12187,7 +12186,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
@@ -13429,7 +13429,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -13496,7 +13495,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /obj/item/cane,
 /obj/item/cane,
@@ -13835,7 +13834,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -14793,12 +14791,8 @@
 /turf/simulated/floor/airless,
 /area/mine/explored/upper_level)
 "Bi" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 8;
-	external_pressure_bound = 140;
-	external_pressure_bound_default = 140;
-	icon_state = "map_vent_out";
-	use_power = 1
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 8
 	},
 /turf/simulated/floor/airless,
 /area/mine/explored/upper_level)
@@ -14982,7 +14976,7 @@
 	locked = 1;
 	name = "Emergency Airlock"
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "BY" = (
 /obj/structure/sign/department/redcross,
@@ -15081,18 +15075,18 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Cq" = (
 /obj/structure/bed/roller,
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Cr" = (
 /obj/structure/bed/roller,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Cs" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
@@ -15101,21 +15095,21 @@
 	pixel_y = 26;
 	tag_door = "large_escape_pod_1_hatch"
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Ct" = (
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Cu" = (
 /obj/structure/bed/chair,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "Cv" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "Cw" = (
 /obj/structure/bed/chair,
@@ -15126,7 +15120,7 @@
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "Cx" = (
 /turf/simulated/shuttle/wall/hard_corner,
@@ -15166,13 +15160,13 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/visible,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "CL" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "CM" = (
 /obj/structure/shuttle/window,
@@ -15205,7 +15199,7 @@
 	},
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled,
 /obj/machinery/light,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "CX" = (
 /obj/structure/table,
@@ -15214,7 +15208,7 @@
 	},
 /obj/item/wrench,
 /obj/random/medical/lite,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "CY" = (
 /obj/structure/closet/crate/medical,
@@ -15257,26 +15251,26 @@
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "CZ" = (
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
 "Db" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /obj/machinery/light,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "Dc" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "De" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15918,6 +15912,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/port)
+"Hp" = (
+/turf/simulated/floor/shuttle/blue,
+/area/shuttle/large_escape_pod1/station)
 "Hq" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -32627,9 +32624,9 @@ Bf
 By
 BL
 BX
-Ct
-Ct
-Ct
+Hp
+Hp
+Hp
 BW
 yY
 ac
@@ -32784,7 +32781,7 @@ za
 yY
 BY
 Cu
-Ct
+Hp
 Db
 BY
 yY
@@ -32940,7 +32937,7 @@ Yw
 yY
 BW
 Cv
-Ct
+Hp
 Dc
 BW
 yY
@@ -33096,7 +33093,7 @@ aP
 yY
 BW
 Cw
-Ct
+Hp
 Dc
 BW
 yY

@@ -171,10 +171,6 @@
 	name = "Bar Maintenance Catwalk"
 	icon_state = "maint_bar"
 
-/area/maintenance/security_starboard
-	name = "Security Maintenance - Starboard"
-	icon_state = "maint_security_starboard"
-
 /area/medical/medbay_emt_bay
 	name = "\improper Medical EMT Bay"
 	icon_state = "medbay_emt_bay"
@@ -283,32 +279,9 @@
 	icon_state = "shuttle2"
 	base_turf = /turf/simulated/floor/tiled/asteroid_steel/airless
 
-/area/shuttle/escape/centcom
-	name = "\improper Emergency Shuttle CentCom"
-	icon_state = "shuttle"
-
 /area/shuttle/large_escape_pod1/station
 	icon_state = "shuttle2"
 	base_turf = /turf/exterior/barren
-
-/area/shuttle/large_escape_pod1/centcom
-	icon_state = "shuttle"
-
-/area/shuttle/large_escape_pod1/transit
-	icon_state = "shuttle"
-
-/area/shuttle/large_escape_pod2/station
-	icon_state = "shuttle2"
-
-/area/shuttle/large_escape_pod2/centcom
-	icon_state = "shuttle"
-
-/area/shuttle/large_escape_pod2/transit
-	icon_state = "shuttle"
-
-/area/shuttle/escape/station
-	name = "\improper Emergency Shuttle Station"
-	icon_state = "shuttle2"
 
 /area/shuttle/escape/centcom
 	name = "\improper Emergency Shuttle CentCom"
@@ -317,10 +290,6 @@
 /area/shuttle/specops/centcom
 	name = "\improper Special Ops Shuttle"
 	icon_state = "shuttlered"
-
-/area/shuttle/specops/station
-	name = "\improper Special Ops Shuttle"
-	icon_state = "shuttlered2"
 
 /area/shuttle/tether/surface
 	name = "Tether Shuttle Landed"
@@ -333,14 +302,6 @@
 /area/shuttle/tether/transit
 	name = "Tether Shuttle Transit"
 	icon_state = "shuttle2"
-
-/area/shuttle/trade/centcom
-	name = "\improper Trade Shuttle CentCom"
-	icon_state = "shuttlered"
-
-/area/shuttle/trade/station
-	name = "\improper Trade Shuttle"
-	icon_state = "shuttlered"
 
 /area/vacant/vacant_site2
 	name = "\improper Abandoned Locker Room"
@@ -356,12 +317,6 @@
 	icon_state = "shuttle3"
 	requires_power = 0
 	base_turf = /turf/space
-
-/area/syndicate_mothership
-	name = "\improper Mercenary Base"
-	icon_state = "syndie-ship"
-	requires_power = 0
-	dynamic_lighting = 0
 
 // Thunderdome
 
@@ -388,19 +343,6 @@
 /area/tdome/tdomeobserve
 	name = "\improper Thunderdome (Observer.)"
 	icon_state = "purple"
-
-/area/syndicate_station/start
-	name = "\improper Mercenary Forward Operating Base"
-	icon_state = "yellow"
-
-/area/syndicate_station/mining
-	name = "\improper northeast of the mining station"
-	icon_state = "north"
-	base_turf = /turf/exterior/dirt
-
-/area/syndicate_station/arrivals_dock
-	name = "\improper docked with station"
-	icon_state = "shuttle"
 
 // Elevator areas.
 /area/turbolift/tether/transit
@@ -558,10 +500,6 @@
 	name = "\improper East Stairwell Second Floor"
 	icon_state = "dk_yellow"
 
-/area/vacant/vacant_shop
-	name = "\improper Vacant Shop"
-	icon_state = "vacant_shop"
-
 /area/vacant/vacant_site
 	name = "\improper Vacant Site"
 	icon_state = "vacant_site"
@@ -572,8 +510,6 @@
 
 /area/vacant/vacant_site/east
 	name = "\improper East Base Vacant Site"
-/area/vacant/vacant_library
-	name = "\improper Atrium Construction Site"
 /area/vacant/vacant_bar
 	name = "\improper Vacant Bar"
 /area/vacant/vacant_bar_upper
@@ -584,8 +520,6 @@
 /area/tether/surfacebase/emergency_storage
 	icon_state = "emergencystorage"
 	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
-/area/tether/surfacebase/emergency_storage/panic_shelter
-	name = "\improper Panic Shelter Emergency Storage"
 /area/tether/surfacebase/emergency_storage/rnd
 	name = "\improper RnD Emergency Storage"
 /area/tether/surfacebase/emergency_storage/atmos
@@ -607,15 +541,11 @@
 	name = "\improper Mining Ore Storage"
 /area/tether/surfacebase/mining_main/eva
 	name = "\improper Mining EVA"
-/area/tether/surfacebase/mining_main/break_room
-	name = "\improper Mining Crew Area"
 /area/tether/surfacebase/mining_main/refinery
 	name = "\improper Mining Refinery"
 /area/tether/surfacebase/mining_main/external
 	name = "\improper Mining Refinery"
 	is_outside = TRUE
-/area/tether/surfacebase/mining_main/bathroom
-	name = "\improper Mining Bathroom"
 /area/tether/surfacebase/mining_main/lobby
 	name = "\improper Mining Lobby"
 /area/quartermaster/belterdock
@@ -682,8 +612,6 @@
 /area/tether/surfacebase/medical
 	icon_state = "medical"
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
-/area/tether/surfacebase/medical/lobby
-	name = "\improper Surface Medical Lobby"
 /area/tether/surfacebase/medical/triage
 	name = "\improper Surface Triage"
 /area/tether/surfacebase/medical/first_aid_west
@@ -701,10 +629,6 @@
 	name = "\improper Surface Security Room"
 /area/tether/surfacebase/security/armory
 	name = "\improper Surface Armory"
-/area/tether/surfacebase/security/checkpoint
-	name = "\improper Surface Checkpoint Office"
-/area/tether/surfacebase/security/hallway
-	name = "\improper Surface Checkpoint Hallway"
 
 /area/engineering/atmos
 	name = "\improper Atmospherics"
@@ -734,9 +658,6 @@
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = TRUE
 
-/area/engineering/atmos/hallway
-	name = "\improper Atmospherics Main Hallway"
-
 /area/engineering/engine_gas
 	name = "\improper Engine Gas Storage"
 	icon_state = "engine_waste"
@@ -744,8 +665,6 @@
 	name = "\improper Enginering Surface Lobby"
 /area/engineering/lower/breakroom
 	name = "\improper Enginering Surface Break Room"
-/area/engineering/lower/corridor
-	name = "\improper Lighthouse Lower Service Corridor"
 /area/engineering/lower/atmos_lockers
 	name = "\improper Engineering Atmos Locker Room"
 /area/engineering/lower/atmos_eva
@@ -765,8 +684,6 @@
 	name = "\improper Research Maintenance"
 /area/maintenance/lower/atmos
 	name = "\improper Atmospherics Maintenance"
-/area/maintenance/lower/locker_room
-	name = "\improper Locker Room Maintenance"
 /area/maintenance/lower/vacant_site
 	name = "\improper Vacant Site Maintenance"
 /area/maintenance/lower/atrium
@@ -797,6 +714,7 @@
 	name = "\improper Research Director's Office"
 	icon_state = "head_quarters"
 	area_flags = AREA_FLAG_IS_NOT_PERSISTENT
+	req_access = list(access_rd)
 /area/rnd/research_storage
 	name = "\improper Research Storage"
 	icon_state = "research_storage"
@@ -816,9 +734,6 @@
 /area/rnd/reception_desk
 	name = "\improper Research Reception Desk"
 	icon_state = "research"
-/area/rnd/lockers
-	name = "\improper Research Locker Room"
-	icon_state = "research"
 /area/rnd/external
 	name = "\improper Research External Access"
 	icon_state = "research"
@@ -829,12 +744,6 @@
 	icon_state = "research"
 /area/rnd/anomaly_lab
 	name = "\improper Anomaly Lab"
-	icon_state = "research"
-/area/rnd/anomaly_lab/containment_one
-	name = "\improper Anomaly Lab - Containment One"
-	icon_state = "research"
-/area/rnd/anomaly_lab/containment_two
-	name = "\improper Anomaly Lab - Containment Two"
 	icon_state = "research"
 /area/rnd/xenoarch_storage
 	name = "\improper Xenoarch Storage"
@@ -954,13 +863,8 @@
 	name = "\improper Lighthouse Shuttle Pad"
 /area/tether/surfacebase/reading_room
 	name = "\improper Reading Room"
-/area/tether/surfacebase/vacant_site
-	name = "\improper Vacant Site"
 /area/crew_quarters/freezer
 	name = "\improper Kitchen Freezer"
-/area/crew_quarters/panic_shelter
-	name = "\improper Panic Shelter"
-	holomap_color = HOLOMAP_AREACOLOR_ESCAPE
 
 /area/server
 	name = "\improper Research Server Room"
@@ -977,23 +881,11 @@
 	req_access = list(access_emergency_storage)
 	icon_state = "emergencystorage"
 
-/area/storage/emergency_storage/emergency
-	name = "Starboard Emergency Storage"
-
-/area/storage/emergency_storage/emergency2
-	name = "Port Emergency Storage"
-
 /area/storage/emergency_storage/emergency3
 	name = "Central Emergency Storage"
 
 /area/storage/emergency_storage/emergency4
 	name = "Civilian Emergency Storage"
-
-/area/storage/emergency_storage/emergency5
-	name = "Dock Emergency Storage"
-
-/area/storage/emergency_storage/emergency6
-	name = "Cargo Emergency Storage"
 
 /area/storage/primary
 	name = "Primary Tool Storage"
@@ -1053,10 +945,6 @@
 
 /area/crew_quarters/sleep/maintDorm3
 	name = "\improper Construction Dorm 3"
-	icon_state = "Sleep"
-
-/area/crew_quarters/sleep/maintDorm4
-	name = "\improper Construction Dorm 4"
 	icon_state = "Sleep"
 
 /area/crew_quarters/sleep/Dorm_1/holo
@@ -1168,9 +1056,6 @@
 /area/medical
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
-/area/medical/virologyisolation
-	name = "\improper Virology Isolation"
-	icon_state = "virology"
 /area/medical/recoveryrestroom
 	name = "\improper Recovery Room Restroom"
 	icon_state = "virology"
@@ -1230,8 +1115,6 @@
 	name = "\improper Engine Room Airlock"
 	icon_state = "engine"
 	holomap_color = HOLOMAP_AREACOLOR_AIRLOCK
-/area/engineering/engine_balcony
-	name = "\improper Engine Room Balcony"
 /area/engineering/engine_eva
 	name = "\improper Engine EVA"
 	icon_state = "engine_eva"
@@ -1299,15 +1182,6 @@
 	icon_state = "blue"
 	sound_env = SMALL_SOFTFLOOR
 
-/area/shuttle/tether/crash1
-	name = "\improper Crash Site 1"
-	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
-/area/shuttle/tether/crash2
-	name = "\improper Crash Site 2"
-	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
-
 // Exploration Shuttle stuff //
 /area/tether/station/excursion_dock
 	name = "\improper Excursion Shuttle Dock"
@@ -1345,108 +1219,12 @@
 	name = "\improper Excursion Shuttle - Lighthouse"
 	base_turf = /turf/simulated/floor/reinforced
 
-/area/shuttle/excursion/tether_nearby
-	name = "\improper Excursion Shuttle - Lighthouse Near"
-
-/area/shuttle/excursion/tether_dockarm
-	name = "\improper Excursion Shuttle - Lighthouse Arm"
-
-/area/shuttle/excursion/space
-	name = "\improper Excursion Shuttle - Space"
-
-/area/shuttle/excursion/space_moving
-	name = "\improper Excursion Shuttle - Space Moving"
-	base_turf = /turf/space/transit/north
-
-/area/shuttle/excursion/bluespace
-	name = "\improper Excursion Shuttle - Bluespace"
-	base_turf = /turf/space/infinity/bluespace
-
-/area/shuttle/excursion/sand_moving
-	name = "\improper Excursion Shuttle - Sand Transit"
-	base_turf = /turf/space/sandyscroll
-
-/area/shuttle/excursion/virgo3b_sky
-	name = "\improper Excursion Shuttle - Virgo3b Sky"
-	base_turf = /turf/exterior/open/sky
-
-
 /area/tether/midpoint
 	name = "\improper Lighthouse Midpoint"
 
-/area/shuttle/excursion/virgo3b_moving
-	name = "\improper Excursion Shuttle - Virgo3b Transit"
-	base_turf = /turf/exterior/open/sky
-
-/area/shuttle/excursion/tether_surface
-	name = "\improper Excursion Shuttle - Lighthouse Surface"
-	base_turf = /turf/simulated/floor/reinforced
-
-
-/area/antag/antag_base
-	name = "\improper Syndicate Outpost"
-	requires_power = 0
-	dynamic_lighting = 0
-
-/area/shuttle/antag_space/base
-	name = "\improper Syndicate PS - Base"
-	icon_state = "shuttle2"
-/area/shuttle/antag_space/transit
-	name = "\improper Syndicate PS - Transit"
-	icon_state = "shuttle2"
-/area/shuttle/antag_space/north
-	name = "\improper Syndicate PS - Nearby"
-	icon_state = "shuttle2"
-/area/shuttle/antag_space/docks
-	name = "\improper Syndicate PS - Docks"
-	icon_state = "shuttle2"
-
-/area/shuttle/antag_ground/base
-	name = "\improper Syndicate LC - Base"
-	icon_state = "shuttle2"
-/area/shuttle/antag_ground/transit
-	name = "\improper Syndicate LC - Transit"
-	icon_state = "shuttle2"
-/area/shuttle/antag_ground/solars
-	name = "\improper Syndicate LC - Solars"
-	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
-/area/shuttle/antag_ground/mining
-	name = "\improper Syndicate LC - Mining"
-	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
-
 // Telecommunications Satellite
-/area/tether/surfacebase/tcomms
-	name = "\improper Telecomms"
-	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg')
-	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
-
-/area/tether/surfacebase/tcomms/entrance
-	name = "\improper Telecomms Teleporter"
-	icon_state = "tcomsatentrance"
-
-/area/tether/surfacebase/tcomms/foyer
-	name = "\improper Telecomms Foyer"
-	icon_state = "tcomsatfoyer"
-
-/area/tether/surfacebase/tcomms/storage
-	name = "\improper Telecomms Storage"
-	icon_state = "tcomsatwest"
-
-/area/tether/surfacebase/tcomms/computer
-	name = "\improper Telecomms Control Room"
-	icon_state = "tcomsatcomp"
-
-/area/tether/surfacebase/tcomms/chamber
-	name = "\improper Telecomms Central Compartment"
-	icon_state = "tcomsatcham"
-
 /area/maintenance/substation/tcomms
 	name = "\improper Telecomms Substation"
-
-/area/maintenance/station/tcomms
-	name = "\improper Telecoms Maintenance"
 
 // Telecomms areas.
 /area/tcomstorage
@@ -1456,6 +1234,8 @@
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
 /area/tcommsat
+	name = "\improper Telecomms"
+	ambience = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg')
 	ambience = AMBIENCE_ENGINEERING
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
@@ -1641,9 +1421,6 @@
 /area/medical/surgery_hallway
 	name = "\improper Surgery Hallway"
 	icon_state = "surgery_hallway"
-/area/medical/surgeryobs
-	name = "\improper Operation Observation Room"
-	icon_state = "surgery"
 /area/medical/virology
 	name = "\improper Virology"
 	icon_state = "virology"
@@ -1749,9 +1526,6 @@
 	name = "\improper Holodeck - Beach"
 	sound_env = PLAIN
 
-/area/holodeck/source_burntest
-	name = "\improper Holodeck - Atmospheric Burn Test"
-
 /area/holodeck/source_wildlife
 	name = "\improper Holodeck - Wildlife Simulation"
 
@@ -1779,9 +1553,6 @@
 	name = "\improper Holodeck - Space"
 	has_gravity = 0
 	sound_env = SPACE
-
-/area/holodeck/source_chess
-	name = "\improper Holodeck - Chessboard"
 
 // Visitor/crew amenities
 /area/bridge
@@ -1849,3 +1620,5 @@
 /area/crew_quarters/visitor_laundry
 	name = "\improper Visitor Laundry"
 	icon_state = "visitor_laundry"
+
+/area/shuttle/belter/transit

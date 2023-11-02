@@ -121,27 +121,30 @@
 
 /turf/unsimulated/floor/techfloor_grid
 	name = "floor"
-	icon = 'icons/turf/flooring/tiles.dmi'
+	icon = 'icons/turf/flooring/techfloor.dmi'
 	icon_state = "techfloor_grid"
 
 /turf/unsimulated/floor/maglev
 	name = "maglev track"
 	desc = "Magnetic levitation tram tracks. Caution! Electrified!"
-	// icon = 'icons/turf/flooring/maglevs.dmi'
+	icon = 'maps/tether/icons/maglevs.dmi'
 	icon_state = "maglevup"
 
 /turf/unsimulated/wall/transit
-	// icon = 'icons/turf/transit_vr.dmi'
+	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 
 /turf/unsimulated/floor/transit
-	// icon = 'icons/turf/transit_vr.dmi'
+	icon = 'maps/tether/icons/obj/transit_vr.dmi'
+
+/obj/effect/floor_decal/transit
+	abstract_type = /obj/effect/floor_decal/transit
 
 /obj/effect/floor_decal/transit/orange
-	// icon = 'icons/turf/transit_vr.dmi'
+	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 	icon_state = "transit_techfloororange_edges"
 
 /obj/effect/transit/light
-	// icon = 'icons/turf/transit_128.dmi'
+	icon = 'maps/tether/icons/obj/transit_128.dmi'
 	icon_state = "tube1-2"
 
 // Bluespace jump turf!
@@ -151,7 +154,7 @@
 // Desert jump turf!
 /turf/space/sandyscroll
 	name = "sand transit"
-	// icon = 'icons/turf/transit_vr.dmi' // DOES NOT EXIST CURRENTLY
+	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 	icon_state = "desert_ns"
 
 // originally /turf/simulated/floor/outdoors/rocks.

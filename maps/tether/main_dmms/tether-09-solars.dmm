@@ -5,9 +5,6 @@
 "ab" = (
 /turf/exterior/sif_growth,
 /area/tether/outpost/solars_outside)
-"ac" = (
-/turf/exterior/sif_growth,
-/area/shuttle/antag_ground/solars)
 "ad" = (
 /turf/exterior/dirt,
 /area/tether/outpost/solars_outside)
@@ -145,7 +142,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -340,7 +337,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /obj/structure/cable,
 /turf/simulated/floor/virgo3b_indoors,
@@ -705,15 +702,6 @@
 "bL" = (
 /turf/unsimulated/dark_filler,
 /area/tether/outpost/solars_outside)
-"bM" = (
-/turf/exterior/sif_growth,
-/area/shuttle/tether/crash1)
-"bN" = (
-/turf/exterior/dirt,
-/area/shuttle/tether/crash1)
-"bO" = (
-/turf/exterior/dirt,
-/area/syndicate_station/mining)
 "bP" = (
 /obj/structure/symbol/em,
 /turf/simulated/wall,
@@ -830,7 +818,7 @@
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
-	pixel_x = -28
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/storage/surface_eva_storage)
@@ -1545,7 +1533,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_northern_hallway)
@@ -1792,7 +1780,7 @@
 /obj/machinery/light,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
@@ -2255,7 +2243,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 8
 	},
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 1445;
 	input_tag = "burn_in";
 	name = "Burn Chamber Air Control";
@@ -2472,7 +2460,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -2710,7 +2698,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -3408,7 +3396,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/telescience_lab)
@@ -3884,7 +3872,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
@@ -4575,7 +4563,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/research/storage/surface_eva)
@@ -5104,7 +5092,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/medical/first_aid_south_west)
@@ -5332,7 +5320,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
@@ -5598,7 +5586,7 @@
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
-	pixel_x = -28
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/storage/tools)
@@ -5629,7 +5617,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/carpet/oracarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -7484,7 +7472,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-8"
@@ -7536,7 +7524,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /turf/simulated/floor/plating,
 /area/outpost/research/engineering/eva_atmospherics)
@@ -7786,7 +7774,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom/outpost)
@@ -7976,7 +7964,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/steel,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
@@ -8144,7 +8132,7 @@
 /obj/machinery/hologram/holopad,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
@@ -8278,7 +8266,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /obj/structure/table,
 /turf/simulated/floor/tiled/white,
@@ -8355,7 +8343,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -8393,7 +8381,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -8866,7 +8854,7 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/medical/first_aid_south_west)
 "Lr" = (
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 1550;
 	name = "Burn Chamber Air Control";
 	pressure_setting = 0
@@ -8887,7 +8875,7 @@
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "east bump";
-	pixel_x = 28
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/simulator)
@@ -10166,7 +10154,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
@@ -10608,7 +10596,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5
 	},
-/obj/machinery/computer/air_control/large_tank_control{
+/obj/machinery/computer/air_control{
 	frequency = 1450;
 	input_tag = "burn_ts_in";
 	name = "Telescience Air Control";
@@ -11025,7 +11013,7 @@
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
-	pixel_x = -28
+	pixel_x = -22
 	},
 /obj/machinery/camera/network/research_outpost{
 	dir = 5
@@ -11063,7 +11051,7 @@
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "west bump";
-	pixel_x = -28
+	pixel_x = -22
 	},
 /turf/simulated/floor/plating,
 /area/outpost/research/materials_chamber)
@@ -14934,16 +14922,16 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15090,16 +15078,16 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15246,16 +15234,16 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15402,16 +15390,6 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
 ab
 ab
 ab
@@ -15488,13 +15466,23 @@ ab
 ab
 ab
 ab
-bM
-bM
-bM
-bM
-bM
-bM
-bM
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15558,16 +15546,16 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15644,13 +15632,13 @@ ab
 ab
 ab
 ab
-bM
-bM
-bM
-bM
-bM
-bM
-bM
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15800,13 +15788,13 @@ ab
 ab
 ab
 ab
-bM
-bM
-bM
-bM
-bM
-bM
-bM
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -15956,13 +15944,13 @@ ab
 ab
 ab
 ab
-bM
-bM
-bM
-bM
-bM
-bM
-bM
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 ab
 ab
 ab
@@ -16112,13 +16100,13 @@ ab
 ab
 ab
 ab
-bM
-bN
-bN
-bN
-bM
-bM
-bM
+ab
+ad
+ad
+ad
+ab
+ab
+ab
 ab
 ab
 ab
@@ -26176,18 +26164,18 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
 ad
-bO
-bO
-bO
-bO
 ad
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -26331,20 +26319,20 @@ ab
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -26486,22 +26474,22 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -26642,22 +26630,22 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -26798,22 +26786,22 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -26953,24 +26941,24 @@ ab
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 bp
@@ -27108,26 +27096,26 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -27264,26 +27252,26 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -27420,26 +27408,26 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -27576,26 +27564,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -27732,26 +27720,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -27888,26 +27876,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -28044,26 +28032,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -28200,26 +28188,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -28357,24 +28345,24 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 bp
@@ -28514,22 +28502,22 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -28670,22 +28658,22 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -28826,22 +28814,22 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -28981,24 +28969,24 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 bp
@@ -29136,26 +29124,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -29292,26 +29280,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -29448,26 +29436,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -29604,26 +29592,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -29760,26 +29748,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -29916,26 +29904,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bp
 bj
@@ -30072,26 +30060,26 @@ ab
 ab
 ab
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 bt
 bI
@@ -30228,26 +30216,26 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -30384,26 +30372,26 @@ ab
 ab
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -30541,24 +30529,24 @@ ab
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
 ad
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -30698,22 +30686,22 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ab
 ad
 ad
 ad
-bO
-bO
-bO
-bO
-bO
+ad
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -30855,20 +30843,20 @@ ad
 ad
 ad
 ad
-bO
-bO
-bO
 ad
 ad
+ad
+ad
+ad
 ab
 ab
 ab
 ab
 ab
 ad
-bO
-bO
-bO
+ad
+ad
+ad
 ad
 ad
 ad

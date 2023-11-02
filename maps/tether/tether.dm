@@ -92,7 +92,8 @@
 	#include "main_dmms/tether-08-mining.dmm"
 	#include "main_dmms/tether-09-solars.dmm"
 	#include "main_dmms/tether-10-colony.dmm"
-	// #include "submaps/tether_misc.dmm" // needs a lot of work
+	#include "submaps/tether_misc.dmm"
+	#include "submaps/tether_ships.dmm"
 
 	#define USING_MAP_DATUM /datum/map/tether
 

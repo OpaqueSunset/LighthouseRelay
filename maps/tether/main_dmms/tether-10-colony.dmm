@@ -53,17 +53,13 @@
 "ak" = (
 /obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/computer/shuttle_control/specops,
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "al" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -73,9 +69,7 @@
 	pixel_y = 32
 	},
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -92,9 +86,7 @@
 	dir = 4
 	},
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -282,16 +274,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "aC" = (
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -302,9 +290,7 @@
 	pixel_y = -25;
 	tag_door = "specops_shuttle_fore_hatch"
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -464,9 +450,7 @@
 	name = "Spec Ops Intercom";
 	pixel_y = -28
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -474,9 +458,7 @@
 /obj/machinery/computer/prisoner{
 	name = "Implant Management"
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -487,9 +469,7 @@
 	pixel_y = -25;
 	tag_door = "specops_shuttle_port_hatch"
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -497,9 +477,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -510,9 +488,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle{
-	icon_state = "floor_red"
-	},
+/turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -3645,17 +3621,6 @@
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
-"gY" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod2/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
-"gZ" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod2/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
 "ha" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
@@ -4063,12 +4028,6 @@
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
-"hZ" = (
-/obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod2/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
 "ia" = (
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4751,26 +4710,11 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
+/area/centcom/evac)
 "jw" = (
 /obj/effect/floor_decal/rust/part_rusted3,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
-"jx" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
-"jy" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
+/area/centcom/evac)
 "jz" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
@@ -4899,9 +4843,7 @@
 "jJ" = (
 /obj/effect/floor_decal/rust/mono_rusted3,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
+/area/centcom/evac)
 "jK" = (
 /turf/unsimulated/wall,
 /area/centcom/medical)
@@ -4913,12 +4855,6 @@
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
-"jM" = (
-/obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/shuttle/large_escape_pod1/centcom{
-	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
-	})
 "jN" = (
 /obj/effect/floor_decal/sign/dock/two,
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -7292,7 +7228,7 @@
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/machinery/clonepod/transhuman/full,
+/obj/machinery/transhuman_clonepod/full,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -20413,18 +20349,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iF
 jl
 jv
-jx
-jx
-jx
-jx
+iQ
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -20569,18 +20505,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iG
 jm
 jw
-jx
-jy
-jy
-jx
+iQ
+iR
+iR
+iQ
 lj
 lF
 ab
@@ -20725,18 +20661,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gZ
-gY
-gY
+iQ
+iQ
+iR
+iQ
+iQ
 iH
 jn
-jx
+iQ
 jJ
-jx
-jx
-jx
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -20881,18 +20817,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gZ
-gY
-gY
+iQ
+iQ
+iR
+iQ
+iQ
 iI
 jo
-jx
-jx
-jx
-jx
-jM
+iQ
+iQ
+iQ
+iQ
+kP
 lj
 lF
 ab
@@ -21037,18 +20973,18 @@ ab
 ab
 gi
 gz
-gZ
-gY
-gY
-gY
-gY
+iR
+iQ
+iQ
+iQ
+iQ
 iJ
 jp
-jx
-jy
-jx
-jx
-jx
+iQ
+iR
+iQ
+iQ
+iQ
 lk
 lF
 ab
@@ -21193,18 +21129,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iK
 jq
-jx
-jx
-jx
-jx
-jx
+iQ
+iQ
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -21349,18 +21285,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iL
 jr
-jy
-jx
-jx
-jx
-jx
+iR
+iQ
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -21505,18 +21441,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iM
 js
-jx
-jx
-jM
-jx
-jy
+iQ
+iQ
+kP
+iQ
+iR
 ll
 lF
 ab
@@ -21661,18 +21597,18 @@ ab
 ab
 gi
 gy
-gY
-gZ
-gY
-hZ
-gY
+iQ
+iR
+iQ
+kP
+iQ
 iN
 jt
-jx
-jx
-jx
-jx
-jx
+iQ
+iQ
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -21817,18 +21753,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gY
-gY
+iQ
+iQ
+iQ
+iQ
+iQ
 iO
 ju
-jx
-jy
-jx
-jx
-jx
+iQ
+iR
+iQ
+iQ
+iQ
 lj
 lF
 ab
@@ -21973,18 +21909,18 @@ ab
 ab
 gi
 gy
-gY
-gY
-gY
-gZ
-gY
+iQ
+iQ
+iQ
+iR
+iQ
 iF
 ju
-jx
-jx
-jx
-jx
-jM
+iQ
+iQ
+iQ
+iQ
+kP
 lj
 lF
 ab
@@ -22130,16 +22066,16 @@ ab
 gi
 gA
 ha
-gY
-gY
-gZ
+iQ
+iQ
+iR
 iz
 iP
 hb
 ha
-jx
-jx
-jx
+iQ
+iQ
+iQ
 iz
 lm
 lF

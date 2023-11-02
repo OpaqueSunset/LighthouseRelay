@@ -4,28 +4,67 @@
 /obj/item/implanter/backup
 /obj/item/implant/backup
 /obj/item/sleevemate
-/obj/item/stock_parts/circuitboard/body_designer
-/obj/item/stock_parts/circuitboard/resleeving_control
-/obj/item/stock_parts/circuitboard/transhuman_clonepod
-/obj/item/stock_parts/circuitboard/transhuman_resleever
-/obj/item/stock_parts/circuitboard/transhuman_synthprinter
-/obj/machinery/clonepod/transhuman
-/obj/machinery/computer/transhuman/resleeving
+	material = /decl/material/solid/plastic
+
+/obj/machinery/transhuman
+	abstract_type = /obj/machinery/transhuman
+	construct_state = /decl/machine_construction/default/panel_closed
+/obj/machinery/computer/transhuman
+	abstract_type = /obj/machinery/computer/transhuman
+
 /obj/machinery/computer/transhuman/designer
+/obj/item/stock_parts/circuitboard/body_designer
+	build_path = /obj/machinery/computer/transhuman/designer
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/body_designer
+	path = /obj/item/stock_parts/circuitboard/body_designer
+
+/obj/machinery/computer/transhuman/resleeving
+/obj/item/stock_parts/circuitboard/resleeving_control
+	build_path = /obj/machinery/computer/transhuman/resleeving
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/resleeving_control
+	path = /obj/item/stock_parts/circuitboard/resleeving_control
+
 /obj/machinery/transhuman/resleever
+/obj/item/stock_parts/circuitboard/transhuman_resleever
+	board_type = "machine"
+	build_path = /obj/machinery/transhuman/resleever
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/transhuman_resleever
+	path = /obj/item/stock_parts/circuitboard/transhuman_resleever
+
+/obj/machinery/transhuman_clonepod
+	construct_state = /decl/machine_construction/default/panel_closed
+/obj/machinery/transhuman_clonepod/full
+	base_type = /obj/machinery/transhuman_clonepod
+/obj/item/stock_parts/circuitboard/transhuman_clonepod
+	board_type = "machine"
+	build_path = /obj/machinery/transhuman_clonepod
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/transhuman_clonepod
+	path = /obj/item/stock_parts/circuitboard/transhuman_clonepod
+
 /obj/machinery/transhuman/synthprinter
+/obj/item/stock_parts/circuitboard/transhuman_synthprinter
+	board_type = "machine"
+	build_path = /obj/machinery/transhuman/synthprinter
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/transhuman_synthprinter
+	path = /obj/item/stock_parts/circuitboard/transhuman_synthprinter
 
 /obj/item/cmo_disk_holder
+	material = /decl/material/solid/paper //it's a manila envelope you tear open
 /obj/item/chems/glass/bottle/biomass
 /obj/item/storage/box/backup_kit
 /obj/item/storage/box/body_record_disk
-/obj/machinery/clonepod/transhuman/full
 // note: cryo is technically part of resleeving now
 /obj/machinery/atmospherics/unary/cryo_cell
 /obj/item/chems/glass/beaker/cryoxadone
 
 // medical QOL
 /obj/item/glasses_kit
+	material = /decl/material/solid/cardboard // it's basically a box.
 /obj/item/storage/bag/chemistry
 /obj/item/storage/pill_bottle/iron
 /obj/item/storage/pill_bottle/nutriment
@@ -47,15 +86,29 @@
 /obj/item/toy/stickhorse
 
 /obj/item/universal_translator
+	material = /decl/material/solid/plastic
 
 /obj/machinery/button/remote/emitter
 /obj/machinery/camera/motion/security
 /obj/machinery/camera/network/research_outpost
 /obj/machinery/camera/network/thunder
+
 /obj/machinery/cash_register
+	construct_state = /decl/machine_construction/default/panel_closed
+	base_type = /obj/machinery/cash_register
+/obj/item/stock_parts/circuitboard/cash_register
+	build_path = /obj/machinery/cash_register
+	origin_tech = "{'programming':1}"
+/datum/fabricator_recipe/imprinter/circuit/cash_register
+	path = /obj/item/stock_parts/circuitboard/cash_register
 /obj/machinery/cash_register/civilian
+
+/obj/machinery/computer/cryopod
+	base_type = /obj/machinery/computer/cryopod
 /obj/machinery/computer/cryopod/dorms
 /obj/machinery/computer/cryopod/gateway
+/obj/machinery/computer/HolodeckControl
+	base_type = /obj/machinery/computer/HolodeckControl
 /obj/machinery/computer/HolodeckControl/holodorm
 /obj/machinery/computer/HolodeckControl/holodorm/five
 /obj/machinery/computer/HolodeckControl/holodorm/one
@@ -95,7 +148,6 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/wall_mounted
 /obj/machinery/portable_atmospherics/powered/pump/huge/stationary/purge
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram
-/obj/machinery/computer/air_control/large_tank_control
 
 // Power
 /obj/machinery/power/grid_checker
@@ -108,6 +160,8 @@
 
 /obj/machinery/light/flicker
 /obj/machinery/navbeacon/delivery/south
+/obj/machinery/network/requests_console/preset
+	base_type = /obj/machinery/network/requests_console
 /obj/machinery/network/requests_console/preset/engineering
 	department = "Engineering"
 
@@ -174,24 +228,58 @@
 
 // TELESCI
 /obj/machinery/computer/telescience
+/obj/item/stock_parts/circuitboard/telesci_computer
+	build_path = /obj/machinery/computer/telescience
+	origin_tech = "{'programming':3}"
+/datum/fabricator_recipe/imprinter/circuit/telesci_computer
+	path = /obj/item/stock_parts/circuitboard/telesci_computer
 /obj/item/stock_parts/circuitboard/telesci_pad
+	origin_tech = "{'materials':2,'magnets':3,'wormholes':3}"
+/datum/fabricator_recipe/imprinter/circuit/telesci_pad
+	path = /obj/item/stock_parts/circuitboard/telesci_pad
 
 // VIROLOGY
 /obj/item/chems/syringe/antiviral
 /obj/item/scanner/antibody
+/obj/item/virusdish
+	material = /decl/material/solid/plastic
 /obj/item/virusdish/random
+/obj/item/stock_parts/circuitboard/virocentrifuge
+	build_path = /obj/machinery/computer/centrifuge
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/virocentrifuge
+	path = /obj/item/stock_parts/circuitboard/virocentrifuge
+/obj/item/stock_parts/circuitboard/diseasesplicer
+	build_path = /obj/machinery/computer/diseasesplicer
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/diseasesplicer
+	path = /obj/item/stock_parts/circuitboard/diseasesplicer
+/obj/item/stock_parts/circuitboard/diseaseanalyser
+	build_path = /obj/machinery/disease2/diseaseanalyser
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/diseaseanalyzer
+	path = /obj/item/stock_parts/circuitboard/diseaseanalyser
+/obj/item/stock_parts/circuitboard/viroincubator
+	build_path = /obj/machinery/disease2/incubator
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/viroincubator
+	path = /obj/item/stock_parts/circuitboard/viroincubator
+/obj/item/stock_parts/circuitboard/viroisolator
+	build_path = /obj/machinery/disease2/isolator
+	origin_tech = "{'biotech':2}"
+/datum/fabricator_recipe/imprinter/circuit/viroisolator
+	path = /obj/item/stock_parts/circuitboard/viroisolator
 /obj/machinery/computer/centrifuge
 /obj/machinery/computer/diseasesplicer
 /obj/machinery/disease2/diseaseanalyser
+	construct_state = /decl/machine_construction/default/panel_closed
 /obj/machinery/disease2/incubator
+	construct_state = /decl/machine_construction/default/panel_closed
 /obj/machinery/disease2/isolator
+	construct_state = /decl/machine_construction/default/panel_closed
 /obj/machinery/smartfridge/chemistry/virology
 /obj/machinery/smartfridge/secure/virology
 /obj/structure/reagent_dispensers/virusfood
-
-// PARTIALLY STUBBED
-/obj/machinery/computer/area_atmos/tag
-	var/scrub_id
 
 /*
 // MOBS (MOTHBALLED)

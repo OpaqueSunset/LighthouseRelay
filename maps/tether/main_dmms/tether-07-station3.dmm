@@ -2844,7 +2844,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "warden";
 	name = "Warden's Office Shutters";
 	opacity = 0
@@ -5890,7 +5889,7 @@
 	dir = 5
 	},
 /obj/machinery/computer/area_atmos/tag{
-	scrub_id = "sec_riot_control"
+	id_tag = "sec_riot_control"
 	},
 /turf/simulated/floor/tiled,
 /area/security/observation)
@@ -6511,8 +6510,14 @@
 /turf/simulated/floor,
 /area/maintenance/station/ai)
 "lY" = (
-/turf/space,
-/area/shuttle/antag_space/north)
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -28
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/wood,
+/area/medical/psych)
 "lZ" = (
 /obj/structure/hygiene/toilet{
 	dir = 4
@@ -15913,6 +15918,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "BE" = (
@@ -15920,6 +15928,9 @@
 /obj/machinery/door/airlock/medical{
 	id_tag = "mentaldoor";
 	name = "Mental Health"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood,
 /area/medical/psych)
@@ -16241,6 +16252,9 @@
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "Cm" = (
@@ -16333,6 +16347,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "Cu" = (
@@ -16351,6 +16368,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 6
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -16723,7 +16743,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -16742,7 +16761,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -16761,7 +16779,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -16799,6 +16816,9 @@
 	name = "Psych/Surgery Waiting Room"
 	},
 /obj/machinery/door/firedoor/glass,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "Dt" = (
@@ -17184,6 +17204,9 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -17592,7 +17615,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "surgeryobs";
 	name = "Holosuite Emergency Shutters";
 	opacity = 0
@@ -18016,6 +18038,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "FM" = (
@@ -18028,6 +18053,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "2-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -18457,7 +18485,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -18482,7 +18509,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 2;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -18614,8 +18640,19 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "GT" = (
-/turf/simulated/wall,
-/area/maintenance/security_starboard)
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/upper)
 "GU" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -18809,7 +18846,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "surgeryobs";
 	name = "Holosuite Emergency Shutters";
 	opacity = 0
@@ -19008,17 +19044,17 @@
 "HJ" = (
 /obj/structure/catwalk,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "HK" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "HL" = (
 /obj/structure/catwalk,
 /obj/random/loot_pile/maintenance,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "HM" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
@@ -19401,7 +19437,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/clean,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "Ix" = (
 /turf/simulated/wall,
 /area/medical/resleeving)
@@ -19533,7 +19569,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "surgeryobs";
 	name = "Holosuite Emergency Shutters";
 	opacity = 0
@@ -19667,7 +19702,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "Ja" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
@@ -20137,7 +20172,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/clean,
 /turf/simulated/floor,
-/area/maintenance/security_starboard)
+/area/medical/resleeving)
 "JQ" = (
 /obj/structure/sign/warning/nosmoking_1,
 /turf/simulated/wall,
@@ -21128,7 +21163,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
 "LH" = (
-/obj/machinery/clonepod/transhuman,
+/obj/machinery/transhuman_clonepod,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/simulated/floor/tiled/white,
@@ -23183,7 +23218,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Shutters";
 	opacity = 0
@@ -24244,6 +24278,12 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/ward)
+"Qq" = (
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/wood,
+/area/medical/psych)
 "Qr" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/pink/border,
@@ -25114,7 +25154,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "surgeryobs";
 	name = "Holosuite Emergency Shutters";
 	opacity = 0
@@ -25386,6 +25425,14 @@
 "SW" = (
 /turf/exterior/wall,
 /area/space)
+"SY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/surgery_hallway)
 "SZ" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -26260,6 +26307,12 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/foyer)
+"VT" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood,
+/area/medical/psych)
 "VU" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
@@ -26767,7 +26820,6 @@
 /obj/machinery/door/blast/shutters{
 	density = 0;
 	dir = 8;
-	icon_state = "shutter0";
 	id_tag = "surgeryobs";
 	name = "Holosuite Emergency Shutters";
 	opacity = 0
@@ -34343,12 +34395,12 @@ vt
 vt
 vt
 ab
-GT
-GT
-GT
-GT
-GT
-GT
+Ix
+Ix
+Ix
+Ix
+Ix
+Ix
 ab
 ab
 ab
@@ -34499,12 +34551,12 @@ we
 vt
 ab
 ab
-GT
+Ix
 HJ
 HJ
 HJ
 HJ
-GT
+Ix
 ab
 ab
 ab
@@ -34655,12 +34707,12 @@ Da
 Da
 Da
 Da
-GT
+Ix
 HJ
 Iw
 IZ
 JP
-GT
+Ix
 ab
 ab
 ab
@@ -34811,7 +34863,7 @@ DE
 EA
 Fo
 Da
-GT
+Ix
 HJ
 Ix
 Ix
@@ -34967,7 +35019,7 @@ DF
 EB
 Fp
 Gf
-GT
+Ix
 HJ
 Ix
 Ja
@@ -35123,7 +35175,7 @@ DG
 EC
 Fq
 Gg
-GT
+Ix
 HK
 Ix
 Jb
@@ -35279,7 +35331,7 @@ DH
 YB
 Fr
 Gh
-GT
+Ix
 HJ
 Ix
 Jc
@@ -35435,7 +35487,7 @@ DI
 EC
 Fq
 Gi
-GT
+Ix
 HJ
 Ix
 Jd
@@ -35591,7 +35643,7 @@ DJ
 ED
 Fs
 Gj
-GT
+Ix
 HL
 Ix
 Je
@@ -39020,7 +39072,7 @@ Bz
 Ct
 Ds
 Ea
-Wd
+SY
 FL
 GA
 Hi
@@ -39329,7 +39381,7 @@ yG
 zA
 Av
 BB
-Ck
+GT
 RL
 RL
 EX
@@ -39485,7 +39537,7 @@ yH
 zB
 Ay
 xX
-Ck
+GT
 RL
 Ec
 EY
@@ -39952,9 +40004,9 @@ xR
 yJ
 zD
 AB
-BF
-BF
-BF
+Qq
+VT
+lY
 Wh
 Sy
 FP
@@ -45077,16 +45129,16 @@ aa
 aa
 aa
 aa
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -45233,16 +45285,16 @@ aa
 aa
 aa
 aa
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -45389,16 +45441,16 @@ aa
 aa
 aa
 aa
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -45545,16 +45597,16 @@ aa
 aa
 aa
 aa
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -45701,16 +45753,16 @@ aa
 aa
 aa
 aa
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa

@@ -2,7 +2,7 @@
 /turf/unsimulated/mineral/virgo3b : /turf/unsimulated/mineral
 /turf/simulated/floor/virgo3b : /turf/simulated/floor
 # TODO: consider if we need to readd the colored sky subtype
-/turf/simulated/sky/virgo3b : /turf/exterior/open/sky
+/turf/simulated/sky/virgo3b/@SUBTYPES : /turf/exterior/open/sky/@SUBTYPES
 # POLARIS TURFS
 /turf/simulated/floor/outdoors/grass/sif/@SUBTYPES : /turf/exterior/sif_growth
 /turf/simulated/mineral/floor/@SUBTYPES : /turf/exterior/barren
@@ -15,6 +15,8 @@
 /turf/simulated/shuttle/plating/airless/carry : @DELETE
 /turf/simulated/shuttle/plating/@SUBTYPES : /turf/simulated/floor/@SUBTYPES{@OLD}
 /turf/simulated/shuttle/floor/@SUBTYPES : /turf/simulated/floor/shuttle/@SUBTYPES{@OLD}
+/turf/simulated/floor/shuttle : /turf/simulated/floor/shuttle/blue{@OLD}
+/turf/unsimulated/wall/seperator : /turf/unsimulated/dark_filler
 # POLARIS SIGNS
 /obj/structure/sign/nosmoking_1 : /obj/structure/sign/warning/nosmoking_1{@OLD}
 /obj/structure/sign/nosmoking_2 : /obj/structure/sign/warning/nosmoking_2{@OLD}
@@ -140,6 +142,9 @@
 # we use a completely different access format
 /@SUBTYPES {req_access = @SET}: @OLD {@OLD; req_access = @SKIP;}
 /@SUBTYPES {req_one_access = @SET}: @OLD {@OLD; req_one_access = @SKIP;}
+/obj/machinery/door/blast/shutters{icon_state = "shutter0"} : /obj/machinery/door/blast/shutters{@OLD; icon_state = @SKIP}
+/obj/machinery/door/airlock/external/glass{icon_state = @SET; locked = 1; density = 0, opacity = 0} : /obj/machinery/door/airlock/external/glass/bolted_open{@OLD; icon_state = @SKIP; locked = @SKIP, density = @SKIP; opacity = @SKIP}
+/obj/machinery/door/airlock/external/glass{icon_state = @SET; locked = 1} : /obj/machinery/door/airlock/external/glass/bolted{@OLD; icon_state = @SKIP; locked = @SKIP}
 
 # RACKS ARE NOT TABLES
 /obj/structure/table/rack/@SUBTYPES : /obj/structure/rack/@SUBTYPES
@@ -285,6 +290,7 @@
 
 /obj/structure/frame/computer : /obj/machinery/constructable_frame/computerframe{@OLD}
 /obj/structure/frame: /obj/machinery/constructable_frame/machine_frame{@OLD}
+/obj/machinery/constructable_frame/machine_frame{anchored = 1} : /obj/machinery/constructable_frame/machine_frame/deconstruct
 
 /obj/structure/bed/chair/sofa : /obj/structure/bed/chair/sofa/middle{@OLD}
 /obj/structure/bed/chair/sofa/@SUBTYPES : /obj/structure/bed/sofa/@SUBTYPES{@OLD}
@@ -453,7 +459,9 @@
 
 /obj/structure/musician/piano : /obj/structure/synthesized_instrument/synthesizer/piano
 
+# TRANSHUMAN
 /obj/item/backup_implanter : /obj/item/implanter/backup
+/obj/machinery/clonepod/transhuman/@SUBTYPES : /obj/machinery/transhuman_clonepod/@SUBTYPES
 
 # CLOTHING REPATHS
 /obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/accessory/toggleable/hawaii/@SUBTYPES{@OLD}
@@ -553,6 +561,7 @@
 /obj/item/pickaxe/hand : /obj/item/pickaxe/xeno/hand{@OLD}
 
 /obj/machinery/computer/general_air_control/@SUBTYPES : /obj/machinery/computer/air_control/@SUBTYPES{@OLD}
+/obj/machinery/computer/air_control/large_tank_control : /obj/machinery/computer/air_control{@OLD}
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide : /obj/machinery/portable_atmospherics/canister/sleeping_agent{@OLD}
 /obj/machinery/atmospherics/trinary/atmos_filter/@SUBTYPES : /obj/machinery/atmospherics/omni/filter{@OLD}
 /obj/machinery/atmospherics/omni/atmos_filter/@SUBTYPES : /obj/machinery/atmospherics/omni/filter{@OLD}
@@ -576,6 +585,7 @@
 
 /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{scrub_id = @SET} : /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{@OLD; scrub_id = @SKIP; id_tag = @OLD:scrub_id}
 /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{scrubbing_gas = list("phoron")} : /obj/machinery/portable_atmospherics/powered/scrubber/@SUBTYPES{@OLD; scrubbing_gas = list(/decl/material/solid/phoron)}
+/obj/machinery/computer/area_atmos/tag/@SUBTYPES{scrub_id = @SET} : /obj/machinery/computer/area_atmos/tag/@SUBTYPES{@OLD; scrub_id = @SKIP; id_tag = @OLD:scrub_id}
 
 /obj/machinery/power/apc{cell_type = /obj/item/cell/super} : /obj/machinery/power/apc/super
 /obj/machinery/power/apc{cell_type = /obj/item/cell/hyper} : /obj/machinery/power/apc/hyper
