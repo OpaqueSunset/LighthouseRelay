@@ -40,13 +40,6 @@
 /obj/item/star,
 /turf/exterior/dirt,
 /area/tether/surfacebase/temple)
-"l" = (
-/obj/effect/decal/mecha_wreckage/phazon{
-	anchored = 1;
-	name = "rusted Phazon wreckage"
-	},
-/turf/exterior/dirt,
-/area/tether/surfacebase/temple)
 "m" = (
 /obj/item/cell/infinite,
 /obj/effect/gibspawner/human,
@@ -7441,7 +7434,7 @@ g
 g
 g
 i
-l
+g
 m
 g
 g

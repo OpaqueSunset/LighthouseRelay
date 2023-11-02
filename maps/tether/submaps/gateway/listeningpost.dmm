@@ -40,9 +40,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /obj/item/clothing/glasses/regular,
 /turf/simulated/floor,
@@ -84,9 +82,7 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_x = 32;
-	subspace_transmission = 1;
-	syndie = 1
+	pixel_x = 32
 	},
 /turf/simulated/floor,
 /area/awaymission/listeningpost)

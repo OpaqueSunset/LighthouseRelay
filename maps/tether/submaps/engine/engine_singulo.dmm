@@ -126,10 +126,8 @@
 	pixel_x = -5;
 	pixel_y = -26
 	},
-/obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
+/obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "eng_north_outer";
-	locked = 1;
 	name = "Engine North Airlock Exterior"
 	},
 /obj/structure/cable/cyan{
@@ -154,10 +152,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/engineering/engine_room)
 "av" = (
-/obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
+/obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "eng_north_inner";
-	locked = 1;
 	name = "Engine North Airlock Interior"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -1277,10 +1273,8 @@
 	pixel_x = -5;
 	pixel_y = 26
 	},
-/obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
+/obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "eng_south_outer";
-	locked = 1;
 	name = "Engine South Airlock Exterior"
 	},
 /obj/structure/cable/cyan{
@@ -1307,10 +1301,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/engineering/engine_room)
 "cv" = (
-/obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
+/obj/machinery/door/airlock/external/glass/bolted{
 	id_tag = "eng_south_inner";
-	locked = 1;
 	name = "Engine South Airlock Interior"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{

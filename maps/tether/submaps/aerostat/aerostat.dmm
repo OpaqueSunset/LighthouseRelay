@@ -138,13 +138,13 @@
 /area/tether_away/aerostat/solars)
 "at" = (
 /obj/structure/table,
-/obj/fiftyspawner/osmium,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "au" = (
 /obj/structure/table,
-/obj/fiftyspawner/phoron,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /obj/random/smokes,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)

@@ -25,7 +25,7 @@
 /area/submap/virgo2/Drugd)
 "i" = (
 /obj/structure/closet/cabinet,
-/obj/item/lipstick/random,
+/obj/random/lipstick,
 /turf/simulated/floor/carpet,
 /area/submap/virgo2/Drugd)
 "j" = (

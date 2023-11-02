@@ -140,10 +140,6 @@
 /obj/structure/ore_box,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
-"A" = (
-/obj/machinery/mineral/equipment_vendor,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/mine/explored/underdark)
 "B" = (
 /obj/machinery/light/small{
 	icon_state = "bulb1";
@@ -216,10 +212,6 @@
 "T" = (
 /obj/item/remains/mouse,
 /turf/exterior/dirt,
-/area/mine/explored/underdark)
-"U" = (
-/obj/machinery/mineral/equipment_vendor/survey,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "W" = (
 /obj/item/bone/skull,
@@ -17704,7 +17696,7 @@ g
 g
 g
 h
-U
+s
 s
 s
 o
@@ -17846,7 +17838,7 @@ g
 g
 g
 h
-A
+s
 s
 o
 o

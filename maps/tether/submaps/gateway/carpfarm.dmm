@@ -476,9 +476,6 @@
 /area/awaymission/carpfarm/base)
 "bE" = (
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/carpfarm/base)

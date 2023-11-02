@@ -51,11 +51,6 @@
 /obj/effect/mine,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/MilitaryCamp1)
-"q" = (
-/obj/structure/table,
-/obj/item/gun/projectile/automatic/c20r,
-/turf/simulated/floor/tiled/techfloor/virgo2,
-/area/submap/virgo2/MilitaryCamp1)
 "r" = (
 /obj/structure/table,
 /obj/item/storage/box/syndie_kit/space,
@@ -404,7 +399,7 @@ c
 c
 j
 j
-q
+m
 s
 j
 i

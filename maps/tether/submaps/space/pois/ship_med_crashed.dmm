@@ -89,7 +89,7 @@
 /turf/simulated/floor/airless,
 /area/tether_away/debrisfield/explored)
 "t" = (
-/obj/machinery/door/unpowered/shuttle,
+/obj/structure/door/shuttle,
 /turf/simulated/floor/shuttle/airless,
 /area/tether_away/debrisfield/explored)
 "u" = (

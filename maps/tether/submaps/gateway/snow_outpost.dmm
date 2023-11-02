@@ -224,7 +224,7 @@
 	},
 /area/awaymission/snow_outpost/outpost)
 "aR" = (
-/obj/structure/AIcore,
+/obj/structure/aicore,
 /turf/simulated/floor/bluegrid{
 	name = "Mainframe Base";
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
@@ -244,7 +244,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "aV" = (
-/obj/machinery/clonepod/transhuman/full,
+/obj/machinery/transhuman_clonepod/full,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "aW" = (
@@ -264,10 +264,6 @@
 /area/awaymission/snow_outpost/outpost)
 "aY" = (
 /obj/machinery/implantchair,
-/turf/simulated/floor/tiled/white,
-/area/awaymission/snow_outpost/outpost)
-"aZ" = (
-/obj/machinery/sleep_console,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "ba" = (
@@ -601,7 +597,7 @@
 /turf/simulated/wall/sandstone,
 /area/awaymission/snow_outpost/outside)
 "cf" = (
-/obj/item/ore/diamond,
+/obj/item/stack/material/ore/diamond,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cg" = (
@@ -615,7 +611,7 @@
 /turf/simulated/floor/plating/external,
 /area/awaymission/snow_outpost/outside)
 "cj" = (
-/obj/item/ore,
+/obj/item/stack/material/ore,
 /turf/simulated/floor/plating/external,
 /area/awaymission/snow_outpost/outside)
 "ck" = (
@@ -651,7 +647,7 @@
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "cs" = (
-/obj/item/ore,
+/obj/item/stack/material/ore,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "ct" = (
@@ -667,7 +663,7 @@
 /area/awaymission/snow_outpost/outside)
 "cw" = (
 /obj/item/frame/apc,
-/obj/item/module/power_control,
+/obj/item/stock_parts/circuitboard/apc,
 /turf/simulated/floor/plating/external,
 /area/awaymission/snow_outpost/outside)
 "cx" = (
@@ -727,11 +723,6 @@
 "cH" = (
 /obj/structure/rack,
 /obj/item/shovel,
-/turf/simulated/floor/snow/snow2,
-/area/awaymission/snow_outpost/outside)
-"cI" = (
-/obj/structure/boulder,
-/obj/effect/decal/mecha_wreckage/ripley,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cJ" = (
@@ -815,26 +806,26 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "db" = (
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "dc" = (
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
-/obj/item/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
+/obj/item/stack/material/ore/gold,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "dd" = (
@@ -1138,8 +1129,7 @@
 /area/awaymission/snow_outpost/restricted)
 "ed" = (
 /obj/structure/table/steel,
-/obj/item/gun/projectile/automatic/wt550,
-/obj/item/gun/projectile/automatic/p90,
+/obj/item/gun/projectile/automatic/smg,
 /turf/simulated/floor/tiled/steel_grid,
 /area/awaymission/snow_outpost/restricted)
 "ee" = (
@@ -1751,7 +1741,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "fW" = (
-/obj/item/ore/gold,
+/obj/item/stack/material/ore/gold,
 /obj/tether_away_spawner/aerostat_inside,
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
@@ -1832,7 +1822,7 @@
 /turf/simulated/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gq" = (
-/obj/item/clothing/accessory/storage/webbing,
+/obj/item/clothing/accessory/storage/vest,
 /obj/item/knife/combat,
 /turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
@@ -2034,7 +2024,7 @@
 /area/awaymission/snow_outpost/outside)
 "ha" = (
 /obj/structure/closet/cabinet,
-/obj/item/lipstick/random,
+/obj/random/lipstick,
 /turf/simulated/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hb" = (
@@ -2240,8 +2230,8 @@
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hO" = (
-/obj/item/spacecash/c100,
-/obj/item/spacecash/c100,
+/obj/item/cash/c100,
+/obj/item/cash/c100,
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hP" = (
@@ -2249,9 +2239,9 @@
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hQ" = (
-/obj/item/spacecash/c100,
-/obj/item/spacecash/c100,
-/obj/item/spacecash/c100,
+/obj/item/cash/c100,
+/obj/item/cash/c100,
+/obj/item/cash/c100,
 /obj/item/remains,
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
@@ -2265,10 +2255,6 @@
 /area/awaymission/snow_outpost/outside)
 "hT" = (
 /obj/random/toolbox,
-/turf/exterior/barren,
-/area/awaymission/snow_outpost/outside)
-"hU" = (
-/obj/effect/decal/mecha_wreckage/ripley,
 /turf/exterior/barren,
 /area/awaymission/snow_outpost/outside)
 "hV" = (
@@ -2425,7 +2411,7 @@
 	name = "Escape Pod Hatch";
 	welded = 1
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "ix" = (
 /obj/structure/bed/chair{
@@ -2437,7 +2423,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -26
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "iy" = (
 /obj/structure/bed/chair{
@@ -2449,7 +2435,7 @@
 	},
 /obj/machinery/light,
 /obj/item/weldingtool/largetank,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "iz" = (
 /obj/machinery/status_display{
@@ -2468,7 +2454,7 @@
 /obj/item/clothing/shoes/dress,
 /obj/item/clothing/glasses/sunglasses,
 /obj/random/multiple/gun/projectile/handgun,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "iA" = (
 /mob/living/simple_animal/giant_spider/frost/sif{
@@ -4818,7 +4804,7 @@ cr
 hM
 cd
 cd
-hU
+cr
 hV
 hM
 cd
@@ -5862,7 +5848,7 @@ ab
 cu
 cu
 cd
-cI
+cJ
 cd
 cd
 cd
@@ -7325,7 +7311,7 @@ aO
 as
 aY
 bH
-aZ
+at
 bH
 aF
 at

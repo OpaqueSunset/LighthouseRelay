@@ -251,10 +251,6 @@
 "aP" = (
 /turf/simulated/floor/plating,
 /area/tether_away/debrisfield/derelict)
-"aQ" = (
-/obj/effect/decal/mecha_wreckage/gygax/adv,
-/turf/simulated/floor/plating,
-/area/tether_away/debrisfield/derelict)
 "aR" = (
 /obj/effect/map_effect/interval/effect_emitter/sparks/frequent,
 /obj/effect/map_effect/interval/effect_emitter/smoke,
@@ -294,10 +290,6 @@
 /turf/simulated/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "aZ" = (
-/turf/simulated/floor/tiled/steel_ridged,
-/area/tether_away/debrisfield/derelict)
-"ba" = (
-/obj/machinery/bomb_tester,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "bb" = (
@@ -2418,7 +2410,7 @@ ao
 ao
 aM
 aq
-aQ
+aP
 aP
 aP
 aq
@@ -2788,7 +2780,7 @@ ao
 ao
 aM
 aq
-aQ
+aP
 aP
 aP
 aq
@@ -3388,7 +3380,7 @@ aa
 aa
 ao
 ao
-ba
+aZ
 aq
 bj
 bi

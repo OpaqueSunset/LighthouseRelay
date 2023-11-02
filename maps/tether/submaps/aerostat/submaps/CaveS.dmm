@@ -26,7 +26,7 @@
 /turf/template_noop,
 /area/submap/virgo2/CaveS)
 "j" = (
-/obj/item/clothing/accessory/storage/webbing,
+/obj/item/clothing/accessory/storage/vest,
 /obj/item/knife/combat,
 /turf/exterior/barren,
 /area/submap/virgo2/CaveS)

@@ -147,7 +147,7 @@
 "aH" = (
 /obj/structure/lattice,
 /obj/structure/closet/crate/secure/engineering,
-/obj/fiftyspawner/plasteel,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "aJ" = (

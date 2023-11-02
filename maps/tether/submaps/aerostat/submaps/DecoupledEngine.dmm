@@ -21,7 +21,7 @@
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "ag" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /turf/exterior/barren,
 /area/submap/virgo2/DecoupledEngine)
 "ah" = (
@@ -154,7 +154,7 @@
 /turf/simulated/wall/durasteel,
 /area/submap/virgo2/DecoupledEngine)
 "aG" = (
-/obj/machinery/fusion_fuel_compressor,
+/obj/machinery/fuel_compressor,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/cobweb,
 /turf/simulated/floor,
@@ -172,7 +172,7 @@
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "aJ" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
@@ -338,7 +338,7 @@
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bf" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/window/borosilicate_reinforced,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 8
@@ -350,14 +350,14 @@
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bg" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/window/borosilicate_reinforced,
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor,
 /area/submap/virgo2/DecoupledEngine)
 "bh" = (
-/obj/machinery/power/rad_collector,
+/obj/machinery/rad_collector,
 /obj/structure/window/borosilicate_reinforced{
 	dir = 4
 	},

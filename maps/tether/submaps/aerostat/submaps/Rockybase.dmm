@@ -164,12 +164,6 @@
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
-"aG" = (
-/obj/structure/rack,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/obj/item/gun/projectile/shotgun/pump/combat,
-/turf/simulated/floor/tiled/techfloor/virgo2,
-/area/submap/virgo2/Rockybase)
 "aH" = (
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -242,9 +236,6 @@
 /obj/item/storage/box/ammo/shotgunshells,
 /obj/item/storage/box/ammo/shotgunshells,
 /obj/item/storage/box/ammo/shotgunshells,
-/obj/item/ammo_magazine/m10mm,
-/obj/item/ammo_magazine/m10mm,
-/obj/item/ammo_magazine/m10mm,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aS" = (
@@ -311,8 +302,6 @@
 /area/submap/virgo2/Rockybase)
 "bc" = (
 /obj/structure/rack,
-/obj/item/gun/projectile/automatic/c20r,
-/obj/item/gun/projectile/automatic/c20r,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bd" = (
@@ -398,11 +387,6 @@
 /obj/item/mecha_parts/part/gygax_right_arm,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
-"bt" = (
-/obj/structure/table,
-/obj/item/kit/paint/gygax/darkgygax,
-/turf/simulated/floor/tiled/techfloor/virgo2,
-/area/submap/virgo2/Rockybase)
 "bu" = (
 /obj/structure/table,
 /obj/item/paper{
@@ -441,14 +425,14 @@
 /area/template_noop)
 "bA" = (
 /obj/structure/table,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
-/obj/item/stack/material/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
+/obj/item/stack/material/gemstone/mapped/diamond,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bB" = (
@@ -477,7 +461,7 @@
 /area/submap/virgo2/Rockybase)
 "bF" = (
 /obj/structure/table,
-/obj/fiftyspawner/rods,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bG" = (
@@ -614,7 +598,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/buildable/point_of_interest,
+/obj/machinery/power/smes/buildable/preset/hidden,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "cg" = (
@@ -702,7 +686,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/smes/buildable/point_of_interest,
+/obj/machinery/power/smes/buildable/preset/hidden,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ct" = (
@@ -1122,7 +1106,7 @@ bi
 ao
 bo
 al
-bt
+aB
 ao
 ao
 cm
@@ -2074,7 +2058,7 @@ ad
 ag
 ag
 al
-aG
+bc
 aR
 bc
 al

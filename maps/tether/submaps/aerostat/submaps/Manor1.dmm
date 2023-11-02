@@ -233,8 +233,8 @@
 /area/submap/virgo2/Manor1)
 "bb" = (
 /obj/structure/table,
-/obj/item/tray,
-/obj/item/tray,
+/obj/item/storage/tray,
+/obj/item/storage/tray,
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bc" = (
@@ -433,7 +433,7 @@
 /area/submap/virgo2/Manor1)
 "bL" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/candle_box,
+/obj/item/storage/candle_box,
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bM" = (
@@ -494,7 +494,7 @@
 /area/submap/virgo2/Manor1)
 "bZ" = (
 /obj/structure/closet/crate,
-/obj/item/stack/cable_coil/random_belt,
+/obj/item/stack/cable_coil/random,
 /obj/random/cash,
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -522,7 +522,7 @@
 /area/submap/virgo2/Manor1)
 "ce" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/rddouble,
+/obj/item/bedsheet/rd,
 /obj/structure/curtain/open/bed,
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)

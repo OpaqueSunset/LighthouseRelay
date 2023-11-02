@@ -30,12 +30,12 @@
 /area/submap/virgo2/BoomBase)
 "ai" = (
 /obj/structure/closet/crate/secure/phoron,
-/obj/fiftyspawner/phoron,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /turf/simulated/floor/plating,
 /area/submap/virgo2/BoomBase)
 "aj" = (
 /obj/structure/closet/crate/secure/phoron,
-/obj/fiftyspawner/phoron,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/BoomBase)
 "ak" = (

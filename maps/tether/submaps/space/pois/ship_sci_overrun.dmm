@@ -246,7 +246,7 @@
 /area/tether_away/debrisfield/explored)
 "aS" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/white,
+/obj/item/folder,
 /turf/simulated/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "aT" = (
@@ -284,7 +284,7 @@
 /turf/simulated/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "aZ" = (
-/obj/machinery/door/unpowered/shuttle,
+/obj/structure/door/shuttle,
 /turf/simulated/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "ba" = (

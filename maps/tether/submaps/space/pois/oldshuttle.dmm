@@ -14,7 +14,7 @@
 /area/tether_away/debrisfield/explored)
 "ae" = (
 /obj/structure/table/steel,
-/obj/item/clothing/head/pilot,
+/obj/item/clothing/head/helmet/tactical/pilot,
 /turf/simulated/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "af" = (
@@ -120,10 +120,6 @@
 	},
 /turf/simulated/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
-"au" = (
-/obj/machinery/sleep_console,
-/turf/simulated/floor/shuttle/black/airless,
-/area/tether_away/debrisfield/explored)
 "av" = (
 /obj/structure/bed/chair/shuttle{
 	icon_state = "shuttle_chair";
@@ -142,7 +138,7 @@
 /area/tether_away/debrisfield/explored)
 "ay" = (
 /obj/structure/table/steel,
-/obj/item/clothing/head/pilot,
+/obj/item/clothing/head/helmet/tactical/pilot,
 /obj/random/unidentified_medicine/drug_den,
 /turf/simulated/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
@@ -494,7 +490,7 @@ ad
 ac
 ap
 ad
-au
+ad
 ac
 ao
 al

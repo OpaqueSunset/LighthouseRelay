@@ -23,7 +23,6 @@
 /area/mine/explored/underdark)
 "g" = (
 /obj/item/remains,
-/obj/item/ore/bluespace_crystal,
 /turf/simulated/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "p" = (

@@ -212,7 +212,7 @@
 /turf/simulated/floor/carpet,
 /area/submap/spa)
 "aK" = (
-/obj/machinery/vending/food,
+/obj/machinery/fabricator/replicator,
 /turf/simulated/floor/wood,
 /area/submap/spa)
 "aL" = (
@@ -233,7 +233,7 @@
 /area/submap/spa)
 "aP" = (
 /obj/structure/table/woodentable,
-/obj/item/flame/candle/candelabra/everburn,
+/obj/item/flame/candle,
 /turf/simulated/floor/wood,
 /area/submap/spa)
 "aQ" = (
@@ -257,8 +257,8 @@
 /turf/simulated/floor/plating,
 /area/submap/spa)
 "aU" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/bluedouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/blue,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "aV" = (
@@ -275,18 +275,18 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "aW" = (
-/obj/structure/bed/double/padded,
+/obj/structure/bed/padded,
 /obj/item/bedsheet/greendouble,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "aX" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/purpledouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/purple,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "aY" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/reddouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/red,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "aZ" = (
@@ -405,8 +405,8 @@
 /turf/simulated/floor/reinforced,
 /area/submap/spa)
 "br" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/browndouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/brown,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bs" = (
@@ -423,18 +423,18 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bt" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/orangedouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/orange,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bu" = (
-/obj/structure/bed/double/padded,
+/obj/structure/bed/padded,
 /obj/item/bedsheet/rainbowdouble,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bv" = (
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/yellowdouble,
+/obj/structure/bed/padded,
+/obj/item/bedsheet/yellow,
 /turf/simulated/floor/carpet/bcarpet,
 /area/submap/spa)
 "bw" = (

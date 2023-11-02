@@ -55,10 +55,6 @@
 /obj/item/clothing/head/helmet/space/void/merc/fire,
 /turf/exterior/barren,
 /area/submap/virgo2/Mudpit)
-"n" = (
-/obj/effect/decal/mecha_wreckage/ripley/firefighter,
-/turf/exterior/barren,
-/area/submap/virgo2/Mudpit)
 
 (1,1,1) = {"
 a
@@ -239,7 +235,7 @@ c
 c
 g
 c
-n
+c
 c
 c
 b

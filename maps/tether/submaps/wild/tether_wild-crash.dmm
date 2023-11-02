@@ -101,10 +101,7 @@
 /turf/simulated/shuttle/wall/dark/hard_corner,
 /area/tether/surfacebase/crash)
 "at" = (
-/obj/machinery/door/airlock/external/glass{
-	icon_state = "door_locked";
-	locked = 1
-	},
+/obj/machinery/door/airlock/external/glass/bolted,
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "au" = (
@@ -203,12 +200,6 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/tether/surfacebase/crash)
-"aH" = (
-/obj/machinery/sleep_console{
-	dir = 8
-	},
-/turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aI" = (
 /obj/machinery/sleeper{
@@ -723,7 +714,7 @@
 	icon_state = "plant-09";
 	name = "Esteban";
 	pixel_y = 8;
-
+	
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
@@ -8986,7 +8977,7 @@ ac
 aj
 af
 af
-aH
+ay
 ay
 aV
 bg

@@ -236,11 +236,6 @@
 /obj/item/soap,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/base)
-"aK" = (
-/obj/structure/closet/jcloset,
-/obj/item/soap/deluxe,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/snowfield/base)
 "aL" = (
 /obj/structure/closet/l3closet/janitor,
 /turf/simulated/floor/tiled/steel,
@@ -648,7 +643,7 @@
 	},
 /obj/structure/table/glass,
 /obj/item/clipboard,
-/obj/item/folder/white,
+/obj/item/folder,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snowfield/base)
 "bN" = (
@@ -1372,11 +1367,6 @@
 /area/awaymission/snowfield/base)
 "dZ" = (
 /obj/structure/closet/crate/secure/gear,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
-/obj/item/ammo_magazine/clip/c762,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/snowfield/base)
 "ea" = (
@@ -1401,7 +1391,7 @@
 /area/awaymission/snowfield/base)
 "ed" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/clothing/suit/armor/combat,
+/obj/item/clothing/suit/armor/vest/heavy,
 /obj/structure/closet/crate/secure/gear,
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/snowfield/base)
@@ -1473,7 +1463,7 @@
 "eo" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/secure/phoron,
-/obj/fiftyspawner/phoron,
+/obj/item/stack/material/aerogel/mapped/tritium/fifty,
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/snowfield/base)
 "ep" = (
@@ -13036,7 +13026,7 @@ ad
 ad
 ad
 ai
-aK
+aJ
 ba
 ba
 ba

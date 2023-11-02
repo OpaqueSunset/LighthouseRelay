@@ -33,7 +33,7 @@
 /obj/item/radio/intercom{
 	pixel_y = -26
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "i" = (
 /obj/structure/bed/chair{
@@ -45,7 +45,7 @@
 	},
 /obj/machinery/light,
 /obj/item/weldingtool/largetank,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "j" = (
 /obj/machinery/status_display{
@@ -65,7 +65,7 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/random/multiple/gun/projectile/handgun,
 /obj/effect/spider/eggcluster/small/frost,
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "k" = (
 /obj/structure/shuttle/engine/propulsion/burst{
@@ -83,7 +83,7 @@
 	name = "Escape Pod Hatch";
 	welded = 1
 	},
-/turf/simulated/floor/shuttle,
+/turf/simulated/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "p" = (
 /obj/effect/spider/stickyweb,

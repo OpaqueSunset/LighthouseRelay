@@ -118,10 +118,6 @@
 /mob/living/simple_animal/space/goose/virgo3b,
 /turf/exterior/sif_growth,
 /area/tether/outpost/exploration_plains)
-"Em" = (
-/mob/living/simple_animal/gaslamp,
-/turf/exterior/sif_growth,
-/area/tether/outpost/exploration_plains)
 
 (1,1,1) = {"
 as
@@ -2657,7 +2653,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -3016,7 +3012,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -5241,7 +5237,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -10787,7 +10783,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -11710,7 +11706,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -15912,7 +15908,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -17575,7 +17571,7 @@ ab
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab
@@ -17594,7 +17590,7 @@ as
 ab
 ab
 ab
-Em
+ab
 ab
 ab
 ab

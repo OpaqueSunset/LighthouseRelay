@@ -29,7 +29,7 @@
 /turf/exterior/barren,
 /area/mine/explored/underdark)
 "aj" = (
-/obj/machinery/crystal,
+/obj/structure/crystal,
 /turf/exterior/barren,
 /area/mine/explored/underdark)
 "ak" = (
@@ -46,14 +46,6 @@
 /area/mine/explored/underdark)
 "an" = (
 /obj/machinery/implantchair,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/mine/explored/underdark)
-"ao" = (
-/obj/machinery/particle_smasher,
-/turf/exterior/barren,
-/area/mine/explored/underdark)
-"ap" = (
-/obj/machinery/particle_smasher,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "aq" = (
@@ -216,15 +208,7 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "aZ" = (
-/obj/machinery/clonepod/transhuman,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/mine/explored/underdark)
-"ba" = (
-/obj/effect/decal/mecha_wreckage/gygax/adv,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/mine/explored/underdark)
-"bb" = (
-/obj/effect/decal/mecha_wreckage/ripley,
+/obj/machinery/transhuman_clonepod,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "bc" = (
@@ -385,7 +369,7 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "GV" = (
-/obj/item/ore/hydrogen,
+/obj/item/stack/material/ore/hydrogen,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
@@ -571,7 +555,7 @@ ab
 ab
 aD
 bB
-ba
+ae
 bB
 ae
 bA
@@ -908,7 +892,7 @@ af
 ab
 ab
 aT
-bb
+ae
 ae
 ae
 aW
@@ -923,7 +907,7 @@ ac
 aj
 ad
 ad
-ao
+ad
 ad
 ah
 ad
@@ -959,7 +943,7 @@ PX
 az
 an
 ab
-ap
+ae
 ae
 aO
 ae
