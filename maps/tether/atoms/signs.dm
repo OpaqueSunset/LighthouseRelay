@@ -28,7 +28,7 @@
 
 /obj/structure/sign/department/tether/engine
 	name = "\improper ENGINE"
-	icon_state = "engine2"
+	icon_state = "engine"
 
 /obj/structure/sign/department/tether/interrogation
 	name = "\improper INTERROGATION"
