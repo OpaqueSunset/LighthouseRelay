@@ -295,14 +295,6 @@
 	name = "Tether Shuttle Landed"
 	icon_state = "shuttle"
 
-/area/shuttle/tether/station
-	name = "Tether Shuttle Dock"
-	icon_state = "shuttle2"
-
-/area/shuttle/tether/transit
-	name = "Tether Shuttle Transit"
-	icon_state = "shuttle2"
-
 /area/vacant/vacant_site2
 	name = "\improper Abandoned Locker Room"
 	icon_state = "vacant_site"
@@ -1056,6 +1048,9 @@
 /area/medical
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
 
+/area/medical/virologyisolation
+	name = "\improper Virology Isolation"
+	icon_state = "virology"
 /area/medical/recoveryrestroom
 	name = "\improper Recovery Room Restroom"
 	icon_state = "virology"
