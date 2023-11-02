@@ -518,7 +518,6 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "bv" = (
-/obj/structure/symbol/sa,
 /turf/simulated/wall{
 	can_open = 1
 	},
@@ -4205,13 +4204,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/maintenance/lower/rnd)
-"jO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/symbol/da{
-	pixel_x = 32
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "jP" = (
@@ -16913,7 +16905,6 @@
 /turf/simulated/floor/wood,
 /area/engineering/lower/breakroom)
 "NY" = (
-/obj/structure/symbol/gu,
 /turf/simulated/wall{
 	can_open = 1
 	},
@@ -17286,10 +17277,6 @@
 "Uh" = (
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
-"Uk" = (
-/obj/structure/symbol/gu,
-/turf/simulated/wall,
-/area/maintenance/lower/public_garden_maintenence/upper)
 "UA" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -25613,7 +25600,7 @@ ac
 ac
 QD
 OQ
-Uk
+QD
 QD
 QD
 ac
@@ -30317,7 +30304,7 @@ iV
 jk
 il
 il
-jO
+il
 il
 il
 il

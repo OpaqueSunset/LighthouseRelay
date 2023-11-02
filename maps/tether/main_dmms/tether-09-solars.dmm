@@ -702,10 +702,6 @@
 "bL" = (
 /turf/unsimulated/dark_filler,
 /area/tether/outpost/solars_outside)
-"bP" = (
-/obj/structure/symbol/em,
-/turf/simulated/wall,
-/area/tether/outpost/solars_shed)
 "bQ" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
@@ -25244,7 +25240,7 @@ au
 aF
 aM
 aU
-bP
+au
 bk
 bj
 ad

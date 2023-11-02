@@ -3823,9 +3823,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
 /obj/random/junk,
-/obj/structure/symbol/lo{
-	pixel_x = -32
-	},
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "ahZ" = (
@@ -3868,9 +3865,6 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "aic" = (
-/obj/structure/symbol/lo{
-	pixel_y = 32
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -17763,9 +17757,6 @@
 	icon_state = "16-0"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/symbol/da{
-	pixel_y = 32
-	},
 /turf/simulated/floor,
 /area/maintenance/station/bridge)
 "bxe" = (

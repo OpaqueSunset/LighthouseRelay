@@ -1930,9 +1930,6 @@
 /obj/structure/hygiene/toilet{
 	pixel_y = 16
 	},
-/obj/structure/symbol/lo{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/recreation_area_restroom)
 "fl" = (
@@ -3854,9 +3851,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
-/obj/structure/symbol/lo{
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "iJ" = (
@@ -18723,10 +18717,6 @@
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/tether/surface)
-"Ju" = (
-/obj/structure/symbol/es,
-/turf/simulated/shuttle/wall,
-/area/shuttle/tether/surface)
 "Jv" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 1
@@ -18752,10 +18742,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/shuttle/black,
-/area/shuttle/tether/surface)
-"JA" = (
-/obj/structure/symbol/da,
-/turf/simulated/shuttle/wall,
 /area/shuttle/tether/surface)
 "JB" = (
 /obj/structure/disposalpipe/segment,
@@ -39385,9 +39371,9 @@ ts
 IY
 Ji
 Ji
-Ju
+Ji
 Jw
-JA
+Ji
 Ji
 Ji
 IY

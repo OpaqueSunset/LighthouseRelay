@@ -14819,10 +14819,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
 /area/quartermaster/qm)
-"zN" = (
-/obj/structure/symbol/pr,
-/turf/simulated/wall,
-/area/quartermaster/qm)
 "zO" = (
 /turf/simulated/wall,
 /area/quartermaster/storage)
@@ -42654,7 +42650,7 @@ wH
 vl
 xZ
 yW
-zN
+zL
 AN
 zL
 CH

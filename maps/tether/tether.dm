@@ -71,7 +71,6 @@
 	#include "atoms/unimplemented/books.dm"
 	#include "atoms/unimplemented/benches.dm"
 	#include "atoms/unimplemented/clothing.dm"
-	#include "atoms/unimplemented/decals.dm"
 	#include "atoms/unimplemented/signs.dm"
 	#include "atoms/unimplemented/turfs.dm"
 	#include "atoms/unimplemented/weapons.dm"

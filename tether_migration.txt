@@ -929,3 +929,4 @@
 /obj/machinery/mineral/equipment_vendor/@SUBTYPES : @DELETE
 /obj/machinery/fitness/punching_bag/clown : /obj/structure/fitness/punchingbag
 /obj/machinery/particle_smasher : @DELETE
+/obj/structure/symbol/@SUBTYPES : @DELETE

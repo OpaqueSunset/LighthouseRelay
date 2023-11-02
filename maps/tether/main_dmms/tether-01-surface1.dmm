@@ -5397,24 +5397,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
-"ajW" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/lightgrey/border{
-	dir = 4
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals7{
-	dir = 10
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals7{
-	dir = 9
-	},
-/obj/structure/symbol/es{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled,
-/area/tether/surfacebase/atrium_one)
 "ajX" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -24750,17 +24732,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
-"bwU" = (
-/obj/structure/table,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
-/obj/random/tech_supply,
-/obj/structure/symbol/sa{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/storage/primary)
 "bwY" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -29438,10 +29409,6 @@
 /obj/machinery/door/window/eastleft,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
-"ctU" = (
-/obj/structure/symbol/sa,
-/turf/simulated/wall,
-/area/vacant/vacant_bar)
 "czo" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 9
@@ -44016,7 +43983,7 @@ boO
 jcB
 cEc
 aeW
-bwU
+afr
 aoA
 aqi
 agz
@@ -47371,7 +47338,7 @@ aKF
 aLX
 poA
 poA
-ctU
+aMj
 aMj
 aMj
 aMj
@@ -49641,7 +49608,7 @@ aah
 agM
 air
 ayk
-ajW
+akF
 awZ
 aCH
 akF

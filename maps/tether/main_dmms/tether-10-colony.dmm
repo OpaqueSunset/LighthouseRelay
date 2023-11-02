@@ -7161,7 +7161,7 @@
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/machinery/computer/transhuman,
+/obj/machinery/computer/transhuman/resleeving,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
