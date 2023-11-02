@@ -69,7 +69,7 @@
 		if(!check_state_in_icon(check_state, check_icon, TRUE))
 			failures += "[sign] - missing icon_state '[check_state]' in icon '[check_icon]"
 	if(failures.len)
-		fail("Signs with missing icon states: [english_list(failures)]")
+		fail("Signs with missing icon states:\n\t-[jointext(failures, "\n\t-")]")
 	else
 		pass("All signs have valid icon states.")
 	return 1
@@ -97,7 +97,7 @@
 		if(!check_state_in_icon(check_state, check_icon, TRUE))
 			failures += "[decal] - missing icon_state '[check_state]' in icon '[check_icon]"
 	if(failures.len)
-		fail("Decals with missing icon states: [english_list(failures)]")
+		fail("Decals with missing icon states:\n\t-[jointext(failures, "\n\t-")]")
 	else
 		pass("All decals have valid icon states.")
 	return 1
