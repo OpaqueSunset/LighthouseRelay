@@ -40,9 +40,6 @@
 		var/datum/level_data/L = SSmapping.levels_by_z[z]
 		if(L.level_id == owner.surface_level_id && owner.surface_area)
 			ChangeArea(src, owner.surface_area)
-		//Otherwise fall back to the level_data's base_area
-		else if(L.base_area)
-			ChangeArea(src, L.get_base_area_instance())
 
 	. = ..(mapload)	// second param is our own, don't pass to children
 

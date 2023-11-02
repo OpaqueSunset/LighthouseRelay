@@ -299,7 +299,7 @@
 	var/endx  = level_inner_min_x + level_inner_width
 	var/endy  = level_inner_min_y + level_inner_height
 	for(var/gen_type in level_generators)
-		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE, get_base_area_instance())
+		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE)
 
 ///Apply the parent entity's map generators. (Planets generally)
 ///This proc is to give a chance to level_data subtypes to individually chose to ignore the parent generators.
@@ -311,7 +311,7 @@
 	var/endx  = level_inner_min_x + level_inner_width
 	var/endy  = level_inner_min_y + level_inner_height
 	for(var/gen_type in map_gen)
-		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE, get_base_area_instance())
+		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE)
 
 ///Called during level setup. Run anything that should happen only after the map is fully generated.
 /datum/level_data/proc/after_generate_level()
