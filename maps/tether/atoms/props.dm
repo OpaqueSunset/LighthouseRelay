@@ -212,9 +212,8 @@
 	icon = 'maps/tether/icons/obj/power_cond_heavy.dmi'
 	stack_merge_type = /obj/item/stack/cable_coil/heavyduty
 	cable_type = /obj/structure/cable/heavyduty
-
-/obj/item/stack/cable_coil/heavyduty/Initialize(mapload, c_length, param_color)
-	return ..(mapload, c_length, null) // no cable color
+	color = null
+	can_have_color = FALSE
 
 /obj/structure/cable/heavyduty
 	icon = 'maps/tether/icons/obj/power_cond_heavy.dmi'
@@ -222,6 +221,7 @@
 	desc = "This cable is tough. It cannot be cut with simple hand tools."
 	cable_type = /obj/item/stack/cable_coil/heavyduty
 	color = null
+	can_have_color = FALSE
 
 #define IS_TOOL_WITH_QUALITY(A, T, Q)     (isatom(A) && A.get_tool_quality(T) >= Q)
 /obj/structure/cable/heavyduty/attackby(obj/item/item, mob/user)
@@ -248,6 +248,3 @@
 		to_chat(user, SPAN_WARNING("\The [src] can't connect at that angle!"))
 		return FALSE
 	return ..(F, user, d1, d2)
-
-/obj/structure/cable/heavyduty/cableColor(colorC)
-	return
