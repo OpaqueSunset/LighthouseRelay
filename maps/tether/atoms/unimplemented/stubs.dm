@@ -97,6 +97,7 @@
 	construct_state = /decl/machine_construction/default/panel_closed
 	base_type = /obj/machinery/cash_register
 /obj/item/stock_parts/circuitboard/cash_register
+	board_type = "machine"
 	build_path = /obj/machinery/cash_register
 	origin_tech = "{'programming':1}"
 /datum/fabricator_recipe/imprinter/circuit/cash_register
@@ -255,16 +256,19 @@
 /datum/fabricator_recipe/imprinter/circuit/diseasesplicer
 	path = /obj/item/stock_parts/circuitboard/diseasesplicer
 /obj/item/stock_parts/circuitboard/diseaseanalyser
+	board_type = "machine"
 	build_path = /obj/machinery/disease2/diseaseanalyser
 	origin_tech = "{'biotech':2}"
 /datum/fabricator_recipe/imprinter/circuit/diseaseanalyzer
 	path = /obj/item/stock_parts/circuitboard/diseaseanalyser
 /obj/item/stock_parts/circuitboard/viroincubator
+	board_type = "machine"
 	build_path = /obj/machinery/disease2/incubator
 	origin_tech = "{'biotech':2}"
 /datum/fabricator_recipe/imprinter/circuit/viroincubator
 	path = /obj/item/stock_parts/circuitboard/viroincubator
 /obj/item/stock_parts/circuitboard/viroisolator
+	board_type = "machine"
 	build_path = /obj/machinery/disease2/isolator
 	origin_tech = "{'biotech':2}"
 /datum/fabricator_recipe/imprinter/circuit/viroisolator

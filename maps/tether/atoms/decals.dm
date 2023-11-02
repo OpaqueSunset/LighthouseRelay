@@ -1,7 +1,7 @@
 /obj/effect/floor_decal/sign
 	name = "floor sign"
 /obj/effect/floor_decal/sign/dock
-	icon = 'maps/tether/icons/turf/flooring/decals.dmi'
+	icon = 'maps/tether/icons/obj/floor_decals.dmi'
 	icon_state = "white_d"
 /obj/effect/floor_decal/sign/dock/one
 	icon_state = "white_d1"
@@ -20,7 +20,7 @@
 	icon_state = "dangercorner"
 // Decal icon edits
 /obj/effect/floor_decal/steeldecal
-	icon = 'maps/tether/icons/turf/flooring/decals.dmi'
+	icon = 'maps/tether/icons/obj/floor_decals.dmi'
 	color = null
 
 /obj/effect/floor_decal/derelict

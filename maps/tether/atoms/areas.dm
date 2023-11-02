@@ -117,11 +117,6 @@
 	icon_state = "head_quarters"
 	req_access = list(access_hop)
 
-/area/crew_quarters/heads/hor
-	name = "Research - RD's Office"
-	icon_state = "head_quarters"
-	req_access = list(access_rd)
-
 /area/crew_quarters/heads/chief
 	name = "Engineering - CE's Office"
 	icon_state = "head_quarters"
@@ -1166,8 +1161,6 @@
 	name = "\improper Security Upper Maintenance"
 /area/maintenance/station/micro
 	name = "\improper Micro Maintenance"
-/area/maintenance/station/virology
-	name = "\improper Virology Maintenance"
 /area/maintenance/station/ai
 	name = "\improper AI Maintenance"
 	sound_env = SEWER_PIPE
@@ -1615,5 +1608,3 @@
 /area/crew_quarters/visitor_laundry
 	name = "\improper Visitor Laundry"
 	icon_state = "visitor_laundry"
-
-/area/shuttle/belter/transit
