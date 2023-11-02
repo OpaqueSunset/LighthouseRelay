@@ -9501,7 +9501,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/department/bar,
+/obj/structure/sign/department/tether/bar,
 /turf/simulated/floor/plating,
 /area/crew_quarters/bar)
 "th" = (
@@ -15943,7 +15943,7 @@
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
-/obj/structure/sign/department/robo{
+/obj/structure/sign/department/tether/robo{
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -16683,7 +16683,7 @@
 /area/hallway/lower/third_south)
 "Fm" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/sign/department/robo{
+/obj/structure/sign/department/tether/robo{
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -17205,7 +17205,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "Gh" = (
-/obj/structure/sign/department/bar{
+/obj/structure/sign/department/tether/bar{
 	pixel_x = 32
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6,
@@ -17715,7 +17715,7 @@
 /area/rnd/research/testingrange)
 "Hm" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/structure/sign/department/robo{
+/obj/structure/sign/department/tether/robo{
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
@@ -17988,7 +17988,7 @@
 "HS" = (
 /obj/machinery/camera/network/research,
 /obj/structure/flora/pottedplant/stoutbush,
-/obj/structure/sign/department/robo{
+/obj/structure/sign/department/tether/robo{
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -18460,7 +18460,7 @@
 /area/rnd/hallway)
 "IN" = (
 /obj/structure/flora/pottedplant/stoutbush,
-/obj/structure/sign/department/robo{
+/obj/structure/sign/department/tether/robo{
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloor{

@@ -118,7 +118,7 @@
 /obj/effect/floor_decal/corner_oldtile/green
 	color = "#46725c"
 /obj/effect/floor_decal/corner_oldtile/green/full
-	icon_state = "corner_oldtile_ful"
+	icon_state = "corner_oldtile_full"
 /obj/effect/floor_decal/corner/lightorange
 	name = "light orange corner"
 	color = "#ed983d"

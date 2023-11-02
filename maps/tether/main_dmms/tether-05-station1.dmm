@@ -3996,7 +3996,7 @@
 /turf/simulated/wall/r_wall,
 /area/tether/station/explorer_prep)
 "aiw" = (
-/obj/structure/sign/department/biblio,
+/obj/structure/sign/department/tether/biblio,
 /turf/simulated/wall,
 /area/library)
 "aix" = (
@@ -5669,7 +5669,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "anl" = (
-/obj/structure/sign/department/engine,
+/obj/structure/sign/department/tether/engine,
 /turf/simulated/wall/r_wall,
 /area/engineering/hallway)
 "ano" = (
@@ -10887,7 +10887,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "aDy" = (
-/obj/structure/sign/department/conference_room,
+/obj/structure/sign/department/tether/conference_room,
 /turf/simulated/wall/r_wall,
 /area/bridge_hallway)
 "aDz" = (

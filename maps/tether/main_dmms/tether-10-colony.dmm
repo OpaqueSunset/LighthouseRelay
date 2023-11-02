@@ -6488,7 +6488,7 @@
 /area/centcom/command)
 "mL" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/sign/department/commander,
+/obj/structure/sign/department/tether/commander,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -6986,7 +6986,7 @@
 /turf/unsimulated/wall,
 /area/centcom/command)
 "nL" = (
-/obj/structure/sign/department/commander,
+/obj/structure/sign/department/tether/commander,
 /turf/unsimulated/wall,
 /area/centcom/security)
 "nM" = (
@@ -8438,7 +8438,7 @@
 	},
 /area/centcom/medical)
 "qw" = (
-/obj/structure/sign/department/operational,
+/obj/structure/sign/department/tether/operational,
 /turf/unsimulated/wall,
 /area/centcom/medical)
 "qx" = (
@@ -8992,7 +8992,7 @@
 /turf/unsimulated/wall,
 /area/centcom/security)
 "rA" = (
-/obj/structure/sign/department/prison,
+/obj/structure/sign/department/tether/prison,
 /turf/unsimulated/wall,
 /area/centcom/security)
 "rB" = (
@@ -10267,7 +10267,7 @@
 /area/centcom/main_hall)
 "ue" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/sign/department/medbay,
+/obj/structure/sign/department/tether/medbay,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -12709,7 +12709,7 @@
 /area/centcom/security)
 "yw" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
-/obj/structure/sign/department/interrogation,
+/obj/structure/sign/department/tether/interrogation,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -12842,7 +12842,7 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "yJ" = (
-/obj/structure/sign/department/bar,
+/obj/structure/sign/department/tether/bar,
 /turf/unsimulated/wall,
 /area/centcom/restaurant)
 "yK" = (

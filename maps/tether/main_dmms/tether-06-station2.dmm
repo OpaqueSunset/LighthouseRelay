@@ -5483,7 +5483,7 @@
 /turf/simulated/wall/r_wall,
 /area/maintenance/station/sec_lower)
 "kl" = (
-/obj/structure/sign/department/chapel,
+/obj/structure/sign/department/tether/chapel,
 /turf/simulated/wall,
 /area/chapel/main)
 "km" = (
@@ -6500,7 +6500,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ai_upload_foyer)
 "mx" = (
-/obj/structure/sign/department/ai,
+/obj/structure/sign/department/tether/ai,
 /turf/simulated/wall/r_wall,
 /area/ai_upload_foyer)
 "my" = (
@@ -12453,7 +12453,7 @@
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "xg" = (
-/obj/structure/sign/department/morgue,
+/obj/structure/sign/department/tether/morgue,
 /turf/simulated/wall,
 /area/medical/morgue)
 "xh" = (
@@ -13415,7 +13415,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
 "yX" = (
-/obj/structure/sign/department/virology,
+/obj/structure/sign/department/tether/virology,
 /turf/simulated/wall/r_wall,
 /area/medical/virologyaccess)
 "yY" = (

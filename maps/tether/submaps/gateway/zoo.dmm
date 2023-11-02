@@ -348,10 +348,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
-"bd" = (
-/obj/structure/symbol/pr,
-/turf/simulated/shuttle/wall,
-/area/awaymission/zoo/pirateship)
 "be" = (
 /obj/machinery/button/alternate/door{
 	pixel_y = -24;
@@ -2582,12 +2578,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
-"hB" = (
-/obj/structure/symbol/em{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/awaymission/zoo)
 "hC" = (
 /obj/structure/grille,
 /obj/structure/window/borosilicate_reinforced{
@@ -3309,12 +3299,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
-"jc" = (
-/obj/structure/symbol/es{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
-/area/awaymission/zoo)
 "jd" = (
 /obj/structure/grille,
 /obj/structure/window/borosilicate_reinforced{
@@ -3346,12 +3330,6 @@
 	name = "robust borosilicate window"
 	},
 /turf/simulated/floor/plating,
-/area/awaymission/zoo)
-"jf" = (
-/obj/structure/symbol/sa{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "jg" = (
 /obj/structure/grille,
@@ -4851,10 +4829,6 @@
 "nj" = (
 /obj/structure/flora/bush/fernybush,
 /turf/simulated/floor/holofloor/grass,
-/area/awaymission/zoo)
-"nk" = (
-/obj/structure/symbol/da,
-/turf/simulated/wall,
 /area/awaymission/zoo)
 "nl" = (
 /obj/structure/flora/bush/stalkybush,
@@ -7713,10 +7687,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/awaymission/zoo)
-"up" = (
-/obj/structure/symbol/sa,
-/turf/simulated/wall,
-/area/awaymission/zoo)
 "uq" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced,
@@ -8429,12 +8399,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/zoo)
-"wi" = (
-/obj/structure/symbol/lo{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled,
-/area/awaymission/zoo)
 "wj" = (
 /obj/machinery/door/window/brigdoor/southleft,
 /obj/structure/window/reinforced{
@@ -8514,12 +8478,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
-"wu" = (
-/obj/structure/symbol/gu{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled,
-/area/awaymission/zoo)
 "wv" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
@@ -8538,12 +8496,6 @@
 "wz" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor,
-/area/awaymission/zoo)
-"wA" = (
-/obj/structure/symbol/pr{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "wB" = (
 /obj/structure/table/steel_reinforced,
@@ -8604,12 +8556,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo)
-"wM" = (
-/obj/structure/symbol/gu{
-	pixel_x = -32
-	},
-/turf/simulated/floor/tiled,
-/area/awaymission/zoo)
 "wN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/floodlight,
@@ -8644,14 +8590,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo)
-"wT" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/abstract/landmark/loot_spawn,
-/obj/structure/symbol/da{
-	pixel_x = -32
-	},
-/turf/simulated/floor/plating,
-/area/awaymission/zoo)
 "wU" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -8676,12 +8614,6 @@
 /obj/item/paper/zoo,
 /obj/item/paper/zoo/pirate/nebula,
 /turf/simulated/floor/tiled/dark,
-/area/awaymission/zoo)
-"wY" = (
-/obj/structure/symbol/da{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled,
 /area/awaymission/zoo)
 "wZ" = (
 /obj/machinery/floodlight,
@@ -13889,7 +13821,7 @@ hC
 hI
 gP
 gP
-jc
+hq
 hq
 hq
 hq
@@ -15092,7 +15024,7 @@ ad
 aB
 al
 gF
-bd
+ad
 gP
 hb
 gP
@@ -15686,7 +15618,7 @@ aa
 ad
 aN
 aW
-bd
+ad
 ad
 bv
 bO
@@ -21331,7 +21263,7 @@ rx
 rx
 rx
 rD
-nk
+gP
 hq
 hq
 hq
@@ -26240,7 +26172,7 @@ rP
 rO
 rP
 rO
-nk
+gP
 hq
 hq
 hq
@@ -27452,7 +27384,7 @@ hq
 hq
 hq
 hq
-nk
+gP
 rO
 rP
 rO
@@ -29734,7 +29666,7 @@ hq
 hq
 hq
 hq
-wu
+hq
 hq
 wL
 hq
@@ -33683,7 +33615,7 @@ kE
 hc
 hc
 vw
-nk
+gP
 hq
 hq
 hq
@@ -36490,7 +36422,7 @@ hq
 hq
 wt
 hq
-wM
+hq
 hq
 hq
 hq
@@ -38449,7 +38381,7 @@ hC
 hI
 gP
 gP
-jf
+hq
 hq
 hq
 hq
@@ -39784,7 +39716,7 @@ kE
 tN
 tN
 tN
-up
+gP
 hq
 hq
 hq
@@ -42017,7 +41949,7 @@ hq
 hq
 hq
 wL
-wY
+hq
 hq
 hq
 hq
@@ -46314,7 +46246,7 @@ vG
 wg
 wg
 vI
-wT
+wg
 wg
 vG
 hq
@@ -48767,7 +48699,7 @@ hq
 hq
 hq
 hq
-wi
+hq
 wt
 hq
 hq
@@ -50729,26 +50661,26 @@ hC
 hI
 gP
 gP
-hB
-hq
-hq
-hq
-gP
-jM
-jM
-jM
-jM
-jM
-jM
-jM
-jM
-jM
-gP
 hq
 hq
 hq
 hq
 gP
+jM
+jM
+jM
+jM
+jM
+jM
+jM
+jM
+jM
+gP
+hq
+hq
+hq
+hq
+gP
 nD
 nD
 nD
@@ -50764,7 +50696,7 @@ nD
 nD
 nD
 nD
-nk
+gP
 hq
 hq
 hq
@@ -50872,7 +50804,7 @@ qK
 qK
 qK
 qK
-nk
+gP
 hq
 hq
 hq
@@ -51976,7 +51908,7 @@ hq
 hq
 hq
 hq
-nk
+gP
 nD
 nD
 nD
@@ -52084,7 +52016,7 @@ hq
 hq
 hq
 hq
-nk
+gP
 qK
 qK
 qK
@@ -54294,7 +54226,7 @@ hq
 hq
 hq
 hq
-wA
+hq
 hq
 wL
 hq
@@ -58207,7 +58139,7 @@ rx
 rx
 rx
 rD
-nk
+gP
 hq
 hq
 hq
@@ -63602,7 +63534,7 @@ aa
 gP
 hb
 gP
-hB
+hq
 hq
 hq
 hn

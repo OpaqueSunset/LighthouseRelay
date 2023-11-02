@@ -16729,7 +16729,7 @@
 /turf/simulated/wall,
 /area/tether/station/stairs_three)
 "Dj" = (
-/obj/structure/sign/department/medbay,
+/obj/structure/sign/department/tether/medbay,
 /turf/simulated/wall,
 /area/medical/reception)
 "Dk" = (
@@ -16787,7 +16787,7 @@
 	},
 /area/medical/reception)
 "Do" = (
-/obj/structure/sign/department/medbay,
+/obj/structure/sign/department/tether/medbay,
 /turf/simulated/wall/r_wall,
 /area/medical/chemistry)
 "Dp" = (
@@ -16804,7 +16804,7 @@
 /turf/simulated/floor/plating,
 /area/medical/chemistry)
 "Dr" = (
-/obj/structure/sign/department/operational,
+/obj/structure/sign/department/tether/operational,
 /turf/simulated/wall,
 /area/medical/surgery_hallway)
 "Ds" = (

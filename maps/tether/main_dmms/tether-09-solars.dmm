@@ -9384,7 +9384,7 @@
 /turf/simulated/wall/r_lead,
 /area/outpost/research/materials_chamber)
 "On" = (
-/obj/structure/sign/department/toxins,
+/obj/structure/sign/department/tether/toxins,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -11094,7 +11094,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "ZA" = (
-/obj/structure/sign/department/toxins,
+/obj/structure/sign/department/tether/toxins,
 /turf/simulated/wall,
 /area/outpost/research/toxins_misc_lab)
 "ZI" = (

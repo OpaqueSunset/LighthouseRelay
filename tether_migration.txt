@@ -47,6 +47,22 @@
 /obj/structure/sign/science : /obj/structure/sign/department/science_2{@OLD}
 /obj/structure/sign/signnew/secure : /obj/structure/sign/warning/secure_area{@OLD}
 /obj/structure/sign/xenobio : /obj/structure/sign/department/xenobio_3{@OLD}
+/obj/structure/sign/department/ai : /obj/structure/sign/department/tether/ai{@OLD}
+/obj/structure/sign/department/bar : /obj/structure/sign/department/tether/bar{@OLD}
+/obj/structure/sign/department/biblio : /obj/structure/sign/department/tether/biblio{@OLD}
+/obj/structure/sign/department/chapel : /obj/structure/sign/department/tether/chapel{@OLD}
+/obj/structure/sign/department/commander : /obj/structure/sign/department/tether/commander{@OLD}
+/obj/structure/sign/department/conference_room : /obj/structure/sign/department/tether/conference_room{@OLD}
+/obj/structure/sign/department/engine : /obj/structure/sign/department/tether/engine{@OLD}
+/obj/structure/sign/department/interrogation : /obj/structure/sign/department/tether/interrogation{@OLD}
+/obj/structure/sign/department/medbay : /obj/structure/sign/department/tether/medbay{@OLD}
+/obj/structure/sign/department/morgue : /obj/structure/sign/department/tether/morgue{@OLD}
+/obj/structure/sign/department/operational : /obj/structure/sign/department/tether/operational{@OLD}
+/obj/structure/sign/department/prison : /obj/structure/sign/department/tether/prison{@OLD}
+/obj/structure/sign/department/robo : /obj/structure/sign/department/tether/robo{@OLD}
+/obj/structure/sign/department/toxins : /obj/structure/sign/department/tether/toxins{@OLD}
+/obj/structure/sign/department/virology : /obj/structure/sign/department/tether/virology{@OLD}
+/obj/structure/sign/department/xenolab : /obj/structure/sign/department/tether/xenolab{@OLD}
 
 /obj/item/stack/cable_coil/random_belt : /obj/item/stack/cable_coil/random
 

@@ -16121,7 +16121,7 @@
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 9
 	},
-/obj/structure/sign/department/xenolab{
+/obj/structure/sign/department/tether/xenolab{
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,

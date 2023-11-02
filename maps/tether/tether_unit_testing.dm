@@ -26,7 +26,7 @@
 		/area/space = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/exoplanet = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/tether/surfacebase/outside = NO_SCRUBBER|NO_VENT|NO_APC,
-		/area/tether/surfacebase/outside/outside1 = NO_SCRUBBER|NO_VENT,
+		/area/tether/surfacebase/outside/outside1 = NO_SCRUBBER|NO_VENT|NO_APC,
 		/area/maintenance/lower/atmos = NO_SCRUBBER|NO_VENT,
 		/area/engineering/atmos/intake = NO_SCRUBBER,
 		/area/rnd/external = NO_SCRUBBER|NO_VENT,
