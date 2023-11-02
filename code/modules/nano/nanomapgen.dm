@@ -65,12 +65,13 @@
 	for(var/WorldX = startX, WorldX <= endX, WorldX++)
 		for(var/WorldY = startY, WorldY <= endY, WorldY++)
 
-			var/atom/Turf = locate(WorldX, WorldY, currentZ)?.resolve_to_actual_turf()
+			var/turf/Turf = locate(WorldX, WorldY, currentZ)
+			Turf = Turf.resolve_to_actual_turf()
 
 			var/icon/TurfIcon = new(Turf.icon, Turf.icon_state, dir = Turf.dir)
 			TurfIcon.Scale(NANOMAP_ICON_SIZE, NANOMAP_ICON_SIZE)
 
-			Tile.Blend(TurfIcon, ICON_OVERLAY, ((WorldX - 1) * NANOMAP_ICON_SIZE), ((WorldY - 1) * NANOMAP_ICON_SIZE))
+			Tile.Blend(TurfIcon, ICON_OVERLAY, ((WorldX - startX) * NANOMAP_ICON_SIZE), ((WorldY - startY) * NANOMAP_ICON_SIZE))
 
 			count++
 
