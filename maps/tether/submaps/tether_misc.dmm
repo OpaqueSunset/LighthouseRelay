@@ -1889,7 +1889,7 @@
 	pixel_y = -5
 	},
 /obj/item/storage/box/syringes,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -1952,7 +1952,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -1960,7 +1960,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -1973,7 +1973,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2071,7 +2071,7 @@
 	pixel_x = -12;
 	pixel_y = 8
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2085,7 +2085,7 @@
 /obj/structure/table/steel,
 /obj/item/tank/oxygen,
 /obj/item/tank/oxygen,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2097,7 +2097,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2184,14 +2184,14 @@
 	dir = 8
 	},
 /obj/structure/iv_drip,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Az" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2244,7 +2244,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2320,7 +2320,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2404,7 +2404,7 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2464,7 +2464,7 @@
 	},
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/surgery,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2480,7 +2480,7 @@
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2522,7 +2522,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2595,7 +2595,7 @@
 "QH" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/optable,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2616,7 +2616,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2637,7 +2637,7 @@
 /area/holodeck/holodorm/source_phoron)
 "Tz" = (
 /obj/effect/floor_decal/industrial/outline/red,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2660,13 +2660,13 @@
 	name = "Station Intercom (General)";
 	pixel_y = 21
 	},
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
 "Uq" = (
 /obj/effect/floor_decal/industrial/loading,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)
@@ -2684,7 +2684,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/surgery,
-/turf/simulated/floor/tiled/steel{
+/turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
 /area/holodeck/holodorm/source_zaddat)

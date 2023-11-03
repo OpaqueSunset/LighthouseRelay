@@ -1,0 +1,7 @@
+# Pull Request 28: Repath some turf types
+/turf/simulated/floor/carpet/bcarpet : /turf/simulated/floor/carpet/blue{@OLD}
+/turf/simulated/floor/carpet/oracarpet : /turf/simulated/floor/carpet/orange{@OLD}
+/turf/simulated/floor/carpet/purcarpet : /turf/simulated/floor/carpet/purple{@OLD}
+/turf/simulated/floor/carpet/sblucarpet : /turf/simulated/floor/carpet/blue3{@OLD}
+/turf/simulated/floor/carpet/turcarpet : /turf/simulated/floor/carpet/blue2{@OLD}
+/turf/simulated/floor/tiled/steel : /turf/simulated/floor/tiled{@OLD}

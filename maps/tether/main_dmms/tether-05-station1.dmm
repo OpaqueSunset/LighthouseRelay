@@ -195,7 +195,7 @@
 /obj/item/chems/drinks/flask{
 	pixel_x = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/crew_quarters/captain)
 "aaC" = (
 /obj/machinery/power/grid_checker,
@@ -4198,7 +4198,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "aiT" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
@@ -4217,7 +4217,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajb" = (
 /obj/structure/bookcase{
@@ -4263,13 +4263,13 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/super,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajj" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajk" = (
 /obj/structure/cable/green{
@@ -4278,7 +4278,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4337,14 +4337,14 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajs" = (
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajt" = (
 /obj/structure/grille,
@@ -4393,7 +4393,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajB" = (
 /obj/structure/cable/green{
@@ -4463,7 +4463,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajK" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -4540,7 +4540,7 @@
 /obj/item/camera/tvcamera,
 /obj/item/camera/tvcamera,
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajV" = (
 /obj/structure/closet,
@@ -4549,7 +4549,7 @@
 /obj/item/pen/invisible,
 /obj/item/pen/invisible,
 /obj/item/pen/invisible,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ajW" = (
 /obj/machinery/newscaster{
@@ -4572,7 +4572,7 @@
 /area/library)
 "akc" = (
 /obj/machinery/vending/snack,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "ake" = (
 /obj/structure/cable/green{
@@ -4705,7 +4705,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "aku" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4718,7 +4718,7 @@
 /obj/machinery/door/morgue{
 	name = "Private Study"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4727,13 +4727,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akx" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4747,14 +4747,14 @@
 	pixel_x = 32;
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "aky" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -4784,7 +4784,7 @@
 "akE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akF" = (
 /obj/machinery/firealarm{
@@ -4802,15 +4802,15 @@
 	dir = 1
 	},
 /obj/item/taperecorder,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akG" = (
 /obj/machinery/light/small,
 /obj/machinery/vending/cola,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akH" = (
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -4922,7 +4922,7 @@
 	pixel_y = -30;
 	dir = 1
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akV" = (
 /obj/structure/table/woodentable,
@@ -4934,7 +4934,7 @@
 	pixel_x = 1;
 	pixel_y = 5
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "akW" = (
 /obj/structure/cable/green{
@@ -13407,7 +13407,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "aQl" = (
 /obj/machinery/power/apc{
@@ -13593,7 +13593,7 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "aRX" = (
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "aRZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -13646,7 +13646,7 @@
 	name = "CE Office Door Control";
 	pixel_x = 26
 	},
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "aSo" = (
 /obj/abstract/landmark/latejoin/cryo,
@@ -13742,7 +13742,7 @@
 /area/crew_quarters/sleep/engi_wash)
 "aTm" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "aTA" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
@@ -13854,7 +13854,7 @@
 	},
 /obj/item/folder/yellow,
 /obj/item/pen/multi,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "aTW" = (
 /obj/machinery/alarm{
@@ -14505,7 +14505,7 @@
 	},
 /obj/item/clothing/glasses/welding/superior,
 /obj/item/flashlight/lamp,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "baI" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
@@ -14743,7 +14743,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/structure/table/reinforced,
 /obj/item/stamp/ce,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "bcp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -14764,7 +14764,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "bcs" = (
 /obj/structure/filing_cabinet/tall,
@@ -14778,7 +14778,7 @@
 	dir = 9
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "bcx" = (
 /obj/structure/cable/green{
@@ -15597,7 +15597,7 @@
 /area/hallway/station/atrium)
 "bfT" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "bfW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -18472,7 +18472,7 @@
 	pixel_x = -22
 	},
 /obj/structure/bed/chair/comfy/brown,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/crew_quarters/captain)
 "bFQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -18582,7 +18582,7 @@
 /turf/simulated/floor/plating,
 /area/tether/station/dock_two)
 "bGQ" = (
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/crew_quarters/captain)
 "bGW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -20208,7 +20208,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/crew_quarters/captain)
 "fOH" = (
 /obj/machinery/light{
@@ -20682,7 +20682,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/crew_quarters/captain)
 "ksm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -21055,7 +21055,7 @@
 /obj/abstract/landmark/start{
 	name = "Librarian"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "mnV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -21069,7 +21069,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "mtd" = (
 /obj/structure/table/woodentable,
@@ -21960,7 +21960,7 @@
 /obj/structure/bed/chair/comfy/brown{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/library)
 "rCG" = (
 /obj/effect/floor_decal/borderfloor/corner{
@@ -22361,7 +22361,7 @@
 /area/tether/station/explorer_entry)
 "ufh" = (
 /mob/living/simple_animal/hostile/retaliate/parrot/Poly,
-/turf/simulated/floor/carpet/oracarpet,
+/turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "ugd" = (
 /obj/machinery/light{

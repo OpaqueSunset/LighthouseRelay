@@ -72,13 +72,6 @@
 /obj/structure/hygiene/sink,
 /turf/simulated/wall/virgo2,
 /area/submap/virgo2/Manor1)
-"aq" = (
-/turf/simulated/floor/carpet/bcarpet,
-/area/submap/virgo2/Manor1)
-"ar" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/bcarpet,
-/area/submap/virgo2/Manor1)
 "as" = (
 /obj/structure/door/wood,
 /turf/simulated/floor/holofloor/wood,
@@ -183,7 +176,7 @@
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aQ" = (
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 "aR" = (
 /obj/structure/table,
@@ -442,7 +435,7 @@
 /area/submap/virgo2/Manor1)
 "bN" = (
 /obj/structure/door/wood,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 "bO" = (
 /obj/machinery/icecream_vat,
@@ -471,7 +464,7 @@
 /area/submap/virgo2/Manor1)
 "bU" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 "bV" = (
 /turf/simulated/floor/holofloor/wood{
@@ -559,7 +552,7 @@
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cl" = (
-/turf/simulated/floor/carpet/turcarpet,
+/turf/simulated/floor/carpet/blue2,
 /area/submap/virgo2/Manor1)
 "cm" = (
 /obj/effect/decal/cleanable/blood,
@@ -593,7 +586,7 @@
 "cr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 "cs" = (
 /obj/item/twohanded/spear,
@@ -711,7 +704,7 @@
 /area/template_noop)
 "cO" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 "kI" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -719,11 +712,11 @@
 /area/submap/virgo2/Manor1)
 "KY" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/floor/carpet/turcarpet,
+/turf/simulated/floor/carpet/blue2,
 /area/submap/virgo2/Manor1)
 "VR" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/purple,
 /area/submap/virgo2/Manor1)
 
 (1,1,1) = {"
@@ -1236,32 +1229,32 @@ aa
 aa
 ab
 ag
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-ar
-ar
-ar
-ar
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bP
+bP
+bP
+bP
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
 as
 cw
 ab
@@ -1278,8 +1271,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ag
 ag
@@ -1320,8 +1313,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ab
@@ -1362,8 +1355,8 @@ aa
 aa
 ab
 al
-aq
-aq
+bl
+bl
 az
 ab
 aF
@@ -1404,8 +1397,8 @@ aa
 aa
 ab
 am
-ar
-aq
+bP
+bl
 al
 ab
 aG
@@ -1446,8 +1439,8 @@ aa
 aa
 ab
 al
-ar
-aq
+bP
+bl
 al
 ab
 ag
@@ -1488,8 +1481,8 @@ aa
 aa
 ab
 ag
-ar
-aq
+bP
+bl
 ag
 ab
 al
@@ -1530,8 +1523,8 @@ aa
 aa
 ab
 an
-ar
-ar
+bP
+bP
 an
 ab
 aH
@@ -1572,8 +1565,8 @@ aa
 ab
 ab
 an
-ar
-ar
+bP
+bP
 an
 ab
 ab
@@ -1614,8 +1607,8 @@ ab
 ab
 ag
 ag
-ar
-ar
+bP
+bP
 an
 ab
 aI
@@ -1656,8 +1649,8 @@ ac
 ad
 ag
 ag
-ar
-ar
+bP
+bP
 aA
 ab
 aJ
@@ -1698,8 +1691,8 @@ ac
 ae
 ag
 ag
-aq
-ar
+bl
+bP
 aA
 ab
 aJ
@@ -1740,8 +1733,8 @@ ac
 af
 ag
 ag
-ar
-ar
+bP
+bP
 aA
 ab
 ag
@@ -1782,8 +1775,8 @@ ac
 ag
 ag
 an
-ar
-ar
+bP
+bP
 ag
 ab
 ag
@@ -1824,8 +1817,8 @@ ab
 ah
 ag
 an
-ar
-ar
+bP
+bP
 an
 ab
 aL
@@ -1866,8 +1859,8 @@ ab
 ai
 ag
 an
-ar
-ar
+bP
+bP
 an
 ab
 aL
@@ -1908,8 +1901,8 @@ ac
 ag
 ag
 an
-ar
-ar
+bP
+bP
 ag
 ab
 ag
@@ -1950,8 +1943,8 @@ ac
 ad
 ag
 ag
-ar
-ar
+bP
+bP
 ag
 ab
 ag
@@ -1992,8 +1985,8 @@ ac
 aj
 ag
 ag
-ar
-ar
+bP
+bP
 ag
 ab
 ag
@@ -2034,8 +2027,8 @@ ac
 af
 ag
 ag
-aq
-ar
+bl
+bP
 ag
 ab
 ag
@@ -2076,8 +2069,8 @@ ab
 ab
 ag
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ah
@@ -2118,8 +2111,8 @@ aa
 ab
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ab
@@ -2160,8 +2153,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ag
@@ -2202,8 +2195,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ag
@@ -2244,8 +2237,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ag
@@ -2286,8 +2279,8 @@ aa
 aa
 ab
 al
-aq
-aq
+bl
+bl
 al
 ab
 ag
@@ -2328,8 +2321,8 @@ aa
 aa
 ab
 al
-aq
-aq
+bl
+bl
 al
 ab
 ag
@@ -2370,8 +2363,8 @@ aa
 aa
 ab
 al
-aq
-aq
+bl
+bl
 aC
 ab
 aN
@@ -2412,8 +2405,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ab
 ab
@@ -2454,8 +2447,8 @@ aa
 aa
 ab
 ag
-aq
-aq
+bl
+bl
 ag
 ag
 ag
@@ -2496,32 +2489,32 @@ aa
 aa
 ab
 ag
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
-aq
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
+bl
 as
 ag
 cl
