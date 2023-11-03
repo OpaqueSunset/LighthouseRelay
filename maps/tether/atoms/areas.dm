@@ -272,7 +272,6 @@
 /area/shuttle/belter/station
 	name = "Belter Shuttle Landed"
 	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/tiled/asteroid_steel/airless
 
 /area/shuttle/large_escape_pod1/station
 	icon_state = "shuttle2"
