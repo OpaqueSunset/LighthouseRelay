@@ -52,7 +52,6 @@
 		/obj/item/chems/food/egg,
 		/obj/item/chems/food/boiledegg
 		)
-	material = /decl/material/solid/cardboard
 
 /obj/item/storage/fancy/egg_box/WillContain()
 	return list(/obj/item/chems/food/egg = 12)
@@ -73,7 +72,6 @@
 	w_class = ITEM_SIZE_SMALL
 	key_type = /obj/item/chems/food/cracker
 	can_hold = list(/obj/item/chems/food/cracker)
-	material = /decl/material/solid/cardboard
 
 /obj/item/storage/fancy/crackers/WillContain()
 	return list(/obj/item/chems/food/cracker = 6)
@@ -91,7 +89,6 @@
 	max_w_class = ITEM_SIZE_TINY
 	max_storage_space = 6
 	key_type = /obj/item/pen/crayon
-	material = /decl/material/solid/cardboard
 
 /obj/item/storage/fancy/crayons/WillContain()
 	return list(
@@ -127,9 +124,8 @@
 	max_storage_space = 6
 	throwforce = 2
 	slot_flags = SLOT_LOWER_BODY
-	material = /decl/material/solid/cardboard
 	key_type = /obj/item/clothing/mask/smokable/cigarette
-	atom_flags = ATOM_FLAG_NO_REACT | ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_TEMP_CHANGE
+	atom_flags = ATOM_FLAG_NO_CHEM_CHANGE | ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_TEMP_CHANGE
 
 /obj/item/storage/fancy/cigarettes/WillContain()
 	return list(/obj/item/clothing/mask/smokable/cigarette = 6)
@@ -150,10 +146,10 @@
 	..()
 
 /obj/item/storage/fancy/cigarettes/attack(mob/living/carbon/M, mob/living/carbon/user)
-	if(!istype(M, /mob))
+	if(!ismob(M))
 		return
 
-	if(M == user && user.zone_sel.selecting == BP_MOUTH && contents.len > 0 && !user.get_equipped_item(slot_wear_mask_str))
+	if(M == user && user.get_target_zone() == BP_MOUTH && contents.len > 0 && !user.get_equipped_item(slot_wear_mask_str))
 		// Find ourselves a cig. Note that we could be full of lighters.
 		var/obj/item/clothing/mask/smokable/cigarette/cig = null
 		for(var/obj/item/clothing/mask/smokable/cigarette/C in contents)
@@ -306,7 +302,7 @@
 	storage_slots = 7
 	material = /decl/material/solid/wood/mahogany
 	key_type = /obj/item/clothing/mask/smokable/cigarette/cigar
-	atom_flags = ATOM_FLAG_NO_REACT | ATOM_FLAG_NO_TEMP_CHANGE
+	atom_flags = ATOM_FLAG_NO_CHEM_CHANGE | ATOM_FLAG_NO_TEMP_CHANGE
 
 /obj/item/storage/fancy/cigar/Initialize(ml, material_key)
 	. = ..()
@@ -321,7 +317,7 @@
 
 /obj/item/storage/fancy/cigar/remove_from_storage(obj/item/W, atom/new_location)
 	var/obj/item/clothing/mask/smokable/cigarette/cigar/C = W
-	if(!istype(C)) 
+	if(!istype(C))
 		return
 	reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
 	return ..()

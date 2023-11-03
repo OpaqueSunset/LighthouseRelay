@@ -16,11 +16,9 @@
 	var/icon_has_corners = FALSE
 	///If this turf is on a level that belongs to a planetoid, this is a reference to that planetoid.
 	var/datum/planetoid_data/owner
-
-// Bit faster than return_air() for exoplanet exterior turfs
-/turf/exterior/get_air_graphic()
-	var/datum/level_data/level = SSmapping.levels_by_z[z]
-	return level?.exterior_atmosphere?.graphic
+	///Overrides the level's strata for this turf.
+	var/strata_override
+	var/decl/material/material
 
 /turf/exterior/Initialize(mapload, no_update_icon = FALSE)
 
@@ -42,15 +40,8 @@
 		var/datum/level_data/L = SSmapping.levels_by_z[z]
 		if(L.level_id == owner.surface_level_id && owner.surface_area)
 			ChangeArea(src, owner.surface_area)
-		//Otherwise fall back to the level_data's base_area
-		else if(L.base_area)
-			ChangeArea(src, L.get_base_area_instance())
 
 	. = ..(mapload)	// second param is our own, don't pass to children
-
-	var/air_graphic = get_air_graphic()
-	if(length(air_graphic))
-		add_vis_contents(src, air_graphic)
 
 	if (no_update_icon)
 		return
@@ -59,11 +50,13 @@
 	if(mapload)
 		update_icon()
 	else
-		for (var/turf/T in RANGE_TURFS(src, 1))
-			if(TICK_CHECK) // not CHECK_TICK -- only queue if the server is overloaded
-				T.queue_icon_update()
-			else
-				T.update_icon()
+		for(var/direction in global.alldirs)
+			var/turf/target_turf = get_step_resolving_mimic(src, direction)
+			if(istype(target_turf))
+				if(TICK_CHECK) // not CHECK_TICK -- only queue if the server is overloaded
+					target_turf.queue_icon_update()
+				else
+					target_turf.update_icon()
 
 /turf/exterior/is_floor()
 	return !density && !is_open()
@@ -115,8 +108,8 @@
 
 	var/neighbors = 0
 	for(var/direction in global.cardinal)
-		var/turf/exterior/turf_to_check = get_step(src,direction)
-		if(!turf_to_check || turf_to_check.density)
+		var/turf/exterior/turf_to_check = get_step_resolving_mimic(src, direction)
+		if(!istype(turf_to_check) || turf_to_check.density)
 			continue
 		if(istype(turf_to_check, type))
 			neighbors |= direction
@@ -137,11 +130,11 @@
 
 	if(icon_has_corners)
 		for(var/direction in global.cornerdirs)
-			var/turf/exterior/turf_to_check = get_step(src,direction)
-			if(!isturf(turf_to_check) || turf_to_check.density || istype(turf_to_check, type))
+			var/turf/exterior/turf_to_check = get_step_resolving_mimic(src, direction)
+			if(!istype(turf_to_check) || turf_to_check.density || istype(turf_to_check, type))
 				continue
 
-			if(!istype(turf_to_check) || icon_edge_layer > turf_to_check.icon_edge_layer)
+			if(icon_edge_layer > turf_to_check.icon_edge_layer)
 				var/draw_state
 				var/res = (neighbors & direction)
 				if(res == 0)

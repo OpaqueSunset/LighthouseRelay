@@ -27,6 +27,7 @@
 #include "datum\ai_icons.dm"
 #include "datum\ai_laws.dm"
 #include "datum\loadout.dm"
+#include "datum\lore.dm"
 #include "datum\robolimbs.dm"
 #include "datum\antagonists\commando.dm"
 #include "datum\antagonists\deathsquad.dm"

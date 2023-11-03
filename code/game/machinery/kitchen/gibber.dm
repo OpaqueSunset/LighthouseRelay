@@ -4,8 +4,8 @@
 	desc = "The name isn't descriptive enough?"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "grinder"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	initial_access = list(list(access_kitchen, access_morgue))
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
@@ -105,11 +105,11 @@
 		to_chat(user, "<span class='danger'>\The [src] is locked and running, wait for it to finish.</span>")
 		return
 
-	if(!(istype(victim, /mob/living/carbon)) && !(istype(victim, /mob/living/simple_animal)) )
+	if(!iscarbon(victim) && !isanimal(victim))
 		to_chat(user, "<span class='danger'>This is not suitable for \the [src]!</span>")
 		return
 
-	if(istype(victim,/mob/living/carbon/human) && !emagged)
+	if(ishuman(victim) && !emagged)
 		to_chat(user, "<span class='danger'>\The [src] safety guard is engaged!</span>")
 		return
 
@@ -134,7 +134,7 @@
 	set name = "Empty Gibber"
 	set src in oview(1)
 
-	if (usr.stat != 0)
+	if (usr.stat != CONSCIOUS)
 		return
 	src.go_out()
 	add_fingerprint(usr)
@@ -143,7 +143,7 @@
 /obj/machinery/gibber/proc/go_out()
 	if(operating || !src.occupant)
 		return
-	for(var/obj/O in (contents - component_parts))
+	for(var/obj/O in get_contained_external_atoms())
 		O.dropInto(loc)
 	if (src.occupant.client)
 		src.occupant.client.eye = src.occupant.client.mob
@@ -181,7 +181,7 @@
 		var/mob/living/carbon/C = occupant
 		slab_nutrition = C.nutrition / 15
 
-	if(istype(occupant, /mob/living/carbon/human))
+	if(ishuman(occupant))
 		slab_name = occupant.real_name
 
 	// Small mobs don't give as much nutrition.
@@ -211,7 +211,7 @@
 	qdel(occupant)
 
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
-	for (var/obj/thing in (contents - component_parts))
+	for (var/obj/thing in get_contained_external_atoms())
 		// There's a chance that the gibber will fail to destroy some evidence.
 		if(istype(thing,/obj/item/organ) && prob(80))
 			qdel(thing)

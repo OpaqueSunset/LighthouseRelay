@@ -5,8 +5,8 @@
 	name = "Body Scanner"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "body_scanner_0"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	idle_power_usage = 60
 	active_power_usage = 10000	//10 kW. It's a big all-body scanner.
 	construct_state = /decl/machine_construction/default/panel_closed
@@ -14,6 +14,11 @@
 	stat_immune = 0
 	var/open_sound = 'sound/machines/podopen.ogg'
 	var/close_sound = 'sound/machines/podclose.ogg'
+
+// Don't dump out the occupant!
+/obj/machinery/bodyscanner/proc/dump_obj_contents()
+	for(var/obj/O in get_contained_external_atoms())
+		O.dropInto(loc)
 
 /obj/machinery/bodyscanner/examine(mob/user)
 	. = ..()
@@ -44,14 +49,10 @@
 	usr.client.perspective = EYE_PERSPECTIVE
 	usr.client.eye = src
 
-/obj/machinery/bodyscanner/proc/drop_contents()
-	for(var/obj/O in (contents - component_parts))
-		O.dropInto(loc)
-
 /obj/machinery/bodyscanner/proc/go_out()
 	if ((!( src.occupant ) || src.locked))
 		return
-	drop_contents()
+	dump_obj_contents()
 	if (src.occupant.client)
 		src.occupant.client.eye = src.occupant.client.mob
 		src.occupant.client.perspective = MOB_PERSPECTIVE
@@ -93,7 +94,7 @@
 	src.occupant = target
 
 	update_use_power(POWER_USE_ACTIVE)
-	drop_contents()
+	dump_obj_contents()
 	SetName("[name] ([occupant])")
 
 	src.add_fingerprint(user)

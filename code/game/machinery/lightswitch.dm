@@ -7,11 +7,12 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light0"
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
-	anchored = 1.0
+	anchored = TRUE
 	idle_power_usage = 20
 	power_channel = LIGHT
 	required_interaction_dexterity = DEXTERITY_SIMPLE_MACHINES
 	z_flags = ZMM_MANGLE_PLANES
+	layer = ABOVE_WINDOW_LAYER
 
 	var/on = 0
 	var/area/connected_area = null

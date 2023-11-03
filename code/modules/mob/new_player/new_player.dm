@@ -1,15 +1,12 @@
 /mob/new_player
 	universal_speak = TRUE
 	mob_sort_value = 10
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	simulated = FALSE
-
-	density = 0
+	density = FALSE
 	stat = DEAD
-
 	movement_handlers = list()
-	anchored = 1	//  don't get pushed around
-
+	anchored = TRUE	//  don't get pushed around
 	virtual_mob = null // Hear no evil, speak no evil
 
 	var/ready = 0
@@ -19,7 +16,6 @@
 	var/totalPlayers = 0
 	var/totalPlayersReady = 0
 	var/show_invalid_jobs = 0
-
 	var/datum/browser/panel
 
 INITIALIZE_IMMEDIATE(/mob/new_player)
@@ -53,7 +49,8 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 		output += lobby_footer
 	output += "</div>"
 
-	panel = new(src, "Welcome","Welcome to [global.using_map.full_name]", 560, 280, src)
+	if(!panel)
+		panel = new(src, "Welcome","Welcome to [global.using_map.full_name]", 560, 280, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(JOINTEXT(output))
 	panel.open()
@@ -101,9 +98,9 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	if(href_list["lobby_ready"])
 		if(GAME_STATE <= RUNLEVEL_LOBBY)
 			ready = !ready
+		show_lobby_menu()
 
 	if(href_list["refresh"])
-		panel.close()
 		show_lobby_menu()
 
 	if(href_list["lobby_observe"])
@@ -173,8 +170,6 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
-	else if(!href_list["late_join"])
-		show_lobby_menu()
 
 	if(href_list["invalid_jobs"])
 		show_invalid_jobs = !show_invalid_jobs
@@ -271,49 +266,52 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	dat += "Choose from the following open/valid positions:<br>"
 	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs</a><br>"
 	dat += "<table>"
-	dat += "<tr><td colspan = 3><b>[global.using_map.station_name]:</b></td></tr>"
-
-	// MAIN MAP JOBS
 	var/list/job_summaries = list()
 	var/list/hidden_reasons = list()
-	for(var/datum/job/job in SSjobs.primary_job_datums)
+	if(length(SSjobs.primary_job_datums))
+		dat += "<tr><td colspan = 3><b>[global.using_map.station_name]:</b></td></tr>"
 
-		var/summary = job.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[job.title]", show_invalid_jobs)
-		if(summary)
+		// MAIN MAP JOBS
+		for(var/datum/job/job in SSjobs.primary_job_datums)
 
-			var/decl/department/dept = job.primary_department && SSjobs.get_department_by_type(job.primary_department)
-			var/summary_key = (dept || "No Department")
-			var/list/existing_summaries = job_summaries[summary_key]
-			if(!existing_summaries)
-				existing_summaries = list()
-				job_summaries[summary_key] = existing_summaries
-			if(job.head_position)
-				existing_summaries.Insert(1, summary)
+			var/summary = job.get_join_link(client, "byond://?src=\ref[src];SelectedJob=[job.title]", show_invalid_jobs)
+			if(summary)
+
+				var/decl/department/dept = job.primary_department && SSjobs.get_department_by_type(job.primary_department)
+				var/summary_key = (dept || "No Department")
+				var/list/existing_summaries = job_summaries[summary_key]
+				if(!existing_summaries)
+					existing_summaries = list()
+					job_summaries[summary_key] = existing_summaries
+				if(job.head_position)
+					existing_summaries.Insert(1, summary)
+				else
+					existing_summaries.Add(summary)
 			else
-				existing_summaries.Add(summary)
-		else
-			for(var/raisin in job.get_unavailable_reasons(client))
-				hidden_reasons[raisin] = TRUE
+				for(var/raisin in job.get_unavailable_reasons(client))
+					hidden_reasons[raisin] = TRUE
 
-	var/added_job = FALSE
-	if(length(job_summaries))
-		job_summaries = sortTim(job_summaries, /proc/cmp_departments_dsc, FALSE)
-		for(var/job_category in job_summaries)
-			if(length(job_summaries[job_category]))
-				var/decl/department/job_dept = job_category
-				// TODO: use bgcolor='[job_dept.display_color]' when less pastel/bright colours are chosen.
-				dat += "<tr><td bgcolor='#333333' colspan = 3><b><font color = '#ffffff'><center>[istype(job_dept) ? job_dept.name : job_dept]</center></font></b></td></tr>"
-				dat += job_summaries[job_category]
-				added_job = TRUE
+		var/added_job = FALSE
+		if(length(job_summaries))
+			job_summaries = sortTim(job_summaries, /proc/cmp_departments_dsc, FALSE)
+			for(var/job_category in job_summaries)
+				if(length(job_summaries[job_category]))
+					var/decl/department/job_dept = job_category
+					// TODO: use bgcolor='[job_dept.display_color]' when less pastel/bright colours are chosen.
+					dat += "<tr><td bgcolor='#333333' colspan = 3><b><font color = '#ffffff'><center>[istype(job_dept) ? job_dept.name : job_dept]</center></font></b></td></tr>"
+					dat += job_summaries[job_category]
+					added_job = TRUE
 
-	if(!added_job)
-		dat += "<tr><td colspan = 3>No available positions.</td></tr>"
+		if(!added_job)
+			dat += "<tr><td colspan = 3>No available positions.</td></tr>"
 	// END MAIN MAP JOBS
 
 	// SUBMAP JOBS
-	for(var/thing in SSmapping.submaps)
-		var/datum/submap/submap = thing
-		if(submap && submap.available())
+	var/list/ordered_submaps = null
+	if(length(SSmapping.submaps))
+		ordered_submaps = sortTim(SSmapping.submaps.Copy(), /proc/cmp_submap_asc)
+	for(var/datum/submap/submap as anything in ordered_submaps)
+		if(submap?.available())
 			dat += "<tr><td colspan = 3><b>[submap.name] ([submap.archetype.descriptor]):</b></td></tr>"
 			job_summaries = list()
 			for(var/otherthing in submap.jobs)
@@ -328,7 +326,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 			if(LAZYLEN(job_summaries))
 				dat += job_summaries
 			else
-				dat += "No available positions."
+				dat += "<tr><td colspan = 3>No available positions.</td></tr>"
 	// END SUBMAP JOBS
 
 	dat += "</table></center>"
@@ -372,7 +370,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	new_character.lastarea = get_area(spawn_turf)
 
 	if(global.random_players)
-		var/decl/species/current_species = get_species_by_key(client.prefs.species || global.using_map.default_species)
+		var/decl/species/current_species = client.prefs.get_species_decl()
 		var/decl/pronouns/pronouns = pick(current_species.available_pronouns)
 		client.prefs.gender = pronouns.name
 		client.prefs.real_name = client.prefs.get_random_name()
@@ -389,13 +387,8 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 			mind.StoreMemory(memory)
 		mind.transfer_to(new_character)					//won't transfer key since the mind is not active
 
-	new_character.dna.ready_dna(new_character)
-	new_character.dna.b_type = client.prefs.b_type
-	new_character.sync_organ_dna()
-
 	// Do the initial caching of the player's body icons.
 	new_character.force_update_limbs()
-	new_character.update_eyes()
 	new_character.refresh_visible_overlays()
 
 	new_character.key = key		//Manually transfer the key to log them in
@@ -416,6 +409,8 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 /mob/new_player/proc/close_spawn_windows()
 	close_browser(src, "window=latechoices") //closes late choices window
 	close_browser(src, "window=preferences_window") //closes preferences window
+	if(client?.prefs)
+		client.prefs.close_load_dialog(src)
 	panel.close()
 
 /mob/new_player/proc/check_species_allowed(var/decl/species/S, var/show_alert=1)
@@ -443,7 +438,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 /mob/new_player/hear_say(var/message, var/verb = "says", var/decl/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	return
 
-/mob/new_player/hear_radio(var/message, var/verb="says", var/decl/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0)
+/mob/new_player/hear_radio(var/message, var/verb="says", var/decl/language/language=null, var/part_a, var/part_b, var/part_c, var/mob/speaker = null, var/hard_to_hear = 0, var/vname, var/vsource)
 	return
 
 /mob/new_player/show_message(msg, type, alt, alt_type)

@@ -1,6 +1,6 @@
 /mob/living/carbon/human/proc/get_unarmed_attack(var/mob/target, var/hit_zone = null)
 	if(!hit_zone)
-		hit_zone = zone_sel.selecting
+		hit_zone = get_target_zone()
 	var/list/available_attacks = get_natural_attacks()
 	var/decl/natural_attack/use_attack = default_attack
 	if(!use_attack || !use_attack.is_usable(src, target, hit_zone) || !(use_attack.type in available_attacks))
@@ -25,14 +25,14 @@
 			. |= limb.unarmed_attacks
 
 /mob/living/carbon/human/default_help_interaction(mob/user)
-	if(user != src && ishuman(user) && (is_asystole() || (status_flags & FAKEDEATH) || failed_last_breath) && !on_fire && !(user.zone_sel.selecting == BP_R_ARM || user.zone_sel.selecting == BP_L_ARM))
+	if(user != src && ishuman(user) && (is_asystole() || (status_flags & FAKEDEATH) || failed_last_breath) && !on_fire && !(user.get_target_zone() == BP_R_ARM || user.get_target_zone() == BP_L_ARM))
 		if (performing_cpr)
 			performing_cpr = FALSE
 		else
 			performing_cpr = TRUE
 			start_compressions(user, TRUE)
 		return TRUE
-	if(!(user == src && apply_pressure(user, user.zone_sel.selecting)))
+	if(!(user == src && apply_pressure(user, user.get_target_zone())))
 		help_shake_act(user)
 		return TRUE
 	. = ..()
@@ -62,7 +62,7 @@
 	var/rand_damage = rand(1, 5)
 	var/block = 0
 	var/accurate = 0
-	var/hit_zone = H.zone_sel.selecting
+	var/hit_zone = H.get_target_zone()
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, hit_zone)
 
 	// See what attack they use
@@ -171,7 +171,7 @@
 	// Should this all be in Touch()?
 		var/mob/living/carbon/human/H = user
 		if(istype(H))
-			if(H != src && check_shields(0, null, H, H.zone_sel.selecting, H.name))
+			if(H != src && check_shields(0, null, H, H.get_target_zone(), H.name))
 				H.do_attack_animation(src)
 				return TRUE
 
@@ -255,22 +255,21 @@
 				to_chat(H, SPAN_WARNING("You need to remove \the [src]'s mouth covering for mouth-to-mouth resuscitation!"))
 				return TRUE
 
-		if(!GET_INTERNAL_ORGAN(H, H.species.breathing_organ))
+		var/decl/bodytype/root_bodytype = H.get_bodytype()
+		if(!GET_INTERNAL_ORGAN(H, root_bodytype.breathing_organ))
 			to_chat(H, SPAN_WARNING("You need lungs for mouth-to-mouth resuscitation!"))
 			return TRUE
 
 		if(!need_breathe())
 			return TRUE
 
-		var/obj/item/organ/internal/lungs/L = get_organ(species.breathing_organ, /obj/item/organ/internal/lungs)
-		if(!L)
+		var/obj/item/organ/internal/lungs/lungs = get_organ(root_bodytype.breathing_organ, /obj/item/organ/internal/lungs)
+		if(!lungs)
 			return
 
-		var/datum/gas_mixture/breath = H.get_breath_from_environment()
-		var/fail = L.handle_breath(breath, 1)
-		if(!fail)
-			if(!L.is_bruised())
-				losebreath = 0
+		if(!lungs.handle_owner_breath(H.get_breath_from_environment(), 1))
+			if(!lungs.is_bruised())
+				ticks_since_last_successful_breath = 0
 			to_chat(src, SPAN_NOTICE("You feel a breath of fresh air enter your lungs. It feels good."))
 
 	// Again.

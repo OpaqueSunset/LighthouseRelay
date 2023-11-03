@@ -29,7 +29,7 @@
 
 /obj/item/soap/populate_reagents()
 	wet()
-	
+
 /obj/item/soap/Initialize()
 	. = ..()
 	initialize_reagents()
@@ -45,9 +45,11 @@
 /obj/item/soap/proc/wet()
 	reagents.add_reagent(/decl/material/liquid/cleaner, SOAP_CLEANER_ON_WET)
 
-/obj/item/soap/Crossed(var/mob/living/AM)
-	if(istype(AM))
-		AM.slip("the [src.name]", 3)
+/obj/item/soap/Crossed(atom/movable/AM)
+	if(!isliving(AM))
+		return
+	var/mob/living/M = AM
+	M.slip("the [src.name]", 3)
 
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	if(!proximity) return
@@ -88,7 +90,7 @@
 /obj/item/soap/attack(mob/living/target, mob/living/user, var/target_zone)
 	if(ishuman(target) && user?.a_intent != I_HURT)
 		var/mob/living/carbon/human/victim = target
-		if(user.zone_sel?.selecting == BP_MOUTH && victim.check_has_mouth())
+		if(user.get_target_zone() == BP_MOUTH && victim.check_has_mouth())
 			user.visible_message(SPAN_DANGER("\The [user] washes \the [target]'s mouth out with soap!"))
 			if(reagents)
 				reagents.trans_to_mob(target, reagents.total_volume / 2, CHEM_INGEST)
@@ -117,6 +119,6 @@
 		add_overlay("soap_key_overlay")
 	else if(decal_name)
 		add_overlay("decal-[decal_name]")
-	
+
 #undef SOAP_MAX_VOLUME
 #undef SOAP_CLEANER_ON_WET

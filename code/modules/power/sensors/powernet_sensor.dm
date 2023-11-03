@@ -8,13 +8,14 @@
 // This is used in NanoUI, for example.
 
 /obj/machinery/power/sensor
-	name = "Powernet Sensor"
+	name = "powernet sensor"
 	desc = "Small machine which transmits data about specific powernet."
-	anchored = 1
-	density = 0
-	level = 1
+	anchored = TRUE
+	density = FALSE
+	level = LEVEL_BELOW_PLATING
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "floor_beacon" // If anyone wants to make better sprite, feel free to do so without asking me.
+	var/long_range = FALSE /// If this is TRUE, it can be seen regardless of Z-level.
 
 	uncreated_component_parts = null
 	stat_immune = NOINPUT | NOSCREEN | NOPOWER
@@ -37,7 +38,7 @@
 		if(!A)
 			return // in nullspace
 		id_tag = "[A.proper_name] #[sequential_id(A.name + "power/sensor")]"
-	name = "[id_tag] - Powernet Sensor"
+	name = "[id_tag] - powernet sensor"
 
 // Proc: check_grid_warning()
 // Parameters: None

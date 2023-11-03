@@ -170,14 +170,14 @@ var/global/list/possible_say_verbs = list(
 		return
 	if(loc != card)
 		return
-	if(world.time <= last_special)
+	if(is_on_special_ability_cooldown())
 		return
-	last_special = world.time + 100
+	set_special_ability_cooldown(10 SECONDS)
 	//I'm not sure how much of this is necessary, but I would rather avoid issues.
 	if(istype(card.loc,/obj/item/rig_module) || istype(card.loc,/obj/item/integrated_circuit/manipulation/ai/))
 		to_chat(src, "There is no room to unfold inside \the [card.loc]. You're good and stuck.")
 		return 0
-	else if(istype(card.loc,/mob))
+	else if(ismob(card.loc))
 		var/mob/holder = card.loc
 		if(ishuman(holder))
 			var/mob/living/carbon/human/H = holder
@@ -211,9 +211,9 @@ var/global/list/possible_say_verbs = list(
 	if(loc == card)
 		return
 
-	if(world.time <= last_special)
+	if(is_on_special_ability_cooldown())
 		return
-	last_special = world.time + 100
+	set_special_ability_cooldown(10 SECONDS)
 
 	// Move us into the card and move the card to the ground.
 	resting = 0
@@ -243,7 +243,7 @@ var/global/list/possible_say_verbs = list(
 	if(istype(src.loc,/obj/item/paicard))
 		resting = 0
 		var/obj/item/rig/rig = src.get_rig()
-		if(istype(rig))
+		if(rig)
 			rig.force_rest(src)
 	else
 		resting = !resting
@@ -271,7 +271,7 @@ var/global/list/possible_say_verbs = list(
 		visible_message(SPAN_WARNING("[user] bonks [src] harmlessly with [W]."))
 
 	spawn(1)
-		if(stat != 2) fold()
+		if(stat != DEAD) fold()
 	return
 
 /mob/living/silicon/pai/default_interaction(mob/user)

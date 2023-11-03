@@ -81,7 +81,7 @@
 	if(!SSmapping || !SSjobs.job_lists_by_map_name)
 		return
 
-	var/decl/species/S = preference_species()
+	var/decl/species/S = pref.get_species_decl()
 	. = list()
 	. += "<style>.Points,a.Points{background: #cc5555;}</style>"
 	. += "<style>a.Points:hover{background: #55cc55;}</style>"
@@ -96,16 +96,16 @@
 		if(isnull(pref.hiding_maps[job_map]))
 			pref.hiding_maps[job_map] = map_data["default_to_hidden"]
 
-		. += "<hr><table width = '100%''><tr>"
-		. += "<td width = '50%' align = 'right'><font size = 3><b>[capitalize(job_map)]</b></td>"
-		. += "<td width = '50%' align = 'left''><a href='?src=\ref[src];toggle_map=[job_map]'>[pref.hiding_maps[job_map] ? "Show" : "Hide"]</a></font></td>"
+		. += "<hr><table style='text-align:center'><tr>"
+		. += "<td style='max-width:50%;text-align:right'><font size = 3><b>[capitalize_words(job_map)]</b></font></td>"
+		. += "<td style='max-width:50%;text-align:left'><font size = 3><a href='?src=\ref[src];toggle_map=[job_map]'>[pref.hiding_maps[job_map] ? "Show" : "Hide"]</a></font></td>"
 		. += "</tr></table>"
 
 		if(!pref.hiding_maps[job_map])
 
 			. += "<hr/>"
-			. += "<table width='100%' cellpadding='1' cellspacing='0'><tr><td width='20%'>" // Table within a table for alignment, also allows you to easily add more columns.
-			. += "<table width='100%' cellpadding='1' cellspacing='0'>"
+			. += "<table style='width:100%;height:100%' cellpadding='1' cellspacing='0'><tr><td style='width:50%;height:100%'>" // Table within a table for alignment, also allows you to easily add more columns.
+			. += "<table style='width:100%;height:100%' cellpadding='1' cellspacing='0'>"
 
 			//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 			var/datum/job/lastJob
@@ -124,9 +124,9 @@
 					player_branch = mil_branches.get_branch(pref.branches[job.title])
 					if(player_branch)
 						if(LAZYLEN(branch_rank) > 1)
-							branch_string += "<td width='10%' align='left'><a href='?src=\ref[src];char_branch=1;checking_job=\ref[job]'>[player_branch.name_short || player_branch.name]</a></td>"
+							branch_string += "<td style='width:10%;text-align:left'><a href='?src=\ref[src];char_branch=1;checking_job=\ref[job]'>[player_branch.name_short || player_branch.name]</a></td>"
 						else
-							branch_string += "<td width='10%' align='left'><span class='linkOff'>[player_branch.name_short || player_branch.name]</span></td>"
+							branch_string += "<td style='width:10%;text-align:left'><span class='linkOff'>[player_branch.name_short || player_branch.name]</span></td>"
 				if(!branch_string)
 					branch_string = "<td>-</td>"
 				if(player_branch)
@@ -135,9 +135,9 @@
 						player_rank = mil_branches.get_rank(player_branch.name, pref.ranks[job.title])
 						if(player_rank)
 							if(LAZYLEN(ranks) > 1)
-								rank_branch_string += "<td width='10%' align='left'><a href='?src=\ref[src];char_rank=1;checking_job=\ref[job]'>[player_rank.name_short || player_rank.name]</a></td>"
+								rank_branch_string += "<td style='width:10%;text-align:left'><a href='?src=\ref[src];char_rank=1;checking_job=\ref[job]'>[player_rank.name_short || player_rank.name]</a></td>"
 							else
-								rank_branch_string += "<td width='10%' align='left'><span class='linkOff'>[player_rank.name_short || player_rank.name]</span></td>"
+								rank_branch_string += "<td style='width:10%;text-align:left'><span class='linkOff'>[player_rank.name_short || player_rank.name]</span></td>"
 				if(!rank_branch_string)
 					rank_branch_string = "<td>-</td>"
 				rank_branch_string = "[branch_string][rank_branch_string]"
@@ -195,14 +195,14 @@
 						//If the cells were broken up by a job in the splitJob list then it will fill in the rest of the cells with
 						//the last job's selection color. Creating a rather nice effect.
 						for(var/i = 0, i < (limit - index), i += 1)
-							. += "<tr bgcolor='[lastJob.selection_color]'><td width='40%' align='right'><a>&nbsp</a></td><td><a>&nbsp</a></td></tr>"
-					. += "</table></td><td width='20%'><table width='100%' cellpadding='1' cellspacing='0'>"
+							. += "<tr bgcolor='[lastJob.selection_color]'><td style='width:40%;text-align:right'><a>&nbsp</a></td><td><a>&nbsp</a></td></tr>"
+					. += "</table></td><td style='width:50%;height:100%'><table style='width:100%;height:100%' cellpadding='1' cellspacing='0'>"
 					index = 0
 
 				. += "<tr bgcolor='[job.selection_color]'>"
 				if(rank_branch_string && rank_branch_string != "")
 					. += "[rank_branch_string]"
-				. += "<td width='30%' align='left'>"
+				. += "<td style='width:30%;text-align:left'>"
 
 				if(bad_message)
 					. += "<del>[title_link]</del>[help_link][skill_link]<td>[bad_message]</td></tr>"
@@ -269,7 +269,7 @@
 		if(LAZYLEN(removing_ranks))
 			pref.ranks -= removing_ranks
 
-	var/decl/species/S = preference_species()
+	var/decl/species/S = pref.get_species_decl()
 	for(var/job_name in SSjobs.titles_to_datums)
 
 		var/datum/job/job = SSjobs.get_by_title(job_name)
@@ -338,7 +338,7 @@
 	else if(href_list["char_branch"])
 		var/datum/job/job = locate(href_list["checking_job"])
 		if(istype(job))
-			var/decl/species/S = preference_species()
+			var/decl/species/S = pref.get_species_decl()
 			var/list/options = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
 			var/choice = input(user, "Choose your branch of service.", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in options
 			if(choice && CanUseTopic(user) && mil_branches.is_spawn_branch(choice, S))
@@ -353,11 +353,11 @@
 		var/datum/job/job = locate(href_list["checking_job"])
 		if(istype(job))
 			var/datum/mil_branch/branch = mil_branches.get_branch(pref.branches[job.title])
-			var/decl/species/S = preference_species()
+			var/decl/species/S = pref.get_species_decl()
 			var/list/branch_rank = job.allowed_branches ? job.get_branch_rank(S) : mil_branches.spawn_branches(S)
 			var/list/options = branch_rank[branch.name] || mil_branches.spawn_ranks(branch.name, S)
 			var/choice = input(user, "Choose your rank.", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in options
-			if(choice && CanUseTopic(user) && mil_branches.is_spawn_rank(branch.name, choice, preference_species()))
+			if(choice && CanUseTopic(user) && mil_branches.is_spawn_rank(branch.name, choice, pref.get_species_decl()))
 				pref.ranks[job.title] = choice
 				pref.skills_allocated = pref.sanitize_skills(pref.skills_allocated)		// Check our skillset is still valid
 				validate_branch_and_rank()

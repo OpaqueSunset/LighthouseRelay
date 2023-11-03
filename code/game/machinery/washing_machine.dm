@@ -8,11 +8,11 @@
 // other states are independent.
 
 /obj/machinery/washing_machine
-	name = "Washing Machine"
+	name = "washing machine"
 	icon = 'icons/obj/machines/washing_machine.dmi'
 	icon_state = "wm_00"
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	stat_immune = 0
@@ -67,7 +67,7 @@
 	addtimer(CALLBACK(src, /obj/machinery/washing_machine/proc/wash), 20 SECONDS)
 
 /obj/machinery/washing_machine/proc/wash()
-	for(var/atom/A in (contents - component_parts))
+	for(var/atom/A as anything in get_contained_external_atoms())
 		if(detergent)
 			A.clean_blood()
 		if(isitem(A))
@@ -200,8 +200,7 @@
 			var/mob/M = locate(/mob/living) in src
 			if(M)
 				M.gib()
-		for(var/atom/movable/O in (contents - component_parts))
-			O.dropInto(loc)
+		dump_contents()
 		state &= ~WASHER_STATE_FULL
 		update_icon()
 		crayon = null

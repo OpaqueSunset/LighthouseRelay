@@ -33,7 +33,10 @@ SUBSYSTEM_DEF(jobs)
 
 	// Create main map jobs.
 	primary_job_datums.Cut()
-	for(var/jobtype in (list(global.using_map.default_job_type) | global.using_map.allowed_jobs))
+	var/list/available_jobs = global.using_map.allowed_jobs.Copy()
+	if(global.using_map.default_job_type)
+		LAZYDISTINCTADD(available_jobs, global.using_map.default_job_type)
+	for(var/jobtype in available_jobs)
 		var/datum/job/job = get_by_path(jobtype)
 		if(!job)
 			job = new jobtype
@@ -54,6 +57,7 @@ SUBSYSTEM_DEF(jobs)
 				job = get_by_path(jobtype)
 			if(job)
 				archetype_job_datums |= job
+	submap_archetypes = sortTim(submap_archetypes, /proc/cmp_submap_archetype_asc, TRUE)
 
 	// Load job configuration (is this even used anymore?)
 	if(job_config_file && config.load_jobs_from_txt)
@@ -85,8 +89,9 @@ SUBSYSTEM_DEF(jobs)
 
 	// Update title and path tracking, submap list, etc.
 	// Populate/set up map job lists.
-	primary_job_datums = sortTim(primary_job_datums, /proc/cmp_job_desc)
-	job_lists_by_map_name = list("[global.using_map.full_name]" = list("jobs" = primary_job_datums, "default_to_hidden" = FALSE))
+	if(length(primary_job_datums))
+		primary_job_datums = sortTim(primary_job_datums, /proc/cmp_job_desc)
+		job_lists_by_map_name = list("[global.using_map.full_name]" = list("jobs" = primary_job_datums, "default_to_hidden" = FALSE))
 
 	for(var/atype in submap_archetypes)
 		var/list/submap_job_datums
@@ -97,7 +102,7 @@ SUBSYSTEM_DEF(jobs)
 				LAZYADD(submap_job_datums, job)
 		if(LAZYLEN(submap_job_datums))
 			submap_job_datums = sortTim(submap_job_datums, /proc/cmp_job_desc)
-			job_lists_by_map_name[arch.descriptor] = list("jobs" = submap_job_datums, "default_to_hidden" = TRUE)
+			job_lists_by_map_name[arch.descriptor] = list("jobs" = submap_job_datums, "default_to_hidden" = arch.default_to_hidden)
 
 	// Update global map blacklists and whitelists.
 	for(var/mappath in global.all_maps)
@@ -205,7 +210,7 @@ SUBSYSTEM_DEF(jobs)
 			log_and_message_admins("User [spawner] spawned at spawn point with dangerous atmosphere.")
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/assign_role(var/mob/new_player/player, var/rank, var/latejoin = 0, var/datum/game_mode/mode = SSticker.mode)
+/datum/controller/subsystem/jobs/proc/assign_role(var/mob/new_player/player, var/rank, var/latejoin = 0, var/decl/game_mode/mode = SSticker.mode)
 	if(player && player.mind && rank)
 		var/datum/job/job = get_by_title(rank)
 		if(!job)
@@ -246,7 +251,7 @@ SUBSYSTEM_DEF(jobs)
 			candidates += player
 	return candidates
 
-/datum/controller/subsystem/jobs/proc/give_random_job(var/mob/new_player/player, var/datum/game_mode/mode = SSticker.mode)
+/datum/controller/subsystem/jobs/proc/give_random_job(var/mob/new_player/player, var/decl/game_mode/mode = SSticker.mode)
 	for(var/datum/job/job in shuffle(primary_job_datums))
 		if(!job)
 			continue
@@ -270,7 +275,7 @@ SUBSYSTEM_DEF(jobs)
 			break
 
 ///This proc is called before the level loop of divide_occupations() and will try to select a head, ignoring ALL non-head preferences for every level until it locates a head or runs out of levels to check
-/datum/controller/subsystem/jobs/proc/fill_head_position(var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/fill_head_position(var/decl/game_mode/mode)
 	for(var/level = 1 to 3)
 		for(var/command_position in must_fill_titles)
 			var/datum/job/job = get_by_title(command_position)
@@ -306,7 +311,7 @@ SUBSYSTEM_DEF(jobs)
 	return 0
 
 ///This proc is called at the start of the level loop of divide_occupations() and will cause head jobs to be checked before any other jobs of the same level
-/datum/controller/subsystem/jobs/proc/CheckHeadPositions(var/level, var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/CheckHeadPositions(var/level, var/decl/game_mode/mode)
 	for(var/command_position in must_fill_titles)
 		var/datum/job/job = get_by_title(command_position)
 		if(!job)	continue
@@ -319,7 +324,7 @@ SUBSYSTEM_DEF(jobs)
  *  fills var "assigned_role" for all ready players.
  *  This proc must not have any side effect besides of modifying "assigned_role".
  **/
-/datum/controller/subsystem/jobs/proc/divide_occupations(datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/divide_occupations(decl/game_mode/mode)
 	if(global.triai)
 		for(var/datum/job/A in primary_job_datums)
 			if(A.title == "AI")
@@ -394,7 +399,7 @@ SUBSYSTEM_DEF(jobs)
 			unassigned_roundstart -= player
 	return TRUE
 
-/datum/controller/subsystem/jobs/proc/attempt_role_assignment(var/mob/new_player/player, var/datum/job/job, var/level, var/datum/game_mode/mode)
+/datum/controller/subsystem/jobs/proc/attempt_role_assignment(var/mob/new_player/player, var/datum/job/job, var/level, var/decl/game_mode/mode)
 	if(!jobban_isbanned(player, job.title) && \
 	 job.player_old_enough(player.client) && \
 	 player.client.prefs.CorrectLevel(job, level) && \
@@ -486,6 +491,8 @@ SUBSYSTEM_DEF(jobs)
 		job.apply_fingerprints(H)
 		spawn_in_storage = equip_custom_loadout(H, job)
 		job.setup_account(H)
+		var/decl/hierarchy/outfit/outfit = job.get_outfit(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank)
+		outfit.equip_id(H, H.mind ? H.mind.role_alt_title : "", H.char_branch, H.char_rank, job)
 	else
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 
@@ -540,6 +547,9 @@ SUBSYSTEM_DEF(jobs)
 			G.spawn_in_storage_or_drop(H, H.client.prefs.Gear()[G.name])
 
 	to_chat(H, "<font size = 3><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></font>")
+
+	if(job.description)
+		to_chat(H, SPAN_BOLD("[job.description]"))
 
 	if(job.supervisors)
 		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")

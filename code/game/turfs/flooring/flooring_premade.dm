@@ -177,9 +177,9 @@
 //Tiled floor + sub-types
 
 /turf/simulated/floor/tiled
-	name = "steel floor"
+	name = "floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "steel"
+	icon_state = "tiled"
 	initial_flooring = /decl/flooring/tiling
 
 /turf/simulated/floor/tiled/dark
@@ -204,11 +204,6 @@
 	name = "floor"
 	icon_state = "monotile"
 	initial_flooring = /decl/flooring/tiling/mono/white
-
-/turf/simulated/floor/tiled/monofloor
-	name = "floor"
-	icon_state = "steel_monofloor"
-	initial_flooring = /decl/flooring/tiling/mono
 
 /turf/simulated/floor/tiled/white/airless
 	name = "airless floor"
@@ -392,3 +387,9 @@
 	icon = 'icons/turf/flooring/pool.dmi'
 	icon_state = "pool"
 	initial_flooring = /decl/flooring/pool
+
+/turf/simulated/floor/pool/deep
+	name = "deep pool floor"
+	icon = 'icons/turf/flooring/pool.dmi'
+	icon_state = "pool"
+	initial_flooring = /decl/flooring/pool/deep

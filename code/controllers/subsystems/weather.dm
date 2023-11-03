@@ -30,21 +30,24 @@ SUBSYSTEM_DEF(weather)
 		if(MC_TICK_CHECK)
 			return
 
-///Sets a weather state to use for a given z level/z level stack.
-/datum/controller/subsystem/weather/proc/setup_weather_system(var/datum/level_data/topmost_level_data, var/decl/state/weather/initial_state)
+///Sets a weather state to use for a given z level/z level stack. topmost_level may be a level_id or a level_data instance.
+/datum/controller/subsystem/weather/proc/setup_weather_system(var/datum/level_data/topmost_level, var/decl/state/weather/initial_state)
+	if(istext(topmost_level))
+		topmost_level = SSmapping.levels_by_id[topmost_level]
+
 	//First check and clear any existing weather system on the level
-	var/obj/abstract/weather_system/WS = weather_by_z[topmost_level_data.level_z]
+	var/obj/abstract/weather_system/WS = weather_by_z[topmost_level.level_z]
 	if(WS)
 		unregister_weather_system(WS)
 		qdel(WS)
 	//Create the new weather system and let it register itself
-	new /obj/abstract/weather_system(locate(1, 1, topmost_level_data.level_z), topmost_level_data.level_z, initial_state)
+	new /obj/abstract/weather_system(locate(1, 1, topmost_level.level_z), topmost_level.level_z, initial_state)
 
 ///Registers a given weather system obj for getting updates by SSweather.
 /datum/controller/subsystem/weather/proc/register_weather_system(var/obj/abstract/weather_system/WS)
 	if(weather_by_z[WS.z])
 		CRASH("Trying to register another weather system on the same z-level([WS.z]) as an existing one!")
-	LAZYDISTINCTADD(weather_systems, WS)
+	weather_systems |= WS
 
 	//Mark all affected z-levels
 	var/list/affected = SSmapping.get_connected_levels(WS.z)
@@ -59,10 +62,4 @@ SUBSYSTEM_DEF(weather)
 	for(var/Z = 1 to length(weather_by_z))
 		if(weather_by_z[Z] == WS)
 			weather_by_z[Z] = null
-	LAZYREMOVE(weather_systems, WS)
-
-///Returns the weather obj for a given z-level if it exists
-/datum/controller/subsystem/weather/proc/get_weather_for_level(var/z_level)
-	if(z_level > length(weather_by_z))
-		return null
-	return weather_by_z[z_level]
+	weather_systems -= WS

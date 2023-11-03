@@ -131,10 +131,26 @@
 	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_ARMS
 
 /obj/item/clothing/under/schoolgirl
-	name = "schoolgirl uniform"
+	name = "blue schoolgirl uniform"
 	desc = "It's just like one of my Japanese animes!"
 	icon = 'icons/clothing/under/uniform_schoolgirl.dmi'
 	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY
+
+/obj/item/clothing/under/schoolgirl/red
+	name = "red schoolgirl uniform"
+	icon = 'icons/clothing/under/uniform_schoolgirl_red.dmi'
+
+/obj/item/clothing/under/schoolgirl/yellow
+	name = "yellow schoolgirl uniform"
+	icon = 'icons/clothing/under/uniform_schoolgirl_yellow.dmi'
+
+/obj/item/clothing/under/schoolgirl/green
+	name = "green schoolgirl uniform"
+	icon = 'icons/clothing/under/uniform_schoolgirl_green.dmi'
+
+/obj/item/clothing/under/schoolgirl/pink
+	name = "pink schoolgirl uniform"
+	icon = 'icons/clothing/under/uniform_schoolgirl_pink.dmi'
 
 /obj/item/clothing/under/overalls
 	name = "laborer's overalls"

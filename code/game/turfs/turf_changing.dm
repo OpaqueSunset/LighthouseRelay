@@ -29,7 +29,7 @@
 	// Spawning space in the middle of a multiz stack should just spawn an open turf.
 	if(ispath(N, /turf/space))
 		var/turf/below = GetBelow(src)
-		if(istype(below) && !isspaceturf(below))
+		if(istype(below) && !isspaceturf(below) && !(below.z_flags & ZM_PARTITION_STACK))
 			var/area/A = get_area(src)
 			N = A?.open_turf || open_turf_type || /turf/simulated/open
 

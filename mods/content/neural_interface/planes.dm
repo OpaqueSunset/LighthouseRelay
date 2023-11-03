@@ -12,17 +12,17 @@
 	plane = AR_PLANE
 	appearance_flags = PLANE_MASTER
 	vis_flags = 0
-	mouse_opacity = 0	//Normally unclickable
+	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE	//Normally unclickable
 	var/visible = FALSE
 
 /obj/screen/ar_plane_master/proc/set_visible(new_state)
 	visible = new_state
 	if(visible)
 		alpha = 255
-		mouse_opacity = 1
+		mouse_opacity = MOUSE_OPACITY_NORMAL
 	else
 		alpha = 0
-		mouse_opacity = 0
+		mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 
 /mob/Destroy()
 	QDEL_NULL(ar_master)

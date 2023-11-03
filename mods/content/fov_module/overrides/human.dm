@@ -8,7 +8,7 @@
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
 		H.fov.screen_loc = "LEFT+50%,BOTTOM+50%"
-		H.fov.mouse_opacity = 0
+		H.fov.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 		H.fov.plane = VISION_CONE_PLANE
 		hud_elements |= H.fov
 
@@ -17,7 +17,7 @@
 		H.fov_mask.icon_state = "combat_mask"
 		H.fov_mask.name = " "
 		H.fov_mask.screen_loc = "LEFT+50%,BOTTOM+50%"
-		H.fov_mask.mouse_opacity = 0
+		H.fov_mask.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 		H.fov_mask.plane = HIDDEN_SHIT_PLANE
 		hud_elements |= H.fov_mask
 
@@ -74,8 +74,8 @@
 	if(!client)
 		return
 	var/obj/item/clothing/headwear = get_equipped_item(slot_head_str)
-	var/obj/item/clothing/maskwear = get_equipped_item(slot_head_str)
-	var/obj/item/clothing/eyeswear = get_equipped_item(slot_head_str)
+	var/obj/item/clothing/maskwear = get_equipped_item(slot_wear_mask_str)
+	var/obj/item/clothing/eyeswear = get_equipped_item(slot_glasses_str)
 	var/use_original_cone = TRUE
 	if(istype(headwear) && headwear.helmet_vision \
 	|| istype(maskwear) && maskwear.helmet_vision \

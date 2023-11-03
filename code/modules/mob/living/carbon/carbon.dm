@@ -15,7 +15,6 @@
 	QDEL_NULL(touching)
 	QDEL_NULL(bloodstr)
 	reagents = null //We assume reagents is a reference to bloodstr here
-	delete_organs()
 	QDEL_NULL_LIST(hallucinations)
 	if(loc)
 		for(var/mob/M in contents)
@@ -49,26 +48,24 @@
 		germ_level++
 
 /mob/living/carbon/relaymove(var/mob/living/user, direction)
-	if((user in contents) && istype(user))
-		if(user.last_special <= world.time)
-			user.last_special = world.time + 50
-			src.visible_message("<span class='danger'>You hear something rumbling inside [src]'s stomach...</span>")
-			var/obj/item/I = user.get_active_hand()
-			if(I && I.force)
-				var/d = rand(round(I.force / 4), I.force)
-				if(istype(src, /mob/living/carbon/human))
-					var/mob/living/carbon/human/H = src
-					var/obj/item/organ/external/organ = GET_EXTERNAL_ORGAN(H, BP_CHEST)
-					if (istype(organ))
-						organ.take_external_damage(d, 0)
-					H.updatehealth()
-				else
-					src.take_organ_damage(d)
-				user.visible_message("<span class='danger'>[user] attacks [src]'s stomach wall with the [I.name]!</span>")
-				playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
-
-				if(prob(src.getBruteLoss() - 50))
-					gib()
+	if(!istype(user) || !(user in contents) || user.is_on_special_ability_cooldown())
+		return
+	user.set_special_ability_cooldown(5 SECONDS)
+	visible_message(SPAN_DANGER("You hear something rumbling inside [src]'s stomach..."))
+	var/obj/item/I = user.get_active_hand()
+	if(!I?.force)
+		return
+	var/d = rand(round(I.force / 4), I.force)
+	visible_message(SPAN_DANGER("\The [user] attacks [src]'s stomach wall with \the [I]!"))
+	playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
+	var/obj/item/organ/external/organ = GET_EXTERNAL_ORGAN(src, BP_CHEST)
+	if(istype(organ))
+		organ.take_external_damage(d, 0)
+		updatehealth()
+	else
+		take_organ_damage(d)
+	if(prob(getBruteLoss() - 50))
+		gib()
 
 /mob/living/carbon/gib(anim="gibbed-m",do_gibs)
 	for(var/mob/M in contents)
@@ -303,14 +300,6 @@
 /mob/living/carbon/proc/can_devour(atom/movable/victim)
 	return FALSE
 
-/mob/living/carbon/can_feel_pain(var/check_organ)
-	if(isSynthetic())
-		return FALSE
-	return !(species && species.species_flags & SPECIES_FLAG_NO_PAIN)
-
-/mob/living/carbon/proc/need_breathe()
-	return
-
 /mob/living/carbon/check_has_mouth()
 	// carbon mobs have mouths by default
 	// behavior of this proc for humans is overridden in human.dm
@@ -321,60 +310,22 @@
 	// overridden in human_defense.dm
 	return null
 
-/mob/living/carbon/proc/SetStasis(var/factor, var/source = "misc")
-	if((species && (species.species_flags & SPECIES_FLAG_NO_SCAN)) || isSynthetic())
-		return
-	stasis_sources[source] = factor
-
-/mob/living/carbon/proc/InStasis()
-	if(!stasis_value)
-		return FALSE
-	return life_tick % stasis_value
-
-// call only once per run of life
-/mob/living/carbon/proc/UpdateStasis()
-	stasis_value = 0
-	if((species && (species.species_flags & SPECIES_FLAG_NO_SCAN)) || isSynthetic())
-		return
-	for(var/source in stasis_sources)
-		stasis_value += stasis_sources[source]
-	stasis_sources.Cut()
-
 /mob/living/carbon/get_max_nutrition()
 	return 400
 
 /mob/living/carbon/get_max_hydration()
 	return 400
 
-/mob/living/carbon/proc/set_nutrition(var/amt)
-	nutrition = clamp(amt, 0, get_max_nutrition())
-
-/mob/living/carbon/get_nutrition(var/amt)
-	return nutrition
-
-/mob/living/carbon/adjust_nutrition(var/amt)
-	set_nutrition(nutrition + amt)
-
-/mob/living/carbon/get_hydration(var/amt)
-	return hydration
-
-/mob/living/carbon/proc/set_hydration(var/amt)
-	hydration = clamp(amt, 0, get_max_hydration())
-
-/mob/living/carbon/adjust_hydration(var/amt)
-	set_hydration(hydration + amt)
-
-/mob/living/carbon/has_dexterity(var/dex_level)
-	. = ..() && (species.get_manual_dexterity() >= dex_level)
-
 /mob/living/carbon/fluid_act(var/datum/reagents/fluids)
+	..()
+	if(QDELETED(src) || !fluids?.total_volume || !touching)
+		return
 	var/saturation =  min(fluids.total_volume, round(mob_size * 1.5 * reagent_permeability()) - touching.total_volume)
 	if(saturation > 0)
 		fluids.trans_to_holder(touching, saturation)
-	if(fluids.total_volume)
-		..()
 
 /mob/living/carbon/get_species()
+	RETURN_TYPE(/decl/species)
 	return species
 
 /mob/living/carbon/get_species_name()

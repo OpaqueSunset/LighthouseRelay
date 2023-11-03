@@ -29,7 +29,8 @@
 		/decl/material/liquid/fuel/hydrazine = 1
 	)
 	default_solid_form = /obj/item/stack/material/segment
-	exoplanet_rarity = MAT_RARITY_EXOTIC
+	exoplanet_rarity_plant = MAT_RARITY_EXOTIC
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /decl/material/solid/phoron
 	name = "phoron"
@@ -39,7 +40,7 @@
 	ignition_point = FLAMMABLE_GAS_MINIMUM_BURN_TEMPERATURE
 	icon_base = 'icons/turf/walls/stone.dmi'
 	table_icon_base = "stone"
-	color = "#e37108"
+	color = "#c408ba"
 	shard_type = SHARD_SHARD
 	hardness = MAT_VALUE_RIGID
 	stack_origin_tech = "{'materials':2,'exoticmatter':2}"
@@ -62,6 +63,7 @@
 	gas_flags = XGM_GAS_FUEL | XGM_GAS_CONTAMINANT
 	gas_symbol_html = "Ph"
 	gas_symbol = "Ph"
+	boiling_point = -90 CELSIUS
 	reflectiveness = MAT_VALUE_SHINY
 	value = 1.6
 	sparse_material_weight = 10
@@ -74,7 +76,8 @@
 		/decl/material/solid/phoron = 1
 	)
 	default_solid_form = /obj/item/stack/material/crystal
-	exoplanet_rarity = MAT_RARITY_EXOTIC
+	exoplanet_rarity_plant = MAT_RARITY_EXOTIC
+	exoplanet_rarity_gas = MAT_RARITY_EXOTIC
 
 //Controls phoron and phoron based objects reaction to being in a turf over 200c -- Phoron's flashpoint.
 /decl/material/solid/phoron/combustion_effect(turf/T, temperature, effect_multiplier)
@@ -115,4 +118,5 @@
 	gas_symbol_html = "Ex<sub>*</sub>"
 	gas_symbol = "Ex*"
 	default_solid_form = /obj/item/stack/material/segment
-	exoplanet_rarity = MAT_RARITY_EXOTIC
+	exoplanet_rarity_plant = MAT_RARITY_EXOTIC
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE

@@ -50,7 +50,7 @@
 	return material.get_recipes(reinf_material && reinf_material.type)
 
 /obj/item/stack/material/get_codex_value()
-	return (material && !material.hidden_from_codex) ? "[lowertext(material.solid_name)] (material)" : ..()
+	return (material && !material.hidden_from_codex) ? "[lowertext(material.codex_name)] (substance)" : ..()
 
 /obj/item/stack/material/get_material()
 	return material
@@ -69,7 +69,7 @@
 		gender = PLURAL
 	else
 		SetName("[material.use_name] [singular_name]")
-		desc = "A [singular_name] of [material.use_name]."
+		desc = "\A [singular_name] of [material.use_name]."
 		gender = NEUTER
 	if(reinf_material)
 		SetName("reinforced [name]")
@@ -146,6 +146,13 @@
 		icon_state = plural_icon_state
 	else
 		icon_state = base_state
+
+/obj/item/stack/material/get_string_for_amount(amount)
+	. = "[reinf_material ? "reinforced " : null][material.use_name]"
+	if(amount == 1)
+		. += " [singular_name]"
+		return indefinite_article ? "[indefinite_article] [.]" : ADD_ARTICLE(.)
+	return "[amount] [.] [plural_name]"
 
 /obj/item/stack/material/ingot
 	name = "ingots"

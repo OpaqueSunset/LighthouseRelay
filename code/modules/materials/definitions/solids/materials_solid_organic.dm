@@ -42,7 +42,8 @@
 	uid = "solid_holographic_plastic"
 	shard_type = SHARD_NONE
 	hidden_from_codex = TRUE
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /decl/material/solid/plastic/holographic/get_recipes(reinf_mat)
 	return list()
@@ -71,7 +72,8 @@
 	reflectiveness = MAT_VALUE_DULL
 	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
 	default_solid_form = /obj/item/stack/material/cardstock
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
@@ -110,7 +112,8 @@
 	value                   = 0.25
 	default_solid_form      = /obj/item/stack/material/bolt
 	shard_type              = /obj/item/shreddedp
-	exoplanet_rarity        = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant  = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas    = MAT_RARITY_NOWHERE
 	sound_manipulate        = 'sound/foley/paperpickup2.ogg'
 	sound_dropped           = 'sound/foley/paperpickup1.ogg'
 
@@ -139,68 +142,86 @@
 	weight = MAT_VALUE_EXTREMELY_LIGHT
 	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
 	default_solid_form = /obj/item/stack/material/bolt
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
+
+/decl/material/solid/cloth/generate_recipes(var/reinforce_material)
+	. = ..()
+	if(reinforce_material)	//recipes below don't support composite materials
+		return
+	. += new/datum/stack_recipe/cloak(src)
+	. += new/datum/stack_recipe/banner(src)
 
 /decl/material/solid/cloth/yellow
 	name = "yellow"
 	uid = "solid_cotton_yellow"
 	use_name = "yellow cloth"
+	adjective_name = "yellow"
 	color = "#ffbf00"
 
 /decl/material/solid/cloth/teal
 	name = "teal"
 	uid = "solid_cotton_teal"
 	use_name = "teal cloth"
+	adjective_name = "teal"
 	color = "#00e1ff"
 
 /decl/material/solid/cloth/black
 	name = "black"
 	uid = "solid_cotton_black"
 	use_name = "black cloth"
+	adjective_name = "black"
 	color = "#505050"
 
 /decl/material/solid/cloth/green
 	name = "green"
 	uid = "solid_cotton_green"
 	use_name = "green cloth"
+	adjective_name = "green"
 	color = "#b7f27d"
 
 /decl/material/solid/cloth/purple
 	name = "purple"
 	uid = "solid_cotton_purple"
 	use_name = "purple cloth"
+	adjective_name = "purple"
 	color = "#9933ff"
 
 /decl/material/solid/cloth/blue
 	name = "blue"
 	uid = "solid_cotton_blue"
 	use_name = "blue cloth"
+	adjective_name = "blue"
 	color = "#46698c"
 
 /decl/material/solid/cloth/beige
 	name = "beige"
 	uid = "solid_cotton_beige"
 	use_name = "beige cloth"
+	adjective_name = "beige"
 	color = "#ceb689"
 
 /decl/material/solid/cloth/lime
 	name = "lime"
 	uid = "solid_cotton_lime"
 	use_name = "lime cloth"
+	adjective_name = "lime"
 	color = "#62e36c"
 
 /decl/material/solid/cloth/red
 	name = "red"
 	uid = "solid_cotton_red"
 	use_name = "red cloth"
+	adjective_name = "red"
 	color = "#9d2300"
 
 /decl/material/solid/carpet
 	name = "red"
 	uid = "solid_carpet"
 	use_name = "red upholstery"
+	adjective_name = "red"
 	color = "#9d2300"
 	flags = MAT_FLAG_PADDING
 	ignition_point = T0C+232
@@ -213,7 +234,8 @@
 	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
 	hidden_from_codex = TRUE
 	default_solid_form = /obj/item/stack/material/bolt
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
@@ -281,6 +303,7 @@
 	sound_manipulate = 'sound/foley/meat1.ogg'
 	sound_dropped = 'sound/foley/meat2.ogg'
 	hitsound = "punch"
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	var/tans_to = /decl/material/solid/leather
 
 /decl/material/solid/skin/generate_recipes(var/reinforce_material)
@@ -288,6 +311,7 @@
 	if(reinforce_material)	//recipes below don't support composite materials
 		return
 	. += new/datum/stack_recipe/cloak(src)
+	. += new/datum/stack_recipe/banner(src)
 	. += new/datum/stack_recipe/shoes(src)
 
 /decl/material/solid/skin/lizard
@@ -297,7 +321,8 @@
 	tans_to = /decl/material/solid/leather/lizard
 	hardness = MAT_VALUE_FLEXIBLE
 	weight = MAT_VALUE_VERY_LIGHT
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /decl/material/solid/skin/insect
 	name = "chitin"
@@ -422,14 +447,16 @@
 	uid = "solid_fishbone"
 	hardness = MAT_VALUE_FLEXIBLE
 	weight = MAT_VALUE_VERY_LIGHT
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /decl/material/solid/bone/cartilage
 	name = "cartilage"
 	uid = "solid_cartilage"
 	hardness = 0
 	weight = MAT_VALUE_EXTREMELY_LIGHT
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 
 /decl/material/solid/leather
 	name = "leather"
@@ -448,7 +475,8 @@
 	reflectiveness = MAT_VALUE_MATTE
 	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
 	default_solid_form = /obj/item/stack/material/skin
-	exoplanet_rarity = MAT_RARITY_NOWHERE
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
@@ -457,6 +485,7 @@
 	if(reinforce_material)	//recipes below don't support composite materials
 		return
 	. += new/datum/stack_recipe/cloak(src)
+	. += new/datum/stack_recipe/banner(src)
 	. += new/datum/stack_recipe/shoes(src)
 	. += new/datum/stack_recipe/boots(src)
 

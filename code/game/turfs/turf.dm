@@ -1,6 +1,6 @@
 /turf
 	icon = 'icons/turf/floors.dmi'
-	level = 1
+	level = LEVEL_BELOW_PLATING
 	abstract_type = /turf
 	is_spawnable_type = TRUE
 	layer = TURF_LAYER
@@ -330,7 +330,7 @@
 
 // Called when turf is hit by a thrown object
 /turf/hitby(atom/movable/AM, var/datum/thrownthing/TT)
-	..()
+	SHOULD_CALL_PARENT(FALSE) // /atom/hitby() applies damage to AM if it's a living mob.
 	if(density)
 		if(isliving(AM))
 			var/mob/living/M = AM
@@ -398,13 +398,10 @@
 /turf/proc/is_floor()
 	return FALSE
 
-/turf/proc/get_footstep_sound(var/mob/caller)
-	return
-
 /turf/proc/update_weather(var/obj/abstract/weather_system/new_weather, var/force_update_below = FALSE)
 
 	if(isnull(new_weather))
-		new_weather = SSweather.get_weather_for_level(z)
+		new_weather = SSweather.weather_by_z[z]
 
 	// We have a weather system and we are exposed to it; update our vis contents.
 	if(istype(new_weather) && is_outside())
@@ -446,9 +443,9 @@
 		var/area/A = get_area(src)
 		. = A ? A.is_outside : OUTSIDE_NO
 
-	// If we are in a multiz volume, we return the outside value of
-	// the highest unenclosed turf in the stack.
-	if(HasAbove(z))
+	// If we are in a multiz volume and not already inside, we return
+	// the outside value of the highest unenclosed turf in the stack.
+	if((. != OUTSIDE_NO) && HasAbove(z))
 		. =  OUTSIDE_YES // assume for the moment we're unroofed until we learn otherwise.
 		var/turf/top_of_stack = src
 		while(HasAbove(top_of_stack.z))
@@ -456,6 +453,10 @@
 			if(!next_turf.is_open())
 				return OUTSIDE_NO
 			top_of_stack = next_turf
+			// ZM_PARTITION_STACK partitions the z-stack such that
+			// for the purposes of this check, the z-stack ends with it.
+			if(top_of_stack.z_flags & ZM_PARTITION_STACK)
+				break
 		// If we hit the top of the stack without finding a roof, we ask the upmost turf if we're outside.
 		. = top_of_stack.is_outside()
 	last_outside_check = . // Cache this for later calls.
@@ -494,6 +495,11 @@
 	return TRUE
 
 /turf/proc/get_air_graphic()
+	if(zone && !zone.invalid)
+		return zone.air?.graphic
+	if(external_atmosphere_participation && is_outside())
+		var/datum/level_data/level = SSmapping.levels_by_z[z]
+		return level.exterior_atmosphere.graphic
 	var/datum/gas_mixture/environment = return_air()
 	return environment?.graphic
 
@@ -539,3 +545,6 @@
 
 /turf/proc/is_defiled()
 	return (locate(/obj/effect/narsie_footstep) in src)
+
+/turf/proc/resolve_to_actual_turf()
+	return src

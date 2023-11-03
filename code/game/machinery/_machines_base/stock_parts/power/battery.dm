@@ -136,10 +136,9 @@
 /obj/item/stock_parts/power/battery/on_refresh(var/obj/machinery/machine)
 	if(machine && !cell)
 		var/obj/item/stock_parts/building_material/mat = machine.get_component_of_type(/obj/item/stock_parts/building_material)
-		var/obj/item/cell/cell = mat && mat.remove_material(/obj/item/cell, 1)
+		var/obj/item/cell/cell = mat && mat.remove_material(/obj/item/cell, 1, src)
 		if(cell)
 			add_cell(machine, cell)
-			cell.forceMove(src)
 	charge_rate = initial(charge_rate)
 	charge_rate *= 1 + 0.5 * machine.total_component_rating_of_type(/obj/item/stock_parts/capacitor)
 
@@ -183,7 +182,7 @@
 	return ..()
 
 /obj/item/stock_parts/power/battery/attack_hand(mob/user)
-	if(cell && istype(loc, /obj/machinery) && user.check_dexterity(DEXTERITY_GRIP))
+	if(cell && istype(loc, /obj/machinery) && user.check_dexterity(DEXTERITY_HOLD_ITEM))
 		user.put_in_hands(cell)
 		extract_cell(user)
 		return TRUE

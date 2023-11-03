@@ -1,17 +1,29 @@
 /mob/living/simple_animal/construct
 	hud_type = /datum/hud/construct
 
+/mob/living/simple_animal/construct
+	var/hud_construct_type
+
+/mob/living/simple_animal/construct/armoured
+	hud_construct_type = "juggernaut"
+
+/mob/living/simple_animal/construct/behemoth
+	hud_construct_type = "juggernaut"
+
+/mob/living/simple_animal/construct/builder
+	hud_construct_type = "artificer"
+
+/mob/living/simple_animal/construct/wraith
+	hud_construct_type = "wraith"
+
+/mob/living/simple_animal/construct/harvester
+	hud_construct_type = "harvester"
+
 /datum/hud/construct/FinalizeInstantiation()
 	var/constructtype
-
-	if(istype(mymob,/mob/living/simple_animal/construct/armoured) || istype(mymob,/mob/living/simple_animal/construct/behemoth))
-		constructtype = "juggernaut"
-	else if(istype(mymob,/mob/living/simple_animal/construct/builder))
-		constructtype = "artificer"
-	else if(istype(mymob,/mob/living/simple_animal/construct/wraith))
-		constructtype = "wraith"
-	else if(istype(mymob,/mob/living/simple_animal/construct/harvester))
-		constructtype = "harvester"
+	if(isconstruct(mymob))
+		var/mob/living/simple_animal/construct/construct = mymob
+		constructtype = construct.hud_construct_type
 
 	if(constructtype)
 		mymob.fire = new /obj/screen()
@@ -26,16 +38,9 @@
 		mymob.healths.SetName("health")
 		mymob.healths.screen_loc = ui_construct_health
 
-		mymob.zone_sel = new /obj/screen/zone_sel()
+		mymob.zone_sel = new
 		mymob.zone_sel.icon = 'icons/mob/screen1_construct.dmi'
-		mymob.zone_sel.overlays.len = 0
-		mymob.zone_sel.overlays += image('icons/mob/zone_sel.dmi', "[mymob.zone_sel.selecting]")
-
-		mymob.purged = new /obj/screen()
-		mymob.purged.icon = 'icons/mob/screen1_construct.dmi'
-		mymob.purged.icon_state = "purge0"
-		mymob.purged.SetName("purged")
-		mymob.purged.screen_loc = ui_construct_purge
+		mymob.zone_sel.update_icon()
 
 	mymob.client.screen = list()
-	mymob.client.screen += list(mymob.fire, mymob.healths, mymob.zone_sel, mymob.purged)
+	mymob.client.screen += list(mymob.fire, mymob.healths, mymob.zone_sel)

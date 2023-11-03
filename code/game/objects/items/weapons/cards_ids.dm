@@ -196,7 +196,7 @@ var/global/const/NO_EMAG_ACT = -50
 	if(detail_color)
 		add_overlay(overlay_image(icon, "[icon_state]-colors", detail_color, RESET_COLOR))
 	for(var/detail in extra_details)
-		add_overlay(overlay_image(icon, detail, flags = RESET_COLOR))
+		add_overlay(overlay_image(icon, "[icon_state]-[detail]", flags = RESET_COLOR))
 
 /obj/item/card/id/Topic(href, href_list, datum/topic_state/state)
 	var/mob/user = usr
@@ -259,10 +259,9 @@ var/global/const/NO_EMAG_ACT = -50
 		id_card.card_gender = "Unset"
 	id_card.set_id_photo(src)
 
-	if(dna)
-		id_card.blood_type		= dna.b_type
-		id_card.dna_hash		= dna.unique_enzymes
-		id_card.fingerprint_hash= md5(dna.uni_identity)
+	id_card.blood_type       = get_blood_type()                       || "Unset"
+	id_card.dna_hash         = get_unique_enzymes()                   || "Unset"
+	id_card.fingerprint_hash = get_full_print(ignore_blockers = TRUE) || "Unset"
 
 /mob/living/carbon/human/set_id_info(var/obj/item/card/id/id_card)
 	..()

@@ -237,9 +237,10 @@
 	icon_base = "techmaint"
 	build_type = /obj/item/stack/tile/techmaint
 
+// todo: recolorable variant
 /decl/flooring/tiling/new_tile/monofloor
-	icon_base = "monofloor"
-	color = COLOR_GUNMETAL
+	icon_base = "steel_monofloor"
+	color = null
 
 /decl/flooring/tiling/new_tile/steel_grid
 	icon_base = "grid"
@@ -424,4 +425,7 @@
 	floor_smooth = SMOOTH_NONE
 	wall_smooth = SMOOTH_NONE
 	space_smooth = SMOOTH_NONE
-	height = -FLUID_OVER_MOB_HEAD * 2
+	height = -FLUID_OVER_MOB_HEAD - 50
+
+/decl/flooring/pool/deep
+	height = -FLUID_DEEP - 50

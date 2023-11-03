@@ -90,8 +90,7 @@
 		var/zone = BP_CHEST
 		if(isliving(firer))
 			var/mob/living/user = firer
-			if(user.zone_sel)
-				zone = user.zone_sel.selecting
+			zone = user.get_target_zone() || zone
 		var/obj/item/organ/external/E = GET_EXTERNAL_ORGAN(H, zone)
 		if(E)
 			chambered.put_residue_on(E)
@@ -226,7 +225,7 @@
 		to_chat(user, SPAN_WARNING("You can't unload \the [src] manually. Maybe try a crowbar?"))
 
 /obj/item/gun/projectile/attack_hand(mob/user)
-	if(!user.is_holding_offhand(src) || !manual_unload || !user.check_dexterity(DEXTERITY_GRIP, TRUE))
+	if(!user.is_holding_offhand(src) || !manual_unload || !user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		return ..()
 	unload_ammo(user, allow_dump=0)
 	return TRUE
@@ -267,7 +266,7 @@
 /obj/item/gun/projectile/on_update_icon()
 	..()
 	if(ammo_indicator)
-		overlays += get_ammo_indicator()
+		add_overlay(get_ammo_indicator())
 
 /obj/item/gun/projectile/proc/get_ammo_indicator()
 	var/base_state = get_world_inventory_state()

@@ -108,7 +108,7 @@
 /decl/grab/normal/resolve_openhand_attack(var/obj/item/grab/G)
 	if(G.assailant.a_intent != I_HELP)
 		if(G.target_zone == BP_HEAD)
-			if(G.assailant.zone_sel.selecting == BP_EYES)
+			if(G.assailant.get_target_zone() == BP_EYES)
 				if(attack_eye(G))
 					return TRUE
 			else
@@ -186,11 +186,9 @@
 	if(istype(affecting_mob) && G.special_target_functional)
 		switch(G.target_zone)
 			if(BP_MOUTH)
-				if(GET_STATUS(affecting_mob, STAT_SILENCE) < 2)
-					affecting_mob.set_status(STAT_SILENCE, 2)
+				SET_STATUS_MAX(affecting_mob, STAT_SILENCE, 2)
 			if(BP_EYES)
-				if(GET_STATUS(affecting_mob, STAT_BLIND) < 2)
-					affecting_mob.set_status(STAT_BLIND, 2)
+				SET_STATUS_MAX(affecting_mob, STAT_BLIND, 2)
 
 // Handles when they change targeted areas and something is supposed to happen.
 /decl/grab/normal/special_target_change(var/obj/item/grab/G, old_zone, new_zone)

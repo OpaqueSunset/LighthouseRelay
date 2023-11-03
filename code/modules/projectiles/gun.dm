@@ -92,9 +92,11 @@
 	var/last_fire_message_time
 
 /obj/item/gun/Initialize()
-	. = ..()
+	// must have firemodes initialized prior to any update_icon_calls
+	// including reconsider_single_icon(), which is done in ..()
 	for(var/i in 1 to firemodes.len)
 		firemodes[i] = new /datum/firemode(src, firemodes[i])
+	. = ..()
 	if(isnull(scoped_accuracy))
 		scoped_accuracy = accuracy
 	if(scope_zoom)
@@ -159,7 +161,7 @@
 		if(has_safety && M.skill_check(SKILL_WEAPONS,SKILL_BASIC))
 			add_overlay(image('icons/obj/guns/gui.dmi',"safety[safety()]"))
 		if(src in M.get_held_items())
-			M.update_inv_hands()
+			M.update_inhand_overlays()
 	if(safety_icon)
 		add_overlay(get_safety_indicator())
 
@@ -178,7 +180,7 @@
 //Otherwise, if you want handle_click_empty() to be called, check in consume_next_projectile() and return null there.
 /obj/item/gun/proc/special_check(var/mob/user)
 
-	if(!istype(user, /mob/living))
+	if(!isliving(user))
 		return 0
 	if(!user.check_dexterity(DEXTERITY_WEAPONS))
 		return 0
@@ -223,7 +225,7 @@
 	Fire(A,user,params) //Otherwise, fire normally.
 
 /obj/item/gun/attack(atom/A, mob/living/user, def_zone)
-	if (A == user && user.zone_sel.selecting == BP_MOUTH && !mouthshoot)
+	if (A == user && user.get_target_zone() == BP_MOUTH && !mouthshoot)
 		handle_suicide(user)
 	else if(user.a_intent != I_HURT && user.aiming && user.aiming.active) //if aim mode, don't pistol whip
 		if (user.aiming.aiming_at != A)
@@ -380,9 +382,9 @@
 
 		if(ishuman(user) && user.is_cloaked()) //shooting will disable a rig cloaking device
 			var/mob/living/carbon/human/H = user
-			var/obj/item/rig/R = H.get_equipped_item(slot_back_str)
-			if(istype(R))
-				for(var/obj/item/rig_module/stealth_field/S in R.installed_modules)
+			var/obj/item/rig/rig = H.get_rig()
+			if(rig)
+				for(var/obj/item/rig_module/stealth_field/S in rig.installed_modules)
 					S.deactivate()
 
 		if(space_recoil)
@@ -489,7 +491,7 @@
 
 	//shooting while in shock
 	var/shock_dispersion = 0
-	if(istype(firer, /mob/living/carbon/human))
+	if(ishuman(firer))
 		var/mob/living/carbon/human/mob = firer
 		if(mob.shock_stage > 120)
 			shock_dispersion = rand(-4,4)
@@ -628,9 +630,9 @@
 		. = 1
 
 /obj/item/gun/attack_self(mob/user)
-	var/datum/firemode/new_mode = switch_firemodes(user)
+	var/datum/firemode/new_mode = switch_firemodes()
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
-		new_mode = switch_firemodes(user)
+		new_mode = switch_firemodes()
 	if(new_mode)
 		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
 
@@ -707,7 +709,7 @@
 		else
 			M.setClickCooldown(DEFAULT_QUICK_COOLDOWN) // Spam prevention, essentially.
 			M.visible_message(SPAN_DANGER("\The [M] pulls the trigger reflexively!"))
-			Fire(aiming_at, M, target_zone = M.zone_sel.selecting)
+			Fire(aiming_at, M, target_zone = M.get_target_zone())
 			if(M.aiming)
 				M.aiming.toggle_active(FALSE, TRUE)
 

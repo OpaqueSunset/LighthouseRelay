@@ -7,10 +7,10 @@
 	maxHealth = 100
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	faction = MOB_FACTION_NEUTRAL
-	density = 0
+	density = FALSE
 	stop_automated_movement = 1
 	wander = 0
-	anchored = 1
+	anchored = TRUE
 	faction = "cute ghost dogs"
 	supernatural = 1
 
@@ -42,7 +42,9 @@
 			var/mob/living/M = m
 			var/dist = get_dist(M, src)
 			if(dist < 2) //Attack! Attack!
-				M.attackby(get_natural_weapon(), src)
+				var/attacking_with = get_natural_weapon()
+				if(attacking_with)
+					M.attackby(attacking_with, src)
 				return .
 			else if(dist == 2)
 				new_aggress = 3

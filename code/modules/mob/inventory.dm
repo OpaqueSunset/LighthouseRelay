@@ -15,10 +15,10 @@
 //set disable_warning to disable the 'you are unable to equip that' warning.
 //unset redraw_mob to prevent the mob from being redrawn at the end.
 //set force to replace items in the slot and ignore blocking overwear
-/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, del_on_fail = 0, disable_warning = 0, redraw_mob = 1, force = FALSE, delete_old_item = TRUE)
+/mob/proc/equip_to_slot_if_possible(obj/item/W, slot, del_on_fail = 0, disable_warning = 0, redraw_mob = 1, force = FALSE, delete_old_item = TRUE, ignore_equipped = FALSE)
 	if(!istype(W) || !slot)
 		return FALSE
-	. = (canUnEquip(W) && can_equip_anything_to_slot(slot) && has_organ_for_slot(slot) && W.mob_can_equip(src, slot, disable_warning, force))
+	. = (canUnEquip(W) && can_equip_anything_to_slot(slot) && has_organ_for_slot(slot) && W.mob_can_equip(src, slot, disable_warning, force, ignore_equipped = ignore_equipped))
 	if(.)
 		equip_to_slot(W, slot, redraw_mob, delete_old_item = delete_old_item) //This proc should not ever fail.
 	else if(del_on_fail)
@@ -35,6 +35,23 @@
 	SHOULD_CALL_PARENT(TRUE)
 	if(!istype(W) || isnull(slot))
 		return FALSE
+
+	// Handle some special slots.
+	if(slot == slot_in_backpack_str)
+		remove_from_mob(W)
+		var/obj/item/back = get_equipped_item(slot_back_str)
+		if(back)
+			W.forceMove(back)
+		else
+			W.dropInto(loc)
+		return TRUE
+
+	if(slot == slot_tie_str)
+		var/obj/item/clothing/under/uniform = get_equipped_item(slot_w_uniform_str)
+		if(istype(uniform))
+			uniform.try_attach_accessory(W, src)
+		return TRUE
+
 	unequip(W)
 	if(!isnum(slot))
 		var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(slot)
@@ -61,7 +78,7 @@
 /mob/proc/equip_to_appropriate_slot(obj/item/W, var/skip_store = 0)
 	if(!istype(W))
 		return FALSE
-	for(var/slot in global.slot_equipment_priority)
+	for(var/slot in get_inventory_slot_priorities())
 		if(skip_store)
 			if(slot == slot_s_store_str || slot == slot_l_store_str || slot == slot_r_store_str)
 				continue
@@ -158,13 +175,11 @@
 
 // Removes an item from inventory and places it in the target atom.
 // If canremove or other conditions need to be checked then use unEquip instead.
-/mob/proc/drop_from_inventory(var/obj/item/W, var/atom/target = null, var/play_dropsound = TRUE)
-	if(W)
-		remove_from_mob(W, target, play_dropsound)
-		if(!(W && W.loc)) return 1 // self destroying objects (tk, grabs)
-		update_icon()
-		return 1
-	return 0
+/mob/proc/drop_from_inventory(var/obj/item/dropping_item, var/atom/target = null, var/play_dropsound = TRUE)
+	if(dropping_item)
+		remove_from_mob(dropping_item, target, play_dropsound)
+		return TRUE
+	return FALSE
 
 // Drops a held item from a given slot.
 /mob/proc/drop_from_hand(var/slot, var/atom/Target)
@@ -231,7 +246,7 @@
 	if(!length(slots))
 		return
 	for(var/slot in slots)
-		if(slots[slot] == I)
+		if(get_equipped_item(slot) == I)
 			return slot
 
 /mob/proc/get_inventory_slot_datum(var/slot)
@@ -274,12 +289,12 @@
 
 /mob/proc/get_equipped_items(var/include_carried = 0)
 	SHOULD_CALL_PARENT(TRUE)
-	for(var/slot in list(slot_back_str, slot_wear_mask_str))
+	var/held_item_slots = get_held_item_slots()
+	for(var/slot in get_inventory_slots())
 		var/obj/item/thing = get_equipped_item(slot)
 		if(istype(thing))
-			LAZYADD(., thing)
-	if(include_carried)
-		for(var/obj/item/thing in get_held_items())
+			if(!include_carried && (slot in held_item_slots))
+				continue
 			LAZYADD(., thing)
 
 /mob/proc/delete_inventory(var/include_carried = FALSE)
@@ -293,49 +308,7 @@
 	var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(slot)
 	if(inv_slot)
 		return !!inv_slot.check_has_required_organ(src)
-
-// Legacy code after this point.
-	switch(slot)
-		if(slot_back_str)
-			return has_organ(BP_CHEST)
-		if(slot_wear_mask_str)
-			return has_organ(BP_HEAD)
-		if(slot_handcuffed_str)
-			return has_organ(BP_L_HAND) && has_organ(BP_R_HAND)
-		if(slot_belt_str)
-			return has_organ(BP_CHEST)
-		if(slot_wear_id_str)
-			// the only relevant check for this is the uniform check
-			return TRUE
-		if(slot_l_ear_str)
-			return has_organ(BP_HEAD)
-		if(slot_r_ear_str)
-			return has_organ(BP_HEAD)
-		if(slot_glasses_str)
-			return has_organ(BP_HEAD)
-		if(slot_gloves_str)
-			return has_organ(BP_L_HAND) || has_organ(BP_R_HAND)
-		if(slot_head_str)
-			return has_organ(BP_HEAD)
-		if(slot_shoes_str)
-			return has_organ(BP_L_FOOT) || has_organ(BP_R_FOOT)
-		if(slot_wear_suit_str)
-			return has_organ(BP_CHEST)
-		if(slot_w_uniform_str)
-			return has_organ(BP_CHEST)
-		if(slot_l_store_str)
-			return has_organ(BP_CHEST)
-		if(slot_r_store_str)
-			return has_organ(BP_CHEST)
-		if(slot_s_store_str)
-			return has_organ(BP_CHEST)
-		if(slot_in_backpack_str)
-			return TRUE
-		if(slot_tie_str)
-			return TRUE
-		else
-			return has_organ(slot)
-// End legacy code.
+	return has_organ(slot)
 
 // Returns all currently covered body parts
 /mob/proc/get_covered_body_parts()
@@ -355,8 +328,7 @@
 // Returns all items which covers any given body part
 /mob/proc/get_covering_equipped_items(var/body_parts)
 	. = list()
-	for(var/entry in get_equipped_items())
-		var/obj/item/I = entry
+	for(var/obj/item/I as anything in get_equipped_items())
 		if(I.body_parts_covered & body_parts)
 			. += I
 
@@ -367,11 +339,16 @@
 	return FALSE
 
 /mob/proc/can_be_buckled(var/mob/user)
-	. = user.Adjacent(src) && !istype(user, /mob/living/silicon/pai)
+	. = user.Adjacent(src) && !ispAI(user)
 
 /// If this proc returns false, reconsider_client_screen_presence will set the item's screen_loc to null.
 /mob/proc/item_should_have_screen_presence(obj/item/item, slot)
-	return hud_used && slot && (hud_used.inventory_shown || !(slot in global.hidden_inventory_slots))
+	if(!slot || !hud_used)
+		return FALSE
+	if(hud_used.inventory_shown)
+		return TRUE
+	var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(slot)
+	return !(inv_slot?.can_be_hidden)
 
 /mob/proc/get_held_item_slots()
 	return
@@ -386,6 +363,9 @@
 	return
 
 /mob/proc/get_inventory_slots()
+	return
+
+/mob/proc/get_inventory_slot_priorities()
 	return
 
 /mob/proc/set_inventory_slots(var/list/new_slots)

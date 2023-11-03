@@ -25,7 +25,7 @@
 		if(!silent)
 			to_chat(src, SPAN_NOTICE("You are feeling far too docile to perform this action."))
 		return FALSE
-	if(check_last_special && world.time < last_special)
+	if(check_last_special && is_on_special_ability_cooldown())
 		if(!silent)
 			to_chat(src, SPAN_NOTICE("You cannot perform this action so soon after the last."))
 		return FALSE
@@ -81,7 +81,7 @@
 	set name = "Revive Host"
 	set desc = "Send a jolt of electricity through your host, reviving them."
 
-	if(stat != 2)
+	if(stat != DEAD)
 		to_chat(usr, SPAN_WARNING("Your host is already alive."))
 		return
 

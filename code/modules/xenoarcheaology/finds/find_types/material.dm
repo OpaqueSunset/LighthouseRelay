@@ -11,7 +11,7 @@
 		)
 
 /decl/archaeological_find/material/spawn_item(atom/loc)
-	return SSmaterials.create_object(pick(possible_materials), loc, rand(5,45))
+	return SSmaterials.create_object(pick(possible_materials), loc, rand(5,45))?[1]
 
 /decl/archaeological_find/material/exotic
 	item_type = "rare material lump"

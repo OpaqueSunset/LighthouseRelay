@@ -1,0 +1,17 @@
+/turf/simulated/floor/carpet/bcarpet
+/turf/simulated/floor/carpet/oracarpet
+/turf/simulated/floor/carpet/purcarpet
+/turf/simulated/floor/carpet/sblucarpet
+/turf/simulated/floor/carpet/turcarpet
+/turf/simulated/floor/tiled/asteroid_steel/airless
+/turf/simulated/floor/tiled/steel
+/turf/simulated/floor/tiled/steel_dirty
+/turf/simulated/floor/wood/broken
+/turf/space/cracked_asteroid
+/turf/unsimulated/wall/planetary/virgo3b
+/turf/simulated/floor/wood/sif
+/turf/simulated/shuttle/wall/dark
+/turf/simulated/shuttle/wall/dark/hard_corner
+/turf/simulated/shuttle/wall/voidcraft/hard_corner
+/turf/simulated/wall/durasteel
+/turf/simulated/wall/r_lead

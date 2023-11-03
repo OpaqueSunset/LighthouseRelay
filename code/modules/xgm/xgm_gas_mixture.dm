@@ -19,10 +19,17 @@
 	///The last cached color of the gas mixture
 	var/tmp/cached_mix_color
 
-/datum/gas_mixture/New(_volume = CELL_VOLUME, _temperature = 0, _group_multiplier = 1)
-	volume = _volume
-	temperature = _temperature
-	group_multiplier = _group_multiplier
+/datum/gas_mixture/New(_volume, _temperature, _group_multiplier)
+	if(!isnull(_volume))
+		volume = _volume
+	if(!isnull(_temperature))
+		temperature = _temperature
+	if(!isnull(_group_multiplier))
+		group_multiplier = _group_multiplier
+
+	//Since we may have values defined on creation, update everything.
+	if(volume && length(gas))
+		update_values()
 
 /datum/gas_mixture/proc/get_gas(gasid)
 	if(!gas.len)
@@ -315,9 +322,9 @@
 //Copies gas and temperature from another gas_mixture.
 /datum/gas_mixture/proc/copy_from(const/datum/gas_mixture/sample)
 	gas = sample.gas.Copy()
-	graphic = sample.graphic.Copy()
 	temperature = sample.temperature
 	update_values()
+	check_tile_graphic()
 	return 1
 
 /datum/gas_mixture/GetCloneArgs()

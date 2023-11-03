@@ -8,6 +8,9 @@
 	name = "kelotane (15u)"
 
 /obj/item/chems/pill/painkillers
+	name = "paracetamol (15u)"
+
+/obj/item/chems/pill/strong_painkillers
 	name = "tramadol (15u)"
 
 /obj/item/chems/pill/stabilizer
@@ -34,31 +37,31 @@
 ////Bottles
 
 /obj/item/storage/pill_bottle/antitox
-	name = "pill bottle (dylovene)"
+	labeled_name = "dylovene"
 
 /obj/item/storage/pill_bottle/brute_meds
-	name = "pill bottle (bicaridine)"
+	labeled_name = "bicaridine"
 
 /obj/item/storage/pill_bottle/oxygen
-	name = "pill bottle (dexalin)"
+	labeled_name = "dexalin"
 
 /obj/item/storage/pill_bottle/antitoxins
-	name = "pill bottle (dylovene)"
+	labeled_name = "dylovene"
 
 /obj/item/storage/pill_bottle/adrenaline
-	name = "pill bottle (inaprovaline)"
+	labeled_name = "inaprovaline"
 
 /obj/item/storage/pill_bottle/burn_meds
-	name = "pill bottle (kelotane)"
+	labeled_name = "kelotane"
 
 /obj/item/storage/pill_bottle/antibiotics
-	name = "pill bottle (spaceacillin)"
+	labeled_name = "spaceacillin"
 
 /obj/item/storage/pill_bottle/painkillers
-	name = "pill bottle (tramadol)"
+	labeled_name = "tramadol"
 
 /obj/item/storage/pill_bottle/antidepressants
-	name = "pill bottle (citalopram)"
+	labeled_name = "citalopram"
 
 /obj/item/storage/pill_bottle/stimulants
-	name = "pill bottle (methylphenidate)"
+	labeled_name = "methylphenidate"

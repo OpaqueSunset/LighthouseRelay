@@ -34,10 +34,10 @@ var/global/list/station_prefixes = list("", "Imperium", "Heretical", "Cuban",
 
 var/global/list/station_names = list("", "Stanford", "Dwarf", "Alien",
 	"Aegis", "Death-World", "Rogue", "Safety", "Paranoia",
-	"Explosive", "North", "West", "East", "South", "Slant-ways", 
-	"Widdershins", "Rimward", "Expensive", "Procreatory", "Imperial", 
-	"Unidentified", "Immoral", "Carp", "Orc", "Pete", "Control", 
-	"Nettle", "Class", "Crab", "Fist", "Corrogated", "Skeleton", 
+	"Explosive", "North", "West", "East", "South", "Slant-ways",
+	"Widdershins", "Rimward", "Expensive", "Procreatory", "Imperial",
+	"Unidentified", "Immoral", "Carp", "Orc", "Pete", "Control",
+	"Nettle", "Class", "Crab", "Fist", "Corrogated", "Skeleton",
 	"Gentleman", "Capitalist", "Communist", "Bear", "Beard", "Space",
 	"Star", "Moon", "System", "Mining", "Research", "Supply", "Military",
 	"Orbital", "Battle", "Science", "Asteroid", "Home", "Production",
@@ -115,22 +115,21 @@ GLOBAL_GETTER(cable_colors, /list, SetupCableColors())
 /proc/SetupCableColors()
 	. = list()
 
-	var/list/valid_cable_coils = typesof(/obj/item/stack/cable_coil)
-	for(var/ctype in list(
+	var/list/valid_cable_coils = typesof(/obj/item/stack/cable_coil) - typesof(
 		/obj/item/stack/cable_coil/single,
 		/obj/item/stack/cable_coil/cut,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/stack/cable_coil/fabricator,
 		/obj/item/stack/cable_coil/random
-	))
-		valid_cable_coils -= typesof(ctype)
+	)
 
 	var/special_name_mappings = list(/obj/item/stack/cable_coil = "Red")
 	for(var/coil_type in valid_cable_coils)
 		var/name = special_name_mappings[coil_type] || capitalize(copytext_after_last("[coil_type]", "/"))
 
 		var/obj/item/stack/cable_coil/C = coil_type
+		if(!initial(C.can_have_color))
+			continue
 		var/color = initial(C.color)
-
 		.[name] = color
 	. = sortTim(., /proc/cmp_text_asc)

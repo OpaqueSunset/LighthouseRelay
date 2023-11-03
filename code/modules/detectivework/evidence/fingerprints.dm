@@ -19,8 +19,8 @@
 			return
 	..()
 
-/datum/forensics/fingerprints/copy()
-	var/datum/forensics/fingerprints/F = new()
+/datum/forensics/fingerprints/PopulateClone(datum/clone)
+	var/datum/forensics/fingerprints/F = ..()
 	for(var/datum/fingerprint/print in data)
 		F.add_data(print.copy())
 	return F
@@ -82,18 +82,17 @@
 	return TRUE
 
 // Mob fingerprint getters
-/mob/proc/get_full_print()
-	return FALSE
+/mob/proc/get_full_print(ignore_blockers)
+	return null
 
-/mob/living/carbon/get_full_print()
-	if (!dna || (mFingerprints in mutations))
-		return FALSE
-	return md5(dna.uni_identity)
+/mob/living/get_full_print(var/ignore_blockers = FALSE)
+	if(!ignore_blockers)
+		var/obj/item/organ/external/E = GET_EXTERNAL_ORGAN(src, get_active_held_item_slot())
+		if(E)
+			return E.get_fingerprint()
+	return fingerprint
 
-/mob/living/carbon/human/get_full_print()
-	if(!..())
-		return FALSE
-
-	var/obj/item/organ/external/E = GET_EXTERNAL_ORGAN(src, get_active_held_item_slot())
-	if(E)
-		return E.get_fingerprint()
+/mob/living/carbon/get_full_print(var/ignore_blockers = FALSE)
+	if (!ignore_blockers && (mFingerprints in mutations))
+		return null
+	return ..()

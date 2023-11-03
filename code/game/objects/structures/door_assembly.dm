@@ -2,8 +2,8 @@
 	name = "airlock assembly"
 	icon = 'icons/obj/doors/station/door.dmi'
 	icon_state = "construction"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
 	var/state = 0
 	var/base_name = "Airlock"
@@ -27,10 +27,11 @@
 	update_icon()
 
 /obj/structure/door_assembly/set_dir(new_dir)
-	if(new_dir & (EAST|WEST))
-		new_dir = WEST
-	else
-		new_dir = SOUTH
+	if(width == 1) // This logic doesn't support multitle doors.
+		if(new_dir & (EAST|WEST))
+			new_dir = WEST
+		else
+			new_dir = SOUTH
 
 	. = ..(new_dir)
 

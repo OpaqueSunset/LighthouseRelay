@@ -6,7 +6,7 @@
 	var/active = 0
 	var/drill_time = 10
 	var/turf/drilling_turf
-	density = 1
+	density = TRUE
 	layer = ABOVE_OBJ_LAYER		//to go over ores
 	matter = list(
 		/decl/material/solid/metal/plasteel/ocp = MATTER_AMOUNT_PRIMARY,
@@ -31,13 +31,13 @@
 			var/turf/exterior/wall/M = A
 			drilling_turf = get_turf(src)
 			src.visible_message("<span class='notice'>\The [src] begins to drill into \the [M].</span>")
-			anchored = 1
+			anchored = TRUE
 			spawn(drill_time)
 				if(get_turf(src) == drilling_turf && active)
 					M.dismantle_wall()
 					forceMove(M)
 				drilling_turf = null
-				anchored = 0
+				anchored = FALSE
 
 /obj/machinery/giga_drill/get_artifact_scan_data()
 	return "Automated mining drill - structure composed of osmium-carbide alloy, with tip and drill lines edged in a complex lattice of diamond and phoron."

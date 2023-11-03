@@ -19,18 +19,14 @@
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
 	sharp = 1
-	unacidable = 1 //glass
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 	var/mode = SYRINGE_DRAW
 	var/image/filling //holds a reference to the current filling overlay
 	var/visible_name = "a syringe"
 	var/time = 30
+	var/can_stab = TRUE
 
 /obj/item/chems/syringe/Initialize(var/mapload)
-	. = ..()
-	update_icon()
-
-/obj/item/chems/syringe/on_reagent_change()
 	. = ..()
 	update_icon()
 
@@ -75,7 +71,10 @@
 		return
 
 	if((user.a_intent == I_HURT) && ismob(target))
-		syringestab(target, user)
+		if(can_stab)
+			syringestab(target, user)
+		else
+			to_chat(user, SPAN_WARNING("This syringe is too big to stab someone with it."))
 		return
 
 	handleTarget(target, user)
@@ -122,16 +121,16 @@
 		if(reagents.total_volume)
 			to_chat(user, SPAN_NOTICE("There is already a blood sample in this syringe."))
 			return
-		if(istype(target, /mob/living/carbon))
+		if(iscarbon(target))
 			var/amount = REAGENTS_FREE_SPACE(reagents)
 			var/mob/living/carbon/T = target
 			if(!T.dna)
 				to_chat(user, SPAN_WARNING("You are unable to locate any blood."))
-				if(istype(target, /mob/living/carbon/human))
+				if(ishuman(target))
 					CRASH("[T] \[[T.type]\] was missing their dna datum!")
 				return
 
-			var/allow = T.can_inject(user, check_zone(user.zone_sel.selecting, T))
+			var/allow = T.can_inject(user, check_zone(user.get_target_zone(), T))
 			if(!allow)
 				return
 
@@ -150,7 +149,7 @@
 
 			if(prob(user.skill_fail_chance(SKILL_MEDICAL, 60, SKILL_BASIC)))
 				to_chat(user, SPAN_WARNING("You miss the vein!"))
-				var/target_zone = check_zone(user.zone_sel.selecting, T)
+				var/target_zone = check_zone(user.get_target_zone(), T)
 				T.apply_damage(3, BRUTE, target_zone, damage_flags=DAM_SHARP)
 				return
 
@@ -182,7 +181,7 @@
 
 /obj/item/chems/syringe/proc/injectReagents(var/atom/target, var/mob/user)
 
-	if(ismob(target) && !user.skill_check(SKILL_MEDICAL, SKILL_BASIC))
+	if(ismob(target) && !user.skill_check(SKILL_MEDICAL, SKILL_BASIC) && (can_stab == TRUE))
 		syringestab(target, user)
 		return
 
@@ -222,7 +221,7 @@
 	if(!trackTarget)
 		trackTarget = target
 
-	var/allow = target.can_inject(user, check_zone(user.zone_sel.selecting, target))
+	var/allow = target.can_inject(user, check_zone(user.get_target_zone(), target))
 	if(!allow)
 		return
 
@@ -261,11 +260,11 @@
 
 /obj/item/chems/syringe/proc/syringestab(var/mob/living/carbon/target, var/mob/living/carbon/user)
 
-	if(istype(target, /mob/living/carbon/human))
+	if(ishuman(target))
 
 		var/mob/living/carbon/human/H = target
 
-		var/target_zone = check_zone(user.zone_sel.selecting, H)
+		var/target_zone = check_zone(user.get_target_zone(), H)
 		var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, target_zone)
 
 		if (!affecting)
@@ -315,13 +314,10 @@
 	visible_name = "a giant syringe"
 	time = 300
 	mode = SYRINGE_INJECT
+	can_stab = FALSE
 
 /obj/item/chems/syringe/ld50_syringe/populate_reagents()
 	reagents.add_reagent(/decl/material/liquid/heartstopper, reagents.maximum_volume)
-
-/obj/item/chems/syringe/ld50_syringe/syringestab(var/mob/living/carbon/target, var/mob/living/carbon/user)
-	to_chat(user, SPAN_NOTICE("This syringe is too big to stab someone with it."))
-	return // No instant injecting
 
 /obj/item/chems/syringe/ld50_syringe/drawReagents(var/target, var/mob/user)
 	if(ismob(target)) // No drawing 60 units of blood at once
@@ -397,7 +393,7 @@
 	name = "cryostasis syringe"
 	desc = "An advanced syringe that stops reagents inside from reacting. It can hold up to 20 units."
 	volume = 20
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_REACT
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_NO_CHEM_CHANGE
 	icon_state = "cs"
 	material = /decl/material/solid/glass
 	matter = list(

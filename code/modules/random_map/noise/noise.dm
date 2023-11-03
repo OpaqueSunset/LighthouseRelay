@@ -83,7 +83,7 @@
 		map[TRANSLATE_COORD(x+isize,y)]   \
 		)/2)
 
-	map[get_map_cell(x,y+hsize)] = round((  \
+	map[TRANSLATE_COORD(x,y+hsize)] = round((  \
 		map[TRANSLATE_COORD(x,y+isize)] + \
 		map[TRANSLATE_COORD(x,y)]              \
 		)/2)
@@ -116,84 +116,94 @@
 		subdivide(iteration, x+hsize, y+hsize, hsize)
 
 /datum/random_map/noise/cleanup()
-	var/is_not_border_left
-	var/is_not_border_right
 	for(var/i = 1 to smoothing_iterations)
 		var/list/next_map[limit_x*limit_y]
+		// simple box blur from http://amritamaz.net/blog/understanding-box-blur
+		// basically: we do two very fast one-dimensional blurs
+		var/total
+		for(var/y = 1 to limit_y) // for each row
+			// init window for x=1
+			// for a blur with a radius >1 use a for loop instead and replace 2 with the real count
+			var/cellone = map[TRANSLATE_COORD(1, y)]
+			var/celltwo = map[TRANSLATE_COORD(2, y)]
+			total = cellone + celltwo
+			next_map[TRANSLATE_COORD(1, y)] = round(total / 2)
+			// hardcoding x=2 also, to lower checks in the loop
+			// larger radius would need to also cover all x < 1 + blur_radius
+			total += map[TRANSLATE_COORD(3, y)]
+			next_map[TRANSLATE_COORD(2, y)] = round(total / 3)
+			for(var/x = 3 to limit_x-1) // should technically be 2 + blur_radius to limit_x - blur_radius
+				total -= map[TRANSLATE_COORD(x-2, y)] // x - blur_radius - 1
+				total += map[TRANSLATE_COORD(x+1, y)] // x + blur_radius
+				next_map[TRANSLATE_COORD(x, y)] = round(total / 3) // should technically be 2*blur_radius+1
+		// now do the same in the x axis
+		map = next_map.Copy()
 		for(var/x = 1 to limit_x)
-			for(var/y = 1 to limit_y)
-				var/current_cell = TRANSLATE_COORD(x,y)
-				next_map[current_cell] = map[current_cell]
-				var/val_count = 1
-				var/total = map[current_cell]
-
-				is_not_border_left = (x != 1)
-				is_not_border_right = (x != limit_x)
-
-				// Center row. Center value's already been done above.
-				if (is_not_border_left)
-					total += map[TRANSLATE_COORD(x - 1, y)]
-					++val_count
-				if (is_not_border_right)
-					total += map[TRANSLATE_COORD(x + 1, y)]
-					++val_count
-
-				if (y != 1) // top row
-					total += map[TRANSLATE_COORD(x, y - 1)]
-					++val_count
-					if (is_not_border_left)
-						total += map[TRANSLATE_COORD(x - 1, y - 1)]
-						++val_count
-					if (is_not_border_right)
-						total += map[TRANSLATE_COORD(x + 1, y - 1)]
-						++val_count
-
-				if (y != limit_y) // bottom row
-					total += map[TRANSLATE_COORD(x, y + 1)]
-					++val_count
-					if (is_not_border_left)
-						total += map[TRANSLATE_COORD(x - 1, y + 1)]
-						++val_count
-					if (is_not_border_right)
-						total += map[TRANSLATE_COORD(x + 1, y + 1)]
-						++val_count
-
-				total = round(total/val_count)
-
-				if(abs(map[current_cell]-total) <= cell_smooth_amt)
-					map[current_cell] = total
-				else if(map[current_cell] < total)
-					map[current_cell]+=cell_smooth_amt
-				else if(map[current_cell] < total)
-					map[current_cell]-=cell_smooth_amt
-				map[current_cell] = max(0,min(cell_range,map[current_cell]))
+			// see comments above
+			var/cellone = map[TRANSLATE_COORD(x, 1)]
+			var/celltwo = map[TRANSLATE_COORD(x, 2)]
+			total = cellone + celltwo
+			next_map[TRANSLATE_COORD(x, 1)] = round(total / 2)
+			// hardcoding x=2 also, to lower checks in the loop
+			// larger radius would need to also cover all x < 1 + blur_radius
+			total += map[TRANSLATE_COORD(x, 3)]
+			next_map[TRANSLATE_COORD(x, 2)] = round(total / 3)
+			for(var/y = 3 to limit_y-1)
+				total -= map[TRANSLATE_COORD(x, y-2)]
+				total += map[TRANSLATE_COORD(x, y+1)]
+				next_map[TRANSLATE_COORD(x, y)] = round(total / 3)
 		map = next_map
 
 	if(smooth_single_tiles)
-		var/list/buddies = list()
 		for(var/x in 1 to limit_x - 1)
 			for(var/y in 1 to limit_y - 1)
-				var/mapcell = get_map_cell(x,y)
-				var/list/neighbors = get_neighbors(x, y)
-				buddies.Cut()
-				for(var/cell in neighbors)
-					if(noise2value(map[cell]) == noise2value(map[mapcell]))
-						buddies |= cell
-				if(!length(buddies))
-					map[mapcell] = map[pick(neighbors)]
+				var/mapcell = TRANSLATE_COORD(x,y)
+				if(has_neighbor_with_path(x, y, get_appropriate_path(map[mapcell]), TRUE))
+					continue
+				map[mapcell] = map[pick(get_neighbors(x, y, TRUE))]
 
+#define CHECK_NEIGHBOR_FOR_PATH(X, Y) \
+	TRANSLATE_AND_VERIFY_COORD(X,Y);\
+	if(tmp_cell && (get_appropriate_path(map[tmp_cell]) == path)) {\
+		return TRUE;\
+	}
+
+/// Checks if the cell at x,y has a neighbor with the given path.
+/// Faster than looping over get_neighbors for the same purpose because it doesn't use list ops.
+/datum/random_map/noise/proc/has_neighbor_with_path(x, y, path, include_diagonals)
+	var/tmp_cell
+	CHECK_NEIGHBOR_FOR_PATH(x-1,y)
+	CHECK_NEIGHBOR_FOR_PATH(x+1,y)
+	CHECK_NEIGHBOR_FOR_PATH(x,y+1)
+	CHECK_NEIGHBOR_FOR_PATH(x,y-1)
+	if(include_diagonals)
+		CHECK_NEIGHBOR_FOR_PATH(x+1,y+1)
+		CHECK_NEIGHBOR_FOR_PATH(x+1,y-1)
+		CHECK_NEIGHBOR_FOR_PATH(x-1,y-1)
+		CHECK_NEIGHBOR_FOR_PATH(x-1,y+1)
+	return FALSE
+
+#undef CHECK_NEIGHBOR_FOR_PATH
+
+#define VERIFY_AND_ADD_CELL(X, Y) \
+	TRANSLATE_AND_VERIFY_COORD(X,Y);\
+	if(tmp_cell) {\
+		. += tmp_cell;\
+	}
+
+/// Gets the neighbors of the cell at x, y, optionally including diagonals.
+/// (x,y) and its neighbors can safely be invalid/not validated before calling.
 /datum/random_map/noise/proc/get_neighbors(x, y, include_diagonals)
 	. = list()
-	if(!include_diagonals)
-		var/static/list/ortho_offsets = list(list(-1, 0), list(1, 0), list(0, 1), list(0,-1))
-		for(var/list/offset in ortho_offsets)
-			var/tmp_cell = get_map_cell(x+offset[1],y+offset[2])
-			if(tmp_cell)
-				. += tmp_cell
-	else
-		for(var/dx in -1 to 1)
-			for(var/dy in -1 to 1)
-				var/tmp_cell = get_map_cell(x+dx,y+dy)
-				if(tmp_cell)
-					. += tmp_cell
-		. -= get_map_cell(x,y)
+	var/tmp_cell
+	VERIFY_AND_ADD_CELL(x-1,y)
+	VERIFY_AND_ADD_CELL(x+1,y)
+	VERIFY_AND_ADD_CELL(x,y+1)
+	VERIFY_AND_ADD_CELL(x,y-1)
+	if(include_diagonals)
+		VERIFY_AND_ADD_CELL(x+1,y+1)
+		VERIFY_AND_ADD_CELL(x+1,y-1)
+		VERIFY_AND_ADD_CELL(x-1,y-1)
+		VERIFY_AND_ADD_CELL(x-1,y+1)
+
+#undef VERIFY_AND_ADD_CELL

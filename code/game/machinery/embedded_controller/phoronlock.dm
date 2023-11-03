@@ -208,31 +208,11 @@
 /datum/computer/file/embedded_program/airlock/phoron
 	var/tag_scrubber
 
-// TODO: MOVE THESE TO MAP FILES
-//Atmosphere properties
-#define VIRGO3B_ONE_ATMOSPHERE	82.4 //kPa
-#define VIRGO3B_AVG_TEMP	234 //kelvin
-
-#define VIRGO3B_PER_N2		0.16 //percent
-#define VIRGO3B_PER_O2		0.00
-#define VIRGO3B_PER_N2O		0.00 //Currently no capacity to 'start' a turf with this. See turf.dm
-#define VIRGO3B_PER_CO2		0.12
-#define VIRGO3B_PER_PHORON	0.72
-
-//Math only beyond this point
-#define VIRGO3B_MOL_PER_TURF	(VIRGO3B_ONE_ATMOSPHERE*CELL_VOLUME/(VIRGO3B_AVG_TEMP*R_IDEAL_GAS_EQUATION))
-#define VIRGO3B_MOL_N2			(VIRGO3B_MOL_PER_TURF * VIRGO3B_PER_N2)
-#define VIRGO3B_MOL_O2			(VIRGO3B_MOL_PER_TURF * VIRGO3B_PER_O2)
-#define VIRGO3B_MOL_N2O			(VIRGO3B_MOL_PER_TURF * VIRGO3B_PER_N2O)
-#define VIRGO3B_MOL_CO2			(VIRGO3B_MOL_PER_TURF * VIRGO3B_PER_CO2)
-#define VIRGO3B_MOL_PHORON		(VIRGO3B_MOL_PER_TURF * VIRGO3B_PER_PHORON)
-// END TODO
-
 /datum/computer/file/embedded_program/airlock/phoron/New(var/obj/machinery/embedded_controller/M)
 	..(M)
 	memory["chamber_sensor_phoron"] = 0
-	memory["external_sensor_pressure"] = VIRGO3B_ONE_ATMOSPHERE
-	memory["external_sensor_phoron"] = VIRGO3B_MOL_PHORON
+	memory["external_sensor_pressure"] = 1 ATM
+	memory["external_sensor_phoron"] = 0
 	memory["internal_sensor_phoron"] = 0
 	memory["scrubber_status"] = "unknown"
 	memory["target_phoron"] = 0.1
@@ -286,7 +266,7 @@
 		if(SIDE_EXTERIOR)
 			return FALSE // Just always cycle for exterior, it's dangerous.
 		if(SIDE_INTERIOR)
-			return memory["chamber_sensor_phoron"] <= memory["target_phoron"]
+			return check_doors_secured() && memory["chamber_sensor_phoron"] <= memory["target_phoron"]
 #undef SIDE_EXTERIOR
 #undef SIDE_INTERIOR
 
@@ -349,19 +329,16 @@
 				//the airlock will not allow itself to continue to cycle when any of the doors are forced open.
 				stop_cycling()
 			else if(memory["chamber_sensor_pressure"] >= memory["target_pressure"] * 0.95)
-				signalPump(tag_airpump, 0)	// send a signal to stop pumping. No need to wait for it tho.
 				cycleDoors(target_state)
+				stop_cycling()
 				// TODO: VIRGO AIRLOCK TTS
 				// playsound(master, 'sound/AI/airlockdone.ogg', 100, 0)
-				state = STATE_IDLE
-				target_state = TARGET_NONE
 
 	memory["processing"] = (state != target_state)
 	return 1
 
 /datum/computer/file/embedded_program/airlock/phoron/stop_cycling()
-	state = STATE_IDLE
-	target_state = TARGET_NONE
+	. = ..()
 	signalPump(tag_airpump, 0)
 	signalScrubber(tag_scrubber, 0)
 

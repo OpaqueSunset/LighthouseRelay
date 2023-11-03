@@ -1,4 +1,6 @@
 /obj/item/ammo_magazine/speedloader
+	name = "speed loader"
+	desc = "A speed loader for revolvers."
 	icon = 'icons/obj/ammo/speedloader.dmi'
 	icon_state = ICON_STATE_WORLD
 	caliber = CALIBER_PISTOL_MAGNUM
@@ -62,7 +64,7 @@
 		overlays += I
 
 /obj/item/ammo_magazine/shotholder/attack_hand(mob/user)
-	if(loc != user || user.a_intent != I_HURT || !length(stored_ammo) || !user.check_dexterity(DEXTERITY_GRIP, TRUE))
+	if(loc != user || user.a_intent != I_HURT || !length(stored_ammo) || !user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		return ..()
 	var/obj/item/ammo_casing/C = stored_ammo[stored_ammo.len]
 	stored_ammo -= C
@@ -98,6 +100,13 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
 	marking_color = COLOR_MUZZLE_FLASH
+
+/obj/item/ammo_magazine/shotholder/emp
+	name = "haywire slug holder"
+	ammo_type = /obj/item/ammo_casing/shotgun/emp
+	material = /decl/material/solid/metal/steel
+	matter = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
+	marking_color = COLOR_SKY_BLUE
 
 /obj/item/ammo_magazine/shotholder/empty
 	name = "shotgun ammunition holder"

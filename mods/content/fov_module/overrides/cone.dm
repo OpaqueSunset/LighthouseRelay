@@ -44,22 +44,19 @@
 	. = ..()
 	if(!src.client) //Same as in module. Hate to look for this twice, but it's needed, short of mashing everything together.
 		return
-	var/delay = 10
-	var/image/I = null
-	for(I in src.client.hidden_atoms)
+	for(var/image/I in src.client.hidden_atoms)
 		I.override = 0
-		spawn(delay)
-			qdel(I)
-		delay += 10
-	src.client.hidden_atoms = list()
-	src.client.hidden_mobs = list()
+		qdel(I)
+
+	src.client.hidden_atoms.Cut()
+	src.client.hidden_mobs.Cut()
 	src.fov.dir = src.dir
 
 	if(fov.alpha != 0)
 
 		for(var/mob/living/M as anything in mobs_in_cone(src, global.flip_dir[dir], 10))
-			I = image("split", M)
-			I.mouse_opacity = 0
+			var/image/I = image("split", M)
+			I.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I
@@ -70,8 +67,8 @@
 			M.in_vision_cones[src.client] = 1
 
 		for(var/obj/item/O in items_in_cone(src, global.flip_dir[dir], 10))
-			I = image("split", O)
-			I.mouse_opacity = 0
+			var/image/I = image("split", O)
+			I.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 			I.override = 1
 			src.client.images += I
 			src.client.hidden_atoms += I

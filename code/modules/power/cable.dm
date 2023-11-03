@@ -31,8 +31,13 @@ By design, d1 is the smallest direction and d2 is the highest
 	color =    COLOR_MAROON
 	anchored = TRUE
 	obj_flags = OBJ_FLAG_MOVES_UNSUPPORTED
-	level = 1
+	level = LEVEL_BELOW_PLATING
 
+	/// The base cable stack that should be produced, not including color.
+	/// cable_type.stack_merge_type should equal cable_type, ideally
+	var/cable_type = /obj/item/stack/cable_coil
+	/// Whether this cable type can be (re)colored.
+	var/can_have_color = TRUE
 	var/d1
 	var/d2
 	var/datum/powernet/powernet
@@ -73,7 +78,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	// ensure d1 & d2 reflect the icon_state for entering and exiting cable
 	. = ..(ml)
 	var/turf/T = src.loc			// hide if turf is not intact
-	if(level==1 && T)
+	if(level == LEVEL_BELOW_PLATING && T)
 		hide(!T.is_plating())
 	global.cable_list += src //add it to the global cable list
 
@@ -199,7 +204,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if (shock(user, 50))
 		return
 
-	new/obj/item/stack/cable_coil(T, (src.d1 ? 2 : 1), color)
+	new cable_type(T, (src.d1 ? 2 : 1), color)
 
 	visible_message(SPAN_WARNING("[user] cuts \the [src]."))
 
@@ -241,6 +246,8 @@ By design, d1 is the smallest direction and d2 is the highest
 	. = ..()
 
 /obj/structure/cable/proc/cableColor(var/colorC)
+	if(!can_have_color)
+		return
 	var/color_n = "#dd0000"
 	if(colorC)
 		color_n = colorC
@@ -255,7 +262,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/structure/cable/proc/mergeDiagonalsNetworks(var/direction)
 
 	//search for and merge diagonally matching cables from the first direction component (north/south)
-	var/turf/T  = get_step(src, direction&3)//go north/south
+	var/turf/T  = get_step_resolving_mimic(src, direction & (NORTH|SOUTH))
 
 	for(var/obj/structure/cable/C in T)
 
@@ -265,7 +272,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		if(src == C)
 			continue
 
-		if(C.d1 == (direction^3) || C.d2 == (direction^3)) //we've got a diagonally matching cable
+		if(C.d1 == (direction ^ (NORTH|SOUTH)) || C.d2 == (direction ^ (NORTH|SOUTH))) //we've got a diagonally matching cable
 			if(!C.powernet) //if the matching cable somehow got no powernet, make him one (should not happen for cables)
 				var/datum/powernet/newPN = new()
 				newPN.add_cable(C)
@@ -276,7 +283,7 @@ By design, d1 is the smallest direction and d2 is the highest
 				C.powernet.add_cable(src) //else, we simply connect to the matching cable powernet
 
 	//the same from the second direction component (east/west)
-	T  = get_step(src, direction&12)//go east/west
+	T  = get_step_resolving_mimic(src, direction & (EAST|WEST))
 
 	for(var/obj/structure/cable/C in T)
 
@@ -285,7 +292,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 		if(src == C)
 			continue
-		if(C.d1 == (direction^12) || C.d2 == (direction^12)) //we've got a diagonally matching cable
+		if(C.d1 == (direction ^ (EAST|WEST)) || C.d2 == (direction ^ (EAST|WEST))) //we've got a diagonally matching cable
 			if(!C.powernet) //if the matching cable somehow got no powernet, make him one (should not happen for cables)
 				var/datum/powernet/newPN = new()
 				newPN.add_cable(C)
@@ -303,7 +310,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(!(d1 == direction || d2 == direction)) //if the cable is not pointed in this direction, do nothing
 		return
 
-	var/turf/TB  = get_zstep(src, direction)
+	var/turf/TB  = get_zstep_resolving_mimic(src, direction)
 
 	for(var/obj/structure/cable/C in TB)
 
@@ -380,14 +387,14 @@ By design, d1 is the smallest direction and d2 is the highest
 		if(cable_dir == 0)
 			continue
 		var/reverse = global.reverse_dir[cable_dir]
-		T = get_zstep(src, cable_dir)
+		T = get_zstep_resolving_mimic(src, cable_dir)
 		if(T)
 			for(var/obj/structure/cable/C in T)
 				if(C.d1 == reverse || C.d2 == reverse)
 					. += C
 		if(cable_dir & (cable_dir - 1)) // Diagonal, check for /\/\/\ style cables along cardinal directions
 			for(var/pair in list(NORTH|SOUTH, EAST|WEST))
-				T = get_step(src, cable_dir & pair)
+				T = get_step_resolving_mimic(src, cable_dir & pair)
 				if(T)
 					var/req_dir = cable_dir ^ pair
 					for(var/obj/structure/cable/C in T)
@@ -431,7 +438,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/list/P_list
 	if(!T1)	return
 	if(d1)
-		T1 = get_step(T1, d1)
+		T1 = get_zstep_resolving_mimic(T1, d1)
 		P_list = power_list(T1, src, turn(d1,180),0,cable_only = 1)	// what adjacently joins on to cut cable...
 
 	P_list += power_list(loc, src, d1, 0, cable_only = 1)//... and on turf
@@ -495,6 +502,9 @@ By design, d1 is the smallest direction and d2 is the highest
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stack_merge_type = /obj/item/stack/cable_coil
 	matter_multiplier = 0.15
+	/// Whether or not this cable coil can even have a color in the first place.
+	var/can_have_color = TRUE
+	var/cable_type = /obj/structure/cable
 
 /obj/item/stack/cable_coil/single
 	amount = 1
@@ -509,14 +519,13 @@ By design, d1 is the smallest direction and d2 is the highest
 	max_health = ITEM_HEALTH_NO_DAMAGE
 	is_spawnable_type = FALSE
 
-/obj/item/stack/cable_coil/Initialize(mapload, c_length = MAXCOIL, var/param_color = null)
+/obj/item/stack/cable_coil/Initialize(mapload, c_length, var/param_color = null)
 	. = ..(mapload, c_length)
 	set_extension(src, /datum/extension/tool/variable, list(
 		TOOL_CABLECOIL = TOOL_QUALITY_DEFAULT,
 		TOOL_SUTURES =   TOOL_QUALITY_MEDIOCRE
 	))
-	src.amount = c_length
-	if (param_color) // It should be red by default, so only recolor it if parameter was specified.
+	if (can_have_color && param_color) // It should be red by default, so only recolor it if parameter was specified.
 		color = param_color
 	update_icon()
 	update_wclass()
@@ -529,7 +538,7 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/item/stack/cable_coil/attack(var/atom/A, var/mob/living/user, var/def_zone)
 	if(ishuman(A) && user.a_intent == I_HELP)
 		var/mob/living/carbon/human/H = A
-		var/obj/item/organ/external/S = GET_EXTERNAL_ORGAN(H, user.zone_sel.selecting)
+		var/obj/item/organ/external/S = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 
 		if (!S) return
 		if(!BP_IS_PROSTHETIC(S) || user.a_intent != I_HELP)
@@ -548,7 +557,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/item/stack/cable_coil/on_update_icon()
 	. = ..()
-	if (!color)
+	if (!color && can_have_color)
 		var/list/possible_cable_colours = get_global_cable_colors()
 		color = possible_cable_colours[pick(possible_cable_colours)]
 	if(amount == 1)
@@ -565,7 +574,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		SetName(initial(name))
 
 /obj/item/stack/cable_coil/proc/set_cable_color(var/selected_color, var/user)
-	if(!selected_color)
+	if(!selected_color || !can_have_color)
 		return
 
 	var/list/possible_cable_colours = get_global_cable_colors()
@@ -588,7 +597,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(get_amount() == 1)
-		to_chat(user, "A [singular_name] of cable.")
+		to_chat(user, "\A [singular_name] of cable.")
 	else if(get_amount() == 2)
 		to_chat(user, "Two [plural_name] of cable.")
 	else
@@ -621,16 +630,16 @@ By design, d1 is the smallest direction and d2 is the highest
 // Items usable on a cable coil :
 //   - Wirecutters : cut them duh !
 //   - Cable coil : merge cables
-/obj/item/stack/cable_coil/can_merge(var/obj/item/stack/cable_coil/C)
-	return color == C.color
+/obj/item/stack/cable_coil/can_merge_stacks(var/obj/item/stack/other)
+	return !other || (istype(other) && other.color == color)
 
-/obj/item/stack/cable_coil/cyborg/can_merge()
-	return 1
+/obj/item/stack/cable_coil/cyborg/can_merge_stacks(var/obj/item/stack/other)
+	return TRUE
 
 /obj/item/stack/cable_coil/transfer_to(obj/item/stack/cable_coil/S)
 	if(!istype(S))
 		return 0
-	if(!(can_merge(S) || S.can_merge(src)))
+	if(!(can_merge_stacks(S) || S.can_merge_stacks(src)))
 		return 0
 
 	return ..()
@@ -778,7 +787,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(!istype(F))
 		return FALSE
 
-	var/obj/structure/cable/C = new(F)
+	var/obj/structure/cable/C = new cable_type(F)
 	C.cableColor(color)
 	C.d1 = d1
 	C.d2 = d2
@@ -843,6 +852,9 @@ By design, d1 is the smallest direction and d2 is the highest
 /obj/item/stack/cable_coil/lime
 	color = COLOR_LIME
 
+/obj/item/stack/cable_coil/black
+	color = COLOR_BLACK
+
 /obj/item/stack/cable_coil/random/Initialize(mapload, c_length, param_color)
 	var/list/possible_cable_colours = get_global_cable_colors()
 	color = possible_cable_colours[pick(possible_cable_colours)]
@@ -860,7 +872,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(istype(loc, /obj/item/rig_module))
 		var/obj/item/rig_module/module = loc
 		return module.get_cell()
-	if(istype(loc, /mob/living/silicon/robot))
+	if(isrobot(loc))
 		var/mob/living/silicon/robot/R = loc
 		return R.get_cell()
 

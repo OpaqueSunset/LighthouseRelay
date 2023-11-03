@@ -68,7 +68,7 @@
 		..()
 
 /obj/item/implanter/attack(mob/M, mob/user)
-	if (!istype(M, /mob/living/carbon))
+	if (!iscarbon(M))
 		return
 	if (user && src.imp)
 		M.visible_message("<span class='warning'>[user] is attemping to implant [M].</span>")
@@ -76,7 +76,7 @@
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(M)
 
-		var/target_zone = user.zone_sel.selecting
+		var/target_zone = user.get_target_zone()
 		if(src.imp.can_implant(M, user, target_zone))
 			var/imp_name = imp.name
 

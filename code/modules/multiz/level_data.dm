@@ -66,7 +66,8 @@
 /datum/level_data
 	///Name displayed to the player to refer to this level in user interfaces and etc. If null, one will be generated.
 	var/name
-
+	/// Multiplier applied to damage when falling through this level.
+	var/fall_depth = 1
 	/// The z-level that was assigned to this level_data
 	var/level_z
 	/// A unique string identifier for this particular z-level. Used to fetch a level without knowing its z-level.
@@ -144,6 +145,10 @@
 	///This is set to prevent spamming the log when a turf has tried to grab our strata before we've been initialized
 	var/tmp/_has_warned_uninitialized_strata = FALSE
 
+	VAR_PROTECTED/UT_turf_exceptions_by_door_type // An associate list of door types/list of allowed turfs
+	///Determines if edge turfs should be centered on the map dimensions.
+	var/origin_is_world_center = TRUE
+
 /datum/level_data/New(var/_z_level, var/defer_level_setup = FALSE)
 	. = ..()
 	level_z = _z_level
@@ -173,6 +178,7 @@
 
 ///Handle copying data from a previous level_data we're replacing.
 /datum/level_data/proc/copy_from(var/datum/level_data/old_level)
+	//#TODO: It's not really clear what should get moved over by default. But putting some time to reflect on this would be good..
 	return
 
 ///Initialize the turfs on the z-level.
@@ -195,6 +201,7 @@
 ///Prepare level for being used. Setup borders, lateral z connections, ambient lighting, atmosphere, etc..
 /datum/level_data/proc/setup_level_data(var/skip_gen = FALSE)
 	if(_level_setup_completed)
+		log_debug("level_data for [src], on z [level_z], had setup_level_data called more than once!")
 		return //Since we can defer setup, make sure we only setup once
 
 	setup_level_bounds()
@@ -207,23 +214,30 @@
 	_level_setup_completed = TRUE
 
 ///Calculate the bounds of the level, the border area, and the inner accessible area.
+///   Basically, by default levels are assumed to be loaded relative to the world center, so if they're smaller than the world
+///   they get their origin offset so they're in the middle of the world. By default templates are always loaded at origin 1,1.
+///   so that's useful to know and have control over!
 /datum/level_data/proc/setup_level_bounds()
+	//Get the width/height we got for the level and the edges
 	level_max_width  = level_max_width  ? level_max_width  : world.maxx
 	level_max_height = level_max_height ? level_max_height : world.maxy
-	var/x_origin     = round((world.maxx - level_max_width)  / 2)
-	var/y_origin     = round((world.maxy - level_max_height) / 2)
 
-	//The first x/y that's within the accessible level
-	level_inner_min_x = x_origin + TRANSITIONEDGE + 1
-	level_inner_min_y = y_origin + TRANSITIONEDGE + 1
-
-	//The last x/y that's within the accessible level
-	level_inner_max_x = (level_max_width  - level_inner_min_x) + 1
-	level_inner_max_y = (level_max_height - level_inner_min_y) + 1
-
-	//The width of the accessible inner area of the level
+	//The width of the accessible inner area of the level between the edges
 	level_inner_width  = level_max_width  - (2 * TRANSITIONEDGE)
 	level_inner_height = level_max_height - (2 * TRANSITIONEDGE)
+
+	//Get the origin of the lower left corner where the level's edge begins at on the world.
+	//#FIXME: This is problematic when dealing with an even width/height
+	var/x_origin = origin_is_world_center? max(FLOOR((world.maxx - level_max_width)  / 2), 1) : 1
+	var/y_origin = origin_is_world_center? max(FLOOR((world.maxy - level_max_height) / 2), 1) : 1
+
+	//The first x/y that's past the edge and within the accessible level
+	level_inner_min_x = x_origin + TRANSITIONEDGE
+	level_inner_min_y = y_origin + TRANSITIONEDGE
+
+	//The last x/y that's within the accessible level and before the edge
+	level_inner_max_x = ((x_origin + level_max_width)  - TRANSITIONEDGE) - 1
+	level_inner_max_y = ((y_origin + level_max_height) - TRANSITIONEDGE) - 1
 
 ///Setup ambient lighting for the level
 /datum/level_data/proc/setup_ambient()
@@ -252,7 +266,15 @@
 /datum/level_data/proc/setup_strata()
 	//If no strata, pick a random one
 	if(isnull(strata))
-		strata = pick(decls_repository.get_decl_paths_of_subtype(/decl/strata))
+		var/list/all_strata      = decls_repository.get_decls_of_subtype(/decl/strata)
+		var/list/possible_strata = list()
+
+		for(var/stype in all_strata)
+			var/decl/strata/strata = all_strata[stype]
+			if(strata.is_valid_level_stratum(src))
+				possible_strata += stype
+
+		strata = DEFAULTPICK(possible_strata, GET_DECL(/decl/strata/sedimentary))
 	//Make sure we have a /decl/strata instance
 	if(ispath(strata))
 		strata = GET_DECL(strata)
@@ -277,7 +299,7 @@
 	var/endx  = level_inner_min_x + level_inner_width
 	var/endy  = level_inner_min_y + level_inner_height
 	for(var/gen_type in level_generators)
-		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE, get_base_area_instance())
+		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE)
 
 ///Apply the parent entity's map generators. (Planets generally)
 ///This proc is to give a chance to level_data subtypes to individually chose to ignore the parent generators.
@@ -289,7 +311,7 @@
 	var/endx  = level_inner_min_x + level_inner_width
 	var/endy  = level_inner_min_y + level_inner_height
 	for(var/gen_type in map_gen)
-		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE, get_base_area_instance())
+		new gen_type(origx, origy, level_z, endx, endy, FALSE, TRUE)
 
 ///Called during level setup. Run anything that should happen only after the map is fully generated.
 /datum/level_data/proc/after_generate_level()
@@ -448,7 +470,7 @@
 		if(LD.level_z in _connected_siblings)
 			continue
 		. |= LD.level_z
-		. |= LD.get_all_connected_level_z()
+		. |= LD.get_all_connected_level_z(_connected_siblings)
 
 
 /datum/level_data/proc/find_connected_levels(var/list/found)
@@ -485,6 +507,7 @@
 /// Mapper helper for spawning a specific level_data datum with the map as it gets loaded
 /obj/abstract/level_data_spawner
 	name = "space"
+	icon_state = "level_data"
 	var/level_data_type = /datum/level_data/space
 
 INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
@@ -531,9 +554,6 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 
 /datum/level_data/player_level
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER)
-
-/datum/level_data/exoplanet
-	use_global_exterior_ambience = FALSE // This is set up by the exoplanet object.
 
 /datum/level_data/unit_test
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER|ZLEVEL_SEALED)

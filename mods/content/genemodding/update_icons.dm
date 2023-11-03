@@ -1,9 +1,10 @@
 /mob/living/carbon/human/get_tail_icon(var/obj/item/organ/external/tail/tail_organ)
 	// No parent call. This is a replacement, not a side-override.
+	var/decl/bodytype/root_bodytype = get_bodytype()
 	if(!istype(tail_organ))
 		return
 	var/tail_anim = tail_organ.get_tail_animation() || tail_organ.get_tail_icon()
-	var/blend_color = tail_organ.get_tail_colour() || ((species.appearance_flags & HAS_SKIN_COLOR) ? skin_colour : FALSE)
+	var/blend_color = tail_organ.get_tail_colour() || ((root_bodytype.appearance_flags & HAS_SKIN_COLOR) ? skin_colour : FALSE)
 	var/icon_key = "[ref(tail_anim)][tail_organ.get_tail()][blend_color][tail_organ.get_tail_blend()]_[tail_organ.get_tail_hair()][tail_organ.get_tail_hair_colour()][tail_organ.get_tail_hair_blend()]"
 	var/icon/tail_icon = tail_icon_cache[icon_key]
 	if(!tail_icon)

@@ -9,7 +9,7 @@
 	var/current_positions = 0                 // How many players have this job
 	var/availablity_chance = 100              // Percentage chance job is available each round
 	var/guestbanned = FALSE                   // If set to 1 this job will be unavalible to guests
-	var/must_fill = FALSE                     // If set to 1 this job will be have priority over other job preferences. Do not reccommend on jobs with more that one position.
+	var/must_fill = FALSE                     // If set to 1 this job will be have priority over other job preferences. Do not recommend on jobs with more than one position.
 	var/not_random_selectable = FALSE         // If set to 1 this job will not be selected when a player asks for a random job.
 	var/description                           // If set, returns a static description. To add dynamic text, overwrite this proc, call parent aka . = ..() and then . += "extra text" on the line after that.
 	var/list/event_categories                 // A set of tags used to check jobs for suitability for things like random event selection.
@@ -86,25 +86,14 @@
 	return title
 
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
-
 	if (required_language)
 		H.add_language(required_language)
 		H.set_default_language(required_language)
-
 	H.add_language(/decl/language/human/common)
 	H.set_default_language(/decl/language/human/common)
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
-	if(outfit) . = outfit.equip(H, title, alt_title)
-
-	if(!QDELETED(H))
-		var/obj/item/card/id/id = H.GetIdCard()
-		if(id)
-			id.rank = title
-			id.assignment = id.rank
-			id.access |= get_access()
-			if(!id.detail_color)
-				id.detail_color = selection_color
-			id.update_icon()
+	if(outfit)
+		return outfit.equip(H, title, alt_title)
 
 /datum/job/proc/get_outfit(var/mob/living/carbon/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade)
 	if(alt_title && alt_titles)
@@ -179,8 +168,7 @@
 /datum/job/proc/get_access()
 	if(minimal_access.len && (!config || config.jobs_have_minimal_access))
 		return minimal_access?.Copy()
-	else
-		return access?.Copy()
+	return access?.Copy()
 
 //If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
 /datum/job/proc/player_old_enough(client/C)
@@ -485,3 +473,9 @@
 	if(primary_department)
 		var/decl/department/dept = GET_DECL(primary_department)
 		. += dept.display_priority
+
+/datum/job/proc/get_department_names()
+	. = list()
+	for(var/department_type in department_types)
+		. += GET_DECL(department_type)
+	return english_list(.)

@@ -17,6 +17,8 @@
 	var/list/matter_per_piece
 	var/singular_name
 	var/plural_name
+	/// If unset, picks a/an based off of if the first letter is a vowel or not.
+	var/indefinite_article
 	var/base_state
 	var/plural_icon_state
 	var/max_icon_state
@@ -42,7 +44,7 @@
 	if(!singular_name)
 		singular_name = "sheet"
 	if(!plural_name)
-		plural_name = "[singular_name]s"
+		plural_name = text_make_plural(singular_name)
 
 /obj/item/stack/Destroy()
 	if (src && usr && usr.machine == src)
@@ -355,8 +357,6 @@
 	return max_amount
 
 /obj/item/stack/proc/add_to_stacks(mob/user, check_hands)
-	if(!can_merge())
-		return
 	var/list/stacks = list()
 	if(check_hands && user)
 		for(var/obj/item/stack/item in user.get_held_items())
@@ -364,7 +364,7 @@
 	for (var/obj/item/stack/item in user?.loc)
 		stacks |= item
 	for (var/obj/item/stack/item in stacks)
-		if (item==src)
+		if(item == src || !(can_merge_stacks(item) || item.can_merge_stacks(src)))
 			continue
 		var/transfer = src.transfer_to(item)
 		if(user && transfer)
@@ -396,7 +396,7 @@
 	return TRUE
 
 /obj/item/stack/attackby(obj/item/W, mob/user)
-	if (istype(W, /obj/item/stack) && can_merge())
+	if (istype(W, /obj/item/stack) && can_merge_stacks(W))
 		var/obj/item/stack/S = W
 		. = src.transfer_to(S)
 
@@ -414,5 +414,11 @@
 	return !(uses_charge && !force) //#TODO: The !force was a hacky way to tell if its a borg or rigsuit module. Probably would be good to find a better way..
 
 /**Whether a stack type has the capability to be merged. */
-/obj/item/stack/proc/can_merge()
+/obj/item/stack/proc/can_merge_stacks(var/obj/item/stack/other)
 	return !(uses_charge && !force)
+
+/// Returns the string describing an amount of the stack, i.e. "an ingot" vs "a flag"
+/obj/item/stack/proc/get_string_for_amount(amount)
+	if(amount == 1)
+		return indefinite_article ? "[indefinite_article] [singular_name]" : ADD_ARTICLE(singular_name)
+	return "[amount] [plural_name]"

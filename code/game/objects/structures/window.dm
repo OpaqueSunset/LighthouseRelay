@@ -2,11 +2,11 @@
 	name = "window"
 	desc = "A window."
 	icon = 'icons/obj/structures/window.dmi'
-	density = 1
+	density = TRUE
 	w_class = ITEM_SIZE_NORMAL
 
 	layer = SIDE_WINDOW_LAYER
-	anchored = 1.0
+	anchored = TRUE
 	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CHECKS_BORDER | ATOM_FLAG_CAN_BE_PAINTED
 	obj_flags = OBJ_FLAG_ROTATABLE | OBJ_FLAG_MOVES_UNSUPPORTED
 	alpha = 180
@@ -148,7 +148,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if (user.a_intent && user.a_intent == I_HURT)
 
-		if (istype(user,/mob/living/carbon/human))
+		if (ishuman(user))
 			var/mob/living/carbon/human/H = user
 			if(H.species.can_shred(H))
 				attack_generic(H,25)
@@ -326,7 +326,7 @@
 		if(S == src)
 			continue
 		S.update_connections()
-		S.update_icon()
+		S.queue_icon_update()
 
 /obj/structure/window/Move()
 	var/ini_dir = dir
@@ -497,7 +497,7 @@
 
 /obj/structure/window/reinforced/tinted
 	name = "tinted window"
-	opacity = 1
+	opacity = TRUE
 	color = GLASS_COLOR_TINTED
 
 /obj/structure/window/reinforced/tinted/frosted

@@ -181,6 +181,11 @@
 /obj/item/storage/box/ammo/beanbags/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/beanbag = 2)
 
+/obj/item/storage/box/ammo/beanbags/large
+	name = "box of beanbag shells"
+/obj/item/storage/box/ammo/beanbags/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/beanbag = 4)
+
 /obj/item/storage/box/ammo/shotgunammo
 	name = "box of shotgun slugs"
 /obj/item/storage/box/ammo/shotgunammo/WillContain()
@@ -193,11 +198,22 @@
 	name = "box of shotgun shells"
 /obj/item/storage/box/ammo/shotgunshells/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/shell = 2)
+/obj/item/storage/box/ammo/shotgunshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/shell = 4)
 
 /obj/item/storage/box/ammo/flashshells
 	name = "box of illumination shells"
 /obj/item/storage/box/ammo/flashshells/WillContain()
 	return list(/obj/item/ammo_magazine/shotholder/flash = 2)
+/obj/item/storage/box/ammo/flashshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/flash = 4)
+
+/obj/item/storage/box/ammo/empshells
+	name = "box of haywire slugs"
+/obj/item/storage/box/ammo/empshells/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/emp = 2)
+/obj/item/storage/box/ammo/empshells/large/WillContain()
+	return list(/obj/item/ammo_magazine/shotholder/emp = 4)
 
 /obj/item/storage/box/ammo/stunshells
 	name = "box of stun shells"
@@ -265,6 +281,13 @@
 	icon_state = "flashbang"
 /obj/item/storage/box/smokes/WillContain()
 	return list(/obj/item/grenade/smokebomb = 5)
+
+/obj/item/storage/box/metalfoam
+	name = "box of metal foam grenades"
+	desc = "A box containing 5 metal foam grenades."
+	icon_state = "flashbang"
+/obj/item/storage/box/metalfoam/WillContain()
+	return list(/obj/item/grenade/chem_grenade/metalfoam = 5)
 
 /obj/item/storage/box/anti_photons
 	name = "box of anti-photon grenades"
@@ -409,7 +432,7 @@
 /obj/item/storage/box/snappops
 	name = "snap pop box"
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
-	icon = 'icons/obj/toy.dmi'
+	icon = 'icons/obj/toy/toy.dmi'
 	icon_state = "spbox"
 	can_hold = list(/obj/item/toy/snappop)
 
@@ -431,12 +454,9 @@
 
 /obj/item/storage/box/matches/attackby(obj/item/flame/match/W, mob/user)
 	if(istype(W) && !W.lit && !W.burnt)
-		W.lit = 1
-		W.damtype = "burn"
-		W.update_icon()
-		START_PROCESSING(SSobj, W)
+		W.light()
 		playsound(src.loc, 'sound/items/match.ogg', 60, 1, -4)
-		user.visible_message("<span class='notice'>[user] strikes the match on the matchbox.</span>")
+		user.visible_message(SPAN_NOTICE("[user] strikes [W] on \the [src]."), SPAN_NOTICE("You strike [W] on \the [src]."))
 	W.update_icon()
 	return
 

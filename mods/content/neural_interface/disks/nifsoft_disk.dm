@@ -124,7 +124,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	load_programs()
 
 /obj/item/disk/nifsoft/attack_self(mob/user)
-	if(!user.has_dexterity(DEXTERITY_KEYBOARDS)) // Have to type to configure it.
+	if(!user.check_dexterity(DEXTERITY_KEYBOARDS)) // Have to type to configure it.
 		return ..()
 	var/list/configurable_programs = list()
 	for(var/pak_name in stored_files)
@@ -152,12 +152,13 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 /// Loads the default programs (bundle or single) onto the disk.
 /// If exact_fit is true, the disk will be resized to have exactly enough capacity to hold the starting programs.
 /obj/item/disk/nifsoft/proc/load_programs(exact_fit = TRUE)
-	if(exact_fit)
+	if(exact_fit && length(stored_files))
 		block_capacity = initial(block_capacity) - free_blocks
 		free_blocks = 0
 
 // NIFsoft disks come in single and bundle formats.
 /obj/item/disk/nifsoft/single
+	abstract_type = /obj/item/disk/nifsoft/single
 	/// The path of the NIFsoft this disk installs.
 	var/datum/computer_file/program/nifsoft/installed_nifsoft
 
@@ -171,6 +172,7 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	desc = "[initial(desc)]\n[initial(installed_nifsoft.extended_desc)]"
 
 /obj/item/disk/nifsoft/bundle
+	abstract_type = /obj/item/disk/nifsoft/bundle
 	var/bundle_desc
 	/// The paths of the NIFsofts this disk installs.
 	var/list/datum/computer_file/program/nifsoft/installed_nifsofts

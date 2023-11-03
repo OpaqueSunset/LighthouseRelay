@@ -7,36 +7,26 @@
 		if(M)
 			LAZYDISTINCTADD(., M)
 
-/proc/random_hair_style(gender, species)
-	var/decl/species/mob_species = get_species_by_key(species || global.using_map.default_species)
-	var/list/valid_styles = mob_species?.get_hair_style_types(gender)
-	return length(valid_styles) ? pick(valid_styles) : /decl/sprite_accessory/hair/bald
-
-/proc/random_facial_hair_style(gender, var/species)
-	var/decl/species/mob_species = get_species_by_key(species || global.using_map.default_species)
-	var/list/valid_styles = mob_species?.get_facial_hair_style_types(gender)
-	return length(valid_styles) ? pick(valid_styles) : /decl/sprite_accessory/facial_hair/shaved
-
 /proc/random_name(gender, species)
 	if(species)
 		var/decl/species/current_species = get_species_by_key(species)
-		if(current_species) 
+		if(current_species)
 			var/decl/cultural_info/current_culture = GET_DECL(current_species.default_cultural_info[TAG_CULTURE])
 			if(current_culture)
 				return current_culture.get_random_name(null, gender)
 	return capitalize(pick(gender == FEMALE ? global.first_names_female : global.first_names_male)) + " " + capitalize(pick(global.last_names))
 
-/proc/random_skin_tone(var/decl/species/current_species)
-	var/species_tone = current_species ? 35 - current_species.max_skin_tone() : -185
+/proc/random_skin_tone(var/decl/bodytype/current_bodytype)
+	var/bodytype_tone = current_bodytype ? 35 - current_bodytype.max_skin_tone() : -185
 	switch(pick(60;"caucasian", 15;"afroamerican", 10;"african", 10;"latino", 5;"albino"))
 		if("caucasian")		. = -10
 		if("afroamerican")	. = -115
 		if("african")		. = -165
 		if("latino")		. = -55
 		if("albino")		. = 34
-		else				. = rand(species_tone,34)
+		else				. = rand(bodytype_tone,34)
 
-	return min(max(. + rand(-25, 25), species_tone), 34)
+	return min(max(. + rand(-25, 25), bodytype_tone), 34)
 
 /proc/skintone2racedescription(tone)
 	switch (tone)
@@ -61,9 +51,9 @@
 /proc/is_robot_module(var/obj/item/thing)
 	if(!thing)
 		return FALSE
-	if(istype(thing.loc, /mob/living/exosuit))
+	if(isexosuit(thing.loc))
 		return FALSE
-	if(!istype(thing.loc, /mob/living/silicon/robot))
+	if(!isrobot(thing.loc))
 		return FALSE
 	var/mob/living/silicon/robot/R = thing.loc
 	return (thing in R.module.equipment)
@@ -116,7 +106,7 @@
 			. = 0
 			break
 
-		if(target_zone && user.zone_sel.selecting != target_zone)
+		if(target_zone && user.get_target_zone() != target_zone)
 			. = 0
 			break
 
@@ -242,7 +232,7 @@
 			if((M.stat != DEAD) || (!M.client))
 				continue
 			//They need a brain!
-			if(istype(M, /mob/living/carbon/human))
+			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
 				if(H.should_have_organ(BP_BRAIN) && !H.has_brain())
 					continue

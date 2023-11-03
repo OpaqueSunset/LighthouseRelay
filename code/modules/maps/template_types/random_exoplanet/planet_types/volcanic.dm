@@ -18,18 +18,19 @@
 
 /datum/level_data/planetoid/exoplanet/volcanic
 	base_area = /area/exoplanet/volcanic
-	base_turf = /turf/exterior/volcanic
+	base_turf = /turf/exterior/rock/volcanic
 	exterior_atmosphere = null
 	exterior_atmos_temp = null
 	level_generators = list(
 		/datum/random_map/noise/exoplanet/volcanic,
+		/datum/random_map/noise/ore/filthy_rich,
 	)
 
 ////////////////////////////////////////////////////////////////////////////
 // Flora Generator
 ////////////////////////////////////////////////////////////////////////////
 
-/datum/flora_generator/volcanic
+/datum/planet_flora/random/volcanic
 	has_trees       = FALSE
 	flora_diversity = 3
 	plant_colors    = list(
@@ -40,9 +41,9 @@
 		"#7a5b3a",
 		"#471429"
 	)
-/datum/flora_generator/volcanic/adapt_seed(datum/seed/S)
+/datum/planet_flora/random/volcanic/adapt_seed(datum/seed/S)
 	..()
-	S.set_trait(TRAIT_REQUIRES_WATER,0)
+	S.set_trait(TRAIT_REQUIRES_WATER, 0)
 	S.set_trait(TRAIT_HEAT_TOLERANCE, 1000 + S.get_trait(TRAIT_HEAT_TOLERANCE))
 
 ////////////////////////////////////////////////////////////////////////////
@@ -65,41 +66,43 @@
 	return Tmpl
 
 ////////////////////////////////////////////////////////////////////////////
+// Planetoid Data
+////////////////////////////////////////////////////////////////////////////
+
+/datum/planetoid_data/random/volcanic
+	habitability_class             = HABITABILITY_BAD
+	atmosphere_gen_temperature_min = 240 CELSIUS
+	atmosphere_gen_temperature_max = 820 CELSIUS
+	atmosphere_gen_pressure_min    = 10 ATM //It's safe to say a volcanic world probably has a thick gas blanket if it's big enough to hold an atmosphere
+	atmosphere_gen_pressure_max    = 90 ATM //Venus is 92.10 atm or 93 bar for reference
+	initial_weather_state          = /decl/state/weather/ash
+	flora                          = /datum/planet_flora/random/volcanic
+	fauna                          = /datum/fauna_generator/volcanic
+	possible_rock_colors           = list(
+		COLOR_DARK_GRAY
+	)
+
+////////////////////////////////////////////////////////////////////////////
 // Map Template
 ////////////////////////////////////////////////////////////////////////////
 
-/datum/map_template/planetoid/exoplanet/volcanic
+/datum/map_template/planetoid/random/exoplanet/volcanic
 	name                       = "volcanic exoplanet"
-	flora_generator_type       = /datum/flora_generator/volcanic
-	fauna_generator_type       = /datum/fauna_generator/volcanic
+	planetoid_data_type        = /datum/planetoid_data/random/volcanic
 	overmap_marker_type        = /obj/effect/overmap/visitable/sector/planetoid/exoplanet/volcanic
 	max_themes                 = 1
 	ruin_tags_blacklist        = RUIN_HABITAT|RUIN_WATER
-	initial_weather_state      = /decl/state/weather/ash
-	atmosphere_temperature_min = 240 CELSIUS
-	atmosphere_temperature_max = 820 CELSIUS
-	atmosphere_pressure_min    = 10 ATM //It's safe to say a volcanic world probably has a thick gas blanket if it's big enough to hold an atmosphere
-	atmosphere_pressure_min    = 90 ATM //Venus is 92.10 atm or 93 bar for reference
-	template_parent_type       = /datum/map_template/planetoid/exoplanet
+	template_parent_type       = /datum/map_template/planetoid/random/exoplanet
 	level_data_type            = /datum/level_data/planetoid/exoplanet/volcanic
 	prefered_level_data_per_z  = list(
 		/datum/level_data/planetoid/exoplanet/volcanic,
 		/datum/level_data/planetoid/exoplanet/underground
-	)
-	possible_rock_colors  = list(
-		COLOR_DARK_GRAY
 	)
 	possible_themes = list(
 		/datum/exoplanet_theme/mountains = 100,
 		/datum/exoplanet_theme = 90,
 		/datum/exoplanet_theme/robotic_guardians = 10
 	)
-	map_generators = list(
-		/datum/random_map/noise/ore/filthy_rich
-	)
-
-/datum/map_template/planetoid/exoplanet/volcanic/generate_habitability(datum/planetoid_data/gen_data)
-	gen_data.set_habitability(HABITABILITY_BAD)
 
 ////////////////////////////////////////////////////////////////////////////
 // Map Generator Surface
@@ -108,7 +111,7 @@
 /datum/random_map/noise/exoplanet/volcanic
 	descriptor           = "volcanic exoplanet"
 	smoothing_iterations = 5
-	land_type            = /turf/exterior/volcanic
+	land_type            = /turf/exterior/rock/volcanic
 	water_type           = /turf/exterior/lava
 	water_level_min      = 5
 	water_level_max      = 6
@@ -116,23 +119,7 @@
 	flora_prob           = 3
 	grass_prob           = 0
 	large_flora_prob     = 0
-
-//Squashing most of 1 tile lava puddles
-/datum/random_map/noise/exoplanet/volcanic/cleanup()
-	for(var/x = 1, x <= limit_x, x++)
-		for(var/y = 1, y <= limit_y, y++)
-			var/current_cell = get_map_cell(x,y)
-			if(noise2value(map[current_cell]) < water_level)
-				continue
-			var/frendos
-			for(var/dx in list(-1,0,1))
-				for(var/dy in list(-1,0,1))
-					var/tmp_cell = get_map_cell(x+dx,y+dy)
-					if(tmp_cell && tmp_cell != current_cell && noise2value(map[tmp_cell]) >= water_level)
-						frendos = 1
-						break
-			if(!frendos)
-				map[current_cell] = 1
+	smooth_single_tiles  = TRUE
 
 ////////////////////////////////////////////////////////////////////////////
 // Areas
@@ -140,4 +127,4 @@
 
 /area/exoplanet/volcanic
 	forced_ambience = list('sound/ambience/magma.ogg')
-	base_turf       = /turf/exterior/volcanic
+	base_turf       = /turf/exterior/rock/volcanic

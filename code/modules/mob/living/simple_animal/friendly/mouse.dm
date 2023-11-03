@@ -14,7 +14,7 @@
 	health = 5
 	maxHealth = 5
 	response_harm = "stamps on"
-	density = 0
+	density = FALSE
 	minbodytemp = 223		//Below -50 Degrees Celsius
 	maxbodytemp = 323	//Above 50 Degrees Celsius
 	universal_speak = FALSE
@@ -32,31 +32,32 @@
 	skin_amount =   1
 	skin_material = /decl/material/solid/skin/fur
 
+	ai = /datum/ai/mouse
+
 	var/body_color //brown, gray and white, leave blank for random
 	var/splatted = FALSE
 
-/mob/living/simple_animal/mouse/check_dexterity(dex_level, silent)
-	return FALSE // Mice are troll bait, give them no power.
+/mob/living/simple_animal/mouse/get_dexterity(var/silent = FALSE)
+	return DEXTERITY_NONE // Mice are troll bait, give them no power.
 
-/mob/living/simple_animal/mouse/Life()
-	. = ..()
-	if(!.)
-		return FALSE
-	if(prob(speak_chance))
-		for(var/mob/M in view())
-			sound_to(M, 'sound/effects/mousesqueek.ogg')
+/datum/ai/mouse
+	expected_type = /mob/living/simple_animal/mouse
 
-	if(!ckey && stat == CONSCIOUS && prob(0.5))
-		set_stat(UNCONSCIOUS)
-		wander = 0
-		speak_chance = 0
-		//snuffles
-	else if(stat == UNCONSCIOUS)
-		if(ckey || prob(1))
-			set_stat(CONSCIOUS)
-			wander = 1
+/datum/ai/mouse/do_process()
+	..()
+	var/mob/living/simple_animal/mouse/mouse = body
+	if(prob(mouse.speak_chance))
+		playsound(mouse.loc, 'sound/effects/mousesqueek.ogg', 50)
+	if(mouse.stat == CONSCIOUS && prob(0.5))
+		mouse.set_stat(UNCONSCIOUS)
+		mouse.wander = 0
+		mouse.speak_chance = 0
+	else if(mouse.stat == UNCONSCIOUS)
+		if(prob(1))
+			mouse.set_stat(CONSCIOUS)
+			mouse.wander = 1
 		else if(prob(5))
-			INVOKE_ASYNC(src, .proc/audible_emote, "snuffles.")
+			INVOKE_ASYNC(mouse, /mob/living/simple_animal/proc/audible_emote, "snuffles.")
 
 /mob/living/simple_animal/mouse/Initialize()
 	verbs += /mob/living/proc/ventcrawl
@@ -91,13 +92,12 @@
 	if(stat == DEAD && splatted)
 		icon_state = "world-splat"
 
-/mob/living/simple_animal/mouse/Crossed(AM)
-	if( ishuman(AM) )
-		if(!stat)
-			var/mob/M = AM
-			to_chat(M, "<span class='warning'>[html_icon(src)] Squeek!</span>")
-			sound_to(M, 'sound/effects/mousesqueek.ogg')
+/mob/living/simple_animal/mouse/Crossed(atom/movable/AM)
 	..()
+	if(!ishuman(AM) || stat)
+		return
+	to_chat(AM, SPAN_WARNING("[html_icon(src)] Squeek!"))
+	sound_to(AM, 'sound/effects/mousesqueek.ogg')
 
 /*
  * Mouse types

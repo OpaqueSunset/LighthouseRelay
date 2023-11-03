@@ -5,11 +5,11 @@
 // this allows the gas flushed to be tracked
 
 /obj/structure/disposalholder
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	var/datum/gas_mixture/gas = null	// gas used to flush, will appear at exit point
 	var/active = 0	// true if the holder is moving, otherwise inactive
 	dir = 0
-	var/count = 2048	//*** can travel 2048 steps before going inactive (in case of loops)
+	var/count = 4096 //*** can travel 4096 steps before going inactive (in case of loops)
 	var/destinationTag = "" // changes if contains a delivery container
 	var/tomail = 0 //changes if contains wrapped package
 	var/hasmob = 0 //If it contains a mob
@@ -20,7 +20,7 @@
 	// initialize a holder from the contents of a disposal unit
 /obj/structure/disposalholder/proc/init(var/obj/machinery/disposal/D, var/datum/gas_mixture/flush_gas)
 	gas = flush_gas// transfer gas resv. into holder object -- let's be explicit about the data this proc consumes, please.
-	var/stuff = D.contents - D.component_parts
+	var/stuff = D.get_contained_external_atoms()
 	//Check for any living mobs trigger hasmob.
 	//hasmob effects whether the package goes to cargo or its tagged destination.
 	hasmob = length(check_mob(stuff))
@@ -37,7 +37,7 @@
 	. = list()
 	if(max_depth > 0)
 		for(var/mob/living/M in stuff)
-			if (!istype(M, /mob/living/silicon/robot/drone))
+			if (!isdrone(M))
 				. += M
 		for(var/obj/O in stuff)
 			. += check_mob(O.contents, max_depth - 1)
@@ -121,15 +121,15 @@
 
 // called when player tries to move while in a pipe
 /obj/structure/disposalholder/relaymove(mob/user)
-	if(!istype(user,/mob/living))
+	if(!isliving(user))
 		return
 
 	var/mob/living/U = user
 
-	if (U.stat || U.last_special <= world.time)
+	if (U.stat || U.is_on_special_ability_cooldown())
 		return
 
-	U.last_special = world.time+100
+	U.set_special_ability_cooldown(10 SECONDS)
 
 	var/turf/our_turf = get_turf(src)
 	if (our_turf)

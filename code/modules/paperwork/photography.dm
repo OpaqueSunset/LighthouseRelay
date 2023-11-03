@@ -183,7 +183,7 @@
 	w_class       = ITEM_SIZE_NORMAL //same as book
 	storage_slots = DEFAULT_BOX_STORAGE //yes, that's storage_slots. Photos are w_class 1 so this has as many slots equal to the number of photos you could put in a box
 	can_hold = list(/obj/item/photo)
-	material = /decl/material/solid/cardboard
+	material = /decl/material/solid/plastic
 
 /obj/item/storage/photo_album/handle_mouse_drop(atom/over, mob/user)
 	if(istype(over, /obj/screen/inventory))
@@ -216,8 +216,8 @@
 	material             = /decl/material/solid/metal/aluminium
 	matter               = list(/decl/material/solid/plastic = MATTER_AMOUNT_REINFORCEMENT)
 	var/turned_on        = TRUE
-	var/field_of_view    = 3       //3 tiles
-	var/obj/item/camera_film/film  //Currently loaded film
+	var/field_of_view    = 3 // squared, so 3 is a 3x3 of tiles
+	var/obj/item/camera_film/film = new //Currently loaded film
 
 /obj/item/camera/Initialize()
 	set_extension(src, /datum/extension/base_icon_state, icon_state)

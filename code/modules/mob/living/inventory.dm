@@ -2,10 +2,21 @@
 	var/_held_item_slot_selected
 	var/list/_held_item_slots
 	var/list/_inventory_slots
+	var/list/_inventory_slot_priority
 	var/pending_hand_rebuild
 
 /mob/living/get_inventory_slots()
 	return _inventory_slots
+
+/mob/living/get_inventory_slot_priorities()
+	if(!_inventory_slot_priority)
+		_inventory_slot_priority = list()
+		var/list/all_slots = list()
+		for(var/slot in get_inventory_slots())
+			all_slots += get_inventory_slot_datum(slot)
+		for(var/datum/inventory_slot/inv_slot as anything in sortTim(all_slots, /proc/cmp_inventory_slot_desc))
+			_inventory_slot_priority += inv_slot.slot_id
+	return _inventory_slot_priority
 
 /mob/living/get_inventory_slot_datum(var/slot)
 	return LAZYACCESS(_inventory_slots, slot)
@@ -115,6 +126,7 @@
 /mob/living/set_inventory_slots(var/list/new_slots)
 
 	var/list/old_slots = _inventory_slots
+	_inventory_slot_priority = null
 	_inventory_slots = null
 
 	// Keep held item slots.
@@ -122,21 +134,36 @@
 		for(var/slot in get_held_item_slots())
 			if(slot in old_slots)
 				LAZYSET(_inventory_slots, slot, old_slots[slot])
+				old_slots -= slot
 
 	// Check if we need to replace any existing slots.
 	for(var/new_slot_id in new_slots)
 		var/datum/inventory_slot/new_slot = new_slots[new_slot_id]
 		var/datum/inventory_slot/old_slot = LAZYACCESS(old_slots, new_slot_id)
-		if(old_slot && new_slot != old_slot)
-			new_slot.set_slot(old_slot.get_equipped_item())
-			old_slot.clear_slot()
-			qdel(old_slot)
+		if(old_slot)
+			if(old_slot != new_slot)
+				// Transfer the item from the old slot to the new slot
+				new_slot.set_slot(old_slot.get_equipped_item())
+				old_slot.clear_slot()
+				qdel(old_slot)
+
+			old_slots -= new_slot_id
+
 		LAZYSET(_inventory_slots, new_slot.slot_id, new_slot)
 
+	// For any old slots which had no equivalent, drop the item into the world
+	for(var/old_slot_id in old_slots)
+		var/datum/inventory_slot/old_slot = old_slots[old_slot_id]
+		drop_from_inventory(old_slot.get_equipped_item())
+		old_slot.clear_slot() // Call this manually since it is no longer in _inventory_slots
+		qdel(old_slot)
+
 /mob/living/add_inventory_slot(var/datum/inventory_slot/inv_slot)
+	_inventory_slot_priority = null
 	LAZYSET(_inventory_slots, inv_slot.slot_id, inv_slot)
 
 /mob/living/remove_inventory_slot(var/slot)
+	_inventory_slot_priority = null
 	var/datum/inventory_slot/inv_slot = istype(slot, /datum/inventory_slot) ? slot : LAZYACCESS(_inventory_slots, slot)
 	if(inv_slot)
 		var/held = inv_slot.get_equipped_item()
@@ -144,3 +171,13 @@
 			drop_from_inventory(held)
 		qdel(inv_slot)
 	LAZYREMOVE(_inventory_slots, slot)
+
+/mob/living/proc/get_jetpack()
+	var/obj/item/tank/jetpack/thrust = get_equipped_item(slot_back_str)
+	if(istype(thrust))
+		return thrust
+	if(istype(thrust, /obj/item/rig))
+		var/obj/item/rig/rig = thrust
+		for(var/obj/item/rig_module/maneuvering_jets/module in rig.installed_modules)
+			return module.jets
+	return null
