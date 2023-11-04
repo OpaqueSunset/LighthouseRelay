@@ -7650,7 +7650,7 @@
 /turf/simulated/floor/tiled,
 /area/holodeck_control)
 "asQ" = (
-/obj/machinery/computer/HolodeckControl,
+/obj/machinery/computer/HolodeckControl/alphadeck,
 /turf/simulated/floor/tiled,
 /area/holodeck_control)
 "asS" = (
