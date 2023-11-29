@@ -51,6 +51,7 @@
 
 	#include "tether_leveldata.dm"
 	#include "tether_unit_testing.dm"
+	#include "tether_holodeck.dm"
 
 	#include "atoms/areas.dm"
 	#include "atoms/clothing.dm"
