@@ -7004,7 +7004,7 @@
 "aqG" = (
 /obj/structure/bed/chair/comfy/beige,
 /obj/abstract/landmark/start{
-	name = "Atmospheric Technician"
+	name = "Station Engineer"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
@@ -7516,7 +7516,7 @@
 	dir = 8
 	},
 /obj/abstract/landmark/start{
-	name = "Atmospheric Technician"
+	name = "Station Engineer"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
@@ -7935,7 +7935,7 @@
 	dir = 8
 	},
 /obj/abstract/landmark/start{
-	name = "Atmospheric Technician"
+	name = "Station Engineer"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
