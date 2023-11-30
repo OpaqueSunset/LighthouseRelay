@@ -49,6 +49,7 @@
 	// Loaded after other modpacks to override everything where needed.
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
 
+	#include "tether_jobs.dm"
 	#include "tether_leveldata.dm"
 	#include "tether_unit_testing.dm"
 
