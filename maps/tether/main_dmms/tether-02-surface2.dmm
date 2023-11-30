@@ -7055,7 +7055,7 @@
 "px" = (
 /obj/structure/bed/chair,
 /obj/abstract/landmark/start{
-	name = "Atmospheric Technician"
+	name = "Station Engineer"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/lower/breakroom)
@@ -12806,7 +12806,7 @@
 "AK" = (
 /obj/structure/bed/chair/office/light,
 /obj/abstract/landmark/start{
-	name = "Atmospheric Technician"
+	name = "Station Engineer"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1;

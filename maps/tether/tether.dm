@@ -49,6 +49,7 @@
 	// Loaded after other modpacks to override everything where needed.
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
 
+	#include "tether_jobs.dm"
 	#include "tether_leveldata.dm"
 	#include "tether_unit_testing.dm"
 	#include "tether_holodeck.dm"
@@ -78,6 +79,8 @@
 	#include "datums/tether_access.dm"
 	#include "datums/tether_departments.dm"
 	#include "datums/tether_spawnpoints.dm"
+	#include "datums/jobs/engineering.dm"
+	#include "datums/outfits/engineering.dm"
 
 	#include "submaps/engine/engine_areas.dm"
 	#include "submaps/engine/engine.dm"
