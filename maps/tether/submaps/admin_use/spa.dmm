@@ -205,7 +205,7 @@
 /area/submap/spa)
 "aI" = (
 /obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/submap/spa)
 "aJ" = (
 /obj/machinery/door/airlock/double/glass,
@@ -259,7 +259,7 @@
 "aU" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/blue,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "aV" = (
 /obj/structure/table/woodentable,
@@ -272,22 +272,22 @@
 	pixel_x = 26;
 	id_tag = "spadorm1"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "aW" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/greendouble,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "aX" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/purple,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "aY" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/red,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "aZ" = (
 /turf/simulated/floor/tiled/white,
@@ -317,9 +317,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/submap/spa)
-"be" = (
-/turf/simulated/floor/carpet/bcarpet,
-/area/submap/spa)
 "bf" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -331,7 +328,7 @@
 	pixel_x = -26;
 	id_tag = "spadorm3"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bg" = (
 /obj/structure/hygiene/sink{
@@ -368,7 +365,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bm" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -407,7 +404,7 @@
 "br" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/brown,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bs" = (
 /obj/structure/table/woodentable,
@@ -420,22 +417,22 @@
 	pixel_x = 26;
 	id_tag = "spadorm5"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bt" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/orange,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bu" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/rainbowdouble,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bv" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/yellow,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bw" = (
 /obj/structure/hygiene/toilet{
@@ -484,7 +481,7 @@
 	pixel_x = -26;
 	id_tag = "spadorm7"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bD" = (
 /obj/machinery/light{
@@ -563,7 +560,7 @@
 	pixel_x = 26;
 	id_tag = "spadorm2"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bQ" = (
 /obj/structure/table/woodentable,
@@ -573,7 +570,7 @@
 	pixel_x = -26;
 	id_tag = "spadorm4"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bR" = (
 /obj/structure/table/woodentable,
@@ -583,7 +580,7 @@
 	pixel_x = 26;
 	id_tag = "spadorm6"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bS" = (
 /obj/structure/table/woodentable,
@@ -593,7 +590,7 @@
 	pixel_x = -26;
 	id_tag = "spadorm8"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/submap/spa)
 "bT" = (
 /obj/machinery/door/airlock{
@@ -1403,7 +1400,7 @@ ae
 aQ
 ab
 aU
-be
+bX
 ab
 bl
 br
@@ -1450,9 +1447,9 @@ ae
 bz
 ab
 aV
-be
+bX
 ab
-be
+bX
 bP
 bx
 bV
@@ -1638,9 +1635,9 @@ ae
 aQ
 ab
 bf
-be
+bX
 ab
-be
+bX
 bQ
 bx
 bV
@@ -1685,7 +1682,7 @@ ae
 aO
 ab
 aW
-be
+bX
 ab
 bl
 bt
@@ -1779,7 +1776,7 @@ ae
 bz
 ab
 aX
-be
+bX
 ab
 bl
 bu
@@ -1826,9 +1823,9 @@ ae
 aQ
 ab
 bs
-be
+bX
 ab
-be
+bX
 bR
 bx
 bV
@@ -2014,9 +2011,9 @@ ae
 bA
 ab
 bC
-be
+bX
 ab
-be
+bX
 bS
 bx
 bV
@@ -2061,7 +2058,7 @@ ae
 bB
 ab
 aY
-be
+bX
 ab
 bl
 bv

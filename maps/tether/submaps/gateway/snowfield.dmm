@@ -234,11 +234,11 @@
 "aJ" = (
 /obj/structure/closet/jcloset,
 /obj/item/soap,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "aL" = (
 /obj/structure/closet/l3closet/janitor,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "aM" = (
 /obj/structure/closet/crate/hydroponics/prespawned,
@@ -353,7 +353,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snowfield/base)
 "ba" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bb" = (
 /obj/effect/floor_decal/corner/green{
@@ -382,7 +382,7 @@
 /area/awaymission/snowfield/base)
 "bg" = (
 /obj/machinery/space_heater,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bh" = (
 /obj/effect/floor_decal/corner/green/full,
@@ -449,7 +449,7 @@
 /obj/item/storage/box/lights/mixed,
 /obj/item/storage/box/lights/mixed,
 /obj/item/chems/spray/cleaner,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bo" = (
 /obj/machinery/door/window/northright{
@@ -537,7 +537,7 @@
 /area/awaymission/snowfield/base)
 "by" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bz" = (
 /obj/machinery/light{
@@ -650,11 +650,11 @@
 /obj/item/mop,
 /obj/item/chems/glass/bucket,
 /obj/structure/janitorialcart,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bO" = (
 /obj/machinery/light,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bP" = (
 /obj/machinery/portable_atmospherics/hydroponics{
@@ -700,7 +700,7 @@
 /area/awaymission/snowfield/base)
 "bU" = (
 /obj/machinery/door/airlock/maintenance,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snowfield/base)
 "bV" = (
 /obj/machinery/gateway{

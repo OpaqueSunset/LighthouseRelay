@@ -1944,12 +1944,9 @@
 	icon_state = "floor7"
 	},
 /area/awaymission/zoo/tradeship)
-"fP" = (
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/zoo/pirateship)
 "fQ" = (
 /obj/item/stool,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fR" = (
 /obj/structure/table/reinforced,
@@ -1957,18 +1954,18 @@
 	info = "DEAR DAIRY: So we was doing our typpical route when the captain says we've been picking up weird signals on some backwatter planet. Madsen wanted to stay on course but he ain't the captain, so we went out of the way to check it out. There was lots of rocks on the way, but we got to the planet fine. Found a big fancy camp with nobody around and this big metal donut thing with NT stamps all over it right in the middle. Case of beer too. Captain reckons we can pass it off to some buyer in the Syndicate. Ingram says it's bad luck and that someone is going to come look for it but it sounds like better money than selling bad meat to jerky companies.";
 	name = "Old Diary"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fS" = (
 /obj/structure/table/reinforced,
 /obj/item/pen/red,
 /obj/item/chems/drinks/bottle/small/beer,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fT" = (
 /obj/structure/closet,
 /obj/item/clothing/under/overalls,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "fU" = (
 /obj/structure/window/reinforced{
@@ -2042,7 +2039,7 @@
 /area/awaymission/zoo/pirateship)
 "gf" = (
 /obj/machinery/computer/arcade,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gg" = (
 /obj/structure/window/reinforced{
@@ -2114,18 +2111,18 @@
 /area/awaymission/zoo/pirateship)
 "go" = (
 /obj/structure/bed,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gp" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/item/storage/wallet/random,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gq" = (
 /obj/structure/closet,
 /obj/item/clothing/under/lawyer/bluesuit,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gr" = (
 /turf/simulated/shuttle/wall/dark/hard_corner,
@@ -2250,17 +2247,13 @@
 "gJ" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/zoo/pirateship)
-"gK" = (
-/obj/structure/door/shuttle,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gL" = (
 /obj/structure/mirror{
 	pixel_y = 28
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gM" = (
 /obj/structure/hygiene/toilet{
@@ -2269,7 +2262,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gN" = (
 /turf/simulated/floor/shuttle/darkred,
@@ -2299,17 +2292,17 @@
 /obj/structure/closet/crate,
 /obj/item/cash/c10,
 /obj/item/cash/c200,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gU" = (
 /obj/structure/closet/crate,
 /obj/item/cash/c10,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gV" = (
 /obj/structure/closet/crate,
 /obj/item/cash/c1000,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gW" = (
 /obj/structure/hygiene/sink{
@@ -2318,7 +2311,7 @@
 	pixel_x = -12;
 	pixel_y = 2
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gX" = (
 /obj/machinery/door/airlock/external{
@@ -21774,11 +21767,11 @@ bT
 cp
 fA
 ad
-fP
+bO
 gf
 fQ
-fP
-fP
+bO
+bO
 gT
 ad
 ae
@@ -22081,11 +22074,11 @@ bT
 bT
 bT
 ad
-fP
-fP
-fP
-fP
-fP
+bO
+bO
+bO
+bO
+bO
 gU
 ad
 af
@@ -22388,11 +22381,11 @@ fg
 bT
 bT
 fM
-fP
-fP
-fP
-fP
-fP
+bO
+bO
+bO
+bO
+bO
 gV
 ad
 gb
@@ -22695,12 +22688,12 @@ fh
 bT
 bT
 ad
-fP
-fP
+bO
+bO
 go
-fP
+bO
 gJ
-fP
+bO
 ad
 ad
 ak
@@ -23002,12 +22995,12 @@ fh
 bT
 bT
 ad
-fP
-fP
-fP
-fP
-fP
-fP
+bO
+bO
+bO
+bO
+bO
+bO
 ad
 hk
 al
@@ -23309,12 +23302,12 @@ fi
 bT
 bT
 fM
-fP
-fP
+bO
+bO
 gp
-fP
+bO
 go
-fP
+bO
 hd
 al
 hr
@@ -23617,11 +23610,11 @@ bT
 fB
 ad
 fQ
-fP
-fP
-fP
-fP
-fP
+bO
+bO
+bO
+bO
+bO
 ad
 hl
 ad
@@ -23924,11 +23917,11 @@ fv
 fC
 ad
 fR
-fP
+bO
 go
-fP
+bO
 go
-fP
+bO
 ad
 ad
 ad
@@ -24231,11 +24224,11 @@ ad
 ad
 ad
 fS
-fP
-fP
-fP
-fP
-fP
+bO
+bO
+bO
+bO
+bO
 ad
 ad
 ad
@@ -24537,11 +24530,11 @@ cu
 cu
 cu
 ad
-fP
-fP
-fP
+bO
+bO
+bO
 ad
-gK
+ck
 ad
 ad
 ad
@@ -24844,9 +24837,9 @@ bO
 bO
 bO
 ck
-fP
-fP
-fP
+bO
+bO
+bO
 ad
 gL
 gW
@@ -25152,7 +25145,7 @@ bO
 bO
 ad
 fT
-fP
+bO
 gq
 ad
 gM

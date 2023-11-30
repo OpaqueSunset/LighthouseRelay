@@ -1057,14 +1057,14 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "dU" = (
 /obj/structure/tank_rack/oxygen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "dV" = (
 /obj/machinery/door/airlock/external{
@@ -1072,7 +1072,7 @@
 	id_tag = "merc_shuttle_outer";
 	name = "Ship External Access"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "dW" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -1118,7 +1118,7 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eb" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
@@ -1136,17 +1136,17 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "ef" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eg" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eh" = (
 /obj/effect/floor_decal/corner/green/border{
@@ -1175,14 +1175,14 @@
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "em" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},
 /area/awaymission/snow_outpost/restricted)
 "en" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
@@ -1206,19 +1206,19 @@
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "er" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "es" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "et" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -1243,7 +1243,7 @@
 "ew" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/borderfloor/full,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "ex" = (
 /obj/structure/table/steel,
@@ -1252,11 +1252,11 @@
 /area/awaymission/snow_outpost/restricted)
 "ey" = (
 /obj/effect/floor_decal/borderfloor/corner,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "ez" = (
 /obj/effect/floor_decal/borderfloor,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eA" = (
 /obj/machinery/light{
@@ -1267,7 +1267,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eB" = (
 /obj/structure/table,
@@ -1319,7 +1319,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eI" = (
 /obj/structure/bed/chair/office/dark{
@@ -1328,20 +1328,20 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eJ" = (
 /obj/machinery/door/airlock/security{
 	locked = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eK" = (
 /obj/machinery/door/airlock/glass,
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snow_outpost/restricted)
 "eL" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /turf/simulated/shuttle/wall/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
@@ -1352,41 +1352,41 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eN" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eO" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eP" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eQ" = (
 /obj/structure/table/steel,
 /obj/item/knife,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eR" = (
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eS" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eT" = (
 /mob/living/simple_mob/humanoid/merc/ranged/smg/poi,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eU" = (
 /obj/structure/table/steel,
@@ -1419,7 +1419,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eY" = (
 /obj/machinery/light{
@@ -1429,7 +1429,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eZ" = (
 /mob/living/simple_animal/giant_spider/ion,
@@ -1446,11 +1446,11 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fb" = (
 /obj/item/stool,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fc" = (
 /obj/structure/table/steel,
@@ -1475,39 +1475,39 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fg" = (
 /obj/effect/floor_decal/corner/grey,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fh" = (
 /obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fi" = (
 /obj/structure/table/steel,
 /obj/item/pizzabox,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fj" = (
 /obj/structure/table/steel,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fk" = (
 /obj/machinery/door/airlock,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fl" = (
 /obj/machinery/door/airlock/glass,
 /obj/effect/floor_decal/borderfloor,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fm" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fn" = (
 /obj/structure/grille,
@@ -1537,20 +1537,20 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fr" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
 /mob/living/simple_mob/humanoid/merc/ranged/laser/poi,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fs" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "ft" = (
 /obj/effect/floor_decal/borderfloor{
@@ -1559,7 +1559,7 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fu" = (
 /obj/structure/table/steel,
@@ -1567,16 +1567,16 @@
 	info = "We need to take a short stop. The engine's are in need of minor repairs due to turbulence, should be a week's time. We've got reserve food supplies but pleanty of locale fauna to subsist on too if need be. PCRC is keeping most of there assets near New Reykjavik and locale authorities are more mindful then most to travel in this kind of weather. Our outfit should be at the rendezvous point in less then ten days assuming the upper ecehelon hasn't dropped ties with us yet.";
 	name = "Operation Progress/M-53"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fv" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fw" = (
 /obj/machinery/light,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fx" = (
 /obj/structure/closet/toolcloset,
@@ -1602,14 +1602,14 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fB" = (
 /obj/structure/bed/chair/office/dark,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fC" = (
 /obj/structure/table/steel,
@@ -1622,7 +1622,7 @@
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fE" = (
 /obj/machinery/light{
@@ -1633,12 +1633,12 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fF" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fG" = (
 /obj/machinery/door/airlock,
@@ -1664,13 +1664,13 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fL" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/structure/bed,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fM" = (
 /obj/machinery/light/small{
@@ -1694,7 +1694,7 @@
 	dir = 4
 	},
 /mob/living/simple_mob/humanoid/merc/melee/sword/poi,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fQ" = (
 /obj/structure/hygiene/toilet{
@@ -1716,25 +1716,25 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fS" = (
 /obj/structure/tank_rack/oxygen,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fT" = (
 /obj/structure/table/woodentable,
 /obj/random/projectile,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fU" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/machinery/light,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fV" = (
 /obj/tether_away_spawner/aerostat_inside,
@@ -2548,13 +2548,13 @@
 /area/awaymission/snow_outpost/outpost)
 "iS" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "iT" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/item/toy/plushie/spider,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "iU" = (
 /turf/simulated/floor/snow/snow2,

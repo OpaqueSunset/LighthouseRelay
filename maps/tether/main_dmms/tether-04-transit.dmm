@@ -91,7 +91,7 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "ap" = (
 /obj/machinery/vending/coffee,
@@ -115,7 +115,7 @@
 /obj/structure/table/woodentable,
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "ax" = (
 /turf/simulated/floor/plating,
@@ -125,7 +125,7 @@
 /area/tether/midpoint)
 "az" = (
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aA" = (
 /obj/structure/disposalpipe/segment{
@@ -147,7 +147,7 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aC" = (
 /obj/structure/cable,
@@ -212,12 +212,12 @@
 /area/maintenance/tether_midpoint)
 "aL" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aM" = (
 /obj/structure/table/woodentable,
 /obj/item/dice/d20,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aN" = (
 /obj/structure/disposalpipe/down{
@@ -269,10 +269,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aV" = (
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "aW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -335,13 +335,13 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "bg" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "bi" = (
 /obj/structure/disposalpipe/segment{
@@ -362,7 +362,7 @@
 "bj" = (
 /obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "bk" = (
 /turf/unsimulated/dark_filler,
@@ -396,7 +396,7 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "uu" = (
 /obj/structure/cable{
@@ -440,12 +440,12 @@
 	dir = 8;
 	pixel_x = -24
 	},
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "zF" = (
 /obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "Aw" = (
 /obj/effect/ceiling,
@@ -457,7 +457,7 @@
 	dir = 1
 	},
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/bcarpet,
+/turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "Hs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,

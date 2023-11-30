@@ -18219,7 +18219,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "Gc" = (
 /obj/structure/rack,
@@ -18552,9 +18552,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
-/area/quartermaster/warehouse)
-"GI" = (
-/turf/simulated/floor/tiled/steel,
 /area/quartermaster/warehouse)
 "GJ" = (
 /obj/structure/cable/green{
@@ -19323,7 +19320,7 @@
 "Im" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "In" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -19616,13 +19613,13 @@
 	pixel_x = -22
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "IS" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "IT" = (
 /obj/machinery/button/blast_door{
@@ -20103,13 +20100,13 @@
 "JH" = (
 /obj/structure/closet/crate/freezer,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "JI" = (
 /obj/structure/closet/crate/internals,
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "JJ" = (
 /obj/machinery/firealarm{
@@ -20117,7 +20114,7 @@
 	pixel_y = -24
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/steel,
+/turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
 "JK" = (
 /obj/structure/closet/crate/medical,
@@ -42037,7 +42034,7 @@ FZ
 GG
 GG
 GG
-GI
+GG
 JH
 Fj
 Vj
@@ -42346,7 +42343,7 @@ Dw
 Er
 zK
 Gb
-GI
+GG
 Hx
 Io
 GG

@@ -80,6 +80,22 @@
 	icon_base = "steel"
 	color = null
 
+/turf/simulated/floor/tiled/steel_dirty
+	name = "steel floor"
+	icon_state = "steel_dirty"
+	initial_flooring = /decl/flooring/tiling/steel_dirty
+
+/obj/item/stack/tile/floor/steel_dirty
+	name = "steel floor tile"
+	singular_name = "steel floor tile"
+	icon_state = "tile_steel"
+	material = /decl/material/solid/metal/plasteel
+
+/decl/flooring/tiling/steel_dirty
+	name = "floor"
+	icon_base = "steel_dirty"
+	build_type = /obj/item/stack/tile/floor/steel_dirty
+
 /turf/simulated/floor/tiled/dark
 	icon_state = "dark"
 	color = null
@@ -98,6 +114,10 @@
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_state = "wood"
 	color = WOOD_COLOR_GENERIC
+
+/turf/simulated/floor/wood/broken/Initialize(ml, floortype)
+	. = ..()
+	break_tile()
 
 //Unsimulated
 /turf/unsimulated/wall/planetary/virgo3b
