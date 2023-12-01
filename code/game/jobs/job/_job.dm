@@ -406,15 +406,27 @@
 /datum/job/proc/make_position_available()
 	total_positions++
 
-/datum/job/proc/get_roundstart_spawnpoint()
+/datum/job/proc/get_roundstart_spawnpoint(alt_title)
+	if(alt_title && !(alt_title in alt_titles))
+		PRINT_STACK_TRACE("Alt title [alt_title] was supplied for job [title] but did not exist in alt titles list!")
+		alt_title = null
 	var/list/loc_list = list()
+	var/list/fallback_list = list()
 	for(var/obj/abstract/landmark/start/sloc in global.landmarks_list)
-		if(sloc.name != title)	continue
-		if(locate(/mob/living) in sloc.loc)	continue
-		loc_list += sloc
+		if(locate(/mob/living) in get_turf(sloc))
+			continue
+		if(sloc.name == title)
+			fallback_list += sloc
+		if(sloc.name == alt_title)
+			loc_list += sloc
 	if(loc_list.len)
 		return pick(loc_list)
+	else if(fallback_list.len)
+		return pick(fallback_list)
 	else
+		var/obj/abstract/landmark/start/alt_start_landmark = locate("start*[alt_title]")
+		if(alt_start_landmark)
+			return alt_start_landmark
 		return locate("start*[title]") // use old stype
 
 /**

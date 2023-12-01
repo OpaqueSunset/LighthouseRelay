@@ -200,7 +200,7 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 
 	var/turf/spawn_turf = pick(spawnpoint.turfs)
 	if(job.latejoin_at_spawnpoints)
-		var/obj/S = job.get_roundstart_spawnpoint()
+		var/obj/S = job.get_roundstart_spawnpoint(client.prefs.player_alt_titles[job.title])
 		spawn_turf = get_turf(S)
 
 	if(!job.no_warn_unsafe && !SSjobs.check_unsafe_spawn(src, spawn_turf))
