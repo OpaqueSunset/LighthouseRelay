@@ -80,7 +80,9 @@
 	#include "datums/tether_departments.dm"
 	#include "datums/tether_spawnpoints.dm"
 	#include "datums/jobs/engineering.dm"
+	#include "datums/jobs/medical.dm"
 	#include "datums/outfits/engineering.dm"
+	#include "datums/outfits/medical.dm"
 
 	#include "submaps/engine/engine_areas.dm"
 	#include "submaps/engine/engine.dm"
