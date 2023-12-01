@@ -131,7 +131,7 @@
 	var/obj/item/organ/internal/augment/active/nif/nif = get_organ(BP_AUGMENT_HEAD, /obj/item/organ/internal/augment/active/nif)
 	if(!nif?.is_usable())
 		return null
-	var/datum/extension/interactive/os/os = get_extension(src, /datum/extension/interactive/os)
+	var/datum/extension/interactive/os/os = get_extension(nif, /datum/extension/interactive/os)
 	for(var/datum/computer_file/program/nifsoft/nif_hud/running_nifhud in os.running_programs)
 		if(hudtype == running_nifhud.hudtype)
 			return nif

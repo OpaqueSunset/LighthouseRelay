@@ -1,5 +1,4 @@
-var/global/list/default_blend_objects = list(/obj/machinery/door, /turf/simulated/wall)
-var/global/list/default_noblend_objects = list(/obj/machinery/door/window, /obj/machinery/door/firedoor, /obj/machinery/door/blast)
+var/global/list/default_blend_typecache = zebra_typecacheof(list(/obj/machinery/door = TRUE, /turf/simulated/wall = TRUE, /obj/machinery/door/window = FALSE, /obj/machinery/door/firedoor = FALSE, /obj/machinery/door/blast = FALSE))
 
 /obj/structure
 	var/handle_generic_blending
@@ -22,13 +21,8 @@ var/global/list/default_noblend_objects = list(/obj/machinery/door/window, /obj/
 /obj/structure/proc/set_connections(dirs, other_dirs)
 	return
 
-/obj/structure/proc/refresh_neighbors()
-	for(var/thing in RANGE_TURFS(src, 1))
-		var/turf/T = thing
-		T.update_icon()
-
 /obj/structure/proc/find_blendable_obj_in_turf(var/turf/T, var/propagate)
-	if(is_type_in_list(T, global.default_blend_objects))
+	if(is_type_in_typecache(T, global.default_blend_typecache))
 		if(propagate && istype(T, /turf/simulated/wall))
 			for(var/turf/simulated/wall/W in RANGE_TURFS(T, 1))
 				W.wall_connections = null
@@ -36,11 +30,8 @@ var/global/list/default_noblend_objects = list(/obj/machinery/door/window, /obj/
 				W.queue_icon_update()
 		return TRUE
 	for(var/obj/O in T)
-		if(!is_type_in_list(O, global.default_blend_objects))
-			continue
-		if(is_type_in_list(O, global.default_noblend_objects))
-			continue
-		return TRUE
+		if(is_type_in_typecache(O, global.default_blend_typecache))
+			return TRUE
 	return FALSE
 
 /obj/structure/proc/update_connections(propagate = 0)
@@ -64,6 +55,5 @@ var/global/list/default_noblend_objects = list(/obj/machinery/door/window, /obj/
 				LAZYDISTINCTADD(dirs, direction)
 				LAZYADD(other_dirs, direction)
 
-	refresh_neighbors()
 	set_connections(dirs, other_dirs)
 	return TRUE

@@ -162,9 +162,6 @@
 			AM.forceMove(dest)
 	..()
 
-/obj/structure/catwalk/refresh_neighbors()
-	return
-
 /obj/effect/catwalk_plated
 	name = "plated catwalk spawner"
 	icon = 'icons/obj/structures/catwalks.dmi'

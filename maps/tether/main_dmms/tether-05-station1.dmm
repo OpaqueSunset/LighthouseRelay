@@ -7004,7 +7004,7 @@
 "aqG" = (
 /obj/structure/bed/chair/comfy/beige,
 /obj/abstract/landmark/start{
-	name = "Station Engineer"
+	name = "Atmospheric Technician"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
@@ -7516,7 +7516,7 @@
 	dir = 8
 	},
 /obj/abstract/landmark/start{
-	name = "Station Engineer"
+	name = "Atmospheric Technician"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
@@ -7650,7 +7650,7 @@
 /turf/simulated/floor/tiled,
 /area/holodeck_control)
 "asQ" = (
-/obj/machinery/computer/HolodeckControl/alphadeck,
+/obj/machinery/computer/HolodeckControl,
 /turf/simulated/floor/tiled,
 /area/holodeck_control)
 "asS" = (
@@ -7935,7 +7935,7 @@
 	dir = 8
 	},
 /obj/abstract/landmark/start{
-	name = "Station Engineer"
+	name = "Atmospheric Technician"
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
