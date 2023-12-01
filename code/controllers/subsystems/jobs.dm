@@ -499,7 +499,7 @@ SUBSYSTEM_DEF(jobs)
 	H.job = rank
 
 	if(!joined_late || job.latejoin_at_spawnpoints)
-		var/obj/S = job.get_roundstart_spawnpoint(H.mind.role_alt_title)
+		var/obj/S = job.get_roundstart_spawnpoint(H.mind?.role_alt_title)
 
 		if(istype(S, /obj/abstract/landmark/start) && isturf(S.loc))
 			H.forceMove(S.loc)
