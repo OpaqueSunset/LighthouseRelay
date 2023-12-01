@@ -407,9 +407,9 @@
 	total_positions++
 
 /datum/job/proc/get_roundstart_spawnpoint(alt_title)
-	if(alt_title && !(alt_title in alt_titles))
+	if(alt_title && (alt_title != title && !(alt_title in alt_titles)))
 		PRINT_STACK_TRACE("Alt title [alt_title] was supplied for job [title] but did not exist in alt titles list!")
-		alt_title = null
+		alt_title = title
 	var/list/loc_list = list()
 	var/list/fallback_list = list()
 	for(var/obj/abstract/landmark/start/sloc in global.landmarks_list)
@@ -423,11 +423,12 @@
 		return pick(loc_list)
 	else if(fallback_list.len)
 		return pick(fallback_list)
-	else
-		var/obj/abstract/landmark/start/alt_start_landmark = locate("start*[alt_title]")
-		if(alt_start_landmark)
-			return alt_start_landmark
-		return locate("start*[title]") // use old stype
+	else // use old stype
+		if(alt_title)
+			var/obj/abstract/landmark/start/alt_start_landmark = locate("start*[alt_title]")
+			if(alt_start_landmark)
+				return alt_start_landmark
+		return locate("start*[title]")
 
 /**
  *  Return appropriate /decl/spawnpoint for given client
