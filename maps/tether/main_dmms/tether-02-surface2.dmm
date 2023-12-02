@@ -5054,13 +5054,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
 "lH" = (
-/obj/machinery/atmospherics/unary/vent_pump{
-	icon_state = "map_vent_out";
-	use_power = 1
-	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -5070,8 +5066,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -5315,8 +5310,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -5529,9 +5523,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/machinery/internet_repeater,
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -5553,11 +5547,11 @@
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
 	},
-/obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/portable_atmospherics/canister/nitrogen/prechilled,
 /turf/simulated/floor/tiled/techfloor,
 /area/server)
 "mJ" = (
@@ -5914,22 +5908,18 @@
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
 "nn" = (
-/obj/machinery/atmospherics/unary/vent_pump{
+/obj/machinery/atmospherics/unary/vent_pump/siphon/on{
 	dir = 1;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	icon_state = "map_vent_in";
 	initialize_directions = 1;
 	internal_pressure_bound = 4000;
 	internal_pressure_bound_default = 4000;
 	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
+	pressure_checks_default = 2
 	},
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -5938,10 +5928,9 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/network/message_server,
+/obj/machinery/internet_uplink,
 /turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 500);
-	name = "Server Base";
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
 	},
 /area/server)
@@ -7253,8 +7242,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/server)
 "pP" = (
-/obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/computer/internet_uplink{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/server)
 "pQ" = (
@@ -15333,7 +15324,6 @@
 "Gz" = (
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15348,7 +15338,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15359,7 +15348,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15370,7 +15358,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15383,7 +15370,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15391,7 +15377,6 @@
 /obj/machinery/porta_turret/stationary,
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15399,7 +15384,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15412,7 +15396,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15429,7 +15412,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15447,7 +15429,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15541,6 +15522,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tcomstorage)
+"GU" = (
+/obj/machinery/network/mainframe/software,
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "GZ" = (
 /obj/structure/table,
 /obj/item/stock_parts/subspace/treatment,
@@ -15562,7 +15550,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15572,7 +15559,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15618,7 +15604,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15631,7 +15616,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15642,7 +15626,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15659,6 +15642,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 9
 	},
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
+"HD" = (
+/obj/machinery/network/mainframe/records,
 /turf/simulated/floor/tiled/dark{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -15688,7 +15678,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15704,7 +15693,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15712,7 +15700,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -15732,7 +15719,6 @@
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	name = "Mainframe Base";
 	temperature = 80
 	},
 /area/tcommsat/chamber)
@@ -16813,6 +16799,13 @@
 /obj/machinery/constructable_frame/machine_frame/deconstruct,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
+"LS" = (
+/obj/machinery/network/mainframe/logs,
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "Mf" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -16833,6 +16826,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
+"MH" = (
+/obj/machinery/network/mainframe/empty,
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "MX" = (
 /obj/structure/table{
 	name = "plastic table frame"
@@ -17003,6 +17003,15 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
+"Pu" = (
+/obj/machinery/network/router{
+	initial_network_id = "LighthouseRelay"
+	},
+/turf/simulated/floor/bluegrid{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "Py" = (
 /turf/simulated/floor,
 /area/maintenance/lower/bar)
@@ -17049,6 +17058,13 @@
 "Qb" = (
 /turf/exterior/open,
 /area/tether/surfacebase/outside/outside2)
+"Qn" = (
+/obj/machinery/network/message_server,
+/turf/simulated/floor/bluegrid{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "Qp" = (
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/wood,
@@ -17099,6 +17115,13 @@
 /obj/structure/cable,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence/upper)
+"QO" = (
+/obj/machinery/network/mainframe/account,
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "QP" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled,
@@ -17253,6 +17276,14 @@
 /obj/structure/ladder,
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar_upper)
+"TF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/obj/machinery/network/acl,
+/turf/simulated/floor/bluegrid{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "TH" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/machinery/firealarm{
@@ -17578,6 +17609,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
+"Yw" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/black,
+/obj/machinery/network/telecomms_hub,
+/turf/simulated/floor/bluegrid{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "YA" = (
 /obj/structure/rack/shelf/steel,
 /obj/item/chems/drinks/bottle/orangejuice,
@@ -17671,6 +17710,13 @@
 "YY" = (
 /turf/unsimulated/dark_filler,
 /area/tether/surfacebase/outside/outside2)
+"Zk" = (
+/obj/machinery/network/modem,
+/turf/simulated/floor/bluegrid{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "Zo" = (
 /obj/structure/table/bench/steel,
 /obj/effect/floor_decal/borderfloor/corner{
@@ -17745,6 +17791,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/gateway)
+"ZS" = (
+/obj/machinery/network/mainframe/files,
+/turf/simulated/floor/tiled/dark{
+	initial_gas = list(/decl/material/gas/nitrogen = 100);
+	temperature = 80
+	},
+/area/tcommsat/chamber)
 "ZT" = (
 /obj/structure/closet/crate/bin{
 	anchored = 1;
@@ -34102,9 +34155,9 @@ FR
 Gz
 GI
 GI
-GI
-GI
-GI
+QO
+GU
+MH
 GI
 GI
 Gz
@@ -34415,7 +34468,7 @@ GB
 GO
 GO
 GO
-GF
+TF
 GO
 GO
 HC
@@ -34725,11 +34778,11 @@ Gg
 Gq
 GD
 GP
+Zk
 Gz
+Pu
 Gz
-Gz
-Gz
-Gz
+Qn
 GI
 HK
 FR
@@ -35039,7 +35092,7 @@ GF
 GO
 GO
 GO
-GF
+Yw
 GO
 GO
 HE
@@ -35350,9 +35403,9 @@ FR
 GH
 GI
 GI
-GI
-GI
-GI
+ZS
+LS
+HD
 GI
 GI
 Gz
