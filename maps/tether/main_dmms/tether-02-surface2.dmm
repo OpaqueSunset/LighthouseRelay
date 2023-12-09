@@ -1549,6 +1549,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/railing/mapped,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/plating,
 /area/gateway)
 "dQ" = (
@@ -3110,6 +3114,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_staires_two)
 "hn" = (
@@ -5586,6 +5594,10 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor,
 /area/maintenance/substation/research)
 "mM" = (
@@ -5878,6 +5890,10 @@
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
@@ -8907,6 +8923,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
@@ -13164,6 +13184,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
 "BE" = (
@@ -14414,6 +14438,9 @@
 /obj/machinery/camera/network/engineering,
 /obj/structure/cable/green{
 	icon_state = "0-2"
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/tcomms)
@@ -16756,6 +16783,13 @@
 	},
 /turf/simulated/floor/grass,
 /area/tether/surfacebase/fishing_garden)
+"KJ" = (
+/obj/structure/catwalk,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/bar)
 "KL" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -16827,7 +16861,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "MH" = (
-/obj/machinery/network/mainframe/empty,
+/obj/machinery/network/mainframe/transcore,
 /turf/simulated/floor/tiled/dark{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -16855,6 +16889,18 @@
 /obj/machinery/camera/network/civilian,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
+"Nb" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/tether/surfacebase/atrium_two)
 "Nf" = (
 /turf/simulated/open,
 /area/tether/surfacebase/public_garden_two)
@@ -17059,7 +17105,7 @@
 /turf/exterior/open,
 /area/tether/surfacebase/outside/outside2)
 "Qn" = (
-/obj/machinery/network/message_server,
+/obj/machinery/network/router/lighthouse,
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -33148,7 +33194,7 @@ aG
 aG
 eo
 dY
-fn
+Nb
 fG
 fY
 gj
@@ -35356,7 +35402,7 @@ ee
 ee
 jb
 du
-ee
+KJ
 nd
 du
 oh

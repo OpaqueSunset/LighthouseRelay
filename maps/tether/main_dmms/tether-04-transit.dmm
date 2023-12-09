@@ -302,6 +302,10 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
 "ba" = (

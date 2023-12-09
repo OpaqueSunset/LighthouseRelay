@@ -33,3 +33,9 @@
 /obj/machinery/computer/HolodeckControl/holodorm/seven
 	name = "dorm seven holodeck control console"
 	linkedholodeck_area = /area/crew_quarters/sleep/Dorm_7/holo
+
+/obj/machinery/network/router/lighthouse
+	initial_network_id = "LighthouseRelay"
+
+/obj/machinery/network/relay/wall_mounted/lighthouse
+	initial_network_id = "LighthouseRelay"

@@ -2822,6 +2822,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "hd" = (
@@ -6799,6 +6803,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "oj" = (
@@ -6824,6 +6832,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
@@ -10212,6 +10224,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "uC" = (
@@ -11254,6 +11269,10 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/techfloor,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/workshop)
 "wA" = (
@@ -19458,6 +19477,10 @@
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/mauve/border,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "Ld" = (
@@ -19794,6 +19817,28 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
+"LJ" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/beige/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/lower/third_south)
 "LL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -20877,6 +20922,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
+"QM" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/plating,
+/area/vacant/vacant_site2)
 "QO" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -22409,6 +22461,10 @@
 /area/tether/surfacebase/public_garden_three)
 "YY" = (
 /obj/item/stool/padded,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/bar_backroom)
 "Zc" = (
@@ -22577,6 +22633,10 @@
 	},
 /obj/effect/floor_decal/spline/plain{
 	dir = 6
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
 	},
 /turf/simulated/floor/wood,
 /area/bridge/secondary)
@@ -37285,7 +37345,7 @@ aQ
 aZ
 bZ
 ax
-aw
+QM
 ae
 aq
 aq
@@ -39203,7 +39263,7 @@ xw
 xw
 CH
 CH
-Ku
+LJ
 EA
 Ku
 Fu
