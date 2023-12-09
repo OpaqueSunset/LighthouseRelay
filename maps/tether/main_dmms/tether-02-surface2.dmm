@@ -16861,7 +16861,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "MH" = (
-/obj/machinery/network/mainframe/transcore,
+/obj/machinery/network/mainframe/transcore{
+	tag_network_tag = "TRANSCORE_RESLEEVING"
+	},
 /turf/simulated/floor/tiled/dark{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
