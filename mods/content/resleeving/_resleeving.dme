@@ -1,0 +1,7 @@
+#ifndef CONTENT_PACK_RESLEEVING
+#define CONTENT_PACK_RESLEEVING
+#include "resleeving.dm"
+#include "mind_record.dm"
+#include "body_record.dm"
+#include "body_printer.dm"
+#endif
