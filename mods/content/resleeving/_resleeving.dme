@@ -4,4 +4,5 @@
 #include "mind_record.dm"
 #include "body_record.dm"
 #include "body_printer.dm"
+#include "sleevemate.dm"
 #endif

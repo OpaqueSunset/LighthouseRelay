@@ -32718,7 +32718,7 @@
 /obj/structure/table/glass,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "taV" = (

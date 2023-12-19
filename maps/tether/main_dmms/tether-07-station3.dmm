@@ -18696,8 +18696,8 @@
 	info = "Bodies designed on the design console must be saved to a disk, provided on the front desk counter, then placed into the resleeving console for printing.";
 	name = "Body Designer Note"
 	},
-/obj/item/sleevemate,
-/obj/item/storage/box/body_record_disk,
+/obj/item/scanner/sleevemate,
+/obj/item/storage/box/transcore_record_disk,
 /obj/item/radio{
 	pixel_x = 4;
 	pixel_y = -4
@@ -19750,7 +19750,7 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -21165,7 +21165,7 @@
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/item/storage/box/body_record_disk,
+/obj/item/storage/box/transcore_record_disk,
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
 "LH" = (

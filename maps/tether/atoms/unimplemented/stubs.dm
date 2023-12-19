@@ -2,8 +2,6 @@
 /obj/item/book/manual/resleeving
 /obj/item/implanter/backup
 /obj/item/implant/backup
-/obj/item/sleevemate
-	material = /decl/material/solid/plastic
 
 /obj/machinery/transhuman
 	abstract_type = /obj/machinery/transhuman

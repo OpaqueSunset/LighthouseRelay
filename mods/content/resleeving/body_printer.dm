@@ -314,7 +314,7 @@
 			do_fakemob_animation("fakemob5", "layer5", "stage5", fade_out = TRUE)
 			print_finished = FALSE
 			removing_clone = FALSE
-			ping("Print removal detected. Engaging cleaning cycle!")
+			ping("\The [src] pings, \"Print removal detected. Engaging cleaning cycle!\"")
 			start_cleaning()
 		else
 			removing_clone = FALSE
@@ -342,21 +342,21 @@
 	if(stat & (NOPOWER|BROKEN)) //shitters clogged
 		return
 	if(cleaning)
-		buzz("\The [src] buzzes, 'Error! Self-cleaning in progress.'")
+		buzz("\The [src] buzzes, \"Error! Self-cleaning in progress.\"")
 	if(printing)
-		buzz("\The [src] buzzes, 'Error! Printer busy.'")
+		buzz("\The [src] buzzes, \"Error! Printer busy.\"")
 		return
 	if(clonemob) //can't clone someone while there's still someone inside.
-		buzz("\The [src] buzzes, 'Error! Printer occupied.'")
+		buzz("\The [src] buzzes, \"Error! Printer occupied.\"")
 		return
 	if(!diskette)
-		buzz("\The [src] buzzes, 'Error! No diskette inserted.'")
+		buzz("\The [src] buzzes, \"Error! No diskette inserted.\"")
 		return
 	if(!diskette.contains_file_type("BDY"))
-		buzz("\The [src] buzzes, 'Error! No body record detected.'")
+		buzz("\The [src] buzzes, \"Error! No body record detected.\"")
 		return
 	if(!use_materials(/decl/material/solid/meat, /decl/material/solid/bone, COST_PER_PRINT, COST_PER_PRINT/2))
-		buzz("\The [src] buzzes, 'Error! Insufficent materials.'")
+		buzz("\The [src] buzzes, \"Error! Insufficent materials.\"")
 		return
 	if(lid_open)
 		close_pod_start()
@@ -368,7 +368,7 @@
 
 /obj/machinery/bioprinter/proc/start_print_next()
 	var/datum/computer_file/data/body_record/body_record = diskette.contains_file_type("BDY")
-	clonemob = body_record.create_human()
+	clonemob = body_record.create_human(src)
 	update_fake_mob()
 	vis_contents += ph
 
@@ -493,8 +493,7 @@
 	printing = FALSE
 	errored = FALSE
 	needs_attention = FALSE
-	qdel(clonemob)
-	clonemob = null
+	QDEL_NULL(clonemob)
 
 /obj/machinery/bioprinter/proc/finish_print()
 	vis_contents -= ph
@@ -505,6 +504,21 @@
 	technobabble_used.Cut()
 	open_pod_start()
 	total_interactions = 0
+	var/datum/computer_file/data/mind_record/mind_record = diskette.contains_file_type("MND")
+	if(!mind_record)
+		return
+	if(!istype(mind_record))
+		buzz("\The [src] buzzes, \"Mind backup corrupted or incompatible. Skipping...\"")
+		return
+	var/datum/mind/stored_mind = mind_record.get_mind()
+	if(!stored_mind)
+		buzz("\The [src] buzzes, \"Mind backup is too outdated. Skipping...\"")
+		return
+	if(stored_mind.current && stored_mind.current.stat != DEAD)
+		buzz("\The [src] buzzes, \"Fork attempt detected, mind signature already present in registered body. Skipping...\"")
+		return
+	if(mind_record.transfer_to_mob(clonemob))
+		ping("\The [src] pings, \"Mind record successfully transferred to body.\"")
 
 /obj/machinery/bioprinter/proc/interact_request(var/is_error)
 	var/list/usable_babble = list()
@@ -518,11 +532,11 @@
 	if(!is_error) //if not a critical error, auto-resolve in ~30s
 		interaction_timer_id = addtimer(CALLBACK(src, .proc/fulfill_interaction), 50 SECONDS, TIMER_STOPPABLE)
 		do_telecomms_announcement(src, "Error in [technobabble] - auto-recovery under way...", "Bioprinter Monitoring System", "Medical")
-		buzz("\The [src] buzzes, 'Error in [technobabble] - auto-recovery under way...'")
+		buzz("\The [src] buzzes, \"Error in [technobabble] - auto-recovery under way...\"")
 	else
 		errored = TRUE
 		do_telecomms_announcement(src, "Unrecoverable error in [technobabble] - manual intervention required!", "Bioprinter Monitoring System", "Medical")
-		buzz("\The [src] buzzes, 'Unrecoverable error in [technobabble] - manual intervention required!'")
+		buzz("\The [src] buzzes, \"Unrecoverable error in [technobabble] - manual intervention required!\"")
 	update_icon()
 
 /obj/machinery/bioprinter/proc/fulfill_interaction(var/mob/living/carbon/human/user, var/manual = FALSE)

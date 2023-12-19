@@ -13169,7 +13169,7 @@
 "yA" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/morgue)
 "yB" = (
@@ -13512,7 +13512,7 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/table,
 /obj/structure/bedsheetbin,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "zg" = (

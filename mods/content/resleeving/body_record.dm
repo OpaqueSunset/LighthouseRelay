@@ -45,7 +45,6 @@
 			<p>[get_bodytype_string()]</p>
 		</center>"}
 
-#define OS_BODY_RECORDS_DIR "body_records"
 /mob/living/carbon/human/proc/create_body_record(upload = TRUE)
 	if(!dna)
 		return
@@ -68,7 +67,7 @@
 		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR_EXTRA, ear_color_extra)
 	// todo: implement BODY_RECORD_FIELD_ASPECTS for storing physical aspects, EXCLUDE things like prosthetics
 	var/datum/computer_file/data/body_record/body_record = new(metadata)
-	body_record.filename = replacetext(real_name, " ", "_")
+	body_record.filename = "[replacetext(real_name, " ", "_")].BDY"
 	if(upload)
 		var/datum/computer_network/network = get_local_network_at(get_turf(src))
 		if(network)
@@ -86,23 +85,20 @@
 	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_EARS)
 
 /obj/item/disk/transcore
-	abstract_type = /obj/item/disk/transcore
+	name = "transcore record disk"
+	desc = "A standard 3.5 inch floppy disk labeled for usage with TransCore-compatible mind and body records."
+	color = COLOR_DEEP_SKY_BLUE
 	label = "label_dna"
 	origin_tech = "{'biotech':2}"
 
-/obj/item/disk/transcore/body
-	name = "body record disk"
-	desc = "A standard 3.5 inch floppy disk labeled for usage with TransCore-compatible body records."
-	color = COLOR_PALE_BLUE_GRAY
+/datum/fabricator_recipe/medical/transcore_disk
+	path = /obj/item/disk/transcore
 
-/datum/fabricator_recipe/medical/transcore_body_disk
-	path = /obj/item/disk/transcore/body
+/obj/item/storage/box/transcore_record_disk/WillContain()
+	return list(/obj/item/disk/transcore = 7)
 
-/obj/item/storage/box/body_record_disk/WillContain()
-	return list(/obj/item/disk/transcore/body = 7)
-
-/datum/computer_file/data/body_record/proc/create_human()
-	var/mob/living/carbon/human/our_human = new /mob/living/carbon/human(null, null, get_dna(), get_bodytype_decl())
+/datum/computer_file/data/body_record/proc/create_human(location)
+	var/mob/living/carbon/human/our_human = new /mob/living/carbon/human(location, null, get_dna(), get_bodytype_decl())
 	var/list/tail_data = get_tail_metadata()
 	if(tail_data?[BODY_RECORD_GENEMOD_STYLE])
 		our_human.tail_style = decls_repository.get_decl_by_id(tail_data[BODY_RECORD_GENEMOD_STYLE])
