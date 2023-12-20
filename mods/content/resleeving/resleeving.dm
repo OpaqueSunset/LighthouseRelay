@@ -13,6 +13,7 @@
 
 /hook/startup/proc/add_transcore_role()
 	global.all_mainframe_roles |= MF_ROLE_TRANSCORE
+	return TRUE
 
 /obj/machinery/network/mainframe/transcore
 	initial_roles = list(
