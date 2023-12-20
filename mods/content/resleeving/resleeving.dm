@@ -23,12 +23,6 @@
 /datum/job
 	var/start_with_transcore_backup = TRUE
 
-/datum/job/computer
-	start_with_transcore_backup = FALSE
-
-/datum/job/robot
-	start_with_transcore_backup = FALSE
-
 /datum/controller/subsystem/jobs/equip_rank(mob/living/carbon/human/worker, rank, joined_late = FALSE)
 	. = ..()
 	var/datum/job/job = get_by_title(rank)
