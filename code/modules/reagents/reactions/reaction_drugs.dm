@@ -188,6 +188,7 @@
 	name = "Space cleaner"
 	result = /decl/material/liquid/cleaner
 	required_reagents = list(/decl/material/gas/ammonia = 1, /decl/material/liquid/water = 1)
+	inhibitors = list(/decl/material/liquid/stabilizer)
 	mix_message = "The solution becomes slick and soapy."
 	result_amount = 2
 
