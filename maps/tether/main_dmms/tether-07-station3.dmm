@@ -20245,17 +20245,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
-"JX" = (
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/glass,
-/obj/structure/window/reinforced/polarized/full{
-	id = "resleeving-tint"
-	},
-/turf/simulated/floor/plating,
-/area/medical/resleeving)
 "JY" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -36033,7 +36022,7 @@ Gk
 Gk
 Ix
 Jg
-JX
+Jg
 KC
 Jg
 Jg

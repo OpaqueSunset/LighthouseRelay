@@ -5317,6 +5317,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -5532,6 +5535,9 @@
 	dir = 4
 	},
 /obj/machinery/internet_repeater,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -5934,6 +5940,12 @@
 	pressure_checks = 2;
 	pressure_checks_default = 2
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -5945,6 +5957,9 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/internet_uplink,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
 	temperature = 80
@@ -6164,6 +6179,9 @@
 	},
 /obj/machinery/door/window/northleft{
 	name = "Server Room"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/server)
@@ -6459,6 +6477,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/server)
