@@ -21145,7 +21145,8 @@
 	dir = 10
 	},
 /obj/machinery/computer/modular/preset/medical/resleeving{
-	dir = 1
+	dir = 1;
+	automount_disks = list("TRANSCORE_RESLEEVING" = "transcore")
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
