@@ -779,6 +779,9 @@
 /obj/item/trash/unajerky : /obj/item/trash/sosjerky
 /obj/item/toy/eight_ball/conch : /obj/item/toy/eightball/conch
 
+/obj/item/beach_ball/holoball : /obj/item/ball/basketball
+/obj/item/beach_ball : /obj/item/ball
+
 /obj/structure/bookcase/manuals/research_and_development : /obj/structure/bookcase/manuals/xenoarchaeology
 /obj/item/book/manual/security_space_law : /obj/item/book/manual/nt_regs
 

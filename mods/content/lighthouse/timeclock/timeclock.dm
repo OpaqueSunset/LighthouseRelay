@@ -88,7 +88,7 @@
 	if(card)
 		data["card"] = "[card]"
 		data["assignment"] = card.assignment
-		var/datum/job/job = SSjobs.get_by_title(card.rank)
+		var/datum/job/job = SSjobs.get_by_title(card.position)
 		if (job)
 			data["job_datum"] = list(
 				"title" = job.title,
@@ -172,26 +172,26 @@
 	return record
 
 /obj/machinery/timeclock/proc/reassign_player(mob/living/player, newrank, newassignment)
-	var/datum/job/oldjob = SSjobs.get_by_title(card.rank)
+	var/datum/job/oldjob = SSjobs.get_by_title(card.position)
 	var/datum/job/newjob = SSjobs.get_by_title(newrank)
 	if(!oldjob || !newjob)
 		return FALSE
 	oldjob.clear_slot()
 	card.access = newjob.get_access()
-	card.rank = newjob.title
+	card.position = newjob.title
 	card.assignment = newassignment
 	fetch_record(card.registered_name)?.set_job(card.assignment)
 	card.last_job_switch = world.time
 	callHook("reassign_employee", list(card)) // FIXME: REPLACE WITH OBSERV
 	newjob.current_positions++
-	player.mind.assigned_role = card.rank
+	player.mind.assigned_role = card.position
 	player.mind.role_alt_title = card.assignment
 	return TRUE
 
 /obj/machinery/timeclock/proc/makeOnDuty(mob/living/player, newrank, newassignment)
 	if(!card)
 		return
-	var/datum/job/oldjob = SSjobs.get_by_title(card.rank)
+	var/datum/job/oldjob = SSjobs.get_by_title(card.position)
 	var/datum/job/newjob = SSjobs.get_by_title(newrank)
 	if(!oldjob || !isOpenOnDutyJob(usr, oldjob.pto_type, newjob))
 		return
@@ -201,7 +201,7 @@
 		do_telecomms_announcement(src, "[card.registered_name] has moved On-Duty as [card.assignment].", "Employee Oversight", channel)
 
 /obj/machinery/timeclock/proc/makeOffDuty(mob/living/player)
-	var/datum/job/foundjob = SSjobs.get_by_title(card.rank)
+	var/datum/job/foundjob = SSjobs.get_by_title(card.position)
 	if(!foundjob)
 		return
 	var/new_dept = foundjob.pto_type || PTO_CIVILIAN

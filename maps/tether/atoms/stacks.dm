@@ -40,6 +40,6 @@
 }
 
 // Placeholder material until actual algae is added.
-STACK_SUBTYPES(algae, "algae", solid/plantmatter, puck, null)
+STACK_SUBTYPES(algae, "algae", solid/organic/plantmatter, puck, null)
 
 #undef STACK_SUBTYPES

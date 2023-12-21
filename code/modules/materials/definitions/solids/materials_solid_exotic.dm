@@ -117,13 +117,6 @@
 	reflectiveness = MAT_VALUE_SHINY
 	gas_symbol_html = "Ex<sub>*</sub>"
 	gas_symbol = "Ex*"
-	taste_mult = 1.5
-	toxicity = 30
-	touch_met = 5
-	accelerant_value = FUEL_VALUE_VOLATILE
-	vapor_products = list(
-		/decl/material/solid/phoron = 1
-	)
 	default_solid_form = /obj/item/stack/material/segment
 	exoplanet_rarity_plant = MAT_RARITY_EXOTIC
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE

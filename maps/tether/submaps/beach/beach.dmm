@@ -272,7 +272,7 @@
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "bd" = (
-/obj/item/beach_ball,
+/obj/item/ball,
 /turf/simulated/floor/beach/sand,
 /area/tether_away/beach)
 "be" = (

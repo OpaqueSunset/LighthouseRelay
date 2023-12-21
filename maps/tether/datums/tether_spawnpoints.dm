@@ -1,20 +1,22 @@
-// Tram arrival point landmarks and datum
-var/global/list/latejoin_tram = list()
-
-/obj/abstract/landmark/latejoin/tram/add_loc()
-	global.latejoin_tram |= get_turf(src) // Register this turf as tram latejoin.
-	..() // Also register this turf as fallback latejoin, since we won't have any arrivals shuttle landmarks.
+// Tram/gateway arrival point landmarks and decls
+/obj/abstract/landmark/latejoin/tram
+	spawn_decl = /decl/spawnpoint/tram
 
 /decl/spawnpoint/tram
 	name = "Tram Station"
-	msg = "has arrived on the tram"
+	spawn_announcement = "has arrived on the tram"
+	uid = "spawn_tether_tram"
 
-/decl/spawnpoint/tram/Initialize()
-	. = ..()
-	turfs = global.latejoin_tram
+/decl/spawnpoint/gateway
+	name = "Gateway"
+	spawn_announcement = "has completed translation from offsite gateway"
+	uid = "spawn_tether_gateway"
+
+/obj/abstract/landmark/latejoin/gateway
+	spawn_decl = /decl/spawnpoint/gateway
 
 /datum/map/tether
-	allowed_spawns = list(
+	allowed_latejoin_spawns = list(
 		/decl/spawnpoint/tram,
 		/decl/spawnpoint/gateway,
 		/decl/spawnpoint/cryo,

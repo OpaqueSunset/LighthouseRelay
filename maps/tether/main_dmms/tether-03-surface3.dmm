@@ -6878,7 +6878,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 9
 	},
-/obj/item/beach_ball,
+/obj/item/ball,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
 "os" = (

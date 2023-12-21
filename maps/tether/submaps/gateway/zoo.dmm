@@ -4268,7 +4268,7 @@
 /area/awaymission/zoo)
 "lT" = (
 /obj/structure/rack,
-/obj/item/beach_ball,
+/obj/item/ball,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lU" = (
