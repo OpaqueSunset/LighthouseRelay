@@ -48,6 +48,7 @@
 
 	// Loaded after other modpacks to override everything where needed.
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
+	#include "../../mods/content/resleeving/_resleeving.dme"
 
 	#include "tether_jobs.dm"
 	#include "tether_leveldata.dm"

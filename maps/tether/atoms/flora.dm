@@ -78,7 +78,7 @@
 	name = "glowing tree"
 	desc = "It's a tree, except this one seems quite alien.  It glows a deep blue."
 	icon = 'maps/tether/icons/obj/flora/tree_sif.dmi'
-	icon_state = "tree_sif"
+	icon_state = "tree_sif0"
 	// todo: add chopping and harvest products
 	// or make them use loaf's rewritten trayless plant system, coming circa 2556
 	// product = /obj/item/stack/material/log/sif

@@ -772,7 +772,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/machinery/computer/cryopod,
+/obj/machinery/computer/cryopod{
+	dir = 8;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "bt" = (
@@ -3563,6 +3566,9 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 1
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
 "gv" = (
@@ -4412,7 +4418,9 @@
 	dir = 8
 	},
 /obj/structure/cable/pink,
-/obj/machinery/power/apc/super,
+/obj/machinery/power/apc/super{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
 "ie" = (
@@ -4675,6 +4683,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 1
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
 	},
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
@@ -5026,6 +5038,10 @@
 "jm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
@@ -6183,6 +6199,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "lN" = (
+/obj/machinery/network/relay{
+	initial_network_id = "LighthouseRelay"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_server_room)
 "lO" = (
@@ -6727,6 +6746,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
 "mQ" = (
@@ -8262,6 +8284,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 9
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -10842,7 +10868,7 @@
 	dir = 5
 	},
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
@@ -11635,6 +11661,10 @@
 "vN" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
@@ -13139,7 +13169,7 @@
 "yA" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/morgue)
 "yB" = (
@@ -13482,7 +13512,7 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/table,
 /obj/structure/bedsheetbin,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "zg" = (
@@ -14078,6 +14108,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
@@ -15491,6 +15525,13 @@
 	},
 /turf/simulated/floor,
 /area/maintenance/evahallway)
+"EG" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled/dark,
+/area/chapel/chapel_morgue)
 "EH" = (
 /obj/random/junk,
 /obj/effect/floor_decal/techfloor{
@@ -15525,6 +15566,9 @@
 "EU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -15806,6 +15850,19 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/engineering/shaft)
+"Gs" = (
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled,
+/area/bridge/meeting_room)
 "Gv" = (
 /obj/machinery/button/blast_door{
 	id_tag = "yard_riot_3";
@@ -16133,6 +16190,13 @@
 /obj/structure/disposalpipe/broken,
 /turf/simulated/floor,
 /area/vacant/vacant_office)
+"IW" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/wood,
+/area/bridge/meeting_room)
 "IX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17429,6 +17493,9 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "Qs" = (
@@ -18357,6 +18424,21 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/station/micro)
+"VO" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/lightgrey/border,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/starboard)
 "VQ" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/fancy/crayons,
@@ -18757,6 +18839,10 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 4
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/public_meeting_room)
 "Yd" = (
@@ -18820,6 +18906,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
+"Yo" = (
+/obj/effect/floor_decal/rust,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor,
+/area/storage/tech)
 "Yq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/glass,
@@ -18942,6 +19036,19 @@
 /obj/random/trash,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
+"YX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/black{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/virology)
 "Za" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -26356,7 +26463,7 @@ mg
 mG
 nv
 nZ
-oa
+Yo
 kJ
 pG
 pG
@@ -31664,7 +31771,7 @@ oW
 pn
 pV
 qH
-rs
+YX
 sf
 sF
 tp
@@ -33548,7 +33655,7 @@ wm
 wO
 xq
 wo
-yi
+Gs
 yK
 wo
 zD
@@ -33976,7 +34083,7 @@ ac
 ac
 bg
 by
-bU
+EG
 bU
 cE
 bU
@@ -35267,7 +35374,7 @@ wV
 ys
 wV
 wV
-wV
+IW
 wo
 ac
 ac
@@ -35715,7 +35822,7 @@ Nh
 mA
 nl
 nU
-ot
+VO
 oY
 pE
 qc

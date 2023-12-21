@@ -2401,6 +2401,9 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/lobby)
 "aeM" = (
@@ -2694,6 +2697,9 @@
 /area/tether/surfacebase/tram)
 "aft" = (
 /obj/machinery/camera/network/civilian,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/storage/primary)
 "afu" = (
@@ -4493,6 +4499,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "aiE" = (
@@ -6133,6 +6143,9 @@
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor,
 /area/maintenance/substation/mining)
 "alx" = (
@@ -7068,6 +7081,9 @@
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/surface_atmos)
 "anv" = (
@@ -7244,6 +7260,9 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	pixel_y = 9
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -10528,6 +10547,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/security/checkpoint)
 "aui" = (
@@ -12455,6 +12477,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "axK" = (
@@ -13452,6 +13478,10 @@
 	dir = 5
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "azt" = (
@@ -13994,6 +14024,10 @@
 "aAu" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central6{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
@@ -20666,6 +20700,10 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 9
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/tram)
 "aPp" = (
@@ -20950,6 +20988,9 @@
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/civ_west)
@@ -22872,6 +22913,10 @@
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 6
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/locker/laundry_arrival)
@@ -27716,6 +27761,28 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"ceE" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 5
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 6
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled,
+/area/tether/surfacebase/atrium_one)
 "ceG" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
@@ -27937,6 +28004,10 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/visitor_laundry)
@@ -30743,6 +30814,9 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 1
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
 "jtj" = (
@@ -30906,6 +30980,25 @@
 /obj/machinery/door/airlock/maintenance,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
+"ksD" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/tether/surfacebase/atrium_one)
 "ksG" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -31275,6 +31368,21 @@
 	dir = 8
 	},
 /area/hallway/lower/first_west)
+"ngA" = (
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/mauve/border,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled,
+/area/rnd/hallway)
 "nhN" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -31521,6 +31629,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
+"oxb" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/wood,
+/area/tether/surfacebase/medical/triage)
 "ozv" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -32520,6 +32635,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
+"sMs" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/yellow/border{
+	dir = 1
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled,
+/area/engineering/atmos)
 "sMJ" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -32588,7 +32718,7 @@
 /obj/structure/table/glass,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
-/obj/item/sleevemate,
+/obj/item/scanner/sleevemate,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "taV" = (
@@ -43243,7 +43373,7 @@ aAZ
 aDf
 aAZ
 bwY
-aEQ
+ngA
 atG
 aEU
 aEU
@@ -45065,7 +45195,7 @@ cEQ
 jtj
 mYd
 mYd
-mYd
+oxb
 qQw
 qQw
 qQw
@@ -47115,7 +47245,7 @@ axQ
 aAd
 akB
 all
-alQ
+ceE
 ayW
 aFS
 anl
@@ -47627,7 +47757,7 @@ ayX
 ayX
 ayX
 axg
-aDo
+sMs
 aqT
 auD
 aqT
@@ -49613,7 +49743,7 @@ awZ
 aCH
 akF
 amv
-akF
+ksD
 ann
 aIe
 gek

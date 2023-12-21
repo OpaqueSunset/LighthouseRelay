@@ -1,10 +1,7 @@
 // resleeving and transcore
 /obj/item/book/manual/resleeving
-/obj/item/disk/transcore
 /obj/item/implanter/backup
 /obj/item/implant/backup
-/obj/item/sleevemate
-	material = /decl/material/solid/plastic
 
 /obj/machinery/transhuman
 	abstract_type = /obj/machinery/transhuman
@@ -57,7 +54,6 @@
 	material = /decl/material/solid/paper //it's a manila envelope you tear open
 /obj/item/chems/glass/bottle/biomass
 /obj/item/storage/box/backup_kit
-/obj/item/storage/box/body_record_disk
 // note: cryo is technically part of resleeving now
 /obj/machinery/atmospherics/unary/cryo_cell
 /obj/item/chems/glass/beaker/cryoxadone

@@ -963,6 +963,9 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/research_outpost,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "cp" = (
@@ -2086,6 +2089,27 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/floor,
 /area/tether/outpost/solars_outside)
+"eh" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/mauve/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/research/hallway/resarch_outpost_storage_hallway)
 "ei" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -2714,7 +2738,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled/white,
@@ -2848,6 +2872,10 @@
 	},
 /obj/machinery/firealarm{
 	pixel_y = 24
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/telescience_lab)
@@ -3363,7 +3391,7 @@
 	name = "Birb"
 	},
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	pixel_x = -24
 	},
 /turf/simulated/floor/tiled,
@@ -3939,10 +3967,18 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
+"kp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/network/relay/long_range{
+	initial_network_id = "LighthouseRelay"
+	},
+/turf/simulated/floor/plating,
+/area/outpost/research/substation)
 "kq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -4352,6 +4388,10 @@
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
@@ -5840,7 +5880,7 @@
 "tM" = (
 /obj/structure/disposalpipe/segment,
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	pixel_x = -24
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -6122,6 +6162,33 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
+"vo" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/mauve/border,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "vp" = (
 /obj/effect/floor_decal/rust,
 /turf/exterior/wall,
@@ -6628,6 +6695,9 @@
 	icon_state = "pipe-c"
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "yF" = (
@@ -8756,6 +8826,28 @@
 /obj/structure/bed/chair/comfy/purple,
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
+"KS" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/mauve/border{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "KV" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -8853,7 +8945,8 @@
 /obj/machinery/computer/air_control{
 	frequency = 1550;
 	name = "Burn Chamber Air Control";
-	pressure_setting = 0
+	pressure_setting = 0;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
@@ -10207,6 +10300,14 @@
 "TR" = (
 /turf/simulated/wall,
 /area/outpost/research/medical/first_aid_south_west)
+"TU" = (
+/obj/structure/table/bench/padded,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/wood,
+/area/rnd/breakroom/outpost)
 "TV" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -10991,6 +11092,10 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/structure/flora/pottedplant/unusual,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/storage/surface_eva_storage)
 "YH" = (
@@ -28756,7 +28861,7 @@ dZ
 Xn
 TX
 Tl
-Vm
+vo
 RL
 vr
 GB
@@ -30912,11 +31017,11 @@ ab
 ab
 mA
 xw
-AP
+TU
 Td
 tT
 xh
-NG
+kp
 VX
 mZ
 lj
@@ -31241,7 +31346,7 @@ ju
 sP
 fC
 fT
-ju
+KS
 ju
 gH
 hd
@@ -31260,7 +31365,7 @@ sY
 sY
 sY
 CU
-sY
+eh
 SL
 Eq
 VE
@@ -31416,7 +31521,7 @@ XH
 XH
 XH
 XH
-MK
+XH
 uc
 MK
 MK
@@ -32976,7 +33081,7 @@ ab
 ab
 ab
 ab
-XH
+MK
 Pw
 Bb
 Ql

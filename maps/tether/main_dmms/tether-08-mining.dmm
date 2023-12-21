@@ -670,6 +670,9 @@
 /obj/structure/closet/hydrant{
 	pixel_y = -32
 	},
+/obj/machinery/network/relay/long_range{
+	initial_network_id = "LighthouseRelay"
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/mining_main/break_room)
 "by" = (

@@ -1528,6 +1528,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "adv" = (
@@ -1988,6 +1992,9 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/tether,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "aes" = (
@@ -7222,6 +7229,9 @@
 	pixel_y = 5
 	},
 /obj/item/storage/toolbox/electrical,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/workshop)
 "art" = (
@@ -10553,6 +10563,9 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/bridge_hallway)
 "aCt" = (
@@ -10728,6 +10741,10 @@
 /obj/machinery/camera/network/command{
 	c_tag = "Bridge Hallway Central";
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/bridge_hallway)
@@ -12967,6 +12984,10 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner2,
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
@@ -15510,7 +15531,8 @@
 /area/hallway/station/atrium)
 "beY" = (
 /obj/machinery/door/airlock/double/metal{
-	name = "Cryogenic Storage"
+	name = "Cryogenic Storage";
+	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15967,6 +15989,25 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
 /area/crew_quarters/sleep/cryo)
+"bis" = (
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled,
+/area/engineering/hallway)
 "biB" = (
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/structure/table,
@@ -17268,6 +17309,9 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
 /turf/simulated/floor/tiled,
 /area/storage/tools)
 "brD" = (
@@ -19203,6 +19247,10 @@
 /obj/machinery/camera/network/tether{
 	dir = 4
 	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
 "bPQ" = (
@@ -20528,6 +20576,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
+"jbC" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled,
+/area/tether/station/excursion_dock)
 "jcG" = (
 /obj/machinery/button/windowtint{
 	id_tag = "pathfinder_office";
@@ -20659,6 +20714,12 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/lounge/kitchen_freezer)
+"jTr" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/lounge)
 "jVa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -20804,6 +20865,31 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_showers)
+"kZu" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/atrium)
 "kZI" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/machinery/camera/network/tether,
@@ -21962,6 +22048,14 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/library)
+"rxR" = (
+/obj/structure/flora/pottedplant/stoutbush,
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled,
+/area/crew_quarters/heads/chief)
 "rCG" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -22418,6 +22512,13 @@
 /obj/item/folder/blue,
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_meeting)
+"uCn" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/tether/station/excursion_dock)
 "uDP" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -22515,6 +22616,30 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)
+"vfi" = (
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/atrium)
 "vkW" = (
 /obj/machinery/power/apc/super,
 /obj/structure/cable/green,
@@ -22699,6 +22824,13 @@
 /obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_meeting)
+"wnk" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 8;
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/docks)
 "wns" = (
 /obj/structure/table/woodentable,
 /obj/machinery/recharger,
@@ -22726,6 +22858,16 @@
 	},
 /turf/simulated/floor,
 /area/construction/observation)
+"wCd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/docks)
 "wCH" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
@@ -22762,6 +22904,22 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
+"wIf" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	pixel_y = 21
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/atrium)
 "wIg" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced{
@@ -22989,6 +23147,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/excursion_dock)
+"yey" = (
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
+	},
+/turf/simulated/floor/wood,
+/area/library)
 "ygn" = (
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
@@ -30246,7 +30411,7 @@ aZg
 aQl
 aSu
 aTW
-aBg
+rxR
 aRb
 bYj
 bYj
@@ -30573,7 +30738,7 @@ bYj
 bYz
 aAV
 btu
-aBZ
+wCd
 awu
 aaa
 aaa
@@ -32093,7 +32258,7 @@ acu
 ahO
 acu
 ajC
-ads
+bis
 akX
 amb
 anr
@@ -33380,7 +33545,7 @@ awZ
 azR
 aAo
 aBi
-aBi
+wnk
 aCc
 aCN
 bPO
@@ -35210,7 +35375,7 @@ rnb
 rnb
 rnb
 afW
-agG
+jTr
 agS
 ahe
 ahl
@@ -35675,7 +35840,7 @@ aaP
 aah
 aah
 aah
-aah
+jbC
 xri
 aah
 kFA
@@ -37605,7 +37770,7 @@ ait
 pNC
 all
 pNC
-ame
+yey
 ama
 amm
 fVe
@@ -37721,7 +37886,7 @@ lIz
 itO
 xhj
 rRw
-mei
+kZu
 acp
 acy
 acy
@@ -38171,7 +38336,7 @@ aal
 aah
 aah
 lKm
-aah
+uCn
 pTz
 wSH
 quT
@@ -38201,7 +38366,7 @@ aFz
 aCw
 aCw
 aTA
-aCw
+vfi
 aWJ
 aFz
 baI
@@ -39458,7 +39623,7 @@ asI
 asI
 bhJ
 aus
-age
+wIf
 acm
 bpl
 bqb
