@@ -1,7 +1,7 @@
 /obj/item/underwear
 	icon = 'icons/mob/human.dmi'
 	w_class = ITEM_SIZE_TINY
-	material = /decl/material/solid/cloth
+	material = /decl/material/solid/organic/cloth
 	var/required_free_body_parts
 	var/slot_offset_str
 
@@ -10,7 +10,8 @@
 		return // Might as well check
 	DelayedEquipUnderwear(user, target)
 
-/obj/item/underwear/handle_mouse_drop(atom/over, mob/user)
+/obj/item/underwear/handle_mouse_drop(atom/over, mob/user, params)
+	SHOULD_CALL_PARENT(FALSE)
 	DelayedEquipUnderwear(user, over)
 	return TRUE
 

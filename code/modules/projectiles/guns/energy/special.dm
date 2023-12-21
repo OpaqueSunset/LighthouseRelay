@@ -146,7 +146,8 @@
 	has_safety = FALSE
 
 /obj/item/gun/energy/plasmacutter/proc/slice(var/mob/M = null)
-	if(!safety() && power_supply.checked_use(charge_cost)) //consumes a shot per use
+	var/obj/item/cell/power_supply = get_cell()
+	if(!safety() && power_supply?.checked_use(charge_cost)) //consumes a shot per use
 		if(M)
 			M.welding_eyecheck()//Welding tool eye check
 			if(check_accidents(M, "[M] loses grip on [src] from its sudden recoil!",SKILL_CONSTRUCTION, 60, SKILL_ADEPT))
@@ -168,7 +169,7 @@
 	origin_tech = "{'combat':7,'magnets':4,'esoteric':4}"
 	material = /decl/material/solid/metal/aluminium
 	matter = list(
-		/decl/material/solid/plastic = MATTER_AMOUNT_REINFORCEMENT,
+		/decl/material/solid/organic/plastic = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/gemstone/diamond = MATTER_AMOUNT_TRACE
 	)
 	projectile_type = /obj/item/projectile/beam/incendiary_laser

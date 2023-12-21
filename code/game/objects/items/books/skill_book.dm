@@ -17,8 +17,8 @@
 										"\"What The Fuck is [capitalize(ADD_ARTICLE(capitalize(skill_name)))]?\"", \
 										"\"Starting [capitalize(ADD_ARTICLE(capitalize(skill_name)))] Business By Yourself\"", \
 										"\"Even You Can Learn [skill_name]!\"", \
-										"\"How To Impress Your Matriarch with [skill_name]\"", \
-										"\"How To Become A Patriarch of [skill_name]\"", \
+										"\"How To Impress Your Parents with [skill_name]\"", \
+										"\"How To Become A Master of [skill_name]\"", \
 										"\"Everything The Government Doesn't Want You To Know About [skill_name]\"", \
 										"\"[skill_name] For Younglets\"", \
 										"\"[skill_name]: Volume [rand(1,100)]\"", \
@@ -40,8 +40,8 @@ Skill books that increase your skills while you activate and hold them
 	force = 4
 	w_class = ITEM_SIZE_LARGE            // Skill books are THICC with knowledge. Up one level from regular books to prevent library-in-a-bag silliness.
 	unique = TRUE
-	material = /decl/material/solid/plastic
-	matter = list(/decl/material/solid/wood = MATTER_AMOUNT_REINFORCEMENT)
+	material = /decl/material/solid/organic/plastic
+	matter = list(/decl/material/solid/organic/wood = MATTER_AMOUNT_REINFORCEMENT)
 	abstract_type = /obj/item/book/skill
 
 	var/decl/hierarchy/skill/skill       // e.g. SKILL_LITERACY

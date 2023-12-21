@@ -351,9 +351,8 @@ var/global/list/hygiene_props = list()
 /obj/item/bikehorn/rubberducky
 	name = "rubber ducky"
 	desc = "Rubber ducky you're so fine, you make bathtime lots of fuuun. Rubber ducky I'm awfully fooooond of yooooouuuu~"	//thanks doohl
-	icon = 'icons/obj/watercloset.dmi'
-	icon_state = "rubberducky"
-	item_state = "rubberducky"
+	icon = 'icons/obj/rubber_duck.dmi'
+	icon_state = ICON_STATE_WORLD
 
 /obj/structure/hygiene/sink
 	name = "sink"
@@ -363,7 +362,7 @@ var/global/list/hygiene_props = list()
 	anchored = TRUE
 	var/busy = 0 	//Something's being washed at the moment
 
-/obj/structure/hygiene/sink/receive_mouse_drop(var/atom/dropping, var/mob/user)
+/obj/structure/hygiene/sink/receive_mouse_drop(atom/dropping, mob/user, params)
 	. = ..()
 	if(!. && isitem(dropping) && ATOM_IS_OPEN_CONTAINER(dropping))
 		var/obj/item/thing = dropping
@@ -418,8 +417,9 @@ var/global/list/hygiene_props = list()
 
 	else if (istype(O, /obj/item/baton))
 		var/obj/item/baton/B = O
-		if(B.bcell)
-			if(B.bcell.charge > 0 && B.status == 1)
+		var/obj/item/cell/cell = B.get_cell()
+		if(cell)
+			if(cell.charge > 0 && B.status == 1)
 				flick("baton_active", src)
 				if(isliving(user))
 					var/mob/living/M = user

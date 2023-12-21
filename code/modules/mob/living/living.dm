@@ -185,7 +185,7 @@ default behaviour is:
 
 /mob/living/verb/succumb()
 	set hidden = 1
-	if ((src.health < src.maxHealth/2)) // Health below half of maxhealth.
+	if ((src.health < src.maxHealth/2)) // Health below half of max_health.
 		src.adjustBrainLoss(src.health + src.maxHealth * 2) // Deal 2x health in BrainLoss damage, as before but variable.
 		updatehealth()
 		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
@@ -274,9 +274,6 @@ default behaviour is:
 
 /mob/living/proc/setHalLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
-
-/mob/living/proc/getBrainLoss()
-	return 0
 
 /mob/living/proc/adjustBrainLoss(var/amount)
 	return
@@ -719,20 +716,6 @@ default behaviour is:
 	update_icon()
 	return 1
 
-/mob/living/update_icon()
-	..()
-	compile_overlays()
-
-/mob/living/on_update_icon()
-	SHOULD_CALL_PARENT(TRUE)
-	..()
-	cut_overlays()
-	if(auras)
-		for(var/obj/aura/aura as anything in auras)
-			var/image/A = new()
-			A.appearance = aura
-			add_overlay(A)
-
 /mob/living/Destroy()
 	if(stressors) // Do not QDEL_NULL, keys are managed instances.
 		stressors = null
@@ -914,9 +897,6 @@ default behaviour is:
 		else if(skip_delays || do_after(src, 5 SECONDS, user))
 			. = ..()
 
-/mob/living/can_be_injected_by(var/atom/injector)
-	return ..() && (can_inject(null, 0, BP_CHEST) || can_inject(null, 0, BP_GROIN))
-
 /mob/living/handle_grab_damage()
 	..()
 	if(!has_gravity())
@@ -965,7 +945,7 @@ default behaviour is:
 /mob/living/get_admin_job_string()
 	return "Living"
 
-/mob/living/handle_mouse_drop(atom/over, mob/user)
+/mob/living/handle_mouse_drop(atom/over, mob/user, params)
 	if(!anchored && user == src && user != over)
 
 		if(isturf(over))
@@ -1238,9 +1218,7 @@ default behaviour is:
 // Get rank from ID, ID inside PDA, PDA, ID in wallet, etc.
 /mob/living/proc/get_authentification_rank(if_no_id = "No id", if_no_job = "No job")
 	var/obj/item/card/id/id = GetIdCard()
-	if(istype(id))
-		return id.rank ? id.rank : if_no_job
-	return if_no_id
+	return istype(id) ? (id.position || if_no_job) : if_no_id
 
 //gets assignment from ID or ID inside PDA or PDA itself
 //Useful when player do something with computers

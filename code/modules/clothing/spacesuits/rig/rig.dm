@@ -36,7 +36,7 @@
 	material = /decl/material/solid/metal/titanium
 	matter = list(
 		/decl/material/solid/fiberglass           = MATTER_AMOUNT_SECONDARY,
-		/decl/material/solid/plastic              = MATTER_AMOUNT_REINFORCEMENT,
+		/decl/material/solid/organic/plastic              = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/metal/copper         = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/silicon              = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/metal/stainlesssteel = MATTER_AMOUNT_TRACE,
@@ -579,7 +579,7 @@
 		for(var/slot in update_rig_slots)
 			wearer.update_equipment_overlay(slot)
 
-/obj/item/rig/adjust_mob_overlay(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
+/obj/item/rig/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && slot == slot_back_str && !offline && equipment_overlay_icon && LAZYLEN(installed_modules))
 		for(var/obj/item/rig_module/module in installed_modules)
 			if(module.suit_overlay)

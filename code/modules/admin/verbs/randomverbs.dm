@@ -440,8 +440,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		to_chat(usr, SPAN_WARNING("There is no active key like that in the game or the person is not currently a ghost."))
 		return
 
-	var/mob/living/carbon/human/new_character = new(pick(global.latejoin_locations))//The mob being spawned.
-
+	var/mob/living/carbon/human/new_character = new(get_random_spawn_turf(SPAWN_FLAG_JOBS_CAN_SPAWN)) //The mob being spawned.
 	var/datum/computer_file/report/crew_record/record_found			//Referenced to later to either randomize or not randomize the character.
 	if(G_found.mind && !G_found.mind.active)
 		record_found = get_crewmember_record(G_found.real_name)
@@ -488,12 +487,12 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	var/player_key = G_found.key
 
 	//Now for special roles and equipment.
-	var/decl/special_role/antag_data = ispath(new_character.mind.assigned_special_role, /decl/special_role) && GET_DECL(new_character.mind.assigned_special_role)
-	if(antag_data)
+	var/decl/special_role/antag_data = GET_DECL(new_character.mind.assigned_special_role)
+	if(istype(antag_data))
 		antag_data.add_antagonist(new_character.mind)
 		antag_data.place_mob(new_character)
 	else
-		SSjobs.equip_rank(new_character, new_character.mind.assigned_role, 1)
+		SSjobs.equip_job_title(new_character, new_character.mind.assigned_role, 1)
 
 	//Announces the character on all the systems, based on the record.
 	if(!issilicon(new_character))//If they are not a cyborg/AI.

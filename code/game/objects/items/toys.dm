@@ -29,7 +29,7 @@
 	throw_speed = 4
 	throw_range = 20
 	force = 0
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /*
  * Balloons
@@ -37,9 +37,8 @@
 /obj/item/chems/water_balloon
 	name                          = "water balloon"
 	desc                          = "A translucent balloon."
-	icon                          = 'icons/obj/toy/toy.dmi'
-	icon_state                    = "waterballoon-e"
-	item_state                    = "balloon-empty"
+	icon                          = 'icons/obj/water_balloon.dmi'
+	icon_state                    = ICON_STATE_WORLD
 	w_class                       = ITEM_SIZE_TINY
 	item_flags                    = ITEM_FLAG_NO_BLUDGEON
 	obj_flags                     = OBJ_FLAG_HOLLOW
@@ -52,7 +51,12 @@
 	possible_transfer_amounts     = null
 	amount_per_transfer_from_this = 10
 	volume                        = 10
-	material                      = /decl/material/solid/plastic
+	material                      = /decl/material/solid/organic/plastic
+
+/obj/item/chems/water_balloon/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
+	if(overlay && reagents?.total_volume <= 0)
+		overlay.icon_state = "[overlay.icon_state]_empty"
+	. = ..()
 
 /obj/item/chems/water_balloon/examine(mob/user, distance, infix, suffix)
 	. = ..()
@@ -77,19 +81,16 @@
 
 /obj/item/chems/water_balloon/physically_destroyed(skip_qdel)
 	if(reagents?.total_volume > 0)
-		new/obj/effect/temporary(src, 5, icon, "burst")
+		new /obj/effect/temporary(src, 5, icon, "[get_world_inventory_state()]_burst")
 		reagents.splash_turf(get_turf(src), reagents.total_volume)
 		playsound(src, 'sound/effects/balloon-pop.ogg', 75, TRUE, 3)
 	. = ..()
 
 /obj/item/chems/water_balloon/on_update_icon()
 	. = ..()
-	if(reagents?.total_volume > 0)
-		icon_state = "waterballoon"
-		item_state = "balloon"
-	else
-		icon_state = "waterballoon-e"
-		item_state = "balloon-empty"
+	icon_state = get_world_inventory_state()
+	if(reagents?.total_volume <= 0)
+		icon_state = "[icon_state]_empty"
 
 /obj/item/chems/water_balloon/afterattack(obj/target, mob/user, proximity)
 	if(!ATOM_IS_OPEN_CONTAINER(src) || !proximity)
@@ -150,7 +151,7 @@
 	force = 1
 	throwforce = 1
 	attack_verb = list("hit")
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 	active_hitsound = 'sound/weapons/genhit.ogg'
 	active_descriptor = "extended"
@@ -163,7 +164,7 @@
 /obj/item/sword/katana/toy
 	name = "toy katana"
 	desc = "Woefully underpowered in D20."
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /*
  * Snap pops
@@ -500,7 +501,7 @@
 	name = "foam sword"
 	desc = "An arcane weapon (made of foam) wielded by the followers of the hit Saturday morning cartoon \"King Nursee and the Acolytes of Heroism\"."
 	icon = 'icons/obj/items/weapon/swords/cult.dmi'
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 	edge = 0
 	sharp = 0
 
@@ -510,7 +511,7 @@
 	icon = 'icons/clothing/belt/inflatable.dmi'
 	icon_state = ICON_STATE_WORLD
 	slot_flags = SLOT_LOWER_BODY
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/item/marshalling_wand //#TODO: Move under obj/item/toy ?
 	name = "marshalling wand"
@@ -522,7 +523,7 @@
 	w_class = ITEM_SIZE_SMALL
 	force = 1
 	attack_verb = list("attacked", "whacked", "jabbed", "poked", "marshalled")
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/item/marshalling_wand/Initialize()
 	set_light(1.5, 1.5, "#ff0000")

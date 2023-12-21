@@ -8,9 +8,9 @@ var/global/list/rad_collectors = list()
 	anchored = FALSE
 	density = TRUE
 	initial_access = list(access_engine_equip)
+	max_health = 100
 	var/obj/item/tank/phoron/loaded_tank = null
 
-	var/health = 100
 	var/max_safe_temp = 1000 + T0C
 	var/melted
 
