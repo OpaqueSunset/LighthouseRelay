@@ -29,8 +29,8 @@ General Public License version 3.
 
 
 <h3 id="modules">Modules
-<aside>(203 modules,
-    109/4594 macros, 2.4%)</aside></h3>
+<aside>(207 modules,
+    114/4607 macros, 2.5%)</aside></h3>
 <ul class="index-tree modules">
     <li><a href="(builtins).html" title="(builtins)">(builtins)</a></li>
     <li class="has-children"><span title="code">code</span><ul class="index-tree">
@@ -41,12 +41,14 @@ General Public License version 3.
     <li><a href="code/__defines/_tick.html" title="code&#x2F;__defines&#x2F;_tick">_tick</a></li>
     <li><a href="code/__defines/admin.html" title="code&#x2F;__defines&#x2F;admin">admin</a></li>
     <li><a href="code/__defines/armor.html" title="code&#x2F;__defines&#x2F;armor">armor</a></li>
+    <li><a href="code/__defines/damage.html" title="code&#x2F;__defines&#x2F;damage">damage</a></li>
     <li><a href="code/__defines/definition_helpers.html" title="code&#x2F;__defines&#x2F;definition_helpers">definition_helpers</a></li>
     <li><a href="code/__defines/gamemode.html" title="code&#x2F;__defines&#x2F;gamemode">gamemode</a></li>
     <li><a href="code/__defines/lists.html" title="code&#x2F;__defines&#x2F;lists">lists</a></li>
     <li><a href="code/__defines/mapping.html" title="code&#x2F;__defines&#x2F;mapping">mapping</a></li>
     <li><a href="code/__defines/misc.html" title="code&#x2F;__defines&#x2F;misc">misc</a></li>
     <li><a href="code/__defines/paperwork.html" title="code&#x2F;__defines&#x2F;paperwork">paperwork</a></li>
+    <li><a href="code/__defines/spawn.html" title="code&#x2F;__defines&#x2F;spawn">spawn</a></li>
     <li><a href="code/__defines/subsystems.html" title="code&#x2F;__defines&#x2F;subsystems">subsystems</a></li>
     <li><a href="code/__defines/tgs.html" title="code&#x2F;__defines&#x2F;tgs">tgs</a></li>
     <li><a href="code/__defines/tools.html" title="code&#x2F;__defines&#x2F;tools">tools</a></li>
@@ -61,6 +63,7 @@ General Public License version 3.
     <li><a href="code/_helpers/icons.html" title="code&#x2F;_helpers&#x2F;icons">icons</a></li>
     <li><a href="code/_helpers/lists.html" title="code&#x2F;_helpers&#x2F;lists">lists</a></li>
     <li><a href="code/_helpers/matrices.html" title="code&#x2F;_helpers&#x2F;matrices">matrices</a></li>
+    <li><a href="code/_helpers/names.html" title="code&#x2F;_helpers&#x2F;names">names</a></li>
     <li><a href="code/_helpers/overmap.html" title="code&#x2F;_helpers&#x2F;overmap">overmap</a></li>
     <li><a href="code/_helpers/profiling.html" title="code&#x2F;_helpers&#x2F;profiling">profiling</a></li>
     <li><a href="code/_helpers/text.html" title="code&#x2F;_helpers&#x2F;text">text</a></li>
@@ -123,6 +126,7 @@ General Public License version 3.
     <li><span class="no-substance">vending&#x2F;</span><a href="code/datums/vending/vending.html" title="code&#x2F;datums&#x2F;vending&#x2F;vending">vending</a></li>
     </ul></li>
     <li class="has-children"><span title="code&#x2F;game">game</span><ul class="index-tree">
+    <li><span class="no-substance">area&#x2F;</span><a href="code/game/area/areas.html" title="code&#x2F;game&#x2F;area&#x2F;areas">areas</a></li>
     <li><span class="no-substance">dna&#x2F;</span><a href="code/game/dna/dna2.html" title="code&#x2F;game&#x2F;dna&#x2F;dna2">dna2</a></li>
     <li class="has-children"><span title="code&#x2F;game&#x2F;gamemodes">gamemodes</span><ul class="index-tree">
     <li><span class="no-substance">calamity&#x2F;</span><a href="code/game/gamemodes/calamity/calamity.html" title="code&#x2F;game&#x2F;gamemodes&#x2F;calamity&#x2F;calamity">calamity</a></li>
@@ -349,7 +353,7 @@ Thanks to forum_account for saving the day, the library can be found
 
 
 <h3 id="types">Types
-<aside>(229 detailed/450 documented/19675 total, 2.3%)</aside></h3>
+<aside>(230 detailed/451 documented/19734 total, 2.3%)</aside></h3>
 <ul class="index-tree">
     <li><a href="global.html" title="(global)">(global)</a></li>
     <li class="has-children"><span class="no-substance">area&#x2F;</span><span class="no-substance" title="&#x2F;area&#x2F;exoplanet">exoplanet</span> - Windy surface<ul class="index-tree">
@@ -628,6 +632,7 @@ A list of strings that are used by the end of round credits roll.</li>
     <li><a href="decl/poster_design.html" title="&#x2F;decl&#x2F;poster_design">poster_design</a> - Contains information on what a poster displays.</li>
     <li><span class="no-substance" title="&#x2F;decl&#x2F;scent_intensity">scent_intensity</span> - Scent intensity</li>
     <li><a href="decl/singularity_stage.html" title="&#x2F;decl&#x2F;singularity_stage">singularity_stage</a></li>
+    <li><a href="decl/spawnpoint.html" title="&#x2F;decl&#x2F;spawnpoint">spawnpoint</a></li>
     <li><a href="decl/species.html" title="&#x2F;decl&#x2F;species">species</a></li>
     <li><a href="decl/submap_archetype.html" title="&#x2F;decl&#x2F;submap_archetype">submap_archetype</a></li>
     <li><a href="decl/surgery_step.html" title="&#x2F;decl&#x2F;surgery_step">surgery_step</a></li>
@@ -805,7 +810,6 @@ Parameters: var/obj/item/card/id</li>
     <li><span class="no-substance">accessory&#x2F;</span><a href="obj/item/clothing/accessory/permit.html" title="&#x2F;obj&#x2F;item&#x2F;clothing&#x2F;accessory&#x2F;permit">permit</a></li>
     <li><a href="obj/item/clothing/shoes.html" title="&#x2F;obj&#x2F;item&#x2F;clothing&#x2F;shoes">shoes</a></li>
     </ul></li>
-    <li><span class="no-substance">contraband&#x2F;</span><a href="obj/item/contraband/poster.html" title="&#x2F;obj&#x2F;item&#x2F;contraband&#x2F;poster">poster</a> - A rolled up version of the wall-mounted poster structure</li>
     <li><a href="obj/item/destTagger.html" title="&#x2F;obj&#x2F;item&#x2F;destTagger">destTagger</a></li>
     <li><span class="no-substance">dice&#x2F;d20&#x2F;</span><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;dice&#x2F;d20&#x2F;cursed">cursed</span> - Cursed Dice</li>
     <li class="has-children"><a href="obj/item/disk.html" title="&#x2F;obj&#x2F;item&#x2F;disk">disk</a><ul class="index-tree">
@@ -846,6 +850,7 @@ Parameters: var/obj/item/card/id</li>
     <li><a href="obj/item/pen.html" title="&#x2F;obj&#x2F;item&#x2F;pen">pen</a></li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;photo">photo</span> - photo</li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;pickaxe">pickaxe</span> - 'pickaxes' but theyre drills actually</li>
+    <li><a href="obj/item/poster.html" title="&#x2F;obj&#x2F;item&#x2F;poster">poster</a> - A rolled up version of the wall-mounted poster structure</li>
     <li class="has-children"><a href="obj/item/radio.html" title="&#x2F;obj&#x2F;item&#x2F;radio">radio</a><ul class="index-tree">
     <li><a href="obj/item/radio/exosuit.html" title="&#x2F;obj&#x2F;item&#x2F;radio&#x2F;exosuit">exosuit</a></li>
     </ul></li>
@@ -1010,7 +1015,7 @@ As with material, these stacks should only set this in Initialize as they are ab
 </main>
 <footer>
     nebula.dme
-    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/1a27bbbd79b7550d0f79c3e8d1813aeeb08c5748">1a27bbb</a>
+    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/df37c81fac23d2194a3164f807f0b640dbeac3ea">df37c81</a>
         (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
 </body>
 </html>
