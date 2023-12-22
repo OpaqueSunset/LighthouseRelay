@@ -25306,7 +25306,7 @@
 /area/rnd/hallway)
 "bGI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/beach_ball/holoball,
+/obj/item/ball/basketball,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
 "bHm" = (

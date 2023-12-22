@@ -52,7 +52,7 @@
 	// product = /obj/item/stack/material/log
 	// product_amount = 10
 	health = 400
-	maxhealth = 400
+	max_health = 400
 	pixel_x = -32
 
 /obj/structure/flora/tree/jungle/init_appearance()
@@ -66,7 +66,7 @@
 	// product = /obj/item/stack/material/log
 	// product_amount = 20
 	health = 800
-	maxhealth = 800
+	max_health = 800
 	pixel_x = -48
 	pixel_y = -16
 	// shake_animation_degrees = 2

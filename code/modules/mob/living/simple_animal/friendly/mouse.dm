@@ -30,14 +30,14 @@
 	meat_amount =   1
 	bone_amount =   1
 	skin_amount =   1
-	skin_material = /decl/material/solid/skin/fur
+	skin_material = /decl/material/solid/organic/skin/fur
 
 	ai = /datum/ai/mouse
 
 	var/body_color //brown, gray and white, leave blank for random
 	var/splatted = FALSE
 
-/mob/living/simple_animal/mouse/get_dexterity(var/silent = FALSE)
+/mob/living/simple_animal/mouse/get_dexterity(var/silent)
 	return DEXTERITY_NONE // Mice are troll bait, give them no power.
 
 /datum/ai/mouse
@@ -73,10 +73,10 @@
 		body_color = pick( list("brown","gray","white") )
 	switch(body_color)
 		if("gray")
-			skin_material = /decl/material/solid/skin/fur/gray
+			skin_material = /decl/material/solid/organic/skin/fur/gray
 			icon = 'icons/mob/simple_animal/mouse_gray.dmi'
 		if("white")
-			skin_material = /decl/material/solid/skin/fur/white
+			skin_material = /decl/material/solid/organic/skin/fur/white
 			icon = 'icons/mob/simple_animal/mouse_white.dmi'
 		if("brown")
 			icon = 'icons/mob/simple_animal/mouse_brown.dmi'
@@ -131,7 +131,7 @@
 	desc = "A large rodent, often seen hiding in maintenance areas and making a nuisance of itself."
 	body_color = "rat"
 	icon = 'icons/mob/simple_animal/rat.dmi'
-	skin_material = /decl/material/solid/skin/fur/gray
+	skin_material = /decl/material/solid/organic/skin/fur/gray
 	maxHealth = 20
 	health = 20
 

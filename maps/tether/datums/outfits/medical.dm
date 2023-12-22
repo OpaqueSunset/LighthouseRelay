@@ -89,4 +89,4 @@
 	hands = list(/obj/item/storage/firstaid/regular)
 	belt = /obj/item/storage/belt/medical/emt
 	pda_slot = slot_l_store_str
-	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
+	outfit_flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL

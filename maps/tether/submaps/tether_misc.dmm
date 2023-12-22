@@ -1100,7 +1100,7 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/holodeck/source_meetinghall)
 "eM" = (
-/obj/item/beach_ball,
+/obj/item/ball,
 /turf/simulated/floor/holofloor/beach/sand,
 /area/holodeck/source_beach)
 "eN" = (
@@ -1193,7 +1193,7 @@
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_basketball)
 "fa" = (
-/obj/item/beach_ball/holoball,
+/obj/item/ball/basketball,
 /obj/effect/floor_decal/corner/red{
 	dir = 10
 	},

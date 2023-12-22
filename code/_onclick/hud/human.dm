@@ -12,17 +12,12 @@
 	if(hud_data.icon)
 		ui_style = hud_data.icon
 
-	adding = list()
-	other = list()
-	src.hotkeybuttons = list() //These can be disabled for hotkey usersx
+	hotkeybuttons = list() //These can be disabled for hotkey usersx
 
-	var/list/hud_elements = list()
 	var/obj/screen/using
 
 	stamina_bar = new
 	adding += stamina_bar
-
-	BuildInventoryUI()
 
 	// Draw the attack intent dialogue.
 	if(hud_data.has_a_intent)
@@ -52,9 +47,6 @@
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
 
-	if(hud_data.has_hands)
-		BuildHandsUI()
-
 	if(hud_data.has_resist)
 		using = new /obj/screen()
 		using.SetName("resist")
@@ -64,6 +56,13 @@
 		using.color = ui_color
 		using.alpha = ui_alpha
 		src.hotkeybuttons += using
+
+	mymob.maneuver_icon       = new
+	mymob.maneuver_icon.icon  = ui_style
+	mymob.maneuver_icon.color = ui_color
+	mymob.maneuver_icon.alpha = ui_alpha
+	src.hotkeybuttons += mymob.maneuver_icon
+	hud_elements |= mymob.maneuver_icon
 
 	if(hud_data.has_throw)
 		mymob.throw_icon = new /obj/screen()
@@ -201,19 +200,7 @@
 	mymob.radio_use_icon.color = ui_color
 	mymob.radio_use_icon.alpha = ui_alpha
 
-	mymob.client.screen = list()
-	if(length(hand_hud_objects))
-		mymob.client.screen += hand_hud_objects
-	if(length(swaphand_hud_objects))
-		mymob.client.screen += swaphand_hud_objects
-	if(length(hud_elements))
-		mymob.client.screen += hud_elements
-	mymob.client.screen += src.adding + src.hotkeybuttons
-
-	hide_inventory()
-
-	hidden_inventory_update()
-	persistant_inventory_update()
+	..()
 
 /mob/living/carbon/human/verb/toggle_hotkey_verbs()
 	set category = "OOC"

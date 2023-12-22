@@ -16448,7 +16448,7 @@
 	dir = 6
 	},
 /obj/structure/table/steel,
-/obj/item/beach_ball/holoball,
+/obj/item/ball/basketball,
 /turf/simulated/floor/tiled/dark,
 /area/security/recstorage)
 "Kw" = (

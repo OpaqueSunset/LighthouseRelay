@@ -20,7 +20,7 @@
 
 	material = /decl/material/solid/metal/steel
 	matter = list(
-		/decl/material/solid/plastic          = MATTER_AMOUNT_SECONDARY,
+		/decl/material/solid/organic/plastic          = MATTER_AMOUNT_SECONDARY,
 		/decl/material/solid/glass            = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/metal/copper     = MATTER_AMOUNT_REINFORCEMENT,
 		/decl/material/solid/metal/plutonium  = MATTER_AMOUNT_REINFORCEMENT,
@@ -164,7 +164,7 @@
 			add_overlay(emissive_overlay(icon, "[icon_state]-extended"))
 			z_flags |= ZMM_MANGLE_PLANES
 
-/obj/item/energy_blade/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart)
+/obj/item/energy_blade/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && active && check_state_in_icon("[overlay.icon_state]-extended", overlay.icon))
 		overlay.overlays += emissive_overlay(overlay.icon, "[overlay.icon_state]-extended")
 	. = ..()

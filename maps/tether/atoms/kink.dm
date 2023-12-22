@@ -30,10 +30,10 @@
 		"opulent",
 	)
 	var/static/list/allowed_materials = list(
-		/decl/material/solid/leather,
-		/decl/material/solid/leather/synth,
-		/decl/material/solid/cloth,
-		/decl/material/solid/plastic,
+		/decl/material/solid/organic/leather,
+		/decl/material/solid/organic/leather/synth,
+		/decl/material/solid/organic/cloth,
+		/decl/material/solid/organic/plastic,
 		/decl/material/solid/metal/stainlesssteel,
 		/decl/material/solid/metal/silver,
 		/decl/material/solid/metal/gold,
@@ -238,7 +238,7 @@
 	name = "dyeable silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/colorized_collar.dmi'
-	material = /decl/material/solid/cloth/black
+	material = /decl/material/solid/organic/cloth/black
 	matter = list(
 		/decl/material/solid/metal/silver = MATTER_AMOUNT_TRACE
 	)

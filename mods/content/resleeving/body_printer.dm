@@ -50,7 +50,7 @@
 	var/datum/sound_token/sound_token
 	var/sound_id
 
-	var/list/materials = list(/decl/material/solid/meat = 0, /decl/material/solid/bone = 0)
+	var/list/materials = list(/decl/material/solid/organic/meat = 0, /decl/material/solid/organic/bone = 0)
 
 	var/list/technobabble_systems = list(
 		"microservo positioning system",
@@ -75,8 +75,8 @@
 
 /obj/machinery/bioprinter/filled/Initialize()
 	. = ..()
-	materials[/decl/material/solid/meat] = BIOPRINTER_MAX_MATERIALS
-	materials[/decl/material/solid/bone] = BIOPRINTER_MAX_MATERIALS
+	materials[/decl/material/solid/organic/meat] = BIOPRINTER_MAX_MATERIALS
+	materials[/decl/material/solid/organic/bone] = BIOPRINTER_MAX_MATERIALS
 
 /obj/machinery/bioprinter/Initialize()
 	. = ..()
@@ -355,7 +355,7 @@
 	if(!diskette.contains_file_type("BDY"))
 		buzz("\The [src] buzzes, \"Error! No body record detected.\"")
 		return
-	if(!use_materials(/decl/material/solid/meat, /decl/material/solid/bone, COST_PER_PRINT, COST_PER_PRINT/2))
+	if(!use_materials(/decl/material/solid/organic/meat, /decl/material/solid/organic/bone, COST_PER_PRINT, COST_PER_PRINT/2))
 		buzz("\The [src] buzzes, \"Error! Insufficent materials.\"")
 		return
 	if(lid_open)

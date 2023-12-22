@@ -194,7 +194,7 @@ var/global/list/image/hazard_overlays //Cached hazard floor overlays for the bar
 	layer            = ABOVE_DOOR_LAYER
 	pass_flags       = PASS_FLAG_TABLE                //About the height of table
 	anchored         = TRUE
-	material         = /decl/material/solid/plastic
+	material         = /decl/material/solid/organic/plastic
 	var/neighbors    = 0                              //Contains all the direction flags of all the neighboring tape_barricades
 	var/nb_neighbors = 0                              //Keep track of our cached neighbors number
 	var/is_lifted    = 0                              //Whether the tape is lifted and we're allowing everyone passage.
@@ -434,7 +434,7 @@ var/global/list/image/hazard_overlays //Cached hazard floor overlays for the bar
 
 //mapper type
 /obj/structure/tape_barricade/police
-	icon_state    = "tape_h_0"
+	icon_state    = "tape_door_0"
 	color         = COLOR_RED
 	tape_template = /decl/barricade_tape_template/police
 
@@ -453,7 +453,7 @@ var/global/list/image/hazard_overlays //Cached hazard floor overlays for the bar
 
 //mapper type
 /obj/structure/tape_barricade/engineering
-	icon_state    = "tape_h_0"
+	icon_state    = "stripetape_door_0"
 	color         = COLOR_ORANGE
 	tape_template = /decl/barricade_tape_template/engineering
 

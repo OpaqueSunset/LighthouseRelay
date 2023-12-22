@@ -44,18 +44,18 @@
 		if(material.reflectiveness >= MAT_VALUE_SHINY && check_state_in_icon("[icon_state]_shine", icon))
 			add_overlay(mutable_appearance(icon, "[icon_state]_shine"), adjust_brightness(color, 20 + material.reflectiveness))
 
-/obj/item/sword/adjust_mob_overlay(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
+/obj/item/sword/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	//Do not color scabbarded blades
 	if(overlay && (material_alteration & MAT_FLAG_ALTERATION_COLOR) && (slot == slot_back_str || slot == slot_belt_str))
 		overlay.color = null
 	. = ..()
 
 /obj/item/sword/wood
-	material = /decl/material/solid/wood
+	material = /decl/material/solid/organic/wood
 	draw_handle = FALSE
 
 /obj/item/sword/replica
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/item/sword/katana
 	name = "katana"
@@ -65,16 +65,16 @@
 
 /obj/item/sword/katana/set_material(new_material)
 	. = ..()
-	if((material_alteration & MAT_FLAG_ALTERATION_NAME) && istype(material, /decl/material/solid/wood))
+	if((material_alteration & MAT_FLAG_ALTERATION_NAME) && istype(material, /decl/material/solid/organic/wood))
 		SetName("[material.solid_name] bokutou")
 		desc = "Finest wooden fibers folded exactly one thousand times by master robots."
 
 /obj/item/sword/katana/bamboo
-	material = /decl/material/solid/wood/bamboo
+	material = /decl/material/solid/organic/wood/bamboo
 	draw_handle = FALSE
 
 /obj/item/sword/katana/wood
-	material = /decl/material/solid/wood
+	material = /decl/material/solid/organic/wood
 	draw_handle = FALSE
 
 /obj/item/sword/katana/vibro

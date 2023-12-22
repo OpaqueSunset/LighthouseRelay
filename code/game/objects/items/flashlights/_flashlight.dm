@@ -9,7 +9,7 @@
 	w_class = ITEM_SIZE_SMALL
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_LOWER_BODY
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 	matter = list(/decl/material/solid/glass = MATTER_AMOUNT_REINFORCEMENT)
 	action_button_name = "Toggle Flashlight"
 	light_wedge = LIGHT_WIDE
@@ -167,7 +167,7 @@
 
 	//if someone wants to implement inspecting robot eyes here would be the place to do it.
 
-/obj/item/flashlight/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart)
+/obj/item/flashlight/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && on)
 		var/icon_state_on = "[overlay.icon_state]-on"
 		if(check_state_in_icon(icon_state_on, overlay.icon))

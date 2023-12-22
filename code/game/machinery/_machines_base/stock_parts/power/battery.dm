@@ -225,7 +225,7 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(
 		/decl/material/solid/metal/aluminium = MATTER_AMOUNT_REINFORCEMENT,
-		/decl/material/solid/plastic = MATTER_AMOUNT_TRACE
+		/decl/material/solid/organic/plastic = MATTER_AMOUNT_TRACE
 	)
 
 /obj/item/stock_parts/power/battery/buildable/turbo/get_lore_info()
@@ -240,7 +240,7 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(
 		/decl/material/solid/metal/aluminium = MATTER_AMOUNT_REINFORCEMENT,
-		/decl/material/solid/plastic = MATTER_AMOUNT_TRACE
+		/decl/material/solid/organic/plastic = MATTER_AMOUNT_TRACE
 	)
 
 /obj/item/stock_parts/power/battery/buildable/responsive/get_lore_info()

@@ -88,7 +88,7 @@
 
 /obj/item/surgicaldrill/Initialize()
 	. = ..()
-	set_extension(src, /datum/extension/tool, list(TOOL_DRILL = TOOL_QUALITY_DEFAULT))
+	set_extension(src, /datum/extension/tool, list(TOOL_SURGICAL_DRILL = TOOL_QUALITY_DEFAULT))
 
 /*
  * Scalpel
@@ -111,7 +111,7 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	pickup_sound = 'sound/foley/knife1.ogg' 
+	pickup_sound = 'sound/foley/knife1.ogg'
 	drop_sound = 'sound/foley/knifedrop3.ogg'
 	var/tool_quality = TOOL_QUALITY_DEFAULT
 
@@ -181,8 +181,8 @@
 	. = ..()
 	set_extension(src, /datum/extension/tool/variable, list(
 		TOOL_SAW =       TOOL_QUALITY_GOOD,
-		TOOL_SCALPEL =   TOOL_QUALITY_GOOD, 
-		TOOL_RETRACTOR = TOOL_QUALITY_GOOD, 
+		TOOL_SCALPEL =   TOOL_QUALITY_GOOD,
+		TOOL_RETRACTOR = TOOL_QUALITY_GOOD,
 		TOOL_HEMOSTAT =  TOOL_QUALITY_GOOD
 	))
 
@@ -227,7 +227,7 @@
 	item_flags = ITEM_FLAG_NO_BLUDGEON
 	obj_flags = OBJ_FLAG_HOLLOW
 	throwforce = 1
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/item/bonegel/Initialize()
 	. = ..()
@@ -242,7 +242,7 @@
 	throwforce = 1
 	origin_tech = "{'materials':1,'biotech':3}"
 	w_class = ITEM_SIZE_SMALL
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/item/sutures/Initialize()
 	. = ..()

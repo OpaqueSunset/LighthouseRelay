@@ -16,6 +16,7 @@
 /turf/simulated/shuttle/plating/@SUBTYPES : /turf/simulated/floor/@SUBTYPES{@OLD}
 /turf/simulated/shuttle/floor/@SUBTYPES : /turf/simulated/floor/shuttle/@SUBTYPES{@OLD}
 /turf/simulated/floor/shuttle : /turf/simulated/floor/shuttle/blue{@OLD}
+/turf/simulated/floor/shuttle/airless : /turf/simulated/floor/shuttle/blue/airless{@OLD}
 /turf/unsimulated/wall/seperator : /turf/unsimulated/dark_filler
 # POLARIS SIGNS
 /obj/structure/sign/nosmoking_1 : /obj/structure/sign/warning/nosmoking_1{@OLD}
@@ -131,6 +132,7 @@
 /obj/abstract/landmark/tram : /obj/abstract/landmark/latejoin/tram
 /obj/abstract/landmark{name = "JoinLateCryo"} : /obj/abstract/landmark/latejoin/cryo
 /obj/abstract/landmark{name = "JoinLateGateway"} : /obj/abstract/landmark/latejoin/gateway
+/obj/abstract/landmark{name = "Observer-Start"} : /obj/abstract/landmark/latejoin/observer
 
 # BUTTONS
 /obj/machinery/access_button/airlock_exterior : /obj/machinery/button/access/exterior{@OLD}
@@ -778,6 +780,9 @@
 /obj/item/toy/plushie/purple_fox : /obj/item/toy/plushie/fox/purple
 /obj/item/trash/unajerky : /obj/item/trash/sosjerky
 /obj/item/toy/eight_ball/conch : /obj/item/toy/eightball/conch
+
+/obj/item/beach_ball/holoball : /obj/item/ball/basketball
+/obj/item/beach_ball : /obj/item/ball
 
 /obj/structure/bookcase/manuals/research_and_development : /obj/structure/bookcase/manuals/xenoarchaeology
 /obj/item/book/manual/security_space_law : /obj/item/book/manual/nt_regs

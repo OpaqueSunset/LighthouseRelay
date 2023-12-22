@@ -3,10 +3,9 @@
 //
 /obj/item/robotanalyzer
 	name = "robot analyzer"
-	icon = 'icons/obj/items/device/robot_analyzer.dmi'
-	icon_state = "robotanalyzer"
-	item_state = "analyzer"
 	desc = "A hand-held scanner able to diagnose robotic injuries."
+	icon = 'icons/obj/items/device/robot_analyzer.dmi'
+	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_LOWER_BODY
 	throwforce = 3
@@ -17,7 +16,7 @@
 	material = /decl/material/solid/metal/steel
 	matter = list(
 		/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT,
-		/decl/material/solid/plastic = MATTER_AMOUNT_TRACE
+		/decl/material/solid/organic/plastic = MATTER_AMOUNT_TRACE
 	)
 
 /obj/item/robotanalyzer/attack(mob/living/M, mob/living/user)

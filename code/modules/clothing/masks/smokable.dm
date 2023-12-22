@@ -109,7 +109,7 @@
 		M.update_equipment_overlay(slot_wear_mask_str, FALSE)
 		M.update_inhand_overlays()
 
-/obj/item/clothing/mask/smokable/adjust_mob_overlay(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
+/obj/item/clothing/mask/smokable/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && lit && check_state_in_icon("[overlay.icon_state]-on", overlay.icon))
 		var/image/on_overlay = emissive_overlay(overlay.icon, "[overlay.icon_state]-on")
 		on_overlay.appearance_flags |= RESET_COLOR
@@ -201,6 +201,9 @@
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
 	brand = "\improper Trans-Stellar Duty-free"
+
+/obj/item/clothing/mask/smokable/cigarette/can_be_injected_by(var/atom/injector)
+	return TRUE
 
 /obj/item/clothing/mask/smokable/cigarette/Initialize()
 	. = ..()
@@ -352,7 +355,7 @@
 	name = "wooden tip"
 	icon = 'icons/clothing/mask/smokables/cigar_butt.dmi'
 	desc = "A wooden mouthpiece from a cigar. Smells rather bad."
-	material = /decl/material/solid/wood
+	material = /decl/material/solid/organic/wood
 
 /obj/item/clothing/mask/smokable/cigarette/attackby(var/obj/item/W, var/mob/user)
 	..()
@@ -452,7 +455,7 @@
 	name = "cigarette butt"
 	desc = "A manky old cigarette butt."
 	icon = 'icons/clothing/mask/smokables/cigarette_butt.dmi'
-	icon_state = "butt"
+	icon_state = ICON_STATE_WORLD
 	randpixel = 10
 	w_class = ITEM_SIZE_TINY
 	slot_flags = SLOT_EARS
@@ -466,7 +469,7 @@
 /obj/item/trash/cigbutt/cigarbutt
 	name = "cigar butt"
 	desc = "A manky old cigar butt."
-	icon = 'icons/clothing/mask/smokables/cigar.dmi'
+	icon = 'icons/clothing/mask/smokables/cigar_butt.dmi'
 
 /obj/item/clothing/mask/smokable/cigarette/cigar/attackby(var/obj/item/W, var/mob/user)
 	..()

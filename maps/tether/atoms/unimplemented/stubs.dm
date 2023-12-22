@@ -51,7 +51,7 @@
 	path = /obj/item/stock_parts/circuitboard/transhuman_synthprinter
 
 /obj/item/cmo_disk_holder
-	material = /decl/material/solid/paper //it's a manila envelope you tear open
+	material = /decl/material/solid/organic/paper //it's a manila envelope you tear open
 /obj/item/chems/glass/bottle/biomass
 /obj/item/storage/box/backup_kit
 // note: cryo is technically part of resleeving now
@@ -60,7 +60,7 @@
 
 // medical QOL
 /obj/item/glasses_kit
-	material = /decl/material/solid/cardboard // it's basically a box.
+	material = /decl/material/solid/organic/cardboard // it's basically a box.
 /obj/item/storage/bag/chemistry
 /obj/item/storage/pill_bottle/iron
 /obj/item/storage/pill_bottle/nutriment
@@ -82,7 +82,7 @@
 /obj/item/toy/stickhorse
 
 /obj/item/universal_translator
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 
 /obj/machinery/button/remote/emitter
 /obj/machinery/camera/motion/security
@@ -239,7 +239,7 @@
 /obj/item/chems/syringe/antiviral
 /obj/item/scanner/antibody
 /obj/item/virusdish
-	material = /decl/material/solid/plastic
+	material = /decl/material/solid/organic/plastic
 /obj/item/virusdish/random
 /obj/item/stock_parts/circuitboard/virocentrifuge
 	build_path = /obj/machinery/computer/centrifuge
