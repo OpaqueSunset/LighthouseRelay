@@ -16,6 +16,7 @@
 /turf/simulated/shuttle/plating/@SUBTYPES : /turf/simulated/floor/@SUBTYPES{@OLD}
 /turf/simulated/shuttle/floor/@SUBTYPES : /turf/simulated/floor/shuttle/@SUBTYPES{@OLD}
 /turf/simulated/floor/shuttle : /turf/simulated/floor/shuttle/blue{@OLD}
+/turf/simulated/floor/shuttle/airless : /turf/simulated/floor/shuttle/blue/airless{@OLD}
 /turf/unsimulated/wall/seperator : /turf/unsimulated/dark_filler
 # POLARIS SIGNS
 /obj/structure/sign/nosmoking_1 : /obj/structure/sign/warning/nosmoking_1{@OLD}

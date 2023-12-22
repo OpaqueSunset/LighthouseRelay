@@ -25177,11 +25177,11 @@
 /obj/machinery/door/airlock/voidcraft{
 	id_tag = "belt_shuttle_exterior"
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "RY" = (
 /obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Sa" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -25195,7 +25195,7 @@
 	dir = 1
 	},
 /obj/machinery/recharge_station,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Se" = (
 /obj/effect/floor_decal/borderfloorwhite,
@@ -25434,7 +25434,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "SW" = (
 /turf/exterior/wall,
@@ -25528,7 +25528,7 @@
 /area/quartermaster/belterdock)
 "Tl" = (
 /obj/machinery/light,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Tp" = (
 /obj/effect/floor_decal/borderfloorwhite/corner{
@@ -25675,7 +25675,7 @@
 /area/ai/foyer)
 "TM" = (
 /obj/structure/rack,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "TO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -25710,7 +25710,7 @@
 /area/medical/psych_ward)
 "TX" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "TY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -25737,7 +25737,7 @@
 "Ui" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Uk" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -26056,7 +26056,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Vb" = (
 /obj/structure/rack/shelf,
@@ -26073,7 +26073,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Vf" = (
 /obj/structure/cable/green{
@@ -26329,7 +26329,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/ward)
 "VP" = (
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "VQ" = (
 /obj/effect/floor_decal/techfloor{
@@ -26414,7 +26414,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "VZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -26484,13 +26484,13 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Wx" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "WA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -26718,7 +26718,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Xv" = (
 /obj/machinery/power/apc{

@@ -19,7 +19,7 @@
 	var/hard_corner = FALSE
 /turf/simulated/shuttle/wall/hard_corner
 	hard_corner = TRUE
-/turf/simulated/floor/shuttle/airless
+/turf/simulated/floor/shuttle/blue/airless
 	initial_gas = null
 /turf/simulated/floor/shuttle/yellow/airless
 	initial_gas = null
@@ -151,9 +151,11 @@
 	icon_state = "maglevup"
 
 /turf/unsimulated/wall/transit
+	abstract_type = /turf/unsimulated/wall/transit
 	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 
 /turf/unsimulated/floor/transit
+	abstract_type = /turf/unsimulated/floor/transit
 	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 
 /obj/effect/floor_decal/transit

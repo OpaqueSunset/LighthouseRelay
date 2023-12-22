@@ -50,7 +50,7 @@
 /area/tether_away/debrisfield/explored)
 "al" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "am" = (
 /obj/effect/decal/cleanable/dirt,
@@ -116,7 +116,7 @@
 /turf/simulated/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aA" = (
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aB" = (
 /obj/structure/girder,
@@ -172,11 +172,11 @@
 /obj/structure/closet/secure_closet/cargotech{
 	name = "cargotech locker"
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aN" = (
 /obj/structure/closet/emcloset,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aO" = (
 /obj/item/inflatable/door/torn,
@@ -189,7 +189,7 @@
 /obj/machinery/computer/shuttle{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aQ" = (
 /obj/structure/bed/chair{
@@ -223,7 +223,7 @@
 /obj/machinery/computer/shuttle{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aW" = (
 /obj/item/remains,
@@ -233,7 +233,7 @@
 /area/tether_away/debrisfield/explored)
 "aX" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aY" = (
 /obj/structure/bed/chair/comfy/teal,
@@ -243,7 +243,7 @@
 /obj/machinery/computer/shuttle{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/airless,
+/turf/simulated/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "bb" = (
 /obj/structure/lattice,
