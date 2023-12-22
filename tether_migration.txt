@@ -131,6 +131,7 @@
 /obj/abstract/landmark/tram : /obj/abstract/landmark/latejoin/tram
 /obj/abstract/landmark{name = "JoinLateCryo"} : /obj/abstract/landmark/latejoin/cryo
 /obj/abstract/landmark{name = "JoinLateGateway"} : /obj/abstract/landmark/latejoin/gateway
+/obj/abstract/landmark{name = "Observer-Start"} : /obj/abstract/landmark/latejoin/observer
 
 # BUTTONS
 /obj/machinery/access_button/airlock_exterior : /obj/machinery/button/access/exterior{@OLD}

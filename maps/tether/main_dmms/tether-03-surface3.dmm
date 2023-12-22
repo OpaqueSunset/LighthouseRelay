@@ -9461,9 +9461,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "tc" = (
-/obj/abstract/landmark{
-	name = "Observer-Start"
-	},
+/obj/abstract/landmark/latejoin/observer,
 /obj/effect/floor_decal/borderfloorblack,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
