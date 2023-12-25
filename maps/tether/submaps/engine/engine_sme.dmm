@@ -102,13 +102,16 @@
 /turf/simulated/wall/r_wall,
 /area/engineering/engine_room)
 "at" = (
+/obj/structure/lattice,
 /obj/structure/sign/warning{
 	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
 	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
+	name = "RADIOACTIVE AREA";
+	dir = 8;
+	pixel_x = 34
 	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_room)
+/turf/space,
+/area/space)
 "au" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/wall/r_wall,
@@ -549,6 +552,13 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
@@ -1118,6 +1128,13 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
+	icon_state = "radiation";
+	name = "RADIOACTIVE AREA";
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "cC" = (
@@ -1330,6 +1347,13 @@
 	name = "Emergency Cooling Valve 2"
 	},
 /obj/machinery/light,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
 "df" = (
@@ -1381,13 +1405,18 @@
 /turf/simulated/floor,
 /area/engineering/engine_gas)
 "dm" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
 	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_room)
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
+	icon_state = "radiation";
+	name = "RADIOACTIVE AREA";
+	dir = 8;
+	pixel_x = 34
+	},
+/turf/space,
+/area/space)
 "dn" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/portable_atmospherics/canister/phoron,
@@ -1471,10 +1500,12 @@
 /obj/structure/sign/warning{
 	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
 	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
+	name = "RADIOACTIVE AREA";
+	dir = 8;
+	pixel_x = 34
 	},
-/turf/simulated/wall/r_wall,
-/area/template_noop)
+/turf/space,
+/area/space)
 "dx" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular{
@@ -1848,7 +1879,7 @@ an
 bO
 ai
 co
-aq
+dm
 co
 aq
 co
@@ -1871,7 +1902,7 @@ ad
 ad
 ad
 ad
-ad
+at
 ad
 ad
 ad
@@ -1880,7 +1911,7 @@ as
 bP
 ce
 cp
-at
+as
 as
 cJ
 cJ
@@ -1903,7 +1934,7 @@ ac
 ac
 ac
 ac
-at
+as
 as
 as
 as
@@ -1983,7 +2014,7 @@ cK
 dj
 dp
 dt
-dw
+av
 aa
 aa
 "}
@@ -1997,7 +2028,7 @@ ab
 ab
 ab
 ab
-ab
+dw
 ab
 as
 aN
@@ -2204,7 +2235,7 @@ bY
 ck
 cw
 de
-dm
+as
 aa
 aa
 aa

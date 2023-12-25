@@ -92,6 +92,10 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/sign/warning/secure_area{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
 "am" = (
@@ -327,7 +331,8 @@
 	dir = 6
 	},
 /obj/structure/sign/poster{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 1
@@ -338,7 +343,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -442,7 +447,6 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "aO" = (
-/obj/structure/sign/warning/secure_area,
 /turf/simulated/wall/r_wall,
 /area/space)
 "aP" = (
@@ -1029,10 +1033,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor,
 /area/maintenance/substation/security)
-"bU" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/security/armory/red)
 "bV" = (
 /obj/structure/railing/mapped{
 	dir = 1
@@ -1701,13 +1701,17 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_upper)
 "df" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
-/turf/simulated/wall,
-/area/maintenance/substation/security)
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/status_display/supply_display{
+	pixel_x = -32;
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "dg" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
@@ -3595,6 +3599,10 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
+/obj/structure/sign/warning/secure_area{
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/security/armory/blue)
 "gO" = (
@@ -4445,12 +4453,16 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/machinery/power/apc/super,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallwayaux)
@@ -5539,10 +5551,6 @@
 	},
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/dark,
-/area/security/armory/blue)
-"kf" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
 /area/security/armory/blue)
 "kg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -6834,9 +6842,32 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/security_lockerroom)
 "my" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/security/security_bathroom)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 4
+	},
+/obj/structure/sign/directions/medical{
+	pixel_y = 24
+	},
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_y = 32
+	},
+/obj/structure/sign/directions/security{
+	dir = 8;
+	pixel_y = 40
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/upper)
 "mz" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -10029,10 +10060,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
-"rZ" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall,
-/area/quartermaster/office)
 "sa" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -10155,6 +10182,10 @@
 "sg" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/noticeboard{
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
@@ -10479,6 +10510,9 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 5
 	},
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "sL" = (
@@ -10707,6 +10741,9 @@
 	dir = 4
 	},
 /obj/machinery/camera/network/security,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "tc" = (
@@ -11048,14 +11085,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_grid,
 /area/quartermaster/office)
-"tA" = (
-/obj/structure/sign/department/cargo,
-/turf/simulated/wall,
-/area/quartermaster/office)
 "tB" = (
-/obj/machinery/status_display/supply_display,
-/turf/simulated/wall,
-/area/quartermaster/office)
+/obj/structure/lattice,
+/obj/structure/sign/warning/secure_area{
+	dir = 8;
+	pixel_x = 34
+	},
+/turf/space,
+/area/space)
 "tC" = (
 /obj/item/stamp/denied{
 	pixel_x = 4;
@@ -11070,6 +11107,10 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/machinery/status_display/supply_display{
+	pixel_x = -32;
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -11636,6 +11677,9 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/structure/sign/department/cargo{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "uB" = (
@@ -11651,6 +11695,10 @@
 	},
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 5
+	},
+/obj/structure/noticeboard{
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
@@ -11700,9 +11748,20 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "uF" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/security/forensics)
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/structure/sign/department/tether/medbay{
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/upper)
 "uG" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/regular/open{
@@ -12030,10 +12089,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/delivery)
-"vi" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall,
-/area/security/evidence_storage)
 "vj" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -12488,9 +12543,14 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/delivery)
 "vY" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall,
-/area/security/security_processing)
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = 32
+	},
+/turf/simulated/floor,
+/area/maintenance/station/sec_upper)
 "vZ" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
@@ -12692,31 +12752,16 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/open,
 /area/maintenance/station/elevator)
-"wv" = (
-/obj/structure/sign/deck/third,
-/turf/simulated/shuttle/wall/voidcraft/green{
-	hard_corner = 1
-	},
-/area/hallway/station/upper)
 "ww" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
 	},
+/obj/structure/sign/deck/third{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled,
-/area/hallway/station/upper)
-"wx" = (
-/obj/structure/sign/directions/supply{
-	dir = 4
-	},
-/obj/structure/sign/directions/security{
-	dir = 8;
-	pixel_y = 8
-	},
-/obj/structure/sign/directions/medical{
-	pixel_y = -8
-	},
-/turf/simulated/wall,
 /area/hallway/station/upper)
 "wy" = (
 /obj/structure/bed/chair/comfy/brown{
@@ -12737,10 +12782,6 @@
 /area/storage/emergency_storage/emergency3)
 "wA" = (
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall,
-/area/quartermaster/delivery)
-"wB" = (
-/obj/structure/sign/department/mail_delivery,
 /turf/simulated/wall,
 /area/quartermaster/delivery)
 "wC" = (
@@ -13200,6 +13241,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
+/obj/structure/sign/department/mail_delivery{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "xj" = (
@@ -13358,10 +13402,6 @@
 	},
 /turf/space,
 /area/space)
-"xv" = (
-/obj/structure/sign/warning/secure_area,
-/turf/simulated/wall/r_wall,
-/area/security/nuke_storage)
 "xw" = (
 /turf/simulated/wall/r_wall,
 /area/security/nuke_storage)
@@ -14279,6 +14319,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
+/obj/structure/sign/poster{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "yS" = (
@@ -14525,11 +14568,12 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/sign/warning/secure_area{
-	pixel_x = -32
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/sign/warning/secure_area{
+	pixel_x = -34;
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/hallway/station/upper)
@@ -14543,7 +14587,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/sign/warning/high_voltage,
+/obj/structure/sign/warning/high_voltage{
+	directional_offset = null
+	},
 /turf/simulated/floor/plating,
 /area/hallway/station/upper)
 "zm" = (
@@ -14821,10 +14867,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
-"zJ" = (
-/obj/structure/sign/poster,
-/turf/simulated/wall,
-/area/quartermaster/qm)
 "zK" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
@@ -15439,17 +15481,21 @@
 "AM" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
+/obj/machinery/status_display/supply_display{
+	dir = 4;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled,
-/area/quartermaster/qm)
-"AN" = (
-/obj/machinery/status_display/supply_display,
-/turf/simulated/wall,
 /area/quartermaster/qm)
 "AO" = (
 /obj/machinery/navbeacon/delivery/south{
 	location = "QM #1"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/status_display/supply_display{
+	pixel_x = -32;
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
 "AP" = (
@@ -16225,7 +16271,8 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -16256,6 +16303,18 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/borderfloor/corner2,
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	pixel_y = -32
+	},
+/obj/structure/sign/directions/security{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_y = -40
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
 "Ck" = (
@@ -16346,6 +16405,10 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/structure/sign/department/tether/medbay{
+	pixel_y = -32;
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -16580,16 +16643,17 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/window/reinforced{
 	dir = 1
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	directional_offset = null
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
@@ -16656,7 +16720,8 @@
 	icon_state = "0-8"
 	},
 /obj/structure/sign/warning/secure_area{
-	pixel_x = -32
+	pixel_x = -34;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -16671,7 +16736,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/sign/warning/high_voltage,
+/obj/structure/sign/warning/high_voltage{
+	directional_offset = null
+	},
 /obj/structure/window/reinforced,
 /turf/simulated/floor/plating,
 /area/hallway/station/upper)
@@ -16695,27 +16762,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
-/area/teleporter/departing)
-"Dd" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/sign/directions/medical{
-	dir = 4;
-	pixel_x = 32
-	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/plating,
-/area/teleporter/departing)
-"De" = (
-/obj/structure/sign/directions/supply{
-	dir = 4;
-	pixel_y = -8
-	},
-/obj/structure/sign/directions/security{
-	dir = 1;
-	pixel_y = 8
-	},
-/turf/simulated/wall,
 /area/teleporter/departing)
 "Df" = (
 /turf/simulated/wall,
@@ -16747,20 +16793,27 @@
 	},
 /area/tether/station/stairs_three)
 "Di" = (
-/obj/structure/sign/directions/security{
-	dir = 1;
-	pixel_y = 8
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 4
 	},
-/obj/structure/sign/directions/supply{
-	dir = 4;
-	pixel_y = -8
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 4
 	},
-/turf/simulated/wall,
-/area/tether/station/stairs_three)
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/noticeboard{
+	pixel_x = 32;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/surgery_hallway)
 "Dj" = (
-/obj/structure/sign/department/tether/medbay,
-/turf/simulated/wall,
-/area/medical/reception)
+/obj/structure/sign/warning/secure_area{
+	pixel_y = 32
+	},
+/turf/space,
+/area/space)
 "Dk" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -16816,9 +16869,26 @@
 	},
 /area/medical/reception)
 "Do" = (
-/obj/structure/sign/department/tether/medbay,
-/turf/simulated/wall/r_wall,
-/area/medical/chemistry)
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/paleblue/border,
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/corner/paleblue/bordercorner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 1
+	},
+/obj/structure/sign/department/tether/operational{
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/upper)
 "Dp" = (
 /turf/simulated/wall/r_wall,
 /area/medical/chemistry)
@@ -16833,9 +16903,12 @@
 /turf/simulated/floor/plating,
 /area/medical/chemistry)
 "Dr" = (
-/obj/structure/sign/department/tether/operational,
-/turf/simulated/wall,
-/area/medical/surgery_hallway)
+/obj/structure/sign/warning/secure_area{
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/exterior/barren,
+/area/mine/explored/upper_level)
 "Ds" = (
 /obj/machinery/door/airlock/medical{
 	name = "Psych/Surgery Waiting Room"
@@ -16996,6 +17069,18 @@
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/structure/sign/directions/security{
+	dir = 1;
+	pixel_y = 40
+	},
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	pixel_y = 32
+	},
+/obj/structure/sign/directions/supply{
+	dir = 4;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/teleporter/departing)
@@ -17690,6 +17775,13 @@
 /area/maintenance/station/cargo)
 "Fg" = (
 /obj/random/loot_pile/maintenance,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/maintenance/station/cargo)
 "Fh" = (
@@ -17750,17 +17842,18 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor/glass,
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
-	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 1
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	directional_offset = null
 	},
 /turf/simulated/floor/plating,
 /area/quartermaster/storage)
@@ -17962,12 +18055,12 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
+/obj/structure/sign/department/chemistry{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
-"FE" = (
-/obj/structure/sign/department/chemistry,
-/turf/simulated/wall/r_wall,
-/area/medical/chemistry)
 "FF" = (
 /obj/structure/table/reinforced,
 /obj/item/hand_labeler,
@@ -18050,6 +18143,10 @@
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 6
+	},
+/obj/structure/sign/department/tether/operational{
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -18162,14 +18259,6 @@
 	},
 /turf/simulated/floor/carpet/blue,
 /area/medical/psych)
-"FU" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
-	},
-/turf/simulated/wall,
-/area/maintenance/station/cargo)
 "FV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -18848,6 +18937,9 @@
 /area/medical/surgery_hallway)
 "Hh" = (
 /obj/machinery/mech_recharger,
+/obj/structure/sign/department/tether/operational{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "Hi" = (
@@ -18895,11 +18987,15 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/super,
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor,
 /area/maintenance/substation/cargo)
 "Ht" = (
@@ -19048,7 +19144,8 @@
 /obj/structure/sign/warning{
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
 	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
+	name = "EXTERNAL AIRLOCK";
+	directional_offset = null
 	},
 /obj/structure/window/reinforced{
 	dir = 4
@@ -19192,6 +19289,10 @@
 	pixel_x = 24
 	},
 /obj/structure/reagent_dispensers/water_cooler,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "HV" = (
@@ -19268,12 +19369,18 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "Ia" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall/r_wall,
-/area/medical/surgery_hallway)
+/obj/structure/sign/warning/secure_area{
+	pixel_y = 32
+	},
+/turf/space/cracked_asteroid,
+/area/mine/explored/upper_level)
 "Ib" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -19283,6 +19390,10 @@
 	},
 /obj/machinery/camera/network/medbay{
 	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -19515,13 +19626,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
-"IC" = (
-/obj/structure/sign/warning/nosmoking_1{
-	pixel_x = 6;
-	pixel_y = 6
-	},
-/turf/simulated/wall,
-/area/medical/sleeper)
 "ID" = (
 /turf/simulated/wall/r_wall,
 /area/medical/medbay_primary_storage)
@@ -19550,7 +19654,9 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "IG" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -19623,6 +19729,13 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "0-8"
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor,
 /area/maintenance/substation/cargo)
@@ -19701,7 +19814,8 @@
 /area/quartermaster/storage)
 "IX" = (
 /obj/machinery/status_display/supply_display{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/conveyor{
 	dir = 4;
@@ -19982,6 +20096,10 @@
 	pixel_x = -4;
 	pixel_y = 26
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Jr" = (
@@ -20138,10 +20256,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
-"JL" = (
-/obj/machinery/status_display/supply_display,
-/turf/simulated/wall,
-/area/quartermaster/warehouse)
 "JM" = (
 /obj/structure/table,
 /obj/item/clothing/head/soft,
@@ -20183,10 +20297,6 @@
 /obj/random/maintenance/clean,
 /turf/simulated/floor,
 /area/medical/resleeving)
-"JQ" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/resleeving)
 "JR" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -20196,6 +20306,10 @@
 	},
 /obj/machinery/camera/network/medbay{
 	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
@@ -20755,12 +20869,19 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "KU" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall/r_wall,
-/area/medical/surgery2)
+/obj/structure/sign/warning/secure_area{
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "KV" = (
 /turf/simulated/wall,
 /area/medical/surgery2)
@@ -21630,11 +21751,11 @@
 /area/medical/surgery2)
 "Mu" = (
 /obj/machinery/optable,
+/obj/machinery/oxygen_pump/anesthetic{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/white,
-/area/medical/surgery2)
-"Mv" = (
-/obj/machinery/oxygen_pump/anesthetic,
-/turf/simulated/wall,
 /area/medical/surgery2)
 "Mw" = (
 /turf/simulated/open,
@@ -21820,6 +21941,10 @@
 /obj/machinery/camera/network/medbay{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "MJ" = (
@@ -21892,24 +22017,28 @@
 	id_tag = "cmodoor";
 	name = "CMO Office Door Control";
 	pixel_x = -8;
-	pixel_y = -36
+	pixel_y = -36;
+	dir = 1
 	},
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id_tag = "virologyquar";
 	name = "Virology Emergency Lockdown Control";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /obj/machinery/button/blast_door{
 	desc = "A remote control-switch for shutters.";
 	id_tag = "medbayquar";
 	name = "Medbay Emergency Lockdown Control";
-	pixel_y = -36
+	pixel_y = -36;
+	dir = 1
 	},
 /obj/machinery/button/windowtint{
 	id_tag = "cmooffice";
 	pixel_x = -6;
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22242,6 +22371,9 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4,
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Nl" = (
@@ -22636,6 +22768,10 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/machinery/light,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "NZ" = (
@@ -22746,6 +22882,10 @@
 	dir = 10
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "Oh" = (
@@ -22937,10 +23077,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/cmo)
-"Ow" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/sleeper)
 "Ox" = (
 /obj/structure/grille,
 /obj/machinery/door/firedoor/glass,
@@ -23089,6 +23225,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "OF" = (
@@ -23196,6 +23336,10 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "OL" = (
@@ -23294,6 +23438,10 @@
 	},
 /obj/structure/table/glass,
 /obj/item/scanner/health,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/ward)
 "OV" = (
@@ -23459,6 +23607,9 @@
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
 	pixel_y = 4
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
 /area/medical/psych/inside)
@@ -23771,6 +23922,10 @@
 /obj/machinery/camera/network/medbay{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_a)
 "PD" = (
@@ -23835,6 +23990,10 @@
 /obj/machinery/camera/network/medbay{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_b)
 "PG" = (
@@ -23898,6 +24057,10 @@
 	},
 /obj/machinery/camera/network/medbay{
 	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_c)
@@ -24963,14 +25126,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/security_processing)
-"Rt" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall,
-/area/medical/medbay_primary_storage)
-"Ru" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall,
-/area/medical/surgery2)
 "Rv" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -25310,6 +25465,9 @@
 	dir = 4;
 	pixel_x = 24
 	},
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
 "SB" = (
@@ -25391,10 +25549,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
-"SK" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/patient_c)
 "SM" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lightgrey/border,
@@ -25588,8 +25742,7 @@
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "Psychiatric Ward Interior";
-	pixel_y = 24;
-	directional_offset = "{'NORTH':{'y':-22}, 'SOUTH':{'y':24}, 'sEAST':{'x':-20}, 'WEST':{'x':20}}"
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
@@ -26439,9 +26592,12 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "Wh" = (
-/obj/structure/noticeboard,
-/turf/simulated/wall/r_wall,
-/area/medical/psych)
+/obj/structure/sign/warning/secure_area{
+	dir = 8;
+	pixel_x = 34
+	},
+/turf/space,
+/area/space)
 "Wk" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/external/glass{
@@ -26860,10 +27016,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock)
-"XW" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/patient_b)
 "XX" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/blast/shutters{
@@ -27111,7 +27263,6 @@
 	command = "cycle_interior";
 	name = "Psychiatric Ward Interior";
 	pixel_y = -22;
-	directional_offset = "{'NORTH':{'y':-22}, 'SOUTH':{'y':24}, 'sEAST':{'x':-20}, 'WEST':{'x':20}}";
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -27503,10 +27654,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock)
-"ZZ" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/medbay_primary_storage)
 
 (1,1,1) = {"
 aa
@@ -32871,7 +33018,7 @@ ab
 ab
 aa
 aa
-ae
+tB
 aa
 aa
 ae
@@ -32884,18 +33031,18 @@ rd
 qc
 sL
 tG
-uF
-aa
+qc
+Dj
 ae
 aa
 aa
-aa
+Wh
 ae
 aa
 AZ
 aa
 ae
-aa
+Wh
 aa
 aa
 ae
@@ -33027,7 +33174,7 @@ dS
 dS
 dS
 dS
-my
+dS
 dR
 nD
 nW
@@ -33045,13 +33192,13 @@ vs
 ae
 aa
 xu
-xv
 xw
 xw
 xw
 xw
 xw
-xv
+xw
+xw
 xu
 aa
 ae
@@ -33199,8 +33346,7 @@ tI
 uH
 vs
 ae
-aa
-xv
+KU
 xw
 xw
 xw
@@ -33208,8 +33354,9 @@ xw
 xw
 xw
 xw
-xv
-aa
+xw
+xw
+Dj
 ae
 aa
 aa
@@ -33979,8 +34126,8 @@ tM
 uI
 vt
 we
-vt
-xv
+Dr
+xw
 xw
 zi
 zU
@@ -33988,8 +34135,8 @@ Be
 zU
 CX
 xw
-xv
-we
+xw
+Ia
 vt
 ab
 ab
@@ -34090,9 +34237,9 @@ aa
 aa
 aa
 aa
-aa
+KU
 aO
-aa
+Dj
 aa
 aa
 aa
@@ -34892,7 +35039,7 @@ jj
 dI
 gE
 gN
-kf
+ao
 ko
 kB
 fA
@@ -34931,7 +35078,7 @@ Ix
 HJ
 Ix
 Ix
-JQ
+Ix
 Ix
 Ix
 Ix
@@ -35546,7 +35693,7 @@ uO
 Ad
 Bo
 Cf
-Dd
+Db
 DI
 EC
 Fq
@@ -35689,7 +35836,7 @@ fv
 oz
 oz
 oz
-vi
+oz
 sX
 tU
 uM
@@ -35702,7 +35849,7 @@ wf
 Ae
 Bo
 Ca
-De
+Da
 DJ
 ED
 Fs
@@ -36132,7 +36279,7 @@ Rm
 Rq
 Rv
 ai
-bU
+ai
 iz
 iQ
 cf
@@ -36313,7 +36460,7 @@ fw
 oA
 oA
 oA
-vY
+oA
 tb
 tT
 uQ
@@ -36326,7 +36473,7 @@ zn
 Ae
 Bo
 Cj
-Di
+Df
 Df
 Df
 Df
@@ -36481,8 +36628,8 @@ yr
 zo
 Ae
 Bs
-Ck
-Dj
+uF
+Dl
 DM
 EG
 Fv
@@ -37124,7 +37271,7 @@ LN
 Na
 LN
 NY
-Ow
+Iy
 OT
 OT
 OT
@@ -37737,7 +37884,7 @@ FD
 Gt
 Hb
 HU
-IC
+Iy
 Jq
 Kf
 KL
@@ -37886,10 +38033,10 @@ yz
 An
 Bx
 Cr
-Do
+Dp
 Dp
 EP
-FE
+Dp
 Gu
 nc
 Dp
@@ -37991,9 +38138,9 @@ aa
 aa
 aa
 aa
-aa
+KU
 aO
-aa
+Dj
 ed
 gg
 ab
@@ -38680,11 +38827,11 @@ KP
 Lu
 LV
 Mo
-Rt
+Jr
 Nk
 NI
 Og
-Ow
+Iy
 Pc
 Pz
 PT
@@ -38828,7 +38975,7 @@ Dp
 Dp
 Dp
 Hg
-Ia
+Hg
 ID
 Jr
 Jr
@@ -38836,7 +38983,7 @@ KQ
 Lp
 Lp
 Jr
-ZZ
+Jr
 Nl
 NJ
 Oh
@@ -38977,12 +39124,12 @@ yE
 zy
 As
 Bz
-Cn
-Dr
+Do
+Dt
 DZ
 EU
 FK
-Dr
+Dt
 Hh
 Ib
 IG
@@ -39099,8 +39246,8 @@ bm
 bA
 bW
 bT
-df
-iq
+bm
+vY
 dw
 dw
 dw
@@ -39282,7 +39429,7 @@ tn
 tn
 ui
 ui
-wv
+tn
 tn
 sp
 sq
@@ -39306,7 +39453,7 @@ LX
 IH
 Jz
 No
-Kn
+Di
 Ok
 OD
 Pe
@@ -39456,16 +39603,16 @@ Hk
 II
 Hk
 Hk
-KU
+RN
 Lw
 Lw
 Mq
 Lw
 Lw
-Ru
+KV
 Ol
 OE
-XW
+Pg
 Pg
 Pg
 Pg
@@ -39906,8 +40053,8 @@ tr
 um
 uZ
 uZ
-wx
-xb
+sq
+my
 xR
 yJ
 zD
@@ -40071,7 +40218,7 @@ AB
 Qq
 VT
 lY
-Wh
+TJ
 Sy
 FP
 XX
@@ -40239,7 +40386,7 @@ Hl
 RN
 LB
 Mb
-Mv
+KV
 ML
 Nt
 KV
@@ -40713,7 +40860,7 @@ Mw
 Mw
 Ot
 OK
-SK
+Pj
 Pj
 Pj
 Pj
@@ -41321,7 +41468,7 @@ Cz
 AH
 El
 Fg
-FU
+AH
 GC
 Hs
 Ij
@@ -41466,7 +41613,7 @@ tv
 us
 qr
 qr
-wB
+qr
 xi
 xW
 yQ
@@ -41782,7 +41929,7 @@ wD
 xk
 xY
 yR
-zJ
+zL
 zL
 zL
 zL
@@ -42719,7 +42866,7 @@ vl
 xZ
 yW
 zL
-AN
+zL
 zL
 CH
 zK
@@ -42730,7 +42877,7 @@ Fj
 Hz
 Iq
 Fj
-JL
+Fj
 Fj
 XU
 XU
@@ -42866,7 +43013,7 @@ gJ
 qu
 rS
 sE
-tA
+qu
 uA
 vk
 vk
@@ -42886,7 +43033,7 @@ GK
 HA
 Ir
 IU
-BS
+df
 JN
 ZB
 XP
@@ -43178,8 +43325,8 @@ gJ
 qu
 rU
 sG
-tB
-rZ
+qu
+qu
 vn
 wa
 wa
@@ -43956,7 +44103,7 @@ gK
 qa
 qu
 qu
-rZ
+qu
 sK
 tF
 uE

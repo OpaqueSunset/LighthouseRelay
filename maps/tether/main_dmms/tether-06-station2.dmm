@@ -5416,10 +5416,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_upload_foyer)
-"ka" = (
-/obj/structure/sign/warning,
-/turf/simulated/wall/r_wall,
-/area/ai_upload_foyer)
 "kb" = (
 /turf/simulated/wall/r_wall,
 /area/ai_cyborg_station)
@@ -5498,10 +5494,6 @@
 "kk" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/station/sec_lower)
-"kl" = (
-/obj/structure/sign/department/tether/chapel,
-/turf/simulated/wall,
-/area/chapel/main)
 "km" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -5580,6 +5572,9 @@
 /obj/structure/cable/cyan{
 	icon_state = "0-8"
 	},
+/obj/structure/sign/warning{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_upload_foyer)
 "kv" = (
@@ -5657,7 +5652,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
@@ -5834,6 +5829,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
 	},
+/obj/structure/sign/department/tether/chapel{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "lb" = (
@@ -5894,6 +5892,9 @@
 	dir = 5
 	},
 /obj/structure/closet/emcloset,
+/obj/structure/sign/department/tether/chapel{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "lh" = (
@@ -6433,10 +6434,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled,
 /area/engineering/foyer_mezzenine)
-"mo" = (
-/obj/structure/sign/department/engineering,
-/turf/simulated/wall,
-/area/engineering/foyer_mezzenine)
 "mp" = (
 /obj/structure/lattice,
 /obj/machinery/door/firedoor/glass,
@@ -6518,14 +6515,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/ai_upload_foyer)
-"mx" = (
-/obj/structure/sign/department/tether/ai,
-/turf/simulated/wall/r_wall,
-/area/ai_upload_foyer)
-"my" = (
-/obj/machinery/status_display,
-/turf/simulated/wall,
-/area/hallway/station/starboard)
 "mz" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
@@ -6983,6 +6972,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
+/obj/structure/sign/department/tether/ai{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "ng" = (
@@ -7357,15 +7349,13 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/station/eng_upper)
-"nI" = (
-/obj/structure/sign/deck/second,
-/turf/simulated/shuttle/wall/voidcraft/green{
-	hard_corner = 1
-	},
-/area/hallway/station/starboard)
 "nJ" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
+	},
+/obj/structure/sign/deck/second{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -7740,7 +7730,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -7819,6 +7809,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
+/obj/structure/sign/warning{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "oA" = (
@@ -7890,6 +7884,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
+	},
+/obj/structure/sign/warning{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -8118,7 +8116,6 @@
 /area/ai_monitored/storage/eva)
 "oZ" = (
 /obj/structure/grille,
-/obj/structure/sign/warning,
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -9807,7 +9804,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -10023,16 +10020,6 @@
 "sw" = (
 /turf/simulated/wall,
 /area/tether/station/stairs_two)
-"sx" = (
-/obj/structure/sign/directions/engineering{
-	dir = 1;
-	pixel_y = 8
-	},
-/obj/structure/sign/directions/elevator{
-	dir = 4
-	},
-/turf/simulated/wall,
-/area/tether/station/stairs_two)
 "sy" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -10045,6 +10032,15 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
+	},
+/obj/structure/sign/directions/elevator{
+	dir = 4;
+	pixel_x = -32
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 1;
+	pixel_y = 8;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
@@ -11144,10 +11140,6 @@
 "uP" = (
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
-"uQ" = (
-/obj/structure/sign/deck/second,
-/turf/simulated/wall,
-/area/tether/station/stairs_two)
 "uR" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
@@ -11404,6 +11396,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel,
+/obj/structure/sign/deck/second{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
 "vq" = (
@@ -12483,9 +12478,12 @@
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "xg" = (
-/obj/structure/sign/department/tether/morgue,
-/turf/simulated/wall,
-/area/medical/morgue)
+/obj/structure/sign/department/tether/morgue{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled,
+/area/medical/biostorage)
 "xh" = (
 /obj/structure/filing_cabinet/chestdrawer{
 	desc = "A large drawer filled with autopsy reports.";
@@ -12854,16 +12852,27 @@
 /obj/item/assembly/timer,
 /obj/item/assembly/timer,
 /obj/item/assembly/timer,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
 "xW" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/morgue)
+/obj/structure/catwalk,
+/obj/structure/sign/department/engineering{
+	pixel_y = 32
+	},
+/turf/simulated/open,
+/area/engineering/foyer_mezzenine)
 "xX" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor{
 	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/morgue)
@@ -13444,10 +13453,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
-"yX" = (
-/obj/structure/sign/department/tether/virology,
-/turf/simulated/wall/r_wall,
-/area/medical/virologyaccess)
 "yY" = (
 /turf/simulated/wall/r_wall,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
@@ -13677,6 +13682,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 4
 	},
+/obj/structure/sign/department/tether/morgue{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
 "zp" = (
@@ -13808,6 +13816,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/structure/sign/department/tether/virology{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
@@ -14027,7 +14038,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
@@ -14048,6 +14059,10 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 9
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/escape/medical_escape_pod_hallway)
@@ -14354,10 +14369,6 @@
 "Ai" = (
 /turf/simulated/wall,
 /area/medical/medbay_emt_bay)
-"Aj" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/medical/medbay_emt_bay)
 "Ak" = (
 /obj/machinery/door/window/northleft,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14525,6 +14536,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 1
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/medbay_emt_bay)
@@ -15013,7 +15027,9 @@
 /turf/simulated/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "BY" = (
-/obj/structure/sign/department/redcross,
+/obj/structure/sign/department/redcross{
+	directional_offset = null
+	},
 /turf/simulated/shuttle/wall,
 /area/shuttle/large_escape_pod1/station)
 "BZ" = (
@@ -15554,6 +15570,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "EQ" = (
@@ -15604,6 +15623,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/shock{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "Fc" = (
@@ -16157,9 +16180,12 @@
 /turf/simulated/floor/carpet/blue,
 /area/tether/station/public_meeting_room)
 "II" = (
-/obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall/r_wall,
-/area/medical/psych_ward)
+/obj/structure/sign/department/redcross{
+	directional_offset = null;
+	dir = 1
+	},
+/turf/simulated/shuttle/wall,
+/area/shuttle/large_escape_pod1/station)
 "IJ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
@@ -16678,7 +16704,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -17707,10 +17733,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
-"Rq" = (
-/obj/structure/sign/warning/shock,
-/turf/simulated/wall/r_wall,
-/area/security/brig)
 "Rr" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -17929,6 +17951,10 @@
 /area/maintenance/evahallway)
 "SL" = (
 /obj/machinery/light,
+/obj/structure/sign/warning/nosmoking_2{
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "SM" = (
@@ -28033,7 +28059,7 @@ sw
 sw
 sw
 sw
-uQ
+sw
 vp
 vP
 sw
@@ -28477,7 +28503,7 @@ bD
 bF
 ZH
 Fb
-Rq
+aS
 cs
 cu
 hQ
@@ -28487,8 +28513,8 @@ jJ
 kf
 kf
 kf
-mo
-mO
+kf
+xW
 mM
 of
 oM
@@ -28497,7 +28523,7 @@ pK
 qq
 rf
 rR
-sx
+sw
 sw
 sw
 sw
@@ -29323,7 +29349,7 @@ gB
 VQ
 YF
 SL
-II
+VR
 VR
 eM
 aa
@@ -30377,7 +30403,7 @@ uV
 vx
 vU
 wu
-xd
+xg
 xw
 xV
 yy
@@ -30533,9 +30559,9 @@ uW
 uW
 uW
 wv
-xg
 uW
-xW
+uW
+uW
 uW
 uW
 vT
@@ -30985,7 +31011,7 @@ kY
 kY
 lH
 lH
-nI
+kY
 kY
 kj
 kj
@@ -31161,7 +31187,7 @@ xk
 xA
 ya
 yC
-xg
+uW
 zo
 zP
 Ai
@@ -31292,7 +31318,7 @@ id
 ed
 jn
 ej
-kl
+fo
 la
 lJ
 lJ
@@ -31320,7 +31346,7 @@ yD
 uW
 zp
 zQ
-Aj
+Ai
 Ay
 AK
 Sc
@@ -32228,7 +32254,7 @@ ig
 ei
 jo
 er
-kl
+fo
 lg
 lM
 mv
@@ -32253,7 +32279,7 @@ xn
 xE
 yd
 yH
-yX
+ve
 zv
 zW
 Am
@@ -32886,7 +32912,7 @@ AR
 Bg
 za
 yY
-BY
+II
 Cu
 Hp
 Db
@@ -33475,11 +33501,11 @@ hI
 in
 iU
 jr
-ka
+jY
 ku
 ll
 lS
-mx
+jY
 nf
 nP
 ot
@@ -34883,7 +34909,7 @@ kc
 kz
 kd
 jx
-my
+ns
 EJ
 nP
 oz

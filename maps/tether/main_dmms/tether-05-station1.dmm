@@ -19,11 +19,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/lounge/kitchen_freezer)
 "aag" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
-	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
-	},
 /turf/simulated/wall/r_wall,
 /area/space)
 "aah" = (
@@ -79,14 +74,6 @@
 	},
 /turf/simulated/floor,
 /area/construction/observation)
-"aan" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
-	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
-	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_room)
 "aao" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -140,7 +127,9 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/excursion/tether)
 "aav" = (
-/obj/structure/flight_left,
+/obj/structure/flight_left{
+	density = 1
+	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aaw" = (
@@ -156,7 +145,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_meeting)
 "aax" = (
-/obj/structure/flight_right,
+/obj/structure/flight_right{
+	density = 1
+	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aay" = (
@@ -479,13 +470,21 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_smes)
 "abf" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/disposalpipe/segment,
 /obj/structure/sign/warning{
 	desc = "A warning sign which reads 'HIGH VOLTAGE'";
 	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+	name = "HIGH VOLTAGE";
+	dir = 8;
+	pixel_x = 34
 	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_smes)
+/turf/simulated/floor,
+/area/maintenance/station/eng_lower)
 "abg" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -562,11 +561,12 @@
 /turf/simulated/floor,
 /area/construction/observation)
 "abp" = (
+/obj/structure/bed/chair/shuttle,
 /obj/machinery/airlock_sensor/shuttle{
-	dir = 6;
-	id_tag = "shuttlesens_exp_int"
+	id_tag = "shuttlesens_exp_psg";
+	pixel_y = 24
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "abq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -921,12 +921,13 @@
 /area/hallway/station/atrium)
 "abW" = (
 /obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
+	icon_state = "radiation";
+	name = "RADIOACTIVE AREA";
+	pixel_y = 32
 	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_monitoring)
+/turf/space,
+/area/space)
 "abX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled,
@@ -975,14 +976,6 @@
 /obj/machinery/timeclock/premade/south,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
-"acd" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
-	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
-	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_monitoring)
 "ace" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1541,6 +1534,13 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "adw" = (
@@ -1967,12 +1967,6 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
-/obj/machinery/airlock_sensor/airlock_exterior/shuttle{
-	dir = 6;
-	id_tag = "expshuttle_exterior_sensor";
-	pixel_x = 4;
-	pixel_y = 28
-	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aeq" = (
@@ -2041,10 +2035,6 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
 "aeu" = (
-/obj/machinery/airlock_sensor/shuttle{
-	dir = 5;
-	id_tag = "shuttlesens_exp"
-	},
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
@@ -2466,8 +2456,7 @@
 /area/crew_quarters/lounge/kitchen)
 "afh" = (
 /obj/item/radio/intercom{
-	pixel_y = 20;
-	directional_offset = "{'NORTH':{'y':-30}, s'SOUTH':{'y':20}, 'EAST':{'x':-22}, 'WEST':{'x':22}}"
+	pixel_y = 20
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
@@ -2615,14 +2604,28 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/lounge/kitchen)
 "afy" = (
-/obj/structure/sign/deck/first,
-/turf/simulated/shuttle/wall/voidcraft/green{
-	hard_corner = 1
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
 	},
-/area/hallway/station/atrium)
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/sign/warning/radioactive{
+	dir = 4;
+	pixel_x = -34
+	},
+/turf/simulated/floor/tiled,
+/area/engineering/hallway)
 "afz" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
+	},
+/obj/structure/sign/deck/first{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -2888,6 +2891,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/sign/warning/radioactive{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "aga" = (
@@ -2897,10 +2904,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/lounge)
-"agb" = (
-/obj/structure/sign/department/engineering,
-/turf/simulated/wall/r_wall,
-/area/hallway/station/atrium)
 "agc" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -3236,6 +3239,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/department/engineering{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -3710,6 +3716,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/lounge)
 "ahO" = (
@@ -3891,6 +3900,13 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "aif" = (
@@ -3952,10 +3968,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
-"ain" = (
-/obj/machinery/status_display,
-/turf/simulated/wall,
-/area/crew_quarters/lounge)
 "aio" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/disposalpipe/segment{
@@ -4002,10 +4014,6 @@
 "aiv" = (
 /turf/simulated/wall/r_wall,
 /area/tether/station/explorer_prep)
-"aiw" = (
-/obj/structure/sign/department/tether/biblio,
-/turf/simulated/wall,
-/area/library)
 "aix" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -4326,13 +4334,12 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
 "ajp" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+/obj/structure/sign/warning/radioactive{
+	dir = 8;
+	pixel_x = 34
 	},
-/turf/simulated/wall/r_wall,
-/area/engineering/engine_room)
+/turf/space,
+/area/space)
 "ajq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -5141,14 +5148,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_grid,
 /area/engineering/atmos/backup)
-"alx" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'RADIOACTIVE AREA'";
-	icon_state = "radiation";
-	name = "RADIOACTIVE AREA"
-	},
-/turf/simulated/wall/r_wall,
-/area/engineering/atmos/backup)
 "aly" = (
 /obj/machinery/computer/atmos_alert,
 /turf/simulated/floor/tiled,
@@ -5530,10 +5529,6 @@
 /obj/machinery/door/airlock/voidcraft/vertical{
 	id_tag = "expshuttle_door_Ri"
 	},
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	pixel_y = -24
-	},
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
@@ -5676,9 +5671,17 @@
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "anl" = (
-/obj/structure/sign/department/tether/engine,
-/turf/simulated/wall/r_wall,
-/area/engineering/hallway)
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/obj/structure/sign/department/engineering{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/station/atrium)
 "ano" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1
@@ -5909,6 +5912,9 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/engineering,
+/obj/structure/sign/department/tether/engine{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "anX" = (
@@ -5941,6 +5947,11 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
 	id_tag = "expshuttle_vent"
+	},
+/obj/machinery/airlock_sensor/shuttle{
+	dir = 8;
+	id_tag = "shuttlesens_exp";
+	pixel_x = 22
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
@@ -6104,14 +6115,6 @@
 /obj/vehicle/train/cargo/trolley,
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/hallway)
-"aoy" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
-	},
-/turf/simulated/wall/r_wall,
-/area/engineering/hallway)
 "aoB" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 9
@@ -6134,12 +6137,12 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
+/obj/machinery/status_display{
+	pixel_x = 32;
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
-"aoF" = (
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall,
-/area/engineering/break_room)
 "aoG" = (
 /obj/machinery/computer/station_alert,
 /turf/simulated/floor/tiled,
@@ -6178,6 +6181,9 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/paint_sprayer,
+/obj/structure/sign/warning/radioactive{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
 "aoX" = (
@@ -6520,6 +6526,9 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/cable/green{
 	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/high_voltage{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
@@ -7928,9 +7937,14 @@
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
 "atH" = (
-/obj/structure/sign/department/engineering,
-/turf/simulated/wall/r_wall,
-/area/engineering/foyer)
+/obj/machinery/button/blast_door{
+	id_tag = "cd-blast";
+	name = "Facility Director Lockdown";
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/captain)
 "atI" = (
 /obj/structure/bed/chair/comfy/beige{
 	dir = 4
@@ -8078,6 +8092,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
+	},
+/obj/structure/sign/department/tether/biblio{
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -8576,9 +8594,12 @@
 /turf/simulated/floor/plating,
 /area/bridge)
 "awA" = (
-/obj/structure/sign/department/bridge,
-/turf/simulated/wall/r_wall,
-/area/bridge_hallway)
+/obj/structure/sign/warning/radioactive{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/space,
+/area/space)
 "awB" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5{
 	dir = 1
@@ -8598,10 +8619,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/workshop)
-"awC" = (
-/obj/structure/sign/nanotrasen,
-/turf/simulated/wall/r_wall,
-/area/bridge_hallway)
 "awD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 9
@@ -8769,6 +8786,9 @@
 /turf/simulated/floor/tiled,
 /area/bridge_hallway)
 "axf" = (
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/bridge_hallway)
 "axg" = (
@@ -8838,6 +8858,10 @@
 "axw" = (
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning/corner,
+/obj/structure/sign/deck/first{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_one)
 "axx" = (
@@ -9017,10 +9041,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/workshop)
-"axQ" = (
-/obj/structure/sign/deck/first,
-/turf/simulated/wall,
-/area/tether/station/stairs_one)
 "axR" = (
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_one)
@@ -10376,13 +10396,20 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/sleep/engi_wash)
 "aBH" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
 	},
-/turf/simulated/wall/r_wall,
-/area/maintenance/substation/civilian)
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/airlock_sensor/airlock_exterior/shuttle{
+	dir = 4;
+	id_tag = "expshuttle_exterior_sensor";
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled,
+/area/tether/station/excursion_dock)
 "aBJ" = (
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 4
@@ -10903,10 +10930,6 @@
 "aDu" = (
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
-"aDy" = (
-/obj/structure/sign/department/tether/conference_room,
-/turf/simulated/wall/r_wall,
-/area/bridge_hallway)
 "aDz" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/substation/command)
@@ -11362,6 +11385,13 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable/green,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor,
 /area/maintenance/substation/civilian)
 "aEZ" = (
@@ -11591,6 +11621,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	name = "interior access button";
+	pixel_x = -20;
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
 "aFW" = (
@@ -11633,6 +11669,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	name = "interior access button";
+	pixel_x = -20;
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "aGb" = (
@@ -11843,6 +11885,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/camera/network/tether{
 	dir = 4
+	},
+/obj/machinery/network/relay/wall_mounted/lighthouse{
+	dir = 4;
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
@@ -13648,7 +13694,8 @@
 /obj/machinery/button/windowtint{
 	id_tag = "ce_office";
 	pixel_x = 26;
-	pixel_y = 29
+	pixel_y = 29;
+	dir = 8
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "englockdown";
@@ -13665,7 +13712,8 @@
 /obj/machinery/button/alternate/door{
 	id_tag = "CEdoor";
 	name = "CE Office Door Control";
-	pixel_x = 26
+	pixel_x = 26;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
@@ -14888,6 +14936,19 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
+/obj/structure/sign/directions/elevator{
+	dir = 4;
+	pixel_y = -24
+	},
+/obj/structure/sign/directions/bridge{
+	dir = 4;
+	pixel_y = -40
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 1;
+	pixel_y = -32;
+	pixel_z = -8
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "bdr" = (
@@ -15255,6 +15316,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
 	},
+/obj/structure/sign/department/bridge{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "bem" = (
@@ -15302,6 +15367,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
+	},
+/obj/structure/sign/nanotrasen{
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -15596,16 +15665,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_one)
-"bfJ" = (
-/obj/structure/sign/directions/bridge{
-	dir = 4
-	},
-/obj/structure/sign/directions/elevator{
-	dir = 4;
-	pixel_y = 8
-	},
-/turf/simulated/wall,
-/area/tether/station/stairs_one)
 "bfQ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -15772,11 +15831,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/sign/directions/engineering{
-	dir = 1;
-	pixel_y = 32;
-	pixel_z = -8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -15788,6 +15842,19 @@
 	},
 /obj/effect/floor_decal/corner/lightgrey/bordercorner2{
 	dir = 4
+	},
+/obj/structure/sign/directions/bridge{
+	dir = 4;
+	pixel_y = 24
+	},
+/obj/structure/sign/directions/elevator{
+	dir = 4;
+	pixel_y = 40
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 1;
+	pixel_y = 32;
+	pixel_z = -8
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_one)
@@ -17079,7 +17146,11 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/super,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "bqo" = (
@@ -17346,8 +17417,8 @@
 	dir = 1
 	},
 /obj/structure/mirror{
-	dir = 4;
-	pixel_x = 32
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/toilet)
@@ -17455,11 +17526,15 @@
 /area/shuttle/excursion/tether)
 "bto" = (
 /obj/structure/cable/green,
-/obj/machinery/power/apc/super,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/toilet)
 "btr" = (
@@ -17625,8 +17700,8 @@
 	pixel_x = 11
 	},
 /obj/structure/mirror{
-	dir = 4;
-	pixel_x = 32
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/toilet)
@@ -17710,6 +17785,10 @@
 	},
 /obj/item/storage/box/ids,
 /obj/structure/table/reinforced,
+/obj/machinery/status_display{
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "bwh" = (
@@ -17818,6 +17897,13 @@
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	id_tag = "expshuttle_docker";
+	dir = 8;
+	pixel_y = 8;
+	pixel_x = 20
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
@@ -17933,11 +18019,15 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
 "byN" = (
-/obj/machinery/power/apc/super,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "byP" = (
@@ -17962,6 +18052,9 @@
 	pixel_x = -32
 	},
 /obj/structure/closet/emcloset,
+/obj/machinery/status_display{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "byY" = (
@@ -18273,9 +18366,13 @@
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor,
 /area/maintenance/substation/command)
 "bBY" = (
@@ -18292,6 +18389,13 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor,
 /area/maintenance/station/bridge)
 "bCd" = (
@@ -18300,7 +18404,7 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/double/metal/mait{
-	dir = 1;
+	dir = 8;
 	name = "Command Substation"
 	},
 /turf/simulated/floor,
@@ -18479,12 +18583,13 @@
 /area/maintenance/substation/command)
 "bFp" = (
 /obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
 	},
-/turf/simulated/wall,
-/area/maintenance/station/bridge)
+/turf/space,
+/area/space)
 "bFE" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -18594,11 +18699,6 @@
 "bGo" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
-	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -18611,11 +18711,6 @@
 "bGy" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
-	},
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -18687,18 +18782,18 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bHt" = (
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = -5;
-	pixel_y = -26
-	},
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "d1a2_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
 "bHu" = (
@@ -18720,7 +18815,8 @@
 /obj/machinery/light/small,
 /obj/machinery/airlock_sensor{
 	id_tag = "d1a2_dock_sensor";
-	pixel_y = -25
+	pixel_y = -18;
+	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	id_tag = "d1a2_dock";
@@ -18733,12 +18829,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
 "bHy" = (
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	name = "interior access button";
-	pixel_x = -28;
-	pixel_y = 26
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -18762,13 +18852,13 @@
 	locked = 1;
 	name = "Docking Port Airlock"
 	},
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = -5;
-	pixel_y = -26
-	},
 /obj/machinery/shield_diffuser,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bHN" = (
@@ -18794,25 +18884,20 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "specops_dock_sensor";
-	pixel_y = -25
+	pixel_y = -18;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bHV" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/machinery/button/access{
+	command = "cycle_exterior";
+	name = "exterior access button";
+	pixel_x = 20;
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 4
-	},
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	name = "interior access button";
-	pixel_x = -28;
-	pixel_y = 26
-	},
-/turf/simulated/floor/tiled,
-/area/tether/station/dock_two)
+/turf/space,
+/area/space)
 "bHY" = (
 /obj/machinery/camera/network/tether{
 	dir = 9
@@ -18866,10 +18951,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/teleporter)
-"bJQ" = (
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall,
-/area/crew_quarters/captain)
 "bJT" = (
 /obj/machinery/door/airlock/command{
 	name = "Teleport Access"
@@ -19064,11 +19145,6 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bPj" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
-	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -19088,18 +19164,18 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bPp" = (
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = -5;
-	pixel_y = -26
-	},
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "d1a1_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
 "bPq" = (
@@ -19125,7 +19201,8 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "d1a1_dock_sensor";
-	pixel_y = -25
+	pixel_y = -18;
+	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 4;
@@ -19134,18 +19211,18 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
 "bPt" = (
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = -5;
-	pixel_y = -26
-	},
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "tether_dock_outer";
 	locked = 1;
 	name = "Docking Port Airlock"
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
+	icon_state = "space";
+	name = "EXTERNAL AIRLOCK";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_two)
 "bPx" = (
@@ -19167,7 +19244,8 @@
 /obj/machinery/light/small,
 /obj/machinery/airlock_sensor{
 	id_tag = "tether_dock_sensor";
-	pixel_y = -25
+	pixel_y = -18;
+	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	id_tag = "tether_dock_airlock";
@@ -19180,12 +19258,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_two)
 "bPA" = (
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	name = "interior access button";
-	pixel_x = -28;
-	pixel_y = 26
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -19240,16 +19312,12 @@
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "interior access button";
-	pixel_x = -28;
-	pixel_y = -26
+	pixel_x = -20;
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/camera/network/tether{
 	dir = 4
-	},
-/obj/machinery/network/relay/wall_mounted/lighthouse{
-	dir = 4;
-	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
@@ -19268,8 +19336,8 @@
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "interior access button";
-	pixel_x = 26;
-	pixel_y = -26
+	pixel_x = 20;
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled,
@@ -19343,7 +19411,8 @@
 "bQk" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	id_tag = "nuke_shuttle_dock";
-	pixel_x = -28
+	pixel_x = -22;
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
@@ -19400,8 +19469,8 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "nuke_shuttle_dock_sensor";
-	pixel_x = -30;
-	pixel_y = 8
+	pixel_x = -22;
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -19417,35 +19486,31 @@
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
 "bQv" = (
-/obj/structure/grille,
-/obj/structure/window/reinforced/full,
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
-	icon_state = "space";
-	name = "EXTERNAL AIRLOCK"
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 9
 	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 8
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
 	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/plating,
-/area/tether/station/dock_one)
-"bQx" = (
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = 28;
-	pixel_y = -6
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
 	},
-/obj/machinery/door/airlock/external/glass{
-	id_tag = "trade_shuttle_dock_outer";
-	locked = 1;
-	name = "Dock One External Access"
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
 	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/tiled/dark,
-/area/tether/station/dock_one)
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals7{
+	dir = 10
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/sign/department/tether/conference_room{
+	dir = 8;
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled,
+/area/bridge_hallway)
 "bQz" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "trade_shuttle_dock_outer";
@@ -19456,20 +19521,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
 "bQC" = (
-/obj/machinery/door/airlock/external/glass{
-	id_tag = "nuke_shuttle_dock_outer";
-	locked = 1;
-	name = "Docking Port Airlock"
-	},
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "exterior access button";
-	pixel_x = -28;
-	pixel_y = -6
+	pixel_y = 24
 	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/tiled,
-/area/tether/station/dock_two)
+/turf/space,
+/area/space)
 "bQD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -20433,13 +20491,6 @@
 "hCe" = (
 /turf/simulated/wall/r_wall,
 /area/tether/station/pathfinder_office)
-"hFL" = (
-/obj/machinery/button/blast_door{
-	id_tag = "cd-blast";
-	name = "Facility Director Lockdown"
-	},
-/turf/simulated/wall/r_wall,
-/area/crew_quarters/captain)
 "hJg" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin{
@@ -21443,6 +21494,11 @@
 /area/tether/station/explorer_prep)
 "nYp" = (
 /obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/airlock_sensor/shuttle{
+	dir = 4;
+	id_tag = "shuttlesens_exp_int";
+	pixel_x = -22
+	},
 /turf/simulated/floor/shuttle/darkred,
 /area/shuttle/excursion/tether)
 "nYM" = (
@@ -22365,12 +22421,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
-"twv" = (
-/obj/machinery/airlock_sensor/shuttle{
-	id_tag = "shuttlesens_exp_psg"
-	},
-/turf/simulated/shuttle/wall/voidcraft,
-/area/shuttle/excursion/tether)
 "txl" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5,
 /obj/effect/floor_decal/steeldecal/steel_decals9,
@@ -22641,7 +22691,6 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
 "vkW" = (
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -22656,6 +22705,11 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)
 "vlu" = (
@@ -27276,7 +27330,7 @@ ahW
 ahW
 ahW
 aag
-aaa
+abW
 aaa
 aaa
 aaa
@@ -28509,7 +28563,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ajp
 aaa
 aaa
 aaa
@@ -28656,16 +28710,16 @@ aaa
 aaa
 aaa
 aaa
+ajp
 aaa
 aaa
 aaa
-aaa
 agJ
 agJ
 agJ
 agJ
 agJ
-aan
+agJ
 acg
 acg
 acg
@@ -28812,7 +28866,7 @@ ahV
 ahV
 ahV
 ahV
-aan
+agJ
 agJ
 agJ
 agJ
@@ -29140,7 +29194,7 @@ aks
 aks
 aks
 aks
-alx
+abZ
 aoW
 aoX
 aqK
@@ -29499,6 +29553,7 @@ aaa
 aaa
 aaa
 aaa
+bHV
 aaa
 aaa
 aaa
@@ -29506,8 +29561,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
+bHV
 aaa
 aaa
 aaa
@@ -29980,8 +30034,8 @@ aCF
 aCF
 bzn
 bzn
-bQv
-aaa
+bPD
+bFp
 aaa
 aaa
 aaa
@@ -30213,8 +30267,8 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aan
+awA
+agJ
 acJ
 acJ
 acJ
@@ -30229,7 +30283,7 @@ acJ
 acJ
 acJ
 acJ
-ajp
+agJ
 aac
 arq
 arq
@@ -30292,7 +30346,7 @@ aIY
 bPX
 bQe
 bQm
-bQx
+bQz
 aaa
 aaa
 aaa
@@ -30449,7 +30503,7 @@ aFU
 aDH
 aDH
 aJo
-aaa
+bQC
 aaa
 aaa
 aaa
@@ -30999,7 +31053,7 @@ acL
 acL
 abs
 abE
-abW
+alF
 adf
 adf
 aew
@@ -31014,7 +31068,7 @@ aac
 acz
 acz
 acz
-aoy
+acz
 apD
 aqu
 aqN
@@ -31816,7 +31870,7 @@ aQD
 aSD
 aUk
 bXG
-atH
+aoJ
 agQ
 bbr
 bdi
@@ -31925,7 +31979,7 @@ aaa
 aaa
 aaa
 aag
-aaa
+abW
 aab
 aaa
 aaa
@@ -31976,10 +32030,10 @@ aYa
 agT
 bbr
 bdq
-bfJ
+aws
 bgJ
 axw
-axQ
+aws
 aws
 aws
 aws
@@ -32088,22 +32142,22 @@ aaa
 aac
 acL
 acL
-abf
+acL
 abv
 abL
-acd
+alF
 afP
 afP
 aeA
 afP
 afP
-acd
+alF
 aiM
 ahD
 aiM
 aiM
 acz
-anl
+acz
 anR
 ano
 apb
@@ -32247,7 +32301,7 @@ aaN
 adv
 aby
 abO
-acu
+afy
 ads
 adV
 aeE
@@ -32574,7 +32628,7 @@ aJs
 aJs
 amf
 anu
-aoF
+aij
 apg
 apg
 asg
@@ -32619,6 +32673,7 @@ aaa
 aaa
 aaa
 aaa
+bHV
 aaa
 aaa
 aaa
@@ -32626,8 +32681,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
+bHV
 aaa
 aaa
 aaa
@@ -32909,7 +32963,7 @@ aSL
 aoJ
 aoJ
 aoJ
-agY
+anl
 acp
 bdK
 awt
@@ -33242,7 +33296,7 @@ aDJ
 aDJ
 aDJ
 aGa
-bHV
+bPA
 aHd
 aHv
 aDJ
@@ -33257,7 +33311,7 @@ aFZ
 bzq
 bzq
 bJm
-aaa
+bQC
 aaa
 aaa
 aaa
@@ -33376,7 +33430,7 @@ aik
 aik
 aik
 aik
-agb
+afC
 agZ
 aim
 bdL
@@ -33412,7 +33466,7 @@ bXm
 bQc
 bQk
 bQt
-bQC
+bQF
 aaa
 aaa
 aaa
@@ -33989,7 +34043,7 @@ ays
 aia
 avP
 apU
-apU
+abf
 aGy
 aIp
 aKz
@@ -34145,7 +34199,7 @@ abC
 aic
 alQ
 alQ
-aBH
+alQ
 aGP
 alQ
 aeq
@@ -34299,7 +34353,7 @@ aht
 syg
 aik
 aie
-aBH
+alQ
 aDs
 aEW
 aGI
@@ -34492,8 +34546,8 @@ aFx
 bGW
 nvn
 aDu
-aDu
-hFL
+atH
+aCO
 aac
 aac
 aac
@@ -34795,7 +34849,7 @@ bqA
 bsH
 aBL
 bwc
-bJQ
+aCO
 byW
 bnW
 bnY
@@ -34932,7 +34986,7 @@ aeq
 aeq
 aeO
 aeO
-afy
+aeq
 aeq
 afC
 afC
@@ -35230,7 +35284,7 @@ ahe
 ahi
 agG
 ahz
-ain
+agj
 ahN
 syg
 aaT
@@ -35720,7 +35774,7 @@ acy
 acy
 ahH
 bek
-awA
+awE
 awE
 awE
 awy
@@ -36032,7 +36086,7 @@ acZ
 acy
 acp
 bep
-awC
+awE
 axf
 bjt
 ayf
@@ -36200,7 +36254,7 @@ bsM
 bvd
 aCn
 aCU
-axg
+bQv
 bAr
 bBJ
 bEG
@@ -36310,7 +36364,7 @@ aap
 aap
 aap
 aaq
-abp
+aaq
 aeo
 aaq
 aaq
@@ -36356,7 +36410,7 @@ awI
 awI
 bwq
 bya
-aDy
+awE
 awE
 awE
 bFe
@@ -37139,7 +37193,7 @@ aCt
 aDA
 bxa
 bCb
-bFp
+awK
 aac
 aac
 aac
@@ -37397,8 +37451,8 @@ aap
 ibX
 gUt
 aaD
-twv
-aaM
+aaq
+abp
 aaD
 xJi
 aaq
@@ -38026,7 +38080,7 @@ aPX
 aPX
 aPX
 aPX
-aPX
+aBH
 aPX
 aPX
 aPX
@@ -38222,7 +38276,7 @@ aCe
 acm
 boi
 aum
-aiw
+ait
 aiE
 akH
 ajd
