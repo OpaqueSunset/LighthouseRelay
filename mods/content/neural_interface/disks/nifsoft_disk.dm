@@ -102,6 +102,9 @@ var/global/list/nifsoft_reverse_hash_lookup = list()
 	stored_data = global.nifsoft_hash_lookup[prog_to_pack]
 	filename = initial(prog_to_pack.filename)
 
+/datum/computer_file/data/nifpak/GetCloneArgs()
+	return list(metadata, get_packed_program())
+
 /datum/computer_file/data/nifpak/proc/get_packed_program()
 	return global.nifsoft_reverse_hash_lookup[stored_data]
 

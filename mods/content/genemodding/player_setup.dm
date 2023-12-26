@@ -56,11 +56,11 @@
 		var/tail_path = LAZYACCESS(tail_data, "path")
 		if(!tail_path)
 			return
-		tail_organ = new tail_path(src)
+		tail_organ = new tail_path(src, null, dna, root_bodytype)
 		add_organ(tail_organ)
 		return
 	if(!tail_organ)
-		tail_organ = new(src)
+		tail_organ = new(src, null, dna, root_bodytype)
 		add_organ(tail_organ)
 		// everything with adding the tail organ will be handled in its Initialize
 	tail_organ.tail_icon = tail_style.icon
