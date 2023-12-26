@@ -80,7 +80,8 @@
 	tag_airpump = "sec_fore_pump";
 	tag_chamber_sensor = "sec_fore_sensor";
 	tag_exterior_door = "sec_fore_outer";
-	tag_interior_door = "sec_fore_inner"
+	tag_interior_door = "sec_fore_inner";
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/eva)
@@ -214,12 +215,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/range)
 "ax" = (
-/obj/machinery/button/access{
-	command = "cycle_interior";
-	name = "interior access button";
-	pixel_x = 25;
-	pixel_y = 25
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
@@ -236,6 +231,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/button/access{
+	command = "cycle_interior";
+	name = "interior access button";
+	pixel_x = -7;
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled,
 /area/security/eva)
@@ -318,8 +319,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/security/range)
@@ -473,7 +474,8 @@
 	},
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/security/range)
@@ -727,9 +729,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallwayaux)
@@ -1526,7 +1527,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/warden)
@@ -1552,18 +1554,21 @@
 	id_tag = "security_lockdown";
 	name = "Brig Lockdown";
 	pixel_x = -28;
-	pixel_y = -36
+	pixel_y = -36;
+	dir = 4
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "HoSdoor";
 	name = "Office Door";
 	pixel_x = -28;
-	pixel_y = -24
+	pixel_y = -26;
+	dir = 4
 	},
 /obj/machinery/button/windowtint{
 	id_tag = "hos_office";
-	pixel_x = -36;
-	pixel_y = -26
+	pixel_x = -38;
+	pixel_y = -26;
+	dir = 4
 	},
 /obj/abstract/landmark/start{
 	name = "Head of Security"
@@ -1763,21 +1768,22 @@
 /obj/machinery/light,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
-	pixel_y = -32
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/button/blast_door{
-	dir = 4;
+	dir = 1;
 	id_tag = "security_lockdown";
 	name = "Brig Lockdown";
 	pixel_x = -6;
-	pixel_y = -40
+	pixel_y = -32
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 1;
 	id_tag = "warden";
 	name = "Office Shutters";
 	pixel_x = 6;
-	pixel_y = -39
+	pixel_y = -32
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -1817,7 +1823,8 @@
 "du" = (
 /obj/structure/table/woodentable,
 /obj/machinery/newscaster/security_unit{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/item/book/manual/standard_operating_procedure,
 /turf/simulated/floor/carpet,
@@ -1928,19 +1935,18 @@
 	pixel_y = 32
 	},
 /obj/item/radio/intercom/locked/ai_private{
-	dir = 4;
-	pixel_x = 32
+	dir = 8;
+	pixel_x = 22
 	},
 /obj/item/radio/intercom{
 	broadcasting = 1;
-	dir = 8;
+	dir = 4;
 	name = "Common Channel";
-	pixel_x = -21
+	pixel_x = -22
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai)
@@ -2026,7 +2032,7 @@
 /obj/machinery/faxmachine,
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/hos)
@@ -2126,7 +2132,8 @@
 	id_tag = "AICore";
 	name = "AI Maintenance Hatch";
 	pixel_x = 8;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/machinery/light/small,
 /obj/machinery/hologram/holopad,
@@ -2239,7 +2246,8 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallwayaux)
@@ -2282,7 +2290,7 @@
 /obj/item/pen/multi,
 /obj/item/radio/intercom/department/security{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/hos)
@@ -3157,7 +3165,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/foyer)
@@ -3319,8 +3327,9 @@
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "exterior access button";
-	pixel_x = -25;
-	pixel_y = -25
+	pixel_x = 7;
+	pixel_y = -22;
+	dir = 1
 	},
 /turf/simulated/floor/airless,
 /area/space)
@@ -3411,8 +3420,7 @@
 	dir = 5
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
@@ -3430,8 +3438,7 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
@@ -3531,8 +3538,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -3737,13 +3743,14 @@
 	locked = 1;
 	name = "Security Fore Internal Access"
 	},
+/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/sign/warning{
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
 	icon_state = "space";
 	name = "EXTERNAL AIRLOCK";
-	pixel_x = -32
+	pixel_x = -34;
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor,
 /area/security/eva)
 "gZ" = (
@@ -4378,12 +4385,14 @@
 	dir = 10
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -38
+	pixel_x = -8;
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
@@ -4437,11 +4446,13 @@
 	},
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -38
+	pixel_x = -8;
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/effect/floor_decal/corner/red/border,
 /turf/simulated/floor/tiled/dark,
@@ -4724,8 +4735,7 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallwayaux)
@@ -5040,8 +5050,7 @@
 	},
 /obj/effect/floor_decal/borderfloorblack/corner,
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
@@ -5075,7 +5084,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/department/security{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/warden)
@@ -5557,12 +5567,14 @@
 	dir = 10
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
+	pixel_x = 28;
+	pixel_y = 2;
+	dir = 8
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
+	pixel_x = 28;
+	pixel_y = -10;
+	dir = 8
 	},
 /obj/structure/rack/shelf/steel,
 /obj/effect/floor_decal/borderfloorblack{
@@ -5728,8 +5740,7 @@
 	pixel_y = -2
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_equiptment_storage)
@@ -5819,7 +5830,8 @@
 	announcementConsole = 1;
 	department = "Head of Security's Desk";
 	name = "Head of Security RC";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/camera/network/security{
 	dir = 1
@@ -5836,7 +5848,8 @@
 /obj/structure/closet/secure_closet/hos2,
 /obj/machinery/light,
 /obj/machinery/keycard_auth{
-	pixel_y = -28
+	pixel_y = -20;
+	dir = 1
 	},
 /obj/item/storage/box/firingpins,
 /turf/simulated/floor/wood,
@@ -6388,8 +6401,7 @@
 	dir = 6
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
@@ -6581,12 +6593,11 @@
 	dir = 4
 	},
 /obj/item/radio/intercom/department/security{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_lockerroom)
@@ -6645,12 +6656,12 @@
 /obj/item/flashlight,
 /obj/item/flashlight,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = 30
+	pixel_x = -6;
+	pixel_y = 32
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = 20
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_lockerroom)
@@ -6810,7 +6821,8 @@
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
 	icon_state = "space";
 	name = "EXTERNAL AIRLOCK";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/structure/closet/emcloset,
 /turf/simulated/floor,
@@ -7148,7 +7160,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "armorytactical";
 	name = "Tactical Armory Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
@@ -7204,8 +7217,7 @@
 /area/maintenance/station/ai)
 "ne" = (
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/wood,
 /area/security/breakroom)
@@ -7309,7 +7321,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -8542,8 +8554,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -8596,7 +8608,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -8666,7 +8678,8 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -9109,8 +9122,7 @@
 	name = "Evidence Closet"
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/forensics)
@@ -9131,8 +9143,7 @@
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/light_switch{
 	name = "light switch ";
-	pixel_x = 10;
-	pixel_y = 36
+	pixel_y = 25
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/forensics)
@@ -9322,7 +9333,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -9646,8 +9657,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -9874,7 +9885,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-8"
@@ -10830,8 +10841,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -10887,15 +10897,17 @@
 /obj/item/roller,
 /obj/item/storage/box/autoinjectors,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
+	pixel_x = 28;
+	pixel_y = 2;
+	dir = 8
 	},
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 28;
+	pixel_y = -9;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -10939,7 +10951,8 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -11132,7 +11145,8 @@
 /obj/structure/table,
 /obj/item/ashtray/glass,
 /obj/machinery/newscaster{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 4
 	},
 /obj/item/deck/cards,
 /obj/effect/floor_decal/borderfloor{
@@ -11437,12 +11451,14 @@
 	pixel_y = 5
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
+	pixel_x = 28;
+	pixel_y = 2;
+	dir = 8
 	},
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
+	pixel_x = 28;
+	pixel_y = -9;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -12056,8 +12072,8 @@
 "vf" = (
 /obj/machinery/network/requests_console{
 	department = "Cargo Bay";
-	pixel_x = -30;
-	pixel_y = -1
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
@@ -12167,7 +12183,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -12327,7 +12344,7 @@
 /obj/machinery/recharge_station,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/security/lobby)
@@ -12381,7 +12398,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/security/lobby)
@@ -12477,8 +12494,8 @@
 "vQ" = (
 /obj/structure/table/woodentable,
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
 /area/hallway/station/upper)
@@ -12589,7 +12606,8 @@
 	dir = 4
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
@@ -12619,7 +12637,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
@@ -12705,7 +12723,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
 /area/security/lobby)
@@ -12815,7 +12833,8 @@
 /area/quartermaster/delivery)
 "wF" = (
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /obj/machinery/camera/network/tether{
 	dir = 4
@@ -12931,7 +12950,8 @@
 	dir = 8
 	},
 /obj/machinery/newscaster/security_unit{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/lobby)
@@ -12968,7 +12988,8 @@
 /obj/machinery/button/alternate/door{
 	id_tag = "BrigFoyer";
 	name = "Brig Foyer";
-	pixel_x = -6
+	pixel_x = -6;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/security/lobby)
@@ -13635,7 +13656,8 @@
 	dir = 6
 	},
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /obj/machinery/camera/network/tether{
 	dir = 4
@@ -13863,7 +13885,8 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /obj/item/storage/briefcase{
 	pixel_x = -2;
@@ -13903,10 +13926,12 @@
 /obj/structure/flora/pottedplant/stoutbush,
 /obj/machinery/button/windowtint{
 	id_tag = "lawyer_blast";
-	pixel_y = -36
+	pixel_y = -36;
+	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
@@ -13935,7 +13960,8 @@
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
 /obj/machinery/newscaster{
-	pixel_x = 27
+	pixel_x = 27;
+	dir = 4
 	},
 /obj/item/storage/briefcase{
 	pixel_x = 3
@@ -14433,7 +14459,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/machinery/camera/network/cargo{
 	c_tag = "CRG - Cargo Office South";
@@ -14460,8 +14487,9 @@
 "zb" = (
 /obj/structure/table,
 /obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = -24
+	pixel_x = -8;
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/item/eftpos/departmental/service{
 	dir = 1
@@ -14973,9 +15001,8 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 4
@@ -15102,8 +15129,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -15167,8 +15193,7 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 4
@@ -15520,7 +15545,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -15659,7 +15684,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "VaultAc";
 	name = "Vault Blast Door";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/nuke_storage)
@@ -16490,7 +16516,8 @@
 /area/maintenance/station/cargo)
 "CB" = (
 /obj/machinery/light_switch{
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/structure/table/steel,
 /obj/item/storage/box/lights/mixed,
@@ -16927,7 +16954,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/medical/psych)
@@ -17068,7 +17096,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 8;
-	pixel_x = 24
+	pixel_x = 22
 	},
 /obj/structure/sign/directions/security{
 	dir = 1;
@@ -17237,8 +17265,7 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /obj/machinery/light{
 	dir = 8
@@ -17544,7 +17571,8 @@
 	dir = 5
 	},
 /obj/machinery/computer/cryopod/gateway{
-	pixel_x = 32
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/machinery/gateway{
 	dir = 5
@@ -17578,7 +17606,8 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/nosmoking_1{
-	pixel_x = -31
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/wood/sif,
 /area/medical/reception)
@@ -17830,7 +17859,8 @@
 	id_tag = "cargo_bay";
 	name = "cargo bay hatch controller";
 	pixel_x = 30;
-	tag_door = "cargo_bay_door"
+	tag_door = "cargo_bay_door";
+	dir = 8
 	},
 /obj/machinery/camera/network/cargo{
 	c_tag = "CRG - Cargo Bay East";
@@ -17864,7 +17894,8 @@
 	pixel_y = -22
 	},
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 6
@@ -17917,7 +17948,8 @@
 /area/tether/station/stairs_three)
 "Fu" = (
 /obj/structure/sign/deck/third{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/open,
 /area/tether/station/stairs_three)
@@ -18209,6 +18241,32 @@
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/button/windowtint{
+	dir = 4;
+	id_tag = "surgeryobs";
+	pixel_x = -27;
+	pixel_y = -5
+	},
+/obj/machinery/light_switch{
+	name = "light switch ";
+	pixel_x = -27;
+	pixel_y = 5;
+	dir = 4
+	},
+/obj/machinery/button/alternate/door/bolts{
+	dir = 4;
+	id_tag = "theaterdoorlock";
+	name = "Theater Door Locks";
+	pixel_x = -37;
+	pixel_y = -5
+	},
+/obj/machinery/button/alternate{
+	id_tag = "surgeryobs";
+	name = "Surgery Emergency Shutters";
+	pixel_x = -37;
+	pixel_y = 5;
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
 "FP" = (
@@ -18592,7 +18650,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
@@ -18688,7 +18746,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -19353,7 +19412,8 @@
 	id_tag = "chemistry";
 	name = "Chemistry Shutters";
 	pixel_x = -6;
-	pixel_y = -24
+	pixel_y = -24;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
@@ -19771,7 +19831,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "qm_warehouse";
 	name = "Warehouse Door Control";
-	pixel_x = 26
+	pixel_x = 26;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/warehouse)
@@ -19779,7 +19840,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "qm_warehouse";
 	name = "Warehouse Door Control";
-	pixel_x = -26
+	pixel_x = -26;
+	dir = 4
 	},
 /obj/machinery/camera/network/cargo{
 	dir = 4
@@ -20283,7 +20345,8 @@
 /obj/machinery/cell_charger,
 /obj/machinery/network/requests_console{
 	department = "Cargo Bay";
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/storage)
@@ -20456,7 +20519,8 @@
 	},
 /obj/structure/iv_drip,
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 10
@@ -21170,7 +21234,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
@@ -21198,9 +21262,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
@@ -21564,7 +21627,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -21579,7 +21642,8 @@
 /obj/item/hand_labeler,
 /obj/item/stack/package_wrap/twenty_five,
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay_primary_storage)
@@ -22001,7 +22065,8 @@
 	dir = 8
 	},
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22471,7 +22536,8 @@
 /obj/effect/floor_decal/corner/white/border,
 /obj/machinery/button/windowtint{
 	id_tag = "surgeryobs2";
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
@@ -22678,7 +22744,8 @@
 /obj/machinery/button/windowtint{
 	id_tag = "cmooffice_b";
 	pixel_x = -20;
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22699,7 +22766,7 @@
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -32
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22712,7 +22779,8 @@
 	},
 /obj/machinery/photocopier,
 /obj/machinery/keycard_auth{
-	pixel_y = -28
+	pixel_y = -20;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22724,7 +22792,8 @@
 	dir = 10
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/machinery/network/relay/wall_mounted/lighthouse{
 	dir = 1;
@@ -22982,8 +23051,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 24
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -23009,7 +23077,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -23021,7 +23089,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -24337,7 +24405,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -24446,7 +24514,8 @@
 	},
 /obj/machinery/vending/medical,
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/ward)
@@ -24469,7 +24538,8 @@
 /area/medical/psych/inside)
 "Qs" = (
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -24524,7 +24594,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_a)
@@ -24569,7 +24640,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_b)
@@ -24614,7 +24686,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_c)
@@ -24805,28 +24878,28 @@
 	pixel_y = 22
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 1";
 	name = "Cell 1 Door";
 	pixel_x = -24;
 	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 2";
 	name = "Cell 2 Door";
 	pixel_x = -36;
 	pixel_y = 7
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 3";
 	name = "Cell 3 Door";
 	pixel_x = -24;
 	pixel_y = -7
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 4";
 	name = "Cell 4 Door";
 	pixel_x = -36;
@@ -25113,7 +25186,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "armoryred";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /obj/machinery/fabricator,
 /turf/simulated/floor/tiled/dark,
@@ -25122,7 +25196,8 @@
 /obj/machinery/button/windowtint{
 	id_tag = "sec_processing";
 	pixel_x = 26;
-	pixel_y = 6
+	pixel_y = 6;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/security/security_processing)
@@ -25137,7 +25212,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "armorytactical";
 	name = "Tactical Armory Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/red)
@@ -25276,7 +25352,8 @@
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "exterior access button";
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled,
@@ -25560,7 +25637,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -25668,7 +25745,8 @@
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "exterior access button";
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor,
@@ -25786,7 +25864,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -26167,7 +26245,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "yard_riot 2";
@@ -26289,8 +26368,7 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/locked/ai_private{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 20
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/foyer)
@@ -26510,7 +26588,8 @@
 /obj/item/clothing/suit/straight_jacket,
 /obj/item/clothing/mask/muzzle,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 10
@@ -26657,30 +26736,6 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/button/alternate{
-	id_tag = "surgeryobs";
-	name = "Surgery Emergency Shutters";
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/machinery/button/windowtint{
-	dir = 4;
-	id_tag = "surgeryobs";
-	pixel_x = 5;
-	pixel_y = -5
-	},
-/obj/machinery/light_switch{
-	name = "light switch ";
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/button/alternate/door/bolts{
-	dir = 4;
-	id_tag = "theaterdoorlock";
-	name = "Theater Door Locks";
-	pixel_x = -5;
-	pixel_y = -5
-	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/item/paper{
 	info = "We misplaced the manual CMF sent with this new suite. Have them stand in the colored squares before you cycle? Reminder: Pin this to the board. -Sergio";
@@ -26728,7 +26783,7 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
@@ -26773,7 +26828,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/security/hallway)
@@ -27379,7 +27434,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -27639,7 +27694,8 @@
 	tag_airpump = "belt_dock_vent";
 	tag_chamber_sensor = "belt_dock_sensor";
 	tag_exterior_door = "belt_dock_exterior";
-	tag_interior_door = "belt_dock_interior"
+	tag_interior_door = "belt_dock_interior";
+	dir = 8
 	},
 /obj/machinery/light{
 	dir = 4
@@ -38923,7 +38979,7 @@ aa
 aa
 ed
 TE
-gg
+gj
 aU
 aU
 aU
@@ -39079,7 +39135,7 @@ aa
 aa
 ed
 TE
-gj
+gg
 gl
 gx
 bb

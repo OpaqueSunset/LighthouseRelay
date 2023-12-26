@@ -288,7 +288,8 @@
 	id_tag = "specops_shuttle_fore";
 	name = "forward docking hatch controller";
 	pixel_y = -25;
-	tag_door = "specops_shuttle_fore_hatch"
+	tag_door = "specops_shuttle_fore_hatch";
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
@@ -448,7 +449,7 @@
 	dir = 1;
 	frequency = 1443;
 	name = "Spec Ops Intercom";
-	pixel_y = -28
+	pixel_y = -30
 	},
 /turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
@@ -467,7 +468,8 @@
 	id_tag = "specops_shuttle_port";
 	name = "port docking hatch controller";
 	pixel_y = -25;
-	tag_door = "specops_shuttle_port_hatch"
+	tag_door = "specops_shuttle_port_hatch";
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
@@ -3035,9 +3037,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
@@ -3520,11 +3521,10 @@
 "gL" = (
 /obj/item/radio/intercom{
 	broadcasting = 1;
-	dir = 1;
 	frequency = 1443;
 	listening = 0;
 	name = "Spec Ops Intercom";
-	pixel_y = 28
+	pixel_y = 20
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
@@ -3796,7 +3796,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC5";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -3807,7 +3808,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC4";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -3897,7 +3899,8 @@
 /obj/machinery/light,
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "anesthetic closet";
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /obj/item/tank/anesthetic,
 /obj/item/tank/anesthetic,
@@ -4754,7 +4757,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "HEAVY";
 	name = "SHIT IS LIT";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4821,7 +4825,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC2";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5240,9 +5245,8 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -6904,7 +6908,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -6929,7 +6934,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "ArmouryC";
 	name = "Armoury Access";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
@@ -7512,9 +7518,8 @@
 /obj/machinery/recharger,
 /obj/item/chems/spray/cleaner,
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /obj/item/storage/box/donut,
 /obj/effect/floor_decal/borderfloor{
@@ -9126,7 +9131,7 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
@@ -9415,7 +9420,8 @@
 	})
 "sC" = (
 /obj/structure/closet/hydrant{
-	pixel_x = -30
+	pixel_x = -30;
+	dir = 4
 	},
 /obj/item/storage/firstaid/o2{
 	pixel_x = 4;
@@ -9537,7 +9543,8 @@
 	dir = 8
 	},
 /obj/machinery/newscaster{
-	pixel_x = 29
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
@@ -9698,10 +9705,9 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -10071,7 +10077,8 @@
 	dir = 6
 	},
 /obj/machinery/newscaster{
-	pixel_x = 29
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
@@ -10235,7 +10242,8 @@
 "ua" = (
 /obj/structure/bed/chair/shuttle,
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = -28
+	pixel_x = -28;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/white{
 	color = "#cccccc"
@@ -10246,7 +10254,8 @@
 "ub" = (
 /obj/structure/bed/chair/shuttle,
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/white{
 	color = "#cccccc"
@@ -10365,7 +10374,7 @@
 /area/centcom/main_hall)
 "ut" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/structure/flora/pottedplant{
 	icon_state = "plant-22"
@@ -10415,7 +10424,7 @@
 /area/centcom/main_hall)
 "uz" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
@@ -10766,7 +10775,8 @@
 	dir = 1
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = -28
+	pixel_x = -28;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/white{
 	color = "#cccccc"
@@ -10779,7 +10789,8 @@
 	dir = 1
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/white{
 	color = "#cccccc"
@@ -11193,10 +11204,9 @@
 /area/centcom/security)
 "wa" = (
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /obj/machinery/photocopier,
 /obj/structure/reagent_dispensers/peppertank{
@@ -11312,10 +11322,9 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -11529,7 +11538,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "turrets";
 	name = "Turret Doors";
-	pixel_x = -23
+	pixel_x = -23;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -11690,7 +11700,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "RiotCon";
 	name = "Riot Control";
-	pixel_x = -23
+	pixel_x = -23;
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -11723,10 +11734,9 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -13810,7 +13820,8 @@
 /area/centcom/security)
 "Aw" = (
 /obj/machinery/newscaster{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -13862,7 +13873,8 @@
 /area/centcom/security/residential)
 "AE" = (
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -27;
+	dir = 8
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -13993,10 +14005,9 @@
 /area/centcom/security/residential)
 "AS" = (
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -14061,10 +14072,9 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -14079,7 +14089,8 @@
 /area/centcom/security/residential)
 "AY" = (
 /obj/machinery/status_display{
-	pixel_x = -31
+	pixel_x = -31;
+	dir = 8
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -14978,10 +14989,9 @@
 	dir = 9
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	frequency = 1475;
 	name = "Station Intercom (Security)";
-	pixel_y = 27
+	pixel_y = 20
 	},
 /turf/unsimulated/floor{
 	dir = 5;

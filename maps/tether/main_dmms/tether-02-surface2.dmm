@@ -161,7 +161,7 @@
 "aC" = (
 /obj/structure/catwalk,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
@@ -917,7 +917,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 27
+	pixel_x = 29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/gateway)
@@ -2130,7 +2131,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2243,7 +2244,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2377,7 +2378,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -3224,7 +3226,7 @@
 	},
 /obj/machinery/space_heater,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
@@ -4239,7 +4241,8 @@
 	dir = 8
 	},
 /obj/structure/closet/hydrant{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -4254,7 +4257,8 @@
 	dir = 4
 	},
 /obj/structure/closet/hydrant{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -4758,7 +4762,8 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/caution{
-	pixel_x = 32
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -4862,8 +4867,8 @@
 	announcementConsole = 1;
 	department = "Research Director's Desk";
 	name = "Research Director RC";
-	pixel_x = 30;
-	pixel_y = -2
+	pixel_x = 32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -5055,13 +5060,15 @@
 /obj/machinery/button/windowtint{
 	id_tag = "rd_office";
 	pixel_x = -24;
-	pixel_y = -16
+	pixel_y = -16;
+	dir = 4
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "RDdoor";
 	name = "RD Office Door Control";
 	pixel_x = -30;
-	pixel_y = -18
+	pixel_y = -18;
+	dir = 4
 	},
 /obj/abstract/landmark/start{
 	name = "Research Director"
@@ -5217,7 +5224,7 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -5518,7 +5525,7 @@
 "mz" = (
 /obj/structure/catwalk,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
@@ -14671,7 +14678,7 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
@@ -17544,6 +17551,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/engineering/lower/breakroom)
+"VC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/rust,
+/obj/structure/sign/warning/caution{
+	dir = 4;
+	pixel_x = -34
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/lower/rnd)
 "VI" = (
 /obj/machinery/light/fixture{
 	dir = 4
@@ -17809,7 +17825,8 @@
 /area/maintenance/asmaint2)
 "YN" = (
 /obj/structure/closet/hydrant{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -26119,7 +26136,7 @@ ww
 Ku
 hb
 ac
-iw
+VC
 jF
 il
 ac

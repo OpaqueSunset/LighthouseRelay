@@ -7563,7 +7563,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 5
@@ -8639,7 +8639,7 @@
 "aqx" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/borderfloor{
@@ -13868,7 +13868,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_stairs_one)
@@ -14842,7 +14842,9 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 8
+	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
@@ -15209,7 +15211,9 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 8
+	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
@@ -16292,7 +16296,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
@@ -16578,7 +16582,6 @@
 /area/engineering/atmos/processing)
 "aFk" = (
 /obj/structure/sign/warning/shock{
-	dir = 1;
 	pixel_y = 32
 	},
 /turf/exterior/sif_growth,
@@ -17400,7 +17403,7 @@
 /obj/machinery/reagentgrinder,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
@@ -19293,7 +19296,7 @@
 "aLv" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -20844,7 +20847,7 @@
 "aPs" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -21133,7 +21136,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -21152,7 +21155,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
@@ -23498,7 +23501,7 @@
 "bnK" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -23626,7 +23629,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
@@ -32921,7 +32924,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)

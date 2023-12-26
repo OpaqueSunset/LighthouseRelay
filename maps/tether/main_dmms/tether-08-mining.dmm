@@ -668,7 +668,8 @@
 	dir = 8
 	},
 /obj/structure/closet/hydrant{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/network/relay/long_range{
 	initial_network_id = "LighthouseRelay"
@@ -1211,7 +1212,8 @@
 "cv" = (
 /obj/machinery/embedded_controller/radio/airlock/phoron{
 	id_tag = "mining_outpost_airlock";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/machinery/airlock_sensor/phoron{
 	id_tag = "mining_outpost_airlock_sensor";

@@ -116,7 +116,7 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_showers)
@@ -288,7 +288,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
@@ -324,7 +324,8 @@
 /obj/machinery/button/alternate/door/bolts{
 	id_tag = "engine_electrical_maintenance";
 	name = "Door Bolt Control";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
@@ -743,7 +744,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/techmaint,
@@ -886,7 +887,8 @@
 "abU" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	id_tag = "expshuttle_dock";
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/machinery/camera/network/tether{
 	dir = 8
@@ -1259,7 +1261,8 @@
 	},
 /obj/structure/table,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -24
+	pixel_x = -24;
+	dir = 4
 	},
 /obj/item/pickaxe,
 /turf/simulated/floor/tiled,
@@ -1293,7 +1296,7 @@
 	},
 /obj/structure/table/bench/steel,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
@@ -1619,7 +1622,8 @@
 	},
 /obj/structure/closet/secure_closet/medical_wall{
 	name = "O- Blood Locker";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/item/chems/ivbag/blood/ominus,
 /obj/item/chems/ivbag/blood/ominus,
@@ -2012,7 +2016,8 @@
 	pixel_y = 32
 	},
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -2475,7 +2480,8 @@
 "afj" = (
 /obj/machinery/light,
 /obj/machinery/newscaster{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -3069,7 +3075,7 @@
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/lounge/kitchen)
@@ -4247,7 +4253,8 @@
 	dir = 8
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
@@ -4263,7 +4270,8 @@
 	dir = 4
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)
@@ -4435,7 +4443,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4472,7 +4480,8 @@
 /area/engineering/storage)
 "ajJ" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/machinery/light/small{
 	dir = 4
@@ -4567,7 +4576,8 @@
 /area/library)
 "ajW" = (
 /obj/machinery/newscaster{
-	pixel_x = -30
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/library)
@@ -4857,7 +4867,8 @@
 /obj/structure/table/woodentable,
 /obj/machinery/librarycomp,
 /obj/machinery/light_switch{
-	pixel_y = -21
+	pixel_y = -21;
+	dir = 1
 	},
 /turf/simulated/floor/wood,
 /area/library)
@@ -4882,7 +4893,7 @@
 	dir = 1
 	},
 /obj/machinery/status_display{
-	dir = 8;
+	dir = 4;
 	pixel_x = 32
 	},
 /turf/simulated/floor/wood,
@@ -4894,8 +4905,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/status_display{
-	pixel_y = 32;
-	dir = 1
+	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
 /area/library)
@@ -4930,7 +4940,8 @@
 /obj/machinery/button/windowtint{
 	id_tag = "library_study";
 	pixel_x = 26;
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /obj/item/radio/intercom{
 	pixel_y = -30;
@@ -4942,7 +4953,8 @@
 /obj/structure/table/woodentable,
 /obj/machinery/light/small,
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = 1;
@@ -5109,7 +5121,8 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
@@ -5118,7 +5131,8 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/recharger,
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/break_room)
@@ -5241,8 +5255,7 @@
 "alN" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /obj/vehicle/train/cargo/trolley,
 /turf/simulated/floor/tiled/monotile,
@@ -5480,7 +5493,8 @@
 /area/engineering/hallway)
 "amt" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
@@ -5576,7 +5590,8 @@
 	},
 /obj/item/shovel,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -24
+	pixel_x = -24;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 10
@@ -5617,7 +5632,8 @@
 	desc = "A remote control-switch for the engine control room blast doors.";
 	id_tag = "EngineEmitterPortWest2";
 	name = "Engine Room Blast Doors";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
@@ -6035,8 +6051,7 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/backup)
@@ -8476,7 +8491,7 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/break_room)
@@ -8615,7 +8630,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/workshop)
@@ -9133,7 +9148,7 @@
 /obj/item/pen/multi,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/break_room)
@@ -9380,7 +9395,8 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/machinery/newscaster{
-	pixel_x = -30
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -9521,7 +9537,8 @@
 /area/maintenance/station/eng_lower)
 "azM" = (
 /obj/machinery/light_switch{
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/structure/table/steel,
 /obj/item/storage/box/lights/mixed,
@@ -9716,7 +9733,8 @@
 /obj/structure/table/reinforced,
 /obj/machinery/faxmachine,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -10081,7 +10099,8 @@
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "exterior access button";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/shield_diffuser,
@@ -10282,10 +10301,12 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /obj/machinery/keycard_auth{
-	pixel_x = -28
+	pixel_x = -24;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -11052,7 +11073,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -11464,7 +11485,8 @@
 /area/tether/station/dock_one)
 "aFr" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -11556,7 +11578,8 @@
 	tag_airpump = "eng_starboard_pump";
 	tag_chamber_sensor = "eng_starboard_sensor";
 	tag_exterior_door = "eng_starboard_outer";
-	tag_interior_door = "eng_starboard_inner"
+	tag_interior_door = "eng_starboard_inner";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/engineering_airlock)
@@ -12087,7 +12110,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
@@ -12378,8 +12401,7 @@
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
@@ -13214,7 +13236,8 @@
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
 	icon_state = "space";
 	name = "EXTERNAL AIRLOCK";
-	pixel_x = -32
+	pixel_x = -34;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_airlock)
@@ -13701,13 +13724,15 @@
 	id_tag = "englockdown";
 	name = "Engineering Lockdown";
 	pixel_x = 26;
-	pixel_y = -12
+	pixel_y = -12;
+	dir = 8
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "atmoslockdown";
 	name = "Atmospherics Lockdown";
 	pixel_x = 38;
-	pixel_y = -12
+	pixel_y = -12;
+	dir = 8
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "CEdoor";
@@ -13835,7 +13860,8 @@
 	dir = 10
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/atrium)
@@ -13844,7 +13870,8 @@
 /obj/item/stack/package_wrap/twenty_five,
 /obj/item/hand_labeler,
 /obj/machinery/status_display{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
@@ -14105,7 +14132,8 @@
 	announcementConsole = 1;
 	department = "Chief Engineer's Desk";
 	name = "Chief Engineer RC";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
@@ -14122,21 +14150,23 @@
 	id_tag = "EngineVent";
 	name = "Engine Ventillatory Control";
 	pixel_x = 6;
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/button/alternate/door/bolts{
 	desc = "A remote control-switch for the engine core airlock hatch bolts.";
 	id_tag = "engine_access_hatch";
 	name = "Engine Hatch Bolt Control";
 	pixel_x = -6;
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
 "aVG" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
@@ -14170,7 +14200,8 @@
 	pixel_y = -24
 	},
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -14188,7 +14219,8 @@
 	dir = 1
 	},
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engineering_monitoring)
@@ -14315,7 +14347,8 @@
 /obj/machinery/button/mass_driver{
 	id_tag = "enginecore";
 	name = "Emergency Core Eject";
-	pixel_y = -21
+	pixel_y = -21;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/heads/chief)
@@ -14474,7 +14507,8 @@
 /obj/structure/table/reinforced,
 /obj/item/megaphone,
 /obj/machinery/keycard_auth{
-	pixel_w = 28
+	pixel_w = 28;
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/chief)
@@ -15389,7 +15423,7 @@
 /area/hallway/station/atrium)
 "bev" = (
 /obj/structure/noticeboard{
-	pixel_y = -32
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -15907,7 +15941,7 @@
 "bhc" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -16339,7 +16373,8 @@
 	dir = 9
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -16563,7 +16598,8 @@
 "bmM" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -16630,7 +16666,8 @@
 /area/hallway/station/docks)
 "bnv" = (
 /obj/structure/noticeboard{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -16696,7 +16733,8 @@
 	},
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -16753,7 +16791,7 @@
 "boc" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -16886,8 +16924,8 @@
 /area/crew_quarters/heads/hop)
 "boU" = (
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 4
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -17072,7 +17110,8 @@
 	dir = 4
 	},
 /obj/structure/fireaxecabinet{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -17448,7 +17487,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "bridge blast";
 	name = "Bridge Blastdoors";
-	pixel_y = -20
+	pixel_y = -20;
+	dir = 1
 	},
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
@@ -17506,7 +17546,8 @@
 	announcementConsole = 1;
 	department = "Bridge";
 	name = "Bridge RC";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -17739,7 +17780,8 @@
 /obj/item/folder/blue,
 /obj/item/folder/red,
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -17764,7 +17806,8 @@
 	announcementConsole = 1;
 	department = "Bridge";
 	name = "Bridge RC";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -17857,7 +17900,8 @@
 /area/bridge_hallway)
 "bwx" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
@@ -18049,7 +18093,8 @@
 	announcementConsole = 1;
 	department = "Bridge";
 	name = "Bridge RC";
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/structure/closet/emcloset,
 /obj/machinery/status_display{
@@ -18119,7 +18164,8 @@
 	pixel_y = 2
 	},
 /obj/structure/mirror{
-	pixel_x = -28
+	pixel_x = -29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/captain)
@@ -18431,7 +18477,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_two)
@@ -18441,7 +18487,8 @@
 	dir = 1
 	},
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -18470,7 +18517,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
@@ -19328,7 +19376,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/dock_one)
@@ -19392,7 +19440,8 @@
 	tag_airpump = "trade_shuttle_dock_pump";
 	tag_chamber_sensor = "trade_shuttle_dock_sensor";
 	tag_exterior_door = "trade_shuttle_dock_outer";
-	tag_interior_door = "trade_shuttle_dock_inner"
+	tag_interior_door = "trade_shuttle_dock_inner";
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/station/dock_one)
@@ -19880,7 +19929,8 @@
 	dir = 4
 	},
 /obj/machinery/newscaster{
-	pixel_x = -30
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/docks)
@@ -20134,8 +20184,8 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_meeting)
@@ -20506,8 +20556,8 @@
 /obj/effect/floor_decal/corner/purple/border,
 /obj/item/paper_bin,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
@@ -20637,14 +20687,15 @@
 "jcG" = (
 /obj/machinery/button/windowtint{
 	id_tag = "pathfinder_office";
-	pixel_x = 26;
-	pixel_y = -26
+	pixel_y = -20;
+	dir = 1;
+	pixel_x = 8
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
@@ -20789,7 +20840,8 @@
 /area/tether/station/explorer_prep)
 "knV" = (
 /obj/machinery/newscaster{
-	pixel_x = -27
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -20803,8 +20855,8 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -28
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
@@ -21057,7 +21109,7 @@
 "lLt" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -21637,7 +21689,7 @@
 "oJC" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/camera/network/tether{
 	dir = 1
@@ -22080,7 +22132,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled,
@@ -22302,7 +22354,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/station/explorer_medical)
@@ -22618,7 +22670,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
@@ -22925,7 +22977,7 @@
 "wCH" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -23107,7 +23159,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/tiled,
@@ -23158,7 +23210,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /turf/simulated/floor/shuttle/black,
 /area/shuttle/excursion/tether)

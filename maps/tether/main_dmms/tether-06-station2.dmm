@@ -136,7 +136,8 @@
 /obj/machinery/button/alternate/door{
 	id_tag = "visitdoor";
 	name = "Visitation Access";
-	pixel_y = -24
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -443,7 +444,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 4";
 	name = "Cell 4 Door";
 	pixel_x = -28
@@ -472,7 +473,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 3";
 	name = "Cell 3 Door";
 	pixel_x = -28
@@ -502,7 +503,7 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 2";
 	name = "Cell 2 Door";
 	pixel_x = -28
@@ -580,7 +581,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/button/blast_door{
-	dir = 8;
+	dir = 4;
 	id_tag = "Cell 1";
 	name = "Cell 1 Door";
 	pixel_x = -28
@@ -980,7 +981,8 @@
 	id_tag = "prison_access";
 	name = "Brig Auxillary Access";
 	pixel_x = -24;
-	pixel_y = -8
+	pixel_y = -8;
+	dir = 4
 	},
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -1073,7 +1075,7 @@
 	id_tag = "prison_access";
 	name = "Brig Auxillary Access";
 	pixel_x = 8;
-	pixel_y = 24
+	pixel_y = 30
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig/visitation)
@@ -1454,13 +1456,15 @@
 	id_tag = "brigouter";
 	name = "Outer Brig Doors";
 	pixel_x = 6;
-	pixel_y = -24
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "briginner";
 	name = "Inner Brig Doors";
 	pixel_x = -6;
-	pixel_y = -24
+	pixel_y = -24;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -1645,7 +1649,7 @@
 	},
 /obj/structure/bed/chair,
 /obj/item/radio/intercom/locked/confessional{
-	pixel_y = 30
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -1775,7 +1779,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/locked/confessional{
-	pixel_y = -25
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -1906,7 +1911,8 @@
 "dg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/chapel_morgue)
@@ -2821,7 +2827,8 @@
 	dir = 8
 	},
 /obj/structure/sign/warning/deathsposal{
-	pixel_x = -32
+	pixel_x = -34;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
@@ -3178,7 +3185,8 @@
 	},
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
@@ -3543,7 +3551,8 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/computer/cryopod{
-	pixel_x = -32
+	pixel_x = -24;
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/locker_room)
@@ -3932,7 +3941,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -4011,14 +4021,14 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/locked/ai_private{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_upload)
 "hn" = (
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /obj/machinery/porta_turret/ai_defense,
 /turf/simulated/floor/bluegrid,
@@ -4439,7 +4449,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/chapel/main)
@@ -5813,7 +5824,8 @@
 	pixel_y = 32
 	},
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
@@ -6054,7 +6066,8 @@
 /area/storage/tech)
 "lx" = (
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/storage/tech)
@@ -6242,8 +6255,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom/locked/ai_private{
-	dir = 4;
-	pixel_x = 32
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_upload_foyer)
@@ -7205,7 +7218,8 @@
 "nv" = (
 /obj/machinery/network/requests_console{
 	department = "Tech storage";
-	pixel_x = -28
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/machinery/camera/network/engineering{
 	dir = 4
@@ -7454,7 +7468,8 @@
 /area/hallway/station/starboard)
 "nV" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -7509,7 +7524,8 @@
 /area/storage/tech)
 "nZ" = (
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor,
@@ -8229,7 +8245,8 @@
 /area/maintenance/station/eng_upper)
 "pk" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -8373,7 +8390,8 @@
 	},
 /obj/machinery/network/requests_console{
 	department = "EVA";
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/ai_monitored/storage/eva)
@@ -9211,7 +9229,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/structure/rack,
 /obj/item/suit_cooling_unit,
@@ -10100,7 +10119,8 @@
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/sign/warning/deathsposal{
-	pixel_x = 32
+	pixel_x = 34;
+	dir = 8
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -10204,7 +10224,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/ai_monitored/storage/eva)
@@ -10643,7 +10664,8 @@
 	pixel_y = 2
 	},
 /obj/machinery/newscaster{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -10715,7 +10737,8 @@
 /obj/machinery/network/requests_console{
 	department = "Virology";
 	name = "Virology Requests Console";
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
@@ -10865,7 +10888,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/tether/station/stairs_two)
@@ -10986,8 +11009,8 @@
 /area/medical/virologyisolation)
 "uB" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 5;
-	pixel_y = -32
+	pixel_y = -29;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyisolation)
@@ -11065,14 +11088,15 @@
 /turf/simulated/floor/tiled,
 /area/ai_monitored/storage/eva)
 "uK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5
+	},
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "interior access button";
-	pixel_x = 26;
-	pixel_y = 26
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 5
+	pixel_x = 20;
+	dir = 8;
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/ai_monitored/storage/eva)
@@ -11090,7 +11114,8 @@
 	desc = "A warning sign which reads 'EXTERNAL AIRLOCK'";
 	icon_state = "space";
 	name = "EXTERNAL AIRLOCK";
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
@@ -11098,7 +11123,7 @@
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	id_tag = "eva_port_airlock";
 	name = "Airlock Console";
-	pixel_y = 30;
+	pixel_y = 24;
 	tag_airpump = "eva_port_pump";
 	tag_chamber_sensor = "eva_port_sensor";
 	tag_exterior_door = "eva_port_outer";
@@ -11117,7 +11142,8 @@
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "eva_port_sensor";
-	pixel_y = -25
+	pixel_y = -18;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/ai_monitored/storage/eva)
@@ -11128,12 +11154,6 @@
 	name = "EVA External Access"
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/button/access{
-	command = "cycle_exterior";
-	name = "exterior access button";
-	pixel_x = 4;
-	pixel_y = -26
-	},
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
@@ -11142,7 +11162,8 @@
 /area/tether/station/stairs_two)
 "uR" = (
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -11227,7 +11248,8 @@
 /obj/item/folder,
 /obj/item/hand_labeler,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/item/radio{
 	pixel_x = -4
@@ -11318,7 +11340,8 @@
 /obj/machinery/disposal,
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/structure/sign/warning/deathsposal{
-	pixel_x = 32
+	pixel_x = 34;
+	dir = 8
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -11563,7 +11586,8 @@
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "Virology Quarantine Access Button";
-	pixel_x = 24
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/structure/cable/green{
@@ -11725,8 +11749,8 @@
 /area/medical/biostorage)
 "vV" = (
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 9
@@ -11772,18 +11796,22 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/unsimulated/floor/techfloor_grid,
 /area/medical/morgue)
-"wb" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall/r_wall,
-/area/medical/virologyaccess)
 "wc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
 /obj/structure/closet/l3closet/virology,
 /obj/item/clothing/mask/gas,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virologyaccess)
 "wd" = (
@@ -11838,7 +11866,8 @@
 	name = "Virology Quarantine Access Console";
 	pixel_x = 22;
 	tag_exterior_door = "virologyq_airlock_exterior";
-	tag_interior_door = "virologyq_airlock_interior"
+	tag_interior_door = "virologyq_airlock_interior";
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
@@ -11848,7 +11877,8 @@
 /obj/machinery/button/access{
 	command = "cycle_interior";
 	name = "Virology Quarantine Access Button";
-	pixel_x = -28
+	pixel_x = -28;
+	dir = 4
 	},
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -11913,7 +11943,8 @@
 /obj/item/clothing/accessory/stethoscope,
 /obj/item/clothing/accessory/stethoscope,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/item/clothing/accessory/stethoscope,
 /turf/simulated/floor/tiled,
@@ -12110,10 +12141,11 @@
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	id_tag = "virology_airlock_control";
 	name = "Virology Access Console";
-	pixel_x = 8;
+	pixel_x = 7;
 	pixel_y = -22;
 	tag_exterior_door = "virology_airlock_exterior";
-	tag_interior_door = "virology_airlock_interior"
+	tag_interior_door = "virology_airlock_interior";
+	dir = 1
 	},
 /obj/structure/hygiene/sink{
 	dir = 8;
@@ -12153,7 +12185,8 @@
 	desc = "A remote control-switch for shutters.";
 	id_tag = "virologyquar";
 	name = "Virology Emergency Lockdown Control";
-	pixel_y = -28
+	pixel_y = -28;
+	dir = 1
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -12336,7 +12369,8 @@
 "wQ" = (
 /obj/structure/table/woodentable,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/machinery/computer/guestpass{
 	pixel_y = 32
@@ -12670,7 +12704,7 @@
 	command = "cycle_interior";
 	name = "Virology Access Button";
 	pixel_x = 8;
-	pixel_y = 28
+	pixel_y = 24
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -12927,7 +12961,8 @@
 "yd" = (
 /obj/structure/table/steel,
 /obj/machinery/light_switch{
-	pixel_x = 26
+	pixel_x = 26;
+	dir = 8
 	},
 /obj/machinery/camera/network/medbay{
 	dir = 8
@@ -13377,8 +13412,8 @@
 /obj/random/firstaid,
 /obj/random/firstaid,
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
@@ -13420,7 +13455,8 @@
 /obj/machinery/button/access{
 	command = "cycle_exterior";
 	name = "Virology Access Button";
-	pixel_x = -24
+	pixel_x = -24;
+	dir = 4
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -13555,7 +13591,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/medical/biostorage)
@@ -13965,7 +14002,8 @@
 /area/bridge/meeting_room)
 "zK" = (
 /obj/machinery/light_switch{
-	pixel_y = -26
+	pixel_y = -26;
+	dir = 1
 	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
@@ -14906,7 +14944,8 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/fireaxecabinet{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/medical/medbay_emt_bay)
@@ -14925,8 +14964,9 @@
 "Bx" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
 	id_tag = "large_escape_pod_1_berth";
-	pixel_x = -26;
-	tag_door = "large_escape_pod_1_berth_hatch"
+	pixel_x = -22;
+	tag_door = "large_escape_pod_1_berth_hatch";
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -15136,14 +15176,10 @@
 /area/shuttle/large_escape_pod1/station)
 "Cr" = (
 /obj/structure/bed/roller,
-/turf/simulated/floor/shuttle/white,
-/area/shuttle/large_escape_pod1/station)
-"Cs" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	id_tag = "large_escape_pod_1";
-	pixel_x = -26;
-	pixel_y = 26;
-	tag_door = "large_escape_pod_1_hatch"
+	tag_door = "large_escape_pod_1_hatch";
+	pixel_y = 24
 	},
 /turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
@@ -15165,7 +15201,8 @@
 /obj/structure/bed/chair,
 /obj/machinery/vending/wallmed1{
 	name = "Emergency NanoMed";
-	pixel_x = 28
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_y = 32
@@ -15299,7 +15336,8 @@
 /obj/item/chems/ivbag,
 /obj/item/chems/ivbag,
 /obj/machinery/status_display{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/white,
 /area/shuttle/large_escape_pod1/station)
@@ -15604,6 +15642,11 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/machinery/button/windowtint{
+	id_tag = "wardobv";
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "EZ" = (
@@ -16522,7 +16565,7 @@
 /obj/machinery/photocopier,
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -16678,12 +16721,16 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "Lx" = (
-/obj/machinery/power/apc/super,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
 /obj/structure/table/steel,
 /obj/item/chems/glass/bucket,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
 "Ly" = (
@@ -16815,6 +16862,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
+"Mh" = (
+/obj/machinery/button/access{
+	command = "cycle_exterior";
+	name = "exterior access button";
+	pixel_x = -20;
+	dir = 4
+	},
+/turf/space,
+/area/space)
 "Mn" = (
 /obj/structure/table/steel,
 /turf/simulated/floor,
@@ -17191,7 +17247,8 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = -27
+	pixel_x = -29;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 10
@@ -18501,9 +18558,6 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/brown/border,
 /obj/structure/table,
-/obj/machinery/button/windowtint{
-	id_tag = "wardobv"
-	},
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "We" = (
@@ -18710,7 +18764,8 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/computer/cryopod{
-	pixel_y = -32
+	pixel_y = -24;
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/security/brig)
@@ -29028,7 +29083,7 @@ VR
 VR
 Dt
 FM
-MM
+We
 Yv
 Ht
 Nw
@@ -29652,7 +29707,7 @@ VR
 VR
 SX
 FM
-We
+MM
 Yv
 KD
 ML
@@ -31805,7 +31860,7 @@ tR
 ux
 uY
 oW
-wb
+ve
 ve
 uX
 uX
@@ -32601,7 +32656,7 @@ AP
 Bx
 BL
 BX
-Cs
+Ct
 Ct
 CZ
 BW
@@ -36795,7 +36850,7 @@ aa
 aa
 aa
 aa
-aa
+Mh
 aa
 aa
 aa
