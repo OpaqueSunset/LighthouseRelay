@@ -63,10 +63,6 @@
 "an" = (
 /turf/simulated/wall,
 /area/maintenance/substation/medsec)
-"ao" = (
-/obj/structure/sign/warning/high_voltage,
-/turf/simulated/wall,
-/area/maintenance/lower/north)
 "ap" = (
 /turf/simulated/wall,
 /area/maintenance/lower/north)
@@ -147,6 +143,9 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
+/obj/structure/sign/warning/high_voltage{
+	pixel_y = 32
+	},
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "aB" = (
@@ -162,7 +161,7 @@
 "aC" = (
 /obj/structure/catwalk,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/north)
@@ -476,7 +475,8 @@
 /area/maintenance/lower/mining)
 "bn" = (
 /obj/machinery/light_switch{
-	pixel_x = -25
+	pixel_x = -24;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/gateway)
@@ -633,7 +633,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -908,7 +908,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "GateShut";
 	name = "Gateway Shutter";
-	pixel_y = -22
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/gateway)
@@ -916,7 +917,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 27
+	pixel_x = 29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/gateway)
@@ -2129,7 +2131,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2171,7 +2173,7 @@
 	dir = 1
 	},
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2218,7 +2220,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2242,7 +2244,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -2376,7 +2378,8 @@
 	dir = 8
 	},
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -2923,7 +2926,7 @@
 "gP" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/open,
 /area/tether/surfacebase/north_staires_two)
@@ -3014,43 +3017,27 @@
 "hb" = (
 /turf/simulated/wall,
 /area/tether/surfacebase/fishing_garden)
-"hc" = (
-/obj/structure/sign/directions/evac{
-	dir = 1
-	},
-/turf/simulated/wall,
-/area/tether/surfacebase/north_staires_two)
 "hd" = (
 /obj/machinery/camera/network/tether{
 	dir = 4
 	},
+/obj/structure/sign/directions/evac{
+	dir = 1;
+	pixel_x = -32
+	},
 /turf/simulated/open,
-/area/tether/surfacebase/north_staires_two)
-"he" = (
-/obj/structure/sign/directions/medical{
-	dir = 1;
-	pixel_y = 8
-	},
-/obj/structure/sign/directions/science{
-	dir = 1;
-	pixel_y = 3
-	},
-/obj/structure/sign/directions/security{
-	dir = 1;
-	pixel_y = -4
-	},
-/obj/structure/sign/directions/engineering{
-	dir = 4;
-	pixel_y = -10
-	},
-/turf/simulated/wall,
 /area/tether/surfacebase/north_staires_two)
 "hf" = (
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_staires_two)
 "hg" = (
-/obj/structure/sign/warning/caution,
-/turf/simulated/wall,
+/obj/effect/floor_decal/borderfloor,
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "hh" = (
 /obj/effect/floor_decal/borderfloor{
@@ -3060,6 +3047,11 @@
 	dir = 10
 	},
 /obj/machinery/camera/network/tether{
+	dir = 4
+	},
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = -32;
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -3144,6 +3136,22 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel,
+/obj/structure/sign/directions/engineering{
+	dir = 4;
+	pixel_y = 22
+	},
+/obj/structure/sign/directions/security{
+	dir = 1;
+	pixel_y = 28
+	},
+/obj/structure/sign/directions/medical{
+	dir = 1;
+	pixel_y = 40
+	},
+/obj/structure/sign/directions/science{
+	dir = 1;
+	pixel_y = 35
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/north_staires_two)
 "hr" = (
@@ -3218,7 +3226,7 @@
 	},
 /obj/machinery/space_heater,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
@@ -3440,12 +3448,6 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
-"hY" = (
-/obj/structure/sign/warning/caution{
-	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS"
-	},
-/turf/simulated/wall,
-/area/tether/surfacebase/atrium_two)
 "hZ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -3455,6 +3457,11 @@
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 8
+	},
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -3537,7 +3544,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -3727,8 +3734,17 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "iF" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
 "iG" = (
 /obj/machinery/door/airlock/maintenance{
@@ -4173,7 +4189,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -4225,7 +4241,8 @@
 	dir = 8
 	},
 /obj/structure/closet/hydrant{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -4240,7 +4257,8 @@
 	dir = 4
 	},
 /obj/structure/closet/hydrant{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -4744,7 +4762,8 @@
 	dir = 4
 	},
 /obj/structure/sign/warning/caution{
-	pixel_x = 32
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
@@ -4848,8 +4867,8 @@
 	announcementConsole = 1;
 	department = "Research Director's Desk";
 	name = "Research Director RC";
-	pixel_x = 30;
-	pixel_y = -2
+	pixel_x = 32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -4869,27 +4888,25 @@
 "ln" = (
 /turf/simulated/wall,
 /area/maintenance/substation/research)
-"lo" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
-	},
-/turf/simulated/wall,
-/area/maintenance/substation/research)
 "lp" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/maintenance/lower/rnd)
-"lq" = (
 /obj/structure/sign/warning/caution{
-	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS"
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = 32;
+	dir = 8
 	},
-/turf/simulated/wall/r_wall,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	dir = 4;
+	pixel_x = -34
+	},
+/turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "lr" = (
 /obj/machinery/light/small{
@@ -4902,6 +4919,11 @@
 	icon_state = "32-2"
 	},
 /obj/structure/disposalpipe/down,
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = -32;
+	dir = 4
+	},
 /turf/simulated/open,
 /area/maintenance/lower/rnd)
 "ls" = (
@@ -5038,13 +5060,15 @@
 /obj/machinery/button/windowtint{
 	id_tag = "rd_office";
 	pixel_x = -24;
-	pixel_y = -16
+	pixel_y = -16;
+	dir = 4
 	},
 /obj/machinery/button/alternate/door{
 	id_tag = "RDdoor";
 	name = "RD Office Door Control";
 	pixel_x = -30;
-	pixel_y = -18
+	pixel_y = -18;
+	dir = 4
 	},
 /obj/abstract/landmark/start{
 	name = "Research Director"
@@ -5096,6 +5120,12 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = 32
 	},
 /turf/simulated/floor,
 /area/maintenance/substation/research)
@@ -5194,7 +5224,7 @@
 	dir = 5
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -5353,6 +5383,11 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = 32;
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "mk" = (
@@ -5369,6 +5404,11 @@
 /obj/structure/cable,
 /obj/structure/disposalpipe/up,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = -32;
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
 "ml" = (
@@ -5485,7 +5525,7 @@
 "mz" = (
 /obj/structure/catwalk,
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
@@ -6018,15 +6058,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
-"nv" = (
-/obj/structure/sign/deck/second,
-/turf/simulated/shuttle/wall/voidcraft/green{
-	hard_corner = 1
-	},
-/area/tether/surfacebase/atrium_two)
 "nw" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
+	},
+/obj/structure/sign/deck/second{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -6115,7 +6153,8 @@
 "nI" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/machinery/newscaster{
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -6238,7 +6277,8 @@
 	dir = 6
 	},
 /obj/machinery/newscaster{
-	pixel_y = -30
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -6275,10 +6315,12 @@
 /area/rnd/rdoffice)
 "nZ" = (
 /obj/structure/sign/warning/caution{
-	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS"
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_x = 32;
+	dir = 8
 	},
-/turf/simulated/wall,
-/area/engineering/lower/lobby)
+/turf/simulated/floor/tiled,
+/area/tether/surfacebase/north_staires_two)
 "oa" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
@@ -6660,7 +6702,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -6684,7 +6726,7 @@
 /area/engineering/lower/breakroom)
 "oL" = (
 /obj/machinery/newscaster{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
 /area/engineering/lower/breakroom)
@@ -7001,7 +7043,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
@@ -8020,7 +8062,8 @@
 /obj/machinery/network/requests_console{
 	department = "Science";
 	name = "Science Requests Console";
-	pixel_x = -30
+	pixel_x = -32;
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
@@ -8111,7 +8154,8 @@
 /area/engineering/lower/lobby)
 "rD" = (
 /obj/machinery/light_switch{
-	pixel_y = -28
+	pixel_y = -20;
+	dir = 1
 	},
 /obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/wood,
@@ -8617,7 +8661,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -8908,7 +8952,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/engineering/pumpstation)
@@ -9246,7 +9290,8 @@
 	pixel_y = 26
 	},
 /obj/structure/mirror{
-	pixel_x = 29
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
@@ -9436,7 +9481,8 @@
 	pixel_x = 11
 	},
 /obj/structure/mirror{
-	pixel_x = 29
+	pixel_x = 29;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/breakroom)
@@ -9526,11 +9572,15 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
-/obj/machinery/power/apc/super,
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
 	},
 /obj/structure/tank_rack/oxygen,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled,
 /area/engineering/lower/atmos_eva)
 "uC" = (
@@ -10040,7 +10090,8 @@
 /area/engineering/atmos)
 "vA" = (
 /obj/machinery/light_switch{
-	pixel_y = -28
+	pixel_y = -20;
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/floodlight,
@@ -10370,7 +10421,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "janitor_blast";
 	name = "Desk Shutters";
-	pixel_x = -22
+	pixel_x = -24;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -10454,7 +10506,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fishing_garden)
@@ -11482,7 +11534,8 @@
 	dir = 4
 	},
 /obj/structure/closet/hydrant{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
@@ -11538,7 +11591,8 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/structure/closet/hydrant{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
@@ -11968,7 +12022,8 @@
 	icon_state = "pipe-c"
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -12008,7 +12063,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/cyan{
 	icon_state = "0-4"
@@ -12262,7 +12317,8 @@
 /obj/machinery/disposal,
 /obj/machinery/network/requests_console{
 	department = "Janitorial";
-	pixel_y = -28
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -13190,7 +13246,8 @@
 	dir = 4
 	},
 /obj/machinery/computer/cryopod/robot{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/engineering/drone_fabrication)
@@ -13399,7 +13456,7 @@
 "Cd" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -13719,8 +13776,7 @@
 	dir = 1
 	},
 /obj/structure/mirror{
-	dir = 4;
-	pixel_y = 32
+	pixel_y = 30
 	},
 /turf/simulated/floor/carpet,
 /area/maintenance/lower/atmos)
@@ -14386,10 +14442,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
-"Ew" = (
-/obj/structure/sign/department/telecomms,
-/turf/simulated/wall,
-/area/maintenance/substation/tcomms)
 "Ex" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Telecomms Substation"
@@ -14401,13 +14453,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/tcomms)
 "Ey" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
+/obj/structure/catwalk,
+/obj/structure/sign/department/telecomms{
+	dir = 1;
+	pixel_y = -32
 	},
-/turf/simulated/wall,
-/area/maintenance/substation/tcomms)
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/south)
 "Ez" = (
 /turf/simulated/wall,
 /area/maintenance/substation/tcomms)
@@ -14438,6 +14490,12 @@
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/tcomms)
 "ED" = (
@@ -14522,6 +14580,10 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light/small,
+/obj/structure/sign/department/telecomms{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/tcomms)
 "EL" = (
@@ -14582,9 +14644,16 @@
 /turf/simulated/floor/plating,
 /area/tcomlobby)
 "EV" = (
-/obj/structure/sign/warning,
-/turf/simulated/wall/r_wall,
-/area/tcomlobby)
+/obj/structure/catwalk,
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/south)
 "EW" = (
 /obj/machinery/porta_turret{
 	dir = 6
@@ -14605,10 +14674,11 @@
 	control_area = /area/tcommsat/chamber;
 	desc = "A firewall prevents AIs from interacting with this device.";
 	name = "Telecoms lethal turret control";
-	pixel_x = 29
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /obj/effect/decal/cleanable/dirt,
@@ -14662,12 +14732,12 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
+/obj/structure/sign/department/telecomms{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
-"Ff" = (
-/obj/structure/sign/department/telecomms,
-/turf/simulated/wall,
-/area/tcommsat/entrance)
 "Fg" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/decal/cleanable/cobweb,
@@ -14683,7 +14753,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /turf/simulated/floor/tiled,
 /area/tcommsat/entrance)
@@ -14694,7 +14764,8 @@
 	control_area = /area/tcomlobby;
 	desc = "A firewall prevents AIs from interacting with this device.";
 	name = "Telecoms Foyer turret control";
-	pixel_x = 29
+	pixel_x = 32;
+	dir = 8
 	},
 /obj/machinery/firealarm{
 	pixel_y = 26
@@ -14726,6 +14797,9 @@
 "Fm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/sign/warning{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/tcomlobby)
@@ -15063,12 +15137,12 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
+/obj/structure/sign/warning{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
-"FU" = (
-/obj/structure/sign/warning,
-/turf/simulated/wall,
-/area/tcommsat/entrance)
 "FV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -15147,7 +15221,8 @@
 /obj/structure/table,
 /obj/item/multitool,
 /obj/structure/sign/warning/shock{
-	pixel_x = -32
+	pixel_x = -34;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/tcommsat/computer)
@@ -15447,22 +15522,6 @@
 	temperature = 80
 	},
 /area/tcommsat/chamber)
-"GH" = (
-/obj/machinery/airlock_sensor/airlock_interior{
-	id_tag = "server_access_in_sensor";
-	name = "interior sensor";
-	pixel_y = 25
-	},
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'SERVER ROOM'.";
-	name = "SERVER ROOM";
-	pixel_y = 32
-	},
-/turf/simulated/floor/bluegrid{
-	initial_gas = list(/decl/material/gas/nitrogen = 100);
-	temperature = 80
-	},
-/area/tcommsat/chamber)
 "GI" = (
 /turf/simulated/floor/tiled/dark{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
@@ -15644,11 +15703,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tcomstorage)
 "Hi" = (
-/obj/structure/sign/warning/nosmoking_2{
-	pixel_x = -32
-	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_2{
+	pixel_x = -34;
+	dir = 4
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
@@ -15656,11 +15716,12 @@
 	},
 /area/tcommsat/chamber)
 "Hs" = (
-/obj/structure/sign/warning/nosmoking_2{
-	pixel_x = 32
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking_2{
+	pixel_x = 34;
+	dir = 8
 	},
 /turf/simulated/floor/bluegrid{
 	initial_gas = list(/decl/material/gas/nitrogen = 100);
@@ -16098,6 +16159,10 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 6
 	},
+/obj/structure/sign/poster{
+	pixel_x = 32;
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
 "ID" = (
@@ -16528,8 +16593,7 @@
 "JP" = (
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = 4;
-	pixel_y = -24
+	pixel_y = -20
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -16556,7 +16620,7 @@
 	},
 /obj/machinery/power/apc{
 	name = "south bump";
-	pixel_y = -28
+	pixel_y = -22
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -16900,6 +16964,10 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 9
 	},
+/obj/structure/sign/poster{
+	pixel_x = -32;
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
 "Na" = (
@@ -16963,10 +17031,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/tcommsat/computer)
-"NV" = (
-/obj/structure/sign/nanotrasen,
-/turf/simulated/wall,
-/area/tether/surfacebase/public_garden_two)
 "NX" = (
 /obj/machinery/computer/station_alert{
 	dir = 4
@@ -17256,10 +17320,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/gateway)
-"Sy" = (
-/obj/structure/sign/poster,
-/turf/simulated/wall,
-/area/tether/surfacebase/public_garden_two)
 "SC" = (
 /obj/structure/railing/mapped{
 	dir = 8
@@ -17281,6 +17341,9 @@
 	},
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 5
+	},
+/obj/structure/sign/nanotrasen{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
@@ -17335,6 +17398,10 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/sign/warning/caution{
+	name = "\improper CAUTION - DANGEROUS EQUIPMENT AND DROPS";
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/atrium_two)
@@ -17441,7 +17508,7 @@
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
-	pixel_y = 28
+	pixel_y = 22
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -17484,6 +17551,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/engineering/lower/breakroom)
+"VC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/rust,
+/obj/structure/sign/warning/caution{
+	dir = 4;
+	pixel_x = -34
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/lower/rnd)
 "VI" = (
 /obj/machinery/light/fixture{
 	dir = 4
@@ -17749,7 +17825,8 @@
 /area/maintenance/asmaint2)
 "YN" = (
 /obj/structure/closet/hydrant{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -24005,7 +24082,7 @@ ac
 ac
 ac
 Kt
-Sy
+Kt
 Kt
 Kt
 ac
@@ -24936,7 +25013,7 @@ ac
 ac
 ac
 ac
-NV
+Kt
 SE
 Qu
 Uh
@@ -25257,7 +25334,7 @@ IE
 Uh
 Zt
 Qt
-Sy
+Kt
 Kt
 ac
 ac
@@ -26059,7 +26136,7 @@ ww
 Ku
 hb
 ac
-iw
+VC
 jF
 il
 ac
@@ -28247,7 +28324,7 @@ kf
 ku
 il
 il
-lo
+ln
 lM
 ln
 mM
@@ -28559,9 +28636,9 @@ ii
 kw
 jx
 lc
-lq
+lc
 lO
-lq
+lc
 mO
 nK
 or
@@ -29655,7 +29732,7 @@ ls
 ls
 lQ
 lQ
-nv
+ls
 ls
 dY
 pl
@@ -29948,7 +30025,7 @@ ge
 ge
 ge
 ge
-hc
+ge
 jv
 JO
 ge
@@ -30120,11 +30197,11 @@ jy
 ii
 ii
 dY
-hY
+dY
 Tg
 fG
-nz
-nZ
+hg
+nX
 nX
 po
 pT
@@ -30416,7 +30493,7 @@ ge
 ge
 ge
 ge
-he
+ge
 hq
 hG
 ge
@@ -30728,7 +30805,7 @@ ge
 gu
 ge
 gQ
-hf
+nZ
 hs
 hI
 hD
@@ -30884,10 +30961,10 @@ dY
 dY
 dY
 dY
-hg
+dY
 ht
 hJ
-hY
+dY
 dY
 dY
 dY
@@ -32109,7 +32186,7 @@ ac
 ac
 ac
 ac
-ao
+ap
 aA
 aO
 aW
@@ -32345,9 +32422,9 @@ rg
 rg
 rg
 ET
-Ff
+ET
 Fy
-FU
+ET
 ET
 ac
 ac
@@ -32964,8 +33041,8 @@ ac
 ac
 rg
 DS
-sK
-Ew
+Ey
+Ez
 Ez
 Ez
 EM
@@ -33276,8 +33353,8 @@ ac
 ac
 rg
 HN
-sK
-Ey
+EV
+Ez
 EC
 EI
 EM
@@ -33592,7 +33669,7 @@ sK
 Ez
 EE
 EK
-EV
+EM
 Fm
 FG
 Fo
@@ -34477,7 +34554,7 @@ fM
 hN
 ib
 fM
-iE
+iF
 iX
 jp
 ib
@@ -34633,7 +34710,7 @@ dY
 dY
 dY
 dY
-iF
+dY
 iY
 dY
 dY
@@ -35469,7 +35546,7 @@ CI
 FR
 Gj
 FR
-GH
+GJ
 GI
 GI
 ZS

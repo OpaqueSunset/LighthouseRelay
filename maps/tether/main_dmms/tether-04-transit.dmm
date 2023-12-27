@@ -65,8 +65,8 @@
 "ai" = (
 /obj/machinery/vending/snack,
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
@@ -441,8 +441,8 @@
 	dir = 5
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)

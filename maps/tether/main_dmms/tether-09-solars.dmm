@@ -951,7 +951,7 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_y = 30
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
@@ -1241,9 +1241,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_northern_hallway)
@@ -1758,7 +1757,8 @@
 	dir = 6
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
@@ -2224,7 +2224,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
-	pixel_x = -30
+	pixel_x = -29
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -2739,7 +2739,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
@@ -2900,7 +2900,8 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/telescience_lab)
@@ -3108,7 +3109,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -3392,7 +3393,7 @@
 	},
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/telescience_lab)
@@ -3486,7 +3487,8 @@
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
-	pixel_x = 25
+	pixel_x = 29;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -3651,9 +3653,8 @@
 	},
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
@@ -3688,7 +3689,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
@@ -4013,7 +4014,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_northern_hallway)
@@ -4666,7 +4667,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -5881,7 +5883,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/item/radio/intercom{
 	dir = 4;
-	pixel_x = -24
+	pixel_x = -22
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -7071,9 +7073,8 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -7223,7 +7224,8 @@
 	tag_chamber_sensor = "outpost_s_airlock_sensor";
 	tag_exterior_door = "scioutpost_airlock_outer";
 	tag_interior_door = "scioutpost_airlock_inner";
-	tag_scrubber = "scioutpost_airlock_scrub"
+	tag_scrubber = "scioutpost_airlock_scrub";
+	dir = 8
 	},
 /obj/structure/sign/warning/fire{
 	pixel_x = 33;
@@ -7516,7 +7518,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -7703,7 +7706,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -8117,7 +8121,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom/outpost)
@@ -8133,8 +8137,8 @@
 	dir = 10
 	},
 /obj/item/radio/intercom{
-	dir = 8;
-	pixel_x = -24
+	dir = 4;
+	pixel_x = -22
 	},
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 9
@@ -9015,7 +9019,8 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/light_switch{
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -9263,7 +9268,7 @@
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -9621,7 +9626,8 @@
 /obj/machinery/button/remote/emitter{
 	id_tag = "MaterialEmitter";
 	name = "Emitter Control";
-	pixel_x = 31
+	pixel_x = 31;
+	dir = 8
 	},
 /obj/machinery/button/blast_door{
 	dir = 8;
@@ -9651,8 +9657,8 @@
 	dir = 8
 	},
 /obj/item/radio/intercom{
-	dir = 4;
-	pixel_x = 24
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom/outpost)
