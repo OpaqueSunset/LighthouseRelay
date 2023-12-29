@@ -4378,7 +4378,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/vending/dinnerware,
+/obj/machinery/vending/dinnerware{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/kitchen)
 "jr" = (
@@ -5815,7 +5817,9 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
 	},
-/obj/machinery/vending/hydronutrients,
+/obj/machinery/vending/hydronutrients{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "mf" = (
@@ -6466,8 +6470,9 @@
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "nq" = (
-/obj/machinery/computer/modular/preset/civilian,
-/turf/simulated/floor/tiled,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/turf/simulated/floor/plating,
 /area/crew_quarters/bar)
 "nr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -8783,7 +8788,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "rN" = (
-/obj/machinery/media/jukebox,
+/obj/machinery/media/jukebox/old,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "rO" = (
@@ -8796,7 +8801,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/civilian,
+/obj/machinery/camera/network/civilian{
+	pixel_y = 21
+	},
 /obj/machinery/holosign/bar{
 	id_tag = "barsign1";
 	pixel_y = 32
@@ -11238,7 +11245,7 @@
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 4
 	},
-/obj/machinery/media/jukebox,
+/obj/machinery/media/jukebox/old,
 /turf/simulated/floor/tiled/steel_grid,
 /area/assembly/robotics)
 "wr" = (
@@ -12168,7 +12175,8 @@
 "xY" = (
 /obj/effect/floor_decal/spline/plain,
 /obj/machinery/light{
-	dir = 4
+	dir = 4;
+	pixel_x = 10
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/machinery/door/blast/shutters{
@@ -15856,13 +15864,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/crew_quarters/bar)
 "DY" = (
-/obj/effect/floor_decal/spline/plain,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
 	},
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
+/obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/bar)
 "DZ" = (
@@ -19444,6 +19452,7 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
+/obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/bar)
 "KO" = (
@@ -19591,7 +19600,6 @@
 "Ld" = (
 /obj/effect/floor_decal/spline/plain,
 /obj/machinery/light,
-/obj/machinery/computer/modular/preset/civilian,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/bar)
 "Le" = (
@@ -21108,7 +21116,9 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 8
 	},
-/obj/machinery/seed_storage/garden,
+/obj/machinery/seed_storage/garden{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "Rh" = (
@@ -22580,6 +22590,16 @@
 "Zc" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark,
+/area/crew_quarters/bar)
+"Zd" = (
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 6
+	},
+/obj/structure/bed/chair/comfy/black{
+	dir = 1
+	},
+/obj/effect/floor_decal/spline/plain,
+/turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/bar)
 "Zf" = (
 /obj/structure/closet/gmcloset{
@@ -40306,7 +40326,7 @@ sK
 sZ
 VD
 DN
-KN
+Zd
 vK
 KC
 sX
@@ -40762,7 +40782,7 @@ mj
 fJ
 un
 xZ
-nq
+no
 uS
 vq
 vs
@@ -40775,7 +40795,7 @@ sZ
 VD
 DN
 KN
-vK
+nq
 Lq
 Wd
 Un
