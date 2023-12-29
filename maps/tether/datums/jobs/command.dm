@@ -1,5 +1,5 @@
 /datum/job/captain
-	title = "Facility Director"
+	title = "Colony Director"
 	alt_titles = list("Site Manager", "Overseer", "Director of Operations")
 	department_types = list(/decl/department/command)
 	total_positions = 1
@@ -157,7 +157,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Command staff"
-	selection_color = "#2F2F7F"
+	selection_color = "#2f2f7f"
 	minimal_player_age = 5
 	economic_power = 7
 	skill_points = 24
