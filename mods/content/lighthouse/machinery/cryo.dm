@@ -75,14 +75,16 @@
 	/// or multiple people entering the same one.
 	var/mob/living/carbon/human/in_choice = null
 
+/obj/machinery/door/airlock/external/glass/cryo // Does not autoset access.
+	autoset_access = FALSE
+
 /obj/machinery/cryopod/robot/door/tram/Process()
 	if(SSevac.evacuation_controller.is_evacuating())
 		// Transform into a door!  But first despawn anyone inside
 		time_till_despawn = 0
 		..()
 		var/turf/T = get_turf(src)
-		var/obj/machinery/door/airlock/external/glass/door = new(T)
-		door.req_access = null
+		new /obj/machinery/door/airlock/external/glass/cryo(T)
 		qdel(src)
 	// Otherwise just operate normally
 	return ..()
