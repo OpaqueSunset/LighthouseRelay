@@ -29,6 +29,7 @@ var/global/list/known_overmap_sectors
 	var/restricted_area = 0				// Regardless of if free_landing is set to TRUE, this square area (centered on the z level) will be restricted from free shuttle landing unless permitted by a docking becaon.
 
 	var/list/map_z = list()
+	var/list/nonlateral_map_z = list() // A list of only the z-levels vertically connected to our assigned level.
 	var/list/associated_machinery
 
 /obj/effect/overmap/visitable/proc/get_linked_machines_of_type(var/base_type)
@@ -126,6 +127,7 @@ var/global/list/known_overmap_sectors
 
 /obj/effect/overmap/visitable/proc/find_z_levels()
 	map_z = SSmapping.get_connected_levels(z)
+	nonlateral_map_z = SSmapping.get_connected_levels(z, include_lateral = FALSE)
 
 /obj/effect/overmap/visitable/proc/register_z_levels()
 	var/datum/overmap/overmap = global.overmaps_by_z[num2text(z)]

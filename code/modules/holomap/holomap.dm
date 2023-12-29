@@ -192,7 +192,7 @@
 /obj/screen/levelselect/up/Click()
 	if(..())
 		if(owner)
-			owner.set_level(owner.displayed_level - 1)
+			owner.set_level(owner.displayed_level + 1)
 
 /obj/screen/levelselect/down
 	icon_state = "fdn"
@@ -200,7 +200,7 @@
 /obj/screen/levelselect/down/Click()
 	if(..())
 		if(owner)
-			owner.set_level(owner.displayed_level + 1)
+			owner.set_level(owner.displayed_level - 1)
 
 /obj/screen/legend
 	icon = null
@@ -326,9 +326,10 @@
 
 		//For the given z level fetch the related map sector and build the list
 		if(istype(O))
-			var/z_count = length(O.map_z)
+			// todo: find a good way to display lateral levels
+			var/z_count = length(O.nonlateral_map_z)
 			var/current_z_index = 1
-			z_levels = O.map_z.Copy()
+			z_levels = O.nonlateral_map_z.Copy()
 
 			if(z_count > 1)
 				if(!LAZYLEN(lbuttons))
@@ -342,11 +343,11 @@
 
 			//Each level now has to be built and offset properly. Then stored to be showed later
 			for(var/level = 1; level <= z_count; level++)
-				if (z == O.map_z[level])
+				if (z == O.nonlateral_map_z[level])
 					current_z_index = level
 
 				//Turfs and walls
-				var/image/map_image = image(SSminimap.holomaps[O.map_z[level]].holomap_base)
+				var/image/map_image = image(SSminimap.holomaps[O.nonlateral_map_z[level]].holomap_base)
 
 				map_image.color = COLOR_HOLOMAP_HOLOFIER
 				map_image.layer = HUD_BASE_LAYER
@@ -356,7 +357,7 @@
 
 				//Store the image for future use
 				//LAZYADD(levels, map_image)
-				LAZYSET(levels, "[O.map_z[level]]", map_image)
+				LAZYSET(levels, "[O.nonlateral_map_z[level]]", map_image)
 
 				var/obj/screen/maptext_overlay = new(null)
 				maptext_overlay.icon = null
@@ -367,7 +368,7 @@
 				maptext_overlay.pixel_x = (HOLOMAP_ICON_SIZE / 2) - (maptext_overlay.maptext_width / 2)
 				maptext_overlay.pixel_y = HOLOMAP_MARGIN
 
-				LAZYSET(maptexts, "[O.map_z[level]]", maptext_overlay)
+				LAZYSET(maptexts, "[O.nonlateral_map_z[level]]", maptext_overlay)
 
 			//Reset to starting zlevel
 			set_level(current_z_index)
@@ -398,10 +399,10 @@
 			station_map.vis_contents += element
 
 	if(displayed_level > 1)
-		station_map.vis_contents += lbuttons[1]
+		station_map.vis_contents += lbuttons[2]
 
 	if(displayed_level < z_levels.len)
-		station_map.vis_contents += lbuttons[2]
+		station_map.vis_contents += lbuttons[1]
 
 /datum/station_holomap/proc/legend_select(obj/screen/legend/L)
 	legend_deselect()
