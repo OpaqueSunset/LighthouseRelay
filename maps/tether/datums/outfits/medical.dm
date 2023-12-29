@@ -63,6 +63,13 @@
 		uniform = /obj/item/clothing/under/medical/scrubs/purple
 		head = null
 
+/decl/hierarchy/outfit/job/medical/intern
+	name = "Job - Medical Intern"
+	uniform = /obj/item/clothing/under/medical
+	suit = /obj/item/clothing/suit/storage/toggle/labcoat
+	r_pocket = /obj/item/flashlight/pen
+	id_type = /obj/item/card/id/medical
+
 /decl/hierarchy/outfit/job/medical/chemist
 	name = "Job - Chemist"
 	uniform = /obj/item/clothing/under/chemist

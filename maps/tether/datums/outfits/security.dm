@@ -53,3 +53,9 @@
 	r_pocket = /obj/item/handcuffs
 	id_type = /obj/item/card/id/security
 	pda_type = /obj/item/modular_computer/pda
+
+/decl/hierarchy/outfit/job/generic/assistant/cadet
+	name = "Job - Security Cadet"
+	uniform = /obj/item/clothing/under/security
+	id_type = /obj/item/card/id/security
+	l_ear = /obj/item/radio/headset/headset_sec
