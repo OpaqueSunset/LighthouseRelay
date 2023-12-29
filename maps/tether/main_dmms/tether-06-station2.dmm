@@ -12379,7 +12379,9 @@
 /area/bridge/meeting_room)
 "wR" = (
 /obj/structure/table/woodentable,
-/obj/machinery/chemical_dispenser/bar_soft/full,
+/obj/machinery/chemical_dispenser/bar_soft/full{
+	pixel_y = 6
+	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "wS" = (
@@ -12627,7 +12629,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/super,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	pixel_x = -22
+	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "xt" = (
@@ -12961,7 +12966,7 @@
 "yd" = (
 /obj/structure/table/steel,
 /obj/machinery/light_switch{
-	pixel_x = 26;
+	pixel_x = 24;
 	dir = 8
 	},
 /obj/machinery/camera/network/medbay{
@@ -13591,7 +13596,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/light_switch{
-	pixel_y = -26;
+	pixel_y = -20;
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
@@ -14002,7 +14007,7 @@
 /area/bridge/meeting_room)
 "zK" = (
 /obj/machinery/light_switch{
-	pixel_y = -26;
+	pixel_y = -20;
 	dir = 1
 	},
 /turf/simulated/floor/wood,

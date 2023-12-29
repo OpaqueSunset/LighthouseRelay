@@ -63,10 +63,12 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/tether/midpoint)
 "ai" = (
-/obj/machinery/vending/snack,
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 22
+	},
+/obj/machinery/vending/snack{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
@@ -94,9 +96,11 @@
 /turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
 "ap" = (
-/obj/machinery/vending/coffee,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/vending/coffee{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
@@ -151,7 +155,11 @@
 /area/tether/midpoint)
 "aC" = (
 /obj/structure/cable,
-/obj/machinery/power/apc/super,
+/obj/machinery/power/apc/super{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/tether_midpoint)
 "aD" = (
@@ -159,7 +167,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/ceiling,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -223,7 +230,6 @@
 /obj/structure/disposalpipe/down{
 	dir = 1
 	},
-/obj/effect/ceiling,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -309,13 +315,17 @@
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
 "ba" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 8
+	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
 "bb" = (
-/obj/machinery/vending/fitness,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/vending/fitness{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
@@ -330,7 +340,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/machinery/media/jukebox,
+/obj/machinery/media/jukebox/old,
 /turf/simulated/floor/wood,
 /area/tether/midpoint)
 "bf" = (
@@ -383,7 +393,6 @@
 	icon_state = "32-2"
 	},
 /obj/structure/disposalpipe/down,
-/obj/effect/ceiling,
 /turf/simulated/open,
 /area/maintenance/tether_midpoint)
 "cd" = (
@@ -451,10 +460,6 @@
 /obj/structure/flora/pottedplant/small,
 /turf/simulated/floor/carpet/blue,
 /area/tether/midpoint)
-"Aw" = (
-/obj/effect/ceiling,
-/turf/simulated/floor/plating,
-/area/maintenance/tether_midpoint)
 "Bg" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -11336,7 +11341,7 @@ ae
 bY
 aD
 ac
-Aw
+ax
 aX
 aN
 ax

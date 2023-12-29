@@ -31,4 +31,12 @@
 	name = "Job - Atmospheric technician"
 	uniform = /obj/item/clothing/under/atmospheric_technician
 	belt = /obj/item/storage/belt/utility/atmostech
+	id_type = /obj/item/card/id/engineering
+	pda_type = /obj/item/modular_computer/pda/engineering
+
+/decl/hierarchy/outfit/job/engineering/apprentice
+	name = "Job - Apprentice Engineer"
+	uniform = /obj/item/clothing/under/engineer
+	belt = null // earn your tools, newbie
+	id_type = /obj/item/card/id/engineering
 	pda_type = /obj/item/modular_computer/pda/engineering

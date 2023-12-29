@@ -93,6 +93,7 @@
 			data["job_datum"] = list(
 				"title" = job.title,
 				"departments" = job.get_department_names(),
+				"economic_modifier" = job.economic_power,
 				"selection_color" = job.selection_color,
 				"timeoff_factor" = job.timeoff_factor,
 				"pto_department" = job.pto_type
@@ -207,7 +208,7 @@
 	var/new_dept = foundjob.pto_type || PTO_CIVILIAN
 	var/datum/job/ptojob = null
 	for(var/datum/job/job in SSjobs.primary_job_datums)
-		if(job.pto_type == new_dept && job.timeoff_factor < 0)
+		if(job.pto_type == new_dept && job.timeoff_factor < 0) // our timeoff job is the first job in the same PTO category that spends PTO time
 			ptojob = job
 			break
 	if(reassign_player(player, ptojob.title, ptojob.title))
