@@ -31,5 +31,11 @@
 		/datum/job/warden,
 		/datum/job/officer,
 		/datum/job/robot,
-		/datum/job/computer
+		/datum/job/computer,
+		/datum/job/offduty/civilian,
+		/datum/job/offduty/cargo,
+		/datum/job/offduty/engineering,
+		/datum/job/offduty/medical,
+		/datum/job/offduty/science,
+		/datum/job/offduty/security
 	)
