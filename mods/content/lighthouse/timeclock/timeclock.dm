@@ -93,6 +93,7 @@
 			data["job_datum"] = list(
 				"title" = job.title,
 				"departments" = job.get_department_names(),
+				"economic_modifier" = job.economic_power,
 				"selection_color" = job.selection_color,
 				"timeoff_factor" = job.timeoff_factor,
 				"pto_department" = job.pto_type
