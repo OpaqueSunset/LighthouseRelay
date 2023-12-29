@@ -89,6 +89,7 @@
 	#include "datums/jobs/command.dm"
 	#include "datums/jobs/engineering.dm"
 	#include "datums/jobs/medical.dm"
+	#include "datums/jobs/offduty.dm"
 	#include "datums/jobs/science.dm"
 	#include "datums/jobs/security.dm"
 	#include "datums/jobs/synthetics.dm"
