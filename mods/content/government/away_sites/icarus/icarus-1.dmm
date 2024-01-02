@@ -440,7 +440,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/cooker/grill,
+/obj/machinery/appliance/cooker/stove,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -450,7 +450,7 @@
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
-/obj/machinery/cooker/fryer,
+/obj/machinery/appliance/cooker/fryer,
 /turf/simulated/floor/tiled/white,
 /area/icarus/vessel)
 "bN" = (
