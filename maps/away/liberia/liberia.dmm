@@ -178,6 +178,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "merch_radaway";
+	
 	},
 /obj/machinery/door/window/northleft{
 	dir = 8;
@@ -206,6 +207,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "merch_radaway";
+	
 	},
 /turf/simulated/floor,
 /area/liberia/engineeringreactor)
@@ -643,6 +645,7 @@
 	dir = 2;
 	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
+	
 	},
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,
@@ -832,6 +835,7 @@
 	dir = 4;
 	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
+	
 	},
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,
@@ -1264,6 +1268,7 @@
 	dir = 4;
 	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
+	
 	},
 /obj/effect/paint/silver,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -1569,6 +1574,7 @@
 	dir = 4;
 	id_tag = "merchantdesk";
 	name = "Merchant Desk Shutters";
+	
 	},
 /obj/structure/cable/blue{
 	icon_state = "4-8"
@@ -5003,6 +5009,7 @@
 /obj/structure/table/glass,
 /obj/machinery/faxmachine/mapped{
 	req_access = list("ACCESS_MERCHANT");
+	
 	},
 /obj/effect/floor_decal/corner/blue/mono,
 /turf/simulated/floor/tiled/dark/monotile,
@@ -6264,7 +6271,8 @@
 "oJ" = (
 /obj/abstract/level_data_spawner/player{
 	name = "Liberia";
-},
+	
+	},
 /turf/space,
 /area/space)
 "oM" = (
@@ -8082,6 +8090,7 @@
 	dir = 2;
 	id_tag = "merchantshuttle";
 	name = "Merchant Window Shutters";
+	
 	},
 /obj/effect/paint/silver,
 /obj/effect/paint_stripe/yellow,

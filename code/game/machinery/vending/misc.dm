@@ -26,7 +26,15 @@
 	markup = 0
 	base_type = /obj/machinery/vending/dinnerware
 	products = list(
-		/obj/item/chems/glass/beaker/bowl =2,
+		/obj/item/chems/glass/beaker/bowl = 2,
+		/obj/item/chems/cooking_container/plate/bowl = 4,
+		/obj/item/chems/cooking_container/plate = 4,
+		/obj/item/chems/cooking_container/fryer = 4,
+		/obj/item/chems/cooking_container/oven = 4,
+		/obj/item/chems/cooking_container/pot = 4,
+		/obj/item/chems/cooking_container/saucepan = 4,
+		/obj/item/chems/cooking_container/skillet = 4,
+		/obj/item/chems/glass/beaker/measuringcup = 4,
 		/obj/item/storage/tray/metal/aluminium = 8,
 		/obj/item/knife/kitchen = 3,
 		/obj/item/kitchen/rollingpin = 2,

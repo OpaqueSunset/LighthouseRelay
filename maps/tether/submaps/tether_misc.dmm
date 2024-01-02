@@ -1996,7 +1996,7 @@
 /obj/effect/floor_decal/corner/purple/border,
 /obj/structure/extinguisher_cabinet{
 	dir = 1;
-	pixel_y = -32
+	pixel_y = -29
 	},
 /turf/simulated/floor/tiled/white{
 	initial_gas = list(/decl/material/solid/phoron = 101)
@@ -2229,9 +2229,8 @@
 	pixel_y = 2
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white{
 	initial_gas = list(/decl/material/solid/phoron = 101)
@@ -2364,9 +2363,8 @@
 	dir = 4
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled/white,
 /area/holodeck/holodorm/source_standard)
@@ -2656,9 +2654,8 @@
 	pixel_y = 2
 	},
 /obj/item/radio/intercom{
-	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 21
+	pixel_y = 20
 	},
 /turf/simulated/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)

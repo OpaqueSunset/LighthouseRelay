@@ -159,3 +159,11 @@
 
 /obj/item/chems/glass/beaker/sulphuric/populate_reagents()
 	reagents.add_reagent(/decl/material/liquid/acid, reagents.maximum_volume)
+
+/obj/item/chems/glass/beaker/measuringcup
+	name = "measuring cup"
+	desc = "A measuring cup, used to measure ingredients for cooking."
+	icon = 'icons/obj/items/chem/beakers/measuringcup.dmi'
+
+/obj/item/chems/glass/beaker/measuringcup/attack_self()
+	return

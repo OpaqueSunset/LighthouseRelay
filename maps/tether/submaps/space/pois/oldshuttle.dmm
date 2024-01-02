@@ -100,7 +100,8 @@
 	dir = 8
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
@@ -110,7 +111,8 @@
 	dir = 4
 	},
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)

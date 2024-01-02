@@ -211,7 +211,7 @@
 /obj/structure/reagent_dispensers/cookingoil
 /obj/machinery/appliance/grill
 /obj/machinery/appliance/cooker/fryer
-/obj/machinery/appliance/cooker/grill
+/obj/machinery/appliance/cooker/stove
 /obj/machinery/appliance/cooker/oven
 /obj/machinery/appliance/mixer/candy
 /obj/machinery/appliance/mixer/cereal
@@ -221,7 +221,6 @@
 /obj/item/chems/food/lasagna
 /obj/item/chems/drinks/bottle/lemonjuice
 /obj/item/chems/drinks/metaglass
-/obj/item/chems/glass/beaker/measuring_cup
 
 // TELESCI
 /obj/machinery/computer/telescience

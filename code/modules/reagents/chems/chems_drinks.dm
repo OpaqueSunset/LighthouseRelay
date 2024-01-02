@@ -80,6 +80,7 @@
 
 /decl/material/liquid/drink/juice/grape
 	name = "grape juice"
+	codex_name = "purple grape juice"
 	lore_text = "It's grrrrrape!"
 	taste_description = "grapes"
 	color = "#863333"
@@ -224,6 +225,7 @@
 
 /decl/material/liquid/drink/juice/apple
 	name = "apple juice"
+	codex_name = "tree apple juice"
 	lore_text = "Delicious sweet juice made from apples."
 	taste_description = "sweet apples"
 	color = "#c07c40"
@@ -241,6 +243,14 @@
 
 	glass_name = "pear juice"
 	glass_desc = "Delicious juice made from pears."
+
+/decl/material/liquid/drink/juice/pumpkinpulp
+	name = "pumpkin pulp"
+	lore_text = "It's almost juice, but not really. Someone's been Smashing Pumpkins Today."
+	taste_description = "pumpkin"
+	color = "#d88b4c"
+	uid = "chem_drink_pumpkin"
+	// no glass
 
 // Everything else
 
@@ -734,6 +744,12 @@
 
 	glass_name = "redbush tea"
 	glass_desc = "A caffeine-free dark red tea, flavorful and full of antioxidants."
+
+/decl/material/liquid/drink/syrup/sugar
+	name = "simple syrup"
+	lore_text = "A rich simple syrup, made of sugar dissolved in boiling water. It's sickeningly sweet."
+	taste_description = "sweetness"
+	uid = "chem_drink_simplesyrup"
 
 /decl/material/liquid/drink/syrup
 	abstract_type =  /decl/material/liquid/drink/syrup

@@ -195,6 +195,7 @@
 
 /decl/material/liquid/tar
 	name = "tar"
+	codex_name = "petroleum tar"
 	uid = "liquid_tar"
 	lore_text = "A dark, viscous liquid."
 	taste_description = "petroleum"

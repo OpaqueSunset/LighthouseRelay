@@ -22200,7 +22200,7 @@
 /turf/simulated/wall/r_wall,
 /area/tether/station/explorer_medical)
 "rYy" = (
-/obj/machinery/appliance/grill,
+/obj/machinery/appliance/cooker/stove,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},

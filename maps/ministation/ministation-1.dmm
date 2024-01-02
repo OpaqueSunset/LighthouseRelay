@@ -3477,7 +3477,7 @@
 	pixel_x = -22
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/cooker/fryer,
+/obj/machinery/appliance/cooker/fryer,
 /turf/simulated/floor/lino,
 /area/ministation/cafe)
 "tT" = (
@@ -5064,7 +5064,7 @@
 /obj/machinery/status_display{
 	pixel_y = 30
 	},
-/obj/machinery/cooker/cereal,
+/obj/machinery/appliance/mixer/cereal,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -5232,7 +5232,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/cooker/grill,
+/obj/machinery/appliance/cooker/stove,
 /turf/simulated/floor/lino,
 /area/ministation/cafe)
 "Au" = (
@@ -5259,7 +5259,7 @@
 /turf/simulated/floor/lino,
 /area/ministation/cafe)
 "Aw" = (
-/obj/machinery/cooker/oven,
+/obj/machinery/appliance/cooker/oven,
 /turf/simulated/floor/lino,
 /area/ministation/cafe)
 "Ax" = (
@@ -5287,7 +5287,7 @@
 /turf/simulated/floor/tiled/white,
 /area/ministation/medical)
 "AA" = (
-/obj/machinery/cooker/candy,
+/obj/machinery/appliance/mixer/candy,
 /obj/machinery/light{
 	dir = 4
 	},

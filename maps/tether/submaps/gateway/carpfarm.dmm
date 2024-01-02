@@ -626,7 +626,8 @@
 /obj/item/storage/toolbox/emergency,
 /obj/machinery/airlock_sensor{
 	id_tag = "carp_sensor";
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/carpfarm/base)

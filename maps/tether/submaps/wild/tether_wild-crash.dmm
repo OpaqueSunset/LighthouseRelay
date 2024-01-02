@@ -347,7 +347,8 @@
 /area/tether/surfacebase/outside/wilderness)
 "aY" = (
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
@@ -435,7 +436,8 @@
 /area/tether/surfacebase/crash)
 "bm" = (
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
@@ -522,7 +524,8 @@
 "bx" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/newscaster{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)

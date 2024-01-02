@@ -94,12 +94,6 @@
 		/area/turbolift/t_station/level3,
 		)
 
-/obj/item/storage/box/beakers/measuring
-	name = "box of measuring cups"
-
-/obj/item/storage/box/beakers/measuring/WillContain()
-	return list(/obj/item/chems/glass/beaker/measuring_cup = 7)
-
 /obj/machinery/light/fixture
 	icon_state = "tube-construct-stage1"
 

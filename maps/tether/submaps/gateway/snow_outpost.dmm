@@ -2348,9 +2348,9 @@
 	},
 /obj/structure/closet/walllocker/emerglocker/east,
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	name = "Station Intercom (General)";
-	pixel_x = -28
+	pixel_x = -22
 	},
 /obj/structure/closet/crate/hydroponics{
 	desc = "All you need to destroy that pesky planet.";
@@ -2421,7 +2421,8 @@
 	pixel_y = 28
 	},
 /obj/item/radio/intercom{
-	pixel_y = -26
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)

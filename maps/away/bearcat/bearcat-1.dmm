@@ -12,6 +12,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /turf/simulated/floor/usedup,
 /area/space)
@@ -57,6 +58,7 @@
 "ai" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "engwindow";
+	
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/escape_port)
@@ -91,6 +93,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -102,6 +105,7 @@
 "ap" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "engwindow";
+	
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/escape_star)
@@ -122,6 +126,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/cargo/lower)
@@ -135,6 +140,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/cargo/lower)
@@ -517,6 +523,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -684,6 +691,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1036,6 +1044,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1184,6 +1193,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1486,6 +1496,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1598,6 +1609,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -2161,6 +2173,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/eva)
@@ -2419,6 +2432,7 @@
 	dir = 4;
 	id_tag = "scraplock";
 	name = "External Blast Doors";
+	
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,

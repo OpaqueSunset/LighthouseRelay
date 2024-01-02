@@ -341,12 +341,6 @@
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/bluegrid,
 /area/icarus/vessel)
-"bl" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/simulated/floor/bluegrid,
-/area/icarus/vessel)
 "bm" = (
 /obj/machinery/light{
 	dir = 4;
@@ -20471,7 +20465,7 @@ ao
 ao
 ap
 aZ
-bl
+aZ
 bt
 ap
 bU

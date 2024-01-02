@@ -50,6 +50,17 @@
 	value = 0.1
 	uid = "chem_blackpepper"
 
+// From Synnono's Cooking Expansion on Aurora
+// Used, as far as I can tell, to disambiguate certain recipes.
+/decl/material/solid/spacespice
+	name = "exotic spices"
+	lore_text = "An exotic blend of spices for cooking. It must flow."
+	color = "#e08702"
+	taste_description = "spices"
+	taste_mult = 1.5
+	value = 0.5
+	uid = "chem_spacespice"
+
 /decl/material/liquid/enzyme
 	name = "universal enzyme"
 	uid = "chem_enzyme"

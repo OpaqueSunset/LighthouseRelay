@@ -828,6 +828,9 @@
 /turf/simulated/floor/water/deep/indoors : /turf/exterior/water
 /turf/simulated/floor/water/indoors : /turf/exterior/water
 
+# for some reason, no grills
+/obj/machinery/appliance/grill : /obj/machinery/appliance/cooker/stove{@OLD}
+
 # DELETIONS
 /obj/machinery/mineral/output : @DELETE
 /obj/machinery/mineral/input : @DELETE

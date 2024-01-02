@@ -157,6 +157,12 @@
 /obj/item/storage/box/beakers/insulated/WillContain()
 	return list(/obj/item/chems/glass/beaker/insulated = 7)
 
+/obj/item/storage/box/beakers/measuring
+	name = "box of measuring cups"
+
+/obj/item/storage/box/beakers/measuring/WillContain()
+	return list(/obj/item/chems/glass/beaker/measuringcup = 7)
+
 /obj/item/storage/box/ammo
 	name = "ammo box"
 	icon = 'icons/obj/items/storage/ammobox.dmi'

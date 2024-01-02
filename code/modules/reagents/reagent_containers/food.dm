@@ -15,6 +15,8 @@
 	icon_state = null
 	randpixel = 6
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
+	item_flags = null
+	material = /decl/material/liquid/nutriment
 	possible_transfer_amounts = null
 	volume = 50
 	center_of_mass = @"{'x':16,'y':16}"
@@ -36,6 +38,106 @@
 	var/trash = null
 	var/list/attack_products //Items you can craft together. Like bomb making, but with food and less screwdrivers.
 	// Uses format list(ingredient = result_type). The ingredient can be a typepath or a kitchen_tag string (used for mobs or plants)
+	var/batter_coating = null // coating typepath, NOT decl instance
+	var/do_coating_prefix = TRUE ///If 0, we wont do "battered thing" or similar prefixes. Mainly for recipes that include batter but have a special name
+	/**
+	 * Used for foods that are "cooked" without being made into a specific recipe or combination.
+	 * Generally applied during modification cooking with oven/fryer.
+	 * Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.
+	 */
+	var/cooked_icon = null
+
+
+//Code for dipping food in batter
+/**
+ * Perform checks, then apply any applicable coatings.
+ *
+ * @param dip /obj The object to attempt to dip src into.
+ * @param user /mob The mob attempting to dip src into dip.
+ *
+ * @return TRUE if coating applied, FALSE otherwise
+ */
+/obj/item/chems/food/proc/attempt_apply_coating(var/obj/dip, var/mob/user)
+	if(!dip || !ATOM_IS_OPEN_CONTAINER(dip) || istype(dip, /obj/item/chems/food) || !Adjacent(user))
+		return
+	for (var/reagent_type in dip.reagents?.reagent_volumes)
+		if(!ispath(reagent_type, /decl/material/liquid/nutriment/batter))
+			continue
+		return apply_coating(dip.reagents, reagent_type, user)
+
+//This proc handles drawing coatings out of a container when this food is dipped into it
+/obj/item/chems/food/proc/apply_coating(var/datum/reagents/holder, var/applied_coating, var/mob/user)
+	if (batter_coating)
+		var/decl/material/coating_reagent = GET_DECL(batter_coating)
+		to_chat(user, "[src] is already coated in [coating_reagent.name]!")
+		return FALSE
+
+	var/decl/material/liquid/nutriment/batter/applied_coating_reagent = GET_DECL(applied_coating)
+
+	//Calculate the reagents of the coating needed
+	var/req = 0
+	for (var/r in reagents.reagent_volumes)
+		if (ispath(r, /decl/material/liquid/nutriment))
+			req += reagents.reagent_volumes[r] * 0.2
+		else
+			req += reagents.reagent_volumes[r] * 0.1
+
+	req += w_class*0.5
+
+	if (!req)
+		//the food has no reagents left, it's probably getting deleted soon
+		return FALSE
+
+	if (holder.reagent_volumes[applied_coating] < req)
+		to_chat(user, SPAN_WARNING("There's not enough [applied_coating_reagent.name] to coat [src]!"))
+		return FALSE
+
+	//First make sure there's space for our batter
+	if (REAGENTS_FREE_SPACE(reagents) < req+5)
+		var/extra = req+5 - REAGENTS_FREE_SPACE(reagents)
+		reagents.maximum_volume += extra
+
+	//Suck the coating out of the holder
+	holder.trans_to_holder(reagents, req)
+
+	if (!REAGENT_VOLUME(reagents, applied_coating))
+		return
+
+	batter_coating = applied_coating
+	var/icon/I = icon(icon, icon_state, dir)
+	color = "#ffffff" //Some fruits use the color var. Reset this so it doesnt tint the batter
+	I.Blend(new /icon('icons/obj/food_custom.dmi', rgb(255,255,255)),ICON_ADD)
+	I.Blend(new /icon('icons/obj/food_custom.dmi', applied_coating_reagent.icon_raw),ICON_MULTIPLY)
+	var/image/J = image(I)
+	J.alpha = 200
+	J.blend_mode = BLEND_OVERLAY
+	add_overlay(J)
+
+	if (user)
+		user.visible_message(SPAN_NOTICE("[user] dips [src] into \the [applied_coating_reagent.name]"), SPAN_NOTICE("You dip [src] into \the [applied_coating_reagent.name]"))
+
+	return TRUE
+
+//Called by cooking machines. This is mainly intended to set properties on the food that differ between raw/cooked
+/obj/item/chems/food/proc/cook()
+	if (batter_coating)
+		cut_overlays()
+		var/decl/material/liquid/nutriment/batter/our_coating = GET_DECL(batter_coating)
+		var/icon/I = icon(icon, icon_state, dir)
+		color = COLOR_WHITE //Some fruits use the color var
+		I.Blend(new /icon('icons/obj/food_custom.dmi', rgb(255,255,255)),ICON_ADD)
+		I.Blend(new /icon('icons/obj/food_custom.dmi', our_coating.icon_cooked),ICON_MULTIPLY)
+		var/image/J = image(I)
+		J.alpha = 200
+		add_overlay(J)
+
+		if (do_coating_prefix)
+			SetName("[our_coating.coated_adj] [name]")
+
+	for (var/r in reagents.reagent_volumes)
+		if (ispath(r, /decl/material/liquid/nutriment/batter))
+			LAZYINITLIST(reagents.reagent_data)
+			LAZYSET(reagents.reagent_data[r], "cooked", TRUE)
 
 /obj/item/chems/food/can_be_injected_by(var/atom/injector)
 	return TRUE
@@ -50,8 +152,13 @@
 	return FALSE
 
 /obj/item/chems/food/Initialize()
-	.=..()
+	. = ..()
 	amount_per_transfer_from_this = bitesize
+	for(var/reagent_type in reagents.reagent_volumes)
+		if(ispath(reagent_type, /decl/material/liquid/nutriment/batter))
+			LAZYINITLIST(reagents.reagent_data)
+			// add a new reagent_data entry for each reagent type
+			LAZYSET(reagents.reagent_data[reagent_type], "cooked", TRUE) // batter starts cooked in compile-time foods
 
 	//Placeholder for effect that trigger on eating that aren't tied to reagents.
 /obj/item/chems/food/proc/On_Consume(var/mob/M)

@@ -31,7 +31,8 @@
 	pixel_y = 28
 	},
 /obj/item/radio/intercom{
-	pixel_y = -26
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
