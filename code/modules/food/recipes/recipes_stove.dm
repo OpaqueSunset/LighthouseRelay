@@ -174,6 +174,7 @@
 	result = /obj/item/chems/food/pelmeni_boiled
 
 /decl/recipe/meatball
+	display_name = "cooked meatball"
 	appliance = APPLIANCE_SKILLET|APPLIANCE_MICROWAVE
 	items = list(
 		/obj/item/chems/food/rawmeatball

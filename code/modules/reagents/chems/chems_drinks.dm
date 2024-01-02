@@ -80,6 +80,7 @@
 
 /decl/material/liquid/drink/juice/grape
 	name = "grape juice"
+	codex_name = "purple grape juice"
 	lore_text = "It's grrrrrape!"
 	taste_description = "grapes"
 	color = "#863333"
@@ -224,6 +225,7 @@
 
 /decl/material/liquid/drink/juice/apple
 	name = "apple juice"
+	codex_name = "tree apple juice"
 	lore_text = "Delicious sweet juice made from apples."
 	taste_description = "sweet apples"
 	color = "#c07c40"

@@ -102,6 +102,7 @@
 
 /decl/material/liquid/ethanol/ale
 	name = "ale"
+	codex_name = "plain ale"
 	lore_text = "A dark alchoholic beverage made by malted barley and yeast."
 	taste_description = "hearty barley ale"
 	color = "#4c3100"
@@ -169,6 +170,7 @@
 
 /decl/material/liquid/ethanol/gin
 	name = "gin"
+	codex_name = "plain gin"
 	lore_text = "It's gin. In space. I say, good sir."
 	taste_description = "an alcoholic christmas tree"
 	color = "#0064c6"

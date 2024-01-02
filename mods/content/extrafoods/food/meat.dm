@@ -29,7 +29,7 @@
 	. = ..()
 	var/obj/item/chems/food/rawbacon/example = /obj/item/chems/food/rawbacon
 	lore_text = initial(example.desc)
-	mechanics_text = "Three strips of raw bacon can be made by slicing a raw cutlet with any sharp object. It can be cooked to make <l>bacon</l>."
+	mechanics_text = "Three strips of raw bacon can be made by slicing a raw cutlet with any sharp object. It can be cooked to make <span codexlink='pan-cooked bacon (recipe)'>bacon</span>."
 
 /obj/item/chems/food/bacon
 	name = "bacon"
