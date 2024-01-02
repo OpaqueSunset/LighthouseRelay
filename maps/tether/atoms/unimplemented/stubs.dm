@@ -211,7 +211,7 @@
 /obj/structure/reagent_dispensers/cookingoil
 /obj/machinery/appliance/grill
 /obj/machinery/appliance/cooker/fryer
-/obj/machinery/appliance/cooker/grill
+/obj/machinery/appliance/cooker/stove
 /obj/machinery/appliance/cooker/oven
 /obj/machinery/appliance/mixer/candy
 /obj/machinery/appliance/mixer/cereal

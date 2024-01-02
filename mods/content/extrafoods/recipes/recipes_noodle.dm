@@ -29,7 +29,7 @@
 	reagents = list(/decl/material/liquid/drink/milk = 5)
 	reagent_mix = REAGENT_REPLACE
 	items = list(
-		/obj/item/reagent_containers/food/snacks/spagetti,
-		/obj/item/reagent_containers/food/snacks/cheesewedge
+		/obj/item/chems/food/spagetti,
+		/obj/item/chems/food/cheesewedge
 	)
-	result = /obj/item/reagent_containers/food/snacks/macncheese
+	result = /obj/item/chems/food/macncheese

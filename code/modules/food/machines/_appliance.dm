@@ -14,8 +14,8 @@
 	desc = "You shouldn't be seeing this!"
 	icon = 'icons/obj/cooking_machines.dmi'
 	var/appliancetype = 0
-	density = 1
-	anchored = 1
+	density = TRUE
+	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 	uncreated_component_parts = null
 	maximum_component_parts = list(/obj/item/stock_parts = 11)

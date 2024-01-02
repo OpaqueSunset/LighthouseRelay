@@ -5232,7 +5232,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/appliance/cooker/grill,
+/obj/machinery/appliance/cooker/stove,
 /turf/simulated/floor/lino,
 /area/ministation/cafe)
 "Au" = (

@@ -221,7 +221,7 @@
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "ba" = (
-/obj/machinery/appliance/cooker/grill,
+/obj/machinery/appliance/cooker/stove,
 /turf/simulated/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bb" = (

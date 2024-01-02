@@ -68,11 +68,11 @@
 //This proc handles drawing coatings out of a container when this food is dipped into it
 /obj/item/chems/food/proc/apply_coating(var/datum/reagents/holder, var/applied_coating, var/mob/user)
 	if (batter_coating)
-		var/decl/material/coating_reagent = decls_repository.get_decl(batter_coating)
+		var/decl/material/coating_reagent = GET_DECL(batter_coating)
 		to_chat(user, "[src] is already coated in [coating_reagent.name]!")
 		return FALSE
 
-	var/decl/material/liquid/nutriment/batter/applied_coating_reagent = decls_repository.get_decl(applied_coating)
+	var/decl/material/liquid/nutriment/batter/applied_coating_reagent = GET_DECL(applied_coating)
 
 	//Calculate the reagents of the coating needed
 	var/req = 0
@@ -122,7 +122,7 @@
 /obj/item/chems/food/proc/cook()
 	if (batter_coating)
 		cut_overlays()
-		var/decl/material/liquid/nutriment/batter/our_coating = decls_repository.get_decl(batter_coating)
+		var/decl/material/liquid/nutriment/batter/our_coating = GET_DECL(batter_coating)
 		var/icon/I = icon(icon, icon_state, dir)
 		color = COLOR_WHITE //Some fruits use the color var
 		I.Blend(new /icon('icons/obj/food_custom.dmi', rgb(255,255,255)),ICON_ADD)
