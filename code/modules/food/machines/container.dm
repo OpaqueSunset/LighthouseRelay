@@ -86,7 +86,7 @@
 	closeToolTip(usr)
 
 /obj/item/chems/cooking_container/attackby(var/obj/item/I, var/mob/user)
-	if(is_type_in_list(I, insertable))
+	if(is_type_in_list(I, insertable) && (user?.a_intent != I_HURT)) // for egg cracking
 		if (!can_fit(I))
 			to_chat(user, SPAN_WARNING("There's no more space in [src] for that!"))
 			return FALSE
