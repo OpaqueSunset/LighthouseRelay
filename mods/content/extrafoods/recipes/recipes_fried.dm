@@ -16,14 +16,6 @@
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/risottoballs
 
-/decl/recipe/onionrings
-	appliance = APPLIANCE_FRYER
-	fruit = list("onion" = 1)
-	items = list(
-		/obj/item/chems/food/doughslice = 1
-	)
-	result = /obj/item/chems/food/onionrings
-
 /decl/recipe/friedmushroom
 	appliance = APPLIANCE_FRYER
 	fruit = list("plumphelmet" = 1)

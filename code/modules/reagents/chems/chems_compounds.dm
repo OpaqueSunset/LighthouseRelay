@@ -59,6 +59,7 @@
 	taste_description = "spices"
 	taste_mult = 1.5
 	value = 0.5
+	uid = "chem_spacespice"
 
 /decl/material/liquid/enzyme
 	name = "universal enzyme"

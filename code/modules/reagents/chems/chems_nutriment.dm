@@ -211,6 +211,7 @@
 	nutriment_factor = 27//The caloric ratio of carb/protein/fat is 4:4:9
 	color = "#cccccc"
 	taste_description = "fat"
+	uid = "chem_nutriment_triglyceride"
 
 /decl/material/liquid/nutriment/triglyceride/oil
 	//Having this base class in case we want to add more variants of oil
@@ -222,6 +223,7 @@
 	var/lastburnmessage = 0
 	taste_description = "some sort of oil"
 	taste_mult = 0.1
+	uid = "chem_nutriment_triglyceride_oil"
 
 /decl/material/liquid/nutriment/triglyceride/oil/initialize_data(var/newdata) // Called when the reagent is created.
 	return ..() || list("temperature" = T20C, "lastburnmessage" = 0)

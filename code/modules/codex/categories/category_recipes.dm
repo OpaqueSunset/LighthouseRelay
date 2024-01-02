@@ -95,7 +95,7 @@
 			ingredients += "[recipe.fruit[thing]] [thing]\s"
 		if(recipe.coating)
 			var/decl/material/coating = GET_DECL(recipe.coating)
-			ingredients += "<span codexlink='[coating.codex_name || coating.name]'>\a [coating.name]</span> coating"
+			ingredients += "<span codexlink='[coating.codex_name || coating.name] (substance)'>\a [coating.name]</span> coating"
 		mechanics_text += "<ul><li>[jointext(ingredients, "</li><li>")]</li></ul>"
 		var/atom/recipe_product = recipe.result
 		var/plural = recipe.result_quantity > 1
