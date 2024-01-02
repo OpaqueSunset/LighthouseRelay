@@ -148,6 +148,7 @@
 	result = /obj/item/chems/food/bunbun
 
 /decl/recipe/hotdog
+	display_name = "plain hotdog"
 	appliance = APPLIANCE_MIX|APPLIANCE_MICROWAVE
 	items = list(
 		/obj/item/chems/food/bun,
@@ -190,6 +191,7 @@
 	result = /obj/item/chems/food/bigbiteburger
 
 /decl/recipe/sandwich
+	display_name = "meat and cheese sandwich"
 	appliance = APPLIANCE_MICROWAVE|APPLIANCE_MIX
 	items = list(
 		/obj/item/chems/food/meatsteak,

@@ -215,6 +215,7 @@
 /decl/material/liquid/nutriment/triglyceride/oil
 	//Having this base class in case we want to add more variants of oil
 	name = "oil"
+	codex_name = "cooking oil"
 	lore_text = "Oils are liquid fats."
 	color = "#c79705"
 	touch_met = 1.5
@@ -502,6 +503,7 @@
 
 /decl/material/liquid/nutriment/sugar
 	name = "sugar"
+	codex_name = "granulated sugar"
 	lore_text = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
 	taste_description = "sugar"
 	taste_mult = 3

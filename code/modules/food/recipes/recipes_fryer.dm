@@ -35,6 +35,7 @@
 	result = /obj/item/chems/food/fishfingers
 
 /decl/recipe/fries
+	display_name = "potato chips"
 	appliance = APPLIANCE_FRYER
 	items = list(
 		/obj/item/chems/food/rawsticks
@@ -50,6 +51,7 @@
 	result = /obj/item/chems/food/onionrings
 
 /decl/recipe/jellydonut
+	display_name = "berry jelly donut"
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/drink/juice/berry = 5, /decl/material/liquid/nutriment/sugar = 5)
 	items = list(
@@ -59,10 +61,12 @@
 	result = /obj/item/chems/food/donut/jelly/berry
 
 /decl/recipe/jellydonut/cherry
+	display_name = "cherry jelly donut"
 	reagents = list(/decl/material/liquid/nutriment/cherryjelly = 5, /decl/material/liquid/nutriment/sugar = 5)
 	result = /obj/item/chems/food/donut/jelly
 
 /decl/recipe/donut
+	display_name = "plain donut"
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/nutriment/sugar = 5)
 	items = list(
