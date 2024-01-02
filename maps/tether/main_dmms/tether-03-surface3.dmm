@@ -5535,7 +5535,7 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/kitchen)
 "lv" = (
-/obj/machinery/appliance/grill,
+/obj/machinery/appliance/cooker/stove,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},

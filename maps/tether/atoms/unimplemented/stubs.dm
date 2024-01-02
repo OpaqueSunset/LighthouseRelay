@@ -221,7 +221,6 @@
 /obj/item/chems/food/lasagna
 /obj/item/chems/drinks/bottle/lemonjuice
 /obj/item/chems/drinks/metaglass
-/obj/item/chems/glass/beaker/measuring_cup
 
 // TELESCI
 /obj/machinery/computer/telescience

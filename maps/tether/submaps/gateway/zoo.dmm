@@ -351,7 +351,8 @@
 "be" = (
 /obj/machinery/button/alternate/door{
 	pixel_y = -24;
-	id_tag = "packerMed"
+	id_tag = "packerMed";
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
@@ -396,7 +397,8 @@
 "bm" = (
 /obj/machinery/button/alternate/door{
 	pixel_y = -24;
-	id_tag = "packerCargo"
+	id_tag = "packerCargo";
+	dir = 1
 	},
 /obj/machinery/light/small,
 /obj/effect/floor_decal/industrial/warning,
@@ -1085,7 +1087,8 @@
 /area/awaymission/zoo/pirateship)
 "do" = (
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
@@ -1478,7 +1481,8 @@
 "es" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/newscaster{
-	pixel_x = 32
+	pixel_x = 32;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
@@ -2395,7 +2399,8 @@
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Syndicate Intercom";
-	pixel_y = -32
+	pixel_y = -30;
+	dir = 1
 	},
 /obj/machinery/light,
 /turf/simulated/floor/shuttle/darkred,
@@ -2599,7 +2604,8 @@
 /area/awaymission/zoo)
 "hF" = (
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
@@ -2636,7 +2642,8 @@
 /area/awaymission/zoo)
 "hJ" = (
 /obj/machinery/recharger/wallcharger{
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /obj/machinery/light{
 	dir = 8;
@@ -2693,7 +2700,8 @@
 /area/awaymission/zoo/syndieship)
 "hP" = (
 /obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 8
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)

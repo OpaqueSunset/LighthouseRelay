@@ -387,9 +387,9 @@
 "bh" = (
 /obj/effect/floor_decal/corner/green/full,
 /obj/item/radio/intercom{
-	dir = 8;
+	dir = 4;
 	name = "Station Intercom (General)";
-	pixel_x = -21
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snowfield/base)
@@ -554,7 +554,8 @@
 "bB" = (
 /obj/item/radio/intercom{
 	name = "Station Intercom (General)";
-	pixel_y = -21
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/awaymission/snowfield/base)
@@ -581,7 +582,8 @@
 	},
 /obj/item/radio/intercom{
 	name = "Station Intercom (General)";
-	pixel_y = -21
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/awaymission/snowfield/base)
@@ -610,7 +612,8 @@
 	dir = 9
 	},
 /obj/structure/closet/medical_wall{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/regular,
@@ -1303,7 +1306,8 @@
 /area/awaymission/snowfield/base)
 "dO" = (
 /obj/structure/closet/medical_wall{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/regular,

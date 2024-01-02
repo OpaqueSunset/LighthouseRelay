@@ -32,7 +32,8 @@
 	desc = "A remote control-switch for the engine control room blast doors.";
 	name = "Engine Monitoring Room Blast Doors";
 	pixel_y = -3;
-	id_tag = "EngineBlast"
+	id_tag = "EngineBlast";
+	dir = 1
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -504,7 +505,8 @@
 	desc = "A remote control-switch for the engine radiator viewport shutters.";
 	name = "Engine Radiator Viewport Shutters";
 	pixel_x = -25;
-	id_tag = "EngineRadiatorViewport"
+	id_tag = "EngineRadiatorViewport";
+	dir = 4
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
@@ -968,7 +970,8 @@
 	desc = "A remote control-switch for the engine control room blast doors.";
 	name = "Engine Room Blast Doors";
 	pixel_y = -25;
-	id_tag = "EngineEmitterPortWest"
+	id_tag = "EngineEmitterPortWest";
+	dir = 1
 	},
 /obj/machinery/camera/network/engine{
 	dir = 1
@@ -1002,7 +1005,8 @@
 	},
 /obj/machinery/airlock_sensor/airlock_interior{
 	id_tag = "eng_al_int_snsr";
-	pixel_x = 22
+	pixel_x = 22;
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
@@ -1077,8 +1081,7 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/structure/extinguisher_cabinet{
-	dir = 1;
-	pixel_y = 32
+	pixel_y = 29
 	},
 /turf/simulated/floor,
 /area/engineering/engine_gas)
@@ -1090,7 +1093,8 @@
 /obj/machinery/button/blast_door{
 	name = "Reactor Ventillatory Control";
 	pixel_y = -25;
-	id_tag = "EngineVent"
+	id_tag = "EngineVent";
+	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor,
@@ -1130,7 +1134,8 @@
 /area/engineering/engine_room)
 "de" = (
 /obj/item/radio/intercom{
-	pixel_y = -24
+	pixel_y = -30;
+	dir = 1
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
@@ -1250,7 +1255,8 @@
 	desc = "A remote control-switch for the engine control room blast doors.";
 	name = "Engine Room Blast Doors";
 	pixel_x = 25;
-	id_tag = "EngineEmitterPortWest2"
+	id_tag = "EngineEmitterPortWest2";
+	dir = 8
 	},
 /turf/simulated/floor,
 /area/engineering/engine_gas)
