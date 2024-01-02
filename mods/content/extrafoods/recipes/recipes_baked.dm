@@ -48,10 +48,10 @@
 
 /decl/recipe/cinnamonbun
 	appliance = APPLIANCE_OVEN
-	reagents = list(/decl/material/liquid/nutriment/sugar = 15, /decl/material/liquid/drink/milk/cream = 10)
+	reagents = list(/decl/material/liquid/nutriment/sugar = 15, /decl/material/liquid/drink/milk/cream = 10, /decl/material/solid/cinnamon = 5)
 	items = list(
 		/obj/item/chems/food/dough = 1
-		)
+	)
 	result = /obj/item/chems/food/cinnamonbun
 	result_quantity = 4
 
