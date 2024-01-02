@@ -10,6 +10,7 @@ fundamental differences
 */
 
 /obj/machinery/appliance/mixer
+	abstract_type = /obj/machinery/appliance/mixer
 	max_contents = 1
 	use_power = POWER_USE_OFF
 	cooking_coeff = 0.75

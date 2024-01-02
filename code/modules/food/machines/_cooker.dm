@@ -1,4 +1,5 @@
 /obj/machinery/appliance/cooker
+	abstract_type = /obj/machinery/appliance/cooker
 	var/min_temp = 80 + T0C	//Minimum temperature to do any cooking
 	var/optimal_temp = 200 + T0C	//Temperature at which we have 100% efficiency. efficiency is lowered on either side of this
 	var/optimal_power = 0.8 //cooking power at 100%

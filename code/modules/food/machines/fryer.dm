@@ -26,6 +26,10 @@
 	var/optimal_oil = 9000//90 litres of cooking oil
 	var/datum/composite_sound/deep_fryer/fry_loop
 
+/obj/machinery/appliance/cooker/fryer/Destroy()
+	QDEL_NULL(fry_loop)
+	return ..()
+
 /obj/machinery/appliance/cooker/fryer/examine(var/mob/user)
 	. = ..()
 	if (.)//no need to duplicate adjacency check
