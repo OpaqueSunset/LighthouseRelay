@@ -242,6 +242,13 @@
 	glass_name = "pear juice"
 	glass_desc = "Delicious juice made from pears."
 
+/decl/material/liquid/drink/juice/pumpkinpulp
+	name = "pumpkin pulp"
+	lore_text = "It's almost juice, but not really. Someone's been Smashing Pumpkins Today."
+	taste_description = "pumpkin"
+	color = "#d88b4c"
+	// no glass
+
 // Everything else
 
 /decl/material/liquid/drink/milk
@@ -734,6 +741,11 @@
 
 	glass_name = "redbush tea"
 	glass_desc = "A caffeine-free dark red tea, flavorful and full of antioxidants."
+
+/decl/material/liquid/drink/syrup_base
+	name = "simple syrup"
+	lore_text = "A rich simple syrup, made of sugar dissolved in boiling water. It's sickeningly sweet."
+	taste_description = "sweetness"
 
 /decl/material/liquid/drink/syrup
 	abstract_type =  /decl/material/liquid/drink/syrup

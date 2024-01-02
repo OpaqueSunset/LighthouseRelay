@@ -300,17 +300,21 @@
 	nutriment_amt = 3
 	bitesize = 3
 	nutriment_type = /decl/material/liquid/nutriment/bread
+	var/random_frosting = TRUE
 	var/overlay_state = "box-donut1"
 	var/donut_state = "donut"
 
 //FIXME: Again a really weird way of handling that
 /obj/item/chems/food/donut/populate_reagents()
 	. = ..()
-	if(prob(30))
+	if(random_frosting && prob(30))
 		icon_state = "[donut_state]2"
 		overlay_state = "box-donut2"
 		SetName("frosted [name]")
 		reagents.add_reagent(/decl/material/liquid/nutriment/sprinkles, 2)
+
+/obj/item/chems/food/donut/unfrosted
+	random_frosting = FALSE
 
 /obj/item/chems/food/donut/chaos
 	name = "chaos donut"
@@ -347,10 +351,14 @@
 	bitesize = 5
 	nutriment_type = /decl/material/liquid/nutriment/bread
 	donut_state = "jdonut"
+	var/jelly_type = /decl/material/liquid/nutriment/cherryjelly
 
 /obj/item/chems/food/donut/jelly/populate_reagents()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/cherryjelly, 5)
+	reagents.add_reagent(jelly_type, 5)
+
+/obj/item/chems/food/donut/jelly/berry
+	jelly_type = /decl/material/liquid/drink/juice/berry
 
 //Sol Vendor
 /obj/item/chems/food/lunacake

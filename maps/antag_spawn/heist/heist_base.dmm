@@ -623,11 +623,6 @@
 	icon_state = "asteroid"
 	},
 /area/map_template/syndicate_mothership/raider_base)
-"bz" = (
-/turf/unsimulated/floor{
-	icon_state = "asteroid"
-	},
-/area/map_template/syndicate_mothership/raider_base)
 "bC" = (
 /obj/effect/decal/cleanable/cobweb2{
 	icon_state = "spiderling";
@@ -1019,6 +1014,7 @@
 /obj/machinery/door/blast/regular/open{
 	id_tag = "SkipjackShuttersNorth";
 	name = "Blast Doors";
+	
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/brown,
@@ -1382,6 +1378,7 @@
 	dir = 4;
 	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack Shutters";
+	
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/brown,
@@ -1408,6 +1405,7 @@
 	dir = 8;
 	id_tag = "SkipjackShuttersEast";
 	name = "Skipjack Shutters";
+	
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /obj/effect/paint/brown,
@@ -1479,6 +1477,7 @@
 	dir = 4;
 	id_tag = "SkipjackShuttersWest";
 	name = "Skipjack Shutters";
+	
 	},
 /obj/effect/wallframe_spawn/reinforced/titanium,
 /turf/simulated/floor/plating,
@@ -1805,12 +1804,6 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/shuttle/red,
 /area/map_template/skipjack_station/start)
-"eI" = (
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
-	},
-/area/map_template/syndicate_mothership/raider_base)
 "jf" = (
 /obj/machinery/network/acl{
 	initial_network_id = "piratenet";
@@ -2677,7 +2670,7 @@ ab
 ab
 aQ
 aq
-bz
+aq
 aq
 aq
 ce
@@ -5190,7 +5183,7 @@ ab
 ab
 ab
 ae
-eI
+aj
 aj
 av
 av

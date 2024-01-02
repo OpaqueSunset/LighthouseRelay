@@ -1,0 +1,8 @@
+# Repath pre-Aurora/Hestia cooking appliances to new ones
+# These two are specifically mixers rather than cookers
+/obj/machinery/cooker/cereal : /obj/machinery/appliance/mixer/cereal{@OLD}
+/obj/machinery/cooker/candy : /obj/machinery/appliance/mixer/candy{@OLD}
+# The grill was replaced by a stove for some reason
+/obj/machinery/cooker/grill : /obj/machinery/appliance/cooker/grill{@OLD}
+# All the others ones just get /appliance added
+/obj/machinery/cooker/@SUBTYPES : /obj/machinery/appliance/cooker/@SUBTYPES{@OLD}

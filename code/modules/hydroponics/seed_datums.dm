@@ -1047,7 +1047,7 @@
 	name = "pumpkin"
 	seed_name = "pumpkin"
 	display_name = "pumpkin vine"
-	chems = list(/decl/material/liquid/nutriment = list(1,6))
+	chems = list(/decl/material/liquid/nutriment = list(1,6), /decl/material/liquid/drink/juice/pumpkinpulp = list(1,6))
 	kitchen_tag = "pumpkin"
 
 /datum/seed/pumpkin/New()

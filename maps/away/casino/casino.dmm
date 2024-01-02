@@ -110,6 +110,7 @@
 	dir = 2;
 	id_tag = "casino_bridge";
 	name = "Casino Bridge Blast Doors";
+	
 	},
 /turf/simulated/floor/plating,
 /area/casino/casino_bridge)
@@ -139,6 +140,7 @@
 	dir = 4;
 	id_tag = "casino_bridge";
 	name = "Casino Bridge Blast Doors";
+	
 	},
 /turf/simulated/floor/plating,
 /area/casino/casino_bridge)
@@ -1808,6 +1810,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
+	
 	},
 /turf/simulated/floor/tiled,
 /area/casino/casino_security)
@@ -1898,6 +1901,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
+	
 	},
 /turf/simulated/floor/tiled,
 /area/casino/casino_security)
@@ -2140,6 +2144,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
+	
 	},
 /turf/simulated/floor/plating,
 /area/casino/casino_security)
@@ -2534,26 +2539,26 @@
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "hq" = (
-/obj/machinery/cooker/cereal,
+/obj/machinery/appliance/mixer/cereal,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "hr" = (
-/obj/machinery/cooker/candy,
+/obj/machinery/appliance/mixer/candy,
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "hs" = (
-/obj/machinery/cooker/fryer,
+/obj/machinery/appliance/cooker/fryer,
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "ht" = (
-/obj/machinery/cooker/oven,
+/obj/machinery/appliance/cooker/oven,
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "hu" = (
-/obj/machinery/cooker/grill,
+/obj/machinery/appliance/cooker/grill,
 /turf/simulated/floor/tiled,
 /area/casino/casino_kitchen)
 "hv" = (
