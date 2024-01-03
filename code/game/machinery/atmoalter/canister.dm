@@ -186,6 +186,7 @@ update_flag
 	if(exposed_temperature > temperature_resistance)
 		health -= 5
 		healthcheck()
+	return ..()
 
 /obj/machinery/portable_atmospherics/canister/proc/healthcheck()
 	if(destroyed)

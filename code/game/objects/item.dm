@@ -324,6 +324,16 @@
 /obj/item/proc/dragged_onto(var/mob/user)
 	return attack_hand_with_interaction_checks(user)
 
+/obj/item/afterattack(var/atom/A, var/mob/user, var/proximity)
+	. = ..()
+	if(. || !proximity)
+		return
+	var/atom_heat = get_heat()
+	if(atom_heat > 0)
+		A.handle_external_heating(atom_heat, src, user)
+		return TRUE
+	return FALSE
+
 /obj/item/attack_hand(mob/user)
 
 	if(!user)
@@ -920,6 +930,15 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 /obj/item/check_mousedrop_adjacency(var/atom/over, var/mob/user)
 	. = (loc == user && istype(over, /obj/screen)) || ..()
 
+// Supplied during loadout gear tweaking.
+/obj/item/proc/set_custom_name(var/new_name)
+	SetName(new_name)
+
+// Supplied during loadout gear tweaking.
+/obj/item/proc/set_custom_desc(var/new_desc)
+	desc = new_desc
+
+
 /obj/item/proc/setup_power_supply(loaded_cell_type, accepted_cell_type, power_supply_extension_type, charge_value)
 	SHOULD_CALL_PARENT(FALSE)
 	if(loaded_cell_type && accepted_cell_type)
@@ -927,4 +946,3 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/handle_loadout_equip_replacement(obj/item/old_item)
 	return
-

@@ -12,7 +12,7 @@
 	status_flags = PASSEMOTES
 	a_intent =     I_HURT
 	mob_size =     MOB_SIZE_LARGE
-	atom_flags = ATOM_FLAG_SHIELD_CONTENTS | ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_BLOCK_DIAGONAL_FACING
+	atom_flags = ATOM_FLAG_SHIELD_CONTENTS | ATOM_FLAG_BLOCK_DIAGONAL_FACING
 
 	meat_type = null
 	meat_amount = 0
@@ -208,9 +208,9 @@
 /mob/living/exosuit/return_air()
 	return (body && body.pilot_coverage >= 100 && hatch_closed && body.cockpit) ? body.cockpit : loc.return_air()
 
-/mob/living/exosuit/GetIdCards(exceptions = null)
+/mob/living/exosuit/GetIdCards(list/exceptions)
 	. = ..()
-	if(istype(access_card))
+	if(istype(access_card) && !is_type_in_list(access_card, exceptions))
 		LAZYDISTINCTADD(., access_card)
 
 /mob/living/exosuit/set_dir()

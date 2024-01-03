@@ -10,9 +10,16 @@
 	uid = "chem_nutriment"
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE // Please, no more animal protein or glowsap or corn oil atmosphere.
 
+	// Technically a room-temperature solid, but saves
+	// repathing it to /solid all over the codebase.
+	melting_point    = 323
+	ignition_point   = 353
+	boiling_point    = 373
+	accelerant_value =   0.65
+
 	var/nutriment_factor = 10 // Per unit
 	var/hydration_factor = 0 // Per unit
-	var/injectable = 0
+	var/injectable       = FALSE
 
 /decl/material/liquid/nutriment/mix_data(var/datum/reagents/reagents, var/list/newdata, var/newamount)
 
@@ -102,6 +109,8 @@
 	taste_description = "egg"
 	color = "#ffffaa"
 	uid = "chem_nutriment_egg"
+	melting_point = 273
+	boiling_point = 373
 
 //vegetamarian alternative that is safe for vegans to ingest//rewired it from its intended nutriment/protein/egg/softtofu because it would not actually work, going with plan B, more recipes.
 
@@ -120,6 +129,8 @@
 	color = "#ffff00"
 	fruit_descriptor = "rich"
 	uid = "chem_nutriment_honey"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/flour
 	name = "flour"
@@ -145,6 +156,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_batter"
+	melting_point = T0C
+	boiling_point = T100C
 	var/icon_raw = "batter_raw"
 	var/icon_cooked = "batter_cooked"
 	var/coated_adj = "battered"
@@ -413,6 +426,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_soysauce"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/ketchup
 	name = "ketchup"
@@ -423,6 +438,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_ketchup"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/banana_cream
 	name = "banana cream"
@@ -432,6 +449,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_bananacream"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/barbecue
 	name = "barbecue sauce"
@@ -442,6 +461,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_bbqsauce"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/garlicsauce
 	name = "garlic sauce"
@@ -452,6 +473,8 @@
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	uid = "chem_nutriment_garlicsauce"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/rice
 	name = "rice"
@@ -482,6 +505,8 @@
 	color = "#801e28"
 	fruit_descriptor = "sweet"
 	uid = "chem_nutriment_cherryjelly"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/cornoil
 	name = "corn oil"
@@ -492,6 +517,8 @@
 	color = "#302000"
 	slipperiness = 8
 	uid = "chem_nutriment_cornoil"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/sprinkles
 	name = "sprinkles"
@@ -526,6 +553,8 @@
 	color = "#e8dfd0"
 	taste_mult = 3
 	uid = "chem_nutriment_vinegar"
+	melting_point = 273
+	boiling_point = 373
 
 /decl/material/liquid/nutriment/mayo
 	name = "mayonnaise"

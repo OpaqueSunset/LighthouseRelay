@@ -1955,7 +1955,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/security/main)
 "aen" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Security South"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/security/main)
 "aeo" = (
@@ -29477,7 +29479,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/quartermaster/office)
 "bkC" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Supply Foyer"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/quartermaster/office)
 "bkD" = (
@@ -37140,7 +37144,9 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/exodus/medical/medbay)
 "bAp" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Medbay Storage"
+	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -45609,7 +45615,9 @@
 /turf/simulated/floor/tiled/white,
 /area/exodus/medical/sleeper)
 "bQZ" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Emergency Recovery"
+	},
 /turf/simulated/floor/tiled/white,
 /area/exodus/medical/sleeper)
 "bRa" = (
@@ -48092,7 +48100,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Emergency Scanning"
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/medical/sleeper)
 "bWe" = (
@@ -60929,7 +60939,9 @@
 /turf/simulated/floor/tiled/white,
 /area/exodus/medical/virology)
 "cCW" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Virology Cafeteria"
+	},
 /turf/simulated/floor/tiled/white,
 /area/exodus/medical/virology)
 "cCX" = (
@@ -63298,6 +63310,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/ship/exodus_pod_research)
+"elq" = (
+/obj/machinery/hologram/holopad{
+	holopad_id = "Security North"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/exodus/security/main)
 "esY" = (
 /obj/effect/paint_stripe/blue,
 /turf/simulated/wall/titanium,
@@ -64736,6 +64754,12 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/hallway/primary/port)
+"woj" = (
+/obj/machinery/hologram/holopad{
+	holopad_id = "Library Rec Area"
+	},
+/turf/simulated/floor/wood/walnut,
+/area/exodus/library)
 "wqh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/corner/lime{
@@ -64852,6 +64876,12 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/exodus/research)
+"xTe" = (
+/obj/machinery/hologram/holopad{
+	holopad_id = "Sorting Office"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/exodus/quartermaster/office)
 "xVx" = (
 /obj/structure/bed/chair/shuttle/black{
 	dir = 8
@@ -88419,7 +88449,7 @@ bfm
 bez
 bga
 bga
-bkC
+xTe
 bga
 bga
 bga
@@ -94787,7 +94817,7 @@ acO
 adm
 adm
 adP
-aen
+elq
 aev
 aeX
 afp
@@ -107936,7 +107966,7 @@ aJD
 aJJ
 aJW
 aMg
-qlX
+woj
 hLX
 aRK
 hLX
