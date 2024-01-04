@@ -112,7 +112,7 @@
 
 /decl/sprite_accessory/ears/sergalhc
 	name = "Sergal ears, colorable"
-	icon_state = "serg_plain_s"
+	icon_state = "serg_plain"
 	uid = "acc_ears_sergal_colorable"
 
 /decl/sprite_accessory/ears/mousehc

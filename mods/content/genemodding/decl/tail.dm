@@ -15,9 +15,6 @@
 	blend = ICON_MULTIPLY // Only appliciable if do_coloration = 1
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
-/decl/sprite_accessory/tail/get_validatable_icon_state()
-	return "[icon_state]_s"
-
 /* // This needs to be done in a better way. It probably doesn't even work currently?
 /decl/sprite_accessory/tail/invisible
 	name = "hide species-sprite tail"
