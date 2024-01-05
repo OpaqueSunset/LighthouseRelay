@@ -1587,6 +1587,7 @@
 #include "code\modules\atmospherics\components\shutoff.dm"
 #include "code\modules\atmospherics\components\tvalve.dm"
 #include "code\modules\atmospherics\components\valve.dm"
+#include "code\modules\atmospherics\components\binary_devices\algae_generator.dm"
 #include "code\modules\atmospherics\components\binary_devices\binary_atmos_base.dm"
 #include "code\modules\atmospherics\components\binary_devices\circulator.dm"
 #include "code\modules\atmospherics\components\binary_devices\oxyregenerator.dm"
