@@ -10833,7 +10833,9 @@
 /area/rnd/breakroom)
 "vy" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Hallway Third Floor South - Elevator"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "vz" = (
@@ -12838,7 +12840,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/rnd/reception_desk)
 "yW" = (
-/obj/machinery/hologram/holopad,
 /obj/machinery/fabricator/protolathe,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/reception_desk)
@@ -14461,7 +14462,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "BK" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Hallway Third Floor South - Research"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
