@@ -265,6 +265,14 @@
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
+/decl/material/solid/organic/plantmatter/algae
+	default_solid_form = /obj/item/stack/material/puck
+	name = "algae"
+	flags = 0
+	hidden_from_codex = FALSE
+	value = 0.6
+	uid = "solid_plantmatter_algae"
+
 /decl/material/solid/organic/meat
 	name = "meat"
 	uid = "solid_meat"

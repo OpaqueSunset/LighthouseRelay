@@ -206,6 +206,9 @@
 /datum/fabricator_recipe/imprinter/circuit/oxyregenerator
 	path = /obj/item/stock_parts/circuitboard/oxyregenerator
 
+/datum/fabricator_recipe/imprinter/circuit/algae_farm
+	path = /obj/item/stock_parts/circuitboard/algae_farm
+
 /datum/fabricator_recipe/imprinter/circuit/reagent_heater
 	path = /obj/item/stock_parts/circuitboard/reagent_heater
 

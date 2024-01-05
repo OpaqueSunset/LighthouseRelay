@@ -3877,7 +3877,9 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 1
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Security - Brig Hallway"
+	},
 /turf/simulated/floor/tiled,
 /area/security/security_cell_hallway)
 "gX" = (
@@ -4474,7 +4476,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "AI Upload Storage West"
+	},
 /turf/simulated/floor/bluegrid,
 /area/ai_upload)
 "ij" = (
@@ -4553,7 +4557,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "AI Upload Storage East"
+	},
 /turf/simulated/floor/bluegrid,
 /area/ai_upload)
 "ip" = (
@@ -15772,7 +15778,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "AI Upload Interior"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai_upload)
 "Fz" = (
