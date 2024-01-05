@@ -4468,7 +4468,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium Third Floor - Pool Hallway"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "jB" = (
@@ -4608,7 +4610,9 @@
 	dir = 2;
 	icon_state = "pipe-j2"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium Third Floor Northwest"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "jR" = (
@@ -4696,7 +4700,9 @@
 	dir = 8;
 	icon_state = "pipe-j2"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium Third Floor Northeast"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "ka" = (
@@ -4818,7 +4824,9 @@
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "kl" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 1
+	},
 /obj/effect/floor_decal/corner/lightgrey{
 	dir = 10
 	},
@@ -5792,7 +5800,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/vending/cigarette,
+/obj/machinery/vending/cigarette{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
 "mc" = (
@@ -6482,7 +6492,9 @@
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
 "ns" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Bar - Kitchen Counter"
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/bar)
 "nt" = (
@@ -10921,7 +10933,9 @@
 	dpdir = 11;
 	icon_state = "pipe-j2"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium Third Floor Southeast"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "vK" = (
@@ -14761,7 +14775,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "Ce" = (
-/obj/machinery/vending/fitness,
+/obj/machinery/vending/fitness{
+	dir = 8
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -14863,7 +14879,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "Cs" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Research Upper Hallway"
+	},
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
@@ -21068,7 +21086,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "QU" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 8
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/lounge)
 "QW" = (
@@ -21713,7 +21733,9 @@
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
 "Ua" = (
-/obj/structure/reagent_dispensers/water_cooler,
+/obj/structure/reagent_dispensers/water_cooler{
+	dir = 8
+	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -22190,7 +22212,9 @@
 /turf/simulated/floor/tiled,
 /area/hydroponics)
 "WU" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 8
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/lounge)
 "Xb" = (
@@ -22435,7 +22459,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_three)
 "Yy" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Bar - Gambling Room"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "Yz" = (

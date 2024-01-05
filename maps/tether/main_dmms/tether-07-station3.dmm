@@ -2136,7 +2136,9 @@
 	dir = 1
 	},
 /obj/machinery/light/small,
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "AI Core"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/ai)
 "ea" = (
@@ -13068,7 +13070,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/station/elevator)
 "wY" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Main Upper Hallway - Elevator"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
@@ -14009,7 +14013,9 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 6
 	},
-/obj/machinery/computer/modular/preset/civilian,
+/obj/machinery/computer/modular/preset/civilian{
+	dir = 1
+	},
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -18879,7 +18885,9 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Medbay Reception - Staff Only"
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "GX" = (

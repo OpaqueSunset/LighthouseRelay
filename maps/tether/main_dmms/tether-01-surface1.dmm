@@ -1200,7 +1200,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "acz" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Tram Station - Holding Cell"
+	},
 /obj/structure/table/steel,
 /obj/structure/window/basic,
 /obj/structure/window/basic{
@@ -3038,7 +3040,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Tram Station - Departure"
+	},
 /obj/abstract/landmark/latejoin/tram,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -7421,7 +7425,9 @@
 /area/tether/surfacebase/atrium_one)
 "aoc" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium First Floor East"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "aod" = (
@@ -7522,7 +7528,7 @@
 /area/maintenance/lower/research)
 "aoq" = (
 /obj/machinery/door/airlock/double/glass{
-	dir = 1
+	dir = 8
 	},
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/steeldecal/steel_decals_central1,
@@ -10541,7 +10547,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium First Floor South"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -11109,7 +11117,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "avb" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Anomaly Lab North"
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/anomaly_lab)
 "avc" = (
@@ -12559,7 +12569,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/mining_eva)
 "axF" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium First Floor Elevator"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "axG" = (
@@ -12798,7 +12810,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium First Floor North"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "axZ" = (
@@ -15211,7 +15225,9 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
 "aCs" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Research Lower Hallway"
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
 "aCt" = (
@@ -15771,10 +15787,10 @@
 /area/storage/surface_eva)
 "aDH" = (
 /obj/structure/closet/crate/hydroponics,
-/obj/item/stack/material/puck/mapped/algae,
-/obj/item/stack/material/puck/mapped/algae,
-/obj/item/stack/material/puck/mapped/algae,
-/obj/item/stack/material/puck/mapped/algae,
+/obj/item/stack/material/puck/mapped/algae/fifty,
+/obj/item/stack/material/puck/mapped/algae/fifty,
+/obj/item/stack/material/puck/mapped/algae/fifty,
+/obj/item/stack/material/puck/mapped/algae/fifty,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos/processing)
 "aDI" = (
@@ -16550,7 +16566,8 @@
 /obj/machinery/computer/air_control{
 	input_tag = "co2_in";
 	name = "Carbon Dioxide Supply Control";
-	output_tag = "co2_out"
+	output_tag = "co2_out";
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
@@ -16623,7 +16640,9 @@
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/outside1)
 "aFq" = (
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Anomaly Lab South"
+	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
@@ -17079,7 +17098,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Xenobiology Lab South"
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "aGt" = (
@@ -18886,7 +18907,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Atrium First Floor West"
+	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/atrium_one)
 "aKC" = (
@@ -22381,7 +22404,8 @@
 /obj/machinery/computer/air_control{
 	input_tag = "tox_in";
 	name = "Phoron Supply Control";
-	output_tag = "tox_out"
+	output_tag = "tox_out";
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
@@ -23840,7 +23864,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/hologram/holopad,
+/obj/machinery/hologram/holopad{
+	holopad_id = "Xenobiology Lab North"
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "bqn" = (
@@ -25971,7 +25997,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "bNY" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 9
 	},
@@ -30382,7 +30410,9 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/public_garden_one)
 "gvu" = (
-/obj/machinery/vending/cola,
+/obj/machinery/vending/cola{
+	dir = 4
+	},
 /obj/machinery/light{
 	dir = 8
 	},
@@ -30567,7 +30597,8 @@
 /obj/machinery/computer/air_control{
 	input_tag = "n2o_in";
 	name = "Nitrous Oxide Supply Control";
-	output_tag = "n2o_out"
+	output_tag = "n2o_out";
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 4
@@ -31988,7 +32019,9 @@
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar)
 "pxz" = (
-/obj/machinery/vending/snack,
+/obj/machinery/vending/snack{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/medical/triage)
 "pxT" = (
@@ -32529,7 +32562,9 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
 "rLL" = (
-/obj/machinery/vending/coffee,
+/obj/machinery/vending/coffee{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/medical/triage)
 "rLX" = (

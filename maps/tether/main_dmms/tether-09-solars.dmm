@@ -329,7 +329,9 @@
 /area/tether/outpost/solars_outside)
 "aR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/solar_control,
+/obj/machinery/power/solar_control{
+	dir = 1
+	},
 /obj/structure/cable/yellow,
 /turf/simulated/floor/virgo3b_indoors,
 /area/tether/outpost/solars_shed)
@@ -399,14 +401,6 @@
 "ba" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
-/area/tether/outpost/solars_shed)
-"bb" = (
-/obj/structure/sign/warning{
-	desc = "A warning sign which reads 'HIGH VOLTAGE'";
-	icon_state = "shock";
-	name = "HIGH VOLTAGE"
-	},
-/turf/simulated/wall,
 /area/tether/outpost/solars_shed)
 "bc" = (
 /obj/structure/cable/yellow{
@@ -838,13 +832,25 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/toxins_misc_lab)
 "cb" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/outpost/research/toxins_misc_lab)
-"cc" = (
-/obj/structure/sign/warning/nosmoking_2,
-/turf/simulated/wall,
-/area/outpost/research/toxins_misc_lab)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/sign/warning{
+	desc = "A warning sign which reads 'HIGH VOLTAGE'";
+	icon_state = "shock";
+	name = "HIGH VOLTAGE";
+	pixel_y = -32;
+	dir = 1
+	},
+/turf/simulated/floor/virgo3b_indoors,
+/area/tether/outpost/solars_shed)
 "cd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -976,6 +982,9 @@
 	dir = 1
 	},
 /obj/machinery/vending/phoronresearch,
+/obj/structure/sign/warning/nosmoking_1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "cq" = (
@@ -1018,11 +1027,14 @@
 	dir = 1
 	},
 /obj/structure/tank_rack,
+/obj/structure/sign/warning/nosmoking_2{
+	pixel_y = 32
+	},
 /turf/simulated/floor/reinforced,
 /area/outpost/research/toxins_misc_lab)
 "cu" = (
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/reinforced,
@@ -1119,7 +1131,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -1966,7 +1978,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
@@ -2028,6 +2040,10 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
+	},
+/obj/structure/sign/department/tether/toxins{
+	dir = 4;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -2393,13 +2409,15 @@
 	id_tag = "burn_chamber_v";
 	name = "Burn Chamber Vent";
 	pixel_x = -26;
-	pixel_y = 6
+	pixel_y = 6;
+	dir = 4
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "burn_chamber_p";
 	name = "Burn Chamber Purge";
 	pixel_x = -26;
-	pixel_y = -8
+	pixel_y = -8;
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
@@ -2507,7 +2525,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -26
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -2753,6 +2771,10 @@
 	},
 /obj/item/pen,
 /obj/structure/disposalpipe/segment,
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_misc_lab)
 "ga" = (
@@ -2790,10 +2812,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
-	},
-/obj/machinery/computer/guestpass{
-	dir = 4;
-	pixel_x = -28
 	},
 /turf/simulated/wall,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -2846,18 +2864,23 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 10
 	},
+/obj/structure/sign/department/science_1{
+	name = "TELE-SCIENCE";
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "gt" = (
-/obj/structure/sign/department/science_1{
-	name = "TELE-SCIENCE"
-	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/r_wall,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "gv" = (
 /obj/machinery/atmospherics/valve{
 	dir = 4
+	},
+/obj/structure/sign/warning{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/telescience_lab)
@@ -2871,7 +2894,7 @@
 	light_range = 12
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/network/relay/wall_mounted/lighthouse{
 	dir = 4;
@@ -2923,7 +2946,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -3025,7 +3048,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -3376,6 +3399,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/structure/sign/warning/secure_area{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "hG" = (
@@ -3618,7 +3645,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
@@ -3664,6 +3691,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/sign/warning/compressed_gas{
+	dir = 8;
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "jl" = (
@@ -3876,7 +3907,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /obj/item/cell,
 /turf/simulated/floor/tiled/white,
@@ -3918,7 +3949,11 @@
 	id_tag = "outpost_dorm_1";
 	name = "Room 1 Lock";
 	pixel_x = 26;
-	pixel_y = -4
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -4176,6 +4211,9 @@
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
 "lh" = (
@@ -4381,6 +4419,11 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/structure/sign/department/redcross{
+	name = "FirstAid";
+	pixel_y = -32;
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
 "ma" = (
@@ -4517,7 +4560,11 @@
 	id_tag = "outpost_dorm_3";
 	name = "Room 3 Lock";
 	pixel_x = 26;
-	pixel_y = -4
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -4625,7 +4672,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -4640,7 +4687,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/plating,
 /area/outpost/research/longtermstorage)
@@ -4659,6 +4706,10 @@
 	},
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "scioutpost_airlock_scrub"
+	},
+/obj/structure/sign/warning/fire{
+	pixel_x = 34;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/research/storage/surface_eva)
@@ -4690,9 +4741,11 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "nw" = (
-/obj/structure/sign/warning/radioactive,
-/turf/simulated/wall,
-/area/outpost/research/hallway/resarch_outpost_eastern_hallway)
+/obj/structure/sign/warning/hot_exhaust{
+	pixel_y = 32
+	},
+/turf/exterior/dirt,
+/area/tether/outpost/solars_outside)
 "nx" = (
 /obj/structure/table/marble,
 /obj/machinery/chemical_dispenser/bar_coffee/full{
@@ -4728,7 +4781,11 @@
 	id_tag = "outpost_dorm_2";
 	name = "Room 2 Lock";
 	pixel_x = 26;
-	pixel_y = -4
+	dir = 8
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 4;
+	pixel_x = -34
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -4885,6 +4942,10 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/sign/warning/radioactive{
+	dir = 8;
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
@@ -5158,7 +5219,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -5261,11 +5322,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
-"qJ" = (
-/obj/structure/sign/warning/secure_area,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
-/area/outpost/research/hallway/resarch_outpost_western_hallway)
 "qL" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -5312,7 +5368,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -26
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_storage_hallway)
@@ -5383,7 +5439,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/toxins_canister_icyhoot)
@@ -5563,6 +5619,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "so" = (
@@ -5641,7 +5701,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -26
+	pixel_x = -21
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -5776,6 +5836,10 @@
 "th" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -6089,6 +6153,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
+/obj/machinery/computer/guestpass{
+	dir = 4;
+	pixel_x = -28
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "uH" = (
@@ -6351,6 +6419,9 @@
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 4
 	},
+/obj/structure/sign/warning/radioactive{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "wE" = (
@@ -6368,7 +6439,8 @@
 /area/outpost/research/crew_quarters/showers)
 "wG" = (
 /obj/structure/sign/warning/nosmoking_2{
-	pixel_y = -32
+	pixel_y = -32;
+	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -6569,6 +6641,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/toxins_misc_lab)
 "xY" = (
@@ -6626,10 +6702,6 @@
 	},
 /turf/exterior/sif_growth,
 /area/tether/outpost/solars_outside)
-"yn" = (
-/obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_lead,
-/area/outpost/research/materials_chamber)
 "yp" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -7227,10 +7299,6 @@
 	tag_scrubber = "scioutpost_airlock_scrub";
 	dir = 8
 	},
-/obj/structure/sign/warning/fire{
-	pixel_x = 33;
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 1
 	},
@@ -7244,7 +7312,8 @@
 /obj/machinery/airlock_sensor/phoron{
 	id_tag = "outpost_s_airlock_sensor";
 	pixel_x = 30;
-	pixel_y = -10
+	pixel_y = -10;
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/storage/surface_eva)
@@ -7327,7 +7396,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/carpet/purple,
 /area/rnd/breakroom/outpost)
@@ -7466,9 +7535,12 @@
 /turf/simulated/floor/plating,
 /area/outpost/research/atmospherics)
 "Cs" = (
-/obj/structure/sign/warning/hot_exhaust,
-/turf/simulated/wall/r_wall,
-/area/outpost/research/mixing)
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/exterior/dirt,
+/area/tether/outpost/solars_outside)
 "Cw" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -7510,9 +7582,12 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "CK" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall,
-/area/outpost/research/crew_quarters/sleep/Dorm_3)
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 1;
+	pixel_y = -32
+	},
+/turf/exterior/sif_growth,
+/area/tether/outpost/solars_outside)
 "CQ" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -7665,9 +7740,12 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "Dw" = (
-/obj/structure/sign/warning,
-/turf/simulated/wall/r_wall,
-/area/outpost/research/telescience_lab)
+/obj/structure/sign/warning/radioactive{
+	pixel_x = -32;
+	dir = 4
+	},
+/turf/exterior/sif_growth,
+/area/tether/outpost/solars_outside)
 "Dx" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/grille,
@@ -7784,13 +7862,17 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/simulator)
 "Ef" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
+	},
+/obj/structure/sign/warning/nosmoking_1{
+	dir = 8;
+	pixel_x = 34
 	},
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -7928,7 +8010,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 5
@@ -8112,6 +8194,10 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/structure/sign/warning/radioactive{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "Hi" = (
@@ -8387,7 +8473,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/storage/surface_eva_storage)
@@ -8441,12 +8527,6 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/outpost/research/engineering/eva_atmospherics)
-"IT" = (
-/obj/structure/sign/department/science_1{
-	name = "PARTICLE SMASHER"
-	},
-/turf/simulated/wall,
-/area/outpost/research/hallway/resarch_outpost_eastern_hallway)
 "IX" = (
 /obj/structure/cable/green,
 /obj/machinery/power/apc{
@@ -8547,7 +8627,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -26
+	pixel_x = -21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 5
@@ -8718,11 +8798,12 @@
 /turf/simulated/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "Ko" = (
-/obj/structure/sign/department/redcross{
-	name = "FirstAid"
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 4;
+	pixel_x = -32
 	},
-/turf/simulated/wall,
-/area/outpost/research/medical/first_aid_south_west)
+/turf/exterior/sif_growth,
+/area/tether/outpost/solars_outside)
 "Kp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -8787,7 +8868,8 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = -27
+	pixel_y = -21;
+	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -8929,7 +9011,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -9222,6 +9304,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/fire{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/materials_chamber)
 "MT" = (
@@ -9245,7 +9330,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/firealarm{
 	dir = 8;
-	pixel_x = -26
+	pixel_x = -21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
@@ -9472,22 +9557,18 @@
 /turf/simulated/wall,
 /area/outpost/research/simulator)
 "Of" = (
-/obj/structure/sign/warning/fire,
-/turf/simulated/wall/r_lead,
-/area/outpost/research/materials_chamber)
+/obj/structure/sign/warning/hot_exhaust{
+	dir = 4;
+	pixel_x = -32
+	},
+/turf/exterior/dirt,
+/area/tether/outpost/solars_outside)
 "Ok" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
 /turf/simulated/wall/r_lead,
 /area/outpost/research/materials_chamber)
-"On" = (
-/obj/structure/sign/department/tether/toxins,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/simulated/wall,
-/area/outpost/research/toxins_misc_lab)
 "Oq" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -9526,6 +9607,11 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
+	},
+/obj/structure/sign/department/science_1{
+	name = "PARTICLE SMASHER";
+	dir = 1;
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -9697,10 +9783,6 @@
 /obj/item/tank/emergency/oxygen/engi,
 /turf/simulated/floor/tiled,
 /area/outpost/research/storage/surface_eva_storage)
-"Qi" = (
-/obj/structure/sign/warning/nosmoking_1,
-/turf/simulated/wall/r_lead,
-/area/outpost/research/materials_chamber)
 "Qk" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/window/reinforced{
@@ -9819,7 +9901,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/red{
 	dir = 4
 	},
-/obj/structure/sign/warning/nosmoking_1,
 /turf/simulated/wall,
 /area/outpost/research/atmospherics)
 "Ra" = (
@@ -9959,7 +10040,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/carpet/purple,
 /area/outpost/research/hallway/resarch_outpost_eastern_hallway)
@@ -10051,7 +10132,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10127,6 +10208,9 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
+/obj/structure/sign/warning/hot_exhaust{
+	pixel_y = 32
+	},
 /turf/exterior/dirt,
 /area/tether/outpost/solars_outside)
 "SG" = (
@@ -10166,6 +10250,7 @@
 /obj/machinery/camera/network/research_outpost{
 	dir = 10
 	},
+/obj/machinery/doppler_array,
 /turf/simulated/floor/greengrid/airless,
 /area/outpost/research/simulator)
 "Td" = (
@@ -10223,7 +10308,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm{
-	pixel_y = 24
+	pixel_y = 21
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_southern_hallway)
@@ -10345,7 +10430,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -10794,6 +10879,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/nosmoking_1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/outpost/research/materials_chamber)
 "WL" = (
@@ -10864,14 +10952,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_storage_hallway)
-"WT" = (
-/obj/structure/sign/warning/radioactive,
-/turf/simulated/wall,
-/area/outpost/research/crew_quarters/showers)
-"WX" = (
-/obj/structure/sign/warning/compressed_gas,
-/turf/simulated/wall,
-/area/outpost/research/toxins_misc_lab)
 "WZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -10947,7 +11027,7 @@
 	},
 /obj/machinery/firealarm{
 	dir = 4;
-	pixel_x = 26
+	pixel_x = 21
 	},
 /turf/simulated/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -11182,6 +11262,10 @@
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 10
 	},
+/obj/structure/sign/department/tether/toxins{
+	dir = 4;
+	pixel_x = -32
+	},
 /turf/simulated/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "Zy" = (
@@ -11204,10 +11288,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled/airless,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
-"ZA" = (
-/obj/structure/sign/department/tether/toxins,
-/turf/simulated/wall,
-/area/outpost/research/toxins_misc_lab)
 "ZI" = (
 /turf/simulated/wall,
 /area/outpost/research/materials_lab)
@@ -11216,7 +11296,6 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/structure/sign/warning/nosmoking_1,
 /turf/simulated/wall,
 /area/outpost/research/toxins_canister_icyhoot)
 "ZR" = (
@@ -25506,8 +25585,8 @@ ad
 au
 aG
 aN
-aU
-bb
+cb
+au
 bj
 bs
 ad
@@ -25571,15 +25650,15 @@ bF
 bF
 bF
 ad
-ad
 Cs
+kY
 kY
 uu
 RT
 yM
 kY
-Cs
-ad
+kY
+nw
 ad
 ad
 ab
@@ -26039,14 +26118,14 @@ bF
 bF
 bF
 ad
-ad
 Cs
+kY
 tf
 dg
 kY
 de
 eG
-Cs
+kY
 SC
 ab
 ab
@@ -27131,7 +27210,7 @@ ad
 ad
 ad
 ad
-cb
+Lz
 cp
 cJ
 dl
@@ -27755,7 +27834,7 @@ ad
 ad
 ad
 ab
-cc
+Lz
 ct
 cN
 Lz
@@ -28068,10 +28147,10 @@ ad
 ad
 ad
 Lz
-ZA
+Lz
 cL
 Lz
-On
+XB
 Lz
 Lz
 Lz
@@ -28549,14 +28628,14 @@ Ma
 gt
 gM
 hi
-qJ
+gt
 Ma
 EN
 EN
 MW
 IJ
 lY
-Ko
+TR
 Mr
 kc
 qa
@@ -29325,7 +29404,7 @@ eU
 fw
 fN
 fw
-Dw
+eU
 gv
 gQ
 hl
@@ -30742,7 +30821,7 @@ IJ
 Vm
 Ne
 Zz
-CK
+Ne
 Ne
 Ne
 vi
@@ -31502,7 +31581,7 @@ NG
 FN
 mN
 Or
-IT
+Xo
 ZI
 ZI
 ZI
@@ -31518,7 +31597,7 @@ Lz
 Lz
 Lz
 XB
-WX
+Lz
 yf
 XH
 Um
@@ -31814,7 +31893,7 @@ ux
 Jo
 MC
 GW
-nw
+Xo
 wy
 LO
 wb
@@ -32914,7 +32993,7 @@ jO
 jO
 jO
 AF
-Of
+AF
 MR
 TN
 SG
@@ -33070,7 +33149,7 @@ sq
 sq
 zT
 wo
-Qi
+AF
 WG
 Zq
 AF
@@ -33217,7 +33296,7 @@ ab
 sW
 sW
 sW
-WT
+sW
 sW
 ab
 MF
@@ -33373,16 +33452,16 @@ ab
 ab
 ab
 ab
-ab
+Dw
 nR
-ab
-yn
+CK
+AF
 AF
 tE
 tE
 tE
 AF
-yn
+AF
 AF
 AF
 AF
@@ -33532,13 +33611,13 @@ ab
 ab
 eC
 ab
-ab
+Ko
 ab
 ab
 ab
 ad
 ab
-ad
+Of
 ad
 ad
 ad
