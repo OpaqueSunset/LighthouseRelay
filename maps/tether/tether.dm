@@ -13,6 +13,7 @@
 	#include "../../mods/content/dungeon_loot/_dungeon_loot.dme"
 	#include "../../mods/content/extrafoods/_extrafoods.dme"
 	#include "../../mods/content/extradrinks/_extradrinks.dme"
+	#include "../../mods/content/cyberplants/cyberplants.dm"
 	#include "../../mods/content/genemodding/_genemodding.dme"
 	#include "../../mods/content/government/_government.dme"
 	#include "../../mods/content/modern_earth/_modern_earth.dme"

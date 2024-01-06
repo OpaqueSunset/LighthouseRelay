@@ -126,7 +126,6 @@
 
 /obj/machinery/gear_painter
 // Station decor
-/obj/machinery/holoplant
 /obj/machinery/holosign/bar
 
 // Our libraries are different
