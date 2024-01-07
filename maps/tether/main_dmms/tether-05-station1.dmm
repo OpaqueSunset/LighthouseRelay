@@ -8520,7 +8520,7 @@
 "avS" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/firecloset/full/double,
+/obj/structure/closet/firecloset/chief,
 /turf/simulated/floor,
 /area/storage/emergency_storage/emergency4)
 "avZ" = (

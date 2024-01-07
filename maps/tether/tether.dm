@@ -63,6 +63,7 @@
 	#include "tether_holodeck.dm"
 
 	#include "atoms/areas.dm"
+	#include "atoms/closets.dm"
 	#include "atoms/clothing.dm"
 	#include "atoms/decals.dm"
 	#include "atoms/effects.dm"

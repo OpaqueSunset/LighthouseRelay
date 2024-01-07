@@ -10869,7 +10869,7 @@
 /turf/simulated/floor/holofloor/tiled/dark,
 /area/tether/surfacebase/atrium_one)
 "auG" = (
-/obj/structure/closet/firecloset/full/double,
+/obj/structure/closet/firecloset/chief,
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/emergency_storage/atrium)
 "auH" = (
@@ -16771,7 +16771,7 @@
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 1
 	},
-/obj/structure/closet/l3closet/scientist/double,
+/obj/structure/closet/l3closet/scientist/multi,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "aFK" = (
@@ -25363,7 +25363,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
-/obj/structure/closet/firecloset/full,
+/obj/structure/closet/firecloset,
 /turf/simulated/floor/tiled,
 /area/rnd/xenobiology)
 "bEd" = (

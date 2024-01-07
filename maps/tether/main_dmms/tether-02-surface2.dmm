@@ -16930,7 +16930,7 @@
 "Mf" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/firecloset/full/double,
+/obj/structure/closet/firecloset/chief,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/public_garden_maintenence/upper)
 "Mk" = (
