@@ -1,5 +1,6 @@
 /mob/living/Initialize()
 
+	current_health = get_max_health()
 	original_fingerprint_seed = sequential_id(/mob)
 	fingerprint               = md5(num2text(original_fingerprint_seed))
 	original_genetic_seed     = sequential_id(/mob)
@@ -185,22 +186,33 @@ default behaviour is:
 
 /mob/living/verb/succumb()
 	set hidden = 1
-	if ((src.health < src.maxHealth/2)) // Health below half of max_health.
-		src.adjustBrainLoss(src.health + src.maxHealth * 2) // Deal 2x health in BrainLoss damage, as before but variable.
-		updatehealth()
-		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
+	var/current_max_health = get_max_health()
+	if (current_health < (current_max_health/2)) // Health below half of maxhealth.
+		adjustBrainLoss(current_max_health * 2) // Deal 2x health in BrainLoss damage, as before but variable.
+		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))
 
 /mob/living/proc/update_body(var/update_icons=1)
 	if(update_icons)
 		queue_icon_update()
 
-/mob/living/proc/updatehealth()
-	if(status_flags & GODMODE)
-		health = maxHealth
-		set_stat(CONSCIOUS)
-	else
-		health = maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - getHalLoss()
+/mob/living/proc/should_be_dead()
+	return current_health <= 0
 
+/mob/living/proc/get_total_life_damage()
+	return (getOxyLoss()+getToxLoss()+getFireLoss()+getBruteLoss()+getCloneLoss()+getHalLoss())
+
+/mob/living/proc/update_health()
+	if(status_flags & GODMODE)
+		current_health = get_max_health()
+		set_stat(CONSCIOUS)
+		return
+	var/max_health = get_max_health()
+	current_health = clamp(max_health-get_total_life_damage(), -(max_health), max_health)
+	if(stat != DEAD && should_be_dead())
+		death()
+		if(!QDELETED(src)) // death() may delete or remove us
+			set_status(STAT_BLIND, 1)
+			set_status(STAT_SILENCE, 0)
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
@@ -231,19 +243,24 @@ default behaviour is:
 
 	return btemperature
 
-/mob/living/proc/getBruteLoss()
-	return maxHealth - health
+/mob/living/proc/setBruteLoss(var/amount)
+	adjustBruteLoss((amount * 0.5)-getBruteLoss())
 
-/mob/living/proc/adjustBruteLoss(var/amount)
-	if (status_flags & GODMODE)
-		return
-	health = clamp(health - amount, 0, maxHealth)
+/mob/living/proc/getBruteLoss()
+	return get_max_health() - current_health
+
+/mob/living/proc/adjustBruteLoss(var/amount, var/do_update_health = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	if(do_update_health)
+		update_health()
 
 /mob/living/proc/getOxyLoss()
 	return 0
 
-/mob/living/proc/adjustOxyLoss(var/amount)
-	return
+/mob/living/proc/adjustOxyLoss(var/damage, var/do_update_health = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	if(do_update_health)
+		update_health()
 
 /mob/living/proc/setOxyLoss(var/amount)
 	return
@@ -251,8 +268,8 @@ default behaviour is:
 /mob/living/proc/getToxLoss()
 	return 0
 
-/mob/living/proc/adjustToxLoss(var/amount)
-	adjustBruteLoss(amount * 0.5)
+/mob/living/proc/adjustToxLoss(var/amount, var/do_update_health = TRUE)
+	adjustBruteLoss(amount * 0.5, do_update_health)
 
 /mob/living/proc/setToxLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
@@ -260,8 +277,8 @@ default behaviour is:
 /mob/living/proc/getFireLoss()
 	return
 
-/mob/living/proc/adjustFireLoss(var/amount)
-	adjustBruteLoss(amount * 0.5)
+/mob/living/proc/adjustFireLoss(var/amount, var/do_update_health = TRUE)
+	adjustBruteLoss(amount * 0.5, do_update_health)
 
 /mob/living/proc/setFireLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
@@ -269,14 +286,16 @@ default behaviour is:
 /mob/living/proc/getHalLoss()
 	return 0
 
-/mob/living/proc/adjustHalLoss(var/amount)
-	adjustBruteLoss(amount * 0.5)
+/mob/living/proc/adjustHalLoss(var/amount, var/do_update_health = TRUE)
+	adjustBruteLoss(amount * 0.5, do_update_health)
 
 /mob/living/proc/setHalLoss(var/amount)
 	adjustBruteLoss((amount * 0.5)-getBruteLoss())
 
-/mob/living/proc/adjustBrainLoss(var/amount)
-	return
+/mob/living/proc/adjustBrainLoss(var/amount, var/do_update_health = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	if(do_update_health)
+		update_health()
 
 /mob/living/proc/setBrainLoss(var/amount)
 	return
@@ -287,14 +306,24 @@ default behaviour is:
 /mob/living/proc/setCloneLoss(var/amount)
 	return
 
-/mob/living/proc/adjustCloneLoss(var/amount)
-	return
+/mob/living/proc/adjustCloneLoss(var/amount, var/do_update_health = TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	if(do_update_health)
+		update_health()
 
-/mob/living/proc/getMaxHealth()
-	return maxHealth
+/mob/living/proc/get_health_ratio() // ratio might be the wrong word
+	return current_health/get_max_health()
 
-/mob/living/proc/setMaxHealth(var/newMaxHealth)
-	maxHealth = newMaxHealth
+/mob/living/proc/get_health_percent(var/sigfig = 1)
+	return round(get_health_ratio()*100, sigfig)
+
+/mob/living/proc/get_max_health()
+	return mob_default_max_health
+
+/mob/living/proc/set_max_health(var/val, var/skip_health_update = FALSE)
+	mob_default_max_health = val
+	if(!skip_health_update)
+		update_health()
 
 // ++++ROCKDTBEN++++ MOB PROCS //END
 
@@ -341,30 +370,27 @@ default behaviour is:
 
 
 // heal ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/heal_organ_damage(var/brute, var/burn, var/affect_robo = FALSE)
-	adjustBruteLoss(-brute)
-	adjustFireLoss(-burn)
-	src.updatehealth()
+/mob/living/proc/heal_organ_damage(var/brute, var/burn, var/affect_robo = FALSE, var/update_health = TRUE)
+	adjustBruteLoss(-brute, do_update_health = FALSE)
+	adjustFireLoss(-burn, do_update_health = update_health)
 
 // damage ONE external organ, organ gets randomly selected from damaged ones.
 /mob/living/proc/take_organ_damage(var/brute = 0, var/burn = 0, var/bypass_armour = FALSE, var/override_droplimb)
-	if(!(status_flags & GODMODE))
-		adjustBruteLoss(brute)
-		adjustFireLoss(burn)
-		updatehealth()
+	if(status_flags & GODMODE)
+		return
+	adjustBruteLoss(brute, do_update_health = FALSE)
+	adjustFireLoss(burn)
 
 // heal MANY external organs, in random order
 /mob/living/proc/heal_overall_damage(var/brute, var/burn)
-	adjustBruteLoss(-brute)
+	adjustBruteLoss(-brute, do_update_health = FALSE)
 	adjustFireLoss(-burn)
-	src.updatehealth()
 
 // damage MANY external organs, in random order
 /mob/living/proc/take_overall_damage(var/brute, var/burn, var/used_weapon = null)
 	if(status_flags & GODMODE)	return 0	//godmode
-	adjustBruteLoss(brute)
+	adjustBruteLoss(brute, do_update_health = FALSE)
 	adjustFireLoss(burn)
-	src.updatehealth()
 
 /mob/living/proc/restore_all_organs()
 	return
@@ -467,7 +493,7 @@ default behaviour is:
 			brain.update_icon()
 	..(repair_brain)
 
-/mob/living/proc/UpdateDamageIcon()
+/mob/living/proc/update_damage_icon()
 	return
 
 /mob/living/handle_grabs_after_move(var/turf/old_loc, var/direction)
@@ -1024,33 +1050,25 @@ default behaviour is:
 	if(hud_used.action_buttons_hidden)
 		if(!hud_used.hide_actions_toggle)
 			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.UpdateIcon()
+			hud_used.hide_actions_toggle.update_icon()
 		hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(1)
 		client.screen += hud_used.hide_actions_toggle
 		return
 
 	var/button_number = 0
-	for(var/datum/action/A in actions)
+	for(var/datum/action/action in actions)
 		button_number++
-		if(A.button == null)
-			var/obj/screen/action_button/N = new(hud_used)
-			N.owner = A
-			A.button = N
-
-		var/obj/screen/action_button/B = A.button
-
-		B.UpdateIcon()
-
-		B.SetName(A.UpdateName())
-		B.desc = A.UpdateDesc()
-
-		client.screen += B
-		B.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number)
+		if(isnull(action.button))
+			action.button = new /obj/screen/action_button(null, src, null, null, null, action)
+		action.button.SetName(action.UpdateName())
+		action.button.desc = action.UpdateDesc()
+		action.button.update_icon()
+		action.button.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number)
+		client.screen |= action.button
 
 	if(button_number > 0)
 		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.InitialiseIcon(src)
+			hud_used.hide_actions_toggle = new(hud_used, src)
 		hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number+1)
 		client.screen += hud_used.hide_actions_toggle
 
@@ -1118,30 +1136,6 @@ default behaviour is:
 
 /mob/living/proc/get_seconds_until_next_special_ability_string()
 	return ticks2readable(next_special_ability - world.time)
-
-//Get species or synthetic temp if the mob is a FBP/robot. Used when a synthetic mob is exposed to a temp check.
-//Essentially, used when a synthetic mob should act diffferently than a normal type mob.
-/mob/living/get_temperature_threshold(var/threshold)
-	if(isSynthetic())
-		switch(threshold)
-			if(COLD_LEVEL_1)
-				return SYNTH_COLD_LEVEL_1
-			if(COLD_LEVEL_2)
-				return SYNTH_COLD_LEVEL_2
-			if(COLD_LEVEL_3)
-				return SYNTH_COLD_LEVEL_3
-			if(HEAT_LEVEL_1)
-				return SYNTH_HEAT_LEVEL_1
-			if(HEAT_LEVEL_2)
-				return SYNTH_HEAT_LEVEL_2
-			if(HEAT_LEVEL_3)
-				return SYNTH_HEAT_LEVEL_3
-			else
-				CRASH("synthetic get_temperature_threshold() called with invalid threshold value.")
-	var/decl/species/my_species = get_species()
-	if(my_species)
-		return my_species.get_species_temperature_threshold(threshold)
-	return ..()
 
 /mob/living/proc/handle_some_updates()
 	//We are long dead, or we're junk mobs spawned like the clowns on the clown shuttle
@@ -1277,3 +1271,22 @@ default behaviour is:
 //Useful when player is being seen by other mobs
 /mob/living/proc/get_id_name(if_no_id = "Unknown")
 	return GetIdCard(exceptions = list(/obj/item/holder))?.registered_name || if_no_id
+
+/mob/living/get_default_temperature_threshold(threshold)
+	if(isSynthetic())
+		switch(threshold)
+			if(COLD_LEVEL_1)
+				return SYNTH_COLD_LEVEL_1
+			if(COLD_LEVEL_2)
+				return SYNTH_COLD_LEVEL_2
+			if(COLD_LEVEL_3)
+				return SYNTH_COLD_LEVEL_3
+			if(HEAT_LEVEL_1)
+				return SYNTH_HEAT_LEVEL_1
+			if(HEAT_LEVEL_2)
+				return SYNTH_HEAT_LEVEL_2
+			if(HEAT_LEVEL_3)
+				return SYNTH_HEAT_LEVEL_3
+			else
+				CRASH("synthetic get_default_temperature_threshold() called with invalid threshold value.")
+	return ..()

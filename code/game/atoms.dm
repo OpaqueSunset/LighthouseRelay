@@ -331,6 +331,19 @@
 	SHOULD_CALL_PARENT(FALSE) //Don't call the stub plz
 	return
 
+/**
+ * Returns the sum of this atoms's reagents plus the combined matter of all its contents.
+ * Obj adds matter contents. Other overrides may add extra handling for things like material storage.
+ * Most useful for calculating worth or deconstructing something along with its contents.
+ */
+/atom/proc/get_contained_matter()
+	if(length(reagents?.reagent_volumes))
+		LAZYINITLIST(.)
+		for(var/R in reagents.reagent_volumes)
+			.[R] += FLOOR(REAGENT_VOLUME(reagents, R) / REAGENT_UNITS_PER_MATERIAL_UNIT)
+	for(var/atom/contained_obj as anything in get_contained_external_atoms()) // machines handle component parts separately
+		. = MERGE_ASSOCS_WITH_NUM_VALUES(., contained_obj.get_contained_matter())
+
 /// Return a list of all simulated atoms inside this one.
 /atom/proc/get_contained_external_atoms()
 	for(var/atom/movable/AM in contents)
@@ -418,7 +431,7 @@
 */
 /atom/proc/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	SHOULD_CALL_PARENT(TRUE)
-	handle_external_heating(adjust_temp = exposed_temperature)
+	handle_external_heating(exposed_temperature)
 
 /// Handle this atom being destroyed through melting
 /atom/proc/melt()
@@ -713,30 +726,18 @@
 		if(M.lying) return //No spamming this on people.
 
 		SET_STATUS_MAX(M, STAT_WEAK, 3)
-		to_chat(M, "<span class='danger'>You topple as \the [src] moves under you!</span>")
-
+		to_chat(M, SPAN_DANGER("You topple as \the [src] moves under you!"))
 		if(prob(25))
-
 			var/damage = rand(15,30)
-			var/mob/living/carbon/human/H = M
-			if(!istype(H))
-				to_chat(H, "<span class='danger'>You land heavily!</span>")
+			var/obj/item/organ/external/affecting = SAFEPICK(M.get_external_organs())
+			if(!affecting)
+				to_chat(M, SPAN_DANGER("You land heavily!"))
 				M.adjustBruteLoss(damage)
-				return
-
-			var/obj/item/organ/external/affecting = pick(H.get_external_organs())
-			if(affecting)
-				to_chat(M, "<span class='danger'>You land heavily on your [affecting.name]!</span>")
+			else
+				to_chat(M, SPAN_DANGER("You land heavily on your [affecting.name]!"))
 				affecting.take_external_damage(damage, 0)
 				if(affecting.parent)
 					affecting.parent.add_autopsy_data("Misadventure", damage)
-			else
-				to_chat(H, "<span class='danger'>You land heavily!</span>")
-				H.adjustBruteLoss(damage)
-
-			H.UpdateDamageIcon()
-			H.updatehealth()
-	return
 
 /// Get the current color of this atom.
 /atom/proc/get_color()
@@ -762,15 +763,6 @@
 /atom/proc/get_radio(var/message_mode)
 	RETURN_TYPE(/obj/item/radio)
 	return
-
-/**
-	Get the material cost of this atom.
-
-	- Return: An dictionary where key is the material and value is the amount.
-*/
-/atom/proc/building_cost()
-	RETURN_TYPE(/list)
-	. = list()
 
 /atom/Topic(href, href_list)
 	var/mob/user = usr

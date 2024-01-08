@@ -5667,7 +5667,7 @@
 /turf/simulated/floor,
 /area/engineering/shaft)
 "and" = (
-/obj/machinery/computer/atmoscontrol{
+/obj/machinery/computer/central_atmos{
 	dir = 4
 	},
 /obj/machinery/camera/network/engineering{

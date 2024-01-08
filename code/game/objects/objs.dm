@@ -284,15 +284,10 @@
 /obj/proc/WillContain()
 	return
 
-/**
- * Returns the sum of this obj's matter plus the matter of all its contents.
- * Overrides may add extra handling for things like material storage.
- * Most useful for calculating worth or deconstructing something along with its contents.
- */
-/obj/proc/get_contained_matter()
-	. = matter?.Copy()
-	for(var/obj/contained_obj in get_contained_external_atoms()) // machines handle component parts separately
-		. = MERGE_ASSOCS_WITH_NUM_VALUES(., contained_obj.get_contained_matter())
+/obj/get_contained_matter()
+	. = ..()
+	if(length(matter))
+		. = MERGE_ASSOCS_WITH_NUM_VALUES(., matter.Copy())
 
 ////////////////////////////////////////////////////////////////
 // Interactions
@@ -312,27 +307,6 @@
 		return SPAN_WARNING("It looks moderately damaged.")
 	else
 		return SPAN_DANGER("It looks heavily damaged.")
-
-//
-// Alt Interactions
-//
-/obj/get_alt_interactions(var/mob/user)
-	. = ..()
-	LAZYADD(., /decl/interaction_handler/rotate)
-
-/decl/interaction_handler/rotate
-	name = "Rotate"
-	expected_target_type = /obj
-
-/decl/interaction_handler/rotate/is_possible(atom/target, mob/user, obj/item/prop)
-	. = ..()
-	if(.)
-		var/obj/O = target
-		. = !!(O.obj_flags & OBJ_FLAG_ROTATABLE)
-
-/decl/interaction_handler/rotate/invoked(atom/target, mob/user, obj/item/prop)
-	var/obj/O = target
-	O.rotate(user)
 
 /obj/fluid_act(var/datum/reagents/fluids)
 	..()

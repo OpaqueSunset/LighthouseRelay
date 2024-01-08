@@ -125,7 +125,7 @@
 		parrot_state = PARROT_SWOOP //The parrot just got hit, it WILL move, now to pick a direction..
 		if(isliving(user))
 			var/mob/living/M = user
-			if(M.health < 50) //Weakened mob? Fight back!
+			if(M.current_health < 50) //Weakened mob? Fight back!
 				parrot_state |= PARROT_ATTACK
 				return
 		parrot_state |= PARROT_FLEE		//Otherwise, fly like a bat out of hell!
@@ -319,9 +319,7 @@
 				return
 
 			//Time for the hurt to begin!
-			var/attacking_with = get_natural_weapon()
-			if(attacking_with)
-				L.attackby(attacking_with, src)
+			UnarmedAttack(L)
 			return
 
 		//Otherwise, fly towards the mob!

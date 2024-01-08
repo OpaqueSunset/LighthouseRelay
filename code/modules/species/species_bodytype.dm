@@ -168,6 +168,30 @@ var/global/list/bodytypes_by_category = list()
 	/// Stun from blindness modifier.
 	var/eye_flash_mod = 1
 
+	// Bodytype temperature damage thresholds.
+	var/cold_level_1 = 243  // Cold damage level 1 below this point. -30 Celsium degrees
+	var/cold_level_2 = 200  // Cold damage level 2 below this point.
+	var/cold_level_3 = 120  // Cold damage level 3 below this point.
+	var/heat_level_1 = 360  // Heat damage level 1 above this point.
+	var/heat_level_2 = 400  // Heat damage level 2 above this point.
+	var/heat_level_3 = 1000 // Heat damage level 3 above this point.
+
+	// Temperature comfort levels and strings.
+	var/heat_discomfort_level = 315
+	var/cold_discomfort_level = 285
+	/// Aesthetic messages about feeling warm.
+	var/list/heat_discomfort_strings = list(
+		"You feel sweat drip down your neck.",
+		"You feel uncomfortably warm.",
+		"Your skin prickles in the heat."
+	)
+	/// Aesthetic messages about feeling chilly.
+	var/list/cold_discomfort_strings = list(
+		"You feel chilly.",
+		"You shiver suddenly.",
+		"Your chilly flesh stands out in goosebumps."
+	)
+
 /decl/bodytype/Initialize()
 	. = ..()
 	icon_deformed ||= icon_base
@@ -278,6 +302,31 @@ var/global/list/bodytypes_by_category = list()
 		else
 			. += "invalid BP_TAIL type: got [tail_organ], expected /obj/item/organ/external/tail"
 
+	if(cold_level_3)
+		if(cold_level_2)
+			if(cold_level_3 > cold_level_2)
+				. += "cold_level_3 ([cold_level_3]) was not lower than cold_level_2 ([cold_level_2])"
+			if(cold_level_1)
+				if(cold_level_3 > cold_level_1)
+					. += "cold_level_3 ([cold_level_3]) was not lower than cold_level_1 ([cold_level_1])"
+	if(cold_level_2 && cold_level_1)
+		if(cold_level_2 > cold_level_1)
+			. += "cold_level_2 ([cold_level_2]) was not lower than cold_level_1 ([cold_level_1])"
+
+	if(heat_level_3 != INFINITY)
+		if(heat_level_2 != INFINITY)
+			if(heat_level_3 < heat_level_2)
+				. += "heat_level_3 ([heat_level_3]) was not higher than heat_level_2 ([heat_level_2])"
+			if(heat_level_1 != INFINITY)
+				if(heat_level_3 < heat_level_1)
+					. += "heat_level_3 ([heat_level_3]) was not higher than heat_level_1 ([heat_level_1])"
+	if((heat_level_2 != INFINITY) && (heat_level_1 != INFINITY))
+		if(heat_level_2 < heat_level_1)
+			. += "heat_level_2 ([heat_level_2]) was not higher than heat_level_1 ([heat_level_1])"
+
+	if(min(heat_level_1, heat_level_2, heat_level_3) <= max(cold_level_1, cold_level_2, cold_level_3))
+		. += "heat and cold damage level thresholds overlap"
+
 /decl/bodytype/proc/max_skin_tone()
 	if(appearance_flags & HAS_SKIN_TONE_GRAV)
 		return 100
@@ -303,14 +352,14 @@ var/global/list/bodytypes_by_category = list()
 	if(H.has_external_organs())
 		for(var/obj/item/organ/external/E in H.get_external_organs())
 			if(!is_default_limb(E))
-				H.remove_organ(E, FALSE, FALSE, TRUE, TRUE, FALSE) //Remove them first so we don't trigger removal effects by just calling delete on them
+				H.remove_organ(E, FALSE, FALSE, TRUE, TRUE, FALSE, skip_health_update = TRUE) //Remove them first so we don't trigger removal effects by just calling delete on them
 				qdel(E)
 
 	//Clear invalid internal organs
 	if(H.has_internal_organs())
 		for(var/obj/item/organ/O in H.get_internal_organs())
 			if(!is_default_organ(O))
-				H.remove_organ(O, FALSE, FALSE, TRUE, TRUE, FALSE) //Remove them first so we don't trigger removal effects by just calling delete on them
+				H.remove_organ(O, FALSE, FALSE, TRUE, TRUE, FALSE, skip_health_update = TRUE) //Remove them first so we don't trigger removal effects by just calling delete on them
 				qdel(O)
 
 	//Create missing limbs
@@ -323,7 +372,7 @@ var/global/list/bodytypes_by_category = list()
 		if(E.parent_organ)
 			var/list/parent_organ_data = has_limbs[E.parent_organ]
 			parent_organ_data["has_children"]++
-		H.add_organ(E, GET_EXTERNAL_ORGAN(H, E.parent_organ), FALSE, FALSE)
+		H.add_organ(E, GET_EXTERNAL_ORGAN(H, E.parent_organ), FALSE, FALSE, skip_health_update = TRUE)
 
 	//Create missing internal organs
 	for(var/organ_tag in has_organ)
@@ -334,7 +383,8 @@ var/global/list/bodytypes_by_category = list()
 		if(organ_tag != O.organ_tag)
 			warning("[O.type] has a default organ tag \"[O.organ_tag]\" that differs from the species' organ tag \"[organ_tag]\". Updating organ_tag to match.")
 			O.organ_tag = organ_tag
-		H.add_organ(O, GET_EXTERNAL_ORGAN(H, O.parent_organ), FALSE, FALSE)
+		H.add_organ(O, GET_EXTERNAL_ORGAN(H, O.parent_organ), FALSE, FALSE, skip_health_update = TRUE)
+	H.update_health()
 
 //Checks if an existing organ is the bodytype default
 /decl/bodytype/proc/is_default_organ(obj/item/organ/internal/O)
@@ -449,8 +499,48 @@ var/global/list/bodytypes_by_category = list()
 		var/obj/item/organ/internal/new_innard = new organ_type(limb.owner, null, limb.owner.dna, src)
 		limb.owner.add_organ(new_innard, GET_EXTERNAL_ORGAN(limb.owner, new_innard.parent_organ), FALSE, FALSE)
 
+/decl/bodytype/proc/get_body_temperature_threshold(var/threshold)
+	switch(threshold)
+		if(COLD_LEVEL_1)
+			return cold_level_1
+		if(COLD_LEVEL_2)
+			return cold_level_2
+		if(COLD_LEVEL_3)
+			return cold_level_3
+		if(HEAT_LEVEL_1)
+			return heat_level_1
+		if(HEAT_LEVEL_2)
+			return heat_level_2
+		if(HEAT_LEVEL_3)
+			return heat_level_3
+		else
+			CRASH("get_species_temperature_threshold() called with invalid threshold value.")
+
+/decl/bodytype/proc/get_environment_discomfort(var/mob/living/carbon/human/H, var/msg_type)
+
+	if(!prob(5))
+		return
+
+	var/covered = 0 // Basic coverage can help.
+	var/held_items = H.get_held_items()
+	for(var/obj/item/clothing/clothes in H)
+		if(clothes in held_items)
+			continue
+		if((clothes.body_parts_covered & SLOT_UPPER_BODY) && (clothes.body_parts_covered & SLOT_LOWER_BODY))
+			covered = 1
+			break
+
+	switch(msg_type)
+		if("cold")
+			if(!covered && length(cold_discomfort_strings))
+				to_chat(H, SPAN_DANGER(pick(cold_discomfort_strings)))
+		if("heat")
+			if(covered && length(heat_discomfort_strings))
+				to_chat(H, SPAN_DANGER(pick(heat_discomfort_strings)))
+
 /decl/bodytype/proc/get_user_species_for_validation()
 	for(var/species_name in get_all_species())
 		var/decl/species/species = get_species_by_key(species_name)
 		if(src in species.available_bodytypes)
 			return species_name
+

@@ -8750,7 +8750,7 @@
 /area/storage/primary)
 "aqI" = (
 /obj/structure/table,
-/obj/machinery/computer/atmoscontrol/laptop{
+/obj/machinery/computer/central_atmos/laptop{
 	monitored_alarm_ids = list("isolation_one","isolation_two")
 	},
 /turf/simulated/floor/tiled,
@@ -26275,7 +26275,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/machinery/computer/atmoscontrol/laptop{
+/obj/machinery/computer/central_atmos/laptop{
 	dir = 1;
 	monitored_alarm_ids = list("xenopenvent")
 	},

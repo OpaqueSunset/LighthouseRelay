@@ -54,7 +54,7 @@
 /obj/item/organ/attack_self(var/mob/user)
 	return (owner && loc == owner && owner == user)
 
-/obj/item/organ/proc/update_health()
+/obj/item/organ/proc/update_organ_health()
 	return
 
 /obj/item/organ/proc/is_broken()
@@ -262,6 +262,8 @@
 	if(status & ORGAN_DEAD)
 		to_chat(user, "<span class='notice'>The decay has set into \the [src].</span>")
 
+// TODO: bodytemp rework that handles this with better respect to
+// individual organs vs. expected body temperature for other organs.
 /obj/item/organ/proc/handle_germ_effects()
 	//** Handle the effects of infections
 	var/germ_immunity = owner.get_immunity() //reduces the amount of times we need to call this proc
@@ -279,7 +281,7 @@
 				germ_level += 10
 
 	if(germ_level >= INFECTION_LEVEL_ONE)
-		var/fever_temperature = (owner.get_temperature_threshold(HEAT_LEVEL_1) - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
+		var/fever_temperature = (owner.get_mob_temperature_threshold(HEAT_LEVEL_1) - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
 		owner.bodytemperature += clamp(0, (fever_temperature - T20C)/BODYTEMP_COLD_DIVISOR + 1, fever_temperature - owner.bodytemperature)
 
 	if (germ_level >= INFECTION_LEVEL_TWO)
@@ -365,6 +367,8 @@
 /obj/item/organ/proc/heal_damage(amount)
 	if(can_recover())
 		damage = clamp(0, damage - round(amount, 0.1), max_damage)
+		if(owner)
+			owner.update_health()
 
 /obj/item/organ/attack(var/mob/target, var/mob/user)
 	if(BP_IS_PROSTHETIC(src) || !istype(target) || !istype(user) || (user != target && user.a_intent == I_HELP))

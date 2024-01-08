@@ -5525,7 +5525,7 @@
 /obj/item/roller,
 /obj/item/storage/firstaid/adv,
 /obj/item/storage/pill_bottle/painkillers,
-/obj/item/storage/pill_bottle/antitox,
+/obj/item/storage/pill_bottle/antitoxins,
 /obj/item/storage/pill_bottle/antibiotics,
 /obj/item/storage/pill_bottle/burn_meds,
 /obj/item/scanner/health,
@@ -6485,15 +6485,11 @@
 "Im" = (
 /obj/structure/table,
 /obj/item/chems/food/monkeycube/wrapped,
-/obj/structure/closet/medical_wall{
-	name = "pill cabinet";
+/obj/structure/closet/secure_closet/medical_wall/pills{
 	pixel_y = -32;
+	req_access = null;
 	dir = 1
 	},
-/obj/item/storage/pill_bottle/antibiotics,
-/obj/item/storage/pill_bottle/painkillers,
-/obj/item/storage/pill_bottle/antitox,
-/obj/item/storage/pill_bottle/burn_meds,
 /turf/simulated/floor/tiled/white,
 /area/ship/trade/crew/medbay)
 "Is" = (
