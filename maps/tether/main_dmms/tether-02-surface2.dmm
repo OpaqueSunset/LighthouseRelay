@@ -4498,7 +4498,7 @@
 /turf/simulated/wall/r_wall,
 /area/rnd/rdoffice)
 "kt" = (
-/obj/structure/closet/secure_closet/RD,
+/obj/structure/closet/secure_closet/research_director,
 /obj/item/aicard,
 /obj/item/clothing/glasses/omnihud/rnd,
 /obj/effect/floor_decal/borderfloor{
@@ -12383,7 +12383,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 8
 	},
-/obj/machinery/computer/atmoscontrol{
+/obj/machinery/computer/central_atmos{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,

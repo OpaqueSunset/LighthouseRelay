@@ -21905,7 +21905,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "MC" = (
-/obj/structure/closet/secure_closet/CMO,
+/obj/structure/closet/secure_closet/cmo,
 /obj/item/cmo_disk_holder,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
