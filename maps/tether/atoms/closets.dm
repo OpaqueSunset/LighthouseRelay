@@ -9,7 +9,8 @@
 /decl/closet_appearance/bio/medical
 	extra_decals = list(
 		"lower_half_solid" = COLOR_BABY_BLUE,
-		"vents"
+		"biohazard" = COLOR_OFF_WHITE,
+		"lower_side_vent"
 	)
 
 /decl/closet_appearance/secure_closet/expedition
@@ -19,7 +20,7 @@
 	)
 	extra_decals = list(
 		"stripe_vertical_mid_full" = COLOR_PURPLE,
-		"security" = COLOR_PURPLE
+		"exped" = COLOR_PURPLE
 	)
 
 //SC Exploration Secure Closets Port
