@@ -5847,7 +5847,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/hos2,
+/obj/structure/closet/secure_closet/hos,
 /obj/machinery/light,
 /obj/machinery/keycard_auth{
 	pixel_y = -20;

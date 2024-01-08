@@ -173,21 +173,15 @@
 /obj/random/unidentified_medicine
 
 // Closets
-/obj/structure/closet/crate/secure/science
-/obj/structure/closet/firecloset/full/double
-/obj/structure/closet/l3closet/medical
-/obj/structure/closet/l3closet/scientist/double
-/obj/structure/closet/secure_closet/explorer
-/obj/structure/closet/secure_closet/guncabinet/excursion
+/obj/structure/closet/l3closet/medical // will be added upstream shortly
+/obj/structure/closet/secure_closet/pilot // will be added upstream shortly
 /obj/structure/closet/secure_closet/guncabinet/phase
-/obj/structure/closet/secure_closet/hos2
 /obj/structure/closet/secure_closet/medical_wall/synth_anesthetics
 /obj/structure/closet/secure_closet/medical2
 /obj/structure/closet/secure_closet/nanotrasen_commander
 /obj/structure/closet/secure_closet/nanotrasen_security
 /obj/structure/closet/secure_closet/nanotrasen_warden
 /obj/structure/closet/secure_closet/pathfinder
-/obj/structure/closet/secure_closet/pilot
 /obj/structure/closet/secure_closet/sar
 /obj/structure/closet/walllocker/emerglocker
 /obj/structure/closet/wardrobe/captain
