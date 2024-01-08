@@ -271,9 +271,12 @@
 //Calculates a scaling factor for scalding damage, based on the temperature of the oil and creature's heat resistance
 /decl/material/liquid/nutriment/triglyceride/oil/proc/heatdamage(var/mob/living/carbon/M, var/datum/reagents/holder)
 	var/threshold = 360//Human heatdamage threshold
-	var/decl/species/S = M.get_species(1)
-	if (S && istype(S))
-		threshold = S.heat_level_1
+	//Step = degrees above heat level 1 for 1.0 multiplier
+	var/damage_step = 60
+	var/obj/item/organ/external/head = GET_EXTERNAL_ORGAN(M, BP_HEAD)
+	if (head?.bodytype)
+		threshold = head.bodytype.heat_level_1
+		damage_step = (head.bodytype.heat_level_2 - head.bodytype.heat_level_1) * 1.5
 
 	var/data = REAGENT_DATA(holder, type)
 
@@ -281,13 +284,8 @@
 	if (data["temperature"] < threshold)
 		return 0
 
-	//Step = degrees above heat level 1 for 1.0 multiplier
-	var/step = 60
-	if (S && istype(S))
-		step = (S.heat_level_2 - S.heat_level_1)*1.5
-
 	. = data["temperature"] - threshold
-	. /= step
+	. /= damage_step
 	. = min(., 2.5)//Cap multiplier at 2.5
 
 /decl/material/liquid/nutriment/triglyceride/oil/affect_touch(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
