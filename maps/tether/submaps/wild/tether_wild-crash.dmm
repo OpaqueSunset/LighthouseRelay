@@ -346,7 +346,7 @@
 	},
 /area/tether/surfacebase/outside/wilderness)
 "aY" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = -32;
 	dir = 1
 	},
@@ -435,7 +435,7 @@
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bm" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = -32;
 	dir = 1
 	},
@@ -802,7 +802,7 @@
 /turf/simulated/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cq" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = 32
 	},
 /turf/simulated/floor/shuttle/black/virgo3b,

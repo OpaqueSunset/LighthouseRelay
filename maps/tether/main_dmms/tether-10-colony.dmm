@@ -10241,7 +10241,7 @@
 /area/centcom/security)
 "ua" = (
 /obj/structure/bed/chair/shuttle,
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = -28;
 	dir = 4
 	},
@@ -10253,7 +10253,7 @@
 	})
 "ub" = (
 /obj/structure/bed/chair/shuttle,
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = 28;
 	dir = 8
 	},
@@ -10774,7 +10774,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = -28;
 	dir = 4
 	},
@@ -10788,7 +10788,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = 28;
 	dir = 8
 	},

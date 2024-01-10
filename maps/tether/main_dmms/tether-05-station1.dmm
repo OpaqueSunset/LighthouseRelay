@@ -4252,7 +4252,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = -32;
 	dir = 4
 	},
@@ -4269,7 +4269,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = 32;
 	dir = 8
 	},

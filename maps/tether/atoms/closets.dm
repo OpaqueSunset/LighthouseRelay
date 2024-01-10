@@ -109,27 +109,29 @@
 	name = "\improper Facility Director's wardrobe"
 	closet_appearance = /decl/closet_appearance/cabinet
 
-	starts_with = list(
+/obj/structure/closet/wardrobe/captain/WillContain()
+	return list(
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/glasses/sunglasses/prescription,
 		/obj/item/clothing/head/caphat,
 		/obj/item/clothing/head/caphat/cap,
 		/obj/item/clothing/head/caphat/formal,
-		/obj/item/clothing/head/beret/centcom/captain,
+		// /obj/item/clothing/head/beret/centcom/captain,
 		/obj/item/clothing/suit/captunic,
 		/obj/item/clothing/suit/captunic/capjacket,
 		// /obj/item/clothing/suit/storage/parade_coat,
 		// /obj/item/clothing/suit/storage/parade_coat/fem,
 		/obj/item/clothing/suit/storage/toggle/wintercoat/captain,
-		/obj/item/clothing/under/rank/captain,
-		/obj/item/clothing/under/rank/captain/skirt_pleated,
+		/obj/item/clothing/under/captain,
+		// /obj/item/clothing/under/captain/skirt_pleated,
 		/obj/item/clothing/under/dress/dress_cap,
 		/obj/item/clothing/under/captainformal,
 		/obj/item/clothing/under/gimmick/rank/captain/suit,
-		/obj/item/clothing/under/gimmick/rank/captain/suit/skirt,
+		// /obj/item/clothing/under/gimmick/rank/captain/suit/skirt,
 		// /obj/item/clothing/under/bodysuit/bodysuitcommand,
 		/obj/item/clothing/gloves/captain,
 		/obj/item/clothing/shoes/color/brown,
 		/obj/item/clothing/shoes/winterboots/command,
 		/obj/item/storage/backpack/satchel/cap,
-		/obj/item/storage/backpack/captain)
+		/obj/item/storage/backpack/captain
+	)

@@ -99,7 +99,7 @@
 	icon_state = "tube1";
 	dir = 8
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = -32;
 	dir = 4
 	},
@@ -110,7 +110,7 @@
 	icon_state = "tube1";
 	dir = 4
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = 32;
 	dir = 8
 	},

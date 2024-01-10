@@ -1086,7 +1086,7 @@
 /turf/simulated/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "do" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = -32;
 	dir = 1
 	},
@@ -1906,7 +1906,7 @@
 /turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fH" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = 32
 	},
 /turf/simulated/floor/shuttle/black,
@@ -2699,7 +2699,7 @@
 /turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hP" = (
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_x = 28;
 	dir = 8
 	},
