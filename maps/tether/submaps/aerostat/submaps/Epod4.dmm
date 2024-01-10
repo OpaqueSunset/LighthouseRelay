@@ -55,7 +55,7 @@
 	icon_state = "chair_preview";
 	dir = 1
 	},
-/obj/structure/closet/walllocker/emerglocker/east,
+/obj/structure/emergency_dispenser/east,
 /obj/item/radio/intercom{
 	dir = 4;
 	name = "Station Intercom (General)";

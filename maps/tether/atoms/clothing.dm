@@ -64,7 +64,7 @@
 	icon = 'maps/tether/icons/obj/clothing/shoes/winterboots_sci.dmi'
 
 /obj/item/clothing/shoes/winterboots/command
-	name = "Facility Director winter boots"
+	name = "\improper Facility Director winter boots"
 	desc = "A pair of winter boots. They're lined with dark fur, and trimmed in the colours of superiority."
 	icon = 'maps/tether/icons/obj/clothing/shoes/winterboots_cap.dmi'
 
@@ -180,3 +180,55 @@
 /obj/item/clothing/suit/space/void/medical/emt
 	name = "emergency medical response voidsuit"
 	icon = 'maps/tether/icons/obj/clothing/suits/void_emt_helmet.dmi'
+
+/obj/item/storage/belt/explorer
+	name = "pathfinder's bandolier"
+	desc = "A versatile bandolier fitted with eight pouches that can hold a wide variety of items such as tools, small melee weapons, batteries, ammunition, and more; ideal for any pathfinder who has too much stuff and not enough pockets."
+	icon = 'icons/clothing/belt/swatbelt.dmi'
+	storage_slots = 7
+	max_storage_space = ITEM_SIZE_NORMAL * 7
+	use_alt_layer = TRUE
+	can_hold = list(
+		/obj/item/grenade,
+		/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/pickaxe,
+		/obj/item/multitool,
+		/obj/item/stack/cable_coil,
+		/obj/item/t_scanner,
+		/obj/item/scanner/gas,
+		/obj/item/flashlight,
+		/obj/item/cell/device,
+		/obj/item/knife,
+		/obj/item/hatchet/machete,
+		/obj/item/energy_blade/sword,
+		/obj/item/shield/energy,
+		/obj/item/ammo_casing,
+		/obj/item/ammo_magazine,
+		/obj/item/storage/box/ammo/beanbags,
+		/obj/item/storage/box/ammo/shotgunammo,
+		/obj/item/storage/box/ammo/shotgunshells,
+		/obj/item/scanner/health,
+		/obj/item/robotanalyzer,
+		/obj/item/chems/glass/beaker,
+		/obj/item/chems/glass/bottle,
+		/obj/item/chems/syringe,
+		/obj/item/chems/hypospray,
+		/obj/item/storage/pill_bottle,
+		/obj/item/stack/medical,
+		/obj/item/stack/flag,
+		/obj/item/flashlight,
+		/obj/item/chems/spray/extinguisher/mini,
+		// /obj/item/storage/quickdraw/syringe_case,
+		/obj/item/photo,
+		/obj/item/camera_film,
+		/obj/item/camera,
+		/obj/item/taperecorder,
+		/obj/item/stack/tape_roll,
+		/obj/item/geiger,
+		/obj/item/gps,
+		/obj/item/ano_scanner
+		)

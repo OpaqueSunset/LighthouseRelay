@@ -135,7 +135,7 @@
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/mining_main/refinery)
 "aau" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "mining_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -933,9 +933,7 @@
 /obj/item/clothing/accessory/permit/gun/planetside,
 /obj/item/cell/gun,
 /obj/item/cell/gun,
-/obj/structure/closet/secure_closet/guncabinet/phase{
-	name = "mining weapon cabinet"
-	},
+/obj/structure/closet/secure_closet/guncabinet/phase/mining,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "aca" = (
@@ -30811,12 +30809,12 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
 "iAg" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
-	id_tag = "mining_airlock_scrubber"
-	},
 /obj/structure/sign/warning/fire{
 	pixel_x = -34;
 	dir = 4
+	},
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
+	id_tag = "mining_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/mining_main/airlock)
@@ -31127,7 +31125,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
 	id_tag = "paramed_airlock_pump"
 	},
@@ -31622,7 +31620,7 @@
 	pixel_x = -34;
 	dir = 4
 	},
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "paramed_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -32155,12 +32153,12 @@
 /turf/simulated/floor/plating,
 /area/vacant/vacant_bar)
 "qcH" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
-	id_tag = "paramed_airlock_scrubber"
-	},
 /obj/structure/sign/warning/nosmoking_2{
 	pixel_x = -34;
 	dir = 4
+	},
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
+	id_tag = "paramed_airlock_scrubber"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/medical/triage)
@@ -33292,7 +33290,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	dir = 4;
 	id_tag = "paramed_airlock_pump"
 	},

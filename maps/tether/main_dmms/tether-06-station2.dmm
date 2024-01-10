@@ -15180,7 +15180,7 @@
 /area/shuttle/large_escape_pod1/station)
 "Cq" = (
 /obj/structure/bed/roller,
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = 32
 	},
 /turf/simulated/floor/shuttle/white,
@@ -15215,7 +15215,7 @@
 	pixel_x = 24;
 	dir = 8
 	},
-/obj/structure/closet/walllocker/emerglocker{
+/obj/structure/emergency_dispenser{
 	pixel_y = 32
 	},
 /turf/simulated/floor/shuttle/blue,

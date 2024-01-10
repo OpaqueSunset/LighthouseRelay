@@ -87,6 +87,6 @@
 	desc = "A card indicating that the owner is allowed to carry a weapon for religious rites and purposes."
 	detail_color = COLOR_GRAY15
 
-/obj/item/clothing/accessory/permit/gun/planetside
+/obj/item/clothing/accessory/permit/gun/planetside/exploration
 	name = "explorer weapon permit"
 	desc = "A card indicating that the owner is allowed to carry weaponry during active exploration missions."

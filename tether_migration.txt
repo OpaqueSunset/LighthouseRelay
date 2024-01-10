@@ -767,6 +767,9 @@
 /obj/structure/closet/firecloset/full/double : /obj/structure/closet/firecloset/chief{@OLD}
 /obj/structure/closet/l3closet/scientist/double : /obj/structure/closet/l3closet/scientist/multi{@OLD}
 /obj/structure/closet/secure_closet/hos2 : /obj/structure/closet/secure_closet/hos{@OLD}
+/obj/structure/closet/secure_closet/medical_wall/synth_anesthetics : /obj/structure/closet/secure_closet/medical_wall/anesthetics/robotics{@OLD}
+/obj/structure/closet/secure_closet/medical2 : /obj/structure/closet/secure_closet/anesthetics{@OLD}
+/obj/structure/closet/walllocker/emerglocker/@SUBTYPES : /obj/structure/emergency_dispenser/@SUBTYPES{@OLD}
 
 /obj/machinery/suit_cycler/headofsecurity : /obj/machinery/suit_cycler/security/alt{@OLD}
 /obj/machinery/account_database : /obj/machinery/computer/account_database{@OLD}
@@ -811,6 +814,7 @@
 /obj/item/module/power_control : /obj/item/stock_parts/circuitboard/apc{@OLD}
 
 /obj/item/storage/box/nifsofts_medical : /obj/item/disk/nifsoft/bundle/medical
+/obj/item/storage/box/flare : /obj/item/storage/box/flares{@OLD}
 /obj/item/storage/fancy/candle_box : /obj/item/storage/candle_box
 /obj/item/storage/fancy/cigar/havana : /obj/item/clothing/mask/smokable/cigarette/cigar/havana
 /obj/item/toy/plushie/coffee_fox : /obj/item/toy/plushie/fox/coffee

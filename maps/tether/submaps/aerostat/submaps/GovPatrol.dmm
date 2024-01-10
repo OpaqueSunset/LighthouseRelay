@@ -17,7 +17,7 @@
 /turf/exterior/barren,
 /area/submap/virgo2/GovPatrol)
 "f" = (
-/obj/item/storage/box/flare,
+/obj/item/storage/box/flares,
 /turf/exterior/barren,
 /area/submap/virgo2/GovPatrol)
 "g" = (
