@@ -64,7 +64,7 @@
 	icon = 'maps/tether/icons/obj/clothing/shoes/winterboots_sci.dmi'
 
 /obj/item/clothing/shoes/winterboots/command
-	name = "Facility Director winter boots"
+	name = "\improper Facility Director winter boots"
 	desc = "A pair of winter boots. They're lined with dark fur, and trimmed in the colours of superiority."
 	icon = 'maps/tether/icons/obj/clothing/shoes/winterboots_cap.dmi'
 
