@@ -2706,7 +2706,7 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/medical2,
+/obj/structure/closet/secure_closet/anesthetics,
 /turf/simulated/floor/tiled/white,
 /area/holodeck/holodorm/source_standard)
 "Yf" = (

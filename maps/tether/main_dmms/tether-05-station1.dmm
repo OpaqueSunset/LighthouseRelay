@@ -21683,7 +21683,7 @@
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/box/autoinjectors,
 /obj/item/storage/bag/chemistry,
-/obj/item/clothing/accessory/permit/gun/planetside,
+/obj/item/clothing/accessory/permit/gun/planetside/exploration,
 /turf/simulated/floor/tiled/monotile,
 /area/tether/station/explorer_prep)
 "oJC" = (
@@ -22910,7 +22910,7 @@
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/box/autoinjectors,
 /obj/item/storage/bag/chemistry,
-/obj/item/clothing/accessory/permit/gun/planetside,
+/obj/item/clothing/accessory/permit/gun/planetside/exploration,
 /turf/simulated/floor/tiled/monotile,
 /area/tether/station/explorer_prep)
 "wcD" = (

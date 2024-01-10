@@ -12236,7 +12236,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/medical_wall/synth_anesthetics{
+/obj/structure/closet/secure_closet/medical_wall/anesthetics/robotics{
 	pixel_x = -32;
 	dir = 4
 	},

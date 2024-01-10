@@ -172,19 +172,12 @@
 /obj/machinery/vending/phoronresearch
 /obj/random/unidentified_medicine
 
-// Closets
-/obj/structure/closet/l3closet/medical // will be added upstream shortly
-/obj/structure/closet/secure_closet/pilot // will be added upstream shortly
-/obj/structure/closet/secure_closet/guncabinet/phase
-/obj/structure/closet/secure_closet/medical_wall/synth_anesthetics
-/obj/structure/closet/secure_closet/medical2
+// Closets (mothballed)
 /obj/structure/closet/secure_closet/nanotrasen_commander
 /obj/structure/closet/secure_closet/nanotrasen_security
 /obj/structure/closet/secure_closet/nanotrasen_warden
 /obj/structure/closet/secure_closet/pathfinder
 /obj/structure/closet/secure_closet/sar
-/obj/structure/closet/walllocker/emerglocker
-/obj/structure/closet/wardrobe/captain
 /obj/structure/closet/wardrobe/ert
 
 /obj/structure/flight_left

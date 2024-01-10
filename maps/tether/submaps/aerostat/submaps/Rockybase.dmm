@@ -510,7 +510,7 @@
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bP" = (
-/obj/structure/closet/secure_closet/medical2,
+/obj/structure/closet/secure_closet/anesthetics,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bQ" = (

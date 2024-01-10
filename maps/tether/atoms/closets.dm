@@ -36,11 +36,11 @@
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
 		/obj/item/clothing/gloves/color/black,
-		// /obj/item/gun/energy/frontier/locked/holdout, // todo: frontier weapons with extra simplemob damage
+		// /obj/item/gun/energy/frontier/locked/holdout, // todo: frontier weapons with extra simplemob damage // or maybe not
 		// /obj/item/radio/headset/explorer,
 		/obj/item/flashlight,
 		/obj/item/gps/explorer,
-		// /obj/item/storage/box/flare, // will be added upstream shortly
+		/obj/item/storage/box/flares,
 		/obj/item/geiger,
 		/obj/item/cell/device,
 		/obj/item/radio,
@@ -54,3 +54,82 @@
 		. += /obj/item/storage/backpack
 	else
 		. += /obj/item/storage/backpack/satchel/grey
+
+/obj/structure/closet/secure_closet/guncabinet/phase
+	name = "explorer weapon cabinet"
+	req_access = list(list(access_explorer),list(access_brig))
+
+/obj/structure/closet/secure_closet/guncabinet/phase/WillContain()
+	return list(
+		/obj/item/gun/energy/gun/small/reloadable = 2,
+		/obj/item/cell/gun = 2,
+		/obj/item/clothing/accessory/permit/gun/planetside
+	)
+
+/obj/structure/closet/secure_closet/guncabinet/phase/mining
+	name = "mining weapon cabinet"
+	req_access = list(list(access_mining),list(access_brig))
+
+/obj/structure/closet/secure_closet/guncabinet/phase/mining/WillContain()
+	return list(
+		/obj/item/gun/energy/gun/small/reloadable = 2,
+		/obj/item/cell/gun = 2,
+		/obj/item/clothing/accessory/permit/gun/planetside
+	)
+
+/obj/structure/closet/secure_closet/anesthetics
+	name = "anesthetics closet"
+	desc = "Used to knock people out."
+	closet_appearance = /decl/closet_appearance/secure_closet/medical/alt
+	req_access = list(access_surgery)
+
+/obj/structure/closet/secure_closet/medical2/WillContain()
+	return list(
+		/obj/item/tank/anesthetic = 3,
+		/obj/item/clothing/mask/breath/medical = 3
+	)
+
+/obj/structure/closet/secure_closet/medical_wall/anesthetics
+	name = "anesthetics wall closet"
+	desc = "Used to knock people out."
+	req_access = list(access_surgery)
+
+/obj/structure/closet/secure_closet/medical_wall/anesthetics/WillContain()
+	return list(
+		/obj/item/tank/anesthetic = 3,
+		/obj/item/clothing/mask/breath/medical = 3
+	)
+
+/obj/structure/closet/secure_closet/medical_wall/anesthetics/robotics
+	name = "robotics anesthetics wall closet"
+	desc = "Used to knock people out... but in the Robotics lab."
+	req_access = list(access_robotics)
+
+/obj/structure/closet/wardrobe/captain
+	name = "\improper Facility Director's wardrobe"
+	closet_appearance = /decl/closet_appearance/cabinet
+
+	starts_with = list(
+		/obj/item/clothing/glasses/sunglasses,
+		/obj/item/clothing/glasses/sunglasses/prescription,
+		/obj/item/clothing/head/caphat,
+		/obj/item/clothing/head/caphat/cap,
+		/obj/item/clothing/head/caphat/formal,
+		/obj/item/clothing/head/beret/centcom/captain,
+		/obj/item/clothing/suit/captunic,
+		/obj/item/clothing/suit/captunic/capjacket,
+		// /obj/item/clothing/suit/storage/parade_coat,
+		// /obj/item/clothing/suit/storage/parade_coat/fem,
+		/obj/item/clothing/suit/storage/toggle/wintercoat/captain,
+		/obj/item/clothing/under/rank/captain,
+		/obj/item/clothing/under/rank/captain/skirt_pleated,
+		/obj/item/clothing/under/dress/dress_cap,
+		/obj/item/clothing/under/captainformal,
+		/obj/item/clothing/under/gimmick/rank/captain/suit,
+		/obj/item/clothing/under/gimmick/rank/captain/suit/skirt,
+		// /obj/item/clothing/under/bodysuit/bodysuitcommand,
+		/obj/item/clothing/gloves/captain,
+		/obj/item/clothing/shoes/color/brown,
+		/obj/item/clothing/shoes/winterboots/command,
+		/obj/item/storage/backpack/satchel/cap,
+		/obj/item/storage/backpack/captain)
