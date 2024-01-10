@@ -30,7 +30,7 @@
 
 /mob/proc/refresh_ar_master()
 	if(!ar_master)
-		ar_master = new
+		ar_master = new (null, src)
 	if(client)
 		client.screen |= ar_master
 	sync_ar_state()
