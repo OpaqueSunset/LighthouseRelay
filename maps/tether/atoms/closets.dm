@@ -135,3 +135,47 @@
 		/obj/item/storage/backpack/satchel/cap,
 		/obj/item/storage/backpack/captain
 	)
+
+//Pathfinder
+/obj/structure/closet/secure_closet/pathfinder
+	name = "pathfinder locker"
+	closet_appearance = /decl/closet_appearance/secure_closet/expedition/pathfinder
+	req_access = list(access_gateway)
+
+/obj/structure/closet/secure_closet/pathfinder/WillContain()
+	. = list(
+		/obj/item/clothing/under/explorer,
+		/obj/item/clothing/suit/storage/toggle/explorer,
+		/obj/item/clothing/mask/gas/explorer,
+		/obj/item/clothing/shoes/winterboots/explorer,
+		/obj/item/clothing/gloves/color/black,
+		// /obj/item/radio/headset/pathfinder,
+		// /obj/item/radio/headset/pathfinder/alt,
+		// /obj/item/clothing/accessory/armor/helmetcamera/exploration,
+		// /obj/item/clothing/accessory/armor/helmetcamera/exploration/body,
+		/obj/item/flashlight,
+		/obj/item/gps/explorer,
+		/obj/item/storage/belt/explorer,
+		/obj/item/storage/box/flares,
+		// /obj/item/storage/box/explorerkeys,
+		/obj/item/geiger,
+		/obj/item/cell/device,
+		/obj/item/radio,
+		/obj/item/stack/flag = 3,
+		// /obj/item/storage/box/survival_knife,
+		/obj/item/hatchet/machete/deluxe,
+		// /obj/item/gun/energy/frontier/locked/carbine,
+		// /obj/item/gun/ballistic/ntles/pathfinder,
+		// /obj/item/ammo_magazine/m57x28mm/ntles,
+		// /obj/item/ammo_magazine/m57x28mm/ntles,
+		/obj/item/clothing/accessory/storage/holster/machete,
+		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/chems/food/liquidfood,
+		// /obj/item/chems/food/liquidfood/protein,
+		/obj/item/disk/survey,
+		/obj/item/cataloguer
+	)
+	if(prob(50))
+		. += /obj/item/storage/backpack
+	else
+		. += /obj/item/storage/backpack/satchel/grey
