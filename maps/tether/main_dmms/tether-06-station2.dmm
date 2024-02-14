@@ -2638,7 +2638,7 @@
 /area/chapel/office)
 "eA" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
@@ -5021,7 +5021,7 @@
 /obj/item/book/manual/medical_diagnostics_manual{
 	pixel_y = 7
 	},
-/obj/item/book/manual/stasis,
+/obj/item/book/fluff/stasis,
 /obj/item/book/manual/resleeving,
 /obj/machinery/light{
 	dir = 8
@@ -10997,7 +10997,7 @@
 /area/medical/virology)
 "uz" = (
 /obj/structure/table/glass,
-/obj/item/storage/fancy/vials,
+/obj/item/storage/box/fancy/vials,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -13103,7 +13103,7 @@
 /area/bridge/meeting_room)
 "yp" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -18537,7 +18537,7 @@
 /area/hallway/station/starboard)
 "VQ" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)

@@ -37,7 +37,9 @@
 		var/obj/item/pizzabox/box = new(location)
 		M.forceMove(box)
 		box.pizza = M
-		box.boxtag = "A special order from [origin]"
+		box.box_tag = "A special order from [origin]!"
+		box.update_strings()
+		box.update_icon()
 
 /datum/trader/ship/chinese
 	name = "Chinese Restaurant"
@@ -114,7 +116,6 @@
 		/obj/item/chems/drinks/cans              = TRADER_SUBTYPES_ONLY,
 		/obj/item/chems/drinks/bottle            = TRADER_SUBTYPES_ONLY,
 		/obj/item/chems/drinks/bottle/small      = TRADER_BLACKLIST,
-		/obj/item/chems/food/checker             = TRADER_BLACKLIST_ALL,
 		/obj/item/chems/food/fruit_slice         = TRADER_BLACKLIST,
 		/obj/item/chems/food/slice               = TRADER_BLACKLIST_ALL,
 		/obj/item/chems/food/grown               = TRADER_BLACKLIST_ALL,

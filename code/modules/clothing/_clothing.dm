@@ -1,7 +1,7 @@
 /obj/item/clothing
 	name = "clothing"
 	siemens_coefficient = 0.9
-	origin_tech = "{'materials':1,'engineering':1}"
+	origin_tech = @'{"materials":1,"engineering":1}'
 	material = /decl/material/solid/organic/cloth
 
 	var/wizard_garb = 0
@@ -17,7 +17,6 @@
 	var/blood_overlay_type = "uniformblood"
 	var/visible_name = "Unknown"
 	var/ironed_state = WRINKLES_DEFAULT
-	var/smell_state = SMELL_DEFAULT
 	var/move_trail = /obj/effect/decal/cleanable/blood/tracks/footprints // if this item covers the feet, the footprints it should leave
 	var/volume_multiplier = 1
 	var/markings_icon	// simple colored overlay that would be applied to the icon
@@ -59,7 +58,7 @@
 // End placeholder.
 
 // Updates the vision of the mob wearing the clothing item, if any
-/obj/item/clothing/proc/update_vision()
+/obj/item/clothing/proc/update_wearer_vision()
 	if(isliving(src.loc))
 		var/mob/living/L = src.loc
 		L.handle_vision()
@@ -68,17 +67,17 @@
 /obj/item/clothing/proc/needs_vision_update()
 	return flash_protection || tint
 
-/obj/item/clothing/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
+/obj/item/clothing/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
 
 	if(overlay)
+
+		if(markings_icon && markings_color && check_state_in_icon("[overlay.icon_state][markings_icon]", overlay.icon))
+			overlay.overlays += mutable_appearance(overlay.icon, "[overlay.icon_state][markings_icon]", markings_color)
 
 		if(length(accessories))
 			for(var/obj/item/clothing/accessory/A in accessories)
 				if(A.should_overlay())
-					overlay.overlays += A.get_mob_overlay(user_mob, slot)
-
-		if(markings_icon && markings_color && check_state_in_icon("[overlay.icon_state][markings_icon]", overlay.icon))
-			overlay.overlays += mutable_appearance(overlay.icon, "[overlay.icon_state][markings_icon]", markings_color)
+					overlay.overlays += A.get_mob_overlay(user_mob, slot, skip_offset = TRUE)
 
 		if(!(slot in user_mob?.get_held_item_slots()))
 			if(blood_DNA)
@@ -105,8 +104,14 @@
 	if(LAZYLEN(new_overlays))
 		add_overlay(new_overlays)
 
-/obj/item/clothing/proc/change_smell(smell = SMELL_DEFAULT)
-	smell_state = smell
+// Used by washing machines to temporarily make clothes smell
+/obj/item/clothing/proc/change_smell(decl/material/odorant, time = 10 MINUTES)
+	if(!odorant || !odorant.scent)
+		remove_extension(src, /datum/extension/scent)
+		return
+
+	set_extension(src, /datum/extension/scent/custom, odorant.scent, odorant.scent_intensity, odorant.scent_descriptor, odorant.scent_range)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/clothing, change_smell)), time, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /obj/item/clothing/proc/get_fibers()
 	. = "material from \a [name]"
@@ -147,7 +152,7 @@
 
 /obj/item/clothing/equipped(var/mob/user)
 	if(needs_vision_update())
-		update_vision()
+		update_wearer_vision()
 	return ..()
 
 /obj/item/clothing/proc/refit_for_bodytype(var/target_bodytype)
@@ -191,12 +196,6 @@
 			to_chat(user, "<span class='bad'>It's wrinkly.</span>")
 		if(WRINKLES_NONE)
 			to_chat(user, "<span class='notice'>It's completely wrinkle-free!</span>")
-
-	switch(smell_state)
-		if(SMELL_CLEAN)
-			to_chat(user, "<span class='notice'>It smells clean!</span>")
-		if(SMELL_STINKY)
-			to_chat(user, "<span class='bad'>It's quite stinky!</span>")
 
 	var/rags = RAG_COUNT(src)
 	if(rags)

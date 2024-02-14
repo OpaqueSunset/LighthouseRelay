@@ -524,7 +524,7 @@
 /area/submap/virgo2/Rockybase)
 "bR" = (
 /obj/structure/table,
-/obj/item/mmi/digital/robot,
+/obj/item/organ/internal/brain/robotic,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bS" = (

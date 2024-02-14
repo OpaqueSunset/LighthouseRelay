@@ -132,6 +132,7 @@ var/global/list/areas = list()
 	T.last_outside_check = OUTSIDE_UNCERTAIN
 	if(T.is_outside == OUTSIDE_AREA && T.is_outside() != old_outside)
 		T.update_weather()
+		T.update_external_atmos_participation()
 
 /turf/proc/update_registrations_on_adjacent_area_change()
 	for(var/obj/machinery/door/firedoor/door in src)
@@ -403,7 +404,7 @@ var/global/list/mob/living/forced_ambiance_list = new
 
 /area/proc/throw_unbuckled_occupants(var/maxrange, var/speed, var/direction)
 	for(var/mob/M in src)
-		addtimer(CALLBACK(src, .proc/throw_unbuckled_occupant, M, maxrange, speed, direction), 0)
+		addtimer(CALLBACK(src, PROC_REF(throw_unbuckled_occupant), M, maxrange, speed, direction), 0)
 
 /area/proc/throw_unbuckled_occupant(var/mob/M, var/maxrange, var/speed, var/direction)
 	if(iscarbon(M))

@@ -86,16 +86,20 @@
 
 /obj/item/paper/on_update_icon()
 	. = ..()
+
 	if(is_crumpled)
 		icon_state = "scrap"
-		return //No overlays on crumpled paper
 	else
 		icon_state = initial(icon_state)
-	update_contents_overlays()
+		update_contents_overlays()
+		//The appearence is the key, the type is the value
+		for(var/image/key in applied_stamps)
+			add_overlay(key)
 
-	//The appearence is the key, the type is the value
-	for(var/image/key in applied_stamps)
-		add_overlay(key)
+	// Update clipboard/paper bundle.
+	if(istype(loc, /obj/item/clipboard) || istype(loc, /obj/item/paper_bundle))
+		compile_overlays()
+		loc.update_icon()
 
 /**Applies the overlay displayed when the paper contains some text. */
 /obj/item/paper/proc/update_contents_overlays()
@@ -150,25 +154,32 @@
 
 /obj/item/paper/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(user.get_target_zone() == BP_EYES)
-		user.visible_message(SPAN_NOTICE("You show the paper to [M]."), \
-			SPAN_NOTICE("[user] holds up a paper and shows it to [M]."))
+		user.visible_message(
+			SPAN_NOTICE("You show the paper to [M]."),
+			SPAN_NOTICE("[user] holds up a paper and shows it to [M].")
+		)
 		M.examinate(src)
+		return TRUE
 
-	else if(user.get_target_zone() == BP_MOUTH) // lipstick wiping
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			if(H == user)
-				to_chat(user, SPAN_NOTICE("You wipe off the lipstick with [src]."))
-				H.lip_style = null
-				H.update_body()
-			else
-				user.visible_message(SPAN_WARNING("[user] begins to wipe [H]'s lipstick off with \the [src]."), \
-								 	 SPAN_NOTICE("You begin to wipe off [H]'s lipstick."))
-				if(do_after(user, 10, H) && do_after(H, 10, check_holding = 0))	//user needs to keep their active hand, H does not.
-					user.visible_message(SPAN_NOTICE("[user] wipes [H]'s lipstick off with \the [src]."), \
-										 SPAN_NOTICE("You wipe off [H]'s lipstick."))
-					H.lip_style = null
-					H.update_body()
+	if(user.get_target_zone() == BP_MOUTH && M.get_lip_colour())
+		var/mob/living/carbon/human/H = M
+		if(H == user)
+			to_chat(user, SPAN_NOTICE("You wipe off the lipstick with [src]."))
+			H.set_lip_colour()
+			return TRUE
+		user.visible_message(
+			SPAN_NOTICE("\The [user] begins to wipe \the [H]'s lipstick off with \the [src]."),
+			SPAN_NOTICE("You begin to wipe off [H]'s lipstick.")
+		)
+		if(do_after(user, 10, H) && do_after(H, 10, check_holding = 0))	//user needs to keep their active hand, H does not.
+			user.visible_message(
+				SPAN_NOTICE("\The [user] wipes \the [H]'s lipstick off with \the [src]."),
+				SPAN_NOTICE("You wipe off \the [H]'s lipstick.")
+			)
+		H.set_lip_colour()
+		return TRUE
+
+	. = ..()
 
 /obj/item/paper/proc/addtofield(var/id, var/text, var/links = 0)
 	var/locid = 0
@@ -292,7 +303,7 @@
 				to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 
 /obj/item/paper/CouldNotUseTopic(mob/user)
-	to_chat(user, SPAN_WARNING("You can't do that!"))
+	to_chat(user, SPAN_WARNING("You can't reach!"))
 
 /obj/item/paper/OnTopic(mob/user, href_list, datum/topic_state/state)
 
@@ -310,9 +321,9 @@
 
 		//If we got a pen that's not in our hands, make sure to move it over
 		if(user.get_active_hand() != I && user.get_empty_hand_slot() && user.put_in_hands(I))
-			to_chat(user, SPAN_NOTICE("You grab your trusty [I]!"))
+			to_chat(user, SPAN_NOTICE("You grab your trusty [I.name]!"))
 		else if(user.get_active_hand() != I)
-			to_chat(user, SPAN_WARNING("You'd use your trusty [I], but your hands are full!"))
+			to_chat(user, SPAN_WARNING("You'd use your trusty [I.name], but your hands are full!"))
 			return TOPIC_NOACTION
 
 		var/pen_flags = I.get_tool_property(TOOL_PEN, TOOL_PROP_PEN_FLAG)

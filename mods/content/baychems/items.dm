@@ -29,6 +29,7 @@
 
 /obj/item/chems/glass/bottle/opium/populate_reagents()
 	reagents.add_reagent(/decl/material/liquid/opium, volume)
+	. = ..()
 
 DEFINE_CARTRIDGE_FOR_CHEM(opium, /decl/material/liquid/opium)
 

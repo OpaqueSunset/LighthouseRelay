@@ -112,7 +112,7 @@
 		/decl/material/solid/glass = MATTER_AMOUNT_SECONDARY,
 		/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT
 	)
-	origin_tech = "{'materials':2,'engineering':2}"
+	origin_tech = @'{"materials":2,"engineering":2}'
 
 /obj/item/clothing/mask/gas/syndicate
 	name = "tactical mask"
@@ -130,7 +130,7 @@
 		/decl/material/solid/glass = MATTER_AMOUNT_SECONDARY,
 		/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT
 	)
-	origin_tech = "{'materials':2,'engineering':2}"
+	origin_tech = @'{"materials":2,"engineering":2}'
 
 /obj/item/clothing/mask/gas/death_commando
 	name = "\improper Death Commando Mask"
@@ -153,7 +153,7 @@
 		)
 	body_parts_covered = SLOT_HEAD|SLOT_FACE|SLOT_EYES
 	material = /decl/material/solid/organic/cloth
-	origin_tech = "{'materials':1,'engineering':2}"
+	origin_tech = @'{"materials":1,"engineering":2}'
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "clown wig and mask"

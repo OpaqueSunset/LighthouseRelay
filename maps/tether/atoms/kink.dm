@@ -109,7 +109,7 @@
 	if(!jingled)
 		usr.audible_message("<b>[usr]</b> jingles \the [src]'s bell.", SPAN_NOTICE("You jingle \the [src]'s bell."), "<b>[usr]</b> plays with \the [src]'s bell.")
 		jingled = TRUE
-		addtimer(CALLBACK(src, .proc/jingledreset), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(jingledreset)), 5 SECONDS)
 	return
 
 /obj/item/clothing/accessory/collar/bell/proc/jingledreset()

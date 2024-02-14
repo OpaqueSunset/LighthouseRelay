@@ -19,15 +19,13 @@
 	adapt_to_current_level()
 	. = ..()
 
-/mob/living/simple_animal/hostile/leech/Life()
+/mob/living/simple_animal/hostile/leech/handle_regular_status_updates()
 	. = ..()
-	if(!.)
-		return FALSE
-
-	if(target_mob)
-		belly -= 3
-	else
-		belly -= 1
+	if(.)
+		if(target_mob)
+			belly -= 3
+		else
+			belly -= 1
 
 /mob/living/simple_animal/hostile/leech/AttackingTarget()
 	. = ..()
@@ -59,7 +57,7 @@
 
 /obj/structure/leech_spawner/LateInitialize()
 	..()
-	proxy_listener = new /datum/proximity_trigger/square(src, .proc/burst, .proc/burst, 5)
+	proxy_listener = new /datum/proximity_trigger/square(src, PROC_REF(burst), PROC_REF(burst), 5)
 	proxy_listener.register_turfs()
 
 /obj/structure/leech_spawner/Destroy()

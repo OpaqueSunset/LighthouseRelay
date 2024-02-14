@@ -5,10 +5,11 @@
 /obj/item/chems/food/egg
 	name = "egg"
 	desc = "An egg!"
-	icon_state = "egg"
+	icon = 'icons/obj/food/eggs/egg.dmi'
+	icon_state = ICON_STATE_WORLD
 	filling_color = "#fdffd1"
 	volume = 10
-	center_of_mass = @"{'x':16,'y':13}"
+	center_of_mass = @'{"x":16,"y":13}'
 	nutriment_amt = 3
 	nutriment_type = /decl/material/liquid/nutriment/protein/egg
 
@@ -45,28 +46,31 @@
 	return ..()
 
 /obj/item/chems/food/egg/blue
-	icon_state = "egg-blue"
+	icon = 'icons/obj/food/eggs/egg_blue.dmi'
 
 /obj/item/chems/food/egg/green
-	icon_state = "egg-green"
+	icon = 'icons/obj/food/eggs/egg_green.dmi'
 
 /obj/item/chems/food/egg/mime
-	icon_state = "egg-mime"
+	icon = 'icons/obj/food/eggs/egg_mime.dmi'
 
 /obj/item/chems/food/egg/orange
-	icon_state = "egg-orange"
+	icon = 'icons/obj/food/eggs/egg_orange.dmi'
 
 /obj/item/chems/food/egg/purple
-	icon_state = "egg-purple"
+	icon = 'icons/obj/food/eggs/egg_purple.dmi'
 
 /obj/item/chems/food/egg/rainbow
-	icon_state = "egg-rainbow"
+	icon = 'icons/obj/food/eggs/egg_rainbow.dmi'
 
 /obj/item/chems/food/egg/red
-	icon_state = "egg-red"
+	icon = 'icons/obj/food/eggs/egg_red.dmi'
 
 /obj/item/chems/food/egg/yellow
-	icon_state = "egg-yellow"
+	icon = 'icons/obj/food/eggs/egg_yellow.dmi'
+
+/obj/item/chems/food/egg/lizard
+	icon = 'icons/obj/food/eggs/egg_lizard.dmi'
 
 /obj/item/chems/food/egg/lizard/populate_reagents()
 	. = ..()
@@ -79,7 +83,7 @@
 	desc = "A fried egg, with a touch of salt and pepper."
 	icon_state = "friedegg"
 	filling_color = "#ffdf78"
-	center_of_mass = @"{'x':16,'y':14}"
+	center_of_mass = @'{"x":16,"y":14}'
 	bitesize = 1
 
 /obj/item/chems/food/friedegg/populate_reagents()
@@ -91,7 +95,8 @@
 /obj/item/chems/food/boiledegg
 	name = "boiled egg"
 	desc = "A hard boiled egg."
-	icon_state = "egg"
+	icon = 'icons/obj/food/eggs/egg.dmi'
+	icon_state = ICON_STATE_WORLD
 	filling_color = "#ffffff"
 
 /obj/item/chems/food/boiledegg/populate_reagents()
@@ -104,7 +109,7 @@
 	icon_state = "omelette"
 	trash = /obj/item/trash/plate
 	filling_color = "#fff9a8"
-	center_of_mass = @"{'x':16,'y':13}"
+	center_of_mass = @'{"x":16,"y":13}'
 	bitesize = 1
 
 /obj/item/chems/food/omelette/populate_reagents()
@@ -117,9 +122,9 @@
 	icon_state = "chawanmushi"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#f0f2e4"
-	center_of_mass = @"{'x':17,'y':10}"
+	center_of_mass = @'{"x":17,"y":10}'
 	bitesize = 1
-	
+
 /obj/item/chems/food/chawanmushi/populate_reagents()
 	. = ..()
 	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 5)

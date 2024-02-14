@@ -32,7 +32,7 @@
 	..()
 	if(is_preview_copy)
 		return
-	addtimer(CALLBACK(src, .proc/copy_ooc_notes), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(copy_ooc_notes)), 2 SECONDS)
 
 /datum/preferences/proc/copy_ooc_notes()
 	for(var/datum/mind/M in SSticker.minds) //Need to iterate minds, unfortunately.

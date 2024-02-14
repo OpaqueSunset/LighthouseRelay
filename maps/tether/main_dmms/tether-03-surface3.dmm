@@ -1161,7 +1161,7 @@
 /area/tether/surfacebase/security/breakroom)
 "do" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /turf/simulated/floor/carpet/blue,
 /area/tether/surfacebase/security/breakroom)
 "dp" = (
@@ -12541,7 +12541,7 @@
 /area/bridge/secondary)
 "yy" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
 "yz" = (
@@ -18217,8 +18217,8 @@
 /area/assembly/robotics)
 "Ib" = (
 /obj/structure/table,
-/obj/item/mmi,
-/obj/item/organ/internal/posibrain,
+/obj/item/organ/internal/brain_interface,
+/obj/item/organ/internal/brain/robotic,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/mauve/border,
 /turf/simulated/floor/tiled/steel_grid,

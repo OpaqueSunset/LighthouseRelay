@@ -471,7 +471,9 @@
 
 /obj/item/storage/firstaid/regular{empty = 1} : /obj/item/storage/firstaid/empty{@OLD; empty = @SKIP; name = @SKIP}
 
-/obj/item/mmi/digital/posibrain : /obj/item/organ/internal/posibrain{@OLD}
+/obj/item/mmi/digital/@SUBTYPES : /obj/item/organ/internal/brain/robotic{@OLD}
+/obj/item/mmi : /obj/item/organ/internal/brain_interface{@OLD}
+/obj/item/organ/internal/posibrain : /obj/item/organ/internal/brain/robotic{@OLD}
 
 /obj/item/energy/@SUBTYPES : /obj/item/energy_blade/@SUBTYPES{@OLD}
 
@@ -817,6 +819,7 @@
 /obj/item/storage/box/flare : /obj/item/storage/box/flares{@OLD}
 /obj/item/storage/fancy/candle_box : /obj/item/storage/candle_box
 /obj/item/storage/fancy/cigar/havana : /obj/item/clothing/mask/smokable/cigarette/cigar/havana
+/obj/item/storage/box/donut : /obj/item/storage/box/fancy/donut{@OLD}
 /obj/item/toy/plushie/coffee_fox : /obj/item/toy/plushie/fox/coffee
 /obj/item/toy/plushie/marble_fox : /obj/item/toy/plushie/fox/marble
 /obj/item/toy/plushie/mouse/fluff : /obj/item/toy/plushie/mouse
@@ -828,7 +831,9 @@
 /obj/item/beach_ball : /obj/item/ball
 
 /obj/structure/bookcase/manuals/research_and_development : /obj/structure/bookcase/manuals/xenoarchaeology
-/obj/item/book/manual/security_space_law : /obj/item/book/manual/nt_regs
+/obj/item/book/manual/security_space_law : /obj/item/book/fluff/nt_regs{@OLD}
+/obj/item/book/manual/nt_regs : /obj/item/book/fluff/nt_regs{@OLD}
+/obj/item/book/manual/stasis : /obj/item/book/fluff/stasis{@OLD}
 
 /obj/machinery/fitness/heavy/lifter : /obj/structure/fitness/weightlifter
 

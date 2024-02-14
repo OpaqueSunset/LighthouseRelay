@@ -12,7 +12,7 @@
 	icon_state = "emptycondiment"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	possible_transfer_amounts = @"[1,5,10]"
-	center_of_mass = @"{'x':16,'y':6}"
+	center_of_mass = @'{"x":16,"y":6}'
 	randpixel = 6
 	volume = 50
 	var/obj/item/chems/condiment/is_special_bottle
@@ -49,13 +49,6 @@
 				on_reagent_change()
 		return
 
-/obj/item/chems/condiment/attack_self(var/mob/user)
-	return
-
-/obj/item/chems/condiment/attack(var/mob/M, var/mob/user, var/def_zone)
-	if(standard_feed_mob(user, M))
-		return
-
 /obj/item/chems/condiment/afterattack(var/obj/target, var/mob/user, var/proximity)
 	if(!proximity)
 		return
@@ -78,12 +71,6 @@
 		to_chat(user, SPAN_NOTICE("You add [trans] units of the condiment to \the [target]."))
 	else
 		..()
-
-/obj/item/chems/condiment/feed_sound(var/mob/user)
-	playsound(user.loc, 'sound/items/drink.ogg', rand(10, 50), 1)
-
-/obj/item/chems/condiment/self_feed_message(var/mob/user)
-	to_chat(user, SPAN_NOTICE("You swallow some of contents of \the [src]."))
 
 /obj/item/chems/condiment/proc/update_center_of_mass()
 	center_of_mass = is_special_bottle ? initial(is_special_bottle.center_of_mass) : initial(center_of_mass)
@@ -203,7 +190,7 @@
 	name = "salt shaker"
 	desc = "Salt. From space oceans, presumably."
 	icon_state = "saltshakersmall"
-	center_of_mass = @"{'x':16,'y':9}"
+	center_of_mass = @'{"x":16,"y":9}'
 
 /obj/item/chems/condiment/small/saltshaker/populate_reagents()
 	reagents.add_reagent(/decl/material/solid/sodiumchloride, reagents.maximum_volume)
@@ -212,7 +199,7 @@
 	name = "pepper mill"
 	desc = "Often used to flavor food or make people sneeze."
 	icon_state = "peppermillsmall"
-	center_of_mass = @"{'x':16,'y':8}"
+	center_of_mass = @'{"x":16,"y":8}'
 
 /obj/item/chems/condiment/small/peppermill/populate_reagents()
 	reagents.add_reagent(/decl/material/solid/blackpepper, reagents.maximum_volume)
@@ -221,7 +208,7 @@
 	name = "sugar"
 	desc = "Sweetness in a bottle"
 	icon_state = "sugarsmall"
-	center_of_mass = @"{'x':17,'y':9}"
+	center_of_mass = @'{"x":17,"y":9}'
 
 /obj/item/chems/condiment/small/sugar/populate_reagents()
 	reagents.add_reagent(/decl/material/liquid/nutriment/sugar, reagents.maximum_volume)

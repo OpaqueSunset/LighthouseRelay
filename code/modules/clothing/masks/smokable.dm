@@ -22,6 +22,9 @@
 	var/smoke_effect = 0
 	var/smoke_amount = 1
 
+/obj/item/clothing/mask/smokable/get_tool_quality(archetype, property)
+	return (!lit && archetype == TOOL_CAUTERY) ? TOOL_QUALITY_NONE : ..()
+
 /obj/item/clothing/mask/smokable/dropped(mob/user)
 	. = ..()
 	if(lit)
@@ -110,7 +113,7 @@
 		M.update_equipment_overlay(slot_wear_mask_str, FALSE)
 		M.update_inhand_overlays()
 
-/obj/item/clothing/mask/smokable/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
+/obj/item/clothing/mask/smokable/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
 	if(overlay && lit && check_state_in_icon("[overlay.icon_state]-on", overlay.icon))
 		var/image/on_overlay = emissive_overlay(overlay.icon, "[overlay.icon_state]-on")
 		on_overlay.appearance_flags |= RESET_COLOR
@@ -390,13 +393,12 @@
 	return ..()
 
 /obj/item/clothing/mask/smokable/cigarette/afterattack(obj/item/chems/glass/glass, var/mob/user, proximity)
-	..()
 	if(!proximity)
 		return
-	if(istype(glass)) //you can dip cigarettes into beakers
+	if(!lit && istype(glass)) //you can dip unlit cigarettes into beakers. todo: extinguishing lit cigarettes in beakers? disambiguation via intent?
 		if(!ATOM_IS_OPEN_CONTAINER(glass))
 			to_chat(user, SPAN_NOTICE("You need to take the lid off first."))
-			return
+			return TRUE
 		var/transfered = glass.reagents.trans_to_obj(src, chem_volume)
 		if(transfered)	//if reagents were transfered, show the message
 			to_chat(user, SPAN_NOTICE("You dip \the [src] into \the [glass]."))
@@ -405,6 +407,8 @@
 				to_chat(user, SPAN_NOTICE("[glass] is empty."))
 			else
 				to_chat(user, SPAN_NOTICE("[src] is full."))
+		return TRUE
+	return ..()
 
 /obj/item/clothing/mask/smokable/cigarette/attack_self(var/mob/user)
 	if(lit == 1)

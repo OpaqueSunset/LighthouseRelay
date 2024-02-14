@@ -17181,7 +17181,7 @@
 /area/hallway/station/docks)
 "bql" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
@@ -19613,7 +19613,7 @@
 /obj/structure/bookcase,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bXl" = (

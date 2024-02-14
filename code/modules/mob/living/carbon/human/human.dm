@@ -49,14 +49,6 @@
 	var/obj/item/organ/internal/stomach/stomach = get_organ(BP_STOMACH)
 	return stomach?.ingested
 
-/mob/living/carbon/human/get_fullness()
-	if(!should_have_organ(BP_STOMACH))
-		return ..()
-	var/obj/item/organ/internal/stomach/stomach = get_organ(BP_STOMACH, /obj/item/organ/internal/stomach)
-	if(stomach)
-		return nutrition + (stomach.ingested?.total_volume * 10)
-	return 0 //Always hungry, but you can't actually eat. :(
-
 /mob/living/carbon/human/get_inhaled_reagents()
 	if(!should_have_organ(BP_LUNGS))
 		return
@@ -99,7 +91,7 @@
 			stat(null, "Hardsuit charge: [cell_status]")
 
 /mob/living/carbon/human/proc/implant_loyalty(mob/living/carbon/human/M, override = FALSE) // Won't override by default.
-	if(!config.use_loyalty_implants && !override) return // Nuh-uh.
+	if(!get_config_value(/decl/config/toggle/use_loyalty_implants) && !override) return // Nuh-uh.
 
 	var/obj/item/implant/loyalty/L = new/obj/item/implant/loyalty(M)
 	L.imp_in = M
@@ -326,12 +318,6 @@
 	dna.check_integrity(src)
 	return
 
-/mob/living/carbon/human/check_has_mouth()
-	var/obj/item/organ/external/head/H = get_organ(BP_HEAD, /obj/item/organ/external/head)
-	if(!H || !istype(H) || !H.can_intake_reagents)
-		return FALSE
-	return TRUE
-
 /mob/living/carbon/human/empty_stomach()
 	SET_STATUS_MAX(src, STAT_STUN, 3)
 
@@ -414,7 +400,7 @@
 	reset_blood()
 
 	if(!client || !key) //Don't boot out anyone already in the mob.
-		for(var/mob/living/carbon/brain/brain in global.player_list) // This is really nasty, does it even work anymore?
+		for(var/mob/living/brain/brain in global.player_list) // This is really nasty, does it even work anymore?
 			if(brain.real_name == src.real_name && brain.mind)
 				brain.mind.transfer_to(src)
 				qdel(brain.loc)
@@ -515,14 +501,16 @@
 		force_update_limbs()
 
 		// Check and clear hair.
-		var/decl/sprite_accessory/hair/hairstyle = GET_DECL(h_style)
+		var/set_hairstyle = get_hairstyle()
+		var/decl/sprite_accessory/hair/hairstyle = GET_DECL(set_hairstyle)
 		if(!hairstyle?.accessory_is_available(src, species, new_bodytype))
-			change_hair(new_bodytype.default_h_style, FALSE)
-		var/decl/sprite_accessory/hair/facialhairstyle = GET_DECL(f_style)
+			set_hairstyle(new_bodytype.default_h_style, skip_update = TRUE)
+		set_hairstyle = get_facial_hairstyle()
+		var/decl/sprite_accessory/hair/facialhairstyle = GET_DECL(set_hairstyle)
 		if(!facialhairstyle?.accessory_is_available(src, species, new_bodytype))
-			change_facial_hair(new_bodytype.default_f_style, FALSE)
+			set_facial_hairstyle(new_bodytype.default_f_style, skip_update = TRUE)
 		// TODO: check markings.
-
+		update_hair()
 		update_eyes()
 		return TRUE
 	return FALSE
@@ -654,7 +642,7 @@
 /mob/living/carbon/human/proc/apply_bodytype_appearance()
 	var/decl/bodytype/root_bodytype = get_bodytype()
 	if(!root_bodytype)
-		skin_colour = COLOR_BLACK
+		set_skin_colour(COLOR_BLACK)
 	else
 		root_bodytype.apply_appearance(src)
 		default_pixel_x = initial(pixel_x) + root_bodytype.pixel_offset_x
@@ -1125,14 +1113,15 @@
 
 	set_species(species_name, new_bodytype)
 	var/decl/bodytype/root_bodytype = get_bodytype() // root bodytype is set in set_species
-	if(!skin_colour)
-		skin_colour = root_bodytype.base_color
-	if(!hair_colour)
-		hair_colour = root_bodytype.base_hair_color
-	if(!facial_hair_colour)
-		facial_hair_colour = root_bodytype.base_hair_color
-	if(!eye_colour)
-		eye_colour = root_bodytype.base_eye_color
+	if(!get_skin_colour())
+		set_skin_colour(root_bodytype.base_color, skip_update = TRUE)
+	if(!get_hair_colour())
+		set_hair_colour(root_bodytype.base_hair_color, skip_update = TRUE)
+	if(!get_facial_hair_colour())
+		set_facial_hair_colour(root_bodytype.base_hair_color, skip_update = TRUE)
+	if(!get_eye_colour())
+		set_eye_colour(root_bodytype.base_eye_color, skip_update = TRUE)
+
 	root_bodytype.set_default_hair(src, override_existing = TRUE, defer_update_hair = TRUE)
 	if(!blood_type && length(species?.blood_types))
 		blood_type = pickweight(species.blood_types)
@@ -1200,3 +1189,9 @@
 			add_stressor(/datum/stressor/thirsty, STRESSOR_DURATION_INDEFINITE)
 		else
 			remove_stressor(/datum/stressor/thirsty)
+
+/mob/living/carbon/human/get_comments_record()
+	if(comments_record_id)
+		return SScharacter_info.get_record(comments_record_id, TRUE)
+	return ..()
+

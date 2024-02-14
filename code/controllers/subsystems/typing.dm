@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(typing)
 	var/static/regex/match_verbs
 	/// A list of clients waiting to be polled for input state.
 	var/list/client/queue = list()
-	/// A list of ckey to list, containing current state data. See .proc/get_entry for details.
+	/// A list of ckey to list, containing current state data. See get_entry() for details.
 	var/list/status = list()
 	/* example of an entry:
 		(ckey = list(
@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(typing)
 	*/
 
 /datum/controller/subsystem/typing/Initialize(start_timeofday)
-	if(config.show_typing_indicator_for_whispers)
+	if(get_config_value(/decl/config/toggle/show_typing_indicator_for_whispers))
 		match_verbs = regex("^(Me|Say|Whisper) +\"?\\w+")
 	else
 		match_verbs = regex("^(Me|Say) +\"?\\w+")

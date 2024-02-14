@@ -3,3 +3,4 @@
 
 /obj/item/chems/glass/bottle/tramadol/populate_reagents()
 	reagents.add_reagent(/decl/material/liquid/painkillers/strong, reagents.maximum_volume)
+	. = ..()

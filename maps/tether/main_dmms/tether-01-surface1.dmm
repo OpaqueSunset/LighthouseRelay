@@ -6014,8 +6014,8 @@
 /area/vacant/vacant_site)
 "alc" = (
 /obj/structure/table,
-/obj/item/storage/fancy/crayons,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /turf/simulated/floor/tiled,
 /area/storage/art)
 "ald" = (

@@ -47,7 +47,7 @@
 	desc = "This robe commands authority."
 	icon = 'icons/clothing/suit/judge.dmi'
 	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_LEGS|SLOT_ARMS
-	allowed = list(/obj/item/storage/fancy/cigarettes,/obj/item/cash)
+	allowed = list(/obj/item/storage/box/fancy/cigarettes,/obj/item/cash)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/apron/overalls
@@ -158,7 +158,7 @@
 			shine = material.reflectiveness
 		desc = "A long, thick [material.use_name] coat."
 
-/obj/item/clothing/suit/leathercoat/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
+/obj/item/clothing/suit/leathercoat/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
 	if(overlay && shine > 0 && slot == slot_wear_suit_str)
 		var/mutable_appearance/S = mutable_appearance(overlay.icon, "shine")
 		S.alpha = max(shine, artificial_shine)/100 * 255
@@ -226,6 +226,21 @@
 	name = "black hoodie"
 	desc = "A warm, black sweatshirt."
 	color = COLOR_DARK_GRAY
+
+/obj/item/clothing/suit/storage/toggle/hoodie/red
+	name = "red hoodie"
+	desc = "A warm, red sweatshirt."
+	color = COLOR_RED
+
+/obj/item/clothing/suit/storage/toggle/hoodie/blue
+	name = "blue hoodie"
+	desc = "A warm, blue sweatshirt."
+	color = COLOR_BLUE
+
+/obj/item/clothing/suit/storage/toggle/hoodie/yellow
+	name = "yellow hoodie"
+	desc = "A warm, yellow sweatshirt."
+	color = COLOR_GOLD
 
 /*
  * Track Jackets

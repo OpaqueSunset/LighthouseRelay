@@ -19,7 +19,7 @@
 	nutriment_desc = list("fried tortilla chips" = 2)
 	nutriment_amt = 2
 
-/obj/item/chems/food/chip/On_Consume(mob/M as mob)
+/obj/item/chems/food/chip/handle_consumed(mob/M as mob)
 	. = ..()
 	if(reagents && reagents.total_volume)
 		icon_state = bitten_state

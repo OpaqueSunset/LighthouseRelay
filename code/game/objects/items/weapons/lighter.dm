@@ -95,14 +95,14 @@
 			else
 				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights the [cig.name].</span>")
 			return
-	..()
+	return ..()
 
 /obj/item/flame/lighter/Process()
 	if(!submerged() && reagents.has_reagent(/decl/material/liquid/fuel))
 		if(ismob(loc) && prob(10) && REAGENT_VOLUME(reagents, /decl/material/liquid/fuel) < 1)
 			to_chat(loc, "<span class='warning'>\The [src]'s flame flickers.</span>")
 			set_light(0)
-			addtimer(CALLBACK(src, .atom/proc/set_light, 2), 4)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(.atom, set_light), 2), 4)
 		reagents.remove_reagent(/decl/material/liquid/fuel, 0.05)
 	else
 		extinguish()
@@ -190,6 +190,8 @@
 		O.reagents.trans_to_obj(src, max_fuel)
 		to_chat(user, "<span class='notice'>You refuel [src] from \the [O]</span>")
 		playsound(src.loc, 'sound/effects/refill.ogg', 50, 1, -6)
+		return TRUE
+	return ..()
 
 /obj/item/flame/lighter/zippo/black
 	color = COLOR_DARK_GRAY

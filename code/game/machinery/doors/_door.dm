@@ -70,7 +70,7 @@
 /obj/machinery/door/Initialize(var/mapload, var/d, var/populate_parts = TRUE, var/obj/structure/door_assembly/assembly = null)
 	if(!populate_parts)
 		inherit_from_assembly(assembly)
-	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, .proc/CheckPenetration)
+	set_extension(src, /datum/extension/penetration, /datum/extension/penetration/proc_call, PROC_REF(CheckPenetration))
 
 	if(!begins_closed)
 		icon_state = icon_state_open
@@ -129,7 +129,7 @@
 	if(close_door_at && world.time >= close_door_at)
 		if(autoclose)
 			close_door_at = next_close_time()
-			INVOKE_ASYNC(src, /obj/machinery/door/proc/close)
+			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/machinery/door, close))
 		else
 			close_door_at = 0
 

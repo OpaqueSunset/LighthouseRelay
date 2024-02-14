@@ -187,7 +187,7 @@
 		if(!spooder.busy && prob(spooder.hunt_chance))
 			spooder.stop_automated_movement = 1
 			walk_to(spooder, pick(orange(20, spooder)), 1, spooder.move_to_delay)
-			addtimer(CALLBACK(spooder, /mob/living/simple_animal/hostile/giant_spider/proc/disable_stop_automated_movement), 5 SECONDS)
+			addtimer(CALLBACK(spooder, TYPE_PROC_REF(/mob/living/simple_animal/hostile/giant_spider, disable_stop_automated_movement)), 5 SECONDS)
 
 /mob/living/simple_animal/hostile/giant_spider/proc/disable_stop_automated_movement()
 	stop_automated_movement = 0
@@ -241,7 +241,7 @@ Guard caste procs
 /mob/living/simple_animal/hostile/giant_spider/guard/proc/protect(mob/nurse)
 	stop_automated_movement = 1
 	walk_to(src, nurse, 2, move_to_delay)
-	addtimer(CALLBACK(src, /mob/living/simple_animal/hostile/giant_spider/proc/disable_stop_automated_movement), 5 SECONDS)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/simple_animal/hostile/giant_spider, disable_stop_automated_movement)), 5 SECONDS)
 
 /mob/living/simple_animal/hostile/giant_spider/guard/proc/go_berserk()
 	audible_message("<span class='danger'>\The [src] chitters wildly!</span>")
@@ -250,7 +250,7 @@ Guard caste procs
 		attacking_with.force = initial(attacking_with.force) + 5
 	move_to_delay--
 	break_stuff_probability = 45
-	addtimer(CALLBACK(src, .proc/calm_down), 3 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(calm_down)), 3 MINUTES)
 
 /mob/living/simple_animal/hostile/giant_spider/guard/proc/calm_down()
 	berserking = FALSE

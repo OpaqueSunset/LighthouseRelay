@@ -1367,7 +1367,7 @@
 "cu" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
@@ -2347,7 +2347,7 @@
 /area/centcom/control)
 "eg" = (
 /obj/structure/table,
-/obj/item/organ/internal/posibrain,
+/obj/item/organ/internal/brain/robotic,
 /obj/item/robotanalyzer,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
@@ -2559,7 +2559,7 @@
 /obj/item/chems/drinks/bottle/small/beer,
 /obj/item/chems/drinks/bottle/small/beer,
 /obj/item/flame/lighter/zippo,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -3609,7 +3609,7 @@
 /area/centcom/control)
 "gW" = (
 /obj/structure/table,
-/obj/item/mmi,
+/obj/item/organ/internal/brain_interface,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "gX" = (
@@ -7521,7 +7521,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = 20
 	},
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -8925,7 +8925,7 @@
 /area/centcom/holding)
 "rl" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "rm" = (
@@ -9926,7 +9926,7 @@
 /area/centcom/security)
 "tu" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -10171,7 +10171,7 @@
 /area/centcom/security)
 "tT" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/item/gun/energy/taser,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
@@ -11045,7 +11045,7 @@
 	dir = 9
 	},
 /obj/item/flame/lighter/zippo,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11056,7 +11056,7 @@
 	dir = 1
 	},
 /obj/item/flame/lighter/zippo,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11073,7 +11073,7 @@
 	dir = 5
 	},
 /obj/item/flame/lighter/zippo,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11855,8 +11855,8 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -13919,7 +13919,7 @@
 /area/centcom/security)
 "AJ" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -14570,7 +14570,7 @@
 /area/centcom/security/residential)
 "BL" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/item/taperecorder,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,

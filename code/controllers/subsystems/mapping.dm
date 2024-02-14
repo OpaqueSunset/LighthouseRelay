@@ -71,6 +71,11 @@ SUBSYSTEM_DEF(mapping)
 	for(var/datum/map_template/MT as anything in get_all_template_instances())
 		register_map_template(MT)
 
+	// Load any queued map template markers.
+	for(var/obj/abstract/landmark/map_load_mark/queued_mark in queued_markers)
+		queued_mark.load_subtemplate()
+	queued_markers.Cut()
+
 	// Populate overmap.
 	if(length(global.using_map.overmap_ids))
 		for(var/overmap_id in global.using_map.overmap_ids)
@@ -121,7 +126,7 @@ SUBSYSTEM_DEF(mapping)
 
 	// Initialize z-level objects.
 #ifdef UNIT_TEST
-	config.roundstart_level_generation = FALSE //#FIXME: Shouldn't this be set before running level_data/setup_level_data()?
+	set_config_value(/decl/config/toggle/roundstart_level_generation, FALSE) //#FIXME: Shouldn't this be set before running level_data/setup_level_data()?
 #endif
 
 	. = ..()

@@ -1625,7 +1625,7 @@
 "eM" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
@@ -2467,7 +2467,7 @@
 /area/awaymission/zoo)
 "hk" = (
 /obj/item/storage/box/matches,
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /turf/simulated/floor/plating,
 /area/awaymission/zoo/pirateship)
 "hl" = (
@@ -2777,7 +2777,7 @@
 "hZ" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/simulated/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
@@ -4093,7 +4093,7 @@
 /area/awaymission/zoo)
 "lq" = (
 /obj/structure/rack,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /turf/simulated/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lr" = (

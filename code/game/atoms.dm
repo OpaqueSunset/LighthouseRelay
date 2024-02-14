@@ -143,7 +143,7 @@
 	Handle an atom entering this atom's proximity
 
 	Called when an atom enters this atom's proximity. Both this and the other atom
-	need to have the PROXMOVE flag (as it helps reduce lag).
+	need to have the MOVABLE_FLAG_PROXMOVE flag (as it helps reduce lag).
 
 	- `AM`: The atom entering proximity
 	- Return: `TRUE` if proximity should continue to be handled, otherwise `FALSE`
@@ -743,9 +743,27 @@
 /atom/proc/get_color()
 	return color
 
-/// Set the color of this atom to `new_color`.
-/atom/proc/set_color(new_color)
-	color = new_color
+/* Set the atom colour. This is a stub effectively due to the broad use of direct setting. */
+// TODO: implement this everywhere that it should be used instead of direct setting.
+/atom/proc/set_color(var/new_color)
+	if(isnull(new_color))
+		return reset_color()
+	if(color != new_color)
+		color = new_color
+		return TRUE
+	return FALSE
+
+/atom/proc/reset_color()
+	if(!isnull(color))
+		color = null
+		return TRUE
+	return FALSE
+
+/atom/proc/set_alpha(var/new_alpha)
+	if(alpha != new_alpha)
+		alpha = new_alpha
+		return TRUE
+	return FALSE
 
 /// Get any power cell associated with this atom.
 /atom/proc/get_cell()

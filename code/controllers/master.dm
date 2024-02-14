@@ -176,7 +176,7 @@ var/global/datum/controller/master/Master = new
 
 	var/start_timeofday = REALTIMEOFDAY
 	// Initialize subsystems.
-	current_ticklimit = config.tick_limit_mc_init
+	current_ticklimit = get_config_value(/decl/config/num/tick_limit_mc_init)
 	for (var/datum/controller/subsystem/SS in subsystems)
 		if (SS.flags & SS_NO_INIT)
 			continue
@@ -202,11 +202,12 @@ var/global/datum/controller/master/Master = new
 #else
 	world.sleep_offline = TRUE
 #endif
-	if(world.fps != config.fps)
-		world.fps = config.fps
+	var/old_fps = world.fps
+	world.fps = get_config_value(/decl/config/num/fps)
+	if(old_fps != world.fps)
 		SStimer.reset_buckets()
-	var/initialized_tod = REALTIMEOFDAY
 
+	var/initialized_tod = REALTIMEOFDAY
 	initializations_finished_with_no_players_logged_in = initialized_tod < REALTIMEOFDAY - 10
 	// Loop.
 	Master.StartProcessing(0)

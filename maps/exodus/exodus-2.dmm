@@ -2485,7 +2485,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/effect/floor_decal/corner/red,
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/security/main)
@@ -3109,7 +3109,7 @@
 /area/exodus/security/main)
 "agN" = (
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/navbeacon/SecurityD,
 /obj/machinery/door/firedoor,
@@ -5138,7 +5138,7 @@
 "akU" = (
 /obj/structure/table/woodentable,
 /obj/item/ashtray/plastic,
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /obj/item/clothing/gloves/forensic,
 /turf/simulated/floor/carpet,
 /area/exodus/security/detectives_office)
@@ -5375,7 +5375,7 @@
 "alo" = (
 /obj/structure/rack,
 /obj/item/flame/lighter/random,
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /obj/random/maintenance,
 /obj/random/maintenance,
 /turf/simulated/floor/plating,
@@ -6652,7 +6652,7 @@
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /turf/simulated/floor/tiled/dark,
 /area/exodus/lawoffice)
 "anU" = (
@@ -7004,7 +7004,7 @@
 /area/exodus/maintenance/auxsolarstarboard)
 "aoK" = (
 /obj/machinery/faxmachine/mapped{
-	anchored = FALSE
+	anchored = 0
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/newscaster{
@@ -7953,7 +7953,7 @@
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -16714,7 +16714,7 @@
 "aJb" = (
 /obj/machinery/navbeacon/Bar,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/loading{
@@ -16734,7 +16734,7 @@
 /area/exodus/gateway)
 "aJd" = (
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/navbeacon/Kitchen,
 /obj/machinery/door/firedoor,
@@ -16768,7 +16768,7 @@
 	pixel_x = -2;
 	pixel_y = 5
 	},
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /turf/simulated/floor/lino,
 /area/exodus/chapel/office)
 "aJk" = (
@@ -17579,7 +17579,7 @@
 "aKW" = (
 /obj/machinery/navbeacon/Hydroponics,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/loading,
@@ -20023,7 +20023,7 @@
 	name = "Prisoner's Locker"
 	},
 /obj/item/flame/lighter/zippo,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/security/prison/dorm)
 "aQb" = (
@@ -20093,7 +20093,7 @@
 /area/exodus/maintenance/arrivals)
 "aQj" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/cigarettes{
+/obj/item/storage/box/fancy/cigarettes{
 	pixel_y = 2
 	},
 /obj/random/single{
@@ -23009,8 +23009,8 @@
 /area/exodus/storage/art)
 "aWZ" = (
 /obj/structure/table,
-/obj/item/storage/fancy/crayons,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
@@ -25371,7 +25371,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/effect/floor_decal/corner/blue/three_quarters,
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/bridge)
@@ -26220,7 +26220,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/item/storage/fancy/cigarettes{
+/obj/item/storage/box/fancy/cigarettes{
 	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/dark/monotile,
@@ -28087,7 +28087,7 @@
 /area/exodus/turret_protected/ai)
 "bhU" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -30472,7 +30472,7 @@
 	dir = 4
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /turf/simulated/floor/wood/walnut,
 /area/exodus/bridge/meeting_room)
 "bmF" = (
@@ -30753,7 +30753,7 @@
 	},
 /obj/item/chems/glass/beaker/sulphuric,
 /obj/structure/reagent_dispensers/acid{
-	density = FALSE;
+	density = 0;
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/monotile,
@@ -32838,7 +32838,7 @@
 	id_tag = "packageExternal"
 	},
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -34898,9 +34898,9 @@
 "bvA" = (
 /obj/effect/floor_decal/corner/paleblue,
 /obj/structure/table,
-/obj/item/mmi,
-/obj/item/mmi,
-/obj/item/mmi,
+/obj/item/organ/internal/brain_interface/empty,
+/obj/item/organ/internal/brain_interface/empty,
+/obj/item/organ/internal/brain_interface/empty,
 /turf/simulated/floor/tiled/dark,
 /area/exodus/research/robotics)
 "bvB" = (
@@ -36562,7 +36562,7 @@
 /obj/item/flash/synthetic,
 /obj/item/flash/synthetic,
 /obj/item/flash/synthetic,
-/obj/item/organ/internal/posibrain,
+/obj/item/organ/internal/brain/robotic,
 /obj/item/robotanalyzer,
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
@@ -38381,7 +38381,7 @@
 "bCL" = (
 /obj/machinery/navbeacon/Research,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/loading{
@@ -42234,7 +42234,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/westleft{
 	name = "Server Room";
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/window/eastleft{
 	name = "Server Room"
@@ -43592,7 +43592,7 @@
 	dir = 1
 	},
 /obj/structure/bookcase/manuals/medical,
-/obj/item/book/manual/stasis,
+/obj/item/book/fluff/stasis,
 /obj/effect/floor_decal/corner/grey/diagonal,
 /turf/simulated/floor/tiled/white,
 /area/exodus/crew_quarters/medbreak)
@@ -44094,7 +44094,7 @@
 "bNY" = (
 /obj/machinery/navbeacon/Janitor,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/plating,
@@ -47011,7 +47011,7 @@
 /area/exodus/maintenance/medbay)
 "bTP" = (
 /obj/machinery/shieldwallgen{
-	anchored = TRUE
+	anchored = 1
 	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -48067,7 +48067,7 @@
 "bWa" = (
 /obj/machinery/navbeacon/Medbay,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /turf/simulated/floor/plating,
 /area/exodus/medical/sleeper)
@@ -50786,7 +50786,7 @@
 	pixel_y = 4
 	},
 /obj/item/clothing/glasses/welding/superior,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /obj/item/book/manual/supermatter_engine,
 /turf/simulated/floor/tiled/steel_grid,
 /area/exodus/crew_quarters/heads/chief)
@@ -55386,7 +55386,7 @@
 "clg" = (
 /obj/machinery/navbeacon/Engineering,
 /obj/structure/plasticflaps{
-	opacity = TRUE
+	opacity = 1
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/loading{
@@ -55993,7 +55993,7 @@
 /turf/simulated/floor/plating,
 /area/exodus/maintenance/starboardsolar)
 "cmq" = (
-/obj/item/storage/fancy/vials,
+/obj/item/storage/box/fancy/vials,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -56184,7 +56184,7 @@
 /area/exodus/engineering/locker_room)
 "cmM" = (
 /obj/machinery/door/blast/regular/open{
-	density = FALSE;
+	density = 0;
 	dir = 4;
 	id_tag = "SupermatterPort";
 	name = "Reactor Blast Door"
@@ -58241,7 +58241,7 @@
 "crR" = (
 /obj/structure/table,
 /obj/item/storage/box/matches,
-/obj/item/storage/fancy/cigarettes,
+/obj/item/storage/box/fancy/cigarettes,
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -59271,7 +59271,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/generator{
-	anchored = TRUE;
+	anchored = 1;
 	dir = 4
 	},
 /obj/structure/cable/yellow,
@@ -61968,7 +61968,7 @@
 /area/exodus/engineering/engine_room)
 "cIa" = (
 /obj/machinery/emitter{
-	anchored = TRUE;
+	anchored = 1;
 	id_tag = "EngineEmitter";
 	state = 2
 	},
@@ -62134,7 +62134,7 @@
 /area/exodus/engineering/engine_room)
 "cIF" = (
 /obj/machinery/atmospherics/binary/circulator{
-	anchored = TRUE;
+	anchored = 1;
 	dir = 1
 	},
 /turf/simulated/floor/plating,
@@ -62150,7 +62150,7 @@
 /area/exodus/engineering/engine_room)
 "cIH" = (
 /obj/machinery/atmospherics/binary/circulator{
-	anchored = TRUE
+	anchored = 1
 	},
 /turf/simulated/floor/plating,
 /area/exodus/engineering/engine_room)
@@ -62507,7 +62507,7 @@
 /area/exodus/maintenance/engi_engine)
 "cJZ" = (
 /obj/machinery/generator{
-	anchored = TRUE;
+	anchored = 1;
 	dir = 4
 	},
 /obj/structure/cable/yellow,
