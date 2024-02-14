@@ -93,7 +93,7 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "riceball"
 	filling_color = "#a66829"
-	center_of_mass = @"{'x':17,'y':16}"
+	center_of_mass = @'{"x":17,"y":16}'
 	nutriment_amt = 1
 	nutriment_desc = list("seaweed" = 1)
 
@@ -132,7 +132,7 @@
 	icon_state = "rpudding"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#fffbdb"
-	center_of_mass = @"{'x':17,'y':11}"
+	center_of_mass = @'{"x":17,"y":11}'
 	nutriment_amt = 4
 	nutriment_type = /decl/material/liquid/nutriment/rice
 	bitesize = 2
@@ -145,7 +145,7 @@
 	icon_state = "risotto"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#edd7d7"
-	center_of_mass = @"{'x':15,'y':9}"
+	center_of_mass = @'{"x":15,"y":9}'
 	nutriment_amt = 4
 	nutriment_desc = list("creamy mushroom" = 4)
 	bitesize = 2
@@ -163,7 +163,7 @@
 	icon_state = "risottoballs"
 	trash = /obj/item/trash/snack_bowl
 	filling_color = "#edd7d7"
-	center_of_mass = @"{'x':15,'y':9}"
+	center_of_mass = @'{"x":15,"y":9}'
 	nutriment_amt = 2
 	nutriment_desc = list("spices" = 2, "mushroom" = 2)
 	bitesize = 3

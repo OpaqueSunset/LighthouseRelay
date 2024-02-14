@@ -418,7 +418,7 @@
 	icon_state = "lasagna"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	trash = /obj/item/trash/tray
-	center_of_mass = @"{'x':16,'y':17}"
+	center_of_mass = @'{"x":16,"y":17}'
 	nutriment_amt = 6
 	nutriment_desc = list("pasta" = 4, "tomato" = 2)
 	bitesize = 3
