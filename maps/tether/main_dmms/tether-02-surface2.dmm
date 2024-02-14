@@ -16161,7 +16161,7 @@
 	},
 /obj/structure/sign/poster{
 	pixel_x = 32;
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)
@@ -16968,7 +16968,7 @@
 	},
 /obj/structure/sign/poster{
 	pixel_x = -32;
-	dir = 8
+	dir = 4
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/public_garden_two)

@@ -333,7 +333,7 @@
 	},
 /obj/structure/sign/poster{
 	pixel_x = -32;
-	dir = 8
+	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 1
