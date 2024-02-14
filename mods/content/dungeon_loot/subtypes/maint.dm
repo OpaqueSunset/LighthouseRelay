@@ -321,7 +321,6 @@
 		// todo: add some decent non-contraband NIFsoft disks here
 		/obj/item/disk/integrated_circuit/upgrade/advanced,
 		/obj/item/camera/tvcamera,
-		/obj/item/universal_translator,
 		/obj/item/aicard,
 		/obj/item/borg/upgrade/jetpack,
 		/obj/item/borg/upgrade/vtec,
