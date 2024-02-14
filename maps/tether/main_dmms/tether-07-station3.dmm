@@ -1826,7 +1826,7 @@
 	pixel_y = -32;
 	dir = 1
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/hos)
 "dv" = (
@@ -2684,7 +2684,7 @@
 /obj/item/stack/package_wrap/twenty_five,
 /obj/item/hand_labeler,
 /obj/structure/table/reinforced,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "fa" = (
@@ -5866,8 +5866,8 @@
 "kI" = (
 /obj/structure/bookcase,
 /obj/item/book/fluff/nt_regs,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/command_guide,
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/hos)
 "kJ" = (
@@ -7251,7 +7251,7 @@
 /obj/structure/bookcase,
 /obj/item/book/fluff/nt_regs,
 /obj/item/book/fluff/nt_regs,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/security/breakroom)
 "nj" = (
@@ -12253,12 +12253,12 @@
 	dir = 1
 	},
 /obj/structure/bookcase,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /obj/item/book/fluff/nt_regs,
 /obj/item/book/fluff/nt_regs,
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/command_guide,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/command_guide,
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
 "vy" = (
@@ -13418,7 +13418,7 @@
 	dir = 4;
 	pixel_x = 21
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "xu" = (
@@ -21343,7 +21343,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
 "LG" = (
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/resleeving,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -21918,7 +21918,7 @@
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /obj/item/scanner/health,
 /obj/item/storage/box/fancy/vials,
 /obj/item/clothing/mask/surgical,
@@ -25520,7 +25520,7 @@
 /area/medical/psych)
 "Su" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "Sv" = (

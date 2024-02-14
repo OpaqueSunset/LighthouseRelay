@@ -556,7 +556,7 @@
 /obj/effect/floor_decal/corner/lightorange/border{
 	dir = 8
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/security/brig)
 "bd" = (
@@ -4422,7 +4422,7 @@
 /area/crew_quarters/medbreak)
 "ic" = (
 /obj/structure/table/glass,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "id" = (
@@ -5022,7 +5022,7 @@
 	pixel_y = 7
 	},
 /obj/item/book/fluff/stasis,
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/resleeving,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -14004,7 +14004,7 @@
 	pixel_y = -22
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "zJ" = (

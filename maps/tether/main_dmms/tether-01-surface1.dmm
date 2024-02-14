@@ -1978,7 +1978,7 @@
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 9
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "adT" = (
@@ -9214,7 +9214,7 @@
 	dir = 1;
 	pixel_y = 28
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "arE" = (
@@ -11561,7 +11561,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/security/checkpoint)
 "avU" = (
@@ -32085,7 +32085,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "pQI" = (

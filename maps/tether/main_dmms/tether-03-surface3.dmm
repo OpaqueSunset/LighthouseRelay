@@ -1533,7 +1533,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/reading_room)
 "el" = (
@@ -6673,7 +6673,7 @@
 /area/tether/surfacebase/atrium_three)
 "nN" = (
 /obj/structure/table/glass,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/atrium_three)
 "nO" = (
@@ -16019,7 +16019,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/rnd/research/testingrange)
 "Eh" = (
@@ -19704,8 +19704,8 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/dark,
 /area/bridge/secondary)
 "Ln" = (
@@ -21830,7 +21830,7 @@
 /area/tether/surfacebase/public_garden_three)
 "Uy" = (
 /obj/structure/table/glass,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet/blue,
 /area/tether/surfacebase/security/breakroom)
 "UB" = (

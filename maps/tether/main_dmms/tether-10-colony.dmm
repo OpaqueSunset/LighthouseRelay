@@ -3941,7 +3941,7 @@
 	dir = 8
 	},
 /obj/machinery/computer/transhuman/resleeving,
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/resleeving,
 /obj/item/storage/box/backup_kit,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)

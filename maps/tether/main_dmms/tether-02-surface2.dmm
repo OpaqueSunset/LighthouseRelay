@@ -11827,7 +11827,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/janitor)
 "yD" = (
@@ -12690,7 +12690,7 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/monitoring)
 "An" = (
@@ -17605,7 +17605,7 @@
 /area/tcommsat/computer)
 "Wh" = (
 /obj/structure/table/glass,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "Wr" = (
