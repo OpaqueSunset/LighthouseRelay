@@ -1,5 +1,6 @@
 // Write to database every 15 minutes.
 SUBSYSTEM_DEF(timeoff)
+	name = "PTO"
 	wait = 15 MINUTES
 	priority = 20
 	flags = SS_BACKGROUND | SS_NO_INIT | SS_KEEP_TIMING
