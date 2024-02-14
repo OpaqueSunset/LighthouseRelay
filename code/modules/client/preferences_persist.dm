@@ -94,7 +94,7 @@
 		// Load/reload our character info record - mass preload is
 		// done if comments are enabled, but not done otherwise.
 		if(!SScharacter_info.get_record(record_id, TRUE))
-			SScharacter_info.load_record(record_id)
+			SScharacter_info.load_record(safe_file2text(record_id))
 		else
 			SScharacter_info.reload_record(record_id)
 		player_setup.load_character(R)
