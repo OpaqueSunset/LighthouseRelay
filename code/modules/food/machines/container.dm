@@ -249,6 +249,7 @@
 		return FALSE
 	return TRUE
 
+// TODO: merge with /obj/item/plate somehow?
 /obj/item/chems/cooking_container/plate
 	name = "serving plate"
 	shortname = "plate"

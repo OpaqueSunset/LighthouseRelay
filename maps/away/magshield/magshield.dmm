@@ -3163,7 +3163,7 @@
 /obj/structure/table{
 	name = "plastic table frame"
 	},
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/item/chems/food/flatbread,
 /turf/simulated/floor/tiled,
 /area/magshield/south)
@@ -3319,7 +3319,7 @@
 /obj/structure/table{
 	name = "plastic table frame"
 	},
-/obj/item/trash/plate,
+/obj/item/plate,
 /turf/simulated/floor/tiled,
 /area/magshield/south)
 "jT" = (
@@ -3738,7 +3738,7 @@
 	name = "plastic table frame"
 	},
 /obj/item/kitchen/utensil/fork/plastic,
-/obj/item/trash/plate,
+/obj/item/plate,
 /turf/simulated/floor/tiled,
 /area/magshield/south)
 "le" = (

@@ -26,6 +26,8 @@
 	markup = 0
 	base_type = /obj/machinery/vending/dinnerware
 	products = list(
+		/obj/item/plate = 10,
+		/obj/item/plate/platter = 5,
 		/obj/item/chems/glass/beaker/bowl = 2,
 		/obj/item/chems/cooking_container/plate/bowl = 4,
 		/obj/item/chems/cooking_container/plate = 4,
