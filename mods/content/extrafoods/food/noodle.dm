@@ -3,7 +3,7 @@
 	desc = "A popular Chinese noodle dish. Chopsticks optional."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "lomein"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#fcee81"
 	nutriment_amt = 4
 	nutriment_desc = list("mushroom" = 2, "cabbage" = 2)

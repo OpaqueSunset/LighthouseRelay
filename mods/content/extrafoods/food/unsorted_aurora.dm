@@ -59,7 +59,7 @@
 	desc = "For those who like their breakfast sweet."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "honeytoast"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#ede5ad"
 	nutriment_amt = 1
 	nutriment_desc = list("sweet, crunchy bread" = 1)
@@ -129,7 +129,7 @@
 	desc = "Pillowy mounds of mashed potato."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "mashedpotato"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 4
 	nutriment_desc = list("mashed potatoes" = 4)

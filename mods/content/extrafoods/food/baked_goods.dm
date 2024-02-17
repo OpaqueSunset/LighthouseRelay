@@ -22,7 +22,7 @@
 	desc = "A slice of tart pie, with whipped cream on top."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "keylimepieslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("lime" = 1)
@@ -50,7 +50,7 @@
 	desc = "A slice of delicious quiche. Eggy, cheesy goodness."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "quicheslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("cheesy eggs" = 1)
@@ -85,7 +85,7 @@
 	desc = "A dense, decadent chocolate brownie."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "browniesslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 2
 	nutriment_desc = list("fudge" = 1)
@@ -124,7 +124,7 @@
 	desc = "A dense, decadent and fun-looking chocolate brownie."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "cosmicbrowniesslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("fudge" = 1)

@@ -18,7 +18,7 @@
 	desc = "A mighty plate of fries, drowned in hot chili and cheese sauce. Because your arteries are overrated."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "chilicheesefries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 8
 	nutriment_desc = list("hearty, cheesy fries" = 8)
@@ -34,7 +34,7 @@
 	desc = "Tasty fries from fresh carrots."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "carrotfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#faa005"
 	nutriment_amt = 3
 	nutriment_desc = list("carrot" = 3)
@@ -65,7 +65,7 @@
 	desc = "Crispy, starchy, sweet banana fritters. Popular street food in parts of Sol."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "pisanggoreng"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#301301"
 	nutriment_amt = 8
 	nutriment_desc = list("sweet bananas" = 8)
@@ -111,7 +111,7 @@
 	desc = "A delicacy consisting of chicken fried in a light beer batter."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "katsu"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#e9adff"
 	do_coating_prefix = FALSE
 	bitesize = 1.5
@@ -136,7 +136,7 @@
 	desc = "Soft and rubbery, should have fried them. Good for smaller crewmembers, maybe?"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "microfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 4
 	nutriment_desc = list("soggy potato slices" = 4)
@@ -147,7 +147,7 @@
 	desc = "Dark and crispy, but a bit dry."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "bakedfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 4
 	nutriment_desc = list("crisp, dry fries" = 4)
@@ -198,7 +198,7 @@
 	desc = "Like circular fries but better."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "onionrings"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_desc = list("fried onions" = 5)
 	nutriment_amt = 5

@@ -179,7 +179,7 @@
 	desc = "Just like your Japanese animes!"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "omurice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_amt = 8
 	nutriment_desc = list("rice" = 4, "egg" = 4)
 	bitesize = 1

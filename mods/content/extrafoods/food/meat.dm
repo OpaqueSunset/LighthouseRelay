@@ -84,7 +84,7 @@
 	desc = "A piece of bacon and two fried eggs."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "bacon_and_eggs"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_amt = 3
 	nutriment_type = /decl/material/liquid/nutriment/protein
 
@@ -97,7 +97,7 @@
 	desc = "A delicately poached egg with a runny yolk. Healthier than its fried counterpart."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "poachedegg"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#ffdf78"
 	nutriment_amt = 1
 	nutriment_desc = list("egg" = 1)
@@ -160,7 +160,7 @@
 	icon_state = "sweet_and_sour"
 	nutriment_desc = list("sweet and sour" = 6)
 	nutriment_amt = 6
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 
 /obj/item/chems/food/sweet_and_sour/Initialize()
 	. = ..()
@@ -211,7 +211,7 @@
 	nutriment_amt = 2
 	nutriment_desc = list("savory butter" = 2)
 	bitesize = 2
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 
 /obj/item/chems/food/crab_legs/Initialize()
 	. = ..()
@@ -249,7 +249,7 @@
 	desc = "One lousy piece of sausage sitting on melted cheese curds. A cheap meal for the Unathi peasants of Moghes."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "red_sun_special"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_amt = 2
 	nutriment_type = /decl/material/liquid/nutriment/protein
 
@@ -267,7 +267,7 @@
 	desc = "A sausage and an omelette on top of a grilled steak."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "father_breakfast"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_type = /decl/material/liquid/nutriment/protein
 	nutriment_amt = 6
 
@@ -288,7 +288,7 @@
 	desc = "An omelette baked on top of a giant meat patty. This monstrousity is typically shared between four people during a dinnertime meal."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "egg_pancake"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_type = /decl/material/liquid/nutriment/protein
 	nutriment_amt = 6
 
@@ -301,7 +301,7 @@
 	desc = "A half-rack of ribs, brushed with some sort of honey-glaze. Why are there no napkins on board?"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "ribplate"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#7a3d11"
 	nutriment_amt = 6
 	nutriment_desc = list("barbecue" = 6)
@@ -319,7 +319,7 @@
 	desc = "Sweet, spicy, and fried. General's Chicken has been around for more than five-hundred years now, and still tastes good."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "generaltso"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_amt = 4
 	nutriment_desc = list("sweet and spicy sauce" = 4)
 	bitesize = 2
@@ -333,7 +333,7 @@
 	desc = "It's beef. It's roasted. It's been a staple of dining tradition for centuries."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "roastbeef"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	nutriment_amt = 8
 	nutriment_desc = list("cooked meat" = 5)
 	bitesize = 2
@@ -417,7 +417,7 @@
 	desc = "Favorite of cats."
 	icon_state = "lasagna"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
-	trash = /obj/item/trash/tray
+	plate = /obj/item/plate/tray
 	center_of_mass = @'{"x":16,"y":17}'
 	nutriment_amt = 6
 	nutriment_desc = list("pasta" = 4, "tomato" = 2)

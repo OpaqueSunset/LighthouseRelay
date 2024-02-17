@@ -108,7 +108,7 @@
 	name = "plate of nachos"
 	desc = "A very cheesy nacho plate."
 	icon_state = "nachos"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	vendingobject = /obj/item/chems/food/chip/nacho
 	nutriment_desc = list("tortilla chips" = 10)
 	bitesize = 1
