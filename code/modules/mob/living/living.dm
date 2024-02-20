@@ -792,23 +792,22 @@ default behaviour is:
 	return (!L || L.can_drown())
 
 /mob/living/handle_drowning()
-	var/turf/T = get_turf(src)
-	if(!can_drown() || !loc.is_flooded(lying))
+	if(!can_drown() || !loc?.is_flooded(lying))
 		return FALSE
+	var/turf/T = get_turf(src)
 	if(!lying && T.above && T.above.is_open() && !T.above.is_flooded() && can_overcome_gravity())
 		return FALSE
 	if(prob(5))
 		var/datum/reagents/metabolism/inhaled = get_inhaled_reagents()
 		var/datum/reagents/metabolism/ingested = get_ingested_reagents()
-		var/obj/effect/fluid/F = locate() in loc
-		to_chat(src, SPAN_DANGER("You choke and splutter as you inhale [(F?.reagents && F.reagents.get_primary_reagent_name()) || "liquid"]!"))
+		to_chat(src, SPAN_DANGER("You choke and splutter as you inhale [T.get_fluid_name()]!"))
 		var/inhale_amount = 0
 		if(inhaled)
 			inhale_amount = rand(2,5)
-			F?.reagents?.trans_to_holder(inhaled, min(F.reagents.total_volume, inhale_amount))
+			T.reagents?.trans_to_holder(inhaled, min(T.reagents.total_volume, inhale_amount))
 		if(ingested)
 			var/ingest_amount = 5 - inhale_amount
-			F?.reagents?.trans_to_holder(ingested, min(F.reagents.total_volume, ingest_amount))
+			reagents?.trans_to_holder(ingested, min(T.reagents.total_volume, ingest_amount))
 
 	T.show_bubbles()
 	return TRUE // Presumably chemical smoke can't be breathed while you're underwater.
@@ -1158,6 +1157,9 @@ default behaviour is:
 	//We are long dead, or we're junk mobs spawned like the clowns on the clown shuttle
 	return life_tick <= 5 || !timeofdeath || (timeofdeath >= 5 && (world.time-timeofdeath) <= 10 MINUTES)
 
+/mob/living/proc/check_dna()
+	dna?.check_integrity(src)
+
 /mob/living/get_unique_enzymes()
 	return unique_enzymes
 
@@ -1206,12 +1208,12 @@ default behaviour is:
 		var/list/overlays_to_add
 		if(check_state_in_icon(overlay_state, surgery_icon))
 			var/image/flesh = image(icon = surgery_icon, icon_state = overlay_state, layer = -HO_SURGERY_LAYER)
-			flesh.color = E.species.get_flesh_colour(src)
+			flesh.color = E.species.get_species_flesh_color(src)
 			LAZYADD(overlays_to_add, flesh)
 		overlay_state = "[base_state]-blood"
 		if(check_state_in_icon(overlay_state, surgery_icon))
 			var/image/blood = image(icon = surgery_icon, icon_state = overlay_state, layer = -HO_SURGERY_LAYER)
-			blood.color = E.species.get_blood_color(src)
+			blood.color = E.species.get_species_blood_color(src)
 			LAZYADD(overlays_to_add, blood)
 		overlay_state = "[base_state]-bones"
 		if(check_state_in_icon(overlay_state, surgery_icon))
@@ -1307,3 +1309,110 @@ default behaviour is:
 			else
 				CRASH("synthetic get_default_temperature_threshold() called with invalid threshold value.")
 	return ..()
+
+/mob/living/clean(clean_forensics = TRUE)
+
+	SHOULD_CALL_PARENT(FALSE)
+
+	for(var/obj/item/thing in get_held_items())
+		thing.clean()
+
+	var/obj/item/back = get_equipped_item(slot_back_str)
+	if(back)
+		back.clean()
+
+	//flush away reagents on the skin
+	var/datum/reagents/touching_reagents = get_contact_reagents()
+	if(touching_reagents)
+		var/remove_amount = touching_reagents.maximum_volume * reagent_permeability() //take off your suit first
+		touching_reagents.remove_any(remove_amount)
+
+	var/obj/item/mask = get_equipped_item(slot_wear_mask_str)
+	if(mask)
+		mask.clean()
+
+	var/washgloves  = TRUE
+	var/washshoes   = TRUE
+	var/washmask    = TRUE
+	var/washears    = TRUE
+	var/washglasses = TRUE
+
+	var/obj/item/suit = get_equipped_item(slot_wear_suit_str)
+	if(suit)
+		washgloves = !(suit.flags_inv & HIDEGLOVES)
+		washshoes = !(suit.flags_inv & HIDESHOES)
+
+	var/obj/item/head = get_equipped_item(slot_head_str)
+	if(head)
+		washmask = !(head.flags_inv & HIDEMASK)
+		washglasses = !(head.flags_inv & HIDEEYES)
+		washears = !(head.flags_inv & HIDEEARS)
+
+	if(mask)
+		if (washears)
+			washears = !(mask.flags_inv & HIDEEARS)
+		if (washglasses)
+			washglasses = !(mask.flags_inv & HIDEEYES)
+
+	if(head)
+		head.clean()
+
+	if(suit)
+		suit.clean()
+	else
+		var/obj/item/uniform = get_equipped_item(slot_w_uniform_str)
+		if(uniform)
+			uniform.clean()
+
+	if(washgloves)
+		var/obj/item/gloves = get_equipped_item(slot_gloves_str)
+		if(gloves)
+			gloves.clean()
+		else
+			germ_level = 0
+
+	var/obj/item/shoes = get_equipped_item(slot_shoes_str)
+	if(shoes && washshoes)
+		shoes.clean()
+
+	if(mask && washmask)
+		mask.clean()
+
+	if(washglasses)
+		var/obj/item/glasses = get_equipped_item(slot_glasses_str)
+		if(glasses)
+			glasses.clean()
+
+	if(washears)
+		var/obj/item/ear = get_equipped_item(slot_l_ear_str)
+		if(ear)
+			ear.clean()
+		ear = get_equipped_item(slot_r_ear_str)
+		if(ear)
+			ear.clean()
+
+	var/obj/item/belt = get_equipped_item(slot_belt_str)
+	if(belt)
+		belt.clean()
+
+	var/obj/item/gloves = get_equipped_item(slot_gloves_str)
+	if(gloves)
+		gloves.clean()
+		gloves.germ_level = 0
+		for(var/organ_tag in get_held_item_slots())
+			var/obj/item/organ/external/organ = get_organ(organ_tag)
+			if(organ)
+				organ.clean()
+	else
+		germ_level = 0
+	update_equipment_overlay(slot_gloves_str, FALSE)
+
+	if(!get_equipped_item(slot_shoes_str))
+		var/static/list/clean_slots = list(BP_L_FOOT, BP_R_FOOT)
+		for(var/organ_tag in clean_slots)
+			var/obj/item/organ/external/organ = get_organ(organ_tag)
+			if(organ)
+				organ.clean()
+	update_equipment_overlay(slot_shoes_str)
+
+	return TRUE

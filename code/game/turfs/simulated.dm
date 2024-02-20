@@ -4,7 +4,7 @@
 		/decl/material/gas/oxygen = MOLES_O2STANDARD,
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
 	)
-	open_turf_type = /turf/simulated/open
+	open_turf_type = /turf/open
 	zone_membership_candidate = TRUE
 	abstract_type = /turf/simulated
 
@@ -14,7 +14,7 @@
 	var/timer_id
 
 // This is not great.
-/turf/simulated/proc/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
+/turf/simulated/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
 
 	if(is_flooded(absolute = TRUE))
 		return
@@ -30,21 +30,21 @@
 		wet_overlay = image('icons/effects/water.dmi',src,"wet_floor")
 		overlays += wet_overlay
 
-	timer_id = addtimer(CALLBACK(src, TYPE_PROC_REF(/turf/simulated, unwet_floor)), 8 SECONDS, (TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE))
+	timer_id = addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, unwet_floor)), 8 SECONDS, (TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE))
 
-/turf/simulated/proc/unwet_floor(var/check_very_wet = TRUE)
+/turf/simulated/unwet_floor(var/check_very_wet = TRUE)
 	if(check_very_wet && wet >= 2)
 		wet--
-		timer_id = addtimer(CALLBACK(src, TYPE_PROC_REF(/turf/simulated, unwet_floor)), 8 SECONDS, (TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE))
+		timer_id = addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, unwet_floor)), 8 SECONDS, (TIMER_STOPPABLE|TIMER_UNIQUE|TIMER_NO_HASH_WAIT|TIMER_OVERRIDE))
 		return
 	wet = 0
 	if(wet_overlay)
 		overlays -= wet_overlay
 		wet_overlay = null
 
-/turf/simulated/clean_blood()
+/turf/simulated/clean(clean_forensics = TRUE)
 	for(var/obj/effect/decal/cleanable/blood/B in contents)
-		B.clean_blood()
+		B.clean(clean_forensics)
 	. = ..()
 
 /turf/simulated/proc/AddTracks(var/typepath,var/bloodDNA,var/comingdir,var/goingdir,var/bloodcolor=COLOR_BLOOD_HUMAN)
@@ -159,14 +159,6 @@
 		blood_splatter(src, M, 1)
 		return 1 //we bloodied the floor
 	return 0
-
-// Only adds blood on the floor -- Skie
-/turf/simulated/proc/add_blood_floor(mob/living/carbon/M)
-	if(isalien(M))
-		var/obj/effect/decal/cleanable/blood/xeno/this = new /obj/effect/decal/cleanable/blood/xeno(src)
-		this.blood_DNA["UNKNOWN BLOOD"] = "X*"
-	else if(isrobot(M))
-		new /obj/effect/decal/cleanable/blood/oil(src)
 
 /turf/simulated/attackby(var/obj/item/thing, var/mob/user)
 	if(IS_COIL(thing) && try_build_cable(thing, user))

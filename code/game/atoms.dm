@@ -468,7 +468,7 @@
 	- `M?`: The mob whose blood will be used
 	- Returns: TRUE if made bloody, otherwise FALSE
 */
-/atom/proc/add_blood(mob/living/carbon/human/M)
+/atom/proc/add_blood(mob/living/M)
 	if(atom_flags & ATOM_FLAG_NO_BLOOD)
 		return FALSE
 
@@ -482,7 +482,7 @@
 			M.dna = new /datum/dna()
 			M.dna.real_name = M.real_name
 		M.check_dna()
-		blood_color = M.species.get_blood_color(M)
+		blood_color = M.get_blood_color()
 	return TRUE
 
 /**
@@ -490,7 +490,7 @@
 
 	- Return: `TRUE` if blood with DNA was removed
 */
-/atom/proc/clean_blood()
+/atom/proc/clean(clean_forensics = TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(!simulated)
 		return
@@ -504,6 +504,7 @@
 			forensics.remove_data(/datum/forensics/blood_dna)
 			forensics.remove_data(/datum/forensics/gunshot_residue)
 		return TRUE
+	return FALSE
 
 /// Only used by Sandbox_Spacemove, which is used by nothing
 /// - TODO: Remove this

@@ -314,10 +314,6 @@
 				return FALSE
 	return ..()
 
-/mob/living/carbon/human/proc/check_dna()
-	dna.check_integrity(src)
-	return
-
 /mob/living/carbon/human/empty_stomach()
 	SET_STATUS_MAX(src, STAT_STUN, 3)
 
@@ -419,23 +415,6 @@
 		update_equipment_overlay(slot_gloves_str)	//handles bloody hands overlays and updating
 		verbs += /mob/living/carbon/human/proc/bloody_doodle
 	return 1 //we applied blood to the item
-
-/mob/living/carbon/human/clean_blood(var/clean_feet)
-	. = ..()
-	var/obj/item/gloves = get_equipped_item(slot_gloves_str)
-	if(gloves)
-		gloves.clean()
-		gloves.germ_level = 0
-	else
-		germ_level = 0
-
-	for(var/obj/item/organ/external/organ in get_external_organs())
-		//TODO check that organ is not covered
-		if(clean_feet || (organ.organ_tag in list(BP_L_HAND,BP_R_HAND)))
-			organ.clean()
-	update_equipment_overlay(slot_gloves_str, FALSE)
-	update_equipment_overlay(slot_shoes_str)
-	return TRUE
 
 /mob/living/carbon/human/get_visible_implants(var/class = 0)
 
@@ -1017,19 +996,6 @@
 	if(BP_IS_PROSTHETIC(E))
 		return BULLET_IMPACT_METAL
 	return BULLET_IMPACT_MEAT
-
-/mob/living/carbon/human/bullet_impact_visuals(var/obj/item/projectile/P, var/def_zone, var/damage)
-	..()
-	switch(get_bullet_impact_effect_type(def_zone))
-		if(BULLET_IMPACT_MEAT)
-			if(damage && P.damtype == BRUTE)
-				var/hit_dir = get_dir(P.starting, src)
-				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
-				if(!QDELETED(B))
-					B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-					var/scale = min(1, round(P.damage / 50, 0.2))
-					B.set_scale(scale)
-				new /obj/effect/temp_visual/bloodsplatter(loc, hit_dir, species.get_blood_color(src))
 
 /mob/living/carbon/human/lose_hair()
 	if(get_bodytype().set_default_hair(src))
