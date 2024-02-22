@@ -125,7 +125,7 @@
 	)
 	UT_turf_exceptions_by_door_type = list(
 		/obj/machinery/door/firedoor/glass = list(
-			/turf/simulated/open
+			/turf/open
 		)
 	)
 

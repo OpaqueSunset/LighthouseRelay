@@ -322,7 +322,7 @@
 
 /obj/effect/decal/remains/@SUBTYPES : /obj/item/remains/@SUBTYPES{@OLD}
 
-/turf/simulated/open/virgo3b : /turf/simulated/open
+/turf/simulated/open/virgo3b : /turf/open
 /turf/simulated/mineral/virgo3b : /turf/exterior/wall
 /turf/simulated/mineral/vacuum : /turf/exterior/wall
 /turf/simulated/floor/carpet/blucarpet : /turf/simulated/floor/carpet/blue

@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/exterior/open/sky,
+/turf/open/sky,
 /area/tether/transit)
 "ab" = (
 /obj/structure/cable{
@@ -87,7 +87,7 @@
 /area/tether/midpoint)
 "al" = (
 /obj/abstract/level_data_spawner/virgo3b/player,
-/turf/exterior/open/sky,
+/turf/open/sky,
 /area/tether/transit)
 "an" = (
 /obj/structure/bed/chair/comfy/black{
@@ -248,7 +248,7 @@
 /area/tether/midpoint)
 "aQ" = (
 /obj/effect/blocker,
-/turf/exterior/open/sky,
+/turf/open/sky,
 /area/tether/transit)
 "aR" = (
 /obj/machinery/light{
@@ -393,7 +393,7 @@
 	icon_state = "32-2"
 	},
 /obj/structure/disposalpipe/down,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/tether_midpoint)
 "cd" = (
 /obj/machinery/hologram/holopad,

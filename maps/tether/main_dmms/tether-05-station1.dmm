@@ -7324,7 +7324,7 @@
 	},
 /obj/structure/lattice,
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_lower)
 "arE" = (
 /obj/structure/cable/green{
@@ -14429,7 +14429,7 @@
 /obj/structure/disposalpipe/down{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_lower)
 "aYg" = (
 /obj/structure/grille,
