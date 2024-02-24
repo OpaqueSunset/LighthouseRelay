@@ -103,7 +103,7 @@
 	reagents.add_reagent(/decl/material/liquid/nutriment/soysauce, 1)
 
 /obj/item/chems/food/riceball/on_update_icon()
-	var/percent = round((reagents.total_volume / 3) * 100)
+	var/percent = round((reagents?.total_volume / 3) * 100)
 	switch(percent)
 		if(0 to 90)
 			icon_state = "riceball_90"
