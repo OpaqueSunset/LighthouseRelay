@@ -6163,7 +6163,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 9
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
@@ -6173,7 +6173,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
@@ -6183,7 +6183,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6193,7 +6193,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 5
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6540,21 +6540,21 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 8
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
 /turf/simulated/floor/pool/deep,
 /area/crew_quarters/pool)
 "nx" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
 /turf/simulated/floor/pool/deep,
 /area/crew_quarters/pool)
 "ny" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6564,7 +6564,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -8016,7 +8016,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 10
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
@@ -8024,7 +8024,7 @@
 /area/crew_quarters/pool)
 "qt" = (
 /obj/effect/floor_decal/spline/plain,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 800;
 	name = "mapped deep pool"
 	},
@@ -8032,7 +8032,7 @@
 /area/crew_quarters/pool)
 "qu" = (
 /obj/effect/floor_decal/spline/plain,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -8042,7 +8042,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 6
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -15133,7 +15133,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 9
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -15365,7 +15365,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -15737,7 +15737,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 5
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -18317,7 +18317,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 10
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -18326,7 +18326,7 @@
 /area/tether/surfacebase/sauna)
 "Io" = (
 /obj/effect/floor_decal/spline/plain,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -21479,7 +21479,7 @@
 /obj/effect/floor_decal/spline/plain{
 	dir = 6
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},

@@ -8771,7 +8771,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/station/docks)
 "axc" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},

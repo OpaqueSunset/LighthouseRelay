@@ -4123,7 +4123,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6100,7 +6100,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6110,7 +6110,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6123,7 +6123,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6413,14 +6413,14 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alS" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6430,7 +6430,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -7080,7 +7080,7 @@
 /area/tether/surfacebase/atrium_one)
 "anm" = (
 /obj/structure/railing/mapped,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -9295,7 +9295,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -9306,7 +9306,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
