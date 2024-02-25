@@ -497,11 +497,11 @@
 			var/turf/next_turf = GetAbove(top_of_stack)
 			if(!next_turf.is_open())
 				return OUTSIDE_NO
-			top_of_stack = next_turf
 			// ZM_TERMINATOR partitions the z-stack such that
-			// for the purposes of this check, the z-stack ends with it.
-			if(top_of_stack.z_flags & ZM_TERMINATOR)
+			// for the purposes of this check, the z-stack ends before it.
+			if(next_turf.z_flags & ZM_TERMINATOR)
 				break
+			top_of_stack = next_turf
 		// If we hit the top of the stack without finding a roof, we ask the upmost turf if we're outside.
 		. = top_of_stack.is_outside()
 	last_outside_check = . // Cache this for later calls.
