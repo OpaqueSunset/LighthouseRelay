@@ -151,6 +151,7 @@
 	holomap_color = HOLOMAP_AREACOLOR_SECURITY
 
 /area/maintenance
+	name = "\improper Maintenance"
 	area_flags = AREA_FLAG_RAD_SHIELDED
 	sound_env = TUNNEL_ENCLOSED
 	turf_initializer = /decl/turf_initializer/maintenance
@@ -159,11 +160,11 @@
 	holomap_color = HOLOMAP_AREACOLOR_MAINTENANCE
 
 /area/maintenance/bar
-	name = "Bar Maintenance"
+	name = "\improper Bar Maintenance"
 	icon_state = "maint_bar"
 
 /area/maintenance/bar/catwalk
-	name = "Bar Maintenance Catwalk"
+	name = "\improper Bar Maintenance Catwalk"
 	icon_state = "maint_bar"
 
 /area/medical/medbay_emt_bay
@@ -177,7 +178,7 @@
 /area/outpost/research
 	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
 /area/outpost/research/longtermstorage
-	name = "Research Outpost Long-Term Storage"
+	name = "\improper Research Outpost Long-Term Storage"
 
 /area/outpost/research/toxins_misc_lab
 	name = "\improper Research Outpost Toxins Miscellaneous Research"
@@ -274,6 +275,7 @@
 	icon_state = "shuttle2"
 
 /area/shuttle/large_escape_pod1/station
+	name = "\improper Large Escape Pod"
 	icon_state = "shuttle2"
 	base_turf = /turf/exterior/barren
 
@@ -393,7 +395,7 @@
 
 
 /area/tether/surfacebase/outside
-	name = "Outside - Surface"
+	name = "\improper Outside - Surface"
 	sound_env = MOUNTAINS
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = OUTSIDE_YES
@@ -1341,24 +1343,29 @@
 	name = "\improper Engineering Maintenance"
 	icon_state = "maint_engineering"
 /area/maintenance/engineering/pumpstation
-	name = "Engineering Pump Station"
+	name = "\improper Engineering Pump Station"
 	icon_state = "maint_pumpstation"
 /area/maintenance/evahallway
 	name = "\improper EVA Maintenance"
 	icon_state = "maint_eva"
 	req_access = list(list(access_eva, access_maint_tunnels))
 /area/maintenance/substation/cargo
-	name = "Cargo Substation"
+	name = "\improper Cargo Substation"
+
 /area/maintenance/substation/civilian
+	name = "\improper Civilian Substation"
+
 /area/maintenance/substation/command
+	name = "\improper Command Substation"
+
 /area/maintenance/substation/engineering
-	name = "Engineering Substation"
+	name = "\improper Engineering Substation"
 /area/maintenance/substation/medical
-	name = "Medical Substation"
+	name = "\improper Medical Substation"
 /area/maintenance/substation/research
-	name = "Research Substation"
+	name = "\improper Research Substation"
 /area/maintenance/substation/security
-	name = "Security Substation"
+	name = "\improper Security Substation"
 /area/medical/biostorage
 	name = "\improper Secondary Storage"
 	icon_state = "medbay4"
@@ -1547,6 +1554,7 @@
 
 // Visitor/crew amenities
 /area/bridge
+	name = "\improper Bridge"
 	holomap_color = HOLOMAP_AREACOLOR_COMMAND
 /area/bridge/secondary
 	name = "\improper Secondary Command Office"
