@@ -6,7 +6,7 @@
 
 /obj/item/chems/drinks/bottle/baijiu/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/baijiu, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/baijiu, 100)
 
 /obj/item/chems/drinks/bottle/cachaca
 	name = "Brazillian Cachaca"
@@ -16,7 +16,7 @@
 
 /obj/item/chems/drinks/bottle/cachaca/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/cachaca, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/cachaca, 100)
 
 /obj/item/chems/drinks/bottle/soju
 	name = "Sol Hyonjun's Soju"
@@ -26,7 +26,7 @@
 
 /obj/item/chems/drinks/bottle/soju/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/soju, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/soju, 100)
 
 /obj/item/chems/drinks/bottle/rakia
 	name = "Sadmir Cumani's Rakia"
@@ -36,7 +36,7 @@
 
 /obj/item/chems/drinks/bottle/rakia/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/rakia, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/rakia, 100)
 
 /obj/item/chems/drinks/bottle/arak
 	name = "Mo's Premium Arak"
@@ -46,7 +46,7 @@
 
 /obj/item/chems/drinks/bottle/arak/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/arak, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/arak, 100)
 
 /obj/item/chems/drinks/bottle/blackstrap
 	name = "Big Bill's Blackstrap"
@@ -56,7 +56,7 @@
 
 /obj/item/chems/drinks/bottle/blackstrap/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/blackstrap, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/blackstrap, 100)
 
 /obj/item/chems/drinks/bottle/brandy
 	name = "Lunar Brandy"
@@ -66,7 +66,7 @@
 
 /obj/item/chems/drinks/bottle/brandy/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/brandy, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/brandy, 100)
 
 /obj/item/chems/drinks/bottle/pink_gin
 	name = "Birmingham Pink"
@@ -76,7 +76,7 @@
 
 /obj/item/chems/drinks/bottle/pink_gin/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/gin/pink, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/gin/pink, 100)
 
 /obj/item/chems/drinks/bottle/ogogoro
 	name = "Metropolitan Ogogoro"
@@ -86,7 +86,7 @@
 
 /obj/item/chems/drinks/bottle/ogogoro/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/ogogoro, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/ogogoro, 100)
 
 /obj/item/chems/drinks/bottle/prosecco
 	name = "2020 Vintage Prosecco"
@@ -96,7 +96,7 @@
 
 /obj/item/chems/drinks/bottle/prosecco/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/prosecco, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/prosecco, 100)
 
 /obj/item/chems/drinks/bottle/tej
 	name = "Rift Valley Tej"
@@ -106,7 +106,7 @@
 
 /obj/item/chems/drinks/bottle/tej/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/tej, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/tej, 100)
 
 /obj/item/chems/drinks/bottle/mars_whiskey
 	name = "Martian Gold Whiskey"
@@ -116,7 +116,7 @@
 
 /obj/item/chems/drinks/bottle/mars_whiskey/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/whiskey/mars, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/whiskey/mars, 100)
 
 /obj/item/chems/drinks/bottle/hrenti
 	name = "Hhassa's Secret Stash"
@@ -126,7 +126,7 @@
 
 /obj/item/chems/drinks/bottle/hrenti/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/hrenti, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/hrenti, 100)
 
 /obj/item/chems/drinks/bottle/wasgaelhi
 	name = "Szikan Wasgaelhi"
@@ -136,7 +136,7 @@
 
 /obj/item/chems/drinks/bottle/wasgaelhi/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/wasgaelhi, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/wasgaelhi, 100)
 
 /obj/item/chems/drinks/bottle/yekala
 	name = "Kis'tan Yekala"
@@ -146,7 +146,7 @@
 
 /obj/item/chems/drinks/bottle/yekala/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/yekala, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/yekala, 100)
 
 /obj/item/chems/drinks/bottle/qokkhrona
 	name = "Qixxkalan Qokk'hrona"
@@ -156,7 +156,7 @@
 
 /obj/item/chems/drinks/bottle/qokkhrona/Initialize()
 	.=..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/qokkhrona, 100)
+	add_to_reagents(/decl/material/liquid/ethanol/qokkhrona, 100)
 
 /obj/item/chems/drinks/bottle/lemonjuice
 	name = "Lemon Juice"
@@ -173,7 +173,7 @@
 
 /obj/item/chems/drinks/bottle/lemonjuice/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/juice/lemon, 100)
+	add_to_reagents(/decl/material/liquid/drink/juice/lemon, 100)
 
 /obj/item/chems/drinks/bottle/pineapplejuice
 	name = "Pineapple Juice"
@@ -190,7 +190,7 @@
 
 /obj/item/chems/drinks/bottle/pineapplejuice/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/juice/pineapple, 100)
+	add_to_reagents(/decl/material/liquid/drink/juice/pineapple, 100)
 
 /obj/item/chems/drinks/bottle/small/cider_apple
 	name = "Apple Cider"
@@ -199,7 +199,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/cider_apple/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/cider_apple, 30)
+	add_to_reagents(/decl/material/liquid/ethanol/cider_apple, 30)
 
 /obj/item/chems/drinks/bottle/small/cider_pear
 	name = "Pear Cider"
@@ -208,7 +208,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/cider_pear/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/cider_pear, 30)
+	add_to_reagents(/decl/material/liquid/ethanol/cider_pear, 30)
 
 /obj/item/chems/drinks/bottle/small/lager
 	name = "Hans' Original Lager"
@@ -217,7 +217,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/lager/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/lager, 30)
+	add_to_reagents(/decl/material/liquid/ethanol/lager, 30)
 
 /obj/item/chems/drinks/bottle/small/martianbeer
 	name = "Martian Pale Ale"
@@ -226,7 +226,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/martianbeer/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/ethanol/martianbeer, 30)
+	add_to_reagents(/decl/material/liquid/ethanol/martianbeer, 30)
 
 /obj/item/chems/drinks/bottle/small/alcoholfreebeer
 	name = "Alcohol-Free Beer"
@@ -235,7 +235,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/alcoholfreebeer/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/alcoholfreebeer, 30)
+	add_to_reagents(/decl/material/liquid/drink/alcoholfreebeer, 30)
 
 /obj/item/chems/drinks/bottle/small/eggnog
 	name = "Grandma's Own Eggnog"
@@ -244,7 +244,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/eggnog/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/eggnog, 30)
+	add_to_reagents(/decl/material/liquid/drink/eggnog, 30)
 
 /obj/item/chems/drinks/bottle/small/rootbeer
 	name = "Root Beer"
@@ -253,7 +253,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/rootbeer/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/rootbeer, 30)
+	add_to_reagents(/decl/material/liquid/drink/rootbeer, 30)
 
 /obj/item/chems/drinks/bottle/small/dnb
 	name = "Dandelion and Burdock"
@@ -262,7 +262,7 @@
 	center_of_mass = @'{"x":16,"y":12}'
 /obj/item/chems/drinks/bottle/small/dnb/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/dnb, 30)
+	add_to_reagents(/decl/material/liquid/drink/dnb, 30)
 
 /obj/item/chems/drinks/bottle/hrukhza
 	name = "Hrukhza Extract"
@@ -279,4 +279,4 @@
 
 /obj/item/chems/drinks/bottle/hrukhza/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/hrukhza, 100)
+	add_to_reagents(/decl/material/liquid/drink/hrukhza, 100)

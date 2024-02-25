@@ -18,8 +18,8 @@
 
 /obj/item/chems/food/rawbacon/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 0.33)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 0.33)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 1)
 
 // May as well put this here.
 /datum/codex_entry/rawbacon
@@ -40,8 +40,8 @@
 
 /obj/item/chems/food/bacon/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 0.33)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 0.33)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 1)
 
 /obj/item/chems/food/bacon/microwave
 	name = "microwaved bacon"
@@ -65,7 +65,7 @@
 
 /obj/item/chems/food/bacon_stick/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
 
 /obj/item/chems/food/chilied_eggs
 	name = "chilied eggs"
@@ -76,8 +76,8 @@
 
 /obj/item/chems/food/chilied_eggs/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 6)
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
 
 /obj/item/chems/food/bacon_and_eggs
 	name = "bacon and eggs"
@@ -90,7 +90,7 @@
 
 /obj/item/chems/food/bacon_and_eggs/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 1)
 
 /obj/item/chems/food/poachedegg
 	name = "poached egg"
@@ -105,8 +105,8 @@
 
 /obj/item/chems/food/poachedegg/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
-	reagents.add_reagent(/decl/material/solid/blackpepper, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/blackpepper, 1)
 
 /obj/item/chems/food/nt_muffin
 	name = "\improper NtMuffin"
@@ -118,7 +118,7 @@
 
 /obj/item/chems/food/nt_muffin/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 5)
 
 /obj/item/chems/food/baconburger
 	name = "bacon burger"
@@ -132,7 +132,7 @@
 
 /obj/item/chems/food/baconburger/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
 
 /obj/item/chems/food/blt
 	name = "BLT"
@@ -146,7 +146,7 @@
 
 /obj/item/chems/food/blt/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
 
 /obj/item/chems/food/blt/cbt
 	name = "CBT"
@@ -164,7 +164,7 @@
 
 /obj/item/chems/food/sweet_and_sour/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
 
 /obj/item/chems/food/bacon_flatbread
 	name = "bacon cheese flatbread"
@@ -176,7 +176,7 @@
 
 /obj/item/chems/food/bacon_flatbread/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 5)
 
 /obj/item/chems/food/meat_pocket
 	name = "meat pocket"
@@ -188,7 +188,7 @@
 
 /obj/item/chems/food/meat_pocket/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
 
 /obj/item/chems/food/crabmeat
 	name = "crab legs"
@@ -199,7 +199,7 @@
 
 /obj/item/chems/food/crabmeat/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
 
 /mob/living/simple_animal/crab/meat_type = /obj/item/chems/food/crabmeat
 
@@ -215,8 +215,8 @@
 
 /obj/item/chems/food/crab_legs/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/solid/sodiumchloride, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 
 /obj/item/chems/food/nugget
 	name = "chicken nugget"
@@ -226,7 +226,7 @@
 
 /obj/item/chems/food/nugget/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
 	var/shape = pick("lump", "star", "lizard", "corgi")
 	desc = "A chicken nugget vaguely shaped like a [shape]."
 	icon_state = "nugget_[shape]"
@@ -242,7 +242,7 @@
 
 /obj/item/chems/food/hatchling_surprise/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2)
 
 /obj/item/chems/food/red_sun_special
 	name = "red sun special"
@@ -273,7 +273,7 @@
 
 /obj/item/chems/food/father_breakfast/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 4)
 
 /obj/item/chems/food/stuffed_meatball
 	name = "stuffed meatball" //YES
@@ -294,7 +294,7 @@
 
 /obj/item/chems/food/egg_pancake/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2)
 
 /obj/item/chems/food/ribplate
 	name = "plate of ribs"
@@ -309,10 +309,10 @@
 
 /obj/item/chems/food/ribplate/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride, 2)
-	reagents.add_reagent(/decl/material/solid/blackpepper, 1)
-	reagents.add_reagent(/decl/material/liquid/nutriment/honey, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 2)
+	add_to_reagents(/decl/material/solid/blackpepper, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/honey, 5)
 
 /obj/item/chems/food/generalschicken
 	name = "general's chicken"
@@ -326,7 +326,7 @@
 
 /obj/item/chems/food/generalschicken/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
 
 /obj/item/chems/food/roastbeef
 	name = "roast beef"
@@ -340,7 +340,7 @@
 
 /obj/item/chems/food/roastbeef/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4) //For meaty things.
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4) //For meaty things.
 
 /obj/item/storage/box/wings //This is kinda like the donut box.
 	name = "wing basket"
@@ -386,7 +386,7 @@
 
 /obj/item/chems/food/chickenwing/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
 
 /obj/item/chems/food/donerkebab
 	name = "doner kebab"
@@ -398,7 +398,7 @@
 
 /obj/item/chems/food/donerkebab/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2) //For meaty things.
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2) //For meaty things.
 
 /obj/item/chems/food/fish_taco
 	name = "carp taco"
@@ -410,7 +410,7 @@
 
 /obj/item/chems/food/fish_taco/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
 
 /obj/item/chems/food/lasagna
 	name = "lasagna"
@@ -425,4 +425,4 @@
 
 /obj/item/chems/food/lasagna/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)

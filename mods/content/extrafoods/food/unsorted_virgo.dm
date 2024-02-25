@@ -10,8 +10,8 @@
 
 /obj/item/chems/food/benedict/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2, list("bacon" = 2))
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 2, list("creamy eggs" = 2))
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2, list("bacon" = 2))
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2, list("creamy eggs" = 2))
 
 /obj/item/chems/food/beans
 	name = "baked beans"
@@ -32,7 +32,7 @@
 
 /obj/item/chems/food/sugarcookie/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/sugar, 2, list("sweetness" = 2))
+	add_to_reagents(/decl/material/liquid/nutriment/sugar, 2, list("sweetness" = 2))
 
 /obj/item/chems/food/fruitsalad
 	name = "fruit salad"
@@ -56,7 +56,7 @@
 
 /obj/item/chems/food/eggbowl/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 4, list("scrambled eggs" = 4))
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 4, list("scrambled eggs" = 4))
 
 /obj/item/chems/food/curryrice
 	name = "curry rice"
@@ -69,8 +69,8 @@
 
 /obj/item/chems/food/curryrice/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 4)
-	reagents.add_reagent(/decl/material/solid/sodiumchloride, 1)
+	add_to_reagents(/decl/material/liquid/capsaicin, 4)
+	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 
 /obj/item/chems/food/piginblanket
 	name = "pig in a blanket"
@@ -83,7 +83,7 @@
 
 /obj/item/chems/food/piginblanket/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4, list("sausage" = 3))
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4, list("sausage" = 3))
 
 /obj/item/chems/food/macncheese
 	name = "macaroni and cheese"

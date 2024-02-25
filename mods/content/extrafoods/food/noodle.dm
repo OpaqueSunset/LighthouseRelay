@@ -11,10 +11,10 @@
 
 /obj/item/chems/food/lomein/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 4)
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
-	reagents.add_reagent(/decl/material/liquid/drink/juice/carrot, 3)
-	reagents.add_reagent(/decl/material/liquid/eyedrops, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/drink/juice/carrot, 3)
+	add_to_reagents(/decl/material/liquid/eyedrops, 1)
 
 /obj/item/chems/food/kitsuneudon
 	name = "kitsune udon"
@@ -38,5 +38,5 @@
 
 /obj/item/chems/food/chickennoodlesoup/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
-	reagents.add_reagent(/decl/material/liquid/water, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/water, 5)

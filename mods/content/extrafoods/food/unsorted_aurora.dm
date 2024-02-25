@@ -10,7 +10,7 @@
 
 /obj/item/chems/food/meatbun/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
 
 /obj/item/chems/food/custardbun
 	name = "custard bun"
@@ -24,7 +24,7 @@
 
 /obj/item/chems/food/custardbun/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
 
 /obj/item/chems/food/chickenmomo
 	name = "chicken momo"
@@ -40,7 +40,7 @@
 
 /obj/item/chems/food/chickenmomo/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
 
 /obj/item/chems/food/veggiemomo
 	name = "veggie momo"
@@ -85,8 +85,8 @@
 
 /obj/item/chems/food/spreads/butter/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride, 15)
-	reagents.add_reagent(/decl/material/solid/sodiumchloride, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 15)
+	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 
 /obj/item/chems/food/cheese_cracker
 	name = "supreme cheese toast"
@@ -105,7 +105,7 @@
 
 /obj/item/chems/food/truffle/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/coco, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/coco, 6)
 
 /obj/item/chems/food/truffle/random
 	name = "mystery chocolate truffle"
@@ -122,7 +122,7 @@
 
 /obj/item/chems/food/truffle/random/Initialize()
 	. = ..()
-	reagents.add_reagent(pick(mystery_reagents), 4)
+	add_to_reagents(pick(mystery_reagents), 4)
 
 /obj/item/chems/food/mashedpotato
 	name = "mashed potato"
@@ -156,4 +156,4 @@
 
 /obj/item/chems/food/banana_split/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/juice/banana, 3)
+	add_to_reagents(/decl/material/liquid/drink/juice/banana, 3)

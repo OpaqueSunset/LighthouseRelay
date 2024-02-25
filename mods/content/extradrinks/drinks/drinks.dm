@@ -6,4 +6,4 @@
 
 /obj/item/chems/drinks/decaf/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/drink/decafcoffee, 30)
+	add_to_reagents(/decl/material/liquid/drink/decafcoffee, 30)

@@ -14,8 +14,8 @@
 
 /obj/item/chems/food/sliceable/keylimepie/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
-	reagents.add_reagent(/decl/material/liquid/nutriment/bread, 4, list("graham crackers" = 4))
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/bread, 4, list("graham crackers" = 4))
 
 /obj/item/chems/food/keylimepieslice
 	name = "slice of key lime pie"
@@ -43,7 +43,7 @@
 
 /obj/item/chems/food/sliceable/quiche/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 10)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 10)
 
 /obj/item/chems/food/quicheslice
 	name = "slice of quiche"
@@ -60,7 +60,7 @@
 
 /obj/item/chems/food/quicheslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
 
 /obj/item/chems/food/sliceable/brownies
 	name = "brownies"
@@ -78,7 +78,7 @@
 
 /obj/item/chems/food/sliceable/brownies/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 2)
 
 /obj/item/chems/food/browniesslice
 	name = "brownie"
@@ -95,7 +95,7 @@
 
 /obj/item/chems/food/browniesslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 1)
 
 /obj/item/chems/food/sliceable/cosmicbrownies
 	name = "cosmic brownies"
@@ -113,11 +113,11 @@
 
 /obj/item/chems/food/sliceable/cosmicbrownies/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 2)
-	reagents.add_reagent(/decl/material/liquid/psychoactives, 2)
-	reagents.add_reagent(/decl/material/liquid/burn_meds, 1)
-	reagents.add_reagent(/decl/material/liquid/brute_meds, 1)
-	reagents.add_reagent(/decl/material/liquid/bromide, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 2)
+	add_to_reagents(/decl/material/liquid/psychoactives, 2)
+	add_to_reagents(/decl/material/liquid/burn_meds, 1)
+	add_to_reagents(/decl/material/liquid/brute_meds, 1)
+	add_to_reagents(/decl/material/liquid/bromide, 1)
 
 /obj/item/chems/food/cosmicbrowniesslice
 	name = "cosmic brownie"
@@ -134,7 +134,7 @@
 
 /obj/item/chems/food/cosmicbrowniesslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 1)
 
 /obj/item/chems/food/berrymuffin
 	name = "berry muffin"
@@ -167,7 +167,7 @@
 
 /obj/item/chems/food/honeybun/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/honey, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/honey, 2)
 
 /obj/item/chems/food/cinnamonbun
 	name = "cinnamon bun"

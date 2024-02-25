@@ -44,7 +44,7 @@
 	if (prob(20))
 		//Sometimes the fryer will start with much less than full oil, significantly impacting efficiency until filled
 		variance = rand()*0.5
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil/corn, optimal_oil*(1 - variance))
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil/corn, optimal_oil*(1 - variance))
 	fry_loop = new(list(src), FALSE)
 
 /obj/machinery/appliance/cooker/fryer/heat_up()
@@ -113,7 +113,7 @@
 					total_oil += I.reagents.reagent_volumes[_R]
 					if (_R != reagents.primary_reagent)
 						total_removed += I.reagents.reagent_volumes[_R]
-						I.reagents.remove_reagent(_R, I.reagents.reagent_volumes[_R])
+						I.remove_from_reagents(_R, I.reagents.reagent_volumes[_R])
 					else
 						total_our_oil += I.reagents.reagent_volumes[_R]
 
@@ -134,7 +134,7 @@
 				if (I.reagents?.total_volume)
 					for (var/_R in I.reagents.reagent_volumes)
 						if (_R == reagents.primary_reagent)
-							I.reagents.remove_reagent(_R, I.reagents.reagent_volumes[_R]*portion)
+							I.remove_from_reagents(_R, I.reagents.reagent_volumes[_R]*portion)
 					if(REAGENT_DATA(I.reagents, reagents.primary_reagent)) // cool down the oil
 						LAZYSET(I.reagents.reagent_data[reagents.primary_reagent], "temperature", T0C + rand(35, 45)) // warm, but not hot; avoiding aftereffects of the hot oil
 
@@ -216,8 +216,8 @@
 			if (ispath(_R, /decl/material/liquid/nutriment/triglyceride/oil))
 				var/delta = REAGENTS_FREE_SPACE(reagents)
 				delta = min(delta, I.reagents.reagent_volumes[_R])
-				reagents.add_reagent(_R, delta)
-				I.reagents.remove_reagent(_R, delta)
+				add_to_reagents(_R, delta)
+				I.remove_from_reagents(_R, delta)
 				amount += delta
 		if (amount > 0)
 			user.visible_message("[user] pours some oil into [src].", SPAN_NOTICE("You pour [amount]u of oil into [src]."), SPAN_NOTICE("You hear something viscous being poured into a metal container."))

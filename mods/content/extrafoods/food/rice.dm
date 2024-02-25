@@ -12,9 +12,9 @@
 
 /obj/item/chems/food/redcurry/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 7)
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 4)
-	reagents.add_reagent(/decl/material/solid/spacespice, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 7)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
+	add_to_reagents(/decl/material/solid/spacespice, 2)
 
 /obj/item/chems/food/greencurry
 	name = "green curry"
@@ -30,9 +30,9 @@
 
 /obj/item/chems/food/greencurry/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/plant_protein, 2)
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 2)
-	reagents.add_reagent(/decl/material/solid/spacespice, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/plant_protein, 2)
+	add_to_reagents(/decl/material/liquid/capsaicin, 2)
+	add_to_reagents(/decl/material/solid/spacespice, 2)
 
 /obj/item/chems/food/yellowcurry
 	name = "yellow curry"
@@ -48,8 +48,8 @@
 
 /obj/item/chems/food/yellowcurry/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 4)
-	reagents.add_reagent(/decl/material/solid/spacespice, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
+	add_to_reagents(/decl/material/solid/spacespice, 2)
 
 /obj/item/chems/food/bibimbap
 	name = "bibimbap bowl"
@@ -64,10 +64,10 @@
 
 /obj/item/chems/food/bibimbap/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/eyedrops, 2)
-	reagents.add_reagent(/decl/material/solid/spacespice, 2)
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein/egg, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/eyedrops, 2)
+	add_to_reagents(/decl/material/solid/spacespice, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 3)
 
 /obj/item/chems/food/friedrice
 	name = "fried rice"
@@ -83,9 +83,9 @@
 
 /obj/item/chems/food/friedrice/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 5)
-	reagents.add_reagent(/decl/material/liquid/drink/juice/carrot, 3)
-	reagents.add_reagent(/decl/material/liquid/eyedrops, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 5)
+	add_to_reagents(/decl/material/liquid/drink/juice/carrot, 3)
+	add_to_reagents(/decl/material/liquid/eyedrops, 1)
 
 /obj/item/chems/food/riceball
 	name = "rice ball"
@@ -99,8 +99,8 @@
 
 /obj/item/chems/food/riceball/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 1)
-	reagents.add_reagent(/decl/material/liquid/nutriment/soysauce, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/soysauce, 1)
 
 /obj/item/chems/food/riceball/on_update_icon()
 	var/percent = round((reagents?.total_volume / 3) * 100)
@@ -123,7 +123,7 @@
 
 /obj/item/chems/food/porkbowl/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
 
 /obj/item/chems/food/ricepudding
 	name = "rice pudding"
@@ -152,8 +152,8 @@
 
 /obj/item/chems/food/risotto/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 3)
-	reagents.add_reagent(/decl/material/solid/spacespice, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 3)
+	add_to_reagents(/decl/material/solid/spacespice, 2)
 
 /obj/item/chems/food/risottoballs
 	name = "risotto balls"
@@ -170,9 +170,9 @@
 
 /obj/item/chems/food/risottoballs/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/rice, 4)
-	reagents.add_reagent(/decl/material/solid/sodiumchloride, 1)
-	reagents.add_reagent(/decl/material/solid/blackpepper, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
+	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
+	add_to_reagents(/decl/material/solid/blackpepper, 1)
 
 /obj/item/chems/food/omurice
 	name = "omelette rice"
