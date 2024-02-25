@@ -46,7 +46,7 @@
 
 	default_language = /decl/language/binary/drone
 	// NO BRAIN.
-	mmi = null
+	central_processor = null
 
 	//We need to screw with their HP a bit. They have around one fifth as much HP as a full borg.
 	for(var/V in components) if(V != "power cell")
@@ -56,10 +56,10 @@
 	verbs -= /mob/living/silicon/robot/verb/Namepick
 	update_icon()
 
-	events_repository.register(/decl/observ/moved, src, src, /mob/living/silicon/robot/drone/proc/on_moved)
+	events_repository.register(/decl/observ/moved, src, src, TYPE_PROC_REF(/mob/living/silicon/robot/drone, on_moved))
 
 /mob/living/silicon/robot/drone/Destroy()
-	events_repository.unregister(/decl/observ/moved, src, src, /mob/living/silicon/robot/drone/proc/on_moved)
+	events_repository.unregister(/decl/observ/moved, src, src, TYPE_PROC_REF(/mob/living/silicon/robot/drone, on_moved))
 	. = ..()
 
 /mob/living/silicon/robot/drone/proc/on_moved(var/atom/movable/am, var/turf/old_loc, var/turf/new_loc)
@@ -77,7 +77,7 @@
 /mob/living/silicon/robot/drone/can_be_possessed_by(var/mob/observer/ghost/possessor)
 	if(!istype(possessor) || !possessor.client || !possessor.ckey)
 		return 0
-	if(!config.allow_drone_spawn)
+	if(!get_config_value(/decl/config/toggle/on/allow_drone_spawn))
 		to_chat(src, "<span class='danger'>Playing as drones is not currently permitted.</span>")
 		return 0
 	if(too_many_active_drones())
@@ -179,7 +179,7 @@
 
 		if(stat == DEAD)
 
-			if(!config.allow_drone_spawn || emagged || should_be_dead()) //It's dead, Dave.
+			if(!get_config_value(/decl/config/toggle/on/allow_drone_spawn) || emagged || should_be_dead()) //It's dead, Dave.
 				to_chat(user, "<span class='danger'>The interface is fried, and a distressing burned smell wafts from the robot's interior. You're not rebooting this one.</span>")
 				return
 
@@ -246,8 +246,8 @@
 /mob/living/silicon/robot/drone/death()
 	if(stat != DEAD && should_be_dead())
 		self_destruct()
-		return
-	return ..()
+		return FALSE
+	. = ..()
 
 /mob/living/silicon/robot/drone/self_destruct()
 	timeofdeath = world.time
@@ -340,7 +340,7 @@
 	for(var/mob/living/silicon/robot/drone/D in global.silicon_mob_list)
 		if(D.key && D.client)
 			drones++
-	return drones >= config.max_maint_drones
+	return drones >= get_config_value(/decl/config/num/max_maint_drones)
 
 /mob/living/silicon/robot/drone/show_laws(var/everyone = 0)
 	if(!controlling_ai)

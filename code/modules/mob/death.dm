@@ -18,7 +18,7 @@
 
 	flick(anim, animation)
 	if(do_gibs)
-		gibs(loc, _blood_type = get_blood_type(), _unique_enzymes = get_unique_enzymes())
+		gibs()
 
 	QDEL_IN(animation, 15)
 	QDEL_IN(src, 15)
@@ -26,7 +26,7 @@
 
 //This is the proc for turning a mob into ash. Mostly a copy of gib code (above).
 //Originally created for wizard disintegrate. I've removed the virus code since it's irrelevant here.
-//Dusting robots does not eject the MMI, so it's a bit more powerful than gib() /N
+//Dusting robots does not eject the brain, so it's a bit more powerful than gib() /N
 /mob/proc/dust(anim="dust-m",remains=/obj/effect/decal/cleanable/ash)
 	death(1)
 	var/atom/movable/overlay/animation = null

@@ -3236,7 +3236,7 @@
 /area/errant_pisces/infirmary)
 "iF" = (
 /obj/structure/table,
-/obj/item/trash/plate,
+/obj/item/plate,
 /obj/item/kitchen/utensil/fork,
 /turf/simulated/floor/tiled,
 /area/errant_pisces/dorms)
@@ -3247,7 +3247,7 @@
 /area/errant_pisces/dorms)
 "iH" = (
 /obj/structure/table/marble,
-/obj/item/trash/plate,
+/obj/item/plate,
 /turf/simulated/floor/tiled,
 /area/errant_pisces/dorms)
 "iI" = (
@@ -3950,8 +3950,8 @@
 	dir = 1
 	},
 /obj/structure/bookcase,
-/obj/item/book/manual/anomaly_testing,
-/obj/item/book/manual/anomaly_spectroscopy,
+/obj/item/book/fluff/anomaly_testing,
+/obj/item/book/fluff/anomaly_spectroscopy,
 /turf/simulated/floor/tiled,
 /area/errant_pisces/science_wing)
 "kB" = (
@@ -3962,7 +3962,7 @@
 /area/errant_pisces/science_wing)
 "kC" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/materials_chemistry_analysis,
+/obj/item/book/fluff/materials_chemistry_analysis,
 /turf/simulated/floor/tiled,
 /area/errant_pisces/science_wing)
 "kD" = (

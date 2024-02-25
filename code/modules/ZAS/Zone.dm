@@ -84,6 +84,7 @@ Class Procs:
 	ASSERT(T.zone == src)
 	soft_assert(T in contents, "Lists are weird broseph")
 #endif
+	T.c_copy_air() // to avoid losing contents
 	contents.Remove(T)
 	fire_tiles.Remove(T)
 	T.zone = null
@@ -114,8 +115,7 @@ Class Procs:
 	for(var/connection_edge/E in edges)
 		if(E.contains_zone(into))
 			continue //don't need to rebuild this edge
-		for(var/turf/T in E.connecting_turfs)
-			SSair.mark_for_update(T)
+		E.update_post_merge()
 
 /zone/proc/c_invalidate()
 	invalid = 1
@@ -191,9 +191,7 @@ Class Procs:
 				if(condense_amt < 1)
 					break
 				air.adjust_gas(g, -condense_amt)
-				var/obj/effect/fluid/F = locate() in flooding
-				if(!F) F = new(flooding)
-				F.reagents.add_reagent(g, condense_amt * REAGENT_UNITS_PER_GAS_MOLE)
+				flooding.add_to_reagents(g, condense_amt * REAGENT_UNITS_PER_GAS_MOLE)
 		CHECK_TICK
 	condensing = FALSE
 

@@ -11,7 +11,7 @@
 
 /obj/item/chems/food/onionsoup/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/water, 5)
+	add_to_reagents(/decl/material/liquid/water, 5)
 
 /obj/item/chems/food/hotandsoursoup
 	name = "hot & sour soup"
@@ -25,10 +25,10 @@
 
 /obj/item/chems/food/hotandsoursoup/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 2)
-	reagents.add_reagent(/decl/material/liquid/nutriment/garlicsauce, 2)
-	reagents.add_reagent(/decl/material/liquid/nutriment/plant_protein, 2)
-	reagents.add_reagent(/decl/material/liquid/water, 5)
+	add_to_reagents(/decl/material/liquid/capsaicin, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/garlicsauce, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/plant_protein, 2)
+	add_to_reagents(/decl/material/liquid/water, 5)
 
 /obj/item/chems/food/goulash
 	name = "goulash"
@@ -41,5 +41,5 @@
 
 /obj/item/chems/food/goulash/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 3) //For meaty things.
-	reagents.add_reagent(/decl/material/liquid/water, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 3) //For meaty things.
+	add_to_reagents(/decl/material/liquid/water, 5)

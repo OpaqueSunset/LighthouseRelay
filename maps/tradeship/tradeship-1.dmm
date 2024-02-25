@@ -182,7 +182,7 @@
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/button/access/interior{
 	dir = 8;
-	id_tag = "tradeship_starboard_dock";
+	id_tag = "eva";
 	pixel_x = 20
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -634,7 +634,7 @@
 "br" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/down,
-/turf/simulated/open,
+/turf/open,
 /area/ship/trade/maintenance/lower)
 "bt" = (
 /obj/effect/floor_decal/corner/beige{
@@ -1104,7 +1104,7 @@
 /obj/item/stamp/clown,
 /obj/item/storage/backpack/clown,
 /obj/item/bikehorn,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/machinery/newscaster{
 	pixel_y = -32;
 	dir = 1
@@ -1239,7 +1239,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/ship/trade/cargo/lower)
 "dj" = (
 /obj/effect/floor_decal/corner/beige{
@@ -1345,7 +1345,7 @@
 /area/ship/trade/cargo/lower)
 "dv" = (
 /obj/machinery/light,
-/turf/simulated/open,
+/turf/open,
 /area/ship/trade/cargo/lower)
 "dw" = (
 /obj/effect/floor_decal/corner/beige{
@@ -2165,7 +2165,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/ship/trade/cargo/lower)
 "lZ" = (
-/turf/simulated/open,
+/turf/open,
 /area/ship/trade/cargo/lower)
 "mb" = (
 /obj/effect/floor_decal/corner/beige{

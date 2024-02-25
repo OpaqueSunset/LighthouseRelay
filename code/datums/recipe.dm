@@ -292,6 +292,8 @@
 
 	for(var/obj/item/chems/food/food in results)
 		food.cooked_food = TRUE
+		if(!QDELETED(food.plate))
+			QDEL_NULL(food.plate) // crafted food should not have plates by default
 
 	return results
 

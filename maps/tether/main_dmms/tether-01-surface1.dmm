@@ -1978,7 +1978,7 @@
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 9
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/mining_main/storage)
 "adT" = (
@@ -4123,7 +4123,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6014,8 +6014,8 @@
 /area/vacant/vacant_site)
 "alc" = (
 /obj/structure/table,
-/obj/item/storage/fancy/crayons,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /turf/simulated/floor/tiled,
 /area/storage/art)
 "ald" = (
@@ -6100,7 +6100,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6110,7 +6110,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6123,7 +6123,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6413,14 +6413,14 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
 /turf/simulated/floor/pool,
 /area/tether/surfacebase/atrium_one)
 "alS" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -6430,7 +6430,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -7080,7 +7080,7 @@
 /area/tether/surfacebase/atrium_one)
 "anm" = (
 /obj/structure/railing/mapped,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -9214,7 +9214,7 @@
 	dir = 1;
 	pixel_y = 28
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "arE" = (
@@ -9295,7 +9295,7 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -9306,7 +9306,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -11561,7 +11561,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/security/checkpoint)
 "avU" = (
@@ -32085,7 +32085,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "pQI" = (

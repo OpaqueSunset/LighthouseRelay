@@ -4069,7 +4069,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Religious)"
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/library)
 "aiB" = (
@@ -4262,7 +4262,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Non-Fiction)"
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/library)
 "ajf" = (
@@ -4338,7 +4338,7 @@
 /area/tether/station/pathfinder_office)
 "ajo" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/tether/station/pathfinder_office)
 "ajp" = (
@@ -4378,7 +4378,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Reference)"
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /obj/item/book/manual/engineering_guide,
 /turf/simulated/floor/wood,
 /area/library)
@@ -4387,7 +4387,7 @@
 	name = "bookcase (Reference)"
 	},
 /obj/item/book/manual/supermatter_engine,
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/resleeving,
 /turf/simulated/floor/wood,
 /area/library)
 "ajy" = (
@@ -7324,7 +7324,7 @@
 	},
 /obj/structure/lattice,
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_lower)
 "arE" = (
 /obj/structure/cable/green{
@@ -7948,7 +7948,7 @@
 	dir = 8
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
 "atH" = (
@@ -8771,7 +8771,7 @@
 /turf/simulated/floor/plating,
 /area/hallway/station/docks)
 "axc" = (
-/obj/abstract/fluid_mapped{
+/obj/abstract/landmark/mapped_fluid{
 	fluid_initial = 300;
 	name = "mapped shallow pool"
 	},
@@ -13551,7 +13551,7 @@
 	dir = 4;
 	name = "Engineering Reception Desk"
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
 "aQJ" = (
@@ -14429,7 +14429,7 @@
 /obj/structure/disposalpipe/down{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_lower)
 "aYg" = (
 /obj/structure/grille,
@@ -17181,7 +17181,7 @@
 /area/hallway/station/docks)
 "bql" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
@@ -17490,8 +17490,8 @@
 	pixel_y = -20;
 	dir = 1
 	},
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
 "bsM" = (
@@ -18244,8 +18244,8 @@
 "bAB" = (
 /obj/structure/table/reinforced,
 /obj/item/megaphone,
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/hop)
 "bAC" = (
@@ -19611,9 +19611,9 @@
 /area/tether/station/explorer_entry)
 "bWH" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/nt_regs,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bXl" = (
@@ -20505,7 +20505,7 @@
 /obj/machinery/camera/network/tether{
 	dir = 4
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_prep)
 "hpl" = (
@@ -23172,7 +23172,7 @@
 	dir = 4
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/tether/station/explorer_meeting)
 "xva" = (

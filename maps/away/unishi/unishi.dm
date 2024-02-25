@@ -140,7 +140,7 @@
 
 /obj/item/chems/glass/bottle/tericadone/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/solid/phoron/safe, 60)
+	add_to_reagents(/decl/material/solid/phoron/safe, 60)
 	update_icon()
 
 /decl/material/solid/phoron/safe/touch_mob(mob/living/M, amount, datum/reagents/holder)

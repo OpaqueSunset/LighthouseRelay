@@ -56,6 +56,13 @@
 
 	refresh_hud()
 
+/mob/living/exosuit/should_do_hud_updates()
+	. = ..()
+	if(!. && length(pilots))
+		for(var/mob/living/pilot in pilots)
+			if(pilot.should_do_hud_updates())
+				return TRUE
+
 /mob/living/exosuit/handle_hud_icons()
 	for(var/hardpoint in hardpoint_hud_elements)
 		var/obj/screen/exosuit/hardpoint/H = hardpoint_hud_elements[hardpoint]
@@ -120,4 +127,4 @@
 		if(H)
 			H.color = "#a03b3b"
 			animate(H, color = COLOR_WHITE, time = timeout, easing = CUBIC_EASING | EASE_IN)
-	addtimer(CALLBACK(src, .proc/reset_hardpoint_color), timeout)
+	addtimer(CALLBACK(src, PROC_REF(reset_hardpoint_color)), timeout)

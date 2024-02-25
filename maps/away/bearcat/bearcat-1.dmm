@@ -11,8 +11,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /turf/simulated/floor/usedup,
 /area/space)
@@ -41,8 +40,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/computer/cryopod/robot{
-	dir = 8;
-	pixel_x = 0
+	dir = 8
 	},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/broken1)
@@ -57,8 +55,7 @@
 /area/ship/scrap/escape_port)
 "ai" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "engwindow";
-	
+	id_tag = "engwindow"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/escape_port)
@@ -92,8 +89,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -104,8 +100,7 @@
 /area/ship/scrap/cargo/lower)
 "ap" = (
 /obj/machinery/door/blast/regular/open{
-	id_tag = "engwindow";
-	
+	id_tag = "engwindow"
 	},
 /turf/simulated/floor/airless,
 /area/ship/scrap/escape_star)
@@ -125,8 +120,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/cargo/lower)
@@ -139,8 +133,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/cargo/lower)
@@ -522,8 +515,7 @@
 "bi" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -690,8 +682,7 @@
 "bA" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1043,8 +1034,7 @@
 "cm" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1192,8 +1182,7 @@
 "cC" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1495,8 +1484,7 @@
 "dk" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1608,8 +1596,7 @@
 "dw" = (
 /obj/machinery/door/blast/regular/open{
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,
@@ -1892,15 +1879,17 @@
 	req_access = newlist()
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+/obj/item/stock_parts/circuitboard/autolathe,
+/obj/item/stock_parts/circuitboard/unary_atmos/heater,
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/techstorage)
 "ed" = (
-/obj/item/stock_parts/circuitboard/autolathe,
-/obj/item/stock_parts/circuitboard/unary_atmos/heater,
-/obj/structure/rack,
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
+/obj/machinery/network/relay{
+	initial_network_id = "freightnet_0451"
+},
 /turf/simulated/floor/tiled/usedup,
 /area/ship/scrap/maintenance/techstorage)
 "ee" = (
@@ -2172,8 +2161,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /turf/simulated/floor/usedup,
 /area/ship/scrap/maintenance/eva)
@@ -2431,8 +2419,7 @@
 /obj/machinery/door/blast/regular/open{
 	dir = 4;
 	id_tag = "scraplock";
-	name = "External Blast Doors";
-	
+	name = "External Blast Doors"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/wallframe_spawn/reinforced,

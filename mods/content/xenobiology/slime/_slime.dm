@@ -1,3 +1,7 @@
+/decl/config/num/movement_slime
+	uid = "slime_delay"
+	desc = "Movement delay for slimes."
+
 #define FEED_RESULT_INVALID -1
 #define FEED_RESULT_DEAD     0
 #define FEED_RESULT_VALID    1
@@ -63,8 +67,7 @@
 
 	ingested = new /datum/reagents/metabolism(240, src, CHEM_TOUCH)
 	reagents = ingested
-	// See comment in /mob/living/slime/on_update_icon() regarding alpha mask filters.
-	//render_target = "slime_\ref[src]"
+	render_target = "slime_\ref[src]"
 
 	verbs += /mob/living/proc/ventcrawl
 	slime_type = _stype
@@ -104,7 +107,7 @@
 	if(current_health <= 0) // if damaged, the slime moves twice as slow
 		tally *= 2
 
-	return tally + config.slime_delay
+	return tally + get_config_value(/decl/config/num/movement_slime)
 
 /mob/living/slime/Bump(atom/movable/AM, yes)
 	if ((!(yes) || now_pushing))
@@ -291,7 +294,7 @@
 	return FALSE
 
 /mob/living/slime/check_has_mouth()
-	return 0
+	return FALSE
 
 /mob/living/slime/set_nutrition(amt)
 	..()

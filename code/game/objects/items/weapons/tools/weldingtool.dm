@@ -8,7 +8,7 @@
 	icon_state                          = ICON_STATE_WORLD
 	obj_flags                           = OBJ_FLAG_CONDUCTIBLE
 	slot_flags                          = SLOT_LOWER_BODY
-	center_of_mass                      = @"{'x':14,'y':15}"
+	center_of_mass                      = @'{"x":14,"y":15}'
 	force                               = 5
 	throwforce                          = 5
 	throw_speed                         = 1
@@ -16,7 +16,7 @@
 	w_class                             = ITEM_SIZE_SMALL
 	material                            = /decl/material/solid/metal/steel
 	matter                              = list(/decl/material/solid/fiberglass = MATTER_AMOUNT_REINFORCEMENT)
-	origin_tech                         = "{'engineering':1}"
+	origin_tech                         = @'{"engineering":1}'
 	drop_sound                          = 'sound/foley/tooldrop1.ogg'
 	z_flags                             = ZMM_MANGLE_PLANES
 	attack_cooldown                     = DEFAULT_ATTACK_COOLDOWN
@@ -52,7 +52,7 @@
 	if(welding)
 		update_icon()
 
-/obj/item/weldingtool/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
+/obj/item/weldingtool/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
 	if(overlay && welding && check_state_in_icon("[overlay.icon_state]-lit", overlay.icon))
 		overlay.add_overlay(emissive_overlay(overlay.icon, "[overlay.icon_state]-lit"))
 	. = ..()
@@ -228,7 +228,7 @@
 	if(location)
 		location.hotspot_expose(WELDING_TOOL_HOTSPOT_TEMP_ACTIVE, 5)
 	set_light(5, 0.7, COLOR_LIGHT_CYAN)
-	addtimer(CALLBACK(src, /atom/proc/update_icon), 5)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 5)
 	return TRUE
 
 /**Handle the flame burning fuel while the welder is on */
@@ -262,7 +262,7 @@
 	if(get_fuel() < amount)
 		. = FALSE //Try to burn as much as possible anyways
 	if(tank)
-		tank.reagents.remove_reagent(/decl/material/liquid/fuel, amount)
+		tank.remove_from_reagents(/decl/material/liquid/fuel, amount)
 
 //Returns whether or not the welding tool is currently on.
 /obj/item/weldingtool/proc/isOn()
@@ -411,7 +411,7 @@
 	var/lit_force     = 11
 
 /obj/item/chems/welder_tank/populate_reagents()
-	reagents.add_reagent(/decl/material/liquid/fuel, reagents.maximum_volume)
+	add_to_reagents(/decl/material/liquid/fuel, reagents.maximum_volume)
 
 /obj/item/chems/welder_tank/examine(mob/user, distance)
 	. = ..()
@@ -430,7 +430,7 @@
 		return TRUE
 	if(standard_pour_into(user, O))
 		return TRUE
-	if(standard_feed_mob(user, O))
+	if(handle_eaten_by_mob(user, O) != EATEN_INVALID)
 		return TRUE
 	if(user.a_intent == I_HURT)
 		if(standard_splash_mob(user, O))
@@ -461,11 +461,11 @@
 		return FALSE
 	. = ..()
 
-/obj/item/chems/welder_tank/standard_feed_mob(mob/user, mob/target)
+/obj/item/chems/welder_tank/handle_eaten_by_mob(mob/user, mob/target)
 	if(!can_refuel)
 		to_chat(user, SPAN_DANGER("\The [src] is sealed shut."))
-		return FALSE
-	. = ..()
+		return EATEN_UNABLE
+	return ..()
 
 /obj/item/chems/welder_tank/get_alt_interactions(var/mob/user)
 	. = ..()
@@ -533,7 +533,7 @@
 /obj/item/chems/welder_tank/experimental/Process()
 	if(REAGENT_VOLUME(reagents, /decl/material/liquid/fuel) < reagents.maximum_volume)
 		var/gen_amount = ((world.time-last_gen)/25)
-		reagents.add_reagent(/decl/material/liquid/fuel, gen_amount)
+		add_to_reagents(/decl/material/liquid/fuel, gen_amount)
 		last_gen = world.time
 
 #undef WELDING_TOOL_HOTSPOT_TEMP_ACTIVE

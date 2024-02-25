@@ -14,7 +14,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/generic/assistant
 
 /datum/job/offduty/get_access()
-	if(config.assistant_maint)
+	if(get_config_value(/decl/config/toggle/assistant_maint))
 		return list(access_maint_tunnels)
 	else
 		return list()

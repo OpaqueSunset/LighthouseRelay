@@ -1,27 +1,9 @@
-var/global/list/ear_icon_cache = list() //key is "\ref[ear_style]", if colorable plus "[ear_color]" and potentially "[ear_color_extra]"
-/obj/item/organ/external/head/get_hair_icon()
-	var/image/res = ..()
-	var/obj/item/headwear = owner.get_equipped_item(slot_head_str)
-	if(!owner.ear_style || (headwear?.flags_inv & BLOCK_HEAD_HAIR))
-		return res
-	var/icon_key
-	if(owner.ear_style.do_colouration)
-		if(owner.ear_style.extra_overlay)
-			icon_key = "\ref[owner.ear_style][owner.ear_color][owner.ear_color_extra]"
-		else
-			icon_key = "\ref[owner.ear_style][owner.ear_color]"
-	else
-		icon_key = any2ref(owner.ear_style)
-	var/icon/ears_icon = global.ear_icon_cache[icon_key]
-	if(!ears_icon)
-		ears_icon = icon(owner.ear_style.icon, owner.ear_style.icon_state)
-		if(owner.ear_style.do_colouration)
-			ears_icon.Blend(owner.ear_color, owner.ear_style.blend)
-		if(owner.ear_style.extra_overlay)
-			var/icon/overlay = icon(owner.ear_style.icon, owner.ear_style.extra_overlay)
-			overlay.Blend(owner.ear_color_extra, owner.ear_style.blend)
-			ears_icon.Blend(overlay, ICON_OVERLAY)
-			qdel(overlay)
-		global.ear_icon_cache[icon_key] = ears_icon
-	res.overlays |= ears_icon
-	return res
+/obj/item/organ/external/head/get_mob_overlays()
+	. = ..()
+	if(!owner)
+		return
+	var/ear_style = owner.get_ear_style()
+	if(ear_style)
+		var/decl/sprite_accessory/ears/ears = resolve_accessory_to_decl(ear_style)
+		if(ears?.accessory_is_available(owner, species, bodytype))
+			LAZYADD(., image(ears.get_cached_accessory_icon(src, owner.get_ear_colour(), owner.get_extra_ear_colour())))

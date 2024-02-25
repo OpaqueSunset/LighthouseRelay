@@ -137,8 +137,8 @@
 #define FLASH_PROTECTION_MODERATE 2
 #define FLASH_PROTECTION_MAJOR 3
 
-#define ANIMAL_SPAWN_DELAY round(config.respawn_delay / 6)
-#define DRONE_SPAWN_DELAY  round(config.respawn_delay / 3)
+#define ANIMAL_SPAWN_DELAY round(get_config_value(/decl/config/num/respawn_delay) / 6)
+#define DRONE_SPAWN_DELAY  round(get_config_value(/decl/config/num/respawn_delay) / 3)
 
 // Incapacitation flags, used by the mob/proc/incapacitated() proc
 #define INCAPACITATION_NONE 0
@@ -182,7 +182,6 @@
 #define BP_ACETONE  "acetone reactor"
 
 // Robo Organs.
-#define BP_POSIBRAIN         "posibrain"
 #define BP_VOICE             "vocal synthesiser"
 #define BP_STACK             "stack"
 #define BP_OPTICS            "optics"
@@ -298,9 +297,6 @@
 
 #define MOB_FLAG_HOLY_BAD BITFLAG(0)  // If this mob is allergic to holiness
 
-#define MARKING_TARGET_SKIN 0 // Draw a /decl/sprite_accessory/marking to the mob's body, eg. tattoos
-#define MARKING_TARGET_HAIR 1 // Draw a /decl/sprite_accessory/marking to the mob's hair, eg. ears & horns
-
 #define DEXTERITY_NONE            0
 #define DEXTERITY_SIMPLE_MACHINES BITFLAG(0)
 #define DEXTERITY_HOLD_ITEM       BITFLAG(1)
@@ -330,7 +326,7 @@ var/global/list/dexterity_levels = list(
 #define INJECTION_PORT 2
 #define INJECTION_PORT_DELAY 3 SECONDS // used by injectors to apply delay due to searching for a port on the injectee's suit
 
-#define ADJUSTED_GLIDE_SIZE(DELAY) (NONUNIT_CEILING((WORLD_ICON_SIZE / max((DELAY), world.tick_lag) * world.tick_lag) - world.tick_lag, 1) + (config.glide_size_delay))
+#define ADJUSTED_GLIDE_SIZE(DELAY) (NONUNIT_CEILING((WORLD_ICON_SIZE / max((DELAY), world.tick_lag) * world.tick_lag) - world.tick_lag, 1) + (get_config_value(/decl/config/num/movement_glide_size)))
 
 #define PREF_MEM_RECORD "memory"
 #define PREF_SEC_RECORD "sec_record"
@@ -380,3 +376,12 @@ var/global/list/dexterity_levels = list(
 // Underlay defines; vestigal implementation currently.
 #define HU_TAIL_LAYER 1
 #define TOTAL_UNDER_LAYERS 1
+
+// Enum for result of an attempt to eat/eat from an item.
+#define EATEN_INVALID 0
+#define EATEN_UNABLE  1
+#define EATEN_SUCCESS 2
+
+// Enum for type of consumption, largely just cosmetic currently.
+#define EATING_METHOD_EAT   0
+#define EATING_METHOD_DRINK 1

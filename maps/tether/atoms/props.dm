@@ -23,7 +23,7 @@
 	icon_state = "pill4"
 
 /obj/item/chems/pill/tox/populate_reagents()
-	reagents.add_reagent(/decl/material/liquid/bromide, 15)
+	add_to_reagents(/decl/material/liquid/bromide, 15)
 
 //"Red" Armory Door
 /obj/machinery/door/airlock/security/armory

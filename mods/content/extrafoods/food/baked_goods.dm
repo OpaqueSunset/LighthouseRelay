@@ -14,15 +14,15 @@
 
 /obj/item/chems/food/sliceable/keylimepie/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
-	reagents.add_reagent(/decl/material/liquid/nutriment/bread, 4, list("graham crackers" = 4))
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/bread, 4, list("graham crackers" = 4))
 
 /obj/item/chems/food/keylimepieslice
 	name = "slice of key lime pie"
 	desc = "A slice of tart pie, with whipped cream on top."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "keylimepieslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("lime" = 1)
@@ -43,14 +43,14 @@
 
 /obj/item/chems/food/sliceable/quiche/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 10)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 10)
 
 /obj/item/chems/food/quicheslice
 	name = "slice of quiche"
 	desc = "A slice of delicious quiche. Eggy, cheesy goodness."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "quicheslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("cheesy eggs" = 1)
@@ -60,7 +60,7 @@
 
 /obj/item/chems/food/quicheslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
 
 /obj/item/chems/food/sliceable/brownies
 	name = "brownies"
@@ -78,14 +78,14 @@
 
 /obj/item/chems/food/sliceable/brownies/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 2)
 
 /obj/item/chems/food/browniesslice
 	name = "brownie"
 	desc = "A dense, decadent chocolate brownie."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "browniesslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 2
 	nutriment_desc = list("fudge" = 1)
@@ -95,7 +95,7 @@
 
 /obj/item/chems/food/browniesslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 1)
 
 /obj/item/chems/food/sliceable/cosmicbrownies
 	name = "cosmic brownies"
@@ -113,18 +113,18 @@
 
 /obj/item/chems/food/sliceable/cosmicbrownies/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 2)
-	reagents.add_reagent(/decl/material/liquid/psychoactives, 2)
-	reagents.add_reagent(/decl/material/liquid/burn_meds, 1)
-	reagents.add_reagent(/decl/material/liquid/brute_meds, 1)
-	reagents.add_reagent(/decl/material/liquid/bromide, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 2)
+	add_to_reagents(/decl/material/liquid/psychoactives, 2)
+	add_to_reagents(/decl/material/liquid/burn_meds, 1)
+	add_to_reagents(/decl/material/liquid/brute_meds, 1)
+	add_to_reagents(/decl/material/liquid/bromide, 1)
 
 /obj/item/chems/food/cosmicbrowniesslice
 	name = "cosmic brownie"
 	desc = "A dense, decadent and fun-looking chocolate brownie."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "cosmicbrowniesslice"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#f5b951"
 	bitesize = 3
 	nutriment_desc = list("fudge" = 1)
@@ -134,7 +134,7 @@
 
 /obj/item/chems/food/cosmicbrowniesslice/filled/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/browniemix, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/browniemix, 1)
 
 /obj/item/chems/food/berrymuffin
 	name = "berry muffin"
@@ -167,7 +167,7 @@
 
 /obj/item/chems/food/honeybun/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/honey, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/honey, 2)
 
 /obj/item/chems/food/cinnamonbun
 	name = "cinnamon bun"

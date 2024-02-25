@@ -174,38 +174,28 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 		QDEL_NULL(natural_weapon)
 	. = ..()
 
-/mob/living/simple_animal/Life()
-	if(is_aquatic && !submerged() && stat != DEAD)
-		walk(src, 0)
-		if(!HAS_STATUS(src, STAT_PARA)) // gated to avoid redundant update_icon() calls.
-			SET_STATUS_MAX(src, STAT_PARA, 3)
-			update_icon()
+/mob/living/simple_animal/handle_regular_status_updates()
+	if(purge)
+		purge -= 1
 	. = ..()
-	if(!.)
-		return FALSE
-	if(z && !living_observers_present(SSmapping.get_connected_levels(z)))
-		return
-	//Health
-	if(stat == DEAD)
-		if(current_health > 0)
-			switch_from_dead_to_living_mob_list()
-			set_stat(CONSCIOUS)
-			set_density(1)
-			update_icon()
-		return 0
+	if(.)
+		if(can_bleed && bleed_ticks > 0)
+			handle_bleeding()
+		if(is_aquatic && !submerged())
+			walk(src, 0)
+			if(HAS_STATUS(src, STAT_PARA))
+				SET_STATUS_MAX(src, STAT_PARA, 3)
+				update_icon()
 
-	handle_atmos()
-	handle_supernatural()
-	handle_impaired_vision()
+/mob/living/simple_animal/handle_some_updates()
+	. = ..() && (!z || living_observers_present(SSmapping.get_connected_levels(z)))
 
-	if(can_bleed && bleed_ticks > 0)
-		handle_bleeding()
-
-	delayed_life_action()
-	return 1
+/mob/living/simple_animal/handle_legacy_ai()
+	. = ..()
+	handle_async_life_action()
 
 // Handles timed stuff in Life()
-/mob/living/simple_animal/proc/delayed_life_action()
+/mob/living/simple_animal/proc/handle_async_life_action()
 	set waitfor = FALSE
 	if(performing_delayed_life_action)
 		return
@@ -255,12 +245,9 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 				if("emote_see")
 					visible_emote("[pick(emote_see)].")
 
-/mob/living/simple_animal/proc/handle_atmos(var/atmos_suitable = 1)
-	//Atmos
-	if(!loc)
-		return
-
-	var/datum/gas_mixture/environment = loc.return_air()
+/mob/living/simple_animal/handle_environment(datum/gas_mixture/environment)
+	. = ..()
+	var/atmos_suitable = TRUE
 	if(environment)
 		// don't bother checking it twice if we got a supplied FALSE val.
 		if(atmos_suitable)
@@ -295,10 +282,6 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 /mob/living/simple_animal/proc/escape(mob/living/M, obj/O)
 	O.unbuckle_mob(M)
 	visible_message(SPAN_DANGER("\The [M] escapes from \the [O]!"))
-
-/mob/living/simple_animal/proc/handle_supernatural()
-	if(purge)
-		purge -= 1
 
 /mob/living/simple_animal/gib()
 	..(((mob_icon_state_flags & MOB_ICON_HAS_GIB_STATE) ? "world-gib" : null), TRUE)
@@ -366,6 +349,7 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 		return TRUE
 
 /mob/living/simple_animal/attackby(var/obj/item/O, var/mob/user)
+
 	if(istype(O, /obj/item/stack/medical))
 		if(stat != DEAD)
 			var/obj/item/stack/medical/MED = O
@@ -380,33 +364,23 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 			to_chat(user, SPAN_WARNING("\The [src] is dead, medical items won't bring [G.him] back to life."))
 		return TRUE
 
-	if(istype(O, /obj/item/flash) && stat != DEAD)
-		return O.attack(src, user, user.get_target_zone())
-
-	if(meat_type && (stat == DEAD) && meat_amount)
-		if(istype(O, /obj/item/knife/kitchen/cleaver))
-			var/victim_turf = get_turf(src)
-			if(!locate(/obj/structure/table, victim_turf))
-				to_chat(user, SPAN_WARNING("You need to place \the [src] on a table to butcher it."))
-				return TRUE
-			var/time_to_butcher = (mob_size)
-			to_chat(user, SPAN_WARNING("You begin harvesting \the [src]."))
-			if(do_after(user, time_to_butcher, src, same_direction = TRUE))
-				if(prob(user.skill_fail_chance(SKILL_COOKING, 60, SKILL_ADEPT)))
-					to_chat(user, SPAN_DANGER("You botch harvesting \the [src], and ruin some of the meat in the process."))
-					subtract_meat(user)
-				else
-					harvest(user, user.get_skill_value(SKILL_COOKING))
-			else
-				to_chat(user, SPAN_DANGER("Your hand slips with your movement, and some of the meat is ruined."))
+	if(meat_type && (stat == DEAD) && meat_amount && istype(O, /obj/item/knife/kitchen/cleaver))
+		var/victim_turf = get_turf(src)
+		if(!locate(/obj/structure/table, victim_turf))
+			to_chat(user, SPAN_WARNING("You need to place \the [src] on a table to butcher it."))
+			return TRUE
+		var/time_to_butcher = (mob_size)
+		to_chat(user, SPAN_WARNING("You begin harvesting \the [src]."))
+		if(do_after(user, time_to_butcher, src, same_direction = TRUE))
+			if(prob(user.skill_fail_chance(SKILL_COOKING, 60, SKILL_ADEPT)))
+				to_chat(user, SPAN_DANGER("You botch harvesting \the [src], and ruin some of the meat in the process."))
 				subtract_meat(user)
-			return TRUE
-
-	else
-		if(!O.force || (O.item_flags & ITEM_FLAG_NO_BLUDGEON))
-			visible_message(SPAN_NOTICE("\The [user] gently taps [src] with \the [O]."))
-			return TRUE
-		return O.attack(src, user, user.get_target_zone() || ran_zone())
+			else
+				harvest(user, user.get_skill_value(SKILL_COOKING))
+		else
+			to_chat(user, SPAN_DANGER("Your hand slips with your movement, and some of the meat is ruined."))
+			subtract_meat(user)
+		return TRUE
 
 	return ..()
 
@@ -441,7 +415,7 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 			tally = 1
 		tally *= purge
 
-	return tally+config.animal_delay
+	return tally+get_config_value(/decl/config/num/movement_animal)
 
 /mob/living/simple_animal/Stat()
 	. = ..()
@@ -453,7 +427,7 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 	density = FALSE
 	adjustBruteLoss(get_max_health()) //Make sure dey dead.
 	walk_to(src,0)
-	. = ..(gibbed,deathmessage,show_dead_message)
+	. = ..(gibbed, deathmessage, show_dead_message)
 
 /mob/living/simple_animal/explosion_act(severity)
 	..()
@@ -508,20 +482,6 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 	meat_amount--
 	if(meat_amount <= 0)
 		to_chat(user, SPAN_NOTICE("\The [src] carcass is ruined beyond use."))
-
-/mob/living/simple_animal/bullet_impact_visuals(var/obj/item/projectile/P, var/def_zone)
-	..()
-	switch(get_bullet_impact_effect_type(def_zone))
-		if(BULLET_IMPACT_MEAT)
-			if(P.damtype == BRUTE)
-				var/hit_dir = get_dir(P.starting, src)
-				var/obj/effect/decal/cleanable/blood/B = blood_splatter(get_step(src, hit_dir), src, 1, hit_dir)
-				if(!QDELETED(B))
-					B.icon_state = pick("dir_splatter_1","dir_splatter_2")
-					B.basecolor = bleed_colour
-					var/scale = min(1, round(mob_size / MOB_SIZE_MEDIUM, 0.1))
-					B.set_scale(scale)
-					B.update_icon()
 
 /mob/living/simple_animal/handle_fire()
 	return
@@ -671,3 +631,6 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 
 /mob/living/simple_animal/proc/get_melee_accuracy()
 	return clamp(sa_accuracy - melee_accuracy_mods(), 0, 100)
+
+/mob/living/simple_animal/check_has_mouth()
+	return TRUE

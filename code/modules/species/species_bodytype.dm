@@ -23,7 +23,7 @@ var/global/list/bodytypes_by_category = list()
 	var/appearance_flags = 0 // Appearance/display related features.
 
 	/// What tech levels should limbs of this type use/need?
-	var/limb_tech = "{'biotech':2}"
+	var/limb_tech = @'{"biotech":2}'
 	var/icon_cache_uid
 	/// Determines if eyes should render on heads using this bodytype.
 	var/has_eyes = TRUE
@@ -204,9 +204,9 @@ var/global/list/bodytypes_by_category = list()
 	if(!breathing_organ && has_organ[BP_LUNGS])
 		breathing_organ = BP_LUNGS
 
-	if(config.grant_default_darksight)
-		eye_darksight_range = max(eye_darksight_range, config.default_darksight_range)
-		eye_low_light_vision_effectiveness = max(eye_low_light_vision_effectiveness, config.default_darksight_effectiveness)
+	if(get_config_value(/decl/config/toggle/grant_default_darksight))
+		eye_darksight_range = max(eye_darksight_range, get_config_value(/decl/config/num/default_darksight_range))
+		eye_low_light_vision_effectiveness = max(eye_low_light_vision_effectiveness, get_config_value(/decl/config/num/default_darksight_effectiveness))
 
 	// Modify organ lists if necessary.
 	if(islist(override_organ_types))
@@ -234,6 +234,18 @@ var/global/list/bodytypes_by_category = list()
 
 /decl/bodytype/validate()
 	. = ..()
+
+	var/damage_icon = get_damage_overlays()
+	if(damage_icon)
+		for(var/brute = 0 to 3)
+			for(var/burn = 0 to 3)
+				var/damage_state = "[brute][burn]"
+				if(!check_state_in_icon(damage_state, damage_icon))
+					. += "missing state '[damage_state]' in icon '[damage_icon]'"
+		if(!check_state_in_icon("", damage_icon))
+			. += "missing default empty state in icon '[damage_icon]'"
+	else
+		. += "null damage overlay icon"
 
 	if(eye_base_low_light_vision > 1)
 		. += "base low light vision is greater than 1 (over 100%)"
@@ -424,11 +436,11 @@ var/global/list/bodytypes_by_category = list()
 			limb.cavity_max_w_class = max(limb.cavity_max_w_class, get_resized_organ_w_class(initial(I.w_class)))
 
 /decl/bodytype/proc/set_default_hair(mob/living/carbon/human/organism, override_existing = TRUE, defer_update_hair = FALSE)
-	if(!organism.h_style || (override_existing && (organism.h_style != default_h_style)))
-		organism.h_style = default_h_style
+	if(!organism.get_hairstyle() || (override_existing && (organism.get_hairstyle() != default_h_style)))
+		organism.set_hairstyle(default_h_style)
 		. = TRUE
-	if(!organism.h_style || (override_existing && (organism.f_style != default_f_style)))
-		organism.f_style = default_f_style
+	if(!organism.get_hairstyle() || (override_existing && (organism.get_facial_hairstyle() != default_f_style)))
+		organism.set_facial_hairstyle(default_f_style)
 		. = TRUE
 	if(. && !defer_update_hair)
 		organism.update_hair()
@@ -445,9 +457,9 @@ var/global/list/bodytypes_by_category = list()
 	for(var/obj/item/organ/external/E in mannequin.get_external_organs())
 		E.skin_colour = base_color
 
-	mannequin.eye_colour = base_eye_color
-	mannequin.hair_colour = base_hair_color
-	mannequin.facial_hair_colour = base_hair_color
+	mannequin.set_eye_colour(base_eye_color, skip_update = TRUE)
+	mannequin.set_hair_colour(base_hair_color, skip_update = TRUE)
+	mannequin.set_facial_hair_colour(base_hair_color, skip_update = TRUE)
 	set_default_hair(mannequin)
 
 	mannequin.force_update_limbs()

@@ -9,7 +9,7 @@
 /decl/sprite_accessory/marking/genemodder
 	abstract_type = /decl/sprite_accessory/marking/genemodder
 	icon = 'mods/content/genemodding/icons/mob/human_races/markings.dmi'
-	blend = ICON_MULTIPLY
+	color_blend = ICON_MULTIPLY
 	species_allowed = null
 
 /decl/sprite_accessory/marking/genemodder/vulp_belly
@@ -75,35 +75,35 @@
 /decl/sprite_accessory/marking/genemodder/monoeye
 	name = "Monoeye"
 	icon_state = "monoeye"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_monoeye"
 
 /decl/sprite_accessory/marking/genemodder/spidereyes
 	name = "Spider Eyes"
 	icon_state = "spidereyes"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_spidereyes"
 
 /decl/sprite_accessory/marking/genemodder/vasseyes
 	name = "Vassilisan Eyes"
 	icon_state = "vasseyes"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_vasseyes"
 
 /decl/sprite_accessory/marking/genemodder/vasseyesalt
 	name = "Vassilisan Eyes (Alt)"
 	icon_state = "vasseyesalt"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_vasseyesalt"
 
 /decl/sprite_accessory/marking/genemodder/sergaleyes
 	name = "Sergal Eyes"
 	icon_state = "eyes_sergal"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_sergaleyes"
 
@@ -116,7 +116,7 @@
 /decl/sprite_accessory/marking/genemodder/spots
 	name = "Spots"
 	icon_state = "spots"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_CHEST)
 	uid = "acc_modder_spots"
 
@@ -129,28 +129,28 @@
 /decl/sprite_accessory/marking/genemodder/jagged_teeth
 	name = "Jagged teeth"
 	icon_state = "jagged"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_jagged_teeth"
 
 /decl/sprite_accessory/marking/genemodder/saber_teeth
 	name = "Saber teeth"
 	icon_state = "saber"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_saber_teeth"
 
 /decl/sprite_accessory/marking/genemodder/fangs
 	name = "Fangs"
 	icon_state = "fangs"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_fangs"
 
 /decl/sprite_accessory/marking/genemodder/tusks
 	name = "Tusks"
 	icon_state = "tusks"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_tusks"
 
@@ -296,28 +296,24 @@
 	name = "Zorren Male Face"
 	icon_state = "zorren_face"
 	body_parts = list(BP_HEAD)
-	required_gender = MALE
 	uid = "acc_modder_zorren_face_male"
 
 /decl/sprite_accessory/marking/genemodder/zorren_face_female
 	name = "Zorren Female Face"
 	icon_state = "zorren_face_female"
 	body_parts = list(BP_HEAD)
-	required_gender = FEMALE
 	uid = "acc_modder_zorren_face_female"
 
 /decl/sprite_accessory/marking/genemodder/zorren_muzzle_male
 	name = "Zorren Male Muzzle"
 	icon_state = "zorren_muzzle"
 	body_parts = list(BP_HEAD)
-	required_gender = MALE
 	uid = "acc_modder_zorren_muzzle_male"
 
 /decl/sprite_accessory/marking/genemodder/zorren_muzzle_female
 	name = "Zorren Female Muzzle"
 	icon_state = "zorren_muzzle_female"
 	body_parts = list(BP_HEAD)
-	required_gender = FEMALE
 	uid = "acc_modder_zorren_muzzle_female"
 
 /decl/sprite_accessory/marking/genemodder/zorren_socks
@@ -353,7 +349,7 @@
 /decl/sprite_accessory/marking/genemodder/body_tone
 	name = "Body toning (for emergency contrast loss)"
 	icon_state = "btone"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_L_FOOT,BP_R_FOOT,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_L_HAND,BP_R_HAND,BP_GROIN,BP_CHEST)
 	uid = "acc_modder_body_tone"
 
@@ -396,21 +392,21 @@
 /decl/sprite_accessory/marking/genemodder/animeeyesinner
 	name = "Anime Eyes Inner"
 	icon_state = "animeeyesinner"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_anime_eyes_inner"
 
 /decl/sprite_accessory/marking/genemodder/animeeyesouter
 	name = "Anime Eyes Outer"
 	icon_state = "animeeyesouter"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_anime_eyes_outer"
 
 /decl/sprite_accessory/marking/genemodder/panda_eye_marks
 	name = "Panda Eye Markings"
 	icon_state = "eyes_panda"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_panda_eye_marks"
 
@@ -477,7 +473,7 @@
 /decl/sprite_accessory/marking/genemodder/heterochromia
 	name = "Heterochromia"
 	icon_state = "heterochromia"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	body_parts = list(BP_HEAD)
 	uid = "acc_modder_heterochromia"
 

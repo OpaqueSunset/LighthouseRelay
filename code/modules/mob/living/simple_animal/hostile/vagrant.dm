@@ -42,7 +42,7 @@
 	if(stat == DEAD && !QDELETED(src) && !gibbed)
 		gib()
 
-/mob/living/simple_animal/hostile/vagrant/Life()
+/mob/living/simple_animal/hostile/vagrant/handle_living_non_stasis_processes()
 	. = ..()
 	if(!.)
 		return FALSE
@@ -56,7 +56,7 @@
 				gripping.vessel.remove_any(blood_per_tick)
 				heal_overall_damage(health_per_tick)
 				if(prob(15))
-					to_chat(gripping, "<span class='danger'>You feel your fluids being drained!</span>")
+					to_chat(gripping, SPAN_DANGER("You feel your fluids being drained!"))
 			else
 				gripping = null
 
@@ -74,16 +74,17 @@
 
 /mob/living/simple_animal/hostile/vagrant/on_update_icon()
 	..()
-	if(cloaked) //It's fun time
-		alpha = 75
-		set_light(0)
-		icon_state = initial(icon_state)
-		move_to_delay = initial(move_to_delay)
-	else //It's fight time
-		alpha = 255
-		icon_state += "-glowing"
-		set_light(3, 0.2)
-		move_to_delay = 2
+	if(stat == CONSCIOUS)
+		if(cloaked) //It's fun time
+			alpha = 75
+			set_light(0)
+			icon_state = initial(icon_state)
+			move_to_delay = initial(move_to_delay)
+		else //It's fight time
+			alpha = 255
+			icon_state += "-glowing"
+			set_light(3, 0.2)
+			move_to_delay = 2
 
 /mob/living/simple_animal/hostile/vagrant/AttackingTarget()
 	. = ..()

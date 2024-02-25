@@ -46,7 +46,7 @@
 /turf/unsimulated/floor/techfloor_grid,
 /area/space)
 "hc" = (
-/turf/exterior/open/sky/moving/south,
+/turf/open/sky/moving/south,
 /area/space)
 "hh" = (
 /obj/effect/floor_decal/transit/orange{
@@ -82,7 +82,7 @@
 	name = "thrower_escapeshuttletop(left)";
 	tiles = 0
 	},
-/turf/exterior/open/sky/moving/south,
+/turf/open/sky/moving/south,
 /area/space)
 "ho" = (
 /obj/effect/step_trigger/thrower{
@@ -91,7 +91,7 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/exterior/open/sky/moving/south,
+/turf/open/sky/moving/south,
 /area/space)
 "hp" = (
 /turf/space/transit/south,
@@ -103,7 +103,7 @@
 	name = "thrower_escapeshuttletop(right)";
 	tiles = 0
 	},
-/turf/exterior/open/sky/moving/south,
+/turf/open/sky/moving/south,
 /area/space)
 "hs" = (
 /obj/effect/step_trigger/teleporter/random{
@@ -116,7 +116,7 @@
 	teleport_z = 6;
 	teleport_z_offset = 6
 	},
-/turf/exterior/open/sky/moving/south,
+/turf/open/sky/moving/south,
 /area/space)
 "ht" = (
 /obj/effect/step_trigger/lost_in_space,

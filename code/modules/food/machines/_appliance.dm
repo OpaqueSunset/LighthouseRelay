@@ -593,7 +593,7 @@
 		meat_name = CH.species?.name || meat_name
 	if(ispath(digest_product_type, /decl/material/liquid/nutriment/protein))
 		data = list("[meat_name] meat" = reagent_amount)
-	result.reagents.add_reagent(digest_product_type, reagent_amount, data)
+	result.add_to_reagents(digest_product_type, reagent_amount, data)
 
 	if (victim.reagents)
 		victim.reagents.trans_to(result, victim.reagents.total_volume)

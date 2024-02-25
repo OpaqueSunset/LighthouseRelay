@@ -26,22 +26,17 @@
 	var/healing = FALSE
 	var/heal_amount = 6
 
-/mob/living/simple_animal/hostile/antlion/Life()
+/mob/living/simple_animal/hostile/antlion/handle_regular_status_updates()
 	. = ..()
-
 	process_healing() //this needs to occur before if(!.) because of stop_automation
-
-	if(!.)
-		return
-
-	if(!is_on_special_ability_cooldown() && can_act() && target_mob)
+	if(. && !is_on_special_ability_cooldown() && can_act() && target_mob)
 		vanish()
 
 /mob/living/simple_animal/hostile/antlion/proc/vanish()
 	visible_message(SPAN_NOTICE("\The [src] burrows into \the [get_turf(src)]!"))
 	set_invisibility(INVISIBILITY_OBSERVER)
 	prep_burrow(TRUE)
-	addtimer(CALLBACK(src, .proc/diggy), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(diggy)), 5 SECONDS)
 
 /mob/living/simple_animal/hostile/antlion/proc/diggy()
 	var/list/turf_targets
@@ -60,12 +55,12 @@
 				continue
 			turf_targets += T
 	if(!LAZYLEN(turf_targets)) //oh no
-		addtimer(CALLBACK(src, .proc/emerge), 2 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(emerge)), 2 SECONDS)
 		return
 	var/turf/T = pick(turf_targets)
 	if(T && !incapacitated())
 		forceMove(T)
-	addtimer(CALLBACK(src, .proc/emerge), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(emerge)), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/antlion/proc/emerge()
 	var/turf/T = get_turf(src)

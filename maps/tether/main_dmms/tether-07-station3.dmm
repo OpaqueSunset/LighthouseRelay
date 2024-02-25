@@ -333,7 +333,7 @@
 	},
 /obj/structure/sign/poster{
 	pixel_x = -32;
-	dir = 8
+	dir = 4
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 1
@@ -1616,7 +1616,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "cT" = (
 /obj/structure/lattice,
@@ -1624,7 +1624,7 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary{
 	id_tag = "sec_riot_control"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "cU" = (
 /turf/simulated/wall/r_wall,
@@ -1633,7 +1633,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "cW" = (
 /obj/machinery/door/firedoor/glass,
@@ -1826,7 +1826,7 @@
 	pixel_y = -32;
 	dir = 1
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/hos)
 "dv" = (
@@ -2684,7 +2684,7 @@
 /obj/item/stack/package_wrap/twenty_five,
 /obj/item/hand_labeler,
 /obj/structure/table/reinforced,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "fa" = (
@@ -3030,7 +3030,7 @@
 "fF" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/lattice,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/ai)
 "fG" = (
 /obj/structure/railing/mapped{
@@ -3284,7 +3284,7 @@
 /area/security/hallway)
 "gb" = (
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "gc" = (
 /obj/effect/floor_decal/borderfloorwhite,
@@ -3403,7 +3403,7 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/warden,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -5092,7 +5092,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/warden)
 "jk" = (
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "jl" = (
 /obj/effect/floor_decal/borderfloor{
@@ -5236,7 +5236,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/brig)
 "jz" = (
 /obj/effect/floor_decal/borderfloor{
@@ -5865,9 +5865,9 @@
 /area/crew_quarters/heads/hos)
 "kI" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/command_guide,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/command_guide,
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/hos)
 "kJ" = (
@@ -6319,10 +6319,10 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/hallway)
 "lC" = (
-/turf/simulated/open,
+/turf/open,
 /area/security/hallway)
 "lD" = (
 /obj/machinery/door/firedoor/glass,
@@ -6417,8 +6417,8 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
@@ -6979,7 +6979,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/security/hallway)
 "mH" = (
 /turf/simulated/wall/r_wall,
@@ -7249,9 +7249,9 @@
 /area/security/breakroom)
 "ni" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/security/breakroom)
 "nj" = (
@@ -7393,7 +7393,7 @@
 	},
 /obj/structure/table/glass,
 /obj/item/folder/red,
-/obj/item/storage/box/donut,
+/obj/item/storage/box/fancy/donut,
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "nu" = (
@@ -8187,7 +8187,7 @@
 /obj/structure/cable{
 	icon_state = "32-4"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/ai)
 "oT" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -9172,8 +9172,8 @@
 /area/security/detectives_office)
 "qG" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/simulated/floor/lino,
 /area/security/detectives_office)
 "qH" = (
@@ -9345,7 +9345,7 @@
 	},
 /obj/structure/lattice,
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/sec_upper)
 "qU" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
@@ -10223,7 +10223,7 @@
 "sj" = (
 /obj/structure/table/woodentable,
 /obj/item/handcuffs,
-/obj/item/storage/fancy/cigarettes/dromedaryco,
+/obj/item/storage/box/fancy/cigarettes/dromedaryco,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -12018,7 +12018,7 @@
 	icon_state = "32-1"
 	},
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/elevator)
 "uY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -12253,12 +12253,12 @@
 	dir = 1
 	},
 /obj/structure/bookcase,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/command_guide,
-/obj/item/book/manual/command_guide,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/command_guide,
+/obj/item/book/fluff/command_guide,
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
 "vy" = (
@@ -12770,7 +12770,7 @@
 	},
 /obj/structure/lattice,
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/elevator)
 "ww" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -13040,8 +13040,8 @@
 /area/security/lobby)
 "wU" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/nt_regs,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /turf/simulated/floor/tiled,
 /area/security/lobby)
 "wV" = (
@@ -13418,7 +13418,7 @@
 	dir = 4;
 	pixel_x = 21
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "xu" = (
@@ -13640,7 +13640,7 @@
 /obj/structure/disposalpipe/down{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/elevator)
 "xO" = (
 /obj/structure/cable{
@@ -17030,7 +17030,7 @@
 /area/quartermaster/storage)
 "DE" = (
 /obj/structure/table,
-/obj/item/storage/fancy/cigarettes{
+/obj/item/storage/box/fancy/cigarettes{
 	pixel_y = 2
 	},
 /obj/item/deck/cards,
@@ -17950,14 +17950,14 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/simulated/open,
+/turf/open,
 /area/tether/station/stairs_three)
 "Fu" = (
 /obj/structure/sign/deck/third{
 	pixel_x = 32;
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/tether/station/stairs_three)
 "Fv" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -18483,7 +18483,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/teleporter/departing)
 "Gk" = (
-/turf/simulated/open,
+/turf/open,
 /area/tether/station/stairs_three)
 "Gl" = (
 /obj/structure/table/glass,
@@ -19368,8 +19368,8 @@
 /obj/item/storage/box/syringes,
 /obj/item/radio/headset/headset_med,
 /obj/item/storage/box/pillbottles,
-/obj/item/storage/fancy/vials,
-/obj/item/storage/fancy/vials,
+/obj/item/storage/box/fancy/vials,
+/obj/item/storage/box/fancy/vials,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -20245,7 +20245,7 @@
 	name = "Best Doctor 2552";
 	pixel_y = 32
 	},
-/turf/simulated/open,
+/turf/open,
 /area/medical/medbay_primary_storage)
 "Jx" = (
 /obj/structure/table,
@@ -20560,7 +20560,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/turf/simulated/open,
+/turf/open,
 /area/medical/medbay_primary_storage)
 "Kl" = (
 /obj/structure/table,
@@ -20607,7 +20607,7 @@
 	icon_state = "32-2"
 	},
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/medbay)
 "Ku" = (
 /obj/structure/disposalpipe/segment{
@@ -21343,7 +21343,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/resleeving)
 "LG" = (
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/resleeving,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -21830,13 +21830,13 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
 "Mw" = (
-/turf/simulated/open,
+/turf/open,
 /area/medical/surgery_hallway)
 "Mx" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/medical/surgery_hallway)
 "My" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -21918,9 +21918,9 @@
 /obj/item/storage/belt/medical,
 /obj/item/clothing/glasses/hud/health,
 /obj/item/clothing/accessory/stethoscope,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /obj/item/scanner/health,
-/obj/item/storage/fancy/vials,
+/obj/item/storage/box/fancy/vials,
 /obj/item/clothing/mask/surgical,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22732,7 +22732,7 @@
 /area/medical/surgery_hallway)
 "NM" = (
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/medical/surgery_hallway)
 "NN" = (
 /obj/structure/railing/mapped{
@@ -25520,7 +25520,7 @@
 /area/medical/psych)
 "Su" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "Sv" = (
@@ -26110,7 +26110,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/open,
+/turf/open,
 /area/medical/psych_ward)
 "Uv" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -26530,7 +26530,7 @@
 /area/medical/psych_ward)
 "VJ" = (
 /obj/machinery/light,
-/turf/simulated/open,
+/turf/open,
 /area/medical/psych_ward)
 "VK" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -26558,7 +26558,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)
 "VM" = (
-/turf/simulated/open,
+/turf/open,
 /area/ai/foyer)
 "VN" = (
 /obj/machinery/door/airlock/medical{
@@ -27065,7 +27065,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock)
 "XQ" = (
-/turf/simulated/open,
+/turf/open,
 /area/medical/psych_ward)
 "XU" = (
 /turf/simulated/wall,
@@ -27382,7 +27382,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/medical/psych_ward)
 "YR" = (
 /obj/effect/floor_decal/borderfloorwhite{

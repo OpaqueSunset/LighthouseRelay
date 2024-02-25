@@ -14,4 +14,4 @@
 		has_done_jank = TRUE // remove all this when condiment bottles are moved to be on materials
 
 /obj/item/chems/condiment/small/spacespice/populate_reagents()
-	reagents.add_reagent(/decl/material/solid/spacespice, reagents.maximum_volume)
+	add_to_reagents(/decl/material/solid/spacespice, reagents.maximum_volume)

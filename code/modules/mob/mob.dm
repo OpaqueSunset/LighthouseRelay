@@ -403,7 +403,7 @@
 
 	face_atom(A)
 
-	if(!isghost(src) && config.visible_examine)
+	if(!isghost(src) && get_config_value(/decl/config/toggle/visible_examine))
 		if((A.loc != src || (A in get_held_items())))
 			var/look_target = "at \the [A]"
 			if(isobj(A.loc))
@@ -552,6 +552,9 @@
 		return TOPIC_HANDLED
 
 // If usr != src, or if usr == src but the Topic call was not resolved, this is called next.
+/mob/proc/get_comments_record()
+	return
+
 /mob/OnTopic(mob/user, href_list, datum/topic_state/state)
 
 	if(href_list["refresh"])
@@ -567,6 +570,14 @@
 		var/datum/browser/popup = new(user, ckey(name), name, 500, 200)
 		var/list/html = list("<h3>Appearance</h3>")
 		html += replacetext(flavor_text, "\n", "<BR>")
+		var/datum/character_information/comments = get_comments_record()
+		if(comments)
+			if(comments.ic_info)
+				html += "<h3>IC Information</h3>"
+				html += "[comments.ic_info]<br/>"
+			if(comments.ooc_info)
+				html += "<h3>OOC Information</h3>"
+				html += "[comments.ooc_info]<br/>"
 		popup.set_content(jointext(html, null))
 		popup.open()
 		return TOPIC_HANDLED
@@ -704,10 +715,9 @@
 	return 0
 
 //Updates lying and icons
-/mob/proc/UpdateLyingBuckledAndVerbStatus()
-	var/last_lying = lying
+/mob/proc/update_lying()
 	if(!resting && cannot_stand() && can_stand_overridden())
-		lying = 0
+		lying = FALSE
 	else if(buckled)
 		anchored = TRUE
 		if(istype(buckled))
@@ -720,12 +730,16 @@
 	else
 		lying = incapacitated(INCAPACITATION_KNOCKDOWN)
 
+/mob/proc/UpdateLyingBuckledAndVerbStatus()
+	var/last_lying = lying
+	update_lying()
+	if(buckled)
+		anchored = (!istype(buckled) || !buckled.buckle_movable)
 	if(lying)
 		set_density(0)
 		drop_held_items()
 	else
 		set_density(initial(density))
-
 	reset_layer()
 
 	//Temporarily moved here from the various life() procs
@@ -780,7 +794,12 @@
 	return
 
 /mob/proc/get_species_name()
-	return ""
+	SHOULD_CALL_PARENT(TRUE)
+	return "Unknown"
+
+/mob/living/get_species_name()
+	var/decl/species/my_species = get_species()
+	return my_species?.name || ..()
 
 /mob/proc/get_visible_implants(var/class = 0)
 	var/list/visible_implants = list()
@@ -1081,10 +1100,12 @@
 
 	// Work out if we have any brain damage impacting our dexterity.
 	var/dex_malus = 0
-	if(getBrainLoss() && getBrainLoss() > config.dex_malus_brainloss_threshold) ///brainloss shouldn't instantly cripple you, so the effects only start once past the threshold and escalate from there.
-		dex_malus = clamp(CEILING((getBrainLoss()-config.dex_malus_brainloss_threshold)/10), 0, length(global.dexterity_levels))
-		if(dex_malus > 0)
-			dex_malus = global.dexterity_levels[dex_malus]
+	if(getBrainLoss())
+		var/brainloss_threshold = get_config_value(/decl/config/num/dex_malus_brainloss_threshold)
+		if(getBrainLoss() > brainloss_threshold) ///brainloss shouldn't instantly cripple you, so the effects only start once past the threshold and escalate from there.
+			dex_malus = clamp(CEILING((getBrainLoss()-brainloss_threshold)/10), 0, length(global.dexterity_levels))
+			if(dex_malus > 0)
+				dex_malus = global.dexterity_levels[dex_malus]
 
 	// If this slot does not need an organ we just go off the dexterity of the slot itself.
 	if(isnull(gripper.requires_organ_tag))
@@ -1131,9 +1152,12 @@
 		to_chat(src, SPAN_WARNING("You scrawl down some meaningless lines."))
 	. = stars(text_content, 5)
 
-// mobs do not have mouths by default
+// mobs do not have mouths by default, unless provided by an organ
 /mob/proc/check_has_mouth()
-	return FALSE
+	var/obj/item/organ/external/head/H = get_organ(BP_HEAD, /obj/item/organ/external/head)
+	if(!H || !istype(H) || !H.can_intake_reagents)
+		return FALSE
+	return TRUE
 
 /mob/proc/check_has_eyes()
 	return TRUE
@@ -1350,10 +1374,10 @@
 /mob/verb/whisper_wrapper()
 	set name = ".Whisper"
 	set hidden = TRUE
-	if(config.show_typing_indicator_for_whispers)
+	if(get_config_value(/decl/config/toggle/show_typing_indicator_for_whispers))
 		SStyping.set_indicator_state(client, TRUE)
 	var/message = input("","me (text)") as text|null
-	if(config.show_typing_indicator_for_whispers)
+	if(get_config_value(/decl/config/toggle/show_typing_indicator_for_whispers))
 		SStyping.set_indicator_state(client, FALSE)
 	if (message)
 		whisper(message)

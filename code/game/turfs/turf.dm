@@ -36,7 +36,7 @@
 	var/fluid_blocked_dirs = 0
 	var/flooded // Whether or not this turf is absolutely flooded ie. a water source.
 	var/footstep_type
-	var/open_turf_type // Which turf to use when this turf is destroyed or replaced in a multiz context. Overridden by area.
+	var/open_turf_type // Which open turf type to use by default above this turf in a multiz context. Overridden by area.
 
 	var/tmp/changing_turf
 	var/tmp/prev_type // Previous type of the turf, prior to turf translation.
@@ -73,6 +73,11 @@
 	/// Used by exterior turfs to determine the warming effect of campfires and such.
 	var/list/affecting_heat_sources
 
+	// Fluid flow tracking vars
+	var/last_slipperiness = 0
+	var/last_flow_strength = 0
+	var/last_flow_dir = 0
+	var/atom/movable/fluid_overlay/fluid_overlay
 
 /turf/Initialize(mapload, ...)
 	. = null && ..()	// This weird construct is to shut up the 'parent proc not called' warning without disabling the lint for child types. We explicitly return an init hint so this won't change behavior.
@@ -106,9 +111,8 @@
 	if (z_flags & ZM_MIMIC_BELOW)
 		setup_zmimic(mapload)
 
-	if(flooded && !density)
-		make_flooded(TRUE)
-
+	if(flooded)
+		set_flooded(flooded, TRUE, skip_vis_contents_update = TRUE, mapload = mapload)
 	refresh_vis_contents()
 
 	return INITIALIZE_HINT_NORMAL
@@ -159,6 +163,8 @@
 	if(weather)
 		remove_vis_contents(src, weather.vis_contents_additions)
 		weather = null
+
+	QDEL_NULL(fluid_overlay)
 
 	..()
 
@@ -215,14 +221,12 @@
 				to_chat(user, SPAN_WARNING("There is nothing to be dug out of \the [src]."))
 			return TRUE
 
-	if(ATOM_IS_OPEN_CONTAINER(W) && W.reagents)
-		var/obj/effect/fluid/F = locate() in src
-		if(F && F.reagents?.total_volume >= FLUID_PUDDLE)
-			var/taking = min(F.reagents?.total_volume, REAGENTS_FREE_SPACE(W.reagents))
-			if(taking > 0)
-				to_chat(user, SPAN_NOTICE("You fill \the [W] with [F.reagents.get_primary_reagent_name()] from \the [src]."))
-				F.reagents.trans_to(W, taking)
-				return TRUE
+	if(ATOM_IS_OPEN_CONTAINER(W) && W.reagents && reagents?.total_volume >= FLUID_PUDDLE)
+		var/taking = min(reagents.total_volume, REAGENTS_FREE_SPACE(W.reagents))
+		if(taking > 0)
+			to_chat(user, SPAN_NOTICE("You fill \the [W] with [reagents.get_primary_reagent_name()] from \the [src]."))
+			reagents.trans_to(W, taking)
+			return TRUE
 
 	if(istype(W, /obj/item/storage))
 		var/obj/item/storage/S = W
@@ -355,7 +359,7 @@
 			M.turf_collision(src, TT.speed)
 			if(LAZYLEN(M.pinned))
 				return
-		addtimer(CALLBACK(src, /turf/proc/bounce_off, AM, TT.init_dir), 2)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, bounce_off), AM, TT.init_dir), 2)
 	else if(isobj(AM))
 		var/obj/structure/ladder/L = locate() in contents
 		if(L)
@@ -442,6 +446,29 @@
 		if(below)
 			below.update_weather(new_weather)
 
+// Updates turf participation in ZAS according to outside status. Must be called whenever the outside status of a turf may change.
+/turf/proc/update_external_atmos_participation(overwrite_air = TRUE)
+	if(is_outside())
+		if(zone && external_atmosphere_participation)
+			if(can_safely_remove_from_zone())
+				#ifdef MULTIZAS
+				var/dirs = global.cardinalz
+				#else
+				var/dirs = global.cardinal
+				#endif
+				zone.remove(src)
+				// Update neighbors to create edges between zones and exterior
+				for(var/dir in dirs)
+					var/turf/neighbor = get_step(src, dir)
+					SSair.mark_for_update(neighbor)
+			else
+				zone.rebuild()
+	else if(zone_membership_candidate)
+		// Set the turf's air to the external atmosphere to add to its new zone.
+		if(overwrite_air)
+			air = get_external_air(FALSE)
+		SSair.mark_for_update(src)
+
 /turf/proc/is_outside()
 
 	// Can't rain inside or through solid walls.
@@ -470,13 +497,14 @@
 			var/turf/next_turf = GetAbove(top_of_stack)
 			if(!next_turf.is_open())
 				return OUTSIDE_NO
-			top_of_stack = next_turf
-			// ZM_PARTITION_STACK partitions the z-stack such that
-			// for the purposes of this check, the z-stack ends with it.
-			if(top_of_stack.z_flags & ZM_PARTITION_STACK)
+			// ZM_TERMINATOR partitions the z-stack such that
+			// for the purposes of this check, the z-stack ends before it.
+			if(next_turf.z_flags & ZM_TERMINATOR)
 				break
+			top_of_stack = next_turf
 		// If we hit the top of the stack without finding a roof, we ask the upmost turf if we're outside.
-		. = top_of_stack.is_outside()
+		if(top_of_stack != src)
+			. = top_of_stack.is_outside()
 	last_outside_check = . // Cache this for later calls.
 
 /turf/proc/set_outside(var/new_outside, var/skip_weather_update = FALSE)
@@ -489,14 +517,7 @@
 	SSambience.queued += src
 
 	last_outside_check = OUTSIDE_UNCERTAIN
-	if(is_outside())
-		if(zone && external_atmosphere_participation)
-			if(can_safely_remove_from_zone())
-				zone.remove(src)
-			else
-				zone.rebuild()
-	else if(zone_membership_candidate)
-		SSair.mark_for_update(src)
+	update_external_atmos_participation()
 
 	if(!HasBelow(z))
 		return TRUE
@@ -528,7 +549,9 @@
 	if(weather)
 		LAZYADD(., weather)
 	if(flooded)
-		LAZYADD(., global.flood_object)
+		var/flood_object = get_flood_overlay(flooded)
+		if(flood_object)
+			LAZYADD(., flood_object)
 
 /**Whether we can place a cable here
  * If you cannot build a cable will return an error code explaining why you cannot.
@@ -600,3 +623,32 @@
 
 /turf/proc/dig_pit()
 	return can_dig_pit() && new /obj/structure/pit(src)
+
+// Largely copied from stairs.
+/turf/proc/can_move_up_ramp(atom/movable/AM, turf/above_wall, turf/under_atom, turf/above_atom)
+	if(!istype(AM) || !istype(above_wall) || !istype(under_atom) || !istype(above_atom))
+		return FALSE
+	return under_atom.CanZPass(AM, UP) && above_atom.CanZPass(AM, DOWN) && above_wall.Enter(AM)
+
+/turf/Bumped(var/atom/movable/AM)
+	if(!istype(AM) || !HasAbove(z))
+		return ..()
+	var/turf/exterior/wall/slope = AM.loc
+	if(!istype(slope) || !slope.ramp_slope_direction || get_dir(src, slope) != slope.ramp_slope_direction)
+		return ..()
+	var/turf/above_wall = GetAbove(src)
+	if(can_move_up_ramp(AM, above_wall, get_turf(AM), GetAbove(AM)))
+		AM.forceMove(above_wall)
+		if(isliving(AM))
+			var/mob/living/L = AM
+			for(var/obj/item/grab/G in L.get_active_grabs())
+				G.affecting.forceMove(above_wall)
+	else
+		to_chat(AM, SPAN_WARNING("Something blocks the path."))
+	return TRUE
+
+/turf/proc/wet_floor(var/wet_val = 1, var/overwrite = FALSE)
+	return
+
+/turf/proc/unwet_floor(var/check_very_wet = TRUE)
+	return

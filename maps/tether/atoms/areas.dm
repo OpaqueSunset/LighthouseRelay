@@ -396,7 +396,7 @@
 	name = "Outside - Surface"
 	sound_env = MOUNTAINS
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
 /area/tether/surfacebase/outside/outside1
 	icon_state = "outside1"
 /area/tether/surfacebase/outside/outside2

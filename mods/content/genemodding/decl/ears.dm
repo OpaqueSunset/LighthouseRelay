@@ -10,9 +10,39 @@
 	abstract_type = /decl/sprite_accessory/ears
 	name = "You should not see this..."
 	icon = 'mods/content/genemodding/icons/mob/ears.dmi'
-	do_colouration = TRUE // Set to 1 to blend (ICON_ADD) hair color
-	blend = ICON_MULTIPLY // Only appliciable if do_colouration = TRUE
+	do_colouration = TRUE
+	color_blend = ICON_MULTIPLY
+	hidden_by_gear_slot = slot_head_str
+	hidden_by_gear_flag = BLOCK_HEAD_HAIR
 	var/extra_overlay // Icon state of an additional overlay to blend in.
+
+/decl/sprite_accessory/ears/get_cached_accessory_icon(obj/item/organ/external/organ, color = COLOR_WHITE, color_extra = null)
+	ASSERT(istext(color) && (length(color) == 7 || length(color) == 9))
+	if(!icon_state)
+		return null
+	LAZYINITLIST(cached_icons[organ.bodytype])
+	LAZYINITLIST(cached_icons[organ.bodytype][organ.organ_tag])
+	var/key = color
+	if(extra_overlay && do_colouration && color_extra)
+		ASSERT(istext(color_extra) && (length(color_extra) == 7 || length(color_extra) == 9))
+		key = "[key][color_extra]"
+	var/icon/accessory_icon = cached_icons[organ.bodytype][organ.organ_tag][key]
+	if(!accessory_icon)
+		accessory_icon = icon(get_accessory_icon(organ), icon_state) // make a new one to avoid mutating the base
+		if(!accessory_icon)
+			cached_icons[organ.bodytype][organ.organ_tag][key] = null
+			return null
+		if(mask_to_bodypart)
+			accessory_icon.Blend(get_limb_mask_for(organ.bodytype, organ.organ_tag), ICON_MULTIPLY)
+		if(do_colouration && color)
+			accessory_icon.Blend(color, color_blend)
+		if(extra_overlay)
+			var/icon/overlay = icon(icon, extra_overlay)
+			if(do_colouration && color_extra)
+				overlay.Blend(color_extra, color_blend)
+			accessory_icon.Blend(overlay, ICON_OVERLAY)
+		cached_icons[organ.bodytype][organ.organ_tag][key] = accessory_icon
+	return accessory_icon
 
 /decl/sprite_accessory/ears/bee
 	name = "bee antennae"

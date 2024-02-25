@@ -1,38 +1,12 @@
-/mob/living/silicon/robot/Life()
-
-	SHOULD_CALL_PARENT(FALSE)
-
-	set invisibility = FALSE
-	set background = 1
-
-	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
-		return
-
-	//Status updates, death etc.
-	clamp_values()
-	handle_regular_status_updates()
-	handle_actions()
-
-	if(client)
-		handle_regular_hud_updates()
-		update_items()
-	if (src.stat != DEAD) //still using power
-		use_power()
-		process_killswitch()
-		process_locks()
-		process_queued_alarms()
-		process_os()
-
-	handle_status_effects()
-	UpdateLyingBuckledAndVerbStatus()
-
-/mob/living/silicon/robot/proc/clamp_values()
-	set_status(STAT_PARA, min(GET_STATUS(src, STAT_PARA), 30))
-	set_status(STAT_ASLEEP, 0)
-	adjustBruteLoss(0, do_update_health = FALSE)
-	adjustToxLoss(0, do_update_health = FALSE)
-	adjustOxyLoss(0, do_update_health = FALSE)
-	adjustFireLoss(0)
+/mob/living/silicon/robot/handle_living_non_stasis_processes()
+	. = ..()
+	if(!.)
+		return FALSE
+	use_power()
+	process_killswitch()
+	process_locks()
+	process_queued_alarms()
+	process_os()
 
 /mob/living/silicon/robot/proc/use_power()
 	used_power_this_tick = 0
@@ -68,11 +42,13 @@
 		set_light(0)
 
 /mob/living/silicon/robot/should_be_dead()
-	return current_health < config.health_threshold_dead
+	return current_health < get_config_value(/decl/config/num/health_health_threshold_dead)
 
 /mob/living/silicon/robot/handle_regular_status_updates()
+	SHOULD_CALL_PARENT(FALSE)
 	update_health()
 
+	set_status(STAT_PARA, min(GET_STATUS(src, STAT_PARA), 30))
 	if(HAS_STATUS(src, STAT_ASLEEP))
 		SET_STATUS_MAX(src, STAT_PARA, 3)
 
@@ -115,8 +91,9 @@
 	return 1
 
 /mob/living/silicon/robot/handle_regular_hud_updates()
-	..()
-
+	. = ..()
+	if(!.)
+		return
 	var/obj/item/borg/sight/hud/hud = (locate(/obj/item/borg/sight/hud) in src)
 	if(hud && hud.hud)
 		hud.hud.process_hud(src)
@@ -165,7 +142,7 @@
 					if(0 to 50)
 						src.healths.icon_state = "health4"
 					else
-						if(current_health > config.health_threshold_dead)
+						if(current_health > get_config_value(/decl/config/num/health_health_threshold_dead))
 							src.healths.icon_state = "health5"
 						else
 							src.healths.icon_state = "health6"
@@ -230,6 +207,7 @@
 			set_fullscreen(GET_STATUS(src, STAT_BLURRY), "blurry", /obj/screen/fullscreen/blurry)
 			set_fullscreen(GET_STATUS(src, STAT_DRUGGY), "high", /obj/screen/fullscreen/high)
 
+	update_items()
 	return 1
 
 /mob/living/silicon/robot/handle_vision()
@@ -265,7 +243,7 @@
 	if (src.client)
 		src.client.screen -= src.contents
 		for(var/obj/I in src.contents)
-			if(I && !(istype(I,/obj/item/cell) || istype(I,/obj/item/radio)  || istype(I,/obj/machinery/camera) || istype(I,/obj/item/mmi)))
+			if(I && !(istype(I,/obj/item/cell) || istype(I,/obj/item/radio)  || istype(I,/obj/machinery/camera) || istype(I,/obj/item/organ/internal/brain_interface)))
 				src.client.screen += I
 	if(src.module_state_1)
 		src.module_state_1:screen_loc = ui_inv1

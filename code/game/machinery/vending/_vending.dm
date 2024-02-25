@@ -96,9 +96,6 @@
  *  product_records.
  */
 
-/obj/machinery/vending/proc/get_product_name(var/entry)
-	return
-
 /obj/machinery/vending/proc/build_inventory(populate_parts = FALSE)
 	var/list/all_products = list(
 		list(products, CAT_NORMAL),
@@ -107,7 +104,7 @@
 	for(var/current_list in all_products)
 		var/category = current_list[2]
 		for(var/entry in current_list[1])
-			var/datum/stored_items/vending_products/product = new(src, entry, get_product_name(entry))
+			var/datum/stored_items/vending_products/product = new(src, entry)
 			product.price = atom_info_repository.get_combined_worth_for(entry) * markup
 			product.category = category
 			if(product && populate_parts)
@@ -360,7 +357,7 @@
 	use_power_oneoff(vend_power_usage)	//actuators and stuff
 	if (icon_vend) //Show the vending animation if needed
 		flick(icon_vend,src)
-	addtimer(CALLBACK(src, /obj/machinery/vending/proc/finish_vending, R), vend_delay)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/vending, finish_vending), R), vend_delay)
 
 /obj/machinery/vending/proc/do_vending_reply()
 	set waitfor = FALSE

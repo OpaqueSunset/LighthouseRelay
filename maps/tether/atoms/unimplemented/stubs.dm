@@ -1,5 +1,6 @@
 // resleeving and transcore
-/obj/item/book/manual/resleeving
+/obj/item/book/fluff/resleeving
+	fluff_text = "<em>todo: write resleeving guide</em>"
 /obj/item/implanter/backup
 /obj/item/implant/backup
 

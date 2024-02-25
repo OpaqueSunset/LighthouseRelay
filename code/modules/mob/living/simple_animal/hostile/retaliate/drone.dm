@@ -54,6 +54,9 @@
 		/decl/material/solid/metal/plasteel = null
 	)
 
+/mob/living/simple_animal/hostile/retaliate/malf_drone/check_has_mouth()
+	return FALSE
+
 /mob/living/simple_animal/hostile/retaliate/malf_drone/can_act()
 	return disabled <= 0 && ..()
 
@@ -85,7 +88,10 @@
 			. -= M
 
 //self repair systems have a chance to bring the drone back to life
-/mob/living/simple_animal/hostile/retaliate/malf_drone/Life()
+/mob/living/simple_animal/hostile/retaliate/malf_drone/handle_living_non_stasis_processes()
+	. = ..()
+	if(!.)
+		return FALSE
 
 	//emps and lots of damage can temporarily shut us down
 	if(disabled > 0)
@@ -148,7 +154,7 @@
 			if(!disabled && exploding)
 				explosion(get_turf(src), 0, 1, 4, 7)
 				death()
-	..()
+
 	update_icon()
 
 /mob/living/simple_animal/hostile/retaliate/malf_drone/on_update_icon()
@@ -202,43 +208,43 @@
 		if(spawnees & 1)
 			C = new(src.loc)
 			C.SetName("Drone CPU motherboard")
-			C.origin_tech = "{'[TECH_DATA]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_DATA]":[rand(3, 6)]}'
 		if(spawnees & 2)
 			C = new(src.loc)
 			C.SetName("Drone neural interface")
-			C.origin_tech = "{'[TECH_BIO]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_BIO]":[rand(3, 6)]}'
 		if(spawnees & 4)
 			C = new(src.loc)
 			C.SetName("Drone suspension processor")
-			C.origin_tech = "{'[TECH_MAGNET]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_MAGNET]":[rand(3, 6)]}'
 		if(spawnees & 8)
 			C = new(src.loc)
 			C.SetName("Drone shielding controller")
-			C.origin_tech = "{'wormholes':[rand(3, 6)]}"
+			C.origin_tech = @'{"wormholes":[rand(3, 6)]}'
 		if(spawnees & 16)
 			C = new(src.loc)
 			C.SetName("Drone power capacitor")
-			C.origin_tech = "{'[TECH_POWER]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_POWER]":[rand(3, 6)]}'
 		if(spawnees & 32)
 			C = new(src.loc)
 			C.SetName("Drone hull reinforcer")
-			C.origin_tech = "{'[TECH_MATERIAL]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_MATERIAL]":[rand(3, 6)]}'
 		if(spawnees & 64)
 			C = new(src.loc)
 			C.SetName("Drone auto-repair system")
-			C.origin_tech = "{'[TECH_ENGINEERING]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_ENGINEERING]":[rand(3, 6)]}'
 		if(spawnees & 128)
 			C = new(src.loc)
 			C.SetName("Drone antigravity overcharge counter")
-			C.origin_tech = "{'[TECH_EXOTIC_MATTER]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_EXOTIC_MATTER]":[rand(3, 6)]}'
 		if(spawnees & 256)
 			C = new(src.loc)
 			C.SetName("Drone targetting circuitboard")
-			C.origin_tech = "{'[TECH_COMBAT]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_COMBAT]":[rand(3, 6)]}'
 		if(spawnees & 512)
 			C = new(src.loc)
 			C.SetName("Corrupted drone morality core")
-			C.origin_tech = "{'[TECH_ESOTERIC]':[rand(3, 6)]}"
+			C.origin_tech = @'{"[TECH_ESOTERIC]":[rand(3, 6)]}'
 	return ..()
 
 /obj/item/projectile/beam/drone

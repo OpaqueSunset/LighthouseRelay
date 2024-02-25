@@ -2,6 +2,9 @@
 #define MODPACK_DUNGEON_LOOT
 // BEGIN INCLUDE
 #include "_dungeon_loot.dm"
-#include "loot_parent.dm"
-#include "loot_structures.dm"
+#include "loot_pile.dm"
+#include "subtypes/exosuit.dm"
+#include "subtypes/maint.dm"
+#include "subtypes/stubs.dm"
+#include "subtypes/surface.dm"
 #endif

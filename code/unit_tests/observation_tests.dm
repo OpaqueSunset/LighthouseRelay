@@ -10,8 +10,6 @@
 	var/list/received_name_set_events
 
 	var/list/stored_global_listen_count
-	var/list/stored_event_sources_count
-	var/list/stored_event_listen_count
 
 /datum/unit_test/observation/start_test()
 	received_moves = received_moves || list()
@@ -24,8 +22,6 @@
 		events_repository.unregister_global(/decl/observ/moved, global_listener)
 
 	stored_global_listen_count = global.global_listen_count.Copy()
-	stored_event_sources_count = global.event_sources_count.Copy()
-	stored_event_listen_count =  global.event_listen_count.Copy()
 
 	sanity_check_events("Pre-Test")
 	. = conduct_test()
@@ -62,10 +58,6 @@
 
 	for(var/entry in (global.global_listen_count - stored_global_listen_count))
 		fail("[phase]: global_listen_count - Contained [log_info_line(entry)].")
-	for(var/entry in (global.event_sources_count - stored_event_sources_count))
-		fail("[phase]: event_sources_count - Contained [log_info_line(entry)].")
-	for(var/entry in (global.event_listen_count - stored_event_listen_count))
-		fail("[phase]: event_listen_count - Contained [log_info_line(entry)].")
 
 /datum/unit_test/observation/proc/conduct_test()
 	return 0
@@ -97,7 +89,7 @@
 	old_name = O.name
 	new_name = O.name + " (New)"
 
-	events_repository.register_global(/decl/observ/name_set, src, /datum/unit_test/observation/proc/receive_name_change)
+	events_repository.register_global(/decl/observ/name_set, src, TYPE_PROC_REF(/datum/unit_test/observation, receive_name_change))
 	O.SetName(new_name)
 
 	if(received_name_set_events.len != 1)
@@ -240,7 +232,7 @@
 
 	exosuit.occupant = holding_mob
 
-	events_repository.register(/decl/observ/moved, held_item, src, /datum/unit_test/observation/proc/receive_move)
+	events_repository.register(/decl/observ/moved, held_item, src, TYPE_PROC_REF(/datum/unit_test/observation, receive_move))
 	holding_mob.drop_from_inventory(held_item)
 
 	if(received_moves.len != 1)
@@ -320,7 +312,7 @@
 	var/turf/T = get_safe_turf()
 	var/obj/O = get_named_instance(/obj, T)
 
-	events_repository.register_global(/decl/observ/name_set, O, /atom/movable/proc/move_to_turf)
+	events_repository.register_global(/decl/observ/name_set, O, TYPE_PROC_REF(/atom/movable, move_to_turf))
 	qdel(O)
 
 	var/decl/observ/name_set/name_set_event = GET_DECL(/decl/observ/name_set)
@@ -347,7 +339,7 @@
 	var/mob/event_source = get_named_instance(/mob, T, "Event Source")
 	var/mob/listener = get_named_instance(/mob, T, "Event Listener")
 
-	events_repository.register(/decl/observ/moved, event_source, listener, /atom/movable/proc/recursive_move)
+	events_repository.register(/decl/observ/moved, event_source, listener, TYPE_PROC_REF(/atom/movable, recursive_move))
 	qdel(event_source)
 
 	var/decl/observ/moved/moved_event = GET_DECL(/decl/observ/moved)
@@ -375,7 +367,7 @@
 	var/mob/event_source = get_named_instance(/mob, T, "Event Source")
 	var/mob/listener = get_named_instance(/mob, T, "Event Listener")
 
-	events_repository.register(/decl/observ/moved, event_source, listener, /atom/movable/proc/recursive_move)
+	events_repository.register(/decl/observ/moved, event_source, listener, TYPE_PROC_REF(/atom/movable, recursive_move))
 	qdel(listener)
 
 	var/decl/observ/moved/moved_event = GET_DECL(/decl/observ/moved)

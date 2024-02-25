@@ -556,7 +556,7 @@
 /obj/effect/floor_decal/corner/lightorange/border{
 	dir = 8
 	},
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/security/brig)
 "bd" = (
@@ -2638,7 +2638,7 @@
 /area/chapel/office)
 "eA" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/structure/cable/pink{
 	icon_state = "1-2"
 	},
@@ -3584,10 +3584,10 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/locker_room)
 "gw" = (
-/turf/simulated/open,
+/turf/open,
 /area/engineering/locker_room)
 "gx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -4315,18 +4315,18 @@
 	dir = 8
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/engineering/locker_room)
 "hO" = (
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/engineering/locker_room)
 "hP" = (
 /obj/structure/railing/mapped,
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/locker_room)
 "hQ" = (
 /turf/simulated/wall/r_wall,
@@ -4422,7 +4422,7 @@
 /area/crew_quarters/medbreak)
 "ic" = (
 /obj/structure/table/glass,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/crew_quarters/medbreak)
 "id" = (
@@ -5021,8 +5021,8 @@
 /obj/item/book/manual/medical_diagnostics_manual{
 	pixel_y = 7
 	},
-/obj/item/book/manual/stasis,
-/obj/item/book/manual/resleeving,
+/obj/item/book/fluff/stasis,
+/obj/item/book/fluff/resleeving,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -5802,7 +5802,7 @@
 	icon_state = "32-2"
 	},
 /obj/machinery/door/firedoor/glass,
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_upper)
 "kY" = (
 /turf/simulated/shuttle/wall/voidcraft/green{
@@ -6459,7 +6459,7 @@
 /obj/structure/disposalpipe/down{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/eng_upper)
 "mq" = (
 /obj/structure/railing/mapped{
@@ -6723,7 +6723,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "mN" = (
 /obj/structure/catwalk,
@@ -6740,11 +6740,11 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "mO" = (
 /obj/structure/catwalk,
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "mP" = (
 /obj/effect/floor_decal/borderfloor/corner{
@@ -7284,7 +7284,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "nB" = (
 /obj/structure/disposalpipe/junction/yjunction,
@@ -7568,13 +7568,13 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "of" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "og" = (
 /obj/structure/railing/mapped{
@@ -7583,7 +7583,7 @@
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "oh" = (
 /obj/structure/disposalpipe/segment,
@@ -8004,7 +8004,7 @@
 /turf/simulated/floor,
 /area/storage/tech)
 "oM" = (
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "oN" = (
 /obj/effect/floor_decal/borderfloor{
@@ -10034,13 +10034,13 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "sv" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "sw" = (
 /turf/simulated/wall,
@@ -10276,10 +10276,10 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "tb" = (
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "tc" = (
 /turf/simulated/floor,
@@ -10288,10 +10288,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/open,
 /area/tether/station/stairs_two)
 "te" = (
-/turf/simulated/open,
+/turf/open,
 /area/tether/station/stairs_two)
 "tf" = (
 /obj/effect/floor_decal/borderfloor{
@@ -10574,7 +10574,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "tI" = (
 /obj/machinery/alarm{
@@ -10997,7 +10997,7 @@
 /area/medical/virology)
 "uz" = (
 /obj/structure/table/glass,
-/obj/item/storage/fancy/vials,
+/obj/item/storage/box/fancy/vials,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -11681,7 +11681,7 @@
 /area/ai_monitored/storage/eva)
 "vM" = (
 /obj/machinery/light,
-/turf/simulated/open,
+/turf/open,
 /area/vacant/vacant_restaurant_upper)
 "vN" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -12908,7 +12908,7 @@
 /obj/structure/sign/department/engineering{
 	pixel_y = 32
 	},
-/turf/simulated/open,
+/turf/open,
 /area/engineering/foyer_mezzenine)
 "xX" = (
 /obj/structure/table/steel,
@@ -12998,7 +12998,7 @@
 /turf/simulated/floor,
 /area/maintenance/station/medbay)
 "yh" = (
-/turf/simulated/open,
+/turf/open,
 /area/bridge/meeting_room)
 "yi" = (
 /obj/effect/floor_decal/steeldecal/steel_decals7{
@@ -13103,7 +13103,7 @@
 /area/bridge/meeting_room)
 "yp" = (
 /obj/structure/table/woodentable,
-/obj/item/book/manual/nt_regs,
+/obj/item/book/fluff/nt_regs,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
@@ -13946,7 +13946,7 @@
 /obj/structure/cable/green{
 	icon_state = "32-4"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/bridge/meeting_room)
 "zC" = (
 /obj/structure/cable/green{
@@ -14004,7 +14004,7 @@
 	pixel_y = -22
 	},
 /obj/structure/table/woodentable,
-/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/fluff/standard_operating_procedure,
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "zJ" = (
@@ -16327,7 +16327,7 @@
 	dir = 4
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/open,
+/turf/open,
 /area/engineering/shaft)
 "Jp" = (
 /obj/machinery/alarm{
@@ -16800,7 +16800,7 @@
 /obj/structure/cable/pink{
 	icon_state = "32-1"
 	},
-/turf/simulated/open,
+/turf/open,
 /area/maintenance/station/sec_lower)
 "LG" = (
 /obj/structure/cable/pink{
@@ -18537,7 +18537,7 @@
 /area/hallway/station/starboard)
 "VQ" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
+/obj/item/storage/box/fancy/crayons,
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/floor/tiled/white,
 /area/medical/psych_ward)

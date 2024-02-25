@@ -220,7 +220,7 @@
 
 /obj/machinery/bioprinter/proc/open_pod_start()
 	animate(lid, pixel_y = 38, time = 3 SECONDS, easing = SINE_EASING)
-	addtimer(CALLBACK(src, .proc/open_pod_finish), 3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(open_pod_finish)), 3 SECONDS)
 	playsound(get_turf(src), 'sound/machines/podopen.ogg', 75)
 
 /obj/machinery/bioprinter/proc/open_pod_finish()
@@ -228,7 +228,7 @@
 
 /obj/machinery/bioprinter/proc/close_pod_start()
 	animate(lid, pixel_y = 0, time = 3 SECONDS, easing = SINE_EASING)
-	addtimer(CALLBACK(src, .proc/close_pod_finish), 3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(close_pod_finish)), 3 SECONDS)
 	playsound(get_turf(src), 'sound/machines/podclose.ogg', 75)
 
 /obj/machinery/bioprinter/proc/close_pod_finish()
@@ -364,7 +364,7 @@
 	print_finished = FALSE
 	next_increment = world.time + 4 SECONDS + get_printing_increment()
 	playsound(get_turf(src), pick(global.keyboard_sound))
-	addtimer(CALLBACK(src, .proc/start_print_next), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(start_print_next)), 4 SECONDS)
 
 /obj/machinery/bioprinter/proc/start_print_next()
 	var/datum/computer_file/data/body_record/body_record = diskette.contains_file_type("BDY")
@@ -430,19 +430,19 @@
 	switch(total_passes)
 		if(0)
 			do_fakemob_animation("fakemob1", "layer1", "stage1", 0.01, FALSE)
-			addtimer(CALLBACK(src, .proc/animate_printhead), 2 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(animate_printhead)), 2 SECONDS)
 		if(1)
 			animate(ph, pixel_y = 0, time = 2 SECONDS)
 			do_fakemob_animation("fakemob2", "layer2", "stage2", 0.02, FALSE)
-			addtimer(CALLBACK(src, .proc/animate_printhead), 2 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(animate_printhead)), 2 SECONDS)
 		if(2)
 			animate(ph, pixel_y = 0, time = 2 SECONDS)
 			do_fakemob_animation("fakemob3", "layer3", "stage3", 0.03, FALSE)
-			addtimer(CALLBACK(src, .proc/animate_printhead), 2 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(animate_printhead)), 2 SECONDS)
 		if(3)
 			animate(ph, pixel_y = 0, time = 2 SECONDS)
 			do_fakemob_animation("fakemob4", "layer4", "stage4", 0.04, FALSE)
-			addtimer(CALLBACK(src, .proc/animate_printhead), 2 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(animate_printhead)), 2 SECONDS)
 		if(4) //By this point we can get rid of the three earlier mobs from vis_contents.
 			animate(ph, pixel_y = 0, time = 2 SECONDS)
 			do_fakemob_animation("fakemob1", "layer1", "stage1", fade_out = TRUE)
@@ -458,7 +458,7 @@
 			fakemob.add_filter("layer5",1 ,list(type = "alpha", y = -32, icon = icon('icons/mob/human.dmi', "body_m_s")))
 			fakemob.animate_filter("layer5", list(y = 0, time = get_printing_increment()))
 			vis_contents += fakemob
-			addtimer(CALLBACK(src, .proc/animate_printhead), 2 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(animate_printhead)), 2 SECONDS)
 
 /obj/machinery/bioprinter/proc/do_fakemob_animation(var/fakemob_name, var/filter_name, var/stage_name, var/fakemob_layer_increment, var/fade_out = FALSE)
 	var/obj/effect/fake_clone_mob/fakemob = clone_mobs[fakemob_name]
@@ -530,7 +530,7 @@
 	last_used_technobabble = technobabble
 	technobabble_used += technobabble
 	if(!is_error) //if not a critical error, auto-resolve in ~30s
-		interaction_timer_id = addtimer(CALLBACK(src, .proc/fulfill_interaction), 50 SECONDS, TIMER_STOPPABLE)
+		interaction_timer_id = addtimer(CALLBACK(src, PROC_REF(fulfill_interaction)), 50 SECONDS, TIMER_STOPPABLE)
 		do_telecomms_announcement(src, "Error in [technobabble] - auto-recovery under way...", "Bioprinter Monitoring System", "Medical")
 		buzz("\The [src] buzzes, \"Error in [technobabble] - auto-recovery under way...\"")
 	else
@@ -561,7 +561,7 @@
 /obj/machinery/bioprinter/proc/start_cleaning()
 	cleaning = TRUE
 	close_pod_start()
-	cleaning_timer_id = addtimer(CALLBACK(src, .proc/finish_cleaning), cleaning_delay, TIMER_STOPPABLE)
+	cleaning_timer_id = addtimer(CALLBACK(src, PROC_REF(finish_cleaning)), cleaning_delay, TIMER_STOPPABLE)
 	update_icon()
 
 /obj/machinery/bioprinter/proc/finish_cleaning()

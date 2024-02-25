@@ -10,7 +10,7 @@
 
 /obj/item/chems/food/chickenfillet/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 8)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 8)
 
 /obj/item/chems/food/chilicheesefries
 	name = "chili cheese fries"
@@ -18,7 +18,7 @@
 	desc = "A mighty plate of fries, drowned in hot chili and cheese sauce. Because your arteries are overrated."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "chilicheesefries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 8
 	nutriment_desc = list("hearty, cheesy fries" = 8)
@@ -26,15 +26,15 @@
 
 /obj/item/chems/food/chilicheesefries/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/capsaicin, 2)
 
 /obj/item/chems/food/carrotfries
 	name = "carrot fries"
 	desc = "Tasty fries from fresh carrots."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "carrotfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#faa005"
 	nutriment_amt = 3
 	nutriment_desc = list("carrot" = 3)
@@ -42,8 +42,8 @@
 
 /obj/item/chems/food/carrotfries/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/eyedrops, 1)
-	reagents.add_reagent(/decl/material/solid/sodiumchloride, 1)
+	add_to_reagents(/decl/material/liquid/eyedrops, 1)
+	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 
 /obj/item/chems/food/friedmushroom
 	name = "fried mushroom"
@@ -57,7 +57,7 @@
 
 /obj/item/chems/food/friedmushroom/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
 
 /obj/item/chems/food/pisanggoreng
 	name = "pisang goreng"
@@ -65,7 +65,7 @@
 	desc = "Crispy, starchy, sweet banana fritters. Popular street food in parts of Sol."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "pisanggoreng"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#301301"
 	nutriment_amt = 8
 	nutriment_desc = list("sweet bananas" = 8)
@@ -73,7 +73,7 @@
 
 /obj/item/chems/food/pisanggoreng/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
 
 /obj/item/chems/food/sausage/battered
 	name = "battered sausage"
@@ -86,9 +86,9 @@
 
 /obj/item/chems/food/sausage/battered/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/nutriment/batter, 1.7)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 1.5)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/batter, 1.7)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1.5)
 
 /obj/item/chems/food/jalapeno_poppers
 	name = "jalapeno popper"
@@ -103,31 +103,31 @@
 
 /obj/item/chems/food/jalapeno_poppers/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/batter, 2)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/batter, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 2)
 
 /obj/item/chems/food/chickenkatsu
 	name = "chicken katsu"
 	desc = "A delicacy consisting of chicken fried in a light beer batter."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "katsu"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#e9adff"
 	do_coating_prefix = FALSE
 	bitesize = 1.5
 
 /obj/item/chems/food/chickenkatsu/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/nutriment/batter/beerbatter, 2)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/batter/beerbatter, 2)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1)
 
 /obj/item/chems/food/fries
 	name = "fries" // NOT CHIPS
 
 /obj/item/chems/food/fries/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 1.2)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1.2)
 
 // i'm putting these here because they're fries
 // even though they're not actually fried
@@ -136,7 +136,7 @@
 	desc = "Soft and rubbery, should have fried them. Good for smaller crewmembers, maybe?"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "microfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 4
 	nutriment_desc = list("soggy potato slices" = 4)
@@ -147,7 +147,7 @@
 	desc = "Dark and crispy, but a bit dry."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "bakedfries"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_amt = 4
 	nutriment_desc = list("crisp, dry fries" = 4)
@@ -166,8 +166,8 @@
 
 /obj/item/chems/food/sliceable/pizza/crunch/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/batter, 6.5)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/batter, 6.5)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 4)
 	batter_coating = /decl/material/liquid/nutriment/batter
 
 /obj/item/chems/food/pizzacrunchslice
@@ -189,16 +189,16 @@
 
 /obj/item/chems/food/funnelcake/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/batter, 10)
-	reagents.add_reagent(/decl/material/liquid/nutriment/sugar, 5)
-	reagents.add_reagent(/decl/material/liquid/nutriment/triglyceride/oil, 1)
+	add_to_reagents(/decl/material/liquid/nutriment/batter, 10)
+	add_to_reagents(/decl/material/liquid/nutriment/sugar, 5)
+	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1)
 
 /obj/item/chems/food/onionrings
 	name = "onion rings"
 	desc = "Like circular fries but better."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "onionrings"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	filling_color = "#eddd00"
 	nutriment_desc = list("fried onions" = 5)
 	nutriment_amt = 5
@@ -217,4 +217,4 @@
 
 /obj/item/chems/food/corn_dog/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)

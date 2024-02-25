@@ -33,7 +33,7 @@
 /decl/material/liquid/glowsap/on_leaving_metabolism(datum/reagents/metabolism/holder)
 	if(ishuman(holder?.my_atom))
 		var/mob/living/carbon/human/H = holder.my_atom
-		addtimer(CALLBACK(H, /mob/living/carbon/human/proc/update_eyes), 5 SECONDS)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, update_eyes)), 5 SECONDS)
 	. = ..()
 
 /decl/material/liquid/glowsap/affect_overdose(var/mob/living/M)
@@ -320,7 +320,7 @@
 
 /decl/material/solid/tobacco/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
-	M.reagents.add_reagent(/decl/material/liquid/nicotine, nicotine)
+	M.add_to_reagents(/decl/material/liquid/nicotine, nicotine)
 
 /decl/material/solid/tobacco/fine
 	name = "fine tobacco"

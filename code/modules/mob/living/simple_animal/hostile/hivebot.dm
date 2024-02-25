@@ -25,6 +25,9 @@
 	skin_material = null
 	skin_amount =   0
 
+/mob/living/simple_animal/hostile/hivebot/check_has_mouth()
+	return FALSE
+
 /mob/living/simple_animal/hostile/hivebot/range
 	desc = "A junky looking robot with four spiky legs. It's equipped with some kind of small-bore gun."
 	ranged = 1
@@ -110,12 +113,9 @@ The megabot
 	. = ..()
 	switch_mode(ATTACK_MODE_ROCKET)
 
-/mob/living/simple_animal/hostile/hivebot/mega/Life()
+/mob/living/simple_animal/hostile/hivebot/mega/handle_regular_status_updates()
 	. = ..()
-	if(!.)
-		return
-
-	if(!is_on_special_ability_cooldown())
+	if(. && !is_on_special_ability_cooldown())
 		switch_mode(ATTACK_MODE_ROCKET)
 
 /mob/living/simple_animal/hostile/hivebot/mega/emp_act(severity)
@@ -179,7 +179,7 @@ The megabot
 	var/datum/extension/armor/toggle/armor = get_extension(src, /datum/extension/armor)
 	if(armor)
 		armor.toggle(FALSE)
-	addtimer(CALLBACK(src, .proc/reactivate), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(reactivate)), 4 SECONDS)
 
 /mob/living/simple_animal/hostile/hivebot/mega/proc/reactivate()
 	stop_automation = FALSE

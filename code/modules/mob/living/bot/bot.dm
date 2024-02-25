@@ -59,16 +59,12 @@
 	else
 		turn_off()
 
-/mob/living/bot/Life()
-	..()
-	if(stat == DEAD)
-		return
-	set_status(STAT_WEAK, 0)
-	set_status(STAT_STUN, 0)
-	set_status(STAT_PARA, 0)
-
-	if(on && !client && !busy)
-		handleAI()
+/mob/living/bot/handle_regular_status_updates()
+	. = ..()
+	if(.)
+		set_status(STAT_WEAK, 0)
+		set_status(STAT_STUN, 0)
+		set_status(STAT_PARA, 0)
 
 /mob/living/bot/get_total_life_damage()
 	return getFireLoss() + getBruteLoss()
@@ -204,7 +200,12 @@
 /mob/living/bot/emag_act(var/remaining_charges, var/mob/user)
 	return 0
 
-/mob/living/bot/proc/handleAI()
+/mob/living/bot/handle_legacy_ai()
+	. = ..()
+	if(on && !busy)
+		handle_async_ai()
+
+/mob/living/bot/proc/handle_async_ai()
 	set waitfor = FALSE
 	if(ignore_list.len)
 		for(var/atom/A in ignore_list)
@@ -283,7 +284,7 @@
 /mob/living/bot/proc/startPatrol()
 	var/turf/T = getPatrolTurf()
 	if(T)
-		patrol_path = AStar(get_turf(loc), T, /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_patrol_dist, id = botcard, exclude = obstacle)
+		patrol_path = AStar(get_turf(loc), T, TYPE_PROC_REF(/turf, CardinalTurfsWithAccess), TYPE_PROC_REF(/turf, Distance), 0, max_patrol_dist, id = botcard, exclude = obstacle)
 		if(!patrol_path)
 			patrol_path = list()
 		obstacle = null
@@ -315,7 +316,7 @@
 	return
 
 /mob/living/bot/proc/calcTargetPath()
-	target_path = AStar(get_turf(loc), get_turf(target), /turf/proc/CardinalTurfsWithAccess, /turf/proc/Distance, 0, max_target_dist, id = botcard, exclude = obstacle)
+	target_path = AStar(get_turf(loc), get_turf(target), TYPE_PROC_REF(/turf, CardinalTurfsWithAccess), TYPE_PROC_REF(/turf, Distance), 0, max_target_dist, id = botcard, exclude = obstacle)
 	if(!target_path)
 		if(target && target.loc)
 			ignore_list |= target

@@ -8,7 +8,7 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		usr.custom_emote_subtle(message = message)
 
 /proc/log_subtle(text)
-	if (config.log_say)
+	if (get_config_value(/decl/config/toggle/log_say))
 		game_log("SUBTLE", text)
 
 /mob/proc/custom_emote_subtle(var/m_type=VISIBLE_MESSAGE, var/message = null) //This would normally go in emote.dm

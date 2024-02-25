@@ -19,7 +19,7 @@
 	nutriment_desc = list("fried tortilla chips" = 2)
 	nutriment_amt = 2
 
-/obj/item/chems/food/chip/On_Consume(mob/M as mob)
+/obj/item/chems/food/chip/handle_consumed(mob/M as mob)
 	. = ..()
 	if(reagents && reagents.total_volume)
 		icon_state = bitten_state
@@ -108,7 +108,7 @@
 	name = "plate of nachos"
 	desc = "A very cheesy nacho plate."
 	icon_state = "nachos"
-	trash = /obj/item/trash/plate
+	plate = /obj/item/plate
 	vendingobject = /obj/item/chems/food/chip/nacho
 	nutriment_desc = list("tortilla chips" = 10)
 	bitesize = 1
@@ -190,7 +190,7 @@
 
 /obj/item/chems/food/burrito/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
 
 /obj/item/chems/food/burrito_vegan
 	name = "vegan burrito"
@@ -203,7 +203,7 @@
 
 /obj/item/chems/food/burrito_vegan/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/plant_protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/plant_protein, 6)
 
 /obj/item/chems/food/burrito_spicy
 	name = "spicy meat burrito"
@@ -216,8 +216,8 @@
 
 /obj/item/chems/food/burrito_spicy/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/capsaicin, 3)
 
 /obj/item/chems/food/burrito_cheese
 	name = "meat cheese burrito"
@@ -230,7 +230,7 @@
 
 /obj/item/chems/food/burrito_cheese/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
 
 /obj/item/chems/food/burrito_cheese_spicy
 	name = "spicy cheese meat burrito"
@@ -243,8 +243,8 @@
 
 /obj/item/chems/food/burrito_cheese_spicy/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 6)
-	reagents.add_reagent(/decl/material/liquid/capsaicin, 3)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/liquid/capsaicin, 3)
 
 /obj/item/chems/food/burrito_hell
 	name = "el diablo"
@@ -266,8 +266,8 @@
 
 /obj/item/chems/food/breakfast_wrap/Initialize()
 	. = ..()
-	reagents.add_reagent(/decl/material/liquid/nutriment/protein, 9)
-	reagents.add_reagent(/decl/material/liquid/capsaicin/condensed, 20)
+	add_to_reagents(/decl/material/liquid/nutriment/protein, 9)
+	add_to_reagents(/decl/material/liquid/capsaicin/condensed, 20)
 
 /obj/item/chems/food/burrito_mystery
 	name = "mystery meat burrito"

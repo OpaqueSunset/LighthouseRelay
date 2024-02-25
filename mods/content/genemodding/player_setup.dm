@@ -49,15 +49,16 @@
 	var/obj/item/organ/external/tail/tail_organ = get_organ(BP_TAIL)
 	var/decl/bodytype/root_bodytype = get_bodytype()
 	if(!tail_style)
-		if(!tail_organ)
+		if(!tail_organ || root_bodytype.is_default_limb(tail_organ))
 			return
+		remove_organ(tail_organ, FALSE, FALSE, TRUE, TRUE, FALSE, TRUE)
 		qdel(tail_organ)
 		var/list/tail_data = LAZYACCESS(root_bodytype?.has_limbs, BP_TAIL)
 		var/tail_path = LAZYACCESS(tail_data, "path")
 		if(!tail_path)
 			return
 		tail_organ = new tail_path(src, null, dna, root_bodytype)
-		add_organ(tail_organ)
+		add_organ(tail_organ, TRUE, TRUE, FALSE, TRUE)
 		return
 	if(!tail_organ)
 		tail_organ = new(src, null, dna, root_bodytype)
@@ -68,8 +69,8 @@
 	if(tail_style.do_colouration)
 		tail_organ.tail_colour = tail_color
 		tail_organ.tail_hair_colour = tail_color_extra
-		tail_organ.tail_blend = tail_style.blend
-		tail_organ.tail_hair_blend = tail_style.blend
+		tail_organ.tail_blend = tail_style.color_blend
+		tail_organ.tail_hair_blend = tail_style.color_blend
 	else
 		tail_organ.tail_colour = null
 		tail_organ.tail_hair_colour = null

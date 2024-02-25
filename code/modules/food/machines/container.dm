@@ -43,7 +43,7 @@
 		return TRUE
 	if(standard_pour_into(user, target)) //Pouring into another beaker?
 		return TRUE
-	if(standard_feed_mob(user, target))
+	if(handle_eaten_by_mob(user, target) != EATEN_INVALID)
 		return TRUE
 	if(user.a_intent == I_HURT)
 		if(standard_splash_mob(user,target))
@@ -249,6 +249,7 @@
 		return FALSE
 	return TRUE
 
+// TODO: merge with /obj/item/plate somehow?
 /obj/item/chems/cooking_container/plate
 	name = "serving plate"
 	shortname = "plate"
@@ -301,9 +302,9 @@
 	desc = "A bowl. You bowl foods on this bowl... wait, what?"
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mixingbowl"
-	center_of_mass = @"{'x':17,'y':7}"
+	center_of_mass = @'{"x":17,"y":7}'
 	max_space = 30
 	matter = list(/decl/material/solid/metal/aluminium = 300)
 	volume = 90
 	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = @"[5,10,15,25,30,60, 90]"
+	possible_transfer_amounts = @'[5,10,15,25,30,60, 90]'

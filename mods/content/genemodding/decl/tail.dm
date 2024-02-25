@@ -12,7 +12,7 @@
 	icon = 'mods/content/genemodding/icons/mob/tails.dmi'
 	do_colouration = TRUE //Set to 1 to enable coloration using the tail color.
 
-	blend = ICON_MULTIPLY // Only appliciable if do_coloration = 1
+	color_blend = ICON_MULTIPLY // Only appliciable if do_coloration = 1
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
 /* // This needs to be done in a better way. It probably doesn't even work currently?
@@ -59,7 +59,7 @@
 	name = "bunny, colorable"
 	icon_state = "bunny"
 	do_colouration = TRUE
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	uid = "acc_tail_bunny_colorable"
 
 /decl/sprite_accessory/tail/bear
@@ -117,7 +117,7 @@
 /decl/sprite_accessory/tail/spade_color
 	name = "spade-tail (colorable)"
 	icon_state = "spadetail-black"
-	blend = ICON_ADD
+	color_blend = ICON_ADD
 	uid = "acc_tail_spade_colorable"
 
 /decl/sprite_accessory/tail/eboop

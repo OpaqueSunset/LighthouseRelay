@@ -11,7 +11,7 @@
 	timeoff_factor = 0
 
 /datum/job/visitor/get_access()
-	if(config.assistant_maint)
+	if(get_config_value(/decl/config/toggle/assistant_maint))
 		return list(access_maint_tunnels)
 	else
 		return list()

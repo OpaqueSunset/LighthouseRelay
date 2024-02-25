@@ -8,7 +8,7 @@
 	slot_flags = SLOT_LOWER_BODY
 	w_class = ITEM_SIZE_SMALL
 	material = /decl/material/solid/metal/aluminium
-	origin_tech = "{'magnets':1,'engineering':1}"
+	origin_tech = @'{"magnets":1,"engineering":1}'
 	action_button_name = "Toggle T-Ray scanner"
 
 	var/scan_range = 3
@@ -103,7 +103,7 @@
 			if(ishuman(scanned))
 				var/mob/living/carbon/human/H = scanned
 				if(H.get_bodytype()?.appearance_flags & HAS_SKIN_COLOR)
-					I.color = H.skin_colour
+					I.color = H.get_skin_colour()
 					I.icon = 'icons/mob/mob.dmi'
 					I.icon_state = "phaseout"
 			var/mob/M = scanned

@@ -69,7 +69,7 @@
 	splatter_colour = "#ffff00"
 
 /decl/species/starlight/handle_death(var/mob/living/carbon/human/H)
-	addtimer(CALLBACK(H,/mob/proc/dust),0)
+	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, dust)),0)
 
 /decl/species/starlight/starborn
 	name = "Starborn"
@@ -103,9 +103,7 @@
 /decl/species/starlight/starborn/handle_death(var/mob/living/carbon/human/H)
 	..()
 	var/turf/T = get_turf(H)
-	var/obj/effect/fluid/F = locate() in T
-	if(!F) F = new(T)
-	F.reagents.add_reagent(/decl/material/liquid/fuel, 20)
+	T.add_to_reagents(/decl/material/liquid/fuel, 20)
 	T.hotspot_expose(FLAMMABLE_GAS_MINIMUM_BURN_TEMPERATURE)
 
 /decl/bodytype/starlight/blueforged
