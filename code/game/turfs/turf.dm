@@ -503,7 +503,8 @@
 				break
 			top_of_stack = next_turf
 		// If we hit the top of the stack without finding a roof, we ask the upmost turf if we're outside.
-		. = top_of_stack.is_outside()
+		if(top_of_stack != src)
+			. = top_of_stack.is_outside()
 	last_outside_check = . // Cache this for later calls.
 
 /turf/proc/set_outside(var/new_outside, var/skip_weather_update = FALSE)
