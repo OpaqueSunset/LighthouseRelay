@@ -89,7 +89,7 @@
 		storage_capacity[/decl/material/solid/graphite] - stored_material[/decl/material/solid/graphite])
 
 	// STEP 2 - Take the CO2 out of the input!
-	var/power_draw = scrub_gas(src, list(input_gas), input_mix, internal, moles_to_convert)
+	var/power_draw = scrub_gas(src, list(input_gas), input_mix, internal, moles_to_convert, power_rating)
 	if (power_draw > 0)
 		use_power_oneoff(power_draw)
 		last_power_draw += power_draw
