@@ -89,13 +89,13 @@
 			var/obj/item/organ/external/parent = GET_EXTERNAL_ORGAN(src, I.parent_organ)
 			if(parent)
 				var/pain = 10
-				var/message = "You feel a dull pain in your [parent.name]"
+				var/message = "You feel a dull pain in your [parent.name]."
 				if(I.is_bruised())
 					pain = 25
-					message = "You feel a pain in your [parent.name]"
+					message = "You feel a pain in your [parent.name]."
 				if(I.is_broken())
 					pain = 50
-					message = "You feel a sharp pain in your [parent.name]"
+					message = "You feel a sharp pain in your [parent.name]."
 				src.custom_pain(message, pain, affecting = parent)
 
 
