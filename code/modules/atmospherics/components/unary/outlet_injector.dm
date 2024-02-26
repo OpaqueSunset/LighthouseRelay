@@ -11,7 +11,7 @@
 
 	use_power = POWER_USE_OFF
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
-	power_rating = 45000	//45000 W ~ 60 HP
+	power_rating = 22500	//22500 W ~ 30 HP
 
 	var/injecting = 0
 
