@@ -89,8 +89,8 @@
 //        Plastic Bag
 // -----------------------------
 
-/obj/item/storage/bag/plasticbag
-	name = "plastic bag"
+/obj/item/storage/bag/flimsy
+	name = "bag"
 	desc = "It's a very flimsy, very noisy alternative to a bag."
 	icon = 'icons/obj/items/storage/plasticbag.dmi'
 	icon_state = "plasticbag"
@@ -100,6 +100,9 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	max_storage_space = DEFAULT_BOX_STORAGE
 	can_hold = list() // any
+
+	material = /decl/material/solid/organic/plastic
+	material_alteration = MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
 
 // -----------------------------
 //           Cash Bag

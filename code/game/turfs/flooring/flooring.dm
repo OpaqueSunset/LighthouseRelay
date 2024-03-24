@@ -116,42 +116,42 @@
 /decl/flooring/carpet/blue
 	name = "blue carpet"
 	icon_base = "blue1"
-	build_type = /obj/item/stack/tile/carpetblue
+	build_type = /obj/item/stack/tile/carpet/blue
 
 /decl/flooring/carpet/blue2
 	name = "pale blue carpet"
 	icon_base = "blue2"
-	build_type = /obj/item/stack/tile/carpetblue2
+	build_type = /obj/item/stack/tile/carpet/blue2
 
 /decl/flooring/carpet/blue3
 	name = "sea blue carpet"
 	icon_base = "blue3"
-	build_type = /obj/item/stack/tile/carpetblue3
+	build_type = /obj/item/stack/tile/carpet/blue3
 
 /decl/flooring/carpet/magenta
 	name = "magenta carpet"
 	icon_base = "purple"
-	build_type = /obj/item/stack/tile/carpetmagenta
+	build_type = /obj/item/stack/tile/carpet/magenta
 
 /decl/flooring/carpet/purple
 	name = "purple carpet"
 	icon_base = "purple"
-	build_type = /obj/item/stack/tile/carpetpurple
+	build_type = /obj/item/stack/tile/carpet/purple
 
 /decl/flooring/carpet/orange
 	name = "orange carpet"
 	icon_base = "orange"
-	build_type = /obj/item/stack/tile/carpetorange
+	build_type = /obj/item/stack/tile/carpet/orange
 
 /decl/flooring/carpet/green
 	name = "green carpet"
 	icon_base = "green"
-	build_type = /obj/item/stack/tile/carpetgreen
+	build_type = /obj/item/stack/tile/carpet/green
 
 /decl/flooring/carpet/red
 	name = "red carpet"
 	icon_base = "red"
-	build_type = /obj/item/stack/tile/carpetred
+	build_type = /obj/item/stack/tile/carpet/red
 
 /decl/flooring/linoleum
 	name = "linoleum"
@@ -342,7 +342,7 @@
 
 /decl/flooring/reinforced/shuttle
 	name = "floor"
-	icon = 'icons/turf/shuttle.dmi'
+	icon = 'icons/turf/flooring/shuttle.dmi'
 	build_type = null
 	flags = TURF_ACID_IMMUNE | TURF_CAN_BREAK | TURF_REMOVE_CROWBAR
 	can_paint = 1
@@ -432,7 +432,22 @@
 	floor_smooth = SMOOTH_NONE
 	wall_smooth = SMOOTH_NONE
 	space_smooth = SMOOTH_NONE
-	height = -FLUID_OVER_MOB_HEAD - 50
+	height = -(FLUID_OVER_MOB_HEAD) - 50
 
 /decl/flooring/pool/deep
 	height = -FLUID_DEEP - 50
+
+/decl/flooring/woven
+	name = "woven floor"
+	desc = "A rustic woven mat."
+	icon = 'icons/turf/flooring/woven.dmi'
+	icon_base = "0"
+	damage_temperature = T0C+80
+	flags = TURF_HAS_EDGES | TURF_HAS_CORNERS | TURF_REMOVE_CROWBAR
+	build_type = /obj/item/stack/tile/woven
+	can_engrave = FALSE
+	floor_smooth = SMOOTH_NONE
+	wall_smooth = SMOOTH_ALL
+	space_smooth = SMOOTH_NONE
+	decal_layer = ABOVE_WIRE_LAYER
+	color = COLOR_BEIGE

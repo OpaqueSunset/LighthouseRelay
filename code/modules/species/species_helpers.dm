@@ -13,8 +13,8 @@ var/global/list/stored_shock_by_ref = list()
 /decl/species/proc/fluid_act(var/mob/living/carbon/human/H, var/datum/reagents/fluids)
 	SHOULD_CALL_PARENT(TRUE)
 	var/water = REAGENT_VOLUME(fluids, /decl/material/liquid/water)
-	if(water >= 40 && H.getHalLoss())
-		H.adjustHalLoss(-(water_soothe_amount))
+	if(water >= 40 && H.get_damage(PAIN))
+		H.heal_damage(PAIN, water_soothe_amount)
 		if(prob(5))
 			to_chat(H, SPAN_NOTICE("The water ripples gently over your skin in a soothing balm."))
 
@@ -39,8 +39,8 @@ var/global/list/stored_shock_by_ref = list()
 /decl/species/proc/handle_post_species_pref_set(datum/preferences/pref)
 	pref.skin_colour = default_bodytype.base_color
 	pref.eye_colour = default_bodytype.base_eye_color
-	pref.hair_colour = default_bodytype.base_hair_color
-	pref.facial_hair_colour = default_bodytype.base_hair_color
+//	pref.hair_colour = default_bodytype.base_hair_color
+//	pref.facial_hair_colour = default_bodytype.base_hair_color
 
 /decl/species/proc/equip_default_fallback_uniform(var/mob/living/carbon/human/H)
 	if(istype(H))

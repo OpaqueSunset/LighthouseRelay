@@ -9,6 +9,11 @@ var/global/obj/temp_reagents_holder = new
 /atom/proc/remove_any_reagents(amount = 1, defer_update = FALSE)
 	return reagents?.remove_any(amount, defer_update)
 
+/atom/proc/get_reagent_space()
+	if(!reagents?.maximum_volume)
+		return 0
+	return reagents.maximum_volume - reagents.total_volume
+
 /datum/reagents
 	var/primary_reagent
 	var/list/reagent_volumes
@@ -383,9 +388,6 @@ var/global/obj/temp_reagents_holder = new
 			return TRUE
 		return splash_mob(target, amount, copy, defer_update = defer_update)
 	if(isturf(target))
-		touch_turf(target)
-		if(QDELETED(target))
-			return TRUE
 		return trans_to_turf(target, amount, multiplier, copy, defer_update = defer_update)
 	if(isobj(target))
 		touch_obj(target)
@@ -396,6 +398,9 @@ var/global/obj/temp_reagents_holder = new
 
 //Splashing reagents is messier than trans_to, the target's loc gets some of the reagents as well.
 /datum/reagents/proc/splash(var/atom/target, var/amount = 1, var/multiplier = 1, var/copy = 0, var/min_spill=0, var/max_spill=60, var/defer_update = FALSE)
+
+	if(!istype(target))
+		return
 
 	if(isturf(target))
 		trans_to_turf(target, amount, multiplier, copy, defer_update = defer_update)
@@ -539,9 +544,6 @@ var/global/obj/temp_reagents_holder = new
 					qdel(B)
 			if(dirtiness <= DIRTINESS_CLEAN)
 				target.clean()
-				if(istype(target, /turf/simulated))
-					var/turf/simulated/simulated_turf = target
-					simulated_turf.dirt = 0
 
 /datum/reagents/proc/touch_obj(var/obj/target)
 	if(!target || !istype(target) || !target.simulated)
@@ -586,17 +588,16 @@ var/global/obj/temp_reagents_holder = new
 	R.touch_mob(target)
 	qdel(R)
 
-/datum/reagents/proc/trans_to_turf(var/turf/target, var/amount = 1, var/multiplier = 1, var/copy = 0, var/defer_update = FALSE) // Turfs don't have any reagents (at least, for now). Just touch it.
-	if(!target || !target.simulated)
-		return
-	var/datum/reagents/R = new /datum/reagents(amount * multiplier, global.temp_reagents_holder)
-	. = trans_to_holder(R, amount, multiplier, copy, TRUE, defer_update = defer_update)
-	R.touch_turf(target)
-	if(R?.total_volume <= FLUID_QDEL_POINT || QDELETED(target))
+/datum/reagents/proc/trans_to_turf(var/turf/target, var/amount = 1, var/multiplier = 1, var/copy = 0, var/defer_update = FALSE)
+	if(!target?.simulated)
 		return
 	if(!target.reagents)
 		target.create_reagents(FLUID_MAX_DEPTH)
 	trans_to_holder(target.reagents, amount, multiplier, copy, defer_update = defer_update)
+	// Deferred updates are presumably being done by SSfluids.
+	// Do an immediate fluid_act call rather than waiting for SSfluids to proc.
+	if(!defer_update)
+		target.fluid_act(target.reagents)
 
 /datum/reagents/proc/trans_to_obj(var/obj/target, var/amount = 1, var/multiplier = 1, var/copy = 0, var/defer_update = FALSE) // Objects may or may not; if they do, it's probably a beaker or something and we need to transfer properly; otherwise, just touch.
 	if(!target || !target.simulated)

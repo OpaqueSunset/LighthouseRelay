@@ -383,8 +383,7 @@ Class Procs:
 		if(stash)
 			stash.stash(expelled_components)
 
-	for(var/obj/O in src)
-		O.dropInto(loc)
+	dump_contents()
 
 	qdel(src)
 	return frame
@@ -400,14 +399,14 @@ Class Procs:
 
 /obj/machinery/CouldUseTopic(var/mob/user)
 	..()
-	if(clicksound && iscarbon(user))
+	if(clicksound && isliving(user))
 		playsound(src, clicksound, clickvol)
 
 /obj/machinery/proc/display_parts(mob/user)
 	to_chat(user, "<span class='notice'>Following parts detected in the machine:</span>")
 	for(var/obj/item/C in component_parts)
 		var/line = "<span class='notice'>	[C.name]</span>"
-		if(!C.health)
+		if(!C.current_health)
 			line = "<span class='warning'>	[C.name] (destroyed)</span>"
 		else if(C.get_percent_health() < 75)
 			line = "<span class='notice'>	[C.name] (damaged)</span>"

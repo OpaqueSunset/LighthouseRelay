@@ -20,6 +20,14 @@
 /mob/proc/attack_empty_hand()
 	return
 
+/mob/living/attack_empty_hand()
+	// Handle any prepared ability/spell/power invocations.
+	var/datum/extension/abilities/abilities = get_extension(src, /datum/extension/abilities)
+	if(abilities?.do_self_invocation())
+		return TRUE
+	return FALSE
+
+
 /mob/living/carbon/human/RestrainedClickOn(var/atom/A)
 	return
 
@@ -36,22 +44,6 @@
 
 /mob/living/RestrainedClickOn(var/atom/A)
 	return
-
-/*
-	Aliens
-*/
-
-/mob/living/carbon/alien/RestrainedClickOn(var/atom/A)
-	return
-
-/mob/living/carbon/alien/UnarmedAttack(var/atom/A, var/proximity)
-
-	. = ..()
-	if(.)
-		return
-
-	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	return A.attack_generic(src,rand(5,6),"bites")
 
 /*
 	New Players:

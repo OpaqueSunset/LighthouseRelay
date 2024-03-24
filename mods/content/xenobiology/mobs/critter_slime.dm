@@ -3,7 +3,7 @@
 	desc = "A lovable, domesticated slime."
 	icon = 'mods/content/xenobiology/icons/slimes/slime_baby.dmi'
 	speak_emote = list("chirps")
-	mob_default_max_health = 100
+	max_health = 100
 	response_harm = "stamps on"
 	emote_see = list("jiggles", "bounces in place")
 	gene_damage = -1
@@ -44,7 +44,8 @@
 /mob/living/simple_animal/slime/adult
 	icon = 'mods/content/xenobiology/icons/slimes/slime_adult.dmi'
 
-/mob/living/simple_animal/slime/adult/death()
+/mob/living/simple_animal/slime/adult/death(gibbed)
+	SHOULD_CALL_PARENT(FALSE)
 	for(var/i = 1 to rand(2,3))
 		var/mob/living/simple_animal/slime/baby = new(get_turf(src), slime_type)
 		if(client)
@@ -53,6 +54,7 @@
 			else
 				baby.key = key
 	qdel(src)
+	return TRUE
 
 /mob/living/simple_animal/slime/adult/get_slime_icon()
 	var/decl/slime_colour/slime_data = GET_DECL(slime_type)

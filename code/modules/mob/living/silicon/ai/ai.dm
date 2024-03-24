@@ -56,7 +56,7 @@ var/global/list/ai_verbs_default = list(
 	density = TRUE
 	status_flags = CANSTUN|CANPARALYSE|CANPUSH
 	shouldnt_see = list(/obj/effect/rune)
-	mob_default_max_health = 200
+	max_health = 200
 
 	silicon_camera = /obj/item/camera/siliconcam/ai_camera
 	silicon_radio = /obj/item/radio/headset/heads/ai_integrated
@@ -714,7 +714,7 @@ var/global/list/custom_ai_icons_by_ckey_and_name = list()
 	if(!A)
 		return
 
-	for(var/turf/simulated/floor/bluegrid/F in A)
+	for(var/turf/floor/bluegrid/F in A)
 		F.color = f_color
 
 	to_chat(usr, SPAN_NOTICE("Proccessing strata color was changed to \"<font color='[f_color]'>[f_color]</font>\""))

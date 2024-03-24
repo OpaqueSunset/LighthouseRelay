@@ -3,15 +3,15 @@
 	real_name = "opossum"
 	desc = "It's an opossum, a small scavenging marsupial."
 	icon = 'icons/mob/simple_animal/possum.dmi'
-	speak = list("Hiss!","Aaa!","Aaa?")
-	speak_emote = list("hisses")
-	emote_hear = list("hisses")
-	emote_see = list("forages for trash", "lounges")
+	speak_emote  = list("hisses")
+	emote_speech = list("Hiss!","Aaa!","Aaa?")
+	emote_hear   = list("hisses")
+	emote_see    = list("forages for trash", "lounges")
 	pass_flags = PASS_FLAG_TABLE
-	speak_chance = 1
+	speak_chance = 0.5
 	turns_per_move = 3
 	see_in_dark = 6
-	mob_default_max_health = 50
+	max_health = 50
 	response_harm = "stamps on"
 	density = FALSE
 	minbodytemp = 223
@@ -88,6 +88,7 @@
 	name = "Poppy the Safety Possum"
 	desc = "It's an opossum, a small scavenging marsupial. It's wearing appropriate personal protective equipment, though."
 	icon = 'icons/mob/simple_animal/poppy_possum.dmi'
+	can_buckle = TRUE
 	var/aaa_words = list("delaminat", "meteor", "fire", "breach")
 
 /mob/living/simple_animal/opossum/poppy/hear_broadcast(decl/language/language, mob/speaker, speaker_name, message)

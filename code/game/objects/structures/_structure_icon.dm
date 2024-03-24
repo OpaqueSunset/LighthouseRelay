@@ -1,4 +1,4 @@
-var/global/list/default_blend_typecache = zebra_typecacheof(list(/obj/machinery/door = TRUE, /turf/simulated/wall = TRUE, /obj/machinery/door/window = FALSE, /obj/machinery/door/firedoor = FALSE, /obj/machinery/door/blast = FALSE))
+var/global/list/default_blend_typecache = zebra_typecacheof(list(/obj/machinery/door = TRUE, /turf/wall = TRUE, /obj/machinery/door/window = FALSE, /obj/machinery/door/firedoor = FALSE, /obj/machinery/door/blast = FALSE))
 
 /obj/structure
 	var/handle_generic_blending
@@ -22,15 +22,15 @@ var/global/list/default_blend_typecache = zebra_typecacheof(list(/obj/machinery/
 	return
 
 /obj/structure/proc/find_blendable_obj_in_turf(var/turf/T, var/propagate)
-	if(is_type_in_typecache(T, global.default_blend_typecache))
-		if(propagate && istype(T, /turf/simulated/wall))
-			for(var/turf/simulated/wall/W in RANGE_TURFS(T, 1))
+	if(global.default_blend_typecache[T.type])
+		if(propagate && istype(T, /turf/wall))
+			for(var/turf/wall/W in RANGE_TURFS(T, 1))
 				W.wall_connections = null
 				W.other_connections = null
 				W.queue_icon_update()
 		return TRUE
 	for(var/obj/O in T)
-		if(is_type_in_typecache(O, global.default_blend_typecache))
+		if(global.default_blend_typecache[O.type])
 			return TRUE
 	return FALSE
 

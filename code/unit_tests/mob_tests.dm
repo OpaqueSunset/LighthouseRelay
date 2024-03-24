@@ -65,7 +65,7 @@ var/global/default_mobloc = null
 
 	if(isnull(mobloc))
 		if(!default_mobloc)
-			for(var/turf/simulated/floor/tiled/T in world)
+			for(var/turf/floor/tiled/T in world)
 				if(!T.zone?.air)
 					continue
 				var/pressure = T.zone.air.return_pressure()
@@ -95,20 +95,20 @@ var/global/default_mobloc = null
 
 	switch(damage_type)
 		if(BRUTE)
-			loss = M.getBruteLoss()
+			loss = M.get_damage(BRUTE)
 		if(BURN)
-			loss = M.getFireLoss()
+			loss = M.get_damage(BURN)
 		if(TOX)
-			loss = M.getToxLoss()
+			loss = M.get_damage(TOX)
 		if(OXY)
-			loss = M.getOxyLoss()
+			loss = M.get_damage(OXY)
 		if(CLONE)
-			loss = M.getCloneLoss()
+			loss = M.get_damage(CLONE)
 		if(PAIN)
-			loss = M.getHalLoss()
+			loss = M.get_damage(PAIN)
 
 	if(!loss && ishuman(M))
-		var/mob/living/carbon/human/H = M            // Synthetics have robot limbs which don't report damage to getXXXLoss()
+		var/mob/living/carbon/human/H = M            // Synthetics have robot limbs which don't report damage to get_damage(XXX)
 		if(H.isSynthetic())                          // So we have to hard code this check or create a different one for them.
 			return H.species.total_health - H.current_health
 	return loss
@@ -252,7 +252,7 @@ var/global/default_mobloc = null
 
 /datum/unit_test/robot_module_icons
 	name = "MOB: Robot Modules Shall Have UI Icons"
-	var/icon_file = 'icons/mob/screen1_robot.dmi'
+	var/icon_file = 'icons/mob/screen/styles/robot/module.dmi'
 
 /datum/unit_test/robot_module_icons/start_test()
 	var/failed = 0

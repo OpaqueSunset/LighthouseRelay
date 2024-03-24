@@ -334,10 +334,10 @@
 
 //Ambrosia/varieties.
 /datum/seed/ambrosia
-	name = "biteleaf"
-	seed_name = "biteleaf"
-	display_name = "biteleaf patch"
-	mutants = list("biteleafdeus")
+	name = "ambrosiavulgaris"
+	seed_name = "ambrosia vulgaris"
+	display_name = "ambrosia vulgaris patch"
+	mutants = list("ambrosiadeus")
 	chems = list(
 		/decl/material/liquid/nutriment = list(1),
 		/decl/material/liquid/psychoactives = list(1,8),
@@ -345,7 +345,7 @@
 		/decl/material/liquid/brute_meds = list(1,10,1),
 		/decl/material/liquid/bromide = list(1,10)
 	)
-	kitchen_tag = "biteleaf"
+	kitchen_tag = "ambrosiavulgaris"
 
 /datum/seed/ambrosia/New()
 	..()
@@ -360,9 +360,9 @@
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
 
 /datum/seed/ambrosia/deus
-	name = "biteleafdeus"
-	seed_name = "biteleaf deus"
-	display_name = "biteleaf deus patch"
+	name = "ambrosiadeus"
+	seed_name = "ambrosia deus"
+	display_name = "ambrosia deus patch"
 	mutants = null
 	chems = list(
 		/decl/material/liquid/nutriment = list(1),
@@ -372,7 +372,7 @@
 		/decl/material/liquid/amphetamines = list(1,10,1),
 		/decl/material/liquid/psychoactives = list(1,10)
 	)
-	kitchen_tag = "biteleafdeus"
+	kitchen_tag = "ambrosiadeus"
 
 /datum/seed/ambrosia/deus/New()
 	..()
@@ -532,8 +532,8 @@
 
 /datum/seed/mushroom/towercap
 	name = "towercap"
-	seed_name = "towercap"
-	display_name = "towercap thicket"
+	seed_name = "dwarf towercap"
+	display_name = "dwarf towercap thicket"
 	chems = list(/decl/material/solid/organic/wood = list(10,1))
 	mutants = null
 	product_type = /obj/item/stack/material/log/towercap
@@ -823,6 +823,8 @@
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/nutriment/cornoil = list(1,10))
 	kitchen_tag = "corn"
 	trash_type = /obj/item/corncob
+	backyard_grilling_product = /obj/item/chems/food/popcorn
+	backyard_grilling_announcement = "pops enthusiastically!"
 
 /datum/seed/corn/New()
 	..()
@@ -1123,6 +1125,7 @@
 	display_name = "grass patch"
 	chems = list(/decl/material/liquid/nutriment = list(1,20))
 	kitchen_tag = "grass"
+	product_type = /obj/item/stack/material/bundle/grass
 
 /datum/seed/grass/New()
 	..()
@@ -1340,3 +1343,50 @@
 	set_trait(TRAIT_IDEAL_HEAT, 298)
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+
+/datum/seed/tea
+	name = "tea"
+	seed_name = "tea leaf"
+	display_name = "tea plant"
+	chems = list(/decl/material/liquid/nutriment = list(1))
+	dried_chems = list(/decl/material/liquid/nutriment/tea = list(10,10))
+
+/datum/seed/tea/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,TRUE)
+	set_trait(TRAIT_MATURATION,6)
+	set_trait(TRAIT_PRODUCTION,6)
+	set_trait(TRAIT_YIELD,5)
+	set_trait(TRAIT_PRODUCT_ICON,"tobacco")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#749733")
+	set_trait(TRAIT_PLANT_COLOUR,"#749733")
+	set_trait(TRAIT_PLANT_ICON,"vine2")
+	set_trait(TRAIT_IDEAL_HEAT, 299)
+	set_trait(TRAIT_IDEAL_LIGHT, 6)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/coffee
+	name = "coffee"
+	seed_name = "coffee cherries"
+	display_name = "coffee plant"
+	chems = list(/decl/material/liquid/nutriment = list(1))
+	roasted_chems = list(/decl/material/liquid/nutriment/coffee = list(10,10))
+	backyard_grilling_product = /obj/item/chems/food/grown/grilled
+	backyard_grilling_announcement = "roasts and darkens."
+	product_material = /decl/material/solid/organic/plantmatter/pith
+
+/datum/seed/coffee/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT,TRUE)
+	set_trait(TRAIT_MATURATION,6)
+	set_trait(TRAIT_PRODUCTION,6)
+	set_trait(TRAIT_YIELD,5)
+	set_trait(TRAIT_PRODUCT_ICON,"grapes")
+	set_trait(TRAIT_PRODUCT_COLOUR,"#a80000")
+	set_trait(TRAIT_PLANT_COLOUR,"#749733")
+	set_trait(TRAIT_PLANT_ICON,"vine2")
+	set_trait(TRAIT_IDEAL_HEAT, 299)
+	set_trait(TRAIT_IDEAL_LIGHT, 6)
+	set_trait(TRAIT_WATER_CONSUMPTION, 6)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)

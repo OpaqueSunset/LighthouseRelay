@@ -183,7 +183,12 @@
 		/obj/structure/reagent_dispensers
 	)
 	// Types to be skipped for reasons other than abstraction/spawnability.
-	var/static/list/excepted_types = list()
+	var/static/list/excepted_types = list(
+		// Not technically abstract, but should not be spawned outside of /datum/seed/harvest().
+		/obj/item/chems/food/grown,
+		/obj/item/chems/food/grown/dry,
+		/obj/item/chems/food/grown/grilled
+	)
 
 /datum/unit_test/chemistry_premade_bottles_shall_not_melt/start_test()
 
@@ -200,7 +205,7 @@
 				continue
 			chem = new chem(spawn_spot)
 			if(QDELETED(chem))
-				failures += "- [type] qdeleted after Initialize()"
+				failures += "- [chem.type] qdeleted after Initialize()"
 				continue
 			chem_refs[chem.type] = weakref(chem)
 

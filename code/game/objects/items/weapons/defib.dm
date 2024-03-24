@@ -422,7 +422,7 @@
 	H.stun_effect_act(2, 120, target_zone)
 	var/burn_damage = H.electrocute_act(burn_damage_amt*2, src, def_zone = target_zone)
 	if(burn_damage > 15 && H.can_feel_pain())
-		H.emote("scream")
+		H.emote(/decl/emote/audible/scream)
 	var/obj/item/organ/internal/heart/doki = locate() in affecting.internal_organs
 	if(istype(doki) && doki.pulse && !doki.open && prob(10))
 		to_chat(doki, SPAN_DANGER("Your [doki] has stopped!"))
@@ -440,7 +440,7 @@
 	M.failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	M.reload_fullscreen()
 
-	M.emote("gasp")
+	M.emote(/decl/emote/audible/gasp)
 	SET_STATUS_MAX(M, STAT_WEAK, rand(10,25))
 	apply_brain_damage(M, deadtime)
 
@@ -452,8 +452,8 @@
 	var/obj/item/organ/internal/brain = GET_INTERNAL_ORGAN(H, BP_BRAIN)
 	if(!brain) return //no brain
 
-	var/brain_damage = clamp((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.getBrainLoss(), brain.max_damage)
-	H.setBrainLoss(brain_damage)
+	var/brain_damage = clamp((deadtime - DEFIB_TIME_LOSS)/(DEFIB_TIME_LIMIT - DEFIB_TIME_LOSS)*brain.max_damage, H.get_damage(BRAIN), brain.max_damage)
+	H.set_damage(BRAIN, brain_damage)
 
 /obj/item/shockpaddles/proc/make_announcement(var/message, var/msg_class)
 	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.")

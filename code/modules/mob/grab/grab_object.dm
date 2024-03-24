@@ -95,7 +95,11 @@
 			upgrade()
 
 /obj/item/grab/attack(mob/M, mob/living/user)
-	return FALSE
+	if(affecting == M)
+		var/datum/extension/abilities/abilities = get_extension(user, /datum/extension/abilities)
+		if(abilities?.do_grabbed_invocation(M))
+			return TRUE
+	. = ..()
 
 /obj/item/grab/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	if(QDELETED(src) || !current_grab || !assailant || proximity_flag) // Close-range is handled in resolve_attackby().
@@ -142,7 +146,7 @@
 */
 
 /obj/item/grab/proc/on_target_change(obj/screen/zone_selector/zone, old_sel, new_sel)
-	if(src != assailant.get_active_hand())
+	if(src != assailant.get_active_held_item())
 		return // Note that because of this condition, there's no guarantee that target_zone = old_sel
 	if(target_zone == new_sel)
 		return
@@ -232,10 +236,10 @@
 
 /obj/item/grab/on_update_icon()
 	. = ..()
-	if(current_grab.icon)
-		icon = current_grab.icon
-	if(current_grab.icon_state)
-		icon_state = current_grab.icon_state
+	if(current_grab.grab_icon)
+		icon = current_grab.grab_icon
+	if(current_grab.grab_icon_state)
+		icon_state = current_grab.grab_icon_state
 
 /obj/item/grab/proc/throw_held()
 	return current_grab.throw_held(src)

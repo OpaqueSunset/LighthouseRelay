@@ -3,15 +3,15 @@
 	name = "goat"
 	desc = "Not known for their pleasant disposition."
 	icon = 'icons/mob/simple_animal/goat.dmi'
-	speak = list("EHEHEHEHEH","eh?")
-	speak_emote = list("brays")
-	emote_hear = list("brays")
-	emote_see = list("shakes its head", "stamps a foot", "glares around")
-	speak_chance = 1
+	speak_emote  = list("brays")
+	emote_speech = list("EHEHEHEHEH","eh?")
+	emote_hear   = list("brays")
+	emote_see    = list("shakes its head", "stamps a foot", "glares around")
+	speak_chance = 0.5
 	turns_per_move = 5
 	see_in_dark = 6
 	faction = "goat"
-	mob_default_max_health = 40
+	max_health = 40
 	natural_weapon = /obj/item/natural_weapon/hooves
 
 	meat_type = /obj/item/chems/food/meat/goat
@@ -94,14 +94,14 @@
 	name = "cow"
 	desc = "Known for their milk, just don't tip them over."
 	icon = 'icons/mob/simple_animal/cow.dmi'
-	speak = list("moo?","moo","MOOOOOO")
-	speak_emote = list("moos","moos hauntingly")
-	emote_hear = list("brays")
-	emote_see = list("shakes its head")
-	speak_chance = 1
+	speak_emote  = list("moos","moos hauntingly")
+	emote_speech = list("moo?","moo","MOOOOOO")
+	emote_hear   = list("brays")
+	emote_see    = list("shakes its head")
+	speak_chance = 0.5
 	turns_per_move = 5
 	see_in_dark = 6
-	mob_default_max_health = 50
+	max_health = 50
 
 	meat_type = /obj/item/chems/food/meat/beef
 	meat_amount = 6
@@ -164,13 +164,13 @@
 	name = "chick"
 	desc = "Adorable! They make such a racket though."
 	icon = 'icons/mob/simple_animal/chick.dmi'
-	speak = list("Cherp.","Cherp?","Chirrup.","Cheep!")
-	speak_emote = list("cheeps")
-	emote_hear = list("cheeps")
-	emote_see = list("pecks at the ground","flaps its tiny wings")
-	speak_chance = 2
+	speak_emote  = list("cheeps")
+	emote_speech = list("Cherp.","Cherp?","Chirrup.","Cheep!")
+	emote_hear   = list("cheeps")
+	emote_see    = list("pecks at the ground","flaps its tiny wings")
+	speak_chance = 1
 	turns_per_move = 2
-	mob_default_max_health = 1
+	max_health = 1
 	pass_flags = PASS_FLAG_TABLE | PASS_FLAG_GRILLE
 	mob_size = MOB_SIZE_MINISCULE
 
@@ -197,7 +197,7 @@
 		qdel(src)
 
 /mob/living/simple_animal/fowl
-	mob_default_max_health = 10
+	max_health = 10
 	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_SIZE_SMALL
 	meat_type = /obj/item/chems/food/meat/chicken
@@ -221,10 +221,10 @@ var/global/chicken_count = 0
 	name = "chicken"
 	desc = "Hopefully the eggs are good this season."
 	icon = 'icons/mob/simple_animal/chicken_white.dmi'
-	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
-	speak_emote = list("clucks","croons")
-	emote_hear = list("clucks")
-	emote_see = list("pecks at the ground","flaps its wings viciously")
+	speak_emote  = list("clucks","croons")
+	emote_speech = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
+	emote_hear   = list("clucks")
+	emote_see    = list("pecks at the ground","flaps its wings viciously")
 	var/eggsleft = 0
 
 /mob/living/simple_animal/fowl/chicken/Initialize()
@@ -244,9 +244,10 @@ var/global/chicken_count = 0
 		else
 			icon = 'icons/mob/simple_animal/chicken_white.dmi'
 
-/mob/living/simple_animal/fowl/chicken/death(gibbed, deathmessage, show_dead_message)
-	..(gibbed, deathmessage, show_dead_message)
-	global.chicken_count -= 1
+/mob/living/simple_animal/fowl/chicken/death(gibbed)
+	. = ..()
+	if(.)
+		global.chicken_count -= 1
 
 /mob/living/simple_animal/fowl/chicken/attackby(var/obj/item/O, var/mob/user)
 	if(istype(O, /obj/item/chems/food/grown)) //feedin' dem chickens
@@ -281,10 +282,10 @@ var/global/chicken_count = 0
 	name = "duck"
 	desc = "It's a duck. Quack."
 	icon = 'icons/mob/simple_animal/duck_white.dmi'
-	speak = list("Wak!","Wak wak wak!","Wak wak.")
-	speak_emote = list("quacks")
-	emote_hear = list("quacks")
-	emote_see = list("preens itself", "waggles its tail")
+	speak_emote  = list("quacks")
+	emote_speech = list("Wak!","Wak wak wak!","Wak wak.")
+	emote_hear   = list("quacks")
+	emote_see    = list("preens itself", "waggles its tail")
 
 /mob/living/simple_animal/fowl/duck/Initialize()
 	. = ..()

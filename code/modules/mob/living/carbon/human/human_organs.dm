@@ -10,7 +10,7 @@
 	return E?.name
 
 /mob/living/carbon/human/proc/should_recheck_bad_external_organs()
-	var/damage_this_tick = getToxLoss()
+	var/damage_this_tick = get_damage(TOX)
 	for(var/obj/item/organ/external/O in get_external_organs())
 		damage_this_tick += O.burn_dam + O.brute_dam
 
@@ -83,8 +83,8 @@
 						W.germ_level += 1
 
 /mob/living/carbon/human/proc/Check_Proppable_Object()
-	for(var/turf/simulated/T in RANGE_TURFS(src, 1)) //we only care for non-space turfs
-		if(T.density)	//walls work
+	for(var/turf/T in RANGE_TURFS(src, 1)) //we only care for non-space turfs
+		if(T.density && T.simulated)	//walls work
 			return 1
 
 	for(var/obj/O in orange(1, src))
@@ -166,7 +166,7 @@
 	if(stance_damage >= 4 || (stance_damage >= 2 && prob(2)) || (stance_damage >= 3 && prob(8)))
 		if(!(lying || resting))
 			if(limb_pain)
-				emote("scream")
+				emote(/decl/emote/audible/scream)
 			custom_emote(VISIBLE_MESSAGE, "collapses!")
 		SET_STATUS_MAX(src, STAT_WEAK, 3) //can't emote while weakened, apparently.
 

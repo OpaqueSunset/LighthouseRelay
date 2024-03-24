@@ -98,35 +98,44 @@ steam.start() -- spawns the effect
 	icon = 'icons/effects/effects.dmi'
 	anchored = TRUE
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
+	pass_flags = PASS_FLAG_TABLE
+	var/spark_sound = "sparks"
+
+/obj/effect/sparks/struck
+	spark_sound = "light_bic"
 
 /obj/effect/sparks/Initialize()
 	. = ..()
 	QDEL_IN(src, 5 SECONDS)
-	playsound(src.loc, "sparks", 100, 1)
-	var/turf/T = src.loc
-	if (isturf(T))
-		T.hotspot_expose(1000,100)
+	playsound(loc, spark_sound, 100, 1)
+	if(isturf(loc))
+		var/turf/T = loc
+		T.spark_act()
 
 /obj/effect/sparks/Destroy()
-	var/turf/T = src.loc
-	if (isturf(T))
-		T.hotspot_expose(1000,100)
+	if(isturf(loc))
+		var/turf/T = loc
+		T.spark_act()
 	return ..()
 
 /obj/effect/sparks/Move()
-	..()
-	var/turf/T = src.loc
-	if (isturf(T))
-		T.hotspot_expose(1000,100)
+	. = ..()
+	if(. && isturf(loc))
+		var/turf/T = loc
+		T.spark_act()
 
-/proc/spark_at(turf/location, amount = 3, cardinal_only = FALSE, holder = null)
-	var/datum/effect/effect/system/spark_spread/sparks = new()
+/proc/spark_at(turf/location, amount = 3, cardinal_only = FALSE, holder = null, spark_type = /datum/effect/effect/system/spark_spread)
+	var/datum/effect/effect/system/spark_spread/sparks = new spark_type
 	sparks.set_up(amount, cardinal_only, location)
 	if(holder)
 		sparks.attach(holder)
 	sparks.start()
 
 /datum/effect/effect/system/spark_spread
+	var/spark_type = /obj/effect/sparks
+
+/datum/effect/effect/system/spark_spread/non_electrical
+	spark_type = /obj/effect/sparks/struck
 
 /datum/effect/effect/system/spark_spread/set_up(n = 3, c = 0, loca)
 	if(n > 10)
@@ -147,7 +156,7 @@ steam.start() -- spawns the effect
 	set waitfor = 0
 	if(holder)
 		src.location = get_turf(holder)
-	var/obj/effect/sparks/sparks = new /obj/effect/sparks(location)
+	var/obj/effect/sparks/sparks = new spark_type(location)
 	var/direction
 	if(src.cardinals)
 		direction = pick(global.cardinal)
@@ -189,13 +198,13 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/Crossed(atom/movable/AM)
 	..()
-	if(iscarbon(AM))
-		affect(AM)
+	if(isliving(AM))
+		affect_mob(AM)
 
-/obj/effect/effect/smoke/proc/affect(var/mob/living/carbon/M)
-	if (!istype(M))
+/obj/effect/effect/smoke/proc/affect_mob(var/mob/living/M)
+	if(!istype(M))
 		return 0
-	if(M.internal != null && M.check_for_airtight_internals(FALSE))
+	if(M.get_internals() != null && M.check_for_airtight_internals(FALSE))
 		return FALSE
 	return TRUE
 
@@ -223,19 +232,15 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/bad/Move()
 	..()
-	for(var/mob/living/carbon/M in get_turf(src))
-		affect(M)
+	for(var/mob/living/M in get_turf(src))
+		affect_mob(M)
 
-/obj/effect/effect/smoke/bad/affect(var/mob/living/carbon/M)
+/obj/effect/effect/smoke/bad/affect_mob(var/mob/living/M)
 	if (!..())
 		return 0
 	M.drop_held_items()
-	M.adjustOxyLoss(1)
-	if (M.coughedtime != 1)
-		M.coughedtime = 1
-		M.cough()
-		spawn ( 20 )
-			M.coughedtime = 0
+	M.take_damage(OXY, 1)
+	M.cough()
 
 /obj/effect/effect/smoke/bad/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
@@ -251,20 +256,17 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/sleepy/Move()
 	..()
-	for(var/mob/living/carbon/M in get_turf(src))
-		affect(M)
+	for(var/mob/living/M in get_turf(src))
+		affect_mob(M)
 
-/obj/effect/effect/smoke/sleepy/affect(mob/living/carbon/M)
+/obj/effect/effect/smoke/sleepy/affect_mob(var/mob/living/M)
 	if (!..())
 		return 0
 
 	M.drop_held_items()
 	ADJ_STATUS(M, STAT_ASLEEP, 1)
-	if (M.coughedtime != 1)
-		M.coughedtime = 1
-		M.cough()
-		spawn ( 20 )
-			M.coughedtime = 0
+	M.cough()
+
 /////////////////////////////////////////////
 // Mustard Gas
 /////////////////////////////////////////////
@@ -276,21 +278,19 @@ steam.start() -- spawns the effect
 
 /obj/effect/effect/smoke/mustard/Move()
 	..()
-	for(var/mob/living/carbon/human/R in get_turf(src))
-		affect(R)
+	for(var/mob/living/M in get_turf(src))
+		affect_mob(M)
 
-/obj/effect/effect/smoke/mustard/affect(var/mob/living/carbon/human/R)
-	if (!..())
+/obj/effect/effect/smoke/mustard/affect_mob(var/mob/living/M)
+	if (!..() || !isliving(M))
 		return 0
-	if (R.get_equipped_item(slot_wear_suit_str))
+	if (M.get_equipped_item(slot_wear_suit_str))
 		return 0
 
-	R.take_overall_damage(0, 0.75)
-	if (R.coughedtime != 1)
-		R.coughedtime = 1
-		R.emote("gasp")
-		spawn (20)
-			R.coughedtime = 0
+	M.take_overall_damage(0, 0.75)
+	if (world.time > M.last_cough + 2 SECONDS)
+		M.last_cough = world.time
+		M.emote(/decl/emote/audible/gasp)
 
 /////////////////////////////////////////////
 // Smoke spread

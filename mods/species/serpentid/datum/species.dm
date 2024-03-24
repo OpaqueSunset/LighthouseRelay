@@ -39,7 +39,7 @@
 	)
 
 	rarity_value = 4
-	hud_type = /datum/hud_data/serpentid
+	species_hud = /datum/hud_data/serpentid
 	total_health = 200
 	brute_mod = 0.9
 	burn_mod =  1.35
@@ -62,7 +62,7 @@
 	swap_flags = ALLMOBS
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/snake
 
-	unarmed_attacks = list(/decl/natural_attack/serpentid)
+	unarmed_attacks = list(/decl/natural_attack/forelimb_slash)
 	appearance_descriptors = list(
 		/datum/appearance_descriptor/height =      1.75,
 		/datum/appearance_descriptor/body_length = 1

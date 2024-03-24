@@ -20,12 +20,15 @@
 	var/list/traits = list()       // Initialized in New()
 	var/list/mutants               // Possible predefined mutant varieties, if any.
 	var/list/chems                 // Chemicals that plant produces in products/injects into victim.
+	var/list/dried_chems           // Chemicals that a dried plant product will have.
+	var/list/roasted_chems         // Chemicals that a roasted/grilled plant product will have.
 	var/list/consume_gasses        // The plant will absorb these gasses during its life.
 	var/list/exude_gasses          // The plant will exude these gasses during its life.
 	var/kitchen_tag                // Used by the reagent grinder.
 	var/trash_type                 // Garbage item produced when eaten.
 	var/splat_type = /obj/effect/decal/cleanable/fruit_smudge // Graffiti decal.
 	var/product_type = /obj/item/chems/food/grown
+	var/product_material
 	var/force_layer
 	var/req_CO2_moles    = 1.0// Moles of CO2 required for photosynthesis.
 	var/hydrotray_only
@@ -36,6 +39,14 @@
 	var/image/dead_overlay
 	var/image/harvest_overlay
 	var/list/growing_overlays
+
+	// Backyard grilling vars. Not passed through genetics.
+	var/backyard_grilling_rawness      = 20
+	var/backyard_grilling_product      = /obj/item/chems/food/badrecipe
+	var/backyard_grilling_announcement = "smokes and chars!"
+
+	// Used to show an icon when drying in a rack.
+	var/drying_state = "grown"
 
 /datum/seed/New()
 
@@ -695,7 +706,7 @@
 /datum/seed/proc/harvest(var/mob/user,var/yield_mod,var/harvest_sample,var/force_amount)
 
 	if(!user)
-		return
+		return FALSE
 
 	if(!force_amount && get_trait(TRAIT_YIELD) == 0 && !harvest_sample)
 		if(istype(user)) to_chat(user, "<span class='danger'>You fail to harvest anything useful.</span>")
@@ -708,10 +719,7 @@
 			SSplants.seeds[name] = src
 
 		if(harvest_sample)
-			var/obj/item/seeds/seeds = new(get_turf(user))
-			seeds.seed_type = name
-			seeds.update_seed()
-			return
+			return new /obj/item/seeds(get_turf(user), null, src)
 
 		var/total_yield = 0
 		if(!isnull(force_amount))
@@ -736,7 +744,7 @@
 				. += new product_type(get_turf(user), using_yield)
 		else
 			for(var/i = 1 to total_yield)
-				var/obj/item/product = new product_type(get_turf(user),name)
+				var/obj/item/product = new product_type(get_turf(user), null, src)
 				. += product
 
 				if(get_trait(TRAIT_PRODUCT_COLOUR) && istype(product, /obj/item/chems/food))

@@ -8,6 +8,8 @@
 	nutriment_desc = list("dough" = 3)
 	nutriment_amt = 3
 	nutriment_type = /decl/material/liquid/nutriment/bread
+	backyard_grilling_product = /obj/item/chems/food/bun
+	backyard_grilling_announcement = "is baked into a simple bun."
 
 // Dough + rolling pin = flat dough
 /obj/item/chems/food/dough/attackby(obj/item/W, mob/user)
@@ -26,6 +28,9 @@
 	slice_path = /obj/item/chems/food/doughslice
 	slices_num = 3
 	center_of_mass = @'{"x":16,"y":16}'
+	utensil_flags = UTENSIL_FLAG_COLLECT | UTENSIL_FLAG_SLICE
+	backyard_grilling_product = /obj/item/chems/food/flatbread
+	backyard_grilling_announcement = "is baked into a simple flatbread."
 
 /obj/item/chems/food/sliceable/flatdough/populate_reagents()
 	. = ..()
@@ -44,6 +49,7 @@
 	nutriment_desc = list("dough" = 1)
 	nutriment_amt = 1
 	nutriment_type = /decl/material/liquid/nutriment/bread
+	utensil_flags = UTENSIL_FLAG_COLLECT | UTENSIL_FLAG_SLICE
 
 /obj/item/chems/food/bun
 	name = "bun"

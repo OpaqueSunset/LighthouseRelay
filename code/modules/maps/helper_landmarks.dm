@@ -67,7 +67,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 /obj/abstract/landmark/clear
 	name = "clear turf"
 	icon_state = "clear"
-	//Don't set deleteme to true, since we work inside lateinitialize
+	//Don't set delete_me to true, since we work inside lateinitialize
 
 /obj/abstract/landmark/clear/Initialize()
 	..()
@@ -75,12 +75,9 @@ INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 
 /obj/abstract/landmark/clear/LateInitialize()
 	. = ..()
-	var/turf/simulated/wall/simulated_wall = get_turf(src)
-	if(istype(simulated_wall))
-		simulated_wall.dismantle_wall(TRUE, TRUE, TRUE)
-	else if(istype(simulated_wall, /turf/exterior/wall))
-		var/turf/exterior/wall/exterior_wall = simulated_wall
-		exterior_wall.dismantle_wall(TRUE)
+	var/turf/wall/wall = get_turf(src)
+	if(istype(wall))
+		wall.dismantle_wall(TRUE, TRUE, TRUE)
 	qdel(src)
 
 //Applies fire act to the turf
@@ -188,8 +185,8 @@ INITIALIZE_IMMEDIATE(/obj/abstract/landmark/map_load_mark)
 	return TRUE
 
 /obj/abstract/landmark/proc_caller/floor_burner
-	type_to_find = /turf/simulated/floor
-	proc_to_call = /turf/simulated/floor/proc/burn_tile
+	type_to_find = /turf/floor
+	proc_to_call = /turf/floor/proc/burn_tile
 	arguments_to_pass = null
 
 /// Used to tell pipe leak unit tests that a leak is intentional. Placed over the pipe that leaks, not the tile missing a pipe.

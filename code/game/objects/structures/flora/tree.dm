@@ -14,6 +14,8 @@
 
 	/// What kind of log we leave behind.
 	var/log_type = /obj/item/stack/material/log
+	/// How many logs we leave behind.
+	var/log_amount = 10
 	/// Whether or not you can shelter under this tree.
 	var/protects_against_weather = TRUE
 	/// What kind of tree stump we leaving behind.
@@ -21,6 +23,8 @@
 	/// How much to shake the tree when struck.
 	/// Larger trees should have smaller numbers or it looks weird.
 	var/shake_animation_degrees = 4
+	/// Marker for repeating the cut sound effect and animation.
+	var/someone_is_cutting = FALSE
 
 /obj/structure/flora/tree/get_material_health_modifier()
 	return 2.5 //Prefer removing via tools than bashing
@@ -29,8 +33,10 @@
 	return IS_HATCHET(I) //Axes can bypass having to damage the tree to break it
 
 /obj/structure/flora/tree/cut_down(obj/item/I, mob/user)
+	someone_is_cutting = TRUE
 	if(I.do_tool_interaction(TOOL_HATCHET, user, src, 5 SECONDS))
 		. = ..()
+	someone_is_cutting = FALSE
 
 /obj/structure/flora/tree/take_damage(damage)
 	. = ..()
@@ -38,16 +44,15 @@
 		shake()
 
 // We chop several times to cut down a tree.
-/obj/structure/flora/tree/play_cut_sound()
+/obj/structure/flora/tree/play_cut_sound(mob/user)
 	shake()
-	for(var/i = 1 to 5)
+	while(someone_is_cutting)
 		sleep(1 SECOND)
 		if(QDELETED(src))
 			return
 		shake()
 		playsound(src, 'sound/items/axe_wood.ogg', 40, TRUE)
-	sleep(1 SECOND)
-	if(QDELETED(src))
+	if(QDELETED(src) || QDELETED(user) || !user.Adjacent(src))
 		return
 	return ..()
 
@@ -64,10 +69,12 @@
 
 /obj/structure/flora/tree/create_dismantled_products(turf/T)
 	if(log_type)
-		new log_type(T, rand(3,5), material?.type, reinf_material?.type)
+		LAZYADD(., new log_type(T, rand(max(1,round(log_amount*0.5)), log_amount), material?.type, reinf_material?.type))
 	if(stump_type)
 		var/obj/structure/flora/stump/stump = new stump_type(T, material, reinf_material)
 		stump.icon_state = icon_state //A bit dirty maybe, but its probably not worth writing a whole system for this when we have 3 kinds of trees..
+		if(paint_color)
+			stump.set_color()
 	. = ..()
 
 /obj/structure/flora/tree/pine
@@ -103,18 +110,28 @@
 
 /obj/structure/flora/tree/dead/ebony
 	icon_state = "dead_ebony_1"
+	material   = /decl/material/solid/organic/wood/ebony
+	stump_type = /obj/structure/flora/stump/tree/ebony
 
 /obj/structure/flora/tree/dead/mahogany
 	icon_state = "dead_mahogany_1"
+	material   = /decl/material/solid/organic/wood/mahogany
+	stump_type = /obj/structure/flora/stump/tree/mahogany
 
 /obj/structure/flora/tree/dead/walnut
 	icon_state = "dead_walnut_1"
+	material   = /decl/material/solid/organic/wood/walnut
+	stump_type = /obj/structure/flora/stump/tree/walnut
 
 /obj/structure/flora/tree/dead/maple
 	icon_state = "dead_maple_1"
+	material   = /decl/material/solid/organic/wood/maple
+	stump_type = /obj/structure/flora/stump/tree/maple
 
 /obj/structure/flora/tree/dead/yew
 	icon_state = "dead_yew_1"
+	material   = /decl/material/solid/organic/wood/yew
+	stump_type = /obj/structure/flora/stump/tree/yew
 
 /obj/structure/flora/tree/softwood
 	icon          = 'icons/obj/flora/softwood.dmi'

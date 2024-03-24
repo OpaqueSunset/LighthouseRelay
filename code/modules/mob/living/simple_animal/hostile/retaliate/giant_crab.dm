@@ -6,14 +6,14 @@
 	speak_emote = list("clicks")
 	emote_hear = list("clicks")
 	emote_see = list("clacks")
-	speak_chance = 1
+	speak_chance = 0.5
 	turns_per_move = 5
 	meat_amount = 12
 	can_escape = TRUE //snip snip
 	break_stuff_probability = 15
 	faction = "crabs"
 	pry_time = 2 SECONDS
-	mob_default_max_health = 350
+	max_health = 350
 	natural_weapon = /obj/item/natural_weapon/pincers/giant
 	return_damage_min = 2
 	return_damage_max = 5

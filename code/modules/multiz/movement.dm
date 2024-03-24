@@ -80,16 +80,16 @@
 		return 1
 
 	if(Check_Shoegrip())	//scaling hull with magboots
-		for(var/turf/simulated/T in RANGE_TURFS(src, 1))
-			if(T.density)
+		for(var/turf/T in RANGE_TURFS(src, 1))
+			if(T.density && T.simulated)
 				return 1
 
 /mob/living/silicon/robot/can_ztravel()
 	if(Process_Spacemove()) //Checks for active jetpack
 		return 1
 
-	for(var/turf/simulated/T in RANGE_TURFS(src, 1)) //Robots get "magboots"
-		if(T.density)
+	for(var/turf/T in RANGE_TURFS(src, 1)) //Robots get "magboots"
+		if(T.density && T.simulated)
 			return 1
 
 //FALLING STUFF
@@ -189,7 +189,7 @@
 /atom/movable/proc/protected_from_fall_damage(var/turf/landing)
 	if(!!(locate(/obj/structure/stairs) in landing))
 		return TRUE
-	var/turf/exterior/wall/ramp = landing
+	var/turf/wall/natural/ramp = landing
 	if(istype(ramp) && ramp.ramp_slope_direction) // walking down a ramp
 		return TRUE
 

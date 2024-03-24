@@ -80,7 +80,7 @@
 	name = "Lower Deck"
 	landmark_tag = "nav_bearcat_lift_bottom"
 	base_area = /area/ship/scrap/cargo/lower
-	base_turf = /turf/simulated/floor
+	base_turf = /turf/floor
 
 /obj/machinery/door/airlock/autoname/command
 	door_color = COLOR_COMMAND_BLUE
@@ -88,40 +88,33 @@
 /obj/machinery/door/airlock/autoname/engineering
 	door_color = COLOR_AMBER
 
-/turf/simulated/floor/usedup
+/turf/floor/usedup
 	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
-/turf/simulated/floor/tiled/usedup
+/turf/floor/tiled/usedup
 	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
-/turf/simulated/floor/tiled/dark/usedup
+/turf/floor/tiled/dark/usedup
 	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
-/turf/simulated/floor/tiled/white/usedup
+/turf/floor/tiled/white/usedup
 	initial_gas = list(/decl/material/gas/carbon_dioxide = MOLES_O2STANDARD, /decl/material/gas/nitrogen = MOLES_N2STANDARD)
 
-/obj/abstract/landmark/deadcap
+/obj/abstract/landmark/corpse/deadcap
 	name = "Dead Captain"
+	corpse_outfits = list(/decl/hierarchy/outfit/deadcap)
+	delete_me = FALSE //  we handle this in LateInit
 
-/obj/abstract/landmark/deadcap/Initialize()
+/obj/abstract/landmark/corpse/deadcap/Initialize()
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
-// chair may need to init first
-/obj/abstract/landmark/deadcap/LateInitialize()
-	..()
-	var/turf/T = get_turf(src)
-	var/mob/living/carbon/human/corpse = new(T)
-	scramble(1,corpse,100)
-	corpse.real_name = "Captain"
-	corpse.name = "Captain"
-	var/decl/hierarchy/outfit/outfit = outfit_by_type(/decl/hierarchy/outfit/deadcap)
-	outfit.equip_outfit(corpse)
-	var/corpse_health = corpse.get_max_health()
-	corpse.adjustOxyLoss(corpse_health)
-	corpse.setBrainLoss(corpse_health)
-	corpse.death(FALSE, deathmessage = "no message", show_dead_message = FALSE)
-	var/obj/structure/bed/chair/C = locate() in T
+/obj/abstract/landmark/corpse/deadcap/LateInitialize()
+	var/mob/corpse = my_corpse?.resolve()
+	if(!istype(corpse))
+		return
+	corpse.SetName("Captain")
+	var/obj/structure/bed/chair/C = locate() in loc
 	if(C)
 		C.buckle_mob(corpse)
 	qdel(src)

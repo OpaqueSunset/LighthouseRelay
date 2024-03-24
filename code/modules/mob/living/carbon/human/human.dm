@@ -6,14 +6,14 @@
 	icon_state = "body_m_s"
 	mob_sort_value = 6
 	dna = new /datum/dna()
-	mob_default_max_health = 150
+	max_health = 150
 
 	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 	var/step_count
 
 /mob/living/carbon/human/Initialize(mapload, species_name, datum/dna/new_dna, decl/bodytype/new_bodytype)
-	current_health = mob_default_max_health
+	current_health = max_health
 	setup_hud_overlays()
 	var/list/newargs = args.Copy(2)
 	setup(arglist(newargs))
@@ -59,7 +59,7 @@
 	. = ..()
 	if(statpanel("Status"))
 
-		var/obj/item/gps/G = get_active_hand()
+		var/obj/item/gps/G = get_active_held_item()
 		if(istype(G))
 			stat("Coordinates:", "[G.get_coordinates()]")
 
@@ -344,7 +344,7 @@
 	visible_message(SPAN_DANGER("\The [src] throws up!"),SPAN_DANGER("You throw up!"))
 	playsound(loc, 'sound/effects/splat.ogg', 50, 1)
 	var/turf/location = loc
-	if(istype(location, /turf/simulated))
+	if(istype(location) && location.simulated)
 		var/obj/effect/decal/cleanable/vomit/splat = new /obj/effect/decal/cleanable/vomit(location)
 		if(stomach.ingested.total_volume)
 			stomach.ingested.trans_to_obj(splat, min(15, stomach.ingested.total_volume))
@@ -405,7 +405,7 @@
 	UpdateAppearance()
 	..()
 
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M, amount = 2, blood_data)
+/mob/living/add_blood(mob/living/M, amount = 2, list/blood_data)
 	if (!..())
 		return 0
 	var/bloodied
@@ -452,7 +452,7 @@
 					to_chat(src, SPAN_DANGER("You feel something rip out of your [stomach.name]!"))
 					O.dropInto(loc)
 					if(parent)
-						parent.embed(O)
+						parent.embed_in_organ(O)
 				else
 					jostle_internal_object(parent, O)
 
@@ -478,17 +478,6 @@
 		new_bodytype.create_missing_organs(src, TRUE) // actually rebuild the body
 		apply_bodytype_appearance()
 		force_update_limbs()
-
-		// Check and clear hair.
-		var/set_hairstyle = get_hairstyle()
-		var/decl/sprite_accessory/hair/hairstyle = GET_DECL(set_hairstyle)
-		if(!hairstyle?.accessory_is_available(src, species, new_bodytype))
-			set_hairstyle(new_bodytype.default_h_style, skip_update = TRUE)
-		set_hairstyle = get_facial_hairstyle()
-		var/decl/sprite_accessory/hair/facialhairstyle = GET_DECL(set_hairstyle)
-		if(!facialhairstyle?.accessory_is_available(src, species, new_bodytype))
-			set_facial_hairstyle(new_bodytype.default_f_style, skip_update = TRUE)
-		// TODO: check markings.
 		update_hair()
 		update_eyes()
 		return TRUE
@@ -551,7 +540,6 @@
 	set_move_intent(GET_DECL(move_intents[1]))
 	if(!istype(move_intent))
 		set_next_usable_move_intent()
-	update_emotes()
 	apply_species_inventory_restrictions()
 	refresh_ai_handler()
 
@@ -587,16 +575,17 @@
 
 	var/list/new_slots
 	var/list/held_slots = get_held_item_slots()
-	for(var/slot_id in species.hud.inventory_slots)
-		var/datum/inventory_slot/old_slot = get_inventory_slot_datum(slot_id)
-		if(slot_id in held_slots)
-			LAZYSET(new_slots, slot_id, old_slot)
-			continue
-		var/datum/inventory_slot/new_slot = species.hud.inventory_slots[slot_id]
-		if(!old_slot || !old_slot.equivalent_to(new_slot))
-			LAZYSET(new_slots, slot_id, new_slot.Clone())
-		else
-			LAZYSET(new_slots, slot_id, old_slot)
+	if(istype(species.species_hud))
+		for(var/slot_id in species.species_hud.inventory_slots)
+			var/datum/inventory_slot/old_slot = get_inventory_slot_datum(slot_id)
+			if(slot_id in held_slots)
+				LAZYSET(new_slots, slot_id, old_slot)
+				continue
+			var/datum/inventory_slot/new_slot = species.species_hud.inventory_slots[slot_id]
+			if(!old_slot || !old_slot.equivalent_to(new_slot))
+				LAZYSET(new_slots, slot_id, new_slot.Clone())
+			else
+				LAZYSET(new_slots, slot_id, old_slot)
 	set_inventory_slots(new_slots)
 
 	//recheck species-restricted clothing
@@ -627,6 +616,21 @@
 		default_pixel_x = initial(pixel_x) + root_bodytype.pixel_offset_x
 		default_pixel_y = initial(pixel_y) + root_bodytype.pixel_offset_y
 		default_pixel_z = initial(pixel_z) + root_bodytype.pixel_offset_z
+
+	for(var/obj/item/organ/external/E in get_external_organs())
+		E.sanitize_sprite_accessories()
+
+	for(var/acc_cat in root_bodytype.default_sprite_accessories)
+		var/decl/sprite_accessory_category/acc_cat_decl = GET_DECL(acc_cat)
+		if(!acc_cat_decl.always_apply_defaults)
+			continue
+		for(var/accessory in root_bodytype.default_sprite_accessories[acc_cat])
+			var/decl/sprite_accessory/accessory_decl = GET_DECL(accessory)
+			var/accessory_colour = root_bodytype.default_sprite_accessories[acc_cat][accessory]
+			for(var/bodypart in accessory_decl.body_parts)
+				var/obj/item/organ/external/O = GET_EXTERNAL_ORGAN(src, bodypart)
+				if(O && O.bodytype == root_bodytype)
+					O.set_sprite_accessory(accessory, accessory_decl.accessory_category, accessory_colour, skip_update = TRUE)
 
 	reset_offsets()
 
@@ -675,6 +679,15 @@
 
 	if(length(default_languages) && isnull(default_language))
 		default_language = default_languages[1]
+
+/mob/living/proc/bodypart_is_covered(target_zone)
+	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, target_zone)
+	if(!affecting?.body_part)
+		return FALSE
+	for(var/obj/item/clothing/thing in get_equipped_items())
+		if(thing.body_parts_covered & affecting.body_part)
+			return thing
+	return FALSE
 
 /mob/living/carbon/human/can_inject(var/mob/user, var/target_zone)
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, target_zone)
@@ -893,8 +906,8 @@
 
 		shock_stage = min(shock_stage, 100) // 120 is the point at which the heart stops.
 		var/oxyloss_threshold = round(species.total_health * 0.35)
-		if(getOxyLoss() >= oxyloss_threshold)
-			setOxyLoss(oxyloss_threshold)
+		if(get_damage(OXY) >= oxyloss_threshold)
+			set_damage(OXY, oxyloss_threshold)
 		heart.pulse = PULSE_NORM
 		heart.handle_pulse()
 		return TRUE
@@ -913,7 +926,7 @@
 
 //Point at which you dun breathe no more. Separate from asystole crit, which is heart-related.
 /mob/living/carbon/human/nervous_system_failure()
-	return getBrainLoss() >= get_max_health() * 0.75
+	return get_damage(BRAIN) >= get_max_health() * 0.75
 
 /mob/living/carbon/human/melee_accuracy_mods()
 	. = ..()
@@ -998,19 +1011,23 @@
 	return BULLET_IMPACT_MEAT
 
 /mob/living/carbon/human/lose_hair()
-	if(get_bodytype().set_default_hair(src))
-		. = TRUE
 	if(species.handle_additional_hair_loss(src))
 		. = TRUE
 	for(var/obj/item/organ/external/E in get_external_organs())
-		for(var/mark in E.markings)
-			var/decl/sprite_accessory/marking/mark_datum = GET_DECL(mark)
-			if(mark_datum.flags & HAIR_LOSS_VULNERABLE)
-				E.markings -= mark
-				. = TRUE
+		if(E.handle_hair_loss())
+			. = TRUE
 	if(.)
 		update_body()
 		to_chat(src, SPAN_DANGER("You feel a chill and your skin feels lighter..."))
+
+/obj/item/organ/external/proc/handle_hair_loss()
+	for(var/accessory_category in _sprite_accessories)
+		var/list/draw_accessories = _sprite_accessories[accessory_category]
+		for(var/accessory in draw_accessories)
+			var/decl/sprite_accessory/accessory_decl = GET_DECL(accessory)
+			if(accessory_decl.accessory_flags & HAIR_LOSS_VULNERABLE)
+				remove_sprite_accessory(accessory, skip_update = TRUE)
+				. = TRUE
 
 /mob/living/carbon/human/increaseBodyTemp(value)
 	bodytemperature += value
@@ -1081,14 +1098,10 @@
 	var/decl/bodytype/root_bodytype = get_bodytype() // root bodytype is set in set_species
 	if(!get_skin_colour())
 		set_skin_colour(root_bodytype.base_color, skip_update = TRUE)
-	if(!get_hair_colour())
-		set_hair_colour(root_bodytype.base_hair_color, skip_update = TRUE)
-	if(!get_facial_hair_colour())
-		set_facial_hair_colour(root_bodytype.base_hair_color, skip_update = TRUE)
 	if(!get_eye_colour())
 		set_eye_colour(root_bodytype.base_eye_color, skip_update = TRUE)
+	root_bodytype.set_default_sprite_accessories(src)
 
-	root_bodytype.set_default_hair(src, override_existing = TRUE, defer_update_hair = TRUE)
 	if(!blood_type && length(species?.blood_types))
 		blood_type = pickweight(species.blood_types)
 
@@ -1161,3 +1174,183 @@
 		return SScharacter_info.get_record(comments_record_id, TRUE)
 	return ..()
 
+/mob/living/carbon/human/proc/get_age()
+	. = LAZYACCESS(appearance_descriptors, "age") || 30
+
+/mob/living/carbon/human/proc/set_age(var/val)
+	var/datum/appearance_descriptor/age = LAZYACCESS(species.appearance_descriptors, "age")
+	LAZYSET(appearance_descriptors, "age", (age ? age.sanitize_value(val) : 30))
+
+/mob/living/carbon/human/get_default_emotes()
+	var/static/list/default_emotes = list(
+		/decl/emote/visible/blink,
+		/decl/emote/audible/synth,
+		/decl/emote/audible/synth/ping,
+		/decl/emote/audible/synth/buzz,
+		/decl/emote/audible/synth/confirm,
+		/decl/emote/audible/synth/deny,
+		/decl/emote/visible/nod,
+		/decl/emote/visible/shake,
+		/decl/emote/visible/shiver,
+		/decl/emote/visible/collapse,
+		/decl/emote/audible/gasp,
+		/decl/emote/audible/sneeze,
+		/decl/emote/audible/sniff,
+		/decl/emote/audible/snore,
+		/decl/emote/audible/whimper,
+		/decl/emote/audible/yawn,
+		/decl/emote/audible/clap,
+		/decl/emote/audible/chuckle,
+		/decl/emote/audible/cough,
+		/decl/emote/audible/cry,
+		/decl/emote/audible/sigh,
+		/decl/emote/audible/laugh,
+		/decl/emote/audible/mumble,
+		/decl/emote/audible/grumble,
+		/decl/emote/audible/groan,
+		/decl/emote/audible/moan,
+		/decl/emote/audible/grunt,
+		/decl/emote/audible/slap,
+		/decl/emote/audible/deathgasp,
+		/decl/emote/audible/giggle,
+		/decl/emote/audible/scream,
+		/decl/emote/visible/airguitar,
+		/decl/emote/visible/blink_r,
+		/decl/emote/visible/bow,
+		/decl/emote/visible/salute,
+		/decl/emote/visible/flap,
+		/decl/emote/visible/aflap,
+		/decl/emote/visible/drool,
+		/decl/emote/visible/eyebrow,
+		/decl/emote/visible/twitch,
+		/decl/emote/visible/dance,
+		/decl/emote/visible/twitch_v,
+		/decl/emote/visible/faint,
+		/decl/emote/visible/frown,
+		/decl/emote/visible/blush,
+		/decl/emote/visible/wave,
+		/decl/emote/visible/glare,
+		/decl/emote/visible/stare,
+		/decl/emote/visible/look,
+		/decl/emote/visible/point,
+		/decl/emote/visible/raise,
+		/decl/emote/visible/grin,
+		/decl/emote/visible/shrug,
+		/decl/emote/visible/smile,
+		/decl/emote/visible/pale,
+		/decl/emote/visible/tremble,
+		/decl/emote/visible/wink,
+		/decl/emote/visible/hug,
+		/decl/emote/visible/dap,
+		/decl/emote/visible/signal,
+		/decl/emote/visible/handshake,
+		/decl/emote/visible/afold,
+		/decl/emote/visible/alook,
+		/decl/emote/visible/eroll,
+		/decl/emote/visible/hbow,
+		/decl/emote/visible/hip,
+		/decl/emote/visible/holdup,
+		/decl/emote/visible/hshrug,
+		/decl/emote/visible/crub,
+		/decl/emote/visible/erub,
+		/decl/emote/visible/fslap,
+		/decl/emote/visible/ftap,
+		/decl/emote/visible/hrub,
+		/decl/emote/visible/hspread,
+		/decl/emote/visible/pocket,
+		/decl/emote/visible/rsalute,
+		/decl/emote/visible/rshoulder,
+		/decl/emote/visible/squint,
+		/decl/emote/visible/tfist,
+		/decl/emote/visible/tilt,
+		/decl/emote/visible/spin,
+		/decl/emote/visible/sidestep,
+		/decl/emote/visible/vomit
+	)
+	return default_emotes
+
+/mob/living/carbon/human/HandleBloodTrail(turf/T, old_loc)
+	// Tracking blood
+	var/obj/item/source
+	var/obj/item/clothing/shoes/shoes = get_equipped_item(slot_shoes_str)
+	if(istype(shoes))
+		shoes.handle_movement(src, MOVING_QUICKLY(src))
+		if(shoes.coating && shoes.coating.total_volume > 1)
+			source = shoes
+	else
+		for(var/foot_tag in list(BP_L_FOOT, BP_R_FOOT))
+			var/obj/item/organ/external/stomper = GET_EXTERNAL_ORGAN(src, foot_tag)
+			if(stomper && stomper.coating && stomper.coating.total_volume > 1)
+				source = stomper
+	if(!source)
+		species.handle_trail(src, T, old_loc)
+		return
+
+	var/list/bloodDNA
+	var/bloodcolor
+	var/list/blood_data = REAGENT_DATA(source.coating, /decl/material/liquid/blood)
+	if(blood_data)
+		bloodDNA = list(blood_data["blood_DNA"] = blood_data["blood_type"])
+	else
+		bloodDNA = list()
+	bloodcolor = source.coating.get_color()
+	source.remove_coating(1)
+	update_equipment_overlay(slot_shoes_str)
+
+	if(species.get_move_trail(src))
+		T.AddTracks(species.get_move_trail(src),bloodDNA, dir, 0, bloodcolor) // Coming
+		if(isturf(old_loc))
+			var/turf/old_turf = old_loc
+			old_turf.AddTracks(species.get_move_trail(src), bloodDNA, 0, dir, bloodcolor) // Going
+
+/mob/living/carbon/human/proc/has_footsteps()
+	if(species.silent_steps || buckled || lying || throwing)
+		return //people flying, lying down or sitting do not step
+
+	var/obj/item/shoes = get_equipped_item(slot_shoes_str)
+	if(shoes && (shoes.item_flags & ITEM_FLAG_SILENT))
+		return // quiet shoes
+
+	if(!has_organ(BP_L_FOOT) && !has_organ(BP_R_FOOT))
+		return //no feet no footsteps
+
+	return TRUE
+
+/mob/living/carbon/human/handle_footsteps()
+	step_count++
+	if(!has_footsteps())
+		return
+
+	 //every other turf makes a sound
+	if((step_count % 2) && !MOVING_DELIBERATELY(src))
+		return
+
+	// don't need to step as often when you hop around
+	if((step_count % 3) && !has_gravity())
+		return
+
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+
+	var/footsound = T.get_footstep_sound(src)
+	if(!footsound)
+		return
+
+	var/range = world.view - 2
+	var/volume = 70
+	if(MOVING_DELIBERATELY(src))
+		volume -= 45
+		range -= 0.333
+	var/obj/item/clothing/shoes/shoes = get_equipped_item(slot_shoes_str)
+	if(istype(shoes))
+		volume *= shoes.footstep_volume_mod
+		range  *= shoes.footstep_range_mod
+	else if(!shoes)
+		volume -= 60
+		range -= 0.333
+
+	range  = round(range)
+	volume = round(volume)
+	if(volume > 0 && range > 0)
+		playsound(T, footsound, volume, 1, range)

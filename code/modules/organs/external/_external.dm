@@ -36,9 +36,11 @@
 	var/skin_colour                    // skin colour
 	var/skin_blend = ICON_ADD          // How the skin colour is applied.
 	var/hair_colour                    // hair colour
-	var/list/markings                  // Markings (body_markings) to apply to the icon
 	var/render_alpha = 255
 	var/skip_body_icon_draw = FALSE    // Set to true to skip including this organ on the human body sprite.
+
+	/// Sprite accessories like hair and markings to apply to the organ icon and owner.
+	VAR_PRIVATE/list/_sprite_accessories
 
 	// Wound and structural data.
 	var/wound_update_accuracy = 1      // how often wounds should be updated, a higher number means less often
@@ -105,6 +107,8 @@
 	. = ..()
 	if(. != INITIALIZE_HINT_QDEL && isnull(pain_disability_threshold))
 		pain_disability_threshold = (max_damage * 0.75)
+	if(force_limb_dir && force_limb_dir != SOUTH)
+		set_dir(force_limb_dir)
 
 /obj/item/organ/external/Destroy()
 	//Update the hierarchy BEFORE clearing all the vars and refs
@@ -788,10 +792,11 @@ Note that amputating the affected organ does in fact remove the infection from t
 		handle_germ_effects()
 
 /obj/item/organ/external/proc/handle_germ_sync()
-	var/turf/simulated/T = get_turf(owner)
+	var/turf/T = get_turf(owner)
 	for(var/datum/wound/W in wounds)
 		//Open wounds can become infected
-		if(max(istype(T) && T.dirt*10, 2*owner.germ_level) > W.germ_level && W.infection_check())
+		// what in the hell is this doing with T?
+		if(max(istype(T) && T.simulated && T.get_dirt()*10, 2*owner.germ_level) > W.germ_level && W.infection_check())
 			W.germ_level++
 
 	var/antibiotics = GET_CHEMICAL_EFFECT(owner, CE_ANTIBIOTIC)
@@ -847,7 +852,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			owner.update_body(1)
 
 		germ_level++
-		owner.adjustToxLoss(1)
+		owner.take_damage(TOX, 1)
 
 //Updating wounds. Handles wound natural I had some free spachealing, internal bleedings and infections
 /obj/item/organ/external/proc/update_wounds()
@@ -1237,7 +1242,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			"<span class='danger'>You hear a sickening crack.</span>")
 		jostle_bone()
 		if(can_feel_pain())
-			owner.emote("scream")
+			owner.emote(/decl/emote/audible/scream)
 
 	playsound(src.loc, "fracture", 100, 1, -2)
 	status |= ORGAN_BROKEN
@@ -1315,7 +1320,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/proc/is_malfunctioning()
 	return (is_robotic() && (brute_dam + burn_dam) >= 10 && prob(brute_dam + burn_dam))
 
-/obj/item/organ/external/proc/embed(var/obj/item/W, var/silent = 0, var/supplied_message, var/datum/wound/supplied_wound)
+/obj/item/organ/external/proc/embed_in_organ(var/obj/item/W, var/silent = FALSE, var/supplied_message, var/datum/wound/supplied_wound)
 	if(!owner || loc != owner)
 		return
 	if(species.species_flags & SPECIES_FLAG_NO_EMBED)
@@ -1510,7 +1515,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		to_chat(owner, "<span class='danger'>You feel extreme pain!</span>")
 
 		var/max_halloss = round(owner.species.total_health * 0.8 * ((100 - armor) / 100)) //up to 80% of passing out, further reduced by armour
-		add_pain(clamp(0, max_halloss - owner.getHalLoss(), 30))
+		add_pain(clamp(0, max_halloss - owner.get_damage(PAIN), 30))
 
 //Adds autopsy data for used_weapon.
 /obj/item/organ/external/proc/add_autopsy_data(var/used_weapon, var/damage)
@@ -1589,3 +1594,21 @@ Note that amputating the affected organ does in fact remove the infection from t
 					vital_to_owner = TRUE
 					break
 	return vital_to_owner
+
+/obj/item/organ/external/proc/get_grooming_results(obj/item/grooming/tool)
+
+	for(var/accessory_category in _sprite_accessories)
+		var/list/draw_accessories = _sprite_accessories[accessory_category]
+		for(var/accessory in draw_accessories)
+			var/decl/sprite_accessory/accessory_decl = resolve_accessory_to_decl(accessory)
+			var/grooming_result = accessory_decl.can_be_groomed_with(src, tool)
+			. = list(
+				"success"    = grooming_result,
+				"descriptor" = accessory_decl.get_grooming_descriptor(grooming_result, src, tool)
+			)
+			if(grooming_result != GROOMING_RESULT_FAILED)
+				return
+
+	var/default_results = bodytype.get_default_grooming_results(src, tool)
+	if(default_results)
+		. = default_results

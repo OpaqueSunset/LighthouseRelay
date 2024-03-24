@@ -24,7 +24,7 @@ var/global/list/possible_say_verbs = list(
 	icon = 'icons/mob/robots/pai/pai_drone.dmi'
 	icon_state = ICON_STATE_WORLD
 	mob_sort_value = 3
-	hud_type = /datum/hud/pai
+	hud_used = /datum/hud/pai
 	emote_type = 2		// pAIs emotes are heard, not seen, so they can be seen through a container (eg. person)
 	pass_flags = PASS_FLAG_TABLE
 	mob_size = MOB_SIZE_SMALL
@@ -34,7 +34,7 @@ var/global/list/possible_say_verbs = list(
 	holder_type = /obj/item/holder
 	idcard = /obj/item/card/id
 	silicon_radio = null // pAIs get their radio from the card they belong to.
-	mob_default_max_health = 100
+	max_health = 100
 
 	os_type =	/datum/extension/interactive/os/silicon/small
 	starting_stock_parts = list(
@@ -143,7 +143,7 @@ var/global/list/possible_say_verbs = list(
 		visible_message( \
 			message = SPAN_DANGER("A shower of sparks spray from [src]'s inner workings!"), \
 			blind_message = SPAN_DANGER("You hear and smell the ozone hiss of electrical sparks being expelled violently."))
-		return death(0)
+		return death()
 
 	switch(pick(1,2,3))
 		if(1)
@@ -273,7 +273,7 @@ var/global/list/possible_say_verbs = list(
 		return
 	if(W.force)
 		visible_message(SPAN_DANGER("[user] attacks [src] with [W]!"))
-		adjustBruteLoss(W.force)
+		take_damage(BRUTE, W.force)
 	else
 		visible_message(SPAN_WARNING("[user] bonks [src] harmlessly with [W]."))
 

@@ -56,7 +56,7 @@
 		if(!skip_vis_contents_update)
 			var/flood_object = get_flood_overlay(flooded)
 			if(flood_object)
-				add_vis_contents(src, flood_object)
+				add_vis_contents(flood_object)
 	else if(!mapload)
 		REMOVE_ACTIVE_FLUID_SOURCE(src)
 		fluid_update() // We are now floodable, so wake up our neighbors.
@@ -64,7 +64,7 @@
 /turf/is_flooded(var/lying_mob, var/absolute)
 	return (flooded || (!absolute && check_fluid_depth(lying_mob ? FLUID_OVER_MOB_HEAD : FLUID_DEEP)))
 
-/turf/check_fluid_depth(var/min)
+/turf/check_fluid_depth(var/min = 1)
 	. = (get_fluid_depth() >= min)
 
 /turf/proc/get_fluid_name()
@@ -90,7 +90,7 @@
 	fluid_can_pass = null
 	if(!ignore_neighbors)
 		for(var/checkdir in global.cardinal)
-			var/turf/T = get_step(src, checkdir)
+			var/turf/T = get_step_resolving_mimic(src, checkdir)
 			if(T)
 				T.fluid_update(TRUE)
 	if(flooded)
@@ -103,11 +103,10 @@
 		create_reagents(FLUID_MAX_DEPTH)
 	return ..()
 
-/turf/proc/get_physical_height()
-	return 0
-
-/turf/simulated/floor/get_physical_height()
-	return flooring?.height || 0
+/turf/get_reagent_space()
+	if(!reagents)
+		create_reagents(FLUID_MAX_DEPTH)
+	return ..()
 
 /turf/fluid_act(var/datum/reagents/fluids)
 	..()
@@ -123,12 +122,12 @@
 	if(defer_update && !QDELETED(reagents))
 		SSfluids.holders_to_update[reagents] = TRUE
 
-/turf/proc/transfer_fluids_to(var/turf/target, var/amount, var/defer_update)
+/turf/proc/transfer_fluids_to(var/turf/target, var/amount, var/defer_update = TRUE)
 	if(!reagents?.total_volume)
 		return
 	if(!target.reagents)
 		target.create_reagents(FLUID_MAX_DEPTH)
-	reagents.trans_to_holder(target.reagents, min(reagents.total_volume, min(FLUID_MAX_DEPTH - target.reagents.total_volume, amount)), defer_update = defer_update)
+	reagents.trans_to_turf(target, min(reagents.total_volume, min(target.reagents.maximum_volume - target.reagents.total_volume, amount)), defer_update = defer_update)
 	if(defer_update)
 		if(!QDELETED(reagents))
 			SSfluids.holders_to_update[reagents] = TRUE
@@ -176,7 +175,8 @@
 		SSfluids.pending_flows -= src
 		if(last_slipperiness > 0)
 			wet_floor(last_slipperiness)
-		for(var/checkdir in global.cardinal)
-			var/turf/neighbor = get_step(src, checkdir)
-			if(neighbor?.reagents?.total_volume > FLUID_QDEL_POINT)
-				ADD_ACTIVE_FLUID(neighbor)
+
+	for(var/checkdir in global.cardinal)
+		var/turf/neighbor = get_step_resolving_mimic(src, checkdir)
+		if(neighbor?.reagents?.total_volume > FLUID_QDEL_POINT)
+			ADD_ACTIVE_FLUID(neighbor)

@@ -6,12 +6,12 @@
 	desc = "a cloud of tiny, tiny robots."
 	icon = 'icons/mob/simple_animal/nanomachines.dmi'
 	natural_weapon = /obj/item/natural_weapon/nanomachine
-	mob_default_max_health = 10
+	max_health = 10
 	can_escape = TRUE
 	known_commands = list("stay", "stop", "attack", "follow", "heal", "emergency protocol")
 	gene_damage = -1
 	response_help_1p = "You wave your hand through $TARGET$."
-	response_help_3p = "$USER$ waves $USER_HIS$ hand through $TARGET$."
+	response_help_3p = "$USER$ waves $USER_THEIR$ hand through $TARGET$."
 	response_harm =    "agitates"
 	response_disarm =  "fans at"
 	ai = /datum/ai/nanomachines
@@ -49,9 +49,16 @@
 		regen_time = 0
 		heal_overall_damage(1)
 
-/mob/living/simple_animal/hostile/commanded/nanomachine/death(gibbed, deathmessage, show_dead_message)
-	..(null, "dissipates into thin air", "You have been destroyed.")
-	qdel(src)
+/mob/living/simple_animal/hostile/commanded/nanomachine/get_death_message(gibbed)
+	return "dissipates into thin air."
+
+/mob/living/simple_animal/hostile/commanded/nanomachine/get_self_death_message(gibbed)
+	return "You have been destroyed."
+
+/mob/living/simple_animal/hostile/commanded/nanomachine/death(gibbed)
+	. = ..()
+	if(. && !gibbed)
+		qdel(src)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/proc/move_to_heal()
 	if(!target_mob)
@@ -74,9 +81,9 @@
 		stance = COMMANDED_HEAL
 		return 0
 	src.visible_message("\The [src] glows green for a moment, healing \the [target_mob]'s wounds.")
-	adjustBruteLoss(3)
-	target_mob.adjustBruteLoss(-5, do_update_health = FALSE)
-	target_mob.adjustFireLoss(-5)
+	take_damage(BRUTE, 3)
+	target_mob.heal_damage(BRUTE, 5, do_update_health = FALSE)
+	target_mob.heal_damage(BURN, 5)
 
 /mob/living/simple_animal/hostile/commanded/nanomachine/misc_command(var/mob/speaker,var/text)
 	if(stance != COMMANDED_HEAL || stance != COMMANDED_HEALING) //dont want attack to bleed into heal.

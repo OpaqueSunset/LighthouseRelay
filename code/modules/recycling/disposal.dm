@@ -152,7 +152,7 @@ var/global/list/diversion_junctions = list()
 			user.visible_message("<span class='warning'>[user] starts climbing into [src].</span>", \
 								"<span class='notice'>You start climbing into [src].</span>")
 		else
-			if(istype(M) && iscarbon(user))
+			if(istype(M) && isliving(user))
 				M.last_handled_by_mob = weakref(user)
 			user.visible_message("<span class='[is_dangerous ? "warning" : "notice"]'>[user] starts stuffing [AM] into [src].</span>", \
 								"<span class='notice'>You start stuffing [AM] into [src].</span>")
@@ -510,7 +510,7 @@ var/global/list/diversion_junctions = list()
 		id_tag = "ds[sequential_id(/obj/item/disposal_switch_construct)]"
 
 /obj/item/disposal_switch_construct/afterattack(atom/A, mob/user, proximity)
-	if(!proximity || !istype(A, /turf/simulated/floor) || user.incapacitated() || !id_tag)
+	if(!proximity || !istype(A, /turf/floor) || user.incapacitated() || !id_tag)
 		return
 	var/area/area = get_area(A)
 	if(!istype(area) || (area.area_flags & AREA_FLAG_SHUTTLE))

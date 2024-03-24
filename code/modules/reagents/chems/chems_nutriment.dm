@@ -21,6 +21,11 @@
 	var/hydration_factor = 0 // Per unit
 	var/injectable       = FALSE
 
+/decl/material/liquid/nutriment/Initialize()
+	solid_name = name   // avoid 'frozen sugar'
+	liquid_name = name  // avoid 'molten honey'
+	return ..()
+
 /decl/material/liquid/nutriment/mix_data(var/datum/reagents/reagents, var/list/newdata, var/newamount)
 
 	if(!islist(newdata) || !newdata.len)
@@ -47,7 +52,7 @@
 
 /decl/material/liquid/nutriment/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	if(!injectable)
-		M.adjustToxLoss(0.2 * removed)
+		M.take_damage(TOX, 0.2 * removed)
 		return
 	affect_ingest(M, removed, holder)
 
@@ -101,7 +106,7 @@
 /decl/material/liquid/nutriment/protein/adjust_nutrition(mob/living/carbon/M, removed)
 	var/malus_level = M.GetTraitLevel(/decl/trait/malus/animal_protein)
 	var/malus_factor = malus_level ? malus_level * 0.25 : 0
-	M.adjustToxLoss(removed * malus_factor)
+	M.take_damage(TOX, removed * malus_factor)
 	M.adjust_nutrition(nutriment_factor * removed * (1 - malus_factor))
 
 /decl/material/liquid/nutriment/protein/egg
@@ -241,7 +246,7 @@
 /decl/material/liquid/nutriment/triglyceride/oil/initialize_data(var/newdata) // Called when the reagent is created.
 	return ..() || list("temperature" = T20C, "lastburnmessage" = 0)
 
-/decl/material/liquid/nutriment/triglyceride/oil/touch_turf(var/turf/simulated/T, var/datum/reagents/holder)
+/decl/material/liquid/nutriment/triglyceride/oil/touch_turf(var/turf/T, var/datum/reagents/holder)
 	if(!istype(T))
 		return
 

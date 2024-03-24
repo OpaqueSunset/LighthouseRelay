@@ -30,11 +30,12 @@
 
 /obj/item/storage/internal/mirror_storage/WillContain()
 	return list(
-			/obj/item/haircomb/random,
-			/obj/item/haircomb/brush,
+			/obj/item/grooming/comb/colorable/random,
+			/obj/item/grooming/brush/colorable/random,
+			/obj/item/grooming/file,
 			/obj/random/medical/lite,
-			/obj/item/lipstick,
 			/obj/random/lipstick,
+			/obj/random/eyeshadow,
 			/obj/random/soap,
 			/obj/item/chems/spray/cleaner/deodorant,
 			/obj/item/towel/random

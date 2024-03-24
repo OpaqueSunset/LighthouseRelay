@@ -229,11 +229,11 @@ var/global/list/global/tank_gauge_cache = list()
 		proxyassembly.assembly.attack_self(user)
 
 /obj/item/tank/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
-	var/mob/living/carbon/location = get_recursive_loc_of_type(/mob/living/carbon)
+	var/mob/living/location = get_recursive_loc_of_type(/mob/living)
 
 	var/using_internal
 	if(istype(location))
-		if(location.internal==src)
+		if(location.get_internals() == src)
 			using_internal = 1
 
 	// this is the data which will be sent to the ui
@@ -248,13 +248,13 @@ var/global/list/global/tank_gauge_cache = list()
 	if(istype(location))
 		var/mask_check = 0
 
-		if(location.internal == src)	// if tank is current internal
+		if(location.get_internals() == src)	// if tank is current internal
 			mask_check = 1
 		else if(src in location)		// or if tank is in the mobs possession
-			if(!location.internal)		// and they do not have any active internals
+			if(!location.get_internals())		// and they do not have any active internals
 				mask_check = 1
 		else if(istype(loc, /obj/item/rig) && (loc in location))	// or the rig is in the mobs possession
-			if(!location.internal)		// and they do not have any active internals
+			if(!location.get_internals())		// and they do not have any active internals
 				mask_check = 1
 
 		if(mask_check)
@@ -302,7 +302,7 @@ var/global/list/global/tank_gauge_cache = list()
 /obj/item/tank/proc/toggle_valve(var/mob/user)
 
 	var/mob/living/carbon/location
-	if(iscarbon(loc))
+	if(isliving(loc))
 		location = loc
 	else if(istype(loc,/obj/item/rig))
 		var/obj/item/rig/rig = loc
@@ -426,10 +426,10 @@ var/global/list/global/tank_gauge_cache = list()
 			var/mult = ((air_contents.volume/140)**(1/2)) * (air_contents.total_moles**2/3)/((29*0.64) **2/3) //tanks appear to be experiencing a reduction on scale of about 0.64 total moles
 			//tanks appear to be experiencing a reduction on scale of about 0.64 total moles
 
-			var/turf/simulated/T = get_turf(src)
-			T.hotspot_expose(air_contents.temperature, 70, 1)
-			if(!T)
+			var/turf/T = get_turf(src)
+			if(!T?.simulated)
 				return
+			T.hotspot_expose(air_contents.temperature, 70, 1)
 
 			T.assume_air(air_contents)
 			explosion(
@@ -458,8 +458,8 @@ var/global/list/global/tank_gauge_cache = list()
 		#endif
 
 		if(integrity <= 0)
-			var/turf/simulated/T = get_turf(src)
-			if(!T)
+			var/turf/T = get_turf(src)
+			if(!T?.simulated)
 				return
 			T.assume_air(air_contents)
 			playsound(get_turf(src), 'sound/weapons/gunshot/shotgun.ogg', 20, 1)
@@ -482,8 +482,8 @@ var/global/list/global/tank_gauge_cache = list()
 			integrity-= 5
 	else if(pressure && (pressure > TANK_LEAK_PRESSURE || air_contents.temperature - T0C > failure_temp))
 		if((integrity <= 19 || leaking) && !valve_welded)
-			var/turf/simulated/T = get_turf(src)
-			if(!T)
+			var/turf/T = get_turf(src)
+			if(!T?.simulated)
 				return
 			var/datum/gas_mixture/environment = loc.return_air()
 			var/env_pressure = environment.return_pressure()

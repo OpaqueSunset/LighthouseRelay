@@ -1,8 +1,9 @@
 /obj/screen/action_button
 	screen_loc = "LEFT,TOP"
+	requires_ui_style = FALSE
 	var/datum/action/action
 
-/obj/screen/action_button/Initialize(mapload, mob/_owner, ui_style, ui_color, ui_alpha, _action)
+/obj/screen/action_button/Initialize(mapload, mob/_owner, ui_style, ui_color, ui_alpha, ui_cat, _action)
 	action = _action
 	return ..()
 
@@ -54,15 +55,14 @@
 	icon_state = "bg_default"
 	var/hidden = FALSE
 
-/obj/screen/action_button/hide_toggle/Initialize(mapload, mob/_owner, ui_style, ui_color, ui_alpha)
+/obj/screen/action_button/hide_toggle/Initialize(mapload, mob/_owner, ui_style, ui_color, ui_alpha, ui_cat)
 	. = ..()
-	if(isalien(_owner))
-		icon_state = "bg_alien"
-	else
-		icon_state = "bg_default"
+	icon_state = "bg_default"
 	update_icon()
 
 /obj/screen/action_button/hide_toggle/handle_click(mob/user, params)
+	if(!istype(user.hud_used))
+		return
 	user.hud_used.action_buttons_hidden = !user.hud_used.action_buttons_hidden
 	hidden = user.hud_used.action_buttons_hidden
 	if(hidden)

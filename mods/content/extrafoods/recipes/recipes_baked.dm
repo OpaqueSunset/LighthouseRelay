@@ -8,7 +8,7 @@
 /decl/recipe/cosmicbrownies
 	appliance = APPLIANCE_OVEN
 	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/liquid/nutriment/protein/egg = 3)
-	fruit = list("biteleaf" = 1)
+	fruit = list("ambrosiavulgaris" = 1)
 	reagent_mix = REAGENT_REPLACE //No egg or mix in final recipe
 	result = /obj/item/chems/food/sliceable/cosmicbrownies
 

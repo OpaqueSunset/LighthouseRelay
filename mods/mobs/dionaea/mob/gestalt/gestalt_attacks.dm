@@ -4,8 +4,9 @@
 		shed_atom(forcefully = TRUE)
 
 /obj/structure/diona_gestalt/hitby()
-	..()
-	shed_atom(forcefully = TRUE)
+	. = ..()
+	if(.)
+		shed_atom(forcefully = TRUE)
 
 /obj/structure/diona_gestalt/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	. = ..()
@@ -19,5 +20,5 @@
 		shed_count--
 		shed_atom(forcefully = TRUE)
 
-/obj/structure/diona_gestalt/proc/handle_member_click(var/mob/living/carbon/alien/diona/clicker)
+/obj/structure/diona_gestalt/proc/handle_member_click(var/mob/living/simple_animal/alien/diona/clicker)
 	return FALSE

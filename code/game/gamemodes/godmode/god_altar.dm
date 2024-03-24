@@ -1,7 +1,7 @@
 /obj/structure/deity/altar
 	name = "altar"
 	desc = "A structure made for the express purpose of religion."
-	health = 50
+	current_health = 50
 	power_adjustment = 5
 	deity_flags = DEITY_STRUCTURE_ALONE
 	build_cost = 1000
@@ -91,8 +91,8 @@
 		cycles_before_converted++
 		if(prob(50))
 			to_chat(M, "<span class='danger'>The mental strain is too much for you! You feel your body weakening!</span>")
-			M.adjustToxLoss(15, do_update_health = FALSE)
-			M.adjustHalLoss(30)
+			M.take_damage(TOX, 15, do_update_health = FALSE)
+			M.take_damage(PAIN, 30)
 		return TOPIC_REFRESH
 
 /obj/structure/deity/altar/on_update_icon()

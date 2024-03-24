@@ -161,7 +161,7 @@
 
 /obj/aura/mechshield/added_to(var/mob/living/target)
 	. = ..()
-	add_vis_contents(target, src)
+	target.add_vis_contents(src)
 	set_dir(target.dir)
 	events_repository.register(/decl/observ/dir_set, user, src, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
 
@@ -177,7 +177,7 @@
 /obj/aura/mechshield/Destroy()
 	if(user)
 		events_repository.unregister(/decl/observ/dir_set, user, src, TYPE_PROC_REF(/obj/aura/mechshield, update_dir))
-		remove_vis_contents(user, src)
+		user.remove_vis_contents(src)
 	shields = null
 	. = ..()
 
@@ -217,13 +217,14 @@
 
 /obj/aura/mechshield/hitby(atom/movable/M, var/datum/thrownthing/TT)
 	. = ..()
-	if(!active)
-		return
-	if(shields.charge && TT.speed <= 5)
-		user.visible_message(SPAN_WARNING("\The [shields.owner]'s shields flash briefly as they deflect \the [M]."))
-		flick("shield_impact", src)
-		playsound(user,'sound/effects/basscannon.ogg',10,1)
-		return AURA_FALSE|AURA_CANCEL
+	if(.)
+		if(!active)
+			return
+		if(shields.charge && TT.speed <= 5)
+			user.visible_message(SPAN_WARNING("\The [shields.owner]'s shields flash briefly as they deflect \the [M]."))
+			flick("shield_impact", src)
+			playsound(user,'sound/effects/basscannon.ogg',10,1)
+			return AURA_FALSE|AURA_CANCEL
 	//Too fast!
 
 //Melee! As a general rule I would recommend using regular objects and putting logic in them.
@@ -404,7 +405,7 @@
 
 /obj/aura/mech_ballistic/added_to(mob/living/target)
 	. = ..()
-	add_vis_contents(target, src)
+	target.add_vis_contents(src)
 	set_dir(target.dir)
 	global.events_repository.register(/decl/observ/dir_set, user, src, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
 
@@ -414,7 +415,7 @@
 /obj/aura/mech_ballistic/Destroy()
 	if (user)
 		global.events_repository.unregister(/decl/observ/dir_set, user, src, TYPE_PROC_REF(/obj/aura/mech_ballistic, update_dir))
-		remove_vis_contents(user, src)
+		user.remove_vis_contents(src)
 	shield = null
 	. = ..()
 
@@ -429,12 +430,11 @@
 
 /obj/aura/mech_ballistic/hitby(atom/movable/M, datum/thrownthing/TT)
 	. = ..()
-	if (shield)
+	if (. && shield)
 		var/throw_damage = 0
 		if (istype(M,/obj/))
 			var/obj/O = M
 			throw_damage = O.throwforce*(TT.speed/THROWFORCE_SPEED_DIVISOR)
-
 		if (prob(shield.block_chance(throw_damage, 0, source = M, attacker = TT.thrower)))
 			user.visible_message(SPAN_WARNING("\The [M] bounces off \the [user]'s [shield]."))
 			playsound(user.loc, 'sound/weapons/Genhit.ogg', 50, 1)

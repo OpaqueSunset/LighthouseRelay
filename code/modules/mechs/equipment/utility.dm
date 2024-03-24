@@ -490,8 +490,8 @@
 		drill_head = null
 		return
 
-	if (istype(target, /turf/exterior/wall))
-		for (var/turf/exterior/wall/M in RANGE_TURFS(target, 1))
+	if (istype(target, /turf/wall/natural))
+		for (var/turf/wall/natural/M in RANGE_TURFS(target, 1))
 			if (!(get_dir(owner, M) & owner.dir))
 				continue
 			drill_head.durability -= 1
@@ -499,8 +499,8 @@
 		scoop_ore(target)
 		return
 
-	if (istype(target, /turf/simulated/wall))
-		var/turf/simulated/wall/wall = target
+	if (istype(target, /turf/wall))
+		var/turf/wall/wall = target
 		var/wall_hardness = max(wall.material.hardness, wall.reinf_material ? wall.reinf_material.hardness : 0)
 		if (wall_hardness > drill_head.material.hardness)
 			to_chat(user, SPAN_WARNING("\The [wall] is too hard to drill through with \the [drill_head]."))
@@ -517,7 +517,7 @@
 		return
 
 	var/audible = "loudly grinding machinery"
-	if (iscarbon(target)) //splorch
+	if (isliving(target)) //splorch
 		audible = "a terrible rending of metal and flesh"
 
 	owner.visible_message(

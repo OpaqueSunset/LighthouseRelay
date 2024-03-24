@@ -21,9 +21,9 @@
 	cast_sound = 'sound/magic/cowhead_curse.ogg'
 
 /spell/targeted/torment/cast(var/list/targets, var/mob/user)
-	user.gibs()
+	user.spawn_gibber()
 	for(var/mob/living/carbon/human/H in targets)
-		H.adjustHalLoss(loss)
+		H.take_damage(PAIN, loss)
 
 /spell/targeted/torment/empower_spell()
 	if(!..())

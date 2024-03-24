@@ -3,12 +3,12 @@
 	real_name = "Shade"
 	desc = "A bound spirit"
 	icon = 'icons/mob/simple_animal/shade.dmi'
-	mob_default_max_health = 50
+	max_health = 50
 	universal_speak = TRUE
 	speak_emote = list("hisses")
 	emote_hear = list("wails","screeches")
 	response_help_1p = "You wave your hand through $TARGET$."
-	response_help_3p = "$USER$ waves $USER_HIS$ hand through $TARGET$."
+	response_help_3p = "$USER$ waves $USER_THEIR$ hand through $TARGET$."
 	response_disarm =  "flails at"
 	response_harm =    "punches"
 	natural_weapon = /obj/item/natural_weapon/shade
@@ -45,7 +45,14 @@
 /mob/living/simple_animal/shade/on_defilement()
 	return
 
-/mob/living/simple_animal/shade/death(gibbed, deathmessage, show_dead_message)
-	new /obj/item/ectoplasm (src.loc)
-	..(deathmessage = "lets out a contented sigh as their form unwinds", show_dead_message = "You have been released from your earthly binds.")
-	qdel(src)
+/mob/living/simple_animal/shade/get_death_message(gibbed)
+	return "lets out a contented sigh as their form unwinds"
+
+/mob/living/simple_animal/shade/get_self_death_message(gibbed)
+	return "You have been released from your earthly binds."
+
+/mob/living/simple_animal/shade/death(gibbed)
+	. = ..()
+	if(. && !gibbed)
+		new /obj/item/ectoplasm(src.loc)
+		qdel(src)

@@ -58,11 +58,12 @@
 			if (prob(chance))
 				if (enter(AM, silent = TRUE, check_incap = FALSE, instant = TRUE))
 					visible_message(SPAN_NOTICE("[message]"))
-					return
+					return TRUE
 
 	if (LAZYLEN(pilots) && (!hatch_closed || !prob(body.pilot_coverage)))
 		var/mob/living/pilot = pick(pilots)
 		return pilot.hitby(AM, TT)
+
 	. = ..()
 
 /mob/living/exosuit/bullet_act(obj/item/projectile/P, def_zone, used_weapon)
@@ -84,7 +85,7 @@
 	return (body ? body.mech_health : 0)
 
 /mob/living/exosuit/get_total_life_damage()
-	return (getFireLoss()+getBruteLoss())
+	return (get_damage(BURN)+get_damage(BRUTE))
 
 /mob/living/exosuit/adjustFireLoss(var/amount, var/obj/item/mech_component/MC = pick(list(arms, legs, body, head)), var/do_update_health = TRUE)
 	if(MC)
@@ -145,9 +146,9 @@
 	//Only 3 types of damage concern mechs and vehicles
 	switch(damagetype)
 		if(BRUTE)
-			adjustBruteLoss(damage, target)
+			take_damage(BRUTE, damage, target)
 		if(BURN)
-			adjustFireLoss(damage, target)
+			take_damage(BURN, damage, target)
 		if(IRRADIATE)
 			for(var/mob/living/pilot in pilots)
 				pilot.apply_damage(damage, IRRADIATE, def_zone, damage_flags, used_weapon)

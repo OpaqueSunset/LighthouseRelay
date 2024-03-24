@@ -1,6 +1,6 @@
 /mob/living/bot
 	name = "Bot"
-	mob_default_max_health = 20
+	max_health = 20
 	icon = 'icons/mob/bot/placeholder.dmi'
 	universal_speak = TRUE
 	density = FALSE
@@ -66,14 +66,29 @@
 		set_status(STAT_STUN, 0)
 		set_status(STAT_PARA, 0)
 
-/mob/living/bot/get_total_life_damage()
-	return getFireLoss() + getBruteLoss()
+/mob/living/bot/get_life_damage_types()
+	var/static/list/life_damage_types = list(
+		BURN,
+		BRUTE
+	)
+	return life_damage_types
 
-/mob/living/bot/death()
+/mob/living/bot/get_dusted_remains()
+	return /obj/effect/decal/cleanable/blood/oil
+
+/mob/living/bot/gib(do_gibs)
+	if(stat != DEAD)
+		death(gibbed = TRUE)
 	if(stat == DEAD)
-		return
-	set_stat(DEAD)
-	explode()
+		turn_off()
+		visible_message(SPAN_DANGER("\The [src] blows apart!"))
+		spark_at(src, cardinal_only = TRUE)
+	return ..()
+
+/mob/living/bot/death(gibbed)
+	. = ..()
+	if(. && !gibbed)
+		gib()
 
 /mob/living/bot/attackby(var/obj/item/O, var/mob/user)
 	if(O.GetIdCard())
@@ -356,9 +371,6 @@
 	set_light(0)
 	update_icon()
 
-/mob/living/bot/proc/explode()
-	qdel(src)
-
 /******************************************************************/
 // Navigation procs
 // Used for A-star pathfinding
@@ -369,13 +381,10 @@
 /turf/proc/CardinalTurfsWithAccess(var/obj/item/card/id/ID)
 	var/L[] = new()
 
-	//	for(var/turf/simulated/t in oview(src,1))
-
 	for(var/d in global.cardinal)
-		var/turf/simulated/T = get_step(src, d)
-		if(istype(T) && !T.density)
-			if(!LinkBlockedWithAccess(src, T, ID))
-				L.Add(T)
+		var/turf/T = get_step(src, d)
+		if(istype(T) && !T.density && T.simulated && !LinkBlockedWithAccess(src, T, ID))
+			L.Add(T)
 	return L
 
 

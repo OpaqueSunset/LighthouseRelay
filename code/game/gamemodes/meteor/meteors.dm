@@ -207,7 +207,7 @@ var/global/list/meteors_cataclysm = list(\
 	return
 
 /obj/effect/meteor/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/pickaxe))
+	if(IS_PICK(W))
 		qdel(src)
 		return
 	..()
@@ -239,7 +239,7 @@ var/global/list/meteors_cataclysm = list(\
 	hits = 1
 	hitpwr = 3
 	dropamt = 1
-	meteordrop = /obj/item/stack/material/ore/sand
+	meteordrop = /obj/item/stack/material/ore/handful/sand
 
 //Medium-sized
 /obj/effect/meteor/medium

@@ -697,21 +697,6 @@ var/global/const/MAX_VIEW = 41
 /client/verb/drop_item()
 	set hidden = 1
 	if(!isrobot(mob) && mob.stat == CONSCIOUS && isturf(mob.loc))
-		var/obj/item/I = mob.get_active_hand()
+		var/obj/item/I = mob.get_active_held_item()
 		if(I && I.can_be_dropped_by_client(mob))
 			mob.drop_item()
-
-/client/verb/activate_ability(var/slot as num)
-	set name = ".activate_ability"
-//	set hidden = 1
-	if(!mob)
-		return // Paranoid.
-	if(isnull(slot) || !isnum(slot))
-		to_chat(src,"<span class='warning'>.activate_ability requires a number as input, corrisponding to the slot you wish to use.</span>")
-		return // Bad input.
-	if(!mob.ability_master)
-		return // No abilities.
-	if(slot > mob.ability_master.ability_objects.len || slot <= 0)
-		return // Out of bounds.
-	var/obj/screen/ability/A = mob.ability_master.ability_objects[slot]
-	A.activate()

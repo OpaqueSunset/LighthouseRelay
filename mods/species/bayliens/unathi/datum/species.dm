@@ -28,6 +28,13 @@
 		/decl/natural_attack/bite/sharp
 	)
 
+	available_accessory_categories = list(
+		SAC_HORNS,
+		SAC_FRILLS,
+		SAC_COSMETICS,
+		SAC_MARKINGS
+	)
+
 	primitive_form = "Stok"
 	gluttonous = GLUT_TINY
 	strength = STR_HIGH
@@ -71,13 +78,13 @@
 		)
 
 	default_emotes = list(
-		/decl/emote/human/swish,
-		/decl/emote/human/wag,
-		/decl/emote/human/sway,
-		/decl/emote/human/qwag,
-		/decl/emote/human/fastsway,
-		/decl/emote/human/swag,
-		/decl/emote/human/stopsway
+		/decl/emote/visible/tail/swish,
+		/decl/emote/visible/tail/wag,
+		/decl/emote/visible/tail/sway,
+		/decl/emote/visible/tail/qwag,
+		/decl/emote/visible/tail/fastsway,
+		/decl/emote/visible/tail/swag,
+		/decl/emote/visible/tail/stopsway
 	)
 
 	pain_emotes_with_pain_level = list(

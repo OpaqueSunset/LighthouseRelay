@@ -1,12 +1,15 @@
 var/global/list/bodytypes_by_category = list()
 
 /decl/bodytype
+	/// Name used in general.
 	var/name = "default"
+	/// Name used in preference bodytype selection. Defaults to name.
+	var/pref_name
 	/// Seen when examining a prosthetic limb, if non-null.
 	var/desc
 	var/icon_base
 	var/icon_deformed
-	var/lip_icon
+	var/cosmetics_icon
 	var/bandages_icon
 	var/bodytype_flag = BODY_FLAG_HUMANOID
 	var/bodytype_category = BODYTYPE_OTHER
@@ -22,6 +25,8 @@ var/global/list/bodytypes_by_category = list()
 	var/associated_gender
 	var/appearance_flags = 0 // Appearance/display related features.
 
+	/// Used when filing your nails.
+	var/nail_noun
 	/// What tech levels should limbs of this type use/need?
 	var/limb_tech = @'{"biotech":2}'
 	var/icon_cache_uid
@@ -40,7 +45,7 @@ var/global/list/bodytypes_by_category = list()
 	/// Determines how the limb behaves with regards to manual attachment/detachment.
 	var/modular_limb_tier = MODULAR_BODYPART_INVALID
 
-	var/uniform_state_modifier
+	var/onmob_state_modifiers
 	var/health_hud_intensity = 1
 
 	var/pixel_offset_x = 0                    // Used for offsetting large icons.
@@ -82,7 +87,6 @@ var/global/list/bodytypes_by_category = list()
 	// Used for initializing prefs/preview
 	var/base_color =      COLOR_BLACK
 	var/base_eye_color =  COLOR_BLACK
-	var/base_hair_color = COLOR_BLACK
 
 	/// Used to initialize organ material
 	var/material =        /decl/material/solid/organic/meat
@@ -143,10 +147,7 @@ var/global/list/bodytypes_by_category = list()
 	var/vital_organ_failure_death_delay = 25 SECONDS
 	var/mob_size = MOB_SIZE_MEDIUM
 
-	var/default_h_style = /decl/sprite_accessory/hair/bald
-	var/default_f_style = /decl/sprite_accessory/facial_hair/shaved
-
-	var/list/base_markings
+	var/list/default_sprite_accessories
 
 	// Darksight handling
 	/// Fractional multiplier (0 to 1) for the base alpha of the darkness overlay. A value of 1 means darkness is completely invisible.
@@ -195,6 +196,9 @@ var/global/list/bodytypes_by_category = list()
 /decl/bodytype/Initialize()
 	. = ..()
 	icon_deformed ||= icon_base
+
+	if(!pref_name)
+		pref_name = name
 
 	LAZYDISTINCTADD(global.bodytypes_by_category[bodytype_category], src)
 	//If the species has eyes, they are the default vision organ
@@ -267,26 +271,47 @@ var/global/list/bodytypes_by_category = list()
 	else if(eye_low_light_vision_adjustment_speed < 0)
 		. += "low light vision adjustment speed is less than 0 (below 0%)"
 
-	if(icon_base)
-		if(check_state_in_icon("torso", icon_base))
-			. += "deprecated \"torso\" state present in icon_base"
-		if(!check_state_in_icon(BP_CHEST, icon_base))
-			. += "\"[BP_CHEST]\" state not present in icon_base"
-	if(icon_deformed && icon_deformed != icon_base)
-		if(check_state_in_icon("torso", icon_deformed))
-			. += "deprecated \"torso\" state present in icon_deformed"
-		if(!check_state_in_icon(BP_CHEST, icon_deformed))
-			. += "\"[BP_CHEST]\" state not present in icon_deformed"
+	if(icon_base || icon_deformed)
+
+		var/list/limb_tags = list()
+		for(var/limb in has_limbs)
+			limb_tags |= limb
+		for(var/limb in override_limb_types)
+			limb_tags |= limb
+
+		if(icon_base)
+			if(check_state_in_icon("torso", icon_base))
+				. += "deprecated \"torso\" state present in icon_base"
+			for(var/limb in limb_tags)
+				if(!check_state_in_icon(limb, icon_base))
+					. += "missing required state in [icon_base]: [limb]"
+
+		if(icon_deformed && icon_deformed != icon_base)
+			if(check_state_in_icon("torso", icon_deformed))
+				. += "deprecated \"torso\" state present in icon_deformed"
+			for(var/limb in limb_tags)
+				if(!check_state_in_icon(limb, icon_deformed))
+					. += "missing required state in [icon_deformed]: [limb]"
+
 	if((appearance_flags & HAS_SKIN_COLOR) && isnull(base_color))
 		. += "uses skin color but missing base_color"
-	if((appearance_flags & HAS_HAIR_COLOR) && isnull(base_hair_color))
-		. += "uses hair color but missing base_hair_color"
 	if((appearance_flags & HAS_EYE_COLOR) && isnull(base_eye_color))
 		. += "uses eye color but missing base_eye_color"
-	if(isnull(default_h_style))
-		. += "null default_h_style (use a bald/hairless hairstyle if 'no hair' is intended)"
-	if(isnull(default_f_style))
-		. += "null default_f_style (use a shaved/hairless facial hair style if 'no facial hair' is intended)"
+
+	for(var/accessory_category in default_sprite_accessories)
+		var/decl/sprite_accessory_category/acc_cat = GET_DECL(accessory_category)
+		if(!istype(acc_cat))
+			. += "invalid sprite accessory category entry: [accessory_category || "null"]"
+			continue
+		for(var/accessory in default_sprite_accessories[accessory_category])
+			var/decl/sprite_accessory/acc_decl = GET_DECL(accessory)
+			if(!istype(acc_decl))
+				. += "invalid sprite accessory in category [accessory_category]: [accessory || "null"]"
+				continue
+			if(acc_decl.accessory_category != acc_cat.type)
+				. += "accessory category [acc_decl.accessory_category || "null"] does not match [acc_cat.type]"
+			if(!istype(acc_decl, acc_cat.base_accessory_type))
+				. += "accessory type [acc_decl.type] does not align with category base accessory: [acc_cat.base_accessory_type || "null"]"
 
 	var/list/tail_data = has_limbs[BP_TAIL]
 	if(tail_data)
@@ -435,33 +460,26 @@ var/global/list/bodytypes_by_category = list()
 		if(initial(I.parent_organ) == organ.organ_tag)
 			limb.cavity_max_w_class = max(limb.cavity_max_w_class, get_resized_organ_w_class(initial(I.w_class)))
 
-/decl/bodytype/proc/set_default_hair(mob/living/carbon/human/organism, override_existing = TRUE, defer_update_hair = FALSE)
-	if(!organism.get_hairstyle() || (override_existing && (organism.get_hairstyle() != default_h_style)))
-		organism.set_hairstyle(default_h_style)
-		. = TRUE
-	if(!organism.get_hairstyle() || (override_existing && (organism.get_facial_hairstyle() != default_f_style)))
-		organism.set_facial_hairstyle(default_f_style)
-		. = TRUE
-	if(. && !defer_update_hair)
-		organism.update_hair()
+/decl/bodytype/proc/set_default_sprite_accessories(var/mob/living/setting)
+	if(!istype(setting))
+		return
+	for(var/obj/item/organ/external/E in setting.get_external_organs())
+		E.skin_colour = base_color
+		E.clear_sprite_accessories(skip_update = TRUE)
+	if(!length(default_sprite_accessories))
+		return
+	for(var/accessory_category in default_sprite_accessories)
+		for(var/accessory in default_sprite_accessories[accessory_category])
+			var/decl/sprite_accessory/accessory_decl = GET_DECL(accessory)
+			var/accessory_colour = default_sprite_accessories[accessory_category][accessory]
+			for(var/bodypart in accessory_decl.body_parts)
+				var/obj/item/organ/external/O = GET_EXTERNAL_ORGAN(setting, bodypart)
+				if(O)
+					O.set_sprite_accessory(accessory, null, accessory_colour, skip_update = TRUE)
 
 /decl/bodytype/proc/customize_preview_mannequin(mob/living/carbon/human/dummy/mannequin/mannequin)
-	if(length(base_markings))
-		for(var/mark_type in base_markings)
-			var/decl/sprite_accessory/marking/mark_decl = GET_DECL(mark_type)
-			for(var/bodypart in mark_decl.body_parts)
-				var/obj/item/organ/external/O = GET_EXTERNAL_ORGAN(mannequin, bodypart)
-				if(O && !LAZYACCESS(O.markings, mark_type))
-					LAZYSET(O.markings, mark_type, base_markings[mark_type])
-
-	for(var/obj/item/organ/external/E in mannequin.get_external_organs())
-		E.skin_colour = base_color
-
+	set_default_sprite_accessories(mannequin)
 	mannequin.set_eye_colour(base_eye_color, skip_update = TRUE)
-	mannequin.set_hair_colour(base_hair_color, skip_update = TRUE)
-	mannequin.set_facial_hair_colour(base_hair_color, skip_update = TRUE)
-	set_default_hair(mannequin)
-
 	mannequin.force_update_limbs()
 	mannequin.update_mutations(0)
 	mannequin.update_body(0)
@@ -556,3 +574,19 @@ var/global/list/bodytypes_by_category = list()
 		if(src in species.available_bodytypes)
 			return species_name
 
+// Defined as a global so modpacks can add to it.
+var/global/list/limbs_with_nails = list(
+	BP_L_HAND,
+	BP_R_HAND,
+	BP_M_HAND,
+	BP_L_FOOT,
+	BP_R_FOOT
+)
+
+/decl/bodytype/proc/get_default_grooming_results(obj/item/organ/external/limb, obj/item/grooming/tool)
+	if(nail_noun && (tool.grooming_flags & GROOMABLE_FILE) && (limb?.organ_tag in limbs_with_nails))
+		return list(
+			"success"    = GROOMING_RESULT_SUCCESS,
+			"descriptor" = nail_noun
+		)
+	return null

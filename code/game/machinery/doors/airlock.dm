@@ -135,7 +135,7 @@ About the new airlock wires panel:
 			var/mob/living/carbon/C = user
 			if(istype(C) && C.hallucination_power > 25)
 				to_chat(user, SPAN_DANGER("You feel a powerful shock course through your body!"))
-				user.adjustHalLoss(10)
+				user.take_damage(PAIN, 10)
 				SET_STATUS_MAX(user, STAT_STUN, 10)
 				return
 	..(user)
@@ -400,7 +400,7 @@ About the new airlock wires panel:
 
 		if(stat & BROKEN)
 			damage_overlay = sparks_broken_file
-		else if(health < max_health * 3/4)
+		else if(current_health < get_max_health() * 3/4)
 			damage_overlay = sparks_damaged_file
 
 	if(welded)
@@ -767,7 +767,7 @@ About the new airlock wires panel:
 			return TRUE
 		else if(!repairing)
 			// Add some minor damage as evidence of forcing.
-			if(health >= max_health)
+			if(current_health >= get_max_health())
 				take_damage(1)
 			if(arePowerSystemsOn())
 				to_chat(user, SPAN_WARNING("The airlock's motors resist your efforts to force it."))
@@ -824,10 +824,10 @@ About the new airlock wires panel:
 		var/obj/item/twohanded/fireaxe/F = I
 		if (F.wielded)
 			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
-			health -= F.force_wielded * 2
-			if(health <= 0)
+			current_health -= F.force_wielded * 2
+			if(current_health <= 0)
 				user.visible_message(SPAN_DANGER("[user] smashes \the [I] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [I] into the airlock's control panel! It explodes in a shower of sparks!"))
-				health = 0
+				current_health = 0
 				set_broken(TRUE)
 			else
 				user.visible_message(SPAN_DANGER("[user] smashes \the [I] into the airlock's control panel!"))
@@ -1099,17 +1099,19 @@ About the new airlock wires panel:
 	name = A.proper_name
 	. = ..()
 
-/obj/machinery/door/airlock/proc/paint_airlock(var/paint_color)
-	door_color = paint_color
-	update_icon()
+/obj/machinery/door/airlock/proc/paint_airlock(var/new_color)
+	if(door_color != new_color)
+		door_color = new_color
+		update_icon()
 
-/obj/machinery/door/airlock/proc/stripe_airlock(var/paint_color)
-	stripe_color = paint_color
-	update_icon()
+/obj/machinery/door/airlock/proc/stripe_airlock(var/new_color)
+	if(stripe_color != new_color)
+		stripe_color = new_color
+		update_icon()
 
-/obj/machinery/door/airlock/proc/paint_window(paint_color)
-	if (paint_color)
-		window_color = paint_color
+/obj/machinery/door/airlock/proc/paint_window(new_color)
+	if (new_color)
+		window_color = new_color
 	else if (window_material)
 		var/decl/material/window = get_window_material()
 		window_color = window.color

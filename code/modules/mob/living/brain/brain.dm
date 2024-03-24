@@ -2,16 +2,6 @@
 	name = "brain"
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "brain1"
-	default_emotes = list(
-		/decl/emote/audible/alarm,
-		/decl/emote/audible/alert,
-		/decl/emote/audible/notice,
-		/decl/emote/audible/whistle,
-		/decl/emote/audible/synth,
-		/decl/emote/audible/boop,
-		/decl/emote/visible/blink,
-		/decl/emote/visible/flash
-	)
 
 	// Used for EMP damage when inside an interface or robobrain.
 	var/emp_damage = 0
@@ -23,16 +13,23 @@
 		SPAN_DANGER("Major electrical distruption detected: System rebooting.")
 	)
 
+/mob/living/brain/get_default_emotes()
+	var/static/list/default_emotes = list(
+		/decl/emote/audible/alarm,
+		/decl/emote/audible/alert,
+		/decl/emote/audible/notice,
+		/decl/emote/audible/whistle,
+		/decl/emote/audible/synth,
+		/decl/emote/audible/boop,
+		/decl/emote/visible/blink,
+		/decl/emote/visible/flash
+	)
+	return default_emotes
+
 /mob/living/brain/handle_regular_status_updates()
 	. = ..()
 	if(emp_damage || stat == DEAD || !is_in_interface())
 		SET_STATUS_MAX(src, STAT_SILENCE, 2)
-
-/mob/living/brain/death()
-	var/obj/item/organ/holder = loc
-	. = ..()
-	if(stat == DEAD && istype(holder))
-		holder.die()
 
 /mob/living/brain/is_deaf()
 	return emp_damage || stat == DEAD || !is_in_interface()
@@ -62,7 +59,7 @@
 	var/container = get_container()
 	return istype(container, /obj/item/organ/internal/brain_interface) || istype(container, /obj/item/organ/internal/brain/robotic)
 
-/mob/living/brain/can_emote()
+/mob/living/brain/can_emote(emote_type, show_message)
 	return is_in_interface() && ..()
 
 /mob/living/brain/can_use_rig()

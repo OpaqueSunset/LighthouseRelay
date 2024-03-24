@@ -3,9 +3,10 @@
 #define TURF_FLAG_NOJAUNT               BITFLAG(0) // This is used in literally one place, turf.dm, to block ethereal jaunt.
 #define TURF_FLAG_NO_POINTS_OF_INTEREST BITFLAG(1) // Used by the level subtemplate generator to skip placing loaded templates on this turf.
 #define TURF_FLAG_BACKGROUND            BITFLAG(2) // Used by shuttle movement to determine if it should be ignored by turf translation.
-#define TURF_IS_HOLOMAP_OBSTACLE        BITFLAG(3)
-#define TURF_IS_HOLOMAP_PATH            BITFLAG(4)
-#define TURF_IS_HOLOMAP_ROCK            BITFLAG(5)
+#define TURF_FLAG_HOLY                  BITFLAG(3)
+#define TURF_IS_HOLOMAP_OBSTACLE        BITFLAG(4)
+#define TURF_IS_HOLOMAP_PATH            BITFLAG(5)
+#define TURF_IS_HOLOMAP_ROCK            BITFLAG(6)
 
 ///Width or height of a transition edge area along the map's borders where transition edge turfs are placed to connect levels together.
 #define TRANSITIONEDGE 7
@@ -318,8 +319,10 @@
 #define LEVEL_ABOVE_PLATING 2
 
 // Defines for fluorescence (/atom/var/fluorescent)
-#define FLUORESCENT_GLOWS   1	// Glows when under flourescent light
-#define FLUORESCENT_GLOWING 2	// Currently glowing due to flourescent light
+/// Glows when under flourescent light
+#define FLUORESCENT_GLOWS   1
+/// Currently glowing due to flourescent light
+#define FLUORESCENT_GLOWING 2
 
 // Cooking appliances.
 #define APPLIANCE_MIX         BITFLAG(0)
@@ -338,3 +341,29 @@
 #define CONTAINER_EMPTY  0
 #define CONTAINER_SINGLE 1
 #define CONTAINER_MANY   2
+
+// Flags used for utensil-food interaction.
+/// Solid or semi-solid food; chopsticks, forks.
+#define UTENSIL_FLAG_COLLECT BITFLAG(0)
+/// Soft, liquid or semi-liquid food; soups, stews, pudding.
+#define UTENSIL_FLAG_SCOOP   BITFLAG(1)
+/// Foods that need to be sliced before eating; steak, grapefruit.
+#define UTENSIL_FLAG_SLICE   BITFLAG(2)
+/// Unimplemented; condiments that are collected before being spread on other food.
+#define UTENSIL_FLAG_SPREAD  BITFLAG(3)
+
+// Default.
+#define GROOMABLE_NONE  0
+// Hair, feathers.
+#define GROOMABLE_COMB  BITFLAG(0)
+// Hair, beards.
+#define GROOMABLE_BRUSH BITFLAG(1)
+// Horns.
+#define GROOMABLE_FILE  BITFLAG(2)
+
+// Nothing to groom on this organ.
+#define GROOMING_RESULT_FAILED  0
+// Can groom somewhat (short hair with a comb)
+#define GROOMING_RESULT_PARTIAL 1
+// Can groom properly (long hair with a brush)
+#define GROOMING_RESULT_SUCCESS 2

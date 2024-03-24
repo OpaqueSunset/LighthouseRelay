@@ -98,12 +98,12 @@
 
 	if(in_throw_mode)
 		if(isturf(A) || isturf(A.loc))
-			throw_item(A)
+			mob_throw_item(A)
 			trigger_aiming(TARGET_CAN_CLICK)
 			return 1
-		throw_mode_off()
+		toggle_throw_mode(FALSE)
 
-	var/obj/item/W = get_active_hand()
+	var/obj/item/W = get_active_held_item()
 
 	if(W == A) // Handle attack_self
 		W.attack_self(src)
@@ -193,6 +193,11 @@
 	if(stat || try_maneuver(A))
 		return TRUE
 
+	// Handle any prepared ability/spell/power invocations.
+	var/datum/extension/abilities/abilities = get_extension(src, /datum/extension/abilities)
+	if(abilities?.do_melee_invocation(A))
+		return TRUE
+
 	// Special glove functions:
 	// If the gloves do anything, have them return 1 to stop
 	// normal attack_hand() here.
@@ -218,7 +223,15 @@
 	return FALSE
 
 /mob/living/RangedAttack(var/atom/A, var/params)
-	return try_maneuver(A)
+	if(try_maneuver(A))
+		return TRUE
+
+	// Handle any prepared ability/spell/power invocations.
+	var/datum/extension/abilities/abilities = get_extension(src, /datum/extension/abilities)
+	if(abilities?.do_ranged_invocation(A))
+		return TRUE
+
+	return FALSE
 
 /*
 	Restrained ClickOn
@@ -280,7 +293,7 @@
 	A.AltClick(src)
 
 /atom/proc/AltClick(var/mob/user)
-	if(try_handle_interactions(user, get_alt_interactions(user)))
+	if(try_handle_interactions(user, get_alt_interactions(user), user?.get_active_held_item()))
 		return TRUE
 	if(user?.get_preference_value(/datum/client_preference/show_turf_contents) == PREF_ALT_CLICK)
 		. = show_atom_list_for_turf(user, get_turf(src))

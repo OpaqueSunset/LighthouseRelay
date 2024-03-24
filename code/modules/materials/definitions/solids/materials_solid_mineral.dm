@@ -2,13 +2,6 @@
 	name = "pitchblende"
 	uid = "solid_pitchblende"
 	color = "#917d1a"
-	heating_products = list(
-		/decl/material/solid/metal/uranium = 0.8,
-		/decl/material/solid/slag = 0.2
-	)
-	heating_point = GENERIC_SMELTING_HEAT_POINT
-	heating_sound = null
-	heating_message = null
 	ore_result_amount = 5
 	ore_spread_chance = 10
 	ore_name = "pitchblende"
@@ -20,8 +13,9 @@
 	sparse_material_weight = 8
 	rich_material_weight = 10
 	dissolves_into = list(
-		/decl/material/solid/metal/uranium = 0.5,
-		/decl/material/solid/metal/radium = 0.5
+		/decl/material/solid/metal/uranium = 0.6,
+		/decl/material/solid/metal/radium  = 0.3,
+		/decl/material/solid/slag          = 0.1
 	)
 	ore_type_value = ORE_NUCLEAR
 	ore_data_value = 3
@@ -47,6 +41,7 @@
 	sparse_material_weight = 35
 	rich_material_weight = 20
 	dirtiness = 15
+	burn_temperature = 1350 CELSIUS
 
 	flags = MAT_FLAG_FISSIBLE
 	neutron_cross_section = 30
@@ -219,7 +214,7 @@
 	uid = "solid_sand"
 	color = "#e2dbb5"
 	heating_products = list(/decl/material/solid/glass = 1)
-	heating_point = GENERIC_SMELTING_HEAT_POINT
+	heating_point = 2000 CELSIUS
 	heating_sound = null
 	heating_message = null
 	ore_compresses_to = /decl/material/solid/stone/sandstone
@@ -228,26 +223,51 @@
 	ore_type_value = ORE_SURFACE
 	ore_data_value = 1
 	value = 0.8
+	hardness = MAT_VALUE_SOFT
+	integrity = 10
 	dirtiness = 15
 	dissolves_into = list(
 		/decl/material/solid/silicon = 1
 	)
-	default_solid_form = /obj/item/stack/material/lump
+	default_solid_form = /obj/item/stack/material/ore/handful
+	can_backfill_turf_type = /turf/exterior/sand
 
 /decl/material/solid/clay
 	name = "clay"
+	codex_name = "raw clay"
 	uid = "solid_clay"
-	color = COLOR_OFF_WHITE
+	color = "#807f7a"
 	ore_name = "clay"
-	ore_icon_overlay = "lump"
-	heating_products = list(/decl/material/solid/stone/ceramic = 1)
-	heating_point = GENERIC_SMELTING_HEAT_POINT
-	heating_sound = null
-	heating_message = null
 	ore_compresses_to = null
-	ore_icon_overlay = "dust"
+	ore_icon_overlay = "lump_large"
+	ore_type_value = ORE_SURFACE
+	ore_data_value = 1
 	value = 0.8
-	default_solid_form = /obj/item/stack/material/lump
+	hardness = MAT_VALUE_SOFT
+	integrity = 10
+	dirtiness = 10
+	default_solid_form = /obj/item/stack/material/lump/large
+	bakes_into_material = /decl/material/solid/stone/pottery
+	melting_point = null // Clay is already almost a liquid...
+	// lower than the temperature expected from a kiln so that clay can be used to make bricks to make a high-temperature kiln.
+	bakes_into_at_temperature = 950 CELSIUS
+	can_backfill_turf_type = /turf/exterior/clay
+
+/decl/material/solid/soil
+	name = "soil"
+	codex_name = "soil"
+	uid = "solid_soil"
+	color = COLOR_BEASTY_BROWN
+	value = 0
+	default_solid_form = /obj/item/stack/material/lump/large
+	melting_point = null
+	hardness = MAT_VALUE_SOFT
+	integrity = 10
+	dirtiness = 30
+	can_backfill_turf_type = list(
+		/turf/exterior/mud,
+		/turf/exterior/dirt
+	)
 
 /decl/material/solid/hematite
 	name = "hematite"
@@ -270,6 +290,7 @@
 	rich_material_weight = 20
 	ore_type_value = ORE_SURFACE
 	ore_data_value = 1
+	ferrous = TRUE
 
 /decl/material/solid/rutile
 	name = "rutile"
@@ -377,6 +398,7 @@
 		/decl/material/solid/gemstone/diamond = 0.02,
 		/decl/material/solid/carbon = 0.98
 	)
+	burn_temperature = 1750 CELSIUS
 	heating_point = GENERIC_SMELTING_HEAT_POINT
 	heating_sound = null
 	heating_message = null

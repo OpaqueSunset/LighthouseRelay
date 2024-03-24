@@ -178,8 +178,8 @@
 	if((stat & (NOPOWER|BROKEN)) || shorted)
 		return
 
-	var/turf/simulated/location = loc
-	if(!istype(location))	return//returns if loc is not simulated
+	var/turf/location = loc
+	if(!istype(location) || !location.simulated)	return//returns if loc is not simulated
 
 	var/datum/gas_mixture/environment = location.return_air()
 
@@ -288,9 +288,9 @@
 
 // Returns whether this air alarm thinks there is a breach, given the sensors that are available to it.
 /obj/machinery/alarm/proc/breach_detected()
-	var/turf/simulated/location = loc
+	var/turf/location = loc
 
-	if(!istype(location))
+	if(!istype(location) || !location.simulated)
 		return 0
 
 	if(breach_detection	== 0)

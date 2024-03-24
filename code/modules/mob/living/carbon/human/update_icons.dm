@@ -1,5 +1,9 @@
 var/global/list/_limb_mask_cache = list()
-/proc/get_limb_mask_for(var/decl/bodytype/bodytype, var/bodypart)
+/proc/get_limb_mask_for(obj/item/organ/external/limb)
+	var/decl/bodytype/bodytype = limb?.bodytype
+	var/bodypart = limb?.icon_state
+	if(!bodytype || !bodypart)
+		return
 	LAZYINITLIST(_limb_mask_cache[bodytype])
 	if(!_limb_mask_cache[bodytype][bodypart])
 		var/icon/limb_mask = icon(bodytype.icon_base, bodypart)
@@ -171,6 +175,11 @@ Please contact me on #coderbus IRC. ~Carn x
 	// If you want stuff like scaling based on species or something, here is a good spot to mix the numbers together.
 	return list(icon_scale_x, icon_scale_y)
 
+/mob/living/carbon/human/update_appearance_flags(add_flags, remove_flags)
+	. = ..()
+	if(.)
+		update_icon()
+
 /mob/living/carbon/human/update_transform()
 
 	// First, get the correct size.
@@ -181,15 +190,16 @@ Please contact me on #coderbus IRC. ~Carn x
 	// Apply KEEP_TOGETHER so all the component overlays move properly when
 	// applying a transform, or remove it if we aren't doing any transforms
 	// (due to cost).
-	if(!lying && desired_scale_x == 1 && desired_scale_y == 1)
-		appearance_flags &= ~KEEP_TOGETHER
+	if(!lying && desired_scale_x == 1 && desired_scale_y == 1 && !("turf_alpha_mask" in filter_data))
+		update_appearance_flags(remove_flags = KEEP_TOGETHER)
 	else
-		appearance_flags |= KEEP_TOGETHER
+		update_appearance_flags(add_flags = KEEP_TOGETHER)
 
 	// Scale/translate/rotate and apply the transform.
+	var/turn_angle
 	var/matrix/M = matrix()
+	M.Scale(desired_scale_x, desired_scale_y)
 	if(lying)
-		var/turn_angle
 		if(dir & WEST)
 			turn_angle = -90
 		else if(dir & EAST)
@@ -197,16 +207,28 @@ Please contact me on #coderbus IRC. ~Carn x
 		else
 			turn_angle = pick(-90, 90)
 		M.Turn(turn_angle)
-		M.Scale(desired_scale_y, desired_scale_x)
 		M.Translate(turn_angle == 90 ? 1 : -2, (turn_angle == 90 ? -6 : -5) - default_pixel_z)
 	else
-		M.Scale(desired_scale_x, desired_scale_y)
 		M.Translate(0, 16 * (desired_scale_y - 1))
 
 	if(transform_animate_time)
 		animate(src, transform = M, time = transform_animate_time)
 	else
 		transform = M
+
+	var/atom/movable/mask = global._alpha_masks[src]
+	if(mask)
+		var/matrix/inverted_transform = matrix()
+		inverted_transform.Scale(desired_scale_y, desired_scale_x)
+		if(lying)
+			inverted_transform.Turn(-turn_angle)
+			inverted_transform.Translate(turn_angle == -90 ? 1 : -2, (turn_angle == -90 ? -6 : -5) - default_pixel_z)
+		else
+			inverted_transform.Translate(0, 16 * (desired_scale_y - 1))
+		if(transform_animate_time)
+			animate(mask, transform = inverted_transform, time = transform_animate_time)
+		else
+			mask.transform = inverted_transform
 
 	return transform
 
@@ -252,7 +274,9 @@ Please contact me on #coderbus IRC. ~Carn x
 		//BEGIN CACHED ICON GENERATION.
 		stand_icon = new(root_bodytype.icon_template || 'icons/mob/human.dmi', "blank")
 		for(var/obj/item/organ/external/part in limbs)
-			var/icon/temp = part.icon // Grabbing the icon excludes overlays.
+			if(isnull(part) || part.skip_body_icon_draw)
+				continue
+			var/icon/temp = part.icon
 			//That part makes left and right legs drawn topmost and lowermost when human looks WEST or EAST
 			//And no change in rendering for other parts (they icon_position is 0, so goes to 'else' part)
 			if(part.icon_position & (LEFT | RIGHT))
@@ -317,7 +341,8 @@ Please contact me on #coderbus IRC. ~Carn x
 
 /mob/living/carbon/human/update_hair(var/update_icons=1)
 	var/obj/item/organ/external/head/head_organ = get_organ(BP_HEAD, /obj/item/organ/external/head)
-	set_current_mob_overlay(HO_HAIR_LAYER, (istype(head_organ) ? head_organ.get_mob_overlays() : null), update_icons)
+	var/list/new_accessories = head_organ?.get_mob_overlays()
+	set_current_mob_overlay(HO_HAIR_LAYER, new_accessories, update_icons)
 
 /mob/living/carbon/human/proc/update_skin(var/update_icons=1)
 	// todo: make this use bodytype
@@ -386,7 +411,7 @@ Please contact me on #coderbus IRC. ~Carn x
 		return // No tail data!
 
 	// These values may be null and are generally optional.
-	var/hair_colour     = get_hair_colour()
+	var/hair_colour     = GET_HAIR_COLOUR(src)
 	var/skin_colour     = get_skin_colour()
 	var/tail_hair       = tail_organ.get_tail_hair()
 	var/tail_blend      = tail_organ.get_tail_blend()
@@ -506,7 +531,7 @@ Please contact me on #coderbus IRC. ~Carn x
 		return .
 	for(var/obj/item/gear in get_equipped_items(TRUE))
 		client.screen |= gear
-	if(hud_used)
+	if(istype(hud_used))
 		hud_used.hidden_inventory_update()
 		hud_used.persistant_inventory_update()
 		update_action_buttons()

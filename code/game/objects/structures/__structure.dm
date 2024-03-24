@@ -13,6 +13,29 @@
 	var/footstep_type
 	var/mob_offset
 
+	var/paint_color
+	var/paint_verb = "painted"
+
+/obj/structure/get_color()
+	if(paint_color)
+		return paint_color
+	if(istype(material) && (material_alteration & MAT_FLAG_ALTERATION_COLOR))
+		return material.color
+	return initial(color)
+
+/obj/item/set_color(new_color)
+	if(new_color == COLOR_WHITE)
+		new_color = null
+	if(paint_color != new_color)
+		paint_color = new_color
+	if(paint_color)
+		color = paint_color
+	else if(material && (material_alteration & MAT_FLAG_ALTERATION_COLOR))
+		color = material.color
+	else
+		color = new_color
+	return FALSE
+
 /obj/structure/create_matter()
 	..()
 	if(material || reinf_material)
@@ -45,6 +68,9 @@
 		var/damage_desc = get_examined_damage_string()
 		if(length(damage_desc))
 			to_chat(user, damage_desc)
+
+		if(paint_color)
+			to_chat(user, "\The [src] has been <font color='[paint_color]'>[paint_verb]</font>.")
 
 		if(tool_interaction_flags & TOOL_INTERACTION_ANCHOR)
 			if(anchored)
@@ -87,7 +113,7 @@
 	return FALSE
 
 /obj/structure/proc/take_damage(var/damage)
-	if(health == -1) // This object does not take damage.
+	if(current_health == -1) // This object does not take damage.
 		return
 
 	if(material && material.is_brittle())
@@ -98,11 +124,11 @@
 			damage *= STRUCTURE_BRITTLE_MATERIAL_DAMAGE_MULTIPLIER
 
 	playsound(loc, hitsound, 75, 1)
-	health = clamp(health - damage, 0, max_health)
+	var/current_max_health = get_max_health()
+	current_health = clamp(current_health - damage, 0, current_max_health)
+	show_damage_message(current_health/current_max_health)
 
-	show_damage_message(health/max_health)
-
-	if(health == 0)
+	if(current_health == 0)
 		physically_destroyed()
 
 /obj/structure/proc/show_damage_message(var/perc)
@@ -120,7 +146,7 @@
 
 /obj/structure/physically_destroyed(var/skip_qdel)
 	if(..(TRUE))
-		return dismantle()
+		return dismantle_structure()
 
 /obj/structure/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	. = ..()
@@ -129,6 +155,18 @@
 		dmg = round(dmg * material.combustion_effect(get_turf(src),temperature, 0.3))
 	if(dmg)
 		take_damage(dmg)
+
+/obj/structure/ProcessAtomTemperature()
+	var/update_mats = FALSE
+	if(material && material.bakes_into_material && !isnull(material.bakes_into_at_temperature) && temperature >= material.bakes_into_at_temperature)
+		material = GET_DECL(material.bakes_into_material)
+		update_mats = TRUE
+	if(reinf_material && reinf_material.bakes_into_material && !isnull(reinf_material.bakes_into_at_temperature) && temperature >= reinf_material.bakes_into_at_temperature)
+		reinf_material = GET_DECL(reinf_material.bakes_into_material)
+		update_mats = TRUE
+	if(update_mats)
+		update_materials()
+	. = ..()
 
 /obj/structure/Destroy()
 	var/turf/T = get_turf(src)
@@ -217,7 +255,7 @@
 			take_damage(rand(5, 15))
 
 /obj/structure/proc/can_repair(var/mob/user)
-	if(health >= max_health)
+	if(current_health >= get_max_health())
 		to_chat(user, SPAN_NOTICE("\The [src] does not need repairs."))
 		return FALSE
 	return TRUE

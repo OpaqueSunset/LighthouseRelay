@@ -86,7 +86,7 @@
 	if(temperature < ignition_point)
 		return 0
 	var/totalPhoron = 0
-	for(var/turf/simulated/floor/target_tile in range(2,T))
+	for(var/turf/floor/target_tile in range(2,T))
 		var/phoronToDeduce = (temperature/30) * effect_multiplier
 		totalPhoron += phoronToDeduce
 		target_tile.assume_gas(/decl/material/solid/phoron, phoronToDeduce, 200+T0C)
