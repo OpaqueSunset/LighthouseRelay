@@ -68,29 +68,29 @@
 
 //Sky stuff!
 // A simple turf to fake the appearance of flying.
-/turf/simulated/sky/virgo3b
+/turf/sky/virgo3b
 	color = "#ffbbbb"
 
-/turf/simulated/sky/virgo3b/Initialize()
+/turf/sky/virgo3b/Initialize()
 	SSplanets.addTurf(src)
 	set_light(2, 2, "#ffbbbb")
 
-/turf/simulated/sky/virgo3b/north
+/turf/sky/virgo3b/north
 	dir = NORTH
-/turf/simulated/sky/virgo3b/south
+/turf/sky/virgo3b/south
 	dir = SOUTH
-/turf/simulated/sky/virgo3b/east
+/turf/sky/virgo3b/east
 	dir = EAST
-/turf/simulated/sky/virgo3b/west
+/turf/sky/virgo3b/west
 	dir = WEST
 
-/turf/simulated/sky/virgo3b/moving
+/turf/sky/virgo3b/moving
 	icon_state = "sky_fast"
-/turf/simulated/sky/virgo3b/moving/north
+/turf/sky/virgo3b/moving/north
 	dir = NORTH
-/turf/simulated/sky/virgo3b/moving/south
+/turf/sky/virgo3b/moving/south
 	dir = SOUTH
-/turf/simulated/sky/virgo3b/moving/east
+/turf/sky/virgo3b/moving/east
 	dir = EAST
-/turf/simulated/sky/virgo3b/moving/west
+/turf/sky/virgo3b/moving/west
 	dir = WEST

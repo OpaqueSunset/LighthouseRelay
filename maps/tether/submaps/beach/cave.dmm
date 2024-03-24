@@ -1,12 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "c" = (
-/turf/simulated/mineral/cave,
+/turf/mineral/cave,
 /area/tether_away/cave/unexplored/normal)
 "d" = (
 /turf/exterior/barren,
 /area/tether_away/cave/explored/normal)
 "e" = (
-/turf/simulated/mineral/cave,
+/turf/mineral/cave,
 /area/tether_away/cave/explored/normal)
 "f" = (
 /obj/effect/step_trigger/teleporter/away_beach_tobeach,
@@ -17,7 +17,7 @@
 /area/tether_away/cave/unexplored/normal)
 "i" = (
 /obj/away_mission_init/beachcave,
-/turf/simulated/mineral/cave,
+/turf/mineral/cave,
 /area/tether_away/cave/explored/normal)
 "j" = (
 /turf/unsimulated/wall/planetary/normal,

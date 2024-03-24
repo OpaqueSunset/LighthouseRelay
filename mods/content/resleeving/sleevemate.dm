@@ -21,7 +21,7 @@
 		return
 
 	var/choice = alert(user, "What would you like to do?", "Stored: [stored_mind_record.get_identifier()]", "Delete", "Backup", "Cancel")
-	if(!stored_mind_record || user.get_active_hand() != src)
+	if(!stored_mind_record || user.get_active_held_item() != src)
 		return
 	switch(choice)
 		if("Delete")
@@ -99,7 +99,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	//Sanity checking/href-hacking checking
-	if(user.get_active_hand() != src)
+	if(user.get_active_held_item() != src)
 		to_chat(user, SPAN_WARNING("You're not holding \the [src]."))
 		return
 
@@ -162,7 +162,7 @@
 			return
 
 		var/choice = alert(user, "This will remove the target's mind from their body. The only way to put it back is via a SleeveMate. Continue?", "Confirmation", "Continue", "Cancel")
-		if(choice == "Continue" && user.get_active_hand() == src && user.Adjacent(target))
+		if(choice == "Continue" && user.get_active_held_item() == src && user.Adjacent(target))
 
 			user.visible_message(SPAN_WARNING("[user] begins downloading [target]'s mind!"), SPAN_NOTICE("You begin downloading [target]'s mind!"))
 			if(do_after(user, 35 SECONDS, target)) //This is powerful, yo.

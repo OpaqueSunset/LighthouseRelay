@@ -23,6 +23,7 @@
 	icon_state = "pill4"
 
 /obj/item/chems/pill/tox/populate_reagents()
+	. = ..()
 	add_to_reagents(/decl/material/liquid/bromide, 15)
 
 //"Red" Armory Door
@@ -117,7 +118,7 @@
 //
 
 // The tram's electrified maglev tracks
-/turf/simulated/floor/maglev
+/turf/floor/maglev
 	name = "maglev track"
 	desc = "Magnetic levitation tram tracks. Caution! Electrified!"
 	icon = 'maps/tether/icons/maglevs.dmi'
@@ -125,21 +126,21 @@
 
 	var/area/shock_area = /area/tether/surfacebase/tram
 
-/turf/simulated/floor/maglev/Initialize()
+/turf/floor/maglev/Initialize()
 	. = ..()
 	shock_area = locate(shock_area)
 
 // Walking on maglev tracks will shock you! Horray!
-/turf/simulated/floor/maglev/Entered(var/atom/movable/AM, var/atom/old_loc)
+/turf/floor/maglev/Entered(var/atom/movable/AM, var/atom/old_loc)
 	..()
 	if(isliving(AM) && prob(50))
 		track_zap(AM)
 
-/turf/simulated/floor/maglev/attack_hand(var/mob/user)
+/turf/floor/maglev/attack_hand(var/mob/user)
 	if(prob(75))
 		track_zap(user)
 
-/turf/simulated/floor/maglev/proc/track_zap(var/mob/living/user)
+/turf/floor/maglev/proc/track_zap(var/mob/living/user)
 	if (!istype(user)) return
 	if (electrocute_mob(user, shock_area, src))
 		spark_at(src, 5, TRUE, src)

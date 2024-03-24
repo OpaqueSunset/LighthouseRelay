@@ -1,7 +1,7 @@
 /turf/space/cracked_asteroid
-/turf/simulated/floor/wood/sif
-/turf/simulated/shuttle/wall/dark
-/turf/simulated/shuttle/wall/dark/hard_corner
-/turf/simulated/shuttle/wall/voidcraft/hard_corner
-/turf/simulated/wall/durasteel
-/turf/simulated/wall/r_lead
+/turf/floor/wood/sif
+/turf/shuttle/wall/dark
+/turf/shuttle/wall/dark/hard_corner
+/turf/shuttle/wall/voidcraft/hard_corner
+/turf/wall/durasteel
+/turf/wall/r_lead

@@ -64,6 +64,13 @@
 
 	try_toggle_door(usr)
 
+/obj/machinery/appliance/cooker/oven/get_thermal_mass_coefficient()
+	. = ..()
+	if(open)
+		. *= 2 // oven loses heat faster when the door is open
+	else
+		. /= 2 // it loses heat slower when closed
+
 /obj/machinery/appliance/cooker/oven/proc/try_toggle_door(mob/user)
 	if (!isliving(user) || isAI(user))
 		return
@@ -75,14 +82,7 @@
 		to_chat(user, "You can't reach the [src] from there, get closer!")
 		return
 
-	if (open)
-		open = FALSE
-		temperature_coefficient = 1
-	else
-		open = TRUE
-		temperature_coefficient = 10
-		//When the oven door is opened, oven loses heat faster
-
+	open = !open
 	playsound(src, 'sound/machines/oven_open.ogg', 20, 1)
 	update_icon()
 

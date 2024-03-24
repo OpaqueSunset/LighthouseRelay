@@ -21,7 +21,7 @@
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "af" = (
-/turf/simulated/shuttle/wall/dark,
+/turf/shuttle/wall/dark,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -46,20 +46,20 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "ak" = (
 /obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/computer/shuttle_control/specops,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "al" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -69,7 +69,7 @@
 	pixel_y = 32
 	},
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -86,12 +86,12 @@
 	dir = 4
 	},
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "ao" = (
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	hard_corner = 1
 	},
 /area/shuttle/specops/centcom{
@@ -274,12 +274,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "aC" = (
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -291,7 +291,7 @@
 	tag_door = "specops_shuttle_fore_hatch";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -301,7 +301,7 @@
 	locked = 1;
 	name = "Forward Docking Hatch"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -451,7 +451,7 @@
 	name = "Spec Ops Intercom";
 	pixel_y = -30
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -459,7 +459,7 @@
 /obj/machinery/computer/prisoner{
 	name = "Implant Management"
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -471,7 +471,7 @@
 	tag_door = "specops_shuttle_port_hatch";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -479,7 +479,7 @@
 /obj/structure/bed/chair{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -490,7 +490,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -1418,16 +1418,16 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/reinforced/mapped/plasteel{
+/obj/item/stack/material/sheet/reinforced/mapped/plasteel{
 	amount = 50
 	},
-/obj/item/stack/material/reinforced/mapped/plasteel{
+/obj/item/stack/material/sheet/reinforced/mapped/plasteel{
 	amount = 50
 	},
-/obj/item/stack/material/reinforced/mapped/plasteel{
+/obj/item/stack/material/sheet/reinforced/mapped/plasteel{
 	amount = 50
 	},
-/obj/item/stack/material/reinforced/mapped/plasteel{
+/obj/item/stack/material/sheet/reinforced/mapped/plasteel{
 	amount = 50
 	},
 /obj/item/stack/material/pane/mapped/rglass{
@@ -2136,7 +2136,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "dN" = (
 /obj/structure/table,
@@ -2150,7 +2150,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "dO" = (
 /obj/item/stock_parts/console_screen,
@@ -2166,7 +2166,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "dP" = (
 /obj/machinery/fabricator/hacked{
@@ -2238,7 +2238,7 @@
 	pixel_x = -2;
 	pixel_y = 2
 	},
-/obj/item/stack/material/reinforced/mapped/plasteel{
+/obj/item/stack/material/sheet/reinforced/mapped/plasteel{
 	amount = 10
 	},
 /obj/machinery/camera/network/crescent,
@@ -2312,7 +2312,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "ec" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
@@ -2415,7 +2415,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "eq" = (
 /obj/structure/closet/secure_closet/bar,
@@ -2756,7 +2756,7 @@
 	},
 /area/centcom/control)
 "fi" = (
-/obj/structure/kitchenspike,
+/obj/structure/meat_hook,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -3420,14 +3420,14 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gy" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gz" = (
 /obj/effect/floor_decal/rust,
@@ -3435,7 +3435,7 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gA" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
@@ -3444,14 +3444,14 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gB" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "gC" = (
 /obj/effect/floor_decal/corner_steel_grid{
@@ -3619,19 +3619,19 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ha" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "hb" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "hc" = (
 /obj/abstract/landmark{
@@ -3711,7 +3711,7 @@
 	},
 /obj/item/kitchen/rollingpin,
 /obj/item/knife/kitchen/cleaver,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/control)
 "hm" = (
 /obj/machinery/door/airlock/freezer{
@@ -3722,7 +3722,7 @@
 	},
 /area/centcom/control)
 "hn" = (
-/obj/structure/kitchenspike,
+/obj/structure/meat_hook,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -3778,7 +3778,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "hv" = (
 /obj/machinery/camera/network/thunder{
@@ -3962,7 +3962,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "hP" = (
 /obj/machinery/light/spot{
@@ -4029,7 +4029,7 @@
 /obj/structure/railing/mapped{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ia" = (
 /turf/unsimulated/floor{
@@ -4292,14 +4292,14 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iA" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iB" = (
 /obj/machinery/door/blast/regular{
@@ -4338,94 +4338,94 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iF" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iG" = (
 /obj/effect/floor_decal/derelict/d9,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iH" = (
 /obj/effect/floor_decal/derelict/d10,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iI" = (
 /obj/effect/floor_decal/derelict/d11,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iJ" = (
 /obj/effect/floor_decal/derelict/d12,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iK" = (
 /obj/effect/floor_decal/derelict/d13,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iL" = (
 /obj/effect/floor_decal/derelict/d14,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iM" = (
 /obj/effect/floor_decal/derelict/d15,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iN" = (
 /obj/effect/floor_decal/derelict/d16,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iO" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iP" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iQ" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iR" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iS" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "iT" = (
 /obj/structure/rack,
@@ -4656,74 +4656,74 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jl" = (
 /obj/effect/floor_decal/rust/steel_decals_rusted2,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jm" = (
 /obj/effect/floor_decal/derelict/d1,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jn" = (
 /obj/effect/floor_decal/derelict/d2,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jo" = (
 /obj/effect/floor_decal/derelict/d3,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jp" = (
 /obj/effect/floor_decal/derelict/d4,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jq" = (
 /obj/effect/floor_decal/derelict/d5,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jr" = (
 /obj/effect/floor_decal/derelict/d6,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "js" = (
 /obj/effect/floor_decal/derelict/d7,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jt" = (
 /obj/effect/floor_decal/derelict/d8,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ju" = (
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jv" = (
 /obj/effect/floor_decal/rust/part_rusted3,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jw" = (
 /obj/effect/floor_decal/rust/part_rusted3,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jz" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jA" = (
 /obj/structure/rack,
@@ -4847,7 +4847,7 @@
 /area/centcom/security)
 "jJ" = (
 /obj/effect/floor_decal/rust/mono_rusted3,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jK" = (
 /turf/unsimulated/wall,
@@ -4865,7 +4865,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "jO" = (
 /obj/machinery/computer/arcade,
@@ -5442,7 +5442,7 @@
 /area/centcom/security)
 "kP" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "kQ" = (
 /obj/machinery/door/airlock/glass/medical{
@@ -5620,14 +5620,14 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lj" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lk" = (
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -5637,7 +5637,7 @@
 	dir = 9
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ll" = (
 /obj/effect/floor_decal/rust,
@@ -5645,19 +5645,19 @@
 	dir = 1
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lm" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
 /obj/structure/railing/mapped,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "ln" = (
 /obj/structure/railing/mapped,
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/centcom/evac)
 "lo" = (
 /obj/item/stool/padded,
@@ -7149,7 +7149,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/space)
 "nX" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -7496,7 +7496,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/centcom/security)
 "oE" = (
 /obj/structure/table,
@@ -7511,7 +7511,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/centcom/security)
 "oF" = (
 /obj/structure/table,
@@ -7528,7 +7528,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/centcom/security)
 "oG" = (
 /obj/machinery/photocopier,
@@ -7539,7 +7539,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/crescent,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/centcom/security)
 "oH" = (
 /obj/effect/floor_decal/borderfloor/corner{
@@ -9251,14 +9251,14 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "si" = (
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
 "sj" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window,
-/turf/simulated/floor,
+/turf/floor,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -9269,7 +9269,7 @@
 /obj/structure/flora/pottedplant{
 	pixel_y = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/centcom/terminal)
 "sl" = (
 /obj/effect/floor_decal/borderfloorwhite{
@@ -9414,7 +9414,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "sB" = (
-/turf/simulated/shuttle/wall/hard_corner,
+/turf/shuttle/wall/hard_corner,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -9430,14 +9430,14 @@
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/toxin,
 /obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
 "sD" = (
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9445,7 +9445,7 @@
 	})
 "sE" = (
 /obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9638,7 +9638,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9646,7 +9646,7 @@
 	})
 "sX" = (
 /obj/structure/table,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9660,7 +9660,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9785,7 +9785,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -9841,7 +9841,7 @@
 /obj/structure/bed/chair/shuttle{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -9935,7 +9935,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
@@ -10014,7 +10014,7 @@
 	locked = 1;
 	name = "Shuttle Hatch"
 	},
-/turf/simulated/floor/shuttle/yellow,
+/turf/floor/shuttle/yellow,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -10024,7 +10024,7 @@
 	locked = 1;
 	name = "Shuttle Hatch"
 	},
-/turf/simulated/floor/shuttle/yellow,
+/turf/floor/shuttle/yellow,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -10206,7 +10206,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/structure/window/reinforced,
 /turf/unsimulated/floor/steel,
@@ -10245,7 +10245,7 @@
 	pixel_x = -28;
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10257,7 +10257,7 @@
 	pixel_x = 28;
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10327,7 +10327,7 @@
 "um" = (
 /obj/structure/table,
 /obj/random/junk,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10336,7 +10336,7 @@
 "un" = (
 /obj/structure/table,
 /obj/random/maintenance/clean,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10570,7 +10570,7 @@
 /area/centcom/living)
 "uP" = (
 /obj/structure/sign/nanotrasen,
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -10672,7 +10672,7 @@
 "vb" = (
 /obj/structure/table,
 /obj/item/clothing/head/beret/corp,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10681,7 +10681,7 @@
 "vc" = (
 /obj/structure/table,
 /obj/random/plushie,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10778,7 +10778,7 @@
 	pixel_x = -28;
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -10792,7 +10792,7 @@
 	pixel_x = 28;
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -11299,13 +11299,13 @@
 "wf" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window,
-/turf/simulated/floor/shuttle/white,
+/turf/floor/shuttle/white,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
 "wg" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -11584,7 +11584,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -11593,7 +11593,7 @@
 "wD" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/light,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -11830,7 +11830,7 @@
 /area/centcom/security)
 "wZ" = (
 /obj/random/junk,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -11841,7 +11841,7 @@
 	dir = 1
 	},
 /obj/random/soap,
-/turf/simulated/floor/shuttle/white{
+/turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/escape/centcom{
@@ -12976,7 +12976,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/machinery/computer/modular/preset/civilian,
 /obj/effect/floor_decal/borderfloorblack{
@@ -13185,7 +13185,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -13401,7 +13401,7 @@
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -14346,7 +14346,7 @@
 	},
 /obj/item/kitchen/rollingpin,
 /obj/item/knife/kitchen/cleaver,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/centcom/bar)
 "Bt" = (
 /obj/structure/table/reinforced,
@@ -14359,7 +14359,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /turf/unsimulated/floor{
 	dir = 5;
@@ -14478,7 +14478,7 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";
@@ -14668,7 +14668,7 @@
 "BS" = (
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -14806,7 +14806,7 @@
 	},
 /area/centcom/bar)
 "Ck" = (
-/obj/structure/kitchenspike,
+/obj/structure/meat_hook,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -14912,7 +14912,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/machinery/door/blast/regular/open{
 	id_tag = "TelelockdownC";

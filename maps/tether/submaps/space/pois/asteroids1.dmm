@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/tether_away/debrisfield/explored)
 "b" = (
 /turf/template_noop,

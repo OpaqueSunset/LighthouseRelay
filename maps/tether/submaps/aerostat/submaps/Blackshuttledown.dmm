@@ -10,7 +10,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Blackshuttledown)
 "ad" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Blackshuttledown)
 "ae" = (
 /obj/effect/decal/cleanable/blood,
@@ -29,20 +29,20 @@
 /area/submap/virgo2/Blackshuttledown)
 "ai" = (
 /turf/exterior/barren,
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
 	},
 /area/submap/virgo2/Blackshuttledown)
 "aj" = (
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
 /area/submap/virgo2/Blackshuttledown)
 "ak" = (
 /turf/exterior/barren,
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
 	},
@@ -53,14 +53,14 @@
 	id_tag = "merc_shuttle_outer";
 	name = "Ship External Access"
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "am" = (
 /obj/structure/shuttle/engine/heater{
 	icon_state = "heater";
 	dir = 4
 	},
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
@@ -85,35 +85,35 @@
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "ap" = (
 /obj/structure/tank_rack/oxygen,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aq" = (
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "ar" = (
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "as" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "at" = (
 /obj/machinery/fabricator/bioprinter,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "au" = (
 /turf/exterior/barren,
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
 	},
@@ -121,25 +121,25 @@
 "av" = (
 /obj/structure/table/steel,
 /obj/item/gun/projectile/automatic/smg,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aw" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "ax" = (
 /obj/machinery/optable,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "ay" = (
 /obj/machinery/bodyscanner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "az" = (
 /turf/exterior/barren,
-/turf/simulated/shuttle/wall/dark{
+/turf/shuttle/wall/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},
@@ -148,17 +148,17 @@
 /obj/machinery/computer/modular/preset/cardslot/command{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aB" = (
 /mob/living/simple_mob/mechanical/viscerator,
 /mob/living/simple_mob/mechanical/viscerator,
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aD" = (
 /mob/living/simple_mob/humanoid/merc/ranged/space,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aE" = (
 /obj/machinery/light{
@@ -166,85 +166,85 @@
 	icon_state = "tube1";
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aF" = (
 /obj/structure/table/steel,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aG" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/surgery,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aH" = (
 /obj/structure/table,
 /obj/item/tank/anesthetic,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aI" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/sterile,
 /obj/item/clothing/gloves/sterile,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aJ" = (
 /obj/structure/table,
 /obj/item/chems/spray/sterilizine,
 /obj/item/chems/spray/sterilizine,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aK" = (
 /obj/structure/table,
 /obj/item/storage/box/masks,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aL" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aM" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aN" = (
 /obj/machinery/door/airlock/security{
 	locked = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aO" = (
 /obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aP" = (
 /obj/machinery/power/apc/hyper,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aQ" = (
 /obj/machinery/computer/area_atmos{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aR" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aS" = (
 /obj/structure/table/steel,
 /obj/item/knife,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aU" = (
 /obj/structure/table/steel,
 /obj/random/toolbox,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aV" = (
 /obj/structure/table/steel,
@@ -252,7 +252,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aW" = (
 /obj/structure/grille,
@@ -265,11 +265,11 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/submap/virgo2/Blackshuttledown)
 "aX" = (
 /obj/item/stool,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aY" = (
 /obj/structure/grille,
@@ -279,16 +279,16 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/submap/virgo2/Blackshuttledown)
 "aZ" = (
 /obj/structure/table/steel,
 /obj/item/pizzabox,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "ba" = (
 /obj/machinery/door/airlock,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bb" = (
 /obj/structure/grille,
@@ -299,7 +299,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/submap/virgo2/Blackshuttledown)
 "be" = (
 /obj/structure/table/steel,
@@ -307,24 +307,24 @@
 	info = "We need to take a short stop. The engine's are in need of minor repairs due to turbulence, should be a week's time. We've got reserve food supplies but pleanty of locale fauna to subsist on too if need be. PCRC is keeping most of there assets near New Reykjavik and locale authorities are more mindful then most to travel in this kind of weather. Our outfit should be at the rendezvous point in less then ten days assuming the upper ecehelon hasn't dropped ties with us yet.";
 	name = "Operation Progress/M-53"
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bf" = (
 /obj/structure/table/steel,
 /obj/item/paper_bin,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bg" = (
 /obj/machinery/light,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bh" = (
 /obj/structure/closet/toolcloset,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bi" = (
 /obj/machinery/portable_atmospherics/canister/empty/oxygen,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bj" = (
 /obj/machinery/atmospherics/unary/tank/oxygen,
@@ -332,20 +332,20 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bk" = (
 /obj/structure/bed/chair/office/dark,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bm" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bn" = (
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bo" = (
 /obj/structure/table/steel,
@@ -354,30 +354,30 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bp" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/structure/bed,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bq" = (
 /mob/living/simple_mob/mechanical/viscerator,
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "br" = (
 /obj/structure/table/steel,
 /obj/item/gun/projectile/pistol,
 /obj/item/gun/projectile/shotgun/pump,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bs" = (
 /obj/structure/hygiene/toilet{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bt" = (
 /obj/machinery/light,
@@ -390,19 +390,19 @@
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
 /obj/item/clothing/suit/space,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bu" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/machinery/light,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bv" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/item/toy/plushie/spider,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "by" = (
 /obj/structure/table/steel,

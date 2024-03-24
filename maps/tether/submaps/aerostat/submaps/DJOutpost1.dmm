@@ -3,7 +3,7 @@
 /turf/template_noop,
 /area/template_noop)
 "b" = (
-/turf/simulated/wall/virgo2,
+/turf/wall/virgo2,
 /area/submap/virgo2/DJOutpost1)
 "c" = (
 /obj/structure/grille/broken,
@@ -12,19 +12,19 @@
 	icon_state = "shardmedium"
 	},
 /obj/item/stack/material/rods,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "d" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "e" = (
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "g" = (
 /obj/structure/loot_pile/maint/technical,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "h" = (
 /obj/structure/sign/plaque/golden{
@@ -32,7 +32,7 @@
 	name = "Best Radio Station 2558";
 	pixel_y = 30
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "j" = (
 /obj/item/remains,
@@ -40,11 +40,11 @@
 /obj/item/clothing/under/frontier,
 /obj/item/knife/combat,
 /obj/random_multi/single_item/sfr_headset,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "k" = (
 /obj/machinery/door/airlock/glass,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "l" = (
 /obj/structure/table/steel_reinforced,
@@ -52,7 +52,7 @@
 	icon_state = "intercom";
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "m" = (
 /obj/machinery/computer/message_monitor,
@@ -60,7 +60,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "n" = (
 /obj/structure/grille,
@@ -69,34 +69,34 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "o" = (
 /obj/effect/overlay/snow/floor,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor{
+/turf/floor{
 	outdoors = 1
 	},
 /area/submap/virgo2/DJOutpost1)
 "p" = (
 /obj/structure/bed/chair/wood,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "q" = (
 /obj/item/remains,
 /obj/item/clothing/under/dress/blacktango,
 /obj/effect/decal/cleanable/blood,
 /obj/item/universal_translator/ear,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "s" = (
 /obj/structure/bed/chair/office/dark{
 	icon_state = "officechair_dark";
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "t" = (
 /obj/machinery/light{
@@ -110,7 +110,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "u" = (
 /obj/effect/overlay/snow/floor,
@@ -121,38 +121,38 @@
 /obj/item/stack/material/crystal/mapped/phoron{
 	amount = 25
 	},
-/turf/simulated/floor{
+/turf/floor{
 	outdoors = 1
 	},
 /area/submap/virgo2/DJOutpost1)
 "v" = (
 /obj/structure/table/woodentable,
 /obj/item/trash/candle,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "w" = (
 /obj/structure/bed/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "x" = (
 /obj/structure/bookcase,
 /obj/item/book/manual/excavation,
 /obj/item/book/manual/engineering_construction,
 /obj/item/storage/bible,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "y" = (
 /obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "z" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/radio/phone,
 /obj/random_multi/single_item/sfr_headset,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "A" = (
 /obj/structure/table/steel_reinforced,
@@ -161,26 +161,26 @@
 	name = "station intercom (General)"
 	},
 /obj/item/multitool,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "B" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/radio,
 /obj/machinery/power/apc/hyper,
 /obj/structure/cable/yellow,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "C" = (
 /obj/effect/overlay/snow/floor,
 /obj/machinery/port_gen/pacman,
 /obj/structure/cable/yellow,
-/turf/simulated/floor{
+/turf/floor{
 	outdoors = 1
 	},
 /area/submap/virgo2/DJOutpost1)
 "E" = (
 /obj/machinery/biogenerator,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "F" = (
 /obj/structure/table/woodentable,
@@ -190,7 +190,7 @@
 	dir = 8
 	},
 /obj/random_multi/single_item/sfr_headset,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "G" = (
 /obj/machinery/light{
@@ -199,18 +199,18 @@
 	pixel_x = 0
 	},
 /obj/machinery/seed_extractor,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "H" = (
 /obj/structure/bed/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "I" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "J" = (
 /obj/structure/table/woodentable,
@@ -219,22 +219,22 @@
 /obj/item/minihoe,
 /obj/item/scanner/plant,
 /obj/random_multi/single_item/sfr_headset,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "K" = (
 /obj/structure/undies_wardrobe,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "L" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/winterboots,
 /obj/item/clothing/suit/storage/toggle/wintercoat,
 /obj/random_multi/single_item/sfr_headset,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "M" = (
 /obj/machinery/light/flamp,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "N" = (
 /obj/structure/hygiene/sink{
@@ -242,17 +242,17 @@
 	icon_state = "sink";
 	pixel_x = 15
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "O" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/clown,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "P" = (
 /obj/structure/rack,
 /obj/item/gun/projectile/shotgun/pump/rifle,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "Q" = (
 /obj/structure/rack,
@@ -260,15 +260,15 @@
 /obj/item/gps{
 	gps_tag = "Sif Free Radio"
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "R" = (
 /obj/machinery/portable_atmospherics/hydroponics,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "Z" = (
 /obj/tether_away_spawner/aerostat_inside,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 
 (1,1,1) = {"

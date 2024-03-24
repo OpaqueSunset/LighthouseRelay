@@ -51,7 +51,7 @@
 		var/turf/T = get_turf(src)
 		for(var/obj/O in loc)
 			qdel(O)
-		T.ChangeTurf(/turf/simulated/shuttle/floor/alienplating)
+		T.ChangeTurf(/turf/shuttle/floor/alienplating)
 		new /obj/machinery/door/airlock/alien/public(T)
 
 	//I'm supposed to stick around and be a teleport target
@@ -69,7 +69,7 @@
 	lethal = TRUE
 	ailock = TRUE
 	check_all = TRUE
-	health = 250
+	current_health = 250
 	maxhealth = 250
 
 /obj/away_mission_init/alienship/door_n2s
@@ -117,7 +117,7 @@
 
 /area/shuttle/excursion/away_alienship
 	name = "\improper Excursion Shuttle - Alien Ship"
-	base_turf = /turf/simulated/shuttle/floor/alienplating
+	base_turf = /turf/shuttle/floor/alienplating
 	var/did_entry = FALSE
 	var/list/teleport_to
 	var/area/dump_area
@@ -190,5 +190,5 @@
 /area/tether_away/alienship/equip_dump
 
 // -- Turfs -- //
-/turf/simulated/shuttle/floor/alienplating/vacuum
+/turf/shuttle/floor/alienplating/vacuum
 	initial_gas_mix = GAS_STRING_VACUUM

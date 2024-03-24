@@ -262,7 +262,7 @@
 	material = /decl/material/solid/stone/ceramic
 
 /obj/item/chems/cooking_container/plate/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/kitchen/utensil))
+	if(istype(I, /obj/item/utensil))
 		if(do_mix())
 			user.visible_message("<b>\The [user]</b> stirs \the [src] with \the [I].", SPAN_NOTICE("You stir \the [src] with \the [I]."))
 			return

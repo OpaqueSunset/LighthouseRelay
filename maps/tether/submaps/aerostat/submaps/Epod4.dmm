@@ -9,12 +9,12 @@
 /turf/exterior/barren,
 /area/submap/virgo2/Epod4)
 "h" = (
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/submap/virgo2/Epod4)
 "i" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Epod4)
 "k" = (
 /obj/structure/bed/chair{
@@ -70,7 +70,7 @@
 /area/submap/virgo2/Epod4)
 "o" = (
 /obj/structure/shuttle/engine/propulsion/burst,
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/submap/virgo2/Epod4)
 "p" = (
 /obj/structure/door_assembly/door_assembly_ext{

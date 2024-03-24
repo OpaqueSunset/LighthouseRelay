@@ -11,7 +11,7 @@
 	},
 /area/space)
 "ac" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/space)
 "ad" = (
 /obj/effect/blocker,
@@ -29,18 +29,18 @@
 /turf/exterior/barren,
 /area/space)
 "aj" = (
-/obj/item/pickaxe/jackhammer,
+/obj/item/tool/hammer/jack,
 /turf/exterior/barren,
 /area/space)
 "ak" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/mine/unexplored)
 "al" = (
 /obj/structure/lattice,
 /turf/space,
 /area/space)
 "am" = (
-/turf/simulated/wall/iron,
+/turf/wall/iron,
 /area/awaymission/carpfarm/base)
 "an" = (
 /obj/structure/cable{
@@ -49,7 +49,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/smes/buildable,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "ao" = (
 /obj/machinery/light{
@@ -65,7 +65,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "ap" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -73,13 +73,13 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aq" = (
 /obj/machinery/gateway{
 	dir = 9
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "ar" = (
 /obj/machinery/gateway{
@@ -88,13 +88,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "as" = (
 /obj/machinery/gateway{
 	dir = 5
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "at" = (
 /obj/structure/hygiene/shower{
@@ -103,17 +103,17 @@
 	pixel_x = 5
 	},
 /obj/machinery/door/window,
-/turf/simulated/floor/tiled/freezer,
+/turf/floor/tiled/freezer,
 /area/awaymission/carpfarm/base)
 "au" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "av" = (
 /obj/machinery/door/airlock/silver,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "aw" = (
 /obj/structure/hygiene/toilet{
@@ -123,18 +123,18 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "ax" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "ay" = (
 /obj/structure/bedsheetbin,
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "az" = (
 /obj/item/storage/toolbox/electrical,
@@ -148,53 +148,53 @@
 	dir = 1
 	},
 /obj/item/paper/awaygate/carpfarm/suicide,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aA" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aB" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aC" = (
 /obj/machinery/gateway{
 	dir = 8
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aD" = (
 /obj/machinery/gateway/centeraway{
 	calibrated = 0
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aE" = (
 /obj/machinery/gateway{
 	dir = 4
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aF" = (
 /obj/structure/window/basic{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "aG" = (
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "aH" = (
 /obj/item/bedsheet,
 /obj/structure/bed/padded,
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "aI" = (
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "aJ" = (
 /obj/structure/rack,
@@ -204,34 +204,34 @@
 /obj/item/scanner/mining,
 /obj/item/tank/jetpack/oxygen,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aK" = (
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aL" = (
 /obj/structure/closet/toolcloset,
-/obj/item/pickaxe/jackhammer,
+/obj/item/tool/hammer/jack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aM" = (
 /obj/machinery/gateway{
 	density = 0;
 	dir = 10
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aN" = (
 /obj/machinery/gateway,
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aO" = (
 /obj/machinery/gateway{
 	density = 0;
 	dir = 6
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/awaymission/carpfarm/base)
 "aP" = (
 /obj/structure/hygiene/sink{
@@ -245,31 +245,31 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/awaymission/carpfarm/base)
 "aQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "aR" = (
 /obj/structure/table/woodentable,
 /obj/random/action_figure,
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "aS" = (
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "aT" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/abstract/landmark/loot_spawn,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "aU" = (
 /obj/structure/closet/jcloset,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "aV" = (
 /obj/structure/closet/secure_closet/medical1,
@@ -277,41 +277,41 @@
 /obj/random/medical,
 /obj/random/medical,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "aW" = (
 /obj/machinery/door/airlock/hatch/maintenance,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aX" = (
 /obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aY" = (
 /obj/machinery/door/airlock/silver,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "aZ" = (
 /obj/machinery/door/airlock,
-/turf/simulated/floor/lino,
+/turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "ba" = (
 /obj/effect/wingrille_spawn/reinforced,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "bb" = (
 /obj/structure/table/reinforced,
 /obj/random/tech_supply,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bc" = (
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bd" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "be" = (
 /obj/structure/closet/gimmick/russian,
@@ -319,34 +319,34 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bf" = (
 /obj/structure/closet/gimmick/russian,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bg" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/freezer,
 /obj/item/trash/syndi_cakes,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bh" = (
 /obj/structure/closet/wardrobe/black,
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bi" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/abstract/landmark/costume,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bj" = (
 /obj/machinery/door/airlock/hatch/maintenance,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bk" = (
 /obj/machinery/light{
@@ -360,7 +360,7 @@
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bl" = (
 /obj/structure/closet/crate/internals,
@@ -371,58 +371,58 @@
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/mask/breath,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bm" = (
 /obj/structure/closet/crate/plastic,
 /obj/random/contraband,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bn" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/random/weapon,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bo" = (
 /obj/machinery/door/airlock/mining,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bp" = (
 /obj/machinery/door/airlock/glass,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bq" = (
 /obj/structure/table/steel,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "br" = (
 /obj/item/mecha_parts/mecha_equipment/tool/drill,
 /obj/item/storage/toolbox/mechanical,
 /obj/structure/table/steel,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bs" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bt" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/rack,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bu" = (
 /obj/structure/rack,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bv" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bw" = (
 /obj/structure/table/frame,
@@ -434,31 +434,31 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bx" = (
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "by" = (
 /obj/machinery/vending/coffee,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bz" = (
 /obj/machinery/vending/sovietsoda,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bA" = (
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bB" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bC" = (
 /obj/machinery/vending/dinnerware,
@@ -466,43 +466,43 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bD" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/item/gun/projectile/shotgun/pump/rifle,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bE" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bF" = (
 /obj/structure/tank_rack/oxygen,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 6
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 1;
 	icon_state = "map"
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -515,26 +515,26 @@
 	pixel_x = 26;
 	pixel_y = -26
 	},
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bK" = (
 /obj/machinery/suit_cycler/mining,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bL" = (
 /obj/structure/bed/chair,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bM" = (
 /obj/mecha/working/hoverpod/combatpod,
 /obj/machinery/mech_recharger,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bN" = (
 /obj/machinery/mech_recharger,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bO" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -542,7 +542,7 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/awaymission/carpfarm/base)
 "bP" = (
 /obj/structure/sign/warning{
@@ -552,7 +552,7 @@
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/turf/simulated/wall/iron,
+/turf/wall/iron,
 /area/awaymission/carpfarm/base)
 "bQ" = (
 /obj/machinery/door/airlock/external{
@@ -562,33 +562,33 @@
 	name = "External Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "bR" = (
 /obj/structure/bed/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bS" = (
 /obj/item/chems/food/cubancarp,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/glass,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bT" = (
 /obj/item/chems/food/carpmeat,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/glass,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bU" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bV" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -608,7 +608,7 @@
 	icon_state = "warningcee";
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "bW" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
@@ -619,7 +619,7 @@
 	icon_state = "warningcee";
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "bX" = (
 /obj/structure/closet/emcloset,
@@ -629,25 +629,25 @@
 	pixel_x = 28;
 	dir = 8
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "bY" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bZ" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "ca" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/closet/crate/bin,
 /obj/item/trash/candy/proteinbar,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "cb" = (
 /obj/machinery/door/airlock/external{
@@ -656,16 +656,16 @@
 	locked = 1;
 	name = "External Access"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/awaymission/carpfarm/base)
 "cc" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/awaymission/carpfarm/base)
 "cd" = (
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/awaymission/carpfarm/base)
 "ce" = (
 /obj/machinery/button/access{
@@ -674,7 +674,7 @@
 	pixel_x = 26;
 	pixel_y = 26
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/awaymission/carpfarm/base)
 "cf" = (
 /obj/structure/lattice,
@@ -685,55 +685,55 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "ch" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "ci" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "cj" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "ck" = (
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "cl" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "cm" = (
 /obj/effect/gibspawner/human,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "cn" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "co" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "cp" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 
 (1,1,1) = {"

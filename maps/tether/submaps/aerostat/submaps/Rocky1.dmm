@@ -13,7 +13,7 @@
 /turf/exterior/barren,
 /area/submap/virgo2/Rocky1)
 "e" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Rocky1)
 "g" = (
 /obj/random/handgun/sec,

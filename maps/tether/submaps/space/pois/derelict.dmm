@@ -9,10 +9,10 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "ac" = (
 /obj/structure/window/reinforced/full,
@@ -21,7 +21,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "ad" = (
 /obj/structure/window/reinforced/full,
@@ -32,35 +32,35 @@
 	dir = 4
 	},
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "ae" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/window/reinforced{
 	dir = 8;
-	health = 1e+006
+	max_health = 1e+006
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "af" = (
 /obj/structure/prop/alien/computer/camera,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "ag" = (
 /obj/structure/prop/alien/computer,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "ah" = (
 /obj/structure/prop/alien/dispenser,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "ai" = (
 /obj/structure/prop/alien/computer/camera/flipped,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "aj" = (
 /obj/structure/window/reinforced/full,
@@ -71,14 +71,14 @@
 	dir = 8
 	},
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "ak" = (
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "al" = (
 /obj/tether_away_spawner/debrisfield/derelict,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "am" = (
 /obj/structure/cable{
@@ -90,47 +90,47 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "an" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "ao" = (
-/turf/simulated/wall/r_wall,
+/turf/wall/r_wall,
 /area/tether_away/debrisfield/derelict)
 "ap" = (
 /obj/machinery/door/airlock/alien/locked,
-/turf/simulated/floor/tiled/techfloor,
+/turf/floor/tiled/techfloor,
 /area/tether_away/debrisfield/derelict)
 "aq" = (
-/turf/simulated/wall,
+/turf/wall,
 /area/tether_away/debrisfield/derelict)
 "ar" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/wall,
+/turf/wall,
 /area/tether_away/debrisfield/derelict)
 "as" = (
-/turf/simulated/floor/tiled/monotile,
+/turf/floor/tiled/monotile,
 /area/tether_away/debrisfield/derelict)
 "at" = (
 /obj/item/remains/human,
-/turf/simulated/floor/tiled/monotile,
+/turf/floor/tiled/monotile,
 /area/tether_away/debrisfield/derelict)
 "au" = (
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "av" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/tether_away/debrisfield/derelict)
 "aw" = (
 /obj/structure/prop/alien/power,
@@ -146,11 +146,11 @@
 	alpha = 0;
 	invisibility = 101
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/tether_away/debrisfield/derelict)
 "ax" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
-/turf/simulated/floor/tiled/monotile,
+/turf/floor/tiled/monotile,
 /area/tether_away/debrisfield/derelict)
 "ay" = (
 /obj/structure/cable{
@@ -158,7 +158,7 @@
 	pixel_y = 0
 	},
 /obj/item/grenade/empgrenade,
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/tether_away/debrisfield/derelict)
 "az" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
@@ -166,18 +166,18 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/tether_away/debrisfield/derelict)
 "aA" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/bluegrid,
+/turf/floor/bluegrid,
 /area/tether_away/debrisfield/derelict)
 "aB" = (
 /obj/machinery/door/airlock/alien,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aC" = (
 /obj/machinery/door/airlock/alien,
@@ -185,36 +185,36 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aD" = (
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aE" = (
 /obj/machinery/door/airlock/alien,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "aF" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "aG" = (
-/turf/simulated/floor/tiled/monofloor,
+/turf/floor/tiled/monofloor,
 /area/tether_away/debrisfield/derelict)
 "aH" = (
 /obj/item/remains/human,
-/turf/simulated/floor/tiled/monofloor,
+/turf/floor/tiled/monofloor,
 /area/tether_away/debrisfield/derelict)
 "aI" = (
 /obj/structure/old_roboprinter,
-/turf/simulated/floor/tiled/monofloor,
+/turf/floor/tiled/monofloor,
 /area/tether_away/debrisfield/derelict)
 "aJ" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
-/turf/simulated/floor/tiled/monofloor,
+/turf/floor/tiled/monofloor,
 /area/tether_away/debrisfield/derelict)
 "aK" = (
 /turf/space,
@@ -225,7 +225,7 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "aM" = (
 /obj/machinery/porta_turret/alien{
@@ -249,48 +249,48 @@
 /turf/space,
 /area/tether_away/debrisfield/derelict)
 "aP" = (
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "aR" = (
 /obj/effect/map_effect/interval/effect_emitter/sparks/frequent,
 /obj/effect/map_effect/interval/effect_emitter/smoke,
 /obj/machinery/door/airlock/alien,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "aS" = (
 /obj/effect/map_effect/interval/effect_emitter/sparks/frequent,
 /obj/structure/door_assembly/door_assembly_alien,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "aT" = (
 /obj/machinery/door/airlock/alien,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "aU" = (
 /obj/random/tool/alien,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aV" = (
 /obj/random/energy,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aW" = (
 /obj/random/humanoidremains,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aX" = (
 /mob/living/simple_mob/mechanical/infectionbot{
 	faction = "derelict"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "aY" = (
 /obj/random/humanoidremains,
 /obj/item/gun/energy/ionrifle,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "aZ" = (
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "bb" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -301,7 +301,7 @@
 /area/tether_away/debrisfield/derelict)
 "bc" = (
 /obj/structure/prop/alien/computer/camera,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bd" = (
 /obj/structure/prop/alien/power,
@@ -313,7 +313,7 @@
 	alpha = 0;
 	invisibility = 101
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "be" = (
 /obj/structure/prop/alien/power,
@@ -324,57 +324,57 @@
 	alpha = 0;
 	invisibility = 101
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bf" = (
 /obj/structure/prop/alien/computer/camera/flipped,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bg" = (
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bh" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bi" = (
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bj" = (
 /obj/machinery/transhuman/resleever,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bk" = (
 /obj/machinery/artifact,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "bl" = (
 /mob/living/simple_mob/mechanical/infectionbot{
 	faction = "derelict"
 	},
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bm" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bo" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bp" = (
 /obj/tether_away_spawner/debrisfield/derelict,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bq" = (
 /obj/structure/cable{
@@ -385,91 +385,91 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "br" = (
 /obj/machinery/transhuman/synthprinter,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bs" = (
 /obj/tether_away_spawner/debrisfield/derelict/mech_wizard,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bt" = (
 /obj/machinery/vr_sleeper/alien,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "bu" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
 /mob/living/simple_mob/mechanical/corrupt_maint_drone{
 	faction = "derelict"
 	},
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bv" = (
 /obj/item/remains/human,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bw" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bx" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "by" = (
 /obj/tether_away_spawner/debrisfield/derelict,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bz" = (
 /obj/structure/old_roboprinter,
-/turf/simulated/floor/tiled/steel_grid,
+/turf/floor/tiled/steel_grid,
 /area/tether_away/debrisfield/derelict)
 "bA" = (
 /obj/machinery/auto_cloner,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "bB" = (
 /obj/structure/old_roboprinter,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bC" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bE" = (
 /obj/machinery/door/airlock/alien,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bF" = (
 /obj/machinery/door/airlock/alien,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bH" = (
 /obj/structure/cable{
@@ -481,7 +481,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bI" = (
 /obj/structure/cable{
@@ -493,7 +493,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bJ" = (
 /obj/effect/map_effect/interval/effect_emitter/sparks/frequent,
@@ -501,25 +501,25 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bL" = (
 /obj/random/humanoidremains,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bO" = (
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "bP" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bQ" = (
 /obj/machinery/door/airlock/alien,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "bR" = (
 /turf/template_noop,
@@ -530,25 +530,25 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bT" = (
 /obj/structure/old_roboprinter,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "bU" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
 /mob/living/simple_mob/mechanical/corrupt_maint_drone{
 	faction = "derelict"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "bV" = (
 /obj/machinery/porta_turret/alien{
 	faction = "derelict";
 	use_power = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "bW" = (
 /obj/structure/cable{
@@ -558,7 +558,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bX" = (
 /obj/structure/cable{
@@ -568,80 +568,80 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "bY" = (
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "bZ" = (
 /obj/machinery/implantchair,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "ca" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cb" = (
 /obj/machinery/door/airlock/alien,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cc" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "ce" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "cf" = (
 /mob/living/simple_mob/mechanical/infectionbot{
 	faction = "derelict"
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "cg" = (
 /obj/machinery/dna_scannernew,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "ch" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "ci" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cj" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "ck" = (
 /obj/machinery/optable,
 /obj/random/humanoidremains,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "cl" = (
 /obj/machinery/door/airlock/alien,
@@ -649,15 +649,15 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/tether_away/debrisfield/derelict)
 "cm" = (
 /obj/random/humanoidremains,
-/turf/simulated/floor/tiled/white,
+/turf/floor/tiled/white,
 /area/tether_away/debrisfield/derelict)
 "cn" = (
 /obj/structure/prop/prism,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "co" = (
 /obj/structure/cable{
@@ -667,7 +667,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cp" = (
 /obj/structure/cable,
@@ -677,45 +677,45 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cq" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cr" = (
 /obj/machinery/replicator,
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "cs" = (
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "ct" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "cu" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "cv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "cw" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/neutral,
+/turf/floor/tiled/neutral,
 /area/tether_away/debrisfield/derelict)
 "cx" = (
 /obj/structure/catwalk,
@@ -723,19 +723,19 @@
 /area/tether_away/debrisfield/derelict)
 "cy" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
-/turf/simulated/floor/tiled/steel_ridged,
+/turf/floor/tiled/steel_ridged,
 /area/tether_away/debrisfield/derelict)
 "cA" = (
 /obj/random/humanoidremains,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cB" = (
 /obj/effect/alien/egg,
 /obj/effect/alien/weeds,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cC" = (
 /obj/item/gun/energy/ionrifle,
@@ -743,15 +743,15 @@
 /area/tether_away/debrisfield/derelict)
 "cD" = (
 /obj/structure/shuttle/engine/heater,
-/turf/simulated/floor/reinforced,
+/turf/floor/reinforced,
 /area/tether_away/debrisfield/derelict)
 "cE" = (
 /obj/structure/prop/alien/pod,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cF" = (
 /obj/structure/ghost_pod/manual/lost_drone,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cG" = (
 /obj/item/grenade/empgrenade,
@@ -761,7 +761,7 @@
 /area/tether_away/debrisfield/derelict)
 "cH" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cI" = (
 /obj/structure/shuttle/engine/propulsion,
@@ -769,7 +769,7 @@
 /area/tether_away/debrisfield/derelict)
 "cJ" = (
 /obj/machinery/door/airlock/alien/locked,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cK" = (
 /obj/random/humanoidremains,
@@ -777,14 +777,14 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cL" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cM" = (
 /obj/structure/cable{
@@ -796,7 +796,7 @@
 	name = "east bump";
 	pixel_x = 28
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cN" = (
 /obj/structure/cable{
@@ -806,13 +806,13 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cO" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cP" = (
 /obj/structure/cable{
@@ -824,19 +824,19 @@
 	name = "east bump";
 	pixel_x = 28
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cQ" = (
 /obj/tether_away_spawner/debrisfield/derelict/corrupt_maint_swarm,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether_away/debrisfield/derelict)
 "cR" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cS" = (
 /obj/tether_away_spawner/debrisfield/derelict/mech_wizard,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cT" = (
 /obj/machinery/door/airlock/hatch{
@@ -845,7 +845,7 @@
 	locked = 1;
 	name = "AI Core"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cU" = (
 /obj/machinery/door/airlock/hatch{
@@ -858,10 +858,10 @@
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cV" = (
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 "cW" = (
 /obj/structure/cable{
@@ -874,39 +874,39 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 "cY" = (
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "cZ" = (
 /obj/machinery/porta_turret/alien{
 	faction = "derelict";
 	use_power = 0
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether_away/debrisfield/derelict)
 "da" = (
 /obj/structure/prop/prism,
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 "db" = (
 /obj/structure/prop/blackbox/xenofrigate,
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 "dc" = (
 /obj/machinery/porta_turret/alien{
 	faction = "derelict";
 	use_power = 0
 	},
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 "dd" = (
 /obj/structure/prop/fake_ai,
-/turf/simulated/floor/greengrid,
+/turf/floor/greengrid,
 /area/tether_away/debrisfield/derelict)
 
 (1,1,1) = {"

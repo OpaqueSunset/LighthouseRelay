@@ -3,7 +3,7 @@
 /turf/template_noop,
 /area/template_noop)
 "b" = (
-/turf/simulated/wall/virgo2,
+/turf/wall/virgo2,
 /area/submap/virgo2/Shack1)
 "c" = (
 /turf/template_noop,
@@ -13,69 +13,69 @@
 /area/submap/virgo2/Shack1)
 "e" = (
 /obj/effect/decal/cleanable/cobweb,
-/turf/simulated/floor/holofloor/wood{
+/turf/floor/holofloor/wood{
 	icon_state = "wood_broken1"
 	},
 /area/submap/virgo2/Shack1)
 "f" = (
 /obj/structure/table/woodentable_reinforced,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "g" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/suit/storage/apron/overalls,
 /obj/item/clothing/under/overalls,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "h" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "i" = (
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "j" = (
-/turf/simulated/floor/holofloor/wood{
+/turf/floor/holofloor/wood{
 	icon_state = "wood_broken0"
 	},
 /area/submap/virgo2/Shack1)
 "k" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/holofloor/wood{
+/turf/floor/holofloor/wood{
 	icon_state = "wood_broken5"
 	},
 /area/submap/virgo2/Shack1)
 "m" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "n" = (
-/turf/simulated/floor/holofloor/wood{
+/turf/floor/holofloor/wood{
 	icon_state = "wood_broken3"
 	},
 /area/submap/virgo2/Shack1)
 "o" = (
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "p" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable_reinforced,
 /obj/item/storage/toolbox,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "q" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable_reinforced,
 /obj/item/twohanded/fireaxe/scythe,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "r" = (
 /obj/effect/decal/cleanable/spiderling_remains,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "s" = (
-/turf/simulated/floor/holofloor/wood{
+/turf/floor/holofloor/wood{
 	icon_state = "wood_broken6"
 	},
 /area/submap/virgo2/Shack1)
@@ -83,7 +83,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable_reinforced,
 /obj/item/flashlight/lamp,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "v" = (
 /turf/exterior/barren,
@@ -91,7 +91,7 @@
 "O" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/multiple/voidsuit,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/submap/virgo2/Shack1)
 
 (1,1,1) = {"

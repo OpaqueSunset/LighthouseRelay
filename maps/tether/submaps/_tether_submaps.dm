@@ -281,7 +281,7 @@
 /obj/effect/step_trigger/zlevel_fall/Initialize()
 	. = ..()
 
-	if(istype(get_turf(src), /turf/simulated/floor))
+	if(istype(get_turf(src), /turf/floor))
 		src:target_z = z
 		return INITIALIZE_HINT_QDEL
 
@@ -290,9 +290,9 @@
 		return
 
 	var/attempts = 100
-	var/turf/simulated/T
+	var/turf/T
 	while(attempts && !T)
-		var/turf/simulated/candidate = locate(rand(5,world.maxx-5),rand(5,world.maxy-5),src:target_z)
+		var/turf/candidate = locate(rand(5,world.maxx-5),rand(5,world.maxy-5),src:target_z)
 		if(candidate.density)
 			attempts--
 			continue

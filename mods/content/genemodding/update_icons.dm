@@ -1,3 +1,4 @@
+// TODO: REWRITE TO USE SPRITE ACCESSORY SYSTEM PROPERLY!
 /mob/living/carbon/human/get_tail_icon_for_organ(var/obj/item/organ/external/tail/tail_organ)
 	// No parent call. This is a replacement, not a side-override.
 	if(!istype(tail_organ))
@@ -9,7 +10,7 @@
 		return // No tail data!
 
 	// These values may be null and are generally optional.
-	var/hair_colour     = get_hair_colour()
+	var/hair_colour     = GET_HAIR_COLOUR(src)
 	var/tail_hair       = tail_organ.get_tail_hair()
 	var/tail_blend      = tail_organ.get_tail_blend()
 	var/tail_hair_blend = tail_organ.get_tail_hair_blend()

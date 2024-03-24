@@ -13,7 +13,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Epod3)
 "e" = (
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/submap/virgo2/Epod3)
 "f" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -34,7 +34,7 @@
 	pixel_y = -30;
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "i" = (
 /obj/structure/bed/chair{
@@ -46,7 +46,7 @@
 	},
 /obj/machinery/light,
 /obj/item/weldingtool/largetank,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "j" = (
 /obj/machinery/status_display{
@@ -66,14 +66,14 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/random/multiple/gun/projectile/handgun,
 /obj/effect/spider/eggcluster/small/frost,
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "k" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	icon_state = "propulsion";
 	dir = 8
 	},
-/turf/simulated/shuttle/wall,
+/turf/shuttle/wall,
 /area/submap/virgo2/Epod3)
 "l" = (
 /obj/effect/spider/stickyweb,
@@ -84,7 +84,7 @@
 	name = "Escape Pod Hatch";
 	welded = 1
 	},
-/turf/simulated/floor/shuttle/blue,
+/turf/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "p" = (
 /obj/effect/spider/stickyweb,
@@ -94,7 +94,7 @@
 "r" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Epod3)
 
 (1,1,1) = {"

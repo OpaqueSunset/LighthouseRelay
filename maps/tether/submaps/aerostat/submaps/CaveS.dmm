@@ -10,7 +10,7 @@
 /turf/template_noop,
 /area/submap/virgo2/CaveS)
 "d" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/CaveS)
 "f" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -32,7 +32,7 @@
 /area/submap/virgo2/CaveS)
 "k" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "l" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -50,7 +50,7 @@
 /turf/exterior/barren,
 /area/submap/virgo2/CaveS)
 "u" = (
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "v" = (
 /obj/structure/closet/crate,
@@ -58,25 +58,25 @@
 /obj/item/stack/cable_coil,
 /obj/item/storage/toolbox,
 /obj/random/toolbox,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "w" = (
 /obj/structure/loot_pile/surface,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "x" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "y" = (
 /obj/machinery/port_gen/pacman,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "z" = (
-/turf/simulated/wall,
+/turf/wall,
 /area/submap/virgo2/CaveS)
 "A" = (
 /obj/structure/closet/crate,
@@ -89,14 +89,14 @@
 /obj/item/chems/pill/paracetamol,
 /obj/random/firstaid,
 /obj/item/storage/firstaid/combat,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "B" = (
 /obj/structure/cable{
 	icon_state = "1-2";
 	pixel_y = 0
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "C" = (
 /obj/structure/closet/crate,
@@ -109,27 +109,27 @@
 /obj/item/star,
 /obj/item/star,
 /obj/item/star,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "E" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "F" = (
 /obj/structure/cable{
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 "G" = (
 /obj/machinery/computer/modular/preset/cardslot/command,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/CaveS)
 
 (1,1,1) = {"

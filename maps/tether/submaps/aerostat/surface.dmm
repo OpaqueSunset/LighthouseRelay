@@ -29,18 +29,18 @@
 /turf/exterior/barren,
 /area/tether_away/aerostat/surface/explored)
 "E" = (
-/turf/simulated/mineral/virgo2,
+/turf/mineral/virgo2,
 /area/tether_away/aerostat/surface/explored)
 "F" = (
-/turf/simulated/mineral/virgo2,
+/turf/mineral/virgo2,
 /area/tether_away/aerostat/surface/unexplored)
 "I" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor/virgo2,
+/turf/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/surface/explored)
 "Q" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor/virgo2,
+/turf/floor/tiled/techfloor/virgo2,
 /area/shuttle/aerostat/landed)
 "V" = (
 /obj/structure/railing,

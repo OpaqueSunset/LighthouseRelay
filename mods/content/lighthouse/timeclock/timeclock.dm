@@ -116,7 +116,7 @@
 			usr.put_in_hands(card)
 			card = null
 		else
-			var/obj/item/held_item = usr.get_active_hand()
+			var/obj/item/held_item = usr.get_active_held_item()
 			if (istype(held_item, /obj/item/card/id) && usr.remove_from_mob(held_item, src))
 				card = held_item
 		queue_icon_update()

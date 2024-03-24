@@ -40,7 +40,7 @@
 	allowed = list(
 		/obj/item/flashlight, /obj/item/gun, /obj/item/ammo_magazine,
 		/obj/item/knife, /obj/item/hatchet/machete, /obj/item/tank,
-		/obj/item/radio, /obj/item/pickaxe, /obj/item/gun/projectile/flare
+		/obj/item/radio, /obj/item/tool/pickaxe,  /obj/item/tool/shovel, /obj/item/gun/projectile/flare
 	)
 
 /obj/item/clothing/head/explorerhood
@@ -156,7 +156,7 @@
 	allowed = list(
 		/obj/item/flashlight, /obj/item/tank, /obj/item/suit_cooling_unit,
 		/obj/item/stack/flag, /obj/item/scanner/health, /obj/item/gps,
-		/obj/item/radio/beacon, /obj/item/shovel, /obj/item/ammo_magazine, /obj/item/gun
+		/obj/item/radio/beacon, /obj/item/tool/pickaxe,  /obj/item/tool/shovel, /obj/item/ammo_magazine, /obj/item/gun
 	)
 
 //Medical Biohazard Voidsuit
@@ -195,7 +195,8 @@
 		/obj/item/weldingtool,
 		/obj/item/wirecutters,
 		/obj/item/wrench,
-		/obj/item/pickaxe,
+		/obj/item/tool/pickaxe,
+		/obj/item/tool/shovel,
 		/obj/item/multitool,
 		/obj/item/stack/cable_coil,
 		/obj/item/t_scanner,

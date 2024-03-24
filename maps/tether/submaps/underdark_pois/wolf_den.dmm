@@ -6,7 +6,7 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "c" = (
-/turf/simulated/mineral/ignore_cavegen/virgo3b,
+/turf/mineral/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
 "d" = (
 /obj/item/remains/tajaran,

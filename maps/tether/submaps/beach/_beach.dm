@@ -141,11 +141,11 @@
 // -- Turfs -- //
 
 //These are just some special turfs for the beach water
-/turf/simulated/floor/beach/coastwater
+/turf/floor/beach/coastwater
 	name = "Water"
 	icon_state = "water"
 
-/turf/simulated/floor/beach/coastwater/Initialize()
+/turf/floor/beach/coastwater/Initialize()
 	. = ..()
 	add_overlay(image("icon"='icons/misc/beach.dmi',"icon_state"="water","layer"=MOB_LAYER+0.1))
 
@@ -154,13 +154,13 @@
 //And some special areas, including our shuttle landing spot (must be unique)
 /area/shuttle/excursion/away_beach
 	name = "\improper Excursion Shuttle - Beach"
-	base_turf = /turf/simulated/floor/beach/sand/desert
+	base_turf = /turf/exterior/sand
 	dynamic_lighting = 0
 
 /area/tether_away/beach
 	name = "\improper Away Mission - Virgo 4 Beach"
 	icon_state = "away"
-	base_turf = /turf/simulated/floor/beach/sand //This is what the ground turns into if destroyed/bombed/etc
+	base_turf = /turf/exterior/sand //This is what the ground turns into if destroyed/bombed/etc
 	//Not going to do sunlight simulations here like virgo3b
 	//So we just make the whole beach fullbright all the time
 	dynamic_lighting = 0
@@ -169,28 +169,28 @@
 /area/tether_away/beach/powershed
 	name = "\improper Away Mission - Virgo 4 Coast PS"
 	icon_state = "blue2"
-	base_turf = /turf/simulated/floor/beach/sand
+	base_turf = /turf/exterior/sand
 
 /area/tether_away/beach/coast
 	name = "\improper Away Mission - Virgo 4 Coast"
 	icon_state = "blue2"
-	base_turf = /turf/simulated/floor/beach/coastline
+	base_turf = /turf/floor/beach/coastline
 
 /area/tether_away/beach/water
 	name = "\improper Away Mission - Virgo 4 Water"
 	icon_state = "bluenew"
-	base_turf = /turf/simulated/floor/beach/coastwater
+	base_turf = /turf/floor/beach/coastwater
 
 /area/tether_away/beach/jungle
 	name = "\improper Away Mission - Virgo 4 Desert"
 	icon_state = "green"
-	base_turf = /turf/simulated/floor/beach/sand/desert
+	base_turf = /turf/exterior/sand
 
 //Some areas for the cave, which are referenced by our init object to seed submaps and ores
 /area/tether_away/cave
 	flags = RAD_SHIELDED
 	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
-	base_turf = /turf/simulated/mineral/floor/ignore_mapgen/cave
+	base_turf = /turf/mineral/floor/ignore_mapgen/cave
 
 /area/tether_away/cave/explored/normal
 	name = "\improper Away Mission - Virgo 4 Cave (E)"

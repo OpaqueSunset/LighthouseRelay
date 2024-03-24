@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/simulated/mineral/ignore_cavegen/virgo3b,
+/turf/mineral/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
 "b" = (
 /turf/template_noop,

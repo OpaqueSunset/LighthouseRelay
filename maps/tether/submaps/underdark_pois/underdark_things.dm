@@ -1,7 +1,6 @@
 // Weakened version of Phoron spiders
 /mob/living/simple_mob/animal/giant_spider/phorogenic/weak
-	maxHealth = 100
-	health = 100
+	max_health = 100
 
 	melee_damage_lower = 10
 	melee_damage_upper = 25
@@ -267,19 +266,19 @@
 				)
 
 //POI STUFF
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral/ignore_oregen)
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor/ignore_oregen)
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral/ignore_cavegen)
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor/ignore_cavegen)
+VIRGO3B_TURF_CREATE(/turf/mineral/ignore_oregen)
+VIRGO3B_TURF_CREATE(/turf/mineral/floor/ignore_oregen)
+VIRGO3B_TURF_CREATE(/turf/mineral/ignore_cavegen)
+VIRGO3B_TURF_CREATE(/turf/mineral/floor/ignore_cavegen)
 
 //Vault2
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/tiled/freezer)
+VIRGO3B_TURF_CREATE(/turf/floor/tiled/freezer)
 
 //Abandonedshelter
-VIRGO3B_TURF_CREATE(/turf/simulated/shuttle/floor/voidcraft)
+VIRGO3B_TURF_CREATE(/turf/shuttle/floor/voidcraft)
 
 //Goldhall
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/tiled/kafel_full/yellow)
+VIRGO3B_TURF_CREATE(/turf/floor/tiled/kafel_full/yellow)
 
 //Mechbay
 /obj/mecha/working/ripley/abandoned/Initialize()

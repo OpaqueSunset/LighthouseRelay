@@ -114,22 +114,22 @@
 	skyfall_levels = list(z+1)
 	. = ..()
 
-/turf/simulated/shuttle/wall/voidcraft/green/virgo2
+/turf/shuttle/wall/voidcraft/green/virgo2
 	VIRGO2_SET_ATMOS
 	color = "#eacd7c"
 
-/turf/simulated/shuttle/wall/voidcraft/green/virgo2/nocol
+/turf/shuttle/wall/voidcraft/green/virgo2/nocol
 	color = null
 
 VIRGO2_TURF_CREATE(/turf/unsimulated/wall/planetary)
 
-VIRGO2_TURF_CREATE(/turf/simulated/wall)
-VIRGO2_TURF_CREATE(/turf/simulated/floor/plating)
-VIRGO2_TURF_CREATE(/turf/simulated/floor/bluegrid)
-VIRGO2_TURF_CREATE(/turf/simulated/floor/tiled/techfloor)
+VIRGO2_TURF_CREATE(/turf/wall)
+VIRGO2_TURF_CREATE(/turf/floor/plating)
+VIRGO2_TURF_CREATE(/turf/floor/bluegrid)
+VIRGO2_TURF_CREATE(/turf/floor/tiled/techfloor)
 
-VIRGO2_TURF_CREATE(/turf/simulated/mineral)
-/turf/simulated/mineral/virgo2/make_ore()
+VIRGO2_TURF_CREATE(/turf/mineral)
+/turf/mineral/virgo2/make_ore()
 	if(mineral)
 		return
 
@@ -140,9 +140,9 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral)
 		UpdateMineral()
 	update_icon()
 
-VIRGO2_TURF_CREATE(/turf/simulated/mineral/ignore_mapgen)
-VIRGO2_TURF_CREATE(/turf/simulated/mineral/floor)
-VIRGO2_TURF_CREATE(/turf/simulated/mineral/floor/ignore_mapgen)
+VIRGO2_TURF_CREATE(/turf/mineral/ignore_mapgen)
+VIRGO2_TURF_CREATE(/turf/mineral/floor)
+VIRGO2_TURF_CREATE(/turf/mineral/floor/ignore_mapgen)
 
 // -- Areas -- //
 
@@ -157,7 +157,7 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral/floor/ignore_mapgen)
 
 /area/shuttle/aerostat/landed
 	name = "\improper Aerostat Shuttle - Surface"
-	base_turf = /turf/simulated/floor/plating/virgo2
+	base_turf = /turf/floor/plating/virgo2
 
 //The aerostat itself
 /area/tether_away/aerostat
@@ -170,7 +170,7 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral/floor/ignore_mapgen)
 /area/tether_away/aerostat/inside
 	name = "\improper Away Mission - Aerostat Inside"
 	icon_state = "crew_quarters"
-	base_turf = /turf/simulated/floor/plating/virgo2
+	base_turf = /turf/floor/plating/virgo2
 	requires_power = TRUE
 	dynamic_lighting = TRUE
 	forced_ambience = list('sound/ambience/tension/tension.ogg', 'sound/ambience/tension/argitoth.ogg', 'sound/ambience/tension/burning_terror.ogg')
@@ -178,13 +178,13 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral/floor/ignore_mapgen)
 /area/tether_away/aerostat/solars
 	name = "\improper Away Mission - Aerostat Solars"
 	icon_state = "crew_quarters"
-	base_turf = /turf/simulated/floor/plating/virgo2
+	base_turf = /turf/floor/plating/virgo2
 	dynamic_lighting = TRUE
 
 /area/tether_away/aerostat/surface
 	flags = RAD_SHIELDED
 	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
-	base_turf = /turf/simulated/mineral/floor/ignore_mapgen/virgo2
+	base_turf = /turf/mineral/floor/ignore_mapgen/virgo2
 
 /area/tether_away/aerostat/surface/explored
 	name = "Away Mission - Aerostat Surface (E)"

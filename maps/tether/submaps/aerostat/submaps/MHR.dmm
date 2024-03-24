@@ -12,7 +12,7 @@
 /turf/exterior/barren,
 /area/submap/virgo2/MHR)
 "e" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/MHR)
 "f" = (
 /obj/effect/decal/cleanable/spiderling_remains,

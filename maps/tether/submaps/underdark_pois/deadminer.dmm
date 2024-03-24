@@ -3,7 +3,7 @@
 /turf/exterior/barren,
 /area/mine/explored/underdark)
 "b" = (
-/turf/simulated/mineral/ignore_cavegen/virgo3b,
+/turf/mineral/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
 "c" = (
 /turf/template_noop,
