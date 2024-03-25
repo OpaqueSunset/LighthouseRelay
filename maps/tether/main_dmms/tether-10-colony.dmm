@@ -21,7 +21,7 @@
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "af" = (
-/turf/shuttle/wall/dark,
+/turf/wall/shuttle/dark,
 /area/shuttle/specops/centcom{
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
@@ -91,7 +91,7 @@
 	base_turf = /turf/unsimulated/floor/shuttle_ceiling
 	})
 "ao" = (
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	hard_corner = 1
 	},
 /area/shuttle/specops/centcom{
@@ -9251,7 +9251,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "si" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -9414,7 +9414,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "sB" = (
-/turf/shuttle/wall/hard_corner,
+/turf/wall/shuttle/hard_corner,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})
@@ -10570,7 +10570,7 @@
 /area/centcom/living)
 "uP" = (
 /obj/structure/sign/nanotrasen,
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/escape/centcom{
 	base_turf = /turf/unsimulated/floor/techfloor_grid
 	})

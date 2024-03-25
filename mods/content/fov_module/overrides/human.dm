@@ -1,9 +1,12 @@
+/obj/screen/fov
+	requires_ui_style = FALSE
+
 /datum/hud/human/FinalizeInstantiation()
 	. = ..()
 	var/list/hud_elements = list()
 	if(ishuman(mymob))
 		var/mob/living/carbon/human/H = mymob
-		H.fov = new /obj/screen(null, mymob)
+		H.fov = new /obj/screen/fov(null, mymob)
 		H.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov.icon_state = "combat"
 		H.fov.name = " "
@@ -12,7 +15,7 @@
 		H.fov.plane = VISION_CONE_PLANE
 		hud_elements |= H.fov
 
-		H.fov_mask = new /obj/screen(null, mymob)
+		H.fov_mask = new /obj/screen/fov(null, mymob)
 		H.fov_mask.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov_mask.icon_state = "combat_mask"
 		H.fov_mask.name = " "

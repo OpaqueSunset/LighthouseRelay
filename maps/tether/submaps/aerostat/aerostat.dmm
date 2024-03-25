@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/shuttle/wall/voidcraft/green/virgo2/nocol,
+/turf/wall/shuttle/voidcraft/green/virgo2/nocol,
 /area/tether_away/aerostat)
 "ab" = (
 /obj/structure/cable/heavyduty{
@@ -11,7 +11,7 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "ac" = (
-/turf/shuttle/wall/voidcraft/green/virgo2,
+/turf/wall/shuttle/voidcraft/green/virgo2,
 /area/tether_away/aerostat/inside)
 "ad" = (
 /obj/effect/decal/cleanable/blood,
@@ -416,7 +416,7 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/solars)
 "bd" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/aerostat/docked)
 "be" = (
 /turf/floor/plating/virgo2,
@@ -714,7 +714,7 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "ce" = (
-/turf/shuttle/wall/voidcraft/green/virgo2{
+/turf/wall/shuttle/voidcraft/green/virgo2{
 	hard_corner = 1;
 	icon_state = "void-hc"
 	},

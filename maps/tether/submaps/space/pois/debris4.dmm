@@ -11,7 +11,7 @@
 /turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "d" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/tether_away/debrisfield/explored)
 "e" = (
 /turf/floor/airless,

@@ -15,7 +15,7 @@
 /turf/space,
 /area/space)
 "ad" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/awaymission/zoo/pirateship)
 "ae" = (
 /obj/structure/window/reinforced{
@@ -265,7 +265,7 @@
 /area/awaymission/zoo/pirateship)
 "aN" = (
 /obj/structure/sign/vacuum,
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/awaymission/zoo/pirateship)
 "aO" = (
 /obj/item/clothing/glasses/regular/hipster,
@@ -405,7 +405,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "bn" = (
-/turf/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/awaymission/zoo/tradeship)
 "bo" = (
 /obj/machinery/door/airlock/external{
@@ -2129,7 +2129,7 @@
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gr" = (
-/turf/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/awaymission/zoo/syndieship)
 "gs" = (
 /obj/structure/grille,

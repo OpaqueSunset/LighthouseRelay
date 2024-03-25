@@ -6,7 +6,7 @@
 /turf/floor/shuttle/alienplating/vacuum,
 /area/tether_away/alienship)
 "ac" = (
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ad" = (
 /obj/structure/closet/alien,
@@ -19,7 +19,7 @@
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ag" = (
-/turf/shuttle/wall/alien/hard_corner,
+/turf/wall/shuttle/alien/hard_corner,
 /area/tether_away/alienship)
 "ah" = (
 /turf/floor/shuttle/alienplating,
@@ -30,70 +30,70 @@
 /area/tether_away/alienship)
 "aj" = (
 /obj/away_mission_init/alienship/door_w2e,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ak" = (
 /obj/away_mission_init/alienship/door_e2w,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "al" = (
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "am" = (
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "an" = (
 /obj/away_mission_init/alienship/door_n2s,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ao" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ap" = (
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aq" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ar" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "as" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "at" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "au" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "av" = (
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aw" = (
 /obj/structure/bed/alien,
@@ -226,7 +226,7 @@
 "aS" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aT" = (
 /obj/structure/bed/alien,
@@ -556,7 +556,7 @@
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "uA" = (
 /obj/item/trash/liquidfood,

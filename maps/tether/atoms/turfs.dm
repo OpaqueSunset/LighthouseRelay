@@ -15,9 +15,9 @@
 	)
 /turf/floor/tiled/steel_dirty/virgo3b
 	initial_gas = null
-/turf/shuttle/wall
+/turf/wall/shuttle
 	var/hard_corner = FALSE
-/turf/shuttle/wall/hard_corner
+/turf/wall/shuttle/hard_corner
 	hard_corner = TRUE
 /turf/floor/shuttle/blue/airless
 	initial_gas = null
@@ -39,27 +39,29 @@
 	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 
 // Voidcraft Shuttle Walls
-/turf/shuttle/wall/voidcraft
+/turf/wall/shuttle/voidcraft
 	name = "voidcraft wall"
 	icon = 'maps/tether/icons/shuttle_void.dmi'
 	icon_state = "void"
-	var/stripe_color = null // If set, generates a colored stripe overlay.  Accepts #XXXXXX as input.
 
-/turf/shuttle/wall/voidcraft/red
+/turf/wall/shuttle/voidcraft/red
 	stripe_color = "#ff0000"
 
-/turf/shuttle/wall/voidcraft/blue
+/turf/wall/shuttle/voidcraft/blue
 	stripe_color = "#0000ff"
 
-/turf/shuttle/wall/voidcraft/green
+/turf/wall/shuttle/voidcraft/green
 	stripe_color = "#00ff00"
 
-/turf/shuttle/wall/voidcraft/Initialize()
+/turf/wall/shuttle/voidcraft/get_wall_icon()
+	return icon
+
+/turf/wall/shuttle/voidcraft/Initialize()
 	. = ..()
 	update_icon()
 
-/turf/shuttle/wall/voidcraft/on_update_icon()
-	. = ..()
+/turf/wall/shuttle/voidcraft/update_wall_icon()
+	icon_state = initial(icon_state)
 	if(stripe_color)
 		cut_overlays()
 		var/image/I = image(icon = src.icon, icon_state = "o_[icon_state]")

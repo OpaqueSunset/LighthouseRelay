@@ -5805,7 +5805,7 @@
 /turf/open,
 /area/maintenance/station/eng_upper)
 "kY" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/hallway/station/starboard)
@@ -15067,7 +15067,7 @@
 /turf/floor/tiled,
 /area/security/brig/visitation)
 "BW" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/large_escape_pod1/station)
 "BX" = (
 /obj/machinery/door/airlock/external/glass{
@@ -15081,7 +15081,7 @@
 /obj/structure/sign/department/redcross{
 	directional_offset = null
 	},
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/large_escape_pod1/station)
 "BZ" = (
 /turf/exterior/barren,
@@ -15221,7 +15221,7 @@
 /turf/floor/shuttle/blue,
 /area/shuttle/large_escape_pod1/station)
 "Cx" = (
-/turf/shuttle/wall/hard_corner,
+/turf/wall/shuttle/hard_corner,
 /area/shuttle/large_escape_pod1/station)
 "Cy" = (
 /obj/machinery/door/firedoor/glass,
@@ -16240,7 +16240,7 @@
 	directional_offset = null;
 	dir = 1
 	},
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/large_escape_pod1/station)
 "IJ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals9{

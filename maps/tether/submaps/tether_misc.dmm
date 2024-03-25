@@ -131,7 +131,7 @@
 /turf/unsimulated/wall,
 /area/space)
 "bc" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/supply/dock)
 "bd" = (
 /obj/structure/flora/bush/fullgrass,

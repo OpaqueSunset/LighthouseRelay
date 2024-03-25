@@ -3,7 +3,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "ab" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/tether_away/debrisfield/explored)
 "ac" = (
 /obj/structure/shuttle/engine/propulsion{
@@ -257,7 +257,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "bd" = (
-/turf/shuttle/wall/hard_corner,
+/turf/wall/shuttle/hard_corner,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

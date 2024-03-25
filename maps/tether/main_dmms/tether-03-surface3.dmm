@@ -10046,7 +10046,7 @@
 /turf/floor/plating,
 /area/rnd/breakroom)
 "ud" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/hallway/lower/third_south)
@@ -18771,7 +18771,7 @@
 /turf/floor/tiled,
 /area/tether/surfacebase/shuttle_pad)
 "Ji" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/shuttle/tether/surface)
 "Jj" = (
 /obj/structure/shuttle/window,

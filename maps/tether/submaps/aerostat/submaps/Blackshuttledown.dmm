@@ -29,20 +29,20 @@
 /area/submap/virgo2/Blackshuttledown)
 "ai" = (
 /turf/exterior/barren,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
 	},
 /area/submap/virgo2/Blackshuttledown)
 "aj" = (
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
 /area/submap/virgo2/Blackshuttledown)
 "ak" = (
 /turf/exterior/barren,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
 	},
@@ -60,7 +60,7 @@
 	icon_state = "heater";
 	dir = 4
 	},
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
@@ -113,7 +113,7 @@
 /area/submap/virgo2/Blackshuttledown)
 "au" = (
 /turf/exterior/barren,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
 	},
@@ -139,7 +139,7 @@
 /area/submap/virgo2/Blackshuttledown)
 "az" = (
 /turf/exterior/barren,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},

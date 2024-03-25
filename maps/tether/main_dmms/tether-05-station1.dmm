@@ -87,7 +87,7 @@
 /turf/floor/reinforced,
 /area/tether/station/excursion_dock)
 "aaq" = (
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "aar" = (
 /obj/structure/cable/cyan{
@@ -124,7 +124,7 @@
 /turf/exterior/barren,
 /area/mine/explored/upper_level)
 "aau" = (
-/turf/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/shuttle/excursion/tether)
 "aav" = (
 /obj/structure/flight_left{
@@ -1924,7 +1924,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "aek" = (
 /obj/machinery/gibber,
@@ -1974,7 +1974,7 @@
 /turf/floor/shuttle/black,
 /area/shuttle/excursion/tether)
 "aeq" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/hallway/station/atrium)
@@ -2043,13 +2043,13 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "aev" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 9
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "aew" = (
 /obj/structure/grille,
@@ -2700,7 +2700,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
-/turf/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/shuttle/excursion/tether)
 "afJ" = (
 /obj/machinery/vending/snack,
@@ -8248,7 +8248,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "auW" = (
 /obj/machinery/atmospherics/omni/mixer{
@@ -21750,7 +21750,7 @@
 	id_tag = "expshuttle_docker_pump_out_external";
 	power_rating = 20000
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/shuttle/excursion/tether)
 "oZc" = (
 /obj/structure/flora/bush/brflowers,

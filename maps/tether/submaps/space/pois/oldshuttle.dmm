@@ -7,7 +7,7 @@
 /turf/space,
 /area/tether_away/debrisfield/explored)
 "ac" = (
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "ad" = (
 /turf/floor/shuttle/black/airless,
@@ -18,7 +18,7 @@
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "af" = (
-/turf/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/tether_away/debrisfield/explored)
 "ag" = (
 /obj/machinery/constructable_frame/computerframe,
@@ -176,7 +176,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aD" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -228,7 +228,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aJ" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -255,7 +255,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aN" = (
 /obj/machinery/door/airlock/voidcraft/vertical,
@@ -279,7 +279,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
-/turf/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/tether_away/debrisfield/explored)
 "aQ" = (
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -296,7 +296,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 9
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aT" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -310,7 +310,7 @@
 	id_tag = "expshuttle_docker_pump_out_external";
 	power_rating = 20000
 	},
-/turf/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aV" = (
 /obj/machinery/light,

@@ -67,9 +67,7 @@
 /obj/machinery/appliance/cooker/oven/get_thermal_mass_coefficient()
 	. = ..()
 	if(open)
-		. *= 2 // oven loses heat faster when the door is open
-	else
-		. /= 2 // it loses heat slower when closed
+		. *= 10 // as if it were open air; don't have to conduct through the appliance body
 
 /obj/machinery/appliance/cooker/oven/proc/try_toggle_door(mob/user)
 	if (!isliving(user) || isAI(user))

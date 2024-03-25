@@ -40,7 +40,7 @@
 /turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "ad" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/tether/midpoint)

@@ -25,7 +25,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "h" = (
-/turf/shuttle/wall/dark/hard_corner/virgo3b,
+/turf/wall/shuttle/dark/hard_corner/virgo3b,
 /area/tether/surfacebase/crash)
 "i" = (
 /obj/item/shard,

@@ -19,7 +19,7 @@
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "af" = (
-/turf/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/tether/surfacebase/outside/wilderness)
 "ag" = (
 /obj/structure/window/reinforced,
@@ -98,7 +98,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "as" = (
-/turf/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/tether/surfacebase/crash)
 "at" = (
 /obj/machinery/door/airlock/external/glass/bolted,
@@ -717,7 +717,7 @@
 	icon_state = "plant-09";
 	name = "Esteban";
 	pixel_y = 8;
-	
+
 	},
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)

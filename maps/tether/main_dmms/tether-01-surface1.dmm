@@ -10485,7 +10485,7 @@
 /turf/floor/tiled,
 /area/storage/primary)
 "atW" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/tether/surfacebase/atrium_one)

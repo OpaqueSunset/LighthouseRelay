@@ -13,7 +13,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Epod3)
 "e" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/submap/virgo2/Epod3)
 "f" = (
 /obj/tether_away_spawner/aerostat_surface,
@@ -73,7 +73,7 @@
 	icon_state = "propulsion";
 	dir = 8
 	},
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/submap/virgo2/Epod3)
 "l" = (
 /obj/effect/spider/stickyweb,

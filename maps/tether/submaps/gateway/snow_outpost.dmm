@@ -1002,20 +1002,20 @@
 /area/awaymission/snow_outpost/restricted)
 "dN" = (
 /turf/floor/snow/snow2,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
 	},
 /area/awaymission/snow_outpost/restricted)
 "dO" = (
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
 /area/awaymission/snow_outpost/restricted)
 "dP" = (
 /turf/floor/snow/snow2,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
 	},
@@ -1029,7 +1029,7 @@
 	icon_state = "heater";
 	dir = 4
 	},
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark0";
 	name = "Unknown Shuttle"
 	},
@@ -1119,7 +1119,7 @@
 /area/awaymission/snow_outpost/restricted)
 "eb" = (
 /turf/floor/tiled,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
 	},
@@ -1176,14 +1176,14 @@
 /area/awaymission/snow_outpost/restricted)
 "em" = (
 /turf/floor/tiled,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},
 /area/awaymission/snow_outpost/restricted)
 "en" = (
 /turf/floor/tiled,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark6";
 	name = "Unknown Shuttle"
 	},
@@ -1342,7 +1342,7 @@
 /area/awaymission/snow_outpost/restricted)
 "eL" = (
 /turf/floor/tiled,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark10";
 	name = "Unknown Shuttle"
 	},
@@ -2296,7 +2296,7 @@
 /turf/exterior/dirt,
 /area/awaymission/snow_outpost/outside)
 "if" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/awaymission/snow_outpost/outside)
 "ig" = (
 /obj/structure/shuttle/window,
@@ -2361,7 +2361,7 @@
 /area/awaymission/snow_outpost/outside)
 "il" = (
 /obj/structure/shuttle/engine/propulsion/burst,
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/awaymission/snow_outpost/outside)
 "im" = (
 /obj/structure/door_assembly/door_assembly_ext{
@@ -2400,7 +2400,7 @@
 	icon_state = "propulsion";
 	dir = 8
 	},
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/awaymission/snow_outpost/outside)
 "iv" = (
 /obj/effect/spider/eggcluster/small/frost,
@@ -2559,14 +2559,14 @@
 /area/awaymission/snow_outpost/restricted)
 "iU" = (
 /turf/floor/snow/snow2,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark5";
 	name = "Unknown Shuttle"
 	},
 /area/awaymission/snow_outpost/restricted)
 "iV" = (
 /turf/floor/snow/snow2,
-/turf/shuttle/wall/dark{
+/turf/wall/shuttle/dark{
 	icon_state = "dark9";
 	name = "Unknown Shuttle"
 	},

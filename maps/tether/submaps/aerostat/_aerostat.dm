@@ -114,11 +114,11 @@
 	skyfall_levels = list(z+1)
 	. = ..()
 
-/turf/shuttle/wall/voidcraft/green/virgo2
+/turf/wall/shuttle/voidcraft/green/virgo2
 	VIRGO2_SET_ATMOS
 	color = "#eacd7c"
 
-/turf/shuttle/wall/voidcraft/green/virgo2/nocol
+/turf/wall/shuttle/voidcraft/green/virgo2/nocol
 	color = null
 
 VIRGO2_TURF_CREATE(/turf/unsimulated/wall/planetary)

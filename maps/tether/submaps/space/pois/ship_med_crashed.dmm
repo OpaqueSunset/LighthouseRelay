@@ -6,7 +6,7 @@
 /turf/wall/natural,
 /area/tether_away/debrisfield/explored)
 "c" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/tether_away/debrisfield/explored)
 "d" = (
 /turf/exterior/barren,
@@ -174,7 +174,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "M" = (
-/turf/shuttle/wall/hard_corner,
+/turf/wall/shuttle/hard_corner,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

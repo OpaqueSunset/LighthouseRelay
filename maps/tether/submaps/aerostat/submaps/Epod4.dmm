@@ -9,7 +9,7 @@
 /turf/exterior/barren,
 /area/submap/virgo2/Epod4)
 "h" = (
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/submap/virgo2/Epod4)
 "i" = (
 /obj/structure/shuttle/window,
@@ -70,7 +70,7 @@
 /area/submap/virgo2/Epod4)
 "o" = (
 /obj/structure/shuttle/engine/propulsion/burst,
-/turf/shuttle/wall,
+/turf/wall/shuttle,
 /area/submap/virgo2/Epod4)
 "p" = (
 /obj/structure/door_assembly/door_assembly_ext{

@@ -10926,7 +10926,7 @@
 /turf/floor/plating,
 /area/maintenance/station/elevator)
 "tn" = (
-/turf/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/hallway/station/upper)
@@ -18512,7 +18512,7 @@
 /turf/floor/tiled/white,
 /area/medical/reception)
 "Go" = (
-/turf/shuttle/wall/voidcraft/blue,
+/turf/wall/shuttle/voidcraft/blue,
 /area/shuttle/belter/station)
 "Gp" = (
 /obj/effect/floor_decal/borderfloorwhite,
