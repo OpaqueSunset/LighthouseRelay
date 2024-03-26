@@ -13,6 +13,7 @@
 	appearance_flags = PLANE_MASTER
 	vis_flags = 0
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE	//Normally unclickable
+	requires_ui_style = FALSE
 	var/visible = FALSE
 
 /obj/screen/ar_plane_master/proc/set_visible(new_state)

@@ -7,25 +7,25 @@
 
 // STUBS DEFINED FOR FUTURE IMPLEMENTATION
 // THESE NEED NAMES, ICONS, AND FUNCTIONALITY ADDED!
-/turf/simulated/floor/asteroid/cave
+/turf/floor/asteroid/cave
 	temperature = T20C
 	initial_gas = list(
 		/decl/material/gas/oxygen = MOLES_O2STANDARD,
 		/decl/material/gas/nitrogen = MOLES_N2STANDARD
 	)
-/turf/simulated/floor/tiled/steel_dirty/virgo3b
+/turf/floor/tiled/steel_dirty/virgo3b
 	initial_gas = null
-/turf/simulated/shuttle/wall
+/turf/wall/shuttle
 	var/hard_corner = FALSE
-/turf/simulated/shuttle/wall/hard_corner
+/turf/wall/shuttle/hard_corner
 	hard_corner = TRUE
-/turf/simulated/floor/shuttle/blue/airless
+/turf/floor/shuttle/blue/airless
 	initial_gas = null
-/turf/simulated/floor/shuttle/yellow/airless
+/turf/floor/shuttle/yellow/airless
 	initial_gas = null
-/turf/simulated/floor/reinforced/virgo3b
+/turf/floor/reinforced/virgo3b
 	initial_gas = null
-/turf/simulated/floor/virgo3b_indoors
+/turf/floor/virgo3b_indoors
 	initial_gas = null
 
 /turf/exterior/sif_growth
@@ -39,27 +39,29 @@
 	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 
 // Voidcraft Shuttle Walls
-/turf/simulated/shuttle/wall/voidcraft
+/turf/wall/shuttle/voidcraft
 	name = "voidcraft wall"
 	icon = 'maps/tether/icons/shuttle_void.dmi'
 	icon_state = "void"
-	var/stripe_color = null // If set, generates a colored stripe overlay.  Accepts #XXXXXX as input.
 
-/turf/simulated/shuttle/wall/voidcraft/red
+/turf/wall/shuttle/voidcraft/red
 	stripe_color = "#ff0000"
 
-/turf/simulated/shuttle/wall/voidcraft/blue
+/turf/wall/shuttle/voidcraft/blue
 	stripe_color = "#0000ff"
 
-/turf/simulated/shuttle/wall/voidcraft/green
+/turf/wall/shuttle/voidcraft/green
 	stripe_color = "#00ff00"
 
-/turf/simulated/shuttle/wall/voidcraft/Initialize()
+/turf/wall/shuttle/voidcraft/get_wall_icon()
+	return icon
+
+/turf/wall/shuttle/voidcraft/Initialize()
 	. = ..()
 	update_icon()
 
-/turf/simulated/shuttle/wall/voidcraft/on_update_icon()
-	. = ..()
+/turf/wall/shuttle/voidcraft/update_wall_icon()
+	icon_state = initial(icon_state)
 	if(stripe_color)
 		cut_overlays()
 		var/image/I = image(icon = src.icon, icon_state = "o_[icon_state]")
@@ -67,7 +69,7 @@
 		add_overlay(I)
 
 // override the default tiled floor icon to match the steel decals
-/turf/simulated/floor/tiled
+/turf/floor/tiled
 	name = "steel floor"
 	icon = 'icons/turf/flooring/tiles.dmi'
 	icon_state = "steel"
@@ -80,7 +82,7 @@
 	icon_base = "steel"
 	color = null
 
-/turf/simulated/floor/tiled/steel_dirty
+/turf/floor/tiled/steel_dirty
 	name = "steel floor"
 	icon_state = "steel_dirty"
 	initial_flooring = /decl/flooring/tiling/steel_dirty
@@ -96,7 +98,7 @@
 	icon_base = "steel_dirty"
 	build_type = /obj/item/stack/tile/floor/steel_dirty
 
-/turf/simulated/floor/tiled/dark
+/turf/floor/tiled/dark
 	icon_state = "dark"
 	color = null
 
@@ -104,7 +106,7 @@
 	icon_base = "dark"
 	color = null
 
-/turf/simulated/floor/tiled/monotile
+/turf/floor/tiled/monotile
 	initial_flooring = /decl/flooring/tiling/mono/steel
 
 /decl/flooring/tiling/mono/steel
@@ -115,7 +117,7 @@
 	icon_state = "wood"
 	color = WOOD_COLOR_GENERIC
 
-/turf/simulated/floor/wood/broken/Initialize(ml, floortype)
+/turf/floor/wood/broken/Initialize(ml, floortype)
 	. = ..()
 	break_tile()
 
@@ -179,7 +181,7 @@
 	icon = 'maps/tether/icons/obj/transit_vr.dmi'
 	icon_state = "desert_ns"
 
-// originally /turf/simulated/floor/outdoors/rocks.
+// originally /turf/floor/outdoors/rocks.
 // todo: port polaris rock turf sprite
 // pr this upstream
 /turf/exterior/rocks

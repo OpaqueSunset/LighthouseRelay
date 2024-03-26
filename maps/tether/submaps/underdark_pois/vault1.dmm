@@ -1,10 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor,
+/turf/floor,
 /area/mine/explored/underdark)
 "b" = (
-/turf/simulated/wall/iron,
+/turf/wall/iron,
 /area/mine/explored/underdark)
 "c" = (
 /turf/template_noop,
@@ -16,18 +16,18 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate/mimic/cointoss,
 /obj/random/underdark,
-/turf/simulated/floor,
+/turf/floor,
 /area/mine/explored/underdark)
 "f" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate/mimic/safe,
 /obj/random/underdark/uncertain,
-/turf/simulated/floor,
+/turf/floor,
 /area/mine/explored/underdark)
 "N" = (
 /obj/effect/floor_decal/rust,
 /obj/random/underdark/uncertain,
-/turf/simulated/floor,
+/turf/floor,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

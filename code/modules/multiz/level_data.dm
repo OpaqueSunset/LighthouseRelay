@@ -108,6 +108,10 @@
 	var/decl/strata/strata
 	///The base material randomly chosen from the strata for this level.
 	var/decl/material/strata_base_material
+	///Strata types to forbid from generating on this level.
+	var/list/forbid_strata = list(
+		/decl/strata/permafrost
+	)
 	///The default base turf type for the whole level. It will be the base turf type for the z level, unless loaded by map.
 	/// filler_turf overrides what turfs the level will be created with.
 	var/base_turf = /turf/space
@@ -122,7 +126,7 @@
 	/// If an unconnected edge is facing a connected edge, it will be instead filled with "border_filler" instead, if defined.
 	var/loop_turf_type// = /turf/unsimulated/mimc_edge/transition/loop
 	/// The turf type to use for zlevel lateral connections
-	var/transition_turf_type = /turf/unsimulated/mimic_edge/transition
+	var/transition_turf_type = /turf/mimic_edge/transition
 
 	// *** Atmos ***
 	/// Temperature of standard exterior atmosphere.
@@ -271,7 +275,7 @@
 
 		for(var/stype in all_strata)
 			var/decl/strata/strata = all_strata[stype]
-			if(strata.is_valid_level_stratum(src))
+			if(!is_type_in_list(strata, forbid_strata) && strata.is_valid_level_stratum(src))
 				possible_strata += stype
 
 		strata = DEFAULTPICK(possible_strata, GET_DECL(/decl/strata/sedimentary))
@@ -518,7 +522,7 @@
 /datum/level_data/proc/warn_bad_strata(var/turf/T)
 	if(_has_warned_uninitialized_strata)
 		return
-	PRINT_STACK_TRACE("Turf tried to init it's strata before it was setup for level '[level_id]' z:[level_z]! [log_info_line(T)]")
+	PRINT_STACK_TRACE("Turf tried to init its strata before it was setup for level '[level_id]' z:[level_z]! [log_info_line(T)]")
 	_has_warned_uninitialized_strata = TRUE
 
 ////////////////////////////////////////////
@@ -586,8 +590,6 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 	base_turf = /turf/unsimulated/dark_filler
 	transition_turf_type = null
 
-//#TODO: This seems like it could be generalized in a much better way?
-// Used specifically by /turf/simulated/floor/asteroid, and some away sites to generate mining turfs
 /datum/level_data/mining_level
 	level_flags = (ZLEVEL_PLAYER|ZLEVEL_SEALED)
 	var/list/mining_turfs
@@ -597,22 +599,11 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 	return ..()
 
 /datum/level_data/mining_level/asteroid
-	base_turf = /turf/simulated/floor/asteroid
+	base_turf = /turf/exterior/barren
 	level_generators = list(
 		/datum/random_map/automata/cave_system,
 		/datum/random_map/noise/ore
 	)
-
-/datum/level_data/mining_level/after_generate_level()
-	..()
-	refresh_mining_turfs()
-
-/datum/level_data/mining_level/proc/refresh_mining_turfs()
-	set waitfor = FALSE
-	for(var/turf/simulated/floor/asteroid/mining_turf as anything in mining_turfs)
-		mining_turf.updateMineralOverlays()
-		CHECK_TICK
-	mining_turfs = null
 
 /datum/level_data/proc/get_subtemplate_areas(template_category, blacklist, whitelist)
 	return list(base_area)

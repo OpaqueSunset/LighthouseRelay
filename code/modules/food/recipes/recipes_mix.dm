@@ -51,12 +51,12 @@
 
 /decl/recipe/aesirsalad
 	appliance = APPLIANCE_MIX
-	fruit = list("goldapple" = 1, "biteleafdeus" = 1)
+	fruit = list("goldapple" = 1, "ambrosiadeus" = 1)
 	result = /obj/item/chems/food/aesirsalad
 
 /decl/recipe/validsalad
 	appliance = APPLIANCE_MIX
-	fruit = list("potato" = 1, "biteleaf" = 3)
+	fruit = list("potato" = 1, "ambrosiavulgaris" = 3)
 	items = list(/obj/item/chems/food/meatball)
 	result = /obj/item/chems/food/validsalad
 

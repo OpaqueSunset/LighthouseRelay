@@ -24,7 +24,7 @@
 	turns_per_move = 5
 	meat_type = /obj/item/chems/food/sharkmeat
 	speed = 2
-	mob_default_max_health = 100
+	max_health = 100
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	break_stuff_probability = 35
 	faction = "shark"
@@ -32,14 +32,15 @@
 /mob/living/simple_animal/hostile/carp/shark/carp_randomify()
 	return
 
-/mob/living/simple_animal/hostile/carp/shark/death()
-	..()
-	var/datum/gas_mixture/environment = loc.return_air()
-	if (environment)
-		var/datum/gas_mixture/sharkmaw_phoron = new
-		sharkmaw_phoron.adjust_gas(/decl/material/solid/phoron, 10)
-		environment.merge(sharkmaw_phoron)
-		visible_message(SPAN_WARNING("\The [src]'s body releases some gas from the gills with a quiet fizz!"))
+/mob/living/simple_animal/hostile/carp/shark/death(gibbed)
+	. = ..()
+	if(. && !gibbed)
+		var/datum/gas_mixture/environment = loc.return_air()
+		if (environment)
+			var/datum/gas_mixture/sharkmaw_phoron = new
+			sharkmaw_phoron.adjust_gas(/decl/material/solid/phoron, 10)
+			environment.merge(sharkmaw_phoron)
+			visible_message(SPAN_WARNING("\The [src]'s body releases some gas from the gills with a quiet fizz!"))
 
 /mob/living/simple_animal/hostile/carp/shark/AttackingTarget()
 	set waitfor = 0//to deal with sleep() possibly stalling other procs
@@ -112,7 +113,7 @@
 			to_chat(user,"<span class='warning'>You can't cut throught \the [src] with \the [W], it's too dull.</span>")
 			return
 		visible_message("<span class='warning'>[user] starts to cut through \the [src] with \the [W]!</span>")
-		while(health > 0 && !QDELETED(src) && !QDELETED(user))
+		while(current_health > 0 && !QDELETED(src) && !QDELETED(user))
 			if (!do_after(user, 20, src))
 				visible_message("<span class='warning'>[user] stops cutting through \the [src] with \the [W]!</span>")
 				return
@@ -162,7 +163,7 @@
 	overlays.Cut()
 	var/turf/T = get_turf(src)
 	for (var/turf/AT in T.CardinalTurfs(FALSE))
-		if ((locate(/obj/structure/net/net_wall) in AT) || istype(AT, /turf/simulated/wall)  || istype(AT, /turf/unsimulated/wall))//connects to another net-wall objects or walls
+		if ((locate(/obj/structure/net/net_wall) in AT) || istype(AT, /turf/wall)  || istype(AT, /turf/unsimulated/wall))//connects to another net-wall objects or walls
 			var/image/I = image(icon,"[icon_state]_ol_[get_dir(src,AT)]")
 			overlays += I
 
@@ -202,7 +203,7 @@
 		return 1
 	var/turf/T = get_turf(src)
 	for (var/turf/AT in T.CardinalTurfs(FALSE))
-		if ((locate(/obj/structure/net/net_wall) in AT) || istype(AT, /turf/simulated/wall)  || istype(AT, /turf/unsimulated/wall))//connects to another net-wall objects or walls
+		if ((locate(/obj/structure/net/net_wall) in AT) || istype(AT, /turf/wall)  || istype(AT, /turf/unsimulated/wall))//connects to another net-wall objects or walls
 			return 1
 	return 0
 

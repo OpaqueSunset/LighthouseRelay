@@ -53,6 +53,7 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	 */
 	var/list/map_admin_faxes
 
+	var/map_tech_level = MAP_TECH_LEVEL_SPACE
 
 	var/shuttle_docked_message
 	var/shuttle_leaving_dock
@@ -151,6 +152,12 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	)
 	var/secrets_directory
 
+	/// A list of /decl/loadout_category types which will be available for characters made on this map. Uses all categories if null.
+	var/list/decl/loadout_category/loadout_categories
+
+	/// A list of survival box types selectable for this map. If null, defaults to all defined decls. At runtime, this is an associative list of decl type -> decl.
+	var/list/decl/survival_box_option/survival_box_choices
+
 /datum/map/proc/get_lobby_track(var/exclude)
 	var/lobby_track_type
 	if(LAZYLEN(lobby_tracks) == 1)
@@ -162,6 +169,20 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	return GET_DECL(lobby_track_type)
 
 /datum/map/proc/setup_map()
+
+	if(!length(loadout_categories))
+		loadout_categories = list()
+		for(var/decl_type in decls_repository.get_decls_of_subtype(/decl/loadout_category))
+			loadout_categories += decl_type
+
+	for(var/loadout_category in loadout_categories)
+		loadout_categories -= loadout_category
+		loadout_categories += GET_DECL(loadout_category)
+
+	if(isnull(survival_box_choices)) // an empty list is a valid option here, a null one is not
+		survival_box_choices = decls_repository.get_decls_of_subtype(/decl/survival_box_option)
+	else if(length(survival_box_choices))
+		survival_box_choices = decls_repository.get_decls(survival_box_choices)
 
 	if(secrets_directory)
 		secrets_directory = trim(lowertext(secrets_directory))

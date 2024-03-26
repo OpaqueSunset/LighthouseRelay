@@ -52,6 +52,12 @@
 	var/tmp/default_pixel_z
 	var/tmp/default_pixel_w
 
+	// Health vars largely used by obj and mob.
+	var/current_health
+	var/max_health
+
+/atom/proc/get_max_health()
+	return max_health
 
 /**
 	Adjust variables prior to Initialize() based on the map
@@ -360,10 +366,10 @@
 	return get_contained_external_atoms()
 
 /// Dump the contents of this atom onto its loc
-/atom/proc/dump_contents()
+/atom/proc/dump_contents(atom/forced_loc = loc, mob/user)
 	for(var/thing in get_contained_external_atoms())
 		var/atom/movable/AM = thing
-		AM.dropInto(loc)
+		AM.dropInto(forced_loc)
 		if(ismob(AM))
 			var/mob/M = AM
 			if(M.client)
@@ -434,8 +440,8 @@
 	handle_external_heating(exposed_temperature)
 
 /// Handle this atom being destroyed through melting
-/atom/proc/melt()
-	return
+/atom/proc/handle_melting(list/meltable_materials)
+	SHOULD_CALL_PARENT(TRUE)
 
 /**
 	Handle this atom being exposed to lava. Calls qdel() by default
@@ -453,12 +459,14 @@
 
 	- `AM`: The atom hitting this atom
 	- `TT`: A datum wrapper for a thrown atom, containing important info
+	- Returns: TRUE if successfully hit the atom.
 */
 /atom/proc/hitby(atom/movable/AM, var/datum/thrownthing/TT)
 	SHOULD_CALL_PARENT(TRUE)
 	if(isliving(AM))
 		var/mob/living/M = AM
 		M.apply_damage(TT.speed*5, BRUTE)
+	return TRUE
 
 /**
 	Attempt to add blood to this atom
@@ -468,7 +476,7 @@
 	- `M?`: The mob whose blood will be used
 	- Returns: TRUE if made bloody, otherwise FALSE
 */
-/atom/proc/add_blood(mob/living/M)
+/atom/proc/add_blood(mob/living/M, amount = 2, list/blood_data)
 	if(atom_flags & ATOM_FLAG_NO_BLOOD)
 		return FALSE
 
@@ -733,7 +741,7 @@
 			var/obj/item/organ/external/affecting = SAFEPICK(M.get_external_organs())
 			if(!affecting)
 				to_chat(M, SPAN_DANGER("You land heavily!"))
-				M.adjustBruteLoss(damage)
+				M.take_damage(BRUTE, damage)
 			else
 				to_chat(M, SPAN_DANGER("You land heavily on your [affecting.name]!"))
 				affecting.take_external_damage(damage, 0)
@@ -886,3 +894,13 @@
 
 /atom/proc/can_be_injected_by(var/atom/injector)
 	return FALSE
+
+/atom/proc/OnSimulatedTurfEntered(turf/T, old_loc)
+	set waitfor = FALSE
+	return
+
+/atom/proc/get_thermal_mass()
+	return 0
+
+/atom/proc/get_thermal_mass_coefficient()
+	return 1

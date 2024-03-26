@@ -276,10 +276,10 @@
 	SSnano.update_uis(src)
 
 /obj/machinery/microwave/proc/has_extra_item()
-	for (var/obj/O in get_contained_external_atoms())
-		if (!istype(O,/obj/item/chems/food) && !istype(O, /obj/item/grown))
-			return 1
-	return 0
+	for(var/obj/O in get_contained_external_atoms())
+		if(!istype(O,/obj/item/chems/food))
+			return TRUE
+	return FALSE
 
 /obj/machinery/microwave/proc/start()
 	start_time = REALTIMEOFDAY
@@ -369,7 +369,7 @@
 	if(!reagents.reagent_volumes[material_type])
 		SSnano.update_uis(src)
 		return // should not happen, must be a UI glitch or href hacking
-	var/obj/item/chems/held_container = user.get_active_hand()
+	var/obj/item/chems/held_container = user.get_active_held_item()
 	var/decl/material/M = GET_DECL(material_type)
 	if(istype(held_container))
 		var/amount_to_move = min(REAGENTS_FREE_SPACE(held_container.reagents), REAGENT_VOLUME(reagents, material_type))

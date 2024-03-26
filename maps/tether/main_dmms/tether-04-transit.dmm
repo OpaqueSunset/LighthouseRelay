@@ -18,7 +18,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "ac" = (
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
@@ -37,10 +37,10 @@
 	icon_state = "16-0"
 	},
 /obj/structure/cable,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "ad" = (
-/turf/simulated/shuttle/wall/voidcraft/green{
+/turf/wall/shuttle/voidcraft/green{
 	hard_corner = 1
 	},
 /area/tether/midpoint)
@@ -57,10 +57,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "af" = (
-/turf/simulated/floor/holofloor/tiled/dark,
+/turf/floor/holofloor/tiled/dark,
 /area/tether/midpoint)
 "ai" = (
 /obj/item/radio/intercom{
@@ -70,7 +70,7 @@
 /obj/machinery/vending/snack{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aj" = (
 /obj/structure/cable{
@@ -79,11 +79,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "ak" = (
 /obj/structure/flora/pottedplant/unusual,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "al" = (
 /obj/abstract/level_data_spawner/virgo3b/player,
@@ -93,7 +93,7 @@
 /obj/structure/bed/chair/comfy/black{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "ap" = (
 /obj/machinery/light{
@@ -102,34 +102,34 @@
 /obj/machinery/vending/coffee{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aq" = (
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "ar" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass/hidden/steel,
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether/midpoint)
 "as" = (
-/turf/simulated/wall/r_wall,
+/turf/wall/r_wall,
 /area/maintenance/tether_midpoint)
 "at" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "ax" = (
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "ay" = (
-/turf/simulated/wall/r_wall,
+/turf/wall/r_wall,
 /area/tether/midpoint)
 "az" = (
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aA" = (
 /obj/structure/disposalpipe/segment{
@@ -145,13 +145,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aB" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aC" = (
 /obj/structure/cable,
@@ -160,7 +160,7 @@
 	name = "west bump";
 	pixel_x = -22
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aD" = (
 /obj/machinery/atmospherics/pipe/simple/visible,
@@ -181,13 +181,13 @@
 	dpdir = 11;
 	icon_state = "pipe-j2"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aE" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aH" = (
 /obj/structure/grille,
@@ -196,7 +196,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether/midpoint)
 "aK" = (
 /obj/structure/disposalpipe/segment{
@@ -215,16 +215,16 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aL" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aM" = (
 /obj/structure/table/woodentable,
 /obj/item/dice/d20,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aN" = (
 /obj/structure/disposalpipe/down{
@@ -233,7 +233,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aP" = (
 /obj/structure/grille,
@@ -244,7 +244,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether/midpoint)
 "aQ" = (
 /obj/effect/blocker,
@@ -260,7 +260,7 @@
 	name = "west bump";
 	pixel_x = -28
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -269,16 +269,16 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aU" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aV" = (
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -288,11 +288,11 @@
 /obj/machinery/camera/network/tether{
 	dir = 5
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether/midpoint)
 "aX" = (
 /obj/structure/disposalpipe/up,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aY" = (
 /obj/structure/cable{
@@ -301,7 +301,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "aZ" = (
 /obj/machinery/alarm{
@@ -312,13 +312,13 @@
 	dir = 4;
 	pixel_x = -21
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "ba" = (
 /obj/machinery/vending/cola{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "bb" = (
 /obj/machinery/light{
@@ -327,21 +327,21 @@
 /obj/machinery/vending/fitness{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "bc" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/timeclock/premade/north,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "bd" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /obj/machinery/media/jukebox/old,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "bf" = (
 /obj/structure/table/woodentable,
@@ -349,13 +349,13 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "bg" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "bi" = (
 /obj/structure/disposalpipe/segment{
@@ -371,12 +371,12 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "bj" = (
 /obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "bk" = (
 /turf/unsimulated/dark_filler,
@@ -397,11 +397,11 @@
 /area/maintenance/tether_midpoint)
 "cd" = (
 /obj/machinery/hologram/holopad,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "fm" = (
 /obj/machinery/light,
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "fD" = (
 /obj/structure/table/woodentable,
@@ -409,7 +409,7 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "uu" = (
 /obj/structure/cable{
@@ -422,7 +422,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "uF" = (
 /obj/structure/grille,
@@ -433,7 +433,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether/midpoint)
 "uM" = (
 /obj/structure/grille,
@@ -442,7 +442,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/tether/midpoint)
 "yq" = (
 /obj/structure/table/woodentable,
@@ -453,12 +453,12 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "zF" = (
 /obj/structure/table/woodentable,
 /obj/structure/flora/pottedplant/small,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "Bg" = (
 /obj/structure/table/woodentable,
@@ -466,7 +466,7 @@
 	dir = 1
 	},
 /obj/structure/flora/pottedplant/flower,
-/turf/simulated/floor/carpet/blue,
+/turf/floor/carpet/blue,
 /area/tether/midpoint)
 "Hs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -477,16 +477,16 @@
 	dir = 8;
 	light_range = 12
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 "Id" = (
 /obj/structure/grille,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "Ie" = (
 /obj/structure/closet,
 /obj/random/plushie,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "Pp" = (
 /obj/structure/disposalpipe/segment,
@@ -495,13 +495,13 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/turf/simulated/floor/plating,
+/turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "RN" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/floor/wood,
 /area/tether/midpoint)
 
 (1,1,1) = {"

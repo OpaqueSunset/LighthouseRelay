@@ -3,6 +3,12 @@
 	ignition_point = T0C+500 // Based on loose ignition temperature of plastic
 	accelerant_value = 0.1
 	burn_product = /decl/material/gas/carbon_monoxide
+	melting_point = null
+
+/* TODO: burn products for solids
+	bakes_into_at_temperature = T0C+500
+	bakes_into_material = /decl/material/solid/carbon
+*/
 
 /decl/material/solid/organic/plastic
 	name = "plastic"
@@ -30,17 +36,6 @@
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
-/decl/material/solid/organic/plastic/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += new/datum/stack_recipe/furniture/crate/plastic(src)
-		. += new/datum/stack_recipe/bag(src)
-		. += new/datum/stack_recipe/ivbag(src)
-		. += create_recipe_list(/datum/stack_recipe/cartridge)
-		. += create_recipe_list(/datum/stack_recipe/tile/light)
-		. += new/datum/stack_recipe/hazard_cone(src)
-		. += new/datum/stack_recipe/furniture/flaps(src)
-
 /decl/material/solid/organic/wax
 	name = "wax"
 	uid = "solid_wax"
@@ -60,10 +55,6 @@
 	melting_point = 363
 	ignition_point = 473
 	boiling_point = 643
-
-// Wax does not use the base recipe list.
-/decl/material/solid/organic/wax/generate_recipes()
-	. = list(new /datum/stack_recipe/candle(src))
 
 /decl/material/solid/organic/plastic/holographic
 	name = "holographic plastic"
@@ -85,7 +76,6 @@
 	brute_armor = 1
 	weight = MAT_VALUE_EXTREMELY_LIGHT - 5
 	ignition_point = T0C+232 //"the temperature at which book-paper catches fire, and burns." close enough
-	melting_point = T0C+232 //temperature at which cardboard walls would be destroyed
 	stack_origin_tech = @'{"materials":1}'
 	door_icon_base = "wood"
 	destruction_desc = "crumples"
@@ -98,14 +88,6 @@
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
-
-/decl/material/solid/organic/cardboard/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += create_recipe_list(/datum/stack_recipe/box)
-		. += new/datum/stack_recipe/cardborg_suit(src)
-		. += new/datum/stack_recipe/cardborg_helmet(src)
-		. += new/datum/stack_recipe_list("folders", create_recipe_list(/datum/stack_recipe/folder))
 
 /decl/material/solid/organic/paper
 	name                    = "paper"
@@ -128,7 +110,6 @@
 	wall_flags              = PAINT_PAINTABLE | PAINT_STRIPABLE | WALL_HAS_EDGES
 	brute_armor             = 0.5
 	ignition_point          = T0C + 232 //"the temperature at which book-paper catches fire, and burns." close enough
-	melting_point           = T0C + 232
 	conductive              = FALSE
 	value                   = 0.25
 	default_solid_form      = /obj/item/stack/material/bolt
@@ -138,20 +119,14 @@
 	sound_manipulate        = 'sound/foley/paperpickup2.ogg'
 	sound_dropped           = 'sound/foley/paperpickup1.ogg'
 
-/decl/material/solid/organic/paper/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += new/datum/stack_recipe/paper_sheets(src)
-
-/decl/material/solid/organic/cloth //todo
-	name = "cotton"
+/decl/material/solid/organic/cloth
+	name = "cloth"
 	uid = "solid_cotton"
-	use_name = "cotton"
+	use_name = "cloth"
 	color = "#ffffff"
 	stack_origin_tech = @'{"materials":2}'
 	door_icon_base = "wood"
 	ignition_point = T0C+232
-	melting_point = T0C+300
 	flags = MAT_FLAG_PADDING
 	brute_armor = 1
 	conductive = 0
@@ -167,96 +142,10 @@
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
-/decl/material/solid/organic/cloth/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += new/datum/stack_recipe/cloak(src)
-		. += new/datum/stack_recipe/banner(src)
-
-/decl/material/solid/organic/cloth/yellow
-	name = "yellow"
-	uid = "solid_cotton_yellow"
-	use_name = "yellow cloth"
-	adjective_name = "yellow"
-	color = "#ffbf00"
-
-/decl/material/solid/organic/cloth/teal
-	name = "teal"
-	uid = "solid_cotton_teal"
-	use_name = "teal cloth"
-	adjective_name = "teal"
-	color = "#00e1ff"
-
-/decl/material/solid/organic/cloth/black
-	name = "black"
-	uid = "solid_cotton_black"
-	use_name = "black cloth"
-	adjective_name = "black"
-	color = "#505050"
-
-/decl/material/solid/organic/cloth/green
-	name = "green"
-	uid = "solid_cotton_green"
-	use_name = "green cloth"
-	adjective_name = "green"
-	color = "#b7f27d"
-
-/decl/material/solid/organic/cloth/purple
-	name = "purple"
-	uid = "solid_cotton_purple"
-	use_name = "purple cloth"
-	adjective_name = "purple"
-	color = "#9933ff"
-
-/decl/material/solid/organic/cloth/blue
-	name = "blue"
-	uid = "solid_cotton_blue"
-	use_name = "blue cloth"
-	adjective_name = "blue"
-	color = "#46698c"
-
-/decl/material/solid/organic/cloth/beige
-	name = "beige"
-	uid = "solid_cotton_beige"
-	use_name = "beige cloth"
-	adjective_name = "beige"
-	color = "#ceb689"
-
-/decl/material/solid/organic/cloth/lime
-	name = "lime"
-	uid = "solid_cotton_lime"
-	use_name = "lime cloth"
-	adjective_name = "lime"
-	color = "#62e36c"
-
-/decl/material/solid/organic/cloth/red
-	name = "red"
-	uid = "solid_cotton_red"
-	use_name = "red cloth"
-	adjective_name = "red"
-	color = "#9d2300"
-
-/decl/material/solid/organic/carpet
-	name = "red"
-	uid = "solid_carpet"
-	use_name = "red upholstery"
-	adjective_name = "red"
-	color = "#9d2300"
-	flags = MAT_FLAG_PADDING
-	ignition_point = T0C+232
-	melting_point = T0C+300
-	conductive = 0
-	construction_difficulty = MAT_VALUE_NORMAL_DIY
-	reflectiveness = MAT_VALUE_DULL
-	hardness = MAT_VALUE_SOFT
-	weight = MAT_VALUE_EXTREMELY_LIGHT
-	wall_support_value = MAT_VALUE_EXTREMELY_LIGHT
-	hidden_from_codex = TRUE
-	default_solid_form = /obj/item/stack/material/bolt
-	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
-	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
-	sound_manipulate = 'sound/foley/paperpickup2.ogg'
-	sound_dropped = 'sound/foley/paperpickup1.ogg'
+/decl/material/solid/organic/cloth/synthetic
+	name = "synthetic cloth"
+	uid = "solid_cloth_synthetic"
+	melting_point = T0C+300 // plastic
 
 /decl/material/solid/organic/plantmatter
 	name = "plant matter"
@@ -264,7 +153,6 @@
 	color = COLOR_GREEN_GRAY
 	flags = MAT_FLAG_PADDING
 	ignition_point = T0C+300
-	melting_point = T0C+300
 	conductive = 1
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
@@ -287,13 +175,34 @@
 	value = 0.6
 	uid = "solid_plantmatter_algae"
 
+/// Used for plant products that aren't quite wood, but are still tougher than normal plant matter.
+/decl/material/solid/organic/plantmatter/pith
+	name = "plant pith"
+	uid = "solid_plantpith"
+	melting_point = null
+	hardness = MAT_VALUE_FLEXIBLE
+	value = 0.4
+
+/decl/material/solid/organic/plantmatter/grass
+	name = "grass"
+	uid = "solid_grass"
+	default_solid_form = /obj/item/stack/material/bundle
+	melting_point = null // can grass melt??
+	ignition_point = T0C+100
+	tans_to = /decl/material/solid/organic/plantmatter/grass/dry
+
+/decl/material/solid/organic/plantmatter/grass/dry
+	name = "dry grass"
+	uid = "solid_dry_grass"
+	color = COLOR_BEIGE
+	ignition_point = T0C+50 // very flammable
+
 /decl/material/solid/organic/meat
 	name = "meat"
 	uid = "solid_meat"
 	color = COLOR_DARK_RED
 	flags = MAT_FLAG_PADDING
 	ignition_point = T0C+300
-	melting_point = T0C+300
 	conductive = 1
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
@@ -315,7 +224,6 @@
 	color = "#9e8c72"
 	flags = MAT_FLAG_PADDING
 	ignition_point = T0C+300
-	melting_point = T0C+300
 	conductive = 0
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
@@ -331,14 +239,7 @@
 	sound_dropped = 'sound/foley/meat2.ogg'
 	hitsound = "punch"
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
-	var/tans_to = /decl/material/solid/organic/leather
-
-/decl/material/solid/organic/skin/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += new/datum/stack_recipe/cloak(src)
-		. += new/datum/stack_recipe/banner(src)
-		. += new/datum/stack_recipe/shoes(src)
+	tans_to = /decl/material/solid/organic/leather
 
 /decl/material/solid/organic/skin/lizard
 	name = "lizardskin"
@@ -448,7 +349,6 @@
 	uid = "solid_bone"
 	color = "#f0edc7"
 	ignition_point = T0C+1100
-	melting_point = T0C+1800
 	conductive = 0
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
@@ -461,12 +361,6 @@
 	default_solid_form = /obj/item/stack/material/bone
 	sound_manipulate = 'sound/foley/stickspickup1.ogg'
 	sound_dropped = 'sound/foley/sticksdrop1.ogg'
-
-/decl/material/solid/organic/bone/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type) && wall_support_value >= 10)
-		. += new/datum/stack_recipe/furniture/girder(src)
-		. += new/datum/stack_recipe/furniture/ladder(src)
 
 // Stub for earrings. TODO: put it in clams
 /decl/material/solid/organic/bone/pearl
@@ -502,7 +396,6 @@
 	stack_origin_tech = @'{"materials":2}'
 	flags = MAT_FLAG_PADDING
 	ignition_point = T0C+300
-	melting_point = T0C+300
 	conductive = 0
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
@@ -517,20 +410,12 @@
 	sound_manipulate = 'sound/foley/paperpickup2.ogg'
 	sound_dropped = 'sound/foley/paperpickup1.ogg'
 
-/decl/material/solid/organic/leather/generate_recipes(stack_type, reinforce_material)
-	. = ..()
-	if(!holographic && !reinforce_material && islist(.) && !ispath(stack_type))
-		. += new/datum/stack_recipe/cloak(src)
-		. += new/datum/stack_recipe/banner(src)
-		. += new/datum/stack_recipe/shoes(src)
-		. += new/datum/stack_recipe/boots(src)
-
 /decl/material/solid/organic/leather/synth
 	name = "synthleather"
 	uid = "solid_synthleather"
 	color = "#1f1f20"
 	ignition_point = T0C+150
-	melting_point = T0C+100
+	melting_point = T0C+100 // Assuming synthetic leather.
 
 /decl/material/solid/organic/leather/lizard
 	name = "scaled hide"

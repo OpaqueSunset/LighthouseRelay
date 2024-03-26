@@ -18,7 +18,7 @@
 	desc = "A mighty suit of silver and gold armor, with a gleaming blue crystal inlaid into its left gaunlet."
 	icon = 'icons/clothing/suit/wizard/servant/champion.dmi'
 	siemens_coefficient = 0.5
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_LEGS|SLOT_FEET|SLOT_ARMS|SLOT_HANDS
+	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_LEGS|SLOT_FEET|SLOT_ARMS|SLOT_HANDS|SLOT_TAIL
 	armor = list(
 		ARMOR_MELEE = ARMOR_MELEE_VERY_HIGH,
 		ARMOR_BULLET = ARMOR_BALLISTIC_AP,
@@ -75,7 +75,7 @@
 			E?.take_external_damage(burn=2,used_weapon="stovetop")
 		else
 			var/mob/living/M = loc
-			M.adjustFireLoss(2)
+			M.take_damage(BURN, 2)
 		if(prob(2))
 			to_chat(loc,"<span class='danger'>\The [src] is burning you!</span>")
 	return 1

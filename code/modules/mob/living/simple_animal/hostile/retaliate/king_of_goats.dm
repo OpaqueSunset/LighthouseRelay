@@ -13,7 +13,7 @@
 	emote_see = list("stamps a mighty foot, shaking the surroundings")
 	meat_amount = 12
 	response_harm = "assaults"
-	mob_default_max_health = 500
+	max_health = 500
 	mob_size = MOB_SIZE_LARGE
 	mob_bump_flag = HEAVY
 	can_escape = TRUE
@@ -58,7 +58,7 @@
 	desc = "The King of Kings, God amongst men, and your superior in every way."
 	icon = 'icons/mob/simple_animal/goat_king_phase_2.dmi'
 	meat_amount = 36
-	mob_default_max_health = 750
+	max_health = 750
 	natural_weapon = /obj/item/natural_weapon/goatking/unleashed
 	elemental_weapons = list(
 		BURN = /obj/item/natural_weapon/goatking/fire/unleashed,
@@ -92,7 +92,7 @@
 	name = "honour guard"
 	desc = "A very handsome and noble beast."
 	icon = 'icons/mob/simple_animal/goat_guard.dmi'
-	mob_default_max_health = 125
+	max_health = 125
 	natural_weapon = /obj/item/natural_weapon/goathorns
 
 /obj/item/natural_weapon/goathorns
@@ -105,7 +105,7 @@
 	name = "master of the guard"
 	desc = "A very handsome and noble beast - the most trusted of all the king's men."
 	icon = 'icons/mob/simple_animal/goat_master.dmi'
-	mob_default_max_health = 200
+	max_health = 200
 	natural_weapon = /obj/item/natural_weapon/goathorns
 	move_to_delay = 3
 
@@ -153,16 +153,16 @@
 			visible_message("<span class='cultannounce'>\The [src]' eyes begin to glow ominously as dust and debris in the area is kicked up in a light breeze.</span>")
 			stop_automation = TRUE
 			if(do_after(src, 6 SECONDS, src))
-				var/initial_brute = getBruteLoss()
-				var/initial_burn = getFireLoss()
+				var/initial_brute = get_damage(BRUTE)
+				var/initial_burn = get_damage(BURN)
 				visible_message(SPAN_MFAUNA("\The [src] raises its fore-hooves and stomps them into the ground with incredible force!"))
 				explosion(get_step(src,pick(global.cardinal)), -1, 2, 2, 3, 6)
 				explosion(get_step(src,pick(global.cardinal)), -1, 1, 4, 4, 6)
 				explosion(get_step(src,pick(global.cardinal)), -1, 3, 4, 3, 6)
 				stop_automation = FALSE
 				spellscast += 2
-				setBruteLoss(initial_brute)
-				setFireLoss(initial_burn)
+				set_damage(BRUTE, initial_brute)
+				set_damage(BURN, initial_burn)
 			else
 				visible_message(SPAN_NOTICE("The [src] loses concentration and huffs haughtily."))
 				stop_automation = FALSE
@@ -172,8 +172,8 @@
 /mob/living/simple_animal/hostile/retaliate/goat/king/phase2/proc/phase3_transition()
 	phase3 = TRUE
 	spellscast = 0
-	mob_default_max_health = 750
-	current_health = mob_default_max_health
+	max_health = 750
+	current_health = max_health
 	new /obj/item/grenade/flashbang/instant(src.loc)
 	QDEL_NULL(boss_theme)
 	boss_theme = play_looping_sound(src, sound_id, 'sound/music/Visager-Miniboss_Fight.ogg', volume = 10, range = 8, falloff = 4, prefer_mute = TRUE)
@@ -211,9 +211,10 @@
 		visible_message(SPAN_MFAUNA("\The [src] shrieks as the seal on his power breaks and his wool sheds off!"))
 		new /obj/item/towel/fleece(src.loc)
 
-/mob/living/simple_animal/hostile/retaliate/goat/king/death()
-	..()
-	OnDeath()
+/mob/living/simple_animal/hostile/retaliate/goat/king/death(gibbed)
+	. = ..()
+	if(.)
+		OnDeath()
 
 /mob/living/simple_animal/hostile/retaliate/goat/king/phase2/Destroy()
 	QDEL_NULL(boss_theme)

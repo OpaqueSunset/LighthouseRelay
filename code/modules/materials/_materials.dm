@@ -34,7 +34,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	self-explanatory but the various object types may have their own documentation.
 
 	PATHS THAT USE DATUMS
-		turf/simulated/wall
+		turf/wall
 		obj/item
 		obj/structure/barricade
 		obj/structure/table
@@ -51,16 +51,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			plastic
 			wood
 */
-
-//Returns the material the object is made of, if applicable.
-//Will we ever need to return more than one value here? Or should we just return the "dominant" material.
-/obj/proc/get_material()
-	return
-
-//mostly for convenience
-/obj/proc/get_material_type()
-	var/decl/material/mat = get_material()
-	. = mat?.type
 
 // Material definition and procs follow.
 /decl/material
@@ -89,6 +79,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/narcosis = 0 // Not a great word for it. Constant for causing mild confusion when ingested.
 	var/toxicity = 0 // Organ damage from ingestion.
 	var/toxicity_targets_organ // Bypass liver/kidneys when ingested, harm this organ directly (using BP_FOO defines).
+
+	var/can_backfill_turf_type
 
 	// Shards/tables/structures
 	var/shard_type = SHARD_SHRAPNEL       // Path of debris object.
@@ -126,6 +118,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/melting_point = 1800
 	/// K, point that material will become a gas.
 	var/boiling_point = 3000
+	/// Set automatically if null based on ignition, boiling and melting point
+	var/temperature_damage_threshold
 	/// kJ/kg, enthalpy of vaporization
 	var/latent_heat = 7000
 	/// kg/mol
@@ -164,7 +158,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	// Damage values.
 	var/hardness = MAT_VALUE_HARD            // Used for edge damage in weapons.
 	var/reflectiveness = MAT_VALUE_DULL
-
+	var/ferrous = FALSE                       // Can be used as a striker for firemaking.
 	var/weight = MAT_VALUE_NORMAL             // Determines blunt damage/throwforce for weapons.
 
 	// Noise when someone is faceplanted onto a table made of this material.
@@ -190,6 +184,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/ore_icon_overlay
 	var/ore_type_value
 	var/ore_data_value
+	var/ore_type = /obj/item/stack/material/ore
 
 	var/value = 1
 
@@ -254,7 +249,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/heating_sound = 'sound/effects/bubbles.ogg'
 	var/list/heating_products
 	var/bypass_heating_products_for_root_type
-	var/accelerant_value = 0
+	var/accelerant_value = FUEL_VALUE_NONE
+	var/burn_temperature = 100 CELSIUS
 	var/burn_product
 	var/list/vapor_products // If splashed, releases these gasses in these proportions. // TODO add to unit test after solvent PR is merged
 
@@ -281,6 +277,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	var/holographic // Set to true if this material is fake/visual only.
 
+	/// Does high temperature baking change this material into something else?
+	var/bakes_into_material
+	var/bakes_into_at_temperature
+
+	/// If set to a material type, stacks of this material will be able to be tanned on a drying rack after being wetted to convert them to tans_to.
+	var/tans_to
+
 // Placeholders for light tiles and rglass.
 /decl/material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack, var/use_sheets = 1)
 	if(!used_stack.can_use(use_sheets))
@@ -293,7 +296,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		return
 
 	if(!target_stack.can_use(use_sheets))
-		to_chat(user, SPAN_WARNING("You need need at least [use_sheets] [use_sheets == 1 ? target_stack.singular_name : target_stack.plural_name] for reinforcement with [used_stack]."))
+		to_chat(user, SPAN_WARNING("You need need at least [use_sheets] [use_sheets == 1 ? target_stack.singular_name : target_stack.plural_name] for reinforcement with \the [used_stack]."))
 		return
 
 	to_chat(user, SPAN_NOTICE("You reinforce the [target_stack] with [reinf_mat.solid_name]."))
@@ -325,28 +328,34 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	// Null/clear a bunch of physical vars as this material is fake.
 	if(holographic)
-		shard_type             = SHARD_NONE
-		conductive             = 0
-		hidden_from_codex      = TRUE
-		value                  = 0
-		exoplanet_rarity_plant = MAT_RARITY_NOWHERE
-		exoplanet_rarity_gas   = MAT_RARITY_NOWHERE
-		dissolves_into         = null
-		dissolves_in           = MAT_SOLVENT_IMMUNE
-		solvent_power          = MAT_SOLVENT_NONE
-		heating_products       = null
-		chilling_products      = null
-		heating_point          = null
-		chilling_point         = null
-		solvent_melt_dose      = 0
-		solvent_max_damage     = 0
-		slipperiness           = 0
-		ignition_point         = null
-		melting_point          = null
-		boiling_point          = null
-		accelerant_value       = FUEL_VALUE_NONE
-		burn_product           = null
-		vapor_products         = null
+		shard_type                   = SHARD_NONE
+		conductive                   = 0
+		hidden_from_codex            = TRUE
+		value                        = 0
+		exoplanet_rarity_plant       = MAT_RARITY_NOWHERE
+		exoplanet_rarity_gas         = MAT_RARITY_NOWHERE
+		dissolves_into               = null
+		dissolves_in                 = MAT_SOLVENT_IMMUNE
+		solvent_power                = MAT_SOLVENT_NONE
+		heating_products             = null
+		chilling_products            = null
+		heating_point                = null
+		chilling_point               = null
+		solvent_melt_dose            = 0
+		solvent_max_damage           = 0
+		slipperiness                 = 0
+		bakes_into_at_temperature    = null
+		ignition_point               = null
+		melting_point                = null
+		boiling_point                = null
+		temperature_damage_threshold = INFINITY
+		accelerant_value             = FUEL_VALUE_NONE
+		burn_product                 = null
+		vapor_products               = null
+	else if(isnull(temperature_damage_threshold))
+		for(var/value in list(ignition_point, melting_point, boiling_point, heating_point, bakes_into_at_temperature))
+			if(!isnull(value) && (isnull(temperature_damage_threshold) || temperature_damage_threshold > value))
+				temperature_damage_threshold = value
 
 	if(!shard_icon)
 		shard_icon = shard_type
@@ -370,6 +379,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 #define FALSEWALL_STATE "fwall_open"
 /decl/material/validate()
 	. = ..()
+
+	if(!isnull(bakes_into_at_temperature))
+		if(!isnull(melting_point) && melting_point <= bakes_into_at_temperature)
+			. += "baking point is set but melting point is lower or equal to it"
+		if(!isnull(boiling_point) && boiling_point <= bakes_into_at_temperature)
+			. += "baking point is set but boiling point is lower or equal to it"
+
 	if(accelerant_value > FUEL_VALUE_NONE && isnull(ignition_point))
 		. += "accelerant value larger than zero but null ignition point"
 	if(!isnull(ignition_point) && accelerant_value <= FUEL_VALUE_NONE)
@@ -494,6 +510,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		else
 			log_warning("Invalid phase '[phase]' passed to get_mols_from_units!")
 			return units
+
 // Used by walls when qdel()ing to avoid neighbor merging.
 /decl/material/placeholder
 	name = "placeholder"
@@ -501,6 +518,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	hidden_from_codex = TRUE
 	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
 	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
+	holographic = TRUE
 
 /// Generic material product (sheets, bricks, etc). Used ALL THE TIME.
 /// May return an instance list, a single instance, or nothing if there is no instance produced.
@@ -599,7 +617,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	if(solvent_power >= MAT_SOLVENT_STRONG && O.solvent_can_melt(solvent_power) && (istype(O, /obj/item) || istype(O, /obj/effect/vine)) && (REAGENT_VOLUME(holder, type) > solvent_melt_dose))
 		O.visible_message(SPAN_DANGER("\The [O] dissolves!"))
-		O.melt()
+		O.handle_melting()
 		holder?.remove_reagent(type, solvent_melt_dose)
 	else if(defoliant && istype(O, /obj/effect/vine))
 		qdel(O)
@@ -627,8 +645,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(REAGENT_VOLUME(holder, type) < turf_touch_threshold)
 		return
 
-	if(istype(T, /turf/simulated))
-		var/turf/simulated/wall/W = T
+	if(istype(T) && T.simulated)
+		var/turf/wall/W = T
 		if(defoliant)
 			for(var/obj/effect/overlay/wallrot/E in W)
 				W.visible_message(SPAN_NOTICE("\The [E] is completely dissolved by the solution!"))
@@ -676,11 +694,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	//adjust effective amounts - removed, dose, and max_dose - for mob size
 	var/effective = removed
-	if(!(flags & IGNORE_MOB_SIZE) && metabolism_class != CHEM_TOUCH)
+	if(!(flags & IGNORE_MOB_SIZE))
 		effective *= (MOB_SIZE_MEDIUM/M.mob_size)
+	if(metabolism_class != CHEM_TOUCH)
+		var/dose = LAZYACCESS(M.chem_doses, type) + effective
+		LAZYSET(M.chem_doses, type, dose)
 
-	var/dose = LAZYACCESS(M.chem_doses, type) + effective
-	LAZYSET(M.chem_doses, type, dose)
+	var/remove_dose = TRUE
 	if(effective >= (metabolism * 0.1) || effective >= 0.1) // If there's too little chemical, don't affect the mob, just remove it
 		switch(metabolism_class)
 			if(CHEM_INJECT)
@@ -688,10 +708,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			if(CHEM_INGEST)
 				affect_ingest(M, effective, holder)
 			if(CHEM_TOUCH)
-				affect_touch(M, effective, holder)
+				remove_dose = affect_touch(M, effective, holder)
 			if(CHEM_INHALE)
 				affect_inhale(M, effective, holder)
-	holder.remove_reagent(type, removed)
+	if(remove_dose)
+		holder.remove_reagent(type, removed)
 
 /decl/material/proc/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	if(M.status_flags & GODMODE)
@@ -718,7 +739,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 							I.take_internal_damage(organ_damage, silent=TRUE)
 							dam = 0
 		if(dam > 0)
-			M.adjustToxLoss(toxicity_targets_organ ? (dam * 0.75) : dam)
+			M.take_damage(TOX, toxicity_targets_organ ? (dam * 0.75) : dam)
 
 	if(solvent_power >= MAT_SOLVENT_STRONG)
 		M.take_organ_damage(0, removed * solvent_power, override_droplimb = DISMEMBER_METHOD_ACID)
@@ -727,7 +748,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		if(prob(10))
 			M.SelfMove(pick(global.cardinal))
 		if(prob(narcosis))
-			M.emote(pick("twitch", "drool", "moan"))
+			M.emote(pick(/decl/emote/visible/twitch, /decl/emote/visible/drool, /decl/emote/audible/moan))
 
 	if(euphoriant)
 		SET_STATUS_MAX(M, STAT_DRUGGY, euphoriant)
@@ -740,13 +761,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(affect_blood_on_inhale)
 		affect_blood(M, removed * 0.75, holder)
 
+// Slightly different to other reagent processing - return TRUE to consume the removed amount, FALSE not to consume.
 /decl/material/proc/affect_touch(var/mob/living/M, var/removed, var/datum/reagents/holder)
 
 	if(!istype(M))
-		return
+		return FALSE
 
 	if(radioactivity)
 		M.apply_damage((radioactivity / 2) * removed, IRRADIATE)
+		. = TRUE
 
 	if(dirtiness <= DIRTINESS_STERILE)
 		if(M.germ_level < INFECTION_LEVEL_TWO) // rest and antibiotics is required to cure serious infections
@@ -754,7 +777,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		for(var/obj/item/I in M.contents)
 			I.was_bloodied = null
 		M.was_bloodied = null
+		. = TRUE
 
+	// TODO: clean should add the gross reagents washed off to a holder to dump on the loc.
 	if(dirtiness <= DIRTINESS_CLEAN)
 		for(var/obj/item/thing in M.get_held_items())
 			thing.clean()
@@ -784,10 +809,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	if(solvent_power > MAT_SOLVENT_NONE && removed >= solvent_melt_dose && M.solvent_act(min(removed * solvent_power * ((removed < solvent_melt_dose) ? 0.1 : 0.2), solvent_max_damage), solvent_melt_dose, solvent_power))
 		holder.remove_reagent(type, REAGENT_VOLUME(holder, type))
+		. = TRUE
 
 /decl/material/proc/affect_overdose(var/mob/living/M) // Overdose effect. Doesn't happen instantly.
 	M.add_chemical_effect(CE_TOXIN, 1)
-	M.adjustToxLoss(REM)
+	M.take_damage(TOX, REM)
 
 /decl/material/proc/initialize_data(var/newdata) // Called when the reagent is created.
 	if(newdata)

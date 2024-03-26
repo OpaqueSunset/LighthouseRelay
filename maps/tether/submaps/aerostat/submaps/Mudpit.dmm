@@ -39,7 +39,7 @@
 /turf/template_noop,
 /area/template_noop)
 "j" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Mudpit)
 "k" = (
 /obj/structure/reagent_dispensers/fueltank,

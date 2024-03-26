@@ -98,11 +98,14 @@
 #define COMPANY_ALIGNMENTS		list(COMPANY_LOYAL,COMPANY_SUPPORTATIVE,COMPANY_NEUTRAL,COMPANY_SKEPTICAL,COMPANY_OPPOSED)
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
-#define MOB_SIZE_LARGE  		40
-#define MOB_SIZE_MEDIUM 		20
-#define MOB_SIZE_SMALL 		10
-#define MOB_SIZE_TINY 		5
-#define MOB_SIZE_MINISCULE	1
+#define MOB_SIZE_LARGE     40
+#define MOB_SIZE_MEDIUM    20
+#define MOB_SIZE_SMALL     10
+#define MOB_SIZE_TINY      5
+#define MOB_SIZE_MINISCULE 1
+
+#define MOB_SIZE_MIN       MOB_SIZE_MINISCULE
+#define MOB_SIZE_MAX       MOB_SIZE_LARGE
 
 // Defines how strong the species is compared to humans. Think like strength in D&D
 #define STR_VHIGH       2
@@ -340,7 +343,8 @@ var/global/list/dexterity_levels = list(
 #define MOB_ICON_HAS_REST_STATE      BITFLAG(2)
 #define MOB_ICON_HAS_SLEEP_STATE     BITFLAG(3)
 #define MOB_ICON_HAS_GIB_STATE       BITFLAG(4)
-#define MOB_ICON_HAS_PARALYZED_STATE BITFLAG(5)
+#define MOB_ICON_HAS_DUST_STATE      BITFLAG(5)
+#define MOB_ICON_HAS_PARALYZED_STATE BITFLAG(6)
 #define NEUTER_ANIMATE "animate singular neutral"
 
 // Equipment Overlays Indices //
@@ -385,3 +389,25 @@ var/global/list/dexterity_levels = list(
 // Enum for type of consumption, largely just cosmetic currently.
 #define EATING_METHOD_EAT   0
 #define EATING_METHOD_DRINK 1
+
+#define SAC_HAIR        /decl/sprite_accessory_category/hair
+#define SAC_FACIAL_HAIR /decl/sprite_accessory_category/facial_hair
+#define SAC_COSMETICS   /decl/sprite_accessory_category/cosmetics
+#define SAC_MARKINGS    /decl/sprite_accessory_category/markings
+#define SAC_HORNS       /decl/sprite_accessory_category/horns
+#define SAC_FRILLS      /decl/sprite_accessory_category/frills
+
+// Helpers for setting mob appearance. They are extremely ugly, hence the helpers.
+#define SET_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE)          (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
+#define GET_HAIR_STYLE(TARGET)                              (TARGET.get_organ_sprite_accessory_by_category(SAC_HAIR, BP_HEAD))
+#define SET_HAIR_COLOUR(TARGET, COLOUR, SKIP_UPDATE)        (TARGET.set_organ_sprite_accessory_by_category(null, SAC_HAIR, (COLOUR), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
+#define GET_HAIR_COLOUR(TARGET)                             (TARGET.get_organ_sprite_accessory(GET_HAIR_STYLE(TARGET), BP_HEAD))
+
+#define SET_FACIAL_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE)   (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_FACIAL_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
+#define GET_FACIAL_HAIR_STYLE(TARGET)                       (TARGET.get_organ_sprite_accessory_by_category(SAC_FACIAL_HAIR, BP_HEAD))
+#define SET_FACIAL_HAIR_COLOUR(TARGET, COLOUR, SKIP_UPDATE) (TARGET.set_organ_sprite_accessory_by_category(null, SAC_FACIAL_HAIR, (COLOUR), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
+#define GET_FACIAL_HAIR_COLOUR(TARGET)                      (TARGET.get_organ_sprite_accessory(GET_FACIAL_HAIR_STYLE(TARGET), BP_HEAD))
+
+// Used in death() to skip message broadcast.
+#define SKIP_DEATH_MESSAGE "no message"
+

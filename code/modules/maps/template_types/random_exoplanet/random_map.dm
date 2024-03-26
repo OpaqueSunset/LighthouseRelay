@@ -10,7 +10,7 @@
 	var/water_level
 	var/water_level_min = 0
 	var/water_level_max = 5
-	var/land_type = /turf/simulated/floor
+	var/land_type = /turf/floor
 	var/water_type
 	var/coast_type
 
@@ -168,6 +168,6 @@
 	descriptor       = "planetary mantle caves"
 	target_turf_type = /turf/exterior/rock/volcanic //Only let it apply to non-lava turfs
 	floor_type       = null
-	wall_type        = /turf/exterior/wall
+	wall_type        = /turf/wall/natural
 
 #undef TRANSLATE_COORD

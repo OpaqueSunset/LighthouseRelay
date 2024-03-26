@@ -85,7 +85,7 @@
 /decl/material/liquid/frostoil/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	M.bodytemperature = max(M.bodytemperature - 10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0)
 	if(prob(1))
-		M.emote("shiver")
+		M.emote(/decl/emote/visible/shiver)
 	holder.remove_reagent(/decl/material/liquid/capsaicin, 5)
 
 /decl/material/liquid/capsaicin
@@ -111,7 +111,7 @@
 	var/slime_temp_adj = 10
 
 /decl/material/liquid/capsaicin/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
-	M.adjustToxLoss(0.5 * removed)
+	M.take_damage(TOX, 0.5 * removed)
 
 /decl/material/liquid/capsaicin/affect_ingest(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	holder.remove_reagent(/decl/material/liquid/frostoil, 5)
@@ -202,6 +202,8 @@
 			M.custom_emote(2, "[pick("coughs!","coughs hysterically!","splutters!")]")
 			SET_STATUS_MAX(M, STAT_STUN, 3)
 
+	return TRUE
+
 /decl/material/liquid/capsaicin/condensed/affect_ingest(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	holder.remove_reagent(/decl/material/liquid/frostoil, 5)
 
@@ -234,6 +236,7 @@
 /decl/material/liquid/mutagenics/affect_touch(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	if(prob(33))
 		affect_blood(M, removed, holder)
+	return TRUE
 
 /decl/material/liquid/mutagenics/affect_ingest(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	if(prob(67))
@@ -434,7 +437,7 @@
 			else if(E.organ_tag != BP_CHEST && E.organ_tag != BP_GROIN && prob(15))
 				to_chat(H, SPAN_DANGER("Your [E.name] is being lacerated from within!"))
 				if(E.can_feel_pain())
-					H.emote("scream")
+					H.emote(/decl/emote/audible/scream)
 				if(prob(25))
 					for(var/i = 1 to rand(3,5))
 						new /obj/item/shard(get_turf(E), result_mat)
@@ -456,6 +459,6 @@
 			break
 	else
 		to_chat(M, SPAN_DANGER("Your flesh is being lacerated from within!"))
-		M.adjustBruteLoss(rand(3,6))
+		M.take_damage(BRUTE, rand(3,6))
 		if(prob(10))
 			new /obj/item/shard(get_turf(M), result_mat)

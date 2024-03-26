@@ -19,7 +19,7 @@
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "af" = (
-/turf/simulated/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/tether/surfacebase/outside/wilderness)
 "ag" = (
 /obj/structure/window/reinforced,
@@ -30,7 +30,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ah" = (
 /obj/structure/window/reinforced,
@@ -38,7 +38,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ai" = (
 /obj/structure/window/reinforced,
@@ -49,10 +49,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aj" = (
-/turf/simulated/floor/virgo3b_indoors{
+/turf/floor/virgo3b_indoors{
 	desc = "Quite dirty!";
 	icon = 'icons/turf/outdoors.dmi';
 	icon_state = "dirt-dark";
@@ -69,40 +69,40 @@
 	icon_opened = "cabinet_open";
 	icon_state = "cabinet_closed"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "am" = (
 /obj/structure/bed/padded,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "an" = (
 /obj/structure/table,
 /obj/machinery/chemical_dispenser/bar_alc/full,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ao" = (
 /obj/structure/table,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ap" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aq" = (
 /obj/structure/bed/chair,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ar" = (
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "as" = (
-/turf/simulated/shuttle/wall/dark/hard_corner,
+/turf/wall/shuttle/dark/hard_corner,
 /area/tether/surfacebase/crash)
 "at" = (
 /obj/machinery/door/airlock/external/glass/bolted,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "au" = (
 /obj/structure/window/reinforced{
@@ -115,47 +115,47 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "av" = (
 /obj/machinery/newscaster{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aw" = (
 /obj/machinery/door/airlock/silver,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ax" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ay" = (
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "az" = (
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aA" = (
 /obj/structure/shuttle/engine/heater{
 	icon_state = "heater";
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aB" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_r";
 	dir = 4
 	},
-/turf/simulated/floor/virgo3b_indoors{
+/turf/floor/virgo3b_indoors{
 	desc = "Quite dirty!";
 	icon = 'icons/turf/outdoors.dmi';
 	icon_state = "dirt-dark";
@@ -164,20 +164,20 @@
 /area/tether/surfacebase/outside/wilderness)
 "aC" = (
 /obj/item/shard,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aD" = (
 /obj/item/pen{
 	pixel_y = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aE" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /obj/machinery/computer/modular/preset/civilian,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aF" = (
 /obj/structure/window/reinforced,
@@ -188,7 +188,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/tether/surfacebase/crash)
 "aG" = (
 /obj/structure/window/reinforced,
@@ -199,19 +199,19 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor,
+/turf/floor,
 /area/tether/surfacebase/crash)
 "aI" = (
 /obj/machinery/sleeper{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aJ" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/virgo3b_indoors{
+/turf/floor/virgo3b_indoors{
 	desc = "Quite dirty!";
 	icon = 'icons/turf/outdoors.dmi';
 	icon_state = "dirt-dark";
@@ -220,17 +220,17 @@
 /area/tether/surfacebase/outside/wilderness)
 "aK" = (
 /obj/machinery/suit_cycler/syndicate,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aL" = (
 /obj/machinery/bodyscanner{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aM" = (
 /obj/machinery/body_scanconsole,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aN" = (
 /obj/item/storage/firstaid/regular{
@@ -275,7 +275,7 @@
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aO" = (
 /obj/machinery/light{
@@ -283,11 +283,11 @@
 	icon_state = "tube1"
 	},
 /obj/item/scalpel,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aP" = (
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aQ" = (
 /obj/structure/window/reinforced{
@@ -300,7 +300,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aR" = (
 /obj/machinery/light{
@@ -308,37 +308,37 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aS" = (
 /obj/machinery/door/airlock/glass/medical{
 	name = "Medical Bay"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aT" = (
 /obj/structure/iv_drip,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aU" = (
 /obj/item/clothing/mask/surgical,
 /obj/item/bonesetter,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aV" = (
 /obj/item/surgicaldrill,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aW" = (
 /obj/machinery/optable,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aX" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion_l";
 	dir = 4
 	},
-/turf/simulated/floor/virgo3b_indoors{
+/turf/floor/virgo3b_indoors{
 	desc = "Quite dirty!";
 	icon = 'icons/turf/outdoors.dmi';
 	icon_state = "dirt-dark";
@@ -350,26 +350,26 @@
 	pixel_y = -32;
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aZ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ba" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bb" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bc" = (
 /obj/structure/window/reinforced{
@@ -379,7 +379,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bd" = (
 /obj/item/circular_saw,
@@ -387,41 +387,41 @@
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "be" = (
 /obj/machinery/light,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bf" = (
 /obj/machinery/vending/medical{
 	pixel_y = -32
 	},
 /obj/item/stack/nanopaste,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bg" = (
 /obj/item/hemostat{
 	pixel_y = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bh" = (
 /obj/machinery/door/airlock/double/glass,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bi" = (
 /obj/structure/window/reinforced,
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bj" = (
 /obj/machinery/door/window/southleft,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bk" = (
 /obj/machinery/door/window/southright,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bl" = (
 /obj/structure/window/reinforced{
@@ -432,14 +432,14 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bm" = (
 /obj/structure/emergency_dispenser{
 	pixel_y = -32;
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bn" = (
 /obj/structure/table,
@@ -451,14 +451,14 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bo" = (
 /obj/item/retractor{
 	pixel_x = 0;
 	pixel_y = 6
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bp" = (
 /obj/structure/grille,
@@ -469,7 +469,7 @@
 	dir = 1
 	},
 /obj/item/shard,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bq" = (
 /obj/structure/window/reinforced{
@@ -480,33 +480,33 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "br" = (
 /obj/machinery/vending/coffee,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bs" = (
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bt" = (
 /obj/machinery/door/airlock/double/glass,
-/turf/simulated/floor/shuttle/black{
+/turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},
 /area/tether/surfacebase/crash)
 "bu" = (
-/turf/simulated/floor/shuttle/black{
+/turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},
 /area/tether/surfacebase/crash)
 "bv" = (
 /obj/structure/closet/crate/secure/weapon,
 /obj/random/weapon,
-/turf/simulated/floor/shuttle/black{
+/turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},
 /area/tether/surfacebase/crash)
@@ -519,7 +519,7 @@
 /obj/item/pen{
 	pixel_y = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bx" = (
 /obj/structure/table/steel_reinforced,
@@ -527,14 +527,14 @@
 	pixel_x = 32;
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "by" = (
 /obj/structure/hygiene/toilet,
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bz" = (
 /obj/structure/hygiene/sink{
@@ -544,26 +544,26 @@
 	pixel_y = 2
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bA" = (
 /obj/structure/mirror{
 	pixel_x = 0;
 	pixel_y = 28
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bB" = (
 /obj/structure/hygiene/shower{
 	pixel_y = 3
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bC" = (
 /obj/machinery/vending/snack{
 	name = "hacked Getmore Chocolate Corp"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bD" = (
 /obj/structure/window/reinforced,
@@ -577,7 +577,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bE" = (
 /obj/structure/grille,
@@ -587,72 +587,72 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bF" = (
 /obj/machinery/computer,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bG" = (
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bH" = (
 /obj/machinery/door/airlock/silver{
 	name = "Toilet"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bI" = (
 /obj/machinery/door/airlock/silver{
 	name = "Restroom"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bJ" = (
 /obj/structure/undies_wardrobe,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bK" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
 	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bL" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bM" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bN" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bO" = (
 /obj/machinery/door/window/westright{
 	name = "Storefront"
 	},
 /obj/structure/table/marble,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bP" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bQ" = (
 /obj/structure/grille,
@@ -660,40 +660,40 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bR" = (
 /obj/structure/bed/chair{
 	dir = 8
 	},
 /obj/effect/gibspawner/human,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bS" = (
 /obj/machinery/door/airlock/command,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bT" = (
 /obj/structure/noticeboard{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bU" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bV" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bW" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bX" = (
 /obj/machinery/door/window/westleft{
@@ -701,7 +701,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/table/marble,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bY" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_3,
@@ -709,7 +709,7 @@
 /area/tether/surfacebase/outside/wilderness)
 "bZ" = (
 /obj/machinery/computer/arcade/battle,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ca" = (
 /obj/structure/table/steel_reinforced,
@@ -717,26 +717,26 @@
 	icon_state = "plant-09";
 	name = "Esteban";
 	pixel_y = 8;
-	
+
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cb" = (
 /obj/machinery/door/airlock/double/glass{
 	dir = 2
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cc" = (
 /obj/machinery/door/window/westright,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cd" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "ce" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_1,
@@ -751,34 +751,34 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cg" = (
 /obj/item/chems/spray/cleaner,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ch" = (
 /obj/machinery/vending/sovietsoda,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ci" = (
 /obj/machinery/light,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cj" = (
 /obj/machinery/vending/boozeomat,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "ck" = (
 /obj/structure/table,
-/turf/simulated/floor/shuttle/black{
+/turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},
 /area/tether/surfacebase/crash)
 "cl" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/shuttle/black{
+/turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},
 /area/tether/surfacebase/crash)
@@ -787,25 +787,25 @@
 	dir = 1
 	},
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cn" = (
 /obj/machinery/door/window/northleft,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "co" = (
 /obj/machinery/door/window/northright,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cp" = (
 /obj/machinery/atmospherics/unary/tank/air,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cq" = (
 /obj/structure/emergency_dispenser{
 	pixel_y = 32
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cr" = (
 /obj/machinery/power/apc{
@@ -815,24 +815,24 @@
 	pixel_x = 0;
 	pixel_y = 24
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cs" = (
 /obj/machinery/fabricator/hacked{
 	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
 	name = "Unlocked Autolathe"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "ct" = (
 /obj/structure/table/steel_reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cu" = (
 /obj/machinery/door/airlock/glass/engineering{
 	name = "Engineering"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cv" = (
 /obj/structure/window/reinforced{
@@ -845,33 +845,33 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cw" = (
 /obj/structure/closet/wardrobe/captain,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cx" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/bookcase,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cy" = (
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cz" = (
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cA" = (
 /obj/structure/bed/chair/office/dark,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cB" = (
 /obj/machinery/photocopier,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cC" = (
 /obj/structure/window/reinforced{
@@ -882,15 +882,15 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cD" = (
 /obj/machinery/door/airlock/command,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cE" = (
 /obj/structure/table/woodentable,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cF" = (
 /obj/structure/window/reinforced{
@@ -901,7 +901,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cG" = (
 /obj/structure/window/reinforced{
@@ -909,7 +909,7 @@
 	},
 /obj/structure/grille,
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cH" = (
 /obj/structure/window/reinforced{
@@ -920,44 +920,44 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cI" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/captain,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cJ" = (
 /obj/structure/table/glass,
 /obj/machinery/computer3/wall_comp/telescreen/entertainment{
 	pixel_y = -35
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cK" = (
 /obj/structure/filing_cabinet/tall,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cL" = (
 /obj/machinery/light,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cM" = (
 /obj/structure/bed/chair/comfy/black{
 	dir = 1
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cN" = (
 /obj/machinery/door/airlock/external/glass,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cO" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cP" = (
 /obj/structure/window/reinforced{
@@ -968,7 +968,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cQ" = (
 /obj/structure/window/reinforced{
@@ -979,22 +979,22 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cR" = (
 /obj/machinery/vending/engivend,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cS" = (
 /obj/machinery/vending/tool,
-/turf/simulated/floor/shuttle/black/virgo3b,
+/turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "cT" = (
 /obj/structure/shuttle/engine/heater{
 	icon_state = "heater";
 	dir = 4
 	},
-/turf/simulated/floor/virgo3b_indoors{
+/turf/floor/virgo3b_indoors{
 	desc = "Quite dirty!";
 	icon = 'icons/turf/outdoors.dmi';
 	icon_state = "dirt-dark";

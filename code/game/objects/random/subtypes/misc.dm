@@ -1,13 +1,14 @@
 /obj/random/contraband
 	name = "Random Illegal Item"
 	desc = "Hot Stuff."
-	icon = 'icons/obj/items/comb.dmi'
-	icon_state = "purplecomb"
+	icon = 'icons/obj/items/grooming/comb.dmi'
+	icon_state = ICON_STATE_WORLD
+	color = COLOR_PURPLE
 	spawn_nothing_percentage = 50
 
 /obj/random/contraband/spawn_choices()
 	var/static/list/spawnable_choices = list(
-		/obj/item/haircomb =                               4,
+		/obj/item/grooming/comb =                               4,
 		/obj/item/storage/pill_bottle/painkillers =        3,
 		/obj/item/storage/pill_bottle/strong_painkillers = 1,
 		/obj/item/storage/pill_bottle/happy =              2,
@@ -172,7 +173,7 @@
 /obj/random/material //Random materials for building stuff
 	name = "random material"
 	desc = "This is a random material."
-	icon = 'icons/obj/materials.dmi'
+	icon = 'icons/obj/items/stacks/materials.dmi'
 	icon_state = "sheet"
 
 /obj/random/material/spawn_choices()
@@ -183,16 +184,16 @@
 		/obj/item/stack/material/panel/mapped/plastic/ten,
 		/obj/item/stack/material/plank/mapped/wood/ten,
 		/obj/item/stack/material/cardstock/mapped/cardboard/ten,
-		/obj/item/stack/material/reinforced/mapped/plasteel/ten,
+		/obj/item/stack/material/sheet/reinforced/mapped/plasteel/ten,
 		/obj/item/stack/material/sheet/mapped/steel/fifty,
-		/obj/item/stack/material/reinforced/mapped/fiberglass/fifty,
+		/obj/item/stack/material/sheet/reinforced/mapped/fiberglass/fifty,
 		/obj/item/stack/material/ingot/mapped/copper/fifty,
 		/obj/item/stack/material/pane/mapped/glass/fifty,
 		/obj/item/stack/material/pane/mapped/rglass/fifty,
 		/obj/item/stack/material/panel/mapped/plastic/fifty,
 		/obj/item/stack/material/plank/mapped/wood/fifty,
 		/obj/item/stack/material/cardstock/mapped/cardboard/fifty,
-		/obj/item/stack/material/reinforced/mapped/plasteel/fifty,
+		/obj/item/stack/material/sheet/reinforced/mapped/plasteel/fifty,
 		/obj/item/stack/material/rods/ten,
 		/obj/item/stack/material/rods/fifty
 	)
@@ -345,7 +346,7 @@
 		/obj/item/stack/material/ingot/mapped/platinum/ten =      8,
 		/obj/item/stack/material/aerogel/mapped/tritium/ten =     7,
 		/obj/item/stack/material/segment/mapped/mhydrogen/ten =   6,
-		/obj/item/stack/material/reinforced/mapped/plasteel/ten = 9,
+		/obj/item/stack/material/sheet/reinforced/mapped/plasteel/ten = 9,
 		/obj/item/stack/material/ingot/mapped/copper/ten =        8,
 		/obj/item/storage/box/monkeycubes =                       5,
 		/obj/item/storage/firstaid/surgery =                      4,
@@ -383,23 +384,71 @@
 /obj/random/lipstick
 	name = "random lipstick"
 	desc = "This is a tube of lipstick."
-	icon = 'icons/obj/items/lipstick.dmi'
-	icon_state = "lipstick_0"
+	icon = 'icons/obj/items/cosmetics/lipstick.dmi'
+	icon_state = "lipstick_closed"
 
 /obj/random/lipstick/spawn_choices()
 	var/static/list/spawnable_choices = list(
-		/obj/item/lipstick,
-		/obj/item/lipstick/blue,
-		/obj/item/lipstick/green,
-		/obj/item/lipstick/turquoise,
-		/obj/item/lipstick/violet,
-		/obj/item/lipstick/yellow,
-		/obj/item/lipstick/orange,
-		/obj/item/lipstick/white,
-		/obj/item/lipstick/black
+		/obj/item/cosmetics/lipstick/red,
+		/obj/item/cosmetics/lipstick/blue,
+		/obj/item/cosmetics/lipstick/green,
+		/obj/item/cosmetics/lipstick/turquoise,
+		/obj/item/cosmetics/lipstick/violet,
+		/obj/item/cosmetics/lipstick/yellow,
+		/obj/item/cosmetics/lipstick/orange,
+		/obj/item/cosmetics/lipstick/white,
+		/obj/item/cosmetics/lipstick/black
 	)
 	return spawnable_choices
 
+/obj/random/eyeshadow
+	name = "random eyeshadow"
+	desc = "This is a tube of eyeshadow."
+	icon = 'icons/obj/items/cosmetics/eyeshadow.dmi'
+	icon_state = "eyeshadow_closed"
+
+/obj/random/eyeshadow/spawn_choices()
+	var/static/list/spawnable_choices = list(
+		/obj/item/cosmetics/eyeshadow/red,
+		/obj/item/cosmetics/eyeshadow/blue,
+		/obj/item/cosmetics/eyeshadow/green,
+		/obj/item/cosmetics/eyeshadow/turquoise,
+		/obj/item/cosmetics/eyeshadow/violet,
+		/obj/item/cosmetics/eyeshadow/yellow,
+		/obj/item/cosmetics/eyeshadow/orange,
+		/obj/item/cosmetics/eyeshadow/white,
+		/obj/item/cosmetics/eyeshadow/black
+	)
+	return spawnable_choices
+
+/obj/random/makeup
+	name = "random makeup"
+	desc = "This is a tube of makeup."
+	icon = 'icons/obj/items/cosmetics/lipstick.dmi'
+	icon_state = "lipstick_closed"
+
+/obj/random/makeup/spawn_choices()
+	var/static/list/spawnable_choices = list(
+		/obj/item/cosmetics/lipstick/red,
+		/obj/item/cosmetics/lipstick/blue,
+		/obj/item/cosmetics/lipstick/green,
+		/obj/item/cosmetics/lipstick/turquoise,
+		/obj/item/cosmetics/lipstick/violet,
+		/obj/item/cosmetics/lipstick/yellow,
+		/obj/item/cosmetics/lipstick/orange,
+		/obj/item/cosmetics/lipstick/white,
+		/obj/item/cosmetics/lipstick/black,
+		/obj/item/cosmetics/eyeshadow/red,
+		/obj/item/cosmetics/eyeshadow/blue,
+		/obj/item/cosmetics/eyeshadow/green,
+		/obj/item/cosmetics/eyeshadow/turquoise,
+		/obj/item/cosmetics/eyeshadow/violet,
+		/obj/item/cosmetics/eyeshadow/yellow,
+		/obj/item/cosmetics/eyeshadow/orange,
+		/obj/item/cosmetics/eyeshadow/white,
+		/obj/item/cosmetics/eyeshadow/black
+	)
+	return spawnable_choices
 
 /obj/random/crayon
 	name = "random crayon"

@@ -6,113 +6,113 @@
 /turf/template_noop,
 /area/submap/virgo2/Drugd)
 "c" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Drugd)
 "e" = (
 /obj/machinery/door/airlock,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "f" = (
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "g" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "h" = (
 /obj/random/trash,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "i" = (
 /obj/structure/closet/cabinet,
 /obj/random/lipstick,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "j" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
 /obj/structure/curtain/open/bed,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "k" = (
 /obj/structure/table/woodentable,
 /obj/item/chems/pill/happy{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "l" = (
 /obj/tether_away_spawner/aerostat_inside,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "m" = (
 /obj/structure/curtain/black,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "n" = (
 /obj/random/trash,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "o" = (
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "p" = (
 /obj/item/remains/mouse,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "q" = (
 /obj/structure/closet/cabinet,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "r" = (
 /obj/structure/table/woodentable,
 /obj/item/chems/pill/methylphenidate{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "s" = (
 /obj/structure/bed/chair/comfy/beige{
 	icon_state = "armchair_preview";
 	dir = 1
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "t" = (
 /obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "u" = (
 /obj/random/junk,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "v" = (
 /obj/structure/closet/cabinet,
 /obj/item/contraband/poster,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "w" = (
 /obj/structure/bed/chair/comfy/beige,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "x" = (
 /obj/structure/table/woodentable,
 /obj/item/flashlight/lamp,
 /obj/item/chems/syringe/drugs,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "y" = (
 /obj/structure/bed/chair/comfy/beige,
 /obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "z" = (
 /obj/structure/loot_pile/maint/junk,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "A" = (
 /obj/item/chems/pill/citalopram{
@@ -121,116 +121,116 @@
 /obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "B" = (
 /obj/structure/table,
 /obj/item/storage/pill_bottle/happy,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "C" = (
 /obj/structure/table,
 /obj/item/stack/medical/splint,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "D" = (
 /obj/structure/table,
 /obj/item/chems/pill/citalopram,
 /obj/item/chems/pill/citalopram,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "E" = (
 /obj/structure/table,
 /obj/item/chems/pill/strong_painkillers,
 /obj/item/chems/pill/strong_painkillers,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "F" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/accessory/jacket,
 /obj/item/butterfly/switchblade,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "G" = (
 /obj/item/chems/pill/zoom{
 	name = "pill"
 	},
 /obj/random/trash,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "H" = (
 /obj/item/chems/pill/zoom{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "I" = (
 /obj/structure/loot_pile/maint/boxfort,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "J" = (
 /obj/structure/table,
 /obj/item/scalpel,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "K" = (
 /obj/item/wheelchair,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "L" = (
 /obj/structure/table,
 /obj/random/firstaid,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "M" = (
 /obj/structure/loot_pile/maint/junk,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "N" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table,
-/turf/simulated/floor/tiled,
+/turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "O" = (
 /obj/structure/table,
 /obj/item/chems/pill/zoom,
 /obj/item/chems/pill/zoom,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "P" = (
 /obj/structure/table/woodentable,
 /obj/item/chems/pill/strong_painkillers{
 	name = "pill"
 	},
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "R" = (
 /obj/structure/girder,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "S" = (
 /obj/item/shard,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "T" = (
 /obj/structure/table/woodentable,
 /obj/item/flashlight/lamp,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "U" = (
 /obj/structure/table/woodentable,
 /obj/item/chems/syringe/drugs,
-/turf/simulated/floor/carpet,
+/turf/floor/carpet,
 /area/submap/virgo2/Drugd)
 "V" = (
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 "W" = (
-/turf/simulated/wall/virgo2,
+/turf/wall/virgo2,
 /area/submap/virgo2/Drugd)
 "X" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor,
+/turf/floor,
 /area/submap/virgo2/Drugd)
 
 (1,1,1) = {"

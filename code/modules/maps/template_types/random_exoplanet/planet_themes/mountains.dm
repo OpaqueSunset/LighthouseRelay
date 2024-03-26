@@ -12,10 +12,11 @@
 /datum/random_map/automata/cave_system/mountains
 	iterations = 2
 	descriptor = "space mountains"
-	wall_type =  /turf/exterior/wall
+	wall_type =  /turf/wall/natural
 	cell_threshold = 6
 	target_turf_type = null
 	floor_type = null
+	change_area = TRUE
 
 /datum/random_map/automata/cave_system/mountains/New(var/tx, var/ty, var/tz, var/tlx, var/tly, var/do_not_apply, var/do_not_announce, var/used_area)
 	var/datum/level_data/LD = SSmapping.levels_by_z[tz]
@@ -25,6 +26,7 @@
 		floor_type = SSmapping.base_turf_by_z[tz] || LD.base_turf || world.turf
 	..()
 
-/datum/random_map/automata/cave_system/mountains/get_additional_spawns(value, var/turf/exterior/wall/T)
-	if(istype(T) && use_area)
-		T.floor_type = use_area.base_turf
+/datum/random_map/automata/cave_system/mountains/get_additional_spawns(value, turf/T)
+	if(istype(T, /turf/wall/natural) && use_area)
+		var/turf/wall/natural/N = T
+		N.floor_type = use_area.base_turf

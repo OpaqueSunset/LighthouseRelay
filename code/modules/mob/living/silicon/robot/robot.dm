@@ -1,73 +1,64 @@
-#define CYBORG_POWER_USAGE_MULTIPLIER 2.5 // Multiplier for amount of power cyborgs use.
+/// Multiplier for amount of power cyborgs use.
+#define CYBORG_POWER_USAGE_MULTIPLIER 2.5
 
 /mob/living/silicon/robot
 	name = "robot"
 	real_name = "robot"
 	icon = 'icons/mob/robots/robot.dmi'
 	icon_state = ICON_STATE_WORLD
-	mob_default_max_health = 300
+	max_health = 300
 	mob_sort_value = 4
-
 	z_flags = ZMM_MANGLE_PLANES
-
 	mob_bump_flag = ROBOT
 	mob_swap_flags = ROBOT|MONKEY|SLIME|SIMPLE_ANIMAL
-	mob_push_flags = ~HEAVY //trundle trundle
+	mob_push_flags = ~HEAVY
 	skillset = /datum/skillset/silicon/robot
+	silicon_camera = /obj/item/camera/siliconcam/robot_camera
+	silicon_radio = /obj/item/radio/borg
+	light_wedge = LIGHT_WIDE
 
 	var/panel_icon = 'icons/mob/robots/_panels.dmi'
-
-	var/lights_on = 0 // Is our integrated light on?
+	 /// Is our integrated light on?
+	var/lights_on = 0
 	var/used_power_this_tick = 0
 	var/power_efficiency = 1
 	var/sight_mode = 0
 	var/custom_name = ""
-	var/crisis //Admin-settable for combat module use.
+	/// Admin-settable for combat module use.
+	var/crisis
 	var/crisis_override = 0
 	var/integrated_light_power = 0.6
 	var/integrated_light_range = 4
 	var/datum/wires/robot/wires
 	var/module_category = ROBOT_MODULE_TYPE_GROUNDED
 	var/dismantle_type = /obj/item/robot_parts/robot_suit
-
-	var/icon_selected = TRUE //If icon selection has been completed yet
-
-//Hud stuff
-
-	var/obj/screen/robot_module_one/inv1
-	var/obj/screen/robot_module_two/inv2
-	var/obj/screen/robot_module_three/inv3
+	/// If icon selection has been completed yet
+	var/icon_selected = TRUE
+	/// Hud stuff
+	var/obj/screen/robot_module/one/inv1
+	var/obj/screen/robot_module/two/inv2
+	var/obj/screen/robot_module/three/inv3
 	var/obj/screen/robot_drop_grab/ui_drop_grab
-
-	var/shown_robot_modules = 0 //Used to determine whether they have the module menu shown or not
+	/// Used to determine whether they have the module menu shown or not
+	var/shown_robot_modules = 0
 	var/obj/screen/robot_modules_background/robot_modules_background
-
-//3 Modules can be activated at any one time.
+	/// 3 Modules can be activated at any one time.
 	var/obj/item/robot_module/module = null
 	var/obj/item/module_active
 	var/obj/item/module_state_1
 	var/obj/item/module_state_2
 	var/obj/item/module_state_3
-
-	silicon_camera = /obj/item/camera/siliconcam/robot_camera
-	silicon_radio = /obj/item/radio/borg
-
 	var/mob/living/silicon/ai/connected_ai = null
 	var/obj/item/cell/cell = /obj/item/cell/high
-
 	var/cell_emp_mult = 2.5
-
-	// Components are basically robot organs.
+	/// Components are basically robot organs.
 	var/list/components = list()
-
 	var/obj/item/organ/internal/central_processor
-
 	var/opened = 0
 	var/emagged = 0
 	var/wiresexposed = 0
 	var/locked = 1
 	var/has_power = 1
-
 	var/spawn_sound = 'sound/voice/liveagain.ogg'
 	var/pitch_toggle = 1
 	var/list/req_access = list(access_robotics)
@@ -77,21 +68,24 @@
 	var/killswitch_time = 60
 	var/weapon_lock = 0
 	var/weaponlock_time = 120
-	var/lawupdate = 1 //Cyborgs will sync their laws with their AI by default
-	var/lockcharge //If a robot is locked down
-	var/speed = 0 //Cause sec borgs gotta go fast //No they dont!
-	var/scrambledcodes = 0 // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
-	var/tracking_entities = 0 //The number of known entities currently accessing the internal camera
+	/// Cyborgs will sync their laws with their AI by default
+	var/lawupdate = 1
+	/// If a robot is locked down
+	var/lockcharge
+	/// Cause sec borgs gotta go fast //No they dont!
+	var/speed = 0
+	/// Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
+	var/scrambledcodes = 0
+	/// The number of known entities currently accessing the internal camera
+	var/tracking_entities = 0
 	var/braintype = "Cyborg"
-	var/intenselight = 0	// Whether cyborg's integrated light was upgraded
+	/// Whether cyborg's integrated light was upgraded
+	var/intenselight = 0
 	var/vtec = FALSE
-
 	var/list/robot_verbs_default = list(
 		/mob/living/silicon/robot/proc/sensor_mode,
 		/mob/living/silicon/robot/proc/robot_checklaws
 	)
-
-	light_wedge = LIGHT_WIDE
 
 /mob/living/silicon/robot/Initialize()
 	. = ..()
@@ -480,13 +474,13 @@
 			to_chat(user, "<span class='warning'>You lack the reach to be able to repair yourself.</span>")
 			return
 
-		if (!getBruteLoss())
+		if (!get_damage(BRUTE))
 			to_chat(user, "Nothing to fix here!")
 			return
 		var/obj/item/weldingtool/WT = W
 		if (WT.weld(0))
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			adjustBruteLoss(-30)
+			heal_damage(BRUTE, 30)
 			add_fingerprint(user)
 			user.visible_message(SPAN_NOTICE("\The [user] has fixed some of the dents on \the [src]!"))
 		else
@@ -494,13 +488,13 @@
 			return
 
 	else if(istype(W, /obj/item/stack/cable_coil) && (wiresexposed || isdrone(src)))
-		if (!getFireLoss())
+		if (!get_damage(BURN))
 			to_chat(user, "Nothing to fix here!")
 			return
 		var/obj/item/stack/cable_coil/coil = W
 		if (coil.use(1))
 			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-			adjustFireLoss(-30)
+			heal_damage(BURN, 30)
 			user.visible_message(SPAN_NOTICE("\The [user] has fixed some of the burnt wires on \the [src]!"))
 
 	else if(IS_CROWBAR(W) && user.a_intent != I_HURT)	// crowbar means open or close the cover - we all know what a crowbar is by now
@@ -645,8 +639,8 @@
 		return ..()
 
 /mob/living/silicon/robot/proc/handle_selfinsert(obj/item/W, mob/user)
-	if ((user == src) && istype(get_active_hand(),/obj/item/gripper))
-		var/obj/item/gripper/H = get_active_hand()
+	if ((user == src) && istype(get_active_held_item(),/obj/item/gripper))
+		var/obj/item/gripper/H = get_active_held_item()
 		if (W.loc == H) //if this triggers something has gone very wrong, and it's safest to abort
 			return
 		else if (H.wrapped == W)
@@ -829,49 +823,18 @@
 /mob/living/silicon/robot/proc/radio_menu()
 	silicon_radio.interact(src)//Just use the radio's Topic() instead of bullshit special-snowflake code
 
-
 /mob/living/silicon/robot/Move(a, b, flag)
-
 	. = ..()
-
-	if(module)
-		if(module.type == /obj/item/robot_module/janitor)
-			var/turf/tile = loc
-			if(isturf(tile))
-				tile.clean()
-				if (istype(tile, /turf/simulated))
-					var/turf/simulated/S = tile
-					S.dirt = 0
-				for(var/A in tile)
-					if(istype(A, /obj/effect))
-						if(istype(A, /obj/effect/rune) || istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/overlay))
-							qdel(A)
-					else if(istype(A, /obj/item))
-						var/obj/item/cleaned_item = A
-						cleaned_item.clean()
-					else if(ishuman(A))
-						var/mob/living/carbon/human/cleaned_human = A
-						if(cleaned_human.lying)
-							var/obj/item/head = cleaned_human.get_equipped_item(slot_head_str)
-							if(head)
-								head.clean()
-							var/obj/item/suit = cleaned_human.get_equipped_item(slot_wear_suit_str)
-							if(suit)
-								suit.clean()
-							else
-								var/obj/item/uniform = cleaned_human.get_equipped_item(slot_w_uniform_str)
-								if(uniform)
-									uniform.clean()
-							var/obj/item/shoes = cleaned_human.get_equipped_item(slot_shoes_str)
-							if(shoes)
-								shoes.clean()
-							cleaned_human.clean()
-							to_chat(cleaned_human, SPAN_WARNING("\The [src] cleans your face!"))
-		return
-
-/mob/living/silicon/robot/proc/self_destruct()
-	gib()
-	return
+	if(.)
+		if(module && isturf(loc))
+			var/obj/item/storage/ore/orebag = locate() in list(module_state_1, module_state_2, module_state_3)
+			if(orebag)
+				loc.attackby(orebag, src)
+			if(istype(module, /obj/item/robot_module/janitor))
+				loc.clean()
+		if(client)
+			var/turf/above = GetAbove(src)
+			up_hint.icon_state = "uphint[!!(above && TURF_IS_MIMICKING(above))]"
 
 /mob/living/silicon/robot/proc/UnlinkSelf()
 	disconnect_from_ai()
@@ -913,7 +876,7 @@
 	set category = "IC"
 	set src = usr
 
-	var/obj/item/W = get_active_hand()
+	var/obj/item/W = get_active_held_item()
 	if (W)
 		W.attack_self(src)
 
@@ -1131,3 +1094,30 @@
 /mob/living/silicon/robot/try_breathe()
 	return FALSE
 
+/mob/living/silicon/robot/get_default_emotes()
+	var/static/list/default_emotes = list(
+		/decl/emote/audible/clap,
+		/decl/emote/visible/bow,
+		/decl/emote/visible/salute,
+		/decl/emote/visible/flap,
+		/decl/emote/visible/aflap,
+		/decl/emote/visible/twitch,
+		/decl/emote/visible/twitch_v,
+		/decl/emote/visible/dance,
+		/decl/emote/visible/nod,
+		/decl/emote/visible/shake,
+		/decl/emote/visible/glare,
+		/decl/emote/visible/look,
+		/decl/emote/visible/stare,
+		/decl/emote/visible/deathgasp_robot,
+		/decl/emote/visible/spin,
+		/decl/emote/visible/sidestep,
+		/decl/emote/audible/synth,
+		/decl/emote/audible/synth/ping,
+		/decl/emote/audible/synth/buzz,
+		/decl/emote/audible/synth/confirm,
+		/decl/emote/audible/synth/deny,
+		/decl/emote/audible/synth/security,
+		/decl/emote/audible/synth/security/halt
+	)
+	return default_emotes

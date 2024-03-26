@@ -66,16 +66,16 @@
 		// everything with adding the tail organ will be handled in its Initialize
 	tail_organ.tail_icon = tail_style.icon
 	tail_organ.tail = tail_style.icon_state
-	if(tail_style.do_colouration)
-		tail_organ.tail_colour = tail_color
-		tail_organ.tail_hair_colour = tail_color_extra
-		tail_organ.tail_blend = tail_style.color_blend
-		tail_organ.tail_hair_blend = tail_style.color_blend
-	else
+	if(isnull(tail_style.color_blend))
 		tail_organ.tail_colour = null
 		tail_organ.tail_hair_colour = null
 		tail_organ.tail_blend = null
 		tail_organ.tail_hair_blend = null
+	else
+		tail_organ.tail_colour = tail_color
+		tail_organ.tail_hair_colour = tail_color_extra
+		tail_organ.tail_blend = tail_style.color_blend
+		tail_organ.tail_hair_blend = tail_style.color_blend
 	if(tail_style.extra_overlay)
 		tail_organ.tail_hair = tail_style.extra_overlay
 	else

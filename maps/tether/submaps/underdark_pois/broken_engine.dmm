@@ -3,44 +3,44 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "b" = (
-/turf/simulated/wall,
+/turf/wall,
 /area/mine/explored/underdark)
 "c" = (
 /obj/machinery/door/airlock/glass/engineering,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "d" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "e" = (
 /obj/structure/sign/warning/radioactive,
-/turf/simulated/wall,
+/turf/wall,
 /area/mine/explored/underdark)
 "f" = (
 /obj/structure/sign/warning/radioactive,
 /obj/effect/map_effect/interval/sound_emitter/geiger/high,
-/turf/simulated/wall,
+/turf/wall,
 /area/mine/explored/underdark)
 "g" = (
 /obj/item/geiger,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "h" = (
 /obj/effect/map_effect/radiation_emitter/strong,
 /obj/item/poi/brokenoldreactor,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "i" = (
 /obj/effect/map_effect/interval/sound_emitter/geiger/ext,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "n" = (
 /obj/random/tool/power,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "r" = (
 /obj/tether_away_spawner/underdark_drone_swarm,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

@@ -68,7 +68,16 @@
 		ARMOR_RAD = ARMOR_RAD_MINOR
 		)
 	max_pressure_protection = ENG_VOIDSUIT_MAX_PRESSURE
-	allowed = list(/obj/item/flashlight,/obj/item/tank,/obj/item/stack/flag,/obj/item/suit_cooling_unit,/obj/item/storage/ore,/obj/item/t_scanner,/obj/item/pickaxe, /obj/item/rcd)
+	allowed = list(
+		/obj/item/flashlight,
+		/obj/item/tank,
+		/obj/item/stack/flag,
+		/obj/item/suit_cooling_unit,
+		/obj/item/storage/ore,
+		/obj/item/t_scanner,
+		/obj/item/tool,
+		/obj/item/rcd
+	)
 
 /obj/item/clothing/suit/space/void/mining/prepared
 	helmet = /obj/item/clothing/head/helmet/space/void/mining
@@ -139,7 +148,7 @@
 
 //Atmospherics
 /obj/item/clothing/head/helmet/space/void/atmos
-	desc = "A flame-retardant voidsuit helmet with a self-repairing visor and light anti-radiation shielding."
+	desc = "A flame-resistant voidsuit helmet with a self-repairing visor and light anti-radiation shielding."
 	name = "atmospherics voidsuit helmet"
 	icon = 'icons/clothing/spacesuit/void/atmos/helmet.dmi'
 	armor = list(

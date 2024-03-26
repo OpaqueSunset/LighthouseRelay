@@ -5,15 +5,20 @@
 /  =--------------------=  /
 ////////////////////////////
 */
+/decl/sprite_accessory_category/ears
+	name                  = "Ears"
+	base_accessory_type   = /decl/sprite_accessory/ears
+	default_accessory     = /decl/sprite_accessory/ears/none
+	uid                   = "acc_cat_ears"
 
 /decl/sprite_accessory/ears
 	abstract_type = /decl/sprite_accessory/ears
 	name = "You should not see this..."
 	icon = 'mods/content/genemodding/icons/mob/ears.dmi'
-	do_colouration = TRUE
 	color_blend = ICON_MULTIPLY
 	hidden_by_gear_slot = slot_head_str
 	hidden_by_gear_flag = BLOCK_HEAD_HAIR
+	accessory_category = SAC_EARS
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
 /decl/sprite_accessory/ears/get_cached_accessory_icon(obj/item/organ/external/organ, color = COLOR_WHITE, color_extra = null)
@@ -23,7 +28,7 @@
 	LAZYINITLIST(cached_icons[organ.bodytype])
 	LAZYINITLIST(cached_icons[organ.bodytype][organ.organ_tag])
 	var/key = color
-	if(extra_overlay && do_colouration && color_extra)
+	if(extra_overlay && !isnull(color_blend) && color_extra)
 		ASSERT(istext(color_extra) && (length(color_extra) == 7 || length(color_extra) == 9))
 		key = "[key][color_extra]"
 	var/icon/accessory_icon = cached_icons[organ.bodytype][organ.organ_tag][key]
@@ -34,20 +39,26 @@
 			return null
 		if(mask_to_bodypart)
 			accessory_icon.Blend(get_limb_mask_for(organ.bodytype, organ.organ_tag), ICON_MULTIPLY)
-		if(do_colouration && color)
+		if(!isnull(color) && !isnull(color_blend))
 			accessory_icon.Blend(color, color_blend)
 		if(extra_overlay)
 			var/icon/overlay = icon(icon, extra_overlay)
-			if(do_colouration && color_extra)
+			if(!isnull(color_extra) && !isnull(color_blend))
 				overlay.Blend(color_extra, color_blend)
 			accessory_icon.Blend(overlay, ICON_OVERLAY)
 		cached_icons[organ.bodytype][organ.organ_tag][key] = accessory_icon
 	return accessory_icon
 
+/decl/sprite_accessory/ears/none
+	name           = "Normal Ears"
+	icon_state     = "nothing"
+	draw_accessory = FALSE
+	grooming_flags = FALSE
+	uid            = "acc_ears_nothing"
 /decl/sprite_accessory/ears/bee
 	name = "bee antennae"
 	icon_state = "bee"
-	do_colouration = FALSE
+	color_blend = null
 	uid = "acc_ears_bee"
 
 /decl/sprite_accessory/ears/antennae
@@ -115,13 +126,13 @@
 /decl/sprite_accessory/ears/foxears
 	name = "highlander zorren ears"
 	icon_state = "foxears"
-	do_colouration = FALSE
+	color_blend = null
 	uid = "acc_ears_zorren_fox"
 
 /decl/sprite_accessory/ears/fenears
 	name = "flatland zorren ears"
 	icon_state = "fenears"
-	do_colouration = FALSE
+	color_blend = null
 	uid = "acc_ears_zorren_fennec"
 
 /decl/sprite_accessory/ears/tajplain
@@ -223,7 +234,7 @@
 /decl/sprite_accessory/ears/cow
 	name = "cow, horns"
 	icon_state = "cow"
-	do_colouration = FALSE
+	color_blend = null
 	uid = "acc_ears_cow_horns"
 
 /decl/sprite_accessory/ears/cowc

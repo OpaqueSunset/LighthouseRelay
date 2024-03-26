@@ -19,7 +19,7 @@
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "f" = (
-/turf/simulated/wall/sandstonediamond,
+/turf/wall/sandstonediamond,
 /area/tether/surfacebase/temple)
 "g" = (
 /turf/exterior/dirt,

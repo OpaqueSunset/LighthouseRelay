@@ -156,8 +156,8 @@
 	ret = 0; \
 	if (T.zone) { \
 		for (var/_gzn_dir in gzn_check) { \
-			var/turf/simulated/other = get_step(T, _gzn_dir); \
-			if (istype(other) && other.zone == T.zone) { \
+			var/turf/other = get_step(T, _gzn_dir); \
+			if (istype(other) && other.simulated && other.zone == T.zone) { \
 				var/block; \
 				ATMOS_CANPASS_TURF(block, other, T); \
 				if (!(block & AIR_BLOCKED)) { \
@@ -190,8 +190,8 @@
 		//for each pair of "adjacent" cardinals (e.g. NORTH and WEST, but not NORTH and SOUTH)
 		if((dir & check_dirs) == dir)
 			//check that they are connected by the corner turf
-			var/turf/simulated/T = get_step(src, dir)
-			if (!istype(T))
+			var/turf/T = get_step(src, dir)
+			if (!istype(T) || !T.simulated)
 				. &= ~dir
 				continue
 			var/connected_dirs
@@ -258,12 +258,15 @@
 	if(!include_heat_sources)
 		return gas
 
-	var/initial_temperature = weather ? weather.adjust_temperature(gas.temperature) : gas.temperature
+	if(weather)
+		gas.temperature = weather.adjust_temperature(gas.temperature)
+	var/initial_temperature = gas.temperature
 	if(length(affecting_heat_sources))
 		for(var/obj/structure/fire_source/heat_source as anything in affecting_heat_sources)
 			gas.temperature = gas.temperature + heat_source.exterior_temperature / max(1, get_dist(src, get_turf(heat_source)))
 			if(abs(gas.temperature - initial_temperature) >= 100)
 				break
+	gas.update_values()
 	return gas
 
 /turf/proc/c_copy_air()

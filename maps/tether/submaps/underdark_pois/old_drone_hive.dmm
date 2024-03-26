@@ -6,11 +6,11 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "c" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "d" = (
 /obj/item/remains/tajaran,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "e" = (
 /obj/item/remains/tajaran,
@@ -29,19 +29,19 @@
 /turf/exterior/barren,
 /area/mine/explored/underdark)
 "i" = (
-/turf/simulated/wall,
+/turf/wall,
 /area/mine/explored/underdark)
 "j" = (
 /obj/random/underdark,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "k" = (
 /obj/structure/old_roboprinter,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "l" = (
 /obj/tether_away_spawner/underdark_drone_swarm,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 "m" = (
 /obj/structure/barricade,
@@ -49,7 +49,7 @@
 /area/mine/explored/underdark)
 "n" = (
 /obj/machinery/door/airlock/double/glass,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

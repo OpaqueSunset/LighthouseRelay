@@ -3,151 +3,151 @@
 /turf/space,
 /area/space)
 "ab" = (
-/turf/simulated/floor/shuttle/alienplating/vacuum,
+/turf/floor/shuttle/alienplating/vacuum,
 /area/tether_away/alienship)
 "ac" = (
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ad" = (
 /obj/structure/closet/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "ae" = (
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "af" = (
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ag" = (
-/turf/simulated/shuttle/wall/alien/hard_corner,
+/turf/wall/shuttle/alien/hard_corner,
 /area/tether_away/alienship)
 "ah" = (
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/shuttle/excursion/away_alienship)
 "ai" = (
 /obj/machinery/door/airlock/alien/locked,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aj" = (
 /obj/away_mission_init/alienship/door_w2e,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ak" = (
 /obj/away_mission_init/alienship/door_e2w,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "al" = (
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "am" = (
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "an" = (
 /obj/away_mission_init/alienship/door_n2s,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ao" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ap" = (
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aq" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_n2s,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "ar" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "as" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "at" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "au" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "av" = (
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aw" = (
 /obj/structure/bed/alien,
 /obj/away_mission_init/alienship/start_w2e,
 /obj/away_mission_init/alienship/start_n2s,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ay" = (
 /obj/structure/bed/alien,
 /obj/away_mission_init/alienship/start_n2s,
 /obj/away_mission_init/alienship/start_e2w,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "az" = (
 /obj/structure/bed/alien,
 /obj/away_mission_init/alienship/start_w2e,
 /obj/away_mission_init/alienship/start_s2n,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aA" = (
 /obj/structure/bed/alien,
 /obj/away_mission_init/alienship/start_e2w,
 /obj/away_mission_init/alienship/start_s2n,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aB" = (
 /obj/item/cell/device/weapon/recharge/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aC" = (
 /obj/item/gps,
 /obj/structure/table/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aD" = (
 /obj/structure/table/alien,
 /obj/item/cell/device/weapon/recharge/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aE" = (
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship/equip_dump)
 "aF" = (
 /obj/structure/closet/crate,
 /obj/item/multitool,
 /obj/item/wrench,
 /obj/item/radio,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aG" = (
 /obj/structure/closet/crate,
 /obj/item/crowbar,
 /obj/item/weldingtool,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aH" = (
 /obj/structure/closet/crate,
@@ -156,12 +156,12 @@
 /obj/item/wirecutters,
 /obj/item/weldingtool,
 /obj/item/storage/firstaid,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aI" = (
 /obj/structure/table/alien,
 /obj/item/storage/belt/utility/alien/full,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aJ" = (
 /obj/structure/closet/crate,
@@ -169,13 +169,13 @@
 /obj/item/screwdriver,
 /obj/item/wirecutters,
 /obj/item/wrench,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aK" = (
 /obj/structure/closet/crate,
 /obj/item/crowbar/power,
 /obj/item/wrench,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aL" = (
 /obj/structure/closet/crate,
@@ -185,14 +185,14 @@
 /obj/item/storage/firstaid/regular,
 /obj/item/chems/food/liquidfood,
 /obj/item/chems/food/liquidfood,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aM" = (
 /obj/structure/closet/crate,
 /obj/item/crowbar/red,
 /obj/item/screwdriver/power,
 /obj/item/wirecutters,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aN" = (
 /obj/structure/closet/crate,
@@ -200,20 +200,20 @@
 /obj/item/wirecutters,
 /obj/item/radio,
 /obj/item/weldingtool,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aO" = (
 /obj/item/radio,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aP" = (
 /obj/item/remains/xeno,
 /obj/item/radio,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aQ" = (
 /obj/item/radio,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aR" = (
 /obj/structure/table/alien,
@@ -221,108 +221,108 @@
 	desc = "There's a permanent colored stain around the inside, as if it held a liquid for a very, very long time.";
 	name = "ancient pint glass"
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aS" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "aT" = (
 /obj/structure/bed/alien,
 /obj/item/clothing/under/explorer,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aU" = (
 /obj/item/clothing/under/explorer,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aV" = (
 /obj/item/clothing/under/explorer,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aW" = (
 /obj/item/remains/xeno,
 /obj/item/clothing/under/explorer,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aX" = (
 /obj/structure/closet/alien,
 /obj/item/chems/hypospray/autoinjector/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aY" = (
 /obj/structure/table/alien,
 /obj/item/chems/hypospray/autoinjector/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "bJ" = (
 /obj/structure/loot_pile/surface/alien/engineering,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bK" = (
 /obj/structure/prop/alien/dispenser,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bM" = (
 /obj/structure/prop/alien/power,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bN" = (
 /obj/machinery/porta_turret/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "bO" = (
 /obj/structure/prop/alien/computer,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bP" = (
 /obj/structure/prop/alien/computer{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bQ" = (
 /obj/structure/prop/alien/computer{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bR" = (
 /obj/structure/prop/alien/computer{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bS" = (
 /obj/structure/table/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "bT" = (
 /obj/item/remains/xeno,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bU" = (
 /obj/item/remains/xeno,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "bV" = (
 /obj/structure/closet/alien,
 /obj/item/prop/alien/junk,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "bX" = (
 /obj/structure/loot_pile/surface/alien/medical,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bY" = (
 /obj/structure/loot_pile/surface/alien/security,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "bZ" = (
 /obj/structure/table/alien,
 /obj/item/clothing/accessory/medal/dungeon/alien_ufo,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "ca" = (
 /obj/structure/table/alien,
@@ -330,25 +330,25 @@
 	icon_state = "alienpaper_words";
 	info = "\[i]This tablet has a large collection of symbols that you've never seen before outside this ship. You have no hope of figuring out what any of the mean...\[/i]"
 	},
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cb" = (
 /obj/item/remains/robot,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cc" = (
 /obj/structure/table/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cd" = (
 /obj/structure/table/alien,
 /obj/item/FixOVein/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ce" = (
 /obj/structure/table/alien,
 /obj/item/bone_clamp/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cf" = (
 /obj/structure/table/alien,
@@ -356,219 +356,219 @@
 	icon_state = "alienpaper_words";
 	info = "\[i]This tablet has a large collection of symbols that you've never seen before outside this ship. You have no hope of figuring out what any of the mean...\[/i]"
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cg" = (
 /obj/structure/table/alien,
 /obj/item/circular_saw/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ch" = (
 /obj/item/remains/robot,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "ci" = (
 /obj/item/remains/xeno,
 /obj/structure/table/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cj" = (
 /obj/structure/closet/alien,
 /obj/item/paper/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "ck" = (
 /obj/structure/prop/alien/computer/camera,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cl" = (
 /obj/structure/prop/alien/computer/camera{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cm" = (
 /obj/structure/prop/alien/computer/camera{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cn" = (
 /obj/structure/prop/alien/computer/camera{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "co" = (
 /obj/structure/prop/alien/pod/open,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cp" = (
 /obj/structure/prop/alien/pod/open,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cq" = (
 /obj/structure/prop/alien/pod,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cr" = (
 /obj/structure/bed/alien,
 /obj/item/remains/xeno,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cs" = (
 /obj/structure/bed/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cu" = (
 /obj/structure/table/alien,
 /obj/item/multitool/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cv" = (
 /obj/structure/table/alien,
 /obj/item/prop/alien/junk,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cw" = (
 /obj/structure/table/alien,
 /obj/item/stack/cable_coil/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cx" = (
 /obj/structure/table/alien,
 /obj/item/hemostat/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cy" = (
 /obj/structure/table/alien,
 /obj/item/storage/belt/utility/alien/full,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cz" = (
 /obj/item/clothing/head/helmet/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cA" = (
 /obj/item/remains/lizard,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cB" = (
 /obj/structure/table/alien,
 /obj/item/clothing/suit/armor/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cC" = (
 /obj/structure/table/alien,
 /obj/item/cautery/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cD" = (
 /obj/item/prop/alien/junk,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cE" = (
 /obj/structure/table/alien,
 /obj/item/hemostat/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cF" = (
 /obj/structure/closet/alien,
 /obj/item/gun/energy/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cG" = (
 /obj/structure/table/alien,
 /obj/item/bone_clamp/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cH" = (
 /obj/item/multitool/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cI" = (
 /obj/item/cell/device/weapon/recharge/alien,
 /obj/structure/table/alien,
 /obj/item/weldingtool/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cJ" = (
 /obj/item/cell/device/weapon/recharge/alien,
 /obj/structure/table/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cL" = (
 /obj/structure/table/alien,
 /obj/item/crowbar/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cM" = (
 /obj/item/screwdriver/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cO" = (
 /obj/structure/table/alien,
 /obj/item/scalpel/alien,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cP" = (
 /obj/structure/table/alien,
 /obj/item/retractor/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cQ" = (
 /obj/structure/table/alien,
 /obj/item/gps,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cR" = (
 /obj/item/gps,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cS" = (
 /obj/structure/table/alien,
 /obj/item/gun/energy/alien,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "cT" = (
 /obj/item/gps,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "da" = (
 /obj/structure/table/alien,
 /obj/item/stack/cable_coil/purple,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "gv" = (
 /obj/item/trash/liquidfood,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "gG" = (
 /obj/item/chems/food/liquidfood,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "nr" = (
 /obj/item/storage/firstaid,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "us" = (
 /obj/away_mission_init/alienship/door_w2e,
 /obj/away_mission_init/alienship/door_e2w,
 /obj/away_mission_init/alienship/door_s2n,
 /obj/away_mission_init/alienship/door_n2s,
-/turf/simulated/shuttle/wall/alien,
+/turf/wall/shuttle/alien,
 /area/tether_away/alienship)
 "uA" = (
 /obj/item/trash/liquidfood,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "Rx" = (
 /obj/item/chems/food/liquidfood,
-/turf/simulated/floor/shuttle/alien,
+/turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "YP" = (
 /obj/machinery/porta_turret/alien/ion,
-/turf/simulated/floor/shuttle/alienplating,
+/turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 
 (1,1,1) = {"

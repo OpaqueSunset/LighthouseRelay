@@ -125,7 +125,7 @@
 		if(H.stat != UNCONSCIOUS)
 			if(H.ticks_since_last_successful_breath >= 10)
 				H.ticks_since_last_successful_breath = max(10, H.ticks_since_last_successful_breath-10)
-			H.adjustOxyLoss(2)
+			H.take_damage(OXY, 2)
 			SET_STATUS_MAX(H, STAT_WEAK, 10)
 		M.add_chemical_effect(CE_NOPULSE, 1)
 
@@ -152,7 +152,7 @@
 /decl/material/liquid/zombiepowder/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
 	M.status_flags |= FAKEDEATH
-	M.adjustOxyLoss(3 * removed)
+	M.take_damage(OXY, 3 * removed)
 	SET_STATUS_MAX(M, STAT_WEAK, 10)
 	SET_STATUS_MAX(M, STAT_SILENCE, 10)
 	if(LAZYACCESS(M.chem_doses, type) <= removed) //half-assed attempt to make timeofdeath update only at the onset
@@ -227,6 +227,7 @@
 /decl/material/liquid/hair_remover/affect_touch(var/mob/M, var/removed, var/datum/reagents/holder)
 	M.lose_hair()
 	holder.remove_reagent(type, REAGENT_VOLUME(holder, type))
+	return TRUE
 
 /decl/material/liquid/zombie
 	name = "liquid corruption"
@@ -245,6 +246,7 @@
 
 /decl/material/liquid/zombie/affect_touch(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	affect_blood(M, removed * 0.5, holder)
+	return TRUE
 
 /decl/material/liquid/zombie/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()

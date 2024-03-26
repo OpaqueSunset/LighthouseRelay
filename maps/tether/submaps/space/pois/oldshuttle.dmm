@@ -7,29 +7,29 @@
 /turf/space,
 /area/tether_away/debrisfield/explored)
 "ac" = (
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "ad" = (
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ae" = (
 /obj/structure/table/steel,
 /obj/item/clothing/head/helmet/tactical/pilot,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "af" = (
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/tether_away/debrisfield/explored)
 "ag" = (
 /obj/machinery/constructable_frame/computerframe,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ah" = (
 /obj/structure/bed/chair/comfy/blue{
 	icon_state = "comfychair_preview";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ai" = (
 /obj/structure/grille,
@@ -37,13 +37,13 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aj" = (
 /obj/item/shard,
 /obj/item/shard,
 /obj/structure/grille/broken,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "ak" = (
 /obj/machinery/light{
@@ -51,7 +51,7 @@
 	},
 /obj/structure/rack/shelf,
 /obj/item/suit_cooling_unit,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "al" = (
 /obj/structure/lattice,
@@ -68,15 +68,15 @@
 /obj/item/clothing/shoes/magboots,
 /obj/item/clothing/suit/space/void/pilot,
 /obj/item/clothing/head/helmet/space/void/pilot,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "an" = (
 /obj/machinery/door/airlock/voidcraft,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ao" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "ap" = (
 /obj/structure/rack/shelf,
@@ -88,11 +88,11 @@
 /obj/item/tank/emergency/oxygen/engi,
 /obj/item/tank/emergency/oxygen/engi,
 /obj/item/tank/emergency/oxygen/engi,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aq" = (
 /obj/structure/bed/chair/shuttle,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ar" = (
 /obj/machinery/light{
@@ -103,7 +103,7 @@
 	pixel_x = -32;
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "as" = (
 /obj/machinery/light{
@@ -114,35 +114,35 @@
 	pixel_x = 32;
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "at" = (
 /obj/machinery/sleeper{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "av" = (
 /obj/structure/bed/chair/shuttle{
 	icon_state = "shuttle_chair";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aw" = (
 /obj/effect/floor_decal/industrial/outline/red,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "ax" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/space_heater,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "ay" = (
 /obj/structure/table/steel,
 /obj/item/clothing/head/helmet/tactical/pilot,
 /obj/random/unidentified_medicine/drug_den,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "az" = (
 /obj/structure/closet/crate/medical,
@@ -152,7 +152,7 @@
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/combat_medicine,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "aA" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -163,20 +163,20 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aB" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aD" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -186,14 +186,14 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aE" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
 /obj/machinery/door/airlock/voidcraft/vertical,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aF" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -204,7 +204,7 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aG" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -215,27 +215,27 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aH" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
 /obj/machinery/door/airlock/voidcraft/vertical,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aI" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 8
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aJ" = (
 /obj/effect/floor_decal/industrial/warning{
 	icon_state = "warning";
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aK" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -245,21 +245,21 @@
 	dir = 8;
 	id_tag = "expshuttle_docker_pump_out_internal"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aL" = (
 /obj/effect/floor_decal/industrial/warning,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aM" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aN" = (
 /obj/machinery/door/airlock/voidcraft/vertical,
-/turf/simulated/floor/shuttle/black,
+/turf/floor/shuttle/black,
 /area/tether_away/debrisfield/explored)
 "aO" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -273,36 +273,36 @@
 	dir = 4;
 	id_tag = "expshuttle_vent"
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aP" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/turf/wall/shuttle/voidcraft/hard_corner,
 /area/tether_away/debrisfield/explored)
 "aQ" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	icon_state = "warningcorner";
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aR" = (
 /obj/machinery/atmospherics/unary/tank/air,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "aS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 9
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aT" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "aU" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/wall_mounted{
@@ -310,7 +310,7 @@
 	id_tag = "expshuttle_docker_pump_out_external";
 	power_rating = 20000
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/wall/shuttle/voidcraft,
 /area/tether_away/debrisfield/explored)
 "aV" = (
 /obj/machinery/light,
@@ -318,7 +318,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 8
 	},
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aW" = (
 /obj/tether_away_spawner/debrisfield/carp/hard,
@@ -326,11 +326,11 @@
 /area/tether_away/debrisfield/explored)
 "aX" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "aY" = (
 /obj/machinery/door/airlock/double/metal,
-/turf/simulated/floor/shuttle/black/airless,
+/turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aZ" = (
 /turf/exterior/barren,
@@ -345,7 +345,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "bc" = (
 /obj/structure/grille,
@@ -353,12 +353,12 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "bd" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "be" = (
 /obj/structure/grille,
@@ -366,7 +366,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 6
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "bg" = (
 /obj/item/storage/mre/random,
@@ -376,7 +376,7 @@
 /obj/item/storage/mre/random,
 /obj/item/storage/mre/random,
 /obj/structure/closet/crate,
-/turf/simulated/floor/shuttle/darkred/airless,
+/turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
 "bh" = (
 /obj/tether_away_spawner/debrisfield/carp,

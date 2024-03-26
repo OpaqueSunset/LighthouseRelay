@@ -9,19 +9,19 @@
 /turf/exterior/dirt,
 /area/tether/outpost/exploration_plains)
 "ae" = (
-/turf/simulated/mineral/virgo3b/rich,
+/turf/mineral/virgo3b/rich,
 /area/mine/explored)
 "af" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/step_trigger/teleporter/from_plains,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "ag" = (
-/turf/simulated/wall/r_wall,
+/turf/wall/r_wall,
 /area/tether/outpost/exploration_shed)
 "ah" = (
 /obj/structure/sign/hostilefauna,
-/turf/simulated/wall/r_wall,
+/turf/wall/r_wall,
 /area/tether/outpost/exploration_shed)
 "ai" = (
 /obj/effect/floor_decal/rust,
@@ -32,7 +32,7 @@
 	pixel_y = -25;
 	id_tag = "wilderness"
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "aj" = (
 /obj/effect/floor_decal/rust,
@@ -40,14 +40,14 @@
 	dir = 8;
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "ak" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "al" = (
 /obj/effect/floor_decal/rust,
@@ -60,13 +60,13 @@
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "am" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/green,
 /obj/machinery/port_gen/pacman,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "an" = (
 /turf/exterior/dirt,
@@ -77,7 +77,7 @@
 	name = "Anti-Fauna Shutters";
 	id_tag = "wilderness"
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "ap" = (
 /obj/effect/floor_decal/rust,
@@ -86,7 +86,7 @@
 	name = "Anti-Fauna Shutters";
 	id_tag = "wilderness"
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "aq" = (
 /obj/machinery/button/blast_door{
@@ -109,10 +109,10 @@
 /area/tether/outpost/exploration_shed)
 "bj" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "bF" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/mine/unexplored)
 "BE" = (
 /mob/living/simple_animal/space/goose/virgo3b,

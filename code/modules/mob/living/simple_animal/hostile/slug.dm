@@ -5,7 +5,7 @@
 	icon = 'icons/mob/simple_animal/slug.dmi'
 	response_harm = "stomps on"
 	destroy_surroundings = 0
-	mob_default_max_health = 15
+	max_health = 15
 	speed = 0
 	move_to_delay = 0
 	density = TRUE
@@ -40,14 +40,14 @@
 	var/obj/item/organ/external/chest = GET_EXTERNAL_ORGAN(H, BP_CHEST)
 	var/obj/item/holder/slug/holder = new(get_turf(src))
 	src.forceMove(holder)
-	chest.embed(holder,0,"\The [src] latches itself onto \the [H]!")
+	chest.embed_in_organ(holder, FALSE, "\The [src] latches itself onto \the [H]!")
 	holder.sync(src)
 
 /mob/living/simple_animal/hostile/slug/AttackingTarget()
 	. = ..()
 	if(ishuman(.))
 		var/mob/living/carbon/human/H = .
-		if(prob(H.getBruteLoss()/2))
+		if(prob(H.get_damage(BRUTE)/2))
 			attach(H)
 
 /mob/living/simple_animal/hostile/slug/handle_regular_status_updates()

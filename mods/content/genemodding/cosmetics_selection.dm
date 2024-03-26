@@ -11,9 +11,8 @@
 		ear_display = "REQUIRES UPDATE"
 	. += "<b>Ears</b><br>"
 	. += " Style: <a href='?src=\ref[src];ear_style=1'>[ear_display]</a><br>"
-	if(ear)
-		if (ear.do_colouration)
-			. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> [COLORED_SQUARE(pref.ear_color)]<br>"
+	if (!isnull(ear.color_blend))
+		. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> [COLORED_SQUARE(pref.ear_color)]<br>"
 		if (ear.extra_overlay)
 			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.ear_color_extra)]<br>"
 
@@ -26,7 +25,7 @@
 	. += "<b>Tail</b><br>"
 	. += " Style: <a href='?src=\ref[src];tail_style=1'>[tail_display]</a><br>"
 
-	if (tails?.do_colouration)
+	if (!isnull(tails?.color_blend))
 		. += "<a href='?src=\ref[src];tail_color=1'>Change Color</a> [COLORED_SQUARE(pref.tail_color)]<br>"
 		if (tails.extra_overlay) // only show the secondary color prompt if we can change color to begin with
 			. += "<a href='?src=\ref[src];tail_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.tail_color_extra)]<br>"

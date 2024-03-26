@@ -6,13 +6,13 @@
 /turf/template_noop,
 /area/submap/virgo2/Rocky4)
 "c" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Rocky4)
 "e" = (
 /turf/exterior/rocks,
 /area/submap/virgo2/Rocky4)
 "f" = (
-/turf/simulated/floor/lava,
+/turf/floor/lava,
 /area/submap/virgo2/Rocky4)
 "Y" = (
 /obj/machinery/crystal/lava,

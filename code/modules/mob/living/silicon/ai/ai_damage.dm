@@ -47,15 +47,15 @@
 	oxyloss = max(0, amount)
 
 /mob/living/silicon/ai/update_health()
-	..()
-	if(status_flags & GODMODE)
-		setOxyLoss(0)
+	. = ..()
+	if(!.)
+		set_damage(OXY, 0)
 
 /mob/living/silicon/ai/rejuvenate()
 	..()
 	add_ai_verbs(src)
 
-// Returns percentage of AI's remaining backup capacitor charge (max_health - oxyloss).
+// Returns percentage of AI's remaining backup capacitor charge (max health - oxyloss).
 /mob/living/silicon/ai/proc/backup_capacitor()
 	var/current_max_health = get_max_health()
-	return ((getOxyLoss() - current_max_health) / current_max_health) * (-100)
+	return ((get_damage(OXY) - current_max_health) / current_max_health) * (-100)

@@ -185,13 +185,12 @@ var/global/list/outfits_decls_by_type_
 				H.equip_to_slot_or_del(backpack, slot_back_str)
 
 	if(H.species && !(OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR & equip_adjustments))
-		if(outfit_flags & OUTFIT_EXTENDED_SURVIVAL)
-			H.species.equip_survival_gear(H, /obj/item/storage/box/engineer)
-		else if(H.client?.prefs?.survival_box_choice && global.survival_box_choices[H.client.prefs.survival_box_choice])
-			var/decl/survival_box_option/box = global.survival_box_choices[H.client.prefs.survival_box_choice]
-			H.species.equip_survival_gear(H, box.box_type)
-		else
-			H.species.equip_survival_gear(H)
+		var/decl/survival_box_option/chosen_survival_box = H?.client?.prefs.survival_box_choice
+		if(chosen_survival_box?.box_type)
+			if(outfit_flags & OUTFIT_EXTENDED_SURVIVAL)
+				H.species.equip_survival_gear(H, /obj/item/storage/box/engineer)
+			else
+				H.species.equip_survival_gear(H, chosen_survival_box.box_type)
 
 	if(H.client?.prefs?.give_passport)
 		global.using_map.create_passport(H)

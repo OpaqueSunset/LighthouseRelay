@@ -72,12 +72,11 @@
 /obj/item/chems/spray/proc/create_chempuff(var/atom/movable/target, var/particle_amount)
 	set waitfor = FALSE
 
-	var/obj/effect/effect/water/chempuff/D = new/obj/effect/effect/water/chempuff(get_turf(src))
+	var/obj/effect/effect/water/chempuff/D = new(get_turf(src))
 	D.create_reagents(amount_per_transfer_from_this)
 	if(QDELETED(src))
 		return
 	reagents.trans_to_obj(D, amount_per_transfer_from_this)
-	D.set_color()
 	D.set_up(get_turf(target), particle_amount? particle_amount : spray_particles, particle_move_delay)
 	return D
 
@@ -89,7 +88,7 @@
 		//If no safety, we just toggle the nozzle
 		var/decl/interaction_handler/IH = GET_DECL(/decl/interaction_handler/next_spray_amount)
 		if(IH.is_possible(src, user))
-			IH.invoked(src, user)
+			IH.invoked(src, user, src)
 			return TRUE
 
 ///Whether the spray has a safety toggle

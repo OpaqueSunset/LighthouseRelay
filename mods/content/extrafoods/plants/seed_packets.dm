@@ -1,31 +1,31 @@
 // fruit expansion
 
 /obj/item/seeds/melonseed
-	seed_type = "melon"
+	seed = "melon"
 
 /obj/item/seeds/coffeeseed
-	seed_type = "coffee"
+	seed = "coffee"
 
 /obj/item/seeds/whitegrapeseed
-	seed_type = "whitegrapes"
+	seed = "whitegrapes"
 
 /obj/item/seeds/vanillaseed
-	seed_type = "vanilla"
+	seed = "vanilla"
 
 /*
 TODO: Add system to specify custom icon files for seeds and plants
 /obj/item/seeds/pineappleseed
-	seed_type = "pineapples"
+	seed = "pineapples"
 */
 
 /obj/item/seeds/pearseed
-	seed_type = "pears"
+	seed = "pears"
 
 /obj/item/seeds/coconutseed
-	seed_type = "coconuts"
+	seed = "coconuts"
 
 /obj/item/seeds/cinnamon
-	seed_type = "cinnamon"
+	seed = "cinnamon"
 
 /obj/item/seeds/olives
-	seed_type = "olives"
+	seed = "olives"

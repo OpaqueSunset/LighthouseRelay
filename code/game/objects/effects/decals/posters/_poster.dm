@@ -9,7 +9,7 @@
 	anchored           = TRUE
 	directional_offset = @'{"NORTH":{"y":32}, "SOUTH":{"y":-32}, "WEST":{"x":32}, "EAST":{"x":-32}}'
 	material           = /decl/material/solid/organic/paper
-	max_health          = 10
+	max_health = 10
 	parts_type         = /obj/item/poster
 	parts_amount       = 1
 
@@ -52,7 +52,7 @@
 		return FALSE //#FIXME: once /obj/structure/sign use the generic structure tools procs we won't need to intercept this here anymore.
 	return ..()
 
-/obj/structure/sign/poster/dismantle()
+/obj/structure/sign/poster/dismantle_structure(mob/user)
 	//If not ruined, we can drop an intact poster item
 	if(!ruined)
 		return ..()
@@ -67,7 +67,7 @@
 /obj/structure/sign/poster/handle_default_wirecutter_attackby(mob/user, obj/item/wirecutters/wirecutters)
 	if(!wirecutters.do_tool_interaction(TOOL_WIRECUTTERS, user, src, 0, ruined? "scrapping off the remnants of" : "carefully removing", ruined? "cutting off" : "carefully removing"))
 		return TRUE //Don't run after_attack
-	dismantle()
+	dismantle_structure(user)
 	return TRUE
 
 /obj/structure/sign/poster/attack_hand(mob/user)
@@ -112,7 +112,7 @@
 	if(ruined == _ruined)
 		return
 	ruined = _ruined
-	health = (!ruined)? max(health, 1) : 0 //setting unruined implies health > 0
+	current_health = (!ruined)? max(current_health, 1) : 0 //setting unruined implies health > 0
 
 	//Make sure we look the part
 	update_appearence()
@@ -187,7 +187,7 @@
 			SPAN_NOTICE("You have placed the poster on \the [W]."))
 	else
 		// We cannot rely on user being on the appropriate turf when placement fails
-		P.dismantle()
+		P.dismantle_structure(user)
 
 /obj/item/poster/proc/ArePostersOnWall(var/turf/W, var/placed_poster)
 	//just check if there is a poster on or adjacent to the wall

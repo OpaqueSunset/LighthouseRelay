@@ -238,7 +238,8 @@
 	name = "dyeable silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/colorized_collar.dmi'
-	material = /decl/material/solid/organic/cloth/black
+	material = /decl/material/solid/organic/cloth
+	paint_color = COLOR_BLACK
 	matter = list(
 		/decl/material/solid/metal/silver = MATTER_AMOUNT_TRACE
 	)

@@ -7,10 +7,10 @@
 /turf/space,
 /area/space)
 "c" = (
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/space)
 "d" = (
-/turf/simulated/shuttle/wall/dark,
+/turf/wall/shuttle/dark,
 /area/space)
 
 (1,1,1) = {"

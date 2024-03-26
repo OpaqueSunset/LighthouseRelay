@@ -64,8 +64,9 @@
 		user.visible_message(SPAN_NOTICE("<i>\The [user] rests a hand on \the [target]'s [E.name]...</i>"))
 		to_chat(target, SPAN_NOTICE("A healing warmth suffuses you."))
 
-		var/redaction_rank = user.psi.get_rank(PSI_REDACTION)
-		var/pk_rank = user.psi.get_rank(PSI_PSYCHOKINESIS)
+		var/datum/ability_handler/psionics/psi = user?.get_ability_handler(/datum/ability_handler/psionics, FALSE)
+		var/redaction_rank = psi?.get_rank(PSI_REDACTION)
+		var/pk_rank = psi?.get_rank(PSI_PSYCHOKINESIS)
 		if(pk_rank >= PSI_RANK_LATENT && redaction_rank >= PSI_RANK_MASTER)
 			var/removal_size = clamp(5-pk_rank, 0, 5)
 			var/valid_objects = list()
@@ -142,12 +143,12 @@
 			else
 				target.radiation = 0
 			return TRUE
-		if(target.getCloneLoss())
+		if(target.get_damage(CLONE))
 			to_chat(user, SPAN_NOTICE("You stitch together some of the mangled DNA within \the [target]..."))
-			if(target.getCloneLoss() >= removing)
-				target.adjustCloneLoss(-removing)
+			if(target.get_damage(CLONE) >= removing)
+				target.heal_damage(CLONE, removing)
 			else
-				target.adjustCloneLoss(-(target.getCloneLoss()))
+				target.heal_damage(CLONE, target.get_damage(CLONE))
 			return TRUE
 		to_chat(user, SPAN_NOTICE("You can find no genetic damage or radiation to heal within \the [target]."))
 		return TRUE
@@ -177,7 +178,8 @@
 
 		user.visible_message(SPAN_NOTICE("<i>\The [user] splays out their hands over \the [target]'s body...</i>"))
 		if(!do_after(user, 100, target, 0, 1))
-			user.psi.backblast(rand(10,25))
+			var/datum/ability_handler/psionics/psi = user?.get_ability_handler(/datum/ability_handler/psionics, FALSE)
+			psi?.backblast(rand(10,25))
 			return TRUE
 
 		for(var/mob/observer/G in global.dead_mob_list_)
@@ -186,6 +188,6 @@
 				break
 		to_chat(target, SPAN_NOTICE("<font size = 3><b>Life floods back into your body!</b></font>"))
 		target.visible_message(SPAN_NOTICE("\The [target] shudders violently!"))
-		target.adjustOxyLoss(-rand(15,20))
+		target.heal_damage(OXY, rand(15,20))
 		target.basic_revival()
 		return TRUE

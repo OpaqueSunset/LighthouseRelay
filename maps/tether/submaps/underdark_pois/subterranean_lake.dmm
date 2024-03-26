@@ -3,13 +3,13 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "b" = (
-/turf/simulated/floor/water,
+/turf/floor/water,
 /area/mine/explored/underdark)
 "c" = (
 /turf/exterior/barren,
 /area/mine/explored/underdark)
 "d" = (
-/turf/simulated/floor/water/deep,
+/turf/floor/water/deep,
 /area/mine/explored/underdark)
 "e" = (
 /obj/tether_away_spawner/underdark_normal,

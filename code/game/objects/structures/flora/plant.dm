@@ -32,6 +32,14 @@
 	else if(length(harvestable))
 		to_chat(user, SPAN_NOTICE("You can see [length(harvestable)] harvestable fruit\s."))
 
+/obj/structure/flora/plant/dismantle_structure(mob/user)
+	if(plant)
+		var/fail_chance = user ? user.skill_fail_chance(SKILL_BOTANY, 30, SKILL_ADEPT) : 30
+		if(!prob(fail_chance))
+			for(var/i = 1 to rand(1,3))
+				new /obj/item/seeds(loc, null, plant)
+	return ..()
+
 /obj/structure/flora/plant/Initialize(ml, _mat, _reinf_mat, datum/seed/_plant)
 	if(!plant && _plant)
 		plant = _plant
@@ -60,8 +68,7 @@
 
 /obj/structure/flora/plant/attackby(obj/item/O, mob/user)
 
-	// TODO: tool categories or something.
-	if(istype(O, /obj/item/shovel) || istype(O, /obj/item/hatchet) || istype(O, /obj/item/twohanded/fireaxe))
+	if(IS_SHOVEL(O) || IS_HATCHET(O))
 		user.visible_message(SPAN_NOTICE("\The [user] uproots \the [src] with \the [O]!"))
 		physically_destroyed()
 		return TRUE
@@ -97,6 +104,8 @@
 
 	var/harvested = plant.harvest(user, force_amount = 1)
 	if(harvested)
+		if(!islist(harvested))
+			harvested = list(harvested)
 		harvestable -= length(harvested)
 		for(var/thing in harvested)
 			user.put_in_hands(thing)

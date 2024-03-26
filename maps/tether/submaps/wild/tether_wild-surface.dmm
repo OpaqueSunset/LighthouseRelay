@@ -56,7 +56,7 @@
 "p" = (
 /turf/exterior/dirt,
 /area/syndicate_station/southwest{
-	base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b;
+	base_turf = /turf/floor/outdoors/dirt/virgo3b;
 	forced_ambience = list('sound/music/Sacred_Grove.ogg')
 	})
 

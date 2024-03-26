@@ -6,7 +6,7 @@
 /turf/template_noop,
 /area/submap/virgo2/SnowR1)
 "c" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/SnowR1)
 "d" = (
 /obj/structure/loot_pile/maint/trash,

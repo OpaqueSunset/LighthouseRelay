@@ -6,7 +6,7 @@
 /turf/exterior/barren,
 /area/template_noop)
 "c" = (
-/turf/simulated/wall/virgo2,
+/turf/wall/virgo2,
 /area/submap/virgo2/Lab1)
 "d" = (
 /obj/structure/grille,
@@ -18,7 +18,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/simulated/floor/plating/virgo2,
+/turf/floor/plating/virgo2,
 /area/submap/virgo2/Lab1)
 "e" = (
 /obj/structure/grille,
@@ -27,7 +27,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating/virgo2,
+/turf/floor/plating/virgo2,
 /area/submap/virgo2/Lab1)
 "f" = (
 /obj/structure/grille,
@@ -39,37 +39,37 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating/virgo2,
+/turf/floor/plating/virgo2,
 /area/submap/virgo2/Lab1)
 "g" = (
 /obj/machinery/space_heater,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "h" = (
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "i" = (
 /obj/machinery/door/airlock,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "j" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "k" = (
 /obj/structure/table,
 /obj/item/storage/toolbox,
 /obj/random/tool,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "l" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "m" = (
 /obj/structure/table,
 /obj/random/tool,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "n" = (
 /obj/machinery/vending/tool,
@@ -77,7 +77,7 @@
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "o" = (
 /obj/structure/rack,
@@ -87,102 +87,102 @@
 	icon_state = "tube1";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "p" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/storage/toggle/wintercoat,
 /obj/item/clothing/shoes/winterboots,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "q" = (
 /obj/structure/table,
 /obj/random/toolbox,
 /obj/item/cell/super,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "r" = (
 /obj/structure/closet/toolcloset,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "s" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "t" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "u" = (
 /obj/machinery/power/apc/hyper,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "v" = (
 /obj/structure/cable{
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "w" = (
 /obj/machinery/power/smes/buildable/preset/hidden,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "x" = (
 /obj/structure/table,
 /obj/item/paper{
 	desc = "Gladstone for the last fucking time, We have crowbars for a REASON. Stop breaking in through the goddamn windows! We big red shiny doors for god's sakes!"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "y" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "z" = (
 /obj/machinery/vending/hydronutrients,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "A" = (
 /obj/machinery/vending/hydroseeds,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "B" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "C" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "D" = (
 /obj/structure/table,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
 /obj/item/stack/material/pane/mapped/glass/fifty,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "E" = (
 /obj/structure/table,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "F" = (
 /obj/machinery/portable_atmospherics/hydroponics,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "G" = (
 /obj/structure/hygiene/sink{
@@ -191,22 +191,22 @@
 	pixel_x = 11;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "H" = (
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "I" = (
 /obj/item/cell/super,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "J" = (
 /obj/machinery/fabricator/robotics,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "K" = (
 /obj/machinery/portable_atmospherics/hydroponics,
@@ -214,66 +214,66 @@
 	icon_state = "tube1";
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "L" = (
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "M" = (
 /obj/item/storage/bag/circuits,
 /obj/structure/table,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "N" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "O" = (
 /obj/item/robot_parts/chest,
 /obj/item/robot_parts/l_arm,
 /obj/item/robot_parts/r_arm,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "P" = (
 /obj/structure/closet/crate/hydroponics,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "Q" = (
 /obj/structure/closet/secure_closet/hydroponics,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "R" = (
 /obj/structure/table,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "S" = (
 /obj/machinery/vending/robotics,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "T" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "U" = (
 /obj/machinery/optable,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 "V" = (
 /turf/exterior/barren,
 /area/submap/virgo2/Lab1)
 "W" = (
-/turf/simulated/floor/plating/virgo2,
+/turf/floor/plating/virgo2,
 /area/submap/virgo2/Lab1)
 "X" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/simulated/floor/tiled/steel_dirty,
+/turf/floor/tiled/steel_dirty,
 /area/submap/virgo2/Lab1)
 
 (1,1,1) = {"

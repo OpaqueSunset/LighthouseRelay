@@ -38,7 +38,7 @@
 			else
 				above.ChangeTurf(open_turf_type, update_open_turfs_above = FALSE)
 
-/turf/proc/ChangeTurf(var/turf/N, var/tell_universe = TRUE, var/force_lighting_update = FALSE, var/keep_air = FALSE, var/keep_air_below = FALSE, var/update_open_turfs_above = TRUE)
+/turf/proc/ChangeTurf(var/turf/N, var/tell_universe = TRUE, var/force_lighting_update = FALSE, var/keep_air = FALSE, var/keep_air_below = FALSE, var/update_open_turfs_above = TRUE, var/keep_height = FALSE)
 	if (!N)
 		return
 
@@ -69,6 +69,7 @@
 	var/old_is_open =          is_open()
 	var/old_open_turf_type =   open_turf_type
 	var/old_affecting_heat_sources = affecting_heat_sources
+	var/old_height =           get_physical_height()
 
 	var/old_ambience =         ambient_light
 	var/old_ambience_mult =    ambient_light_multiplier
@@ -77,7 +78,6 @@
 	var/old_ambient_light_old_b = ambient_light_old_b
 
 	changing_turf = TRUE
-
 
 	qdel(src)
 	. = new N(src)
@@ -95,7 +95,7 @@
 	if(keep_air)
 		W.air = old_air
 	if(old_fire)
-		if(istype(W, /turf/simulated))
+		if(W.simulated)
 			W.fire = old_fire
 		else if(old_fire)
 			qdel(old_fire)
@@ -155,8 +155,14 @@
 
 	W.update_weather(force_update_below = W.is_open() != old_is_open)
 
+	if(keep_height)
+		W.set_physical_height(old_height)
+
 	if(update_open_turfs_above)
 		update_open_above(old_open_turf_type)
+
+	for(var/atom/movable/AM in W.contents)
+		AM.update_turf_alpha_mask()
 
 /turf/proc/transport_properties_from(turf/other)
 	if(other.zone)
@@ -176,7 +182,7 @@
 		src.update_icon()
 	return 1
 
-/turf/simulated/floor/transport_properties_from(turf/simulated/floor/other)
+/turf/floor/transport_properties_from(turf/floor/other)
 	if(!..())
 		return FALSE
 
@@ -187,7 +193,7 @@
 	set_flooring(other.flooring)
 	return TRUE
 
-/turf/simulated/wall/transport_properties_from(turf/simulated/wall/other)
+/turf/wall/transport_properties_from(turf/wall/other)
 	if(!..())
 		return FALSE
 
@@ -209,8 +215,3 @@
 
 	update_material()
 	return TRUE
-
-//No idea why resetting the base appearance from New() isn't enough, but without this it doesn't work
-/turf/simulated/shuttle/wall/corner/transport_properties_from(turf/simulated/other)
-	. = ..()
-	reset_base_appearance()

@@ -360,8 +360,8 @@
 /obj/item/storage/box/wings/empty/WillContain()
 	return null
 
-/datum/stack_recipe/box/wings
-	title = "chicken wings box"
+/decl/stack_recipe/cardstock/box/wings
+	name = "chicken wings box"
 	result_type = /obj/item/storage/box/wings/empty
 
 /obj/item/storage/box/wings/Initialize()

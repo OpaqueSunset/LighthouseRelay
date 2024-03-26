@@ -8,7 +8,7 @@
 	desc = "This forge gives off no heat, no light, its flames look almost unnatural."
 	icon_state = "forge"
 	build_cost = 1000
-	health = 50
+	current_health = 50
 	var/busy = 0
 	var/recipe_feat_list = "Blood Crafting"
 	var/text_modifications = list("Cost" = "Blood",
@@ -74,7 +74,7 @@
 	name = "bloody stone"
 	desc = "A jagged stone covered in the various stages of blood, from dried to fresh."
 	icon_state = "blood_stone"
-	health = 100 //Its a piece of rock.
+	current_health = 100 //Its a piece of rock.
 	build_cost = 700
 
 /obj/structure/deity/blood_stone/attack_hand(var/mob/user)
@@ -87,6 +87,6 @@
 		if(H.should_have_organ(BP_HEART))
 			H.drip(5,get_turf(src))
 		else
-			H.adjustBruteLoss(5)
+			H.take_damage(BRUTE, 5)
 		linked_god.adjust_power_min(1,1)
 	return TRUE

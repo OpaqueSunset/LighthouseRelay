@@ -6,8 +6,6 @@
 	var/set_temp = 200 + T0C
 	var/temp_settings = 4 // the number of temperature settings to have, including min and optimal
 	var/list/temp_options = list()
-
-	var/loss = 1	//Temp lost per proc when equalising
 	var/resistance = 320000	//Resistance to heating. combines with heating power to determine how long heating takes
 
 	var/light_x = 0
@@ -82,7 +80,6 @@
 		disp_image.color = HSVtoRGB(hue)
 		temp_options["[newtemp - T0C]"] = disp_image
 	temp_options["OFF"] = image('icons/misc/mark.dmi', "x3")
-	loss = (active_power_usage / resistance)*0.5
 	cooking_objs = list()
 	for(var/cctype in starts_with)
 		if (length(cooking_objs) >= max_contents)
@@ -138,7 +135,7 @@
 	add_overlay(light)
 
 /obj/machinery/appliance/cooker/Process()
-	if ((temperature >= set_temp) && (stat || use_power == 1))
+	if ((temperature >= set_temp) && (stat || use_power == POWER_USE_IDLE))
 		QUEUE_TEMPERATURE_ATOM(src) // cool every tick if we're not turned on or heating
 	if(use_power != POWER_USE_OFF)
 		heat_up()
@@ -163,7 +160,6 @@
 			update_icon()
 		ADJUST_ATOM_TEMPERATURE(src, temperature + heating_power / resistance)
 		update_cooking_power()
-		return 1
 	else
 		if (use_power == POWER_USE_ACTIVE)
 			update_use_power(POWER_USE_IDLE)
@@ -172,14 +168,15 @@
 	QUEUE_TEMPERATURE_ATOM(src)
 
 /obj/machinery/appliance/cooker/ProcessAtomTemperature()
-	if( use_power != POWER_USE_OFF && !(stat & NOPOWER) ) // must be powered and turned on, to keep heating items
-		update_cooking_power() // update!
-		if(!LAZYLEN(cooking_objs))
-			return TRUE
-		for(var/datum/cooking_item/CI in cooking_objs)
-			QUEUE_TEMPERATURE_ATOM(CI.container)
+	. = ..() // we have to call parent to heat contents
+	update_cooking_power() // update!
+	if(. == PROCESS_KILL && use_power != POWER_USE_OFF && !(stat & NOPOWER))
 		return TRUE // Don't kill this processing loop unless we're not powered or we're cold.
-	. = ..()
+
+/obj/machinery/appliance/cooker/get_thermal_mass_coefficient()
+	if(use_power <= POWER_USE_IDLE || (stat & NOPOWER))
+		return ..()
+	return 0
 
 //Cookers do differently, they use containers
 /obj/machinery/appliance/cooker/has_space(var/obj/item/I)

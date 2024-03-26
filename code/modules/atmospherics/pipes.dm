@@ -36,7 +36,8 @@
 	return -1
 
 /obj/machinery/atmospherics/pipe/Initialize()
-	if(istype(get_turf(src), /turf/simulated/wall) || istype(get_turf(src), /turf/simulated/shuttle/wall) || istype(get_turf(src), /turf/unsimulated/wall))
+	var/turf/T = get_turf(src)
+	if(T?.is_wall())
 		level = LEVEL_BELOW_PLATING
 	alpha = 255 // for mapping hidden pipes
 	. = ..()
@@ -190,7 +191,8 @@
 	set_leaking(missing)
 
 /obj/machinery/atmospherics/pipe/hide(var/i)
-	if(istype(loc, /turf/simulated))
+	var/turf/turf = loc
+	if(istype(turf) && turf.simulated)
 		set_invisibility(i ? 101 : 0)
 	update_icon()
 
@@ -266,8 +268,7 @@
 		integrity_key += "[!!length(nodes_in_dir(direction))]"
 
 	icon_state = "[integrity_key][icon_connect_type]"
-	if(!isnull(pipe_color))
-		color = pipe_color
+	color = get_color()
 
 	try_leak()
 
@@ -389,7 +390,7 @@
 	icon_state = null
 	cut_overlays()
 	var/image/I = image(icon, "core[icon_connect_type]")
-	I.color = pipe_color
+	I.color = get_color()
 	add_overlay(I)
 	add_overlay("clamps[icon_connect_type]")
 
@@ -519,7 +520,7 @@
 	icon_state = null
 	cut_overlays()
 	var/image/I = image(icon, "4way[icon_connect_type]")
-	I.color = pipe_color
+	I.color = get_color()
 	add_overlay(I)
 	add_overlay("clamps_4way[icon_connect_type]")
 
@@ -634,7 +635,7 @@
 
 /obj/machinery/atmospherics/pipe/cap/on_update_icon(var/safety = 0)
 	icon_state = "cap[icon_connect_type]"
-	color = pipe_color
+	color = get_color()
 
 /obj/machinery/atmospherics/pipe/cap/visible
 	level = LEVEL_ABOVE_PLATING

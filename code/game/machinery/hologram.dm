@@ -229,7 +229,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 					ai_text = stars(text)
 			if(isanimal(M) && !M.universal_speak)
 				var/mob/living/simple_animal/SA = M
-				ai_text = pick(SA.speak)
+				ai_text = DEFAULTPICK(SA.emote_speech, "...")
 			var/name_used = M.GetVoice()
 			//This communication is imperfect because the holopad "filters" voices and is only designed to connect to the master only.
 			var/short_links = master.get_preference_value(/datum/client_preference/ghost_follow_link_length) == PREF_SHORT
@@ -240,7 +240,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	var/message
 	if(isanimal(M) && !M.universal_speak)
 		var/mob/living/simple_animal/SA = M
-		message = get_hear_message(name_used, pick(SA.speak), verb, speaking)
+		message = get_hear_message(name_used, DEFAULTPICK(SA.emote_speech, "..."), verb, speaking)
 	else
 		message = get_hear_message(name_used, text, verb, speaking)
 	if(targetpad && !targetpad.incoming_connection) //If this is the pad you're making the call from and the call is accepted
@@ -399,28 +399,6 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 	for (var/mob/living/master in masters)
 		clear_holo(master)
 	return ..()
-
-/*
-Holographic project of everything else.
-
-/mob/verb/hologram_test()
-	set name = "Hologram Debug New"
-	set category = "CURRENT DEBUG"
-
-	var/obj/effect/overlay/hologram = new(loc)//Spawn a blank effect at the location.
-	var/icon/flat_icon = icon(getFlatIcon(src,0))//Need to make sure it's a new icon so the old one is not reused.
-	flat_icon.ColorTone(rgb(125,180,225))//Let's make it bluish.
-	flat_icon.ChangeOpacity(0.5)//Make it half transparent.
-	var/input = input("Select what icon state to use in effect.",,"")
-	if(input)
-		var/icon/alpha_mask = new('icons/effects/effects.dmi', "[input]")
-		flat_icon.AddAlphaMask(alpha_mask)//Finally, let's mix in a distortion effect.
-		hologram.icon = flat_icon
-
-		log_debug("Your icon should appear now.")
-
-	return
-*/
 
 /*
  * Other Stuff: Is this even used?

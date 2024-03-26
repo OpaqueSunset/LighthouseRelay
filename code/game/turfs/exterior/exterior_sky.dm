@@ -6,7 +6,7 @@
 	z_flags = ZM_TERMINATOR
 
 // No matter what, the sky will never be 'inside'.
-/turf/exterior/open/sky/is_outside()
+/turf/open/sky/is_outside()
 	return TRUE // you can't take the sky from meee
 
 /turf/open/sky/north

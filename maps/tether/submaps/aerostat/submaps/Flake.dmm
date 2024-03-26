@@ -13,13 +13,13 @@
 /turf/exterior/rocks,
 /area/submap/virgo2/Lake1)
 "h" = (
-/turf/simulated/floor/lava,
+/turf/floor/lava,
 /area/submap/virgo2/Lake1)
 "i" = (
 /turf/exterior/barren,
 /area/submap/virgo2/Lake1)
 "j" = (
-/turf/simulated/mineral/ignore_mapgen/virgo2,
+/turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Lake1)
 "R" = (
 /obj/machinery/crystal/lava,

@@ -40,7 +40,7 @@
 
 /obj/item/plastique/attack_self(mob/user)
 	var/newtime = input(usr, "Please set the timer.", "Timer", 10) as num
-	if(user.get_active_hand() == src)
+	if(user.get_active_held_item() == src)
 		newtime = clamp(newtime, 10, 60000)
 		timer = newtime
 		to_chat(user, "Timer set for [timer] seconds.")
@@ -48,8 +48,13 @@
 /obj/item/plastique/afterattack(atom/movable/target, mob/user, flag)
 	if (!flag)
 		return
-	if (ismob(target) || istype(target, /turf/unsimulated) || istype(target, /turf/simulated/shuttle) || istype(target, /obj/item/storage/) || istype(target, /obj/item/clothing/accessory/storage/) || istype(target, /obj/item/clothing/under))
+	if (ismob(target) || istype(target, /obj/item/storage) || istype(target, /obj/item/clothing/accessory/storage) || istype(target, /obj/item/clothing/under))
 		return
+	if(isturf(target))
+		var/turf/target_turf = target
+		if(!target_turf.simulated)
+			return
+
 	to_chat(user, "Planting explosives...")
 	user.do_attack_animation(target)
 
@@ -80,8 +85,8 @@
 		explosion(location, -1, -1, 2, 3)
 
 	if(target)
-		if (istype(target, /turf/simulated/wall))
-			var/turf/simulated/wall/W = target
+		if (istype(target, /turf/wall))
+			var/turf/wall/W = target
 			W.dismantle_wall(1)
 		else if(isliving(target))
 			target.explosion_act(2) // c4 can't gib mobs anymore.

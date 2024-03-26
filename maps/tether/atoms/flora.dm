@@ -50,9 +50,6 @@
 	icon = 'maps/tether/icons/obj/flora/tree_jungle_small.dmi'
 	icon_state = "tree"
 	stump_type = /obj/structure/flora/stump/tree/jungle_small
-	// product = /obj/item/stack/material/log
-	// product_amount = 10
-	health = 400
 	max_health = 400
 	pixel_x = -32
 
@@ -69,13 +66,11 @@
 	icon = 'maps/tether/icons/obj/flora/tree_jungle.dmi'
 	icon_state = "tree"
 	stump_type = /obj/structure/flora/stump/tree/jungle
-	// product = /obj/item/stack/material/log
-	// product_amount = 20
-	health = 800
+	log_amount = 20
 	max_health = 800
 	pixel_x = -48
 	pixel_y = -16
-	// shake_animation_degrees = 2
+	shake_animation_degrees = 2
 
 /obj/structure/flora/tree/jungle/init_appearance()
 	icon_state = "[initial(icon_state)][rand(1, 6)]"
@@ -90,8 +85,7 @@
 	icon = 'maps/tether/icons/obj/flora/tree_sif.dmi'
 	icon_state = "tree_sif0"
 	stump_type = /obj/structure/flora/stump/tree/sif
-	// todo: add chopping and harvest products
-	// or make them use loaf's rewritten trayless plant system, coming circa 2556
+	// todo: add harvest product and alien sivian wood
 	// product = /obj/item/stack/material/log/sif
 	randomize_size = TRUE
 

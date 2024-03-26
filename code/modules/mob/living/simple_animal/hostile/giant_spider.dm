@@ -11,11 +11,11 @@
 	speak_emote = list("chitters")
 	emote_hear = list("chitters")
 	emote_see = list("rubs its forelegs together", "wipes its fangs", "stops suddenly")
-	speak_chance = 5
+	speak_chance = 2.5
 	turns_per_move = 5
 	see_in_dark = 10
 	response_harm = "pokes"
-	mob_default_max_health = 125
+	max_health = 125
 	natural_weapon = /obj/item/natural_weapon/bite
 	heat_damage_per_tick = 20
 	cold_damage_per_tick = 20
@@ -65,7 +65,7 @@
 /mob/living/simple_animal/hostile/giant_spider/guard
 	desc = "A monstrously huge brown spider with shimmering eyes."
 	meat_amount = 4
-	mob_default_max_health = 200
+	max_health = 200
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	poison_per_bite = 5
 	speed = 2
@@ -81,7 +81,7 @@
 /mob/living/simple_animal/hostile/giant_spider/nurse
 	desc = "A monstrously huge beige spider with shimmering eyes."
 	icon = 'icons/mob/simple_animal/spider_beige.dmi'
-	mob_default_max_health = 80
+	max_health = 80
 	harm_intent_damage = 6 //soft
 	poison_per_bite = 5
 	speed = 0
@@ -105,7 +105,7 @@
 /mob/living/simple_animal/hostile/giant_spider/hunter
 	desc = "A monstrously huge black spider with shimmering eyes."
 	icon = 'icons/mob/simple_animal/spider_black.dmi'
-	mob_default_max_health = 150
+	max_health = 150
 	natural_weapon = /obj/item/natural_weapon/bite/strong
 	poison_per_bite = 10
 	speed = -1
@@ -125,7 +125,7 @@
 /mob/living/simple_animal/hostile/giant_spider/spitter
 	desc = "A monstrously huge iridescent spider with shimmering eyes."
 	icon = 'icons/mob/simple_animal/spider_purple.dmi'
-	mob_default_max_health = 90
+	max_health = 90
 	poison_per_bite = 15
 	ranged = TRUE
 	move_to_delay = 2
@@ -146,7 +146,7 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/giant_spider/proc/spider_randomify() //random math nonsense to get their damage, health and venomness values
-	set_max_health(rand(initial(mob_default_max_health), (1.4 * initial(mob_default_max_health))))
+	set_max_health(rand(initial(max_health), (1.4 * initial(max_health))))
 	eye_colour = pick(allowed_eye_colours)
 	update_icon()
 
@@ -216,9 +216,10 @@ Guard caste procs
 	if(spooder.paired_nurse && !spooder.busy && spooder.stance == HOSTILE_STANCE_IDLE)
 		spooder.protect(spooder.paired_nurse)
 
-/mob/living/simple_animal/hostile/giant_spider/guard/death()
+/mob/living/simple_animal/hostile/giant_spider/guard/death(gibbed)
 	. = ..()
-	divorce()
+	if(.)
+		divorce()
 
 /mob/living/simple_animal/hostile/giant_spider/guard/Destroy()
 	. = ..()
@@ -270,14 +271,15 @@ Nurse caste procs
 			paired_guard.paired_nurse = null
 	paired_guard = null
 
-/mob/living/simple_animal/hostile/giant_spider/nurse/death()
+/mob/living/simple_animal/hostile/giant_spider/nurse/death(gibbed)
 	. = ..()
-	if(paired_guard)
-		paired_guard.vengance = rand(50,100)
-		if(prob(paired_guard.vengance))
-			paired_guard.berserking = TRUE
-			paired_guard.go_berserk()
-	divorce()
+	if(.)
+		if(paired_guard)
+			paired_guard.vengance = rand(50,100)
+			if(prob(paired_guard.vengance))
+				paired_guard.berserking = TRUE
+				paired_guard.go_berserk()
+		divorce()
 
 /mob/living/simple_animal/hostile/giant_spider/nurse/Destroy()
 	. = ..()

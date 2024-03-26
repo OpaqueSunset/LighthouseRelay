@@ -76,7 +76,10 @@
 				. = SUBSTANCE_TAKEN_SOME
 
 /obj/machinery/fabricator/proc/can_ingest(var/obj/item/thing)
-	. = (has_recycler || istype(thing, /obj/item/stack/material))
+	if(istype(thing, /obj/item/melted_thing) || istype(thing, /obj/item/scrap_material))
+		return TRUE
+	var/obj/item/stack/material/stack = thing
+	return istype(stack) && !stack.reinf_material
 
 /obj/machinery/fabricator/proc/show_intake_message(var/mob/user, var/value, var/thing)
 	if(value == SUBSTANCE_TAKEN_FULL)
@@ -121,6 +124,13 @@
 			design_cache |= disk.blueprint
 			visible_message(SPAN_NOTICE("\The [user] inserts \the [O] into \the [src], and after a second or so of loud clicking, the fabricator beeps and spits it out again."))
 			return
+
+	// TEMP HACK FIX:
+	// Autolathes currently do not process atom contents. As a workaround, refuse all atoms with contents.
+	if(length(O.contents))
+		to_chat(user, SPAN_WARNING("\The [src] cannot process an object containing other objects. Empty it out first."))
+		return
+	// REMOVE FIX WHEN LATHES TAKE CONTENTS PLS.
 
 	// Take reagents, if any are applicable.
 	var/atom_name = O.name

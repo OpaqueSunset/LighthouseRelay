@@ -131,7 +131,7 @@
 		/obj/item/stack/material/crystal/mapped/phoron/fifty,
 		/obj/item/stack/material/puck/mapped/uranium/fifty,
 		/obj/item/stack/material/gemstone/mapped/diamond/fifty,
-		/obj/item/stack/material/reinforced/mapped/plasteel/fifty,
+		/obj/item/stack/material/sheet/reinforced/mapped/plasteel/fifty,
 		/obj/item/stack/material/rods/fifty
 	)
 

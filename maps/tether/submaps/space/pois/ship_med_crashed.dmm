@@ -3,10 +3,10 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "b" = (
-/turf/exterior/wall,
+/turf/wall/natural,
 /area/tether_away/debrisfield/explored)
 "c" = (
-/turf/simulated/shuttle/wall,
+/turf/wall/shuttle,
 /area/tether_away/debrisfield/explored)
 "d" = (
 /turf/exterior/barren,
@@ -14,10 +14,10 @@
 "e" = (
 /obj/structure/shuttle/window,
 /obj/structure/grille,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "f" = (
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "g" = (
 /obj/effect/decal/cleanable/generic,
@@ -26,117 +26,117 @@
 "h" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/constructable_frame/machine_frame,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "i" = (
 /obj/machinery/constructable_frame/machine_frame,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "j" = (
 /obj/structure/closet/secure_closet/sar{
 	name = "sar locker"
 	},
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "k" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "l" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "m" = (
 /obj/structure/table,
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/old_medicine,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "n" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "o" = (
 /obj/structure/table,
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/fresh_medicine,
 /obj/random/unidentified_medicine/viral,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "p" = (
 /obj/structure/closet/secure_closet/medical3{
 	name = "medical locker"
 	},
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "q" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/molten_item,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "r" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/oil,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "s" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/remains/posi,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "t" = (
 /obj/structure/door/shuttle,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "u" = (
 /obj/structure/closet/emcloset,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "v" = (
 /obj/structure/rack,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "w" = (
 /obj/effect/decal/cleanable/generic,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "x" = (
 /obj/structure/tank_rack/oxygen,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "y" = (
 /obj/effect/decal/cleanable/blood/oil,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "z" = (
 /obj/machinery/constructable_frame/computerframe{
 	dir = 1
 	},
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "A" = (
 /obj/machinery/suit_cycler/medical,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "B" = (
 /mob/living/bot/medbot{
 	name = "Dr. Crusty"
 	},
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "C" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/firstaid,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "D" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/firstaid/adv,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "E" = (
 /obj/item/shard/shrapnel,
@@ -153,28 +153,28 @@
 "H" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/material/sheet/mapped/steel,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "I" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/material/rods,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "J" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/shard/shrapnel,
-/turf/simulated/floor/airless,
+/turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "K" = (
 /obj/item/shard/shrapnel,
-/turf/simulated/floor/shuttle/blue/airless,
+/turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "L" = (
 /obj/tether_away_spawner/debrisfield/carp,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "M" = (
-/turf/simulated/shuttle/wall/hard_corner,
+/turf/wall/shuttle/hard_corner,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

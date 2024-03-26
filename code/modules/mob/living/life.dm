@@ -18,6 +18,8 @@
 	if(machine && (machine.CanUseTopic(src, machine.DefaultTopicState()) == STATUS_CLOSE)) // unsure if this is a good idea, but using canmousedrop was ???
 		machine = null
 
+	CLEAR_HUD_ALERTS(src) // These will be set again in the various update procs below.
+
 	//Handle temperature/pressure differences between body and environment
 	handle_environment(loc.return_air())
 	handle_regular_status_updates() // Status & health update, are we dead or alive etc.
@@ -123,7 +125,7 @@
 				to_chat(src, "<span class='warning'>You feel weak.</span>")
 				SET_STATUS_MAX(src, STAT_WEAK, 3)
 				if(!lying)
-					emote("collapse")
+					emote(/decl/emote/visible/collapse)
 			if(prob(5) && prob(100 * RADIATION_SPEED_COEFFICIENT))
 				lose_hair()
 
@@ -135,8 +137,8 @@
 				take_overall_damage(0, 5 * RADIATION_SPEED_COEFFICIENT, used_weapon = "Radiation Burns")
 			if(prob(1))
 				to_chat(src, "<span class='warning'>You feel strange!</span>")
-				adjustCloneLoss(5 * RADIATION_SPEED_COEFFICIENT)
-				emote("gasp")
+				take_damage(CLONE, 5 * RADIATION_SPEED_COEFFICIENT)
+				emote(/decl/emote/audible/gasp)
 	if(radiation > 150)
 		damage = 8
 		radiation -= 4 * RADIATION_SPEED_COEFFICIENT
@@ -145,7 +147,7 @@
 	damage = FLOOR(damage * (my_species ? my_species.get_radiation_mod(src) : 1))
 	if(damage)
 		immunity = max(0, immunity - damage * 15 * RADIATION_SPEED_COEFFICIENT)
-		adjustToxLoss(damage * RADIATION_SPEED_COEFFICIENT)
+		take_damage(TOX, damage * RADIATION_SPEED_COEFFICIENT)
 		var/list/limbs = get_external_organs()
 		if(!isSynthetic() && LAZYLEN(limbs))
 			var/obj/item/organ/external/O = pick(limbs)
@@ -232,6 +234,16 @@
 /mob/living/proc/handle_environment(var/datum/gas_mixture/environment)
 
 	SHOULD_CALL_PARENT(TRUE)
+
+	// TODO: process dripping outside of Life() so corpses don't become sponges.
+	// TODO: factor temperature and vapor into this so warmer locations dry you off.
+	// TODO: apply a dripping overlay a la fire to show someone is saturated.
+	if(loc)
+		var/datum/reagents/touching_reagents = get_contact_reagents()
+		if(touching_reagents?.total_volume)
+			var/drip_amount = max(1, round(touching_reagents.total_volume * 0.1))
+			if(drip_amount)
+				touching_reagents.trans_to(loc, drip_amount)
 
 	// Handle physical effects of weather.
 	var/decl/state/weather/weather_state

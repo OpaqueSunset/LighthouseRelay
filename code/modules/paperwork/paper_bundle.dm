@@ -19,8 +19,8 @@
 	drop_sound        = 'sound/foley/paperpickup1.ogg'
 	pickup_sound      = 'sound/foley/paperpickup2.ogg'
 	item_flags        = ITEM_FLAG_CAN_TAPE
-	health            = 10
-	max_health        = 10
+	current_health    = 10
+	max_health = 10
 	var/tmp/cur_page  = 1           // current page
 	var/tmp/max_pages = 100         //Maximum number of papers that can be in the bundle
 	var/list/pages                  // Ordered list of pages as they are to be displayed. Can be different order than src.contents.
@@ -167,7 +167,7 @@
 /obj/item/paper_bundle/proc/burn_callback(var/obj/item/flame/P, var/mob/user, var/span_class)
 	if(QDELETED(P) || QDELETED(user))
 		return
-	if(!Adjacent(user) || user.get_active_hand() != P || !P.lit)
+	if(!Adjacent(user) || user.get_active_held_item() != P || !P.lit)
 		to_chat(user, SPAN_WARNING("You must hold \the [P] steady to burn \the [src]."))
 		return
 	user.visible_message( \

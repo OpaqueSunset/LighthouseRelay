@@ -128,9 +128,9 @@
 		if(reagents.total_volume)
 			to_chat(user, SPAN_NOTICE("There is already a blood sample in this syringe."))
 			return
-		if(iscarbon(target))
+		if(ishuman(target))
 			var/amount = REAGENTS_FREE_SPACE(reagents)
-			var/mob/living/carbon/T = target
+			var/mob/living/carbon/human/T = target
 			if(!T.dna)
 				to_chat(user, SPAN_WARNING("You are unable to locate any blood."))
 				if(ishuman(target))
@@ -306,7 +306,7 @@
 	admin_inject_log(user, target, src, contained_reagents, trans, violent=1)
 	break_syringe(target, user)
 
-/obj/item/chems/syringe/proc/break_syringe(mob/living/carbon/target, mob/living/carbon/user)
+/obj/item/chems/syringe/proc/break_syringe(mob/living/carbon/human/target, mob/living/carbon/user)
 	desc += " It is broken."
 	mode = SYRINGE_BROKEN
 	if(target)
@@ -321,7 +321,7 @@
 	amount_per_transfer_from_this = 60
 	volume = 60
 	visible_name = "a giant syringe"
-	time = 300
+	time = 30 SECONDS
 	mode = SYRINGE_INJECT
 	autolabel = FALSE
 	can_stab = FALSE

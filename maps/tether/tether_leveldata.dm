@@ -113,8 +113,8 @@
 /datum/level_data/virgo3b
 	abstract_type = /datum/level_data/virgo3b // use the main or player subtypes instead please
 	base_area = /area/tether/surfacebase/outside/outside1
-	base_turf = /turf/exterior/open
-	transition_turf_type = /turf/exterior/mimic_edge/transition
+	base_turf = /turf/open
+	transition_turf_type = /turf/mimic_edge/transition
 	use_global_exterior_ambience = FALSE
 	exterior_atmosphere = list(
 		/decl/material/gas/nitrogen       = VIRGO3B_MOL_N2,
@@ -176,7 +176,7 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /datum/level_data/virgo3b/player/solars
 	level_id = "virgo3bsolars"
-	transition_turf_type = /turf/exterior/mimic_edge/transition
+	transition_turf_type = /turf/mimic_edge/transition
 	connected_levels = list(
 		"virgo3bsurface1" = EAST
 	)
@@ -190,7 +190,7 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /datum/level_data/mining_level/virgo3b
 	level_id = "virgo3bmining"
-	transition_turf_type = /turf/exterior/mimic_edge/transition
+	transition_turf_type = /turf/mimic_edge/transition
 	connected_levels = list(
 		"virgo3bsurface1" = SOUTH
 	)

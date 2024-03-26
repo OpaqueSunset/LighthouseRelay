@@ -91,11 +91,6 @@
 		ChangeArea(src, new_area)
 	ChangeTurf(SSmapping.base_floor_type, keep_air_below = TRUE)
 
-// override for space turfs, since they should never hide anything
-/turf/space/levelupdate()
-	for(var/obj/O in src)
-		O.hide(0)
-
 /turf/space/attackby(obj/item/C, mob/user)
 
 	if (istype(C, /obj/item/stack/material/rods))
@@ -116,7 +111,7 @@
 			if (!S.use(1))
 				return
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			ChangeTurf(/turf/simulated/floor/airless)
+			ChangeTurf(/turf/floor/airless)
 			qdel(L)
 		else
 			to_chat(user, "<span class='warning'>The plating is going to need some support.</span>")

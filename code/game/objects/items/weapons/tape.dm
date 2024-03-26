@@ -11,7 +11,7 @@
 	max_amount       = 32
 	w_class          = ITEM_SIZE_SMALL
 	material         = /decl/material/solid/organic/plastic
-	health           = 10
+	current_health   = 10
 	max_health       = 10
 
 /obj/item/stack/tape_roll/can_split()
@@ -31,7 +31,7 @@
 
 /obj/item/stack/tape_roll/duct_tape/Initialize(mapload, amount, material)
 	. = ..()
-	set_extension(src, /datum/extension/tool/variable, list(
+	set_extension(src, /datum/extension/tool/variable/simple, list(
 		TOOL_BONE_GEL = TOOL_QUALITY_MEDIOCRE,
 		TOOL_SUTURES =  TOOL_QUALITY_BAD
 	))
