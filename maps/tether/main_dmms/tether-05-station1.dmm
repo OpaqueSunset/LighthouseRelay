@@ -19824,6 +19824,7 @@
 /area/engineering/workshop)
 "bZd" = (
 /obj/structure/window/reinforced,
+/obj/machinery/recycler,
 /turf/floor/tiled,
 /area/engineering/workshop)
 "bZi" = (

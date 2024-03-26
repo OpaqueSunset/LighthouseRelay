@@ -10014,6 +10014,7 @@
 /obj/structure/table/steel,
 /obj/random/tech_supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/random/tech_supply,
 /turf/floor/plating,
 /area/rnd/breakroom)
 "ua" = (
@@ -10520,7 +10521,9 @@
 /area/rnd/workshop)
 "uW" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/vending,
+/obj/machinery/vending{
+	dir = 4
+	},
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = -21
@@ -10673,11 +10676,10 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/structure/table/steel,
-/obj/random/tech_supply,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
+/obj/machinery/recycler,
 /turf/floor/plating,
 /area/rnd/breakroom)
 "vk" = (
@@ -12086,14 +12088,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/borderfloor{
-	dir = 8
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 8
@@ -12369,11 +12371,11 @@
 /turf/floor/tiled,
 /area/rnd/reception_desk)
 "yl" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 10
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 10
@@ -12883,11 +12885,11 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 6
 	},
-/obj/effect/floor_decal/borderfloor/corner{
-	dir = 8
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner{
 	dir = 8
@@ -13226,14 +13228,14 @@
 /turf/floor/tiled/steel_grid,
 /area/rnd/reception_desk)
 "zG" = (
-/obj/machinery/camera/network/research{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 4
+	},
+/obj/machinery/camera/network/research{
+	dir = 8
 	},
 /turf/floor/tiled,
 /area/rnd/reception_desk)
