@@ -5,6 +5,11 @@
 /  =--------------------=  /
 ////////////////////////////
 */
+/decl/sprite_accessory_category/ears
+	name                  = "Ears"
+	base_accessory_type   = /decl/sprite_accessory/ears
+	default_accessory     = /decl/sprite_accessory/ears/none
+	uid                   = "acc_cat_ears"
 
 /decl/sprite_accessory/ears
 	abstract_type = /decl/sprite_accessory/ears
@@ -13,6 +18,7 @@
 	color_blend = ICON_MULTIPLY
 	hidden_by_gear_slot = slot_head_str
 	hidden_by_gear_flag = BLOCK_HEAD_HAIR
+	accessory_category = SAC_EARS
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
 /decl/sprite_accessory/ears/get_cached_accessory_icon(obj/item/organ/external/organ, color = COLOR_WHITE, color_extra = null)
@@ -43,6 +49,12 @@
 		cached_icons[organ.bodytype][organ.organ_tag][key] = accessory_icon
 	return accessory_icon
 
+/decl/sprite_accessory/ears/none
+	name           = "Normal Ears"
+	icon_state     = "nothing"
+	draw_accessory = FALSE
+	grooming_flags = FALSE
+	uid            = "acc_ears_nothing"
 /decl/sprite_accessory/ears/bee
 	name = "bee antennae"
 	icon_state = "bee"

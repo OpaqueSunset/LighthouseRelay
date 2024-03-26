@@ -5,12 +5,17 @@
 /  =--------------------=  /
 ////////////////////////////
 */
+/decl/sprite_accessory_category/tail
+	name                  = "Tail"
+	base_accessory_type   = /decl/sprite_accessory/tail
+	default_accessory     = /decl/sprite_accessory/tail
+	uid                   = "acc_cat_tail"
 
 /decl/sprite_accessory/tail
 	abstract_type = /decl/sprite_accessory/tail
 	name = "You should not see this..."
 	icon = 'mods/content/genemodding/icons/mob/tails.dmi'
-
+	accessory_category = SAC_TAIL
 	color_blend = ICON_MULTIPLY // If null, don't recolor this at all.
 	var/extra_overlay // Icon state of an additional overlay to blend in.
 
