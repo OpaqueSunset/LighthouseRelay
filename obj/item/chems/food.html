@@ -16,29 +16,78 @@
 <h1>food <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/chems/food.html">chems/food</a></aside>
         
     
-            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/498b0a2d1483c98283d415a95c48250575626a88/code/modules/food/machines/_appliance.dm#L8">
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/food/machines/_appliance.dm#L8">
         <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;food&#x2F;machines&#x2F;_appliance.dm 8"/></a></h1>
 
 <p>Droppers. END</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/backyard_grilling_announcement">backyard_grilling_announcement</a></th><td>The message shown when the food cooks.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/backyard_grilling_count">backyard_grilling_count</a></th><td>The number of times this object and its ancestors have been grilled. Used for grown foods' roasted chems.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/backyard_grilling_product">backyard_grilling_product</a></th><td>What object type the food cooks into.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/backyard_grilling_rawness">backyard_grilling_rawness</a></th><td>How many SSobj ticks it takes for the food to cook.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/backyard_grilling_span">backyard_grilling_span</a></th><td>The span class used for the message above. Burned food defaults to SPAN_DANGER.</td></tr>
             <tr><th><a href="obj/item/chems/food.html#var/cooked_icon">cooked_icon</a></th><td>If 0, we wont do &quot;battered thing&quot; or similar prefixes. Mainly for recipes that include batter but have a special name
 Used for foods that are &quot;cooked&quot; without being made into a specific recipe or combination.
 Generally applied during modification cooking with oven/fryer.
-Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/utensil_flags">utensil_flags</a></th><td>A set of utensil flags determining which utensil interactions are valid with this food.</td></tr>
+            <tr><th><a href="obj/item/chems/food.html#var/utensil_type">utensil_type</a></th><td>A type used when cloning this food item for utensils.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
             <tr><th><a href="obj/item/chems/food.html#proc/attempt_apply_coating">attempt_apply_coating</a></th><td>Perform checks, then apply any applicable coatings.</td></tr></table>
-    <h2 id="var">Var Details</h2><h3 id="var/cooked_icon"><aside class="declaration">var </aside>cooked_icon
+    <h2 id="var">Var Details</h2><h3 id="var/backyard_grilling_announcement"><aside class="declaration">var </aside>backyard_grilling_announcement
             <aside>&ndash; </aside>
         
     
-            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/498b0a2d1483c98283d415a95c48250575626a88/code/modules/reagents/reagent_containers/food.dm#L49">
-        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food.dm 49"/></a></h3>
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food_cooking.dm#L7">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food_cooking.dm 7"/></a></h3>
+        <p>The message shown when the food cooks.</p><h3 id="var/backyard_grilling_count"><aside class="declaration">var </aside>backyard_grilling_count
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food_cooking.dm#L11">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food_cooking.dm 11"/></a></h3>
+        <p>The number of times this object and its ancestors have been grilled. Used for grown foods' roasted chems.</p><h3 id="var/backyard_grilling_product"><aside class="declaration">var </aside>backyard_grilling_product
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food_cooking.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food_cooking.dm 3"/></a></h3>
+        <p>What object type the food cooks into.</p><h3 id="var/backyard_grilling_rawness"><aside class="declaration">var </aside>backyard_grilling_rawness
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food_cooking.dm#L5">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food_cooking.dm 5"/></a></h3>
+        <p>How many SSobj ticks it takes for the food to cook.</p><h3 id="var/backyard_grilling_span"><aside class="declaration">var </aside>backyard_grilling_span
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food_cooking.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food_cooking.dm 9"/></a></h3>
+        <p>The span class used for the message above. Burned food defaults to SPAN_DANGER.</p><h3 id="var/cooked_icon"><aside class="declaration">var </aside>cooked_icon
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food.dm#L48">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food.dm 48"/></a></h3>
         <p>If 0, we wont do &quot;battered thing&quot; or similar prefixes. Mainly for recipes that include batter but have a special name
 Used for foods that are &quot;cooked&quot; without being made into a specific recipe or combination.
 Generally applied during modification cooking with oven/fryer.
-Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.</p><h2 id="proc">Proc Details</h2><h3 id="proc/attempt_apply_coating"><aside class="declaration">proc </aside>attempt_apply_coating<aside>(/<a href="obj.html">obj</a>/dip, /<a href="mob.html">mob</a>/user) 
+Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.</p><h3 id="var/utensil_flags"><aside class="declaration">var </aside>utensil_flags
+            <aside>&ndash; </aside>
         
     
-            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/498b0a2d1483c98283d415a95c48250575626a88/code/modules/reagents/reagent_containers/food.dm#L61">
-        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food.dm 61"/></a></aside>
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/food/utensils/_utensil.dm#L69">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;food&#x2F;utensils&#x2F;_utensil.dm 69"/></a></h3>
+        <p>A set of utensil flags determining which utensil interactions are valid with this food.</p><h3 id="var/utensil_type"><aside class="declaration">var </aside>utensil_type
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/food/utensils/_utensil.dm#L67">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;food&#x2F;utensils&#x2F;_utensil.dm 67"/></a></h3>
+        <p>A type used when cloning this food item for utensils.</p><h2 id="proc">Proc Details</h2><h3 id="proc/attempt_apply_coating"><aside class="declaration">proc </aside>attempt_apply_coating<aside>(/<a href="obj.html">obj</a>/dip, /<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/OpaqueSunset/LighthouseRelay/blob/caa2923d16fea3b9c2ba29ede45ea92780b435d9/code/modules/reagents/reagent_containers/food.dm#L60">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;reagent_containers&#x2F;food.dm 60"/></a></aside>
         </h3>
         <p>Perform checks, then apply any applicable coatings.</p>
 <p>@param dip /obj The object to attempt to dip src into.
@@ -46,7 +95,7 @@ Used to stop deep-fried meat from looking like slightly tanned raw meat, and mak
 <p>@return TRUE if coating applied, FALSE otherwise</p></main>
 <footer>
     nebula.dme
-    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/498b0a2d1483c98283d415a95c48250575626a88">498b0a2</a>
+    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/caa2923d16fea3b9c2ba29ede45ea92780b435d9">caa2923</a>
         (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
 </body>
 </html>
