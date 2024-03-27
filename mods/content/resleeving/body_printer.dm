@@ -1,9 +1,5 @@
 #define MAX_PRINTING_PASSES 5
-#define COST_PER_PRINT 15000 //in cm3
-#define BIOPRINTER_MAX_MATERIALS 30000
-#define MATERIAL_LOW 1
-#define MATERIAL_VERY_LOW 2
-#define MATERIAL_FULL 3
+#define COST_PER_PRINT 30 //in units
 
 /obj/machinery/bioprinter
 	name = "bioprinter"
@@ -50,7 +46,7 @@
 	var/datum/sound_token/sound_token
 	var/sound_id
 
-	var/list/materials = list(/decl/material/solid/organic/meat = 0, /decl/material/solid/organic/bone = 0)
+	var/obj/item/chems/glass/biomass_reservoir
 
 	var/list/technobabble_systems = list(
 		"microservo positioning system",
@@ -73,10 +69,14 @@
 	var/mob/living/carbon/human/clonemob
 	var/lid_open = FALSE
 
+/obj/machinery/bioprinter/get_contained_external_atoms()
+	. = ..()
+	LAZYREMOVE(., biomass_reservoir)
+
 /obj/machinery/bioprinter/filled/Initialize()
 	. = ..()
-	materials[/decl/material/solid/organic/meat] = BIOPRINTER_MAX_MATERIALS
-	materials[/decl/material/solid/organic/bone] = BIOPRINTER_MAX_MATERIALS
+	biomass_reservoir = new /obj/item/chems/glass/beaker/large
+	biomass_reservoir.reagents.add_reagent(/decl/material/liquid/biomass, 120)
 
 /obj/machinery/bioprinter/Initialize()
 	. = ..()
@@ -107,16 +107,6 @@
 	clone_mobs.Cut()
 	sound_token = null
 
-/obj/machinery/bioprinter/examine(mob/user)
-	. = ..()
-	for(var/S in materials)
-		var/decl/material/exam_material = GET_DECL(S)
-		var/mat_amt = 0
-		mat_amt = materials[S]
-		if(mat_amt > 0)
-			mat_amt = round((materials[S]/SHEET_MATERIAL_AMOUNT))
-		to_chat(user, SPAN_NOTICE("\The [src] has [mat_amt] sheets of [exam_material.name] out of [BIOPRINTER_MAX_MATERIALS/SHEET_MATERIAL_AMOUNT] in it!"))
-
 /obj/machinery/bioprinter/proc/SetBounds()
 	bound_width = width * world.icon_size
 	bound_height = height * world.icon_size
@@ -128,11 +118,16 @@
 		var/image/radial_button
 
 		radial_button = image(icon = 'icons/obj/items/device/diskette.dmi', icon_state = ICON_STATE_WORLD)
-		radial_button.name = "Eject \the DNA disk"
+		radial_button.color = COLOR_DEEP_SKY_BLUE
+		radial_button.overlays = list(
+			mutable_appearance(radial_button.icon, "slider", flags = RESET_COLOR),
+			mutable_appearance(radial_button.icon, "label_dna", flags = RESET_COLOR)
+		)
+		radial_button.name = "Eject the backup diskette"
 		cached_choices["disk_eject"] = radial_button
 
 		radial_button = image('icons/screen/radial.dmi', "radial_eject")
-		radial_button.name = "Eject \the [clonemob]"
+		radial_button.name = "Eject the patient"
 		cached_choices["eject_clone"] = radial_button
 
 		radial_button = image('icons/screen/radial.dmi', "radial_use")
@@ -143,6 +138,14 @@
 		radial_button.name = "Interact"
 		cached_choices["interact"] = radial_button
 
+		radial_button = image(icon = 'icons/obj/items/chem/beakers/beaker.dmi', icon_state = ICON_STATE_WORLD)
+		radial_button.color = GLASS_COLOR
+		var/mutable_appearance/shine_overlay = mutable_appearance(radial_button.icon, "[ICON_STATE_WORLD]_shine", adjust_brightness(GLASS_COLOR, 20 + MAT_VALUE_SHINY))
+		shine_overlay.alpha = MAT_VALUE_SHINY * 3
+		radial_button.overlays += shine_overlay
+		radial_button.name = "Eject the biomass container"
+		cached_choices["biomass_eject"] = radial_button
+
 /obj/machinery/bioprinter/attackby(obj/item/I, mob/user)
 	. = ..()
 	if(istype(I, /obj/item/disk) && !diskette)
@@ -152,71 +155,12 @@
 			diskette = D
 			to_chat(user, SPAN_NOTICE("You insert \the [D] into \the [src]."))
 		return TRUE
-	if(isitem(I) && LAZYLEN(I.matter) && (I.matter[1] in materials))
-		accept_materials(I, user)
-
-/obj/machinery/bioprinter/proc/accept_materials(var/obj/item/S, var/user)
-	// by this point, we assume that the stack is indeed a material we need.
-	// this code is all really cringe and does not give a shit beyond the first entry in matter because it shouldn't be accepting anything else.
-	// this is bad, yes!
-	// too bad!
-
-	if(materials[S.matter[1]] >= BIOPRINTER_MAX_MATERIALS)
-		to_chat(user, SPAN_WARNING("\The [src] is full of [S]!"))
-		return
-	if(isstack(S))
-		var/obj/item/stack/ST = S
-		var/sheets_input = input(user, "How many sheets do you wish to input?", "Sheet Input", 0) as num|null
-
-		if(sheets_input == 0)
-			return
-
-		sheets_input = clamp(sheets_input, 1, ST.amount)
-
-		var/free_space = BIOPRINTER_MAX_MATERIALS - materials[ST.matter[1]]
-		var/max_input = round((free_space / SHEET_MATERIAL_AMOUNT))
-		if(max_input == 0)
-			to_chat(user, SPAN_WARNING("\The [src] is too full to add \the [ST]!"))
-			return
-
-		sheets_input = min(sheets_input, max_input)
-
-		var/input_amt = sheets_input * SHEET_MATERIAL_AMOUNT
-
-		if((materials[ST.matter[1]] + input_amt) >= BIOPRINTER_MAX_MATERIALS) //doublecheck sanity
-			return
-
-		materials[ST.matter[1]] += input_amt
-		ST.use(sheets_input)
-		to_chat(user, SPAN_NOTICE("You insert [sheets_input] sheets of [S] into \the [src]."))
-	else
-		var/mat = S.matter[1]
-		if(materials[mat] + S.matter[mat] > BIOPRINTER_MAX_MATERIALS)
-			return
-		qdel(S)
-		materials[mat] += S.matter[mat]
-
-/obj/machinery/bioprinter/proc/check_materials()
-	var/mats_low
-	var/mats_very_low
-	for(var/S in materials)
-		if(materials[S] <= 15000 && materials[S] > 5000)
-			mats_low++
-		if(materials[S] <= 5000)
-			mats_very_low++
-	if(mats_very_low)
-		return MATERIAL_VERY_LOW
-	if(mats_low)
-		return MATERIAL_LOW
-	else
-		return MATERIAL_FULL
-
-/obj/machinery/bioprinter/proc/use_materials(var/material1, var/material2, var/mat1amt, var/mat2amt)
-	if(materials[material1] < mat1amt || materials[material2] < mat2amt) //if either material is too low, return.
-		return FALSE
-	materials[material1] -= mat1amt
-	materials[material2] -= mat2amt
-	return TRUE
+	if(istype(I, /obj/item/chems/glass/beaker) && !biomass_reservoir)
+		if(user.unequip(I))
+			I.forceMove(src)
+			biomass_reservoir = I
+			to_chat(user, SPAN_NOTICE("You insert \the [biomass_reservoir] into \the [src]."))
+		return TRUE
 
 /obj/machinery/bioprinter/proc/open_pod_start()
 	animate(lid, pixel_y = 38, time = 3 SECONDS, easing = SINE_EASING)
@@ -261,14 +205,13 @@
 		var/has_record = diskette.contains_file_type("BDY")
 		add_overlay(image(icon, "dna_indicator_[has_record ? "sample" : "none"]"))
 
-	var/mat_status = check_materials()
-	switch(mat_status)
-		if(MATERIAL_LOW)
-			add_overlay(image(icon, "reactor_medium"))
-		if(MATERIAL_VERY_LOW)
-			add_overlay(image(icon, "reactor_low"))
-		if(MATERIAL_FULL)
-			add_overlay(image(icon, "reactor_full"))
+	var/biomass_volume = REAGENT_VOLUME(biomass_reservoir?.reagents, /decl/material/liquid/biomass)
+	if(biomass_volume <= COST_PER_PRINT)
+		add_overlay(image(icon, "reactor_low"))
+	else if(biomass_volume < biomass_reservoir.reagents.maximum_volume)
+		add_overlay(image(icon, "reactor_medium"))
+	else
+		add_overlay(image(icon, "reactor_full"))
 
 	if(!printing && !cleaning)
 		add_overlay(image(icon, "computer_standby"))
@@ -299,34 +242,52 @@
 /obj/machinery/bioprinter/physical_attack_hand(var/mob/living/carbon/human/user)
 	. = ..()
 	if(stat & (NOPOWER|BROKEN)) //shitters clogged
-		return
+		return FALSE
 	var/list/choices = radial_choices()
 	var/choice = RADIAL_INPUT(user, choices)
-	if(choice == "start_print")
-		start_print()
-	if(choice == "interact" && needs_attention)
-		fulfill_interaction(user, TRUE)
-	if(choice == "eject_clone" && clonemob && print_finished && !removing_clone)
-		removing_clone = TRUE
-		if(do_after(user, 5 SECONDS, src))
-			clonemob.forceMove(get_turf(user))
-			clonemob = null
-			do_fakemob_animation("fakemob5", "layer5", "stage5", fade_out = TRUE)
-			print_finished = FALSE
-			removing_clone = FALSE
-			ping("\The [src] pings, \"Print removal detected. Engaging cleaning cycle!\"")
-			start_cleaning()
-		else
-			removing_clone = FALSE
-	if(choice == "disk_eject" && diskette)
-		user.put_in_hands(diskette)
-		to_chat(user, SPAN_NOTICE("You eject the diskette."))
-		diskette = null
+	switch(choice)
+		if("start_print")
+			start_print()
+			return TRUE
+		if("interact")
+			if(needs_attention)
+				fulfill_interaction(user, TRUE)
+			return TRUE
+		if("eject_clone")
+			if(clonemob && print_finished && !removing_clone)
+				removing_clone = TRUE
+				if(do_after(user, 5 SECONDS, src))
+					clonemob.forceMove(get_turf(user))
+					clonemob = null
+					do_fakemob_animation("fakemob5", "layer5", "stage5", fade_out = TRUE)
+					print_finished = FALSE
+					removing_clone = FALSE
+					ping("\The [src] pings, \"Print removal detected. Engaging cleaning cycle!\"")
+					start_cleaning()
+				else
+					removing_clone = FALSE
+			return TRUE
+		if("disk_eject")
+			if(diskette)
+				if(!user.put_in_hands(diskette))
+					diskette.dropInto(loc)
+				to_chat(user, SPAN_NOTICE("You eject \the [diskette]."))
+				diskette = null
+			return TRUE
+		if("biomass_eject")
+			if(biomass_reservoir)
+				if(!user.put_in_hands(biomass_reservoir))
+					biomass_reservoir.dropInto(loc)
+				to_chat(user, SPAN_NOTICE("You eject \the [biomass_reservoir]."))
+				biomass_reservoir = null
+			return TRUE
 
 /obj/machinery/bioprinter/proc/radial_choices()
 	. = list()
 	if(diskette && !printing)
 		.["disk_eject"] = cached_choices["disk_eject"]
+	if(biomass_reservoir && !printing)
+		.["biomass_eject"] = cached_choices["biomass_eject"]
 	if(clonemob && print_finished)
 		.["eject_clone"] = cached_choices["eject_clone"]
 	if(!printing && !cleaning && !(print_finished && clonemob))
@@ -355,9 +316,10 @@
 	if(!diskette.contains_file_type("BDY"))
 		buzz("\The [src] buzzes, \"Error! No body record detected.\"")
 		return
-	if(!use_materials(/decl/material/solid/organic/meat, /decl/material/solid/organic/bone, COST_PER_PRINT, COST_PER_PRINT/2))
-		buzz("\The [src] buzzes, \"Error! Insufficent materials.\"")
+	if(!biomass_reservoir?.reagents?.has_reagent(/decl/material/liquid/biomass, COST_PER_PRINT))
+		buzz("\The [src] buzzes, \"Error! Insufficent biomass.\"")
 		return
+	biomass_reservoir.remove_from_reagents(/decl/material/liquid/biomass, COST_PER_PRINT)
 	if(lid_open)
 		close_pod_start()
 	printing = TRUE
@@ -451,6 +413,7 @@
 			//we don't use do_fakemob_animation here because we do some custom stuff to make the final fakemob look like the person being printed.
 			var/obj/effect/fake_clone_mob/fakemob = clone_mobs["fakemob5"]
 			fakemob.appearance = clonemob.appearance
+			fakemob.transform = matrix() // do not rest!!
 			fakemob.appearance_flags = RESET_TRANSFORM
 			fakemob.pixel_x += 1 //appearance means the x and y are completely wonky, so set offsets to make sure it renders properly.
 			fakemob.pixel_y += 17
