@@ -11,7 +11,7 @@
 		ear_display = "REQUIRES UPDATE"
 	. += "<b>Ears</b><br>"
 	. += " Style: <a href='?src=\ref[src];ear_style=1'>[ear_display]</a><br>"
-	if (!isnull(ear.color_blend))
+	if (!isnull(ear?.color_blend))
 		. += "<a href='?src=\ref[src];ear_color=1'>Change Color</a> [COLORED_SQUARE(pref.ear_color)]<br>"
 		if (ear.extra_overlay)
 			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.ear_color_extra)]<br>"
@@ -40,7 +40,7 @@
 
 	if(href_list["ear_style"])
 		// Construct the list of names allowed for this user.
-		var/list/pretty_ear_styles = list("Normal" = null)
+		var/list/pretty_ear_styles = list()
 		for(var/path in ear_styles)
 			var/decl/sprite_accessory/ears/instance = ear_styles[path]
 			pretty_ear_styles[instance.name] = path
@@ -67,7 +67,7 @@
 
 	else if(href_list["tail_style"])
 		// Construct the list of names allowed for this user.
-		var/list/pretty_tail_styles = list("Normal" = null)
+		var/list/pretty_tail_styles = list()
 		for(var/path in tail_styles)
 			var/decl/sprite_accessory/tail/instance = tail_styles[path]
 			pretty_tail_styles[instance.name] = path

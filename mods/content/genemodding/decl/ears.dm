@@ -50,11 +50,13 @@
 	return accessory_icon
 
 /decl/sprite_accessory/ears/none
-	name           = "Normal Ears"
+	name           = "normal ears"
 	icon_state     = "nothing"
+	color_blend    = null
 	draw_accessory = FALSE
 	grooming_flags = FALSE
 	uid            = "acc_ears_nothing"
+
 /decl/sprite_accessory/ears/bee
 	name = "bee antennae"
 	icon_state = "bee"
