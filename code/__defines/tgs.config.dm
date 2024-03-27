@@ -3,7 +3,7 @@
 #define TGS_DEFINE_AND_SET_GLOBAL(Name, Value) var/global/##Name = ##Value
 #define TGS_READ_GLOBAL(Name) global.##Name
 #define TGS_WRITE_GLOBAL(Name, Value) global.##Name = ##Value
-#define TGS_WORLD_ANNOUNCE(message) to_chat(world, SPAN_BOLDANNOUNCE([html_encode(##message)]))
+#define TGS_WORLD_ANNOUNCE(message) to_world(SPAN_BOLDANNOUNCE(html_encode(##message)))
 #define TGS_INFO_LOG(message) log_world("TGS Info: [##message]")
 #define TGS_WARNING_LOG(message) log_world("TGS Warn: [##message]")
 #define TGS_ERROR_LOG(message) log_world("TGS Error: [##message]")
