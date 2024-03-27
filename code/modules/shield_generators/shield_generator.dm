@@ -514,6 +514,8 @@
 
 	while(HasAbove(T.z))
 		T = GetAbove(T)
+		if(T.z_flags & ZM_TERMINATOR) // Do not propagate from the surface to the station.
+			break
 		if(istype(T))
 			turfs.Add(T)
 
@@ -521,6 +523,8 @@
 
 	while(HasBelow(T.z))
 		T = GetBelow(T)
+		if(T.z_flags & ZM_TERMINATOR) // Or from the station to the surface.
+			break
 		if(istype(T))
 			turfs.Add(T)
 

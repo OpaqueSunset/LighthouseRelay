@@ -36,16 +36,13 @@
 "aad" = (
 /turf/exterior/sif_growth,
 /area/tether/surfacebase/outside/outside1)
-"aae" = (
-/turf/exterior/sif_growth,
-/area/tether/surfacebase/mining_main/external)
 "aaf" = (
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/mining_main/external)
 "aag" = (
 /obj/machinery/hologram/holopad,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/mining_main/external)
+/area/tether/surfacebase/outside/outside1)
 "aah" = (
 /turf/wall/natural,
 /area/tether/surfacebase/outside/outside1)
@@ -53,9 +50,8 @@
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/mining_main/external)
+/area/tether/surfacebase/outside/outside1)
 "aaj" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -387,9 +383,8 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/mining_main/external)
+/area/tether/surfacebase/outside/outside1)
 "aaX" = (
 /obj/structure/flaps,
 /obj/machinery/conveyor{
@@ -18283,8 +18278,8 @@
 	icon_state = "map_vent_in";
 	id_tag = "atmos_in";
 	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
+	internal_pressure_bound = 400;
+	internal_pressure_bound_default = 400;
 	pressure_checks = 2;
 	pressure_checks_default = 2;
 	pump_direction = 0;
@@ -18502,7 +18497,6 @@
 /obj/machinery/air_sensor{
 	id_tag = "atmos_intake"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/engineering/atmos/intake)
 "aJB" = (
@@ -29702,10 +29696,6 @@
 	},
 /turf/floor/tiled,
 /area/engineering/atmos)
-"cAR" = (
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/engineering/atmos/intake)
 "cBB" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -30056,8 +30046,8 @@
 	icon_state = "map_vent_in";
 	id_tag = "atmos_in";
 	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
+	internal_pressure_bound = 400;
+	internal_pressure_bound_default = 400;
 	pressure_checks = 2;
 	pressure_checks_default = 2;
 	pump_direction = 0;
@@ -30265,10 +30255,6 @@
 /obj/machinery/meter,
 /turf/floor/tiled/techmaint,
 /area/engineering/atmos)
-"fOF" = (
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/mining_main/external)
 "fPj" = (
 /obj/structure/closet/secure_closet/paramedic,
 /obj/item/stack/nanopaste,
@@ -38577,10 +38563,10 @@ aah
 aah
 aah
 aah
-pLu
-pLu
-pLu
-pLu
+akb
+akb
+akb
+akb
 aah
 aah
 aah
@@ -41114,7 +41100,7 @@ bOI
 bQT
 aHh
 aIp
-pLu
+akb
 aad
 aad
 aad
@@ -41270,7 +41256,7 @@ bOt
 bQL
 bSJ
 aIq
-pLu
+akb
 aad
 aad
 aad
@@ -41426,7 +41412,7 @@ bON
 bQV
 bSJ
 aIq
-pLu
+akb
 aad
 aad
 aad
@@ -41582,7 +41568,7 @@ bOL
 bQU
 aHh
 aIr
-pLu
+akb
 aad
 aad
 aad
@@ -43466,16 +43452,16 @@ aIv
 aIv
 aIv
 aIv
-cAR
-cAR
-cAR
-cAR
+aJt
+aJt
+aJt
+aJt
 aJA
-cAR
-cAR
-cAR
-cAR
-cAR
+aJt
+aJt
+aJt
+aJt
+aJt
 aad
 aad
 aad
@@ -43632,7 +43618,7 @@ aJS
 aJJ
 aJS
 aJt
-cAR
+aJt
 aad
 aad
 aad
@@ -43788,7 +43774,7 @@ aIM
 aIM
 aIM
 aJS
-cAR
+aJt
 aad
 aad
 aad
@@ -43944,7 +43930,7 @@ aJK
 aJW
 aKl
 aKl
-cAR
+aJt
 aad
 aad
 aad
@@ -44100,7 +44086,7 @@ aJJ
 aJS
 aKl
 aKl
-cAR
+aJt
 aad
 aad
 aad
@@ -44166,7 +44152,7 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aBy
 qQw
 jZV
@@ -44256,7 +44242,7 @@ aIM
 aIM
 aIM
 aJW
-cAR
+aJt
 aad
 aad
 aad
@@ -44322,7 +44308,7 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aDD
 bVO
 den
@@ -44478,7 +44464,7 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aDD
 bVO
 mYW
@@ -44634,7 +44620,7 @@ aad
 aad
 aad
 aad
-pLu
+akb
 cHR
 qQw
 qQw
@@ -46487,25 +46473,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-fOF
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+akb
 aaf
 aao
 aau
@@ -46643,24 +46629,24 @@ aaT
 aaT
 aaT
 rmp
-aaf
-fOF
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+akb
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
 aaW
 aaj
 aao
@@ -46799,24 +46785,24 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-fOF
-fOF
-fOF
-fOF
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
 aai
 vCB
 aap
@@ -46955,25 +46941,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-fOF
-fOF
-fOF
-fOF
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aaf
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+akb
 aaf
 aaq
 aax
@@ -47111,25 +47097,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-aaf
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
 aak
 aar
 aar
@@ -47267,25 +47253,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
 aal
 aat
 aaz
@@ -47423,25 +47409,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
 aam
 aas
 aay
@@ -47579,25 +47565,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aaf
-aaf
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-fOF
-aaf
-aaf
-aaf
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
+akb
 aan
 aar
 aar
@@ -47735,25 +47721,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-fOF
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aaf
+akb
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+akb
 aag
-aaf
+akb
 aaf
 oDw
 jAw
@@ -47891,25 +47877,25 @@ aaT
 aaT
 aaT
 rmp
-aaf
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-fOF
-fOF
-fOF
+akb
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+aad
+akb
+akb
+akb
 aaf
 oDw
 waw
@@ -48066,7 +48052,7 @@ aad
 aad
 aad
 aad
-fOF
+aaf
 uVV
 dcr
 aar

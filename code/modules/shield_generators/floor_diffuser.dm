@@ -4,8 +4,8 @@
 	icon = 'icons/obj/machines/shielding.dmi'
 	icon_state = "fdiffuser_on"
 	use_power = POWER_USE_ACTIVE
-	idle_power_usage = 100
-	active_power_usage = 2000
+	idle_power_usage = 25 // Previously 100.
+	active_power_usage = 500 // Previously 2000
 	anchored = TRUE
 	density = FALSE
 	level = LEVEL_BELOW_PLATING
