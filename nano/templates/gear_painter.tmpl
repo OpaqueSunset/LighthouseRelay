@@ -1,0 +1,31 @@
+<div class="item">
+	<div class="itemLabelNarrow">
+		<b>Item</b>:
+	</div>
+	<div class="itemContent">
+		{{if data.item}}
+			<b>{{:data.item}}</b>
+		{{else}}
+			<b>None</b>
+		{{/if}}
+	</div>
+</div>
+<div class="item">
+	<div class="itemLabelNarrow">
+		<b>Color</b>:
+	</div>
+	<div class="itemContentWide">
+		<span style='font-family: fixedsys; font-size: 14px; background-color: {{:data.painting_color}}; color: {{:data.painting_color}}'>___</span>
+		&nbsp;&nbsp;{{:helper.link('Select Color', 'pencil', {'select' : 1})}}
+	</div>
+</div>
+<div class="item">
+	<div class="itemLabelNarrow">
+		<b>Actions</b>:
+	</div>
+	<div class="itemContentWide">
+		{{:helper.link('Paint', 'gear', {'paint' : 1}, data.item ? null : 'disabled')}}
+		{{:helper.link('Remove Paint', 'cancel', {'clear' : 1}, (!data.item || !data.item_color) ? 'disabled' : null)}}
+		{{:helper.link('Eject', 'eject', {'eject' : 1}, data.item ? null : 'disabled')}}
+	</div>
+</div>
