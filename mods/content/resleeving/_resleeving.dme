@@ -2,6 +2,7 @@
 #define CONTENT_PACK_RESLEEVING
 #include "resleeving.dm"
 #include "mind_record.dm"
+#include "biomass.dm"
 #include "body_record.dm"
 #include "body_printer.dm"
 #include "sleevemate.dm"
