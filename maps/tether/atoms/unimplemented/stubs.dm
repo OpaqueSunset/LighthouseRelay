@@ -126,8 +126,6 @@
 /obj/machinery/door/firedoor/multi_tile
 
 /obj/machinery/gear_painter
-// Station decor
-/obj/machinery/holosign/bar
 
 // Our libraries are different
 /obj/machinery/librarycomp
