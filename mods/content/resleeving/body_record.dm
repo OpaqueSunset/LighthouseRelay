@@ -45,44 +45,25 @@
 			<p>[get_bodytype_string()]</p>
 		</center>"}
 
-/mob/living/carbon/human/proc/create_body_record(upload = TRUE)
-	if(!dna)
-		return
+/mob/living/carbon/human/proc/get_body_record_metadata()
 	var/list/metadata = list()
 	metadata[BODY_RECORD_FIELD_DNA] = dna
 	var/bodytype_string = get_bodytype()?.name
 	if(bodytype_string)
 		metadata[BODY_RECORD_FIELD_BODYTYPE] = bodytype_string
-	if(tail_style)
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL])
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_STYLE, tail_style.uid)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR, tail_color)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR_EXTRA, tail_color_extra)
-	if(ear_style)
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS])
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_STYLE, ear_style.uid)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR, ear_color)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR_EXTRA, ear_color_extra)
+	return metadata
+
+/mob/living/carbon/human/proc/create_body_record(upload = TRUE)
+	if(!dna)
+		return
 	// todo: implement BODY_RECORD_FIELD_ASPECTS for storing physical aspects, EXCLUDE things like prosthetics
-	var/datum/computer_file/data/body_record/body_record = new(metadata)
+	var/datum/computer_file/data/body_record/body_record = new(get_body_record_metadata())
 	body_record.filename = "[replacetext(real_name, " ", "_")].BDY"
 	if(upload)
 		var/datum/computer_network/network = get_local_network_at(get_turf(src))
 		if(network)
 			network.store_file(body_record, OS_BODY_RECORDS_DIR, TRUE, mainframe_role = MF_ROLE_TRANSCORE)
 	return body_record
-
-/datum/computer_file/data/body_record/proc/get_tail_metadata()
-	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
-		return
-	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_TAIL)
-
-/datum/computer_file/data/body_record/proc/get_ears_metadata()
-	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
-		return
-	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_EARS)
 
 /obj/item/disk/transcore
 	name = "transcore record disk"
@@ -99,6 +80,38 @@
 
 /datum/computer_file/data/body_record/proc/create_human(location)
 	var/mob/living/carbon/human/our_human = new /mob/living/carbon/human(location, null, get_dna(), get_bodytype_decl())
+	our_human.update_hair(update_icons = TRUE)
+	return our_human
+
+#ifdef CONTENT_PACK_GENEMODDING
+/mob/living/carbon/human/get_body_record_metadata()
+	var/list/metadata = ..()
+	if(tail_style)
+		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
+		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL])
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_STYLE, tail_style.uid)
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR, tail_color)
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR_EXTRA, tail_color_extra)
+	if(ear_style)
+		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
+		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS])
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_STYLE, ear_style.uid)
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR, ear_color)
+		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR_EXTRA, ear_color_extra)
+	return metadata
+
+/datum/computer_file/data/body_record/proc/get_tail_metadata()
+	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
+		return
+	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_TAIL)
+
+/datum/computer_file/data/body_record/proc/get_ears_metadata()
+	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
+		return
+	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_EARS)
+
+/datum/computer_file/data/body_record/create_human(location)
+	var/mob/living/carbon/human/our_human = ..()
 	var/list/tail_data = get_tail_metadata()
 	if(tail_data?[BODY_RECORD_GENEMOD_STYLE])
 		our_human.tail_style = decls_repository.get_decl_by_id(tail_data[BODY_RECORD_GENEMOD_STYLE])
@@ -110,5 +123,5 @@
 		our_human.ear_style = decls_repository.get_decl_by_id(ear_data[BODY_RECORD_GENEMOD_STYLE])
 		our_human.ear_color = ear_data[BODY_RECORD_GENEMOD_COLOR]
 		our_human.ear_color_extra = ear_data[BODY_RECORD_GENEMOD_COLOR_EXTRA]
-	our_human.update_hair(update_icons = TRUE)
 	return our_human
+#endif
