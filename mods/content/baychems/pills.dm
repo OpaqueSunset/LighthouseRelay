@@ -36,32 +36,32 @@
 
 ////Bottles
 
-/obj/item/storage/pill_bottle/antitox
+/obj/item/pill_bottle/antitox
 	labeled_name = "dylovene"
 
-/obj/item/storage/pill_bottle/brute_meds
+/obj/item/pill_bottle/brute_meds
 	labeled_name = "bicaridine"
 
-/obj/item/storage/pill_bottle/oxygen
+/obj/item/pill_bottle/oxygen
 	labeled_name = "dexalin"
 
-/obj/item/storage/pill_bottle/antitoxins
+/obj/item/pill_bottle/antitoxins
 	labeled_name = "dylovene"
 
-/obj/item/storage/pill_bottle/adrenaline
+/obj/item/pill_bottle/adrenaline
 	labeled_name = "inaprovaline"
 
-/obj/item/storage/pill_bottle/burn_meds
+/obj/item/pill_bottle/burn_meds
 	labeled_name = "kelotane"
 
-/obj/item/storage/pill_bottle/antibiotics
+/obj/item/pill_bottle/antibiotics
 	labeled_name = "spaceacillin"
 
-/obj/item/storage/pill_bottle/painkillers
+/obj/item/pill_bottle/painkillers
 	labeled_name = "tramadol"
 
-/obj/item/storage/pill_bottle/antidepressants
+/obj/item/pill_bottle/antidepressants
 	labeled_name = "citalopram"
 
-/obj/item/storage/pill_bottle/stimulants
+/obj/item/pill_bottle/stimulants
 	labeled_name = "methylphenidate"

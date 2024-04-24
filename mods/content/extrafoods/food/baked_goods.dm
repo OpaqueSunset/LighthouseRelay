@@ -7,14 +7,14 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "keylimepie"
 	slice_path = /obj/item/chems/food/keylimepieslice
-	slices_num = 5
+	slice_num = 5
 	filling_color = "#f5b951"
 	nutriment_amt = 12
 	nutriment_desc = list("lime" = 12)
 
 /obj/item/chems/food/sliceable/keylimepie/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 	add_to_reagents(/decl/material/liquid/nutriment/bread, 4, list("graham crackers" = 4))
 
 /obj/item/chems/food/keylimepieslice
@@ -36,14 +36,14 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "quiche"
 	slice_path = /obj/item/chems/food/quicheslice
-	slices_num = 5
+	slice_num = 5
 	filling_color = "#f5b951"
 	nutriment_amt = 10
 	nutriment_desc = list("cheese" = 5, "egg" = 5)
 
 /obj/item/chems/food/sliceable/quiche/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 10)
+	add_to_reagents(/decl/material/solid/organic/meat, 10)
 
 /obj/item/chems/food/quicheslice
 	name = "slice of quiche"
@@ -60,7 +60,7 @@
 
 /obj/item/chems/food/quicheslice/filled/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
+	add_to_reagents(/decl/material/solid/organic/meat, 1)
 
 /obj/item/chems/food/sliceable/brownies
 	name = "brownies"
@@ -69,7 +69,7 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "brownies"
 	slice_path = /obj/item/chems/food/browniesslice
-	slices_num = 4
+	slice_num = 4
 	trash = /obj/item/trash/brownies
 	filling_color = "#301301"
 	nutriment_amt = 8
@@ -104,7 +104,7 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "cosmicbrownies"
 	slice_path = /obj/item/chems/food/cosmicbrowniesslice
-	slices_num = 4
+	slice_num = 4
 	trash = /obj/item/trash/brownies
 	filling_color = "#301301"
 	nutriment_amt = 8

@@ -12,7 +12,7 @@
 /obj/item/chems/food/lomein/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 	add_to_reagents(/decl/material/liquid/drink/juice/carrot, 3)
 	add_to_reagents(/decl/material/liquid/eyedrops, 1)
 
@@ -38,5 +38,5 @@
 
 /obj/item/chems/food/chickennoodlesoup/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 	add_to_reagents(/decl/material/liquid/water, 5)

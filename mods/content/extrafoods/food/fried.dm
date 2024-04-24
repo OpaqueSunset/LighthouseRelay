@@ -10,7 +10,7 @@
 
 /obj/item/chems/food/chickenfillet/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 8)
+	add_to_reagents(/decl/material/solid/organic/meat, 8)
 
 /obj/item/chems/food/chilicheesefries
 	name = "chili cheese fries"
@@ -26,7 +26,7 @@
 
 /obj/item/chems/food/chilicheesefries/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 	add_to_reagents(/decl/material/liquid/capsaicin, 2)
 
 /obj/item/chems/food/carrotfries
@@ -57,7 +57,7 @@
 
 /obj/item/chems/food/friedmushroom/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
 /obj/item/chems/food/pisanggoreng
 	name = "pisang goreng"
@@ -73,7 +73,7 @@
 
 /obj/item/chems/food/pisanggoreng/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
+	add_to_reagents(/decl/material/solid/organic/meat, 1)
 
 /obj/item/chems/food/sausage/battered
 	name = "battered sausage"
@@ -86,7 +86,7 @@
 
 /obj/item/chems/food/sausage/battered/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/nutriment/batter, 1.7)
 	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1.5)
 
@@ -118,7 +118,7 @@
 
 /obj/item/chems/food/chickenkatsu/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/nutriment/batter/beerbatter, 2)
 	add_to_reagents(/decl/material/liquid/nutriment/triglyceride/oil, 1)
 
@@ -159,7 +159,7 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "pizzacrunch"
 	slice_path = /obj/item/chems/food/pizzacrunchslice
-	slices_num = 6
+	slice_num = 6
 	nutriment_amt = 25
 	nutriment_desc = list("fried pizza" = 25)
 	bitesize = 2
@@ -217,4 +217,4 @@
 
 /obj/item/chems/food/corn_dog/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)

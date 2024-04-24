@@ -190,7 +190,7 @@
 
 /obj/item/chems/food/burrito/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 
 /obj/item/chems/food/burrito_vegan
 	name = "vegan burrito"
@@ -216,7 +216,7 @@
 
 /obj/item/chems/food/burrito_spicy/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/capsaicin, 3)
 
 /obj/item/chems/food/burrito_cheese
@@ -230,7 +230,7 @@
 
 /obj/item/chems/food/burrito_cheese/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 
 /obj/item/chems/food/burrito_cheese_spicy
 	name = "spicy cheese meat burrito"
@@ -243,7 +243,7 @@
 
 /obj/item/chems/food/burrito_cheese_spicy/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/capsaicin, 3)
 
 /obj/item/chems/food/burrito_hell
@@ -266,7 +266,7 @@
 
 /obj/item/chems/food/breakfast_wrap/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 9)
+	add_to_reagents(/decl/material/solid/organic/meat, 9)
 	add_to_reagents(/decl/material/liquid/capsaicin/condensed, 20)
 
 /obj/item/chems/food/burrito_mystery

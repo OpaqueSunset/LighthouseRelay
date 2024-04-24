@@ -38,16 +38,14 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		var/list/vis_objs = list()
 		get_mobs_and_objs_in_view_fast(get_turf(src),1,vis_mobs,vis_objs) //ok so the implementation on bay/neb directly mutates lists
 
-		for(var/vismob in vis_mobs)
-			var/mob/M = vismob
-			if(isobserver(M) && (get_preference_value(/datum/client_preference/show_subtle) == PREF_HIDE) && !M.client?.holder)
-				M.show_message(undisplayed_message, AUDIBLE_MESSAGE)
+		for(var/mob/vismob as anything in vis_mobs)
+			if(isobserver(vismob) && (get_preference_value(/datum/client_preference/show_subtle) == PREF_HIDE) && !vismob.client?.holder)
+				vismob.show_message(undisplayed_message, AUDIBLE_MESSAGE)
 			else
-				M.show_message(message, AUDIBLE_MESSAGE)
+				vismob.show_message(message, AUDIBLE_MESSAGE)
 
-		for(var/visobj in vis_objs)
-			var/obj/O = visobj
-			O.see_emote(src, message, AUDIBLE_MESSAGE)
+		for(var/obj/visobj as anything in vis_objs)
+			visobj.show_message(message, AUDIBLE_MESSAGE)
 
 
 #define MAX_HUGE_MESSAGE_LEN 8192

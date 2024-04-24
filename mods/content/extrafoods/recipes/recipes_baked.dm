@@ -1,13 +1,13 @@
 /decl/recipe/brownies
 	display_name = "chocolate brownies"
 	appliance = APPLIANCE_OVEN
-	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/liquid/nutriment/protein/egg = 3)
+	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/solid/organic/meat/egg = 3)
 	reagent_mix = REAGENT_REPLACE //No egg or mix in final recipe
 	result = /obj/item/chems/food/sliceable/brownies
 
 /decl/recipe/cosmicbrownies
 	appliance = APPLIANCE_OVEN
-	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/liquid/nutriment/protein/egg = 3)
+	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/solid/organic/meat/egg = 3)
 	fruit = list("ambrosiavulgaris" = 1)
 	reagent_mix = REAGENT_REPLACE //No egg or mix in final recipe
 	result = /obj/item/chems/food/sliceable/cosmicbrownies
@@ -24,7 +24,7 @@
 /decl/recipe/keylimepie
 	appliance = APPLIANCE_OVEN
 	fruit = list("lime slice" = 2)
-	reagents = list(/decl/material/liquid/drink/milk = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/liquid/nutriment/protein/egg = 3, /decl/material/liquid/nutriment/flour = 10)
+	reagents = list(/decl/material/liquid/drink/milk = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/solid/organic/meat/egg = 3, /decl/material/liquid/nutriment/flour = 10)
 	result = /obj/item/chems/food/sliceable/keylimepie
 	reagent_mix = REAGENT_REPLACE //No raw egg in finished product, protein after cooking causes magic meatballs otherwise
 
@@ -57,7 +57,7 @@
 
 /decl/recipe/sugarcookie
 	appliance = APPLIANCE_OVEN
-	reagents = list(/decl/material/liquid/nutriment/batter/cakebatter = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/liquid/nutriment/protein/egg = 3)
+	reagents = list(/decl/material/liquid/nutriment/batter/cakebatter = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/solid/organic/meat/egg = 3)
 	reagent_mix = REAGENT_REPLACE // Don't include the cakebatter
 	result = /obj/item/chems/food/sugarcookie
 	result_quantity = 4 // so that it's economically feasible to make a batch

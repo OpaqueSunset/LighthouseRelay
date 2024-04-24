@@ -34,7 +34,7 @@
 /decl/recipe/katsu
 	appliance = APPLIANCE_FRYER
 	items = list(
-		/obj/item/chems/food/meat/chicken = 1
+		/obj/item/chems/food/butchery/meat/chicken = 1
 	)
 	result = /obj/item/chems/food/chickenkatsu
 	coating = /decl/material/liquid/nutriment/batter/beerbatter

@@ -70,7 +70,7 @@
 /decl/recipe/baconburger
 	items = list(
 		/obj/item/chems/food/bun = 1,
-		/obj/item/chems/food/meat = 1,
+		/obj/item/chems/food/butchery/meat = 1,
 		/obj/item/chems/food/bacon = 2
 	)
 	result = /obj/item/chems/food/baconburger
@@ -92,7 +92,7 @@
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/nutriment/flour = 5)
 	items = list(
-		/obj/item/chems/food/meat/chicken = 1
+		/obj/item/chems/food/butchery/meat/chicken = 1
 	)
 	reagent_mix = REAGENT_REPLACE
 	result = /obj/item/chems/food/nugget
@@ -102,7 +102,7 @@
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/capsaicin = 2, /decl/material/liquid/nutriment/sugar = 2, /decl/material/liquid/nutriment/batter = 10)
 	items = list(
-		/obj/item/chems/food/meat/chicken = 2
+		/obj/item/chems/food/butchery/meat/chicken = 2
 	)
 	result = /obj/item/chems/food/generalschicken
 
@@ -110,7 +110,7 @@
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/capsaicin = 1, /decl/material/liquid/nutriment/batter = 2)
 	items = list(
-		/obj/item/chems/food/meat/chicken = 1
+		/obj/item/chems/food/butchery/meat/chicken = 1
 	)
 	result = /obj/item/chems/food/chickenwing
 
@@ -125,14 +125,14 @@
 /decl/recipe/ribplate // Well, steak.
 	appliance = APPLIANCE_OVEN
 	reagents = list(/decl/material/liquid/nutriment/honey = 5, /decl/material/solid/spacespice = 2, /decl/material/solid/blackpepper = 1)
-	items = list(/obj/item/chems/food/meat = 1)
+	items = list(/obj/item/chems/food/butchery/meat = 1)
 	reagent_mix = REAGENT_REPLACE
 	result = /obj/item/chems/food/ribplate
 
 /decl/recipe/lasagna
 	appliance = APPLIANCE_OVEN
 	fruit = list("tomato" = 2, "eggplant" = 1)
-	reagents = list(/decl/material/liquid/nutriment/protein = 6) // in lieu of mincemeat; 2 meatballs or 3 cutlets
+	reagents = list(/decl/material/solid/organic/meat = 6) // in lieu of mincemeat; 2 meatballs or 3 cutlets
 	items = list(
 		/obj/item/chems/food/sliceable/flatdough = 2
 	)
@@ -153,7 +153,7 @@
 	appliance = APPLIANCE_OVEN
 	fruit = list("carrot" = 2, "potato" = 2)
 	items = list(
-		/obj/item/chems/food/meat = 1
+		/obj/item/chems/food/butchery/meat = 1
 	)
 	result = /obj/item/chems/food/roastbeef
 

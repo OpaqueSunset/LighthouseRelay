@@ -214,7 +214,7 @@
 		/obj/item/box/metalfoam,
 		/obj/item/box/handcuffs,
 		// TODO: Replace with box of Security NIFsofts? Or a box of USB sticks with programs on them?
-		// /obj/item/storage/box/seccarts
+		// /obj/item/box/seccarts
 	)
 	return uncommon_loot
 

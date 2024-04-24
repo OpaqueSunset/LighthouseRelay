@@ -1,6 +1,6 @@
 /decl/recipe/kitsuneudon
 	appliance = APPLIANCE_MICROWAVE | APPLIANCE_SAUCEPAN | APPLIANCE_POT
-	reagents = list(/decl/material/liquid/nutriment/protein/egg = 3)
+	reagents = list(/decl/material/solid/organic/meat/egg = 3)
 	items = list(
 		/obj/item/chems/food/spagetti = 1,
 		/obj/item/chems/food/tofu = 1

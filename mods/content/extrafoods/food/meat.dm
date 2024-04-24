@@ -18,7 +18,7 @@
 
 /obj/item/chems/food/rawbacon/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 0.33)
+	add_to_reagents(/decl/material/solid/organic/meat, 0.33)
 	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 1)
 
 // May as well put this here.
@@ -40,7 +40,7 @@
 
 /obj/item/chems/food/bacon/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 0.33)
+	add_to_reagents(/decl/material/solid/organic/meat, 0.33)
 	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 1)
 
 /obj/item/chems/food/bacon/microwave
@@ -65,7 +65,7 @@
 
 /obj/item/chems/food/bacon_stick/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 
 /obj/item/chems/food/chilied_eggs
 	name = "chilied eggs"
@@ -76,8 +76,8 @@
 
 /obj/item/chems/food/chilied_eggs/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 6)
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
 /obj/item/chems/food/bacon_and_eggs
 	name = "bacon and eggs"
@@ -86,11 +86,11 @@
 	icon_state = "bacon_and_eggs"
 	plate = /obj/item/plate
 	nutriment_amt = 3
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 
 /obj/item/chems/food/bacon_and_eggs/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 1)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 1)
 
 /obj/item/chems/food/poachedegg
 	name = "poached egg"
@@ -105,7 +105,7 @@
 
 /obj/item/chems/food/poachedegg/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 	add_to_reagents(/decl/material/solid/blackpepper, 1)
 
 /obj/item/chems/food/nt_muffin
@@ -118,7 +118,7 @@
 
 /obj/item/chems/food/nt_muffin/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 5)
+	add_to_reagents(/decl/material/solid/organic/meat, 5)
 
 /obj/item/chems/food/baconburger
 	name = "bacon burger"
@@ -132,7 +132,7 @@
 
 /obj/item/chems/food/baconburger/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
 /obj/item/chems/food/blt
 	name = "BLT"
@@ -146,7 +146,7 @@
 
 /obj/item/chems/food/blt/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
 /obj/item/chems/food/blt/cbt
 	name = "CBT"
@@ -164,7 +164,7 @@
 
 /obj/item/chems/food/sweet_and_sour/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 
 /obj/item/chems/food/bacon_flatbread
 	name = "bacon cheese flatbread"
@@ -176,7 +176,7 @@
 
 /obj/item/chems/food/bacon_flatbread/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 5)
+	add_to_reagents(/decl/material/solid/organic/meat, 5)
 
 /obj/item/chems/food/meat_pocket
 	name = "meat pocket"
@@ -188,7 +188,7 @@
 
 /obj/item/chems/food/meat_pocket/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 
 /obj/item/chems/food/crabmeat
 	name = "crab legs"
@@ -199,9 +199,10 @@
 
 /obj/item/chems/food/crabmeat/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
-/mob/living/simple_animal/crab/meat_type = /obj/item/chems/food/crabmeat
+/decl/butchery_data/animal/arthropod/crab
+	meat_type = /obj/item/chems/food/crabmeat
 
 /obj/item/chems/food/crab_legs
 	name = "steamed crab legs"
@@ -215,7 +216,7 @@
 
 /obj/item/chems/food/crab_legs/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 
 /obj/item/chems/food/nugget
@@ -226,7 +227,7 @@
 
 /obj/item/chems/food/nugget/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 	var/shape = pick("lump", "star", "lizard", "corgi")
 	desc = "A chicken nugget vaguely shaped like a [shape]."
 	icon_state = "nugget_[shape]"
@@ -237,12 +238,12 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "hatchling_surprise"
 	trash = /obj/item/trash/snack_bowl
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 	nutriment_amt = 4
 
 /obj/item/chems/food/hatchling_surprise/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 2)
 
 /obj/item/chems/food/red_sun_special
 	name = "red sun special"
@@ -251,7 +252,7 @@
 	icon_state = "red_sun_special"
 	plate = /obj/item/plate
 	nutriment_amt = 2
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 
 /obj/item/chems/food/riztizkzi_sea
 	name = "moghesian sea delight"
@@ -259,7 +260,7 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "riztizkzi_sea"
 	trash = /obj/item/trash/snack_bowl
-	nutriment_type = /decl/material/liquid/nutriment/protein/egg
+	nutriment_type = /decl/material/solid/organic/meat/egg
 	nutriment_amt = 4
 
 /obj/item/chems/food/father_breakfast
@@ -268,19 +269,19 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "father_breakfast"
 	plate = /obj/item/plate
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 	nutriment_amt = 6
 
 /obj/item/chems/food/father_breakfast/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 4)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 4)
 
 /obj/item/chems/food/stuffed_meatball
 	name = "stuffed meatball" //YES
 	desc = "A meatball loaded with cheese."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "stuffed_meatball"
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 	nutriment_amt = 4
 
 /obj/item/chems/food/egg_pancake
@@ -289,12 +290,12 @@
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "egg_pancake"
 	plate = /obj/item/plate
-	nutriment_type = /decl/material/liquid/nutriment/protein
+	nutriment_type = /decl/material/solid/organic/meat
 	nutriment_amt = 6
 
 /obj/item/chems/food/egg_pancake/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 2)
 
 /obj/item/chems/food/ribplate
 	name = "plate of ribs"
@@ -309,7 +310,7 @@
 
 /obj/item/chems/food/ribplate/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/nutriment/triglyceride, 2)
 	add_to_reagents(/decl/material/solid/blackpepper, 1)
 	add_to_reagents(/decl/material/liquid/nutriment/honey, 5)
@@ -326,7 +327,7 @@
 
 /obj/item/chems/food/generalschicken/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
 /obj/item/chems/food/roastbeef
 	name = "roast beef"
@@ -340,36 +341,38 @@
 
 /obj/item/chems/food/roastbeef/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4) //For meaty things.
+	add_to_reagents(/decl/material/solid/organic/meat, 4) //For meaty things.
 
-/obj/item/storage/box/wings //This is kinda like the donut box.
+/obj/item/box/wings //This is kinda like the donut box.
 	name = "wing basket"
 	desc = "A basket of chicken wings! Get some before they're all gone! Or maybe you're too late..."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "wings5"
+	storage = /datum/storage/box/chickenwing
 	var/icon_base = "wings"
-	max_storage_space = ITEM_SIZE_SMALL * 5
+
+/datum/storage/box/chickenwing
+	max_storage_space = ITEM_SIZE_SMALL * 6
 	can_hold = list(/obj/item/chems/food/chickenwing)
 
-
-/obj/item/storage/box/wings/WillContain()
+/obj/item/box/wings/WillContain()
 	return list(
 		/obj/item/chems/food/chickenwing = 5
 	)
 
-/obj/item/storage/box/wings/empty/WillContain()
+/obj/item/box/wings/empty/WillContain()
 	return null
 
 /decl/stack_recipe/cardstock/box/wings
 	name = "chicken wings box"
-	result_type = /obj/item/storage/box/wings/empty
+	result_type = /obj/item/box/wings/empty
 
-/obj/item/storage/box/wings/Initialize()
+/obj/item/box/wings/Initialize()
 	. = ..()
 	update_icon()
 	return
 
-/obj/item/storage/box/wings/on_update_icon()
+/obj/item/box/wings/on_update_icon()
 	var/i = 0
 	for(var/obj/item/chems/food/W in get_contained_external_atoms())
 		i++
@@ -386,7 +389,7 @@
 
 /obj/item/chems/food/chickenwing/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
 /obj/item/chems/food/donerkebab
 	name = "doner kebab"
@@ -398,7 +401,7 @@
 
 /obj/item/chems/food/donerkebab/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2) //For meaty things.
+	add_to_reagents(/decl/material/solid/organic/meat, 2) //For meaty things.
 
 /obj/item/chems/food/fish_taco
 	name = "carp taco"
@@ -410,7 +413,7 @@
 
 /obj/item/chems/food/fish_taco/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 
 /obj/item/chems/food/lasagna
 	name = "lasagna"
@@ -425,4 +428,4 @@
 
 /obj/item/chems/food/lasagna/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
