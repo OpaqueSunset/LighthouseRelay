@@ -253,6 +253,7 @@
 	result = /obj/item/chems/food/bun
 
 /decl/recipe/baked/flatbread
+	display_name = "plain flatbread"
 	items = list(
 		/obj/item/chems/food/sliceable/flatdough
 	)

@@ -37,6 +37,7 @@
 	result = /obj/item/chems/food/grilledcheese
 
 /decl/recipe/grilled/meatball
+	display_name = "cooked meatball"
 	items = list(
 		/obj/item/chems/food/meatball/raw
 	)
