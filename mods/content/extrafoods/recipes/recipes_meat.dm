@@ -1,5 +1,5 @@
 //Bacon
-/decl/recipe/bacon
+/decl/recipe/fried/bacon
 	display_name = "deep-fried bacon"
 	appliance = APPLIANCE_FRYER
 	items = list(
@@ -14,7 +14,7 @@
 	)
 	result = /obj/item/chems/food/bacon/microwave
 
-/decl/recipe/bacon_oven
+/decl/recipe/baked/bacon_oven
 	appliance = APPLIANCE_OVEN
 	items = list(
 		/obj/item/chems/food/rawbacon = 6,
@@ -23,7 +23,7 @@
 	result = /obj/item/chems/food/bacon/oven
 	result_quantity = 6
 
-/decl/recipe/bacon_pan
+/decl/recipe/toasted/bacon_pan
 	appliance = APPLIANCE_SKILLET
 	items = list(
 		/obj/item/chems/food/rawbacon = 6,
@@ -50,15 +50,14 @@
 	result = /obj/item/chems/food/hatchling_surprise
 
 /decl/recipe/bacon_and_eggs
-	appliance = APPLIANCE_SKILLET
+	appliance = APPLIANCE_SKILLET | APPLIANCE_MIX
 	items = list(
 		/obj/item/chems/food/bacon = 1,
 		/obj/item/chems/food/friedegg = 1
 	)
 	result = /obj/item/chems/food/bacon_and_eggs
 
-/decl/recipe/bacon_flatbread
-	appliance = APPLIANCE_OVEN
+/decl/recipe/baked/bacon_flatbread
 	fruit = list("tomato" = 2)
 	items = list(
 		/obj/item/chems/food/sliceable/flatdough = 1,
@@ -67,7 +66,7 @@
 	)
 	result = /obj/item/chems/food/bacon_flatbread
 
-/decl/recipe/baconburger
+/decl/recipe/toasted/baconburger
 	items = list(
 		/obj/item/chems/food/bun = 1,
 		/obj/item/chems/food/butchery/meat = 1,
@@ -75,7 +74,7 @@
 	)
 	result = /obj/item/chems/food/baconburger
 
-/decl/recipe/blt
+/decl/recipe/toasted/blt
 	fruit = list("tomato" = 2, "lettuce" = 1)
 	items = list(
 		/obj/item/chems/food/slice/bread = 2,
@@ -83,12 +82,12 @@
 	)
 	result = /obj/item/chems/food/blt
 
-/decl/recipe/blt/cbt
+/decl/recipe/toasted/blt/cbt
 	fruit = list("tomato" = 1, "cabbage" = 1)
 	result = /obj/item/chems/food/blt/cbt
 
 // Chicken
-/decl/recipe/nugget
+/decl/recipe/fried/nugget
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/nutriment/flour = 5)
 	items = list(
@@ -98,7 +97,7 @@
 	result = /obj/item/chems/food/nugget
 	result_quantity = 6
 
-/decl/recipe/generalschicken
+/decl/recipe/fried/generalschicken
 	appliance = APPLIANCE_FRYER
 	reagents = list(/decl/material/liquid/capsaicin = 2, /decl/material/liquid/nutriment/sugar = 2, /decl/material/liquid/nutriment/batter = 10)
 	items = list(
