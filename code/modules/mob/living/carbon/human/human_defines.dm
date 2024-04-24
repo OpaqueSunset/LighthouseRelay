@@ -11,8 +11,6 @@
 	var/skin_tone = 0
 	/// multiplies melee combat damage
 	var/damage_multiplier = 1
-	/// no lipstick by default- arguably misleading, as it could be used for general makeup
-	var/lip_color = null
 	var/list/worn_underwear = list()
 	var/datum/backpack_setup/backpack_setup
 	var/list/cultural_info = list()
@@ -63,7 +61,6 @@
 	/// vars for fountain of youth examine lines
 	var/became_older
 	var/became_younger
-	var/list/appearance_descriptors
 	var/list/smell_cooldown
 	/// var for caching last pain calc to avoid looping through organs over and over and over again
 	var/last_pain

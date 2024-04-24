@@ -55,7 +55,7 @@
 	current_location = "nav_ministation_science_dock_shuttle"
 
 /obj/effect/shuttle_landmark/science_dock
-	name = "Science Department Docking Arm"
+	name = "Tradepost Science Department Docking Arm"
 	docking_controller = "ministation_science_dock"
 	landmark_tag = "nav_ministation_science_dock_shuttle"
 

@@ -36,13 +36,12 @@
 		to_chat(user, SPAN_WARNING("The tiles need some support, build a lattice first."))
 		return FALSE
 
-	if(!use(1))
-		return FALSE
-
-	playsound(target, 'sound/weapons/Genhit.ogg', 50, 1)
-	target.ChangeTurf(replacement_turf_type, keep_air = TRUE)
-	qdel(lattice)
-	return TRUE
+	if(use(1))
+		playsound(target, 'sound/weapons/Genhit.ogg', 50, 1)
+		target.ChangeTurf(replacement_turf_type, keep_air = TRUE)
+		qdel(lattice)
+		return TRUE
+	return FALSE
 
 /*
  * Grass

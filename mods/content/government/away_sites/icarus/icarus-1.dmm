@@ -6,7 +6,7 @@
 /turf/unsimulated/mask,
 /area/mine/unexplored)
 "ac" = (
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "ae" = (
 /turf/wall/natural,
@@ -34,7 +34,7 @@
 /area/icarus/vessel)
 "al" = (
 /obj/structure/flora/bush/palebush,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "am" = (
 /obj/structure/bed/chair/comfy/black,
@@ -46,7 +46,7 @@
 /area/icarus/vessel)
 "ao" = (
 /obj/structure/bed/chair/comfy/black,
-/obj/item/storage/secure/briefcase,
+/obj/item/secure_storage/briefcase,
 /turf/floor/wood,
 /area/icarus/vessel)
 "ap" = (
@@ -58,7 +58,7 @@
 /area/icarus/open)
 "ar" = (
 /obj/structure/flora/tree/dead,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "as" = (
 /turf/wall/r_wall,
@@ -69,7 +69,7 @@
 /area/icarus/vessel)
 "au" = (
 /obj/structure/table/woodentable,
-/obj/item/flame/lighter/zippo/random,
+/obj/item/flame/fuelled/lighter/zippo/random,
 /obj/random/smokes,
 /turf/floor/wood,
 /area/icarus/vessel)
@@ -83,7 +83,7 @@
 /area/icarus/vessel)
 "ax" = (
 /obj/item/stack/material/ore/slag,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "ay" = (
 /obj/item/shreddedp,
@@ -106,12 +106,12 @@
 /area/icarus/vessel)
 "aD" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/lunchbox/mars,
+/obj/item/lunchbox/mars,
 /turf/floor/wood,
 /area/icarus/vessel)
 "aE" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/photo_album,
+/obj/item/photo_album,
 /turf/floor/wood,
 /area/icarus/vessel)
 "aF" = (
@@ -154,7 +154,7 @@
 /area/icarus/vessel)
 "aL" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/fancy/cigar,
+/obj/item/box/fancy/cigar,
 /turf/floor/wood,
 /area/icarus/vessel)
 "aM" = (
@@ -1309,7 +1309,7 @@
 /area/icarus/open)
 "ex" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/empty,
+/obj/item/firstaid/empty,
 /turf/floor/tiled,
 /area/icarus/open)
 "ey" = (
@@ -1362,7 +1362,7 @@
 /area/icarus/open)
 "eF" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "eG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1531,7 +1531,7 @@
 "fa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/pill_bottle/antibiotics,
+/obj/item/pill_bottle/antibiotics,
 /turf/unsimulated/beach/sand,
 /area/icarus/open)
 "fb" = (
@@ -1551,7 +1551,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/bag/trash,
+/obj/item/bag/trash,
 /turf/unsimulated/beach/sand,
 /area/icarus/open)
 "fd" = (
@@ -2616,24 +2616,24 @@
 /area/icarus/open)
 "io" = (
 /obj/effect/decal/cleanable/ash,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "ip" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "jb" = (
 /obj/effect/shuttle_landmark/nav_icarus/nav1,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "kb" = (
 /obj/effect/shuttle_landmark/nav_icarus/nav2,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "lb" = (
 /obj/effect/shuttle_landmark/nav_icarus/nav3,
-/turf/exterior/wildgrass,
+/turf/floor/natural/grass/wild,
 /area/icarus/open)
 "mb" = (
 /obj/structure/hygiene/sink{

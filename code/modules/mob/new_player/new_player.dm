@@ -8,6 +8,7 @@
 	movement_handlers = list()
 	anchored = TRUE	//  don't get pushed around
 	virtual_mob = null // Hear no evil, speak no evil
+	is_spawnable_type = FALSE
 
 	var/ready = 0
 	/// Referenced when you want to delete the new_player later on in the code.
@@ -437,9 +438,6 @@ INITIALIZE_IMMEDIATE(/mob/new_player)
 	if(!chosen_species || !check_species_allowed(chosen_species, 0))
 		return global.using_map.default_species
 	return chosen_species.name
-
-/mob/new_player/is_ready()
-	return ready && ..()
 
 /mob/new_player/hear_say(var/message, var/verb = "says", var/decl/language/language = null, var/alt_name = "",var/italics = 0, var/mob/speaker = null)
 	return

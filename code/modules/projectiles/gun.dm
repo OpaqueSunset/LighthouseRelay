@@ -170,7 +170,7 @@
 /obj/item/gun/proc/get_safety_indicator()
 	return mutable_appearance(icon, "[get_world_inventory_state()][safety_icon][safety()]")
 
-/obj/item/gun/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/gun/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && user_mob.can_wield_item(src) && is_held_twohanded(user_mob))
 		var/wielded_state = "[overlay.icon_state]-wielded"
 		if(check_state_in_icon(wielded_state, overlay.icon))
@@ -178,7 +178,7 @@
 	apply_gun_mob_overlays(user_mob, bodytype, overlay, slot, bodypart)
 	. = ..()
 
-/obj/item/gun/proc/apply_gun_mob_overlays(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart, var/skip_offset = FALSE)
+/obj/item/gun/proc/apply_gun_mob_overlays(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
 	return
 
 //Checks whether a given mob can use the gun
@@ -230,18 +230,24 @@
 
 	Fire(A,user,params) //Otherwise, fire normally.
 
-/obj/item/gun/attack(atom/A, mob/living/user, def_zone)
-	if (A == user && user.get_target_zone() == BP_MOUTH && !mouthshoot)
+/obj/item/gun/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
+
+	if (target == user && user.get_target_zone() == BP_MOUTH && !mouthshoot)
 		handle_suicide(user)
-	else if(user.a_intent != I_HURT && user.aiming && user.aiming.active) //if aim mode, don't pistol whip
-		if (user.aiming.aiming_at != A)
-			PreFire(A, user)
+		return TRUE
+	
+	if(user.a_intent != I_HURT && user.aiming && user.aiming.active) //if aim mode, don't pistol whip
+		if (user.aiming.aiming_at != target)
+			PreFire(target, user)
 		else
-			Fire(A, user, pointblank=1)
-	else if(user.a_intent == I_HURT) //point blank shooting
-		Fire(A, user, pointblank=1)
-	else
-		return ..() //Pistolwhippin'
+			Fire(target, user, pointblank=1)
+		return TRUE
+
+	if(user.a_intent == I_HURT) //point blank shooting
+		Fire(target, user, pointblank = TRUE)
+		return TRUE
+
+	return ..() //Pistolwhippin'
 
 /obj/item/gun/dropped(var/mob/living/user)
 	check_accidents(user)

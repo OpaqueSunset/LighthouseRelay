@@ -98,6 +98,11 @@
 	else if(reagents?.total_volume > FLUID_QDEL_POINT)
 		ADD_ACTIVE_FLUID(src)
 
+/turf/get_reagents()
+	if(!reagents)
+		create_reagents(FLUID_MAX_DEPTH)
+	return ..()
+
 /turf/add_to_reagents(reagent_type, amount, data, safety = FALSE, defer_update = FALSE)
 	if(!reagents)
 		create_reagents(FLUID_MAX_DEPTH)
@@ -163,7 +168,7 @@
 	if(reagents?.total_volume > FLUID_QDEL_POINT)
 		ADD_ACTIVE_FLUID(src)
 		var/decl/material/primary_reagent = reagents.get_primary_reagent_decl()
-		if(primary_reagent)
+		if(primary_reagent && (REAGENT_VOLUME(reagents, primary_reagent.type) >= primary_reagent.slippery_amount))
 			last_slipperiness = primary_reagent.slipperiness
 		if(!fluid_overlay)
 			fluid_overlay = new(src, TRUE)

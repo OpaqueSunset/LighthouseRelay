@@ -239,33 +239,6 @@ default behaviour is:
 /mob/living/proc/increaseBodyTemp(value)
 	return 0
 
-/mob/living/proc/adjustBodyTemp(actual, desired, incrementboost)
-	var/btemperature = actual
-	var/difference = abs(actual-desired)	//get difference
-	var/increments = difference/10 //find how many increments apart they are
-	var/change = increments*incrementboost	// Get the amount to change by (x per increment)
-
-	// Too cold
-	if(actual < desired)
-		btemperature += change
-		if(actual > desired)
-			btemperature = desired
-	// Too hot
-	if(actual > desired)
-		btemperature -= change
-		if(actual < desired)
-			btemperature = desired
-//	if(ishuman(src))
-//		log_debug("[src] ~ [src.bodytemperature] ~ [temperature]")
-
-	return btemperature
-
-/mob/living/proc/get_health_ratio() // ratio might be the wrong word
-	return current_health/get_max_health()
-
-/mob/living/proc/get_health_percent(var/sigfig = 1)
-	return round(get_health_ratio()*100, sigfig)
-
 /mob/living/proc/set_max_health(var/val, var/skip_health_update = FALSE)
 	max_health = val
 	if(!skip_health_update)
@@ -273,35 +246,21 @@ default behaviour is:
 
 // ++++ROCKDTBEN++++ MOB PROCS //END
 
-/mob/proc/get_contents()
-	return
+/mob/proc/get_mob_contents()
 
-//Recursive function to find everything a mob is holding.
-/mob/living/get_contents(var/obj/item/storage/Storage = null)
-	var/list/L = list()
+	var/list/gear_tree = list()
+	for(var/obj/item/thing as anything in get_equipped_items(include_carried = TRUE))
+		gear_tree |= thing
 
-	if(Storage) //If it called itself
-		L += Storage.return_inv()
-
-		//Leave this commented out, it will cause storage items to exponentially add duplicate to the list
-		//for(var/obj/item/storage/S in Storage.return_inv()) //Check for storage items
-		//	L += get_contents(S)
-		return L
-
-	else
-
-		L += src.contents
-		for(var/obj/item/storage/S in src.contents)	//Check for storage items
-			L += get_contents(S)
-		return L
-
-/mob/living/proc/check_contents_for(A)
-	var/list/L = src.get_contents()
-
-	for(var/obj/B in L)
-		if(B.type == A)
-			return 1
-	return 0
+	while(length(gear_tree))
+		var/obj/item/thing = gear_tree[1]
+		gear_tree -= thing
+		if(thing in .)
+			continue
+		LAZYDISTINCTADD(., thing)
+		var/list/storage_contents = thing?.storage?.return_inv()
+		if(length(storage_contents))
+			gear_tree |= storage_contents
 
 /mob/living/proc/can_inject(var/mob/user, var/target_zone)
 	return 1
@@ -548,7 +507,7 @@ default behaviour is:
 	. = ..()
 	if(.)
 		handle_grabs_after_move(old_loc, Dir)
-		if (active_storage && !( active_storage in contents ) && get_turf(active_storage) != get_turf(src))	//check !( active_storage in contents ) first so we hopefully don't have to call get_turf() so much.
+		if(active_storage && !active_storage.can_view(src))
 			active_storage.close(src)
 
 /mob/living/verb/resist()
@@ -601,7 +560,7 @@ default behaviour is:
 			if(ismob(A) || istype(A,/obj/item/holder))
 				return
 		M.status_flags &= ~PASSEMOTES
-	else if(istype(H.loc,/obj/item/clothing/accessory/storage/holster) || istype(H.loc,/obj/item/storage/belt/holster))
+	else if(istype(H.loc,/obj/item/clothing/webbing/holster) || istype(H.loc,/obj/item/belt/holster))
 		var/datum/extension/holster/holster = get_extension(src, /datum/extension/holster)
 		if(holster.holstered == H)
 			holster.clear_holster()
@@ -652,11 +611,6 @@ default behaviour is:
 			if(src)
 				clear_fullscreen("flash", 25)
 		return 1
-
-/mob/living/proc/cannot_use_vents()
-	if(mob_size > MOB_SIZE_SMALL)
-		return "You can't fit into that vent."
-	return null
 
 /mob/living/proc/has_brain()
 	return TRUE
@@ -929,7 +883,7 @@ default behaviour is:
 
 /mob/living/proc/get_food_satiation(consumption_method = EATING_METHOD_EAT)
 	. = (consumption_method == EATING_METHOD_EAT) ? get_nutrition() : get_hydration()
-	. += get_ingested_reagents()?.total_volume * 10
+	. += get_ingested_reagents()?.total_volume * 5
 
 /mob/living/proc/get_ingested_reagents()
 	RETURN_TYPE(/datum/reagents)

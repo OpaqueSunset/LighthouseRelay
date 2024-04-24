@@ -109,7 +109,7 @@
 
 // todo: make this redundant with matter shenanigans
 /obj/item/organ/populate_reagents()
-	var/reagent_to_add = /decl/material/liquid/nutriment/protein
+	var/reagent_to_add = /decl/material/solid/organic/meat
 	if(bodytype)
 		reagent_to_add = bodytype.edible_reagent // can set this to null and skip the next block
 	if(reagent_to_add)
@@ -255,7 +255,7 @@
 		var/obj/item/organ/O = loc
 		return O.is_preserved()
 	var/static/list/preserved_types = list(
-		/obj/item/storage/box/freezer,
+		/obj/item/box/freezer,
 		/obj/structure/closet/crate/freezer,
 		/obj/structure/closet/body_bag/cryobag
 	)
@@ -380,7 +380,8 @@
 		if(owner)
 			owner.update_health()
 
-/obj/item/organ/attack(var/mob/target, var/mob/user)
+/obj/item/organ/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
+
 	if(BP_IS_PROSTHETIC(src) || !istype(target) || !istype(user) || (user != target && user.a_intent == I_HELP))
 		return ..()
 

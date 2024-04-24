@@ -9,8 +9,6 @@
 #define AIRLOCK_DENY	5
 #define AIRLOCK_EMAG	6
 
-var/global/list/airlock_overlays = list()
-
 /obj/machinery/door/airlock
 	name = "airlock"
 	icon = 'icons/obj/doors/station/door.dmi'
@@ -1092,11 +1090,10 @@ About the new airlock wires panel:
 		to_chat(user, "\The [brace] is installed on \the [src], preventing it from opening.")
 		to_chat(user, brace.examine_health())
 
-/obj/machinery/door/airlock/autoname
-
 /obj/machinery/door/airlock/autoname/Initialize()
 	var/area/A = get_area(src)
-	name = A.proper_name
+	if(A?.proper_name)
+		name = A.proper_name
 	. = ..()
 
 /obj/machinery/door/airlock/proc/paint_airlock(var/new_color)

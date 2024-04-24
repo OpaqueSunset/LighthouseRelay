@@ -11,10 +11,10 @@
 /decl/hierarchy/supply_pack/nonessent/artscrafts
 	name = "Art - Arts and Crafts supplies"
 	contains = list(
-		/obj/item/storage/box/fancy/crayons,
+		/obj/item/box/fancy/crayons,
 		/obj/item/camera,
 		/obj/item/camera_film = 2,
-		/obj/item/storage/photo_album,
+		/obj/item/photo_album,
 		/obj/item/chems/glass/paint/red,
 		/obj/item/chems/glass/paint/green,
 		/obj/item/chems/glass/paint/blue,
@@ -83,7 +83,7 @@
 	num_contained = 2
 	contains = list(/obj/item/clothing/suit/pirate,
 					/obj/item/clothing/suit/judgerobe,
-					/obj/item/clothing/accessory/wcoat/black,
+					/obj/item/clothing/suit/jacket/waistcoat/black,
 					/obj/item/clothing/suit/hastur,
 					/obj/item/clothing/suit/holidaypriest,
 					/obj/item/clothing/suit/nun,
@@ -94,8 +94,8 @@
 					/obj/item/clothing/under/lawyer/purpsuit,
 					/obj/item/clothing/under/mailman,
 					/obj/item/clothing/under/dress/dress_saloon,
-					/obj/item/clothing/accessory/suspenders,
-					/obj/item/clothing/suit/storage/toggle/labcoat/mad,
+					/obj/item/clothing/suspenders,
+					/obj/item/clothing/suit/toggle/labcoat/mad,
 					/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
 					/obj/item/clothing/under/schoolgirl,
 					/obj/item/clothing/under/owl,
@@ -116,20 +116,21 @@
 	supply_method = /decl/supply_method/randomized
 
 /decl/hierarchy/supply_pack/nonessent/formal_wear
-	contains = list(/obj/item/clothing/head/bowler,
-					/obj/item/clothing/head/that,
-					/obj/item/clothing/suit/storage/toggle/suit/blue,
-					/obj/item/clothing/suit/storage/toggle/suit/purple,
-					/obj/item/clothing/under/suit_jacket,
-					/obj/item/clothing/under/suit_jacket/female,
-					/obj/item/clothing/under/suit_jacket/really_black,
-					/obj/item/clothing/under/suit_jacket/red,
-					/obj/item/clothing/under/lawyer/bluesuit,
-					/obj/item/clothing/under/lawyer/purpsuit,
-					/obj/item/clothing/shoes/color/black,
-					/obj/item/clothing/shoes/color/black,
-					/obj/item/clothing/shoes/craftable,
-					/obj/item/clothing/accessory/wcoat/black)
+	contains = list(
+		/obj/item/clothing/head/bowler,
+		/obj/item/clothing/head/that,
+		/obj/item/clothing/suit/jacket,
+		/obj/item/clothing/suit/jacket/blue,
+		/obj/item/clothing/suit/jacket/purple,
+		/obj/item/clothing/suit/jacket/black,
+		/obj/item/clothing/suit/jacket/burgundy,
+		/obj/item/clothing/suit/jacket/waistcoat,
+		/obj/item/clothing/under/lawyer/bluesuit,
+		/obj/item/clothing/under/lawyer/purpsuit,
+		/obj/item/clothing/shoes/color/black,
+		/obj/item/clothing/shoes/color/black,
+		/obj/item/clothing/shoes/craftable
+	)
 	name = "Costume - Formalwear"
 	containertype = /obj/structure/closet
 	containername = "formalwear for the best occasions."
@@ -228,7 +229,7 @@
 					/obj/item/clothing/head/chaplain_hood,
 					/obj/item/clothing/suit/holidaypriest,
 					/obj/item/clothing/under/wedding/bride_white,
-					/obj/item/storage/candle_box = 3)
+					/obj/item/box/candles = 3)
 	containername = "chaplain equipment crate"
 
 /decl/hierarchy/supply_pack/nonessent/exosuit_mod_ripl3
@@ -246,7 +247,7 @@
 	name = "Rec - Aromatherapy"
 	contains = list(
 		/obj/item/paper/aromatherapy_disclaimer,
-		/obj/item/storage/candle_box/scented = 3,
-		/obj/item/storage/candle_box/incense = 6,
-		/obj/item/flame/lighter/random)
+		/obj/item/box/candles/scented = 3,
+		/obj/item/box/candles/incense = 6,
+		/obj/item/flame/fuelled/lighter/random)
 	containername = "aromatherapy crate"

@@ -1,21 +1,23 @@
-/obj/item/clothing/accessory/badge/tags
+/obj/item/clothing/badge/tags
 	name = "dog tags"
 	desc = "Plain identification tags made from a durable metal. They are stamped with a variety of informational details."
 	gender = PLURAL
 	icon = 'icons/clothing/accessories/jewelry/dogtags.dmi'
-	slot_flags = SLOT_FACE | SLOT_TIE
+	slot_flags = SLOT_FACE
 	badge_string = null
-	hide_on_uniform_rolldown = FALSE
 	material = /decl/material/solid/metal/stainlesssteel
 	var/owner_rank
 	var/owner_name
 	var/owner_branch
 
-/obj/item/clothing/accessory/badge/tags/proc/loadout_setup(mob/M)
+/obj/item/clothing/badge/tags/get_initial_accessory_hide_on_states()
+	return null
+
+/obj/item/clothing/badge/tags/proc/loadout_setup(mob/M)
 	set_name(M.real_name)
 	set_desc(M)
 
-/obj/item/clothing/accessory/badge/tags/set_desc(mob/living/carbon/human/H)
+/obj/item/clothing/badge/tags/set_desc(mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 

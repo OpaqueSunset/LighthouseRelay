@@ -11,7 +11,6 @@
 	turns_per_move = 5
 	response_harm = "stamps on"
 	stop_automated_movement = 1
-	friendly = "pinches"
 	possession_candidate = 1
 	can_escape = TRUE //snip snip
 	pass_flags = PASS_FLAG_TABLE
@@ -19,12 +18,7 @@
 		ARMOR_MELEE = ARMOR_MELEE_KNIVES
 		)
 	ai = /datum/ai/crab
-
-	meat_amount =   3
-	skin_material = /decl/material/solid/organic/skin/insect
-	skin_amount =   10
-	bone_material = null
-	bone_amount =   0
+	butchery_data = /decl/butchery_data/animal/arthropod/crab
 
 /mob/living/simple_animal/crab/get_bodytype()
 	return GET_DECL(/decl/bodytype/animal/crab)

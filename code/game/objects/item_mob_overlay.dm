@@ -57,14 +57,14 @@ var/global/list/icon_state_cache = list()
 	..()
 	update_world_inventory_state()
 
-/obj/item/proc/get_mob_overlay(mob/user_mob, slot, bodypart, use_fallback_if_icon_missing = TRUE, force_skip_offset = FALSE, skip_offset = FALSE)
+/obj/item/proc/get_mob_overlay(mob/user_mob, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_adjustment = FALSE)
 
 	var/state_modifier = user_mob?.get_overlay_state_modifier()
 	if(!use_single_icon)
 		var/mob_state = "[item_state || icon_state][state_modifier]"
 		var/mob_icon = global.default_onmob_icons[slot]
 		var/decl/bodytype/root_bodytype = user_mob.get_bodytype()
-		if(istype(root_bodytype) && !skip_offset)
+		if(istype(root_bodytype))
 			var/use_slot = (bodypart in root_bodytype.equip_adjust) ? bodypart : slot
 			return root_bodytype.get_offset_overlay_image(mob_icon, mob_state, color, use_slot)
 		return overlay_image(mob_icon, mob_state, color, RESET_COLOR)
@@ -73,8 +73,9 @@ var/global/list/icon_state_cache = list()
 	var/useicon   = get_icon_for_bodytype(bodytype)
 	var/use_state = "[bodytype]-[slot][state_modifier]"
 
+	var/is_not_held_slot = !(slot in global.all_hand_slots)
 	if(bodytype != BODYTYPE_HUMANOID && !check_state_in_icon(use_state, useicon) && use_fallback_if_icon_missing)
-		var/fallback = get_fallback_slot(slot)
+		var/fallback = is_not_held_slot && get_fallback_slot(slot)
 		if(fallback && fallback != slot && check_state_in_icon("[bodytype]-[fallback][state_modifier]", useicon))
 			slot = fallback
 		else
@@ -86,7 +87,7 @@ var/global/list/icon_state_cache = list()
 		use_state = "[bodytype]-[global.bodypart_to_slot_lookup_table[slot]][state_modifier]"
 
 	if(!check_state_in_icon(use_state, useicon))
-		var/fallback = use_fallback_if_icon_missing && get_fallback_slot(slot)
+		var/fallback = use_fallback_if_icon_missing && is_not_held_slot && get_fallback_slot(slot)
 		if(!fallback)
 			return new /image
 		slot = fallback
@@ -99,7 +100,7 @@ var/global/list/icon_state_cache = list()
 	I.color = color
 	I.appearance_flags = RESET_COLOR
 
-	. = force_skip_offset ? I : adjust_mob_overlay(user_mob, bodytype, I, slot, bodypart, use_fallback_if_icon_missing)
+	. = skip_adjustment ? I : adjust_mob_overlay(user_mob, bodytype, I, slot, bodypart, use_fallback_if_icon_missing)
 
 /obj/item/proc/get_fallback_slot(var/slot)
 	return
@@ -110,9 +111,9 @@ var/global/list/icon_state_cache = list()
 // Ensure ..() is called only at the end of this proc, and that `overlay` is mutated rather than replaced.
 // This is necessary to ensure that all the overlays are generated and tracked prior to being passed to
 // the bodytype offset proc, which can scrub icon/icon_state information as part of the offset process.
-/obj/item/proc/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/proc/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	var/decl/bodytype/root_bodytype = user_mob?.get_bodytype()
-	if(root_bodytype && root_bodytype.bodytype_category != bodytype && !skip_offset)
+	if(root_bodytype && root_bodytype.bodytype_category != bodytype)
 		var/list/overlays_to_offset = overlay.overlays
 		overlay = root_bodytype.get_offset_overlay_image(overlay.icon, overlay.icon_state, color, (bodypart || slot))
 		for(var/thing in overlays_to_offset)

@@ -11,7 +11,7 @@
 		"a nasa voidsuit"                    = /obj/item/clothing/suit/space/void,
 		"full tank of phoron"                = /obj/item/tank/phoron,
 		"full tank of hydrogen"              = /obj/item/tank/hydrogen,
-		"a piece of corgi meat"              = /obj/item/chems/food/meat/corgi,
+		"a piece of corgi meat"              = /obj/item/chems/food/butchery/meat/corgi,
 		"a chief science officer's jumpsuit" = /obj/item/clothing/under/research_director,
 		"a chief engineer's jumpsuit"        = /obj/item/clothing/under/chief_engineer,
 		"a chief medical officer's jumpsuit" = /obj/item/clothing/under/chief_medical_officer,
@@ -25,7 +25,7 @@
 	var/list/potential_special_theft_targets = list(
 		"nuclear gun"         = /obj/item/gun/energy/gun/nuclear,
 		"diamond drill"       = /obj/item/tool/drill/diamond,
-		"bag of holding"      = /obj/item/storage/backpack/holding,
+		"bag of holding"      = /obj/item/backpack/holding,
 		"hyper-capacity cell" = /obj/item/cell/hyper,
 		"10 diamonds"         = list(/obj/item/stack/material/gemstone, 10, /decl/material/solid/gemstone/diamond),
 		"50 gold ingots"      = list(/obj/item/stack/material/ingot,    50, /decl/material/solid/metal/gold),

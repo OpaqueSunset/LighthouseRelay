@@ -71,10 +71,10 @@ meteor_act
 		var/obj/item/clothing/gear = get_equipped_item(slot)
 		if(!istype(gear))
 			continue
-		if(gear.accessories.len)
-			for(var/obj/item/clothing/accessory/bling in gear.accessories)
-				if(bling.body_parts_covered & def_zone.body_part)
-					var/armor = get_extension(bling, /datum/extension/armor)
+		if(LAZYLEN(gear.accessories))
+			for(var/obj/item/clothing/accessory in gear.accessories)
+				if(accessory.body_parts_covered & def_zone.body_part)
+					var/armor = get_extension(accessory, /datum/extension/armor)
 					if(armor)
 						. += armor
 		if(gear.body_parts_covered & def_zone.body_part)
@@ -90,7 +90,7 @@ meteor_act
 	if (!def_zone)
 		return 1.0
 
-	var/siemens_coefficient = max(species.siemens_coefficient,0)
+	var/siemens_coefficient = max(species.get_shock_vulnerability(src), 0)
 	for(var/slot in global.standard_clothing_slots)
 		var/obj/item/clothing/C = get_equipped_item(slot)
 		if(istype(C) && (C.body_parts_covered & def_zone.body_part)) // Is that body part being targeted covered?
@@ -379,7 +379,7 @@ meteor_act
 
 	if(status_flags & GODMODE)	return 0	//godmode
 
-	if(species.siemens_coefficient == -1)
+	if(species.get_shock_vulnerability(src) == -1)
 		if(stored_shock_by_ref["\ref[src]"])
 			stored_shock_by_ref["\ref[src]"] += shock_damage
 		else

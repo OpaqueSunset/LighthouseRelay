@@ -21,9 +21,10 @@
 	var/armor_penetration = 0
 	var/anchor_fall = FALSE
 	var/holographic = 0 //if the obj is a holographic object spawned by the holodeck
-	var/tmp/directional_offset ///JSON list of directions to x,y offsets to be applied to the object depending on its direction EX: @'{"NORTH":{"x":12,"y":5}, "EAST":{"x":10,"y":50}}'
+	var/list/directional_offset ///JSON list of directions to x,y offsets to be applied to the object depending on its direction EX: @'{"NORTH":{"x":12,"y":5}, "EAST":{"x":10,"y":50}}'
 
 /obj/Initialize(mapload)
+	//Health should be set to max_health only if it's null.
 	. = ..()
 	create_matter()
 	//Only apply directional offsets if the mappers haven't set any offsets already
@@ -113,9 +114,6 @@
 		*/
 	return
 
-/obj/proc/see_emote(mob/M, text, var/emote_type)
-	return
-
 /obj/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	return
 
@@ -129,11 +127,10 @@
 			. |= DAM_LASER
 
 /obj/attackby(obj/item/O, mob/user)
-	if(obj_flags & OBJ_FLAG_ANCHORABLE)
-		if(IS_WRENCH(O))
-			wrench_floor_bolts(user)
-			update_icon()
-			return
+	if((obj_flags & OBJ_FLAG_ANCHORABLE) && IS_WRENCH(O))
+		wrench_floor_bolts(user)
+		update_icon()
+		return TRUE
 	return ..()
 
 /obj/proc/wrench_floor_bolts(mob/user, delay=20)
@@ -367,4 +364,27 @@
 		UNSETEMPTY(matter)
 
 /obj/proc/get_blend_objects()
+	return
+
+/obj/proc/is_compostable()
+	for(var/mat in matter)
+		var/decl/material/composting_mat = GET_DECL(mat)
+		if(composting_mat.compost_value)
+			return TRUE
+	return FALSE
+
+// Used to determine if something can be used as the basis of a mold.
+/obj/proc/get_mould_difficulty()
+	return SKILL_IMPOSSIBLE // length(matter) <= 1
+
+// Used to determine what a mold made from this item produces.
+/obj/proc/get_mould_product_type()
+	return type
+
+// Used to pass an associative list of data to the mold to pass to the product.
+/obj/proc/get_mould_metadata()
+	return
+
+// Called when passing the metadata back to the item.
+/obj/proc/take_mould_metadata(list/metadata)
 	return

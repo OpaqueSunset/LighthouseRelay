@@ -33,6 +33,10 @@
 	// we do not use get_cell() here as some devices may return a non-extension cell
 	var/datum/extension/loaded_cell/cell_loaded = get_extension(src, /datum/extension/loaded_cell)
 	var/obj/item/cell/cell = cell_loaded?.get_cell()
+	for(var/obj/O in contents)
+		if(O == cell)
+			continue
+		O.emp_act(severity)
 	if(cell)
 		cell.emp_act(severity)
 		update_icon()
@@ -82,11 +86,11 @@
 			if(istype(protection) && (protection.body_parts_covered & SLOT_EYES))
 				// you can't stab someone in the eyes wearing a mask!
 				to_chat(user, SPAN_WARNING("You're going to need to remove the eye covering first."))
-				return
+				return TRUE
 
 	if(!M.check_has_eyes())
 		to_chat(user, SPAN_WARNING("You cannot locate any eyes on [M]!"))
-		return
+		return TRUE
 
 	admin_attack_log(user, M, "Attacked using \a [src]", "Was attacked with \a [src]", "used \a [src] to attack")
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -125,4 +129,4 @@
 	else
 		M.take_organ_damage(7)
 	SET_STATUS_MAX(M, STAT_BLURRY, rand(3,4))
-	return
+	return TRUE

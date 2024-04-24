@@ -169,6 +169,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/hitsound = 'sound/weapons/genhit.ogg'
 	// Wallrot crumble message.
 	var/rotting_touch_message = "crumbles under your touch"
+	/// When a stack recipe doesn't specify a skill to use, use this skill.
+	var/crafting_skill = SKILL_CONSTRUCTION
 	// Modifies skill checks when constructing with this material.
 	var/construction_difficulty = MAT_VALUE_EASY_DIY
 	// Determines what is used to remove or dismantle this material.
@@ -225,6 +227,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/solvent_melt_dose = 0
 	var/solvent_max_damage  = 0
 	var/slipperiness = 0
+	var/slippery_amount = 1
 	var/euphoriant // If set, ingesting/injecting this material will cause the rainbow high overlay/behavior.
 
 	var/glass_icon = DRINK_ICON_DEFAULT
@@ -283,6 +286,27 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	/// If set to a material type, stacks of this material will be able to be tanned on a drying rack after being wetted to convert them to tans_to.
 	var/tans_to
+	/// A multiplier for this material when used in fishing bait.
+	var/fishing_bait_value = 0
+	/// A relative value used only by fishing line at time of commit.
+	var/tensile_strength = 0
+
+	/// What form does this take if dug out of the ground, if any?
+	var/dug_drop_type
+
+	/// Can objects containing this material be used for textile spinning?
+	var/has_textile_fibers = FALSE
+
+	/// Whether or not turfs made of this material can support plants.
+	var/tillable = FALSE
+
+	var/compost_value = 0
+
+	/// Nutrition values!
+	var/nutriment_animal     = FALSE
+	var/nutriment_factor     = 0 // Per removed amount each tick
+	var/hydration_factor     = 0 // Per removed amount each tick
+	var/injectable_nutrition = FALSE
 
 // Placeholders for light tiles and rglass.
 /decl/material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack, var/use_sheets = 1)
@@ -290,7 +314,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		to_chat(user, SPAN_WARNING("You need need at least one [used_stack.singular_name] to reinforce [target_stack]."))
 		return
 
-	var/decl/material/reinf_mat = used_stack.material
+	var/decl/material/reinf_mat = used_stack.get_material()
 	if(reinf_mat.integrity <= integrity || reinf_mat.is_brittle())
 		to_chat(user, SPAN_WARNING("The [reinf_mat.solid_name] is too structurally weak to reinforce the [name]."))
 		return
@@ -352,6 +376,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		accelerant_value             = FUEL_VALUE_NONE
 		burn_product                 = null
 		vapor_products               = null
+		compost_value                = 0
 	else if(isnull(temperature_damage_threshold))
 		for(var/value in list(ignition_point, melting_point, boiling_point, heating_point, bakes_into_at_temperature))
 			if(!isnull(value) && (isnull(temperature_damage_threshold) || temperature_damage_threshold > value))
@@ -379,6 +404,18 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 #define FALSEWALL_STATE "fwall_open"
 /decl/material/validate()
 	. = ..()
+
+	if(!crafting_skill)
+		. += "no construction skill set"
+	else if(!isnull(construction_difficulty))
+		var/decl/hierarchy/skill/used_skill = GET_DECL(crafting_skill)
+		if(!istype(used_skill))
+			. += "invalid skill decl [used_skill]"
+		else if(length(used_skill.levels) < construction_difficulty)
+			. += "required skill [used_skill] is missing skill level [json_encode(construction_difficulty)]"
+
+	if(isnull(construction_difficulty))
+		. += "no construction difficulty set"
 
 	if(!isnull(bakes_into_at_temperature))
 		if(!isnull(melting_point) && melting_point <= bakes_into_at_temperature)
@@ -471,10 +508,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(weight >= MAT_VALUE_HEAVY)
 		return SLOW_WEAPON_COOLDOWN
 	return DEFAULT_WEAPON_COOLDOWN
-
-// Snowflakey, only checked for alien doors at the moment.
-/decl/material/proc/can_open_material_door(var/mob/living/user)
-	return 1
 
 // Currently used for weapons and objects made of uranium to irradiate things.
 /decl/material/proc/products_need_process()
@@ -654,7 +687,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		if(slipperiness != 0 && !T.check_fluid_depth()) // Don't make floors slippery if they have an active fluid on top of them please.
 			if(slipperiness < 0)
 				W.unwet_floor(TRUE)
-			else
+			else if (REAGENT_VOLUME(holder, type) >= slippery_amount)
 				W.wet_floor(slipperiness)
 
 	if(length(vapor_products))
@@ -715,8 +748,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		holder.remove_reagent(type, removed)
 
 /decl/material/proc/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
+
 	if(M.status_flags & GODMODE)
 		return
+
+	if(nutriment_factor || hydration_factor)
+		if(injectable_nutrition)
+			adjust_nutrition(M, removed)
+		else
+			M.take_damage(TOX, 0.2 * removed)
 
 	if(radioactivity)
 		M.apply_damage(radioactivity * removed, IRRADIATE, armor_pen = 100)
@@ -753,7 +793,22 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(euphoriant)
 		SET_STATUS_MAX(M, STAT_DRUGGY, euphoriant)
 
+// Defined as a proc so it can be overridden.
+/decl/material/proc/adjust_nutrition(var/mob/living/M, var/removed)
+	if(nutriment_factor)
+		var/nutriment_power = nutriment_factor * removed
+		if(nutriment_animal)
+			var/malus_level = M.GetTraitLevel(/decl/trait/malus/animal_protein)
+			var/malus_factor = malus_level ? malus_level * 0.25 : 0
+			if(malus_level)
+				nutriment_power *= (1 - malus_factor)
+				M.take_damage(TOX, removed * malus_factor)
+		M.adjust_nutrition(nutriment_power)
+	if(hydration_factor)
+		M.adjust_hydration(hydration_factor * removed)
+
 /decl/material/proc/affect_ingest(var/mob/living/M, var/removed, var/datum/reagents/holder)
+	adjust_nutrition(M, removed)
 	if(affect_blood_on_ingest)
 		affect_blood(M, removed * 0.5, holder)
 
@@ -878,3 +933,30 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(!environment || amount <= 0 || !burn_product)
 		return
 	environment.adjust_gas(burn_product, amount)
+
+// Returns null for no burn, empty list for burn with no products, assoc
+// matter to value list for waste products.
+// We assume a normalized mole amount for 'amount'.
+/decl/material/proc/get_burn_products(var/amount, var/burn_temperature)
+
+	// No chance of burning.
+	if(isnull(ignition_point) && isnull(boiling_point) && !length(vapor_products))
+		return
+
+	// Burning a reagent of any kind.
+	if(ignition_point && burn_temperature >= ignition_point)
+		. = list() // We need to return a non-null value to indicate we consumed the material.
+		if(burn_product)
+			.[burn_product] = amount
+		return
+
+	// If it has a vapor product, turn it into that.
+	if(length(vapor_products))
+		. = list()
+		for(var/vapor in vapor_products)
+			.[vapor] = (amount * vapor_products[vapor])
+		return
+
+	// If it's not ignitable but can be boiled, consider vaporizing it.
+	if(!isnull(boiling_point) && burn_temperature >= boiling_point)
+		. = list(type = amount)

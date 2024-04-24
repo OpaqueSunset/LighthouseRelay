@@ -1,5 +1,7 @@
 /decl/stack_recipe/tool
+	category = "tool parts"
 	abstract_type               = /decl/stack_recipe/tool
+	category = "tool parts"
 	forbidden_craft_stack_types = null
 	craft_stack_types           = list(
 		/obj/item/stack/material/ore,
@@ -27,6 +29,9 @@
 
 /decl/stack_recipe/tool/head/hammer
 	result_type                 = /obj/item/tool_component/head/hammer
+
+/decl/stack_recipe/tool/head/hoe
+	result_type                 = /obj/item/tool_component/head/hoe
 
 /decl/stack_recipe/tool/head/shovel
 	result_type                 = /obj/item/tool_component/head/shovel

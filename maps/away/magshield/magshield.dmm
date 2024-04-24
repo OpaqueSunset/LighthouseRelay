@@ -1178,7 +1178,7 @@
 /turf/floor/airless,
 /area/magshield/north)
 "dn" = (
-/obj/item/storage/wallet/random,
+/obj/item/wallet/random,
 /turf/floor/airless,
 /area/magshield/north)
 "do" = (
@@ -1348,7 +1348,7 @@
 /area/magshield/north)
 "dV" = (
 /obj/effect/floor_decal/industrial/warning,
-/obj/item/flame/lighter/random,
+/obj/item/flame/fuelled/lighter/random,
 /turf/floor/airless,
 /area/magshield/north)
 "dW" = (
@@ -1732,7 +1732,7 @@
 /area/magshield/north)
 "eQ" = (
 /obj/structure/table/steel,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /turf/floor/airless,
 /area/magshield/north)
 "eR" = (
@@ -1741,7 +1741,7 @@
 /area/magshield/north)
 "eS" = (
 /obj/structure/table/steel,
-/obj/item/storage/box/lights,
+/obj/item/box/lights,
 /turf/floor/airless,
 /area/magshield/north)
 "eT" = (
@@ -2182,7 +2182,7 @@
 /area/magshield/west)
 "gt" = (
 /obj/structure/closet,
-/obj/item/storage/wallet/leather,
+/obj/item/wallet/leather,
 /obj/random/clothing,
 /obj/random/smokes,
 /turf/floor/carpet/blue,
@@ -2263,7 +2263,7 @@
 /obj/structure/table/woodentable{
 	dir = 10
 	},
-/obj/item/storage/box/checkers,
+/obj/item/box/checkers,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -2273,7 +2273,7 @@
 /obj/structure/table/woodentable{
 	dir = 10
 	},
-/obj/item/storage/belt/champion,
+/obj/item/belt/champion,
 /turf/floor/carpet/blue,
 /area/magshield/west)
 "gJ" = (
@@ -2286,7 +2286,7 @@
 /obj/structure/table/woodentable{
 	dir = 10
 	},
-/obj/item/storage/bible/booze,
+/obj/item/bible/booze,
 /turf/floor/carpet/blue,
 /area/magshield/west)
 "gL" = (
@@ -2727,7 +2727,7 @@
 /area/magshield/west)
 "ia" = (
 /obj/structure/table/woodentable,
-/obj/item/flame/lighter/zippo/random,
+/obj/item/flame/fuelled/lighter/zippo/random,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -2772,7 +2772,7 @@
 /turf/floor/tiled,
 /area/magshield/east)
 "ii" = (
-/obj/item/minihoe,
+/obj/item/tool/hoe/mini,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -3619,11 +3619,11 @@
 /area/magshield/south)
 "kL" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/magshield/south)
 "kM" = (

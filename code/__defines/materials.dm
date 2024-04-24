@@ -2,10 +2,10 @@
 #define DEFAULT_WALL_MATERIAL       /decl/material/solid/metal/steel
 #define DEFAULT_FURNITURE_MATERIAL  /decl/material/solid/metal/aluminium
 
-#define MAT_FLAG_ALTERATION_NONE    BITFLAG(0)
-#define MAT_FLAG_ALTERATION_NAME    BITFLAG(1)
-#define MAT_FLAG_ALTERATION_DESC    BITFLAG(2)
-#define MAT_FLAG_ALTERATION_COLOR   BITFLAG(3)
+#define MAT_FLAG_ALTERATION_NONE    0
+#define MAT_FLAG_ALTERATION_NAME    BITFLAG(0)
+#define MAT_FLAG_ALTERATION_DESC    BITFLAG(1)
+#define MAT_FLAG_ALTERATION_COLOR   BITFLAG(2)
 #define MAT_FLAG_ALTERATION_ALL     (~MAT_FLAG_ALTERATION_NONE)
 
 #define MAT_FLAG_UNMELTABLE         BITFLAG(0)
@@ -35,6 +35,7 @@
 #define MAT_VALUE_VERY_HARD_DIY     3
 
 //Arbitrary hardness thresholds
+#define MAT_VALUE_MALLEABLE          0
 #define MAT_VALUE_SOFT              10
 #define MAT_VALUE_FLEXIBLE          20
 #define MAT_VALUE_RIGID             40

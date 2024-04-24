@@ -272,6 +272,10 @@
 			if(T.reagents)
 				fluid_act(T.reagents)
 
+		for(var/mob/viewer in storage?.storage_ui?.is_seeing)
+			if(!storage.can_view(viewer))
+				storage.close(viewer)
+
 //called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, var/datum/thrownthing/TT)
 	SHOULD_CALL_PARENT(TRUE)
@@ -287,6 +291,8 @@
 
 	var/datum/thrownthing/TT = new(src, target, range, speed, thrower, callback)
 	throwing = TT
+
+	storage?.close_all()
 
 	pixel_z = 0
 	if(spin && does_spin)
@@ -427,15 +433,18 @@
 
 /atom/movable/proc/show_buckle_message(var/mob/buckled, var/mob/buckling)
 	if(buckled == buckling)
-		visible_message(\
-			SPAN_NOTICE("\The [buckled] buckles themselves to \the [src]."),\
-			SPAN_NOTICE("You buckle yourself to \the [src]."),\
-			SPAN_NOTICE("You hear metal clanking."))
+		var/decl/pronouns/G = buckled.get_pronouns()
+		visible_message(
+			SPAN_NOTICE("\The [buckled] buckles [G.him][G.self] to \the [src]."),
+			SPAN_NOTICE("You buckle yourself to \the [src]."),
+			SPAN_NOTICE("You hear metal clanking.")
+		)
 	else
-		visible_message(\
-			SPAN_NOTICE("\The [buckled] is buckled to \the [src] by \the [buckling]!"),\
-			SPAN_NOTICE("You are buckled to \the [src] by \the [buckling]!"),\
-			SPAN_NOTICE("You hear metal clanking."))
+		visible_message(
+			SPAN_NOTICE("\The [buckled] is buckled to \the [src] by \the [buckling]!"),
+			SPAN_NOTICE("You are buckled to \the [src] by \the [buckling]!"),
+			SPAN_NOTICE("You hear metal clanking.")
+		)
 
 /atom/movable/proc/user_unbuckle_mob(mob/user)
 	var/mob/living/M = unbuckle_mob()
@@ -447,16 +456,19 @@
 	return M
 
 /atom/movable/proc/show_unbuckle_message(var/mob/buckled, var/mob/buckling)
-	if(buckled != buckling)
-		visible_message(\
-			SPAN_NOTICE("\The [buckled] was unbuckled by \the [buckling]!"),\
-			SPAN_NOTICE("You were unbuckled from \the [src] by \the [buckling]."),\
-			SPAN_NOTICE("You hear metal clanking."))
+	if(buckled == buckling)
+		var/decl/pronouns/G = buckled.get_pronouns()
+		visible_message(
+			SPAN_NOTICE("\The [buckled] unbuckled [G.him][G.self] from \the [src]!"),
+			SPAN_NOTICE("You unbuckle yourself from \the [src]."),
+			SPAN_NOTICE("You hear metal clanking.")
+		)
 	else
-		visible_message(\
-			SPAN_NOTICE("\The [buckled] unbuckled themselves!"),\
-			SPAN_NOTICE("You unbuckle yourself from \the [src]."),\
-			SPAN_NOTICE("You hear metal clanking."))
+		visible_message(
+			SPAN_NOTICE("\The [buckled] was unbuckled from \the [src] by \the [buckling]!"),
+			SPAN_NOTICE("You were unbuckled from \the [src] by \the [buckling]."),
+			SPAN_NOTICE("You hear metal clanking.")
+		)
 
 /atom/movable/proc/handle_buckled_relaymove(var/datum/movement_handler/mh, var/mob/mob, var/direction, var/mover)
 	return
@@ -479,6 +491,7 @@
 /atom/movable/proc/get_object_size()
 	return ITEM_SIZE_NORMAL
 
+// TODO: account for reagents and matter.
 /atom/movable/get_thermal_mass()
 	if(!simulated)
 		return 0
@@ -496,7 +509,18 @@
 	if(!held_slot || !istype(holder) || QDELETED(holder) || loc != holder)
 		return
 
-	// TODO: check protective gear
+	// TODO: put these flags on the inventory slot or something.
+	var/check_slots
+	if(held_slot in global.all_hand_slots)
+		check_slots = SLOT_HANDS
+	else if(held_slot == BP_MOUTH || held_slot == BP_HEAD)
+		check_slots = SLOT_FACE
+
+	if(check_slots)
+		for(var/obj/item/covering in holder.get_covering_equipped_items(check_slots))
+			if(covering.max_heat_protection_temperature >= temperature)
+				return
+
 	// TODO: less simplistic messages and logic
 	var/datum/inventory_slot/slot = held_slot && holder.get_inventory_slot_datum(held_slot)
 	var/check_organ = slot?.requires_organ_tag
@@ -535,3 +559,5 @@
 		appearance_flags &= ~remove_flags
 	return old_appearance != appearance_flags
 
+/atom/movable/proc/end_throw()
+	throwing = null

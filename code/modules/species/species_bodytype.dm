@@ -94,7 +94,7 @@ var/global/list/bodytypes_by_category = list()
 	var/list/matter =     null
 	/// The reagent organs are filled with, which currently affects what mobs that eat the organ will receive.
 	/// TODO: Remove this in a later matter edibility refactor.
-	var/edible_reagent =  /decl/material/liquid/nutriment/protein
+	var/edible_reagent =  /decl/material/solid/organic/meat
 	/// A bitfield representing various bodytype-specific features.
 	var/body_flags = 0
 	/// Used to modify the arterial_bleed_severity of organs.
@@ -590,3 +590,6 @@ var/global/list/limbs_with_nails = list(
 			"descriptor" = nail_noun
 		)
 	return null
+
+/decl/bodytype/proc/get_movement_slowdown(var/mob/living/carbon/human/H)
+	return movement_slowdown

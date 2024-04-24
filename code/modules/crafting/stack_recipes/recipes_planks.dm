@@ -8,9 +8,11 @@
 /decl/stack_recipe/planks/crossbowframe
 	result_type            = /obj/item/crossbowframe
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
+	category               = "weapons"
 
 /decl/stack_recipe/planks/beehive_assembly
 	result_type            = /obj/item/beehive_assembly
+	category               = "furniture"
 
 /decl/stack_recipe/planks/beehive_frame
 	result_type            = /obj/item/honey_frame
@@ -19,11 +21,15 @@
 	result_type            = /obj/item/zipgunframe
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
 	available_to_map_tech_level = MAP_TECH_LEVEL_SPACE
+	category               = "weapons"
 
 /decl/stack_recipe/planks/coilgun
 	result_type            = /obj/item/coilgun_assembly
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
 	available_to_map_tech_level = MAP_TECH_LEVEL_SPACE
+
+/decl/stack_recipe/planks/fishing_rod
+	result_type = /obj/item/fishing_rod
 
 /decl/stack_recipe/planks/stick
 	result_type            = /obj/item/stick
@@ -88,6 +94,13 @@
 	one_per_turf           = TRUE
 	on_floor               = TRUE
 	difficulty             = MAT_VALUE_HARD_DIY
+	category               = "furniture"
+
+/decl/stack_recipe/planks/furniture/simple_bed
+	result_type = /obj/structure/bed/simple/crafted
+
+/decl/stack_recipe/planks/furniture/compost_bin
+	result_type            = /obj/structure/reagent_dispensers/compost_bin
 
 /decl/stack_recipe/planks/furniture/coffin
 	result_type            = /obj/structure/closet/coffin/wooden
@@ -123,3 +136,15 @@
 
 /decl/stack_recipe/planks/furniture/meathook
 	result_type            = /obj/structure/meat_hook/improvised
+
+/decl/stack_recipe/planks/furniture/spinning_wheel
+	result_type            = /obj/structure/textiles/spinning_wheel
+	difficulty             = MAT_VALUE_VERY_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/loom
+	result_type            = /obj/structure/textiles/loom
+	difficulty             = MAT_VALUE_VERY_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/twisting_bench
+	result_type            = /obj/structure/textiles/spinning_wheel/twisting_bench
+	difficulty             = MAT_VALUE_VERY_HARD_DIY

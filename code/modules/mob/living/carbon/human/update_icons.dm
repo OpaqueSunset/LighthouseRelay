@@ -20,7 +20,6 @@ var/global/list/_limb_mask_cache = list()
 var/global/list/human_icon_cache    = list()
 var/global/list/eye_icon_cache      = list()
 var/global/list/tail_icon_cache     = list() //key is [bodytype.get_icon_cache_uid(src)][skin_colour]
-var/global/list/light_overlay_cache = list()
 
 /proc/overlay_image(icon,icon_state,color,flags)
 	var/image/ret = image(icon,icon_state)
@@ -74,7 +73,6 @@ There are several things that need to be remembered:
 		update_body()	//Handles updating your mob's icon to reflect their gender/race/complexion etc
 		update_hair()	//Handles updating your hair overlay (used to be update_face, but mouth and
 																			...eyes were merged into update_body)
-		update_targeted() // Updates the target overlay when someone points a gun at you
 
 >	All of these procs update our overlay lists, and then call update_icon() by default.
 	If you wish to update several overlays at once, you can set the argument to 0 to disable the update and call
@@ -171,7 +169,7 @@ Please contact me on #coderbus IRC. ~Carn x
 				underlay.transform = M
 	underlays = visible_underlays
 
-/mob/living/carbon/human/proc/get_icon_scale_mult()
+/mob/living/proc/get_icon_scale_mult()
 	// If you want stuff like scaling based on species or something, here is a good spot to mix the numbers together.
 	return list(icon_scale_x, icon_scale_y)
 
@@ -179,6 +177,20 @@ Please contact me on #coderbus IRC. ~Carn x
 	. = ..()
 	if(.)
 		update_icon()
+
+// Separate and duplicated from human logic due to humans having `lying` and many overlays.
+/mob/living/update_transform()
+	var/list/icon_scale_values = get_icon_scale_mult()
+	var/desired_scale_x = icon_scale_values[1]
+	var/desired_scale_y = icon_scale_values[2]
+	var/matrix/M = matrix()
+	M.Scale(desired_scale_x, desired_scale_y)
+	M.Translate(0, 16 * (desired_scale_y - 1))
+	if(transform_animate_time)
+		animate(src, transform = M, time = transform_animate_time)
+	else
+		transform = M
+	return transform
 
 /mob/living/carbon/human/update_transform()
 
@@ -200,10 +212,11 @@ Please contact me on #coderbus IRC. ~Carn x
 	var/matrix/M = matrix()
 	M.Scale(desired_scale_x, desired_scale_y)
 	if(lying)
-		if(dir & WEST)
-			turn_angle = -90
-		else if(dir & EAST)
+		// This locate is very bad but trying to get it to respect the buckled dir is proving tricky.
+		if((dir & EAST) || (isturf(loc) && (locate(/obj/structure/bed) in loc)))
 			turn_angle = 90
+		else if(dir & WEST)
+			turn_angle = -90
 		else
 			turn_angle = pick(-90, 90)
 		M.Turn(turn_angle)

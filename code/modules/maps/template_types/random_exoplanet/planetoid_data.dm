@@ -244,11 +244,11 @@
 ///Registers to neccessary processors and begin running all processing needed by the planet
 /datum/planetoid_data/proc/begin_processing()
 	if(day_duration)
-		SSdaycyle.add_linked_levels(get_linked_level_ids(), starts_at_night, day_duration)
+		SSdaycycle.add_linked_levels(get_linked_level_ids(), starts_at_night, day_duration)
 
 ///Stop running any processing needed by the planet, and unregister from processors.
 /datum/planetoid_data/proc/end_processing()
-	SSdaycyle.remove_linked_levels(topmost_level_id)
+	SSdaycycle.remove_linked_levels(topmost_level_id)
 
 //#TODO: Move this into some SS for planet processing stuff or something?
 /datum/planetoid_data/Process(wait, tick)
@@ -278,6 +278,8 @@
 /datum/planetoid_data/proc/generate_life(var/list/breathable_gas, var/list/toxic_gases)
 	if(fauna)
 		fauna.generate_fauna(atmosphere, breathable_gas?.Copy(), toxic_gases?.Copy()) //Must be copies here #TODO: Fix this
+		for(var/datum/exoplanet_theme/theme in themes)
+			fauna.apply_theme(theme)
 
 ///Setup the initial weather state for the planet. Doesn't apply it to our z levels however.
 /datum/planetoid_data/proc/generate_weather()
@@ -498,10 +500,10 @@
 	if(habitability_class == HABITABILITY_OKAY || habitability_class == HABITABILITY_IDEAL)
 		var/decl/species/S           = global.get_species_by_key(global.using_map.default_species)
 		var/breathed_min_pressure    = S.breath_pressure
-		var/safe_max_pressure        = S.hazard_high_pressure
-		var/safe_min_pressure        = S.hazard_low_pressure
-		var/comfortable_max_pressure = S.warning_high_pressure
-		var/comfortable_min_pressure = S.warning_low_pressure
+		var/safe_max_pressure        = S.get_hazard_high_pressure()
+		var/safe_min_pressure        = S.get_hazard_low_pressure()
+		var/comfortable_max_pressure = S.get_warning_high_pressure()
+		var/comfortable_min_pressure = S.get_warning_low_pressure()
 
 		//On ideal planets, clamp against the comfortability limit pressures, since it shouldn't hit any extremes
 		if(habitability_class == HABITABILITY_IDEAL)

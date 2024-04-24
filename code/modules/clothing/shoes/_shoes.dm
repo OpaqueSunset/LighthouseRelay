@@ -14,6 +14,7 @@
 	blood_overlay_type = "shoeblood"
 	material = /decl/material/solid/organic/leather
 	origin_tech = @'{"materials":1,"engineering":1}'
+	fallback_slot = slot_shoes_str
 
 	var/can_fit_under_magboots = TRUE
 	var/can_add_cuffs = TRUE
@@ -174,7 +175,7 @@
 		S.blend_mode = BLEND_ADD
 		add_overlay(S)
 
-/obj/item/clothing/shoes/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/clothing/shoes/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && shine > 0 && slot == slot_shoes_str)
 		var/mutable_appearance/S = mutable_appearance(overlay.icon, "shine")
 		S.alpha = 127 * shine / 100

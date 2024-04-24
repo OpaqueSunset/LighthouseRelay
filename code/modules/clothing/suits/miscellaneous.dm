@@ -47,7 +47,7 @@
 	desc = "This robe commands authority."
 	icon = 'icons/clothing/suit/judge.dmi'
 	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_LEGS|SLOT_ARMS
-	allowed = list(/obj/item/storage/box/fancy/cigarettes,/obj/item/cash)
+	allowed = list(/obj/item/box/fancy/cigarettes,/obj/item/cash)
 	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/apron/overalls
@@ -158,7 +158,7 @@
 			shine = material.reflectiveness
 		desc = "A long, thick [material.use_name] coat."
 
-/obj/item/clothing/suit/leathercoat/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/clothing/suit/leathercoat/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && shine > 0 && slot == slot_wear_suit_str)
 		var/mutable_appearance/S = mutable_appearance(overlay.icon, "shine")
 		S.alpha = max(shine, artificial_shine)/100 * 255
@@ -185,87 +185,6 @@
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 	siemens_coefficient = 2.0
 
-/obj/item/clothing/suit/storage/toggle/bomber
-	name = "bomber jacket"
-	desc = "A thick, well-worn WW2 leather bomber jacket."
-	icon = 'icons/clothing/suit/leather_jacket/bomber.dmi'
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_ARMS
-	cold_protection = SLOT_UPPER_BODY|SLOT_ARMS
-	min_cold_protection_temperature = T0C - 20
-	siemens_coefficient = 0.7
-	material = /decl/material/solid/organic/leather
-
-/obj/item/clothing/suit/storage/leather_jacket
-	name = "black leather jacket"
-	desc = "A black leather coat."
-	icon = 'icons/clothing/suit/leather_jacket/black.dmi'
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_ARMS
-
-//This one has buttons for some reason
-/obj/item/clothing/suit/storage/toggle/brown_jacket
-	name = "leather jacket"
-	desc = "A brown leather coat."
-	icon = 'icons/clothing/suit/leather_jacket/brown.dmi'
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_ARMS
-
-/obj/item/clothing/suit/storage/toggle/agent_jacket
-	name = "agent jacket"
-	desc = "A black leather jacket belonging to an agent of the Sol Federal Police."
-	icon = 'icons/clothing/suit/leather_jacket/agent.dmi'
-	valid_accessory_slots = list(ACCESSORY_SLOT_INSIGNIA)
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_ARMS
-
-/obj/item/clothing/suit/storage/toggle/hoodie
-	name = "hoodie"
-	desc = "A warm sweatshirt."
-	icon = 'icons/clothing/suit/hoodie.dmi'
-	min_cold_protection_temperature = T0C - 20
-	cold_protection = SLOT_UPPER_BODY|SLOT_LOWER_BODY|SLOT_ARMS
-
-/obj/item/clothing/suit/storage/toggle/hoodie/black
-	name = "black hoodie"
-	desc = "A warm, black sweatshirt."
-	color = COLOR_DARK_GRAY
-
-/obj/item/clothing/suit/storage/toggle/hoodie/red
-	name = "red hoodie"
-	desc = "A warm, red sweatshirt."
-	color = COLOR_RED
-
-/obj/item/clothing/suit/storage/toggle/hoodie/blue
-	name = "blue hoodie"
-	desc = "A warm, blue sweatshirt."
-	color = COLOR_BLUE
-
-/obj/item/clothing/suit/storage/toggle/hoodie/yellow
-	name = "yellow hoodie"
-	desc = "A warm, yellow sweatshirt."
-	color = COLOR_GOLD
-
-/*
- * Track Jackets
- */
-/obj/item/clothing/suit/storage/toggle/track
-	name = "track jacket"
-	desc = "A track jacket, for the athletic."
-	icon = 'icons/clothing/suit/tracksuit/black.dmi'
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_ARMS
-
-/obj/item/clothing/suit/storage/toggle/track/blue
-	name = "blue track jacket"
-	desc = "A blue track jacket, for the athletic."
-	icon = 'icons/clothing/suit/tracksuit/blue.dmi'
-
-/obj/item/clothing/suit/storage/toggle/track/red
-	name = "red track jacket"
-	desc = "A red track jacket, for the athletic."
-	icon = 'icons/clothing/suit/tracksuit/red.dmi'
-
-/obj/item/clothing/suit/storage/toggle/track/navy
-	name = "navy track jacket"
-	desc = "A navy track jacket, for the athletic."
-	icon = 'icons/clothing/suit/tracksuit/navy.dmi'
-
 /obj/item/clothing/suit/rubber
 	name = "human suit"
 	desc = "A Human suit made out of rubber."
@@ -286,34 +205,6 @@
 
 /obj/item/clothing/suit/hospital/pink
 	color = "#ffb7db"
-
-/obj/item/clothing/suit/letterman
-	name = "letterman jacket"
-	desc = "A letter jacket often given to members of a varsity team."
-	color = "#ee1511"
-	icon = 'icons/clothing/suit/letterman.dmi'
-	markings_icon = "_sleeves"
-	markings_color = "#ffffff"
-
-/obj/item/clothing/suit/letterman/red
-	name = "red letterman jacket"
-	desc = "A red letter jacket often given to members of a varsity team."
-
-/obj/item/clothing/suit/letterman/blue
-	name = "blue letterman jacket"
-	desc = "A blue letter jacket often given to members of a varsity team."
-	color = "#3a64ba"
-
-/obj/item/clothing/suit/letterman/brown
-	name = "brown letterman jacket"
-	desc = "A brown letter jacket often given to members of a varsity team."
-	color = "#553c2f"
-	markings_color = "#dfd5cd"
-
-/obj/item/clothing/suit/letterman/green
-	name = "green letterman jacket"
-	desc = "A green letter jacket often given to members of a varsity team."
-	color = "#82e011"
 
 //Space santa outfit suit
 /obj/item/clothing/head/santahat

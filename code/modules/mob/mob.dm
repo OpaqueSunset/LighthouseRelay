@@ -206,12 +206,6 @@
 /atom/proc/drain_power(var/drain_check,var/surge, var/amount = 0)
 	return -1
 
-/mob/proc/findname(msg)
-	for(var/mob/M in SSmobs.mob_list)
-		if (M.real_name == msg)
-			return M
-	return 0
-
 #define ENCUMBERANCE_MOVEMENT_MOD 0.35
 /mob/proc/get_movement_delay(var/travel_dir)
 	. = 0
@@ -352,7 +346,7 @@
 			dat += "<B>[capitalize(get_descriptive_slot_name(slot))]:</b> <a href='?src=\ref[src];item=[slot]'>[thing_in_slot || "nothing"]</a>"
 			if(istype(thing_in_slot, /obj/item/clothing))
 				var/obj/item/clothing/C = thing_in_slot
-				if(C.accessories.len)
+				if(LAZYLEN(C.accessories))
 					dat += "<A href='?src=\ref[src];item=[slot_tie_str];holder=\ref[C]'>Remove accessory</A>"
 
 	// Do they get an option to set internals?
@@ -367,7 +361,7 @@
 	var/obj/item/clothing/suit = get_equipped_item(slot_w_uniform_str)
 	if(istype(suit))
 		dat += "<BR><b>Pockets:</b> <A href='?src=\ref[src];item=pockets'>Empty or Place Item</A>"
-	var/obj/item/clothing/accessory/vitals_sensor/sensor = get_vitals_sensor()
+	var/obj/item/clothing/sensor/vitals/sensor = get_vitals_sensor()
 	if(sensor)
 		if(sensor.get_sensors_locked())
 			dat += "<BR><A href='?src=\ref[src];item=lock_sensors'>Unlock vitals sensors</A>"
@@ -489,11 +483,6 @@
 		return
 	if(msg != null)
 		flavor_text = msg
-
-/mob/proc/warn_flavor_changed()
-	if(flavor_text && flavor_text != "") // don't spam people that don't use it!
-		to_chat(src, "<h2 class='alert'>OOC Warning:</h2>")
-		to_chat(src, "<span class='alert'>Your flavor text is likely out of date! <a href='byond://?src=\ref[src];flavor_change=1'>Change</a></span>")
 
 /mob/proc/print_flavor_text()
 	if (flavor_text && flavor_text != "")
@@ -617,23 +606,8 @@
 		return TRUE
 	. = ..()
 
-/mob/proc/can_use_hands()
-	return
-
 /mob/proc/is_active()
 	return (0 >= usr.stat)
-
-/mob/proc/is_dead()
-	return stat == DEAD
-
-/mob/proc/is_mechanical()
-	return FALSE
-
-/mob/living/silicon/is_mechanical()
-	return TRUE
-
-/mob/proc/is_ready()
-	return client && !!mind
 
 /mob/proc/can_touch(var/atom/touching)
 	if(!touching.Adjacent(src) || incapacitated())
@@ -780,19 +754,6 @@
 /mob/verb/southface()
 	set hidden = 1
 	return facedir(client.client_dir(SOUTH))
-
-/mob/proc/Resting(amount)
-	facing_dir = null
-	resting = max(max(resting,amount),0)
-	return
-
-/mob/proc/SetResting(amount)
-	resting = max(amount,0)
-	return
-
-/mob/proc/AdjustResting(amount)
-	resting = max(resting + amount,0)
-	return
 
 /mob/proc/get_species_name()
 	SHOULD_CALL_PARENT(TRUE)
@@ -969,12 +930,6 @@
 /mob/verb/westfaceperm()
 	set hidden = 1
 	set_face_dir(client.client_dir(WEST))
-
-/mob/proc/adjustEarDamage()
-	return
-
-/mob/proc/setEarDamage()
-	return
 
 //Throwing stuff
 
@@ -1178,9 +1133,6 @@
 		else if(!is_blind())
 			flash_eyes()
 
-/mob/proc/get_telecomms_race_info()
-	return list("Unknown", FALSE)
-
 /mob/proc/can_enter_cryopod(var/mob/user)
 	if(stat == DEAD)
 		if(user == src)
@@ -1231,58 +1183,6 @@
 
 /mob/proc/set_glide_size(var/delay)
 	glide_size = ADJUSTED_GLIDE_SIZE(delay)
-
-/mob/proc/get_weather_protection()
-	for(var/obj/item/brolly in get_held_items())
-		if(brolly.gives_weather_protection())
-			LAZYADD(., brolly)
-	if(!LAZYLEN(.))
-		for(var/turf/T as anything in RANGE_TURFS(loc, 1))
-			for(var/obj/structure/flora/tree/tree in T)
-				if(tree.protects_against_weather)
-					LAZYADD(., tree)
-
-/mob/living/carbon/human/get_weather_protection()
-	. = ..()
-	if(!LAZYLEN(.))
-		var/obj/item/clothing/head/check_head = get_equipped_item(slot_head_str)
-		if(!istype(check_head) || !check_head.protects_against_weather)
-			return
-		var/obj/item/clothing/suit/check_body = get_equipped_item(slot_wear_suit_str)
-		if(!istype(check_body) || !check_body.protects_against_weather)
-			return
-		LAZYADD(., check_head)
-		LAZYADD(., check_body)
-
-/mob/proc/get_weather_exposure()
-
-	// We're inside something else.
-	if(!isturf(loc))
-		return WEATHER_IGNORE
-
-	var/turf/T = loc
-	// We're under a roof or otherwise shouldn't be being rained on.
-	if(!T.is_outside())
-
-		// For non-multiz we'll give everyone some nice ambience.
-		if(!HasAbove(T.z))
-			return WEATHER_ROOFED
-
-		// For multi-z, check the actual weather on the turf above.
-		// TODO: maybe make this a property of the z-level marker.
-		var/turf/above = GetAbove(T)
-		if(above.weather)
-			return WEATHER_ROOFED
-
-		// Being more than one level down should exempt us from ambience.
-		return WEATHER_IGNORE
-
-	// Nothing's protecting us from the rain here
-	var/list/weather_protection = get_weather_protection()
-	if(LAZYLEN(weather_protection))
-		return WEATHER_PROTECTED
-
-	return WEATHER_EXPOSED
 
 /mob/proc/IsMultiZAdjacent(var/atom/neighbor)
 

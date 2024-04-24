@@ -54,6 +54,12 @@
 
 	return INITIALIZE_HINT_LATELOAD // oh no! we need to switch to being a different kind of turf!
 
+/turf/space/LateInitialize()
+	if(SSmapping.base_floor_area)
+		var/area/new_area = locate(SSmapping.base_floor_area) || new SSmapping.base_floor_area
+		ChangeArea(src, new_area)
+	ChangeTurf(SSmapping.base_floor_type, keep_air_below = TRUE)
+
 /turf/space/proc/toggle_transit(var/direction)
 	if(edge)
 		return
@@ -85,12 +91,6 @@
 
 	return ..()
 
-/turf/space/LateInitialize()
-	if(SSmapping.base_floor_area)
-		var/area/new_area = locate(SSmapping.base_floor_area) || new SSmapping.base_floor_area
-		ChangeArea(src, new_area)
-	ChangeTurf(SSmapping.base_floor_type, keep_air_below = TRUE)
-
 /turf/space/attackby(obj/item/C, mob/user)
 
 	if (istype(C, /obj/item/stack/material/rods))
@@ -101,7 +101,7 @@
 		if (R.use(1))
 			to_chat(user, "<span class='notice'>Constructing support lattice ...</span>")
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			ReplaceWithLattice(R.material.type)
+			new /obj/structure/lattice(src, R.material.type)
 			return TRUE
 
 	if (istype(C, /obj/item/stack/tile/floor))

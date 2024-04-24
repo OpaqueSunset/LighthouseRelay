@@ -35,16 +35,28 @@
 
 /turf/wall/natural/ice
 	strata_override = /decl/strata/permafrost
-	floor_type = /turf/exterior/ice
+	floor_type = /turf/floor/natural/ice
 
 /turf/wall/natural/random/ice
 	strata_override = /decl/strata/permafrost
-	floor_type = /turf/exterior/ice
+	floor_type = /turf/floor/natural/ice
 
 /turf/wall/natural/random/high_chance/ice
 	strata_override = /decl/strata/permafrost
-	floor_type = /turf/exterior/ice
+	floor_type = /turf/floor/natural/ice
 
 /turf/wall/natural/dirt
 	material = /decl/material/solid/soil
 	color = "#41311b"
+
+/turf/wall/natural/basalt
+	material = /decl/material/solid/stone/basalt
+	color = COLOR_DARK_GRAY
+
+/turf/wall/natural/random/basalt
+	material = /decl/material/solid/stone/basalt
+	color = COLOR_DARK_GRAY
+
+/turf/wall/natural/random/high_chance/basalt
+	material = /decl/material/solid/stone/basalt
+	color = COLOR_DARK_GRAY

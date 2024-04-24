@@ -338,7 +338,7 @@ var/global/list/_wood_materials = list(
 
 /obj/item/chems/food/grown/get_dried_product()
 	if(ispath(dried_type, /obj/item/chems/food/grown))
-		return new dried_type(loc, seed.type)
+		return new dried_type(loc, null, seed.name)
 	return ..()
 
 /obj/item/chems/food/grown/grilled
@@ -347,7 +347,7 @@ var/global/list/_wood_materials = list(
 
 /obj/item/chems/food/grown/get_grilled_product()
 	if(ispath(backyard_grilling_product, /obj/item/chems/food/grown))
-		return new backyard_grilling_product(loc, seed.type)
+		return new backyard_grilling_product(loc, null, seed.name)
 	return ..()
 
 // Predefined types for placing on the map.
@@ -409,3 +409,10 @@ var/global/list/fruit_icon_cache = list()
 		user.visible_message(SPAN_DANGER("\The [user] reflexively hurls \the [src] at \the [aiming_at]!"))
 		user.mob_throw_item(get_turf(aiming_at), src)
 		user.trigger_aiming(TARGET_CAN_CLICK)
+
+/obj/item/chems/food/grown/has_textile_fibers()
+	for(var/mat in get_contained_matter())
+		var/decl/material/check_mat = GET_DECL(mat)
+		if(check_mat.has_textile_fibers)
+			return TRUE
+	return FALSE

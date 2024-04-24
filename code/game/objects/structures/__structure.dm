@@ -5,6 +5,9 @@
 	abstract_type = /obj/structure
 	max_health = 50
 
+	/// Multiplier for degree of comfort offered to mobs buckled to this furniture.
+	var/user_comfort = 0 // TODO: extremely uncomfortable chairs
+
 	var/structure_flags
 	var/last_damage_message
 	var/hitsound = 'sound/weapons/smash.ogg'
@@ -23,7 +26,7 @@
 		return material.color
 	return initial(color)
 
-/obj/item/set_color(new_color)
+/obj/structure/set_color(new_color)
 	if(new_color == COLOR_WHITE)
 		new_color = null
 	if(paint_color != new_color)
@@ -58,12 +61,18 @@
 		reinf_material = GET_DECL(reinf_material)
 	. = ..()
 	update_materials()
+	if(lock)
+		lock = new /datum/lock(src, lock)
 	if(!CanFluidPass())
 		fluid_update(TRUE)
 
 /obj/structure/examine(mob/user, distance, infix, suffix)
 	. = ..()
+
 	if(distance <= 3)
+
+		if(distance <= 1 && lock)
+			to_chat(user, SPAN_NOTICE("\The [src] appears to have a lock, opened by '[lock.lock_data]'."))
 
 		var/damage_desc = get_examined_damage_string()
 		if(length(damage_desc))
@@ -169,6 +178,7 @@
 	. = ..()
 
 /obj/structure/Destroy()
+	QDEL_NULL(lock)
 	var/turf/T = get_turf(src)
 	. = ..()
 	if(T)

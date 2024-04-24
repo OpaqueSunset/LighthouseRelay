@@ -52,7 +52,7 @@
 "af" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/rd,
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 34
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -249,7 +249,7 @@
 	dir = 1
 	},
 /obj/structure/table,
-/obj/item/storage/toolbox/electrical{
+/obj/item/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -572,7 +572,7 @@
 /area/liberia/traidingroom)
 "bl" = (
 /obj/structure/rack,
-/obj/item/storage/bag/cash,
+/obj/item/bag/cash,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -679,7 +679,7 @@
 	},
 /obj/effect/floor_decal/corner/brown/half,
 /obj/item/chems/pill/stimulants,
-/obj/item/storage/pill_bottle/gleam,
+/obj/item/pill_bottle/gleam,
 /obj/item/plastique,
 /obj/item/plastique,
 /obj/item/beartrap,
@@ -697,13 +697,13 @@
 	req_access = list("ACCESS_MERCHANT")
 	},
 /obj/effect/floor_decal/corner/brown/half,
-/obj/item/storage/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
 /obj/item/clothing/accessory/armor/plate/tactical,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/glasses/tacgoggles,
-/obj/item/clothing/accessory/legguards,
+/obj/item/clothing/shoes/legguards,
 /obj/item/clothing/under/syndicate,
 /turf/floor/tiled/dark/monotile,
 /area/liberia/mule)
@@ -733,7 +733,7 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/storage/secure/briefcase,
+/obj/item/secure_storage/briefcase,
 /obj/item/poster,
 /obj/item/poster,
 /obj/item/poster,
@@ -761,8 +761,8 @@
 /obj/machinery/door/window/brigdoor/southright{
 	req_access = newlist()
 	},
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/combat,
+/obj/item/firstaid/surgery,
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
 /obj/item/auto_cpr,
@@ -956,7 +956,7 @@
 	pixel_x = -7;
 	pixel_y = 32
 	},
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 30
 	},
 /obj/machinery/power/smes/buildable{
@@ -2039,7 +2039,7 @@
 	pixel_y = 24
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /obj/item/chems/spray/cleaner,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -3510,7 +3510,7 @@
 /area/liberia/bar)
 "gl" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/storage/box/glasses/pint,
+/obj/item/box/glasses/pint,
 /turf/floor/wood/ebony,
 /area/liberia/bar)
 "gm" = (
@@ -3824,7 +3824,7 @@
 /obj/item/clothing/shoes/craftable,
 /obj/item/clothing/under/blazer,
 /obj/item/clothing/under/lawyer,
-/obj/item/clothing/under/suit_jacket/navy,
+/obj/item/clothing/under/formal/navy,
 /obj/random/handgun,
 /obj/item/chems/drinks/bottle/premiumwine,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4186,7 +4186,7 @@
 "hz" = (
 /obj/machinery/vending/cigarette{
 	dir = 1;
-	products = list(/obj/item/storage/box/fancy/cigarettes=10,/obj/item/storage/box/matches=10,/obj/item/flame/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
+	products = list(/obj/item/box/fancy/cigarettes=10,/obj/item/box/matches=10,/obj/item/flame/fuelled/lighter/zippo=4,/obj/item/clothing/mask/smokable/cigarette/cigar/havana=2)
 	},
 /turf/floor/wood/walnut,
 /area/liberia/bar)
@@ -4205,7 +4205,7 @@
 "hC" = (
 /obj/structure/table/woodentable/walnut,
 /obj/item/ashtray,
-/obj/item/storage/box/matches,
+/obj/item/box/matches,
 /obj/random/smokes,
 /turf/floor/carpet/red,
 /area/liberia/captain)
@@ -4287,7 +4287,7 @@
 /area/liberia/bar)
 "hL" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -4541,7 +4541,7 @@
 "io" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
-/obj/item/storage/toolbox/electrical{
+/obj/item/toolbox/electrical{
 	pixel_x = 7;
 	pixel_y = 4
 	},
@@ -5249,7 +5249,7 @@
 /area/liberia/library)
 "kc" = (
 /obj/structure/table/woodentable/walnut,
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
@@ -5510,8 +5510,8 @@
 /area/liberia/dockinghall)
 "kC" = (
 /obj/structure/table/steel,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/belt/utility/full,
+/obj/item/toolbox/mechanical,
+/obj/item/belt/utility/full,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -5886,19 +5886,19 @@
 	dir = 8;
 	pixel_x = 32
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = -2
 	},
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/toxin,
+/obj/item/firstaid/o2,
+/obj/item/firstaid/toxin,
 /obj/effect/floor_decal/corner/blue{
 	dir = 6
 	},
@@ -5938,7 +5938,7 @@
 /area/liberia/medbay)
 "ls" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery{
+/obj/item/firstaid/surgery{
 	pixel_y = 6
 	},
 /obj/item/stack/medical/advanced/bruise_pack,
@@ -6146,12 +6146,12 @@
 /area/liberia/engineeringreactor)
 "mO" = (
 /obj/structure/closet/crate/med_crate,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/surgery,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/trauma,
+/obj/item/firstaid/fire,
+/obj/item/firstaid/o2,
+/obj/item/firstaid/regular,
+/obj/item/firstaid/surgery,
+/obj/item/firstaid/toxin,
+/obj/item/firstaid/trauma,
 /obj/item/defibrillator,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
@@ -6160,7 +6160,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/item/auto_cpr,
-/obj/item/storage/box/freezer,
+/obj/item/box/freezer,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/light,
 /turf/floor/tiled/techfloor/grid,
@@ -7319,12 +7319,12 @@
 /area/liberia/engineeringstorage)
 "Ep" = (
 /obj/structure/rack/dark,
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/bloodpacks,
-/obj/item/storage/box/beakers,
-/obj/item/storage/box/masks,
-/obj/item/storage/box/syringes,
-/obj/item/storage/box/bodybags,
+/obj/item/box/gloves,
+/obj/item/box/bloodpacks,
+/obj/item/box/beakers,
+/obj/item/box/masks,
+/obj/item/box/syringes,
+/obj/item/box/bodybags,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/floor/tiled/techfloor/grid,
 /area/liberia/merchantstorage)
