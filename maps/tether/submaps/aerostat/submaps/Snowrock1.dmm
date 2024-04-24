@@ -10,22 +10,22 @@
 /area/submap/virgo2/SnowR1)
 "d" = (
 /obj/structure/loot_pile/maint/trash,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/SnowR1)
 "e" = (
 /obj/structure/closet/crate/trashcart,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/SnowR1)
 "f" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/SnowR1)
 "g" = (
 /obj/random/trash,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/SnowR1)
 "h" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/SnowR1)
 
 (1,1,1) = {"

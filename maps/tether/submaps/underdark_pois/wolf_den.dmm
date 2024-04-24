@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "b" = (
 /turf/template_noop,
@@ -11,55 +11,55 @@
 "d" = (
 /obj/item/remains/tajaran,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "e" = (
 /obj/item/remains/mouse,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/item/remains/deer,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "g" = (
 /mob/living/simple_animal/wolf/phoron,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/item/remains/ribcage,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "i" = (
 /obj/item/remains/deer,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "j" = (
 /mob/living/simple_mob/otie/feral{
 	faction = "underdark"
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "k" = (
 /obj/structure/dogbed,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "l" = (
 /obj/structure/barricade,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "m" = (
 /obj/item/broken_device/random,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "n" = (
 /obj/item/resonator/upgraded,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "o" = (
 /obj/item/archaeological_find,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

@@ -17,7 +17,7 @@
 
 /obj/item/clothing/accessory/choker //A colorable, tagless choker
 	name = "plain choker"
-	slot_flags = SLOT_TIE | SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY
 	desc = "A simple, plain choker. Or maybe it's a collar? Use in-hand to customize it."
 	icon = 'maps/tether/icons/obj/clothing/choker.dmi'
 	obj_flags = OBJ_FLAG_HOLLOW
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/accessory/collar
 	abstract_type = /obj/item/clothing/accessory/collar
-	slot_flags = SLOT_TIE | SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY
 	obj_flags = OBJ_FLAG_HOLLOW
 	var/writtenon = FALSE
 

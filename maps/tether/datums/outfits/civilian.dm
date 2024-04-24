@@ -7,14 +7,14 @@
 	uniform = /obj/item/clothing/under/bartender
 	id_type = /obj/item/card/id/civilian
 	pda_type = /obj/item/modular_computer/pda
-	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/bar = 1)
+	backpack_contents = list(/obj/item/clothing/permit/gun/bar = 1)
 
 /decl/hierarchy/outfit/job/service/bartender/post_equip(mob/living/carbon/human/H)
 	. = ..()
-	var/obj/item/storage/backpack = H.get_equipped_item(slot_back_str)
+	var/obj/item/backpack = H.get_equipped_item(slot_back_str)
 	if(!istype(backpack))
 		return
-	for(var/obj/item/clothing/accessory/permit/gun/bar/permit in backpack.get_contained_external_atoms())
+	for(var/obj/item/clothing/permit/gun/bar/permit in backpack.get_contained_external_atoms())
 		permit.set_owner(H.real_name)
 
 /decl/hierarchy/outfit/job/service/bartender/barista
@@ -44,9 +44,9 @@
 
 /decl/hierarchy/outfit/job/service/gardener/Initialize()
 	. = ..()
-	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/storage/backpack/hydroponics
-	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/hyd
-	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/storage/backpack/messenger/hyd
+	backpack_overrides[/decl/backpack_outfit/backpack]      = /obj/item/backpack/hydroponics
+	backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/backpack/satchel/hyd
+	backpack_overrides[/decl/backpack_outfit/messenger_bag] = /obj/item/backpack/messenger/hyd
 
 /decl/hierarchy/outfit/job/service/janitor
 	name = "Job - Janitor"
@@ -56,7 +56,7 @@
 
 /decl/hierarchy/outfit/job/librarian
 	name = "Job - Librarian"
-	uniform = /obj/item/clothing/under/suit_jacket/red
+	uniform = /obj/item/clothing/under/formal/red
 	id_type = /obj/item/card/id/civilian
 	pda_type = /obj/item/modular_computer/pda
 
@@ -70,17 +70,17 @@
 	name = "Job - Internal affairs agent"
 	l_ear = /obj/item/radio/headset/heads/ia
 	uniform = /obj/item/clothing/under/internalaffairs
-	suit = /obj/item/clothing/suit/storage/toggle/suit/black
+	suit = /obj/item/clothing/suit/jacket/black
 	shoes = /obj/item/clothing/shoes/color/brown
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	hands = list(/obj/item/storage/briefcase)
+	hands = list(/obj/item/briefcase)
 	id_type = /obj/item/card/id/civilian/internal_affairs_agent
 	pda_type = /obj/item/modular_computer/pda/heads/paperpusher
 
 /decl/hierarchy/outfit/job/chaplain
 	name = "Job - Chaplain"
 	uniform = /obj/item/clothing/under/chaplain
-	hands = list(/obj/item/storage/bible)
+	hands = list(/obj/item/bible)
 	id_type = /obj/item/card/id/civilian
 	pda_type = /obj/item/modular_computer/pda/medical
 
@@ -113,7 +113,7 @@
 	uniform = /obj/item/clothing/under/miner
 	id_type = /obj/item/card/id/cargo
 	pda_type = /obj/item/modular_computer/pda/science
-	backpack_contents = list(/obj/item/crowbar = 1, /obj/item/storage/ore = 1)
+	backpack_contents = list(/obj/item/crowbar = 1, /obj/item/ore = 1)
 	outfit_flags = OUTFIT_HAS_BACKPACK | OUTFIT_EXTENDED_SURVIVAL | OUTFIT_HAS_VITALS_SENSOR
 
 /decl/hierarchy/outfit/job/cargo/mining/Initialize()

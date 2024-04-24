@@ -3,7 +3,7 @@
 /turf/unsimulated/wall/planetary/virgo3b,
 /area/mine/explored)
 "ab" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "ac" = (
 /obj/structure/sign/mining,
@@ -11,16 +11,16 @@
 /area/mine/explored)
 "ad" = (
 /obj/structure/railing/mapped,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "ae" = (
 /obj/structure/railing/mapped{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "af" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored)
 "ag" = (
 /obj/effect/step_trigger/teleporter/to_underdark{
@@ -28,13 +28,13 @@
 	icon_state = "";
 	pixel_x = -16
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "ah" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "aj" = (
 /turf/wall/natural,
@@ -391,7 +391,7 @@
 	},
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/storage/belt,
+/obj/item/belt,
 /turf/floor/tiled,
 /area/outpost/mining_main/break_room)
 "ba" = (
@@ -651,11 +651,11 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 8
 	},
-/obj/item/storage/box/cups{
+/obj/item/box/cups{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/floor/tiled,
 /area/outpost/mining_main/break_room)
 "bx" = (
@@ -926,7 +926,7 @@
 /area/outpost/mining_main/maintenance)
 "bX" = (
 /obj/structure/table,
-/obj/item/storage/briefcase/inflatable,
+/obj/item/briefcase/inflatable,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -1398,7 +1398,7 @@
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/outpost/mining_main/passage)
 "cQ" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/outpost/mining_main/passage)
 "cR" = (
 /obj/structure/cable/heavyduty{
@@ -1422,7 +1422,7 @@
 /area/outpost/mining_main/passage)
 "pl" = (
 /obj/abstract/level_data_spawner/virgo3b/mining,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored)
 "rb" = (
 /turf/unsimulated/dark_filler,

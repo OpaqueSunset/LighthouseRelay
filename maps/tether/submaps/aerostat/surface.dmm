@@ -1,17 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
 /obj/away_mission_init/aerostat,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "b" = (
 /turf/unsimulated/wall/planetary/virgo2,
 /area/tether_away/aerostat/surface)
 "e" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "i" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "n" = (
 /obj/structure/railing{
@@ -19,14 +19,14 @@
 	dir = 1
 	},
 /obj/structure/metal_edge,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "A" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 8
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "E" = (
 /turf/mineral/virgo2,
@@ -44,14 +44,14 @@
 /area/shuttle/aerostat/landed)
 "V" = (
 /obj/structure/railing,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 "X" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 4
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/aerostat/surface/explored)
 
 (1,1,1) = {"

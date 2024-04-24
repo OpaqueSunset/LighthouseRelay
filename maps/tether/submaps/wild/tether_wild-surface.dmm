@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "b" = (
 /turf/unsimulated/wall/planetary/virgo3b{
@@ -12,49 +12,49 @@
 /area/tether/surfacebase/outside/wilderness)
 "e" = (
 /obj/structure/mob_spawner/scanner/wild_animals,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "f" = (
 /obj/effect/step_trigger/teleporter/wild/from_wild,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "g" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_3,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "h" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_4,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "i" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_2,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "j" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_1,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "k" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_5,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "l" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_crash,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "m" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_6,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "n" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_ruins,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "o" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/outside/wilderness)
 "p" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/syndicate_station/southwest{
 	base_turf = /turf/floor/outdoors/dirt/virgo3b;
 	forced_ambience = list('sound/music/Sacred_Grove.ogg')

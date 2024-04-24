@@ -9,49 +9,49 @@
 /area/tether/surfacebase/outside/wilderness)
 "b" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_1,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "c" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "e" = (
 /obj/structure/mob_spawner/scanner/wild_animals,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "f" = (
 /turf/wall/sandstonediamond,
 /area/tether/surfacebase/temple)
 "g" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "h" = (
 /obj/structure/mob_spawner/scanner/xenos,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "i" = (
 /obj/structure/mob_spawner/scanner/xenos/royal,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "j" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_6,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "k" = (
 /obj/item/star,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "m" = (
 /obj/item/cell/infinite,
 /obj/effect/gibspawner/human,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "n" = (
 /obj/item/sword/katana,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/surfacebase/temple)
 "o" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_4,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 
 (1,1,1) = {"

@@ -2,14 +2,14 @@
 /turf/unsimulated/mineral/virgo3b : /turf/unsimulated/mineral
 /turf/simulated/floor/virgo3b : /turf/simulated/floor
 # TODO: consider if we need to readd the colored sky subtype
-/turf/simulated/sky/virgo3b/@SUBTYPES : /turf/exterior/open/sky/@SUBTYPES
+/turf/simulated/sky/virgo3b/@SUBTYPES : /turf/open/sky/@SUBTYPES
 # POLARIS TURFS
-/turf/simulated/floor/outdoors/grass/sif/@SUBTYPES : /turf/exterior/sif_growth
-/turf/simulated/mineral/floor/@SUBTYPES : /turf/exterior/barren
-/turf/simulated/floor/outdoors/dirt/@SUBTYPES : /turf/exterior/dirt
-/turf/simulated/floor/outdoors/rocks/@SUBTYPES : /turf/exterior/rocks
-/turf/simulated/mineral : /turf/exterior/wall
-/turf/simulated/sky : /turf/exterior/open/sky
+/turf/simulated/floor/outdoors/grass/sif/@SUBTYPES : /turf/floor/natural/sif_growth
+/turf/simulated/mineral/floor/@SUBTYPES : /turf/floor/natural/barren
+/turf/simulated/floor/outdoors/dirt/@SUBTYPES : /turf/floor/natural/dirt
+/turf/simulated/floor/outdoors/rocks/@SUBTYPES : /turf/floor/natural/rocks
+/turf/simulated/mineral : /turf/wall/natural
+/turf/simulated/sky : /turf/open/sky
 /turf/simulated/floor/water/pool : /turf/simulated/floor/pool
 /turf/simulated/shuttle/plating/airless : /turf/simulated/floor/airless{@OLD}
 /turf/simulated/shuttle/plating/airless/carry : @DELETE
@@ -78,7 +78,7 @@
 /obj/structure/trash_pile : /obj/random/loot_pile/maintenance
 /obj/random/trash_pile : /obj/random/loot_pile/maintenance
 
-/obj/item/storage/pill_bottle/tramadol : /obj/item/storage/pill_bottle/strong_painkillers{@OLD}
+/obj/item/storage/pill_bottle/tramadol : /obj/item/pill_bottle/strong_painkillers{@OLD}
 /obj/item/chems/pill/tramadol : /obj/item/chems/pill/strong_painkillers{@OLD}
 
 # RANDOM SPAWNERS
@@ -224,8 +224,8 @@
 /obj/structure/plasticflaps/mining : /obj/structure/plasticflaps/airtight{@OLD}
 
 # MISC. ITEMS
-/obj/item/moneybag/vault : /obj/item/storage/bag/cash/filled{@OLD}
-/obj/item/moneybag : /obj/item/storage/bag/cash{@OLD}
+/obj/item/moneybag/vault : /obj/item/bag/cash/filled{@OLD}
+/obj/item/moneybag : /obj/item/bag/cash{@OLD}
 /obj/item/tank/oxygen/red : /obj/item/tank/emergency/oxygen/double/red{@OLD}
 
 /obj/machinery/shower : /obj/structure/hygiene/shower{@OLD}
@@ -247,7 +247,7 @@
 /obj/structure/closet{name = "tactical equipment"} : /obj/structure/closet/wardrobe/tactical
 /obj/item/camera{name = "detectives camera"} : /obj/item/camera{pixel_x = @OLD; pixel_y = @OLD}
 /turf/unsimulated/floor/steel{icon = 'icons/turf/floors_vr.dmi'; icon_state = "wood"} : /turf/unsimulated/floor/wood
-/turf/unsimulated/floor/steel{icon = 'icons/turf/outdoors.dmi';	icon_state = "grass"} : /turf/exterior/grass
+/turf/unsimulated/floor/steel{icon = 'icons/turf/outdoors.dmi';	icon_state = "grass"} : /turf/floor/natural/grass
 /obj/machinery/cryopod/robot/door/dorms{icon = 'icons/obj/doors/Door2x1glass.dmi'} : /obj/machinery/cryopod/robot/door/dorms/colony
 /obj/structure/closet{icon_closed = "cabinet_closed";icon_opened = "cabinet_open";icon_state = "cabinet_closed";name = "Clothing Storage"} : /obj/structure/closet/wardrobe{name = "clothing storage"}
 /obj/structure/closet/secure_closet{icon_broken = "medicalbroken";icon_closed = "medical";icon_locked = "medical1";icon_off = "medicaloff";icon_opened = "medicalopen";icon_state = "medical1";name = "Surgical Pressure Gear"} : /obj/structure/closet/secure_closet{name = "surgical pressure gear"; req_access = list(access_medical_equip); closet_appearance = /decl/closet_appearance/secure_closet/medical/alt}
@@ -323,8 +323,8 @@
 /obj/effect/decal/remains/@SUBTYPES : /obj/item/remains/@SUBTYPES{@OLD}
 
 /turf/simulated/open/virgo3b : /turf/open
-/turf/simulated/mineral/virgo3b : /turf/exterior/wall
-/turf/simulated/mineral/vacuum : /turf/exterior/wall
+/turf/simulated/mineral/virgo3b : /turf/wall/natural
+/turf/simulated/mineral/vacuum : /turf/wall/natural
 /turf/simulated/floor/carpet/blucarpet : /turf/simulated/floor/carpet/blue
 /turf/simulated/floor/water/deep/pool : /turf/simulated/floor/pool/deep
 /obj/structure/window/phoronreinforced/@SUBTYPES : /obj/structure/window/borosilicate_reinforced/@SUBTYPES{@OLD}
@@ -469,7 +469,7 @@
 /obj/item/radio/headset/syndicate : /obj/item/radio/headset/hacked
 /obj/item/radio/headset/syndicate/alt : /obj/item/radio/headset/hacked
 
-/obj/item/storage/firstaid/regular{empty = 1} : /obj/item/storage/firstaid/empty{@OLD; empty = @SKIP; name = @SKIP}
+/obj/item/storage/firstaid/regular{empty = 1} : /obj/item/firstaid/empty{@OLD; empty = @SKIP; name = @SKIP}
 
 /obj/item/mmi/digital/@SUBTYPES : /obj/item/organ/internal/brain/robotic{@OLD}
 /obj/item/mmi : /obj/item/organ/internal/brain_interface{@OLD}
@@ -480,7 +480,7 @@
 /obj/item/clothing/accessory/medal/bronze_heart : /obj/item/clothing/accessory/medal/nanotrasen/bronze
 /obj/item/clothing/accessory/medal/nobel_science : /obj/item/clothing/accessory/medal/nanotrasen/silver
 /obj/item/clothing/accessory/scarf/white : /obj/item/clothing/accessory/scarf
-/obj/item/clothing/accessory/storage/webbing : /obj/item/clothing/accessory/storage/vest
+/obj/item/clothing/accessory/storage/webbing : /obj/item/clothing/webbing/vest
 
 /obj/item/knife/plastic : /obj/item/knife/table/plastic
 
@@ -509,7 +509,7 @@
 
 /obj/item/pen/click : /obj/item/pen{@OLD}
 
-/obj/item/storage/box/survival/comp : /obj/item/storage/box/survival{@OLD}
+/obj/item/storage/box/survival/comp : /obj/item/box/survival{@OLD}
 
 /obj/structure/musician/piano : /obj/structure/synthesized_instrument/synthesizer/piano
 
@@ -519,14 +519,14 @@
 
 # CLOTHING REPATHS
 /obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/accessory/toggleable/hawaii/@SUBTYPES{@OLD}
-/obj/item/clothing/accessory/holster/@SUBTYPES : /obj/item/clothing/accessory/storage/holster/@SUBTYPES{@OLD}
-/obj/item/storage/belt/security/tactical : /obj/item/storage/belt/holster/security/tactical{@OLD}
-/obj/item/clothing/accessory/storage/black_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/black{@OLD}
-/obj/item/clothing/accessory/storage/black_vest : /obj/item/clothing/accessory/storage/vest/black{@OLD}
-/obj/item/clothing/accessory/storage/brown_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/brown{@OLD}
-/obj/item/clothing/accessory/storage/brown_vest : /obj/item/clothing/accessory/storage/vest/brown{@OLD}
-/obj/item/clothing/accessory/storage/white_drop_pouches : /obj/item/clothing/accessory/storage/drop_pouches/white{@OLD}
-/obj/item/clothing/accessory/storage/white_vest : /obj/item/clothing/accessory/storage/vest{@OLD}
+/obj/item/clothing/accessory/holster/@SUBTYPES : /obj/item/clothing/webbing/holster/@SUBTYPES{@OLD}
+/obj/item/storage/belt/security/tactical : /obj/item/belt/holster/security/tactical{@OLD}
+/obj/item/clothing/accessory/storage/black_drop_pouches : /obj/item/clothing/webbing/drop_pouches/black{@OLD}
+/obj/item/clothing/accessory/storage/black_vest : /obj/item/clothing/webbing/vest/black{@OLD}
+/obj/item/clothing/accessory/storage/brown_drop_pouches : /obj/item/clothing/webbing/drop_pouches/brown{@OLD}
+/obj/item/clothing/accessory/storage/brown_vest : /obj/item/clothing/webbing/vest/brown{@OLD}
+/obj/item/clothing/accessory/storage/white_drop_pouches : /obj/item/clothing/webbing/drop_pouches/white{@OLD}
+/obj/item/clothing/accessory/storage/white_vest : /obj/item/clothing/webbing/vest{@OLD}
 /obj/item/clothing/ears/earmuffs : /obj/item/clothing/head/earmuffs{@OLD}
 /obj/item/clothing/gloves/black : /obj/item/clothing/gloves/thick{@OLD}
 /obj/item/clothing/gloves/swat : /obj/item/clothing/gloves/thick/swat{@OLD}
@@ -556,7 +556,7 @@
 /obj/item/clothing/suit/armor/pcarrier/medium/nt : /obj/item/clothing/suit/armor/pcarrier/medium{@OLD}
 /obj/item/clothing/suit/storage/vest/tactical : /obj/item/clothing/suit/armor/pcarrier/tactical{@OLD}
 /obj/item/clothing/suit/storage/vest/heavy/officer : /obj/item/clothing/suit/armor/pcarrier/merc{@OLD}
-/obj/item/clothing/shoes/leg_guard/@SUBTYPES : /obj/item/clothing/accessory/legguards/@SUBTYPES{@OLD}
+/obj/item/clothing/shoes/leg_guard/@SUBTYPES : /obj/item/clothing/shoes/legguards/@SUBTYPES{@OLD}
 /obj/item/clothing/gloves/arm_guard/@SUBTYPES : /obj/item/clothing/accessory/armguards/@SUBTYPES{@OLD}
 /obj/item/clothing/suit/armor/bulletproof/alt : /obj/item/clothing/suit/armor/bulletproof/prepared{@OLD}
 /obj/item/clothing/mask/gas/commando : /obj/item/clothing/mask/gas/syndicate{@OLD}
@@ -567,14 +567,14 @@
 /obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/under/avian_smock/@SUBTYPES{@OLD}
 /obj/item/clothing/under/avian_smock/medical : /obj/item/clothing/under/avian_smock/utility{@OLD}
 /obj/item/clothing/under/rank/@SUBTYPES : /obj/item/clothing/under/@SUBTYPES{@OLD}
-/obj/item/clothing/accessory/armor/armguards : /obj/item/clothing/accessory/armguards
-/obj/item/clothing/accessory/armor/legguards : /obj/item/clothing/accessory/legguards
-/obj/item/clothing/accessory/legguards/combat : /obj/item/clothing/accessory/legguards/riot{@OLD}
-/obj/item/clothing/accessory/armguards/combat : /obj/item/clothing/accessory/armguards/riot{@OLD}
-/obj/item/clothing/accessory/armguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
-/obj/item/clothing/accessory/armguards/laserproof : /obj/item/clothing/accessory/armguards/ablative{@OLD}
-/obj/item/clothing/accessory/legguards/bulletproof : /obj/item/clothing/accessory/legguards/ballistic{@OLD}
-/obj/item/clothing/accessory/legguards/laserproof : /obj/item/clothing/accessory/legguards/ablative{@OLD}
+/obj/item/clothing/accessory/armor/armguards : /obj/item/clothing/gloves/armguards
+/obj/item/clothing/accessory/armor/legguards : /obj/item/clothing/shoes/legguards
+/obj/item/clothing/shoes/legguards/combat : /obj/item/clothing/shoes/legguards/riot{@OLD}
+/obj/item/clothing/gloves/armguards/combat : /obj/item/clothing/gloves/armguards/riot{@OLD}
+/obj/item/clothing/gloves/armguards/bulletproof : /obj/item/clothing/gloves/armguards/ballistic{@OLD}
+/obj/item/clothing/gloves/armguards/laserproof : /obj/item/clothing/gloves/armguards/ablative{@OLD}
+/obj/item/clothing/shoes/legguards/bulletproof : /obj/item/clothing/shoes/legguards/ballistic{@OLD}
+/obj/item/clothing/shoes/legguards/laserproof : /obj/item/clothing/shoes/legguards/ablative{@OLD}
 /obj/item/clothing/accessory/armor/helmcover/nt : /obj/item/clothing/accessory/armor/helmcover/corp{@OLD}
 /obj/item/clothing/head/pin/flower : /obj/item/clothing/head/hairflower
 /obj/item/clothing/head/pin/flower/violet : /obj/item/clothing/head/hairflower/pink
@@ -682,15 +682,15 @@
 /obj/machinery/power/smes/buildable/point_of_interest : /obj/machinery/power/smes/buildable/preset/hidden
 
 # AMMO BOXES
-/obj/item/storage/box/beanbags/@SUBTYPES : /obj/item/storage/box/ammo/beanbags/@SUBTYPES{@OLD}
-/obj/item/storage/box/stunshells/@SUBTYPES : /obj/item/storage/box/ammo/stunshells/@SUBTYPES{@OLD}
-/obj/item/storage/box/blanks/@SUBTYPES : /obj/item/storage/box/ammo/blanks/@SUBTYPES{@OLD}
-/obj/item/storage/box/empshells/@SUBTYPES : /obj/item/storage/box/ammo/empshells/@SUBTYPES{@OLD}
-/obj/item/storage/box/flashshells/@SUBTYPES : /obj/item/storage/box/ammo/flashshells/@SUBTYPES{@OLD}
-/obj/item/storage/box/shotgunammo/@SUBTYPES : /obj/item/storage/box/ammo/shotgunammo/@SUBTYPES{@OLD}
-/obj/item/storage/box/shotgunshells/@SUBTYPES : /obj/item/storage/box/ammo/shotgunshells/@SUBTYPES{@OLD}
-/obj/item/storage/box/sniperammo/@SUBTYPES : /obj/item/storage/box/ammo/sniperammo/@SUBTYPES{@OLD}
-/obj/item/storage/box/stunshells/@SUBTYPES : /obj/item/storage/box/ammo/stunshells/@SUBTYPES{@OLD}
+/obj/item/storage/box/beanbags/@SUBTYPES : /obj/item/box/ammo/beanbags/@SUBTYPES{@OLD}
+/obj/item/storage/box/stunshells/@SUBTYPES : /obj/item/box/ammo/stunshells/@SUBTYPES{@OLD}
+/obj/item/storage/box/blanks/@SUBTYPES : /obj/item/box/ammo/blanks/@SUBTYPES{@OLD}
+/obj/item/storage/box/empshells/@SUBTYPES : /obj/item/box/ammo/empshells/@SUBTYPES{@OLD}
+/obj/item/storage/box/flashshells/@SUBTYPES : /obj/item/box/ammo/flashshells/@SUBTYPES{@OLD}
+/obj/item/storage/box/shotgunammo/@SUBTYPES : /obj/item/box/ammo/shotgunammo/@SUBTYPES{@OLD}
+/obj/item/storage/box/shotgunshells/@SUBTYPES : /obj/item/box/ammo/shotgunshells/@SUBTYPES{@OLD}
+/obj/item/storage/box/sniperammo/@SUBTYPES : /obj/item/box/ammo/sniperammo/@SUBTYPES{@OLD}
+/obj/item/storage/box/stunshells/@SUBTYPES : /obj/item/box/ammo/stunshells/@SUBTYPES{@OLD}
 
 /obj/item/extinguisher/@SUBTYPES : /obj/item/chems/spray/extinguisher/@SUBTYPES{@OLD}
 
@@ -724,8 +724,8 @@
 /obj/item/toy/sword : /obj/item/energy_blade/sword/toy{@OLD}
 /obj/item/lipstick/jade : /obj/item/lipstick/green{@OLD}
 /obj/item/rig_module/device/plasmacutter : /obj/item/rig_module/mounted/plasmacutter{@OLD}
-/obj/item/storage/box/syndie_kit/ewar_voice : /obj/item/storage/backpack/satchel/syndie_kit/ewar_voice
-/obj/item/tray : /obj/item/storage/tray{@OLD}
+/obj/item/storage/box/syndie_kit/ewar_voice : /obj/item/backpack/satchel/syndie_kit/ewar_voice
+/obj/item/tray : /obj/item/plate/tray{@OLD}
 /obj/item/weldpack : /obj/item/chems/weldpack{@OLD}
 /obj/machinery/crystal : /obj/structure/crystal{@OLD}
 /obj/item/ore/@SUBTYPES : /obj/item/stack/material/ore/@SUBTYPES{@OLD}
@@ -816,10 +816,10 @@
 /obj/item/module/power_control : /obj/item/stock_parts/circuitboard/apc{@OLD}
 
 /obj/item/storage/box/nifsofts_medical : /obj/item/disk/nifsoft/bundle/medical
-/obj/item/storage/box/flare : /obj/item/storage/box/flares{@OLD}
-/obj/item/storage/fancy/candle_box : /obj/item/storage/candle_box
+/obj/item/storage/box/flare : /obj/item/box/flares{@OLD}
+/obj/item/storage/fancy/candle_box : /obj/item/box/candles
 /obj/item/storage/fancy/cigar/havana : /obj/item/clothing/mask/smokable/cigarette/cigar/havana
-/obj/item/storage/box/donut : /obj/item/storage/box/fancy/donut{@OLD}
+/obj/item/storage/box/donut : /obj/item/box/fancy/donut{@OLD}
 /obj/item/toy/plushie/coffee_fox : /obj/item/toy/plushie/fox/coffee
 /obj/item/toy/plushie/marble_fox : /obj/item/toy/plushie/fox/marble
 /obj/item/toy/plushie/mouse/fluff : /obj/item/toy/plushie/mouse
@@ -842,8 +842,8 @@
 
 /obj/structure/flora/skeleton : /obj/structure/skele_stand{@OLD}
 
-/turf/simulated/floor/water/deep/indoors : /turf/exterior/water
-/turf/simulated/floor/water/indoors : /turf/exterior/water
+/turf/simulated/floor/water/deep/indoors : /turf/floor/natural/water
+/turf/simulated/floor/water/indoors : /turf/floor/natural/water
 
 # for some reason, no grills
 /obj/machinery/appliance/grill : /obj/machinery/appliance/cooker/stove{@OLD}

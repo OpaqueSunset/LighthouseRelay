@@ -26,7 +26,7 @@
 	siemens_coefficient = 0.9
 
 //Hazardous Softsuits
-/obj/item/clothing/suit/storage/toggle/explorer
+/obj/item/clothing/suit/toggle/explorer
 	name = "explorer suit"
 	desc = "An armoured suit for exploring harsh environments."
 	icon = 'maps/tether/icons/obj/clothing/suits/explorer.dmi'
@@ -181,13 +181,16 @@
 	name = "emergency medical response voidsuit"
 	icon = 'maps/tether/icons/obj/clothing/suits/void_emt_helmet.dmi'
 
-/obj/item/storage/belt/explorer
+/obj/item/belt/explorer
 	name = "pathfinder's bandolier"
 	desc = "A versatile bandolier fitted with eight pouches that can hold a wide variety of items such as tools, small melee weapons, batteries, ammunition, and more; ideal for any pathfinder who has too much stuff and not enough pockets."
 	icon = 'icons/clothing/belt/swatbelt.dmi'
+	use_alt_layer = TRUE
+	storage = /datum/storage/belt/explorer
+
+/datum/storage/belt/explorer
 	storage_slots = 7
 	max_storage_space = ITEM_SIZE_NORMAL * 7
-	use_alt_layer = TRUE
 	can_hold = list(
 		/obj/item/grenade,
 		/obj/item/crowbar,
@@ -209,21 +212,21 @@
 		/obj/item/shield/energy,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_magazine,
-		/obj/item/storage/box/ammo/beanbags,
-		/obj/item/storage/box/ammo/shotgunammo,
-		/obj/item/storage/box/ammo/shotgunshells,
+		/obj/item/box/ammo/beanbags,
+		/obj/item/box/ammo/shotgunammo,
+		/obj/item/box/ammo/shotgunshells,
 		/obj/item/scanner/health,
 		/obj/item/robotanalyzer,
 		/obj/item/chems/glass/beaker,
 		/obj/item/chems/glass/bottle,
 		/obj/item/chems/syringe,
 		/obj/item/chems/hypospray,
-		/obj/item/storage/pill_bottle,
+		/obj/item/pill_bottle,
 		/obj/item/stack/medical,
 		/obj/item/stack/flag,
 		/obj/item/flashlight,
 		/obj/item/chems/spray/extinguisher/mini,
-		// /obj/item/storage/quickdraw/syringe_case,
+		// /obj/item/quickdraw/syringe_case,
 		/obj/item/photo,
 		/obj/item/camera_film,
 		/obj/item/camera,

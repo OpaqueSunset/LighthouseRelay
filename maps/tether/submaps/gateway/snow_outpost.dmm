@@ -641,10 +641,10 @@
 /area/awaymission/snow_outpost/outside)
 "cq" = (
 /obj/structure/closet/crate/secure/loot,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "cr" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "cs" = (
 /obj/item/stack/material/ore,
@@ -656,7 +656,7 @@
 /area/awaymission/snow_outpost/outside)
 "cu" = (
 /obj/structure/anomaly_container,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "cv" = (
 /turf/wall,
@@ -674,7 +674,7 @@
 /area/awaymission/snow_outpost/outside)
 "cy" = (
 /obj/structure/table/steel,
-/obj/item/storage/excavation,
+/obj/item/excavation,
 /obj/item/measuring_tape,
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
@@ -736,7 +736,7 @@
 "cL" = (
 /obj/structure/table/steel,
 /obj/item/wrench,
-/obj/item/storage/box/samplebags,
+/obj/item/box/samplebags,
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "cM" = (
@@ -1271,7 +1271,7 @@
 /area/awaymission/snow_outpost/restricted)
 "eB" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
 	dir = 10
@@ -1304,7 +1304,7 @@
 /area/awaymission/snow_outpost/restricted)
 "eG" = (
 /obj/structure/table,
-/obj/item/storage/box/masks,
+/obj/item/box/masks,
 /obj/effect/floor_decal/corner/green/border{
 	icon_state = "bordercolor";
 	dir = 6
@@ -1803,11 +1803,11 @@
 /area/awaymission/snow_outpost/outside)
 "gk" = (
 /obj/random/landmine,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gl" = (
 /obj/effect/spider/stickyweb,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gm" = (
 /obj/item/ammo_casing/a45,
@@ -1815,45 +1815,45 @@
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gn" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "go" = (
 /obj/item/chems/food/xenomeat/spidermeat,
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gq" = (
-/obj/item/clothing/accessory/storage/vest,
+/obj/item/clothing/webbing/vest,
 /obj/item/knife/combat,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gr" = (
 /mob/living/simple_animal/giant_spider,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gs" = (
 /obj/effect/decal/cleanable/cobweb,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gt" = (
 /obj/random/mob/spider,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gu" = (
 /mob/living/simple_animal/giant_spider/lurker,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gv" = (
 /obj/effect/decal/cleanable/cobweb2,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gw" = (
 /mob/living/simple_animal/giant_spider/webslinger,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gx" = (
 /obj/effect/decal/cleanable/cobweb2,
 /mob/living/simple_animal/giant_spider/lurker,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gy" = (
 /obj/random/landmine,
@@ -1861,7 +1861,7 @@
 /area/awaymission/snow_outpost/outside)
 "gz" = (
 /obj/random/mob/spider/mutant,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gB" = (
 /obj/structure/flora/tree/pine{
@@ -1882,7 +1882,7 @@
 /obj/structure/closet/crate,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
-/obj/item/storage/toolbox,
+/obj/item/toolbox,
 /obj/random/toolbox,
 /turf/floor,
 /area/awaymission/snow_outpost/outside)
@@ -1936,7 +1936,7 @@
 "gK" = (
 /obj/effect/spider/stickyweb,
 /mob/living/simple_animal/giant_spider/lurker,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "gL" = (
 /obj/structure/cable{
@@ -2120,7 +2120,7 @@
 /area/awaymission/snow_outpost/outside)
 "hs" = (
 /obj/structure/table,
-/obj/item/storage/pill_bottle/happy,
+/obj/item/pill_bottle/happy,
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/outside)
 "ht" = (
@@ -2223,52 +2223,52 @@
 /area/awaymission/snow_outpost/outside)
 "hM" = (
 /obj/effect/spider/stickyweb,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hN" = (
 /obj/effect/spider/spiderling/frost,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hO" = (
 /obj/item/cash/c100,
 /obj/item/cash/c100,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hP" = (
 /obj/random/mob/spider/mutant,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hQ" = (
 /obj/item/cash/c100,
 /obj/item/cash/c100,
 /obj/item/cash/c100,
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hR" = (
 /obj/random/mob/spider,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hS" = (
 /obj/item/grenade/spawnergrenade/spider,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hT" = (
 /obj/random/toolbox,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hV" = (
 /obj/item/mecha_parts/mecha_equipment/tool/drill/diamonddrill,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hW" = (
 /mob/living/simple_animal/giant_spider/frost,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hX" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/stickyweb,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/snow_outpost/outside)
 "hY" = (
 /mob/living/simple_animal/giant_spider/frost,
@@ -2282,18 +2282,18 @@
 /area/awaymission/snow_outpost/outside)
 "ib" = (
 /obj/structure/flora/tree/pine,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "ic" = (
 /obj/structure/flora/grass/green,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "id" = (
 /turf/floor/water,
 /area/awaymission/snow_outpost/outside)
 "ie" = (
 /obj/structure/flora/tree/dead,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "if" = (
 /turf/wall/shuttle,
@@ -2305,7 +2305,7 @@
 /area/awaymission/snow_outpost/outside)
 "ih" = (
 /obj/structure/flora/grass/both,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "ii" = (
 /obj/structure/bed/chair{
@@ -2374,7 +2374,7 @@
 /area/awaymission/snow_outpost/outside)
 "io" = (
 /obj/structure/flora/grass/brown,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "ip" = (
 /obj/effect/spider/stickyweb,
@@ -2476,19 +2476,19 @@
 /area/awaymission/snow_outpost/outside)
 "iD" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "iE" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iF" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "iG" = (
 /obj/structure/closet/grave,
 /obj/structure/gravemarker,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iH" = (
 /obj/structure/closet/crate/mimic/dangerous,
@@ -2573,23 +2573,23 @@
 /area/awaymission/snow_outpost/restricted)
 "iW" = (
 /obj/item/remains/deer,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iX" = (
 /obj/structure/bonfire/permanent,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iY" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "iZ" = (
 /obj/structure/dogbed,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "ja" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/restricted)
 "jb" = (
 /obj/structure/flora/tree/sif,

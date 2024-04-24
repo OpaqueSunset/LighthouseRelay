@@ -23,14 +23,14 @@
 /area/space)
 "af" = (
 /obj/abstract/landmark/gateway_scatter,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/space)
 "ah" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/space)
 "aj" = (
 /obj/item/tool/hammer/jack,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/space)
 "ak" = (
 /turf/wall/natural,
@@ -137,7 +137,7 @@
 /turf/floor/lino,
 /area/awaymission/carpfarm/base)
 "az" = (
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/electrical,
 /obj/structure/cable,
 /obj/machinery/power/apc{
 	dir = 8;
@@ -399,7 +399,7 @@
 /area/awaymission/carpfarm/base)
 "br" = (
 /obj/item/mecha_parts/mecha_equipment/tool/drill,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /obj/structure/table/steel,
 /turf/floor/tiled,
 /area/awaymission/carpfarm/base)
@@ -623,7 +623,7 @@
 /area/awaymission/carpfarm/base)
 "bX" = (
 /obj/structure/closet/emcloset,
-/obj/item/storage/toolbox/emergency,
+/obj/item/toolbox/emergency,
 /obj/machinery/airlock_sensor{
 	id_tag = "carp_sensor";
 	pixel_x = 28;

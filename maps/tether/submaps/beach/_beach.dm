@@ -154,13 +154,13 @@
 //And some special areas, including our shuttle landing spot (must be unique)
 /area/shuttle/excursion/away_beach
 	name = "\improper Excursion Shuttle - Beach"
-	base_turf = /turf/exterior/sand
+	base_turf = /turf/floor/natural/sand
 	dynamic_lighting = 0
 
 /area/tether_away/beach
 	name = "\improper Away Mission - Virgo 4 Beach"
 	icon_state = "away"
-	base_turf = /turf/exterior/sand //This is what the ground turns into if destroyed/bombed/etc
+	base_turf = /turf/floor/natural/sand //This is what the ground turns into if destroyed/bombed/etc
 	//Not going to do sunlight simulations here like virgo3b
 	//So we just make the whole beach fullbright all the time
 	dynamic_lighting = 0
@@ -169,7 +169,7 @@
 /area/tether_away/beach/powershed
 	name = "\improper Away Mission - Virgo 4 Coast PS"
 	icon_state = "blue2"
-	base_turf = /turf/exterior/sand
+	base_turf = /turf/floor/natural/sand
 
 /area/tether_away/beach/coast
 	name = "\improper Away Mission - Virgo 4 Coast"
@@ -184,7 +184,7 @@
 /area/tether_away/beach/jungle
 	name = "\improper Away Mission - Virgo 4 Desert"
 	icon_state = "green"
-	base_turf = /turf/exterior/sand
+	base_turf = /turf/floor/natural/sand
 
 //Some areas for the cave, which are referenced by our init object to seed submaps and ores
 /area/tether_away/cave

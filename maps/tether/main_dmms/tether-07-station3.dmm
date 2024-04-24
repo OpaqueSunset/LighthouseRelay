@@ -120,11 +120,11 @@
 /area/security/armory/blue)
 "ap" = (
 /obj/structure/rack/steel,
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /obj/item/shield/riot,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
@@ -242,11 +242,11 @@
 /area/security/eva)
 "az" = (
 /obj/structure/rack/steel,
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /obj/item/shield/riot,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -464,11 +464,11 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ammo/blanks{
+/obj/item/box/ammo/blanks{
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/item/storage/box/ammo/blanks{
+/obj/item/box/ammo/blanks{
 	pixel_x = 2;
 	pixel_y = -2
 	},
@@ -565,11 +565,11 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/clothing/suit/armor/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /obj/item/shield/riot,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -818,8 +818,8 @@
 /obj/structure/rack/shelf/steel,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /turf/floor/tiled/dark,
 /area/security/armory/red)
 "by" = (
@@ -1063,19 +1063,19 @@
 /area/ai)
 "bZ" = (
 /obj/structure/rack/shelf/steel,
-/obj/item/storage/box/ammo/shotgunshells{
+/obj/item/box/ammo/shotgunshells{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/storage/box/ammo/shotgunshells{
+/obj/item/box/ammo/shotgunshells{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/storage/box/ammo/shotgunshells{
+/obj/item/box/ammo/shotgunshells{
 	pixel_x = 6;
 	pixel_y = -1
 	},
-/obj/item/storage/box/ammo/shotgunshells{
+/obj/item/box/ammo/shotgunshells{
 	pixel_x = 6;
 	pixel_y = -1
 	},
@@ -1091,10 +1091,10 @@
 /obj/item/ammo_magazine/smg,
 /obj/item/ammo_magazine/smg,
 /obj/item/ammo_magazine/smg,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
 	},
@@ -2474,17 +2474,17 @@
 /area/crew_quarters/heads/hos)
 "eF" = (
 /obj/structure/table/woodentable,
-/obj/item/clothing/accessory/permit/gun,
-/obj/item/clothing/accessory/permit/gun,
-/obj/item/clothing/accessory/permit/gun,
-/obj/item/clothing/accessory/permit/gun,
-/obj/item/clothing/accessory/permit/gun,
+/obj/item/clothing/permit/gun,
+/obj/item/clothing/permit/gun,
+/obj/item/clothing/permit/gun,
+/obj/item/clothing/permit/gun,
+/obj/item/clothing/permit/gun,
 /obj/item/paper{
 	desc = "";
 	info = "In the event that more weapon permits are needed, please fax Central Command to request more. Please also include a reason for the request. Blank permits will be shipped to cargo for pickup. If long-term permits are desired, please contact your NanoTrasen Employee Representitive for more information.";
 	name = "note from CentCom about permits"
 	},
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 38
 	},
 /turf/floor/wood,
@@ -2543,7 +2543,7 @@
 /obj/item/coin/silver,
 /obj/item/bone/skull,
 /mob/living/simple_animal/hostile/mimic,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/maintenance/station/ai)
 "eN" = (
 /obj/structure/cable{
@@ -2626,9 +2626,9 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
-/obj/item/clothing/accessory/horrible,
+/obj/item/clothing/neck/tie/horrible,
 /obj/random/drinkbottle,
-/obj/item/flame/lighter/random,
+/obj/item/flame/fuelled/lighter/random,
 /turf/floor,
 /area/maintenance/station/ai)
 "eV" = (
@@ -3230,7 +3230,7 @@
 	dir = 6
 	},
 /obj/structure/table/steel,
-/obj/item/storage/lockbox,
+/obj/item/lockbox,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 24
@@ -3596,7 +3596,7 @@
 /obj/structure/rack,
 /obj/random/maintenance/medical,
 /obj/random/maintenance/research,
-/obj/item/storage/toolbox,
+/obj/item/toolbox,
 /turf/floor,
 /area/maintenance/station/ai)
 "gN" = (
@@ -4028,7 +4028,7 @@
 /turf/floor/tiled,
 /area/hallway/station/upper)
 "hy" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/maintenance/station/ai)
 "hz" = (
 /obj/structure/closet/crate,
@@ -4158,8 +4158,8 @@
 	dir = 8
 	},
 /obj/item/clothing/suit/armor/bulletproof/prepared,
-/obj/item/clothing/accessory/legguards/ballistic,
-/obj/item/clothing/accessory/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
 /obj/item/clothing/head/helmet/ballistic,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -4254,8 +4254,8 @@
 	dir = 4
 	},
 /obj/item/clothing/suit/armor/bulletproof/prepared,
-/obj/item/clothing/accessory/legguards/ballistic,
-/obj/item/clothing/accessory/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
 /obj/item/clothing/head/helmet/ballistic,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -4411,7 +4411,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/item/storage/box/empslite,
+/obj/item/box/empslite,
 /obj/effect/floor_decal/corner/red/border,
 /turf/floor/tiled/dark,
 /area/security/armory/red)
@@ -4425,8 +4425,8 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/flashbangs,
+/obj/item/box/flashbangs,
+/obj/item/box/flashbangs,
 /obj/effect/floor_decal/corner/red/border,
 /turf/floor/tiled/dark,
 /area/security/armory/red)
@@ -4604,17 +4604,17 @@
 "iu" = (
 /obj/structure/rack/shelf/steel,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
-/obj/item/clothing/accessory/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
+/obj/item/clothing/shoes/legguards,
 /turf/floor/tiled/dark,
 /area/security/armory/blue)
 "iv" = (
@@ -4994,8 +4994,8 @@
 	dir = 8
 	},
 /obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/accessory/legguards/ablative,
-/obj/item/clothing/accessory/armguards/ablative,
+/obj/item/clothing/shoes/legguards/ablative,
+/obj/item/clothing/gloves/armguards/ablative,
 /obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -5273,7 +5273,7 @@
 /area/crew_quarters/heads/hos)
 "jD" = (
 /obj/random/junk,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/maintenance/station/ai)
 "jE" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -5295,11 +5295,11 @@
 /obj/item/cell/gun{
 	pixel_x = 3
 	},
-/obj/item/storage/box/handcuffs{
+/obj/item/box/handcuffs{
 	pixel_x = 6;
 	pixel_y = -2
 	},
-/obj/item/storage/box/handcuffs{
+/obj/item/box/handcuffs{
 	pixel_x = 6;
 	pixel_y = -2
 	},
@@ -5395,7 +5395,7 @@
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
-/obj/item/clothing/accessory/permit/gun{
+/obj/item/clothing/permit/gun{
 	desc = "An example of a card indicating that the owner is allowed to carry a firearm. There's a note saying to fax CentCom if you want to order more blank permits.";
 	name = "sample weapon permit";
 	hand_name_used = 1
@@ -5512,7 +5512,7 @@
 /area/crew_quarters/heads/hos)
 "jY" = (
 /obj/random/loot_pile/maintenance,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/maintenance/station/ai)
 "jZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
@@ -5581,14 +5581,14 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
-/obj/item/clothing/accessory/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
+/obj/item/clothing/gloves/armguards,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -5735,8 +5735,8 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/table/steel,
-/obj/item/storage/box/evidence,
-/obj/item/storage/box/handcuffs{
+/obj/item/box/evidence,
+/obj/item/box/handcuffs{
 	pixel_x = 6;
 	pixel_y = -2
 	},
@@ -5852,7 +5852,7 @@
 	pixel_y = -20;
 	dir = 1
 	},
-/obj/item/storage/box/firingpins,
+/obj/item/box/firingpins,
 /turf/floor/wood,
 /area/crew_quarters/heads/hos)
 "kH" = (
@@ -5888,7 +5888,7 @@
 	dir = 8
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/flashbangs{
+/obj/item/box/flashbangs{
 	pixel_x = -2;
 	pixel_y = -2
 	},
@@ -6616,15 +6616,15 @@
 	dir = 4
 	},
 /obj/structure/table/steel,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo/cord,
-/obj/item/clothing/accessory/badge/holo/cord,
-/obj/item/clothing/accessory/badge/holo/cord,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo/cord,
+/obj/item/clothing/badge/holo/cord,
+/obj/item/clothing/badge/holo/cord,
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
 	},
@@ -6850,7 +6850,7 @@
 	pixel_x = -22
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/nifsofts_security,
+/obj/item/box/nifsofts_security,
 /obj/item/hand_labeler,
 /turf/floor/tiled/dark,
 /area/security/security_lockerroom)
@@ -7392,7 +7392,7 @@
 	},
 /obj/structure/table/glass,
 /obj/item/folder/red,
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /turf/floor/tiled,
 /area/security/briefing_room)
 "nu" = (
@@ -7504,7 +7504,7 @@
 "nG" = (
 /obj/structure/table/steel,
 /obj/machinery/chemical_dispenser/bar_soft/full,
-/obj/item/storage/box/glasses/square,
+/obj/item/box/glasses/square,
 /turf/floor/wood,
 /area/security/breakroom)
 "nH" = (
@@ -7804,8 +7804,8 @@
 	dir = 4
 	},
 /obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/accessory/legguards/ablative,
-/obj/item/clothing/accessory/armguards/ablative,
+/obj/item/clothing/shoes/legguards/ablative,
+/obj/item/clothing/gloves/armguards/ablative,
 /obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -7909,7 +7909,7 @@
 /turf/floor,
 /area/maintenance/station/ai)
 "or" = (
-/obj/item/storage/laundry_basket,
+/obj/item/laundry_basket,
 /turf/floor,
 /area/maintenance/station/ai)
 "os" = (
@@ -7953,7 +7953,7 @@
 /area/security/breakroom)
 "ox" = (
 /obj/structure/table/steel,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 24
@@ -8927,7 +8927,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/evidence,
+/obj/item/box/evidence,
 /turf/floor/tiled,
 /area/security/security_processing)
 "qi" = (
@@ -10117,7 +10117,7 @@
 	pixel_y = -3
 	},
 /obj/item/folder/red,
-/obj/item/storage/box/swabs,
+/obj/item/box/swabs,
 /obj/item/hand_labeler,
 /turf/floor/tiled/white,
 /area/security/forensics)
@@ -10143,11 +10143,11 @@
 /obj/structure/closet{
 	name = "Forensics Gear"
 	},
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/evidence,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/briefcase/crimekit,
-/obj/item/storage/briefcase/crimekit,
+/obj/item/box/gloves,
+/obj/item/box/evidence,
+/obj/item/box/bodybags,
+/obj/item/briefcase/crimekit,
+/obj/item/briefcase/crimekit,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -10222,7 +10222,7 @@
 "sj" = (
 /obj/structure/table/woodentable,
 /obj/item/handcuffs,
-/obj/item/storage/box/fancy/cigarettes/dromedaryco,
+/obj/item/box/fancy/cigarettes/dromedaryco,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -10896,7 +10896,7 @@
 	},
 /obj/structure/table/steel,
 /obj/item/roller,
-/obj/item/storage/box/autoinjectors,
+/obj/item/box/autoinjectors,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 28;
 	pixel_y = 2;
@@ -11069,8 +11069,8 @@
 /area/quartermaster/delivery)
 "ty" = (
 /obj/structure/table/steel,
-/obj/item/storage/box,
-/obj/item/storage/box,
+/obj/item/box,
+/obj/item/box,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -11447,7 +11447,7 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 6
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -12057,8 +12057,8 @@
 	pixel_x = 25;
 	report_danger_level = 0
 	},
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /obj/item/t_scanner,
 /turf/floor,
 /area/storage/emergency_storage/emergency3)
@@ -12199,7 +12199,7 @@
 /turf/floor/airless,
 /area/mine/explored/upper_level)
 "vt" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/upper_level)
 "vu" = (
 /turf/wall,
@@ -12237,8 +12237,8 @@
 	},
 /obj/item/flash,
 /obj/item/flash,
-/obj/item/storage/secure/briefcase,
-/obj/item/storage/secure/briefcase,
+/obj/item/secure_storage/briefcase,
+/obj/item/secure_storage/briefcase,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -12739,7 +12739,7 @@
 /obj/random/maintenance/clean,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor,
 /area/maintenance/station/elevator)
 "ws" = (
@@ -12922,7 +12922,7 @@
 	c_tag = "SEC - Vault Exterior North";
 	dir = 1
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/upper_level)
 "wM" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -13030,8 +13030,8 @@
 /area/security/forensics)
 "wT" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/cups,
-/obj/item/storage/box/cups{
+/obj/item/box/cups,
+/obj/item/box/cups{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -13433,7 +13433,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/upper_level)
 "xy" = (
 /obj/effect/floor_decal/spline/plain{
@@ -13863,8 +13863,8 @@
 /area/quartermaster/office)
 "yh" = (
 /obj/structure/table,
-/obj/item/storage/belt/utility,
-/obj/item/storage/belt/utility,
+/obj/item/belt/utility,
+/obj/item/belt/utility,
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
@@ -13891,7 +13891,7 @@
 	pixel_x = -27;
 	dir = 8
 	},
-/obj/item/storage/briefcase{
+/obj/item/briefcase{
 	pixel_x = -2;
 	pixel_y = -5
 	},
@@ -13966,7 +13966,7 @@
 	pixel_x = 27;
 	dir = 4
 	},
-/obj/item/storage/briefcase{
+/obj/item/briefcase{
 	pixel_x = 3
 	},
 /turf/floor/tiled/dark,
@@ -14517,7 +14517,7 @@
 "zd" = (
 /obj/structure/table,
 /obj/item/stack/tape_roll/barricade_tape,
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = 6;
 	pixel_y = -5
 	},
@@ -14544,7 +14544,7 @@
 /area/security/nuke_storage)
 "zf" = (
 /obj/item/stack/material/ingot/mapped/gold,
-/obj/item/storage/belt/champion,
+/obj/item/belt/champion,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/secure{
 	name = "Gold Crate"
@@ -15444,7 +15444,7 @@
 "AC" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/plushie/therapy/blue,
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 5;
 	pixel_y = 28
 	},
@@ -15588,7 +15588,7 @@
 /area/quartermaster/storage)
 "AU" = (
 /obj/structure/closet/secure_closet/cargotech,
-/obj/item/storage/backpack/dufflebag,
+/obj/item/backpack/dufflebag,
 /obj/item/stamp/cargo,
 /turf/floor/tiled,
 /area/quartermaster/storage)
@@ -16525,8 +16525,8 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/tiled,
 /area/maintenance/station/cargo)
 "CC" = (
@@ -16699,7 +16699,7 @@
 /obj/item/disk/nuclear{
 	name = "authentication disk"
 	},
-/obj/item/storage/bag/cash/filled,
+/obj/item/bag/cash/filled,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/floor/tiled/dark,
 /area/security/nuke_storage)
@@ -16739,7 +16739,7 @@
 	desc = "There is a tag on the back bearing a long list of names. The name Yuri 'Iceman' Jones has been sloppily crossed out with permanent marker. Beneath the name, the word NanoTrasen has been stenciled in.";
 	name = "mysterious balloon"
 	},
-/obj/item/storage/secure/briefcase/money{
+/obj/item/secure_storage/briefcase/money{
 	desc = "An sleek tidy briefcase."
 	},
 /turf/floor/tiled/dark,
@@ -16939,7 +16939,7 @@
 	pixel_y = -32;
 	dir = 1
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/upper_level)
 "Ds" = (
 /obj/machinery/door/airlock/medical{
@@ -17029,7 +17029,7 @@
 /area/quartermaster/storage)
 "DE" = (
 /obj/structure/table,
-/obj/item/storage/box/fancy/cigarettes{
+/obj/item/box/fancy/cigarettes{
 	pixel_y = 2
 	},
 /obj/item/deck/cards,
@@ -17495,7 +17495,7 @@
 /area/quartermaster/qm)
 "Es" = (
 /obj/structure/closet,
-/obj/item/storage/backpack/dufflebag,
+/obj/item/backpack/dufflebag,
 /turf/floor/tiled,
 /area/quartermaster/qm)
 "Et" = (
@@ -17705,7 +17705,7 @@
 /area/medical/chemistry)
 "ES" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/beakers,
+/obj/item/box/beakers,
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "ET" = (
@@ -18279,7 +18279,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/computer/HolodeckControl/holosurgery{
+/obj/machinery/computer/holodeck_control/holosurgery{
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
@@ -18500,7 +18500,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled/white,
 /area/medical/reception)
 "Gm" = (
@@ -18850,7 +18850,7 @@
 	name = "Body Designer Note"
 	},
 /obj/item/scanner/sleevemate,
-/obj/item/storage/box/transcore_record_disk,
+/obj/item/box/transcore_record_disk,
 /obj/item/radio{
 	pixel_x = 4;
 	pixel_y = -4
@@ -18953,11 +18953,11 @@
 	dir = 6
 	},
 /obj/structure/table/glass,
-/obj/item/storage/box/cups{
+/obj/item/box/cups{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/box/cups,
+/obj/item/box/cups,
 /turf/floor/tiled/white,
 /area/medical/reception)
 "Hc" = (
@@ -19363,12 +19363,12 @@
 /area/medical/reception)
 "HV" = (
 /obj/structure/closet/secure_closet/medical1,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/syringes,
+/obj/item/box/pillbottles,
+/obj/item/box/syringes,
 /obj/item/radio/headset/headset_med,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/fancy/vials,
-/obj/item/storage/box/fancy/vials,
+/obj/item/box/pillbottles,
+/obj/item/box/fancy/vials,
+/obj/item/box/fancy/vials,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -20248,7 +20248,7 @@
 /area/medical/medbay_primary_storage)
 "Jx" = (
 /obj/structure/table,
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -20563,7 +20563,7 @@
 /area/medical/medbay_primary_storage)
 "Kl" = (
 /obj/structure/table,
-/obj/item/storage/box/masks,
+/obj/item/box/masks,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -21138,7 +21138,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/item/storage/toolbox/emergency,
+/obj/item/toolbox/emergency,
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 8
 	},
@@ -21261,7 +21261,7 @@
 /area/medical/surgery2)
 "LA" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -21346,7 +21346,7 @@
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/item/storage/box/transcore_record_disk,
+/obj/item/box/transcore_record_disk,
 /turf/floor/tiled/white,
 /area/medical/resleeving)
 "LH" = (
@@ -21432,8 +21432,8 @@
 "LR" = (
 /obj/structure/table/glass,
 /obj/item/screwdriver,
-/obj/item/storage/pill_bottle/strong_painkillers,
-/obj/item/storage/pill_bottle/antitox,
+/obj/item/pill_bottle/strong_painkillers,
+/obj/item/pill_bottle/antitox,
 /obj/item/chems/syringe/antiviral,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -21664,11 +21664,11 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 9
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "Mm" = (
@@ -21723,8 +21723,8 @@
 	name = "east bump";
 	pixel_x = 28
 	},
-/obj/item/storage/box/rxglasses,
-/obj/item/storage/box/rxglasses,
+/obj/item/box/rxglasses,
+/obj/item/box/rxglasses,
 /turf/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "Mp" = (
@@ -21914,12 +21914,12 @@
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/item/flashlight/pen,
-/obj/item/storage/belt/medical,
+/obj/item/belt/medical,
 /obj/item/clothing/glasses/hud/health,
-/obj/item/clothing/accessory/stethoscope,
+/obj/item/clothing/neck/stethoscope,
 /obj/item/book/fluff/standard_operating_procedure,
 /obj/item/scanner/health,
-/obj/item/storage/box/fancy/vials,
+/obj/item/box/fancy/vials,
 /obj/item/clothing/mask/surgical,
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -25003,7 +25003,7 @@
 /obj/random/maintenance/security,
 /obj/random/maintenance/security,
 /obj/random/maintenance/medical,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /obj/structure/railing/mapped,
 /obj/random/tool,
 /obj/machinery/light/small{
@@ -25077,8 +25077,8 @@
 /obj/structure/rack/shelf/steel,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
@@ -25156,8 +25156,8 @@
 /obj/structure/rack/shelf/steel,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
-/obj/item/clothing/accessory/legguards/riot,
-/obj/item/clothing/accessory/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
@@ -25741,7 +25741,7 @@
 /turf/floor/tiled/white,
 /area/medical/psych_ward)
 "Tf" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/space)
 "Tj" = (
 /obj/machinery/door/airlock/external/glass{
@@ -25844,8 +25844,8 @@
 	dir = 8
 	},
 /obj/item/destTagger,
-/obj/item/storage/box,
-/obj/item/storage/box,
+/obj/item/box,
+/obj/item/box,
 /obj/structure/table/steel,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -25884,8 +25884,8 @@
 /area/space)
 "TG" = (
 /obj/structure/rack/shelf/steel,
-/obj/item/storage/box/firingpins,
-/obj/item/storage/box/firingpins,
+/obj/item/box/firingpins,
+/obj/item/box/firingpins,
 /turf/floor/tiled/dark,
 /area/security/armory/red)
 "TI" = (
@@ -26409,7 +26409,7 @@
 /obj/structure/table,
 /obj/item/scanner/health,
 /obj/item/scanner/health,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/machinery/light,
 /turf/floor/tiled/white,
 /area/medical/psych_ward)
@@ -26512,7 +26512,7 @@
 	pixel_x = 25;
 	pixel_y = 5
 	},
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /obj/machinery/button/blast_door{
 	dir = 8;
 	id_tag = "psych cell 2";
@@ -26812,11 +26812,11 @@
 	dir = 4;
 	pixel_x = 21
 	},
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/box/masks,
+/obj/item/box/masks,
 /turf/floor/tiled/white,
 /area/medical/psych_ward)
 "WN" = (
@@ -27554,7 +27554,7 @@
 	pixel_x = -25;
 	pixel_y = 5
 	},
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /obj/machinery/button/blast_door{
 	dir = 4;
 	id_tag = "psych cell 1";

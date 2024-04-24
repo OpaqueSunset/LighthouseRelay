@@ -13,7 +13,7 @@
 	name = "Airlock NanoMed"
 	desc = "A wall-mounted medical equipment dispenser. This limited-use free version is designed for use in phoron contamination incidents from surface EVA."
 	base_type = /obj/machinery/vending/wallmed1/airlock
-	products = list(/obj/item/storage/med_pouch/toxin = 4, /obj/item/chems/pill/painkillers = 4, /obj/item/scanner/health = 1)
+	products = list(/obj/item/med_pouch/toxin = 4, /obj/item/chems/pill/painkillers = 4, /obj/item/scanner/health = 1)
 	contraband = list(/obj/item/chems/pill/tox = 2)
 	markup = 0
 

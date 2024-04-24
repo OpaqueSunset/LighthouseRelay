@@ -10,7 +10,7 @@
 /turf/template_noop,
 /area/submap/virgo2/DecoupledEngine)
 "ad" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "ae" = (
 /obj/item/chems/spray/extinguisher,
@@ -22,28 +22,28 @@
 /area/submap/virgo2/DecoupledEngine)
 "ag" = (
 /obj/machinery/rad_collector,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "ah" = (
 /obj/item/arrow/rod,
 /obj/item/stack/material/sheet/mapped/steel,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ai" = (
 /obj/item/stack/material/sheet/mapped/steel,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "aj" = (
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ak" = (
 /obj/structure/lattice,
 /obj/structure/girder/displaced,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "al" = (
 /obj/item/projectile/bullet/magnetic/fuelrod,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "am" = (
 /obj/item/arrow/rod,
@@ -54,7 +54,7 @@
 /area/submap/virgo2/DecoupledEngine)
 "ao" = (
 /obj/structure/lattice,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ap" = (
 /obj/effect/floor_decal/rust,
@@ -95,7 +95,7 @@
 "ax" = (
 /obj/structure/lattice,
 /obj/structure/grille/broken,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ay" = (
 /obj/effect/floor_decal/rust,
@@ -131,7 +131,7 @@
 /area/submap/virgo2/DecoupledEngine)
 "aC" = (
 /obj/structure/ghost_pod/manual/lost_drone/dogborg,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "aD" = (
 /obj/structure/lattice,
@@ -296,11 +296,11 @@
 /area/submap/virgo2/DecoupledEngine)
 "aZ" = (
 /obj/item/stack/material/sheet/mapped/steel,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "ba" = (
 /obj/item/stack/material/rods,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bb" = (
 /obj/structure/lattice,
@@ -372,7 +372,7 @@
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bj" = (
 /obj/machinery/atmospherics/tvalve/digital{
@@ -412,7 +412,7 @@
 	icon_state = "propulsion_l";
 	dir = 4
 	},
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bo" = (
 /obj/effect/floor_decal/rust,
@@ -474,34 +474,34 @@
 /area/submap/virgo2/DecoupledEngine)
 "bx" = (
 /obj/structure/girder,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "by" = (
 /obj/structure/girder/displaced,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DecoupledEngine)
 "bz" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/template_noop)
 "bA" = (
 /obj/item/arrow/rod,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bB" = (
 /obj/item/fuel_assembly/deuterium,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bC" = (
 /obj/item/shard/phoron,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bD" = (
 /obj/structure/lattice,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 "bE" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DecoupledEngine)
 
 (1,1,1) = {"

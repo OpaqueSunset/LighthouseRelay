@@ -1,12 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ab" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/exploration_plains)
 "ac" = (
 /turf/unsimulated/mineral,
 /area/mine/explored)
 "ad" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/exploration_plains)
 "ae" = (
 /turf/mineral/virgo3b/rich,
@@ -69,7 +69,7 @@
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/outpost/exploration_shed)
 "an" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/exploration_shed)
 "ao" = (
 /obj/machinery/door/blast/shutters{
@@ -96,10 +96,10 @@
 	pixel_y = 25;
 	id_tag = "wilderness"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/exploration_shed)
 "ar" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/exploration_shed)
 "as" = (
 /turf/unsimulated/wall/planetary/virgo3b,
@@ -116,7 +116,7 @@
 /area/mine/unexplored)
 "BE" = (
 /mob/living/simple_animal/space/goose/virgo3b,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/exploration_plains)
 
 (1,1,1) = {"

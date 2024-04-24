@@ -3,14 +3,14 @@
 /turf/mineral/cave,
 /area/tether_away/cave/unexplored/normal)
 "d" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/cave/explored/normal)
 "e" = (
 /turf/mineral/cave,
 /area/tether_away/cave/explored/normal)
 "f" = (
 /obj/effect/step_trigger/teleporter/away_beach_tobeach,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/cave/explored/normal)
 "h" = (
 /turf/unsimulated/wall/planetary/normal,
@@ -24,7 +24,7 @@
 /area/tether_away/cave/explored/normal)
 "r" = (
 /obj/tether_away_spawner/beach_cave,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/cave/explored/normal)
 
 (1,1,1) = {"

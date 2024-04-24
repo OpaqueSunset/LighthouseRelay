@@ -9,7 +9,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Shack1)
 "d" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Shack1)
 "e" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -23,7 +23,7 @@
 /area/submap/virgo2/Shack1)
 "g" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/suit/storage/apron/overalls,
+/obj/item/clothing/suit/apron/overalls,
 /obj/item/clothing/under/overalls,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
@@ -61,7 +61,7 @@
 "p" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable_reinforced,
-/obj/item/storage/toolbox,
+/obj/item/toolbox,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "q" = (
@@ -86,7 +86,7 @@
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "v" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/template_noop)
 "O" = (
 /obj/effect/decal/cleanable/dirt,

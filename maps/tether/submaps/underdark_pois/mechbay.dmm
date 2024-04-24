@@ -12,7 +12,7 @@
 /turf/floor,
 /area/mine/explored/underdark)
 "e" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/structure/closet/crate/mimic/cointoss,
@@ -38,15 +38,15 @@
 /area/mine/explored/underdark)
 "k" = (
 /obj/mecha/working/ripley/abandoned,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "l" = (
 /mob/living/simple_animal/hostile/corrupthound,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "m" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

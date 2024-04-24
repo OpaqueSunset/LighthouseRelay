@@ -131,7 +131,7 @@
 /obj/effect/decal/cleanable/cobweb2,
 /obj/item/clothing/head/hood/winter,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aF" = (
@@ -226,8 +226,8 @@
 /area/submap/virgo2/Manor1)
 "bb" = (
 /obj/structure/table,
-/obj/item/storage/tray,
-/obj/item/storage/tray,
+/obj/item/tray,
+/obj/item/tray,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bc" = (
@@ -249,7 +249,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/head/hood/winter,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/random/contraband,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -350,7 +350,7 @@
 /area/submap/virgo2/Manor1)
 "by" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/item/clothing/head/hood/winter,
 /obj/item/clothing/shoes/winterboots,
 /turf/floor/holofloor/wood,
@@ -426,7 +426,7 @@
 /area/submap/virgo2/Manor1)
 "bL" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/candle_box,
+/obj/item/candle_box,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bM" = (
@@ -521,7 +521,7 @@
 /area/submap/virgo2/Manor1)
 "cf" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/wallet/random,
+/obj/item/wallet/random,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cg" = (
@@ -536,14 +536,14 @@
 /area/submap/virgo2/Manor1)
 "ci" = (
 /obj/structure/closet/crate,
-/obj/item/flame/lighter/random,
+/obj/item/flame/fuelled/lighter/random,
 /obj/random/powercell,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cj" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/item/clothing/head/hood/winter,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -564,7 +564,7 @@
 /area/submap/virgo2/Manor1)
 "cn" = (
 /obj/structure/closet/crate,
-/obj/item/storage/wallet/random,
+/obj/item/wallet/random,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "co" = (
@@ -573,7 +573,7 @@
 /area/submap/virgo2/Manor1)
 "cp" = (
 /obj/structure/loot_pile/surface/bones,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cq" = (

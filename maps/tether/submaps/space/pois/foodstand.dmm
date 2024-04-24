@@ -6,7 +6,7 @@
 /turf/wall/natural,
 /area/tether_away/debrisfield/explored)
 "c" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "d" = (
 /turf/wall/wood,

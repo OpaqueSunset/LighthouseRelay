@@ -1,36 +1,36 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "b" = (
 /obj/structure/flora/bush/ppflowers,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "c" = (
 /turf/template_noop,
 /area/mine/explored/underdark)
 "d" = (
 /obj/structure/flora/bush/fullgrass,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "e" = (
 /obj/structure/flora/bush/leafybush,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "f" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "g" = (
 /obj/structure/flora/bush/brflowers,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "h" = (
 /obj/structure/flora/tree/pine,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/mine/explored/underdark)
 "i" = (
 /obj/tether_away_spawner/underdark_hard,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

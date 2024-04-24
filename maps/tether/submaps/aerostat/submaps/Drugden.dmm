@@ -125,7 +125,7 @@
 /area/submap/virgo2/Drugd)
 "B" = (
 /obj/structure/table,
-/obj/item/storage/pill_bottle/happy,
+/obj/item/pill_bottle/happy,
 /turf/floor/tiled,
 /area/submap/virgo2/Drugd)
 "C" = (

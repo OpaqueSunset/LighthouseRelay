@@ -1888,7 +1888,7 @@
 	pixel_x = -5;
 	pixel_y = -5
 	},
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /turf/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
@@ -1982,7 +1982,7 @@
 /area/space)
 "vi" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -2461,7 +2461,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /turf/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
@@ -2490,7 +2490,7 @@
 	dir = 1
 	},
 /obj/structure/table/glass/pglass,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /turf/floor/tiled/white{
 	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
@@ -2585,7 +2585,7 @@
 /area/holodeck/holodorm/source_standard)
 "OO" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/white/border,
 /turf/floor/tiled/white,
@@ -2671,7 +2671,7 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/structure/table/glass/pglass,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /turf/floor/tiled/white{
 	initial_gas = list(/decl/material/solid/phoron = 101)
 	},
@@ -2680,7 +2680,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/red/border,
 /obj/structure/table/steel,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /turf/floor/tiled{
 	initial_gas = list(/decl/material/gas/oxygen = 410)
 	},
@@ -2744,7 +2744,7 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /turf/floor/tiled/white{
 	initial_gas = list(/decl/material/solid/phoron = 101)
 	},

@@ -3,7 +3,7 @@
 /turf/unsimulated/wall/planetary/virgo3b,
 /area/space)
 "ab" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/space)
 "ac" = (
 /turf/unsimulated/mineral,
@@ -248,9 +248,9 @@
 /area/centcom/specops)
 "aA" = (
 /obj/structure/rack,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/flashbangs,
-/obj/item/storage/box/emps{
+/obj/item/box/flashbangs,
+/obj/item/box/flashbangs,
+/obj/item/box/emps{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -260,8 +260,8 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/storage/box/smokes,
-/obj/item/storage/box/smokes,
+/obj/item/box/smokes,
+/obj/item/box/smokes,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -333,7 +333,7 @@
 /obj/item/clothing/mask/surgical,
 /obj/item/stack/nanopaste,
 /obj/item/stack/nanopaste,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -373,13 +373,13 @@
 /area/centcom/specops)
 "aK" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/clotting,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/firstaid/combat,
-/obj/item/storage/pill_bottle/iron,
-/obj/item/storage/pill_bottle/iron,
-/obj/item/storage/pill_bottle/nutriment,
-/obj/item/storage/pill_bottle/nutriment,
+/obj/item/firstaid/clotting,
+/obj/item/firstaid/combat,
+/obj/item/firstaid/combat,
+/obj/item/pill_bottle/iron,
+/obj/item/pill_bottle/iron,
+/obj/item/pill_bottle/nutriment,
+/obj/item/pill_bottle/nutriment,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -387,10 +387,10 @@
 /area/centcom/specops)
 "aL" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/autoinjectors,
-/obj/item/storage/box/beakers,
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/pillbottles,
+/obj/item/box/autoinjectors,
+/obj/item/box/beakers,
+/obj/item/box/gloves,
+/obj/item/box/pillbottles,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
 /obj/item/bodybag/cryobag,
@@ -420,11 +420,11 @@
 /area/centcom/specops)
 "aO" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -510,18 +510,18 @@
 /obj/structure/rack,
 /obj/item/flash,
 /obj/item/flash,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -538,18 +538,18 @@
 /obj/item/rig/ert/medical,
 /obj/item/rig/ert/medical,
 /obj/item/rig/ert/medical,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/vest,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
-/obj/item/clothing/accessory/storage/drop_pouches/white,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/vest,
+/obj/item/clothing/webbing/drop_pouches/white,
+/obj/item/clothing/webbing/drop_pouches/white,
+/obj/item/clothing/webbing/drop_pouches/white,
+/obj/item/clothing/webbing/drop_pouches/white,
+/obj/item/clothing/webbing/drop_pouches/white,
+/obj/item/clothing/webbing/drop_pouches/white,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -564,11 +564,11 @@
 "bb" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunammo,
+/obj/item/box/ammo/shotgunammo,
+/obj/item/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunshells,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -576,12 +576,12 @@
 "bc" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -722,11 +722,11 @@
 /area/centcom/specops)
 "bl" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/syringes{
+/obj/item/box/syringes{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -764,11 +764,11 @@
 /area/centcom/specops)
 "bo" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/firstaid/adv,
+/obj/item/firstaid/adv,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -776,11 +776,11 @@
 /area/centcom/specops)
 "bp" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/toxin{
+/obj/item/firstaid/toxin{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/firstaid/toxin,
+/obj/item/firstaid/toxin,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -796,10 +796,10 @@
 /obj/item/clothing/head/helmet/ert/medical,
 /obj/item/clothing/head/helmet/ert/medical,
 /obj/item/clothing/head/helmet/ert/medical,
-/obj/item/storage/backpack/ert/medical,
-/obj/item/storage/backpack/ert/medical,
-/obj/item/storage/backpack/ert/medical,
-/obj/item/storage/backpack/ert/medical,
+/obj/item/backpack/ert/medical,
+/obj/item/backpack/ert/medical,
+/obj/item/backpack/ert/medical,
+/obj/item/backpack/ert/medical,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -807,23 +807,23 @@
 /area/centcom/specops)
 "br" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ammo/flashshells,
-/obj/item/storage/box/ammo/flashshells,
-/obj/item/storage/box/ammo/stunshells,
-/obj/item/storage/box/ammo/stunshells,
-/obj/item/storage/box/ammo/beanbags,
-/obj/item/storage/box/ammo/beanbags,
+/obj/item/box/ammo/flashshells,
+/obj/item/box/ammo/flashshells,
+/obj/item/box/ammo/stunshells,
+/obj/item/box/ammo/stunshells,
+/obj/item/box/ammo/beanbags,
+/obj/item/box/ammo/beanbags,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom/specops)
 "bs" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/handcuffs{
+/obj/item/box/handcuffs{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -874,12 +874,12 @@
 /area/centcom/specops)
 "bv" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/storage/belt/holster/security/tactical,
-/obj/item/storage/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -945,11 +945,11 @@
 /area/centcom/specops)
 "bC" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/bodybags{
+/obj/item/box/bodybags{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/box/bodybags,
+/obj/item/box/bodybags,
 /obj/item/chems/spray/extinguisher/mini,
 /obj/item/chems/spray/extinguisher/mini,
 /obj/item/chems/spray/extinguisher/mini,
@@ -961,12 +961,12 @@
 /area/centcom/specops)
 "bD" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -974,11 +974,11 @@
 /area/centcom/specops)
 "bE" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/firstaid/fire,
+/obj/item/firstaid/fire,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -986,11 +986,11 @@
 /area/centcom/specops)
 "bF" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/firstaid/o2,
+/obj/item/firstaid/o2,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -998,10 +998,10 @@
 /area/centcom/specops)
 "bG" = (
 /obj/structure/rack,
-/obj/item/storage/backpack/dufflebag/syndie/med,
-/obj/item/storage/backpack/dufflebag/syndie/med,
-/obj/item/storage/backpack/dufflebag/syndie/med,
-/obj/item/storage/backpack/dufflebag/syndie/med,
+/obj/item/backpack/dufflebag/syndie/med,
+/obj/item/backpack/dufflebag/syndie/med,
+/obj/item/backpack/dufflebag/syndie/med,
+/obj/item/backpack/dufflebag/syndie/med,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -1017,10 +1017,10 @@
 /obj/item/clothing/head/helmet/ert/security,
 /obj/item/clothing/head/helmet/ert/security,
 /obj/item/clothing/head/helmet/ert/security,
-/obj/item/storage/backpack/ert/security,
-/obj/item/storage/backpack/ert/security,
-/obj/item/storage/backpack/ert/security,
-/obj/item/storage/backpack/ert/security,
+/obj/item/backpack/ert/security,
+/obj/item/backpack/ert/security,
+/obj/item/backpack/ert/security,
+/obj/item/backpack/ert/security,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1040,12 +1040,12 @@
 "bJ" = (
 /obj/structure/rack,
 /obj/item/rig_module/mounted,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1117,15 +1117,15 @@
 "bU" = (
 /obj/structure/table/reinforced,
 /obj/item/megaphone,
-/obj/item/storage/box/trackimp,
-/obj/item/storage/box/cdeathalarm_kit,
+/obj/item/box/trackimp,
+/obj/item/box/cdeathalarm_kit,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "bV" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/vest/heavy/hos,
 /obj/item/clothing/head/helmet/ert/command,
-/obj/item/storage/backpack/ert/commander,
+/obj/item/backpack/ert/commander,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "bW" = (
@@ -1174,7 +1174,7 @@
 /area/centcom/specops)
 "cd" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/accessory/storage/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "ce" = (
@@ -1239,12 +1239,12 @@
 	},
 /area/centcom/specops)
 "ck" = (
-/obj/item/clothing/accessory/storage/holster/waist,
-/obj/item/clothing/accessory/storage/holster/waist,
-/obj/item/clothing/accessory/storage/holster/waist,
-/obj/item/clothing/accessory/storage/holster/waist,
-/obj/item/clothing/accessory/storage/holster/waist,
-/obj/item/clothing/accessory/storage/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
+/obj/item/clothing/webbing/holster/waist,
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
@@ -1254,12 +1254,12 @@
 	},
 /area/centcom/specops)
 "cl" = (
-/obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/clothing/accessory/storage/holster/hip,
-/obj/item/clothing/accessory/storage/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
+/obj/item/clothing/webbing/holster/hip,
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
@@ -1270,11 +1270,11 @@
 /area/centcom/specops)
 "cm" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/flashbangs,
+/obj/item/box/flashbangs,
 /obj/item/handcuffs,
 /obj/item/flash,
 /obj/item/baton/loaded,
-/obj/item/storage/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
 /obj/item/gun/projectile/revolver/stun,
 /obj/item/clothing/glasses/sunglasses/sechud/goggles,
 /obj/item/knife/combat,
@@ -1283,7 +1283,7 @@
 "cn" = (
 /obj/structure/rack,
 /obj/item/rig/ert,
-/obj/item/clothing/accessory/storage/vest/black,
+/obj/item/clothing/webbing/vest/black,
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
 "co" = (
@@ -1300,18 +1300,18 @@
 /area/centcom/specops)
 "cq" = (
 /obj/structure/table/reinforced,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/vest/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
-/obj/item/clothing/accessory/storage/drop_pouches/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/vest/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
+/obj/item/clothing/webbing/drop_pouches/black,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1353,12 +1353,12 @@
 	},
 /area/centcom/specops)
 "ct" = (
-/obj/item/clothing/accessory/storage/holster/armpit,
-/obj/item/clothing/accessory/storage/holster/armpit,
-/obj/item/clothing/accessory/storage/holster/armpit,
-/obj/item/clothing/accessory/storage/holster/armpit,
-/obj/item/clothing/accessory/storage/holster/armpit,
-/obj/item/clothing/accessory/storage/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
+/obj/item/clothing/webbing/holster/armpit,
 /obj/structure/table/reinforced,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1367,7 +1367,7 @@
 "cu" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/box/fancy/cigarettes = 10, /obj/item/box/matches = 10, /obj/item/flame/fuelled/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/specops)
@@ -1439,19 +1439,19 @@
 /obj/item/stack/material/pane/mapped/rglass{
 	amount = 50
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -1468,14 +1468,14 @@
 /area/centcom/specops)
 "cy" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
-/obj/item/storage/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
+/obj/item/box/survival,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1652,10 +1652,10 @@
 /obj/item/clothing/head/helmet/ert/engineer,
 /obj/item/clothing/head/helmet/ert/engineer,
 /obj/item/clothing/head/helmet/ert/engineer,
-/obj/item/storage/backpack/ert/engineer,
-/obj/item/storage/backpack/ert/engineer,
-/obj/item/storage/backpack/ert/engineer,
-/obj/item/storage/backpack/ert/engineer,
+/obj/item/backpack/ert/engineer,
+/obj/item/backpack/ert/engineer,
+/obj/item/backpack/ert/engineer,
+/obj/item/backpack/ert/engineer,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1673,18 +1673,18 @@
 /obj/structure/rack,
 /obj/item/flash,
 /obj/item/flash,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/vest/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
-/obj/item/clothing/accessory/storage/drop_pouches/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/vest/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
+/obj/item/clothing/webbing/drop_pouches/brown,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1697,12 +1697,12 @@
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/gloves/insulated,
 /obj/item/clothing/gloves/insulated,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
+/obj/item/belt/utility/full,
+/obj/item/belt/utility/full,
+/obj/item/belt/utility/full,
+/obj/item/belt/utility/full,
+/obj/item/belt/utility/full,
+/obj/item/belt/utility/full,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1807,12 +1807,12 @@
 /obj/item/clothing/shoes/magboots,
 /obj/item/clothing/shoes/magboots,
 /obj/item/clothing/shoes/magboots,
-/obj/item/storage/box,
-/obj/item/storage/box,
-/obj/item/storage/box,
-/obj/item/storage/box,
-/obj/item/storage/box,
-/obj/item/storage/box,
+/obj/item/box,
+/obj/item/box,
+/obj/item/box,
+/obj/item/box,
+/obj/item/box,
+/obj/item/box,
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1943,7 +1943,7 @@
 	},
 /area/centcom/control)
 "dx" = (
-/obj/item/storage/firstaid/combat,
+/obj/item/firstaid/combat,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -2082,7 +2082,7 @@
 /area/centcom/control)
 "dJ" = (
 /obj/structure/table,
-/obj/item/storage/belt/utility,
+/obj/item/belt/utility,
 /obj/item/clothing/gloves/latex,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -2558,8 +2558,8 @@
 /obj/item/chems/drinks/bottle/small/beer,
 /obj/item/chems/drinks/bottle/small/beer,
 /obj/item/chems/drinks/bottle/small/beer,
-/obj/item/flame/lighter/zippo,
-/obj/item/storage/box/fancy/cigarettes,
+/obj/item/flame/fuelled/lighter/zippo,
+/obj/item/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -2666,13 +2666,13 @@
 /area/centcom/control)
 "eZ" = (
 /obj/structure/rack,
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
 	},
 /obj/item/crowbar,
-/obj/item/storage/belt/utility,
-/obj/item/storage/toolbox/electrical{
+/obj/item/belt/utility,
+/obj/item/toolbox/electrical{
 	pixel_x = 1;
 	pixel_y = 6
 	},
@@ -2810,7 +2810,7 @@
 	density = 0;
 	pixel_y = -30
 	},
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
 	},
@@ -2877,19 +2877,19 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "ft" = (
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -2990,9 +2990,9 @@
 	pixel_x = 5;
 	pixel_y = -5
 	},
-/obj/item/storage/firstaid/empty,
-/obj/item/storage/firstaid/empty,
-/obj/item/storage/firstaid/empty,
+/obj/item/firstaid/empty,
+/obj/item/firstaid/empty,
+/obj/item/firstaid/empty,
 /obj/item/scanner/health,
 /obj/item/scanner/health,
 /obj/item/scanner/health,
@@ -3284,19 +3284,19 @@
 /area/centcom/control)
 "gh" = (
 /obj/effect/floor_decal/corner_steel_grid,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "gi" = (
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 10
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "gj" = (
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "gk" = (
 /obj/structure/rack,
@@ -3399,7 +3399,7 @@
 /area/centcom/control)
 "gv" = (
 /obj/structure/table,
-/obj/item/storage/box/bodybags{
+/obj/item/box/bodybags{
 	pixel_x = -1;
 	pixel_y = -2
 	},
@@ -3409,7 +3409,7 @@
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 6
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "gx" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
@@ -3457,7 +3457,7 @@
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 9
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "gD" = (
 /obj/machinery/recharger{
@@ -3908,7 +3908,7 @@
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/breath/medical,
-/obj/item/storage/box/gloves,
+/obj/item/box/gloves,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -3942,7 +3942,7 @@
 	},
 /obj/machinery/computer/transhuman/resleeving,
 /obj/item/book/fluff/resleeving,
-/obj/item/storage/box/backup_kit,
+/obj/item/box/backup_kit,
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "hM" = (
@@ -3968,7 +3968,7 @@
 /obj/machinery/light/spot{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/space)
 "hQ" = (
 /obj/machinery/door/airlock/centcom{
@@ -4089,15 +4089,15 @@
 "ik" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
-/obj/item/storage/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
+/obj/item/box/ammo/shotgunammo/large,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4105,14 +4105,14 @@
 /area/centcom/security)
 "il" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
-/obj/item/storage/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
+/obj/item/box/ammo/beanbags/large,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4121,15 +4121,15 @@
 /area/centcom/security)
 "im" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
-/obj/item/storage/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
+/obj/item/box/ammo/empshells/large,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/camera/network/crescent,
 /turf/unsimulated/floor{
@@ -4139,14 +4139,14 @@
 /area/centcom/security)
 "in" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
-/obj/item/storage/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
+/obj/item/box/ammo/flashshells/large,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4155,14 +4155,14 @@
 /area/centcom/security)
 "io" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
-/obj/item/storage/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
+/obj/item/box/ammo/stunshells/large,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4265,8 +4265,8 @@
 /area/centcom/security)
 "ix" = (
 /obj/structure/rack,
-/obj/item/clothing/accessory/armguards/ablative,
-/obj/item/clothing/accessory/legguards/ablative,
+/obj/item/clothing/gloves/armguards/ablative,
+/obj/item/clothing/shoes/legguards/ablative,
 /obj/item/clothing/suit/armor/laserproof,
 /obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4278,8 +4278,8 @@
 /area/centcom/security)
 "iy" = (
 /obj/structure/rack,
-/obj/item/clothing/accessory/armguards/ablative,
-/obj/item/clothing/accessory/legguards/ablative,
+/obj/item/clothing/gloves/armguards/ablative,
+/obj/item/clothing/shoes/legguards/ablative,
 /obj/item/clothing/suit/armor/laserproof,
 /obj/item/clothing/head/helmet/ablative,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4320,10 +4320,10 @@
 "iD" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/dufflebag/syndie/ammo,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4480,10 +4480,10 @@
 "iY" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/storage/box/ammo/sniperammo,
-/obj/item/storage/box/ammo/sniperammo,
-/obj/item/storage/box/ammo/sniperammo,
-/obj/item/storage/box/ammo/sniperammo,
+/obj/item/box/ammo/sniperammo,
+/obj/item/box/ammo/sniperammo,
+/obj/item/box/ammo/sniperammo,
+/obj/item/box/ammo/sniperammo,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4557,15 +4557,15 @@
 "jd" = (
 /obj/structure/rack,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
-/obj/item/storage/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
+/obj/item/box/ammo/shotgunshells/large,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4581,7 +4581,7 @@
 /area/centcom/security)
 "jf" = (
 /obj/structure/rack,
-/obj/item/storage/box/frags,
+/obj/item/box/frags,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -4640,8 +4640,8 @@
 /area/centcom/security)
 "jj" = (
 /obj/structure/rack,
-/obj/item/clothing/accessory/armguards/riot,
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4782,11 +4782,11 @@
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
 /obj/item/clothing/under/tactical,
-/obj/item/storage/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/storage/backpack/dufflebag/syndie/ammo,
-/obj/item/storage/backpack/satchel/sec,
+/obj/item/backpack/dufflebag/syndie/ammo,
+/obj/item/backpack/satchel/sec,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4800,11 +4800,11 @@
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
 /obj/item/clothing/under/tactical,
-/obj/item/storage/belt/holster/security/tactical,
+/obj/item/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/storage/backpack/dufflebag/syndie/med,
-/obj/item/storage/backpack/satchel/sec,
+/obj/item/backpack/dufflebag/syndie/med,
+/obj/item/backpack/satchel/sec,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -4835,8 +4835,8 @@
 /area/centcom/security)
 "jI" = (
 /obj/structure/rack,
-/obj/item/clothing/accessory/legguards/ballistic,
-/obj/item/clothing/accessory/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
+/obj/item/clothing/shoes/legguards/ballistic,
 /obj/item/clothing/suit/armor/bulletproof/prepared,
 /obj/item/clothing/head/helmet/ballistic,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4943,11 +4943,11 @@
 	},
 /area/centcom/medical)
 "jU" = (
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/box/masks,
+/obj/item/box/masks,
 /obj/structure/table/glass,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -4997,11 +4997,11 @@
 	},
 /area/centcom/medical)
 "jY" = (
-/obj/item/storage/box/syringes{
+/obj/item/box/syringes{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/box/beakers,
+/obj/item/box/beakers,
 /obj/item/chems/dropper,
 /obj/structure/table/glass,
 /obj/structure/reagent_dispensers/virusfood{
@@ -5149,7 +5149,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -5238,8 +5238,8 @@
 /area/centcom/security)
 "kt" = (
 /obj/structure/rack,
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/box/flashbangs{
+/obj/item/box/handcuffs,
+/obj/item/box/flashbangs{
 	pixel_x = -2;
 	pixel_y = -2
 	},
@@ -5488,7 +5488,7 @@
 	dir = 1
 	},
 /obj/structure/table/glass,
-/obj/item/storage/box/monkeycubes,
+/obj/item/box/monkeycubes,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
 	},
@@ -5902,19 +5902,19 @@
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "lF" = (
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 5
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "lG" = (
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 1
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/centcom/evac)
 "lH" = (
 /obj/machinery/vending/snack,
@@ -6082,8 +6082,8 @@
 "me" = (
 /obj/structure/table,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/storage/box/teargas,
-/obj/item/storage/box/teargas,
+/obj/item/box/teargas,
+/obj/item/box/teargas,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -6195,8 +6195,8 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/clothing/accessory/armguards/riot,
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/shield/riot,
@@ -6209,17 +6209,17 @@
 /area/centcom/security)
 "mq" = (
 /obj/structure/table,
-/obj/item/storage/box/empslite{
+/obj/item/box/empslite{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/storage/box/flashbangs{
+/obj/item/box/flashbangs{
 	pixel_x = -2;
 	pixel_y = -2
 	},
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/item/storage/box/empslite,
-/obj/item/storage/box/flashbangs{
+/obj/item/box/empslite,
+/obj/item/box/flashbangs{
 	pixel_x = -2;
 	pixel_y = -2
 	},
@@ -6392,8 +6392,8 @@
 /area/centcom/medical)
 "mD" = (
 /obj/structure/table/steel,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/bodybags,
+/obj/item/box/bodybags,
+/obj/item/box/bodybags,
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 1
 	},
@@ -6454,8 +6454,8 @@
 /area/centcom/main_hall)
 "mI" = (
 /obj/structure/rack,
-/obj/item/clothing/accessory/armguards/riot,
-/obj/item/clothing/accessory/legguards/riot,
+/obj/item/clothing/gloves/armguards/riot,
+/obj/item/clothing/shoes/legguards/riot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/clothing/head/helmet/riot,
 /obj/item/shield/riot,
@@ -6468,15 +6468,15 @@
 /area/centcom/security)
 "mJ" = (
 /obj/structure/table,
-/obj/item/storage/box/handcuffs{
+/obj/item/box/handcuffs{
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/storage/box/chemimp{
+/obj/item/box/chemimp{
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/storage/box/trackimp,
+/obj/item/box/trackimp,
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -7489,7 +7489,7 @@
 "oD" = (
 /obj/structure/table,
 /obj/machinery/chemical_dispenser/bar_soft/full,
-/obj/item/storage/box/glasses/square,
+/obj/item/box/glasses/square,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -7521,7 +7521,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = 20
 	},
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -7574,7 +7574,7 @@
 /obj/item/taperecorder,
 /obj/item/megaphone,
 /obj/item/stack/package_wrap/twenty_five,
-/obj/item/storage/box,
+/obj/item/box,
 /obj/item/hand_labeler,
 /obj/item/universal_translator,
 /obj/effect/floor_decal/borderfloor{
@@ -7587,9 +7587,9 @@
 /area/centcom/security)
 "oL" = (
 /obj/structure/table,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo,
-/obj/item/clothing/accessory/badge/holo/cord,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo,
+/obj/item/clothing/badge/holo/cord,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 26
@@ -8267,7 +8267,7 @@
 /obj/structure/table/woodentable{
 	dir = 5
 	},
-/obj/item/storage/briefcase{
+/obj/item/briefcase{
 	pixel_x = 3;
 	pixel_y = 5
 	},
@@ -8624,8 +8624,8 @@
 /area/centcom/security)
 "qL" = (
 /obj/structure/table/glass,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
 	},
@@ -8638,8 +8638,8 @@
 /area/centcom/medical)
 "qM" = (
 /obj/structure/table/glass,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
+/obj/item/firstaid/adv,
+/obj/item/firstaid/adv,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/unsimulated/floor/steel{
@@ -8685,7 +8685,7 @@
 /obj/effect/floor_decal/borderfloorwhite/corner2,
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
 /obj/structure/table/glass,
-/obj/item/storage/firstaid/o2,
+/obj/item/firstaid/o2,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -8694,7 +8694,7 @@
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/structure/table/glass,
-/obj/item/storage/firstaid/fire,
+/obj/item/firstaid/fire,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -8707,7 +8707,7 @@
 	dir = 6
 	},
 /obj/structure/table/glass,
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -8905,7 +8905,7 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 6
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = 5;
 	pixel_y = 5
 	},
@@ -8930,7 +8930,7 @@
 /area/centcom/security)
 "rm" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "rn" = (
@@ -9423,12 +9423,12 @@
 	pixel_x = -30;
 	dir = 4
 	},
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/toxin,
+/obj/item/firstaid/fire,
+/obj/item/firstaid/toxin,
 /obj/structure/bed/chair/shuttle,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
@@ -9668,8 +9668,8 @@
 	})
 "sZ" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/cups,
-/obj/item/storage/box/cups,
+/obj/item/box/cups,
+/obj/item/box/cups,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
 	},
@@ -10112,7 +10112,7 @@
 /area/centcom/bathroom)
 "tM" = (
 /obj/structure/table/steel,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -10179,7 +10179,7 @@
 /area/centcom/security)
 "tU" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/unsimulated/floor/steel,
@@ -11044,8 +11044,8 @@
 /obj/effect/floor_decal/carpet{
 	dir = 9
 	},
-/obj/item/flame/lighter/zippo,
-/obj/item/storage/box/fancy/cigarettes,
+/obj/item/flame/fuelled/lighter/zippo,
+/obj/item/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11055,8 +11055,8 @@
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
-/obj/item/flame/lighter/zippo,
-/obj/item/storage/box/fancy/cigarettes,
+/obj/item/flame/fuelled/lighter/zippo,
+/obj/item/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11072,8 +11072,8 @@
 /obj/effect/floor_decal/carpet{
 	dir = 5
 	},
-/obj/item/flame/lighter/zippo,
-/obj/item/storage/box/fancy/cigarettes,
+/obj/item/flame/fuelled/lighter/zippo,
+/obj/item/box/fancy/cigarettes,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -11635,7 +11635,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/camera,
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -11648,11 +11648,11 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "wI" = (
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "wJ" = (
 /obj/structure/table/bench/wooden,
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "wK" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -11905,11 +11905,11 @@
 /area/centcom/main_hall)
 "xg" = (
 /obj/machinery/light/flamp/noshade,
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "xh" = (
 /obj/structure/flora/bush/brflowers,
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "xi" = (
 /obj/structure/bed/chair{
@@ -11992,7 +11992,7 @@
 "xs" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/closet/secure_closet/nanotrasen_security,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -12144,7 +12144,7 @@
 "xB" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/closet/secure_closet/nanotrasen_warden,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -12230,7 +12230,7 @@
 /area/centcom/security/arrivals)
 "xI" = (
 /obj/structure/flora/bush/ppflowers,
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "xJ" = (
 /obj/structure/table/woodentable,
@@ -12587,8 +12587,8 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -12745,7 +12745,7 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,
 /obj/structure/closet/secure_closet/nanotrasen_security,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /obj/item/gun/energy/gun,
 /obj/item/shield/riot,
 /turf/unsimulated/floor{
@@ -12763,7 +12763,7 @@
 	dir = 9
 	},
 /obj/structure/closet/secure_closet/nanotrasen_security,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /obj/item/gun/energy/gun,
 /obj/item/shield/riot,
 /turf/unsimulated/floor{
@@ -12812,7 +12812,7 @@
 	},
 /area/centcom/security)
 "yE" = (
-/obj/item/storage/box/evidence,
+/obj/item/box/evidence,
 /obj/item/folder/red,
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
@@ -13066,7 +13066,7 @@
 /area/centcom/security)
 "yX" = (
 /obj/structure/table/reinforced,
-/obj/item/minihoe,
+/obj/item/tool/hoe/mini,
 /obj/item/scanner/plant,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -13156,7 +13156,7 @@
 /area/centcom/security)
 "ze" = (
 /obj/structure/flora/bush/ywflowers,
-/turf/exterior/grass,
+/turf/floor/natural/grass,
 /area/centcom/main_hall)
 "zf" = (
 /obj/structure/table/woodentable,
@@ -13682,8 +13682,8 @@
 /area/centcom/security)
 "Ah" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
+/obj/item/box/donkpockets,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -13927,7 +13927,7 @@
 /area/centcom/security)
 "AK" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/pill_bottle/dice,
+/obj/item/pill_bottle/dice,
 /obj/item/deck/cards,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -14582,7 +14582,7 @@
 "BM" = (
 /obj/structure/table/reinforced,
 /obj/item/camera,
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
 	},
@@ -14609,9 +14609,9 @@
 /area/centcom/security/residential)
 "BO" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
+/obj/item/box/donkpockets,
+/obj/item/box/donkpockets,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/unsimulated/floor{
@@ -15121,7 +15121,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "CR" = (
@@ -15163,7 +15163,7 @@
 "CU" = (
 /obj/structure/table/reinforced,
 /obj/item/camera,
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
@@ -15609,7 +15609,7 @@
 /area/centcom/specops)
 "YE" = (
 /obj/abstract/level_data_spawner/virgo3b/player,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/space)
 
 (1,1,1) = {"

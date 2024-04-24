@@ -169,7 +169,7 @@
 "aI" = (
 /obj/item/remains,
 /obj/item/clothing/under/hydroponics,
-/obj/item/clothing/suit/storage/toggle/labcoat/green,
+/obj/item/clothing/suit/toggle/labcoat/green,
 /obj/item/clothing/head/bandana/green,
 /turf/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
@@ -288,13 +288,13 @@
 /turf/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "ba" = (
-/obj/item/clothing/suit/storage/toggle/labcoat/purple,
+/obj/item/clothing/suit/toggle/labcoat/purple,
 /turf/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "bb" = (
 /obj/item/remains,
 /obj/item/clothing/under/scientist,
-/obj/item/clothing/suit/storage/toggle/labcoat/blue,
+/obj/item/clothing/suit/toggle/labcoat/blue,
 /turf/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "bc" = (

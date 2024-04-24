@@ -54,7 +54,7 @@
 /obj/item/cmo_disk_holder
 	material = /decl/material/solid/organic/paper //it's a manila envelope you tear open
 /obj/item/chems/glass/bottle/biomass
-/obj/item/storage/box/backup_kit
+/obj/item/box/backup_kit
 // note: cryo is technically part of resleeving now
 /obj/machinery/atmospherics/unary/cryo_cell
 /obj/item/chems/glass/beaker/cryoxadone
@@ -62,20 +62,20 @@
 // medical QOL
 /obj/item/glasses_kit
 	material = /decl/material/solid/organic/cardboard // it's basically a box.
-/obj/item/storage/bag/chemistry
-/obj/item/storage/pill_bottle/iron
-/obj/item/storage/pill_bottle/nutriment
+/obj/item/bag/chemistry
+/obj/item/pill_bottle/iron
+/obj/item/pill_bottle/nutriment
 
 // OBJECTS
 /obj/item/baton/slime/loaded
 /obj/item/radio/intercom/department/security
 /obj/item/radio/intercom/locked/ai_private
-/obj/item/storage/bag/circuits/basic
-/obj/item/storage/box/firingpins
-/obj/item/storage/box/nifsofts_engineering
+/obj/item/bag/circuits/basic
+/obj/item/box/firingpins
+/obj/item/box/nifsofts_engineering
 // todo: maybe readd trash/unajerky? we'd need lore first...
-/obj/item/storage/box/nifsofts_mining
-/obj/item/storage/box/nifsofts_security
+/obj/item/box/nifsofts_mining
+/obj/item/box/nifsofts_security
 
 // Toys
 /obj/item/toy/eightball/conch
@@ -105,14 +105,14 @@
 	base_type = /obj/machinery/computer/cryopod
 /obj/machinery/computer/cryopod/dorms
 /obj/machinery/computer/cryopod/gateway
-/obj/machinery/computer/HolodeckControl
-	base_type = /obj/machinery/computer/HolodeckControl
-/obj/machinery/computer/HolodeckControl/holodorm
-/obj/machinery/computer/HolodeckControl/holodorm/five
-/obj/machinery/computer/HolodeckControl/holodorm/one
-/obj/machinery/computer/HolodeckControl/holodorm/seven
-/obj/machinery/computer/HolodeckControl/holodorm/three
-/obj/machinery/computer/HolodeckControl/holosurgery
+/obj/machinery/computer/holodeck_control
+	base_type = /obj/machinery/computer/holodeck_control
+/obj/machinery/computer/holodeck_control/holodorm
+/obj/machinery/computer/holodeck_control/holodorm/five
+/obj/machinery/computer/holodeck_control/holodorm/one
+/obj/machinery/computer/holodeck_control/holodorm/seven
+/obj/machinery/computer/holodeck_control/holodorm/three
+/obj/machinery/computer/holodeck_control/holosurgery
 
 
 /obj/machinery/door/airlock/double/metal
@@ -200,7 +200,7 @@
 /obj/machinery/appliance/cooker/oven
 /obj/machinery/appliance/mixer/candy
 /obj/machinery/appliance/mixer/cereal
-/obj/item/storage/box/wings
+/obj/item/box/wings
 /obj/item/chems/food/roastbeef
 /obj/item/chems/food/kitsuneudon
 /obj/item/chems/food/lasagna
@@ -305,7 +305,7 @@
 /obj/item/bone/skull/unathi
 /obj/item/flame/candle/candelabra
 /obj/item/flame/candle/candelabra/everburn
-/obj/item/flame/lighter/zippo/gonzo
+/obj/item/flame/fuelled/lighter/zippo/gonzo
 /obj/item/folder/blue_captain
 /obj/item/folder/blue_hop
 /obj/item/folder/red_hos

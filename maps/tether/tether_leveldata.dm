@@ -34,15 +34,15 @@
 /datum/random_map/noise/virgo3b/get_appropriate_path(var/value)
 	switch(value)
 		if(0)
-			return /turf/exterior/mud
+			return /turf/floor/natural/mud
 		if(1 to 2)
-			return /turf/exterior/dirt
+			return /turf/floor/natural/dirt
 		if(3 to 5)
-			return /turf/exterior/sif_growth
+			return /turf/floor/natural/sif_growth
 		if(6 to 8)
-			return /turf/exterior/sif_growth/thick
+			return /turf/floor/natural/sif_growth/thick
 		if(9)
-			return /turf/exterior/snow
+			return /turf/floor/natural/snow
 
 /datum/random_map/noise/virgo3b/get_additional_spawns(var/value, var/turf/T)
 	if(prob(45) || T.density)
@@ -72,22 +72,22 @@
 				new /obj/structure/flora/sif/tendrils(T)
 
 /datum/random_map/noise/virgo3b/decorator
-	target_turf_type = /turf/exterior/sif_growth
+	target_turf_type = /turf/floor/natural/sif_growth
 
 /datum/random_map/noise/virgo3b/forest
 	descriptor = "Virgo 3B forest (roundstart)"
 
 /datum/random_map/noise/virgo3b/forest/decorator
-	target_turf_type = /turf/exterior/sif_growth
+	target_turf_type = /turf/floor/natural/sif_growth
 
 /datum/random_map/noise/virgo3b/forest/get_appropriate_path(var/value)
 	switch(value)
 		if(0 to 3)
-			return /turf/exterior/sif_growth
+			return /turf/floor/natural/sif_growth
 		if(4 to 6)
-			return /turf/exterior/sif_growth/thick
+			return /turf/floor/natural/sif_growth/thick
 		if(7 to 9)
-			return /turf/exterior/snow
+			return /turf/floor/natural/snow
 
 /datum/random_map/noise/virgo3b/forest/get_additional_spawns(var/value, var/turf/T)
 	if(prob(25) || T.density)
@@ -146,7 +146,7 @@ var/global/decl/material/virgo3b_stratum_base_material
 	level_flags = (ZLEVEL_STATION|ZLEVEL_CONTACT|ZLEVEL_PLAYER)
 
 /datum/level_data/virgo3b/main/lowest
-	base_turf = /turf/exterior/rocks
+	base_turf = /turf/floor/natural/rocks
 	level_id = "virgo3bsurface1"
 	connected_levels = list(
 		"virgo3bsolars" = WEST,

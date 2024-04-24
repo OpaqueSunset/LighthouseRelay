@@ -6,46 +6,46 @@
 /turf/template_noop,
 /area/submap/virgo2/DoomP)
 "ac" = (
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "ad" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "ae" = (
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "af" = (
 /turf/floor/lava,
 /area/submap/virgo2/DoomP)
 "ah" = (
 /obj/random/landmine,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "ai" = (
 /mob/living/simple_mob/mechanical/viscerator,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "al" = (
 /obj/item/remains/mouse,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "am" = (
 /obj/random/landmine,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "an" = (
 /obj/item/remains/deer,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "ao" = (
 /obj/item/remains/mouse,
 /obj/random/landmine,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "aq" = (
 /obj/machinery/light/small,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "as" = (
 /obj/machinery/porta_turret/poi{
@@ -170,7 +170,7 @@
 /area/submap/virgo2/DoomP)
 "aL" = (
 /obj/structure/lattice,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "aM" = (
 /obj/structure/bed/chair{
@@ -323,18 +323,18 @@
 /area/submap/virgo2/DoomP)
 "bn" = (
 /obj/structure/table,
-/obj/item/storage/box/syndie_kit/spy,
+/obj/item/box/syndie_kit/spy,
 /obj/item/card/id/syndicate,
 /turf/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bo" = (
 /obj/structure/rack,
-/obj/item/storage/box/smokes,
+/obj/item/box/smokes,
 /turf/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bp" = (
 /obj/structure/rack,
-/obj/item/storage/box/handcuffs,
+/obj/item/box/handcuffs,
 /turf/floor/tiled/techfloor,
 /area/submap/virgo2/DoomP)
 "bq" = (
@@ -507,23 +507,23 @@
 /area/submap/virgo2/DoomP)
 "bM" = (
 /obj/structure/lattice,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "bN" = (
 /obj/machinery/crystal/lava,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "bO" = (
 /obj/machinery/crystal/lava,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "mi" = (
 /obj/structure/barricade,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DoomP)
 "El" = (
 /obj/structure/barricade,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/DoomP)
 "Hh" = (
 /obj/effect/floor_decal/industrial/warning,

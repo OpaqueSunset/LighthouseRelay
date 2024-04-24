@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "b" = (
 /turf/template_noop,
@@ -14,19 +14,19 @@
 /area/mine/explored/underdark)
 "e" = (
 /obj/item/remains/tajaran,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/random/underdark,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "g" = (
 /obj/item/remains/deer,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/structure/ore_box,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "i" = (
 /turf/wall,
@@ -45,7 +45,7 @@
 /area/mine/explored/underdark)
 "m" = (
 /obj/structure/barricade,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "n" = (
 /obj/machinery/door/airlock/double/glass,
