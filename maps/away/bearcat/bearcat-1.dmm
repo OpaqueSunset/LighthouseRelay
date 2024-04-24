@@ -1890,7 +1890,7 @@
 	},
 /obj/machinery/network/relay{
 	initial_network_id = "freightnet_0451"
-},
+	},
 /turf/floor/tiled/usedup,
 /area/ship/scrap/maintenance/techstorage)
 "ee" = (

@@ -323,7 +323,7 @@
 "aO" = (
 /obj/machinery/network/message_server{
 	initial_network_id = "freightnet_0451"
-},
+	},
 /turf/floor/bluegrid/airless,
 /area/ship/scrap/comms)
 "aP" = (
@@ -2840,7 +2840,7 @@
 	},
 /obj/machinery/network/relay{
 	initial_network_id = "freightnet_0451"
-},
+	},
 /turf/floor/usedup,
 /area/ship/scrap/unused)
 "fA" = (
@@ -5180,7 +5180,7 @@
 "Ix" = (
 /obj/machinery/network/router{
 	initial_network_id = "freightnet_0451"
-},
+	},
 /turf/floor/bluegrid/airless,
 /area/ship/scrap/comms)
 "IG" = (

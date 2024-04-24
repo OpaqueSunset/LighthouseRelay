@@ -7861,7 +7861,7 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/obj/machinery/cooker/candy,
+/obj/machinery/appliance/mixer/candy,
 /turf/floor/lino,
 /area/ministation/cafe)
 "Jl" = (
