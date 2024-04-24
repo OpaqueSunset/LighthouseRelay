@@ -2325,6 +2325,7 @@
 #include "code\modules\food\cooking\recipes\recipe_pasta.dm"
 #include "code\modules\food\cooking\recipes\recipe_simmered.dm"
 #include "code\modules\food\cooking\recipes\recipe_steamed.dm"
+#include "code\modules\food\cooking\recipes\recipe_toasted.dm"
 #include "code\modules\food\cooking\recipes\recipe_tossed.dm"
 #include "code\modules\food\cooking\recipes\recipes_microwave.dm"
 #include "code\modules\food\machines\_appliance.dm"
