@@ -175,11 +175,11 @@
 //Medical EMT Voidsuit
 /obj/item/clothing/head/helmet/space/void/medical/emt
 	name = "emergency medical response voidsuit helmet"
-	icon = 'maps/tether/icons/obj/clothing/suits/void_emt.dmi'
+	icon = 'maps/tether/icons/obj/clothing/suits/void_emt_helmet.dmi'
 
 /obj/item/clothing/suit/space/void/medical/emt
 	name = "emergency medical response voidsuit"
-	icon = 'maps/tether/icons/obj/clothing/suits/void_emt_helmet.dmi'
+	icon = 'maps/tether/icons/obj/clothing/suits/void_emt.dmi'
 
 /obj/item/belt/explorer
 	name = "pathfinder's bandolier"
