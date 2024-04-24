@@ -212,7 +212,7 @@
 	result = /obj/item/chems/food/poppypretzel
 
 /decl/recipe/baked/plumphelmetbiscuit
-	display_name = "plump helmet biscuit"
+	display_name = "batter plump helmet biscuit"
 	fruit = list("plumphelmet" = 1)
 	reagents = list(/decl/material/liquid/nutriment/batter = 10)
 	reagent_mix = REAGENT_REPLACE // Remove the batter
