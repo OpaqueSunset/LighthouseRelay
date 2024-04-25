@@ -10,6 +10,7 @@
 	origin_tech = @'{"magnets":2,"biotech":2}'
 	use_delay = 4 SECONDS
 
+	var/scanning = FALSE
 	var/datum/computer_file/data/mind_record/stored_mind_record
 
 /obj/item/scanner/sleevemate/is_valid_scan_target(atom/O)
@@ -113,6 +114,10 @@
 		to_chat(user, SPAN_WARNING("You are too far from that target."))
 		return
 
+	if(scanning)
+		to_chat(user, SPAN_WARNING("\The [src] is already busy!"))
+		return
+
 	//The actual options
 	if(href_list["mindscan"])
 		if(!target.mind)
@@ -120,6 +125,7 @@
 			return
 
 		user.visible_message("[user] begins scanning [target]'s mind.", SPAN_NOTICE("You begin scanning [target]'s mind."))
+		scanning = TRUE
 		if(do_after(user, 8 SECONDS, target))
 			var/datum/computer_file/data/mind_record/temp_record = target.create_mind_record(upload = FALSE) // upload it ourselves so that we can check success
 			var/datum/computer_network/network = get_local_network_at(get_turf(src))
@@ -129,6 +135,7 @@
 				to_chat(user, SPAN_WARNING("Unable to upload to local network. Please check that a network with a TransCore system is currently operational in the local area."))
 		else
 			to_chat(user, SPAN_WARNING("You must remain close to your target!"))
+		scanning = FALSE
 
 		return
 
@@ -139,6 +146,7 @@
 
 		var/mob/living/carbon/human/human_target = target
 		user.visible_message("[user] begins scanning [target]'s body.", SPAN_NOTICE("You begin scanning [target]'s body."))
+		scanning = TRUE
 		if(do_after(user, 8 SECONDS, target))
 			var/datum/computer_file/data/body_record/temp_record = human_target.create_body_record(upload = FALSE) // upload it ourselves so that we can check success
 			var/datum/computer_network/network = get_local_network_at(get_turf(src))
@@ -149,6 +157,7 @@
 			to_chat(user, SPAN_NOTICE("Body scanned!"))
 		else
 			to_chat(user, SPAN_WARNING("You must remain close to your target!"))
+		scanning = FALSE
 
 		return
 
@@ -162,9 +171,13 @@
 			return
 
 		var/choice = alert(user, "This will remove the target's mind from their body. The only way to put it back is via a SleeveMate. Continue?", "Confirmation", "Continue", "Cancel")
+		if(scanning)
+			to_chat(user, SPAN_WARNING("\The [src] is already busy!"))
+			return
 		if(choice == "Continue" && user.get_active_held_item() == src && user.Adjacent(target))
 
 			user.visible_message(SPAN_WARNING("[user] begins downloading [target]'s mind!"), SPAN_NOTICE("You begin downloading [target]'s mind!"))
+			scanning = TRUE
 			if(do_after(user, 35 SECONDS, target)) //This is powerful, yo.
 				if(!stored_mind_record && target.mind)
 					stored_mind_record = target.create_mind_record(upload = FALSE)
@@ -172,6 +185,7 @@
 					stored_mind_record.get_mind()?.current = null
 					update_icon()
 					to_chat(user, SPAN_NOTICE("Mind downloaded!"))
+			scanning = FALSE
 
 		return
 
@@ -184,13 +198,16 @@
 			return
 
 		user.visible_message(SPAN_WARNING("[user] begins uploading someone's mind into [target]!"), SPAN_NOTICE("You begin uploading a mind into [target]!"))
+		scanning = TRUE
 		if(do_after(user, 35 SECONDS, target))
 			var/datum/mind/stored_mind = stored_mind_record?.get_mind()
 			if(!stored_mind)
 				to_chat(user, SPAN_WARNING("\The [src] no longer has a stored mind."))
+				scanning = FALSE
 				return
 			stored_mind.active = TRUE
 			stored_mind.transfer_to(target)
 			QDEL_NULL(stored_mind_record)
 			to_chat(user, SPAN_NOTICE("Mind transferred into [target]!"))
 			update_icon()
+		scanning = FALSE
