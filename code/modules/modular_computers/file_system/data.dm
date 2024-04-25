@@ -4,8 +4,8 @@
 	var/stored_data = "" 			// Stored data in string format.
 	filetype = "DAT"
 	var/block_size = 2000			// Turns out, text is small.
-	var/do_not_edit = 0				// Whether the user will be reminded that the file probably shouldn't be edited.
-	var/read_only = 0				// Protects files that should never be edited by the user due to special properties.
+	var/do_not_edit = FALSE			// Whether the user will be reminded that the file probably shouldn't be edited.
+	var/read_only = FALSE			// Protects files that should never be edited by the user due to special properties.
 
 /datum/computer_file/data/PopulateClone(datum/computer_file/data/clone)
 	clone = ..()
@@ -27,7 +27,7 @@
 
 /datum/computer_file/data/bodyscan
 	filetype = "BSC"
-	read_only = 1
+	read_only = TRUE
 	papertype = /obj/item/paper/bodyscan
 
 /datum/computer_file/data/bodyscan/generate_file_data(var/mob/user)
