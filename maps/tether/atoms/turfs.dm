@@ -1,4 +1,4 @@
-/turf/exterior/water/indoors
+/turf/floor/natural/water/indoors
 	temperature = T20C
 	initial_gas = list(
 		/decl/material/gas/oxygen = MOLES_O2STANDARD,
@@ -28,13 +28,13 @@
 /turf/floor/virgo3b_indoors
 	initial_gas = null
 
-/turf/exterior/sif_growth
+/turf/floor/natural/sif_growth
 	name = "growth"
 	desc = "A natural moss that has adapted to the sheer cold climate."
 	icon = 'maps/tether/icons/sif_grass.dmi'
 	possible_states = 1
 
-/turf/exterior/sif_growth/thick
+/turf/floor/natural/sif_growth/thick
 	name = "thick growth"
 	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 
@@ -184,12 +184,12 @@
 // originally /turf/floor/outdoors/rocks.
 // todo: port polaris rock turf sprite
 // pr this upstream
-/turf/exterior/rocks
+/turf/floor/natural/rocks
 	name = "ground"
-	icon = 'icons/turf/exterior/barren.dmi'
+	icon = 'icons/turf/flooring/barren.dmi'
 	icon_edge_layer = EXT_EDGE_BARREN
 
-/turf/exterior/rocks/Initialize()
+/turf/floor/natural/rocks/Initialize()
 	if(prob(20))
 		LAZYADD(decals, image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]"))
 	. = ..()

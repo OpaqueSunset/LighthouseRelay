@@ -60,7 +60,6 @@
 
 /datum/ai/slime/do_process(time_elapsed)
 	. = ..()
-
 	if(attacked > 0)
 		attacked = clamp(attacked--, 0, 50)
 
@@ -143,7 +142,7 @@
 
 		if(!current_target)
 			if(prob(1))
-				for(var/mob/living/slime/frenemy in range(1, src))
+				for(var/mob/living/slime/frenemy in range(1, body))
 					if(frenemy != body && body.Adjacent(frenemy))
 						body.a_intent_change((frenemy.slime_type == slime.slime_type) ? I_HELP : I_HURT)
 						body.UnarmedAttack(frenemy)

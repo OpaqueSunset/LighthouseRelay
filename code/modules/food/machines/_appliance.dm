@@ -207,7 +207,7 @@
 	else if(istype(I, /obj/item/chems/glass))
 		to_chat(user, SPAN_WARNING("That would probably break [I]."))
 		return CANNOT_INSERT
-	else if(IS_CROWBAR(I) || IS_SCREWDRIVER(I) || istype(I, /obj/item/storage/part_replacer))
+	else if(IS_CROWBAR(I) || IS_SCREWDRIVER(I) || istype(I, /obj/item/part_replacer))
 		return CANNOT_INSERT
 	else if(!istype(check) && !istype(I, /obj/item/holder))
 		to_chat(user, SPAN_WARNING("That's not edible."))
@@ -366,7 +366,7 @@
 		var/decl/recipe/oldrecipe = recipe
 		var/list/cooked_items = list()
 		while(recipe)
-			cooked_items += recipe.make_food(C)
+			cooked_items += recipe.produce_result(C)
 			recipe = select_recipe(C, appliance = appliance)
 			if (!recipe || recipe != oldrecipe)
 				break
@@ -376,7 +376,7 @@
 			R.forceMove(C) //Move everything from the buffer back to the container
 			LAZYDISTINCTADD(R.cooked, cook_type)
 
-		. = TRUE //None of the rest of this function is relevant for recipe cooking
+		return TRUE //None of the rest of this function is relevant for recipe cooking
 
 	else if(CI.combine_target)
 		. = combination_cook(CI)
@@ -580,18 +580,16 @@
 	var/obj/item/chems/food/variable/mob/result = new /obj/item/chems/food/variable/mob(CI.container)
 	result.w_class = victim.mob_size
 	var/reagent_amount = victim.mob_size ** 2 * 3
-	if(isanimal(victim))
-		var/mob/living/simple_animal/SA = victim
-		result.kitchen_tag = initial(SA.name) // workaround for no kitchen_tag var
-		if (SA.meat_amount)
-			reagent_amount = SA.meat_amount*9 // at a rate of 9 protein per meat
+	var/decl/butchery_data/butchery_data = GET_DECL(victim.butchery_data)
+	if(butchery_data?.meat_amount)
+		reagent_amount = butchery_data.meat_amount*9 // at a rate of 9 protein per meat
 	var/digest_product_type = victim.get_digestion_product() // DOES NOT RETURN A DECL, RETURNS A PATH
 	var/list/data
 	var/meat_name = result.kitchen_tag || victim.name
 	if(ishuman(victim))
 		var/mob/living/carbon/human/CH = victim
 		meat_name = CH.species?.name || meat_name
-	if(ispath(digest_product_type, /decl/material/liquid/nutriment/protein))
+	if(ispath(digest_product_type, /decl/material/solid/organic/meat))
 		data = list("[meat_name] meat" = reagent_amount)
 	result.add_to_reagents(digest_product_type, reagent_amount, data)
 

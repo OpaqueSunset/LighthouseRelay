@@ -26,6 +26,7 @@
 	brightness_on = 4
 	light_wedge = LIGHT_WIDE
 	on = 0
+	replaced_in_loadout = FALSE
 
 	var/obj/machinery/camera/camera
 	var/tinted = null	//Set to non-null for toggleable tint helmets
@@ -97,7 +98,7 @@
 	to_chat(usr, "You toggle [src]'s visor tint.")
 	update_tint()
 
-/obj/item/clothing/head/helmet/space/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/clothing/head/helmet/space/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && tint && check_state_in_icon("[overlay.icon_state]_dark", overlay.icon))
 		overlay.icon_state = "[overlay.icon_state]_dark"
 	. = ..()
@@ -143,6 +144,7 @@
 		/decl/material/solid/organic/plastic = MATTER_AMOUNT_REINFORCEMENT
 	)
 	protects_against_weather = TRUE
+	replaced_in_loadout = FALSE
 
 /obj/item/clothing/suit/space/Initialize()
 	. = ..()

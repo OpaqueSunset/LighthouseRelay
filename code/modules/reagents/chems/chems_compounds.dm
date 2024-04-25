@@ -71,6 +71,12 @@
 	overdose = REAGENTS_OVERDOSE
 	exoplanet_rarity_gas = MAT_RARITY_EXOTIC
 
+/decl/material/liquid/enzyme/rennet
+	name = "rennet"
+	uid = "chem_rennet"
+	lore_text = "A complex mix of enzymes extracted from a ruminant's stomach. Important to cheesemaking, and as a chemical precursor."
+	taste_description = "sweet bile"
+
 /decl/material/liquid/frostoil
 	name = "chilly oil"
 	lore_text = "An oil harvested from a mutant form of chili peppers, it has a chilling effect on the body."
@@ -303,9 +309,9 @@
 	if(!H.should_have_organ(BP_HEART)) //We want the var for safety but we can do without the actual blood.
 		return
 	if(H.regenerate_blood(4 * removed))
-		H.immunity = max(H.immunity - 0.1, 0)
+		H.adjust_immunity(-0.1)
 		if(LAZYACCESS(H.chem_doses, type) > H.species.blood_volume/8) //half of blood was replaced with us, rip white bodies
-			H.immunity = max(H.immunity - 0.5, 0)
+			H.adjust_immunity(-0.5)
 
 /decl/material/solid/tobacco
 	name = "tobacco"

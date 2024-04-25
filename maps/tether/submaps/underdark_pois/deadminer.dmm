@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "b" = (
 /turf/mineral/ignore_cavegen/virgo3b,
@@ -10,7 +10,7 @@
 /area/mine/explored/underdark)
 "d" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "e" = (
 /obj/structure/closet/crate/mimic/guaranteed,
@@ -19,7 +19,7 @@
 /obj/item/clothing/head/helmet/space/void/mining,
 /obj/item/clothing/suit/space/void/mining,
 /obj/item/clothing/accessory/poncho/roles/cloak/mining,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

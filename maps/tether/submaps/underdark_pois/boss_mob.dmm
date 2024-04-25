@@ -3,35 +3,35 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "b" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "c" = (
 /obj/tether_away_spawner/underdark_boss,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "i" = (
 /obj/structure/outcrop/diamond,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "p" = (
 /obj/tether_away_spawner/underdark_normal,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "E" = (
 /obj/tether_away_spawner/underdark_hard,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "F" = (
 /obj/structure/outcrop/silver,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "T" = (
 /obj/structure/outcrop/uranium,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "X" = (
 /obj/structure/outcrop/gold,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

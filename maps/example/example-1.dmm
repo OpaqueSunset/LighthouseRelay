@@ -87,7 +87,7 @@
 /obj/item/stack/material/ingot/mapped/silver/ten,
 /obj/item/stack/material/puck/mapped/uranium/ten,
 /obj/item/stack/material/gemstone/mapped/diamond/ten,
-/obj/item/storage/belt/utility/full,
+/obj/item/belt/utility/full,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
 /turf/floor/tiled/steel_grid,
 /area/example/first)
@@ -633,7 +633,7 @@
 /area/example/first)
 "Eh" = (
 /obj/structure/table,
-/obj/item/storage/backpack/holding,
+/obj/item/backpack/holding,
 /turf/floor/tiled/steel_grid,
 /area/example/first)
 "Er" = (
@@ -779,13 +779,6 @@
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 26
-	},
-/turf/floor/tiled/steel_grid,
-/area/example/first)
-"Mo" = (
-/obj/abstract/landmark/latejoin,
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
 	},
 /turf/floor/tiled/steel_grid,
 /area/example/first)
@@ -2634,7 +2627,7 @@ WW
 Yp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2688,7 +2681,7 @@ WW
 Yp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2742,7 +2735,7 @@ WW
 Yp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2796,7 +2789,7 @@ WW
 Yp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2850,7 +2843,7 @@ WW
 Yp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2904,7 +2897,7 @@ gT
 Pp
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY
@@ -2958,7 +2951,7 @@ tA
 LM
 VY
 kw
-Mo
+kw
 WW
 Yp
 VY

@@ -495,7 +495,7 @@
 			if (!(get_dir(owner, M) & owner.dir))
 				continue
 			drill_head.durability -= 1
-			M.dismantle_wall()
+			M.dismantle_turf()
 		scoop_ore(target)
 		return
 
@@ -511,7 +511,7 @@
 		for(var/turf/asteroid in RANGE_TURFS(target, 1))
 			if (!(get_dir(owner, asteroid) & owner.dir))
 				continue
-			if(asteroid.can_be_dug() && asteroid.drop_diggable_resources())
+			if(asteroid.can_be_dug(drill_head.material?.hardness) && asteroid.drop_diggable_resources())
 				drill_head.durability -= 1
 				scoop_ore(asteroid)
 		return

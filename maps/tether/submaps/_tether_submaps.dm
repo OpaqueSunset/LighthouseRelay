@@ -43,7 +43,7 @@
 /datum/map_z_level/tether_lateload/underdark
 	name = "Underdark"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 	z = Z_LEVEL_UNDERDARK
 
 /datum/map_template/tether_lateload/tether_underdark/on_map_loaded(z)
@@ -62,7 +62,7 @@
 /datum/map_z_level/tether_lateload/tether_plains
 	name = "Away Mission - Plains"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 	z = Z_LEVEL_PLAINS
 
 /datum/map_template/tether_lateload/tether_plains/on_map_loaded(z)

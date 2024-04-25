@@ -10,7 +10,7 @@
 
 /decl/recipe/custardbun
 	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
-	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/liquid/water = 5, /decl/material/liquid/nutriment/protein/egg = 3)
+	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/liquid/water = 5, /decl/material/solid/organic/meat/egg = 3)
 	items = list(
 		/obj/item/chems/food/doughslice = 1
 	)
@@ -22,7 +22,7 @@
 	reagents = list(/decl/material/solid/spacespice = 2, /decl/material/liquid/water = 5)
 	items = list(
 		/obj/item/chems/food/doughslice = 3,
-		/obj/item/chems/food/meat/chicken = 1
+		/obj/item/chems/food/butchery/meat/chicken = 1
 	)
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/chickenmomo
@@ -51,7 +51,7 @@
 	appliance = APPLIANCE_MIX | APPLIANCE_SKILLET
 	fruit = list("chili" = 1, "lemon slice" = 1)
 	items = list(
-		/obj/item/chems/food/fish = 1,
+		/obj/item/chems/food/butchery/meat/fish = 1,
 		/obj/item/chems/food/tortilla = 1
 	)
 	result = /obj/item/chems/food/fish_taco
@@ -109,7 +109,7 @@
 		/obj/item/chems/food/slice/bread = 1,
 		/obj/item/chems/food/spreads/butter = 1
 	)
-	reagents = list(/decl/material/liquid/nutriment/protein/egg = 3, /decl/material/liquid/drink/juice/lemon = 5)
+	reagents = list(/decl/material/solid/organic/meat/egg = 3, /decl/material/liquid/drink/juice/lemon = 5)
 	result = /obj/item/chems/food/benedict
 
 /decl/recipe/bakedbeans

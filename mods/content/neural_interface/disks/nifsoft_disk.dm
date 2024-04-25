@@ -74,7 +74,7 @@
 	// also some way to jailbreak/reuse it to either copy files or let you add new ones
 	return TRUE
 
-/obj/item/disk/nifsoft/attack(atom/target, mob/user)
+/obj/item/disk/nifsoft/use_on_mob(atom/target, mob/user)
 	if(!user.Adjacent(target))
 		return ..()
 	if(can_install(user) && can_install_to(target, user))

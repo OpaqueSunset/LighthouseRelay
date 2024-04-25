@@ -9,7 +9,7 @@
 /turf/wall/shuttle,
 /area/tether_away/debrisfield/explored)
 "d" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "e" = (
 /obj/structure/shuttle/window,
@@ -21,7 +21,7 @@
 /area/tether_away/debrisfield/explored)
 "g" = (
 /obj/effect/decal/cleanable/generic,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "h" = (
 /obj/effect/decal/cleanable/dirt,
@@ -135,20 +135,20 @@
 /area/tether_away/debrisfield/explored)
 "D" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/storage/firstaid/adv,
+/obj/item/firstaid/adv,
 /turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "E" = (
 /obj/item/shard/shrapnel,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "F" = (
 /obj/item/stack/material/sheet/mapped/steel,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "G" = (
 /obj/item/stack/material/rods,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "H" = (
 /obj/effect/decal/cleanable/dirt,

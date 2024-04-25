@@ -3,36 +3,36 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "b" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "c" = (
 /obj/tether_away_spawner/underdark_normal,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "d" = (
 /obj/structure/closet/crate/mimic/dangerous,
 /obj/random/underdark,
 /obj/random/underdark,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "e" = (
 /turf/wall/r_lead,
 /area/mine/explored/underdark)
 "f" = (
 /obj/machinery/constructable_frame/computerframe,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "g" = (
 /obj/machinery/constructable_frame/machine_frame,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/machinery/singularity_generator,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "i" = (
 /obj/random/underdark/uncertain,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "j" = (
 /turf/mineral/ignore_cavegen/virgo3b,
@@ -43,22 +43,22 @@
 /obj/item/stack/material/lead{
 	amount = 10
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "l" = (
 /obj/machinery/port_gen/pacman/super,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "m" = (
 /obj/structure/closet/crate/mimic,
 /obj/item/stack/material/uranium{
 	amount = 5
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "n" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

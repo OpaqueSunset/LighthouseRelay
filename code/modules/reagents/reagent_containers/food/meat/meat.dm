@@ -1,21 +1,4 @@
 // Processed meats
-/obj/item/chems/food/rawcutlet
-	name = "raw cutlet"
-	desc = "A thin piece of raw meat."
-	icon = 'icons/obj/food_ingredients.dmi'
-	icon_state = "rawcutlet"
-	bitesize = 1
-	center_of_mass = @'{"x":17,"y":20}'
-	material = /decl/material/solid/organic/meat
-	backyard_grilling_product = /obj/item/chems/food/cutlet
-	backyard_grilling_announcement = "sizzles as it is grilled through."
-	drying_wetness = 30
-	dried_type = /obj/item/chems/food/jerky/cutlet
-
-/obj/item/chems/food/rawcutlet/populate_reagents()
-	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 1)
-
 /obj/item/chems/food/cutlet
 	name = "cutlet"
 	desc = "A tasty meat slice."
@@ -25,24 +8,26 @@
 	center_of_mass = @'{"x":17,"y":20}'
 	material = /decl/material/solid/organic/meat
 
+/obj/item/chems/food/cutlet/raw
+	desc = "A thin piece of raw meat."
+	icon_state = "rawcutlet"
+	cooked_food = FOOD_RAW
+	backyard_grilling_product = /obj/item/chems/food/cutlet
+	backyard_grilling_announcement = "sizzles as it is grilled through."
+	drying_wetness = 30
+	dried_type = /obj/item/chems/food/jerky/cutlet
+
+/obj/item/chems/food/cutlet/raw/populate_reagents()
+	. = ..()
+	add_to_reagents(/decl/material/solid/organic/meat, 1)
+
 /obj/item/chems/food/cutlet/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
-/obj/item/chems/food/rawmeatball
-	name = "raw meatball"
-	desc = "A raw meatball."
-	icon = 'icons/obj/food_ingredients.dmi'
-	icon_state = "rawmeatball"
-	bitesize = 2
-	center_of_mass = @'{"x":16,"y":15}'
-	material = /decl/material/solid/organic/meat
-	backyard_grilling_product = /obj/item/chems/food/meatball
-	backyard_grilling_announcement = "sizzles as it is grilled through."
-
-/obj/item/chems/food/rawmeatball/populate_reagents()
+/obj/item/chems/food/meatball/raw/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
 /obj/item/chems/food/meatball
 	name = "meatball"
@@ -55,7 +40,15 @@
 
 /obj/item/chems/food/meatball/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
+
+/obj/item/chems/food/meatball/raw
+	desc = "A raw meatball."
+	icon = 'icons/obj/food_ingredients.dmi'
+	icon_state = "rawmeatball"
+	cooked_food = FOOD_RAW
+	backyard_grilling_product = /obj/item/chems/food/meatball
+	backyard_grilling_announcement = "sizzles as it is grilled through."
 
 /obj/item/chems/food/plainsteak
 	name = "plain steak"
@@ -63,7 +56,7 @@
 	icon = 'icons/obj/food_ingredients.dmi'
 	icon_state = "steak"
 	slice_path = /obj/item/chems/food/cutlet
-	slices_num = 3
+	slice_num = 3
 	filling_color = "#7a3d11"
 	center_of_mass = @'{"x":16,"y":13}'
 	bitesize = 3
@@ -72,7 +65,7 @@
 
 /obj/item/chems/food/plainsteak/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
 /obj/item/chems/food/meatsteak
 	name = "meat steak"
@@ -86,7 +79,7 @@
 
 /obj/item/chems/food/meatsteak/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 	add_to_reagents(/decl/material/solid/sodiumchloride,     1)
 	add_to_reagents(/decl/material/solid/blackpepper,        1)
 
@@ -108,7 +101,7 @@
 
 /obj/item/chems/food/loadedsteak/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein,     2)
+	add_to_reagents(/decl/material/solid/organic/meat,     2)
 	add_to_reagents(/decl/material/liquid/nutriment/garlicsauce, 2)
 
 /obj/item/chems/food/tomatomeat
@@ -132,7 +125,7 @@
 
 /obj/item/chems/food/bearmeat/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein,     12)
+	add_to_reagents(/decl/material/solid/organic/meat,     12)
 	add_to_reagents(/decl/material/liquid/amphetamines,           5)
 
 // Shouldn't this be poisonous?
@@ -151,7 +144,7 @@
 
 /obj/item/chems/food/spider/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 9)
+	add_to_reagents(/decl/material/solid/organic/meat, 9)
 
 /obj/item/chems/food/spider/charred
 	name = "charred spider meat"
@@ -178,7 +171,7 @@
 
 /obj/item/chems/food/xenomeat/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/acid/polyacid,     6)
 
 /obj/item/chems/food/sausage
@@ -193,7 +186,7 @@
 
 /obj/item/chems/food/sausage/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 
 /obj/item/chems/food/fatsausage
 	name = "spiced sausage"
@@ -206,7 +199,7 @@
 
 /obj/item/chems/food/fatsausage/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 8)
+	add_to_reagents(/decl/material/solid/organic/meat, 8)
 
 /obj/item/chems/food/organ
 	name = "organ"
@@ -219,7 +212,7 @@
 
 /obj/item/chems/food/organ/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, rand(3,5))
+	add_to_reagents(/decl/material/solid/organic/meat, rand(3,5))
 	add_to_reagents(/decl/material/liquid/bromide,           rand(1,3)) //lolwat?
 
 /obj/item/chems/food/meatkabob
@@ -233,4 +226,4 @@
 
 /obj/item/chems/food/meatkabob/populate_reagents()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 8)
+	add_to_reagents(/decl/material/solid/organic/meat, 8)

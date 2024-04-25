@@ -1,7 +1,6 @@
 /mob/living/carbon/human
 	name = "unknown"
 	real_name = "unknown"
-	voice_name = "unknown"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "body_m_s"
 	mob_sort_value = 6
@@ -525,12 +524,7 @@
 
 	available_maneuvers = species.maneuvers.Copy()
 
-	meat_type =     species.meat_type
-	meat_amount =   species.meat_amount
-	skin_material = species.skin_material
-	skin_amount =   species.skin_amount
-	bone_material = species.bone_material
-	bone_amount =   species.bone_amount
+	butchery_data = species.butchery_data
 
 	full_prosthetic = null //code dum thinks ur robot always
 	default_walk_intent = null
@@ -967,7 +961,10 @@
 		if(!defer_language_update)
 			update_languages()
 
-/mob/living/carbon/human/proc/get_cultural_value(var/token)
+/mob/living/proc/get_cultural_value(var/token)
+	return null
+
+/mob/living/carbon/human/get_cultural_value(var/token)
 	. = LAZYACCESS(cultural_info, token)
 	if(!istype(., /decl/cultural_info))
 		. = global.using_map.default_cultural_info[token]
@@ -1039,11 +1036,6 @@
 /mob/living/carbon/human/can_change_intent()
 	return TRUE
 
-/mob/living/carbon/human/get_telecomms_race_info()
-	if(isMonkey())
-		return list("Monkey", FALSE)
-	return list("Sapient Race", TRUE)
-
 /mob/living/carbon/human/breathing_hole_covered()
 	. = ..()
 	if(!.)
@@ -1053,27 +1045,6 @@
 
 /mob/living/carbon/human/set_internals_to_best_available_tank(var/breathes_gas = /decl/material/gas/oxygen, var/list/poison_gas = list(/decl/material/gas/chlorine))
 	. = ..(species.breath_type, species.poison_types)
-
-//Set and force the mob to update according to the given DNA
-// Will reset the entire mob's state, regrow limbs/organ etc
-/mob/living/carbon/human/proc/apply_dna(var/datum/dna/new_dna)
-	if(!new_dna)
-		CRASH("mob/living/carbon/human/proc/apply_dna() : Got null dna")
-	src.dna = new_dna
-
-	//Set species and real name data
-	set_real_name(new_dna.real_name)
-	set_species(new_dna.species)
-	//Revive actually regen organs, reset their appearance and makes sure if the player is kicked out they get reinserted in
-	revive()
-
-	species.handle_pre_spawn(src)
-	apply_species_appearance()
-	apply_species_cultural_info()
-	apply_species_inventory_restrictions()
-	species.handle_post_spawn(src)
-
-	try_refresh_visible_overlays()
 
 //Sets the mob's real name and update all the proper fields
 /mob/living/carbon/human/proc/set_real_name(var/newname)

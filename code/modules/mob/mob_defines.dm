@@ -109,7 +109,7 @@
 	var/decl/move_intent/default_walk_intent
 	var/decl/move_intent/default_run_intent
 
-	var/obj/item/storage/active_storage
+	var/datum/storage/active_storage
 	var/obj/buckled = null//Living
 	var/in_throw_mode = 0
 
@@ -122,8 +122,6 @@
 	//see: setup.dm for list of mutations
 
 	var/radiation = 0.0//Carbon
-
-	var/voice_name = "unidentifiable voice"
 
 	var/faction = MOB_FACTION_NEUTRAL //Used for checking whether hostile simple animals will attack you, possibly more stuff later
 

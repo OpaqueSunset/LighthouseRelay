@@ -6,13 +6,13 @@
 /turf/open,
 /area/tether/surfacebase/outside/outside3)
 "ac" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "ad" = (
 /obj/machinery/camera/network/tether{
 	dir = 1
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "ae" = (
 /turf/wall,
@@ -281,7 +281,7 @@
 /obj/machinery/camera/network/security{
 	dir = 9
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "bh" = (
 /turf/wall/r_wall,
@@ -403,8 +403,8 @@
 /area/gateway/prep_room)
 "bC" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled/dark,
 /area/gateway/prep_room)
 "bD" = (
@@ -593,7 +593,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /obj/structure/table/steel,
 /obj/random/tech_supply,
 /turf/floor/tiled/techfloor/grid,
@@ -731,8 +731,8 @@
 /area/gateway/prep_room)
 "cn" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/adv,
-/obj/item/storage/firstaid/adv,
+/obj/item/firstaid/adv,
+/obj/item/firstaid/adv,
 /turf/floor/tiled/dark,
 /area/gateway/prep_room)
 "co" = (
@@ -1161,7 +1161,7 @@
 /area/tether/surfacebase/security/breakroom)
 "do" = (
 /obj/structure/table/glass,
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /turf/floor/carpet/blue,
 /area/tether/surfacebase/security/breakroom)
 "dp" = (
@@ -1985,7 +1985,7 @@
 	pixel_x = 25;
 	dir = 8
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled,
 /area/tether/surfacebase/security/common)
 "fp" = (
@@ -2094,7 +2094,7 @@
 /obj/machinery/camera/network/tether{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "fG" = (
 /obj/structure/grille,
@@ -4818,7 +4818,7 @@
 /obj/machinery/camera/network/tether{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "kl" = (
 /obj/machinery/vending/cola{
@@ -6114,7 +6114,7 @@
 "mI" = (
 /obj/structure/table,
 /obj/item/chems/food/mint,
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -6613,7 +6613,7 @@
 /area/crew_quarters/recreation_area)
 "nG" = (
 /obj/structure/flora/tree/sif,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "nH" = (
 /obj/structure/reagent_dispensers/watertank,
@@ -6756,9 +6756,9 @@
 /obj/structure/table{
 	name = "plastic table frame"
 	},
-/obj/item/minihoe,
+/obj/item/tool/hoe/mini,
 /obj/item/knife,
-/obj/item/minihoe,
+/obj/item/tool/hoe/mini,
 /obj/item/knife,
 /turf/floor/tiled,
 /area/hydroponics)
@@ -6997,8 +6997,8 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/tiled,
 /area/tether/surfacebase/north_stairs_three)
 "oB" = (
@@ -7132,7 +7132,7 @@
 /area/crew_quarters/kitchen)
 "oO" = (
 /obj/structure/flora/bush/grassybush,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "oP" = (
 /obj/machinery/light{
@@ -7150,7 +7150,7 @@
 /area/crew_quarters/bar)
 "oQ" = (
 /obj/machinery/camera/network/civilian,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "oR" = (
 /obj/structure/grille,
@@ -7325,14 +7325,14 @@
 	dir = 4;
 	pixel_x = -21
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "pk" = (
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "pl" = (
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "pm" = (
 /obj/effect/floor_decal/spline/plain{
@@ -7504,7 +7504,7 @@
 /obj/random/maintenance/medical,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/clean,
-/obj/item/storage/briefcase/inflatable,
+/obj/item/briefcase/inflatable,
 /turf/floor/plating,
 /area/tether/surfacebase/atrium_three)
 "pA" = (
@@ -7588,7 +7588,7 @@
 "pH" = (
 /obj/structure/flora/bush/lavendergrass,
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "pI" = (
 /obj/structure/disposalpipe/segment,
@@ -7988,13 +7988,13 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "qq" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "qr" = (
 /obj/structure/bed/chair{
@@ -8423,17 +8423,17 @@
 "qZ" = (
 /obj/structure/flora/bush/sparsegrass,
 /obj/structure/flora/bush/ywflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "ra" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "rb" = (
 /obj/structure/flora/bush/pointybush,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "rc" = (
 /obj/structure/table/glass,
@@ -9615,7 +9615,7 @@
 /area/crew_quarters/bar)
 "tl" = (
 /obj/structure/table/marble,
-/obj/item/storage/box/wings,
+/obj/item/box/wings,
 /obj/machinery/door/blast/shutters{
 	dir = 8;
 	id_tag = "bar";
@@ -9989,7 +9989,7 @@
 "tW" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/table/steel,
-/obj/item/storage/bag/circuits/basic,
+/obj/item/bag/circuits/basic,
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -21
@@ -11310,7 +11310,7 @@
 	id_tag = "bar";
 	name = "Bar Shutters"
 	},
-/obj/item/storage/box/wings,
+/obj/item/box/wings,
 /obj/machinery/door/firedoor/glass,
 /turf/floor/wood,
 /area/crew_quarters/bar)
@@ -11770,7 +11770,7 @@
 /obj/item/chems/spray/extinguisher,
 /obj/item/clothing/head/hardhat/red,
 /obj/item/clothing/glasses/meson,
-/obj/item/storage/briefcase/inflatable,
+/obj/item/briefcase/inflatable,
 /obj/item/t_scanner,
 /obj/random/maintenance/medical,
 /turf/floor/plating,
@@ -12540,7 +12540,7 @@
 /area/bridge/secondary)
 "yy" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /turf/floor/tiled/dark,
 /area/bridge/secondary)
 "yz" = (
@@ -12571,8 +12571,8 @@
 /area/bridge/secondary)
 "yB" = (
 /obj/structure/table,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/clean,
 /turf/floor/plating,
@@ -12900,7 +12900,7 @@
 /obj/machinery/camera/network/mining{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "zb" = (
 /turf/floor/tiled,
@@ -13163,16 +13163,16 @@
 /area/rnd/reception_desk)
 "zB" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
 	},
 /obj/item/clothing/glasses/welding,
-/obj/item/storage/belt/utility,
+/obj/item/belt/utility,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -13506,7 +13506,7 @@
 /area/rnd/hallway)
 "Ak" = (
 /obj/structure/catwalk,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "Al" = (
 /obj/effect/floor_decal/borderfloor,
@@ -14218,7 +14218,7 @@
 "Bp" = (
 /obj/machinery/light,
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/item/radio,
 /obj/item/radio,
 /obj/machinery/alarm{
@@ -14229,7 +14229,7 @@
 /area/bridge/secondary)
 "Bq" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/secure/briefcase,
+/obj/item/secure_storage/briefcase,
 /turf/floor/tiled/dark,
 /area/bridge/secondary)
 "Br" = (
@@ -14241,8 +14241,8 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/ids,
-/obj/item/storage/box/PDAs{
+/obj/item/box/ids,
+/obj/item/box/PDAs{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -14787,14 +14787,14 @@
 /area/tether/surfacebase/lounge)
 "Ci" = (
 /obj/machinery/camera/network/mining,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "Cj" = (
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/structure/table,
 /obj/item/scanner/autopsy,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/freezer,
+/obj/item/box/bodybags,
+/obj/item/box/freezer,
 /turf/floor/tiled{
 	icon_state = "techmaint"
 	},
@@ -15403,7 +15403,7 @@
 /obj/random/tech_supply,
 /obj/structure/table/steel,
 /obj/random/maintenance/engineering,
-/obj/item/storage/briefcase/inflatable,
+/obj/item/briefcase/inflatable,
 /turf/floor/plating,
 /area/maintenance/substation/surface_civ)
 "Dm" = (
@@ -15639,15 +15639,15 @@
 	},
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/glasses/welding,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /obj/item/multitool{
 	pixel_x = 3
 	},
 /obj/item/crowbar,
 /obj/item/crowbar,
-/obj/item/storage/belt/utility,
-/obj/item/storage/toolbox/electrical{
+/obj/item/belt/utility,
+/obj/item/toolbox/electrical{
 	pixel_x = 1;
 	pixel_y = 6
 	},
@@ -15688,9 +15688,9 @@
 	pixel_x = 5;
 	pixel_y = -5
 	},
-/obj/item/storage/firstaid/empty,
-/obj/item/storage/firstaid/empty,
-/obj/item/storage/firstaid/empty,
+/obj/item/firstaid/empty,
+/obj/item/firstaid/empty,
+/obj/item/firstaid/empty,
 /obj/item/scanner/health,
 /obj/item/scanner/health,
 /obj/item/scanner/health,
@@ -17947,7 +17947,7 @@
 "Hx" = (
 /obj/item/clothing/under/color/grey,
 /obj/item/clothing/mask/gas/budget,
-/obj/item/storage/belt/utility/full,
+/obj/item/belt/utility/full,
 /obj/effect/decal/cleanable/dirt,
 /turf/floor/plating,
 /area/tether/surfacebase/shuttle_pad)
@@ -18074,8 +18074,8 @@
 /area/assembly/robotics)
 "HM" = (
 /obj/structure/table,
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/masks{
+/obj/item/box/gloves,
+/obj/item/box/masks{
 	pixel_y = 5
 	},
 /turf/floor/tiled/white,
@@ -18782,19 +18782,19 @@
 /area/shuttle/tether/surface)
 "Jk" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = -6
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 4;
 	pixel_y = -6
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 4;
 	pixel_y = 4
 	},
@@ -19063,7 +19063,7 @@
 "JW" = (
 /obj/structure/catwalk,
 /obj/machinery/shield_diffuser,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "JX" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
@@ -19980,7 +19980,7 @@
 /area/bridge/secondary)
 "LM" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/item/paper{
 	desc = "";
 	info = "Stop installing NIFs in here you clods! Unless it's on a synth. Otherwise, STOP DOING IT! You're killing people! -Management";
@@ -20099,7 +20099,7 @@
 /area/tether/surfacebase/public_garden_three)
 "Mu" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "Mv" = (
 /obj/machinery/firealarm{
@@ -20113,7 +20113,7 @@
 /obj/machinery/camera/network/mining{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "MB" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -20154,7 +20154,7 @@
 "MK" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/mining,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "MO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -20172,7 +20172,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hydroponics/cafegarden)
 "MV" = (
 /obj/structure/disposalpipe/segment{
@@ -20612,13 +20612,13 @@
 /area/tether/surfacebase/atrium_three)
 "OE" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/ammo/beanbags,
+/obj/item/box/ammo/beanbags,
 /obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/item/paper{
 	info = "This permit signifies that the Bartender is permitted to posess this firearm in the bar, and ONLY the bar. Failure to adhere to this permit will result in confiscation of the weapon and possibly arrest.";
 	name = "Shotgun permit"
 	},
-/obj/item/clothing/accessory/permit/gun/bar,
+/obj/item/clothing/permit/gun/bar,
 /turf/floor/wood,
 /area/tether/surfacebase/bar_backroom)
 "OJ" = (
@@ -20750,7 +20750,7 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "Px" = (
 /obj/structure/grille,
@@ -20767,7 +20767,7 @@
 "Pz" = (
 /obj/structure/catwalk,
 /obj/machinery/shield_diffuser,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "PA" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -20889,7 +20889,7 @@
 /area/tether/surfacebase/atrium_three)
 "Qd" = (
 /obj/structure/table/woodentable,
-/obj/item/minihoe,
+/obj/item/tool/hoe/mini,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/item/scanner/plant,
 /obj/item/scanner/plant,
@@ -21111,7 +21111,7 @@
 /turf/floor/wood,
 /area/crew_quarters/bar)
 "Ra" = (
-/obj/item/storage/secure/safe,
+/obj/item/secure_storage/safe,
 /turf/wall,
 /area/tether/surfacebase/bar_backroom)
 "Rb" = (
@@ -21263,7 +21263,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/shield_diffuser,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "Rz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -21853,8 +21853,8 @@
 /area/tether/surfacebase/public_garden_three)
 "UI" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/pill_bottle/dice,
-/obj/item/storage/pill_bottle/dice_nerd,
+/obj/item/pill_bottle/dice,
+/obj/item/pill_bottle/dice_nerd,
 /turf/floor/wood,
 /area/crew_quarters/bar)
 "UJ" = (
@@ -21867,7 +21867,7 @@
 "UL" = (
 /obj/machinery/light,
 /obj/structure/table/bench/wooden,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "UN" = (
 /obj/machinery/light{
@@ -21990,14 +21990,14 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "VF" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/table/bench/wooden,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "VG" = (
 /obj/structure/grille,
@@ -22041,7 +22041,7 @@
 	pixel_x = -21
 	},
 /obj/machinery/portable_atmospherics/hydroponics/soil,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "VU" = (
 /obj/structure/cable{
@@ -22101,7 +22101,7 @@
 /area/tether/surfacebase/atrium_three)
 "Wm" = (
 /obj/machinery/camera/network/tether,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/outside3)
 "Wn" = (
 /obj/structure/table/woodentable,
@@ -22123,7 +22123,7 @@
 /area/tether/surfacebase/lounge)
 "Ws" = (
 /obj/structure/table/bench/wooden,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "Ww" = (
 /obj/structure/table/bench/wooden,
@@ -22189,7 +22189,7 @@
 /area/tether/surfacebase/reading_room)
 "WR" = (
 /obj/structure/catwalk,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "WS" = (
 /obj/machinery/door/firedoor,
@@ -22235,7 +22235,7 @@
 "Xh" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/tether,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "Xk" = (
 /obj/structure/railing/mapped,
@@ -22417,7 +22417,7 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "Ym" = (
 /obj/machinery/door/airlock/glass{
@@ -22428,7 +22428,7 @@
 /area/crew_quarters/bar)
 "Yq" = (
 /obj/structure/closet/toolcloset,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /obj/item/stack/material/sheet/mapped/steel/fifty,
 /obj/item/stack/material/pane/mapped/glass/fifty,
 /obj/item/stack/cable_coil/random,
@@ -22463,7 +22463,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "YA" = (
 /obj/structure/grille,
@@ -22627,7 +22627,7 @@
 /obj/item/glass_jar,
 /obj/item/eftpos/departmental/service,
 /obj/item/eftpos/departmental/service,
-/obj/item/clothing/accessory/toggleable/hawaii/random,
+/obj/item/clothing/shirt/hawaii/random,
 /turf/floor/wood,
 /area/tether/surfacebase/bar_backroom)
 "Zg" = (
@@ -22678,7 +22678,7 @@
 /turf/floor/plating,
 /area/tether/surfacebase/public_garden_three)
 "Zq" = (
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/tether/surfacebase/public_garden_three)
 "Zx" = (
 /obj/structure/disposalpipe/segment{

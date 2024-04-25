@@ -10,7 +10,7 @@
 
 /obj/item/chems/food/meatbun/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3)
+	add_to_reagents(/decl/material/solid/organic/meat, 3)
 
 /obj/item/chems/food/custardbun
 	name = "custard bun"
@@ -24,7 +24,7 @@
 
 /obj/item/chems/food/custardbun/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2)
+	add_to_reagents(/decl/material/solid/organic/meat, 2)
 
 /obj/item/chems/food/chickenmomo
 	name = "chicken momo"
@@ -40,7 +40,7 @@
 
 /obj/item/chems/food/chickenmomo/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 
 /obj/item/chems/food/veggiemomo
 	name = "veggie momo"

@@ -9,7 +9,7 @@
 /turf/template_noop,
 /area/space)
 "ad" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "ae" = (
 /turf/floor/tiled/steel_dirty/virgo3b,
@@ -26,15 +26,15 @@
 /area/mine/explored/underdark)
 "ah" = (
 /obj/machinery/floodlight,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "aj" = (
 /obj/structure/crystal,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "ak" = (
 /obj/machinery/light/flicker,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "al" = (
 /obj/machinery/mech_recharger,
@@ -42,7 +42,7 @@
 /area/mine/explored/underdark)
 "am" = (
 /obj/machinery/gravity_generator,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "an" = (
 /obj/machinery/implantchair,
@@ -62,7 +62,7 @@
 /area/mine/explored/underdark)
 "at" = (
 /obj/tether_away_spawner/underdark_hard,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "au" = (
 /obj/tether_away_spawner/underdark_normal,
@@ -90,12 +90,12 @@
 /area/mine/explored/underdark)
 "aA" = (
 /obj/structure/barricade,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "aB" = (
 /obj/structure/barricade,
 /obj/structure/boulder,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "aC" = (
 /obj/structure/table/steel,
@@ -201,7 +201,7 @@
 /area/mine/explored/underdark)
 "aX" = (
 /obj/machinery/light/flamp/flicker,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "aY" = (
 /obj/effect/decal/cleanable/cobweb,
@@ -213,21 +213,21 @@
 /area/mine/explored/underdark)
 "bc" = (
 /obj/item/remains/deer,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "bd" = (
 /obj/effect/decal/cleanable/blood/drip,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "be" = (
 /obj/item/remains/deer,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "bf" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "bg" = (
 /obj/machinery/door/airlock/uranium,
@@ -303,7 +303,7 @@
 /area/mine/explored/underdark)
 "bu" = (
 /obj/effect/decal/cleanable/spiderling_remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "bv" = (
 /obj/item/assembly/prox_sensor,
@@ -353,7 +353,7 @@
 /area/mine/explored/underdark)
 "bE" = (
 /obj/item/geiger,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "dN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -362,7 +362,7 @@
 /area/mine/explored/underdark)
 "kn" = (
 /obj/tether_away_spawner/underdark_normal,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "ul" = (
 /obj/tether_away_spawner/underdark_hard,

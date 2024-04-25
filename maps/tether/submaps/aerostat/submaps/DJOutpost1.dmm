@@ -141,11 +141,11 @@
 /obj/structure/bookcase,
 /obj/item/book/manual/excavation,
 /obj/item/book/manual/engineering_construction,
-/obj/item/storage/bible,
+/obj/item/bible,
 /turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "y" = (
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "z" = (
@@ -228,7 +228,7 @@
 "L" = (
 /obj/structure/rack,
 /obj/item/clothing/shoes/winterboots,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/random_multi/single_item/sfr_headset,
 /turf/floor/wood,
 /area/submap/virgo2/DJOutpost1)

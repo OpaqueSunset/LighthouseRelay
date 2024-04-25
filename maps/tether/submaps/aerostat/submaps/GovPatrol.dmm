@@ -7,18 +7,18 @@
 /area/submap/virgo2/GovPatrol)
 "c" = (
 /obj/tether_away_spawner/aerostat_surface,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "d" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "e" = (
 /obj/item/radio/off,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "f" = (
-/obj/item/storage/box/flares,
-/turf/exterior/barren,
+/obj/item/box/flares,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "g" = (
 /obj/item/ammo_casing,
@@ -26,25 +26,25 @@
 /area/submap/virgo2/GovPatrol)
 "h" = (
 /obj/item/ammo_casing,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "i" = (
 /obj/item/clothing/under/solgov/utility/sifguard,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "k" = (
 /obj/item/gun/projectile/shotgun/pump/rifle/lever,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "m" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 "v" = (
 /obj/random/multiple/voidsuit,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/GovPatrol)
 
 (1,1,1) = {"

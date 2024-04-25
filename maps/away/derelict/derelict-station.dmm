@@ -600,7 +600,7 @@
 /area/derelict/ship)
 "bW" = (
 /obj/structure/rack,
-/obj/item/storage/toolbox/syndicate,
+/obj/item/toolbox/syndicate,
 /obj/random/maintenance,
 /turf/floor/tiled,
 /area/derelict/ship)
@@ -1868,10 +1868,6 @@
 /obj/random/tool,
 /turf/floor/airless,
 /area/constructionsite/hallway/fore)
-"gp" = (
-/obj/machinery/porta_turret_construct,
-/turf/floor/tiled/dark/airless,
-/area/constructionsite/ai)
 "gq" = (
 /obj/effect/decal/cleanable/blood/oil,
 /turf/floor/tiled/dark/airless,
@@ -2338,7 +2334,7 @@
 /turf/floor/airless,
 /area/constructionsite/medical)
 "il" = (
-/obj/item/storage/box/freezer,
+/obj/item/box/freezer,
 /turf/floor/airless,
 /area/constructionsite/medical)
 "im" = (
@@ -3371,7 +3367,7 @@
 /turf/space,
 /area/AIsattele)
 "lY" = (
-/obj/item/storage/toolbox/electrical{
+/obj/item/toolbox/electrical{
 	pixel_x = 1;
 	pixel_y = -1
 	},
@@ -22522,7 +22518,7 @@ aR
 aR
 gg
 gg
-gp
+gh
 gi
 gh
 gi
@@ -23734,11 +23730,11 @@ aR
 aR
 gg
 gg
-gp
+gh
 gi
 gh
 gi
-gp
+gh
 gg
 gg
 aR

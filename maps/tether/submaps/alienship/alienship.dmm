@@ -155,12 +155,12 @@
 /obj/item/screwdriver,
 /obj/item/wirecutters,
 /obj/item/weldingtool,
-/obj/item/storage/firstaid,
+/obj/item/firstaid,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aI" = (
 /obj/structure/table/alien,
-/obj/item/storage/belt/utility/alien/full,
+/obj/item/belt/utility/alien/full,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aJ" = (
@@ -182,7 +182,7 @@
 /obj/item/multitool,
 /obj/item/screwdriver,
 /obj/item/weldingtool,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/item/chems/food/liquidfood,
 /obj/item/chems/food/liquidfood,
 /turf/floor/shuttle/alien,
@@ -321,7 +321,7 @@
 /area/tether_away/alienship)
 "bZ" = (
 /obj/structure/table/alien,
-/obj/item/clothing/accessory/medal/dungeon/alien_ufo,
+/obj/item/clothing/medal/dungeon/alien_ufo,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "ca" = (
@@ -442,7 +442,7 @@
 /area/tether_away/alienship)
 "cy" = (
 /obj/structure/table/alien,
-/obj/item/storage/belt/utility/alien/full,
+/obj/item/belt/utility/alien/full,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "cz" = (
@@ -548,7 +548,7 @@
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "nr" = (
-/obj/item/storage/firstaid,
+/obj/item/firstaid,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "us" = (

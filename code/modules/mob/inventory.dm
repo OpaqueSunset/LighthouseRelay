@@ -47,9 +47,24 @@
 		return TRUE
 
 	if(slot == slot_tie_str)
-		var/obj/item/clothing/under/uniform = get_equipped_item(slot_w_uniform_str)
-		if(istype(uniform))
-			uniform.try_attach_accessory(W, src)
+
+		var/list/check_slots = get_inventory_slots()
+		if(islist(check_slots))
+
+			check_slots = check_slots.Copy()
+			check_slots -= global.all_hand_slots
+
+			var/try_equip_slot = W.get_fallback_slot()
+			if(try_equip_slot)
+				check_slots -= try_equip_slot
+				check_slots.Insert(1, try_equip_slot)
+		
+			for(var/slot_string in check_slots)
+				var/obj/item/clothing/clothes = get_equipped_item(slot_string)
+				if(istype(clothes) && clothes.can_attach_accessory(W, src))
+					clothes.attach_accessory(src, W)
+					break
+
 		return TRUE
 
 	unequip(W)
@@ -88,16 +103,16 @@
 
 /mob/proc/equip_to_storage(obj/item/newitem)
 	// Try put it in their backpack
-	var/obj/item/storage/backpack = get_equipped_item(slot_back_str)
-	if(istype(backpack) && backpack.can_be_inserted(newitem, null, 1))
-		newitem.forceMove(backpack)
-		return backpack
+	var/obj/item/back = get_equipped_item(slot_back_str) 
+	if(back?.storage?.can_be_inserted(newitem, null, 1))
+		back.storage.handle_item_insertion(src, newitem)
+		return back
 
 	// Try to place it in any item that can store stuff, on the mob.
-	for(var/obj/item/storage/S in src.contents)
-		if(S.can_be_inserted(newitem, null, 1))
-			newitem.forceMove(S)
-			return S
+	for(var/obj/item/thing in contents)
+		if(thing?.storage?.can_be_inserted(newitem, null, 1))
+			thing.storage.handle_item_insertion(src, newitem)
+			return thing
 
 /mob/proc/equip_to_storage_or_drop(obj/item/newitem)
 	var/stored = equip_to_storage(newitem)
@@ -229,6 +244,12 @@
 	if(!slot && !istype(I.loc, /obj/item/rig_module))
 		return 1 //already unequipped, so success
 	return I.mob_can_unequip(src, slot)
+
+/obj/item/proc/get_equipped_slot()
+	if(!ismob(loc))
+		return null
+	var/mob/mob = loc
+	return mob.get_equipped_slot_for_item(src)
 
 /mob/proc/get_equipped_slot_for_item(obj/item/I)
 	var/list/slots = get_inventory_slots()

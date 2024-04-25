@@ -112,15 +112,9 @@
 	dir = 2;
 	id_tag = "casino_bridge";
 	name = "Casino Bridge Blast Doors";
-
+	
 	},
 /turf/floor/plating,
-/area/casino/casino_bridge)
-"ao" = (
-/turf/space,
-/turf/wall/shuttle/dark{
-	unique_merge_identifier = "casino_bridge"
-	},
 /area/casino/casino_bridge)
 "ap" = (
 /turf/floor/tiled,
@@ -144,7 +138,7 @@
 	dir = 4;
 	id_tag = "casino_bridge";
 	name = "Casino Bridge Blast Doors";
-
+	
 	},
 /turf/floor/plating,
 /area/casino/casino_bridge)
@@ -1148,11 +1142,6 @@
 	unique_merge_identifier = "casino_cutter"
 	},
 /area/casino/casino_cutter)
-"dp" = (
-/turf/wall/shuttle{
-	unique_merge_identifier = "casino_cutter"
-	},
-/area/casino/casino_cutter)
 "dq" = (
 /obj/structure/fuel_port/hydrogen,
 /turf/wall/shuttle{
@@ -1210,9 +1199,9 @@
 /area/casino/casino_security)
 "dB" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
-/obj/item/storage/box/ammo/shotgunammo,
+/obj/item/box/ammo/shotgunammo,
+/obj/item/box/ammo/shotgunammo,
+/obj/item/box/ammo/shotgunammo,
 /turf/floor/tiled,
 /area/casino/casino_security)
 "dC" = (
@@ -1307,19 +1296,19 @@
 /area/casino/casino_storage)
 "dQ" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
 /obj/random/tool,
@@ -1331,7 +1320,7 @@
 /area/casino/casino_storage)
 "dS" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /obj/item/stack/cable_coil,
 /turf/floor/plating,
 /area/casino/casino_storage)
@@ -1351,7 +1340,7 @@
 /turf/floor/shuttle/yellow,
 /area/casino/casino_cutter)
 "dX" = (
-/obj/item/storage/backpack/dufflebag,
+/obj/item/backpack/dufflebag,
 /obj/random/cash,
 /obj/random/cash,
 /obj/random/cash,
@@ -1366,7 +1355,7 @@
 /obj/structure/bed/chair/comfy/captain{
 	dir = 1
 	},
-/obj/item/storage/bag/cash,
+/obj/item/bag/cash,
 /turf/floor/shuttle/yellow,
 /area/casino/casino_cutter)
 "dZ" = (
@@ -1475,11 +1464,6 @@
 	},
 /turf/floor/shuttle/blue,
 /area/casino/casino_cutter)
-"ep" = (
-/turf/wall/shuttle{
-	unique_merge_identifier = "casino_cutter"
-	},
-/area/casino/casino_cutter)
 "eq" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -1583,7 +1567,7 @@
 "eE" = (
 /obj/random/coin,
 /obj/random/coin,
-/obj/item/storage/bag/cash,
+/obj/item/bag/cash,
 /mob/living/simple_animal/hostile/carp,
 /turf/floor/plating,
 /area/casino/casino_security)
@@ -1668,7 +1652,7 @@
 /area/casino/casino_storage)
 "eR" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/electrical,
 /turf/floor/plating,
 /area/casino/casino_storage)
 "eS" = (
@@ -1815,7 +1799,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
-
+	
 	},
 /turf/floor/tiled,
 /area/casino/casino_security)
@@ -1906,7 +1890,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
-
+	
 	},
 /turf/floor/tiled,
 /area/casino/casino_security)
@@ -2149,7 +2133,7 @@
 	dir = 4;
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Doors";
-
+	
 	},
 /turf/floor/plating,
 /area/casino/casino_security)
@@ -2275,8 +2259,8 @@
 /area/casino/casino_mainfloor)
 "gv" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/fancy/cigar,
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar,
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
 /turf/floor/carpet,
@@ -2486,7 +2470,7 @@
 /turf/floor/tiled,
 /area/casino/casino_mainfloor)
 "hi" = (
-/obj/item/storage/secure/briefcase/money,
+/obj/item/secure_storage/briefcase/money,
 /obj/random/cash,
 /obj/random/cash,
 /obj/random/cash,
@@ -2835,9 +2819,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/item/storage/box/fancy/egg_box,
-/obj/item/storage/box/fancy/egg_box,
-/obj/item/storage/box/fancy/egg_box,
+/obj/item/box/fancy/egg_box,
+/obj/item/box/fancy/egg_box,
+/obj/item/box/fancy/egg_box,
 /obj/item/chems/condiment/flour,
 /obj/item/chems/condiment/sugar,
 /turf/floor/tiled,
@@ -2964,10 +2948,10 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/casino/casino_kitchen)
 "iD" = (
@@ -3395,7 +3379,7 @@
 "jH" = (
 /obj/structure/table/marble,
 /obj/item/ashtray,
-/obj/item/flame/lighter/zippo/random,
+/obj/item/flame/fuelled/lighter/zippo/random,
 /turf/floor/tiled,
 /area/casino/casino_mainfloor)
 "jI" = (
@@ -3451,11 +3435,11 @@
 /area/casino/casino_crew_atmos)
 "jQ" = (
 /obj/structure/table/marble,
-/obj/item/storage/box/glass_extras/sticks,
-/obj/item/storage/box/glass_extras/straws,
-/obj/item/storage/box/glass_extras,
-/obj/item/storage/box/glasses/pint,
-/obj/item/storage/box/glasses/wine,
+/obj/item/box/glass_extras/sticks,
+/obj/item/box/glass_extras/straws,
+/obj/item/box/glass_extras,
+/obj/item/box/glasses/pint,
+/obj/item/box/glasses/wine,
 /obj/item/radio,
 /turf/floor/tiled,
 /area/casino/casino_kitchen)
@@ -3629,7 +3613,7 @@
 /area/casino/casino_mainfloor)
 "kp" = (
 /obj/structure/table/marble,
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
 /turf/floor/tiled,
@@ -4145,7 +4129,7 @@
 /turf/floor/wood,
 /area/casino/casino_private_vip)
 "lJ" = (
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 30
 	},
 /turf/floor/wood,
@@ -4158,7 +4142,7 @@
 /turf/floor/wood,
 /area/casino/casino_private1)
 "lM" = (
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 30
 	},
 /turf/floor/wood,
@@ -4171,7 +4155,7 @@
 /turf/floor/wood,
 /area/casino/casino_private2)
 "lP" = (
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = 25
 	},
 /turf/floor/wood,
@@ -4238,7 +4222,7 @@
 /area/casino/casino_private_vip)
 "lZ" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/box/fancy/cigar{
+/obj/item/box/fancy/cigar{
 	pixel_y = 5
 	},
 /turf/floor/wood,
@@ -4276,7 +4260,7 @@
 /area/casino/casino_private1)
 "mf" = (
 /obj/structure/bed/chair/comfy/red,
-/obj/item/flame/lighter/zippo/random,
+/obj/item/flame/fuelled/lighter/zippo/random,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/floor/wood,
 /area/casino/casino_private2)
@@ -4303,7 +4287,7 @@
 /obj/item/chems/drinks/bottle/agedwhiskey,
 /obj/item/clothing/mask/smokable/cigarette/cigar/havana,
 /obj/item/clothing/mask/smokable/cigarette/cigar/havana,
-/obj/item/flame/lighter/zippo/random,
+/obj/item/flame/fuelled/lighter/zippo/random,
 /turf/floor/carpet,
 /area/casino/casino_mainfloor)
 "mk" = (
@@ -4358,7 +4342,7 @@
 /obj/structure/bed/chair/comfy/red{
 	dir = 8
 	},
-/obj/item/storage/bag/cash,
+/obj/item/bag/cash,
 /turf/floor/wood,
 /area/casino/casino_private_vip)
 "mt" = (
@@ -4526,12 +4510,6 @@
 	icon_state = "1-8"
 	},
 /turf/floor/plating,
-/area/casino/casino_bow)
-"mT" = (
-/turf/space,
-/turf/wall/shuttle/dark{
-	unique_merge_identifier = "casino_bridge"
-	},
 /area/casino/casino_bow)
 "mU" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -4705,11 +4683,6 @@
 	dir = 4
 	},
 /turf/floor/plating,
-/area/casino/casino_bow)
-"nr" = (
-/turf/wall/shuttle/dark{
-	unique_merge_identifier = "casino_bridge"
-	},
 /area/casino/casino_bow)
 "ns" = (
 /turf/floor/reinforced/airless,
@@ -9889,7 +9862,7 @@ aa
 aa
 aa
 aa
-ao
+al
 am
 at
 at
@@ -10657,7 +10630,7 @@ kC
 nf
 nf
 nf
-nr
+np
 ns
 aa
 aa
@@ -11065,7 +11038,7 @@ kC
 nf
 nf
 nf
-nr
+np
 ns
 aa
 aa
@@ -11473,7 +11446,7 @@ kC
 nf
 nf
 nf
-nr
+np
 ns
 aa
 aa
@@ -11841,10 +11814,10 @@ bP
 ci
 cD
 cV
-dp
+do
 dG
 Ub
-dp
+do
 eG
 eX
 bq
@@ -11943,7 +11916,7 @@ bQ
 cj
 cD
 cV
-dp
+do
 dH
 dW
 eo
@@ -12045,10 +12018,10 @@ bR
 ck
 cD
 cV
-dp
+do
 dI
 dX
-dp
+do
 eG
 eZ
 br
@@ -12147,10 +12120,10 @@ bS
 cl
 cE
 cW
-dp
+do
 Tb
 dY
-dp
+do
 eG
 cF
 br
@@ -12249,10 +12222,10 @@ bq
 bq
 bq
 cU
-dp
+do
 dI
 dZ
-dp
+do
 eG
 cF
 br
@@ -12351,10 +12324,10 @@ bT
 cm
 cF
 cV
-dp
+do
 dJ
 ea
-dp
+do
 eG
 fa
 br
@@ -12456,7 +12429,7 @@ cV
 dq
 dK
 dK
-ep
+do
 eG
 fa
 br
@@ -12489,7 +12462,7 @@ mE
 kC
 mH
 kC
-mT
+mM
 aa
 aa
 aa
@@ -12590,7 +12563,7 @@ mj
 kl
 kC
 kC
-mT
+mM
 aa
 aa
 aa
@@ -12691,7 +12664,7 @@ fA
 fA
 fA
 kC
-mT
+mM
 aa
 aa
 aa

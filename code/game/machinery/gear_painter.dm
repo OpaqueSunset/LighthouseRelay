@@ -11,8 +11,8 @@
 	var/list/allowed_types = list(
 		/obj/item/clothing,
 		/obj/item/towel,
-		/obj/item/storage/backpack,
-		/obj/item/storage/belt,
+		/obj/item/backpack,
+		/obj/item/belt,
 		// todo: make color variant toys (plushies, etc) greyscaled?
 		// todo: make headsets use greyscale and decals? handling for painting stripes, etc. on specific objects?
 	)

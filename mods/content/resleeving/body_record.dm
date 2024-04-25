@@ -94,7 +94,7 @@
 /datum/fabricator_recipe/medical/transcore_disk
 	path = /obj/item/disk/transcore
 
-/obj/item/storage/box/transcore_record_disk/WillContain()
+/obj/item/box/transcore_record_disk/WillContain()
 	return list(/obj/item/disk/transcore = 7)
 
 /datum/computer_file/data/body_record/proc/create_human(location)

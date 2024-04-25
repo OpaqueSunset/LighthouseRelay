@@ -333,11 +333,11 @@
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aZ" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "ba" = (
 /obj/effect/immovablerod,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 "bb" = (
 /obj/structure/grille,
@@ -369,12 +369,12 @@
 /turf/floor/airless,
 /area/tether_away/debrisfield/explored)
 "bg" = (
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
-/obj/item/storage/mre/random,
+/obj/item/mre/random,
+/obj/item/mre/random,
+/obj/item/mre/random,
+/obj/item/mre/random,
+/obj/item/mre/random,
+/obj/item/mre/random,
 /obj/structure/closet/crate,
 /turf/floor/shuttle/darkred/airless,
 /area/tether_away/debrisfield/explored)
@@ -384,7 +384,7 @@
 /area/tether_away/debrisfield/explored)
 "bi" = (
 /obj/structure/loot_pile/mecha/durand,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/tether_away/debrisfield/explored)
 
 (1,1,1) = {"

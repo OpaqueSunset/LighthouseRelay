@@ -10,20 +10,20 @@
 	pixel_y = 24;
 	alarms_hidden = 1
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "b" = (
 /obj/tether_away_spawner/shadekin{
 	faction = "underdark"
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "c" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "d" = (
 /obj/item/remains/deer,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "e" = (
 /turf/unsimulated/mineral,
@@ -41,14 +41,14 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "j" = (
 /obj/machinery/port_gen/pacman,
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "k" = (
 /obj/structure/cable/green{
@@ -58,38 +58,38 @@
 	icon_state = "bulb1";
 	dir = 1
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "l" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "n" = (
 /obj/structure/railing,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "o" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "p" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "q" = (
 /obj/structure/cable/green{
 	icon_state = "5-8"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "r" = (
 /obj/structure/cable/green{
 	icon_state = "1-5"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "s" = (
 /turf/floor/tiled/steel_dirty/virgo3b,
@@ -117,21 +117,21 @@
 	icon_state = "railing0";
 	dir = 8
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "w" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 8
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "x" = (
 /obj/structure/railing{
 	icon_state = "railing0";
 	dir = 1
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "y" = (
 /turf/wall/iron,
@@ -145,7 +145,7 @@
 	icon_state = "bulb1";
 	dir = 8
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "C" = (
 /obj/machinery/door/airlock/maintenance,
@@ -177,14 +177,14 @@
 	icon_state = "bulb1";
 	dir = 4
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "I" = (
 /obj/machinery/light/small,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "J" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/unexplored/underdark)
 "K" = (
 /obj/structure/sign/graffiti/pisoff{
@@ -199,27 +199,27 @@
 /area/mine/explored/underdark)
 "N" = (
 /obj/item/remains/posi,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "R" = (
 /obj/item/bone,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "S" = (
 /obj/item/bone,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "T" = (
 /obj/item/remains/mouse,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/mine/explored/underdark)
 "W" = (
 /obj/item/bone/skull,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "Z" = (
 /obj/item/remains/ribcage,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

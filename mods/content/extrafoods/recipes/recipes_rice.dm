@@ -24,27 +24,20 @@
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/yellowcurry
 
-/decl/recipe/friedrice
+/decl/recipe/simmered/friedrice
 	appliance = APPLIANCE_SKILLET | APPLIANCE_SAUCEPAN
 	reagents = list(/decl/material/liquid/water = 5, /decl/material/liquid/nutriment/rice = 10, /decl/material/liquid/nutriment/soysauce = 5)
 	fruit = list("carrot" = 1, "cabbage" = 1)
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/friedrice
 
-/decl/recipe/risotto
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+/decl/recipe/simmered/risotto
 	reagents = list(/decl/material/liquid/ethanol/wine = 5, /decl/material/liquid/nutriment/rice = 10, /decl/material/solid/spacespice = 1)
 	fruit = list("mushroom" = 1)
 	reagent_mix = REAGENT_REPLACE //Get that rice and wine outta here
 	result = /obj/item/chems/food/risotto
 
-/decl/recipe/ricepudding
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
-	reagents = list(/decl/material/liquid/drink/milk = 5, /decl/material/liquid/nutriment/rice = 10)
-	result = /obj/item/chems/food/ricepudding
-
-/decl/recipe/bibimbap
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+/decl/recipe/simmered/bibimbap
 	fruit = list("carrot" = 1, "cabbage" = 1, "mushroom" = 1)
 	reagents = list(/decl/material/liquid/nutriment/rice = 5, /decl/material/solid/spacespice = 2)
 	items = list(
@@ -54,8 +47,7 @@
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/bibimbap
 
-/decl/recipe/porkbowl
-	appliance = APPLIANCE_SAUCEPAN
+/decl/recipe/simmered/porkbowl
 	reagents = list(/decl/material/liquid/water = 5, /decl/material/liquid/nutriment/rice = 10)
 	reagent_mix = REAGENT_REPLACE
 	items = list(

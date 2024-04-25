@@ -4,6 +4,7 @@ A butchered variant on Giacom's Ministation designed for 5 to 10 players.
 Now poorly imported for Nebula!
 And then imported back to ScavStation!
 And then copied back upstream to Neb...
+Twice...
 */
 
 #if !defined(USING_MAP_DATUM)
@@ -21,7 +22,6 @@ And then copied back upstream to Neb...
 	#include "../../mods/content/matchmaking/_matchmaking.dme"
 	#include "../../mods/species/ascent/_ascent.dme"
 	#include "../../mods/species/neoavians/_neoavians.dme"
-	#include "../../mods/species/vox/_vox.dme"
 	#include "../../mods/species/serpentid/_serpentid.dme"
 	#include "../../mods/species/bayliens/_bayliens.dme"
 	#include "../../mods/content/mundane.dm"
@@ -73,7 +73,7 @@ And then copied back upstream to Neb...
 	#include "jobs/medical.dm"
 	#include "jobs/security.dm"
 	#include "jobs/science.dm"
-	#include "jobs/corporate.dm"
+	#include "jobs/tradehouse.dm"
 	#include "jobs/synthetics.dm"
 
 	#include "outfits/_outfits.dm"
@@ -83,7 +83,7 @@ And then copied back upstream to Neb...
 	#include "outfits/medical.dm"
 	#include "outfits/science.dm"
 	#include "outfits/security.dm"
-	#include "outfits/corporate.dm"
+	#include "outfits/tradehouse.dm"
 
 #elif !defined(MAP_OVERRIDE)
 

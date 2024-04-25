@@ -17,6 +17,7 @@
 #include "food\unsorted_virgo.dm"
 #include "plants\seed_datums.dm"
 #include "plants\seed_packets.dm"
+#include "recipes\assembled.dm"
 #include "recipes\recipes_baked.dm"
 #include "recipes\recipes_fried.dm"
 #include "recipes\recipes_meat.dm"

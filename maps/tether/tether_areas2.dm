@@ -146,10 +146,10 @@
 // Mining Underdark
 /area/mine/unexplored/underdark
 	name = "\improper Mining Underdark"
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 /area/mine/explored/underdark
 	name = "\improper Mining Underdark"
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 
 // Mining outpost areas
 /area/outpost/mining_main/passage
@@ -613,11 +613,11 @@
 /area/shuttle/tether/crash1
 	name = "\improper Crash Site 1"
 	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/natural/dirt
 /area/shuttle/tether/crash2
 	name = "\improper Crash Site 2"
 	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/natural/dirt
 
 // Exploration Shuttle stuff //
 /area/tether/station/excursion_dock
@@ -721,11 +721,11 @@
 /area/shuttle/antag_ground/solars
 	name = "\improper Syndicate LC - Solars"
 	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/natural/dirt
 /area/shuttle/antag_ground/mining
 	name = "\improper Syndicate LC - Mining"
 	icon_state = "shuttle2"
-	base_turf = /turf/exterior/dirt
+	base_turf = /turf/floor/natural/dirt
 
 
 

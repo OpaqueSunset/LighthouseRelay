@@ -413,11 +413,11 @@
 	dir = 8
 	},
 /obj/effect/spider/stickyweb,
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "bm" = (
 /obj/effect/spider/stickyweb,
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "bn" = (
 /obj/effect/spider/stickyweb,
@@ -449,7 +449,7 @@
 "bs" = (
 /obj/item/inflatable_duck,
 /obj/effect/spider/stickyweb,
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "bt" = (
 /obj/machinery/light{
@@ -473,11 +473,11 @@
 /turf/floor/carpet/purple,
 /area/yacht/living)
 "bx" = (
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "by" = (
 /mob/living/simple_animal/hostile/giant_spider/hunter,
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "bz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -540,7 +540,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/item/storage/bible,
+/obj/item/bible,
 /obj/item/pen/blue,
 /obj/structure/table/woodentable,
 /obj/item/paper{
@@ -553,7 +553,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/exterior/sand/water,
+/turf/floor/natural/sand/water,
 /area/yacht/living)
 "bI" = (
 /obj/machinery/light,
@@ -820,7 +820,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/item/storage/toolbox/syndicate,
+/obj/item/toolbox/syndicate,
 /turf/floor/airless{
 	icon_state = "dmg2"
 	},
@@ -1174,7 +1174,7 @@
 	icon_state = "tube1"
 	},
 /obj/item/cane,
-/obj/item/clothing/suit/storage/det_trench/grey,
+/obj/item/clothing/suit/det_trench/grey,
 /obj/item/clothing/ring/cti,
 /obj/item/clothing/under/lawyer/oldman,
 /obj/structure/table/woodentable,
@@ -1211,7 +1211,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/electrical,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4

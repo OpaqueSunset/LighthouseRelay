@@ -12,7 +12,7 @@
 
 /obj/item/chems/food/redcurry/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 7)
+	add_to_reagents(/decl/material/solid/organic/meat, 7)
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 
@@ -64,10 +64,10 @@
 
 /obj/item/chems/food/bibimbap/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 6)
+	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/eyedrops, 2)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 3)
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 3)
 
 /obj/item/chems/food/friedrice
 	name = "fried rice"
@@ -123,7 +123,7 @@
 
 /obj/item/chems/food/porkbowl/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4)
+	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
 /obj/item/chems/food/ricepudding
 	name = "rice pudding"

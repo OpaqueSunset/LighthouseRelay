@@ -94,12 +94,7 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	var/vision_flags = SEE_SELF               // Same flags as glasses.
 
 	// Death vars.
-	var/meat_type =     /obj/item/chems/food/meat/human
-	var/meat_amount =   3
-	var/skin_material = /decl/material/solid/organic/skin
-	var/skin_amount =   3
-	var/bone_material = /decl/material/solid/organic/bone
-	var/bone_amount =   3
+	var/butchery_data = /decl/butchery_data/humanoid
 	var/remains_type =  /obj/item/remains/xeno
 	var/gibbed_anim =   "gibbed-h"
 	var/dusted_anim =   "dust-h"
@@ -145,7 +140,7 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 
 	// Body/form vars.
 	var/list/inherent_verbs 	  // Species-specific verbs.
-	var/siemens_coefficient = 1   // The lower, the thicker the skin and better the insulation.
+	var/shock_vulnerability = 1   // The lower, the thicker the skin and better the insulation.
 	var/species_flags = 0         // Various specific features.
 	var/spawn_flags = 0           // Flags that specify who can spawn as this species
 	// Move intents. Earlier in list == default for that type of movement.
@@ -426,8 +421,8 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	if(taste_sensitivity < 0)
 		. += "taste_sensitivity ([taste_sensitivity]) was negative"
 
-/decl/species/proc/equip_survival_gear(var/mob/living/carbon/human/H, var/box_type = /obj/item/storage/box/survival)
-	var/obj/item/storage/backpack/backpack = H.get_equipped_item(slot_back_str)
+/decl/species/proc/equip_survival_gear(var/mob/living/carbon/human/H, var/box_type = /obj/item/box/survival)
+	var/obj/item/backpack/backpack = H.get_equipped_item(slot_back_str)
 	if(istype(backpack))
 		H.equip_to_slot_or_del(new box_type(backpack), slot_in_backpack_str)
 	else

@@ -185,7 +185,8 @@
 			user.put_in_hands(removing)
 			if(lit == FIRE_LIT)
 				visible_message(SPAN_DANGER("\The [user] fishes \the [removing] out of \the [src]!"))
-				user.fire_act(return_air(), last_fuel_burn_temperature, 500)
+				// Uncomment this when there's a way to take stuff out of a kiln or oven without setting yourself on fire.
+				//user.fire_act(return_air(), last_fuel_burn_temperature, 500)
 			else
 				visible_message(SPAN_NOTICE("\The [user] removes \the [removing] from \the [src]."))
 		update_icon()
@@ -222,33 +223,6 @@
 /obj/structure/fire_source/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	return ..() || (istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 
-// Returns null for no burn, empty list for burn with no products, assoc
-// matter to value list for waste products.
-// We assume a normalized mole amount for 'amount'.
-/decl/material/proc/get_burn_products(var/amount, var/burn_temperature)
-
-	// No chance of burning.
-	if(isnull(ignition_point) && isnull(boiling_point) && !length(vapor_products))
-		return
-
-	// Burning a reagent of any kind.
-	if(ignition_point && burn_temperature >= ignition_point)
-		. = list() // We need to return a non-null value to indicate we consumed the material.
-		if(burn_product)
-			.[burn_product] = amount
-		return
-
-	// If it has a vapor product, turn it into that.
-	if(length(vapor_products))
-		. = list()
-		for(var/vapor in vapor_products)
-			.[vapor] = (amount * vapor_products[vapor])
-		return
-
-	// If it's not ignitable but can be boiled, consider vaporizing it.
-	if(!isnull(boiling_point) && burn_temperature >= boiling_point)
-		. = list(type = amount)
-
 /obj/structure/fire_source/proc/burn_material(var/decl/material/mat, var/amount)
 	. = mat.get_burn_products(amount, last_fuel_burn_temperature)
 	if(.)
@@ -259,6 +233,7 @@
 		else if(mat.accelerant_value <= FUEL_VALUE_SUPPRESSANT)
 			fuel -= amount * mat.accelerant_value
 		fuel = max(fuel, 0)
+		loc.take_waste_burn_products(., last_fuel_burn_temperature)
 
 // Dump waste gas from burned fuel.
 /obj/structure/fire_source/proc/dump_waste_products(var/atom/target, var/list/waste)
@@ -277,21 +252,9 @@
 		if(chems.standard_pour_into(src, user))
 			return TRUE
 
-	if(lit == FIRE_LIT)
-
-		if(istype(thing, /obj/item/flame/match))
-			var/obj/item/flame/match/match = thing
-			if(!match.burnt && !match.lit)
-				match.lit = TRUE
-				match.damtype = BURN
-				match.update_force()
-				match.update_icon()
-				return TRUE
-
-		if(istype(thing, /obj/item/flame/candle))
-			var/obj/item/flame/candle/flame = thing
-			flame.light(user)
-			return TRUE
+	if(lit == FIRE_LIT && istype(thing, /obj/item/flame))
+		thing.fire_act(return_air(), last_fuel_burn_temperature, 500)
+		return TRUE
 
 	if(thing.isflamesource())
 		visible_message(SPAN_NOTICE("\The [user] attempts to light \the [src] with \the [thing]."))
@@ -410,19 +373,19 @@
 	if((fuel || length(contents)) && (lit != FIRE_DEAD))
 		// todo: get colour from fuel
 		var/image/I = image(icon, "[icon_state]_full")
-		I.appearance_flags |= RESET_COLOR | RESET_ALPHA
+		I.appearance_flags |= RESET_COLOR | RESET_ALPHA | KEEP_APART
 		add_overlay(I)
 
 	switch(lit)
 		if(FIRE_LIT)
 			if(fuel >= HIGH_FUEL)
 				var/image/I = image(icon, "[icon_state]_lit")
-				I.appearance_flags |= RESET_COLOR | RESET_ALPHA
+				I.appearance_flags |= RESET_COLOR | RESET_ALPHA | KEEP_APART
 				add_overlay(I)
 				set_light(light_range_high, light_power_high, light_color_high)
 			else if(fuel <= LOW_FUEL)
 				var/image/I = image(icon, "[icon_state]_lit_dying")
-				I.appearance_flags |= RESET_COLOR | RESET_ALPHA
+				I.appearance_flags |= RESET_COLOR | RESET_ALPHA | KEEP_APART
 				add_overlay(I)
 				set_light(light_range_mid, light_power_mid, light_color_mid)
 			else
@@ -437,6 +400,9 @@
 			set_light(0)
 		else
 			set_light(0)
+
+/obj/structure/fire_source/spark_act(obj/effect/sparks/sparks)
+	try_light(1000)
 
 // Subtypes.
 /obj/structure/fire_source/firepit
@@ -462,6 +428,12 @@
 
 /obj/structure/fire_source/fireplace/grab_attack(obj/item/grab/G)
 	return FALSE
+
+/obj/structure/fire_source/fireplace/basalt
+	material = /decl/material/solid/stone/basalt
+
+/obj/structure/fire_source/firepit/basalt
+	material = /decl/material/solid/stone/basalt
 
 #undef FUEL_CONSUMPTION_CONSTANT
 #undef FIRE_LIT

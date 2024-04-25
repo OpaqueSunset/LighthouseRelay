@@ -52,7 +52,7 @@
 	if(welding)
 		update_icon()
 
-/obj/item/weldingtool/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE, skip_offset = FALSE)
+/obj/item/weldingtool/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
 	if(overlay && welding && check_state_in_icon("[overlay.icon_state]-lit", overlay.icon))
 		overlay.add_overlay(emissive_overlay(overlay.icon, "[overlay.icon_state]-lit"))
 	. = ..()
@@ -342,27 +342,22 @@
 	else
 		return turn_on(user)
 
-/obj/item/weldingtool/attack(mob/living/M, mob/living/user, target_zone)
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/external/S = GET_EXTERNAL_ORGAN(H, target_zone)
-
+/obj/item/weldingtool/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		var/obj/item/organ/external/S = GET_EXTERNAL_ORGAN(H, user?.get_target_zone())
 		if(!S || !S.is_robotic() || user.a_intent != I_HELP)
 			return ..()
-
 		if(BP_IS_BRITTLE(S))
-			to_chat(user, SPAN_WARNING("\The [M]'s [S.name] is hard and brittle - \the [src]  cannot repair it."))
+			to_chat(user, SPAN_WARNING("\The [target]'s [S.name] is hard and brittle - \the [src]  cannot repair it."))
 			return TRUE
-
 		if(!welding)
-			to_chat(user, SPAN_WARNING("You'll need to turn [src] on to patch the damage on [M]'s [S.name]!"))
+			to_chat(user, SPAN_WARNING("You'll need to turn [src] on to patch the damage on [target]'s [S.name]!"))
 			return TRUE
-
 		if(S.robo_repair(15, BRUTE, "some dents", src, user))
 			weld(1, user)
 			return TRUE
-	else
-		return ..()
+	return ..()
 
 /obj/item/weldingtool/get_autopsy_descriptors()
 	if(isOn())

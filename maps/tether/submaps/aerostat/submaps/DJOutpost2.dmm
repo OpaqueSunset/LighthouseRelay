@@ -62,18 +62,18 @@
 "m" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/radio/phone,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "n" = (
 /obj/item/stack/material/rods,
 /turf/template_noop,
 /area/template_noop)
 "o" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "p" = (
 /obj/structure/loot_pile/surface/bones,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "q" = (
 /obj/structure/table/steel_reinforced,
@@ -82,7 +82,7 @@
 /turf/floor/wood/broken,
 /area/submap/virgo2/DJOutpost1)
 "r" = (
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DJOutpost1)
 "s" = (
 /obj/effect/overlay/snow/floor,
@@ -92,7 +92,7 @@
 /area/submap/virgo2/DJOutpost1)
 "u" = (
 /obj/effect/decal/cleanable/ash,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "w" = (
 /obj/structure/grille/broken,
@@ -104,7 +104,7 @@
 /area/submap/virgo2/DJOutpost1)
 "x" = (
 /obj/structure/girder,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DJOutpost1)
 "y" = (
 /obj/structure/table/steel_reinforced,
@@ -112,15 +112,15 @@
 	desc = "Talk through this.";
 	name = "station intercom (General)"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "A" = (
 /obj/item/stack/material/rods,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "B" = (
 /obj/structure/door_assembly/door_assembly_ext,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DJOutpost1)
 "C" = (
 /obj/structure/grille/broken,
@@ -141,7 +141,7 @@
 /area/template_noop)
 "F" = (
 /obj/item/transfer_valve,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DJOutpost1)
 "G" = (
 /obj/structure/grille/broken,
@@ -173,8 +173,8 @@
 /turf/floor/wood/broken,
 /area/submap/virgo2/DJOutpost1)
 "L" = (
-/obj/item/storage/toolbox/mechanical,
-/turf/exterior/rocks,
+/obj/item/toolbox/mechanical,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/DJOutpost1)
 "M" = (
 /obj/structure/grille/broken,
@@ -191,7 +191,7 @@
 /area/submap/virgo2/DJOutpost1)
 "O" = (
 /obj/structure/lattice,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 "P" = (
 /obj/effect/decal/cleanable/ash,
@@ -199,7 +199,7 @@
 /area/submap/virgo2/DJOutpost1)
 "S" = (
 /obj/structure/girder,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/DJOutpost1)
 
 (1,1,1) = {"

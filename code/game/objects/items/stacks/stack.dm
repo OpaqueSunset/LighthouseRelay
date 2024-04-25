@@ -15,6 +15,7 @@
 	max_health = 32 //Stacks should take damage even if no materials
 	/// A copy of initial matter list when this atom initialized. Stack matter should always assume a single tile.
 	var/list/matter_per_piece
+	var/name_modifier
 	var/singular_name
 	var/plural_name
 	/// If unset, picks a/an based off of if the first letter is a vowel or not.
@@ -123,8 +124,8 @@
 	var/list/dat = list()
 
 	var/popup_title
-	if (istype(recipes, /datum/stack_recipe_list))
-		var/datum/stack_recipe_list/recipe_list = recipes
+	var/datum/stack_recipe_list/recipe_list = recipes
+	if (istype(recipe_list))
 		popup_title = "Crafting [recipe_list.name] with \the [src]"
 		dat += "<p><a href='?src=\ref[src];back=1'>Back</a></p>"
 		recipes = recipe_list.recipes
@@ -140,10 +141,10 @@
 	for(var/thing in recipes)
 		if(istype(thing, /decl/stack_recipe))
 			var/decl/stack_recipe/recipe = thing
-			recipe_strings[recipe.name] = recipe.get_list_display(user, src)
+			recipe_strings[recipe.name] = recipe.get_list_display(user, src, recipe_list)
 		else if(istype(thing, /datum/stack_recipe_list))
-			var/datum/stack_recipe_list/recipe_list = thing
-			recipe_strings[recipe_list.name] = recipe_list.get_list_display(user, src)
+			var/datum/stack_recipe_list/sub_recipe_list = thing
+			recipe_strings[sub_recipe_list.name] = sub_recipe_list.get_list_display(user, src)
 	for(var/recipe_name in sortTim(recipe_strings.Copy(), /proc/cmp_text_asc))
 		dat += recipe_strings[recipe_name]
 	dat += "</table>"
@@ -153,7 +154,7 @@
 	popup.open()
 
 
-/obj/item/stack/proc/produce_recipe(decl/stack_recipe/recipe, var/producing, var/expending, mob/user, paint_color)
+/obj/item/stack/proc/produce_recipe(decl/stack_recipe/recipe, var/producing, var/expending, mob/user, paint_color, sublist = null)
 
 	if(producing <= 0 || expending <= 0 || expending > get_amount())
 		return
@@ -165,15 +166,18 @@
 		return
 	if(!recipe.can_make(user))
 		return
-	if (recipe.time)
+	var/used_skill = recipe.get_skill(mat, reinf_mat)
+	var/used_difficulty = recipe.get_skill_difficulty(mat, reinf_mat)
+	var/used_time = recipe.get_adjusted_time(mat, reinf_mat)
+	if (used_time)
 		to_chat(user, SPAN_NOTICE("You set about [recipe.get_craft_verbing(src)] [recipe.get_display_name(producing, mat, reinf_mat)]..."))
-		if (!user.do_skilled(recipe.time, SKILL_CONSTRUCTION))
+		if (!user.do_skilled(used_time, used_skill))
 			return
 
 	if(!use(expending))
 		return
 
-	if(user.skill_fail_prob(SKILL_CONSTRUCTION, 90, recipe.difficulty))
+	if(user.skill_fail_prob(used_skill, 90, used_difficulty))
 		to_chat(user, SPAN_WARNING("You waste some [name] and fail to [recipe.get_craft_verb(src)] [recipe.get_display_name(producing, mat, reinf_mat)]!"))
 		return
 
@@ -183,7 +187,7 @@
 	if(istype(O) && !QDELETED(O)) // In case of stack merger.
 		O.add_fingerprint(user)
 		user.put_in_hands(O)
-	attack_self(user)
+	list_recipes(user, sublist)
 
 /obj/item/stack/OnTopic(mob/user, list/href_list)
 	. = ..()
@@ -230,8 +234,9 @@
 		// Validate the target amount and create the product.
 		var/producing = text2num(href_list["producing"])
 		var/expending = text2num(href_list["expending"])
+		var/datum/stack_recipe_list/returning = locate(href_list["returning"])
 		if(producing > 0 && expending > 0)
-			produce_recipe(recipe, producing, expending, user, paint_color)
+			produce_recipe(recipe, producing, expending, user, paint_color, sublist = returning)
 			return TOPIC_REFRESH
 
 	return TOPIC_NOACTION
@@ -279,14 +284,13 @@
 			update_icon()
 			update_matter()
 		return TRUE
-	else
-		if(get_amount() < used)
-			return FALSE
-		for(var/i = 1 to charge_costs.len)
-			var/datum/matter_synth/S = synths[i]
-			S.use_charge(charge_costs[i] * used) // Doesn't need to be deleted
-		update_icon()
-		return TRUE
+	if(get_amount() < used)
+		return FALSE
+	for(var/i = 1 to charge_costs.len)
+		var/datum/matter_synth/S = synths[i]
+		S.use_charge(charge_costs[i] * used) // Doesn't need to be deleted
+	update_icon()
+	return TRUE
 
 /obj/item/stack/proc/on_used_last()
 	qdel(src) //should be safe to qdel immediately since if someone is still using this stack it will persist for a little while longer

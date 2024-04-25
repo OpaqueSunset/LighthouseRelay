@@ -120,7 +120,7 @@
 /obj/random/multiple/underdark/ores/item_to_spawn()
 	return pick(
 				prob(9);list(
-							/obj/item/storage/bag/ore,
+							/obj/item/bag/ore,
 							/obj/item/shovel,
 							/obj/item/ore/glass,
 							/obj/item/ore/glass,
@@ -140,7 +140,7 @@
 							/obj/item/ore/hydrogen
 							),
 				prob(7);list(
-							/obj/item/storage/bag/ore,
+							/obj/item/bag/ore,
 							/obj/item/pickaxe,
 							/obj/item/ore/osmium,
 							/obj/item/ore/osmium,
@@ -218,7 +218,7 @@
 							/obj/item/clothing/head/pirate
 							),
 				prob(4);list(
-							/obj/item/storage/bag/cash,
+							/obj/item/bag/cash,
 							/obj/item/spacecash/c500,
 							/obj/item/spacecash/c100,
 							/obj/item/spacecash/c50

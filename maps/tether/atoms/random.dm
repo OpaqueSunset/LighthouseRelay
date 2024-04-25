@@ -25,15 +25,15 @@
 
 /obj/random/medical/pillbottle/spawn_choices()
 	var/static/list/spawnable_choices = list(
-		/obj/item/storage/pill_bottle =                 4,
-		/obj/item/storage/pill_bottle/antibiotics =     4,
-		/obj/item/storage/pill_bottle/painkillers =     2,
-		/obj/item/storage/pill_bottle/antidepressants = 4,
-		/obj/item/storage/pill_bottle/oxygen =          2,
-		/obj/item/storage/pill_bottle/stabilizer =      2,
-		/obj/item/storage/pill_bottle/antitox =         4,
-		/obj/item/storage/pill_bottle/burn_meds =       2,
-		/obj/item/storage/pill_bottle/brute_meds =      2,
-		/obj/item/storage/pill_bottle/assorted =        1
+		/obj/item/pill_bottle =                 4,
+		/obj/item/pill_bottle/antibiotics =     4,
+		/obj/item/pill_bottle/painkillers =     2,
+		/obj/item/pill_bottle/antidepressants = 4,
+		/obj/item/pill_bottle/oxygen =          2,
+		/obj/item/pill_bottle/stabilizer =      2,
+		/obj/item/pill_bottle/antitox =         4,
+		/obj/item/pill_bottle/burn_meds =       2,
+		/obj/item/pill_bottle/brute_meds =      2,
+		/obj/item/pill_bottle/assorted =        1
 	)
 	return spawnable_choices

@@ -4,14 +4,14 @@
 	maxbodytemp = 900;
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive/returnhome
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/template_noop)
 "ab" = (
 /turf/template_noop,
 /area/template_noop)
 "ac" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Rockybase)
 "ad" = (
 /turf/template_noop,
@@ -27,7 +27,7 @@
 	maxbodytemp = 900;
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/threatening/returnhome
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Rockybase)
 "ag" = (
 /turf/mineral/ignore_mapgen/virgo2,
@@ -131,7 +131,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "az" = (
-/obj/item/storage/belt/janitor,
+/obj/item/belt/janitor,
 /obj/structure/table,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -233,9 +233,9 @@
 /area/submap/virgo2/Rockybase)
 "aR" = (
 /obj/structure/rack,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
-/obj/item/storage/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunshells,
+/obj/item/box/ammo/shotgunshells,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aS" = (
@@ -285,8 +285,8 @@
 /area/submap/virgo2/Rockybase)
 "aZ" = (
 /obj/structure/table,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
+/obj/item/bag/trash,
+/obj/item/bag/trash,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ba" = (
@@ -421,7 +421,7 @@
 /turf/floor/tiled,
 /area/submap/virgo2/Rockybase)
 "bz" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/template_noop)
 "bA" = (
 /obj/structure/table,
@@ -474,12 +474,12 @@
 /area/submap/virgo2/Rockybase)
 "bI" = (
 /obj/structure/table,
-/obj/item/storage/toolbox,
+/obj/item/toolbox,
 /turf/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bJ" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /turf/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "bK" = (
@@ -792,11 +792,11 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "cO" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Rockybase)
 "cT" = (
 /obj/item/remains,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/template_noop)
 
 (1,1,1) = {"

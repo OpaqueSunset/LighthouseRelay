@@ -1,17 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "ab" = (
 /obj/effect/overlay/palmtree_r,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "ac" = (
 /obj/effect/overlay/palmtree_l,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "ad" = (
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "ae" = (
 /obj/machinery/constructable_frame/machine_frame,
@@ -28,35 +28,35 @@
 /area/tether_away/beach)
 "ah" = (
 /obj/item/stack/cable_coil,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "ai" = (
 /obj/machinery/port_gen/pacman/mrs,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "aj" = (
-/turf/exterior/water,
+/turf/floor/natural/water,
 /area/tether_away/beach/coast)
 "ak" = (
-/turf/exterior/water,
+/turf/floor/natural/water,
 /area/tether_away/beach/water)
 "al" = (
 /turf/floor/tiled/asteroid_steel,
 /area/tether_away/beach)
 "am" = (
-/turf/exterior/water,
+/turf/floor/natural/water,
 /area/tether_away/beach/jungle)
 "an" = (
 /obj/effect/overlay/palmtree_r,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "ao" = (
 /obj/effect/overlay/coconut,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "ap" = (
 /obj/effect/overlay/palmtree_r,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "aq" = (
 /turf/wall/wood,
@@ -258,75 +258,75 @@
 /area/tether_away/beach)
 "aZ" = (
 /obj/effect/overlay/palmtree_l,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "ba" = (
 /turf/unsimulated/wall/planetary/normal,
 /area/tether_away/beach)
 "bb" = (
 /obj/structure/bed/chair,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "bc" = (
 /obj/item/chems/drinks/cans/waterbottle,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "bd" = (
 /obj/item/ball,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "be" = (
 /obj/item/clothing/head/collectable/paper,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 "bf" = (
-/turf/exterior/water,
+/turf/floor/natural/water,
 /area/tether_away/beach)
 "bg" = (
 /turf/unsimulated/wall/planetary/normal,
 /area/tether_away/beach/coast)
 "bh" = (
 /obj/effect/overlay/coconut,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "bi" = (
 /turf/unsimulated/wall/planetary/normal,
 /area/tether_away/beach/water)
 "bk" = (
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/water)
 "bl" = (
 /turf/unsimulated/wall/planetary/normal,
 /area/tether_away/beach/jungle)
 "bm" = (
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/shuttle/excursion/away_beach)
 "bp" = (
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "bq" = (
 /turf/mineral/ignore_mapgen,
 /area/tether_away/beach/jungle)
 "br" = (
 /obj/effect/step_trigger/teleporter/away_beach_tocave,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "bs" = (
 /obj/shuttle_connector/beach,
 /obj/effect/step_trigger/zlevel_fall/beach,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "xW" = (
 /obj/tether_away_spawner/beach_outside_friendly,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "TU" = (
 /obj/tether_away_spawner/beach_outside,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach/jungle)
 "UZ" = (
 /obj/tether_away_spawner/beach_outside_friendly,
-/turf/exterior/sand,
+/turf/floor/natural/sand,
 /area/tether_away/beach)
 
 (1,1,1) = {"

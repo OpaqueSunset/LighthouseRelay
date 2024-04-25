@@ -1,10 +1,6 @@
 /decl/species/starlight
 	abstract_type = /decl/species/starlight
-
-	meat_type = null
-	bone_material = null
-	skin_material = null
-
+	butchery_data = null
 	spawn_flags = SPECIES_IS_RESTRICTED
 	available_pronouns = list(/decl/pronouns/neuter)
 	force_cultural_info = list(
@@ -86,7 +82,7 @@
 
 	warning_low_pressure = 50
 	hazard_low_pressure = 0
-	siemens_coefficient = 0
+	shock_vulnerability = 0
 	hunger_factor = 0
 	death_message = "dissolves into pure flames!"
 	breath_type = null

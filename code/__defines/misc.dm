@@ -4,9 +4,10 @@
 #define TURF_FLAG_NO_POINTS_OF_INTEREST BITFLAG(1) // Used by the level subtemplate generator to skip placing loaded templates on this turf.
 #define TURF_FLAG_BACKGROUND            BITFLAG(2) // Used by shuttle movement to determine if it should be ignored by turf translation.
 #define TURF_FLAG_HOLY                  BITFLAG(3)
-#define TURF_IS_HOLOMAP_OBSTACLE        BITFLAG(4)
-#define TURF_IS_HOLOMAP_PATH            BITFLAG(5)
-#define TURF_IS_HOLOMAP_ROCK            BITFLAG(6)
+#define TURF_FLAG_ABSORB_LIQUID         BITFLAG(4)
+#define TURF_IS_HOLOMAP_OBSTACLE        BITFLAG(5)
+#define TURF_IS_HOLOMAP_PATH            BITFLAG(6)
+#define TURF_IS_HOLOMAP_ROCK            BITFLAG(7)
 
 ///Width or height of a transition edge area along the map's borders where transition edge turfs are placed to connect levels together.
 #define TRANSITIONEDGE 7
@@ -86,9 +87,6 @@
 #define EVENT_LEVEL_MUNDANE  1
 #define EVENT_LEVEL_MODERATE 2
 #define EVENT_LEVEL_MAJOR    3
-
-//General-purpose life speed define for plants.
-#define HYDRO_SPEED_MULTIPLIER 1
 
 //Area flags, possibly more to come
 #define AREA_FLAG_RAD_SHIELDED         BITFLAG(1)  // Shielded from radiation, clearly.
@@ -367,3 +365,9 @@
 #define GROOMING_RESULT_PARTIAL 1
 // Can groom properly (long hair with a brush)
 #define GROOMING_RESULT_SUCCESS 2
+
+#if DM_VERSION < 515
+#define TYPE_INITIAL(REF, VAR) initial(REF.VAR)
+#else
+#define TYPE_INITIAL(REF, VAR) (REF::VAR)
+#endif

@@ -23,11 +23,13 @@
 	w_class = ITEM_SIZE_SMALL
 	abstract_type = /obj/item/chems/food
 
-	var/cooked_food = FALSE // Indicates the food should give a positive stress effect on eating. This is set to true if the food is created by a recipe.
+	/// Indicates the food should give a stress effect on eating.
+	// This is set to 1 if the food is created by a recipe, -1 if the food is raw.
+	var/cooked_food = FOOD_PREPARED
 	var/bitesize = 1
 	var/bitecount = 0
 	var/slice_path
-	var/slices_num
+	var/slice_num
 	var/dry = FALSE
 	var/nutriment_amt = 0
 	var/nutriment_type = /decl/material/liquid/nutriment // Used to determine which base nutriment type is spawned for this item.
@@ -120,6 +122,7 @@
 
 //Called by cooking machines. This is mainly intended to set properties on the food that differ between raw/cooked
 /obj/item/chems/food/proc/cook()
+	cooked_food = FOOD_COOKED
 	if (batter_coating)
 		cut_overlays()
 		var/decl/material/liquid/nutriment/batter/our_coating = GET_DECL(batter_coating)
@@ -139,6 +142,19 @@
 			LAZYINITLIST(reagents.reagent_data)
 			LAZYSET(reagents.reagent_data[r], "cooked", TRUE)
 
+/obj/item/chems/food/Initialize()
+	. = ..()
+	if(cooked_food == FOOD_RAW)
+		name = "raw [name]"
+	for(var/reagent_type in reagents.reagent_volumes)
+		if(ispath(reagent_type, /decl/material/liquid/nutriment/batter))
+			LAZYINITLIST(reagents.reagent_data)
+			// add a new reagent_data entry for each reagent type
+			LAZYSET(reagents.reagent_data[reagent_type], "cooked", TRUE) // batter starts cooked in compile-time foods
+	amount_per_transfer_from_this = bitesize
+	if(ispath(plate))
+		plate = new plate(src)
+
 /obj/item/chems/food/can_be_injected_by(var/atom/injector)
 	return TRUE
 
@@ -151,22 +167,15 @@
 /obj/item/chems/food/update_container_desc()
 	return FALSE
 
-/obj/item/chems/food/Initialize()
-	. = ..()
-	amount_per_transfer_from_this = bitesize
-	for(var/reagent_type in reagents.reagent_volumes)
-		if(ispath(reagent_type, /decl/material/liquid/nutriment/batter))
-			LAZYINITLIST(reagents.reagent_data)
-			// add a new reagent_data entry for each reagent type
-			LAZYSET(reagents.reagent_data[reagent_type], "cooked", TRUE) // batter starts cooked in compile-time foods
-	if(ispath(plate))
-		plate = new plate(src)
-
 /obj/item/chems/food/attack_self(mob/user)
-	attack(user, user)
+	if(is_edible(user))
+		use_on_mob(user, user)
+	else
+		to_chat(user, SPAN_WARNING("\The [src] is empty!"))
+	return TRUE
 
 /obj/item/chems/food/dragged_onto(var/mob/user)
-	attack(user, user)
+	return attack_self(user)
 
 /obj/item/chems/food/examine(mob/user, distance)
 	. = ..()
@@ -189,65 +198,8 @@
 	else
 		to_chat(user, SPAN_NOTICE("\The [src] was bitten multiple times!"))
 
-/obj/item/chems/food/attackby(obj/item/W, mob/user)
-
-	if(istype(W, /obj/item/storage))
-		return ..()
-
-	// Plating food.
-	if(istype(W, /obj/item/plate))
-		var/obj/item/plate/plate = W
-		plate.try_plate_food(src, user)
-		return TRUE
-
-	// Eating with forks
-	if(user.a_intent == I_HELP && do_utensil_interaction(W, user))
-		return TRUE
-
-	// Hiding items inside larger food items.
-	if(user.a_intent != I_HURT && is_sliceable() && W.w_class < w_class && !is_robot_module(W) && !istype(W, /obj/item/chems/condiment))
-		if(user.try_unequip(W, src))
-			to_chat(user, SPAN_NOTICE("You slip \the [W] inside \the [src]."))
-			add_fingerprint(user)
-			W.forceMove(src)
-		return TRUE
-
-	// Creating food combinations.
-	if(try_create_combination(W, user))
-		return TRUE
-
-	return ..()
-
-/obj/item/chems/food/proc/try_create_combination(obj/item/W, mob/user)
-	if(!length(attack_products) || !istype(W) || QDELETED(src) || QDELETED(W))
-		return FALSE
-	var/create_type
-	for(var/key in attack_products)
-		if(ispath(key) && !istype(W, key))
-			continue
-		if(istext(key))
-			if(!istype(W, /obj/item/chems/food/grown))
-				continue
-			var/obj/item/chems/food/grown/G = W
-			if(G.seed.kitchen_tag && G.seed.kitchen_tag != key)
-				continue
-		create_type = attack_products[key]
-		break
-	if(!ispath(create_type) || (user && (!user.canUnEquip(src) || !user.canUnEquip(W))))
-		return FALSE
-	//If the snack was in your hands, the result will be too
-	var/was_in_hands = (src in user?.get_held_items())
-	var/my_loc = get_turf(src)
-	qdel(src)
-	qdel(W)
-	var/obj/item/chems/food/result = new create_type(my_loc)
-	if(was_in_hands)
-		user.put_in_hands(result)
-	to_chat(user, SPAN_NOTICE("You make \the [result]!"))
-	return TRUE
-
 /obj/item/chems/food/proc/is_sliceable()
-	return (slices_num && slice_path && slices_num > 0)
+	return (slice_num && slice_path && slice_num > 0)
 
 /obj/item/chems/food/proc/drop_plate(var/drop_loc)
 	if(istype(plate))
@@ -305,5 +257,9 @@
 /obj/item/chems/food/populate_reagents()
 	. = ..()
 	SHOULD_CALL_PARENT(TRUE)
-	if(nutriment_amt)
-		add_to_reagents(nutriment_type, nutriment_amt, nutriment_desc)
+	if(nutriment_amt && nutriment_type)
+		// TODO: generalize taste as data
+		if(ispath(nutriment_type, /decl/material/liquid/nutriment))
+			add_to_reagents(nutriment_type, nutriment_amt, nutriment_desc)
+		else
+			add_to_reagents(nutriment_type, nutriment_amt)

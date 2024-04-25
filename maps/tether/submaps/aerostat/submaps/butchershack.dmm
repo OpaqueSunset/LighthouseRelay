@@ -50,7 +50,7 @@
 /area/submap/virgo2/ButcherShack)
 "l" = (
 /obj/structure/loot_pile/maint/trash,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/ButcherShack)
 "m" = (
 /obj/structure/meat_hook,
@@ -100,7 +100,7 @@
 /turf/floor/tiled,
 /area/submap/virgo2/ButcherShack)
 "v" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/ButcherShack)
 "w" = (
 /obj/structure/window/basic,

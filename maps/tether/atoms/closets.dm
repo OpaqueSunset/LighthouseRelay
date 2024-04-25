@@ -32,7 +32,7 @@
 /obj/structure/closet/secure_closet/explorer/WillContain()
 	. = list(
 		/obj/item/clothing/under/explorer,
-		/obj/item/clothing/suit/storage/toggle/explorer,
+		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
 		/obj/item/clothing/gloves/color/black,
@@ -40,20 +40,20 @@
 		// /obj/item/radio/headset/explorer,
 		/obj/item/flashlight,
 		/obj/item/gps/explorer,
-		/obj/item/storage/box/flares,
+		/obj/item/box/flares,
 		/obj/item/geiger,
 		/obj/item/cell/device,
 		/obj/item/radio,
 		/obj/item/stack/flag = 3,
 		/obj/item/hatchet/machete,
-		/obj/item/clothing/accessory/storage/holster/machete,
+		/obj/item/clothing/webbing/holster/machete,
 		/obj/item/chems/food/liquidfood,
 		// /obj/item/chems/food/liquidprotein, // does not exist, no real interest in porting
 		/obj/item/cataloguer)
 	if(prob(50))
-		. += /obj/item/storage/backpack
+		. += /obj/item/backpack
 	else
-		. += /obj/item/storage/backpack/satchel/grey
+		. += /obj/item/backpack/satchel/grey
 
 /obj/structure/closet/secure_closet/guncabinet/phase
 	name = "explorer weapon cabinet"
@@ -63,7 +63,7 @@
 	return list(
 		/obj/item/gun/energy/gun/small/reloadable = 2,
 		/obj/item/cell/gun = 2,
-		/obj/item/clothing/accessory/permit/gun/planetside
+		/obj/item/clothing/permit/gun/planetside
 	)
 
 /obj/structure/closet/secure_closet/guncabinet/phase/mining
@@ -74,7 +74,7 @@
 	return list(
 		/obj/item/gun/energy/gun/small/reloadable = 2,
 		/obj/item/cell/gun = 2,
-		/obj/item/clothing/accessory/permit/gun/planetside
+		/obj/item/clothing/permit/gun/planetside
 	)
 
 /obj/structure/closet/secure_closet/anesthetics
@@ -117,11 +117,11 @@
 		/obj/item/clothing/head/caphat/cap,
 		/obj/item/clothing/head/caphat/formal,
 		// /obj/item/clothing/head/beret/centcom/captain,
-		/obj/item/clothing/suit/captunic,
-		/obj/item/clothing/suit/captunic/capjacket,
-		// /obj/item/clothing/suit/storage/parade_coat,
-		// /obj/item/clothing/suit/storage/parade_coat/fem,
-		/obj/item/clothing/suit/storage/toggle/wintercoat/captain,
+		/obj/item/clothing/shirt/tunic/captain,
+		/obj/item/clothing/suit/jacket/captain,
+		// /obj/item/clothing/suit/parade_coat,
+		// /obj/item/clothing/suit/parade_coat/fem,
+		/obj/item/clothing/suit/jacket/winter/captain,
 		/obj/item/clothing/under/captain,
 		// /obj/item/clothing/under/captain/skirt_pleated,
 		/obj/item/clothing/under/dress/dress_cap,
@@ -132,8 +132,8 @@
 		/obj/item/clothing/gloves/captain,
 		/obj/item/clothing/shoes/color/brown,
 		/obj/item/clothing/shoes/winterboots/command,
-		/obj/item/storage/backpack/satchel/cap,
-		/obj/item/storage/backpack/captain
+		/obj/item/backpack/satchel/cap,
+		/obj/item/backpack/captain
 	)
 
 //Pathfinder
@@ -145,7 +145,7 @@
 /obj/structure/closet/secure_closet/pathfinder/WillContain()
 	. = list(
 		/obj/item/clothing/under/explorer,
-		/obj/item/clothing/suit/storage/toggle/explorer,
+		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
 		/obj/item/clothing/gloves/color/black,
@@ -155,27 +155,27 @@
 		// /obj/item/clothing/accessory/armor/helmetcamera/exploration/body,
 		/obj/item/flashlight,
 		/obj/item/gps/explorer,
-		/obj/item/storage/belt/explorer,
-		/obj/item/storage/box/flares,
-		// /obj/item/storage/box/explorerkeys,
+		/obj/item/belt/explorer,
+		/obj/item/box/flares,
+		// /obj/item/box/explorerkeys,
 		/obj/item/geiger,
 		/obj/item/cell/device,
 		/obj/item/radio,
 		/obj/item/stack/flag = 3,
-		// /obj/item/storage/box/survival_knife,
+		// /obj/item/box/survival_knife,
 		/obj/item/hatchet/machete/deluxe,
 		// /obj/item/gun/energy/frontier/locked/carbine,
 		// /obj/item/gun/ballistic/ntles/pathfinder,
 		// /obj/item/ammo_magazine/m57x28mm/ntles,
 		// /obj/item/ammo_magazine/m57x28mm/ntles,
-		/obj/item/clothing/accessory/storage/holster/machete,
-		/obj/item/clothing/accessory/storage/holster/thigh,
+		/obj/item/clothing/webbing/holster/machete,
+		/obj/item/clothing/webbing/holster/thigh,
 		/obj/item/chems/food/liquidfood,
 		// /obj/item/chems/food/liquidfood/protein,
 		/obj/item/disk/survey,
 		/obj/item/cataloguer
 	)
 	if(prob(50))
-		. += /obj/item/storage/backpack
+		. += /obj/item/backpack
 	else
-		. += /obj/item/storage/backpack/satchel/grey
+		. += /obj/item/backpack/satchel/grey

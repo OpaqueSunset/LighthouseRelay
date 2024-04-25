@@ -3,25 +3,25 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "b" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "c" = (
 /obj/tether_away_spawner/underdark_normal,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "s" = (
 /obj/structure/table/frame,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "M" = (
 /obj/item/chems/glass/bottle/bicaridine,
 /obj/structure/table/frame,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "V" = (
 /obj/structure/table/frame,
 /obj/item/flashlight/lantern,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

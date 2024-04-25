@@ -41,5 +41,5 @@
 
 /obj/item/chems/food/goulash/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 3) //For meaty things.
+	add_to_reagents(/decl/material/solid/organic/meat, 3) //For meaty things.
 	add_to_reagents(/decl/material/liquid/water, 5)

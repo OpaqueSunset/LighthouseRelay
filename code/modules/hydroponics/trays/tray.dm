@@ -66,7 +66,8 @@
 		/decl/material/gas/ammonia =                1,
 		/decl/material/liquid/nutriment =           1,
 		/decl/material/liquid/adminordrazine =      1,
-		/decl/material/liquid/fertilizer =          1
+		/decl/material/liquid/fertilizer =          1,
+		/decl/material/liquid/fertilizer/compost =  1
 	)
 	var/static/list/weedkiller_reagents = list(
 		/decl/material/liquid/fuel/hydrazine =     -4,
@@ -109,7 +110,8 @@
 		/decl/material/liquid/nutriment =          list(  0.5,  0.1, 0  ),
 		/decl/material/solid/metal/radium =        list( -1.5,  0,   0.2),
 		/decl/material/liquid/adminordrazine =     list(  1,    1,   1  ),
-		/decl/material/liquid/fertilizer =         list(  0,    0.2, 0.2)
+		/decl/material/liquid/fertilizer =         list(  0,    0.2, 0.2),
+		/decl/material/liquid/fertilizer/compost = list(  0,    0.2, 0.2)
 	)
 
 	// Mutagen list specifies minimum value for the mutation to take place, rather
@@ -203,7 +205,7 @@
 	dead = 1
 	mutation_level = 0
 	harvest = 0
-	weedlevel += 1 * HYDRO_SPEED_MULTIPLIER
+	weedlevel += 1
 	pestlevel = 0
 
 //Process reagents being input into the tray.
@@ -462,10 +464,11 @@
 
 		plant_seed(user, O)
 
-	else if (istype(O, /obj/item/minihoe))  // The minihoe
+	else if (IS_HOE(O))
 
 		if(weedlevel > 0)
-			user.visible_message("<span class='notice'>[user] starts uprooting the weeds.</span>", "<span class='notice'>You remove the weeds from the [src].</span>")
+			if(!O.do_tool_interaction(TOOL_HOE, user, src, 2 SECONDS, start_message = "uprooting the weeds in", success_message = "weeding") || weedlevel <= 0 || QDELETED(src))
+				return TRUE
 			weedlevel = 0
 			update_icon()
 			if(seed)
@@ -474,16 +477,15 @@
 					plant_health -= rand(40,60)
 					check_plant_health()
 		else
-			to_chat(user, "<span class='notice'>This plot is completely devoid of weeds. It doesn't need uprooting.</span>")
+			to_chat(user, SPAN_WARNING("This plot is completely devoid of weeds. It doesn't need uprooting."))
+		return TRUE
 
-	else if (istype(O, /obj/item/storage/plants))
-
+	else if (istype(O, /obj/item/plants))
 		physical_attack_hand(user) // Harvests and clears out dead plants.
-		var/obj/item/storage/plants/S = O
-		for (var/obj/item/chems/food/grown/G in locate(user.x,user.y,user.z))
-			if(!S.can_be_inserted(G, user))
-				return
-			S.handle_item_insertion(G, 1)
+		if(O.storage)
+			for (var/obj/item/chems/food/grown/G in get_turf(user))
+				if(O.storage.can_be_inserted(G, user))
+					O.storage.handle_item_insertion(user, G, TRUE)
 
 	else if ( istype(O, /obj/item/plantspray) )
 

@@ -1,22 +1,22 @@
 //Pouches
-/obj/item/clothing/accessory/storage/pouches
+/obj/item/clothing/webbing/pouches
 	name = "storage pouches"
 	desc = "A collection of black pouches that can be attached to a plate carrier. Carries up to two items."
 	icon = 'icons/clothing/accessories/pouches/pouches.dmi'
 	icon_state = ICON_STATE_WORLD
 	color = COLOR_GRAY40
 	gender = PLURAL
-	slot = ACCESSORY_SLOT_ARMOR_S
-	slots = 2
+	storage = /datum/storage/pouches
+	accessory_slot = ACCESSORY_SLOT_ARMOR_S
 
-/obj/item/clothing/accessory/storage/pouches/large
+/obj/item/clothing/webbing/pouches/large
 	name = "large storage pouches"
 	desc = "A collection of black pouches that can be attached to a plate carrier. Carries up to four items."
 	icon = 'icons/clothing/accessories/pouches/lpouches.dmi'
-	slots = 4
-	slowdown = 1
+	storage = /datum/storage/pouches/large
+	accessory_slowdown = 1
 
-/obj/item/clothing/accessory/storage/pouches/large/tan
+/obj/item/clothing/webbing/pouches/large/tan
 	color = COLOR_TAN
 
 //Armor plates
@@ -32,7 +32,7 @@
 		ARMOR_ENERGY = ARMOR_ENERGY_MINOR,
 		ARMOR_BOMB = ARMOR_BOMB_MINOR
 		)
-	slot = ACCESSORY_SLOT_ARMOR_C
+	accessory_slot = ACCESSORY_SLOT_ARMOR_C
 	material = /decl/material/solid/organic/plastic
 	matter = list(
 		/decl/material/solid/metal/steel = MATTER_AMOUNT_SECONDARY
@@ -69,7 +69,7 @@
 		ARMOR_ENERGY = ARMOR_ENERGY_RESISTANT,
 		ARMOR_BOMB = ARMOR_BOMB_PADDED
 		)
-	slowdown = 0.5
+	accessory_slowdown = 0.5
 	material = /decl/material/solid/metal/plasteel
 	matter = list(
 		/decl/material/solid/metal/titanium = MATTER_AMOUNT_REINFORCEMENT,
@@ -78,7 +78,7 @@
 	origin_tech = @'{"materials":3,"engineering":2,"combat":2}'
 
 //Arm guards
-/obj/item/clothing/accessory/armguards
+/obj/item/clothing/gloves/armguards
 	name = "arm guards"
 	desc = "A pair of black arm pads reinforced with armor plating. Attaches to a plate carrier."
 	icon = 'icons/clothing/accessories/armor/armguards.dmi'
@@ -93,20 +93,22 @@
 		ARMOR_ENERGY = ARMOR_ENERGY_SMALL,
 		ARMOR_BOMB = ARMOR_BOMB_PADDED
 		)
-	slot = ACCESSORY_SLOT_ARMOR_A
 	material = /decl/material/solid/organic/plastic
 	matter = list(
 		/decl/material/solid/metal/steel = MATTER_AMOUNT_SECONDARY
 	)
 	origin_tech = @'{"materials":1,"engineering":1,"combat":1}'
+	accessory_slot = ACCESSORY_SLOT_ARMOR_A
+	slot_flags = SLOT_HANDS
+	accessory_slot = ACCESSORY_SLOT_DECOR
 
-/obj/item/clothing/accessory/armguards/craftable
+/obj/item/clothing/gloves/armguards/craftable
 	material_armor_multiplier = 1
 	matter = null
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME
 
 //Leg guards
-/obj/item/clothing/accessory/legguards
+/obj/item/clothing/shoes/legguards
 	name = "leg guards"
 	desc = "A pair of armored leg pads in black. Attaches to a plate carrier."
 	icon = 'icons/clothing/accessories/armor/legguards.dmi'
@@ -121,14 +123,16 @@
 		ARMOR_ENERGY = ARMOR_ENERGY_SMALL,
 		ARMOR_BOMB = ARMOR_BOMB_PADDED
 		)
-	slot = ACCESSORY_SLOT_ARMOR_L
 	material = /decl/material/solid/organic/plastic
 	matter = list(
 		/decl/material/solid/metal/steel = MATTER_AMOUNT_SECONDARY
 	)
 	origin_tech = @'{"materials":1,"engineering":1,"combat":1}'
+	accessory_slot = ACCESSORY_SLOT_ARMOR_L
+	slot_flags = SLOT_FEET
+	accessory_slot = ACCESSORY_SLOT_DECOR
 
-/obj/item/clothing/accessory/legguards/craftable
+/obj/item/clothing/shoes/legguards/craftable
 	material_armor_multiplier = 1
 	matter = null
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME
@@ -143,7 +147,7 @@
 	name = "\improper WARDEN tag"
 	desc = "A tag with the word WARDEN printed in silver lettering on it."
 	icon = 'icons/clothing/accessories/tags/tag_large.dmi'
-	slot = ACCESSORY_SLOT_ARMOR_M
+	accessory_slot = ACCESSORY_SLOT_ARMOR_M
 
 /obj/item/clothing/accessory/armor/tag/press
 	name = "\improper PRESS tag"
@@ -200,7 +204,7 @@
 	desc = "A fabric cover for armored helmets."
 	icon = 'icons/clothing/accessories/armor/helmcover.dmi'
 	icon_state = ICON_STATE_WORLD
-	slot = ACCESSORY_SLOT_HELM_C
+	accessory_slot = ACCESSORY_SLOT_HELM_C
 
 /obj/item/clothing/accessory/armor/helmcover/blue
 	color = COLOR_SKY_BLUE

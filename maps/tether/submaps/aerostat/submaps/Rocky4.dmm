@@ -9,14 +9,14 @@
 /turf/mineral/ignore_mapgen/virgo2,
 /area/submap/virgo2/Rocky4)
 "e" = (
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/Rocky4)
 "f" = (
 /turf/floor/lava,
 /area/submap/virgo2/Rocky4)
 "Y" = (
 /obj/machinery/crystal/lava,
-/turf/exterior/rocks,
+/turf/floor/natural/rocks,
 /area/submap/virgo2/Rocky4)
 
 (1,1,1) = {"

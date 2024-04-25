@@ -6,7 +6,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Epod4)
 "c" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Epod4)
 "h" = (
 /turf/wall/shuttle,
@@ -27,7 +27,7 @@
 	pixel_y = 0
 	},
 /obj/structure/loot_pile/maint/junk,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Epod4)
 "m" = (
 /obj/structure/bed/chair{
@@ -48,7 +48,7 @@
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/under/mbill,
 /obj/item/clothing/head/soft/mbill,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Epod4)
 "n" = (
 /obj/structure/bed/chair{
@@ -66,7 +66,7 @@
 	name = "exotic seeds crate";
 	starts_with = list(/obj/item/seeds/random = 6, /obj/item/seeds/replicapod = 2, /obj/item/seeds/ambrosiavulgarisseed = 2, /obj/item/seeds/kudzuseed, /obj/item/seeds/libertymycelium, /obj/item/seeds/reishimycelium)
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Epod4)
 "o" = (
 /obj/structure/shuttle/engine/propulsion/burst,
@@ -76,10 +76,10 @@
 /obj/structure/door_assembly/door_assembly_ext{
 	anchored = 1
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/submap/virgo2/Epod4)
 "Y" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/submap/virgo2/Epod4)
 
 (1,1,1) = {"

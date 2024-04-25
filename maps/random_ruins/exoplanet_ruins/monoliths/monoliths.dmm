@@ -8,6 +8,7 @@
 /turf/template_noop,
 /area/template_noop)
 "c" = (
+/obj/abstract/landmark/random_base_turf,
 /turf/floor/fixed/alium/ruin,
 /area/template_noop)
 "d" = (
@@ -22,6 +23,7 @@
 	dir = 8
 	},
 /obj/structure/window/borosilicate_reinforced,
+/obj/abstract/landmark/random_base_turf,
 /turf/floor/fixed/alium/ruin,
 /area/template_noop)
 "e" = (

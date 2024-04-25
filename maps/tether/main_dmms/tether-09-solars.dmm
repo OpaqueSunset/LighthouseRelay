@@ -3,10 +3,10 @@
 /turf/unsimulated/wall/planetary/virgo3b,
 /area/tether/outpost/solars_outside)
 "ab" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "ad" = (
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "ae" = (
 /obj/structure/cable/yellow{
@@ -147,7 +147,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "au" = (
 /turf/wall,
@@ -1888,7 +1888,7 @@
 	name = "west bump";
 	pixel_x = -22
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/outpost/research/mixing)
 "dH" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -2062,7 +2062,7 @@
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "dZ" = (
 /obj/structure/flora/tree/sif,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "ee" = (
 /obj/effect/floor_decal/borderfloor{
@@ -2248,7 +2248,7 @@
 /obj/structure/fence/post{
 	dir = 8
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "eF" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction{
@@ -2395,7 +2395,7 @@
 /area/outpost/research/telescience_lab)
 "fe" = (
 /obj/structure/fence/door,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "fh" = (
 /obj/item/stool/padded,
@@ -2801,7 +2801,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /obj/item/clothing/gloves/insulated,
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 6
@@ -3149,7 +3149,7 @@
 /area/outpost/research/materials_lab)
 "hf" = (
 /obj/structure/table,
-/obj/item/storage/box/beakers,
+/obj/item/box/beakers,
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
@@ -3521,7 +3521,7 @@
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "hV" = (
 /obj/structure/flora/sif/tendrils,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "hZ" = (
 /obj/structure/window/reinforced/full,
@@ -3570,7 +3570,7 @@
 /area/outpost/research/toxins_misc_lab)
 "ir" = (
 /obj/structure/fence/door,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/outpost/research/toxins_misc_lab)
 "iz" = (
 /obj/effect/floor_decal/borderfloor{
@@ -4744,7 +4744,7 @@
 /obj/structure/sign/warning/hot_exhaust{
 	pixel_y = 32
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "nx" = (
 /obj/structure/table/marble,
@@ -4829,7 +4829,7 @@
 /obj/structure/fence{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "nS" = (
 /obj/machinery/atmospherics/unary/tank/nitrogen{
@@ -4933,7 +4933,7 @@
 /area/outpost/research/materials_chamber)
 "oq" = (
 /obj/structure/table,
-/obj/item/storage/laundry_basket,
+/obj/item/laundry_basket,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -5178,7 +5178,7 @@
 /area/outpost/research/crew_quarters/showers)
 "qa" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/toxin,
+/obj/item/firstaid/toxin,
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -5392,7 +5392,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "rg" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
@@ -5940,7 +5940,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
 "tM" = (
@@ -6180,7 +6180,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 6
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "vc" = (
 /obj/structure/railing/mapped{
@@ -6319,7 +6319,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "wb" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -6400,7 +6400,7 @@
 	dir = 9
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/item/clothing/mask/gas,
 /obj/item/tank/emergency/oxygen/engi,
 /turf/floor/tiled,
@@ -6449,7 +6449,7 @@
 /area/outpost/research/medical/first_aid_south_west)
 "wK" = (
 /obj/machinery/atmospherics/pipe/vent/high_volume,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "wN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -6581,7 +6581,7 @@
 /area/outpost/research/crew_quarters/showers)
 "xE" = (
 /obj/item/ashtray/glass,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "xH" = (
 /obj/structure/disposalpipe/segment,
@@ -6688,7 +6688,7 @@
 	pixel_y = -4;
 	controlled = 0
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "yi" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
@@ -6700,7 +6700,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "yp" = (
 /obj/effect/floor_decal/borderfloor{
@@ -7539,7 +7539,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "Cw" = (
 /obj/machinery/door/airlock{
@@ -7586,7 +7586,7 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "CQ" = (
 /obj/structure/cable/green{
@@ -7744,7 +7744,7 @@
 	pixel_x = -32;
 	dir = 4
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "Dx" = (
 /obj/structure/window/reinforced/full,
@@ -7798,7 +7798,7 @@
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "DO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7964,7 +7964,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "EU" = (
@@ -8802,7 +8802,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "Kp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -9094,7 +9094,7 @@
 /area/outpost/research/toxins_misc_lab)
 "LK" = (
 /obj/abstract/level_data_spawner/virgo3b/player/solars,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "LN" = (
 /obj/structure/cable/green{
@@ -9185,7 +9185,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "Mq" = (
 /obj/machinery/power/terminal{
@@ -9561,7 +9561,7 @@
 	dir = 4;
 	pixel_x = -32
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "Ok" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -9654,14 +9654,14 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled/white,
 /area/outpost/research/medical/first_aid_south_west)
 "OP" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "OT" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -9736,7 +9736,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 9
 	},
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "Ps" = (
 /obj/structure/bed/chair/comfy/purple{
@@ -9778,7 +9778,7 @@
 	dir = 5
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/toggle/wintercoat,
+/obj/item/clothing/suit/jacket/winter,
 /obj/item/clothing/mask/gas,
 /obj/item/tank/emergency/oxygen/engi,
 /turf/floor/tiled,
@@ -9878,7 +9878,7 @@
 /obj/structure/fence/post{
 	dir = 8
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "QP" = (
 /obj/machinery/meter,
@@ -10087,7 +10087,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "Sl" = (
 /obj/machinery/atmospherics/unary/tank/air,
@@ -10141,7 +10141,7 @@
 /area/outpost/research/substation)
 "Sr" = (
 /obj/effect/floor_decal/rust,
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "Ss" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -10211,7 +10211,7 @@
 /obj/structure/sign/warning/hot_exhaust{
 	pixel_y = 32
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "SG" = (
 /obj/structure/disposalpipe/segment,
@@ -10349,7 +10349,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "TG" = (
@@ -10928,7 +10928,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/turf/exterior/dirt,
+/turf/floor/natural/dirt,
 /area/tether/outpost/solars_outside)
 "WR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10969,7 +10969,7 @@
 /area/outpost/research/toxins_misc_lab)
 "Xn" = (
 /obj/structure/flora/sif/eyes,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/outpost/solars_outside)
 "Xo" = (
 /turf/wall,

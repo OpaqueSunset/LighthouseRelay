@@ -156,6 +156,12 @@
 	secure = TRUE
 	holomap_color = HOLOMAP_AREACOLOR_CARGO
 
+/area/ministation/mining
+	name = "\improper Mineral Processing"
+	req_access = list(access_mining)
+	icon_state = "mining_production"
+	secure = TRUE
+
 /area/ministation/bridge
 	name = "\improper Bridge"
 	req_access = list(access_heads)
@@ -269,8 +275,8 @@
 	icon_state = "light_blue"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 
-/area/ministation/company_rep
-	name = "\improper Company Representative Chamber"
+/area/ministation/tradehouse_rep
+	name = "\improper Tradehouse Representative Chamber"
 	req_access = list(access_lawyer)
 	icon_state = "brown"
 

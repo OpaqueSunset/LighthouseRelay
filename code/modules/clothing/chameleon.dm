@@ -158,7 +158,7 @@
 //**********************
 //**Chameleon Backpack**
 //**********************
-/obj/item/storage/backpack/chameleon
+/obj/item/backpack/chameleon
 	name = "backpack"
 	desc = "A backpack outfitted with cloaking tech. It seems to have a small dial inside, kept away from the storage."
 	origin_tech = @'{"esoteric":3}'
@@ -166,12 +166,12 @@
 	icon = 'icons/obj/items/storage/backpack/backpack.dmi'
 	var/static/list/clothing_choices
 
-/obj/item/storage/backpack/chameleon/Initialize()
+/obj/item/backpack/chameleon/Initialize()
 	. = ..()
 	if(!clothing_choices)
-		clothing_choices = generate_chameleon_choices(/obj/item/storage/backpack)
+		clothing_choices = generate_chameleon_choices(/obj/item/backpack)
 
-/obj/item/storage/backpack/chameleon/verb/change(picked in clothing_choices)
+/obj/item/backpack/chameleon/verb/change(picked in clothing_choices)
 	set name = "Change Backpack Appearance"
 	set category = "Chameleon Items"
 	set src in usr
@@ -338,12 +338,11 @@
 		update_clothing_icon()	//so our overlays update.
 
 /obj/item/clothing/accessory/chameleon/disguise(var/newtype, var/mob/user)
-	var/obj/item/clothing/accessory/copy = ..()
+	var/obj/item/clothing/copy = ..()
 	if (!copy)
 		return
-
-	slot = copy.slot
-	high_visibility = copy.high_visibility
+	accessory_slot            = copy.accessory_slot
+	accessory_high_visibility = copy.accessory_high_visibility
 	return copy
 
 //*****************

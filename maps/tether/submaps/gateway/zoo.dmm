@@ -136,7 +136,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "at" = (
-/obj/item/storage/box/syringes,
+/obj/item/box/syringes,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "au" = (
@@ -181,7 +181,7 @@
 /area/awaymission/zoo/pirateship)
 "aA" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box,
+/obj/item/box,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -203,7 +203,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "aD" = (
-/obj/item/storage/box,
+/obj/item/box,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "aE" = (
@@ -486,7 +486,7 @@
 /area/awaymission/zoo/pirateship)
 "by" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
@@ -795,7 +795,7 @@
 /area/awaymission/zoo/tradeship)
 "cA" = (
 /obj/structure/table,
-/obj/item/storage/box/donkpockets,
+/obj/item/box/donkpockets,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "cB" = (
@@ -825,11 +825,11 @@
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cG" = (
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -839,24 +839,24 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 5
 	},
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/box/masks{
+/obj/item/box/masks{
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/toxin,
+/obj/item/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
@@ -990,7 +990,7 @@
 /area/awaymission/zoo/tradeship)
 "cZ" = (
 /obj/structure/table,
-/obj/item/storage/box/glasses/square,
+/obj/item/box/glasses/square,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "da" = (
@@ -1223,7 +1223,7 @@
 /area/awaymission/zoo/pirateship)
 "dI" = (
 /obj/structure/rack,
-/obj/item/storage/box/lights,
+/obj/item/box/lights,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -1395,7 +1395,7 @@
 /area/awaymission/zoo/pirateship)
 "eh" = (
 /obj/structure/rack,
-/obj/item/storage/belt/utility/full,
+/obj/item/belt/utility/full,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -1625,7 +1625,7 @@
 "eM" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/box/fancy/cigarettes = 10, /obj/item/box/matches = 10, /obj/item/flame/fuelled/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
@@ -1866,7 +1866,7 @@
 /area/awaymission/zoo/tradeship)
 "fy" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fz" = (
@@ -2120,7 +2120,7 @@
 "gp" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/obj/item/storage/wallet/random,
+/obj/item/wallet/random,
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "gq" = (
@@ -2326,7 +2326,7 @@
 /area/awaymission/zoo)
 "gY" = (
 /obj/structure/table,
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 2;
 	pixel_y = 3
 	},
@@ -2466,8 +2466,8 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "hk" = (
-/obj/item/storage/box/matches,
-/obj/item/storage/box/fancy/cigarettes/dromedaryco,
+/obj/item/box/matches,
+/obj/item/box/fancy/cigarettes/dromedaryco,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "hl" = (
@@ -2529,8 +2529,8 @@
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
 /obj/item/stack/medical/bruise_pack,
-/obj/item/storage/belt/medical/emt,
-/obj/item/storage/belt/medical/emt,
+/obj/item/belt/medical/emt,
+/obj/item/belt/medical/emt,
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hu" = (
@@ -2777,7 +2777,7 @@
 "hZ" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/box/fancy/cigarettes = 10, /obj/item/box/matches = 10, /obj/item/flame/fuelled/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
@@ -3129,21 +3129,21 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/storage/firstaid/toxin{
+/obj/item/firstaid/toxin{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = 1
 	},
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/fire{
 	pixel_x = 1
 	},
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iJ" = (
@@ -3753,12 +3753,12 @@
 /area/awaymission/zoo)
 "kk" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/hooded/ian_costume,
+/obj/item/clothing/suit/hooded/ian_costume,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "kl" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/storage/hooded/carp_costume,
+/obj/item/clothing/suit/hooded/carp_costume,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "km" = (
@@ -4093,7 +4093,7 @@
 /area/awaymission/zoo)
 "lq" = (
 /obj/structure/rack,
-/obj/item/storage/box/fancy/crayons,
+/obj/item/box/fancy/crayons,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lr" = (
@@ -4121,7 +4121,7 @@
 /area/awaymission/zoo)
 "lv" = (
 /obj/structure/rack,
-/obj/item/storage/photo_album,
+/obj/item/photo_album,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lw" = (
@@ -4266,12 +4266,12 @@
 /area/awaymission/zoo)
 "lR" = (
 /obj/structure/rack,
-/obj/item/storage/wallet/poly,
+/obj/item/wallet/poly,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lS" = (
 /obj/structure/rack,
-/obj/item/storage/pill_bottle/dice_nerd,
+/obj/item/pill_bottle/dice_nerd,
 /turf/floor/holofloor/carpet,
 /area/awaymission/zoo)
 "lT" = (
@@ -4291,7 +4291,7 @@
 /area/awaymission/zoo)
 "lW" = (
 /obj/structure/rack,
-/obj/item/storage/backpack/clown,
+/obj/item/backpack/clown,
 /obj/item/clothing/shoes/rainbow,
 /obj/item/clothing/under/color/rainbow,
 /obj/item/clothing/under/teshari/undercoat/standard/rainbow,
@@ -5345,7 +5345,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/awaymission/zoo)
 "oG" = (
 /obj/structure/flora/bush/lavendergrass,
@@ -6181,7 +6181,7 @@
 /area/awaymission/zoo)
 "qU" = (
 /obj/structure/rack,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/plating,
 /area/awaymission/zoo)
 "qV" = (
@@ -8232,11 +8232,11 @@
 /turf/floor/tiled/white,
 /area/awaymission/zoo)
 "vL" = (
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -8246,24 +8246,24 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 5
 	},
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/box/masks{
+/obj/item/box/masks{
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/toxin,
+/obj/item/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
@@ -8274,7 +8274,7 @@
 /obj/structure/closet/medical_wall{
 	pixel_y = 32
 	},
-/obj/item/storage/firstaid/combat,
+/obj/item/firstaid/combat,
 /turf/floor/tiled/white,
 /area/awaymission/zoo)
 "vM" = (

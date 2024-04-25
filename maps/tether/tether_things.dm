@@ -14,7 +14,7 @@
 //
 // Holodorms
 //
-/obj/machinery/computer/HolodeckControl/holodorm
+/obj/machinery/computer/holodeck_control/holodorm
 	name = "Don't use this one!!!"
 	powerdown_program = "Off"
 	default_program = "Off"
@@ -38,7 +38,7 @@
 //
 //Holosurgery
 //
-/obj/machinery/computer/HolodeckControl/holosurgery
+/obj/machinery/computer/holodeck_control/holosurgery
 	name = "Don't use this one either."
 	powerdown_program = "Off"
 	default_program = "Off"
@@ -54,7 +54,7 @@
 	"Zaddat Suite"	= new/datum/holodeck_program(/area/holodeck/holodorm/source_zaddat)
 	)
 
-/obj/machinery/computer/HolodeckControl/holosurgery
+/obj/machinery/computer/holodeck_control/holosurgery
 	name = "holosurgery control"
 	linkedholodeck_area = /area/medical/surgery/holosurgery
 

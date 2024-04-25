@@ -1,9 +1,11 @@
-// Cotton Im going to achieve singularity
-
 /datum/seed/cotton
 	name = "cotton"
 	seed_name = "cotton"
 	display_name = "cotton"
+	product_material = /decl/material/solid/organic/plantmatter/pith/husk
+	chems = list(
+		/decl/material/solid/organic/cloth = list(10,1)
+	)
 
 /datum/seed/cotton/New()
 	..()
@@ -16,7 +18,6 @@
 	set_trait(TRAIT_PRODUCT_COLOUR, "#ffffff")
 	set_trait(TRAIT_PLANT_ICON,"bush2")
 	set_trait(TRAIT_IDEAL_LIGHT, 6)
-
 
 // Chili plants/variants.
 /datum/seed/chili
@@ -548,6 +549,7 @@
 	set_trait(TRAIT_PRODUCT_COLOUR,"#d3aca3")
 	set_trait(TRAIT_PLANT_COLOUR,"#dcd9d9")
 	set_trait(TRAIT_PLANT_ICON,"mushroom8")
+
 /datum/seed/mushroom/glowbell
 	name = "glowbell"
 	seed_name = "glowbell"

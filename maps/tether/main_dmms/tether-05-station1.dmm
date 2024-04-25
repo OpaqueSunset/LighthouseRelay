@@ -121,7 +121,7 @@
 /turf/floor/tiled/white,
 /area/tether/station/explorer_showers)
 "aat" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/upper_level)
 "aau" = (
 /turf/wall/shuttle/voidcraft/hard_corner,
@@ -177,7 +177,7 @@
 /area/engineering/engine_smes)
 "aaB" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/photo_album{
+/obj/item/photo_album{
 	pixel_y = -10
 	},
 /obj/machinery/light{
@@ -432,7 +432,7 @@
 /obj/item/cell/high{
 	maxcharge = 15000
 	},
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/tiled/techmaint,
 /area/engineering/engine_smes)
 "abc" = (
@@ -459,7 +459,7 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/electrical,
 /obj/item/clothing/gloves/insulated,
 /obj/item/multitool{
 	pixel_x = 5
@@ -672,7 +672,7 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/rack,
 /obj/random/maintenance/medical,
-/obj/item/flame/lighter/zippo,
+/obj/item/flame/fuelled/lighter/zippo,
 /turf/floor,
 /area/construction/observation)
 "abB" = (
@@ -1122,7 +1122,7 @@
 /turf/floor,
 /area/maintenance/substation/engineering)
 "acy" = (
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acz" = (
 /turf/wall/r_wall,
@@ -1163,25 +1163,25 @@
 "acD" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/bush/brflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acE" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acF" = (
 /obj/structure/railing/mapped,
 /obj/structure/flora/bush/brflowers,
 /obj/structure/disposalpipe/segment,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acG" = (
 /obj/structure/railing/mapped{
 	dir = 4
 	},
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acH" = (
 /turf/floor/wood,
@@ -1201,7 +1201,7 @@
 	dir = 8
 	},
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acL" = (
 /turf/wall/r_wall,
@@ -1281,11 +1281,11 @@
 /area/engineering/workshop)
 "acT" = (
 /obj/machinery/light/flamp/noshade,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acU" = (
 /obj/structure/disposalpipe/segment,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acV" = (
 /obj/effect/floor_decal/borderfloor{
@@ -1325,11 +1325,11 @@
 	dir = 4
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "acZ" = (
 /obj/structure/flora/bush/brflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "ada" = (
 /obj/structure/bed/chair/wood,
@@ -1340,7 +1340,7 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "adc" = (
 /obj/structure/bed/chair/wood{
@@ -1558,14 +1558,14 @@
 	dir = 1
 	},
 /obj/structure/flora/bush/brflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "ady" = (
 /obj/structure/railing/mapped{
 	dir = 1
 	},
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "adz" = (
 /obj/machinery/light{
@@ -1879,7 +1879,7 @@
 /area/crew_quarters/lounge/kitchen_freezer)
 "aed" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/adv,
+/obj/item/firstaid/adv,
 /turf/floor/tiled/white,
 /area/tether/station/explorer_medical)
 "aee" = (
@@ -2245,14 +2245,14 @@
 /area/shuttle/excursion/tether)
 "aeI" = (
 /obj/structure/table,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /turf/floor/tiled/white,
 /area/tether/station/explorer_medical)
 "aeJ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/item/storage/firstaid/surgery,
+/obj/item/firstaid/surgery,
 /obj/structure/table,
 /obj/structure/disposalpipe/segment,
 /turf/floor/tiled/white,
@@ -2308,7 +2308,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 2
 	},
@@ -2875,7 +2875,7 @@
 /obj/structure/table,
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/item/chems/food/mint,
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -4567,7 +4567,7 @@
 /area/library)
 "ajV" = (
 /obj/structure/closet,
-/obj/item/clothing/under/suit_jacket/red,
+/obj/item/clothing/under/formal/red,
 /obj/item/scanner/barcode,
 /obj/item/pen/invisible,
 /obj/item/pen/invisible,
@@ -5640,7 +5640,7 @@
 /area/engineering/atmos/backup)
 "amY" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/item/bodybag/cryobag{
 	pixel_x = 6
 	},
@@ -5991,8 +5991,8 @@
 "aog" = (
 /obj/structure/table,
 /obj/item/t_scanner,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/plating,
 /area/storage/emergency_storage/emergency4)
 "aoh" = (
@@ -7249,10 +7249,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_y = 5
 	},
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/electrical,
 /obj/machinery/network/relay/wall_mounted/lighthouse{
 	pixel_y = 21
 	},
@@ -7684,7 +7684,7 @@
 /turf/floor/tiled,
 /area/holodeck_control)
 "asQ" = (
-/obj/machinery/computer/HolodeckControl,
+/obj/machinery/computer/holodeck_control,
 /turf/floor/tiled,
 /area/holodeck_control)
 "asS" = (
@@ -7744,8 +7744,8 @@
 /area/engineering/atmos/backup)
 "ath" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/belt/utility,
-/obj/item/storage/belt/utility,
+/obj/item/belt/utility,
+/obj/item/belt/utility,
 /obj/item/stack/cable_coil{
 	pixel_x = 3;
 	pixel_y = 3
@@ -7754,7 +7754,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/storage/box/nifsofts_engineering,
+/obj/item/box/nifsofts_engineering,
 /turf/floor/tiled,
 /area/engineering/workshop)
 "atj" = (
@@ -8057,7 +8057,7 @@
 "auc" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/white/diagonal,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/item/bodybag/cryobag{
 	pixel_x = 6
 	},
@@ -8335,7 +8335,7 @@
 /obj/structure/table/reinforced,
 /obj/item/crowbar,
 /obj/item/clothing/gloves/thick,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/tiled,
 /area/engineering/workshop)
 "avf" = (
@@ -8732,11 +8732,11 @@
 /area/engineering/break_room)
 "awT" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets{
+/obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 2
 	},
-/obj/item/storage/box/glasses/square,
+/obj/item/box/glasses/square,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/alarm{
 	dir = 8;
@@ -9541,8 +9541,8 @@
 	dir = 1
 	},
 /obj/structure/table/steel,
-/obj/item/storage/box/lights/mixed,
-/obj/item/storage/box/lights/mixed,
+/obj/item/box/lights/mixed,
+/obj/item/box/lights/mixed,
 /turf/floor/tiled,
 /area/tether/station/stairs_one)
 "azN" = (
@@ -10155,14 +10155,14 @@
 /obj/item/radio/intercom{
 	pixel_y = 20
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 6
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_y = 3
 	},
-/obj/item/storage/briefcase/inflatable,
+/obj/item/briefcase/inflatable,
 /turf/floor/tiled,
 /area/engineering/engine_eva)
 "aAV" = (
@@ -10272,14 +10272,14 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/reinforced,
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = 3;
 	pixel_y = 6
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_y = 3
 	},
-/obj/item/storage/briefcase/inflatable{
+/obj/item/briefcase/inflatable{
 	pixel_x = -3
 	},
 /turf/floor/tiled,
@@ -13384,8 +13384,8 @@
 	dir = 4;
 	pixel_x = -21
 	},
-/obj/item/storage/toolbox/emergency,
-/obj/item/storage/toolbox/electrical,
+/obj/item/toolbox/emergency,
+/obj/item/toolbox/electrical,
 /turf/floor/tiled,
 /area/engineering/engineering_monitoring)
 "aPa" = (
@@ -16762,7 +16762,7 @@
 /obj/abstract/landmark/start{
 	name = "Facility Director"
 	},
-/obj/item/storage/secure/safe{
+/obj/item/secure_storage/safe{
 	pixel_x = -28
 	},
 /obj/machinery/button/alternate/door{
@@ -17181,7 +17181,7 @@
 /area/hallway/station/docks)
 "bql" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/fancy/donut,
+/obj/item/box/fancy/donut,
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
@@ -17483,7 +17483,7 @@
 /area/hallway/station/docks)
 "bsH" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/secure/briefcase,
+/obj/item/secure_storage/briefcase,
 /obj/machinery/button/blast_door{
 	id_tag = "bridge blast";
 	name = "Bridge Blastdoors";
@@ -17796,7 +17796,7 @@
 /area/bridge)
 "bvW" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/regular,
+/obj/item/firstaid/regular,
 /obj/item/radio{
 	pixel_x = 2;
 	pixel_y = 3
@@ -17822,11 +17822,11 @@
 /area/bridge)
 "bwc" = (
 /obj/item/aicard,
-/obj/item/storage/box/PDAs{
+/obj/item/box/PDAs{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/storage/box/ids,
+/obj/item/box/ids,
 /obj/structure/table/reinforced,
 /obj/machinery/status_display{
 	pixel_y = -32;
@@ -20259,19 +20259,19 @@
 /area/bridge_hallway)
 "eNQ" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 5;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = -6
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 5;
 	pixel_y = -6
 	},
@@ -20524,7 +20524,7 @@
 /area/crew_quarters/lounge/kitchen)
 "hrc" = (
 /obj/structure/flora/bush/ppflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "hry" = (
 /turf/wall,
@@ -21150,7 +21150,7 @@
 "lZb" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/flora/bush/brflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "mcn" = (
 /obj/structure/grille,
@@ -21681,10 +21681,10 @@
 	dir = 1
 	},
 /obj/structure/closet/secure_closet/sar,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/autoinjectors,
-/obj/item/storage/bag/chemistry,
-/obj/item/clothing/accessory/permit/gun/planetside/exploration,
+/obj/item/box/pillbottles,
+/obj/item/box/autoinjectors,
+/obj/item/bag/chemistry,
+/obj/item/clothing/permit/gun/planetside/exploration,
 /turf/floor/tiled/monotile,
 /area/tether/station/explorer_prep)
 "oJC" = (
@@ -21731,8 +21731,8 @@
 /obj/item/tank/oxygen,
 /obj/item/suit_cooling_unit,
 /obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/pilot,
-/obj/item/clothing/head/helmet/space/void/pilot,
+/obj/item/clothing/suit/space/void/expedition,
+/obj/item/clothing/head/helmet/space/void/expedition,
 /obj/structure/window/reinforced,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
@@ -21756,7 +21756,7 @@
 "oZc" = (
 /obj/structure/flora/bush/brflowers,
 /obj/structure/flora/bush/brflowers,
-/turf/floor/grass,
+/turf/floor/fake_grass,
 /area/hallway/station/atrium)
 "pdw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -21956,7 +21956,7 @@
 	dir = 4
 	},
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical{
+/obj/item/toolbox/mechanical{
 	pixel_y = 5
 	},
 /obj/item/robotanalyzer,
@@ -22542,8 +22542,8 @@
 /obj/item/tank/oxygen,
 /obj/item/suit_cooling_unit,
 /obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/pilot,
-/obj/item/clothing/head/helmet/space/void/pilot,
+/obj/item/clothing/suit/space/void/expedition,
+/obj/item/clothing/head/helmet/space/void/expedition,
 /obj/effect/floor_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
@@ -22908,10 +22908,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/autoinjectors,
-/obj/item/storage/bag/chemistry,
-/obj/item/clothing/accessory/permit/gun/planetside/exploration,
+/obj/item/box/pillbottles,
+/obj/item/box/autoinjectors,
+/obj/item/bag/chemistry,
+/obj/item/clothing/permit/gun/planetside/exploration,
 /turf/floor/tiled/monotile,
 /area/tether/station/explorer_prep)
 "wcD" = (
@@ -23076,19 +23076,19 @@
 /area/tether/station/pathfinder_office)
 "wPM" = (
 /obj/structure/rack/shelf,
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 5;
 	pixel_y = 4
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = -4;
 	pixel_y = -6
 	},
-/obj/item/storage/backpack/parachute{
+/obj/item/backpack/parachute{
 	pixel_x = 5;
 	pixel_y = -6
 	},

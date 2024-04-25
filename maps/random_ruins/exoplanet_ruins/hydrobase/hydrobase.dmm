@@ -188,7 +188,7 @@
 	dir = 8;
 	pixel_x = -38
 	},
-/obj/item/clothing/accessory/armband/hydro,
+/obj/item/clothing/armband/hydro,
 /turf/floor/tiled/dark,
 /area/map_template/hydrobase/station/goatzone)
 "aG" = (
@@ -1412,8 +1412,8 @@
 /area/map_template/hydrobase/station/processing)
 "dQ" = (
 /obj/structure/table/glass/pglass,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/pillbottles,
+/obj/item/box/pillbottles,
+/obj/item/box/pillbottles,
 /obj/item/chems/glass/beaker/vial/random,
 /obj/item/chems/glass/beaker/vial/random,
 /obj/item/chems/glass/beaker/vial/random,
@@ -1813,7 +1813,7 @@
 /obj/structure/cable{
 	dir = 4
 	},
-/turf/exterior/concrete,
+/turf/floor/concrete,
 /area/template_noop)
 "eM" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2569,7 +2569,7 @@
 /turf/floor/tiled/freezer,
 /area/map_template/hydrobase/station/shower)
 "gy" = (
-/obj/item/clothing/accessory/toggleable/hawaii/random,
+/obj/item/clothing/shirt/hawaii/random,
 /obj/item/clothing/pants/casual/greyjeans,
 /obj/item/clothing/head/bowler,
 /obj/item/clothing/shoes/craftable,

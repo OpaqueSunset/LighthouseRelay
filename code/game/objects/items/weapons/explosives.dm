@@ -48,7 +48,7 @@
 /obj/item/plastique/afterattack(atom/movable/target, mob/user, flag)
 	if (!flag)
 		return
-	if (ismob(target) || istype(target, /obj/item/storage) || istype(target, /obj/item/clothing/accessory/storage) || istype(target, /obj/item/clothing/under))
+	if (ismob(target) || target.storage || istype(target, /obj/item/clothing/webbing/) || istype(target, /obj/item/clothing/under))
 		return
 	if(isturf(target))
 		var/turf/target_turf = target
@@ -85,14 +85,14 @@
 		explosion(location, -1, -1, 2, 3)
 
 	if(target)
-		if (istype(target, /turf/wall))
-			var/turf/wall/W = target
-			W.dismantle_wall(1)
+		if (istype(target, /turf))
+			target.physically_destroyed()
 		else if(isliving(target))
 			target.explosion_act(2) // c4 can't gib mobs anymore.
 		else
 			target.explosion_act(1)
-	if(target)
+	// TODO: vis contents instead of diddling overlays directly.
+	if(!QDELETED(target))
 		target.overlays -= image_overlay
 	qdel(src)
 
@@ -108,5 +108,5 @@
 		T--
 	explode(get_turf(target))
 
-/obj/item/plastique/attack(mob/M, mob/user, def_zone)
-	return
+/obj/item/plastique/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
+	return FALSE

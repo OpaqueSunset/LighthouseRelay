@@ -135,7 +135,7 @@
 	var/datum/gas_mixture/exterior_atmosphere
 
 	// *** Connections ***
-	///A list of all level_ids, and a direction. Indicates what direction of the map connects to what level
+	///A associative list of all level_ids to a direction bitflag. Indicates what direction of the map connects to what level
 	var/list/connected_levels
 	///A cached list of connected directions to their connected level id. Filled up at runtime.
 	var/tmp/list/cached_connections
@@ -533,6 +533,7 @@
 /obj/abstract/level_data_spawner
 	name = "space"
 	icon_state = "level_data"
+	is_spawnable_type = FALSE
 	var/level_data_type = /datum/level_data/space
 
 INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
@@ -582,6 +583,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 
 /datum/level_data/unit_test
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER|ZLEVEL_SEALED)
+	filler_turf = /turf/unsimulated/dark_filler
 
 /datum/level_data/overmap
 	name = "Sensor Display"
@@ -599,7 +601,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 	return ..()
 
 /datum/level_data/mining_level/asteroid
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 	level_generators = list(
 		/datum/random_map/automata/cave_system,
 		/datum/random_map/noise/ore

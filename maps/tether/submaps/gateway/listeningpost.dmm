@@ -51,7 +51,7 @@
 /turf/floor,
 /area/awaymission/listeningpost)
 "l" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored)
 "m" = (
 /obj/machinery/computer/message_monitor{
@@ -242,7 +242,7 @@
 /turf/floor/tiled/freezer,
 /area/awaymission/listeningpost)
 "K" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/unexplored)
 "L" = (
 /turf/floor/greengrid,

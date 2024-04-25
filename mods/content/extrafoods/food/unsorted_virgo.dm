@@ -10,8 +10,8 @@
 
 /obj/item/chems/food/benedict/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 2, list("bacon" = 2))
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 2, list("creamy eggs" = 2))
+	add_to_reagents(/decl/material/solid/organic/meat, 2, list("bacon" = 2))
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 2, list("creamy eggs" = 2))
 
 /obj/item/chems/food/beans
 	name = "baked beans"
@@ -56,7 +56,7 @@
 
 /obj/item/chems/food/eggbowl/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein/egg, 4, list("scrambled eggs" = 4))
+	add_to_reagents(/decl/material/solid/organic/meat/egg, 4, list("scrambled eggs" = 4))
 
 /obj/item/chems/food/curryrice
 	name = "curry rice"
@@ -83,7 +83,7 @@
 
 /obj/item/chems/food/piginblanket/Initialize()
 	. = ..()
-	add_to_reagents(/decl/material/liquid/nutriment/protein, 4, list("sausage" = 3))
+	add_to_reagents(/decl/material/solid/organic/meat, 4, list("sausage" = 3))
 
 /obj/item/chems/food/macncheese
 	name = "macaroni and cheese"

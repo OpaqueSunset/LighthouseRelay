@@ -22,11 +22,11 @@
 	. = ..()
 	set_extension(src, /datum/extension/tool, list(TOOL_SCALPEL = TOOL_QUALITY_BAD))
 
-/obj/item/shard/attack(mob/living/M, mob/living/user, var/target_zone)
+/obj/item/shard/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 	. = ..()
-	if(. && !has_handle)
+	if(. && !has_handle && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H) && !H.get_equipped_item(slot_gloves_str) && !(H.species.species_flags & SPECIES_FLAG_NO_MINOR_CUT))
+		if(!H.get_equipped_item(slot_gloves_str) && !(H.species.species_flags & SPECIES_FLAG_NO_MINOR_CUT))
 			var/obj/item/organ/external/hand = GET_EXTERNAL_ORGAN(H, H.get_active_held_item_slot())
 			if(istype(hand) && !BP_IS_PROSTHETIC(hand))
 				to_chat(H, SPAN_DANGER("You slice your hand on \the [src]!"))
@@ -104,7 +104,7 @@
 	playsound(src.loc, 'sound/effects/glass_step.ogg', 50, 1) // not sure how to handle metal shards with sounds
 
 	var/decl/species/walker_species = M.get_species()
-	if(walker_species && (walker_species.siemens_coefficient<0.5 || (walker_species.species_flags & (SPECIES_FLAG_NO_EMBED|SPECIES_FLAG_NO_MINOR_CUT)))) //Thick skin.
+	if(walker_species && (walker_species.get_shock_vulnerability(M) < 0.5 || (walker_species.species_flags & (SPECIES_FLAG_NO_EMBED|SPECIES_FLAG_NO_MINOR_CUT)))) //Thick skin.
 		return
 
 	var/obj/item/shoes = M.get_equipped_item(slot_shoes_str)

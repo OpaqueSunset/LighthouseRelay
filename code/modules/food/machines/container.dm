@@ -30,7 +30,7 @@
 		to_chat(user, SPAN_NOTICE(get_reagent_info()))
 
 // So we can smack people with frying pans.
-/obj/item/chems/cooking_container/attack(var/mob/M, var/mob/user, var/def_zone)
+/obj/item/chems/cooking_container/use_on_mob(var/mob/M, var/mob/user, var/def_zone)
 	if(can_operate(M) && do_surgery(M, user, src))
 		return
 	if(!reagents.total_volume && user.a_intent == I_HURT)
@@ -274,7 +274,7 @@
 	var/decl/recipe/recipe = select_recipe(src, appliance = appliancetype)
 	if(!recipe)
 		return FALSE
-	var/list/results = recipe.make_food(src)
+	var/list/results = recipe.produce_result(src)
 	var/obj/temp = new /obj(src) //To prevent infinite loops, all results will be moved into a temporary location so they're not considered as inputs for other recipes
 	for (var/result in results)
 		var/atom/movable/AM = result
@@ -283,7 +283,7 @@
 	//making multiple copies of a recipe from one container. For example, tons of fries
 	while (select_recipe(src, appliance = appliancetype) == recipe)
 		var/list/TR = list()
-		TR += recipe.make_food(src)
+		TR += recipe.produce_result(src)
 		for (var/result in TR) //Move results to buffer
 			var/atom/movable/AM = result
 			AM.forceMove(temp)

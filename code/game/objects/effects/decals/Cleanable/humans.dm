@@ -4,8 +4,6 @@
 #define BLOOD_SIZE_BIG       3
 #define BLOOD_SIZE_NO_MERGE -1
 
-var/global/list/image/splatter_cache=list()
-
 /obj/effect/decal/cleanable/blood
 	name = "blood"
 	desc = "It's some blood. That's not supposed to be there."
@@ -163,6 +161,7 @@ var/global/list/image/splatter_cache=list()
 
 /obj/effect/decal/cleanable/blood/drip/on_update_icon()
 	SHOULD_CALL_PARENT(FALSE)
+	color = basecolor
 	set_overlays(drips?.Copy())
 
 /obj/effect/decal/cleanable/blood/drip/Destroy()

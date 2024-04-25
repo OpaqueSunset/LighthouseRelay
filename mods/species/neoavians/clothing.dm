@@ -20,7 +20,7 @@
 
 //Backpacks & tanks
 
-/obj/item/storage/backpack/satchel/Initialize()
+/obj/item/backpack/satchel/Initialize()
 	. = ..()
 	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/satchel.dmi')
 
@@ -35,11 +35,11 @@
 	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/suit/rad_suit.dmi')
 
 //cloaks
-/obj/item/clothing/accessory/cloak/Initialize()
+/obj/item/clothing/suit/cloak/Initialize()
 	. = ..()
 	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/accessory/cloak.dmi')
 
-/obj/item/clothing/accessory/cloak/hide/Initialize()
+/obj/item/clothing/suit/cloak/hide/Initialize()
 	. = ..()
 	LAZYSET(sprite_sheets, BODYTYPE_AVIAN, 'mods/species/neoavians/icons/clothing/accessory/cloak_hide.dmi')
 

@@ -9,14 +9,14 @@
 /area/tether/surfacebase/outside/wilderness)
 "ab" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_5,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "ac" = (
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "ae" = (
 /obj/structure/mob_spawner/scanner/wild_animals,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "af" = (
 /turf/wall/shuttle/dark/hard_corner,
@@ -61,7 +61,7 @@
 /area/tether/surfacebase/outside/wilderness)
 "ak" = (
 /obj/item/shard,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "al" = (
 /obj/structure/closet{
@@ -233,11 +233,11 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "aN" = (
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/regular{
+/obj/item/firstaid/regular{
 	pixel_x = -2;
 	pixel_y = 4
 	},
@@ -247,24 +247,24 @@
 /obj/item/bodybag/cryobag{
 	pixel_x = 5
 	},
-/obj/item/storage/firstaid/o2{
+/obj/item/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 6
 	},
-/obj/item/storage/box/masks{
+/obj/item/box/masks{
 	pixel_x = 0;
 	pixel_y = 0
 	},
-/obj/item/storage/box/gloves{
+/obj/item/box/gloves{
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/fire{
+/obj/item/firstaid/toxin,
+/obj/item/firstaid/fire{
 	pixel_x = 2;
 	pixel_y = 3
 	},
-/obj/item/storage/firstaid/adv{
+/obj/item/firstaid/adv{
 	pixel_x = -2
 	},
 /obj/item/chems/ivbag,
@@ -618,7 +618,7 @@
 "bK" = (
 /obj/machinery/vending/cigarette{
 	name = "hacked cigarette machine";
-	products = list(/obj/item/storage/box/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	products = list(/obj/item/box/fancy/cigarettes = 10, /obj/item/box/matches = 10, /obj/item/flame/fuelled/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
 	},
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
@@ -705,7 +705,7 @@
 /area/tether/surfacebase/crash)
 "bY" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_3,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "bZ" = (
 /obj/machinery/computer/arcade/battle,
@@ -740,7 +740,7 @@
 /area/tether/surfacebase/crash)
 "ce" = (
 /obj/effect/step_trigger/teleporter/wild/to_wild_1,
-/turf/exterior/sif_growth,
+/turf/floor/natural/sif_growth,
 /area/tether/surfacebase/outside/wilderness)
 "cf" = (
 /obj/structure/grille,
@@ -777,7 +777,7 @@
 /area/tether/surfacebase/crash)
 "cl" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/mechanical,
+/obj/item/toolbox/mechanical,
 /turf/floor/shuttle/black{
 	initial_gas_mix = "n2=16.95;phoron=76.2751;co2=12.7125;TEMP=293.15"
 	},

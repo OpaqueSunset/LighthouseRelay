@@ -1051,7 +1051,7 @@
 		var/obj/item/fax = locate(href_list["AdminFaxView"])
 		if (istype(fax, /obj/item/paper))
 			var/obj/item/paper/P = fax
-			P.interact(usr, TRUE)
+			P.interact(usr, TRUE, admin_interact = TRUE)
 		else if (istype(fax, /obj/item/photo))
 			var/obj/item/photo/H = fax
 			H.interact(usr)
@@ -1186,10 +1186,6 @@
 			else if(!ispath(path, /obj) && !ispath(path, /turf) && !ispath(path, /mob))
 				removed_paths += dirty_path
 				continue
-			else if(ispath(path, /obj/effect/bhole))
-				if(!check_rights(R_FUN,0))
-					removed_paths += dirty_path
-					continue
 			paths += path
 
 		if(!paths)

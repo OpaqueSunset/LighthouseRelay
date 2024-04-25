@@ -151,6 +151,8 @@
 /obj/effect/rune/teleport/Initialize()
 	. = ..()
 	var/area/A = get_area(src)
+	if(!A)
+		return INITIALIZE_HINT_QDEL
 	destination = A.proper_name
 	var/decl/special_role/cultist/cult = GET_DECL(/decl/special_role/cultist)
 	cult.teleport_runes += src
@@ -159,8 +161,9 @@
 	var/decl/special_role/cultist/cult = GET_DECL(/decl/special_role/cultist)
 	cult.teleport_runes -= src
 	var/turf/T = get_turf(src)
-	for(var/atom/movable/A in contents)
-		A.forceMove(T)
+	if(T)
+		for(var/atom/movable/A in contents)
+			A.forceMove(T)
 	return ..()
 
 /obj/effect/rune/teleport/examine(mob/user)
@@ -421,14 +424,14 @@
 		user.equip_to_slot_or_del(new /obj/item/clothing/shoes/cult(user), slot_shoes_str)
 
 	O = user.get_equipped_item(slot_back_str)
-	if(istype(O, /obj/item/storage) && !istype(O, /obj/item/storage/backpack/cultpack) && user.try_unequip(O))
-		var/obj/item/storage/backpack/cultpack/C = new /obj/item/storage/backpack/cultpack(user)
+	if(O.storage && !istype(O, /obj/item/backpack/cultpack) && user.try_unequip(O))
+		var/obj/item/backpack/cultpack/C = new /obj/item/backpack/cultpack(user)
 		user.equip_to_slot_or_del(C, slot_back_str)
 		if(C)
 			for(var/obj/item/I in O)
 				I.forceMove(C)
 	else if(!O)
-		var/obj/item/storage/backpack/cultpack/C = new /obj/item/storage/backpack/cultpack(user)
+		var/obj/item/backpack/cultpack/C = new /obj/item/backpack/cultpack(user)
 		user.equip_to_slot_or_del(C, slot_back_str)
 
 	user.update_icon()

@@ -218,25 +218,50 @@
 
 	if(is_floor())
 
-		if(istype(W, /obj/item/stack/tile))
+		if(istype(W, /obj/item/stack/tile) && is_plating())
 			var/obj/item/stack/tile/T = W
 			T.try_build_turf(user, src)
 			return TRUE
 
-		if(IS_SHOVEL(W) && can_be_dug())
-			if(user.a_intent == I_HELP && can_dig_pit())
-				try_dig_pit(user, W)
-			else if(can_dig_trench())
-				try_dig_trench(user, W)
-			else
-				to_chat(user, SPAN_WARNING("There is nothing to be dug out of \the [src]."))
+		if(IS_HOE(W) && can_dig_farm(W.material?.hardness))
+			try_dig_farm(user, W)
 			return TRUE
 
-		if(istype(W, /obj/item/storage))
-			var/obj/item/storage/storage = W
-			if(storage.collection_mode)
-				storage.gather_all(src, user)
+		if(IS_SHOVEL(W))
+
+			if(!can_be_dug(W.material?.hardness))
+				to_chat(user, SPAN_WARNING("\The [src] is too hard to be dug with \the [W]."))
 				return TRUE
+
+			if(user.a_intent == I_HELP && can_dig_pit(W.material?.hardness))
+				try_dig_pit(user, W)
+			else if(can_dig_trench(W.material?.hardness))
+				try_dig_trench(user, W)
+			else
+				to_chat(user, SPAN_WARNING("You cannot dig anything out of \the [src] with \the [W]."))
+			return TRUE
+
+		var/decl/material/material = get_material()
+		if(IS_PICK(W) && material)
+
+			if(material?.hardness <= MAT_VALUE_FLEXIBLE)
+				to_chat(user, SPAN_WARNING("\The [src] is too soft to be excavated with \the [W]. Use a shovel."))
+				return TRUE
+
+			// Let picks dig out hard turfs, but not dig pits.
+			if(!can_be_dug(W.material?.hardness, using_tool = TOOL_PICK))
+				to_chat(user, SPAN_WARNING("\The [src] is too hard to be excavated with \the [W]."))
+				return TRUE
+
+			if(can_dig_trench(W.material?.hardness, using_tool = TOOL_PICK))
+				try_dig_trench(user, W, using_tool = TOOL_PICK)
+			else
+				to_chat(user, SPAN_WARNING("You cannot excavate \the [src] with \the [W]."))
+
+			return TRUE
+
+		if(W?.storage?.collection_mode && W.storage.gather_all(src, user))
+			return TRUE
 
 	if(ATOM_IS_OPEN_CONTAINER(W) && W.reagents && reagents?.total_volume >= FLUID_PUDDLE)
 		var/taking = min(reagents.total_volume, REAGENTS_FREE_SPACE(W.reagents))
@@ -245,10 +270,8 @@
 			reagents.trans_to(W, taking)
 			return TRUE
 
-	if(istype(W, /obj/item/storage))
-		var/obj/item/storage/S = W
-		if(S.use_to_pickup && S.collection_mode)
-			S.gather_all(src, user)
+	if(istype(W, /obj/item) && storage && storage.use_to_pickup && storage.collection_mode)
+		storage.gather_all(src, user)
 		return TRUE
 
 	if(istype(W, /obj/item/grab))
@@ -314,7 +337,7 @@
 			if(abs(current_height - old_height) > FLUID_SHALLOW)
 				if(current_height > old_height)
 					return 0
-				if(MOVING_DELIBERATELY(mover_mob))
+				if(istype(mover_mob) && MOVING_DELIBERATELY(mover_mob))
 					to_chat(mover_mob, SPAN_WARNING("You refrain from stepping over the edge; it looks like a steep drop down to \the [src]."))
 					return 0
 
@@ -324,7 +347,7 @@
 	return
 
 /turf/proc/is_plating()
-	return 0
+	return FALSE
 
 /turf/proc/protects_atom(var/atom/A)
 	return FALSE
@@ -386,11 +409,9 @@
 		if(istype(O,/obj/effect/rune) || istype(O,/obj/effect/decal/cleanable))
 			qdel(O)
 
-/turf/proc/update_blood_overlays()
-	return
-
 /turf/proc/remove_decals()
 	LAZYCLEARLIST(decals)
+	update_icon()
 
 // Called when turf is hit by a thrown object
 /turf/hitby(atom/movable/AM, var/datum/thrownthing/TT)
@@ -587,7 +608,7 @@
 /turf/get_vis_contents_to_add()
 	var/air_graphic = get_air_graphic()
 	if(length(air_graphic))
-		LAZYADD(., air_graphic)
+		LAZYDISTINCTADD(., air_graphic)
 	if(weather)
 		LAZYADD(., weather)
 	if(flooded)
@@ -701,12 +722,12 @@
 		if(fluid_depth <= FLUID_DEEP)
 			return "mask_deep"
 
-/turf/proc/spark_act(obj/effect/sparks/sparks)
+/turf/spark_act(obj/effect/sparks/sparks)
 	if(simulated)
 		hotspot_expose(1000,100)
-		if(prob(25))
-			for(var/obj/structure/fire_source/fire in contents)
-				fire.try_light(1000)
+		for(var/atom/thing in contents)
+			if(thing.simulated && prob(25))
+				thing.spark_act(sparks)
 		return TRUE
 	return FALSE
 
@@ -732,12 +753,34 @@
 			user.dropInto(src)
 			LAZYREMOVE(skip_height_fall_for, weakref(user))
 
+/turf/proc/handle_universal_decay()
+	return
+
+/turf/proc/get_plant_growth_rate()
+	return 0
+
+/turf/proc/get_soil_color()
+	return null
+
+/turf/proc/get_fishing_result(obj/item/chems/food/bait)
+	var/area/A = get_area(src)
+	return A.get_fishing_result(src, bait)
+
 /turf/get_alt_interactions(mob/user)
 	. = ..()
 	LAZYADD(., /decl/interaction_handler/show_turf_contents)
-	if(user && IS_SHOVEL(user.get_active_held_item()))
-		if(can_dig_pit())
-			LAZYADD(., /decl/interaction_handler/dig/pit)
+	if(user)
+		var/obj/item/held = user.get_active_held_item()
+		if(istype(held))
+			if(IS_SHOVEL(held))
+				if(can_dig_pit(held.material?.hardness))
+					LAZYDISTINCTADD(., /decl/interaction_handler/dig/pit)
+				if(can_dig_trench(held.material?.hardness))
+					LAZYDISTINCTADD(., /decl/interaction_handler/dig/trench)
+			if(IS_PICK(held) && can_dig_trench(held.material?.hardness, using_tool = TOOL_PICK))
+				LAZYDISTINCTADD(., /decl/interaction_handler/dig/trench)
+			if(IS_HOE(held) && can_dig_farm(held.material?.hardness))
+				LAZYDISTINCTADD(., /decl/interaction_handler/dig/farm)
 
 /decl/interaction_handler/show_turf_contents
 	name = "Show Turf Contents"
@@ -758,16 +801,26 @@
 
 /decl/interaction_handler/dig/trench/invoked(atom/target, mob/user, obj/item/prop)
 	var/turf/T = get_turf(target)
-	if(T.can_dig_trench())
-		T.try_dig_trench(user, prop)
+	if(IS_SHOVEL(prop))
+		if(T.can_dig_trench(prop?.material?.hardness))
+			T.try_dig_trench(user, prop)
+	else if(IS_PICK(prop))
+		var/decl/material/material = T.get_material()
+		if(material?.hardness > MAT_VALUE_FLEXIBLE && T.can_dig_trench(prop?.material?.hardness, using_tool = TOOL_PICK))
+			T.try_dig_trench(user, prop, using_tool = TOOL_PICK)
 
 /decl/interaction_handler/dig/pit
 	name = "Dig Pit"
 
 /decl/interaction_handler/dig/pit/invoked(atom/target, mob/user, obj/item/prop)
 	var/turf/T = get_turf(target)
-	if(T.can_dig_pit())
+	if(T.can_dig_pit(prop?.material?.hardness))
 		T.try_dig_pit(user, prop)
 
-/turf/proc/handle_universal_decay()
-	return
+/decl/interaction_handler/dig/farm
+	name = "Dig Farm Plot"
+
+/decl/interaction_handler/dig/farm/invoked(atom/target, mob/user, obj/item/prop)
+	var/turf/T = get_turf(target)
+	if(T.can_dig_farm(prop?.material?.hardness))
+		T.try_dig_farm(user, prop)

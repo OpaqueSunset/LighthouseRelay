@@ -6,33 +6,33 @@
 /turf/template_noop,
 /area/mine/explored/underdark)
 "c" = (
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "e" = (
 /obj/structure/closet/crate/mimic/cointoss,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "f" = (
 /obj/structure/closet/crate/mimic/guaranteed,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "g" = (
 /obj/structure/closet/crate/mimic/dangerous,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "h" = (
 /obj/structure/closet/crate/mimic/safe,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "i" = (
 /obj/item/remains/deer,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 "j" = (
 /obj/item/remains/tajaran,
 /obj/effect/decal/cleanable/blood,
-/turf/exterior/barren,
+/turf/floor/natural/barren,
 /area/mine/explored/underdark)
 
 (1,1,1) = {"

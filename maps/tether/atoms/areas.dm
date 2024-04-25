@@ -277,7 +277,7 @@
 /area/shuttle/large_escape_pod1/station
 	name = "\improper Large Escape Pod"
 	icon_state = "shuttle2"
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 
 /area/shuttle/escape/centcom
 	name = "\improper Emergency Shuttle CentCom"
@@ -549,10 +549,10 @@
 // Mining Underdark
 /area/mine/unexplored/underdark
 	name = "\improper Mining Underdark"
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 /area/mine/explored/underdark
 	name = "\improper Mining Underdark"
-	base_turf = /turf/exterior/barren
+	base_turf = /turf/floor/natural/barren
 
 // Mining outpost areas
 /area/outpost/mining_main/passage
