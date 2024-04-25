@@ -16,7 +16,7 @@
 	name = "Biomass"
 	result = /decl/material/liquid/biomass
 	required_reagents = list(
-		/decl/material/liquid/nutriment/protein = 1,
+		/decl/material/solid/organic/meat = 1,
 		/decl/material/liquid/nutriment/sugar = 1,
 		/decl/material/solid/phoron = 1
 	)
