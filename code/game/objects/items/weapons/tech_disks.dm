@@ -48,7 +48,7 @@
 /**Delete a specific file. Fails if file is write protected, and force is FALSE. */
 /obj/item/disk/proc/delete_file(var/name, var/force = FALSE)
 	var/datum/computer_file/data/F = LAZYACCESS(stored_files, name)
-	if(!F || (F.read_only && !force))
+	if(!F)
 		return FALSE
 	free_blocks = clamp(round(free_blocks + F.block_size), 0, block_capacity)
 	// do not qdel; should be GC'd once it has no references anyway

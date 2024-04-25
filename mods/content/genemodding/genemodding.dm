@@ -11,3 +11,7 @@
 	dreams = list(
 		"a biohacker","some genemods","transhumanism","mutations","an abandoned laboratory"
 	)
+
+#ifdef CONTENT_PACK_RESLEEVING
+#warn Resleeving must be loaded AFTER genemodding for full compatibility!
+#endif
