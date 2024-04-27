@@ -72,7 +72,7 @@
 	data["painting_color"] = painting_color
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, name, "gear_painter.tmpl", name)
+		ui = new(user, src, ui_key, "gear_painter.tmpl", name)
 		ui.set_initial_data(data)
 		ui.open()
 
