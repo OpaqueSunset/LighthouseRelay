@@ -1,3 +1,28 @@
+var/global/list/_cooking_recipe_cache = list()
+/proc/select_recipe(category, atom/container, cooking_temperature)
+
+	if(!category)
+		return
+
+	if(!global._cooking_recipe_cache[category])
+		var/list/recipes = list()
+		var/list/all_recipes = decls_repository.get_decls_of_subtype(/decl/recipe)
+		for(var/rtype in all_recipes)
+			var/decl/recipe/recipe = all_recipes[rtype]
+			if(isnull(recipe.container_categories) || (category in recipe.container_categories))
+				recipes += recipe
+		global._cooking_recipe_cache[category] = recipes
+
+	var/list/available_recipes = global._cooking_recipe_cache[category]
+	if(!length(available_recipes))
+		return
+
+	var/highest_count = 0
+	for(var/decl/recipe/recipe as anything in available_recipes)
+		if(recipe.can_cook_in(container, cooking_temperature) && (!. || recipe.complexity >= highest_count))
+			highest_count = recipe.complexity
+			. = recipe
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * *
  * /datum/recipe by rastaf0            13 apr 2011 *
  * /decl/recipe by Neb                 21 may 2021 *
@@ -13,8 +38,10 @@
 	var/list/reagents             // example: = list(/decl/material/liquid/drink/juice/berry = 5) // do not list same reagent twice
 	var/list/items                // example: = list(/obj/item/crowbar, /obj/item/welder, /obj/item/screwdriver = 2) // place /foo/bar before /foo
 	var/list/fruit                // example: = list("fruit" = 3)
-	var/time = 100                // Cooking time in deciseconds.
+	var/cooking_time = 10 SECONDS                // Cooking time in deciseconds.
 
+	/// What categories can this recipe be cooked by? Null for any.
+	var/list/container_categories
 	/// How many items to create, or how many reagent units to add.
 	var/result_quantity = 1
 	/// An atom type to create, or a /decl/material type if you want to place a reagent into the container.
@@ -28,7 +55,7 @@
 	/// Coatings are used for batter, breadcrumbs, beer-batter, colonel's secret coating, etc
 	var/coating = null
 	/// Which appliances this recipe can be made in.
-	var/appliance = APPLIANCE_MIX
+	var/appliance = RECIPE_CATEGORY_MIX
 	// List of defines is in __defines/misc.dm. But for reference they are:
 	/*
 		MIX
@@ -70,6 +97,8 @@
 	var/mechanics_text    // Mechanical description of recipe/food.
 	var/antag_text        // Any antagonist-relevant stuff relating to this recipe.
 
+	var/completion_message
+
 /decl/recipe/validate()
 	. = ..()
 	if(!ispath(result))
@@ -88,40 +117,55 @@
 
 /decl/recipe/proc/get_appliances_string()
 	var/list/appliance_names
-	if(appliance & APPLIANCE_MIX)
+	if(appliance & RECIPE_CATEGORY_MIX)
 		LAZYADD(appliance_names, "a mixing bowl or plate")
-	if(appliance & APPLIANCE_FRYER)
+	if(appliance & RECIPE_CATEGORY_FRYER)
 		LAZYADD(appliance_names, "a fryer")
-	if(appliance & APPLIANCE_OVEN)
+	if(appliance & RECIPE_CATEGORY_OVEN)
 		LAZYADD(appliance_names, "an oven")
-	if(appliance & APPLIANCE_SKILLET)
+	if(appliance & RECIPE_CATEGORY_SKILLET)
 		LAZYADD(appliance_names, "a skillet")
-	if(appliance & APPLIANCE_SAUCEPAN)
+	if(appliance & RECIPE_CATEGORY_SAUCEPAN)
 		LAZYADD(appliance_names, "a saucepan")
-	if(appliance & APPLIANCE_POT)
+	if(appliance & RECIPE_CATEGORY_POT)
 		LAZYADD(appliance_names, "a pot")
-	if(appliance & APPLIANCE_MICROWAVE)
+	if(appliance & RECIPE_CATEGORY_MICROWAVE)
 		LAZYADD(appliance_names, "a microwave")
 	return english_list(appliance_names, and_text = " or ")
 
 /decl/recipe/proc/get_appliance_names()
 	var/list/appliance_names
-	if(appliance & APPLIANCE_MIX)
+	if(appliance & RECIPE_CATEGORY_MIX)
 		LAZYADD(appliance_names, "mixing bowl")
 		LAZYADD(appliance_names, "plate")
-	if(appliance & APPLIANCE_FRYER)
+	if(appliance & RECIPE_CATEGORY_FRYER)
 		LAZYADD(appliance_names, "fryer")
-	if(appliance & APPLIANCE_OVEN)
+	if(appliance & RECIPE_CATEGORY_OVEN)
 		LAZYADD(appliance_names, "oven")
-	if(appliance & APPLIANCE_SKILLET)
+	if(appliance & RECIPE_CATEGORY_SKILLET)
 		LAZYADD(appliance_names, "skillet")
-	if(appliance & APPLIANCE_SAUCEPAN)
+	if(appliance & RECIPE_CATEGORY_SAUCEPAN)
 		LAZYADD(appliance_names, "saucepan")
-	if(appliance & APPLIANCE_POT)
+	if(appliance & RECIPE_CATEGORY_POT)
 		LAZYADD(appliance_names, "pot")
-	if(appliance & APPLIANCE_MICROWAVE)
+	if(appliance & RECIPE_CATEGORY_MICROWAVE)
 		LAZYADD(appliance_names, "microwave")
 	return appliance_names
+
+/decl/recipe/proc/can_cook_in(atom/container, cooking_temperature)
+	if(!istype(container))
+		return FALSE
+	if(cooking_temperature < minimum_temperature)
+		return FALSE
+	if(cooking_temperature > maximum_temperature)
+		return FALSE
+	if(!check_reagents(container.reagents))
+		return FALSE
+	if(!check_items(container))
+		return FALSE
+	if(!check_fruit(container))
+		return FALSE
+	return TRUE
 
 /decl/recipe/proc/check_reagents(datum/reagents/avail_reagents)
 	SHOULD_BE_PURE(TRUE)
@@ -142,19 +186,10 @@
 		return FALSE
 	var/list/needed_fruits = fruit.Copy()
 	for(var/obj/item/chems/food/S in container_contents)
-		var/use_tag
-		if(istype(S, /obj/item/chems/food/grown))
-			var/obj/item/chems/food/grown/G = S
-			if(!G.seed || !G.seed.kitchen_tag)
-				continue
-			use_tag = G.dry ? "dried [G.seed.kitchen_tag]" : G.seed.kitchen_tag
-		else if(istype(S, /obj/item/chems/food/fruit_slice))
-			var/obj/item/chems/food/fruit_slice/FS = S
-			if(!FS.seed || !FS.seed.kitchen_tag)
-				continue
-			use_tag = "[FS.seed.kitchen_tag] slice"
-		use_tag = "[S.dry ? "dried " : ""][use_tag]"
-		if(isnull(needed_fruits[use_tag]) || !check_coating(S))
+		var/use_tag = S.get_grown_tag()
+		if(!use_tag)
+			continue
+		if(isnull(needed_fruits[use_tag]))
 			continue
 		needed_fruits[use_tag]--
 	for(var/ktag in needed_fruits)
@@ -209,8 +244,8 @@
 
 	if(!istype(container) || QDELETED(container) || !container.simulated)
 		CRASH("Recipe trying to create a result with null or invalid container: [container || "NULL"], [container?.simulated || "NULL"]")
-	if(!container.reagents?.total_volume)
-		CRASH("Recipe trying to create a result in a container with null or zero capacity reagent holder: [container.reagents?.total_volume || "NULL"]")
+	if(!container.reagents?.maximum_volume)
+		CRASH("Recipe trying to create a result in a container with null or zero capacity reagent holder: [container.reagents?.maximum_volume || "NULL"]")
 
 	if(ispath(result, /atom/movable))
 		var/produced = create_result_atom(container, used_ingredients)
@@ -223,7 +258,7 @@
 		return produced
 
 	if(ispath(result, /decl/material))
-		container.reagents.add_reagent(result, result_quantity, get_result_data(container, used_ingredients))
+		container.reagents?.add_reagent(result, result_quantity, get_result_data(container, used_ingredients))
 		return null
 
 // Create the actual result atom. Handled by a proc to allow for recipes to override it.
@@ -264,13 +299,12 @@
 	// Find fruits that we need.
 	if(LAZYLEN(fruit))
 		var/list/checklist = fruit.Copy()
-		for(var/obj/item/chems/food/grown/fruit in container_contents)
-			if(!fruit.seed?.kitchen_tag || isnull(checklist[fruit.seed.kitchen_tag]))
-				continue
-			if(checklist[fruit.seed.kitchen_tag] > 0)
+		for(var/obj/item/chems/food/food in container_contents)
+			var/check_grown_tag = food.get_grown_tag()
+			if(check_grown_tag && checklist[check_grown_tag] > 0)
 				//We found a thing we need
 				container_contents -= fruit
-				checklist[fruit.seed.kitchen_tag]--
+				checklist[check_grown_tag]--
 				used_ingredients["fruits"] += fruit
 
 	// And lastly deduct necessary quantities of reagents.
@@ -287,10 +321,15 @@
 
 	// Create our food products.
 	// Note that this will simply put reagents into the container for non-object recipes.
-	for(var/_ in 1 to result_quantity)
+	if(ispath(result, /decl/material))
 		var/atom/movable/result_obj = create_result(container, used_ingredients)
 		if(istype(result_obj))
 			LAZYADD(., result_obj)
+	else
+		for(var/_ in 1 to result_quantity)
+			var/atom/movable/result_obj = create_result(container, used_ingredients)
+			if(istype(result_obj))
+				LAZYADD(., result_obj)
 
 	// Collect all our ingredient reagents in a buffer.
 	// If we aren't using a buffer, just discard the reagents.
@@ -321,6 +360,9 @@
 		food.cook()
 		if(!QDELETED(food.plate))
 			QDEL_NULL(food.plate) // crafted food should not have plates by default
+
+	if(completion_message && ATOM_IS_OPEN_CONTAINER(container))
+		container.visible_message(SPAN_NOTICE(completion_message))
 
 	// We only care about the outputs, so we can go home now.
 	if(reagent_mix == REAGENT_REPLACE)

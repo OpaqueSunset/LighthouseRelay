@@ -13,7 +13,9 @@
 	)
 	trade_flags = TRADER_MONEY
 	possible_wanted_items = list() //They are a pizza shop, not a bargainer.
-	possible_trading_items = list(/obj/item/chems/food/sliceable/pizza = TRADER_SUBTYPES_ONLY)
+	possible_trading_items = list(
+		/obj/item/chems/food/sliceable/pizza = TRADER_SUBTYPES_ONLY
+	)
 
 	speech = list(
 		TRADER_HAIL_GENERIC      = "Hello! Welcome to " + TRADER_TOKEN_ORIGIN + ", may I take your order?",
@@ -62,7 +64,6 @@
 		/obj/item/chems/food/boiledegg           = TRADER_THIS_TYPE,
 		/obj/item/chems/food/boiledrice          = TRADER_THIS_TYPE,
 		/obj/item/chems/food/ricepudding         = TRADER_THIS_TYPE,
-		/obj/item/chems/food/soydope             = TRADER_THIS_TYPE,
 		/obj/item/chems/food/stewedsoymeat       = TRADER_THIS_TYPE,
 		/obj/item/chems/drinks/dry_ramen         = TRADER_THIS_TYPE
 	)
@@ -122,7 +123,7 @@
 		/obj/item/chems/drinks/cans              = TRADER_SUBTYPES_ONLY,
 		/obj/item/chems/drinks/bottle            = TRADER_SUBTYPES_ONLY,
 		/obj/item/chems/drinks/bottle/small      = TRADER_BLACKLIST,
-		/obj/item/chems/food/fruit_slice         = TRADER_BLACKLIST,
+		/obj/item/chems/food/processed_grown     = TRADER_BLACKLIST_ALL,
 		/obj/item/chems/food/slice               = TRADER_BLACKLIST_ALL,
 		/obj/item/chems/food/grown               = TRADER_BLACKLIST_ALL,
 		/obj/item/chems/food/human               = TRADER_BLACKLIST_ALL,

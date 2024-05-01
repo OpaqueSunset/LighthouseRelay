@@ -1,6 +1,6 @@
 /decl/recipe/fried
 	abstract_type = /decl/recipe/fried
-	appliance = APPLIANCE_FRYER
+	appliance = RECIPE_CATEGORY_FRYER
 	//cooking_heat_type = COOKING_HEAT_DIRECT
 	//cooking_medium_type = /decl/material/liquid/oil
 
@@ -21,7 +21,7 @@
 	result = /obj/item/chems/food/fishandchips
 
 /decl/recipe/fried/fishfingers
-	appliance = APPLIANCE_FRYER
+	appliance = RECIPE_CATEGORY_FRYER
 	coating = /decl/material/liquid/nutriment/batter
 	items = list(
 		/obj/item/chems/food/egg,
@@ -37,9 +37,7 @@
 
 /decl/recipe/fried/fries
 	display_name = "potato chips"
-	items = list(
-		/obj/item/chems/food/rawsticks
-	)
+	fruit = list("potato sticks" = 1)
 	reagent_mix = REAGENT_REPLACE // get the raw potato out of there
 	result = /obj/item/chems/food/fries
 

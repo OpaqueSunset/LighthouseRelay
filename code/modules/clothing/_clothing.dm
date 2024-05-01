@@ -5,14 +5,14 @@
 	material = /decl/material/solid/organic/cloth
 	paint_verb = "dyed"
 	replaced_in_loadout = TRUE
+	w_class = ITEM_SIZE_SMALL
 	icon_state = ICON_STATE_WORLD
+	force = 0
 
 	var/wizard_garb = 0
 	var/flash_protection = FLASH_PROTECTION_NONE	  // Sets the item's level of flash protection.
 	var/tint = TINT_NONE							  // Sets the item's level of visual impairment tint.
-
 	var/bodytype_equip_flags    // Bitfields; if null, checking is skipped. Determine if a given mob can equip this item or not.
-
 	var/list/accessories = list()
 	var/list/valid_accessory_slots
 	var/list/restricted_accessory_slots
@@ -30,7 +30,6 @@
 /obj/item/clothing/Initialize()
 
 	. = ..()
-
 	if(accessory_slot)
 		if(isnull(accessory_removable))
 			accessory_removable = TRUE
@@ -40,8 +39,7 @@
 
 	if(starting_accessories)
 		for(var/T in starting_accessories)
-			src.attach_accessory(null, new T(src))
-
+			attach_accessory(null, new T(src))
 	if(ACCESSORY_SLOT_SENSORS in valid_accessory_slots)
 		set_extension(src, /datum/extension/interactive/multitool/items/clothing)
 
@@ -167,19 +165,35 @@
 				overlay.overlays += accessory.get_mob_overlay(user_mob, slot, bodypart)
 	return overlay
 
+/obj/item/clothing/set_dir(ndir)
+	// Avoid rendering the profile or back sides of the mob overlay we used when accessories are rendered.
+	if(length(accessories))
+		ndir = SOUTH
+	return ..()
+
 /obj/item/clothing/on_update_icon()
 	. = ..()
-	icon_state = JOINTEXT(list(get_world_inventory_state(), get_clothing_state_modifier()))
-	if(markings_state_modifier && markings_color)
-		add_overlay(mutable_appearance(icon, "[icon_state][markings_state_modifier]", markings_color))
-	var/list/new_overlays
-	for(var/obj/item/clothing/accessory in accessories)
-		var/image/I = accessory.get_attached_inventory_overlay(icon_state)
+
+	// Clothing does not generally align with each other's world icons, so we just use the mob overlay in this case.
+	var/set_appearance = FALSE
+	if(length(accessories))
+		var/image/I = get_mob_overlay(ismob(loc) ? loc : null, get_fallback_slot())
 		if(I)
-			LAZYADD(new_overlays, I)
-	if(LAZYLEN(new_overlays))
-		add_overlay(new_overlays)
+			I.plane = plane
+			I.layer = layer
+			I.alpha = alpha
+			I.color = color
+			I.name = name
+			appearance = I
+			set_dir(SOUTH)
+			set_appearance = TRUE
+	if(!set_appearance)
+		icon_state = JOINTEXT(list(get_world_inventory_state(), get_clothing_state_modifier()))
+		if(markings_state_modifier && markings_color)
+			add_overlay(mutable_appearance(icon, "[icon_state][markings_state_modifier]", markings_color))
+
 	update_clothing_icon()
+
 
 // Used by washing machines to temporarily make clothes smell
 /obj/item/clothing/proc/change_smell(decl/material/odorant, time = 10 MINUTES)
@@ -219,6 +233,7 @@
 		to_chat(user, SPAN_WARNING("\The [src] [gender == PLURAL ? "do" : "does"] not fit you."))
 
 /obj/item/clothing/equipped(var/mob/user)
+	update_icon()
 	if(needs_vision_update())
 		update_wearer_vision()
 	return ..()
@@ -239,11 +254,20 @@
 		reconsider_single_icon()
 		update_clothing_icon()
 
+/obj/item/clothing/get_examine_name()
+	var/list/ensemble = list(name)
+	for(var/obj/item/clothing/accessory in accessories)
+		if(accessory.accessory_visibility == ACCESSORY_VISIBILITY_ENSEMBLE)
+			LAZYADD(ensemble, accessory.get_examine_name())
+	if(length(ensemble) <= 1)
+		return ..()
+	return english_list(ensemble, summarize = TRUE)
+
 /obj/item/clothing/get_examine_line()
 	. = ..()
 	var/list/ties
 	for(var/obj/item/clothing/accessory in accessories)
-		if(accessory.accessory_high_visibility)
+		if(accessory.accessory_visibility == ACCESSORY_VISIBILITY_ATTACHMENT)
 			LAZYADD(ties, "\a [accessory.get_examine_line()]")
 	if(LAZYLEN(ties))
 		.+= " with [english_list(ties)] attached"
@@ -312,8 +336,8 @@
 			return TOPIC_HANDLED
 	. = ..()
 
-/obj/item/clothing/get_pressure_weakness(pressure,zone)
-	. = ..()
+/obj/item/clothing/get_pressure_weakness(pressure, zone)
+	. = (body_parts_covered & zone) ? ..() : 1
 	for(var/obj/item/clothing/accessory in accessories)
 		. = min(., accessory.get_pressure_weakness(pressure,zone))
 
@@ -348,7 +372,7 @@
 /obj/item/clothing/proc/get_hood()
 	return null
 
-/obj/item/clothing/proc/remove_hood()
+/obj/item/clothing/proc/remove_hood(skip_update = FALSE)
 	var/obj/item/check_hood = get_hood()
 	if(!istype(check_hood) || check_hood.loc == src)
 		return
@@ -356,11 +380,13 @@
 		var/mob/M = check_hood.loc
 		M.drop_from_inventory(check_hood)
 	check_hood.forceMove(src)
-	update_clothing_icon()
+	if(!skip_update)
+		update_clothing_icon()
 
 /obj/item/clothing/dropped()
 	. = ..()
-	remove_hood()
+	remove_hood(skip_update = TRUE)
+	update_icon()
 
 /obj/item/clothing/get_alt_interactions(var/mob/user)
 	. = ..()

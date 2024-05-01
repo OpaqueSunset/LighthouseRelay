@@ -579,7 +579,7 @@
 		if(.)
 			return
 	else if(href_list["flavor_change"] && !is_admin(usr) && (usr != src))
-		log_and_message_admins(usr, "is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.")
+		log_and_message_admins("is suspected of trying to change flavor text on [key_name_admin(src)] via Topic exploits.", usr)
 	return ..()
 
 /mob/proc/pull_damage()
@@ -1358,3 +1358,6 @@
 /mob/proc/mob_throw_item(atom/target)
 	return
 
+/mob/living/proc/get_butchery_product_name()
+	var/decl/butchery_data/butchery_decl = GET_DECL(butchery_data)
+	. = butchery_decl?.meat_name || name

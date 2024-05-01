@@ -8,7 +8,7 @@
 		/obj/item/cosmetics,
 		/obj/item/grooming,
 		/obj/item/mirror,
-		/obj/item/clothing/accessory/locket,
+		/obj/item/clothing/neck/necklace/locket,
 		/obj/item/clothing/head/hairflower,
 		/obj/item/flashlight/pen,
 		/obj/item/flashlight,
@@ -35,7 +35,7 @@
 		/obj/item/key,
 		/obj/item/clothing/badge,
 		/obj/item/clothing/medal,
-		/obj/item/clothing/accessory/armor/tag,
+		/obj/item/clothing/armor_attachment/tag,
 	)
 
 /datum/storage/wallet/remove_from_storage(mob/user, obj/item/W, atom/new_location, skip_update)
