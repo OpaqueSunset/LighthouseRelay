@@ -27257,7 +27257,7 @@
 	},
 /obj/item/book{
 	author = "Asylum Inmate";
-	dat = "<html>\n\t\t\t\t<head>\n\t\t\t\t<style>\n\t\t\t\th1 {font-size: 18px; margin: 15px 0px 5px;}\n\t\t\t\th2 {font-size: 15px; margin: 15px 0px 5px;}\n\t\t\t\tli {margin: 2px 0px 2px 15px;}\n\t\t\t\tul {margin: 5px; padding: 0px;}\n\t\t\t\tol {margin: 5px; padding: 0px 15px;}\n\t\t\t\tbody {font-size: 13px; font-family: Verdana;}\n\t\t\t\t</style>\n\t\t\t\t</head>\n\t\t\t\t<body>\n\t\t\t\t<br>\n\t\t\t\tThe pages of this book are covered in row upon row of the same phrase written over and over. The size and quality of the lettering varies, but there's no doubt\n\t\t\t\tthat the author's blood was used instead of ink. The penmanship steadily degrades as the journal continues, until the writing becomes ultimately unintelligible:\n\t\t\t\t'She says I'm getting better.'\n\t\t\t\t</body>\n\t\t\t</html>";
+	dat = "<html>\n\t\t\t\t<head>\n\t\t\t\t<style>h1 {font-size: 18px; margin: 15px 0px 5px;} h2 {font-size: 15px; margin: 15px 0px 5px;} li {margin: 2px 0px 2px 15px;} ul {margin: 5px; padding: 0px;} ol {margin: 5px; padding: 0px 15px;} body {font-size: 13px; font-family: Verdana;}\n\t\t\t\t</style>\n\t\t\t\t</head>\n\t\t\t\t<body>\n\t\t\t\t<br>\n\t\t\t\tThe pages of this book are covered in row upon row of the same phrase written over and over. The size and quality of the lettering varies, but there's no doubt\n\t\t\t\tthat the author's blood was used instead of ink. The penmanship steadily degrades as the journal continues, until the writing becomes ultimately unintelligible:\n\t\t\t\t'She says I'm getting better.'\n\t\t\t\t</body>\n\t\t\t</html>";
 	name = "Forgotten Journal"
 	},
 /obj/structure/table,
