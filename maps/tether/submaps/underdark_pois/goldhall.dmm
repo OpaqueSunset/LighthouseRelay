@@ -17,7 +17,7 @@
 /turf/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)
 "f" = (
-/obj/item/clothing/suit/toggle/hoodie/blue,
+/obj/item/clothing/suit/jacket/hoodie/blue,
 /obj/item/clothing/shoes/slippers_worn,
 /turf/floor/tiled/kafel_full/yellow/virgo3b,
 /area/mine/explored/underdark)

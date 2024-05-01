@@ -5341,17 +5341,17 @@
 	dir = 9
 	},
 /obj/structure/rack/shelf/steel,
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
-/obj/item/clothing/accessory/armor/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
+/obj/item/clothing/armor_attachment/helmcover/corp,
 /obj/structure/cable/green{
 	icon_state = "2-4"
 	},

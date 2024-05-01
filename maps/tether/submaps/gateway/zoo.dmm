@@ -156,8 +156,8 @@
 /area/awaymission/zoo/pirateship)
 "ax" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -165,7 +165,7 @@
 /area/awaymission/zoo/pirateship)
 "ay" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -742,8 +742,8 @@
 /area/awaymission/zoo/pirateship)
 "cr" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/meat,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
+/obj/item/chems/food/butchery/meat,
 /obj/item/chems/food/xenomeat,
 /turf/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
@@ -917,7 +917,7 @@
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "cP" = (
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "cQ" = (
@@ -1875,7 +1875,7 @@
 /area/awaymission/zoo/pirateship)
 "fA" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/meat,
+/obj/item/chems/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "fB" = (
