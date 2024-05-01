@@ -15,9 +15,9 @@
 
 	// Technically a room-temperature solid, but saves
 	// repathing it to /solid all over the codebase.
-	melting_point    = 323
-	ignition_point   = 353
-	boiling_point    = 373
+	melting_point    = 250 CELSIUS // Both of these are hotter than an oven would get.
+	ignition_point   = 300 CELSIUS
+	boiling_point    = 350 CELSIUS
 	accelerant_value =   0.65
 
 /decl/material/liquid/nutriment/Initialize()
