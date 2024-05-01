@@ -61,10 +61,10 @@
 		MA.plane   = HUD_PLANE
 		MA.alpha   = 80
 		MA.color   = mouse_over_atom.mob_can_equip(owner, slot_id, TRUE) ? COLOR_GREEN : COLOR_RED
-		MA.pixel_x = mouse_over_atom.default_pixel_x
-		MA.pixel_y = mouse_over_atom.default_pixel_y
-		MA.pixel_w = mouse_over_atom.default_pixel_w
-		MA.pixel_z = mouse_over_atom.default_pixel_z
+		MA.pixel_x = 0
+		MA.pixel_y = 0
+		MA.pixel_w = 0
+		MA.pixel_z = 0
 		add_overlay(MA)
 	else
 		mouse_over_atom_ref = null
