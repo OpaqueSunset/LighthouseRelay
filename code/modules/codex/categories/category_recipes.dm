@@ -84,13 +84,12 @@
 		for(var/thing in recipe.reagents)
 			var/decl/material/thing_reagent = GET_DECL(thing)
 			ingredients += "[recipe.reagents[thing]]u <span codexlink='[thing_reagent.codex_name || thing_reagent.name] (substance)'>[thing_reagent.name]</span>"
-		for(var/thing in recipe.items)
-			var/atom/thing_atom = thing
+		for(var/atom/thing as anything in recipe.items)
 			var/count = recipe.items[thing]
-			var/thing_name = initial(thing_atom.name)
+			var/thing_name = TYPE_IS_SPAWNABLE(thing) ? atom_info_repository.get_name_for(thing) : initial(thing.name)
 			if(SScodex.get_entry_by_string(thing_name))
 				thing_name = "<l>[thing_name]</l>"
-			ingredients += (count > 1) ? "[count]x [thing_name]" : "\a [initial(thing_atom.name)]"
+			ingredients += (count > 1) ? "[count]x [thing_name]" : "\a [thing_name]"
 		for(var/thing in recipe.fruit)
 			ingredients += "[recipe.fruit[thing]] [thing]\s"
 		if(recipe.coating)
@@ -99,7 +98,8 @@
 		mechanics_text += "<ul><li>[jointext(ingredients, "</li><li>")]</li></ul>"
 		var/atom/recipe_product = recipe.result
 		var/plural = recipe.result_quantity > 1
-		mechanics_text += "<br>This recipe takes [CEILING(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [initial(recipe_product.name)][plural ? "s" : ""]."
+		var/product_name = ispath(recipe.result, /atom) ? atom_info_repository.get_name_for(recipe.result) : initial(recipe_product.name)
+		mechanics_text += "<br>This recipe takes [CEILING(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [product_name][plural ? "s" : ""]."
 		var/lore_text = recipe.lore_text || initial(recipe_product.desc)
 
 		var/recipe_name = recipe.display_name || sanitize(initial(recipe_product.name))
