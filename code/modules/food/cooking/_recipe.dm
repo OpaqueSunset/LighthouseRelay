@@ -227,10 +227,7 @@ var/global/list/_cooking_recipe_cache = list()
 			// break
 		if(!length(container_contents))
 			break
-	sum = 0
-	for(var/i in needed_items)
-		sum += needed_items[i]
-	return !sum
+	return !length(needed_items)
 
 /decl/recipe/proc/create_result(atom/container, list/used_ingredients)
 
