@@ -4,16 +4,17 @@ var/global/list/_cooking_recipe_cache = list()
 	if(!category)
 		return
 
-	if(!global._cooking_recipe_cache[category])
+	var/cache_key = num2text(category)
+	if(!global._cooking_recipe_cache[cache_key])
 		var/list/recipes = list()
 		var/list/all_recipes = decls_repository.get_decls_of_subtype(/decl/recipe)
 		for(var/rtype in all_recipes)
 			var/decl/recipe/recipe = all_recipes[rtype]
 			if(isnull(recipe.container_categories) || recipe.container_categories & category)
 				recipes += recipe
-		global._cooking_recipe_cache[category] = recipes
+		global._cooking_recipe_cache[cache_key] = recipes
 
-	var/list/available_recipes = global._cooking_recipe_cache[category]
+	var/list/available_recipes = global._cooking_recipe_cache[cache_key]
 	if(!length(available_recipes))
 		return
 
