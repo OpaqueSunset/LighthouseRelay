@@ -15,7 +15,7 @@
 // Collars, ported from Citadel RP
 //
 
-/obj/item/clothing/accessory/choker //A colorable, tagless choker
+/obj/item/clothing/neck/choker //A colorable, tagless choker
 	name = "plain choker"
 	slot_flags = SLOT_OVER_BODY
 	desc = "A simple, plain choker. Or maybe it's a collar? Use in-hand to customize it."
@@ -45,7 +45,7 @@
 		"necklace"
 	)
 
-/obj/item/clothing/accessory/choker/attack_self(mob/user)
+/obj/item/clothing/neck/choker/attack_self(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -77,29 +77,29 @@
 	else
 		to_chat(user, SPAN_NOTICE("[src] has already been customized!"))
 
-/obj/item/clothing/accessory/collar
-	abstract_type = /obj/item/clothing/accessory/collar
+/obj/item/clothing/neck/collar
+	abstract_type = /obj/item/clothing/neck/collar
 	slot_flags = SLOT_OVER_BODY
 	obj_flags = OBJ_FLAG_HOLLOW
 	var/writtenon = FALSE
 
-/obj/item/clothing/accessory/collar/silver
+/obj/item/clothing/neck/collar/silver
 	name = "silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/silver_collar.dmi'
 
-/obj/item/clothing/accessory/collar/gold
+/obj/item/clothing/neck/collar/gold
 	name = "golden tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/gold_collar.dmi'
 
-/obj/item/clothing/accessory/collar/bell
+/obj/item/clothing/neck/collar/bell
 	name = "bell collar"
 	desc = "A collar with a tiny bell hanging from it, purrfect furr kitties."
 	icon = 'maps/tether/icons/obj/clothing/collars/bell_collar.dmi'
 	var/jingled = FALSE
 
-/obj/item/clothing/accessory/collar/bell/verb/jinglebell()
+/obj/item/clothing/neck/collar/bell/verb/jinglebell()
 	set name = "Jingle Bell"
 	set category = "Object"
 	set src in usr
@@ -112,10 +112,10 @@
 		addtimer(CALLBACK(src, PROC_REF(jingledreset)), 5 SECONDS)
 	return
 
-/obj/item/clothing/accessory/collar/bell/proc/jingledreset()
+/obj/item/clothing/neck/collar/bell/proc/jingledreset()
 	jingled = FALSE
 
-/obj/item/clothing/accessory/collar/shock
+/obj/item/clothing/neck/collar/shock
 	name = "shock collar"
 	desc = "A collar used to deter hungry predators."
 	icon = 'maps/tether/icons/obj/clothing/collars/shock_collar.dmi'
@@ -125,21 +125,21 @@
 	var/code = 2
 	var/datum/radio_frequency/radio_connection
 
-/obj/item/clothing/accessory/collar/shock/Initialize(mapload)
+/obj/item/clothing/neck/collar/shock/Initialize(mapload)
 	. = ..()
 	radio_connection = radio_controller.add_object(src, frequency, RADIO_CHAT) // Makes it so you don't need to change the frequency off of default for it to work.
 
-/obj/item/clothing/accessory/collar/shock/Destroy() //Clean up your toys when you're done.
+/obj/item/clothing/neck/collar/shock/Destroy() //Clean up your toys when you're done.
 	radio_controller.remove_object(src, frequency)
 	radio_connection = null //Don't delete this, this is a shared object.
 	return ..()
 
-/obj/item/clothing/accessory/collar/shock/proc/set_frequency(new_frequency)
+/obj/item/clothing/neck/collar/shock/proc/set_frequency(new_frequency)
 	radio_controller.remove_object(src, frequency)
 	frequency = new_frequency
 	radio_connection = radio_controller.add_object(src, frequency, RADIO_CHAT)
 
-/obj/item/clothing/accessory/collar/shock/Topic(href, href_list)
+/obj/item/clothing/neck/collar/shock/Topic(href, href_list)
 	if(CanUseTopic(usr, global.hands_topic_state, href_list) == STATUS_INTERACTIVE)
 		usr.set_machine(src)
 		if(href_list["freq"])
@@ -168,7 +168,7 @@
 		return
 	return
 
-/obj/item/clothing/accessory/collar/shock/receive_signal(datum/signal/signal)
+/obj/item/clothing/neck/collar/shock/receive_signal(datum/signal/signal)
 	if(!signal || signal.encryption != code)
 		return
 
@@ -185,13 +185,13 @@
 			victim.set_status(STAT_WEAK, 5 SECONDS)
 	return
 
-/obj/item/clothing/accessory/collar/shock/on_update_icon()
+/obj/item/clothing/neck/collar/shock/on_update_icon()
 	// overlays are cut in /obj/item/on_update_icon()
 	. = ..()
 	if(on)
 		add_overlay("world_on")
 
-/obj/item/clothing/accessory/collar/shock/attack_self(mob/user)
+/obj/item/clothing/neck/collar/shock/attack_self(mob/user)
 	if(!istype(user, /mob/living/carbon/human))
 		return
 	user.set_machine(src)
@@ -217,24 +217,24 @@
 	onclose(user, "radio")
 	return
 
-/obj/item/clothing/accessory/collar/spike
+/obj/item/clothing/neck/collar/spike
 	name = "spiked collar"
 	desc = "A collar with spikes that look as sharp as your teeth."
 	icon = 'maps/tether/icons/obj/clothing/collars/spike_collar.dmi'
 
-/obj/item/clothing/accessory/collar/pink
+/obj/item/clothing/neck/collar/pink
 	name = "pink collar"
 	desc = "This collar will make your pets look FA-BU-LOUS."
 	icon = 'maps/tether/icons/obj/clothing/collars/pink_collar.dmi'
 
-/obj/item/clothing/accessory/collar/holo
+/obj/item/clothing/neck/collar/holo
 	name = "holo-collar"
 	desc = "An expensive holo-collar for the modern day pet."
 	icon = 'maps/tether/icons/obj/clothing/collars/holo_collar.dmi'
 	material = /decl/material/solid/metal/stainlesssteel
 	obj_flags = OBJ_FLAG_HOLLOW | OBJ_FLAG_CONDUCTIBLE
 
-/obj/item/clothing/accessory/collar/silvercolor
+/obj/item/clothing/neck/collar/silvercolor
 	name = "dyeable silver tag collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/colorized_collar.dmi'
@@ -244,7 +244,7 @@
 		/decl/material/solid/metal/silver = MATTER_AMOUNT_TRACE
 	)
 
-/obj/item/clothing/accessory/collar/cowbell
+/obj/item/clothing/neck/collar/cowbell
 	name = "cowbell collar"
 	desc = "A collar for your little pets... or the big ones."
 	icon = 'maps/tether/icons/obj/clothing/collars/cowbell_collar.dmi'
@@ -253,11 +253,11 @@
 // Collar interactions //
 /////////////////////////
 
-/obj/item/clothing/accessory/collar/attack_self(mob/user)
+/obj/item/clothing/neck/collar/attack_self(mob/user)
 	. = ..()
 	if(.)
 		return
-	if(istype(src,/obj/item/clothing/accessory/collar/holo))
+	if(istype(src,/obj/item/clothing/neck/collar/holo))
 		to_chat(user, SPAN_NOTICE("[name]'s interface is projected onto your hand."))
 	else
 		if(writtenon)
@@ -275,16 +275,16 @@
 		to_chat(user, SPAN_NOTICE("You set the [name]'s tag to '[str]'."))
 		initialize_tag(str)
 
-/obj/item/clothing/accessory/collar/proc/initialize_tag(tag, writemethod = "engraved")
+/obj/item/clothing/neck/collar/proc/initialize_tag(tag, writemethod = "engraved")
 	name = initial(name) + " ([tag])"
 	desc = initial(desc) + " \"[tag]\" has been [writemethod] on the tag."
 	writtenon = TRUE
 
-/obj/item/clothing/accessory/collar/holo/initialize_tag(var/tag)
+/obj/item/clothing/neck/collar/holo/initialize_tag(var/tag)
 	..()
 	desc = initial(desc) + " The tag says \"[tag]\"."
 
-/obj/item/clothing/accessory/collar/attackby(obj/item/I, mob/user)
+/obj/item/clothing/neck/collar/attackby(obj/item/I, mob/user)
 	if(IS_SCREWDRIVER(I))
 		update_collartag(user, I, "scratched out", "scratch out", "engraved")
 		return TRUE
@@ -295,7 +295,7 @@
 
 	return ..()
 
-/obj/item/clothing/accessory/collar/proc/update_collartag(mob/user, obj/item/I, erasemethod, erasing, writemethod)
+/obj/item/clothing/neck/collar/proc/update_collartag(mob/user, obj/item/I, erasemethod, erasing, writemethod)
 	if(!(isturf(src.loc) || user.is_holding_offhand(src)))
 		to_chat(user, SPAN_WARNING("You need to hold the collar or set it down in order to write on the tag!"))
 		return

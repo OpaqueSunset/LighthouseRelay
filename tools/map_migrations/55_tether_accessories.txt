@@ -1,0 +1,2 @@
+/obj/item/clothing/accessory/collar/@SUBTYPES : /obj/item/clothing/neck/collar/@SUBTYPES{@OLD}
+/obj/item/clothing/accessory/choker/@SUBTYPES : /obj/item/clothing/neck/choker/@SUBTYPES{@OLD}

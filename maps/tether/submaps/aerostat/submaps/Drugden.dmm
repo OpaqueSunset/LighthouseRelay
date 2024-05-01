@@ -147,7 +147,7 @@
 /area/submap/virgo2/Drugd)
 "F" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/accessory/jacket,
+/obj/item/clothing/suit/jacket/leather,
 /obj/item/butterfly/switchblade,
 /turf/floor/carpet,
 /area/submap/virgo2/Drugd)

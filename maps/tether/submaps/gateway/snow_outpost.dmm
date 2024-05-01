@@ -2142,7 +2142,7 @@
 /area/awaymission/snow_outpost/outside)
 "hw" = (
 /obj/structure/closet/cabinet,
-/obj/item/clothing/accessory/jacket,
+/obj/item/clothing/suit/jacket/leather,
 /obj/item/butterfly/switchblade,
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)

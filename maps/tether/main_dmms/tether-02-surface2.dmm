@@ -13514,8 +13514,8 @@
 /area/maintenance/lower/atmos)
 "Cl" = (
 /obj/structure/table/steel,
-/obj/item/clothing/accessory/collar/pink,
-/obj/item/clothing/accessory/collar/shock,
+/obj/item/clothing/neck/collar/pink,
+/obj/item/clothing/neck/collar/shock,
 /turf/floor/plating,
 /area/maintenance/lower/south)
 "Cm" = (
@@ -13762,7 +13762,7 @@
 /area/tether/surfacebase/fishing_garden)
 "CU" = (
 /obj/structure/dogbed,
-/obj/item/clothing/accessory/collar/pink,
+/obj/item/clothing/neck/collar/pink,
 /turf/floor/wood,
 /area/maintenance/lower/atmos)
 "CV" = (
