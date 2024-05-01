@@ -65,7 +65,7 @@
 
 /decl/recipe/baked/enchiladas // this is an override of the core recipe, since we have tortillas
 	fruit = list("chili" = 2)
-	items = list(/obj/item/chems/food/cutlet = 1, /obj/item/chems/food/tortilla = 1)
+	items = list(/obj/item/chems/food/butchery/cutlet = 1, /obj/item/chems/food/tortilla = 1)
 	result = /obj/item/chems/food/enchiladas
 
 /decl/recipe/burrito

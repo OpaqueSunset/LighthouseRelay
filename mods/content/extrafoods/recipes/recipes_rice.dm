@@ -2,7 +2,7 @@
 	container_categories = RECIPE_CATEGORY_SKILLET
 	reagents = list(/decl/material/liquid/drink/milk/cream = 5, /decl/material/solid/spacespice = 2, /decl/material/liquid/nutriment/rice = 5)
 	items = list(
-		/obj/item/chems/food/cutlet = 2
+		/obj/item/chems/food/butchery/cutlet = 2
 	)
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/redcurry
@@ -42,7 +42,7 @@
 	reagents = list(/decl/material/liquid/nutriment/rice = 5, /decl/material/solid/spacespice = 2)
 	items = list(
 		/obj/item/chems/food/egg = 1,
-		/obj/item/chems/food/cutlet = 1
+		/obj/item/chems/food/butchery/cutlet = 1
 	)
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/bibimbap

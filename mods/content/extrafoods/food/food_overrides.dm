@@ -1,13 +1,12 @@
 #define FOOD_OVERRIDE(type) ##type/icon = 'mods/content/extrafoods/icons/obj/food_overrides.dmi'
 #define INGREDIENTS_OVERRIDE(type) ##type/icon = 'mods/content/extrafoods/icons/obj/food_ingredients_overrides.dmi'
 
-INGREDIENTS_OVERRIDE(/obj/item/chems/food/rawcutlet)
-INGREDIENTS_OVERRIDE(/obj/item/chems/food/cutlet)
+INGREDIENTS_OVERRIDE(/obj/item/chems/food/butchery/cutlet/raw)
+INGREDIENTS_OVERRIDE(/obj/item/chems/food/butchery/cutlet)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/dough)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/doughslice)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/sliceable/flatdough)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/rawmeatball)
-INGREDIENTS_OVERRIDE(/obj/item/chems/food/rawsticks)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/bun)
 INGREDIENTS_OVERRIDE(/obj/item/chems/food/flatbread)
 

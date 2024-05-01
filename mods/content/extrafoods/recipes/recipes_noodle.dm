@@ -20,7 +20,7 @@
 /decl/recipe/simmered/chickennoodlesoup
 	fruit = list("carrot" = 1)
 	reagents = list(/decl/material/liquid/water = 10)
-	items = list(/obj/item/chems/food/spagetti = 1, /obj/item/chems/food/rawcutlet = 1)
+	items = list(/obj/item/chems/food/spagetti = 1, /obj/item/chems/food/butchery/cutlet/raw = 1)
 	reagent_mix = REAGENT_REPLACE //Simplify end product
 	result = /obj/item/chems/food/chickennoodlesoup
 

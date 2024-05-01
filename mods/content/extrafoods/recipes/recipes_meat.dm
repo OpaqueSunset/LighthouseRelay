@@ -233,7 +233,7 @@
 	container_categories = RECIPE_CATEGORY_FRYER
 	items = list(
 		/obj/item/chems/food/bacon = 1,
-		/obj/item/chems/food/cutlet = 1
+		/obj/item/chems/food/butchery/cutlet = 1
 	)
 	reagents = list(/decl/material/liquid/nutriment/soysauce = 5, /decl/material/liquid/nutriment/batter = 10)
 	result = /obj/item/chems/food/sweet_and_sour

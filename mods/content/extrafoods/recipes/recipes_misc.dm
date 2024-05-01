@@ -3,7 +3,7 @@
 	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/liquid/water = 5)
 	items = list(
 		/obj/item/chems/food/doughslice = 1,
-		/obj/item/chems/food/rawcutlet = 1
+		/obj/item/chems/food/butchery/cutlet/raw = 1
 	)
 	reagent_mix = REAGENT_REPLACE //Water used up in cooking
 	result = /obj/item/chems/food/meatbun
@@ -104,7 +104,7 @@
 /decl/recipe/benedict
 	container_categories = RECIPE_CATEGORY_MIX | RECIPE_CATEGORY_SKILLET
 	items = list(
-		/obj/item/chems/food/cutlet = 1,
+		/obj/item/chems/food/butchery/cutlet = 1,
 		/obj/item/chems/food/friedegg = 1,
 		/obj/item/chems/food/slice/bread = 1,
 		/obj/item/chems/food/spreads/butter = 1

@@ -51,7 +51,7 @@
 	container_categories = RECIPE_CATEGORY_MIX|RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/chems/food/bun,
-		/obj/item/chems/food/cutlet
+		/obj/item/chems/food/butchery/cutlet
 	)
 	result = /obj/item/chems/food/hamburger
 
@@ -139,7 +139,7 @@
 	container_categories = RECIPE_CATEGORY_MIX|RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/stack/material/rods,
-		/obj/item/chems/food/cutlet = 2
+		/obj/item/chems/food/butchery/cutlet = 2
 	)
 	result = /obj/item/chems/food/meatkabob
 
@@ -184,7 +184,7 @@
 	container_categories = RECIPE_CATEGORY_MIX|RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/chems/food/doughslice,
-		/obj/item/chems/food/cutlet,
+		/obj/item/chems/food/butchery/cutlet,
 		/obj/item/chems/food/cheesewedge
 	)
 	result = /obj/item/chems/food/taco

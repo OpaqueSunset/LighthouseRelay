@@ -1,4 +1,4 @@
-/obj/item/chems/food/rawcutlet/attackby(var/obj/item/W, var/mob/user)
+/obj/item/chems/food/butchery/cutlet/raw/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W,/obj/item/knife))
 		var/obj/item/chems/food/rawbacon/rawBacon = new() // unrolled for loop
 		rawBacon.dropInto(loc)
