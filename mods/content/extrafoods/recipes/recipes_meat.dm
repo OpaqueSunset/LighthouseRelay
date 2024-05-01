@@ -1,21 +1,21 @@
 //Bacon
 /decl/recipe/fried/bacon
 	display_name = "deep-fried bacon"
-	appliance = APPLIANCE_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	items = list(
 		/obj/item/chems/food/rawbacon = 1
 	)
 	result = /obj/item/chems/food/bacon
 
 /decl/recipe/bacon_micro
-	appliance = APPLIANCE_MICROWAVE
+	container_categories = RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/chems/food/rawbacon = 1
 	)
 	result = /obj/item/chems/food/bacon/microwave
 
 /decl/recipe/baked/bacon_oven
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	items = list(
 		/obj/item/chems/food/rawbacon = 6,
 		/obj/item/chems/food/spreads = 1
@@ -24,7 +24,7 @@
 	result_quantity = 6
 
 /decl/recipe/toasted/bacon_pan
-	appliance = APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_SKILLET
 	items = list(
 		/obj/item/chems/food/rawbacon = 6,
 		/obj/item/chems/food/spreads = 1
@@ -33,7 +33,7 @@
 	result_quantity = 6
 
 /decl/recipe/bacon_stick
-	appliance = APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/chems/food/bacon = 1,
 		/obj/item/chems/food/boiledegg = 1
@@ -41,7 +41,7 @@
 	result = /obj/item/chems/food/bacon_stick
 
 /decl/recipe/hatchling_surprise
-	appliance = APPLIANCE_SKILLET | APPLIANCE_SAUCEPAN
+	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_SAUCEPAN
 	items = list(
 		/obj/item/chems/food/poachedegg = 1,
 		/obj/item/chems/food/bacon = 3
@@ -50,7 +50,7 @@
 	result = /obj/item/chems/food/hatchling_surprise
 
 /decl/recipe/bacon_and_eggs
-	appliance = APPLIANCE_SKILLET | APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/chems/food/bacon = 1,
 		/obj/item/chems/food/friedegg = 1
@@ -88,7 +88,7 @@
 
 // Chicken
 /decl/recipe/fried/nugget
-	appliance = APPLIANCE_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	reagents = list(/decl/material/liquid/nutriment/flour = 5)
 	items = list(
 		/obj/item/chems/food/butchery/meat/chicken = 1
@@ -98,7 +98,7 @@
 	result_quantity = 6
 
 /decl/recipe/fried/generalschicken
-	appliance = APPLIANCE_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	reagents = list(/decl/material/liquid/capsaicin = 2, /decl/material/liquid/nutriment/sugar = 2, /decl/material/liquid/nutriment/batter = 10)
 	items = list(
 		/obj/item/chems/food/butchery/meat/chicken = 2
@@ -106,7 +106,7 @@
 	result = /obj/item/chems/food/generalschicken
 
 /decl/recipe/chickenwings
-	appliance = APPLIANCE_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	reagents = list(/decl/material/liquid/capsaicin = 1, /decl/material/liquid/nutriment/batter = 2)
 	items = list(
 		/obj/item/chems/food/butchery/meat/chicken = 1
@@ -122,14 +122,14 @@
 
 // Beef
 /decl/recipe/ribplate // Well, steak.
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/honey = 5, /decl/material/solid/spacespice = 2, /decl/material/solid/blackpepper = 1)
 	items = list(/obj/item/chems/food/butchery/meat = 1)
 	reagent_mix = REAGENT_REPLACE
 	result = /obj/item/chems/food/ribplate
 
 /decl/recipe/lasagna
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	fruit = list("tomato" = 2, "eggplant" = 1)
 	reagents = list(/decl/material/solid/organic/meat = 6) // in lieu of mincemeat; 2 meatballs or 3 cutlets
 	items = list(
@@ -139,7 +139,7 @@
 	reagent_mix = REAGENT_REPLACE
 
 /decl/recipe/donerkebab
-	appliance = APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_MIX
 	fruit = list("tomato" = 1, "cabbage" = 1)
 	reagents = list(/decl/material/solid/sodiumchloride = 1)
 	items = list(
@@ -149,7 +149,7 @@
 	result = /obj/item/chems/food/donerkebab
 
 /decl/recipe/roastbeef
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	fruit = list("carrot" = 2, "potato" = 2)
 	items = list(
 		/obj/item/chems/food/butchery/meat = 1
@@ -157,7 +157,7 @@
 	result = /obj/item/chems/food/roastbeef
 
 /decl/recipe/father_breakfast
-	appliance = APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/chems/food/sausage = 1,
 		/obj/item/chems/food/omelette = 1,
@@ -166,7 +166,7 @@
 	result = /obj/item/chems/food/father_breakfast
 
 /decl/recipe/stuffed_meatball
-	appliance = APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/chems/food/meatball = 1,
 		/obj/item/chems/food/cheesewedge = 1
@@ -175,7 +175,7 @@
 	result = /obj/item/chems/food/stuffed_meatball
 
 /decl/recipe/meat_pocket
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	items = list(
 		/obj/item/chems/food/sliceable/flatdough = 1,
 		/obj/item/chems/food/meatball = 1,
@@ -186,7 +186,7 @@
 
 // Eggs
 /decl/recipe/egg_pancake
-	appliance = APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_SKILLET
 	items = list(
 		/obj/item/chems/food/meatball = 3,
 		/obj/item/chems/food/omelette = 1
@@ -194,7 +194,7 @@
 	result = /obj/item/chems/food/egg_pancake
 
 /decl/recipe/riztizkzi_sea
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	items = list(
 		/obj/item/chems/food/egg = 3
 	)
@@ -202,7 +202,7 @@
 	result = /obj/item/chems/food/riztizkzi_sea
 
 /decl/recipe/chilied_eggs
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	items = list(
 		/obj/item/chems/food/hotchili = 1,
 		/obj/item/chems/food/boiledegg = 3
@@ -210,7 +210,7 @@
 	result = /obj/item/chems/food/chilied_eggs
 
 /decl/recipe/poachedegg
-	appliance = APPLIANCE_SKILLET | APPLIANCE_SAUCEPAN
+	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_SAUCEPAN
 	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/solid/sodiumchloride = 1, /decl/material/solid/blackpepper = 1, /decl/material/liquid/water = 5)
 	items = list(
 		/obj/item/chems/food/egg = 1
@@ -220,7 +220,7 @@
 
 // Sausage
 /decl/recipe/red_sun_special
-	appliance = APPLIANCE_SKILLET | APPLIANCE_SAUCEPAN
+	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_SAUCEPAN
 	items = list(
 		/obj/item/chems/food/sausage = 1,
 		/obj/item/chems/food/cheesewedge = 1
@@ -230,7 +230,7 @@
 
 // "Pork"
 /decl/recipe/sweet_and_sour
-	appliance = APPLIANCE_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	items = list(
 		/obj/item/chems/food/bacon = 1,
 		/obj/item/chems/food/cutlet = 1
@@ -240,7 +240,7 @@
 
 // Seafood
 /decl/recipe/crab_legs
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/liquid/water = 10, /decl/material/solid/sodiumchloride = 1)
 	items = list(
 		/obj/item/chems/food/crabmeat = 1,

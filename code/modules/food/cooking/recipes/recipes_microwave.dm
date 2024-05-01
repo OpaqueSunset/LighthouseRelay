@@ -1,11 +1,11 @@
 /decl/recipe/popcorn
-	appliance = APPLIANCE_MICROWAVE|APPLIANCE_SAUCEPAN|APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_SAUCEPAN|RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/solid/sodiumchloride = 5)
 	fruit = list("corn" = 1)
 	result = /obj/item/chems/food/popcorn
 
 /decl/recipe/donkpocket
-	appliance = APPLIANCE_OVEN | APPLIANCE_MICROWAVE
+	container_categories = RECIPE_CATEGORY_OVEN | RECIPE_CATEGORY_MICROWAVE
 	display_name = "warm donk-pocket"
 	items = list(
 		/obj/item/chems/food/donkpocket

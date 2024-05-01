@@ -1,6 +1,6 @@
 /decl/recipe/grilled
 	abstract_type = /decl/recipe/grilled
-	appliance = APPLIANCE_MICROWAVE|APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_SKILLET
 	//cooking_heat_type = COOKING_HEAT_DIRECT
 
 /decl/recipe/grilled/plainsteak

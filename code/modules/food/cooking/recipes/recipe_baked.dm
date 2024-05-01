@@ -1,6 +1,6 @@
 /decl/recipe/baked
 	abstract_type = /decl/recipe/baked
-	appliance = RECIPE_CATEGORY_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	//cooking_heat_type = COOKING_HEAT_INDIRECT
 
 /decl/recipe/baked/pizzamargherita
@@ -119,7 +119,7 @@
 	result = /obj/item/chems/food/cookie
 
 /decl/recipe/baked/fortunecookie
-	appliance = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_FRYER
+	container_categories = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_FRYER
 	reagents = list(/decl/material/liquid/nutriment/sugar = 5)
 	items = list(
 		/obj/item/chems/food/doughslice,
@@ -156,7 +156,7 @@
 	result = /obj/item/chems/food/eggplantparm
 
 /decl/recipe/baked/enchiladas
-	appliance = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_FRYER
+	container_categories = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_FRYER
 	fruit = list("chili" = 2, "corn" = 1)
 	items = list(/obj/item/chems/food/butchery/cutlet)
 	result = /obj/item/chems/food/enchiladas
@@ -169,7 +169,7 @@
 	result = /obj/item/chems/food/sliceable/creamcheesebread
 
 /decl/recipe/baked/monkeysdelight
-	appliance = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_MICROWAVE
+	container_categories = RECIPE_CATEGORY_OVEN|RECIPE_CATEGORY_MICROWAVE
 	fruit = list("banana" = 1)
 	reagents = list(/decl/material/solid/sodiumchloride = 1, /decl/material/solid/blackpepper = 1, /decl/material/liquid/nutriment/flour = 10)
 	items = list(
@@ -325,6 +325,6 @@
 	items  = list(/obj/item/chems/food/loadedbakedpotato/raw)
 	result = /obj/item/chems/food/loadedbakedpotato
 /decl/recipe/baked/cheesyfries
-	appliance = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_OVEN
+	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_OVEN
 	items  = list(/obj/item/chems/food/cheesyfries/uncooked)
 	result = /obj/item/chems/food/cheesyfries

@@ -1,6 +1,6 @@
 /decl/recipe/simmered
 	abstract_type = /decl/recipe/simmered
-	appliance = APPLIANCE_MICROWAVE | APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_MICROWAVE | RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 
 /decl/recipe/simmered/meatballsoup
 	fruit = list("carrot" = 1, "potato" = 1)
@@ -28,7 +28,7 @@
 	reagents = list(/decl/material/liquid/water = 20)
 	reagent_mix = REAGENT_REPLACE // Remove extra water
 	result= /obj/item/chems/food/wishsoup
-	container_categories = list(RECIPE_CATEGORY_MICROWAVE)
+	container_categories = RECIPE_CATEGORY_MICROWAVE
 
 /decl/recipe/simmered/hotchili
 	fruit = list("chili" = 1, "tomato" = 1)

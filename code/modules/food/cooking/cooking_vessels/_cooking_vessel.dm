@@ -6,7 +6,7 @@
 	w_class                       = ITEM_SIZE_LARGE
 	icon_state                    = ICON_STATE_WORLD
 	material_alteration           = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
-	storage                       = /datum/storage/hopper/industrial
+	storage                       = /datum/storage/hopper
 	material                      = /decl/material/solid/metal/stainlesssteel
 	amount_per_transfer_from_this = 15
 

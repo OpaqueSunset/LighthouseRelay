@@ -4,7 +4,7 @@
 	name = "lettuce"
 	seed_name = "lettuce"
 	display_name = "lettuce patch"
-	kitchen_tag = "lettuce"
+	grown_tag = "lettuce"
 	chems = list(/decl/material/liquid/nutriment = list(1,15))
 
 /datum/seed/lettuce/New()
@@ -26,7 +26,7 @@
 	name = "rhubarb"
 	seed_name = "rhubarb"
 	display_name = "rhubarb stalks"
-	kitchen_tag = "rhubarb"
+	grown_tag = "rhubarb"
 	chems = list(/decl/material/liquid/nutriment = list(1,15))
 
 /datum/seed/rhubarb/New()
@@ -47,7 +47,7 @@
 	seed_name = "wurmwoad"
 	display_name = "wurmwoad growth"
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/solid/spacespice = list(5,15))
-	kitchen_tag = "wurmwoad"
+	grown_tag = "wurmwoad"
 
 /datum/seed/wurmwoad/New()
 	..()
@@ -68,7 +68,7 @@
 	name = "celery"
 	seed_name = "celery"
 	display_name = "celery stalks"
-	kitchen_tag = "celery"
+	grown_tag = "celery"
 	chems = list(/decl/material/liquid/nutriment = list(5,20))
 
 /datum/seed/celery/New()

@@ -7,7 +7,7 @@
 	on_icon = "fryer_on"
 	off_icon = "fryer_off"
 	food_color = "#ffad33"
-	appliancetype = APPLIANCE_FRYER
+	cooking_category = RECIPE_CATEGORY_FRYER
 	active_power_usage = 12 KILOWATTS
 	heating_power = 12000
 	optimal_power = 0.8

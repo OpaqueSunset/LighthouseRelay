@@ -1,6 +1,6 @@
 /decl/recipe/fried
 	abstract_type = /decl/recipe/fried
-	appliance = RECIPE_CATEGORY_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	//cooking_heat_type = COOKING_HEAT_DIRECT
 	//cooking_medium_type = /decl/material/liquid/oil
 
@@ -21,7 +21,7 @@
 	result = /obj/item/chems/food/fishandchips
 
 /decl/recipe/fried/fishfingers
-	appliance = RECIPE_CATEGORY_FRYER
+	container_categories = RECIPE_CATEGORY_FRYER
 	coating = /decl/material/liquid/nutriment/batter
 	items = list(
 		/obj/item/chems/food/egg,

@@ -3,7 +3,7 @@
 	desc = "Cookies are ready, dear."
 	icon_state = "ovenopen"
 	cook_type = "baked"
-	appliancetype = APPLIANCE_OVEN
+	cooking_category = RECIPE_CATEGORY_OVEN
 	food_color = "#a34719"
 	can_burn_food = TRUE
 	active_power_usage = 6 KILOWATTS

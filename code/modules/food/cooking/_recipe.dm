@@ -9,7 +9,7 @@ var/global/list/_cooking_recipe_cache = list()
 		var/list/all_recipes = decls_repository.get_decls_of_subtype(/decl/recipe)
 		for(var/rtype in all_recipes)
 			var/decl/recipe/recipe = all_recipes[rtype]
-			if(isnull(recipe.container_categories) || (category in recipe.container_categories))
+			if(isnull(recipe.container_categories) || recipe.container_categories & category)
 				recipes += recipe
 		global._cooking_recipe_cache[category] = recipes
 
@@ -41,7 +41,7 @@ var/global/list/_cooking_recipe_cache = list()
 	var/cooking_time = 10 SECONDS                // Cooking time in deciseconds.
 
 	/// What categories can this recipe be cooked by? Null for any.
-	var/list/container_categories
+	var/container_categories = RECIPE_CATEGORY_MIX
 	/// How many items to create, or how many reagent units to add.
 	var/result_quantity = 1
 	/// An atom type to create, or a /decl/material type if you want to place a reagent into the container.
@@ -54,19 +54,6 @@ var/global/list/_cooking_recipe_cache = list()
 	/// Any typepath indicates a specific coating that should be present
 	/// Coatings are used for batter, breadcrumbs, beer-batter, colonel's secret coating, etc
 	var/coating = null
-	/// Which appliances this recipe can be made in.
-	var/appliance = RECIPE_CATEGORY_MIX
-	// List of defines is in __defines/misc.dm. But for reference they are:
-	/*
-		MIX
-		FRYER
-		OVEN
-		SKILLET
-		SAUCEPAN
-		POT
-		MICROWAVE
-	*/
-	// This is a bitfield, more than one type can be used.
 
 	/// A minimum cooking temperature for this recipe to be considered.
 	var/minimum_temperature = 0
@@ -115,40 +102,40 @@ var/global/list/_cooking_recipe_cache = list()
 		complexity += isnum(value) ? value : 1
 	complexity += length(uniquelist(items)) // add how many unique items there are; will prioritise burgers over 2 bunbuns and 1 wasted meat, for example
 
-/decl/recipe/proc/get_appliances_string()
+/decl/recipe/proc/get_categories_string()
 	var/list/appliance_names
-	if(appliance & RECIPE_CATEGORY_MIX)
+	if(container_categories & RECIPE_CATEGORY_MIX)
 		LAZYADD(appliance_names, "a mixing bowl or plate")
-	if(appliance & RECIPE_CATEGORY_FRYER)
+	if(container_categories & RECIPE_CATEGORY_FRYER)
 		LAZYADD(appliance_names, "a fryer")
-	if(appliance & RECIPE_CATEGORY_OVEN)
+	if(container_categories & RECIPE_CATEGORY_OVEN)
 		LAZYADD(appliance_names, "an oven")
-	if(appliance & RECIPE_CATEGORY_SKILLET)
+	if(container_categories & RECIPE_CATEGORY_SKILLET)
 		LAZYADD(appliance_names, "a skillet")
-	if(appliance & RECIPE_CATEGORY_SAUCEPAN)
+	if(container_categories & RECIPE_CATEGORY_SAUCEPAN)
 		LAZYADD(appliance_names, "a saucepan")
-	if(appliance & RECIPE_CATEGORY_POT)
+	if(container_categories & RECIPE_CATEGORY_POT)
 		LAZYADD(appliance_names, "a pot")
-	if(appliance & RECIPE_CATEGORY_MICROWAVE)
+	if(container_categories & RECIPE_CATEGORY_MICROWAVE)
 		LAZYADD(appliance_names, "a microwave")
 	return english_list(appliance_names, and_text = " or ")
 
-/decl/recipe/proc/get_appliance_names()
+/decl/recipe/proc/get_category_names()
 	var/list/appliance_names
-	if(appliance & RECIPE_CATEGORY_MIX)
+	if(container_categories & RECIPE_CATEGORY_MIX)
 		LAZYADD(appliance_names, "mixing bowl")
 		LAZYADD(appliance_names, "plate")
-	if(appliance & RECIPE_CATEGORY_FRYER)
+	if(container_categories & RECIPE_CATEGORY_FRYER)
 		LAZYADD(appliance_names, "fryer")
-	if(appliance & RECIPE_CATEGORY_OVEN)
+	if(container_categories & RECIPE_CATEGORY_OVEN)
 		LAZYADD(appliance_names, "oven")
-	if(appliance & RECIPE_CATEGORY_SKILLET)
+	if(container_categories & RECIPE_CATEGORY_SKILLET)
 		LAZYADD(appliance_names, "skillet")
-	if(appliance & RECIPE_CATEGORY_SAUCEPAN)
+	if(container_categories & RECIPE_CATEGORY_SAUCEPAN)
 		LAZYADD(appliance_names, "saucepan")
-	if(appliance & RECIPE_CATEGORY_POT)
+	if(container_categories & RECIPE_CATEGORY_POT)
 		LAZYADD(appliance_names, "pot")
-	if(appliance & RECIPE_CATEGORY_MICROWAVE)
+	if(container_categories & RECIPE_CATEGORY_MICROWAVE)
 		LAZYADD(appliance_names, "microwave")
 	return appliance_names
 
@@ -191,6 +178,8 @@ var/global/list/_cooking_recipe_cache = list()
 			continue
 		if(isnull(needed_fruits[use_tag]))
 			continue
+		if(!check_coating(S))
+			continue
 		needed_fruits[use_tag]--
 	for(var/ktag in needed_fruits)
 		if(needed_fruits[ktag] > 0)
@@ -222,6 +211,8 @@ var/global/list/_cooking_recipe_cache = list()
 	for(var/itype in needed_items)
 		for(var/thing in container_contents)
 			if(!istype(thing, itype))
+				continue
+			if(!check_coating(thing))
 				continue
 			container_contents -= thing
 			if(isnum(needed_items[itype]))
@@ -426,18 +417,3 @@ var/global/list/_cooking_recipe_cache = list()
 		qdel(buffer)
 	if(temporary_holder && holder)
 		qdel(holder)
-
-/proc/select_recipe(var/obj/container, var/appliance)
-	if(!appliance)
-		CRASH("Null appliance flag passed to select_recipe!")
-	var/highest_complexity = 0
-	var/available_recipes = decls_repository.get_decls_of_subtype(/decl/recipe)
-	for (var/rtype in available_recipes)
-		var/decl/recipe/recipe = available_recipes[rtype]
-		if(!(appliance & recipe.appliance))
-			continue
-		if(!recipe.check_reagents(container.reagents) || !recipe.check_items(container)  || !recipe.check_fruit(container))
-			continue
-		if(recipe.complexity >= highest_complexity)
-			highest_complexity = recipe.complexity
-			. = recipe

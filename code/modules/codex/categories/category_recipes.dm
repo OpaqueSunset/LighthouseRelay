@@ -99,15 +99,15 @@
 		mechanics_text += "<ul><li>[jointext(ingredients, "</li><li>")]</li></ul>"
 		var/atom/recipe_product = recipe.result
 		var/plural = recipe.result_quantity > 1
-		mechanics_text += "<br>This recipe takes [CEILING(recipe.time/10)] second\s to cook in [recipe.get_appliances_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [initial(recipe_product.name)][plural ? "s" : ""]."
+		mechanics_text += "<br>This recipe takes [CEILING(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [initial(recipe_product.name)][plural ? "s" : ""]."
 		var/lore_text = recipe.lore_text || initial(recipe_product.desc)
 
 		var/recipe_name = recipe.display_name || sanitize(initial(recipe_product.name))
-		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_appliances_string()] for [CEILING(recipe.time/(1 SECOND))] second\s."
+		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_categories_string()] for [CEILING(recipe.cooking_time/(1 SECOND))] second\s."
 
 		var/list/assoc_strings = list()
-		for(var/appliance in recipe.get_appliance_names())
-			assoc_strings += "[recipe_name] ([appliance] recipe)"
+		for(var/category in recipe.get_category_names())
+			assoc_strings += "[recipe_name] ([category] recipe)"
 
 		entries_to_register += new /datum/codex_entry(           \
 		 _display_name =       "[recipe_name] (cooking recipe)", \

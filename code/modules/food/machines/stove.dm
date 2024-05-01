@@ -4,7 +4,7 @@
 	icon_state = "stove_off"
 	pass_flags = PASS_FLAG_TABLE
 	cook_type = "pan-fried"
-	appliancetype = APPLIANCE_SKILLET | APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	cooking_category = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	food_color = "#a34719"
 	can_burn_food = TRUE
 	active_power_usage = 6 KILOWATTS
@@ -33,12 +33,12 @@
 	var/list/pans = list()
 	for(var/obj/item/chems/cooking_container/CC in contents)
 		var/image/pan_overlay
-		switch(CC.appliancetype)
-			if(APPLIANCE_SKILLET)
+		switch(CC.cooking_category)
+			if(RECIPE_CATEGORY_SKILLET)
 				pan_overlay = image('icons/obj/cooking_machines.dmi', "skillet[clamp(length(pans)+1, 1, 4)]")
-			if(APPLIANCE_SAUCEPAN)
+			if(RECIPE_CATEGORY_SAUCEPAN)
 				pan_overlay = image('icons/obj/cooking_machines.dmi', "pan[clamp(length(pans)+1, 1, 4)]")
-			if(APPLIANCE_POT)
+			if(RECIPE_CATEGORY_POT)
 				pan_overlay = image('icons/obj/cooking_machines.dmi', "pot[clamp(length(pans)+1, 1, 4)]")
 			else
 				continue

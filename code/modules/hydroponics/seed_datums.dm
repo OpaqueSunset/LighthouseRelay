@@ -1075,7 +1075,7 @@
 	name = "watermelon"
 	seed_name = "watermelon"
 	display_name = "watermelon vine"
-	kitchen_tag = "watermelon"
+	grown_tag = "watermelon"
 	chems = list(/decl/material/liquid/nutriment = list(1,6), /decl/material/liquid/drink/juice/watermelon = list(10,6))
 	slice_product = /obj/item/chems/food/processed_grown/slice/large
 

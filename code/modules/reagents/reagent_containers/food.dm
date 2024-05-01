@@ -39,7 +39,7 @@
 	var/trash
 	var/obj/item/plate/plate
 	var/list/attack_products //Items you can craft together. Like bomb making, but with food and less screwdrivers.
-	// Uses format list(ingredient = result_type). The ingredient can be a typepath or a kitchen_tag string (used for mobs or plants)
+	// Uses format list(ingredient = result_type). The ingredient can be a typepath or a grown_tag string (used for plants)
 	var/batter_coating = null // coating typepath, NOT decl instance
 	var/do_coating_prefix = TRUE ///If 0, we wont do "battered thing" or similar prefixes. Mainly for recipes that include batter but have a special name
 	/**

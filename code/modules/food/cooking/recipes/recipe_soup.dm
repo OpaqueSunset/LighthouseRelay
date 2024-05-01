@@ -1,7 +1,7 @@
 /decl/recipe/soup
 	abstract_type = /decl/recipe/soup
 	reagent_mix = REAGENT_REPLACE
-	container_categories = list(RECIPE_CATEGORY_POT)
+	container_categories = RECIPE_CATEGORY_POT
 	var/precursor_type
 
 /decl/recipe/soup/stock
@@ -40,7 +40,7 @@
 					ingredients[meat.meat_name]++
 
 	if(precursor_type)
-		var/list/precursor_data = LAZYACCESS(container.reagents?.reagent_data, precursor_type)
+		var/list/precursor_data = REAGENT_DATA(container.reagents, precursor_type)
 		var/list/precursor_taste = LAZYACCESS(precursor_data, "taste")
 		if(length(precursor_taste))
 			for(var/taste in precursor_taste)
