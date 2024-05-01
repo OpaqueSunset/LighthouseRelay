@@ -17,9 +17,14 @@
 		if(plate.try_plate_food(src, user))
 			return TRUE
 
-	// Eating with forks
-	if(user.a_intent == I_HELP && do_utensil_interaction(W, user))
-		return TRUE
+	if(user.a_intent == I_HELP)
+		// Eating with forks
+		if(do_utensil_interaction(W, user))
+			return TRUE
+
+		// Creating food combinations.
+		if(try_create_combination(W, user))
+			return TRUE
 
 	// Hiding items inside larger food items.
 	if(user.a_intent != I_HURT && is_sliceable() && W.w_class < w_class && !is_robot_module(W) && !istype(W, /obj/item/chems/condiment))
@@ -27,10 +32,6 @@
 			to_chat(user, SPAN_NOTICE("You slip \the [W] inside \the [src]."))
 			add_fingerprint(user)
 			W.forceMove(src)
-		return TRUE
-
-	// Creating food combinations.
-	if(try_create_combination(W, user))
 		return TRUE
 
 	return ..()
