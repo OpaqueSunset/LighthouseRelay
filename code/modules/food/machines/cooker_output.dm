@@ -173,4 +173,3 @@
 	desc = "Poor little thing."
 	size = 5
 	w_class = ITEM_SIZE_TINY
-	var/kitchen_tag = "animal"

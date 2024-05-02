@@ -1,6 +1,6 @@
 /decl/recipe/simmered
 	abstract_type = /decl/recipe/simmered
-	appliance = APPLIANCE_MICROWAVE | APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_MICROWAVE | RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 
 /decl/recipe/simmered/meatballsoup
 	fruit = list("carrot" = 1, "potato" = 1)
@@ -28,15 +28,16 @@
 	reagents = list(/decl/material/liquid/water = 20)
 	reagent_mix = REAGENT_REPLACE // Remove extra water
 	result= /obj/item/chems/food/wishsoup
+	container_categories = RECIPE_CATEGORY_MICROWAVE
 
 /decl/recipe/simmered/hotchili
 	fruit = list("chili" = 1, "tomato" = 1)
-	items = list(/obj/item/chems/food/cutlet)
+	items = list(/obj/item/chems/food/butchery/cutlet)
 	result = /obj/item/chems/food/hotchili
 
 /decl/recipe/simmered/coldchili
 	fruit = list("icechili" = 1, "tomato" = 1)
-	items = list(/obj/item/chems/food/cutlet)
+	items = list(/obj/item/chems/food/butchery/cutlet)
 	result = /obj/item/chems/food/coldchili
 
 /decl/recipe/simmered/tomatosoup
@@ -54,18 +55,15 @@
 
 /decl/recipe/simmered/milosoup
 	reagents = list(/decl/material/liquid/water = 10)
+	fruit = list("soybeans chopped" = 2)
 	items = list(
-		/obj/item/chems/food/soydope = 2,
-		/obj/item/chems/food/tofu = 2,
+		/obj/item/chems/food/tofu = 2
 	)
 	reagent_mix = REAGENT_REPLACE // simplify end product
 	result = /obj/item/chems/food/milosoup
 
 /decl/recipe/simmered/stewedsoymeat
-	fruit = list("carrot" = 1, "tomato" = 1)
-	items = list(
-		/obj/item/chems/food/soydope = 2
-	)
+	fruit = list("carrot" = 1, "tomato" = 1, "soybeans chopped" = 2)
 	result = /obj/item/chems/food/stewedsoymeat
 
 /decl/recipe/simmered/bloodsoup

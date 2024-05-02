@@ -84,13 +84,12 @@
 		for(var/thing in recipe.reagents)
 			var/decl/material/thing_reagent = GET_DECL(thing)
 			ingredients += "[recipe.reagents[thing]]u <span codexlink='[thing_reagent.codex_name || thing_reagent.name] (substance)'>[thing_reagent.name]</span>"
-		for(var/thing in recipe.items)
-			var/atom/thing_atom = thing
+		for(var/atom/thing as anything in recipe.items)
 			var/count = recipe.items[thing]
-			var/thing_name = initial(thing_atom.name)
+			var/thing_name = TYPE_IS_SPAWNABLE(thing) ? atom_info_repository.get_name_for(thing) : initial(thing.name)
 			if(SScodex.get_entry_by_string(thing_name))
 				thing_name = "<l>[thing_name]</l>"
-			ingredients += (count > 1) ? "[count]x [thing_name]" : "\a [initial(thing_atom.name)]"
+			ingredients += (count > 1) ? "[count]x [thing_name]" : "\a [thing_name]"
 		for(var/thing in recipe.fruit)
 			ingredients += "[recipe.fruit[thing]] [thing]\s"
 		if(recipe.coating)
@@ -99,20 +98,23 @@
 		mechanics_text += "<ul><li>[jointext(ingredients, "</li><li>")]</li></ul>"
 		var/atom/recipe_product = recipe.result
 		var/plural = recipe.result_quantity > 1
-		mechanics_text += "<br>This recipe takes [CEILING(recipe.time/10)] second\s to cook in [recipe.get_appliances_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [initial(recipe_product.name)][plural ? "s" : ""]."
+		var/product_name = ispath(recipe.result, /atom) ? atom_info_repository.get_name_for(recipe.result) : initial(recipe_product.name)
+		mechanics_text += "<br>This recipe takes [CEILING(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [product_name][plural ? "s" : ""]."
+		var/lore_text = recipe.lore_text || initial(recipe_product.desc)
 
 		var/recipe_name = recipe.display_name || sanitize(initial(recipe_product.name))
-		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_appliances_string()] for [CEILING(recipe.time/(1 SECOND))] second\s."
-		var/list/assoc_strings = list()
-		for(var/appliance in recipe.get_appliance_names())
-			assoc_strings += "[recipe_name] ([appliance] recipe)"
+		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_categories_string()] for [CEILING(recipe.cooking_time/(1 SECOND))] second\s."
 
-		entries_to_register += new /datum/codex_entry(                           \
-		 _display_name =       "[recipe_name] (recipe)",                         \
-		 _associated_strings = assoc_strings,                                    \
-		 _lore_text =          recipe.lore_text || initial(recipe_product.desc), \
-		 _mechanics_text =     mechanics_text,                                   \
-		 _antag_text =         recipe.antag_text                                 \
+		var/list/assoc_strings = list()
+		for(var/category in recipe.get_category_names())
+			assoc_strings += "[recipe_name] ([category] recipe)"
+
+		entries_to_register += new /datum/codex_entry(           \
+		 _display_name =       "[recipe_name] (cooking recipe)", \
+		 _associated_strings = assoc_strings,                    \
+		 _lore_text =          lore_text,                        \
+		 _mechanics_text =     mechanics_text,                   \
+		 _antag_text =         recipe.antag_text                 \
 		)
 
 	for(var/datum/codex_entry/entry in entries_to_register)

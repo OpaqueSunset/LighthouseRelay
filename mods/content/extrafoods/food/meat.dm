@@ -1,4 +1,4 @@
-/obj/item/chems/food/rawcutlet/attackby(var/obj/item/W, var/mob/user)
+/obj/item/chems/food/butchery/cutlet/raw/attackby(var/obj/item/W, var/mob/user)
 	if(istype(W,/obj/item/knife))
 		var/obj/item/chems/food/rawbacon/rawBacon = new() // unrolled for loop
 		rawBacon.dropInto(loc)
@@ -29,7 +29,7 @@
 	. = ..()
 	var/obj/item/chems/food/rawbacon/example = /obj/item/chems/food/rawbacon
 	lore_text = initial(example.desc)
-	mechanics_text = "Three strips of raw bacon can be made by slicing a raw cutlet with any sharp object. It can be cooked to make <span codexlink='pan-cooked bacon (recipe)'>bacon</span>."
+	mechanics_text = "Three strips of raw bacon can be made by slicing a raw cutlet with any sharp object. It can be cooked to make <span codexlink='pan-cooked bacon (cooking recipe)'>bacon</span>."
 
 /obj/item/chems/food/bacon
 	name = "bacon"

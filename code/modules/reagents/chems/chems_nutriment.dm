@@ -15,39 +15,15 @@
 
 	// Technically a room-temperature solid, but saves
 	// repathing it to /solid all over the codebase.
-	melting_point    = 323
-	ignition_point   = 353
-	boiling_point    = 373
+	melting_point    = 250 CELSIUS // Both of these are hotter than an oven would get.
+	ignition_point   = 300 CELSIUS
+	boiling_point    = 350 CELSIUS
 	accelerant_value =   0.65
 
 /decl/material/liquid/nutriment/Initialize()
 	solid_name = name   // avoid 'frozen sugar'
 	liquid_name = name  // avoid 'molten honey'
 	return ..()
-
-/decl/material/liquid/nutriment/mix_data(var/datum/reagents/reagents, var/list/newdata, var/newamount)
-
-	if(!islist(newdata) || !newdata.len)
-		return
-
-	//add the new taste data
-	var/data = ..()
-	LAZYINITLIST(data)
-	for(var/taste in newdata)
-		if(taste in data)
-			data[taste] += newdata[taste]
-		else
-			data[taste] = newdata[taste]
-
-	//cull all tastes below 10% of total
-	var/totalFlavor = 0
-	for(var/taste in data)
-		totalFlavor += data[taste]
-	if(totalFlavor)
-		for(var/taste in data)
-			if(data[taste]/totalFlavor < 0.1)
-				data -= taste
-	. = data
 
 /decl/material/liquid/nutriment/slime_meat
 	name = "slime-meat"
@@ -442,17 +418,8 @@
 	nutriment_factor = 1
 	color = "#ffffff"
 	uid = "chem_nutriment_rice"
-
-/decl/material/liquid/nutriment/rice/chazuke
-	name = "chazuke"
-	lore_text = "Green tea over rice. How rustic!"
-	taste_description = "green tea and rice"
-	taste_mult = 0.4
-	nutriment_factor = 1
-	color = "#f1ffdb"
-	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
-	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
-	uid = "chem_nutriment_chazuke"
+	soup_base = "rice_base"
+	soup_overlay = "soup_meatballs"
 
 /decl/material/liquid/nutriment/cherryjelly
 	name = "cherry jelly"

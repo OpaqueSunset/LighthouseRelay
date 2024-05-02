@@ -1,5 +1,5 @@
 /decl/recipe/toasted
-	appliance = APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_SKILLET
 	abstract_type = /decl/recipe/toasted
 	//cooking_heat_type = COOKING_HEAT_DIRECT
 	//cooking_medium_type = null

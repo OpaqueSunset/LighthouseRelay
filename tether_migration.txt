@@ -477,10 +477,13 @@
 
 /obj/item/energy/@SUBTYPES : /obj/item/energy_blade/@SUBTYPES{@OLD}
 
-/obj/item/clothing/accessory/medal/bronze_heart : /obj/item/clothing/accessory/medal/nanotrasen/bronze
-/obj/item/clothing/accessory/medal/nobel_science : /obj/item/clothing/accessory/medal/nanotrasen/silver
-/obj/item/clothing/accessory/scarf/white : /obj/item/clothing/accessory/scarf
+/obj/item/clothing/accessory/medal/bronze_heart : /obj/item/clothing/medal/nanotrasen/bronze{@OLD}
+/obj/item/clothing/accessory/medal/nobel_science : /obj/item/clothing/medal/nanotrasen/silver{@OLD}
+/obj/item/clothing/accessory/scarf/white : /obj/item/clothing/neck/scarf{@OLD}
+/obj/item/clothing/accessory/scarf/@SUBTYPES : /obj/item/clothing/neck/scarf/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/storage/webbing : /obj/item/clothing/webbing/vest
+/obj/item/clothing/accessory/collar/@SUBTYPES : /obj/item/clothing/neck/collar/@SUBTYPES{@OLD}
+/obj/item/clothing/accessory/choker/@SUBTYPES : /obj/item/clothing/neck/choker/@SUBTYPES{@OLD}
 
 /obj/item/knife/plastic : /obj/item/knife/table/plastic
 
@@ -518,7 +521,7 @@
 /obj/machinery/clonepod/transhuman/@SUBTYPES : /obj/machinery/transhuman_clonepod/@SUBTYPES
 
 # CLOTHING REPATHS
-/obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/accessory/toggleable/hawaii/@SUBTYPES{@OLD}
+/obj/item/clothing/accessory/hawaii/@SUBTYPES : /obj/item/clothing/shirt/hawaii{@OLD}
 /obj/item/clothing/accessory/holster/@SUBTYPES : /obj/item/clothing/webbing/holster/@SUBTYPES{@OLD}
 /obj/item/storage/belt/security/tactical : /obj/item/belt/holster/security/tactical{@OLD}
 /obj/item/clothing/accessory/storage/black_drop_pouches : /obj/item/clothing/webbing/drop_pouches/black{@OLD}
@@ -541,13 +544,13 @@
 /obj/item/clothing/head/helmet/laserproof : /obj/item/clothing/head/helmet/ablative{@OLD}
 /obj/item/clothing/suit/space/anomaly : /obj/item/clothing/suit/space/void/excavation{@OLD}
 /obj/item/clothing/suit/storage/hooded/wintercoat/@SUBTYPES : /obj/item/clothing/suit/storage/toggle/wintercoat/@SUBTYPES{@OLD}
-/obj/item/clothing/suit/storage/teshari/cloak/standard/rainbow : /obj/item/clothing/accessory/cloak/random{@OLD}
+/obj/item/clothing/suit/storage/teshari/cloak/standard/rainbow : /obj/item/clothing/suit/cloak/random{@OLD}
 /obj/item/clothing/suit/storage/vest/hoscoat/jensen : /obj/item/clothing/suit/armor/hos/jensen{@OLD}
-/obj/item/clothing/suit/suspenders : /obj/item/clothing/accessory/suspenders{@OLD}
+/obj/item/clothing/suit/suspenders : /obj/item/clothing/suspenders{@OLD}
 /obj/item/clothing/under/pants : /obj/item/clothing/pants{@OLD}
 /obj/item/clothing/suit/varsity/@SUBTYPES : /obj/item/clothing/suit/letterman/@SUBTYPES{@OLD}
 /obj/item/clothing/glasses/sunglasses/blindfold/@SUBTYPES : /obj/item/clothing/glasses/blindfold/@SUBTYPES{@OLD}
-/obj/item/clothing/accessory/tie/horrible : /obj/item/clothing/accessory/horrible{@OLD}
+/obj/item/clothing/accessory/tie/horrible : /obj/item/clothing/neck/tie/horrible{@OLD}
 /obj/item/clothing/shoes/black : /obj/item/clothing/shoes/color/black{@OLD}
 /obj/item/clothing/shoes/brown : /obj/item/clothing/shoes/color/brown{@OLD}
 /obj/item/clothing/shoes/white : /obj/item/clothing/shoes/color/white{@OLD}
@@ -557,7 +560,7 @@
 /obj/item/clothing/suit/storage/vest/tactical : /obj/item/clothing/suit/armor/pcarrier/tactical{@OLD}
 /obj/item/clothing/suit/storage/vest/heavy/officer : /obj/item/clothing/suit/armor/pcarrier/merc{@OLD}
 /obj/item/clothing/shoes/leg_guard/@SUBTYPES : /obj/item/clothing/shoes/legguards/@SUBTYPES{@OLD}
-/obj/item/clothing/gloves/arm_guard/@SUBTYPES : /obj/item/clothing/accessory/armguards/@SUBTYPES{@OLD}
+/obj/item/clothing/gloves/arm_guard/@SUBTYPES : /obj/item/clothing/gloves/armguards/@SUBTYPES{@OLD}
 /obj/item/clothing/suit/armor/bulletproof/alt : /obj/item/clothing/suit/armor/bulletproof/prepared{@OLD}
 /obj/item/clothing/mask/gas/commando : /obj/item/clothing/mask/gas/syndicate{@OLD}
 /obj/item/clothing/shoes/boots/jackboots : /obj/item/clothing/shoes/jackboots{@OLD}
@@ -575,7 +578,7 @@
 /obj/item/clothing/gloves/armguards/laserproof : /obj/item/clothing/gloves/armguards/ablative{@OLD}
 /obj/item/clothing/shoes/legguards/bulletproof : /obj/item/clothing/shoes/legguards/ballistic{@OLD}
 /obj/item/clothing/shoes/legguards/laserproof : /obj/item/clothing/shoes/legguards/ablative{@OLD}
-/obj/item/clothing/accessory/armor/helmcover/nt : /obj/item/clothing/accessory/armor/helmcover/corp{@OLD}
+/obj/item/clothing/accessory/armor/helmcover/nt : /obj/item/clothing/armor_attachment/helmcover/corp{@OLD}
 /obj/item/clothing/head/pin/flower : /obj/item/clothing/head/hairflower
 /obj/item/clothing/head/pin/flower/violet : /obj/item/clothing/head/hairflower/pink
 /obj/item/clothing/head/pin/flower/blue : /obj/item/clothing/head/hairflower/blue
@@ -599,8 +602,10 @@
 /obj/item/clothing/shoes/magboots/adv : /obj/item/clothing/shoes/magboots
 /obj/item/clothing/shoes/mime : /obj/item/clothing/shoes/color/white
 /obj/item/clothing/head/pilot : /obj/item/clothing/head/helmet/tactical/pilot
-/obj/item/clothing/accessory/poncho/roles/medical : /obj/item/clothing/suit/poncho/roles/medical
-/obj/item/clothing/accessory/scarf/stripedred : /obj/item/clothing/accessory/scarf/christmas
+/obj/item/clothing/accessory/poncho/roles/@SUBTYPES : /obj/item/clothing/suit/poncho/@SUBTYPES
+/obj/item/clothing/accessory/poncho/@SUBTYPES : /obj/item/clothing/suit/poncho/@SUBTYPES
+/obj/item/clothing/accessory/scarf/stripedred : /obj/item/clothing/neck/scarf/christmas
+/obj/item/clothing/accessory/scarf/@SUBTYPES : /obj/item/clothing/neck/scarf/@SUBTYPES
 /obj/item/clothing/glasses/gglasses : /obj/item/clothing/glasses/prescription/gglasses
 /obj/item/clothing/mask/smokable/cigarette/joint : /obj/item/clothing/mask/smokable/cigarette/rolled
 /obj/item/clothing/under/fluff/latexmaid : /obj/item/clothing/under/dress/maid/latex

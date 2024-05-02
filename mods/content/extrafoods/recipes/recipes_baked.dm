@@ -1,19 +1,19 @@
 /decl/recipe/baked/brownies
 	display_name = "chocolate brownies"
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/solid/organic/meat/egg = 3)
 	reagent_mix = REAGENT_REPLACE //No egg or mix in final recipe
 	result = /obj/item/chems/food/sliceable/brownies
 
 /decl/recipe/baked/cosmicbrownies
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/browniemix = 10, /decl/material/solid/organic/meat/egg = 3)
 	fruit = list("ambrosiavulgaris" = 1)
 	reagent_mix = REAGENT_REPLACE //No egg or mix in final recipe
 	result = /obj/item/chems/food/sliceable/cosmicbrownies
 
 /decl/recipe/baked/honeybun
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	items = list(
 		/obj/item/chems/food/dough = 1
 	)
@@ -22,14 +22,14 @@
 	result_quantity = 4
 
 /decl/recipe/baked/keylimepie
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	fruit = list("lime slice" = 2)
 	reagents = list(/decl/material/liquid/drink/milk = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/solid/organic/meat/egg = 3, /decl/material/liquid/nutriment/flour = 10)
 	result = /obj/item/chems/food/sliceable/keylimepie
 	reagent_mix = REAGENT_REPLACE //No raw egg in finished product, protein after cooking causes magic meatballs otherwise
 
 /decl/recipe/baked/quiche
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/batter = 15)
 	items = list(/obj/item/chems/food/cheesewedge)
 	result = /obj/item/chems/food/sliceable/quiche
@@ -46,7 +46,7 @@
 	result = /obj/item/chems/food/croissant
 
 /decl/recipe/baked/cinnamonbun
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/sugar = 15, /decl/material/liquid/drink/milk/cream = 10, /decl/material/solid/cinnamon = 5)
 	items = list(
 		/obj/item/chems/food/dough = 1
@@ -55,7 +55,7 @@
 	result_quantity = 4
 
 /decl/recipe/baked/sugarcookie
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/batter/cakebatter = 5, /decl/material/liquid/nutriment/sugar = 5, /decl/material/solid/organic/meat/egg = 3)
 	reagent_mix = REAGENT_REPLACE // Don't include the cakebatter
 	result = /obj/item/chems/food/sugarcookie

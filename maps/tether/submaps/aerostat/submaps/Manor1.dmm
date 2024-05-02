@@ -284,7 +284,7 @@
 /area/submap/virgo2/Manor1)
 "bm" = (
 /obj/structure/loot_pile/surface/bones,
-/obj/item/clothing/accessory/sweater/blue,
+/obj/item/clothing/shirt/sweater/blue,
 /turf/floor/carpet/blue,
 /area/submap/virgo2/Manor1)
 "bn" = (
@@ -531,7 +531,7 @@
 /area/submap/virgo2/Manor1)
 "ch" = (
 /obj/structure/loot_pile/surface/bones,
-/obj/item/clothing/accessory/sweater,
+/obj/item/clothing/shirt/sweater,
 /turf/floor/carpet/blue,
 /area/submap/virgo2/Manor1)
 "ci" = (

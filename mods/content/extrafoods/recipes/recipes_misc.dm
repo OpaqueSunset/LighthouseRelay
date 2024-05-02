@@ -1,15 +1,15 @@
 /decl/recipe/meatbun
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/liquid/water = 5)
 	items = list(
 		/obj/item/chems/food/doughslice = 1,
-		/obj/item/chems/food/rawcutlet = 1
+		/obj/item/chems/food/butchery/cutlet/raw = 1
 	)
 	reagent_mix = REAGENT_REPLACE //Water used up in cooking
 	result = /obj/item/chems/food/meatbun
 
 /decl/recipe/custardbun
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/liquid/water = 5, /decl/material/solid/organic/meat/egg = 3)
 	items = list(
 		/obj/item/chems/food/doughslice = 1
@@ -18,7 +18,7 @@
 	result = /obj/item/chems/food/custardbun
 
 /decl/recipe/chickenmomo
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/solid/spacespice = 2, /decl/material/liquid/water = 5)
 	items = list(
 		/obj/item/chems/food/doughslice = 3,
@@ -28,7 +28,7 @@
 	result = /obj/item/chems/food/chickenmomo
 
 /decl/recipe/veggiemomo
-	appliance = APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	reagents = list(/decl/material/solid/spacespice = 2, /decl/material/liquid/water = 5)
 	fruit = list("carrot" = 1, "cabbage" = 1)
 	items = list(
@@ -48,7 +48,7 @@
 	result_quantity = 4
 
 /decl/recipe/fish_taco
-	appliance = APPLIANCE_MIX | APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_MIX | RECIPE_CATEGORY_SKILLET
 	fruit = list("chili" = 1, "lemon slice" = 1)
 	items = list(
 		/obj/item/chems/food/butchery/meat/fish = 1,
@@ -78,7 +78,7 @@
 	result = /obj/item/chems/food/banana_split
 
 /decl/recipe/honeytoast
-	appliance = APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_SKILLET
 	reagents = list(/decl/material/liquid/nutriment/honey = 5)
 	items = list(
 		/obj/item/chems/food/slice/bread = 1
@@ -87,7 +87,7 @@
 	result = /obj/item/chems/food/honeytoast
 
 /decl/recipe/truffle
-	appliance = APPLIANCE_SAUCEPAN // it's melted and poured into a mold...?
+	container_categories = RECIPE_CATEGORY_SAUCEPAN // it's melted and poured into a mold...?
 	reagents = list(/decl/material/liquid/nutriment/coco = 2, /decl/material/liquid/drink/milk/cream = 5)
 	items = list(
 		/obj/item/chems/food/chocolatebar = 1
@@ -97,14 +97,14 @@
 	result_quantity = 4
 
 /decl/recipe/fruitsalad
-	appliance = APPLIANCE_MIX
+	container_categories = RECIPE_CATEGORY_MIX
 	fruit = list("orange slice" = 2, "apple slice" = 2, "grape" = 1, "watermelon slice" = 1)
 	result = /obj/item/chems/food/fruitsalad
 
 /decl/recipe/benedict
-	appliance = APPLIANCE_MIX | APPLIANCE_SKILLET
+	container_categories = RECIPE_CATEGORY_MIX | RECIPE_CATEGORY_SKILLET
 	items = list(
-		/obj/item/chems/food/cutlet = 1,
+		/obj/item/chems/food/butchery/cutlet = 1,
 		/obj/item/chems/food/friedegg = 1,
 		/obj/item/chems/food/slice/bread = 1,
 		/obj/item/chems/food/spreads/butter = 1
@@ -113,7 +113,7 @@
 	result = /obj/item/chems/food/benedict
 
 /decl/recipe/bakedbeans
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	fruit = list("soybeans" = 2)
 	reagents = list(/decl/material/liquid/nutriment/barbecue = 5)
 	result = /obj/item/chems/food/beans
@@ -124,7 +124,7 @@
 	result = /obj/item/chems/food/curryrice
 
 /decl/recipe/piginblanket
-	appliance = APPLIANCE_OVEN
+	container_categories = RECIPE_CATEGORY_OVEN
 	items = list(
 		/obj/item/chems/food/doughslice,
 		/obj/item/chems/food/sausage

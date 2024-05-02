@@ -18,7 +18,7 @@
 /obj/random/multiple/underdark/miningdrills,
 /obj/item/clothing/head/helmet/space/void/mining,
 /obj/item/clothing/suit/space/void/mining,
-/obj/item/clothing/accessory/poncho/roles/cloak/mining,
+/obj/item/clothing/suit/poncho/cargo,
 /turf/floor/natural/barren,
 /area/mine/explored/underdark)
 

@@ -14,7 +14,7 @@
 	name = "cooker"
 	desc = "You shouldn't be seeing this!"
 	icon = 'icons/obj/cooking_machines.dmi'
-	var/appliancetype = 0
+	var/cooking_category = 0
 	density = TRUE
 	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
@@ -196,7 +196,7 @@
 
 	if (istype(I, /obj/item/chems/cooking_container))
 		var/obj/item/chems/cooking_container/CC = I
-		if(CC.appliancetype & appliancetype)
+		if(CC.cooking_category & cooking_category)
 			return CAN_INSERT
 
 	// We're trying to cook something else. Check if it's valid.
@@ -268,7 +268,8 @@
 
 	// We can actually start cooking now.
 	user.visible_message("<b>[user]</b> puts [I] into [src].")
-	if(selected_option || length(CI.container.contents) || select_recipe(CI.container || src, appliance = CI.container.appliancetype)) // we're doing combo cooking, we're not just heating reagents, OR we have a valid reagent-only recipe
+	var/atom/recipe_parent = CI.container || src
+	if(selected_option || length(CI.container.contents) || select_recipe(CI.container.cooking_category, recipe_parent, recipe_parent.temperature)) // we're doing combo cooking, we're not just heating reagents, OR we have a valid reagent-only recipe
 		// this is to stop reagents from burning when you're heating stuff
 		get_cooking_work(CI)
 		cooking = TRUE
@@ -352,22 +353,22 @@
 	//Check recipes first, a valid recipe overrides other options
 	var/decl/recipe/recipe = null
 	var/atom/C = null
-	var/appliance
-	if (CI.container?.appliancetype)
+	var/category
+	if (CI.container?.cooking_category)
 		C = CI.container
-		appliance = CI.container.appliancetype
-	else if(appliancetype)
+		category = CI.container.cooking_category
+	else if(cooking_category)
 		C = src
-		appliance = appliancetype
-	if(appliance)
-		recipe = select_recipe(C, appliance = appliance)
+		category = cooking_category
+	if(category)
+		recipe = select_recipe(category, C, C.temperature)
 
 	if (recipe)
 		var/decl/recipe/oldrecipe = recipe
 		var/list/cooked_items = list()
 		while(recipe)
 			cooked_items += recipe.produce_result(C)
-			recipe = select_recipe(C, appliance = appliance)
+			recipe = select_recipe(category, C, C.temperature)
 			if (!recipe || recipe != oldrecipe)
 				break
 
@@ -585,12 +586,12 @@
 		reagent_amount = butchery_data.meat_amount*9 // at a rate of 9 protein per meat
 	var/digest_product_type = victim.get_digestion_product() // DOES NOT RETURN A DECL, RETURNS A PATH
 	var/list/data
-	var/meat_name = result.kitchen_tag || victim.name
+	var/meat_name = butchery_data.meat_name
 	if(ishuman(victim))
 		var/mob/living/carbon/human/CH = victim
-		meat_name = CH.species?.name || meat_name
+		meat_name = CH.species?.name ? "[CH.species?.name] meat" : meat_name
 	if(ispath(digest_product_type, /decl/material/solid/organic/meat))
-		data = list("[meat_name] meat" = reagent_amount)
+		data = list((meat_name) = reagent_amount)
 	result.add_to_reagents(digest_product_type, reagent_amount, data)
 
 	if (victim.reagents)

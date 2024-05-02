@@ -16,7 +16,7 @@ fundamental differences
 	cooking_coeff = 0.75
 	active_power_usage = 3000
 	idle_power_usage = 50
-	appliancetype = 0
+	cooking_category = 0
 
 /obj/machinery/appliance/mixer/examine(var/mob/user)
 	. = ..()

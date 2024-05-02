@@ -1,6 +1,6 @@
 /decl/recipe/steamed
 	abstract_type = /decl/recipe/steamed
-	appliance = APPLIANCE_SAUCEPAN|APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_SAUCEPAN|RECIPE_CATEGORY_POT
 
 /decl/recipe/steamed/chawanmushi
 	fruit = list("mushroom" = 1)

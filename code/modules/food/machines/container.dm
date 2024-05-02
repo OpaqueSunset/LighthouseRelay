@@ -2,6 +2,7 @@
 //They work fairly similar to the microwave - acting as a container for objects and reagents,
 //which can be checked against recipe requirements in order to cook recipes that require several things
 
+// TODO: Refactor to use storage datum, merge with /obj/item/chems/cooking_vessel
 /obj/item/chems/cooking_container
 	icon = 'icons/obj/cooking_machines.dmi'
 	var/shortname
@@ -16,7 +17,7 @@
 		/obj/item/stack/material/rods,
 		/obj/item/organ/internal/brain
 		)
-	var/appliancetype // Bitfield, uses the same as appliances
+	var/cooking_category // Bitfield, uses the same as appliances
 	w_class = ITEM_SIZE_NORMAL
 	material = /decl/material/solid/metal/stainlesssteel
 	material_alteration = MAT_FLAG_ALTERATION_ALL
@@ -201,7 +202,7 @@
 	icon_state = "ovendish"
 	max_space = 30
 	volume = 120
-	appliancetype = APPLIANCE_OVEN
+	cooking_category = RECIPE_CATEGORY_OVEN
 	material = /decl/material/solid/stone/ceramic
 
 /obj/item/chems/cooking_container/skillet
@@ -212,7 +213,7 @@
 	volume = 30
 	hitsound = 'sound/weapons/smash.ogg'
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER // Will still react
-	appliancetype = APPLIANCE_SKILLET
+	cooking_category = RECIPE_CATEGORY_SKILLET
 
 /obj/item/chems/cooking_container/saucepan
 	name = "saucepan"
@@ -223,18 +224,18 @@
 	slot_flags = SLOT_HEAD
 	hitsound = 'sound/weapons/smash.ogg'
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER // Will still react
-	appliancetype = APPLIANCE_SAUCEPAN
+	cooking_category = RECIPE_CATEGORY_SAUCEPAN
 
 /obj/item/chems/cooking_container/pot
 	name = "cooking pot"
 	shortname = "pot"
 	desc = "Boil things with this. Maybe even stick 'em in a stew."
-	icon_state = "pot"
+	icon = 'icons/obj/food/cooking_vessels/pot.dmi'
 	max_space = 50
 	volume = 180
 	hitsound = 'sound/weapons/smash.ogg'
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER // Will still react
-	appliancetype = APPLIANCE_POT
+	cooking_category = RECIPE_CATEGORY_POT
 	w_class = ITEM_SIZE_LARGE
 
 /obj/item/chems/cooking_container/fryer
@@ -242,7 +243,7 @@
 	shortname = "basket"
 	desc = "Put ingredients in this; designed for use with a deep fryer. Warranty void if used."
 	icon_state = "basket"
-	appliancetype = APPLIANCE_FRYER
+	cooking_category = RECIPE_CATEGORY_FRYER
 
 /obj/item/chems/cooking_container/grill_grate/can_fit()
 	if(length(contents) >= 3)
@@ -255,7 +256,7 @@
 	shortname = "plate"
 	desc = "A plate. You plate foods on this plate."
 	icon_state = "plate"
-	appliancetype = APPLIANCE_MIX
+	cooking_category = RECIPE_CATEGORY_MIX
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER // Will still react
 	volume = 15 // for things like jelly sandwiches etc
 	max_space = 25
@@ -271,7 +272,7 @@
 /obj/item/chems/cooking_container/plate/proc/do_mix()
 	if(!(length(contents) || reagents?.total_volume))
 		return FALSE
-	var/decl/recipe/recipe = select_recipe(src, appliance = appliancetype)
+	var/decl/recipe/recipe = select_recipe(cooking_category, src, temperature)
 	if(!recipe)
 		return FALSE
 	var/list/results = recipe.produce_result(src)
@@ -281,7 +282,7 @@
 		AM.forceMove(temp)
 
 	//making multiple copies of a recipe from one container. For example, tons of fries
-	while (select_recipe(src, appliance = appliancetype) == recipe)
+	while (select_recipe(cooking_category, src, temperature) == recipe)
 		var/list/TR = list()
 		TR += recipe.produce_result(src)
 		for (var/result in TR) //Move results to buffer

@@ -7,7 +7,7 @@
 	fruit = list("tomato" = 1)
 	reagents = list(/decl/material/liquid/water = 5)
 	items = list(
-		/obj/item/chems/food/cutlet = 1,
+		/obj/item/chems/food/butchery/cutlet = 1,
 		/obj/item/chems/food/spagetti = 1
 	)
 	result = /obj/item/chems/food/goulash

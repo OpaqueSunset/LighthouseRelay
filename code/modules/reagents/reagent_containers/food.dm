@@ -39,7 +39,7 @@
 	var/trash
 	var/obj/item/plate/plate
 	var/list/attack_products //Items you can craft together. Like bomb making, but with food and less screwdrivers.
-	// Uses format list(ingredient = result_type). The ingredient can be a typepath or a kitchen_tag string (used for mobs or plants)
+	// Uses format list(ingredient = result_type). The ingredient can be a typepath or a grown_tag string (used for plants)
 	var/batter_coating = null // coating typepath, NOT decl instance
 	var/do_coating_prefix = TRUE ///If 0, we wont do "battered thing" or similar prefixes. Mainly for recipes that include batter but have a special name
 	/**
@@ -258,8 +258,11 @@
 	. = ..()
 	SHOULD_CALL_PARENT(TRUE)
 	if(nutriment_amt && nutriment_type)
-		// TODO: generalize taste as data
-		if(ispath(nutriment_type, /decl/material/liquid/nutriment))
-			add_to_reagents(nutriment_type, nutriment_amt, nutriment_desc)
-		else
-			add_to_reagents(nutriment_type, nutriment_amt)
+		// Ensure our taste data is in the expected format.
+		if(nutriment_desc)
+			if(!islist(nutriment_desc))
+				nutriment_desc = list(nutriment_desc)
+			for(var/taste in nutriment_desc)
+				if(nutriment_desc[taste] <= 0)
+					nutriment_desc[taste] = 1
+		add_to_reagents(nutriment_type, nutriment_amt, list("taste" = nutriment_desc))

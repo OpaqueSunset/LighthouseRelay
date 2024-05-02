@@ -1,6 +1,6 @@
 /decl/recipe/boiled
 	abstract_type = /decl/recipe/boiled
-	appliance = APPLIANCE_MICROWAVE | APPLIANCE_SAUCEPAN | APPLIANCE_POT
+	container_categories = RECIPE_CATEGORY_MICROWAVE | RECIPE_CATEGORY_SAUCEPAN | RECIPE_CATEGORY_POT
 	//minimum_temperature = T100C
 	//cooking_heat_type = COOKING_HEAT_INDIRECT
 	//cooking_medium_type = /decl/material/liquid/water

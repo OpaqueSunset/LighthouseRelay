@@ -79,9 +79,9 @@
 /area/submap/virgo2/ButcherShack)
 "r" = (
 /obj/structure/table,
-/obj/item/chems/food/cutlet,
-/obj/item/chems/food/cutlet,
-/obj/item/chems/food/cutlet,
+/obj/item/chems/food/butchery/cutlet,
+/obj/item/chems/food/butchery/cutlet,
+/obj/item/chems/food/butchery/cutlet,
 /obj/item/chems/food/sausage,
 /turf/floor/tiled,
 /area/submap/virgo2/ButcherShack)
