@@ -29,8 +29,8 @@ General Public License version 3.
 
 
 <h3 id="modules">Modules
-<aside>(218 modules,
-    147/4781 macros, 3.1%)</aside></h3>
+<aside>(219 modules,
+    148/4791 macros, 3.1%)</aside></h3>
 <ul class="index-tree modules">
     <li><a href="(builtins).html" title="(builtins)">(builtins)</a></li>
     <li class="has-children"><span title="code">code</span><ul class="index-tree">
@@ -39,6 +39,7 @@ General Public License version 3.
     <li><a href="code/__defines/MC.html" title="code&#x2F;__defines&#x2F;MC">MC</a></li>
     <li><a href="code/__defines/ZAS.html" title="code&#x2F;__defines&#x2F;ZAS">ZAS</a></li>
     <li><a href="code/__defines/_byond_version_compat.html" title="code&#x2F;__defines&#x2F;_byond_version_compat">_byond_version_compat</a></li>
+    <li><a href="code/__defines/_compile_helpers.html" title="code&#x2F;__defines&#x2F;_compile_helpers">_compile_helpers</a></li>
     <li><a href="code/__defines/_tick.html" title="code&#x2F;__defines&#x2F;_tick">_tick</a></li>
     <li><a href="code/__defines/admin.html" title="code&#x2F;__defines&#x2F;admin">admin</a></li>
     <li><a href="code/__defines/armor.html" title="code&#x2F;__defines&#x2F;armor">armor</a></li>
@@ -216,7 +217,7 @@ General Public License version 3.
     <li><span class="no-substance">clothing&#x2F;masks&#x2F;</span><a href="code/modules/clothing/masks/cig_crafting.html" title="code&#x2F;modules&#x2F;clothing&#x2F;masks&#x2F;cig_crafting">cig_crafting</a></li>
     <li><span class="no-substance">economy&#x2F;</span><a href="code/modules/economy/worth_cash.html" title="code&#x2F;modules&#x2F;economy&#x2F;worth_cash">worth_cash</a></li>
     <li class="has-children"><span title="code&#x2F;modules&#x2F;food">food</span><ul class="index-tree">
-    <li><span class="no-substance">cooking&#x2F;</span><a href="code/modules/food/cooking/_recipe.html" title="code&#x2F;modules&#x2F;food&#x2F;cooking&#x2F;_recipe">_recipe</a></li>
+    <li><span class="no-substance">cooking&#x2F;cooking_vessels&#x2F;</span><a href="code/modules/food/cooking/cooking_vessels/_cooking_vessel.html" title="code&#x2F;modules&#x2F;food&#x2F;cooking&#x2F;cooking_vessels&#x2F;_cooking_vessel">_cooking_vessel</a></li>
     <li><span class="no-substance">machines&#x2F;</span><a href="code/modules/food/machines/_appliance.html" title="code&#x2F;modules&#x2F;food&#x2F;machines&#x2F;_appliance">_appliance</a></li>
     </ul></li>
     <li><span class="no-substance">games&#x2F;</span><a href="code/modules/games/cards.html" title="code&#x2F;modules&#x2F;games&#x2F;cards">cards</a></li>
@@ -373,7 +374,7 @@ Thanks to forum_account for saving the day, the library can be found
 
 
 <h3 id="types">Types
-<aside>(260 detailed/482 documented/21277 total, 2.3%)</aside></h3>
+<aside>(262 detailed/485 documented/21308 total, 2.3%)</aside></h3>
 <ul class="index-tree">
     <li><a href="global.html" title="(global)">(global)</a></li>
     <li class="has-children"><span class="no-substance">area&#x2F;</span><span class="no-substance" title="&#x2F;area&#x2F;exoplanet">exoplanet</span> - Windy surface<ul class="index-tree">
@@ -626,6 +627,7 @@ It doesn't handle crystalline logic, only setting up organs as crystalline
 on their initial creation.</li>
     <li><a href="decl/bodytype/prosthetic.html" title="&#x2F;decl&#x2F;bodytype&#x2F;prosthetic">prosthetic</a></li>
     </ul></li>
+    <li><a href="decl/butchery_data.html" title="&#x2F;decl&#x2F;butchery_data">butchery_data</a></li>
     <li><a href="decl/chemical_reaction.html" title="&#x2F;decl&#x2F;chemical_reaction">chemical_reaction</a></li>
     <li><a href="decl/cocktail.html" title="&#x2F;decl&#x2F;cocktail">cocktail</a></li>
     <li><a href="decl/comment_mood.html" title="&#x2F;decl&#x2F;comment_mood">comment_mood</a> - Formatting data for comments.</li>
@@ -831,6 +833,7 @@ Parameters: var/obj/item/card/id</li>
     <li><a href="obj/item/cataloguer.html" title="&#x2F;obj&#x2F;item&#x2F;cataloguer">cataloguer</a></li>
     <li class="has-children"><span title="&#x2F;obj&#x2F;item&#x2F;chems">chems</span><ul class="index-tree">
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;condiment">condiment</span> - Condiments</li>
+    <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;cooking_vessel">cooking_vessel</span> - Set the appropriate flag on the food for stressor updates.</li>
     <li class="has-children"><span title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;drinks">drinks</span> - Drinks.<ul class="index-tree">
     <li class="has-children"><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;drinks&#x2F;bottle">bottle</span> - Alchohol bottles! -Agouri<ul class="index-tree">
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;drinks&#x2F;bottle&#x2F;orangejuice">orangejuice</span> - JUICES AND STUFF</li>
@@ -844,6 +847,7 @@ Parameters: var/obj/item/card/id</li>
     </ul></li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;dropper">dropper</span> - Droppers.</li>
     <li class="has-children"><a href="obj/item/chems/food.html" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;food">food</a> - Droppers. END<ul class="index-tree">
+    <li><a href="obj/item/chems/food/processed_grown.html" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;food&#x2F;processed_grown">processed_grown</a></li>
     <li><a href="obj/item/chems/food/slice.html" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;food&#x2F;slice">slice</a> - A food item slice</li>
     </ul></li>
     <li><span class="no-substance" title="&#x2F;obj&#x2F;item&#x2F;chems&#x2F;glass">glass</span> - (Mixing)Glass.</li>
@@ -1065,7 +1069,7 @@ As with material, these stacks should only set this in Initialize as they are ab
 </main>
 <footer>
     nebula.dme
-    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/caf15d0d1c6c948fd24a25c309d2f01ad1b78a61">caf15d0</a>
+    <a href="https://github.com/OpaqueSunset/LighthouseRelay/tree/4fd5f3fea66be99e88401b46fa87c4e0348285db">4fd5f3f</a>
         (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.1</a></footer>
 </body>
 </html>
