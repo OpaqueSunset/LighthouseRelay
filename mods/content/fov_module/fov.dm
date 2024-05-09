@@ -28,7 +28,7 @@
 	if(!src.client)
 		return
 
-	if(resting || lying || (client && client.eye != client.mob))
+	if(current_posture.prone || (client && client.eye != client.mob))
 		src.fov.alpha = 0
 		src.fov_mask.alpha = 0
 		return

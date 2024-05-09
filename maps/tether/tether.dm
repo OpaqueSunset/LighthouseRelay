@@ -32,6 +32,8 @@
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"
 
+	#include "../../mods/content/pheromones/_pheromones.dme"
+
 	#include "../../mods/species/ascent/_ascent.dme"
 	#include "../../mods/species/serpentid/_serpentid.dme"
 	#include "../../mods/species/utility_frames/_utility_frames.dme"

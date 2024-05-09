@@ -2,7 +2,7 @@
 // Lettuce/varieties.
 /datum/seed/lettuce
 	name = "lettuce"
-	seed_name = "lettuce"
+	product_name = "lettuce"
 	display_name = "lettuce patch"
 	grown_tag = "lettuce"
 	chems = list(/decl/material/liquid/nutriment = list(1,15))
@@ -24,7 +24,7 @@
 
 /datum/seed/rhubarb
 	name = "rhubarb"
-	seed_name = "rhubarb"
+	product_name = "rhubarb"
 	display_name = "rhubarb stalks"
 	grown_tag = "rhubarb"
 	chems = list(/decl/material/liquid/nutriment = list(1,15))
@@ -44,7 +44,7 @@
 
 /datum/seed/wurmwoad
 	name = "wurmwoad"
-	seed_name = "wurmwoad"
+	product_name = "wurmwoad"
 	display_name = "wurmwoad growth"
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/solid/spacespice = list(5,15))
 	grown_tag = "wurmwoad"
@@ -66,7 +66,7 @@
 
 /datum/seed/celery
 	name = "celery"
-	seed_name = "celery"
+	product_name = "celery"
 	display_name = "celery stalks"
 	grown_tag = "celery"
 	chems = list(/decl/material/liquid/nutriment = list(5,20))
@@ -93,7 +93,7 @@
 
 /datum/seed/melon
 	name = "melon"
-	seed_name = "melon"
+	product_name = "melon"
 	display_name = "melon vine"
 	chems = list(/decl/material/liquid/nutriment = list(1,6), /decl/material/liquid/drink/juice/melon = list(10,6))
 
@@ -116,7 +116,7 @@
 
 /datum/seed/coffee
 	name = "coffee"
-	seed_name = "coffee bean"
+	product_name = "coffee bean"
 	display_name = "coffee plant"
 	chems = list(/decl/material/liquid/nutriment/coffee = list(10,10))
 
@@ -133,7 +133,7 @@
 
 /datum/seed/grapes/white
 	name = "whitegrapes"
-	seed_name = "white grape seeds"
+	product_name = "white grape seeds"
 	display_name = "white grapevines"
 	mutants = list("grapes","greengrapes")
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/nutriment/sugar = list(1,5), /decl/material/liquid/drink/juice/grape/white = list(10,10))
@@ -146,7 +146,7 @@
 
 /datum/seed/vanilla
 	name = "vanilla"
-	seed_name = "vanilla flower"
+	product_name = "vanilla flower"
 	display_name = "vanilla flower"
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/drink/syrup/vanilla = list(4,5))
 
@@ -167,7 +167,7 @@
 // TODO: Sane way to specify modular icon files
 /datum/seed/pineapple
 	name = "pineapples"
-	seed_name = "pineapple"
+	product_name = "pineapple"
 	display_name = "pineapple plant"
 	chems = list(/decl/material/liquid/drink/juice/pineapple = list(10,10), /decl/material/liquid/enzyme = list(1,5),/decl/material/liquid/nutriment = list(1,10))
 
@@ -190,7 +190,7 @@
 
 /datum/seed/pear
 	name = "pears"
-	seed_name = "pear"
+	product_name = "pear"
 	display_name = "pear tree"
 	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/drink/juice/pear = list(10,10))
 
@@ -210,7 +210,7 @@
 
 /datum/seed/coconut
 	name = "coconuts"
-	seed_name = "coconut"
+	product_name = "coconut"
 	display_name = "coconut trees"
 	chems = list(/decl/material/liquid/nutriment = list(1,20), /decl/material/liquid/drink/juice/coconut = list(10,20))
 
@@ -228,7 +228,7 @@
 
 /datum/seed/cinnamon
 	name = "cinnamon"
-	seed_name = "cinnamon"
+	product_name = "cinnamon"
 	display_name = "cinnamon"
 	chems = list(/decl/material/solid/cinnamon = list(10,20))
 
@@ -246,7 +246,7 @@
 
 /datum/seed/olives
 	name = "olives"
-	seed_name = "olives"
+	product_name = "olives"
 	display_name = "olive tree"
 	chems = list(/decl/material/liquid/nutriment = list(1,20), /decl/material/liquid/nutriment/triglyceride/oil/olive = list(10,20))
 

@@ -39,7 +39,7 @@
 	armor = list(ARMOR_MELEE = ARMOR_MELEE_RESISTANT, ARMOR_BULLET = ARMOR_BALLISTIC_SMALL, ARMOR_LASER = ARMOR_LASER_SMALL, ARMOR_ENERGY = ARMOR_ENERGY_SMALL, ARMOR_BOMB = ARMOR_BOMB_PADDED, ARMOR_BIO = ARMOR_BIO_STRONG, ARMOR_RAD = ARMOR_RAD_RESISTANT) // Inferior to sec vests in bullet/laser but better for environmental protection.
 	allowed = list(
 		/obj/item/flashlight, /obj/item/gun, /obj/item/ammo_magazine,
-		/obj/item/knife, /obj/item/hatchet/machete, /obj/item/tank,
+		/obj/item/knife, /obj/item/tool/machete, /obj/item/tank,
 		/obj/item/radio, /obj/item/tool/pickaxe,  /obj/item/tool/shovel, /obj/item/gun/projectile/flare
 	)
 
@@ -207,7 +207,7 @@
 		/obj/item/flashlight,
 		/obj/item/cell/device,
 		/obj/item/knife,
-		/obj/item/hatchet/machete,
+		/obj/item/tool/machete,
 		/obj/item/energy_blade/sword,
 		/obj/item/shield/energy,
 		/obj/item/ammo_casing,

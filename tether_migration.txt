@@ -610,7 +610,7 @@
 /obj/item/clothing/mask/smokable/cigarette/joint : /obj/item/clothing/mask/smokable/cigarette/rolled
 /obj/item/clothing/under/fluff/latexmaid : /obj/item/clothing/under/dress/maid/latex
 
-/obj/item/knife/machete : /obj/item/hatchet/machete{@OLD}
+/obj/item/knife/machete : /obj/item/tool/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}
 
 /obj/item/cell/device/weapon : /obj/item/cell/gun{@OLD}

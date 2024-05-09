@@ -30267,7 +30267,7 @@
 	},
 /obj/item/clothing/webbing/holster/machete,
 /obj/item/knife/tacknife/survival,
-/obj/item/hatchet/machete,
+/obj/item/tool/machete,
 /obj/item/clothing/permit/gun/paramedic,
 /turf/floor/tiled/dark,
 /area/tether/surfacebase/medical/triage)

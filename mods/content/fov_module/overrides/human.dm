@@ -63,7 +63,7 @@
 			mob.dir = turn(mob.dir, 180)
 			mob.update_vision_cone()
 
-/mob/UpdateLyingBuckledAndVerbStatus()
+/mob/update_posture(force_update)
 	. = ..()
 	update_vision_cone()
 
