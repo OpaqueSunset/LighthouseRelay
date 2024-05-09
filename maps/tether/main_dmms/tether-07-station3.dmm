@@ -7204,8 +7204,17 @@
 /turf/floor/tiled/dark,
 /area/security/armory/blue)
 "nc" = (
-/obj/machinery/smartfridge/chemistry/chemvator,
-/turf/wall/r_wall,
+/obj/machinery/smartfridge/chemistry{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/full,
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	dir = 8
+	},
+/turf/floor/tiled/white,
 /area/medical/chemistry)
 "nd" = (
 /obj/structure/cable{
@@ -17297,6 +17306,14 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
+/obj/machinery/reagent_temperature{
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/machinery/reagent_temperature/cooler{
+	pixel_y = 4;
+	pixel_x = -8
+	},
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "DY" = (
@@ -18144,9 +18161,6 @@
 "FJ" = (
 /obj/structure/table/reinforced,
 /obj/item/screwdriver,
-/obj/item/stack/material/crystal/mapped/phoron,
-/obj/item/stack/material/crystal/mapped/phoron,
-/obj/item/stack/material/crystal/mapped/phoron,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
 	},
@@ -18161,11 +18175,10 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/obj/item/stack/material/crystal/mapped/phoron,
-/obj/item/stack/material/crystal/mapped/phoron,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/item/stack/material/crystal/mapped/phoron/five,
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "FK" = (
@@ -19697,8 +19710,15 @@
 /turf/wall/r_wall,
 /area/medical/medbay_primary_storage)
 "IE" = (
-/obj/machinery/smartfridge/chemistry/chemvator,
-/turf/wall/r_wall,
+/obj/machinery/smartfridge/chemistry,
+/obj/effect/floor_decal/corner/paleblue/full,
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner2{
+	dir = 1
+	},
+/turf/floor/plating,
 /area/medical/medbay_primary_storage)
 "IF" = (
 /obj/structure/cable/green{
