@@ -9,20 +9,8 @@
 
 /decl/material/liquid/hallucinogenics
 	name = "mindbreaker toxin"
+	lore_text = "Mindbreaker toxin is a derivative of LSD that began as an innocuous research chemical, but received widespread abuse in the late 2100s. Its name was changed to the menacing-sounding \"mindbreaker toxin\" in an attempt to reduce abuse."
 
-/decl/material/liquid/opium
-	name = "opium"
-	lore_text = "A milky substance extracted from space poppy. Very useful in the creation of opiates."
-	taste_description = "incredible bitterness"
-	color = "#a68480"
-	overdose = REAGENTS_OVERDOSE * 0.5
-	value = 2
-	uid = "chem_opium"
-
-/decl/material/liquid/opium/affect_blood(var/mob/living/M, var/alien, var/removed, var/datum/reagents/holder)
-	M.add_chemical_effect(CE_PAINKILLER, 40)
-	M.add_chemical_effect(CE_BLOCKAGE, 10) //raw plant matter in bloodstream
-	M.add_chemical_effect(CE_TOXIN, 1)
-	SET_STATUS_MAX(M, STAT_SLUR, 40)
-	SET_STATUS_MAX(M, STAT_DIZZY, 40)
-	SET_STATUS_MAX(M, STAT_BLURRY, 40)
+/decl/material/liquid/psychoactives
+	name = "space drugs"
+	lore_text = "Erythrithiol mercurate lithium, commonly known as 'space drugs,' is an illegal psychoactive drug that causes narcosis and euphoria in its users."

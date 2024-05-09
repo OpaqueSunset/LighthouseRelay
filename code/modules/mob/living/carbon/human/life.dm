@@ -54,7 +54,7 @@
 
 /mob/living/carbon/human/proc/handle_stamina()
 	if((world.time - last_quick_move_time) > 5 SECONDS)
-		var/mod = (lying + (nutrition / get_max_nutrition())) / 2
+		var/mod = (current_posture.prone + (nutrition / get_max_nutrition())) / 2
 		adjust_stamina(max(get_config_value(/decl/config/num/movement_max_stamina_recovery), get_config_value(/decl/config/num/movement_min_stamina_recovery) * mod) * (1 + GET_CHEMICAL_EFFECT(src, CE_ENERGETIC)))
 
 /mob/living/carbon/human/set_stat(var/new_stat)
@@ -263,7 +263,7 @@
 			if(O.damage + (LOW_PRESSURE_DAMAGE) < O.min_broken_damage) //vacuum does not break bones
 				O.take_external_damage(brute = LOW_PRESSURE_DAMAGE, used_weapon = "Low Pressure")
 		if(getOxyLossPercent() < 55) // 11 OxyLoss per 4 ticks when wearing internals;    unconsciousness in 16 ticks, roughly half a minute
-			take_damage(OXY, 4)  // 16 OxyLoss per 4 ticks when no internals present; unconsciousness in 13 ticks, roughly twenty seconds
+			take_damage(4)  // 16 OxyLoss per 4 ticks when no internals present; unconsciousness in 13 ticks, OXY, roughly twenty seconds
 		SET_HUD_ALERT(src, /decl/hud_element/condition/pressure, -2)
 
 	return
@@ -366,7 +366,7 @@
 		for(var/obj/item/I in src)
 			if(I.contaminated)
 				total_contamination += vsc.contaminant_control.CONTAMINATION_LOSS
-		take_damage(TOX, total_contamination)
+		take_damage(total_contamination, TOX)
 
 	. = ..()
 	if(!.)
@@ -394,7 +394,7 @@
 			embedded_flag = 0
 
 	//Resting
-	if(resting)
+	if(current_posture.prone)
 		if(HAS_STATUS(src, STAT_DIZZY))
 			ADJ_STATUS(src, STAT_DIZZY, -15)
 		if(HAS_STATUS(src, STAT_JITTER))

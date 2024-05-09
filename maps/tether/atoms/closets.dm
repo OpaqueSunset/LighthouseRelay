@@ -45,7 +45,7 @@
 		/obj/item/cell/device,
 		/obj/item/radio,
 		/obj/item/stack/flag = 3,
-		/obj/item/hatchet/machete,
+		/obj/item/tool/machete,
 		/obj/item/clothing/webbing/holster/machete,
 		/obj/item/chems/food/liquidfood,
 		// /obj/item/chems/food/liquidprotein, // does not exist, no real interest in porting
@@ -163,7 +163,7 @@
 		/obj/item/radio,
 		/obj/item/stack/flag = 3,
 		// /obj/item/box/survival_knife,
-		/obj/item/hatchet/machete/deluxe,
+		/obj/item/tool/machete/deluxe,
 		// /obj/item/gun/energy/frontier/locked/carbine,
 		// /obj/item/gun/ballistic/ntles/pathfinder,
 		// /obj/item/ammo_magazine/m57x28mm/ntles,

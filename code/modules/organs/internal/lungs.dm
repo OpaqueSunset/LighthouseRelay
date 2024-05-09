@@ -176,7 +176,7 @@
 	if(!forced && breatheffect && !GET_CHEMICAL_EFFECT(owner, CE_STABLE)) //opiates are bad mmkay
 		safe_pressure_min *= 1 + breatheffect
 
-	if(owner.lying)
+	if(owner.current_posture.prone)
 		safe_pressure_min *= 0.8
 
 	var/failed_inhale = 0
@@ -264,7 +264,7 @@
 			owner.emote(pick(/decl/emote/visible/shiver,/decl/emote/visible/twitch))
 
 	if(damage || GET_CHEMICAL_EFFECT(owner, CE_BREATHLOSS) || world.time > last_successful_breath + 2 MINUTES)
-		owner.take_damage(OXY, HUMAN_MAX_OXYLOSS*breath_fail_ratio)
+		owner.take_damage(HUMAN_MAX_OXYLOSS*breath_fail_ratio, OXY)
 
 	SET_HUD_ALERT_MAX(owner, /decl/hud_element/condition/oxygen, 2)
 	last_int_pressure = 0
@@ -362,7 +362,7 @@
 	name = "lungs and gills"
 	has_gills = TRUE
 
-/mob/living/proc/cough(var/deliberate = FALSE)
+/mob/living/proc/cough(silent = FALSE, deliberate = FALSE)
 
 	var/obj/item/organ/internal/lungs/lung = get_organ(BP_LUNGS)
 	if(!lung || !lung.active_breathing || isSynthetic() || stat == DEAD || (deliberate && last_cough + 3 SECONDS > world.time))
@@ -377,7 +377,8 @@
 		to_chat(src, SPAN_WARNING("You cannot do that right now."))
 		return
 
-	audible_message("<b>[src]</b> coughs!", "You cough!", radio_message = "coughs!") // styled like an emote
+	if(!silent)
+		audible_message("<b>[src]</b> coughs!", "You cough!", radio_message = "coughs!") // styled like an emote
 
 	last_cough = world.time
 

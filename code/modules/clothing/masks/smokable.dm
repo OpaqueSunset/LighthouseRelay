@@ -136,7 +136,7 @@
 			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
 		lit = TRUE
-		damtype = BURN
+		atom_damage_type = BURN
 		var/explosive_power = round(REAGENT_VOLUME(reagents, /decl/material/solid/phoron) / 2.5 + REAGENT_VOLUME(reagents, /decl/material/liquid/fuel) / 5, 1)
 		if(explosive_power > 0)
 			var/datum/effect/effect/system/reagents_explosion/e = new()
@@ -155,7 +155,7 @@
 
 /obj/item/clothing/mask/smokable/proc/extinguish(var/mob/user, var/no_message)
 	lit = FALSE
-	damtype = BRUTE
+	atom_damage_type =  BRUTE
 	STOP_PROCESSING(SSobj, src)
 	set_light(0)
 	update_icon()
@@ -525,7 +525,7 @@
 			to_chat(usr, SPAN_WARNING("You cannot light \the [src] underwater."))
 			return
 		lit = TRUE
-		damtype = BURN
+		atom_damage_type = BURN
 		var/turf/T = get_turf(src)
 		T.visible_message(flavor_text)
 		START_PROCESSING(SSobj, src)

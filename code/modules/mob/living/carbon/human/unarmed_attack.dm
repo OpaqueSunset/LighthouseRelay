@@ -66,18 +66,21 @@
 				return TRUE
 	return FALSE
 
-/decl/natural_attack/proc/get_unarmed_damage()
+/decl/natural_attack/proc/get_unarmed_damage(mob/living/user, mob/living/victim)
 	return damage
 
-/decl/natural_attack/proc/apply_effects(var/mob/living/carbon/human/user,var/mob/living/carbon/human/target,var/attack_damage,var/zone)
+// Returns TRUE if further affects should be applied.
+/decl/natural_attack/proc/apply_effects(mob/living/user, mob/living/target, attack_damage, zone)
 
 	if(target.stat == DEAD)
-		return
+		return FALSE
+
+	var/armour = target.get_blocked_ratio(zone, BRUTE, damage = attack_damage)
+	if(armour >= 1)
+		return FALSE
 
 	var/stun_chance = rand(0, 100)
-	var/armour = target.get_blocked_ratio(zone, BRUTE, damage = attack_damage)
-
-	if(attack_damage >= 5 && armour < 1 && !(target == user) && stun_chance <= attack_damage * 5) // 25% standard chance
+	if(attack_damage >= 5 && !(target == user) && stun_chance <= attack_damage * 5) // 25% standard chance
 		switch(zone) // strong punches can have effects depending on where they hit
 			if(BP_HEAD, BP_EYES, BP_MOUTH)
 				// Induce blurriness
@@ -94,7 +97,7 @@
 					target.visible_message(SPAN_DANGER("\The [equipped] was knocked right out of [target]'s grasp!"))
 					target.drop_from_inventory(equipped)
 			if(BP_CHEST)
-				if(!target.lying)
+				if(!target.current_posture.prone)
 					var/turf/T = get_step(get_turf(target), get_dir(get_turf(user), get_turf(target)))
 					if(!T.density)
 						step(target, get_dir(get_turf(user), get_turf(target)))
@@ -109,11 +112,11 @@
 					SPAN_WARNING(G.get_message_for_being_kicked_in_the_dick()))
 				target.apply_effects(stutter = attack_damage * 2, agony = attack_damage* 3, blocked = armour)
 			if(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT)
-				if(!target.lying)
+				if(!target.current_posture.prone)
 					target.visible_message("<span class='warning'>[target] gives way slightly.</span>")
 					target.apply_effect(attack_damage*3, PAIN, armour)
-	else if(attack_damage >= 5 && !(target == user) && (stun_chance + attack_damage * 5 >= 100) && armour < 1) // Chance to get the usual throwdown as well (25% standard chance)
-		if(!target.lying)
+	else if(attack_damage >= 5 && !(target == user) && (stun_chance + attack_damage * 5 >= 100)) // Chance to get the usual throwdown as well (25% standard chance)
+		if(!target.current_posture.prone)
 			target.visible_message("<span class='danger'>[target] [pick("slumps", "falls", "drops")] down to the ground!</span>")
 		else
 			target.visible_message("<span class='danger'>[target] has been weakened!</span>")
@@ -122,6 +125,8 @@
 	var/obj/item/clothing/C = target.get_covering_equipped_item_by_zone(zone)
 	if(istype(C) && prob(10))
 		C.leave_evidence(user)
+
+	return TRUE
 
 /decl/natural_attack/proc/show_attack(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone, var/attack_damage)
 	var/msg = "\The [user] [pick(attack_verb)] \the [target]"
@@ -209,7 +214,7 @@
 	var/decl/pronouns/user_gender =   user.get_pronouns()
 	var/decl/pronouns/target_gender = target.get_pronouns()
 	var/attack_string
-	if(!target.lying)
+	if(!target.current_posture.prone)
 		switch(zone)
 			if(BP_HEAD, BP_MOUTH, BP_EYES)
 				// ----- HEAD ----- //
@@ -258,7 +263,7 @@
 		zone = BP_CHEST
 	. = ..()
 
-/decl/natural_attack/kick/get_unarmed_damage(var/mob/living/carbon/human/user)
+/decl/natural_attack/kick/get_unarmed_damage(mob/living/user, mob/living/victim)
 	var/obj/item/clothing/shoes = user.get_equipped_item(slot_shoes_str)
 	if(!istype(shoes))
 		return damage
@@ -288,15 +293,15 @@
 /decl/natural_attack/stomp/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
 	if(!istype(target))
 		return FALSE
-	if (!user.lying && (target.lying || (zone in list(BP_L_FOOT, BP_R_FOOT))))
-		if((user in target.grabbed_by) && target.lying)
+	if (!user.current_posture.prone && (target.current_posture.prone || (zone in list(BP_L_FOOT, BP_R_FOOT))))
+		if((user in target.grabbed_by) && target.current_posture.prone)
 			return FALSE
 		for(var/foot_tag in list(BP_L_FOOT, BP_R_FOOT))
 			if(GET_EXTERNAL_ORGAN(user, foot_tag))
 				return TRUE
 	return FALSE
 
-/decl/natural_attack/stomp/get_unarmed_damage(var/mob/living/carbon/human/user)
+/decl/natural_attack/stomp/get_unarmed_damage(mob/living/user, mob/living/victim)
 	var/obj/item/clothing/shoes = user.get_equipped_item(slot_shoes_str)
 	return damage + (shoes ? shoes.force : 0)
 

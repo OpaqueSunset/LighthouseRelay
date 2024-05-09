@@ -10,6 +10,7 @@
 
 	// Strings.
 	var/organ_tag = "organ"                // Unique identifier.
+	var/organ_category                     // Identifier for use in organ collections, unused if unset. Would be nice to make this a list, but bodytypes rely on initial() with it.
 	var/parent_organ = BP_CHEST            // Organ holding this object.
 
 	// Status tracking.
@@ -23,6 +24,7 @@
 	var/decl/species/species               // Original species.
 	var/decl/bodytype/bodytype             // Original bodytype.
 	var/list/ailments                      // Current active ailments if any.
+	var/meat_name                          // Taken from first owner.
 
 	// Damage vars.
 	var/damage = 0                         // Current damage to the organ
@@ -367,7 +369,7 @@
 		germ_level -= 5	//at germ_level == 500, this should cure the infection in 5 minutes
 	else
 		germ_level -= 3 //at germ_level == 1000, this will cure the infection in 10 minutes
-	if(owner && owner.lying)
+	if(owner && owner.current_posture.prone)
 		germ_level -= 2
 	germ_level = max(0, germ_level)
 
@@ -395,15 +397,19 @@
 	if(!user.try_unequip(src))
 		return
 
-	var/obj/item/chems/food/organ/O = new(get_turf(src))
-	O.SetName(name)
-	O.appearance = src
+	target.attackby(convert_to_food(user), user)
+
+/obj/item/organ/proc/convert_to_food(mob/user)
+	var/obj/item/chems/food/organ/yum = new(get_turf(src))
+	yum.SetName(name)
+	yum.appearance = src
 	if(reagents && reagents.total_volume)
-		reagents.trans_to(O, reagents.total_volume)
-	transfer_fingerprints_to(O)
-	user.put_in_active_hand(O)
+		reagents.trans_to(yum, reagents.total_volume)
+	transfer_fingerprints_to(yum)
+	if(user)
+		user.put_in_active_hand(yum)
 	qdel(src)
-	target.attackby(O, user)
+	return yum
 
 /obj/item/organ/proc/can_feel_pain()
 	return !(bodytype.body_flags & BODY_FLAG_NO_PAIN)
@@ -559,6 +565,8 @@ var/global/list/ailment_reference_cache = list()
 		return
 
 	owner = target
+	if(owner && isnull(meat_name))
+		meat_name = owner.get_butchery_product_name()
 	vital_to_owner = null
 	action_button_name = initial(action_button_name)
 	if(owner)
@@ -628,3 +636,15 @@ var/global/list/ailment_reference_cache = list()
 			return FALSE
 		vital_to_owner = (organ_tag in root_bodytype.vital_organs)
 	return vital_to_owner
+
+/obj/item/organ/proc/place_butcher_product(decl/butchery_data/butchery_decl)
+	if(butchery_decl.meat_type)
+		var/list/products = butchery_decl.place_products(owner, material?.type, clamp(w_class, 1, 3), butchery_decl.meat_type)
+		if(meat_name)
+			for(var/obj/item/chems/food/butchery/product in products)
+				product.set_meat_name(meat_name)
+
+/obj/item/organ/physically_destroyed(skip_qdel)
+	if(!owner && !BP_IS_PROSTHETIC(src) && species?.butchery_data)
+		place_butcher_product(GET_DECL(species.butchery_data))
+	return ..()

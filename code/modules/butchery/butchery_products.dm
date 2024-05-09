@@ -14,7 +14,7 @@
 	cooked_food         = FOOD_RAW
 	ingredient_flags    = INGREDIENT_FLAG_MEAT
 	var/fat_material    = /decl/material/solid/organic/meat/gut
-	var/meat_name       = "beef"
+	var/meat_name       = "meat"
 
 /obj/item/chems/food/butchery/Initialize(ml, material_key, mob/living/donor)
 	var/decl/butchery_data/butchery_decl = GET_DECL(donor?.butchery_data)
@@ -154,6 +154,7 @@
 	desc                = "A severed leg of some unfortunate beast, cleaned and ready for cooking."
 	icon                = 'icons/obj/items/butchery/haunch.dmi'
 	slice_num           = 2
+	slice_path          = /obj/item/chems/food/butchery/meat
 	w_class             = ITEM_SIZE_HUGE
 	var/bone_material   = /decl/material/solid/organic/bone
 

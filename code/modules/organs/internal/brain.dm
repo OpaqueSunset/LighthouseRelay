@@ -100,7 +100,10 @@
 	alert(owner, "You have taken massive brain damage! You will not be able to remember the events leading up to your injury.", "Brain Damaged")
 
 /obj/item/organ/internal/brain/organ_can_heal()
-	return (damage && GET_CHEMICAL_EFFECT(owner, CE_BRAIN_REGEN)) || ..()
+	return (damage && owner && GET_CHEMICAL_EFFECT(owner, CE_BRAIN_REGEN)) || ..()
+
+/obj/item/organ/internal/brain/has_limited_healing()
+	return (!owner || !GET_CHEMICAL_EFFECT(owner, CE_BRAIN_REGEN)) && ..()
 
 /obj/item/organ/internal/brain/get_organ_heal_amount()
 	return 1
@@ -214,7 +217,7 @@
 	if(damage >= 0.6*max_damage)
 		SET_STATUS_MAX(owner, STAT_SLUR, 2)
 	if(is_broken())
-		if(!owner.lying)
+		if(!owner.current_posture.prone)
 			to_chat(owner, "<span class='danger'>You black out!</span>")
 		SET_STATUS_MAX(owner, STAT_PARA, 10)
 

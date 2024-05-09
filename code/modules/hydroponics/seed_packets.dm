@@ -6,6 +6,7 @@
 	w_class = ITEM_SIZE_SMALL
 	abstract_type = /obj/item/seeds
 	max_health = 10 //Can't set a material, otherwise extracting seeds would generate free materials
+	material = /decl/material/solid/organic/plantmatter/pith
 
 	var/seed_mask_icon = 'icons/obj/seeds/seed_masks.dmi'
 	var/seed_base_name = "packet"
@@ -16,7 +17,16 @@
 	if(isnull(seed) && !isnull(_seed))
 		seed = _seed
 	update_seed()
+	initialize_reagents()
 	. = ..()
+
+/obj/item/seeds/initialize_reagents()
+	create_reagents(3)
+	. = ..()
+
+/obj/item/seeds/populate_reagents()
+	. = ..()
+	add_to_reagents(/decl/material/liquid/nutriment/plant_oil, 3)
 
 /obj/item/seeds/get_single_monetary_worth()
 	. = seed ? seed.get_monetary_value() : ..()
@@ -67,10 +77,10 @@
 
 /obj/item/seeds/proc/update_strings(is_seeds)
 	if(is_seeds)
-		SetName("[seed_base_name] of [seed.seed_name] [seed.seed_noun]")
+		SetName("[seed_base_name] of [seed.product_name] [seed.seed_noun]")
 		desc = "It has a picture of \a [seed.display_name] on the front."
 	else
-		SetName("sample of [seed.seed_name] [seed.seed_noun]")
+		SetName("sample of [seed.product_name] [seed.seed_noun]")
 		desc = "It's labelled as coming from \a [seed.display_name]."
 
 /obj/item/seeds/examine(mob/user)
@@ -91,9 +101,9 @@
 
 /obj/item/seeds/extracted/update_strings(is_seeds)
 	if(is_seeds)
-		SetName("[seed_base_name] of [seed.seed_name] [seed.seed_noun]")
+		SetName("[seed_base_name] of [seed.display_name] [seed.seed_noun]")
 	else
-		SetName("sample of [seed.seed_name] [seed.seed_noun]")
+		SetName("sample of [seed.display_name] [seed.seed_noun]")
 
 /obj/item/seeds/extracted/cutting
 	name = "cuttings"
@@ -103,7 +113,7 @@
 	return SEED_NOUN_CUTTINGS
 
 /obj/item/seeds/extracted/cutting/update_strings(is_seeds)
-	SetName("[seed_base_name] of [seed.seed_name] cuttings")
+	SetName("[seed_base_name] of [seed.display_name] cuttings")
 
 /obj/item/seeds/random
 	seed = null
@@ -327,3 +337,33 @@
 
 /obj/item/seeds/cotton
 	seed = "cotton"
+
+/obj/item/seeds/yarrow
+	seed = "yarrow"
+
+/obj/item/seeds/aloe
+	seed = "aloe"
+
+/obj/item/seeds/ginseng
+	seed = "ginseng"
+
+/obj/item/seeds/valerian
+	seed = "valerian"
+
+/obj/item/seeds/foxglove
+	seed = "foxglove"
+
+/obj/item/seeds/extracted/yarrow
+	seed = "yarrow"
+
+/obj/item/seeds/extracted/aloe
+	seed = "aloe"
+
+/obj/item/seeds/extracted/ginseng
+	seed = "ginseng"
+
+/obj/item/seeds/extracted/valerian
+	seed = "valerian"
+
+/obj/item/seeds/extracted/foxglove
+	seed = "foxglove"

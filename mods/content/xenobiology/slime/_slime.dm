@@ -14,7 +14,6 @@
 	speak_emote = list("chirps")
 	max_health = 150
 	gender = NEUTER
-	update_icon = 0
 	see_in_dark = 8
 	status_flags = CANPARALYSE|CANPUSH
 	butchery_data = null
@@ -42,6 +41,12 @@
 		AM.dropInto(loc)
 	. = ..()
 
+/mob/living/slime/get_available_postures()
+	var/static/list/available_postures = list(
+		/decl/posture/standing
+	)
+	return available_postures
+
 /mob/living/slime/getToxLoss()
 	return toxloss
 
@@ -54,7 +59,7 @@
 		update_health()
 
 /mob/living/slime/setToxLoss(var/amount)
-	take_damage(TOX, amount-get_damage(TOX))
+	take_damage(amount-get_damage(TOX), TOX)
 
 /mob/living/slime/Initialize(mapload, var/_stype = /decl/slime_colour/grey)
 
@@ -260,7 +265,7 @@
 				return TRUE
 			playsound(loc, "punch", 25, 1, -1)
 			visible_message(SPAN_DANGER("\The [user] has punched \the [src]!"))
-			take_damage(BRUTE, damage)
+			take_damage(damage)
 			return TRUE
 
 	return ..()

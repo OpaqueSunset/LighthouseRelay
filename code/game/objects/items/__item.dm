@@ -134,6 +134,7 @@
 	return origin_tech
 
 /obj/item/Initialize(var/ml, var/material_key)
+
 	if(isnull(current_health))
 		current_health = max_health //Make sure to propagate max_health to health var before material setup, for consistency
 	if(!ispath(material_key, /decl/material))
@@ -142,6 +143,8 @@
 		set_material(material_key)
 
 	. = ..()
+
+	setup_sprite_sheets()
 
 	if(islist(armor))
 		for(var/type in armor)
@@ -508,11 +511,11 @@
 		return TRUE
 
 	if(W.storage?.use_to_pickup)
-		if(W.storage.collection_mode) //Mode is set to collect all items
-			if(isturf(src.loc))
-				W.storage.gather_all(src.loc, user)
+		//Mode is set to collect all items
+		if(W.storage.collection_mode && isturf(loc))
+			W.storage.gather_all(loc, user)
 			return TRUE
-		else if(W.storage.can_be_inserted(src, user))
+		if(W.storage.can_be_inserted(src, user))
 			W.storage.handle_item_insertion(user, src)
 			return TRUE
 
@@ -537,6 +540,10 @@
 /obj/item/proc/dropped(var/mob/user, var/play_dropsound = TRUE)
 
 	SHOULD_CALL_PARENT(TRUE)
+
+	if(QDELETED(src))
+		return
+
 	if(randpixel)
 		pixel_z = randpixel //an idea borrowed from some of the older pixel_y randomizations. Intended to make items appear to drop at a character
 	update_twohanding()
@@ -579,7 +586,11 @@
 // for items that can be placed in multiple slots
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(var/mob/user, var/slot)
+
 	SHOULD_CALL_PARENT(TRUE)
+
+	if(QDELETED(src))
+		return
 
 	// Clear our alpha mask.
 	update_turf_alpha_mask()
@@ -651,7 +662,7 @@
 
 	return TRUE
 
-/obj/item/proc/mob_can_unequip(mob/user, slot, disable_warning = FALSE)
+/obj/item/proc/mob_can_unequip(mob/user, slot, disable_warning = FALSE, dropping = FALSE)
 	if(!slot || !user || !canremove)
 		return FALSE
 	var/datum/inventory_slot/inv_slot = user.get_inventory_slot_datum(slot)
@@ -717,7 +728,7 @@
 	if(!istype(attacker))
 		return 0
 	var/decl/pronouns/G = attacker.get_pronouns()
-	attacker.apply_damage(force, damtype, attacker.get_active_held_item_slot(), used_weapon = src)
+	attacker.apply_damage(force, atom_damage_type, attacker.get_active_held_item_slot(), used_weapon = src)
 	attacker.visible_message(SPAN_DANGER("\The [attacker] hurts [G.his] hand on \the [src]!"))
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 	playsound(target, hitsound, 50, 1, -1)
@@ -1108,4 +1119,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	return ..()
 
 /obj/item/proc/loadout_setup(mob/wearer, metadata)
+	return
+
+/obj/item/proc/setup_sprite_sheets()
 	return

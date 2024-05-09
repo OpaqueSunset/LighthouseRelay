@@ -14728,7 +14728,7 @@
 /obj/item/stack/medical/splint,
 /obj/item/stack/nanopaste,
 /obj/item/knife/tacknife/survival,
-/obj/item/hatchet/machete,
+/obj/item/tool/machete,
 /obj/item/clothing/webbing/holster/machete,
 /obj/item/clothing/permit/gun/paramedic,
 /turf/floor/tiled/dark,

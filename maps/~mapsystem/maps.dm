@@ -161,6 +161,9 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	// A list of cash spawn options, similar to above.
 	var/list/decl/starting_cash_choice/starting_cash_choices
 
+	/// A reagent used to prefill lanterns.
+	var/default_liquid_fuel_type = /decl/material/liquid/fuel
+
 /datum/map/proc/get_lobby_track(var/exclude)
 	var/lobby_track_type
 	if(LAZYLEN(lobby_tracks) == 1)
@@ -175,7 +178,7 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 
 	if(!length(loadout_categories))
 		loadout_categories = list()
-		for(var/decl_type in decls_repository.get_decls_of_subtype(/decl/loadout_category))
+		for(var/decl_type in decls_repository.get_decls_of_type(/decl/loadout_category))
 			loadout_categories += decl_type
 
 	for(var/loadout_category in loadout_categories)
