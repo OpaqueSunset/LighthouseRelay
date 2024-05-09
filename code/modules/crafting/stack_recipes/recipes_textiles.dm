@@ -13,6 +13,10 @@
 	result_type           = /obj/item/banner
 	category              = "furniture"
 
+/decl/stack_recipe/textiles/sack
+	result_type           = /obj/item/bag/sack
+	category              = "storage"
+
 /decl/stack_recipe/textiles/leather
 	abstract_type         = /decl/stack_recipe/textiles/leather
 	craft_stack_types     = /obj/item/stack/material/skin
@@ -59,6 +63,10 @@
 /decl/stack_recipe/textiles/cloth/bedding
 	result_type           = /obj/item/bedsheet
 	category              = "bedding"
+
+/decl/stack_recipe/textiles/cloth/bandages
+	result_type           = /obj/item/stack/medical/bruise_pack/bandage
+	category              = "medical"
 
 /decl/stack_recipe/textiles/fur
 	abstract_type         = /decl/stack_recipe/textiles/fur

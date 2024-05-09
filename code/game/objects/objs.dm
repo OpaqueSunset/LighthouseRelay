@@ -17,7 +17,7 @@
 	var/sharp = 0		// whether this object cuts
 	var/edge = 0		// whether this object is more likely to dismember
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
-	var/damtype = BRUTE
+	var/atom_damage_type = BRUTE
 	var/armor_penetration = 0
 	var/anchor_fall = FALSE
 	var/holographic = 0 //if the obj is a holographic object spawned by the holodeck
@@ -123,7 +123,7 @@
 		. |= DAM_EDGE
 	if(is_sharp(src))
 		. |= DAM_SHARP
-		if(damtype == BURN)
+		if(atom_damage_type == BURN)
 			. |= DAM_LASER
 
 /obj/attackby(obj/item/O, mob/user)
@@ -388,3 +388,8 @@
 // Called when passing the metadata back to the item.
 /obj/proc/take_mould_metadata(list/metadata)
 	return
+
+/obj/try_burn_wearer(var/mob/living/holder, var/held_slot, var/delay = 0)
+	if(obj_flags & OBJ_FLAG_INSULATED_HANDLE)
+		return
+	return ..()

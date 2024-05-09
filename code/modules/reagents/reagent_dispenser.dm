@@ -71,6 +71,16 @@
 			to_chat(user, "It may contain up to [reagents.maximum_volume] unit\s of fluid.")
 
 /obj/structure/reagent_dispensers/attackby(obj/item/W, mob/user)
+
+	// We do this here to avoid putting the vessel straight into storage.
+	// This is usually handled by afterattack on /chems.
+	if(storage && istype(W, /obj/item/chems) && !istype(W, /obj/item/chems/food) && user.a_intent == I_HELP)
+		var/obj/item/chems/vessel = W
+		if(vessel.standard_dispenser_refill(user, src))
+			return TRUE
+		if(vessel.standard_pour_into(user, src))
+			return TRUE
+
 	if(wrenchable && IS_WRENCH(W))
 		unwrenched = !unwrenched
 		visible_message(SPAN_NOTICE("\The [user] wrenches \the [src]'s tap [unwrenched ? "open" : "shut"]."))
@@ -201,7 +211,7 @@
 			else
 				log_and_message_admins("shot a fuel tank outside the world.")
 
-		if((Proj.damage_flags & DAM_EXPLODE) || (Proj.damage_type == BURN) || (Proj.damage_type == ELECTROCUTE) || (Proj.damage_type == BRUTE))
+		if((Proj.damage_flags & DAM_EXPLODE) || (Proj.atom_damage_type == BURN) || (Proj.atom_damage_type == ELECTROCUTE) || (Proj.atom_damage_type == BRUTE))
 			try_detonate_reagents()
 
 	return ..()

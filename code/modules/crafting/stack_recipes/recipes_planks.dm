@@ -148,3 +148,11 @@
 /decl/stack_recipe/planks/furniture/twisting_bench
 	result_type            = /obj/structure/textiles/spinning_wheel/twisting_bench
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/cabinet
+	result_type            = /obj/structure/closet/cabinet/wooden
+	difficulty             = MAT_VALUE_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/barrel
+	result_type            = /obj/structure/reagent_dispensers/barrel
+	difficulty             = MAT_VALUE_HARD_DIY

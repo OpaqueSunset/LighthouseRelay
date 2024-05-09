@@ -26,6 +26,8 @@
 	#include "../../mods/utility/centcomdb/_centcomdb.dme"
 	#include "../../mods/verbs/antighost/_subtle_antighost.dme"
 
+	#include "../../mods/content/pheromones/_pheromones.dme"
+
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"
 

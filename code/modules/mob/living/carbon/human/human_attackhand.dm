@@ -126,7 +126,7 @@
 		if(prob(80))
 			hit_zone = ran_zone(hit_zone, target = src)
 		if(prob(15) && hit_zone != BP_CHEST) // Missed!
-			if(!src.lying)
+			if(!src.current_posture.prone)
 				attack_message = "\The [H] attempted to strike \the [src], but missed!"
 			else
 				var/decl/pronouns/G = get_pronouns()
@@ -151,7 +151,7 @@
 		return TRUE
 
 	var/real_damage = rand_damage
-	real_damage += attack.get_unarmed_damage(H)
+	real_damage += attack.get_unarmed_damage(H, src)
 	real_damage *= damage_multiplier
 	rand_damage *= damage_multiplier
 	real_damage = max(1, real_damage)

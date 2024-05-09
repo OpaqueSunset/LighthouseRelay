@@ -188,7 +188,7 @@ default behaviour is:
 	set hidden = 1
 	var/current_max_health = get_max_health()
 	if (current_health < (current_max_health/2)) // Health below half of maxhealth.
-		take_damage(BRAIN, current_max_health * 2) // Deal 2x health in BrainLoss damage, as before but variable.
+		take_damage(current_max_health * 2) // Deal 2x health in BrainLoss damage, BRAIN, as before but variable.
 		to_chat(src, SPAN_NOTICE("You have given up life and succumbed to death."))
 
 /mob/living/proc/update_body(var/update_icons=1)
@@ -283,8 +283,8 @@ default behaviour is:
 /mob/living/proc/take_organ_damage(var/brute = 0, var/burn = 0, var/bypass_armour = FALSE, var/override_droplimb)
 	if(status_flags & GODMODE)
 		return
-	take_damage(BRUTE, brute, do_update_health = FALSE)
-	take_damage(BURN, burn)
+	take_damage(brute, do_update_health = FALSE)
+	take_damage(burn, BURN)
 
 // heal MANY external organs, in random order
 /mob/living/proc/heal_overall_damage(var/brute, var/burn)
@@ -294,8 +294,8 @@ default behaviour is:
 // damage MANY external organs, in random order
 /mob/living/proc/take_overall_damage(var/brute, var/burn, var/used_weapon = null)
 	if(status_flags & GODMODE)	return 0	//godmode
-	take_damage(BRUTE, brute, do_update_health = FALSE)
-	take_damage(BURN, burn)
+	take_damage(brute, do_update_health = FALSE)
+	take_damage(burn, BURN)
 
 /mob/living/proc/restore_all_organs()
 	return
@@ -517,8 +517,6 @@ default behaviour is:
 	if(!incapacitated(INCAPACITATION_KNOCKOUT) && last_resist + 2 SECONDS <= world.time)
 		last_resist = world.time
 		resist_grab()
-		if(resting)
-			lay_down()
 		if(!HAS_STATUS(src, STAT_WEAK))
 			process_resist()
 
@@ -589,18 +587,42 @@ default behaviour is:
 	if(resisting)
 		visible_message("<span class='danger'>[src] resists!</span>")
 
-/mob/living/verb/lay_down()
+// Shortcut for people used to typing Rest instead of Change Posture.
+/mob/living/verb/rest_verb()
 	set name = "Rest"
 	set category = "IC"
+	lay_down()
 
-	if(!incapacitated(INCAPACITATION_KNOCKOUT) && canClick())
-		setClickCooldown(3)
-		if(resting && !do_after(src, 2 SECONDS, src, incapacitation_flags = ~INCAPACITATION_FORCELYING))
+/mob/living/verb/lay_down()
+	set name = "Change Posture"
+	set category = "IC"
+
+	// No posture, no adjustment.
+	if(length(get_available_postures()) <= 1 || incapacitated(INCAPACITATION_KNOCKOUT) || !canClick())
+		return
+
+	var/list/selectable_postures = get_selectable_postures()
+	if(!length(selectable_postures))
+		return
+
+	var/decl/posture/selected_posture
+	if(length(selectable_postures) == 1)
+		selected_posture = selectable_postures[1]
+	else
+		selected_posture = input(usr, "Which posture do you wish to adopt?", "Change Posture", current_posture) as null|anything in selectable_postures
+		if(!selected_posture || length(get_available_postures()) <= 1 || incapacitated(INCAPACITATION_KNOCKOUT) || !canClick())
 			return
-		resting = !resting
-		UpdateLyingBuckledAndVerbStatus()
-		update_icon()
-		to_chat(src, SPAN_NOTICE("You are now [resting ? "resting" : "getting up"]."))
+		if(current_posture == selected_posture || !(selected_posture in get_selectable_postures()))
+			return
+
+	setClickCooldown(3)
+	to_chat(src, SPAN_NOTICE("You are now [selected_posture.posture_change_message]."))
+	if(current_posture.prone && !selected_posture.prone)
+		if(!do_after(src, 2 SECONDS, src, incapacitation_flags = ~INCAPACITATION_FORCELYING))
+			return
+		if(current_posture == selected_posture || !(selected_posture in get_selectable_postures()))
+			return
+	set_posture(selected_posture)
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
@@ -619,11 +641,7 @@ default behaviour is:
 	return FALSE
 
 /mob/living/carbon/human/canUnEquip(obj/item/I)
-	if(!..())
-		return
-	if(I in get_organs())
-		return
-	return 1
+	. = ..() && !(I in get_organs())
 
 /mob/proc/can_be_possessed_by(var/mob/observer/ghost/possessor)
 	return istype(possessor) && possessor.client
@@ -668,20 +686,23 @@ default behaviour is:
 	to_chat(src, "<span class='notice'>Remember to stay in character for a mob of this type!</span>")
 	return 1
 
-/mob/living/proc/add_aura(var/obj/aura/aura)
+/mob/living/proc/add_aura(var/obj/aura/aura, skip_icon_update = FALSE)
 	LAZYDISTINCTADD(auras,aura)
-	update_icon()
+	if(!skip_icon_update)
+		update_icon()
 	return 1
 
-/mob/living/proc/remove_aura(var/obj/aura/aura)
+/mob/living/proc/remove_aura(var/obj/aura/aura, skip_icon_update = FALSE)
 	LAZYREMOVE(auras,aura)
-	update_icon()
+	if(!skip_icon_update)
+		update_icon()
 	return 1
 
 /mob/living/Destroy()
 	QDEL_NULL(aiming)
 	QDEL_NULL_LIST(_hallucinations)
 	QDEL_NULL_LIST(aimed_at_by)
+	LAZYCLEARLIST(smell_cooldown)
 	if(stressors) // Do not QDEL_NULL, keys are managed instances.
 		stressors = null
 	if(auras)
@@ -728,10 +749,10 @@ default behaviour is:
 	return (!L || L.can_drown())
 
 /mob/living/handle_drowning()
-	if(!can_drown() || !loc?.is_flooded(lying))
+	if(!can_drown() || !loc?.is_flooded(current_posture.prone))
 		return FALSE
 	var/turf/T = get_turf(src)
-	if(!lying && T.above && T.above.is_open() && !T.above.is_flooded() && can_overcome_gravity())
+	if(!current_posture.prone && T.above && T.above.is_open() && !T.above.is_flooded() && can_overcome_gravity())
 		return FALSE
 	if(prob(5))
 		var/datum/reagents/metabolism/inhaled = get_inhaled_reagents()
@@ -768,7 +789,12 @@ default behaviour is:
 			fluids.trans_to_holder(touching_reagents, saturation)
 
 /mob/living/proc/needs_wheelchair()
-	return FALSE
+	var/tmp_stance_damage = 0
+	for(var/limb_tag in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT))
+		var/obj/item/organ/external/E = GET_EXTERNAL_ORGAN(src, limb_tag)
+		if(!E || !E.is_usable())
+			tmp_stance_damage += 2
+	return tmp_stance_damage >= 4
 
 /mob/living/proc/seizure()
 	set waitfor = 0
@@ -777,7 +803,7 @@ default behaviour is:
 		visible_message(SPAN_DANGER("\The [src] starts having a seizure!"))
 		SET_STATUS_MAX(src, STAT_PARA, rand(8,16))
 		set_status(STAT_JITTER, rand(150,200))
-		take_damage(PAIN, rand(50,60))
+		take_damage(rand(50, 60), PAIN)
 
 /mob/living/proc/get_digestion_product()
 	return null
@@ -869,7 +895,7 @@ default behaviour is:
 		if (!should_have_organ(BP_HEART))
 			blood_splatter(loc, src, large = TRUE)
 		if(prob(25))
-			take_damage(BRUTE, 1)
+			take_damage(1)
 			visible_message(SPAN_DANGER("\The [src]'s [isSynthetic() ? "state worsens": "wounds open more"] from being dragged!"))
 
 /mob/living/CanUseTopicPhysical(mob/user)
@@ -1032,7 +1058,7 @@ default behaviour is:
 				A.alert_on_fall(src)
 
 /mob/living/proc/apply_fall_damage(var/turf/landing)
-	take_damage(BRUTE, rand(max(1, CEILING(mob_size * 0.33)), max(1, CEILING(mob_size * 0.66))) * get_fall_height())
+	take_damage(rand(max(1, CEILING(mob_size * 0.33)), max(1, CEILING(mob_size * 0.66))) * get_fall_height())
 
 /mob/living/proc/get_toxin_resistance()
 	var/decl/species/species = get_species()
@@ -1403,7 +1429,7 @@ default behaviour is:
 
 	HandleBloodTrail(T, old_loc)
 
-	if(lying)
+	if(current_posture.prone)
 		return
 
 	var/turf_wet = T.get_wetness()
@@ -1444,3 +1470,20 @@ default behaviour is:
 
 /mob/living/proc/handle_footsteps()
 	return
+
+/mob/living/get_movement_delay(var/travel_dir)
+	. = ..()
+	if(stance_damage)
+		. += max(2 * stance_damage, 0) //damaged/missing feet or legs is slow
+
+/mob/living/proc/find_mob_supporting_object()
+	for(var/turf/T in RANGE_TURFS(src, 1))
+		if(T.density && T.simulated)
+			return TRUE
+	for(var/obj/O in orange(1, src))
+		if((O.obj_flags & OBJ_FLAG_SUPPORT_MOB) || (O.density && O.anchored))
+			return TRUE
+	return FALSE
+
+/mob/living/proc/is_asystole()
+	return FALSE

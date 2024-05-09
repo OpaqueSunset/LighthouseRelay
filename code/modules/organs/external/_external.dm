@@ -36,8 +36,9 @@
 	var/skin_colour                    // skin colour
 	var/skin_blend = ICON_ADD          // How the skin colour is applied.
 	var/hair_colour                    // hair colour
-	var/render_alpha = 255
+	var/render_alpha = 255             // Alpha value to use for rendering the icon (slime transparency)
 	var/skip_body_icon_draw = FALSE    // Set to true to skip including this organ on the human body sprite.
+	var/icon_state_modifier            // String modifier to icon_state used for prone icons, etc.
 
 	/// Sprite accessories like hair and markings to apply to the organ icon and owner.
 	VAR_PRIVATE/list/_sprite_accessories
@@ -743,7 +744,7 @@ This function completely restores a damaged organ to perfect condition.
 /obj/item/organ/external/Process()
 	if(owner)
 		if(pain)
-			pain -= owner.lying ? 3 : 1
+			pain -= owner.current_posture.prone ? 3 : 1
 			if(pain<0)
 				pain = 0
 		// Process wounds, doing healing etc. Only do this every few ticks to save processing power
@@ -851,7 +852,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			owner.update_body(1)
 
 		germ_level++
-		owner.take_damage(TOX, 1)
+		owner.take_damage(1, TOX)
 
 //Updating wounds. Handles wound natural I had some free spachealing, internal bleedings and infections
 /obj/item/organ/external/proc/update_wounds()
@@ -1078,7 +1079,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			for(var/obj/item/organ/external/organ in remaining_organs)
 				victim.remove_organ(organ, TRUE, TRUE, update_icon = FALSE)
 				if(organ.place_remains_from_dismember_method(disintegrate))
-					qdel(organ)
+					organ.physically_destroyed()
 			victim.dump_contents()
 			qdel(victim)
 		else // We deliberately skip queuing this via remove_organ() above due to potentially immediately deleting the mob.
@@ -1574,15 +1575,19 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/is_internal()
 	return FALSE
 
+/obj/item/organ/external/place_butcher_product(decl/butchery_data/butchery_decl)
+	if(butchery_decl.bone_type)
+		butchery_decl.place_products(owner, butchery_decl.bone_material, 1, butchery_decl.bone_type)
+	return ..()
+
 // This likely seems excessive, but refer to organ explosion_act() to see how it should be handled before reaching this point.
 /obj/item/organ/external/physically_destroyed(skip_qdel)
-	if(owner)
-		if(limb_flags & ORGAN_FLAG_CAN_AMPUTATE)
-			dismember(FALSE, DISMEMBER_METHOD_BLUNT)
-		else
-			owner.gib()
-	else
+	if(!owner)
 		return ..()
+	if(limb_flags & ORGAN_FLAG_CAN_AMPUTATE)
+		dismember(FALSE, DISMEMBER_METHOD_BLUNT)
+	else
+		owner.gib()
 
 /obj/item/organ/external/is_vital_to_owner()
 	if(isnull(vital_to_owner))

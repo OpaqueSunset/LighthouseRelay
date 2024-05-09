@@ -747,7 +747,7 @@
 		climbers.Cut(1,2)
 
 	for(var/mob/living/M in get_turf(src))
-		if(M.lying) return //No spamming this on people.
+		if(M.current_posture.prone) return //No spamming this on people.
 
 		SET_STATUS_MAX(M, STAT_WEAK, 3)
 		to_chat(M, SPAN_DANGER("You topple as \the [src] moves under you!"))
@@ -756,7 +756,7 @@
 			var/obj/item/organ/external/affecting = SAFEPICK(M.get_external_organs())
 			if(!affecting)
 				to_chat(M, SPAN_DANGER("You land heavily!"))
-				M.take_damage(BRUTE, damage)
+				M.take_damage(damage)
 			else
 				to_chat(M, SPAN_DANGER("You land heavily on your [affecting.name]!"))
 				affecting.take_external_damage(damage, 0)

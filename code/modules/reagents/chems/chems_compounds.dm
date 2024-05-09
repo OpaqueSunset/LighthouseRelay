@@ -117,7 +117,7 @@
 	var/slime_temp_adj = 10
 
 /decl/material/liquid/capsaicin/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
-	M.take_damage(TOX, 0.5 * removed)
+	M.take_damage(0.5 * removed, TOX)
 
 /decl/material/liquid/capsaicin/affect_ingest(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	holder.remove_reagent(/decl/material/liquid/frostoil, 5)
@@ -202,7 +202,7 @@
 			to_chat(M, "<span class='warning'>Your [partial_face_protection] partially protects you from the pepperspray!</span>")
 			stun_probability *= 0.5
 		to_chat(M, "<span class='danger'>Your face and throat burn!</span>")
-		if(HAS_STATUS(M, STAT_STUN)  && !M.lying)
+		if(HAS_STATUS(M, STAT_STUN)  && !M.current_posture.prone)
 			SET_STATUS_MAX(M, STAT_WEAK, 4)
 		if(prob(stun_probability))
 			M.custom_emote(2, "[pick("coughs!","coughs hysterically!","splutters!")]")
@@ -465,6 +465,6 @@
 			break
 	else
 		to_chat(M, SPAN_DANGER("Your flesh is being lacerated from within!"))
-		M.take_damage(BRUTE, rand(3,6))
+		M.take_damage(rand(3,6))
 		if(prob(10))
 			new /obj/item/shard(get_turf(M), result_mat)

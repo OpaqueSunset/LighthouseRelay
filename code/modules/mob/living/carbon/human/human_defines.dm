@@ -50,8 +50,6 @@
 	var/list/equipment_overlays = list()
 	var/datum/mil_branch/char_branch = null
 	var/datum/mil_rank/char_rank = null
-	/// Whether this mob's ability to stand has been affected
-	var/stance_damage = 0
 	/// default unarmed attack
 	var/decl/natural_attack/default_attack
 	/// machine that is currently applying visual effects to this mob. Only used for camera monitors currently.
@@ -61,7 +59,6 @@
 	/// vars for fountain of youth examine lines
 	var/became_older
 	var/became_younger
-	var/list/smell_cooldown
 	/// var for caching last pain calc to avoid looping through organs over and over and over again
 	var/last_pain
 	var/vital_organ_missing_time

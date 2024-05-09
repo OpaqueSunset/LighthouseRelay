@@ -134,11 +134,11 @@
 
 /mob/living/silicon/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj.nodamage)
-		switch(Proj.damage_type)
+		switch(Proj.atom_damage_type)
 			if(BRUTE)
-				take_damage(BRUTE, Proj.damage)
+				take_damage(Proj.damage)
 			if(BURN)
-				take_damage(BURN, Proj.damage)
+				take_damage(Proj.damage, BURN)
 	Proj.on_hit(src,100) //wow this is a terrible hack
 	return 100
 
@@ -452,3 +452,9 @@
 
 /mob/living/silicon/get_self_death_message(gibbed)
 	return "You have suffered a critical system failure, and are dead."
+
+/mob/living/silicon/get_available_postures()
+	var/static/list/available_postures = list(
+		/decl/posture/standing
+	)
+	return available_postures
