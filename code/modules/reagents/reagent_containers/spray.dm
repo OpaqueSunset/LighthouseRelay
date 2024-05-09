@@ -30,7 +30,7 @@
 	src.verbs -= /obj/item/chems/verb/set_amount_per_transfer_from_this
 
 // Override to avoid drinking from this or feeding it to your neighbor.
-/obj/item/chems/spray/attack(mob/user)
+/obj/item/chems/spray/use_on_mob(mob/user)
 	return FALSE
 
 /obj/item/chems/spray/afterattack(atom/A, mob/user, proximity)
