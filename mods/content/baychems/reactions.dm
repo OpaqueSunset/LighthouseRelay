@@ -9,8 +9,6 @@
 	result = /decl/material/liquid/burn_meds/dermaline
 	required_reagents = list(/decl/material/liquid/acetone = 1, /decl/material/solid/phosphorus = 1, /decl/material/liquid/burn_meds = 1)
 	result_amount = 3
-	minimum_temperature = -150 CELSIUS
-	maximum_temperature = -50 CELSIUS
 
 /decl/chemical_reaction/drug/oxy_meds
 	name = "Dexalin"
@@ -65,3 +63,14 @@
 	result = /decl/material/liquid/antidepressants/paroxetine
 	required_reagents = list(/decl/material/liquid/hallucinogenics = 1, /decl/material/liquid/acetone = 1, /decl/material/liquid/stabilizer = 1)
 	result_amount = 3
+
+/decl/chemical_reaction/drug/hallucinogenics
+	name = "Mindbreaker Toxin"
+	required_reagents = list(/decl/material/solid/silicon = 1, /decl/material/gas/ammonia = 1, /decl/material/liquid/antitoxins = 1)
+	minimum_temperature = 0
+	maximum_temperature = INFINITY
+
+/decl/chemical_reaction/drug/psychoactives
+	name = "Space Drugs"
+	minimum_temperature = 0
+	maximum_temperature = INFINITY
