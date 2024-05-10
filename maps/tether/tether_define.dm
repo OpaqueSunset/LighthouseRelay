@@ -33,6 +33,7 @@
 	starting_money = 5000
 	department_money = 0
 	salary_modifier = 0.2
+	game_year = 546
 
 	radiation_detected_message = "High levels of radiation have been detected in proximity of the %STATION_NAME%. Please move to a shielded area such as the cargo bay, dormitories or medbay until the radiation has passed."
 	default_telecomms_channels = list(
