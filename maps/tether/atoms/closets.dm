@@ -35,7 +35,7 @@
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
-		/obj/item/clothing/gloves/color/black,
+		/obj/item/clothing/gloves/black,
 		// /obj/item/gun/energy/frontier/locked/holdout, // todo: frontier weapons with extra simplemob damage // or maybe not
 		// /obj/item/radio/headset/explorer,
 		/obj/item/flashlight,
@@ -148,7 +148,7 @@
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
-		/obj/item/clothing/gloves/color/black,
+		/obj/item/clothing/gloves/black,
 		// /obj/item/radio/headset/pathfinder,
 		// /obj/item/radio/headset/pathfinder/alt,
 		// /obj/item/clothing/armor_attachment/helmetcamera/exploration,

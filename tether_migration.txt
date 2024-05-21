@@ -757,13 +757,6 @@
 /obj/item/firstaid_arm_assembly : @DELETE
 /obj/item/bucket_sensor : @DELETE
 /obj/item/broken_device : @DELETE
-/obj/item/clothing/gloves/blue : /obj/item/clothing/gloves/color/blue
-/obj/item/clothing/gloves/brown : /obj/item/clothing/gloves/color/brown
-/obj/item/clothing/gloves/green : /obj/item/clothing/gloves/color/green
-/obj/item/clothing/gloves/grey : /obj/item/clothing/gloves/color/grey
-/obj/item/clothing/gloves/light_brown : /obj/item/clothing/gloves/color/light_brown
-/obj/item/clothing/gloves/purple : /obj/item/clothing/gloves/color/purple
-/obj/item/clothing/gloves/white : /obj/item/clothing/gloves/color/white
 
 /obj/item/spacecash/@SUBTYPES : /obj/item/cash/@SUBTYPES{@OLD}
 
