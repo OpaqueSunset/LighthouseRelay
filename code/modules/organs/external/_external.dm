@@ -35,10 +35,8 @@
 	var/skin_tone                      // Skin tone.
 	var/skin_colour                    // skin colour
 	var/skin_blend = ICON_ADD          // How the skin colour is applied.
-	var/hair_colour                    // hair colour
 	var/render_alpha = 255             // Alpha value to use for rendering the icon (slime transparency)
 	var/skip_body_icon_draw = FALSE    // Set to true to skip including this organ on the human body sprite.
-	var/icon_state_modifier            // String modifier to icon_state used for prone icons, etc.
 
 	/// Sprite accessories like hair and markings to apply to the organ icon and owner.
 	VAR_PRIVATE/list/_sprite_accessories
@@ -301,34 +299,34 @@
 
 //Handles removing internal organs/implants/items still in the detached limb.
 /obj/item/organ/external/proc/try_remove_internal_item(var/obj/item/W, var/mob/user)
-	switch(stage)
-		if(0)
-			if(W.sharp)
-				user.visible_message(SPAN_DANGER("<b>[user]</b> cuts [src] open with [W]!"))
-				stage++
-				return TRUE
-		if(1)
-			if(istype(W))
-				user.visible_message(SPAN_DANGER("<b>[user]</b> cracks [src] open like an egg with [W]!"))
-				stage++
-				return TRUE
-		if(2)
-			if(W.sharp || istype(W,/obj/item/hemostat) || IS_WIRECUTTER(W))
-				var/list/radial_buttons = make_item_radial_menu_choices(get_contents_recursive())
-				if(LAZYLEN(radial_buttons))
-					var/obj/item/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = TRUE, check_locs = list(src))
-					if(removing)
-						if(istype(removing, /obj/item/organ))
-							var/obj/item/organ/O = removing
-							O.do_uninstall()
-						removing.forceMove(get_turf(user))
 
-						if(user.get_empty_hand_slot())
-							user.put_in_hands(removing)
-						user.visible_message(SPAN_DANGER("<b>[user]</b> extracts [removing] from [src] with [W]!"))
-				else
-					user.visible_message(SPAN_DANGER("<b>[user]</b> fishes around fruitlessly in [src] with [W]."))
-				return TRUE
+	if(stage == 0 && W.sharp)
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> cuts \the [src] open with \the [W]."))
+		stage++
+		return TRUE
+
+	if(stage == 1 && IS_RETRACTOR(W))
+		user.visible_message(SPAN_NOTICE("<b>\The [user]</b> levers \the [src] open with \the [W]."))
+		stage++
+		return TRUE
+
+	if(stage == 2 && (W.sharp || IS_HEMOSTAT(W) || IS_WIRECUTTER(W)))
+		var/list/radial_buttons = make_item_radial_menu_choices(get_contents_recursive())
+		if(LAZYLEN(radial_buttons))
+			var/obj/item/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = TRUE, check_locs = list(src))
+			if(removing)
+				if(istype(removing, /obj/item/organ))
+					var/obj/item/organ/O = removing
+					O.do_uninstall()
+				removing.forceMove(get_turf(user))
+
+				if(user.get_empty_hand_slot())
+					user.put_in_hands(removing)
+				user.visible_message(SPAN_NOTICE("<b>\The [user]</b> extracts [removing] from \the [src] with \the [W]!"))
+		else
+			user.visible_message(SPAN_NOTICE("<b>\The [user]</b> fishes around fruitlessly in \the [src] with \the [W]."))
+		return TRUE
+
 	return FALSE
 
 //Handles removing child limbs from the detached limb.
@@ -432,10 +430,6 @@
 			if(limb.is_dislocated())
 				return
 		owner.verbs -= /mob/living/carbon/human/proc/undislocate
-
-/obj/item/organ/external/update_organ_health()
-	damage = min(max_damage, (brute_dam + burn_dam))
-	return
 
 //If "in_place" is TRUE will make organs skip their install/uninstall effects and  the sub-limbs and internal organs
 /obj/item/organ/external/do_install(mob/living/carbon/human/target, obj/item/organ/external/affected, in_place, update_icon, detached)
@@ -1170,16 +1164,6 @@ Note that amputating the affected organ does in fact remove the infection from t
 		if(!W.disinfected)
 			return 0
 	return 1
-
-/obj/item/organ/external/proc/bandage()
-	var/rval = 0
-	status &= ~ORGAN_BLEEDING
-	for(var/datum/wound/W in wounds)
-		rval |= !W.bandaged
-		W.bandaged = 1
-	if(rval)
-		owner.update_surgery()
-	return rval
 
 /obj/item/organ/external/proc/salve()
 	var/rval = 0

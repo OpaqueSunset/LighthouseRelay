@@ -347,7 +347,7 @@
 			if(istype(thing_in_slot, /obj/item/clothing))
 				var/obj/item/clothing/C = thing_in_slot
 				if(LAZYLEN(C.accessories))
-					dat += "<A href='?src=\ref[src];item=[slot_tie_str];holder=\ref[C]'>Remove accessory</A>"
+					dat += "<A href='?src=\ref[src];item=accessory;holder=\ref[C]'>Remove accessory</A>"
 
 	// Do they get an option to set internals?
 	if(istype(get_equipped_item(slot_wear_mask_str), /obj/item/clothing/mask) || istype(get_equipped_item(slot_head_str), /obj/item/clothing/head/helmet/space))
@@ -974,7 +974,7 @@
 /client/verb/body_groin()
 	set name = "body-groin"
 	set hidden = 1
-	toggle_zone_sel(list(BP_GROIN))
+	toggle_zone_sel(list(BP_GROIN,BP_TAIL))
 
 /client/verb/body_r_leg()
 	set name = "body-r-leg"
@@ -990,7 +990,7 @@
 	if(!check_has_body_select())
 		return
 	var/obj/screen/zone_selector/selector = mob.zone_sel
-	selector.set_selected_zone(next_in_list(mob.get_target_zone(),zones))
+	selector.set_selected_zone(next_in_list(mob.get_target_zone(), zones))
 
 /mob/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)

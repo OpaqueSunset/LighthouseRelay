@@ -164,6 +164,10 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	/// A reagent used to prefill lanterns.
 	var/default_liquid_fuel_type = /decl/material/liquid/fuel
 
+	/// Decl list of backpacks available to outfits and in character generation.
+	var/list/_available_backpacks
+	var/backpacks_setup = FALSE
+
 /datum/map/proc/get_lobby_track(var/exclude)
 	var/lobby_track_type
 	if(LAZYLEN(lobby_tracks) == 1)
@@ -173,6 +177,17 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	else
 		lobby_track_type = pick(decls_repository.get_decl_paths_of_subtype(/decl/music_track) - exclude)
 	return GET_DECL(lobby_track_type)
+
+/datum/map/proc/get_available_backpacks()
+	if(!backpacks_setup)
+		backpacks_setup = TRUE
+		if(length(_available_backpacks))
+			for(var/backpack_type in _available_backpacks)
+				_available_backpacks[backpack_type] = GET_DECL(backpack_type)
+			_available_backpacks[/decl/backpack_outfit/nothing] = GET_DECL(/decl/backpack_outfit/nothing)
+		else
+			_available_backpacks = decls_repository.get_decls_of_subtype(/decl/backpack_outfit)
+	return _available_backpacks
 
 /datum/map/proc/setup_map()
 
@@ -246,7 +261,25 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	LAZYSET(map_admin_faxes, uppertext(replacetext("[system_name]_POLICE.GOV", " ", "_")), list("name" = "[system_name] Police",  "color" = "#1f66a0", "access" = list(access_heads)))
 
 /datum/map/proc/setup_job_lists()
-	return
+
+	// Populate blacklists for any default-blacklisted species.
+	for(var/decl/species/species as anything in decls_repository.get_decls_of_subtype_unassociated(/decl/species))
+		if(!species.job_blacklist_by_default)
+			continue
+		var/found_whitelisted_job = FALSE
+		for(var/datum/job/job as anything in SSjobs.primary_job_datums)
+			if((species.name in job_to_species_whitelist[job.type]) || (job.type in species_to_job_whitelist[species.name]))
+				LAZYDISTINCTADD(species_to_job_whitelist[species.name], job.type)
+				LAZYDISTINCTADD(job_to_species_whitelist[job.type], species.name)
+				found_whitelisted_job = TRUE
+			else
+				LAZYDISTINCTADD(species_to_job_blacklist[species.name], job.type)
+				LAZYDISTINCTADD(job_to_species_blacklist[job.type], species.name)
+
+		// If no jobs are available for the main map, mark the species as unavailable to avoid player confusion.
+		if(!found_whitelisted_job && src == global.using_map)
+			species.spawn_flags &= ~SPECIES_CAN_JOIN
+			species.spawn_flags |=  SPECIES_IS_RESTRICTED
 
 /datum/map/proc/send_welcome()
 	return
@@ -334,9 +367,6 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 #ifdef UNIT_TEST
 		log_unit_test("Loaded template '[PT]' ([PT.type]) at Z-level [world.maxz] with a tallness of [PT.tallness]")
 #endif
-
-/datum/map/proc/get_network_access(var/network)
-	return 0
 
 // By default transition randomly to another zlevel
 /datum/map/proc/get_transit_zlevel(var/current_z_level)

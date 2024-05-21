@@ -61,11 +61,6 @@
 		/decl/blood_type/skrell/noplus,
 		/decl/blood_type/skrell/nominus
 	)
-	appearance_descriptors = list(
-		/datum/appearance_descriptor/height = 1,
-		/datum/appearance_descriptor/build = 0.8,
-		/datum/appearance_descriptor/headtail_length = 1
-	)
 
 	available_cultural_info = list(
 		TAG_CULTURE = list(
@@ -115,9 +110,6 @@
 	var/water = REAGENT_VOLUME(fluids, /decl/material/liquid/water)
 	if(water >= 40 && H.hydration < 400) //skrell passively absorb water.
 		H.hydration += 1
-
-/decl/species/skrell/get_gender(var/mob/living/carbon/human/H)
-	return istype(H) && (H.appearance_descriptors["headtail length"] == 1 ? MALE : FEMALE)
 
 /decl/species/skrell/handle_trail(mob/living/carbon/human/H, turf/T, old_loc)
 	var/obj/item/shoes = H.get_equipped_item(slot_shoes_str)

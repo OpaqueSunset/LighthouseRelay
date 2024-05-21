@@ -24,8 +24,6 @@
 
 #define isbrain(A) istype(A, /mob/living/brain)
 
-#define iscolorablegloves(A) (istype(A, /obj/item/clothing/gloves/color)||istype(A, /obj/item/clothing/gloves/insulated)||istype(A, /obj/item/clothing/gloves/thick))
-
 #define isclient(A) istype(A, /client)
 
 #define iscorgi(A) istype(A, /mob/living/simple_animal/corgi)
@@ -42,7 +40,7 @@
 
 #define isdeity(A) istype(A, /mob/living/deity)
 
-#define ismouse(A) istype(A, /mob/living/simple_animal/mouse)
+#define ismouse(A) istype(A, /mob/living/simple_animal/passive/mouse)
 
 #define islizard(A) istype(A, /mob/living/simple_animal/lizard)
 

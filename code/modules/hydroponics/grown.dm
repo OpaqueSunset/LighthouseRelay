@@ -1,6 +1,6 @@
 //Grown foods.
 /obj/item/chems/food/grown
-	name = "fruit"
+	name = "produce"
 	icon = 'icons/obj/hydroponics/hydroponics_products.dmi'
 	icon_state = "blank"
 	randpixel = 5
@@ -350,6 +350,9 @@ var/global/list/_wood_materials = list(
 	if(ispath(dried_type, /obj/item/chems/food/grown))
 		return new dried_type(loc, null, seed.name)
 	return ..()
+
+/obj/item/chems/food/grown/get_drying_state(var/obj/rack)
+	return seed?.drying_state || ..()
 
 /obj/item/chems/food/grown/grilled
 	backyard_grilling_count = 1 // will get overwritten when actually made

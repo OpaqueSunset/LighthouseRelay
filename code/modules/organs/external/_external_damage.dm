@@ -197,16 +197,9 @@
 
 	return update_damstate()
 
-// Brute/burn
-/obj/item/organ/external/proc/get_brute_damage()
-	return brute_dam
-
-/obj/item/organ/external/proc/get_burn_damage()
-	return burn_dam
-
 // Geneloss/cloneloss.
 /obj/item/organ/external/proc/get_genetic_damage()
-	if(bodytype.body_flags & BODY_FLAG_NO_DNA)
+	if(!bodytype || (bodytype.body_flags & BODY_FLAG_NO_DNA))
 		return 0
 	if(BP_IS_PROSTHETIC(src))
 		return 0

@@ -1,6 +1,7 @@
 /turf/floor/natural
 
 	name = "ground"
+	gender = PLURAL
 	icon = 'icons/turf/flooring/barren.dmi'
 	desc = "Bare, barren sand."
 	icon_state = "0"
@@ -109,7 +110,7 @@
 /turf/floor/natural/on_reagent_change()
 	. = ..()
 	if(!QDELETED(src) && reagent_type && height < 0 && !QDELETED(reagents) && reagents.total_volume < abs(height))
-		add_to_reagents(abs(height) - reagents.total_volume)
+		add_to_reagents(reagent_type, abs(height) - reagents.total_volume)
 
 /turf/floor/natural/dismantle_turf(devastated, explode, no_product)
 	return !!switch_to_base_turf()

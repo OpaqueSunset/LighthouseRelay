@@ -646,11 +646,9 @@
 		else if (H.wrapped == W)
 			H.wrapped = null
 
-/mob/living/silicon/robot/default_help_interaction(mob/user)
-	if(ishuman(user))
-		user.attempt_hug(src)
-		return TRUE
-	. = ..()
+
+/mob/living/silicon/robot/try_awaken(mob/user)
+	return user?.attempt_hug(src)
 
 /mob/living/silicon/robot/default_hurt_interaction(mob/user)
 	var/decl/species/user_species = user.get_species()
@@ -1121,3 +1119,9 @@
 		/decl/emote/audible/synth/security/halt
 	)
 	return default_emotes
+
+/mob/living/silicon/robot/check_grab_hand()
+	if(locate(/obj/item/grab) in contents)
+		to_chat(src, SPAN_WARNING("You have already grabbed something!"))
+		return FALSE
+	return TRUE

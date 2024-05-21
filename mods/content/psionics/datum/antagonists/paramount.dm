@@ -20,7 +20,7 @@
 	suit =    /obj/item/clothing/suit/wizrobe/psypurple
 	shoes =   /obj/item/clothing/shoes/jackboots
 	back =    /obj/item/backpack/satchel
-	gloves =  /obj/item/clothing/gloves/color/grey
+	gloves =  /obj/item/clothing/gloves/grey
 	id_type = /obj/item/card/id/syndicate
 
 /decl/special_role/paramount/equip_role(var/mob/living/carbon/human/player)
@@ -30,7 +30,7 @@
 		player.set_psi_rank(PSI_COERCION, 3,      defer_update = TRUE)
 		player.set_psi_rank(PSI_PSYCHOKINESIS, 3, defer_update = TRUE)
 		player.set_psi_rank(PSI_ENERGISTICS, 3,   defer_update = TRUE)
-		var/datum/ability_handler/psionics/psi = player.get_ability_handler(/datum/ability_handler/psionics, FALSE)
+		var/datum/ability_handler/psionics/psi = player.get_ability_handler(/datum/ability_handler/psionics)
 		psi?.update(TRUE)
 
 /decl/special_role/paramount/create_objectives(var/datum/mind/player)

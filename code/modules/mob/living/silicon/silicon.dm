@@ -447,6 +447,9 @@
 	)
 	return life_damage_types
 
+/mob/living/silicon/get_dexterity(var/silent)
+	return dexterity
+
 /mob/living/silicon/get_death_message(gibbed)
 	return "gives one shrill beep before falling lifeless."
 
@@ -458,3 +461,10 @@
 		/decl/posture/standing
 	)
 	return available_postures
+
+/mob/living/silicon/try_awaken(mob/user)
+	return FALSE
+
+/mob/living/silicon/handle_stance()
+	stance_damage = 0
+	return
