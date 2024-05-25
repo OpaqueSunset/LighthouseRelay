@@ -17,10 +17,13 @@
 
 /obj/item/clothing/neck/choker //A colorable, tagless choker
 	name = "plain choker"
-	slot_flags = SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY | SLOT_FACE
+	obj_flags = OBJ_FLAG_HOLLOW
+	fallback_slot = slot_wear_suit_str
 	desc = "A simple, plain choker. Or maybe it's a collar? Use in-hand to customize it."
 	icon = 'maps/tether/icons/obj/clothing/choker.dmi'
 	obj_flags = OBJ_FLAG_HOLLOW
+	// TODO: make this use loadout geartweaks instead, at least for material
 	var/customized = FALSE
 	var/static/list/allowed_descriptors = list(
 		"plain",
@@ -79,8 +82,9 @@
 
 /obj/item/clothing/neck/collar
 	abstract_type = /obj/item/clothing/neck/collar
-	slot_flags = SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY | SLOT_FACE
 	obj_flags = OBJ_FLAG_HOLLOW
+	fallback_slot = slot_wear_suit_str
 	var/writtenon = FALSE
 
 /obj/item/clothing/neck/collar/silver
