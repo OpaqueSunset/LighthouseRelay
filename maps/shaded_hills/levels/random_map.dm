@@ -33,26 +33,6 @@
 		return /turf/floor/natural/grass/wild
 	return /turf/floor/natural/grass
 
-/datum/random_map/noise/shaded_hills_woods/get_additional_spawns(var/value, var/turf/T)
-	if(T.density || (locate(/obj/structure) in T))
-		return
-	value = noise2value(value)
-	if(value <= 5)
-		if(prob(75))
-			new /obj/structure/flora/tree/hardwood/ebony
-		else
-			new /obj/structure/flora/tree/dead/ebony
-	else if(value <= 7)
-		if(prob(50))
-			new /obj/structure/flora/tree/hardwood/ebony
-		else if(prob(25))
-			new /obj/structure/flora/tree/dead/ebony
-	else
-		if(prob(10))
-			new /obj/structure/flora/tree/hardwood/ebony
-		else if(prob(5))
-			new /obj/structure/flora/tree/dead/ebony
-
 // TODO
 /datum/random_map/noise/forage/shaded_hills
 	abstract_type = /datum/random_map/noise/forage/shaded_hills
@@ -67,8 +47,8 @@
 /datum/random_map/noise/forage/shaded_hills/swamp
 	tree_weight = 4
 	trees = list(
-		/obj/structure/flora/tree/hardwood/ebony = 1,
-		/obj/structure/flora/tree/dead/ebony = 2,
+		/obj/structure/flora/tree/hardwood/walnut = 1,
+		/obj/structure/flora/tree/dead/walnut = 2,
 		/obj/structure/flora/bush = 4,
 		/obj/structure/flora/bush/leafybush = 5,
 		/obj/structure/flora/bush/grassybush = 5,
@@ -98,9 +78,11 @@
 /datum/random_map/noise/forage/shaded_hills/woods
 	tree_weight = 7
 	trees = list(
+		/obj/structure/flora/tree/hardwood/walnut = 8,
 		/obj/structure/flora/tree/hardwood/yew = 8,
 		/obj/structure/flora/tree/hardwood/mahogany = 8,
 		/obj/structure/flora/bush/pointybush = 5,
+		/obj/structure/flora/tree/dead/walnut = 1,
 		/obj/structure/flora/tree/dead/yew = 1,
 		/obj/structure/flora/tree/dead/mahogany = 1,
 		/obj/structure/flora/bush/genericbush = 1,

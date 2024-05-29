@@ -203,7 +203,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 			line+=locate(px,py,M.z)
 	return line
 
-#define LOCATE_COORDS(X, Y, Z) locate(clamp(1, X, world.maxx), clamp(1, Y, world.maxy), Z)
+#define LOCATE_COORDS(X, Y, Z) locate(clamp(X, 1, world.maxx), clamp(Y, 1, world.maxy), Z)
 /proc/getcircle(turf/center, var/radius) //Uses a fast Bresenham rasterization algorithm to return the turfs in a thin circle.
 	if(!radius) return list(center)
 
@@ -230,7 +230,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 #undef LOCATE_COORDS
 
-#define LOCATE_COORDS_SAFE(X, Y, Z) locate(clamp(TRANSITIONEDGE + 1, X, world.maxx - TRANSITIONEDGE), clamp(TRANSITIONEDGE + 1, Y, world.maxy - TRANSITIONEDGE), Z)
+#define LOCATE_COORDS_SAFE(X, Y, Z) locate(clamp(X, TRANSITIONEDGE + 1, world.maxx - TRANSITIONEDGE), clamp(Y, TRANSITIONEDGE + 1, world.maxy - TRANSITIONEDGE), Z)
 /proc/getcirclesafe(turf/center, var/radius) //Uses a fast Bresenham rasterization algorithm to return the turfs in a thin circle.
 	if(!radius) return list(center)
 
@@ -768,8 +768,7 @@ var/global/list/WALLITEMS = list(
 /proc/get_random_colour(var/simple = FALSE, var/lower = 0, var/upper = 255)
 	if(simple)
 		return pick(list("#ff0000","#ff7f00","#ffff00","#00ff00","#0000ff","#4b0082","#8f00ff"))
-	else
-		return rgb(rand(lower, upper), rand(lower, upper), rand(lower, upper))
+	return rgb(rand(lower, upper), rand(lower, upper), rand(lower, upper))
 
 // call to generate a stack trace and print to runtime logs
 /proc/get_stack_trace(msg, file, line)

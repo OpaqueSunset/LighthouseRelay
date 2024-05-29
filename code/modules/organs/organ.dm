@@ -35,6 +35,9 @@
 	var/death_time                         // REALTIMEOFDAY at moment of death.
 	var/scale_max_damage_to_species_health // Whether or not we should scale the damage values of this organ to the owner species.
 
+	/// Set to true if this organ should return info to Stat(). See get_stat_info().
+	var/has_stat_info
+
 /obj/item/organ/Destroy()
 	if(owner)
 		owner.remove_organ(src, FALSE, FALSE, TRUE, TRUE, FALSE) //Tell our parent we're unisntalling in place
@@ -56,11 +59,8 @@
 /obj/item/organ/attack_self(var/mob/user)
 	return (owner && loc == owner && owner == user)
 
-/obj/item/organ/proc/update_organ_health()
-	return
-
 /obj/item/organ/proc/is_broken()
-	return (damage >= min_broken_damage || (status & ORGAN_CUT_AWAY) || (status & ORGAN_BROKEN))
+	return (damage >= min_broken_damage || (status & ORGAN_CUT_AWAY) || (status & ORGAN_BROKEN) || (status & ORGAN_DEAD))
 
 //Third argument may be a dna datum; if null will be set to holder's dna.
 /obj/item/organ/Initialize(mapload, material_key, datum/dna/given_dna, decl/bodytype/new_bodytype)
@@ -294,7 +294,7 @@
 
 	if(germ_level >= INFECTION_LEVEL_ONE)
 		var/fever_temperature = (owner.get_mob_temperature_threshold(HEAT_LEVEL_1) - owner.species.body_temperature - 5)* min(germ_level/INFECTION_LEVEL_TWO, 1) + owner.species.body_temperature
-		owner.bodytemperature += clamp(0, (fever_temperature - T20C)/BODYTEMP_COLD_DIVISOR + 1, fever_temperature - owner.bodytemperature)
+		owner.bodytemperature += clamp((fever_temperature - T20C)/BODYTEMP_COLD_DIVISOR + 1, 0, fever_temperature - owner.bodytemperature)
 
 	if (germ_level >= INFECTION_LEVEL_TWO)
 		var/obj/item/organ/external/parent = GET_EXTERNAL_ORGAN(owner, parent_organ)
@@ -378,7 +378,7 @@
 
 /obj/item/organ/proc/heal_damage(amount)
 	if(can_recover())
-		damage = clamp(0, damage - round(amount, 0.1), max_damage)
+		damage = clamp(damage - round(amount, 0.1), 0, max_damage)
 		if(owner)
 			owner.update_health()
 
@@ -412,7 +412,7 @@
 	return yum
 
 /obj/item/organ/proc/can_feel_pain()
-	return !(bodytype.body_flags & BODY_FLAG_NO_PAIN)
+	return bodytype && !(bodytype.body_flags & BODY_FLAG_NO_PAIN)
 
 /obj/item/organ/proc/is_usable()
 	return !(status & (ORGAN_CUT_AWAY|ORGAN_MUTATED|ORGAN_DEAD))
@@ -474,9 +474,6 @@
 //used by stethoscope
 /obj/item/organ/proc/listen()
 	return
-
-/obj/item/organ/proc/get_mechanical_assisted_descriptor()
-	return "mechanically-assisted [name]"
 
 var/global/list/ailment_reference_cache = list()
 /proc/get_ailment_reference(var/ailment_type)
@@ -648,3 +645,7 @@ var/global/list/ailment_reference_cache = list()
 	if(!owner && !BP_IS_PROSTHETIC(src) && species?.butchery_data)
 		place_butcher_product(GET_DECL(species.butchery_data))
 	return ..()
+
+/// Returns a list with two entries, first being the stat panel title, the second being the value. See has_stat_value bool above.
+/obj/item/organ/proc/get_stat_info()
+	return null

@@ -13,7 +13,6 @@
 	var/changing_state = FALSE
 	var/icon_base
 	var/door_sound_volume = 25
-	var/connections = 0
 
 /obj/structure/door/Initialize()
 	..()
@@ -49,11 +48,17 @@
 
 /obj/structure/door/update_connections(var/propagate = FALSE)
 	. = ..()
-	if(propagate && isturf(loc))
+	if(isturf(loc))
+
+		if(propagate)
+			for(var/turf/wall/W in RANGE_TURFS(loc, 1))
+				W.wall_connections = null
+				W.other_connections = null
+				W.queue_icon_update()
+
 		for(var/turf/wall/W in RANGE_TURFS(loc, 1))
-			W.wall_connections = null
-			W.other_connections = null
-			W.queue_icon_update()
+			set_dir(turn(get_dir(loc, W), 90))
+			break
 
 /obj/structure/door/get_material_health_modifier()
 	. = 10
@@ -159,9 +164,13 @@
 /obj/structure/door/CanFluidPass(coming_from)
 	return !density
 
-/obj/structure/door/Bumped(atom/AM)
-	if(!density || changing_state)
+/obj/structure/door/Bumped(atom/movable/AM)
+	if(!density || changing_state || !istype(AM))
 		return
+
+	if(AM.get_object_size() <= MOB_SIZE_SMALL)
+		return
+
 	if(ismob(AM))
 		var/mob/M = AM
 		if(M.restrained() || issmall(M))
@@ -210,10 +219,19 @@
 
 /obj/structure/door/wood/ebony
 	material = /decl/material/solid/organic/wood/ebony
-	color = WOOD_COLOR_BLACK
+	color = /decl/material/solid/organic/wood/ebony::color
 
 /obj/structure/door/wood/saloon/ebony
 	material = /decl/material/solid/organic/wood/ebony
+	color = /decl/material/solid/organic/wood/ebony::color
+
+/obj/structure/door/wood/walnut
+	material = /decl/material/solid/organic/wood/walnut
+	color = /decl/material/solid/organic/wood/walnut::color
+
+/obj/structure/door/wood/saloon/walnut
+	material = /decl/material/solid/organic/wood/walnut
+	color = /decl/material/solid/organic/wood/walnut::color
 
 /obj/structure/door/glass
 	material = /decl/material/solid/glass

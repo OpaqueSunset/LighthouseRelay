@@ -5,7 +5,7 @@
 
 /obj/structure/closet/secure_closet/scientist/WillContain()
 	return list(
-		/obj/item/clothing/under/color/white,
+		/obj/item/clothing/jumpsuit/white,
 		/obj/item/clothing/suit/toggle/labcoat,
 		/obj/item/clothing/shoes/color/white,
 		/obj/item/radio/headset/headset_sci,
@@ -20,7 +20,7 @@
 
 /obj/structure/closet/secure_closet/xenobio/WillContain()
 	return list(
-		/obj/item/clothing/under/color/white,
+		/obj/item/clothing/jumpsuit/white,
 		/obj/item/clothing/suit/toggle/labcoat,
 		/obj/item/clothing/shoes/color/white,
 		/obj/item/radio/headset/headset_sci,
@@ -73,7 +73,7 @@
 		/obj/item/clothing/suit/jacket/bomber,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/shoes/color/black,
-		/obj/item/clothing/gloves/color/black,
+		/obj/item/clothing/gloves/black,
 		/obj/item/radio/headset/headset_sci,
 		/obj/item/flashlight,
 		/obj/item/chems/food/liquidfood,

@@ -17945,7 +17945,7 @@
 /turf/floor/tiled/steel_grid,
 /area/assembly/chargebay)
 "Hx" = (
-/obj/item/clothing/under/color/grey,
+/obj/item/clothing/jumpsuit/grey,
 /obj/item/clothing/mask/gas/budget,
 /obj/item/belt/utility/full,
 /obj/effect/decal/cleanable/dirt,

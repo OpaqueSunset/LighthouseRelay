@@ -243,7 +243,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/mouse/brown/Tom,
+/mob/living/simple_animal/passive/mouse/brown/Tom,
 /turf/floor/lino,
 /area/ministation/cafe)
 "bs" = (
@@ -6472,19 +6472,19 @@
 /obj/structure/closet/wardrobe/mixed,
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
-/obj/item/clothing/under/color,
-/obj/item/clothing/under/color,
-/obj/item/clothing/under/color,
-/obj/item/clothing/under/color{
+/obj/item/clothing/jumpsuit,
+/obj/item/clothing/jumpsuit,
+/obj/item/clothing/jumpsuit,
+/obj/item/clothing/jumpsuit{
 	color = "#ff00ff"
 	},
-/obj/item/clothing/under/color{
+/obj/item/clothing/jumpsuit{
 	color = "#000000"
 	},
-/obj/item/clothing/under/color{
+/obj/item/clothing/jumpsuit{
 	color = "#008000"
 	},
-/obj/item/clothing/under/color{
+/obj/item/clothing/jumpsuit{
 	color = "#808080"
 	},
 /obj/item/clothing/suit/jacket/winter,
@@ -7226,7 +7226,7 @@
 /obj/structure/closet,
 /obj/item/clothing/mask/gas/clown_hat,
 /obj/item/clothing/shoes/clown_shoes,
-/obj/item/clothing/under/clown,
+/obj/item/clothing/costume/clown,
 /obj/item/stamp/clown,
 /obj/item/backpack/clown,
 /obj/item/bikehorn,
@@ -7634,7 +7634,7 @@
 /turf/floor/carpet/red,
 /area/ministation/detective)
 "HR" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/ministation/maint/l2centrals)
 "HW" = (

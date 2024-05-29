@@ -32,13 +32,13 @@
 		player.set_psi_rank(PSI_COERCION,      3, defer_update = TRUE)
 		player.set_psi_rank(PSI_PSYCHOKINESIS, 3, defer_update = TRUE)
 		player.set_psi_rank(PSI_ENERGISTICS,   3, defer_update = TRUE)
-		var/datum/ability_handler/psionics/psi = player.get_ability_handler(/datum/ability_handler/psionics, FALSE)
+		var/datum/ability_handler/psionics/psi = player.get_ability_handler(/datum/ability_handler/psionics)
 		psi?.update(TRUE)
 
 /decl/hierarchy/outfit/foundation
 	name = "Cuchulain Foundation Agent"
 	glasses =  /obj/item/clothing/glasses/sunglasses
-	uniform =  /obj/item/clothing/under/formal/charcoal
+	uniform =  /obj/item/clothing/pants/slacks/black/outfit
 	shoes =    /obj/item/clothing/shoes/color/black
 	hands =    list(/obj/item/briefcase/foundation)
 	l_ear =    /obj/item/radio/headset/foundation

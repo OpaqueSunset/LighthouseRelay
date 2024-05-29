@@ -27,6 +27,20 @@
 // Accessory will only be shown on 'view accessories'.
 #define ACCESSORY_VISIBILITY_HIDDEN     2
 
+#define UNIFORM_DEFAULT_ACCESSORIES list( \
+	ACCESSORY_SLOT_SENSORS,               \
+	ACCESSORY_SLOT_UTILITY,               \
+	ACCESSORY_SLOT_HOLSTER,               \
+	ACCESSORY_SLOT_ARMBAND,               \
+	ACCESSORY_SLOT_RANK,                  \
+	ACCESSORY_SLOT_DEPT,                  \
+	ACCESSORY_SLOT_DECOR,                 \
+	ACCESSORY_SLOT_NECK,                  \
+	ACCESSORY_SLOT_MEDAL,                 \
+	ACCESSORY_SLOT_INSIGNIA,              \
+	ACCESSORY_SLOT_OVER                   \
+)
+
 // Bitmasks for the flags_inv variable. These determine when a piece of clothing hides another, i.e. a helmet hiding glasses.
 // WARNING: The following flags apply only to the external suit!
 #define HIDEGLOVES         BITFLAG(0)
@@ -61,7 +75,6 @@
 #define slot_wear_id_str     "slot_wear_id"
 #define slot_gloves_str      "slot_gloves"
 #define slot_glasses_str     "slot_glasses"
-#define slot_tie_str         "slot_tie"
 #define slot_l_store_str     "slot_l_store"
 #define slot_r_store_str     "slot_r_store"
 #define slot_s_store_str     "slot_s_store"

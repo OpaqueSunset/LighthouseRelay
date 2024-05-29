@@ -12,10 +12,24 @@
 /turf/wall/brick/get_dismantle_sound()
 	return 'sound/foley/wooden_drop.ogg' // todo
 
-// Subtypes.
-/turf/wall/brick/sandstone
-	color = COLOR_GOLD
+/turf/wall/brick/update_strings()
+	if(reinf_material)
+		SetName("reinforced [material.solid_name] brick wall")
+		desc = "A brick wall made of [material.solid_name] and reinforced with [reinf_material.solid_name]."
+	else
+		SetName("[material.solid_name] brick wall")
+		desc = "A brick wall made of [material.solid_name]."
 
-/turf/wall/brick/basalt
-	material = /decl/material/solid/stone/basalt
-	color = COLOR_DARK_GRAY
+// Subtypes.
+#define MATERIAL_BRICK_WALL(material_name) \
+/turf/wall/brick/##material_name { \
+	color = /decl/material/solid/stone/##material_name::color; \
+	material = /decl/material/solid/stone/##material_name; \
+}
+
+MATERIAL_BRICK_WALL(sandstone)
+MATERIAL_BRICK_WALL(basalt)
+MATERIAL_BRICK_WALL(granite)
+MATERIAL_BRICK_WALL(marble)
+MATERIAL_BRICK_WALL(pottery)
+#undef MATERIAL_BRICK_WALL

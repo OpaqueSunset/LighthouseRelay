@@ -61,7 +61,7 @@
 /area/holodeck/source_picnicarea)
 "aO" = (
 /obj/structure/rack/holorack,
-/obj/item/clothing/under/dress/dress_saloon,
+/obj/item/clothing/dress/saloon,
 /obj/item/clothing/head/hairflower,
 /turf/floor/holofloor/tiled/dark,
 /area/holodeck/source_theatre)
@@ -947,7 +947,7 @@
 /obj/structure/table/holotable,
 /obj/item/clothing/head/helmet/thunderdome,
 /obj/item/clothing/suit/armor/tdome/red,
-/obj/item/clothing/under/color/red,
+/obj/item/clothing/jumpsuit/red,
 /obj/item/holo/esword/red,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -1472,7 +1472,7 @@
 /obj/structure/table/holotable,
 /obj/item/clothing/head/helmet/thunderdome,
 /obj/item/clothing/suit/armor/tdome/green,
-/obj/item/clothing/under/color/green,
+/obj/item/clothing/jumpsuit/green,
 /obj/item/holo/esword/green,
 /obj/effect/floor_decal/corner/green{
 	dir = 10

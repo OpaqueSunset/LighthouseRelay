@@ -16703,7 +16703,7 @@
 /area/supply/station)
 "CT" = (
 /obj/structure/safe,
-/obj/item/clothing/under/color/yellow,
+/obj/item/clothing/jumpsuit/yellow,
 /obj/item/sword/katana/toy,
 /obj/item/disk/nuclear{
 	name = "authentication disk"
@@ -19999,15 +19999,15 @@
 /obj/structure/closet{
 	name = "spare clothes"
 	},
-/obj/item/clothing/under/color/black,
-/obj/item/clothing/under/color/black,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/grey,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/blue,
-/obj/item/clothing/under/color/green,
-/obj/item/clothing/under/color/lightpurple,
+/obj/item/clothing/jumpsuit/black,
+/obj/item/clothing/jumpsuit/black,
+/obj/item/clothing/jumpsuit/grey,
+/obj/item/clothing/jumpsuit/grey,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/blue,
+/obj/item/clothing/jumpsuit/green,
+/obj/item/clothing/jumpsuit/lightpurple,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 5
 	},

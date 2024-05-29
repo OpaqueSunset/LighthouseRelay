@@ -13,9 +13,20 @@
 	var/flash_protection = FLASH_PROTECTION_NONE	  // Sets the item's level of flash protection.
 	var/tint = TINT_NONE							  // Sets the item's level of visual impairment tint.
 	var/bodytype_equip_flags    // Bitfields; if null, checking is skipped. Determine if a given mob can equip this item or not.
-	var/list/accessories = list()
+
+	var/list/accessories
+
 	var/list/valid_accessory_slots
-	var/list/restricted_accessory_slots
+
+	var/list/restricted_accessory_slots = list(
+		ACCESSORY_SLOT_UTILITY,
+		ACCESSORY_SLOT_HOLSTER,
+		ACCESSORY_SLOT_ARMBAND,
+		ACCESSORY_SLOT_RANK,
+		ACCESSORY_SLOT_DEPT,
+		ACCESSORY_SLOT_OVER
+	)
+
 	var/list/starting_accessories
 	var/blood_overlay_type = "uniformblood"
 	var/visible_name = "Unknown"
@@ -27,6 +38,9 @@
 	var/should_display_id = TRUE
 	var/fallback_slot
 
+/obj/item/clothing/get_equipment_tint()
+	return tint
+
 /obj/item/clothing/Initialize()
 
 	. = ..()
@@ -36,7 +50,7 @@
 		if(isnull(accessory_removable))
 			accessory_removable = TRUE
 		if(isnull(fallback_slot))
-			fallback_slot = slot_tie_str
+			fallback_slot = slot_w_uniform_str
 		accessory_hide_on_states = get_initial_accessory_hide_on_states()
 
 	if(starting_accessories)
@@ -160,7 +174,7 @@
 	// Don't do this for inhands as the overlay is generally not slot based.
 	// TODO: make this slot based and masked to the onmob overlay?
 	if(!(slot in user_mob?.get_held_item_slots()) && blood_DNA && blood_overlay_type)
-		var/mob_blood_overlay = user_mob.get_bodytype()?.get_blood_overlays(user_mob)
+		var/mob_blood_overlay = user_mob?.get_bodytype()?.get_blood_overlays(user_mob)
 		if(mob_blood_overlay)
 			var/image/bloodsies = overlay_image(mob_blood_overlay, blood_overlay_type, blood_color, RESET_COLOR)
 			bloodsies.appearance_flags |= NO_CLIENT_COLOR

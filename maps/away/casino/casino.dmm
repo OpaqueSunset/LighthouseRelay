@@ -293,7 +293,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "casino_weaponry";
 	name = "Weaponry Blast Door contol";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/structure/flora/pottedplant/unusual,
 /obj/machinery/power/apc{
@@ -307,7 +308,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "casino_bridge";
 	name = "Casino Bridge Blast Door contol";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2307,7 +2309,8 @@
 	tag_airpump = "casino_solar_pump";
 	tag_chamber_sensor = "casino_solar_sensor";
 	tag_exterior_door = "casino_solar_outer";
-	tag_interior_door = "casino_solar_inner"
+	tag_interior_door = "casino_solar_inner";
+	dir = 8
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "casino_solar_sensor";
@@ -4628,39 +4631,45 @@
 "nm" = (
 /obj/structure/bed/chair,
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	id_tag = "Casino_escape_pod_3";
 	name = "Casino escape pod Three controller";
 	pixel_x = 24;
-	tag_door = "Casino escape_pod_3_hatch"
+	tag_door = "Casino escape_pod_3_hatch";
+	dir = 8
 	},
 /turf/floor/plating,
 /area/casino/casino_bow)
 "nn" = (
 /obj/structure/bed/chair,
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	id_tag = "Casino_escape_pod_2";
 	name = "Casino escape pod Two controller";
 	pixel_x = 24;
-	tag_door = "Casino escape_pod_2_hatch"
+	tag_door = "Casino escape_pod_2_hatch";
+	dir = 8
 	},
 /turf/floor/plating,
 /area/casino/casino_bow)
 "no" = (
 /obj/structure/bed/chair,
 /obj/machinery/status_display{
-	pixel_x = -32
+	pixel_x = -32;
+	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	id_tag = "Casino_escape_pod_1";
 	name = "Casino escape pod One controller";
 	pixel_x = 24;
-	tag_door = "escape_pod_17_hatch"
+	tag_door = "escape_pod_17_hatch";
+	dir = 8
 	},
 /turf/floor/plating,
 /area/casino/casino_bow)
@@ -5010,7 +5019,8 @@
 /obj/machinery/button/blast_door{
 	id_tag = "casino_checkpoint";
 	name = "Casino Checkpoint Blast Door contol";
-	pixel_y = -25
+	pixel_y = -25;
+	dir = 1
 	},
 /turf/floor/tiled,
 /area/casino/casino_security)

@@ -4567,7 +4567,7 @@
 /area/library)
 "ajV" = (
 /obj/structure/closet,
-/obj/item/clothing/under/formal/red,
+/obj/item/clothing/pants/slacks/red/outfit,
 /obj/item/scanner/barcode,
 /obj/item/pen/invisible,
 /obj/item/pen/invisible,

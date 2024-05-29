@@ -58,13 +58,13 @@
 
 /obj/random/gloves/spawn_choices()
 	var/static/list/spawnable_choices = list(
+		/obj/item/clothing/gloves                 = 5,
 		/obj/item/clothing/gloves/insulated       = 3,
 		/obj/item/clothing/gloves/thick           = 6,
 		/obj/item/clothing/gloves/thick/botany    = 5,
 		/obj/item/clothing/gloves/latex           = 4,
 		/obj/item/clothing/gloves/thick/swat      = 3,
 		/obj/item/clothing/gloves/thick/combat    = 3,
-		/obj/item/clothing/gloves/color/white     = 5,
 		/obj/item/clothing/gloves/rainbow         = 1,
 		/obj/item/clothing/gloves/thick/duty      = 5,
 		/obj/item/clothing/gloves/guards          = 3,
@@ -156,15 +156,15 @@
 	var/static/list/spawnable_choices = list(
 		/obj/item/clothing/under/syndicate/tacticool = 2,
 		/obj/item/clothing/under/syndicate/combat    = 1,
-		/obj/item/clothing/under/hazard              = 4,
-		/obj/item/clothing/under/sterile             = 4,
+		/obj/item/clothing/jumpsuit/hazard              = 4,
+		/obj/item/clothing/jumpsuit/sterile             = 4,
 		/obj/item/clothing/pants/casual/camo         = 2,
 		/obj/item/clothing/under/frontier            = 2,
 		/obj/item/clothing/under/harness             = 2,
-		/obj/item/clothing/under/medical/paramedic   = 2,
+		/obj/item/clothing/jumpsuit/medical/paramedic   = 2,
 		/obj/item/clothing/under/overalls            = 2,
 		/obj/item/clothing/head/earmuffs             = 2,
-		/obj/item/clothing/under/tactical            = 1
+		/obj/item/clothing/jumpsuit/tactical            = 1
 	)
 	return spawnable_choices
 

@@ -2,6 +2,7 @@
 	abstract_type = /area/shaded_hills
 	icon = 'maps/shaded_hills/areas/icons.dmi'
 	icon_state = "area"
+	base_turf = /turf/floor/natural/rock/basalt
 	fishing_failure_prob = 5
 	fishing_results = list(
 		/mob/living/simple_animal/aquatic/fish               = 10,
@@ -25,7 +26,7 @@
 	. = ..()
 
 /area/shaded_hills/outside
-	name = "Grasslands"
+	name = "\improper Grasslands"
 	color = COLOR_GREEN
 	is_outside = OUTSIDE_YES
 	ambience = list(
@@ -38,6 +39,5 @@
 	)
 	description = "Birds and insects call from the grasses, and a cool wind gusts from across the river."
 	area_blurb_category = /area/shaded_hills/outside
-	interior_ambient_light_level = 0.2
-	interior_ambient_light_color = "#f3e6ca"
+	interior_ambient_light_modifier = -0.3
 

@@ -2662,7 +2662,7 @@
 /obj/item/clothing/head/soft/mime,
 /obj/item/clothing/mask/gas/mime,
 /obj/item/clothing/shoes/color/white,
-/obj/item/clothing/under/mime,
+/obj/item/clothing/costume/mime,
 /obj/item/pen/crayon/mime,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -9179,13 +9179,13 @@
 /area/medical/virologyisolation)
 "qP" = (
 /obj/structure/closet/secure_closet/personal/patient,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
 /obj/item/clothing/shoes/color/white,
 /obj/item/clothing/shoes/color/white,
 /obj/item/clothing/shoes/color/white,
@@ -15748,8 +15748,8 @@
 /obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/suit/jacket/winter/medical,
-/obj/item/clothing/under/medical,
-/obj/item/clothing/under/avian_smock/utility,
+/obj/item/clothing/jumpsuit/medical,
+/obj/item/clothing/dress/avian_smock/utility,
 /turf/floor,
 /area/maintenance/station/sec_lower)
 "Fv" = (
@@ -17676,7 +17676,7 @@
 /obj/structure/closet,
 /obj/item/clothing/shoes/winterboots/medical,
 /obj/item/clothing/suit/jacket/winter/medical,
-/obj/item/clothing/under/medical,
+/obj/item/clothing/jumpsuit/medical,
 /turf/floor/tiled/white,
 /area/maintenance/station/sec_lower)
 "QO" = (

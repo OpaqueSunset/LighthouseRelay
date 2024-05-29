@@ -54,9 +54,6 @@
 		return (M.sdisabilities & DEAFENED) || GET_STATUS(M, STAT_DEAF)
 	return 0
 
-/proc/hasorgans(A) // Fucking really??
-	return ishuman(A)
-
 /proc/iscuffed(var/mob/mob)
 	return ismob(mob) && !!mob.get_equipped_item(slot_handcuffed_str)
 
@@ -541,7 +538,7 @@ var/global/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 	return 1
 
 /mob/proc/ssd_check()
-	return !client && !teleop
+	return !client && !teleop && (last_ckey || !ai)
 
 /mob/proc/try_teleport(var/area/thearea)
 	if(!istype(thearea))

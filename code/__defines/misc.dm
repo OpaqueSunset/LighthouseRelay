@@ -11,8 +11,6 @@
 
 ///Width or height of a transition edge area along the map's borders where transition edge turfs are placed to connect levels together.
 #define TRANSITIONEDGE 7
-///Extra spacing needed between any random level templates and the transition edge of a level.
-#define TEMPLATE_TAG_MAP_EDGE_PAD 15
 
 ///Enum value for a level edge that's to be untouched
 #define LEVEL_EDGE_NONE 0
@@ -103,12 +101,13 @@
 #define AREA_FLAG_HIDE_FROM_HOLOMAP    BITFLAG(12) // if we shouldn't be drawn on station holomaps
 
 //Map template flags
-#define TEMPLATE_FLAG_ALLOW_DUPLICATES BITFLAG(0)  // Lets multiple copies of the template to be spawned
-#define TEMPLATE_FLAG_SPAWN_GUARANTEED BITFLAG(1)  // Makes it ignore away site budget and just spawn (only for away sites)
-#define TEMPLATE_FLAG_CLEAR_CONTENTS   BITFLAG(2)  // if it should destroy objects it spawns on top of
-#define TEMPLATE_FLAG_NO_RUINS         BITFLAG(3)  // if it should forbid ruins from spawning on top of it
-#define TEMPLATE_FLAG_NO_RADS          BITFLAG(4)  // Removes all radiation from the template after spawning.
-#define TEMPLATE_FLAG_TEST_DUPLICATES  BITFLAG(5)  // Makes unit testing attempt to spawn mutliple copies of this template. Assumes unit testing is spawning at least one copy.
+#define TEMPLATE_FLAG_ALLOW_DUPLICATES   BITFLAG(0)  // Lets multiple copies of the template to be spawned
+#define TEMPLATE_FLAG_SPAWN_GUARANTEED   BITFLAG(1)  // Makes it ignore away site budget and just spawn (only for away sites)
+#define TEMPLATE_FLAG_CLEAR_CONTENTS     BITFLAG(2)  // if it should destroy objects it spawns on top of
+#define TEMPLATE_FLAG_NO_RUINS           BITFLAG(3)  // if it should forbid ruins from spawning on top of it
+#define TEMPLATE_FLAG_NO_RADS            BITFLAG(4)  // Removes all radiation from the template after spawning.
+#define TEMPLATE_FLAG_TEST_DUPLICATES    BITFLAG(5)  // Makes unit testing attempt to spawn mutliple copies of this template. Assumes unit testing is spawning at least one copy.
+#define TEMPLATE_FLAG_GENERIC_REPEATABLE BITFLAG(6) // Template can be picked repeatedly for the same level gen run.
 
 // Convoluted setup so defines can be supplied by Bay12 main server compile script.
 // Should still work fine for people jamming the icons into their repo.
@@ -358,12 +357,6 @@
 // Can groom properly (long hair with a brush)
 #define GROOMING_RESULT_SUCCESS 2
 
-#if DM_VERSION < 515
-#define TYPE_INITIAL(REF, VAR) initial(REF.VAR)
-#else
-#define TYPE_INITIAL(REF, VAR) (REF::VAR)
-#endif
-
 // Used by recipe selection.
 #define RECIPE_CATEGORY_MICROWAVE BITFLAG(0)
 #define RECIPE_CATEGORY_POT       BITFLAG(1)
@@ -372,3 +365,19 @@
 #define RECIPE_CATEGORY_OVEN      BITFLAG(4)
 #define RECIPE_CATEGORY_SKILLET   BITFLAG(5)
 #define RECIPE_CATEGORY_SAUCEPAN  BITFLAG(6)
+
+// So we want to have compile time guarantees these methods exist on local type, unfortunately 515 killed the .proc/procname and .verb/verbname syntax so we have to use nameof()
+// For the record: GLOBAL_VERB_REF would be useless as verbs can't be global.
+
+/// Call by name proc references, checks if the proc exists on either this type or as a global proc.
+#define PROC_REF(X) (nameof(.proc/##X))
+/// Call by name verb references, checks if the verb exists on either this type or as a global verb.
+#define VERB_REF(X) (nameof(.verb/##X))
+
+/// Call by name proc reference, checks if the proc exists on either the given type or as a global proc
+#define TYPE_PROC_REF(TYPE, X) (nameof(##TYPE.proc/##X))
+/// Call by name verb reference, checks if the verb exists on either the given type or as a global verb
+#define TYPE_VERB_REF(TYPE, X) (nameof(##TYPE.verb/##X))
+
+/// Call by name proc reference, checks if the proc is an existing global proc
+#define GLOBAL_PROC_REF(X) (/proc/##X)

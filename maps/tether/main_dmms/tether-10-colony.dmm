@@ -3111,7 +3111,7 @@
 /area/centcom/control)
 "fN" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/red,
+/obj/item/clothing/jumpsuit/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/energy_blade/axe,
 /turf/unsimulated/floor{
@@ -3128,7 +3128,7 @@
 /area/tdome/tdomeobserve)
 "fQ" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/green,
+/obj/item/clothing/jumpsuit/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/energy_blade/axe,
 /turf/unsimulated/floor{
@@ -3300,7 +3300,7 @@
 /area/centcom/evac)
 "gk" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/red,
+/obj/item/clothing/jumpsuit/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/tdome/red,
 /obj/item/clothing/head/helmet/thunderdome,
@@ -3351,7 +3351,7 @@
 /area/tdome/tdome1)
 "gp" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/green,
+/obj/item/clothing/jumpsuit/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/tdome/green,
 /obj/item/clothing/head/helmet/thunderdome,
@@ -4429,7 +4429,7 @@
 /area/centcom/evac)
 "iT" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/red,
+/obj/item/clothing/jumpsuit/red,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/helmet/swat,
@@ -4441,7 +4441,7 @@
 /area/tdome/tdome2)
 "iU" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/green,
+/obj/item/clothing/jumpsuit/green,
 /obj/item/clothing/shoes/color/brown,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/helmet/swat,
@@ -4781,7 +4781,7 @@
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
-/obj/item/clothing/under/tactical,
+/obj/item/clothing/jumpsuit/tactical,
 /obj/item/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -4799,7 +4799,7 @@
 /obj/item/clothing/mask/balaclava/tactical,
 /obj/item/clothing/shoes/jackboots/tactical,
 /obj/item/clothing/suit/armor/pcarrier/tactical,
-/obj/item/clothing/under/tactical,
+/obj/item/clothing/jumpsuit/tactical,
 /obj/item/belt/holster/security/tactical,
 /obj/structure/closet/wardrobe/tactical,
 /obj/effect/floor_decal/industrial/outline/grey,

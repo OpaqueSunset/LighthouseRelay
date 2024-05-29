@@ -351,7 +351,7 @@
 	desc = "These gloves are insulated with rubber.";
 	name = "black insulated gloves"
 	},
-/obj/item/clothing/under/dress/maid/latex,
+/obj/item/clothing/dress/maid/latex,
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/mining)
 "aZ" = (
@@ -10329,7 +10329,7 @@
 /area/tether/surfacebase/outside/outside2)
 "vX" = (
 /obj/structure/closet,
-/obj/item/clothing/under/schoolgirl,
+/obj/item/clothing/costume/schoolgirl,
 /turf/floor/wood,
 /area/maintenance/lower/atmos)
 "vZ" = (
@@ -13851,7 +13851,7 @@
 /area/engineering/atmos)
 "Dg" = (
 /obj/structure/rack,
-/obj/item/clothing/under/color/black,
+/obj/item/clothing/jumpsuit/black,
 /turf/floor/plating,
 /area/maintenance/lower/south)
 "Dh" = (

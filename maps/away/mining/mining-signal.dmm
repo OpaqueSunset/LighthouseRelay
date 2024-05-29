@@ -1156,7 +1156,8 @@
 "dY" = (
 /obj/structure/extinguisher_cabinet{
 	icon_state = "extinguisher_empty";
-	pixel_x = 30
+	pixel_x = 29;
+	dir = 8
 	},
 /obj/machinery/light/small{
 	dir = 4;
@@ -2155,12 +2156,14 @@
 /obj/machinery/newscaster{
 	icon_state = "newscaster_off";
 	pixel_x = -30;
-	stat = 1
+	stat = 1;
+	dir = 8
 	},
 /obj/machinery/newscaster{
 	icon_state = "crack3";
 	pixel_x = -30;
-	stat = 1
+	stat = 1;
+	dir = 8
 	},
 /obj/structure/cable/orange{
 	icon_state = "1-2"

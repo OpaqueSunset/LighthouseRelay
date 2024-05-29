@@ -86,7 +86,7 @@
 /area/submap/virgo2/DJOutpost1)
 "q" = (
 /obj/item/remains,
-/obj/item/clothing/under/dress/blacktango,
+/obj/item/clothing/dress/blacktango,
 /obj/effect/decal/cleanable/blood,
 /obj/item/universal_translator/ear,
 /turf/floor/wood,

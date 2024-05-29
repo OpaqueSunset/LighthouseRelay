@@ -17,10 +17,13 @@
 
 /obj/item/clothing/neck/choker //A colorable, tagless choker
 	name = "plain choker"
-	slot_flags = SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY | SLOT_FACE
+	obj_flags = OBJ_FLAG_HOLLOW
+	fallback_slot = slot_wear_suit_str
 	desc = "A simple, plain choker. Or maybe it's a collar? Use in-hand to customize it."
 	icon = 'maps/tether/icons/obj/clothing/choker.dmi'
 	obj_flags = OBJ_FLAG_HOLLOW
+	// TODO: make this use loadout geartweaks instead, at least for material
 	var/customized = FALSE
 	var/static/list/allowed_descriptors = list(
 		"plain",
@@ -79,8 +82,9 @@
 
 /obj/item/clothing/neck/collar
 	abstract_type = /obj/item/clothing/neck/collar
-	slot_flags = SLOT_OVER_BODY
+	slot_flags = SLOT_OVER_BODY | SLOT_FACE
 	obj_flags = OBJ_FLAG_HOLLOW
+	fallback_slot = slot_wear_suit_str
 	var/writtenon = FALSE
 
 /obj/item/clothing/neck/collar/silver
@@ -321,23 +325,23 @@
 			desc = initial(desc) + " Something has been [erasemethod] on the tag, and it now has \"[str]\" [writemethod] on it."
 
 // Costumes
-/obj/item/clothing/under/dress/maid
+/obj/item/clothing/dress/maid
 	name = "maid costume"
 	desc = "Maid in China."
 	icon = 'maps/tether/icons/obj/clothing/costume/maid.dmi'
 
-/obj/item/clothing/under/dress/maid/janitor
+/obj/item/clothing/dress/maid/janitor
 	name = "maid uniform"
 	desc = "A simple maid uniform for housekeeping."
 	icon = 'maps/tether/icons/obj/clothing/costume/janitor_maid.dmi'
 
-/obj/item/clothing/under/dress/maid/sexy
+/obj/item/clothing/dress/maid/sexy
 	name = "sexy maid costume"
 	desc = "You must be a bit risque teasing all of them in a maid uniform!"
 	icon = 'maps/tether/icons/obj/clothing/costume/sexy_maid.dmi'
 
 //KotetsuRedwood:Latex Maid Dresses, for everyone to 'enjoy'. :3c
-/obj/item/clothing/under/dress/maid/latex
+/obj/item/clothing/dress/maid/latex
 	name = "latex maid dress"
 	desc = "Squeak! A shiny outfit for cleaning, made by people with dirty minds."
 	icon = 'maps/tether/icons/obj/clothing/costume/latex_maid.dmi'

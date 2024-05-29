@@ -1184,7 +1184,7 @@
 /turf/floor/plating,
 /area/exodus/maintenance/security_starboard)
 "acE" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/tiled/dark,
 /area/exodus/security/tactical)
 "acF" = (
@@ -2739,7 +2739,7 @@
 /turf/space,
 /area/shuttle/escape_pod_3)
 "afX" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/security_starboard)
 "afY" = (
@@ -9159,7 +9159,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/evahallway)
 "asY" = (
@@ -9552,7 +9552,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/arrivals)
 "auf" = (
@@ -10065,7 +10065,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/security_port)
 "avl" = (
@@ -10543,7 +10543,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/library)
 "awj" = (
@@ -14856,7 +14856,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
-/mob/living/simple_animal/mouse/brown/Tom,
+/mob/living/simple_animal/passive/mouse/brown/Tom,
 /turf/floor/tiled/dark,
 /area/exodus/security/nuke_storage)
 "aFw" = (
@@ -15432,7 +15432,7 @@
 /area/exodus/maintenance/auxsolarstarboard)
 "aGz" = (
 /obj/structure/safe,
-/obj/item/clothing/under/color/yellow,
+/obj/item/clothing/jumpsuit/yellow,
 /obj/item/key,
 /obj/item/sword/katana,
 /obj/structure/cable/green{
@@ -16148,7 +16148,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/evahallway)
 "aHR" = (
@@ -17493,7 +17493,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/bar)
 "aKP" = (
@@ -20976,7 +20976,7 @@
 /area/exodus/chapel/main)
 "aSm" = (
 /obj/structure/cult/tome,
-/obj/item/clothing/under/formal/red,
+/obj/item/clothing/pants/slacks/red/outfit,
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -29894,7 +29894,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/locker)
 "blw" = (
@@ -33588,7 +33588,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/research_shuttle)
 "btf" = (
@@ -43654,7 +43654,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/tiled/steel_grid,
 /area/exodus/research/storage)
 "bMX" = (
@@ -45534,7 +45534,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/engineering)
 "bQU" = (
@@ -50469,7 +50469,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/research_port)
 "caT" = (
@@ -50539,7 +50539,7 @@
 /turf/floor/tiled/white,
 /area/exodus/medical/patient_c)
 "cbc" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/research_starboard)
 "cbd" = (
@@ -54066,8 +54066,8 @@
 /obj/effect/floor_decal/corner/purple{
 	dir = 9
 	},
-/obj/item/clothing/under/hydroponics,
-/obj/item/clothing/under/hydroponics,
+/obj/item/clothing/jumpsuit/hydroponics,
+/obj/item/clothing/jumpsuit/hydroponics,
 /obj/item/clothing/gloves/thick/botany,
 /obj/item/clothing/gloves/thick/botany,
 /turf/floor/tiled/white,
@@ -58170,7 +58170,8 @@
 /obj/machinery/button/access/exterior{
 	id_tag = "engineering_dock_airlock";
 	name = "exterior access button";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/floor/tiled/techfloor/grid,
 /area/exodus/maintenance/engi_shuttle)
@@ -60224,7 +60225,7 @@
 /turf/floor/tiled/techfloor/grid,
 /area/exodus/research/storage)
 "cyF" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/tiled/steel_grid,
 /area/exodus/maintenance/incinerator)
 "cyG" = (
@@ -61401,13 +61402,13 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/personal/patient,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
-/obj/item/clothing/under/color/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
+/obj/item/clothing/jumpsuit/white,
 /obj/item/clothing/shoes/color/white,
 /obj/item/clothing/shoes/color/white,
 /obj/item/clothing/shoes/color/white,
@@ -62645,7 +62646,7 @@
 /turf/floor/plating,
 /area/exodus/engineering/engine_room)
 "cKI" = (
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/engineering)
 "cKM" = (
@@ -62978,7 +62979,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/mouse,
+/mob/living/simple_animal/passive/mouse,
 /turf/floor/plating,
 /area/exodus/maintenance/engi_engine)
 "cLK" = (

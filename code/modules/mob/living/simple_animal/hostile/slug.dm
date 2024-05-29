@@ -23,11 +23,11 @@
 /mob/living/simple_animal/hostile/slug/ListTargets(var/dist = 7)
 	. = ..()
 	for(var/mob/living/M in .)
-		if(M.faction == faction)
+		if(check_friendly_species(M))
 			. -= M
 
 /mob/living/simple_animal/hostile/slug/get_scooped(var/mob/living/carbon/target, var/mob/living/initiator)
-	if(target == initiator || (istype(initiator) && initiator.faction == faction))
+	if(target == initiator || check_friendly_species(initiator))
 		return ..()
 	to_chat(initiator, SPAN_WARNING("\The [src] wriggles out of your hands before you can pick it up!"))
 
@@ -43,7 +43,7 @@
 	chest.embed_in_organ(holder, FALSE, "\The [src] latches itself onto \the [H]!")
 	holder.sync(src)
 
-/mob/living/simple_animal/hostile/slug/AttackingTarget()
+/mob/living/simple_animal/hostile/slug/attack_target(mob/target)
 	. = ..()
 	if(ishuman(.))
 		var/mob/living/carbon/human/H = .

@@ -13,10 +13,9 @@ var/global/list/areas = list()
 	luminosity =    0
 	mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
 
-	// If set, will apply ambient light of this power to turfs under a ceiling.
-	var/interior_ambient_light_level
+	// If set, will modify ambient light of ambiently lit turfs under a ceiling.
+	var/interior_ambient_light_modifier
 	// If set, will apply ambient light of this colour to turfs under a ceiling.
-	var/interior_ambient_light_color
 
 	var/proper_name /// Automatically set by SetName and Initialize; cached result of strip_improper(name).
 	var/holomap_color	// Color of this area on the holomap. Must be a hex color (as string) or null.
@@ -49,6 +48,7 @@ var/global/list/areas = list()
 	var/sound_env = STANDARD_STATION
 	var/description //A text-based description of what this area is for.
 	var/area_blurb_category // Used to filter description showing across subareas
+	var/const/BLURB_COOLDOWN_TIME = 15 MINUTES
 
 	var/base_turf // The base turf type of the area, which can be used to override the z-level's base turf
 	var/open_turf // The base turf of the area if it has a turf below it in multizi. Overrides turf-specific open type
@@ -117,7 +117,7 @@ var/global/list/areas = list()
 	if(old_area == A)
 		return
 
-	var/old_area_ambience = old_area?.interior_ambient_light_level
+	var/old_area_ambience = old_area?.interior_ambient_light_modifier
 
 	A.contents.Add(T)
 	if(old_area)
@@ -143,7 +143,7 @@ var/global/list/areas = list()
 		T.update_weather()
 		T.update_external_atmos_participation()
 
-	if(A.interior_ambient_light_level != old_area_ambience || outside_changed)
+	if(A.interior_ambient_light_modifier != old_area_ambience || outside_changed)
 		SSambience.queued |= T
 
 /turf/proc/update_registrations_on_adjacent_area_change()
@@ -346,7 +346,9 @@ var/global/list/mob/living/forced_ambiance_list = new
 		L.update_floating()
 	if(L.ckey)
 		play_ambience(L)
-		do_area_blurb(L)
+		// If we haven't changed blurb categories, don't send a blurb.
+		if(oldarea?.area_blurb_category != area_blurb_category)
+			do_area_blurb(L)
 	L.lastarea = src
 
 
@@ -360,9 +362,10 @@ var/global/list/mob/living/forced_ambiance_list = new
 		return
 	if(L?.get_preference_value(/datum/client_preference/area_info_blurb) != PREF_YES)
 		return
-	if(!(L.ckey in global.area_blurb_stated_to[area_blurb_category]))
-		LAZYADD(global.area_blurb_stated_to[area_blurb_category], L.ckey)
-		to_chat(L, SPAN_NOTICE(FONT_SMALL("[description]")))
+	var/next_message_time = LAZYACCESS(global.area_blurb_stated_to[area_blurb_category], L.ckey)
+	if(isnull(next_message_time) || world.time > next_message_time)
+		LAZYSET(global.area_blurb_stated_to[area_blurb_category], L.ckey, world.time + BLURB_COOLDOWN_TIME)
+		to_chat(L, SPAN_NOTICE(FONT_SMALL(description)))
 
 /area/proc/play_ambience(var/mob/living/L)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch

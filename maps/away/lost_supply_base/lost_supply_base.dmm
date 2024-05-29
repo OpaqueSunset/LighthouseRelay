@@ -181,7 +181,8 @@
 	tag_airpump = "solar_starboard_pump";
 	tag_chamber_sensor = "solar_starboard_sensor";
 	tag_exterior_door = "solar_starboard_outer";
-	tag_interior_door = "solar_starboard_inner"
+	tag_interior_door = "solar_starboard_inner";
+	dir = 8
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
 	id_tag = "solar_starboard_pump"
@@ -646,7 +647,8 @@
 	tag_airpump = "solar_starboard_pump";
 	tag_chamber_sensor = "solar_starboard_sensor";
 	tag_exterior_door = "solar_starboard_outer";
-	tag_interior_door = "solar_starboard_inner"
+	tag_interior_door = "solar_starboard_inner";
+	dir = 8
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_starboard_sensor";
@@ -1403,7 +1405,8 @@
 /area/lost_supply_base)
 "eq" = (
 /obj/structure/closet/medical_wall{
-	pixel_x = -30
+	pixel_x = -30;
+	dir = 4
 	},
 /turf/floor/tiled/airless,
 /area/lost_supply_base/common)
@@ -1908,7 +1911,8 @@
 	tag_airpump = "solar_starboard_pump";
 	tag_chamber_sensor = "solar_starboard_sensor";
 	tag_exterior_door = "solar_starboard_outer";
-	tag_interior_door = "solar_starboard_inner"
+	tag_interior_door = "solar_starboard_inner";
+	dir = 8
 	},
 /obj/machinery/airlock_sensor{
 	id_tag = "solar_starboard_sensor";

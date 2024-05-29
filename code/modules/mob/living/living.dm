@@ -690,7 +690,10 @@ default behaviour is:
 	LAZYDISTINCTADD(auras,aura)
 	if(!skip_icon_update)
 		update_icon()
-	return 1
+	return TRUE
+
+/mob/living/proc/has_aura(aura_type)
+	return length(auras) && (locate(aura_type) in auras)
 
 /mob/living/proc/remove_aura(var/obj/aura/aura, skip_icon_update = FALSE)
 	LAZYREMOVE(auras,aura)
@@ -969,6 +972,11 @@ default behaviour is:
 /mob/living/attempt_hug(mob/living/target, hug_3p, hug_1p)
 	. = ..()
 	if(.)
+
+		if(stat != DEAD)
+			ADJ_STATUS(src, STAT_PARA, -3)
+			ADJ_STATUS(src, STAT_STUN, -3)
+			ADJ_STATUS(src, STAT_WEAK, -3)
 
 		if(fire_stacks >= target.fire_stacks + 3)
 			target.fire_stacks += 1
@@ -1379,6 +1387,8 @@ default behaviour is:
 
 /mob/living/proc/can_direct_mount(var/mob/user)
 	if(can_buckle && istype(user) && !user.incapacitated() && user == buckled_mob)
+		if(client && a_intent != I_HELP)
+			return FALSE // do not Ratatouille your colleagues
 		// TODO: Piloting skillcheck for hands-free moving? Stupid but amusing
 		for(var/obj/item/grab/reins in user.get_held_items())
 			if(istype(reins.current_grab, /decl/grab/simple/control) && reins.get_affecting_mob() == src)
@@ -1487,3 +1497,21 @@ default behaviour is:
 
 /mob/living/proc/is_asystole()
 	return FALSE
+
+/mob/living/proc/get_remains_type()
+	var/decl/species/my_species = get_species()
+	return my_species?.remains_type
+
+/mob/living/verb/mob_sleep()
+	set name = "Sleep"
+	set category = "IC"
+
+	if(alert("Are you sure you want to [player_triggered_sleeping ? "wake up?" : "sleep for a while? Use 'sleep' again to wake up"]", "Sleep", "No", "Yes") == "Yes")
+		player_triggered_sleeping = !player_triggered_sleeping
+
+/mob/living/Stat()
+	. = ..()
+	if(statpanel("Status") && length(stat_organs))
+		for(var/obj/item/organ/organ in stat_organs)
+			var/list/organ_info = organ.get_stat_info()
+			stat(organ_info[1], organ_info[2])

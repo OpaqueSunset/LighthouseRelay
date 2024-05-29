@@ -47,8 +47,7 @@
 	blood_volume = 800
 
 	hunger_factor = DEFAULT_HUNGER_FACTOR * 2
-
-	age_descriptor = /datum/appearance_descriptor/age/lizard
+	thirst_factor = DEFAULT_THIRST_FACTOR * 2
 
 	body_temperature = null // cold-blooded, implemented the same way nabbers do it
 
@@ -75,11 +74,6 @@
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/claw
 
 	breathing_sound = 'mods/species/bayliens/unathi/sound/lizard_breathing.ogg'
-
-	appearance_descriptors = list(
-		/datum/appearance_descriptor/height = 1.25,
-		/datum/appearance_descriptor/build =  1.25
-		)
 
 	default_emotes = list(
 		/decl/emote/visible/tail/swish,

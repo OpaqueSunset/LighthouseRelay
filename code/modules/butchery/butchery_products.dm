@@ -29,7 +29,7 @@
 		ingredient_flags = butchery_decl.meat_flags
 	. = ..()
 	if(istype(donor))
-		meat_name = set_meat_name(donor.get_butchery_product_name())
+		meat_name = donor.get_butchery_product_name()
 	if(meat_name)
 		set_meat_name(meat_name)
 
@@ -116,14 +116,13 @@
 
 /obj/item/chems/food/butchery/offal/handle_utensil_cutting(obj/item/tool, mob/user)
 	. = ..()
-	if(dry && length(.))
-		for(var/obj/item/chems/food/butchery/offal/guts in .)
-			if(!guts.dry)
-				guts.dry = TRUE
-				guts.SetName("dried [guts.name]")
-			else if(!guts._cleaned)
-				guts._cleaned = TRUE
-				guts.SetName("cleaned [guts.name]")
+	for(var/obj/item/chems/food/butchery/offal/guts in .)
+		if(dry && !guts.dry)
+			guts.dry = TRUE
+			guts.SetName("dried [guts.name]")
+		else if(_cleaned && !guts._cleaned)
+			guts._cleaned = TRUE
+			guts.SetName("cleaned [guts.name]")
 
 /obj/item/chems/food/butchery/offal/fluid_act(var/datum/reagents/fluids)
 	. = ..()
@@ -148,6 +147,8 @@
 	icon                = 'icons/obj/items/butchery/offal_small.dmi'
 	nutriment_amt       = 5
 	w_class             = ITEM_SIZE_SMALL
+	slice_path          = null
+	slice_num           = null
 
 /obj/item/chems/food/butchery/haunch
 	name                = "haunch"

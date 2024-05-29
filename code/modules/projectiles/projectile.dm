@@ -176,8 +176,8 @@
 	//randomize clickpoint a bit based on dispersion
 	if(dispersion)
 		var/radius = round((dispersion*0.443)*world.icon_size*0.8) //0.443 = sqrt(pi)/4 = 2a, where a is the side length of a square that shares the same area as a circle with diameter = dispersion
-		p_x = clamp(0, p_x + gaussian(0, radius) * 0.25, world.icon_size)
-		p_y = clamp(0, p_y + gaussian(0, radius) * 0.25, world.icon_size)
+		p_x = clamp(p_x + gaussian(0, radius) * 0.25, 0, world.icon_size)
+		p_y = clamp(p_y + gaussian(0, radius) * 0.25, 0, world.icon_size)
 
 //Used to change the direction of the projectile in flight.
 /obj/item/projectile/proc/redirect(var/new_x, var/new_y, var/atom/starting_loc, var/atom/movable/new_firer=null, var/is_ricochet = FALSE)
@@ -542,16 +542,6 @@
 	beam_segments[beam_index] = pcache
 	beam_index = pcache
 	beam_segments[beam_index] = null
-
-/obj/item/projectile/proc/return_predicted_turf_after_moves(moves, forced_Angle)		//I say predicted because there's no telling that the projectile won't change direction/location in flight.
-	if(!trajectory && isnull(forced_Angle) && isnull(Angle))
-		return FALSE
-	var/datum/point/vector/current = trajectory
-	if(!current)
-		var/turf/T = get_turf(src)
-		current = new(T.x, T.y, T.z, pixel_x, pixel_y, isnull(forced_Angle)? Angle : forced_Angle, pixel_speed)
-	var/datum/point/vector/v = current.return_vector_after_increments(moves)
-	return v.return_turf()
 
 /obj/item/projectile/proc/process_hitscan()
 	set waitfor = FALSE

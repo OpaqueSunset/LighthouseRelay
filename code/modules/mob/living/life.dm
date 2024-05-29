@@ -131,7 +131,7 @@
 /mob/living/proc/get_thirst_factor()
 	var/decl/species/my_species = get_species()
 	if(my_species)
-		return my_species.hunger_factor
+		return my_species.thirst_factor
 	return 0
 
 // Used to handle non-datum AI.
@@ -234,7 +234,7 @@
 		var/size_modifier = (MOB_SIZE_MEDIUM / mob_size)
 		for(var/decl/material/R as anything in tick_dosage_tracker)
 			if(tick_dosage_tracker[R] > (R.overdose * ((R.flags & IGNORE_MOB_SIZE) ? 1 : size_modifier)))
-				R.affect_overdose(src)
+				R.affect_overdose(src, tick_dosage_tracker[R])
 
 	// Update chem dosage.
 	// TODO: refactor chem dosage above isSynthetic() and GODMODE checks.
@@ -361,6 +361,11 @@
 	// If we're dead, don't continue further.
 	if(stat == DEAD)
 		return FALSE
+
+	// Should we be asleep?
+	var/decl/species/my_species = get_species()
+	if(player_triggered_sleeping || (ssd_check() && my_species?.get_ssd(src)))
+		SET_STATUS_MAX(src, STAT_ASLEEP, 2)
 
 	// Handle some general state updates.
 	if(HAS_STATUS(src, STAT_PARA))
