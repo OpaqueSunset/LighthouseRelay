@@ -17793,7 +17793,7 @@
 "aHR" = (
 /obj/item/clothing/head/soft/rainbow,
 /obj/item/clothing/shoes/rainbow,
-/obj/item/clothing/under/color/rainbow,
+/obj/item/clothing/jumpsuit/rainbow,
 /turf/floor/plating,
 /area/engineering/atmos)
 "aHS" = (

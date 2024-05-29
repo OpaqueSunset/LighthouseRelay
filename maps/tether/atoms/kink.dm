@@ -325,23 +325,23 @@
 			desc = initial(desc) + " Something has been [erasemethod] on the tag, and it now has \"[str]\" [writemethod] on it."
 
 // Costumes
-/obj/item/clothing/under/dress/maid
+/obj/item/clothing/dress/maid
 	name = "maid costume"
 	desc = "Maid in China."
 	icon = 'maps/tether/icons/obj/clothing/costume/maid.dmi'
 
-/obj/item/clothing/under/dress/maid/janitor
+/obj/item/clothing/dress/maid/janitor
 	name = "maid uniform"
 	desc = "A simple maid uniform for housekeeping."
 	icon = 'maps/tether/icons/obj/clothing/costume/janitor_maid.dmi'
 
-/obj/item/clothing/under/dress/maid/sexy
+/obj/item/clothing/dress/maid/sexy
 	name = "sexy maid costume"
 	desc = "You must be a bit risque teasing all of them in a maid uniform!"
 	icon = 'maps/tether/icons/obj/clothing/costume/sexy_maid.dmi'
 
 //KotetsuRedwood:Latex Maid Dresses, for everyone to 'enjoy'. :3c
-/obj/item/clothing/under/dress/maid/latex
+/obj/item/clothing/dress/maid/latex
 	name = "latex maid dress"
 	desc = "Squeak! A shiny outfit for cleaning, made by people with dirty minds."
 	icon = 'maps/tether/icons/obj/clothing/costume/latex_maid.dmi'

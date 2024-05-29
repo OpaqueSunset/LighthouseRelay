@@ -44,3 +44,8 @@
 	starting_accessories = list(
 		/obj/item/clothing/shirt/scrubs/purple
 	)
+
+/obj/item/clothing/pants/scrubs/black/outfit
+	starting_accessories = list(
+		/obj/item/clothing/shirt/scrubs/black
+	)

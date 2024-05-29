@@ -567,8 +567,8 @@
 /obj/item/clothing/shoes/boots/swat : /obj/item/clothing/shoes/jackboots/swat{@OLD}
 /obj/item/clothing/shoes/boots/tactical : /obj/item/clothing/shoes/jackboots/tactical{@OLD}
 /obj/item/clothing/shoes/boots/winter/@SUBTYPES : /obj/item/clothing/shoes/winterboots/@SUBTYPES{@OLD}
-/obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/under/avian_smock/@SUBTYPES{@OLD}
-/obj/item/clothing/under/avian_smock/medical : /obj/item/clothing/under/avian_smock/utility{@OLD}
+/obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/dress/avian_smock/@SUBTYPES{@OLD}
+/obj/item/clothing/dress/avian_smock/medical : /obj/item/clothing/dress/avian_smock/utility{@OLD}
 /obj/item/clothing/under/rank/@SUBTYPES : /obj/item/clothing/under/@SUBTYPES{@OLD}
 /obj/item/clothing/accessory/armor/armguards : /obj/item/clothing/gloves/armguards
 /obj/item/clothing/accessory/armor/legguards : /obj/item/clothing/shoes/legguards
@@ -608,7 +608,7 @@
 /obj/item/clothing/accessory/scarf/@SUBTYPES : /obj/item/clothing/neck/scarf/@SUBTYPES
 /obj/item/clothing/glasses/gglasses : /obj/item/clothing/glasses/prescription/gglasses
 /obj/item/clothing/mask/smokable/cigarette/joint : /obj/item/clothing/mask/smokable/cigarette/rolled
-/obj/item/clothing/under/fluff/latexmaid : /obj/item/clothing/under/dress/maid/latex
+/obj/item/clothing/under/fluff/latexmaid : /obj/item/clothing/dress/maid/latex
 
 /obj/item/knife/machete : /obj/item/tool/machete{@OLD}
 /obj/item/knife/tacknife/combatknife : /obj/item/knife/combat{@OLD}

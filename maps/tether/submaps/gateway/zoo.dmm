@@ -4293,7 +4293,7 @@
 /obj/structure/rack,
 /obj/item/backpack/clown,
 /obj/item/clothing/shoes/rainbow,
-/obj/item/clothing/under/color/rainbow,
+/obj/item/clothing/jumpsuit/rainbow,
 /obj/item/clothing/under/teshari/undercoat/standard/rainbow,
 /obj/item/clothing/gloves/rainbow,
 /obj/item/clothing/head/soft/rainbow,
@@ -8349,7 +8349,7 @@
 /area/awaymission/zoo)
 "vX" = (
 /obj/structure/closet,
-/obj/item/clothing/under/captain_fly,
+/obj/item/clothing/jumpsuit/captain_fly,
 /turf/floor/tiled/dark,
 /area/awaymission/zoo)
 "vY" = (

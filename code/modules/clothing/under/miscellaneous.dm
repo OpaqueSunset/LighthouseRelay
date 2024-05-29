@@ -60,28 +60,6 @@
 	desc = "A teal suit and yellow necktie. An authoritative yet tacky ensemble."
 	icon = 'icons/clothing/under/suits/suit_teal.dmi'
 
-/obj/item/clothing/costume/schoolgirl
-	name = "blue schoolgirl uniform"
-	desc = "It's just like one of my Japanese animes!"
-	icon = 'icons/clothing/under/uniform_schoolgirl.dmi'
-	body_parts_covered = SLOT_UPPER_BODY|SLOT_LOWER_BODY
-
-/obj/item/clothing/costume/schoolgirl/red
-	name = "red schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_red.dmi'
-
-/obj/item/clothing/costume/schoolgirl/yellow
-	name = "yellow schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_yellow.dmi'
-
-/obj/item/clothing/costume/schoolgirl/green
-	name = "green schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_green.dmi'
-
-/obj/item/clothing/costume/schoolgirl/pink
-	name = "pink schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_pink.dmi'
-
 /obj/item/clothing/under/overalls
 	name = "laborer's overalls"
 	desc = "A set of durable overalls for getting the job done."
