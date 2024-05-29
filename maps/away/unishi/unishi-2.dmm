@@ -2222,7 +2222,7 @@
 /area/unishi/smresearch)
 "gg" = (
 /obj/item/remains,
-/obj/item/clothing/under/chief_engineer,
+/obj/item/clothing/jumpsuit/chief_engineer,
 /obj/random/shoes,
 /obj/item/clothing/suit/toggle/labcoat/science{
 	name = "\improper labcoat"
@@ -2332,7 +2332,8 @@
 	},
 /obj/machinery/button/mass_driver{
 	id_tag = "unishi_sm_eject";
-	pixel_x = 24
+	pixel_x = 24;
+	dir = 8
 	},
 /turf/floor/tiled/techfloor,
 /area/unishi/smresearch)
@@ -2456,7 +2457,8 @@
 	},
 /obj/machinery/button/blast_door{
 	id_tag = "unishi_eject";
-	pixel_x = 22
+	pixel_x = 22;
+	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
 /turf/floor/tiled/techfloor,
@@ -2504,7 +2506,8 @@
 /obj/effect/decal/cleanable/blood,
 /obj/item/remains,
 /obj/random/shoes,
-/obj/item/clothing/under/pj/blue,
+/obj/item/clothing/pants/pj/blue,
+/obj/item/clothing/shirt/pj/blue,
 /turf/floor/tiled/techfloor,
 /area/unishi/smresearch)
 "gN" = (

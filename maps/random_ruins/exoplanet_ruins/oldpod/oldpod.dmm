@@ -108,7 +108,8 @@
 /area/map_template/oldpod)
 "aq" = (
 /obj/structure/closet/hydrant{
-	pixel_x = 24
+	pixel_x = 24;
+	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/dirt,
