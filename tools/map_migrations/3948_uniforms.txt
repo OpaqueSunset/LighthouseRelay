@@ -86,3 +86,5 @@
 /obj/item/clothing/under/vox/vox_robes/@SUBTYPES : /obj/item/clothing/suit/robe/vox/@SUBTYPES{@OLD}
 /obj/item/clothing/under/vox/vox_casual/@SUBTYPES : /obj/item/clothing/pants/vox/@SUBTYPES{@OLD}
 /obj/item/clothing/under/vox/@SUBTYPES : /obj/item/clothing/pants/vox/@SUBTYPES{@OLD}
+/obj/item/clothing/under/head_of_personnel/@SUBTYPES : /obj/item/clothing/jumpsuit/head_of_personnel/@SUBTYPES{@OLD}
+/obj/item/clothing/under/head_of_personnel_whimsy/@SUBTYPES : /obj/item/clothing/jumpsuit/head_of_personnel_whimsy/@SUBTYPES{@OLD}
