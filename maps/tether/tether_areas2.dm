@@ -4,7 +4,7 @@
 //
 
 /area/tether/surfacebase
-	icon = 'icons/turf/areas_vr.dmi'
+	icon = 'maps/tether/icons/areas_vr.dmi'
 
 
 /area/tether/surfacebase/outside

@@ -392,7 +392,7 @@
 	holomap_color = HOLOMAP_AREACOLOR_CREW
 
 /area/tether/surfacebase
-	// icon = 'icons/turf/areas_vr.dmi'
+	icon = 'maps/tether/icons/areas_vr.dmi'
 
 
 /area/tether/surfacebase/outside
@@ -400,6 +400,8 @@
 	sound_env = MOUNTAINS
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
+
 /area/tether/surfacebase/outside/outside1
 	icon_state = "outside1"
 /area/tether/surfacebase/outside/outside2
@@ -419,13 +421,15 @@
 	name = "Outside - Wilderness" // ToDo: Make a way to hide spoiler areas off the list of areas ghosts can jump to.
 	icon_state = "red"
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
 
 /area/tether/surfacebase/crash
 	name = "Outside - Wilderness" // ToDo: Make a way to hide spoiler areas off the list of areas ghosts can jump to.
 	icon_state = "yellow"
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
 
 /area/tether/surfacebase/tram
 	name = "\improper Tram Station"
@@ -534,7 +538,9 @@
 	name = "\improper Mining Refinery"
 /area/tether/surfacebase/mining_main/external
 	name = "\improper Mining Refinery"
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
+
 /area/tether/surfacebase/mining_main/lobby
 	name = "\improper Mining Lobby"
 /area/quartermaster/belterdock
@@ -558,7 +564,9 @@
 // Mining outpost areas
 /area/outpost/mining_main/passage
 	name = "\improper Mining Outpost Passage"
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
+
 /area/outpost/mining_main/airlock
 	name = "\improper Mining Outpost Airlock"
 /area/outpost/mining_main/break_room
@@ -570,14 +578,16 @@
 /area/outpost/mining_main/storage
 	name = "\improper Mining Outpost Gear Storage"
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
 
 // Solars map areas
 /area/tether/outpost/solars_outside
 	name = "\improper Solar Farm"
 	holomap_color = HOLOMAP_AREACOLOR_ENGINEERING
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
 
 /area/tether/outpost/solars_shed
 	name = "\improper Solar Farm Shed"
@@ -603,8 +613,19 @@
 /area/tether/surfacebase/medical
 	icon_state = "medical"
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
+
 /area/tether/surfacebase/medical/triage
 	name = "\improper Surface Triage"
+
+/area/tether/surfacebase/medical/triage/external
+	name = "\improper Surface Triage External Access"
+
+/area/tether/surfacebase/medical/triage/external/outside
+	name = "\improper Surface Triage External Access Outside"
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
+
 /area/tether/surfacebase/medical/first_aid_west
 	name = "\improper First Aid West"
 
@@ -647,7 +668,8 @@
 	icon_state = "atmos"
 	sound_env = MOUNTAINS
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
+	is_outside = OUTSIDE_YES
+	interior_ambient_light_modifier = -0.3
 
 /area/engineering/engine_gas
 	name = "\improper Engine Gas Storage"
@@ -728,8 +750,12 @@
 /area/rnd/external
 	name = "\improper Research External Access"
 	icon_state = "research"
+
+/area/rnd/external/outside
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = TRUE
+	interior_ambient_light_modifier = -0.3
+
 /area/rnd/hallway
 	name = "\improper Research Lower Hallway"
 	icon_state = "research"
@@ -849,6 +875,10 @@
 	name = "\improper Surface EVA"
 /area/storage/surface_eva/external
 	name = "\improper Surface EVA Access"
+/area/storage/surface_eva/external/outside
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = TRUE
+	interior_ambient_light_modifier = -0.3
 
 /area/tether/surfacebase/shuttle_pad
 	name = "\improper Lighthouse Shuttle Pad"
@@ -881,11 +911,6 @@
 /area/storage/primary
 	name = "Primary Tool Storage"
 	icon_state = "primarystorage"
-
-/area/storage/surface_eva
-/area/storage/surface_eva/external
-	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
-	is_outside = TRUE
 
 /area/storage/tech
 	name = "Technical Storage"
