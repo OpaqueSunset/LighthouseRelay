@@ -119,6 +119,10 @@ meteor_act
 			return null
 
 	if(user == src) // Attacking yourself can't miss
+		var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(src, target_zone)
+		if (!affecting)
+			to_chat(user, SPAN_DANGER("You are missing that limb!"))
+			return null
 		return target_zone
 
 	var/accuracy_penalty = user.melee_accuracy_mods()

@@ -1,7 +1,7 @@
 /datum/category_item/player_setup_item/physical/cosmetics/content(var/mob/user)
 	. += "<h2>Genemod Selection</h2>"
 
-	var/ear_display = "Normal"
+	var/ear_display = "NULL"
 	var/list/ear_styles = decls_repository.get_decls_of_subtype(/decl/sprite_accessory/ears)
 	var/list/tail_styles = decls_repository.get_decls_of_subtype(/decl/sprite_accessory/tail)
 	var/decl/sprite_accessory/ears/ear = (pref.ear_style in ear_styles) ? ear_styles[pref.ear_style] : null
@@ -16,7 +16,7 @@
 		if (ear.extra_overlay)
 			. += "<a href='?src=\ref[src];ear_color2=1'>Change Secondary Color</a> [COLORED_SQUARE(pref.ear_color_extra)]<br>"
 
-	var/tail_display = "Normal"
+	var/tail_display = "normal tail"
 	var/decl/sprite_accessory/tail/tails = (pref.tail_style in tail_styles) ? tail_styles[pref.tail_style] : null
 	if(tails)
 		tail_display = tails.name
@@ -67,7 +67,7 @@
 
 	else if(href_list["tail_style"])
 		// Construct the list of names allowed for this user.
-		var/list/pretty_tail_styles = list()
+		var/list/pretty_tail_styles = list("normal tail" = null)
 		for(var/path in tail_styles)
 			var/decl/sprite_accessory/tail/instance = tail_styles[path]
 			pretty_tail_styles[instance.name] = path

@@ -89,6 +89,7 @@
 	character.ear_style = ear_styles[ear_style]
 	character.ear_color = ear_color
 	character.ear_color_extra = ear_color_extra
+	character.update_hair(update_icons = FALSE)
 	character.tail_style = tail_styles[tail_style]
 	character.tail_color = tail_color
 	character.tail_color_extra = tail_color_extra
