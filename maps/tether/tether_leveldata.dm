@@ -161,9 +161,13 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 /datum/level_data/virgo3b/main/top
 	level_id = "virgo3bsurface3"
-	ambient_light_level = 1
-	ambient_light_color = COLOR_WHITE
 	exterior_atmos_temp = VIRGO3B_AVG_TEMP
+	daycycle_type = /datum/daycycle/tether
+	daycycle_id = "daycycle_tether"
+
+/datum/level_data/virgo3b/main/top/after_generate_level()
+	. = ..()
+	SSweather.setup_weather_system(src)
 
 /datum/level_data/virgo3b/main/space
 	base_turf = /turf/space
@@ -174,19 +178,27 @@ var/global/decl/material/virgo3b_stratum_base_material
 /datum/level_data/virgo3b/player
 	level_flags = (ZLEVEL_CONTACT|ZLEVEL_PLAYER)
 
+/datum/level_data/virgo3b/player/transit
+	daycycle_type = /datum/daycycle/tether
+	daycycle_id = "daycycle_tether"
+
 /datum/level_data/virgo3b/player/solars
 	level_id = "virgo3bsolars"
 	transition_turf_type = /turf/mimic_edge/transition
 	connected_levels = list(
 		"virgo3bsurface1" = EAST
 	)
-	ambient_light_level = 1
-	ambient_light_color = COLOR_WHITE
+	daycycle_type = /datum/daycycle/tether
+	daycycle_id = "daycycle_tether"
 	level_generators = list(
 		/datum/random_map/automata/cave_system,
 		/datum/random_map/noise/ore,
 		/datum/random_map/noise/virgo3b/forest/decorator
 	)
+
+/datum/level_data/virgo3b/player/solars/after_generate_level()
+	. = ..()
+	SSweather.setup_weather_system(src)
 
 /datum/level_data/mining_level/virgo3b
 	level_id = "virgo3bmining"
@@ -208,9 +220,13 @@ var/global/decl/material/virgo3b_stratum_base_material
 		/datum/random_map/noise/virgo3b/forest/decorator
 	)
 	use_global_exterior_ambience = FALSE
-	ambient_light_level = 1
-	ambient_light_color = COLOR_WHITE
+	daycycle_type = /datum/daycycle/tether
+	daycycle_id = "daycycle_tether"
 	exterior_atmos_temp = VIRGO3B_AVG_TEMP
+
+/datum/level_data/mining_level/virgo3b/after_generate_level()
+	. = ..()
+	SSweather.setup_weather_system(src)
 
 // AWFUL AWFUL AWFUL code duplication. Please remove this when mining_level is unified with generic level_data.
 /datum/level_data/mining_level/virgo3b/setup_strata()
@@ -239,10 +255,18 @@ var/global/decl/material/virgo3b_stratum_base_material
 	level_data_type = /datum/level_data/virgo3b/main/space
 
 /obj/abstract/level_data_spawner/virgo3b/player
+	abstract_type = /obj/abstract/level_data_spawner/virgo3b/player
 	level_data_type = /datum/level_data/virgo3b/player
+
+/obj/abstract/level_data_spawner/virgo3b/player/transit
+	level_data_type = /datum/level_data/virgo3b/player/transit
 
 /obj/abstract/level_data_spawner/virgo3b/player/solars
 	level_data_type = /datum/level_data/virgo3b/player/solars
 
 /obj/abstract/level_data_spawner/virgo3b/mining
 	level_data_type = /datum/level_data/mining_level/virgo3b
+
+// Placeholder for more customised values.
+/datum/daycycle/tether
+	day_duration = 3 MINUTES

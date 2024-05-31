@@ -45,7 +45,7 @@
 		return INITIALIZE_HINT_NORMAL
 
 	var/turf/below = GetBelow(src)
-	if(isspaceturf(below))
+	if(isspaceturf(below) || !below?.simulated)
 		return INITIALIZE_HINT_NORMAL
 
 	var/area/A = below.loc

@@ -381,6 +381,7 @@
 	name = "\improper Lighthouse Transit"
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = OUTSIDE_YES
+	open_turf = /turf/open/sky
 
 
 //
@@ -568,6 +569,8 @@
 	name = "\improper Mining Outpost Maintenance"
 /area/outpost/mining_main/storage
 	name = "\improper Mining Outpost Gear Storage"
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
+	is_outside = TRUE
 
 // Solars map areas
 /area/tether/outpost/solars_outside
