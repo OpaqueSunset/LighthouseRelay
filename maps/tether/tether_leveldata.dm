@@ -269,4 +269,8 @@ var/global/decl/material/virgo3b_stratum_base_material
 
 // Placeholder for more customised values.
 /datum/daycycle/tether
-	day_duration = 3 MINUTES
+	day_duration = 1 HOUR
+
+/datum/daycycle/tether/New(_cycle_id)
+	time_of_day = rand(0, day_duration)
+	. = ..()
