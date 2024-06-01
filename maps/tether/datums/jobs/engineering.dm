@@ -16,6 +16,8 @@
 	must_fill = TRUE
 	not_random_selectable = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
+	timeoff_factor = 3
 	access = list(
 		access_engine,
 		access_engine_equip,
@@ -95,6 +97,7 @@
 
 	total_positions = 8
 	spawn_positions = 8
+	pto_type = PTO_ENGINEERING
 	supervisors = "the chief engineer"
 	selection_color = "#5b4d20"
 	economic_power = 5

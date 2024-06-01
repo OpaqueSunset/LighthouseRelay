@@ -2,6 +2,8 @@
 	title = "Head of Security"
 	head_position = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
+	timeoff_factor = 3
 	department_types = list(
 		/decl/department/security,
 		/decl/department/command
@@ -96,6 +98,7 @@
 	department_types = list(/decl/department/security)
 	total_positions = 1
 	spawn_positions = 1
+	pto_type = PTO_SECURITY
 	supervisors = "the head of security"
 	selection_color = "#601c1c"
 	economic_power = 5
@@ -193,6 +196,7 @@
 	department_types = list(/decl/department/security)
 	total_positions = 4
 	spawn_positions = 4
+	pto_type = PTO_SECURITY
 	supervisors = "the head of security"
 	selection_color = "#601c1c"
 	alt_titles = list("Junior Officer")

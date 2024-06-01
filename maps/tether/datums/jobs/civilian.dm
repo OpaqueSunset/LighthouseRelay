@@ -94,6 +94,7 @@
 	department_types = list(/decl/department/supply)
 	total_positions = 1
 	spawn_positions = 1
+	pto_type = PTO_CARGO
 	supervisors = "the head of personnel"
 	economic_power = 5
 	access = list(
@@ -139,6 +140,7 @@
 	department_types = list(/decl/department/supply)
 	total_positions = 3
 	spawn_positions = 3
+	pto_type = PTO_CARGO
 	supervisors = "the quartermaster and the head of personnel"
 	access = list(
 		access_maint_tunnels,
@@ -175,6 +177,7 @@
 	department_types = list(/decl/department/supply)
 	total_positions = 4
 	spawn_positions = 4
+	pto_type = PTO_CARGO
 	supervisors = "the quartermaster and the head of personnel"
 	economic_power = 5
 	access = list(

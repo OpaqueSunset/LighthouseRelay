@@ -3,6 +3,8 @@
 	alt_titles = list("Chief Science Officer", "Research Supervisor")
 	head_position = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
+	timeoff_factor = 3
 	req_admin_notify = TRUE
 	guestbanned = TRUE
 	must_fill = TRUE
@@ -82,6 +84,7 @@
 	department_types = list(/decl/department/science)
 	total_positions = 8
 	spawn_positions = 5
+	pto_type = PTO_SCIENCE
 	supervisors = "the Research Director"
 	selection_color = "#633d63"
 	economic_power = 7
@@ -131,6 +134,7 @@
 	department_types = list(/decl/department/science)
 	total_positions = 2
 	spawn_positions = 2
+	pto_type = PTO_SCIENCE
 	supervisors = "the Chief Science Officer"
 	selection_color = "#633d63"
 	economic_power = 5
