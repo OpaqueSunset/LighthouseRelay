@@ -125,13 +125,27 @@
 	os_full_name = "Nanite Interface Framework v2.0.0-rc1"
 	expected_type = /obj/item/organ/internal/augment/active/nif
 
-/mob/living/carbon/human/getHUDsource(hudtype)
+/mob/getHUDsource(hudtype)
 	if((. = ..()))
 		return .
 	var/obj/item/organ/internal/augment/active/nif/nif = get_organ(BP_AUGMENT_HEAD, /obj/item/organ/internal/augment/active/nif)
 	if(!nif?.is_usable())
 		return null
+	var/datum/extension/assembly/assembly = get_extension(nif, /datum/extension/assembly)
+	var/obj/item/stock_parts/computer/network_card/network_card = assembly.get_component(PART_NETWORK)
 	var/datum/extension/interactive/os/os = get_extension(nif, /datum/extension/interactive/os)
 	for(var/datum/computer_file/program/nifsoft/nif_hud/running_nifhud in os.running_programs)
 		if(hudtype == running_nifhud.hudtype)
-			return nif
+			return network_card // I hate this.
+
+/* If we ever want to switch to returning the NIF instead of the network card, we have the following code.
+// Checks for NIF networks. TODO: /atom/proc/get_network()?
+/mob/getHUDnetwork(hudtype)
+	if((. = ..()))
+		return .
+	var/obj/item/organ/internal/augment/active/nif/nif = getHUDsource(hudtype)
+	if(!nif?.is_usable())
+		return null
+	var/datum/extension/interactive/os/os = get_extension(nif, /datum/extension/interactive/os)
+	return os.get_network()
+*/
