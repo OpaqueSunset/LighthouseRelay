@@ -1273,7 +1273,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "dI" = (
@@ -1281,7 +1280,6 @@
 	dir = 5
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "dJ" = (
@@ -1289,7 +1287,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "dK" = (
@@ -1540,7 +1537,6 @@
 /obj/effect/floor_decal/corner_oldtile/green{
 	dir = 9
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "em" = (
@@ -1553,7 +1549,6 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "eo" = (
@@ -1847,7 +1842,6 @@
 /obj/effect/floor_decal/corner_oldtile/green{
 	dir = 9
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "eY" = (
@@ -1857,7 +1851,6 @@
 /obj/effect/floor_decal/corner_oldtile/green{
 	dir = 6
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "eZ" = (
@@ -2526,7 +2519,6 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_oldtile/green/full,
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "gu" = (
@@ -2536,7 +2528,6 @@
 /obj/effect/floor_decal/corner_oldtile/green{
 	dir = 10
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "gv" = (
@@ -2546,7 +2537,6 @@
 /obj/effect/floor_decal/corner_oldtile/green/full{
 	dir = 4
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
 "gw" = (
@@ -19060,11 +19050,6 @@
 	},
 /turf/floor/tiled,
 /area/tether/surfacebase/shuttle_pad)
-"JW" = (
-/obj/structure/catwalk,
-/obj/machinery/shield_diffuser,
-/turf/floor/natural/sif_growth,
-/area/tether/surfacebase/outside/outside3)
 "JX" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
 	dir = 1
@@ -20764,11 +20749,6 @@
 	},
 /turf/floor/plating,
 /area/tether/surfacebase/bar_backroom)
-"Pz" = (
-/obj/structure/catwalk,
-/obj/machinery/shield_diffuser,
-/turf/floor/natural/sif_growth,
-/area/maintenance/bar/catwalk)
 "PA" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -21262,7 +21242,6 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/natural/sif_growth,
 /area/maintenance/bar/catwalk)
 "Rz" = (
@@ -31155,14 +31134,14 @@ ac
 ac
 ac
 ac
-JW
+Ak
 Ak
 Mw
 Ak
 Ak
 Ak
 Ak
-JW
+Ak
 Pi
 ab
 ab
@@ -32254,7 +32233,7 @@ Hk
 Dx
 Dx
 Dx
-JW
+Ak
 Pi
 ab
 ab
@@ -32724,7 +32703,7 @@ Dx
 Dx
 Ay
 Ak
-JW
+Ak
 ac
 ab
 ab
@@ -43140,7 +43119,7 @@ ab
 ab
 ab
 Qh
-Pz
+WR
 WR
 VE
 WR

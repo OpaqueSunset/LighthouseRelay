@@ -11,6 +11,7 @@
 	icon_state = "explored"
 	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_IS_NOT_PERSISTENT | AREA_FLAG_IS_BACKGROUND | AREA_FLAG_HIDE_FROM_HOLOMAP
 	is_outside = TRUE
+	interior_ambient_light_modifier = -0.3
 
 /area/mine/unexplored
 	name = "Mine"

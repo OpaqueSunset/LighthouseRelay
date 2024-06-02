@@ -46,18 +46,14 @@
 "aah" = (
 /turf/wall/natural,
 /area/tether/surfacebase/outside/outside1)
-"aai" = (
-/obj/structure/cable/green{
-	icon_state = "2-8"
-	},
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "aaj" = (
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -28
 	},
-/obj/structure/cable/green,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/mining_main/external)
 "aak" = (
@@ -379,12 +375,6 @@
 "aaU" = (
 /turf/wall,
 /area/maintenance/lower/trash_pit)
-"aaW" = (
-/obj/structure/cable/green{
-	icon_state = "2-4"
-	},
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "aaX" = (
 /obj/structure/flaps,
 /obj/machinery/conveyor{
@@ -2690,7 +2680,6 @@
 /area/tether/surfacebase/tram)
 "afq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shield_diffuser,
 /turf/floor,
 /area/tether/surfacebase/outside/outside1)
 "afr" = (
@@ -5500,7 +5489,7 @@
 	dir = 4
 	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/storage/surface_eva/external)
+/area/storage/surface_eva/external/outside)
 "akd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -5806,7 +5795,7 @@
 /area/tether/surfacebase/outside/outside1)
 "akH" = (
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/storage/surface_eva/external)
+/area/storage/surface_eva/external/outside)
 "akI" = (
 /obj/machinery/firealarm{
 	pixel_y = 21
@@ -6478,8 +6467,13 @@
 	pixel_x = 20;
 	id_tag = "civ_airlock"
 	},
+/obj/structure/cable/green,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -22
+	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/storage/surface_eva/external)
+/area/storage/surface_eva/external/outside)
 "ama" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -7000,7 +6994,7 @@
 	pixel_y = 32
 	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
+/area/storage/surface_eva/external/outside)
 "ang" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -9894,7 +9888,6 @@
 /area/rnd/hallway)
 "asV" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /obj/structure/sign/warning/high_voltage{
 	name = "\improper SOLAR FARM";
 	dir = 4;
@@ -13157,14 +13150,6 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "civ_airlock_scrubber"
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 22
-	},
-/obj/structure/cable/green{
-	icon_state = "0-2"
-	},
 /turf/floor/tiled/techmaint,
 /area/storage/surface_eva/external)
 "ayL" = (
@@ -14237,16 +14222,8 @@
 /turf/floor/tiled,
 /area/crew_quarters/locker/laundry_arrival)
 "aAF" = (
-/obj/structure/railing/mapped,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/structure/grille,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume/external_air{
-	id_tag = "civ_airlock_pump"
-	},
-/turf/floor/tiled,
-/area/storage/surface_eva/external)
+/turf/wall,
+/area/tether/surfacebase/medical/triage/external)
 "aAG" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -14718,8 +14695,15 @@
 	pixel_y = -32;
 	dir = 1
 	},
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -22
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external/outside)
 "aBz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -14983,10 +14967,13 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/floor/tiled,
 /area/storage/surface_eva/external)
 "aCe" = (
@@ -14998,6 +14985,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 5
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
 	},
 /turf/floor/tiled,
 /area/storage/surface_eva/external)
@@ -15750,7 +15740,7 @@
 /area/rnd/hallway)
 "aDD" = (
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external/outside)
 "aDE" = (
 /obj/machinery/embedded_controller/radio/airlock/phoron{
 	id_tag = "civ_airlock";
@@ -15759,6 +15749,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled,
 /area/storage/surface_eva/external)
 "aDF" = (
@@ -16021,6 +16014,11 @@
 /obj/structure/railing/mapped{
 	dir = 1
 	},
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -22
+	},
+/obj/structure/cable/green,
 /turf/floor/tiled/techmaint,
 /area/storage/surface_eva/external)
 "aEm" = (
@@ -17140,7 +17138,6 @@
 /obj/item/toolbox/emergency,
 /obj/item/radio{
 	frequency = 1487;
-	icon_state = "med_walkietalkie";
 	name = "Medbay Emergency Radio Link"
 	},
 /obj/machinery/recharger,
@@ -17991,7 +17988,7 @@
 /area/crew_quarters/showers)
 "aIp" = (
 /turf/wall/natural,
-/area/rnd/external)
+/area/rnd/external/outside)
 "aIq" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 10
@@ -17999,19 +17996,17 @@
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 9
 	},
-/obj/effect/ceiling,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/rnd/external)
+/area/rnd/external/outside)
 "aIr" = (
 /obj/machinery/camera/network/research,
 /obj/machinery/floodlight,
-/obj/effect/ceiling,
 /obj/machinery/button/access/exterior{
 	pixel_y = 24;
 	id_tag = "rnd_s_airlock"
 	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/rnd/external)
+/area/rnd/external/outside)
 "aIs" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -23317,6 +23312,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "blQ" = (
@@ -26194,6 +26192,12 @@
 	},
 /turf/floor/tiled,
 /area/crew_quarters/visitor_lodging)
+"bQd" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/storage/surface_eva/external/outside)
 "bQi" = (
 /obj/structure/table/woodentable,
 /obj/machinery/light{
@@ -26289,6 +26293,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/floor/tiled,
 /area/rnd/external)
@@ -26891,7 +26898,7 @@
 	locked = 1
 	},
 /turf/floor/tiled/steel_grid,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "bVQ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 10
@@ -27005,7 +27012,6 @@
 	id_tag = "xenobiovent";
 	name = "Vent Blast Door"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/reinforced,
 /area/rnd/xenobiology)
 "bWv" = (
@@ -27699,6 +27705,12 @@
 	},
 /turf/floor/tiled/white,
 /area/crew_quarters/sleep/Dorm_2)
+"ccF" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/tether/surfacebase/medical/triage/external/outside)
 "ccW" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -29730,7 +29742,7 @@
 	id_tag = "paramed_airlock"
 	},
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external/outside)
 "cHS" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -29813,8 +29825,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/floor/tiled,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "deS" = (
 /obj/structure/railing/mapped{
 	dir = 4
@@ -30013,6 +30028,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "eMI" = (
@@ -30152,6 +30170,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "frA" = (
@@ -30223,11 +30244,6 @@
 	},
 /turf/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
-"fGy" = (
-/obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "fIx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -30271,6 +30287,18 @@
 /obj/item/clothing/permit/gun/paramedic,
 /turf/floor/tiled/dark,
 /area/tether/surfacebase/medical/triage)
+"fQi" = (
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/rnd/external/outside)
 "fTH" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -30337,6 +30365,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -30565,6 +30596,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -30945,6 +30979,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "jec" = (
@@ -30967,6 +31004,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -31016,8 +31056,11 @@
 	id_tag = "paramed_airlock_inner";
 	locked = 1
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/steel_grid,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "jyb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -31068,6 +31111,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "jIn" = (
@@ -31084,7 +31130,7 @@
 	dir = 4
 	},
 /turf/floor/tiled,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "jMq" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 1
@@ -31115,8 +31161,11 @@
 	dir = 4;
 	id_tag = "paramed_airlock_pump"
 	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/floor/tiled/techmaint,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "kcR" = (
 /obj/structure/window/reinforced,
 /turf/floor/tiled,
@@ -31538,8 +31587,14 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "ncL" = (
 /obj/machinery/door/airlock/double/glass{
 	name = "Public Gardens"
@@ -31578,6 +31633,23 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"nkt" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -22
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/rnd/external/outside)
+"nkI" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/storage/surface_eva/external/outside)
 "nlP" = (
 /obj/machinery/disposal,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -31610,7 +31682,7 @@
 	id_tag = "paramed_airlock_scrubber"
 	},
 /turf/floor/tiled/techmaint,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "nxt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/firecloset,
@@ -31737,6 +31809,16 @@
 	},
 /turf/floor/tiled,
 /area/engineering/atmos)
+"nYf" = (
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "rnd_s_airlock_outer";
+	locked = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/floor/tiled/steel_grid,
+/area/rnd/external)
 "oco" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -31749,6 +31831,12 @@
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"oeZ" = (
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/tether/surfacebase/medical/triage/external/outside)
 "ofR" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -31798,10 +31886,6 @@
 /obj/effect/floor_decal/techfloor/corner,
 /turf/floor/tiled/techfloor,
 /area/tether/surfacebase/public_garden_one)
-"orR" = (
-/obj/machinery/shield_diffuser,
-/turf/floor,
-/area/tether/surfacebase/outside/outside1)
 "osF" = (
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -32048,12 +32132,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
-"pLu" = (
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "pLG" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -32086,6 +32169,9 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "pRH" = (
@@ -32146,8 +32232,16 @@
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/phoronlock{
 	id_tag = "paramed_airlock_scrubber"
 	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 22
+	},
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
 /turf/floor/tiled/techmaint,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "qeU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -32404,7 +32498,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan,
 /turf/floor/tiled/steel_grid,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "raC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -32427,6 +32521,16 @@
 	},
 /turf/floor/tiled,
 /area/engineering/atmos)
+"rcw" = (
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "civ_airlock_outer";
+	locked = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/turf/floor/tiled/steel_grid,
+/area/storage/surface_eva/external)
 "rfg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -32489,6 +32593,16 @@
 /obj/machinery/hologram/holopad,
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"rpU" = (
+/obj/machinery/door/airlock/external/glass{
+	id_tag = "paramed_airlock_outer";
+	locked = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/floor/tiled/steel_grid,
+/area/tether/surfacebase/medical/triage/external)
 "rsX" = (
 /obj/structure/disposalpipe/junction{
 	dir = 2;
@@ -32693,6 +32807,9 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+"suF" = (
+/turf/wall/r_wall,
+/area/storage/surface_eva/external/outside)
 "svh" = (
 /obj/structure/table/woodentable,
 /obj/machinery/microwave,
@@ -32745,13 +32862,19 @@
 /obj/machinery/atmospherics/unary/tank/air,
 /obj/effect/floor_decal/industrial/outline,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/storage/surface_eva/external)
+/area/storage/surface_eva/external/outside)
 "sAe" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/floor/plating,
 /area/maintenance/lower/public_garden_maintenence)
+"sAQ" = (
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/rnd/external/outside)
 "sCz" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -32937,6 +33060,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -33159,8 +33285,11 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 9
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "ufg" = (
 /turf/wall,
 /area/tether/surfacebase/mining_main/external)
@@ -33282,7 +33411,7 @@
 	},
 /obj/machinery/light/small,
 /turf/floor/tiled/techmaint,
-/area/tether/surfacebase/medical/triage)
+/area/tether/surfacebase/medical/triage/external)
 "uMP" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 10
@@ -33291,6 +33420,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "uUL" = (
@@ -33422,10 +33554,10 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/floor/tiled/steel_dirty/virgo3b,
-/area/storage/surface_eva/external)
+/area/storage/surface_eva/external/outside)
 "vCB" = (
 /obj/structure/cable/green{
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
 /turf/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/mining_main/external)
@@ -33538,6 +33670,9 @@
 "wnu" = (
 /turf/floor/reinforced/oxygen,
 /area/engineering/atmos)
+"wpz" = (
+/turf/wall,
+/area/storage/surface_eva/external/outside)
 "wrh" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/atmospherics/binary/pump{
@@ -33621,12 +33756,18 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/junction,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
 "xfG" = (
 /obj/machinery/light,
 /turf/floor/tiled,
 /area/engineering/atmos)
+"xhS" = (
+/turf/floor/tiled/steel_dirty/virgo3b,
+/area/rnd/external/outside)
 "xuu" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -33648,6 +33789,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -35163,17 +35307,17 @@ frA
 frA
 qys
 asV
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
 aEa
 aad
 aad
@@ -35784,9 +35928,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEv
-pLu
+akb
 aad
 aad
 aad
@@ -35940,9 +36084,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36096,9 +36240,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36252,9 +36396,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36408,9 +36552,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36564,9 +36708,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36720,9 +36864,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36876,9 +37020,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEx
-pLu
+akb
 aad
 aad
 aad
@@ -38238,9 +38382,9 @@ aah
 aah
 aah
 adK
-orR
-orR
-orR
+aeo
+aeo
+aeo
 afq
 afq
 adK
@@ -38563,10 +38707,10 @@ aah
 aah
 aah
 aah
-akb
-akb
-akb
-akb
+akH
+akH
+akH
+akH
 aah
 aah
 aah
@@ -38716,13 +38860,13 @@ aah
 aah
 aah
 aah
-aiy
-aiy
-aiy
+wpz
+wpz
+wpz
 anf
-akb
-akb
-akb
+akH
+akH
+akH
 aah
 aah
 aah
@@ -38872,14 +39016,14 @@ aah
 aah
 aah
 aah
-aiy
+wpz
 sxm
 vBE
 akc
-akH
-akH
+bQd
+nkI
 alZ
-amD
+suF
 amU
 amU
 amU
@@ -39032,7 +39176,7 @@ aiy
 aiy
 aiy
 aiy
-aCb
+rcw
 aCb
 aiy
 amD
@@ -39343,7 +39487,7 @@ aah
 aah
 aiy
 ayK
-aAF
+aAH
 aCd
 aDE
 aEl
@@ -41100,7 +41244,7 @@ bOI
 bQT
 aHh
 aIp
-akb
+nkt
 aad
 aad
 aad
@@ -41254,9 +41398,9 @@ bKk
 bMm
 bOt
 bQL
-bSJ
-aIq
-akb
+nYf
+fQi
+sAQ
 aad
 aad
 aad
@@ -41412,7 +41556,7 @@ bON
 bQV
 bSJ
 aIq
-akb
+xhS
 aad
 aad
 aad
@@ -41568,7 +41712,7 @@ bOL
 bQU
 aHh
 aIr
-akb
+xhS
 aad
 aad
 aad
@@ -43842,10 +43986,10 @@ aad
 aad
 aad
 aah
-qQw
-qQw
-qQw
-qQw
+aAF
+aAF
+aAF
+aAF
 plY
 qQw
 vVy
@@ -43998,10 +44142,10 @@ aad
 aad
 aah
 aah
-qQw
+aAF
 qcH
 nqG
-qQw
+aAF
 plY
 qQw
 vyR
@@ -44152,12 +44296,12 @@ aad
 aad
 aad
 aad
-akb
+aDD
 aBy
-qQw
+aAF
 jZV
 uME
-qQw
+aAF
 bEB
 qQw
 qQw
@@ -44308,8 +44452,8 @@ aad
 aad
 aad
 aad
-akb
 aDD
+ccF
 bVO
 den
 jIn
@@ -44464,9 +44608,9 @@ aad
 aad
 aad
 aad
-akb
 aDD
-bVO
+oeZ
+rpU
 mYW
 ubp
 jup
@@ -44620,12 +44764,12 @@ aad
 aad
 aad
 aad
-akb
+aDD
 cHR
-qQw
-qQw
-qQw
-qQw
+aAF
+aAF
+aAF
+aAF
 qQw
 raC
 qQw
@@ -46647,7 +46791,7 @@ aad
 aad
 aad
 aad
-aaW
+akb
 aaj
 aao
 aaw
@@ -46803,7 +46947,7 @@ aad
 aad
 aad
 aad
-aai
+akb
 vCB
 aap
 aav

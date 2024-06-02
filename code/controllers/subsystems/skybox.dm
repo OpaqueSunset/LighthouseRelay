@@ -49,7 +49,6 @@ SUBSYSTEM_DEF(skybox)
 		var/image/im = image('icons/turf/space_dust.dmi', "[i]")
 		im.plane = DUST_PLANE
 		im.alpha = 80
-		im.blend_mode = BLEND_ADD
 
 		MA.overlays = list(im)
 
@@ -61,7 +60,6 @@ SUBSYSTEM_DEF(skybox)
 		var/mutable_appearance/MA = new(normal_space)
 		var/image/im = image('icons/turf/space_dust_transit.dmi', "speedspace_ns_[i]")
 		im.plane = DUST_PLANE
-		im.blend_mode = BLEND_ADD
 
 		MA.overlays = list(im)
 
@@ -71,7 +69,6 @@ SUBSYSTEM_DEF(skybox)
 		MA = new(normal_space)
 		im = image('icons/turf/space_dust_transit.dmi', "speedspace_ew_[i]")
 		im.plane = DUST_PLANE
-		im.blend_mode = BLEND_ADD
 
 		MA.overlays = list(im)
 

@@ -54,7 +54,7 @@
 
 /area/tether_away/debrisfield
 	name = "Away Mission - Debris Field"
-	icon = 'icons/turf/areas_vr.dmi'
+	icon = 'maps/tether/icons/areas_vr.dmi'
 	icon_state = "dark"
 
 /area/tether_away/debrisfield/explored

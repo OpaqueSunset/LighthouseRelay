@@ -86,7 +86,7 @@
 /turf/floor/wood,
 /area/tether/midpoint)
 "al" = (
-/obj/abstract/level_data_spawner/virgo3b/player,
+/obj/abstract/level_data_spawner/virgo3b/player/transit,
 /turf/open/sky,
 /area/tether/transit)
 "an" = (

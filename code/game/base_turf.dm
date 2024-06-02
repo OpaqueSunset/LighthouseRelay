@@ -32,6 +32,8 @@
 		return
 	var/turf/below = T
 	while ((below = GetBelow(below)))
+		if(below.z_flags & ZM_TERMINATOR)
+			break
 		if(!below.is_open() || !HasBelow(below.z))
 			if(below.open_turf_type)
 				return below.open_turf_type
