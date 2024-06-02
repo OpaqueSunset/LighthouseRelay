@@ -166,6 +166,9 @@
 /area/maintenance/bar/catwalk
 	name = "\improper Bar Maintenance Catwalk"
 	icon_state = "maint_bar"
+	sound_env = PLAIN
+	area_flags = AREA_FLAG_EXTERNAL | AREA_FLAG_MAINTENANCE
+	is_outside = OUTSIDE_YES
 
 /area/medical/medbay_emt_bay
 	name = "\improper Medical EMT Bay"

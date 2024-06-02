@@ -2680,7 +2680,6 @@
 /area/tether/surfacebase/tram)
 "afq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/shield_diffuser,
 /turf/floor,
 /area/tether/surfacebase/outside/outside1)
 "afr" = (
@@ -9889,7 +9888,6 @@
 /area/rnd/hallway)
 "asV" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
 /obj/structure/sign/warning/high_voltage{
 	name = "\improper SOLAR FARM";
 	dir = 4;
@@ -27014,7 +27012,6 @@
 	id_tag = "xenobiovent";
 	name = "Vent Blast Door"
 	},
-/obj/machinery/shield_diffuser,
 /turf/floor/reinforced,
 /area/rnd/xenobiology)
 "bWv" = (
@@ -30247,11 +30244,6 @@
 	},
 /turf/floor/tiled,
 /area/tether/surfacebase/public_garden_one)
-"fGy" = (
-/obj/effect/floor_decal/rust,
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "fIx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -31894,10 +31886,6 @@
 /obj/effect/floor_decal/techfloor/corner,
 /turf/floor/tiled/techfloor,
 /area/tether/surfacebase/public_garden_one)
-"orR" = (
-/obj/machinery/shield_diffuser,
-/turf/floor,
-/area/tether/surfacebase/outside/outside1)
 "osF" = (
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
@@ -32149,10 +32137,6 @@
 	},
 /turf/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
-"pLu" = (
-/obj/machinery/shield_diffuser,
-/turf/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside1)
 "pLG" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -35323,17 +35307,17 @@ frA
 frA
 qys
 asV
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
-fGy
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
+aFB
 aEa
 aad
 aad
@@ -35944,9 +35928,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEv
-pLu
+akb
 aad
 aad
 aad
@@ -36100,9 +36084,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36256,9 +36240,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36412,9 +36396,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36568,9 +36552,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36724,9 +36708,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -36880,9 +36864,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEw
-pLu
+akb
 aad
 aad
 aad
@@ -37036,9 +37020,9 @@ aad
 aad
 aad
 aad
-pLu
+akb
 aEx
-pLu
+akb
 aad
 aad
 aad
@@ -38398,9 +38382,9 @@ aah
 aah
 aah
 adK
-orR
-orR
-orR
+aeo
+aeo
+aeo
 afq
 afq
 adK
