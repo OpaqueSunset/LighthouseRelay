@@ -26,7 +26,7 @@
 		return
 	var/turf/above = src
 	while ((above = GetAbove(above)))
-		if(!above.is_open())
+		if(!above.is_open() || above.z_flags & ZM_TERMINATOR)
 			break
 		if(!restrict_type || istype(above, restrict_type))
 			if(respect_area)
