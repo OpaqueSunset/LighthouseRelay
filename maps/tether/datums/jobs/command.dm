@@ -15,6 +15,8 @@
 	head_position = TRUE
 	req_admin_notify = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
+	timeoff_factor = 5
 	guestbanned = TRUE
 	must_fill = TRUE
 	not_random_selectable = TRUE
@@ -57,6 +59,7 @@
 	head_position = TRUE
 	req_admin_notify = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
 	guestbanned = TRUE
 	not_random_selectable = TRUE
 	access = list(
@@ -154,6 +157,7 @@
 	title = "Command Secretary"
 	department_types = list(/decl/department/command, /decl/department/service)
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND // you count! for now...
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Command staff"

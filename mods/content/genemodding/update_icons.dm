@@ -10,7 +10,7 @@
 		return // No tail data!
 
 	// These values may be null and are generally optional.
-	var/hair_colour     = GET_HAIR_COLOUR(src)
+	var/hair_colour     = tail_organ.get_tail_hair_colour() // GENEMODDING EDIT
 	var/tail_hair       = tail_organ.get_tail_hair()
 	var/tail_blend      = tail_organ.get_tail_blend()
 	var/tail_hair_blend = tail_organ.get_tail_hair_blend()

@@ -2,6 +2,8 @@
 	title = "Chief Medical Officer"
 	head_position = TRUE
 	disallow_jobhop = TRUE
+	pto_type = PTO_COMMAND
+	timeoff_factor = 3
 	department_types = list(
 		/decl/department/medical,
 		/decl/department/command
@@ -80,6 +82,7 @@
 	minimal_player_age = 3
 	total_positions = 5
 	spawn_positions = 3
+	pto_type = PTO_MEDICAL
 	supervisors = "the chief medical officer"
 	selection_color = "#013d3b"
 	economic_power = 7
@@ -134,6 +137,7 @@
 	minimal_player_age = 7
 	total_positions = 2
 	spawn_positions = 2
+	pto_type = PTO_MEDICAL
 	supervisors = "the chief medical officer"
 	selection_color = "#013d3b"
 	economic_power = 5
@@ -169,6 +173,7 @@
 	department_types = list(/decl/department/medical)
 	total_positions = 1
 	spawn_positions = 1
+	pto_type = PTO_MEDICAL
 	economic_power = 5
 	minimal_player_age = 3
 	supervisors = "the chief medical officer"

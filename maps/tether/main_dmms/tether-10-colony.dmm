@@ -17,14 +17,10 @@
 	icon_state = "burst_l"
 	},
 /turf/unsimulated/floor/shuttle_ceiling,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "af" = (
 /turf/wall/shuttle/dark,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "ag" = (
 /turf/unsimulated/floor/shuttle_ceiling,
 /area/centcom/specops)
@@ -36,9 +32,7 @@
 	dir = 8
 	},
 /turf/unsimulated/floor/shuttle_ceiling,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aj" = (
 /obj/structure/shuttle/engine/heater{
 	dir = 8
@@ -47,22 +41,16 @@
 	dir = 4
 	},
 /turf/floor/airless,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "ak" = (
 /obj/machinery/computer/modular/preset/civilian,
 /obj/machinery/computer/shuttle_control/specops,
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "al" = (
 /obj/structure/bed/chair,
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "am" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
@@ -70,9 +58,7 @@
 	},
 /obj/structure/bed/chair,
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "an" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
@@ -87,16 +73,12 @@
 	},
 /obj/structure/bed/chair,
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "ao" = (
 /turf/wall/shuttle/dark{
 	hard_corner = 1
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "ap" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -194,6 +176,12 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"aw" = (
+/obj/effect/shuttle_landmark/escape_shuttle/start,
+/turf/floor/shuttle/white{
+	color = "#cccccc"
+	},
+/area/shuttle/tram)
 "ax" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -275,14 +263,10 @@
 	dir = 8
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aC" = (
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aD" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	id_tag = "specops_shuttle_fore";
@@ -292,9 +276,7 @@
 	dir = 1
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aE" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "specops_shuttle_fore_hatch";
@@ -302,9 +284,7 @@
 	name = "Forward Docking Hatch"
 	},
 /turf/floor,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aF" = (
 /obj/structure/rack,
 /obj/item/ammo_casing/rocket,
@@ -452,17 +432,13 @@
 	pixel_y = -30
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aR" = (
 /obj/machinery/computer/prisoner{
 	name = "Implant Management"
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aS" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	id_tag = "specops_shuttle_port";
@@ -472,17 +448,13 @@
 	dir = 1
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aT" = (
 /obj/structure/bed/chair{
 	dir = 1
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aU" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -491,9 +463,7 @@
 	dir = 4
 	},
 /turf/floor/shuttle/blue,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "aV" = (
 /obj/structure/rack,
 /obj/item/gun/energy/pulse_rifle,
@@ -639,9 +609,7 @@
 	icon_state = "burst_r"
 	},
 /turf/unsimulated/floor/shuttle_ceiling,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "bi" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "specops_shuttle_port_hatch";
@@ -651,9 +619,7 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specops/centcom)
 "bj" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/thick/swat{
@@ -9252,16 +9218,12 @@
 /area/centcom/security)
 "si" = (
 /turf/wall/shuttle,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sj" = (
 /obj/structure/grille,
 /obj/structure/shuttle/window,
 /turf/floor,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sk" = (
 /obj/structure/table/woodentable{
 	dir = 5
@@ -9415,9 +9377,7 @@
 /area/centcom/security)
 "sB" = (
 /turf/wall/shuttle/hard_corner,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sC" = (
 /obj/structure/closet/hydrant{
 	pixel_x = -30;
@@ -9433,24 +9393,18 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sD" = (
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sE" = (
 /obj/structure/bed/chair/shuttle,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sF" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -9641,17 +9595,13 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sX" = (
 /obj/structure/table,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sY" = (
 /obj/machinery/status_display{
 	pixel_y = 30
@@ -9663,9 +9613,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "sZ" = (
 /obj/structure/table/glass,
 /obj/item/box/cups,
@@ -9844,9 +9792,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "tm" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -10015,9 +9961,7 @@
 	name = "Shuttle Hatch"
 	},
 /turf/floor/shuttle/yellow,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "tC" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "escape_shuttle_hatch_offsite";
@@ -10025,9 +9969,7 @@
 	name = "Shuttle Hatch"
 	},
 /turf/floor/shuttle/yellow,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "tD" = (
 /obj/structure/table/glass,
 /obj/item/roller,
@@ -10248,9 +10190,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "ub" = (
 /obj/structure/bed/chair/shuttle,
 /obj/structure/emergency_dispenser{
@@ -10260,9 +10200,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "uc" = (
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor/steel,
@@ -10330,18 +10268,14 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "un" = (
 /obj/structure/table,
 /obj/random/maintenance/clean,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "uo" = (
 /obj/structure/flora/pottedplant{
 	icon_state = "plant-22"
@@ -10571,9 +10505,7 @@
 "uP" = (
 /obj/structure/sign/nanotrasen,
 /turf/wall/shuttle,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "uQ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5{
 	dir = 8
@@ -10675,18 +10607,14 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "vc" = (
 /obj/structure/table,
 /obj/random/plushie,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "vd" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/blast/regular/open{
@@ -10781,9 +10709,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "vl" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 1
@@ -10795,9 +10721,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "vm" = (
 /turf/unsimulated/wall,
 /area/centcom/security/arrivals)
@@ -10979,7 +10903,6 @@
 /area/centcom/restaurant)
 "vJ" = (
 /obj/structure/sign/directions/elevator{
-	name = "\improper Elevator";
 	pixel_x = -30
 	},
 /turf/unsimulated/floor/steel,
@@ -11300,17 +11223,13 @@
 /obj/structure/grille,
 /obj/structure/shuttle/window,
 /turf/floor/shuttle/white,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "wg" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "wh" = (
 /obj/machinery/computer/modular/preset/cardslot/personnel{
 	dir = 4
@@ -11587,18 +11506,14 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "wD" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/light,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "wE" = (
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 4
@@ -11833,9 +11748,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "xa" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 1
@@ -11844,9 +11757,7 @@
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
-/area/shuttle/escape/centcom{
-	base_turf = /turf/unsimulated/floor/techfloor_grid
-	})
+/area/shuttle/tram)
 "xb" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -21641,7 +21552,7 @@ sD
 sD
 sD
 sD
-sD
+aw
 sD
 sD
 sD

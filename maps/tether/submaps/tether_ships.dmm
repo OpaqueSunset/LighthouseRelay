@@ -126,9 +126,6 @@
 /obj/effect/step_trigger/lost_in_space,
 /turf/space,
 /area/space)
-"hx" = (
-/turf/unsimulated/mineral,
-/area/space)
 "hz" = (
 /obj/effect/step_trigger/thrower{
 	affect_ghosts = 1;
@@ -175,7 +172,7 @@
 /obj/effect/transit/light{
 	dir = 4
 	},
-/turf/unsimulated/mineral,
+/turf/unsimulated/dark_filler,
 /area/space)
 "HC" = (
 /obj/abstract/level_data_spawner/admin_level,
@@ -18759,7 +18756,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gW
 gW
 gW
@@ -18781,7 +18778,7 @@ gW
 gW
 gW
 gW
-hx
+dJ
 aa
 "}
 (132,1,1) = {"
@@ -18901,7 +18898,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gX
 gX
 gX
@@ -18923,7 +18920,7 @@ gX
 gX
 gX
 hh
-hx
+dJ
 aa
 "}
 (133,1,1) = {"
@@ -19043,7 +19040,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gY
 gY
 gY
@@ -19065,7 +19062,7 @@ gY
 gY
 gY
 gY
-hx
+dJ
 aa
 "}
 (134,1,1) = {"
@@ -19185,7 +19182,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gY
 gY
 gY
@@ -19207,7 +19204,7 @@ gY
 gY
 gY
 gY
-hx
+dJ
 aa
 "}
 (135,1,1) = {"
@@ -19327,7 +19324,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gY
 gY
 gY
@@ -19349,7 +19346,7 @@ gY
 gY
 gY
 gY
-hx
+dJ
 aa
 "}
 (136,1,1) = {"
@@ -19469,7 +19466,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gY
 gY
 gY
@@ -19491,7 +19488,7 @@ gY
 gY
 gY
 gY
-hx
+dJ
 aa
 "}
 (137,1,1) = {"
@@ -19611,7 +19608,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gY
 gY
 gY
@@ -19633,7 +19630,7 @@ gY
 gY
 gY
 gY
-hx
+dJ
 aa
 "}
 (138,1,1) = {"
@@ -19753,7 +19750,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gZ
 gZ
 gZ
@@ -19895,7 +19892,7 @@ aa
 aa
 aa
 aa
-hx
+dJ
 gW
 gW
 gW
@@ -19917,7 +19914,7 @@ gW
 gW
 gW
 gW
-hx
+dJ
 aa
 "}
 (140,1,1) = {"

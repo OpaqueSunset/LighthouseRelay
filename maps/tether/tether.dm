@@ -59,6 +59,7 @@
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
 	#include "../../mods/content/resleeving/_resleeving.dme"
 
+	#include "tether_evacuation.dm"
 	#include "tether_jobs.dm"
 	#include "tether_leveldata.dm"
 	#include "tether_unit_testing.dm"

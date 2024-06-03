@@ -29,6 +29,10 @@
 /obj/structure/window/reinforced,
 /turf/unsimulated/wall,
 /area/space)
+"aA" = (
+/obj/effect/shuttle_landmark/escape_shuttle/transit,
+/turf/unsimulated/floor/techfloor_grid,
+/area/centcom/ferry)
 "aI" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -586,8 +590,8 @@
 /turf/floor/holofloor/tiled,
 /area/holodeck/source_emptycourt)
 "cC" = (
-/turf/unsimulated/floor/maglev,
-/area/space)
+/turf/unsimulated/dark_filler,
+/area/centcom/ferry)
 "cO" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	id_tag = "supply_shuttle";
@@ -1931,7 +1935,7 @@
 /obj/effect/transit/light{
 	dir = 8
 	},
-/turf/unsimulated/mineral,
+/turf/unsimulated/dark_filler,
 /area/centcom/ferry)
 "nw" = (
 /obj/machinery/door/window/holowindoor{
@@ -1978,8 +1982,12 @@
 	},
 /area/holodeck/holodorm/source_zaddat)
 "uC" = (
+/obj/effect/floor_decal/transit/orange{
+	dir = 8
+	},
+/obj/effect/step_trigger/lost_in_space/tram,
 /turf/unsimulated/floor/techfloor_grid,
-/area/space)
+/area/centcom/ferry)
 "vi" = (
 /obj/structure/table,
 /obj/item/firstaid/surgery,
@@ -2312,6 +2320,10 @@
 	},
 /turf/floor/tiled/white,
 /area/holodeck/holodorm/source_standard)
+"EV" = (
+/obj/effect/step_trigger/lost_in_space/tram,
+/turf/unsimulated/floor/maglev,
+/area/centcom/ferry)
 "EX" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -2574,6 +2586,13 @@
 	},
 /turf/floor/tiled/white,
 /area/holodeck/holodorm/source_standard)
+"Os" = (
+/obj/effect/floor_decal/transit/orange{
+	dir = 4
+	},
+/obj/effect/step_trigger/lost_in_space/tram,
+/turf/unsimulated/floor/techfloor_grid,
+/area/centcom/ferry)
 "OJ" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -2728,6 +2747,10 @@
 	},
 /turf/floor/tiled/white,
 /area/holodeck/holodorm/source_standard)
+"YD" = (
+/obj/effect/step_trigger/lost_in_space/tram,
+/turf/unsimulated/floor/techfloor_grid,
+/area/centcom/ferry)
 "ZY" = (
 /obj/structure/table/glass/pglass,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -3319,7 +3342,6 @@ ap
 ap
 "}
 (5,1,1) = {"
-gX
 hl
 hl
 hl
@@ -3350,7 +3372,8 @@ hl
 hl
 hl
 hl
-gX
+hl
+hl
 ap
 ap
 ap
@@ -3461,7 +3484,7 @@ ap
 ap
 "}
 (6,1,1) = {"
-gX
+cC
 hm
 hm
 hm
@@ -3491,7 +3514,7 @@ hm
 hv
 hm
 hm
-hm
+uC
 mu
 ap
 ap
@@ -3603,7 +3626,7 @@ ap
 ap
 "}
 (7,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -3612,20 +3635,20 @@ hn
 hn
 ib
 ib
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 lo
 hn
@@ -3633,8 +3656,8 @@ hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -3745,7 +3768,7 @@ ap
 ap
 "}
 (8,1,1) = {"
-gX
+cC
 ho
 ho
 ho
@@ -3753,30 +3776,30 @@ ho
 ho
 ho
 ic
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
 lx
 ho
 ho
 ho
 ho
 ho
-ho
-gX
+EV
+cC
 ap
 ap
 ap
@@ -3887,7 +3910,7 @@ ap
 ap
 "}
 (9,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -3895,30 +3918,30 @@ hn
 hn
 hn
 ib
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 hn
 hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -4029,7 +4052,7 @@ ap
 ap
 "}
 (10,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -4037,30 +4060,30 @@ hn
 hn
 hn
 ib
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+aA
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 hn
 hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -4171,7 +4194,7 @@ ap
 ap
 "}
 (11,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -4179,30 +4202,30 @@ hn
 hn
 hn
 id
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 hn
 hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -4313,7 +4336,7 @@ ap
 ap
 "}
 (12,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -4321,30 +4344,30 @@ hn
 hn
 hn
 id
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 hn
 hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -4455,7 +4478,7 @@ ap
 ap
 "}
 (13,1,1) = {"
-gX
+cC
 ho
 ho
 ho
@@ -4463,30 +4486,30 @@ ho
 ho
 ho
 ie
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
-cC
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
+ho
 lx
 ho
 ho
 ho
 ho
 ho
-ho
-gX
+EV
+cC
 ap
 ap
 ap
@@ -4597,7 +4620,7 @@ ap
 ap
 "}
 (14,1,1) = {"
-gX
+cC
 hn
 hn
 hn
@@ -4606,20 +4629,20 @@ hn
 hn
 id
 id
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
-uC
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 lo
 lo
 hn
@@ -4627,8 +4650,8 @@ hn
 hn
 hn
 hn
-hn
-gX
+YD
+cC
 ap
 ap
 ap
@@ -4739,7 +4762,7 @@ ap
 ap
 "}
 (15,1,1) = {"
-gX
+cC
 hp
 hp
 hp
@@ -4769,8 +4792,8 @@ hp
 hp
 hI
 hp
-hp
-gX
+Os
+cC
 ap
 ap
 ap
@@ -4881,7 +4904,6 @@ ap
 ap
 "}
 (16,1,1) = {"
-gX
 hl
 hl
 hl
@@ -4912,7 +4934,8 @@ hl
 hl
 hl
 hl
-gX
+hl
+hl
 ap
 ap
 ap
