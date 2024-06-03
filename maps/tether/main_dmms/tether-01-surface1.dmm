@@ -32655,6 +32655,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/floor/tiled/dark,
 /area/tether/surfacebase/medical/triage)
+"rGX" = (
+/obj/effect/shuttle_landmark/escape_shuttle/station,
+/turf/floor/tiled/techfloor/grid,
+/area/tether/surfacebase/tram)
 "rKM" = (
 /obj/structure/stairs/long/north,
 /turf/floor/tiled,
@@ -54171,7 +54175,7 @@ aqE
 aqE
 aqE
 aqE
-aqE
+rGX
 aqE
 aqE
 aqE

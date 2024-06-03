@@ -29,6 +29,10 @@
 /obj/structure/window/reinforced,
 /turf/unsimulated/wall,
 /area/space)
+"aA" = (
+/obj/effect/shuttle_landmark/escape_shuttle/transit,
+/turf/unsimulated/floor/techfloor_grid,
+/area/centcom/ferry)
 "aI" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -4063,7 +4067,7 @@ hn
 hn
 hn
 hn
-hn
+aA
 hn
 hn
 hn

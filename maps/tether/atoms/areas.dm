@@ -282,8 +282,8 @@
 	icon_state = "shuttle2"
 	base_turf = /turf/floor/natural/barren
 
-/area/shuttle/escape/centcom
-	name = "\improper Emergency Shuttle CentCom"
+/area/shuttle/tram
+	name = "\improper Orange Line Tram"
 	icon_state = "shuttle"
 
 /area/shuttle/specops/centcom
