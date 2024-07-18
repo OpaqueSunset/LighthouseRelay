@@ -147,7 +147,8 @@
 	announcementConsole = 1;
 	department = "Captain";
 	pixel_x = 32;
-	initial_network_id = "freightnet_0451"
+	initial_network_id = "freightnet_0451";
+	dir = 4;
 	},
 /obj/structure/bed/chair{
 	dir = 1
@@ -4324,7 +4325,7 @@
 /turf/floor/tiled/usedup,
 /area/ship/scrap/maintenance/power)
 "in" = (
-/obj/machinery/shield_generator,
+/obj/machinery/shield_generator/mapped,
 /obj/structure/cable{
 	icon_state = "0-2";
 	pixel_y = 1

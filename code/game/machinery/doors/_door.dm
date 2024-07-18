@@ -234,12 +234,13 @@
 /obj/machinery/door/hitby(var/atom/movable/AM, var/datum/thrownthing/TT)
 	. = ..()
 	if(.)
-		visible_message("<span class='danger'>[src.name] was hit by [AM].</span>")
+		visible_message(SPAN_DANGER("\The [src] was hit by \the [AM]."))
 		var/tforce = 0
 		if(ismob(AM))
 			tforce = 3 * TT.speed
-		else
-			tforce = AM:throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+		else if(isobj(AM))
+			var/obj/hitter_obj = AM
+			tforce = hitter_obj.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 		playsound(src.loc, hitsound, 100, 1)
 		take_damage(tforce)
 
@@ -329,20 +330,26 @@
 		emagged = TRUE
 		return 1
 
-/obj/machinery/door/bash(obj/item/I, mob/user)
-	if(density && user.a_intent == I_HURT && !(I.item_flags & ITEM_FLAG_NO_BLUDGEON))
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.do_attack_animation(src)
-		if(I.force < min_force)
-			user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [I] with no visible effect.</span>")
-		else
-			user.visible_message("<span class='danger'>\The [user] forcefully strikes \the [src] with \the [I]!</span>")
-			playsound(src.loc, hitsound, 100, 1)
-			take_damage(I.force, I.atom_damage_type)
-		return TRUE
-	return FALSE
+/obj/machinery/door/bash(obj/item/weapon, mob/user)
+	if(isliving(user) && user.a_intent != I_HURT)
+		return FALSE
+	if(!weapon.user_can_wield(user))
+		return FALSE
+	if(weapon.item_flags & ITEM_FLAG_NO_BLUDGEON)
+		return FALSE
+	if(!density)
+		return FALSE
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	user.do_attack_animation(src)
+	if(weapon.force < min_force)
+		user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [weapon] with no visible effect.</span>")
+	else
+		user.visible_message("<span class='danger'>\The [user] forcefully strikes \the [src] with \the [weapon]!</span>")
+		playsound(src.loc, hitsound, 100, 1)
+		take_damage(weapon.force, weapon.atom_damage_type)
+	return TRUE
 
-/obj/machinery/door/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent = FALSE)
+/obj/machinery/door/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent, do_update_health)
 	if(!current_health)
 		..(damage, damage_type)
 		update_icon()
@@ -390,7 +397,7 @@
 		else if(current_health < current_max_health && get_dist(src, user) <= 1)
 			to_chat(user, "\The [src] has some minor scuffing.")
 
-	var/mob/living/carbon/human/H = user
+	var/mob/living/human/H = user
 	if (emagged && istype(H) && (H.skill_check(SKILL_COMPUTER, SKILL_ADEPT) || H.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT)))
 		to_chat(user, SPAN_WARNING("\The [src]'s control panel looks fried."))
 
@@ -498,7 +505,6 @@
 	for(var/turf/turf in locs)
 		if(turf.simulated)
 			update_heat_protection(turf)
-			SSair.mark_for_update(turf)
 	return 1
 
 /obj/machinery/door/proc/update_heat_protection(var/turf/source)

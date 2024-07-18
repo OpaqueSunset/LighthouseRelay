@@ -1,4 +1,4 @@
-/obj/machinery/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent = FALSE)
+/obj/machinery/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent, do_update_health)
 	//Let's not bother initializing all the components for nothing
 	if(damage <= 0)
 		return
@@ -83,7 +83,7 @@
 	take_damage(P.damage, P.atom_damage_type)
 
 /obj/machinery/bash(obj/item/W, mob/user)
-	if(!istype(W) || W.force <= 5 || (W.item_flags & ITEM_FLAG_NO_BLUDGEON))
+	if(!istype(W) || W.force <= 5)
 		return FALSE
 	. = ..()
 	if(.)

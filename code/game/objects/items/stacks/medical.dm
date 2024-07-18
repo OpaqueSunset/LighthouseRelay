@@ -38,7 +38,7 @@
 		use(1)
 		return TRUE
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 	if(!affecting)
 		to_chat(user, SPAN_WARNING("\The [target] is missing that body part!"))
@@ -80,6 +80,62 @@
 	desc                = "Some clean material cut into lengths suitable for bandaging wounds."
 	amount              = 1
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
+	// Reagents required for a single poultice.
+	var/static/list/poultice_reagent_requirements = list(
+		/decl/material/liquid/antitoxins/ginseng = 1,
+		/decl/material/liquid/brute_meds/yarrow  = 1,
+		/decl/material/liquid/burn_meds/aloe     = 1
+	)
+
+/obj/item/stack/medical/bruise_pack/bandage/five
+	amount = 5
+
+/obj/item/stack/medical/bruise_pack/bandage/ten
+	amount = 10
+
+/obj/item/stack/medical/bruise_pack/bandage/proc/get_poultice_requirement_string()
+	. = list()
+	for(var/reagent in poultice_reagent_requirements)
+		var/decl/material/reagent_decl = GET_DECL(reagent)
+		. += "[poultice_reagent_requirements[reagent]] unit\s of [reagent_decl.liquid_name]"
+	. = english_list(.)
+
+/obj/item/stack/medical/bruise_pack/bandage/examine(mob/user, distance)
+	. = ..()
+	var/poultice_requirement_string = get_poultice_requirement_string()
+	if(poultice_requirement_string)
+		to_chat(user, SPAN_NOTICE("With a mixture of [poultice_requirement_string], you could use a bandage to make a herbal poultice."))
+
+/obj/item/stack/medical/bruise_pack/bandage/attackby(obj/item/W, mob/living/user)
+
+	// Making a poultice.
+	if(istype(W, /obj/item/chems) && W.reagents && !istype(W, /obj/item/chems/food) && ATOM_IS_OPEN_CONTAINER(W))
+
+		var/create_poultices = get_amount()
+		var/missing_reagent = FALSE
+		for(var/reagent in poultice_reagent_requirements)
+			var/available_amt = round(REAGENT_VOLUME(W.reagents, reagent) / poultice_reagent_requirements[reagent])
+			if(available_amt)
+				create_poultices = min(create_poultices, available_amt)
+			else
+				missing_reagent = TRUE
+				break
+
+		// If we have enough reagents, create poultices, otherwise, warn the user.
+		if(create_poultices <= 0 || missing_reagent)
+			var/poultice_requirement_string = get_poultice_requirement_string()
+			if(poultice_requirement_string)
+				to_chat(user, SPAN_WARNING("You need at least [poultice_requirement_string] to make one herbal poultice."))
+		else
+			var/obj/item/stack/medical/ointment/poultice/poultices = new(get_turf(src), create_poultices)
+			user.put_in_hands(poultices)
+			user.visible_message("\The [user] carefully pours the herbal mash into the bandage, making [poultices.get_amount()] poultice\s.")
+			for(var/reagent in poultice_reagent_requirements)
+				W.reagents.remove_reagent(reagent, create_poultices * poultice_reagent_requirements[reagent])
+			use(create_poultices)
+		return TRUE
+
+	return ..()
 
 /obj/item/stack/medical/bruise_pack/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 
@@ -87,7 +143,7 @@
 	if(. || !ishuman(target))
 		return
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 	if(affecting.is_bandaged())
 		to_chat(user, SPAN_WARNING("The wounds on [target]'s [affecting.name] have already been bandaged."))
@@ -138,7 +194,7 @@
 
 /obj/item/stack/medical/ointment
 	name = "ointment"
-	desc = "Used to treat those nasty burns."
+	desc = "An antibacterial ointment used to treat burns and prevent infections."
 	gender = PLURAL
 	singular_name = "ointment"
 	icon_state = "ointment"
@@ -147,13 +203,28 @@
 	animal_heal = 4
 	apply_sounds = list('sound/effects/ointment.ogg')
 
+/obj/item/stack/medical/ointment/poultice
+	name = "poultice"
+	gender = NEUTER
+	singular_name = "poultice"
+	plural_name = "poultices"
+	icon_state = "poultice"
+	desc = "A bandage soaked in a medicinal herbal mixture, good for treating burns and preventing infections."
+	animal_heal = 3
+
+/obj/item/stack/medical/ointment/poultice/five
+	amount = 5
+
+/obj/item/stack/medical/ointment/poultice/ten
+	amount = 10
+
 /obj/item/stack/medical/ointment/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 
 	. = ..()
 	if(. || !ishuman(target))
 		return
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 	if(affecting.is_salved())
 		to_chat(user, SPAN_WARNING("The wounds on [target]'s [affecting.name] have already been salved."))
@@ -193,7 +264,7 @@
 	if(. || !ishuman(target))
 		return
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 	if(affecting.is_bandaged() && affecting.is_disinfected())
 		to_chat(user, SPAN_WARNING("The wounds on [target]'s [affecting.name] have already been treated."))
@@ -259,7 +330,7 @@
 	if(. || !ishuman(target))
 		return
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 
 	if(affecting.is_salved())
@@ -287,12 +358,16 @@
 /obj/item/stack/medical/splint
 	name = "medical splints"
 	singular_name = "medical splint"
+	plural_name = "medical splints"
 	desc = "Modular splints capable of supporting and immobilizing bones in both limbs and appendages."
 	icon_state = "splint"
 	amount = 5
 	max_amount = 5
 	animal_heal = 0
-	var/list/splintable_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT)	//List of organs you can splint, natch.
+
+/obj/item/stack/medical/splint/proc/get_splitable_organs()
+	var/static/list/splintable_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG, BP_L_HAND, BP_R_HAND, BP_L_FOOT, BP_R_FOOT)	//List of organs you can splint, natch.
+	return splintable_organs
 
 /obj/item/stack/medical/splint/check_limb_state(var/mob/user, var/obj/item/organ/external/limb)
 	if(BP_IS_PROSTHETIC(limb))
@@ -300,16 +375,30 @@
 		return FALSE
 	return TRUE
 
+/obj/item/stack/medical/splint/simple
+	name = "splints"
+	singular_name = "splint"
+	plural_name = "splints"
+	icon_state = "simple-splint"
+	amount = 1
+	material = /decl/material/solid/organic/wood
+	matter = list(
+		/decl/material/solid/organic/cloth = MATTER_AMOUNT_REINFORCEMENT
+	)
+
+/obj/item/stack/medical/splint/simple/five
+	amount = 5
+
 /obj/item/stack/medical/splint/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 
 	. = ..()
 	if(. || !ishuman(target))
 		return
 
-	var/mob/living/carbon/human/H = target
+	var/mob/living/human/H = target
 	var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 
-	if(!(affecting.organ_tag in splintable_organs))
+	if(!(affecting.organ_tag in get_splitable_organs()))
 		to_chat(user, SPAN_WARNING("You can't use \the [src] to apply a splint there!"))
 		return TRUE
 
@@ -346,7 +435,7 @@
 		var/obj/item/stack/medical/splint/S = split(1, TRUE)
 		if(S)
 			if(affecting.apply_splint(S))
-				target.verbs += /mob/living/carbon/human/proc/remove_splints
+				target.verbs += /mob/living/human/proc/remove_splints
 				S.forceMove(affecting)
 				if (target != user)
 					user.visible_message(
@@ -375,7 +464,10 @@
 	desc = "For holding your limbs in place with duct tape and scrap metal."
 	icon_state = "tape-splint"
 	amount = 1
-	splintable_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+
+/obj/item/stack/medical/splint/ghetto/get_splitable_organs()
+	var/static/list/splintable_organs = list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
+	return splintable_organs
 
 /obj/item/stack/medical/resin
 	name = "resin patches"
@@ -406,7 +498,7 @@
 /obj/item/stack/medical/resin/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 	. = ..()
 	if(!. && ishuman(target))
-		var/mob/living/carbon/human/H = target
+		var/mob/living/human/H = target
 		var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, user.get_target_zone())
 		if((affecting.brute_dam + affecting.burn_dam) <= 0)
 			to_chat(user, SPAN_WARNING("\The [target]'s [affecting.name] is undamaged."))

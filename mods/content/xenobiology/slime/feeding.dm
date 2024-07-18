@@ -22,7 +22,7 @@
 			to_chat(src, SPAN_WARNING("\The [M] is protected from your feeding."))
 		return FEED_RESULT_INVALID
 	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+		var/mob/living/human/H = M
 		if((H.species.species_flags & SPECIES_FLAG_NO_POISON) || (H.get_bodytype()?.body_flags & BODY_FLAG_NO_DNA))
 			if(!silent)
 				to_chat(src, SPAN_WARNING("You cannot feed on \the [M]."))
@@ -55,7 +55,7 @@
 		events_repository.register(/decl/observ/moved, src, src, TYPE_PROC_REF(/mob/living/slime, check_feed_target_position))
 		events_repository.register(/decl/observ/moved, victim, src, TYPE_PROC_REF(/mob/living/slime, check_feed_target_position))
 		events_repository.register(/decl/observ/destroyed, victim, src, TYPE_PROC_REF(/mob/living/slime, check_feed_target_position))
-	var/datum/ai/slime/slime_ai = ai
+	var/datum/mob_controller/slime/slime_ai = ai
 	if(istype(slime_ai))
 		slime_ai.update_mood()
 	update_icon()

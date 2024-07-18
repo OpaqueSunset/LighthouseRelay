@@ -20,7 +20,9 @@
 
 /mob/living/show_other_examine_strings(mob/user, distance, infix, suffix, hideflags, decl/pronouns/pronouns)
 	if(admin_paralyzed)
-		to_chat(user, SPAN_OCCULT("OOC: They have been paralyzed by staff. Please avoid interacting with them unless cleared to do so by staff."))
+		to_chat(user, SPAN_OCCULT("OOC: [pronouns.He] [pronouns.has] been paralyzed by staff. Please avoid interacting with [pronouns.him] unless cleared to do so by staff."))
+	if(!length(get_external_organs()) && length(embedded)) // fallback for simple embedding used by limbless mobs
+		to_chat(user, SPAN_WARNING("[pronouns.He] [pronouns.has] [inline_counting_english_list(embedded, determiners = DET_INDEFINITE)] embedded in [pronouns.him]."))
 
 //mob verbs are faster than object verbs. See above.
 /mob/living/pointed(atom/A as mob|obj|turf in view())
@@ -31,7 +33,7 @@
 	if(!..())
 		return 0
 
-	usr.visible_message("<b>[src]</b> points to <a href='?src=\ref[A];look_at_me=1'>[A]</a>")
+	usr.visible_message("<b>[src]</b> points to <a href='byond://?src=\ref[A];look_at_me=1'>[A]</a>")
 	return 1
 
 /*one proc, four uses
@@ -147,7 +149,7 @@ default behaviour is:
 						if(!tmob.buckled.anchored)
 							step(tmob.buckled, t)
 				if(ishuman(AM))
-					var/mob/living/carbon/human/M = AM
+					var/mob/living/human/M = AM
 					for(var/obj/item/grab/G in M.grabbed_by)
 						step(G.assailant, get_dir(G.assailant, AM))
 						G.adjust_position()
@@ -300,13 +302,6 @@ default behaviour is:
 /mob/living/proc/restore_all_organs()
 	return
 
-
-/mob/living/carbon/revive()
-	var/obj/item/cuffs = get_equipped_item(slot_handcuffed_str)
-	if (cuffs)
-		try_unequip(cuffs, get_turf(src))
-	. = ..()
-
 /mob/living/proc/revive()
 	rejuvenate()
 	if(buckled)
@@ -316,6 +311,9 @@ default behaviour is:
 	BITSET(hud_updateflag, LIFE_HUD)
 	ExtinguishMob()
 	fire_stacks = 0
+	var/obj/item/cuffs = get_equipped_item(slot_handcuffed_str)
+	if (cuffs)
+		try_unequip(cuffs, get_turf(src))
 
 /mob/living/proc/rejuvenate()
 
@@ -335,8 +333,7 @@ default behaviour is:
 	// shut down ongoing problems
 	radiation = 0
 	bodytemperature = get_species()?.body_temperature || initial(bodytemperature)
-	sdisabilities = 0
-	disabilities = 0
+	reset_genetic_conditions()
 
 	// fix all status conditions including blind/deaf
 	clear_status_effects()
@@ -361,11 +358,25 @@ default behaviour is:
 	BITSET(hud_updateflag, STATUS_HUD)
 	BITSET(hud_updateflag, LIFE_HUD)
 
+	set_nutrition(get_max_nutrition())
+	set_hydration(get_max_hydration())
+
 	failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	reload_fullscreen()
 	return
 
 /mob/living/proc/basic_revival(var/repair_brain = TRUE)
+
+	if(repair_brain && should_have_organ(BP_BRAIN))
+		repair_brain = FALSE
+		var/obj/item/organ/internal/brain = GET_INTERNAL_ORGAN(src, BP_BRAIN)
+		if(brain)
+			if(brain.damage > (brain.max_damage/2))
+				brain.damage = (brain.max_damage/2)
+			if(brain.status & ORGAN_DEAD)
+				brain.status &= ~ORGAN_DEAD
+				START_PROCESSING(SSobj, brain)
+			brain.update_icon()
 
 	if(repair_brain && get_damage(BRAIN) > 50)
 		repair_brain = FALSE
@@ -384,19 +395,6 @@ default behaviour is:
 
 	failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
 	reload_fullscreen()
-
-/mob/living/carbon/basic_revival(var/repair_brain = TRUE)
-	if(repair_brain && should_have_organ(BP_BRAIN))
-		repair_brain = FALSE
-		var/obj/item/organ/internal/brain = GET_INTERNAL_ORGAN(src, BP_BRAIN)
-		if(brain)
-			if(brain.damage > (brain.max_damage/2))
-				brain.damage = (brain.max_damage/2)
-			if(brain.status & ORGAN_DEAD)
-				brain.status &= ~ORGAN_DEAD
-				START_PROCESSING(SSobj, brain)
-			brain.update_icon()
-	..(repair_brain)
 
 /mob/living
 	var/previous_damage_appearance // store what the body last looked like, so we only have to update it if something changed
@@ -446,13 +444,16 @@ default behaviour is:
 	if(!isturf(loc))
 		for(var/G in get_active_grabs())
 			qdel(G)
-			return
+		return
 
 	if(isturf(old_loc))
 		for(var/atom/movable/AM as anything in ret_grab())
 			if(AM != src && AM.loc != loc && !AM.anchored && old_loc.Adjacent(AM))
-				AM.glide_size = glide_size // This is adjusted by grabs again from events/some of the procs below, but doing it here makes it more likely to work with recursive movement.
-				AM.DoMove(get_dir(get_turf(AM), old_loc), src, TRUE)
+				if(get_z(AM) <= get_z(src))
+					AM.glide_size = glide_size // This is adjusted by grabs again from events/some of the procs below, but doing it here makes it more likely to work with recursive movement.
+					AM.DoMove(get_dir(get_turf(AM), old_loc), src, TRUE)
+				else // Hackfix for eternal bump due to grabber moving down through an openturf.
+					AM.dropInto(get_turf(src))
 
 	var/list/mygrabs = get_active_grabs()
 	for(var/obj/item/grab/G as anything in mygrabs)
@@ -509,6 +510,8 @@ default behaviour is:
 		handle_grabs_after_move(old_loc, Dir)
 		if(active_storage && !active_storage.can_view(src))
 			active_storage.close(src)
+		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
+			germ_level++
 
 /mob/living/verb/resist()
 	set name = "Resist"
@@ -571,22 +574,6 @@ default behaviour is:
 	if(loc != H)
 		qdel(H)
 
-/mob/living/proc/escape_buckle()
-	if(buckled)
-		if(buckled.can_buckle)
-			buckled.user_unbuckle_mob(src)
-		else
-			to_chat(usr, "<span class='warning'>You can't seem to escape from \the [buckled]!</span>")
-			return
-
-/mob/living/proc/resist_grab()
-	var/resisting = 0
-	for(var/obj/item/grab/G in grabbed_by)
-		resisting++
-		G.handle_resist()
-	if(resisting)
-		visible_message("<span class='danger'>[src] resists!</span>")
-
 // Shortcut for people used to typing Rest instead of Change Posture.
 /mob/living/verb/rest_verb()
 	set name = "Rest"
@@ -626,21 +613,37 @@ default behaviour is:
 
 //called when the mob receives a bright flash
 /mob/living/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
-	if(override_blindness_check || !(disabilities & BLINDED))
-		..()
+	if(eyecheck() < intensity || override_blindness_check || !has_genetic_condition(GENE_COND_BLINDED))
 		overlay_fullscreen("flash", type)
 		spawn(25)
 			if(src)
 				clear_fullscreen("flash", 25)
-		return 1
+		return TRUE
+	return FALSE
 
 /mob/living/proc/has_brain()
 	return TRUE
 
 /mob/living/proc/slip(var/slipped_on, stun_duration = 8)
+
+	var/decl/species/my_species = get_species()
+	if(my_species?.check_no_slip(src))
+		return FALSE
+
+	var/obj/item/shoes = get_equipped_item(slot_shoes_str)
+	if(shoes && (shoes.item_flags & ITEM_FLAG_NOSLIP))
+		return FALSE
+
+	if(has_gravity() && !buckled && !current_posture?.prone)
+		to_chat(src, SPAN_DANGER("You slipped on [slipped_on]!"))
+		playsound(loc, 'sound/misc/slip.ogg', 50, 1, -3)
+		SET_STATUS_MAX(src, STAT_WEAK, stun_duration)
+		return TRUE
+
 	return FALSE
 
-/mob/living/carbon/human/canUnEquip(obj/item/I)
+
+/mob/living/human/canUnEquip(obj/item/I)
 	. = ..() && !(I in get_organs())
 
 /mob/proc/can_be_possessed_by(var/mob/observer/ghost/possessor)
@@ -673,33 +676,41 @@ default behaviour is:
 	src.ckey = possessor.ckey
 	qdel(possessor)
 
-	if(round_is_spooky(6)) // Six or more active cultists.
-		to_chat(src, "<span class='notice'>You reach out with tendrils of ectoplasm and invade the mind of \the [src]...</span>")
-		to_chat(src, "<b>You have assumed direct control of \the [src].</b>")
-		to_chat(src, "<span class='notice'>Due to the spookiness of the round, you have taken control of the poor animal as an invading, possessing spirit - roleplay accordingly.</span>")
-		src.universal_speak = TRUE
-		src.universal_understand = TRUE
-		//src.on_defilement() // Maybe another time.
-		return
-
 	to_chat(src, "<b>You are now \the [src]!</b>")
 	to_chat(src, "<span class='notice'>Remember to stay in character for a mob of this type!</span>")
 	return 1
 
-/mob/living/proc/add_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+/mob/proc/add_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+	return FALSE
+
+/mob/living/add_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+	if(ispath(aura))
+		aura = new aura(src)
+	if(!istype(aura))
+		return FALSE
 	LAZYDISTINCTADD(auras,aura)
 	if(!skip_icon_update)
 		update_icon()
 	return TRUE
 
-/mob/living/proc/has_aura(aura_type)
+/mob/proc/has_aura(aura_type)
+	return FALSE
+
+/mob/living/has_aura(aura_type)
 	return length(auras) && (locate(aura_type) in auras)
 
-/mob/living/proc/remove_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+/mob/proc/remove_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+	return FALSE
+
+/mob/living/remove_aura(var/obj/aura/aura, skip_icon_update = FALSE)
+	if(ispath(aura))
+		aura = locate() in auras
+	if(!istype(aura))
+		return FALSE
 	LAZYREMOVE(auras,aura)
 	if(!skip_icon_update)
 		update_icon()
-	return 1
+	return TRUE
 
 /mob/living/Destroy()
 	QDEL_NULL(aiming)
@@ -726,7 +737,7 @@ default behaviour is:
 		. += 15
 	if(HAS_STATUS(src, STAT_CONFUSE))
 		. += 30
-	if(MUTATION_CLUMSY in mutations)
+	if(has_genetic_condition(GENE_COND_CLUMSY))
 		. += 40
 
 /mob/living/proc/ranged_accuracy_mods()
@@ -739,7 +750,7 @@ default behaviour is:
 		. -= 5
 	if(HAS_STATUS(src, STAT_BLURRY))
 		. -= 1
-	if(MUTATION_CLUMSY in mutations)
+	if(has_genetic_condition(GENE_COND_CLUMSY))
 		. -= 3
 
 /mob/living/can_drown()
@@ -785,6 +796,7 @@ default behaviour is:
 		A.fluid_act(fluids)
 		if(QDELETED(src) || !fluids.total_volume)
 			return
+	// TODO: review saturation logic so we can end up with more than like 15 water in our contact reagents.
 	var/datum/reagents/touching_reagents = get_contact_reagents()
 	if(touching_reagents)
 		var/saturation =  min(fluids.total_volume, round(mob_size * 1.5 * reagent_permeability()) - touching_reagents.total_volume)
@@ -814,8 +826,26 @@ default behaviour is:
 /mob/living/proc/handle_additional_vomit_reagents(var/obj/effect/decal/cleanable/vomit/vomit)
 	vomit.add_to_reagents(/decl/material/liquid/acid/stomach, 5)
 
+/mob/living/proc/get_flash_mod()
+	var/vision_organ_tag = get_vision_organ_tag()
+	if(vision_organ_tag)
+		var/obj/item/organ/internal/eyes/I = get_organ(vision_organ_tag, /obj/item/organ/internal/eyes)
+		if(I) // get_organ with a type passed already does a typecheck
+			return I.get_flash_mod()
+	return get_bodytype()?.eye_flash_mod
+
 /mob/living/proc/eyecheck()
-	return FLASH_PROTECTION_NONE
+	var/total_protection = flash_protection
+	if(should_have_organ(BP_EYES))
+		var/vision_organ_tag = get_vision_organ_tag()
+		if(vision_organ_tag && get_bodytype()?.has_organ[vision_organ_tag])
+			var/obj/item/organ/internal/eyes/I = get_organ(vision_organ_tag, /obj/item/organ/internal/eyes)
+			if(!I?.is_usable())
+				return FLASH_PROTECTION_MAJOR
+			total_protection = I.get_total_protection(flash_protection)
+		else // They can't be flashed if they don't have eyes.
+			return FLASH_PROTECTION_MAJOR
+	return total_protection
 
 /mob/living/proc/get_satiated_nutrition()
 	return 500
@@ -826,7 +856,7 @@ default behaviour is:
 /mob/living/proc/set_nutrition(var/amt)
 	nutrition = clamp(amt, 0, get_max_nutrition())
 
-/mob/living/proc/get_nutrition(var/amt)
+/mob/living/proc/get_nutrition()
 	return nutrition
 
 /mob/living/proc/adjust_nutrition(var/amt)
@@ -920,7 +950,7 @@ default behaviour is:
 
 /mob/living/proc/should_have_organ(organ_to_check)
 	var/decl/bodytype/root_bodytype = get_bodytype()
-	return root_bodytype?.has_organ[organ_to_check]
+	return !!root_bodytype?.has_organ[organ_to_check]
 
 /// Returns null if the mob's bodytype doesn't have a limb tag by default.
 /// Otherwise, returns the data of the limb instead.
@@ -1125,11 +1155,13 @@ default behaviour is:
 	//We are long dead, or we're junk mobs spawned like the clowns on the clown shuttle
 	return life_tick <= 5 || !timeofdeath || (timeofdeath >= 5 && (world.time-timeofdeath) <= 10 MINUTES)
 
-/mob/living/proc/check_dna()
-	dna?.check_integrity(src)
-
 /mob/living/get_unique_enzymes()
+	if(isnull(unique_enzymes) && has_genetic_information())
+		set_unique_enzymes(md5(name))
 	return unique_enzymes
+
+/mob/living/set_unique_enzymes(value)
+	unique_enzymes = value
 
 /mob/living/get_blood_type()
 	return blood_type
@@ -1165,7 +1197,7 @@ default behaviour is:
 		var/how_open = round(E.how_open())
 		if(how_open <= 0)
 			continue
-		var/surgery_icon = E.species.get_surgery_overlay_icon(src)
+		var/surgery_icon = E.get_surgery_overlay_icon()
 		if(!surgery_icon)
 			continue
 		if(!total)
@@ -1242,6 +1274,8 @@ default behaviour is:
 	return "Unknown"
 
 /mob/living/proc/identity_is_visible()
+	if(has_genetic_condition(GENE_COND_HUSK))
+		return FALSE
 	if(!real_name)
 		return FALSE
 	var/obj/item/clothing/mask/mask = get_equipped_item(slot_wear_mask_str)
@@ -1386,7 +1420,7 @@ default behaviour is:
 	return TRUE
 
 /mob/living/proc/can_direct_mount(var/mob/user)
-	if(can_buckle && istype(user) && !user.incapacitated() && user == buckled_mob)
+	if((user.faction == faction || !faction) && can_buckle && istype(user) && !user.incapacitated() && user == buckled_mob)
 		if(client && a_intent != I_HELP)
 			return FALSE // do not Ratatouille your colleagues
 		// TODO: Piloting skillcheck for hands-free moving? Stupid but amusing
@@ -1421,6 +1455,13 @@ default behaviour is:
 		for(var/obj/item/grab/G in buckled_mob.get_held_items())
 			if(G.get_affecting_mob() == src && !istype(G.current_grab, /decl/grab/simple/control))
 				qdel(G)
+	if(istype(ai))
+		ai.retaliate(M)
+
+/mob/living/try_make_grab(mob/living/user, defer_hand = FALSE)
+	. = ..()
+	if(istype(ai))
+		ai.retaliate(user)
 
 /mob/living/can_buckle_mob(var/mob/living/dropping)
 	. = ..() && stat == CONSCIOUS && !buckled && dropping.mob_size <= mob_size
@@ -1478,8 +1519,93 @@ default behaviour is:
 		return TRUE
 	return FALSE
 
+/mob/living/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, datum/callback/callback) //If this returns FALSE then callback will not be called.
+	return !length(pinned) && ..()
+
+/mob/living/remove_implant(obj/item/implant, surgical_removal = FALSE, obj/item/organ/external/affected)
+
+	LAZYREMOVE(embedded, implant)
+
+	if(!LAZYLEN(get_visible_implants(0))) //Yanking out last object - removing verb.
+		verbs -= /mob/proc/yank_out_object
+
+	for(var/obj/item/O in pinned)
+		if(O == implant)
+			LAZYREMOVE(pinned, O)
+		if(!LAZYLEN(pinned))
+			anchored = FALSE
+	implant.dropInto(loc)
+	implant.add_blood(src)
+	implant.update_icon()
+	if(istype(implant,/obj/item/implant))
+		var/obj/item/implant/imp = implant
+		imp.removed()
+
+	if(!affected) //Grab the organ holding the implant.
+		for(var/obj/item/organ/external/organ in get_external_organs())
+			for(var/obj/item/O in organ.implants)
+				if(O == implant)
+					affected = organ
+					break
+	if(affected)
+		LAZYREMOVE(affected.implants, implant)
+		for(var/datum/wound/wound in affected.wounds)
+			LAZYREMOVE(wound.embedded_objects, implant)
+		if(!surgical_removal)
+			affected.take_external_damage((implant.w_class * 3), 0, DAM_EDGE, "Embedded object extraction")
+			if(!BP_IS_PROSTHETIC(affected) && prob(implant.w_class * 5) && affected.sever_artery()) //I'M SO ANEMIC I COULD JUST -DIE-.
+				custom_pain("Something tears wetly in your [affected.name] as [implant] is pulled free!", 50, affecting = affected)
+
+	return TRUE
+
 /mob/living/proc/handle_footsteps()
 	return
+
+/mob/living/handle_flashed(var/obj/item/flash/flash, var/flash_strength)
+
+	var/safety = eyecheck()
+	if(safety >= FLASH_PROTECTION_MODERATE || flash_strength <= 0) // May be modified by human proc.
+		return FALSE
+
+	flash_eyes(FLASH_PROTECTION_MODERATE - safety)
+	SET_STATUS_MAX(src, STAT_STUN, (flash_strength / 2))
+	SET_STATUS_MAX(src, STAT_BLURRY, flash_strength)
+	SET_STATUS_MAX(src, STAT_CONFUSE, (flash_strength + 2))
+	if(flash_strength > 3)
+		drop_held_items()
+	if(flash_strength > 5)
+		SET_STATUS_MAX(src, STAT_WEAK, 2)
+
+/mob/living/verb/showoff()
+	set name = "Show Held Item"
+	set category = "Object"
+
+	var/obj/item/I = get_active_held_item()
+	if(I && I.simulated)
+		I.showoff(src)
+
+/mob/living/relaymove(var/mob/living/user, direction)
+	if(!istype(user) || !(user in contents) || user.is_on_special_ability_cooldown())
+		return
+	user.set_special_ability_cooldown(5 SECONDS)
+	visible_message(SPAN_DANGER("You hear something rumbling inside [src]'s stomach..."))
+	var/obj/item/I = user.get_active_held_item()
+	if(!I?.force)
+		return
+	var/d = rand(round(I.force / 4), I.force)
+	visible_message(SPAN_DANGER("\The [user] attacks [src]'s stomach wall with \the [I]!"))
+	playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
+	var/obj/item/organ/external/organ = GET_EXTERNAL_ORGAN(src, BP_CHEST)
+	if(istype(organ))
+		organ.take_external_damage(d, 0)
+	else
+		take_organ_damage(d)
+	if(prob(get_damage(BRUTE) - 50))
+		gib()
+
+/mob/living/hud_reset(full_reset = FALSE)
+	if((. = ..()))
+		queue_hand_rebuild()
 
 /mob/living/get_movement_delay(var/travel_dir)
 	. = ..()
@@ -1515,3 +1641,91 @@ default behaviour is:
 		for(var/obj/item/organ/organ in stat_organs)
 			var/list/organ_info = organ.get_stat_info()
 			stat(organ_info[1], organ_info[2])
+
+/mob/living/force_update_limbs()
+	for(var/obj/item/organ/external/O in get_external_organs())
+		O.sync_colour_to_human(src)
+	update_body(0)
+
+/mob/living/proc/get_vision_organ_tag()
+	return get_bodytype()?.vision_organ
+
+/mob/living/proc/get_darksight_range()
+	var/vision_organ_tag = get_vision_organ_tag()
+	if(vision_organ_tag)
+		var/obj/item/organ/internal/eyes/I = get_organ(vision_organ_tag, /obj/item/organ/internal/eyes)
+		if(istype(I))
+			return I.get_darksight_range()
+	return get_bodytype()?.eye_darksight_range
+
+/mob/living/proc/can_act()
+	return !QDELETED(src) && !incapacitated()
+
+// Currently only used by AI behaviors
+/mob/living/proc/has_ranged_attack()
+	return FALSE
+
+/mob/living/proc/get_ranged_attack_distance()
+	return 0
+
+/mob/living/proc/handle_ranged_attack(atom/target)
+	if(istype(target))
+		for(var/obj/item/gun/gun in get_held_items())
+			gun.afterattack(target, src, target.Adjacent(src))
+		return TRUE
+	return FALSE
+
+/mob/living/proc/can_pry_door()
+	return FALSE
+
+/mob/living/proc/get_door_pry_time()
+	return 7 SECONDS
+
+/mob/living/proc/pry_door(atom/target, pry_time)
+	return
+
+/mob/living/proc/turf_is_safe(turf/target)
+	if(!istype(target))
+		return FALSE
+	if(target.is_open() && target.has_gravity() && !can_overcome_gravity())
+		return FALSE
+	return TRUE
+
+/mob/living/proc/get_attack_telegraph_delay()
+	return 0
+
+/mob/living/proc/get_base_telegraphed_melee_accuracy()
+	return 85
+
+/mob/living/proc/get_telegraphed_melee_accuracy()
+	return clamp(get_base_telegraphed_melee_accuracy() - melee_accuracy_mods(), 0, 100)
+
+// This will generally only be invoked by AI driven mobs. Player humans do not show the windup.
+/mob/living/do_attack_windup_checking(atom/target)
+
+	var/attack_delay = get_attack_telegraph_delay()
+	if(attack_delay <= 0)
+		return TRUE
+
+	var/decl/pronouns/G = get_pronouns()
+	setClickCooldown(attack_delay)
+	face_atom(target)
+
+	stop_automove() // Cancel any baked-in movement.
+	do_windup_animation(target, attack_delay, no_reset = TRUE)
+	if(!do_after(src, attack_delay, target) || !Adjacent(target))
+		visible_message(SPAN_NOTICE("\The [src] misses [G.his] attack on \the [target]!"))
+		reset_offsets(anim_time = 2)
+		ai?.move_to_target(TRUE) // Restart hostile mob tracking.
+		return FALSE
+
+	ai?.move_to_target(TRUE) // Restart hostile mob tracking.
+	if(ismob(target))
+		// Clientless mobs are too dum to move away, so they can be missed.
+		var/mob/mob = target
+		if(!mob.ckey && !prob(get_telegraphed_melee_accuracy()))
+			visible_message(SPAN_NOTICE("\The [src] misses [G.his] attack on \the [target]!"))
+			reset_offsets(anim_time = 2)
+			return FALSE
+
+	return TRUE

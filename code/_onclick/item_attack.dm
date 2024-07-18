@@ -5,7 +5,7 @@ These are the default click code call sequences used when clicking on stuff with
 Atoms:
 
 mob/ClickOn() calls the item's resolve_attackby() proc.
-item/resolve_attackby() calls the target atom's attackby() proc.
+item/resolve_attackby() calls the target atom's attackby() proc. If it (or attackby) returns true, afterattack is skipped.
 
 Mobs:
 
@@ -44,24 +44,30 @@ avoid code duplication. This includes items that may sometimes act as a standard
 	if(!.)
 		return bash(W,user)
 
-/atom/movable/proc/bash(obj/item/W, mob/user)
+/atom/movable/proc/bash(obj/item/weapon, mob/user)
 	if(isliving(user) && user.a_intent == I_HELP)
 		return FALSE
-	if(W.item_flags & ITEM_FLAG_NO_BLUDGEON)
+	if(!weapon.user_can_wield(user))
 		return FALSE
-	visible_message("<span class='danger'>[src] has been hit by [user] with [W].</span>")
+	if(weapon.item_flags & ITEM_FLAG_NO_BLUDGEON)
+		return FALSE
+	visible_message(SPAN_DANGER("[src] has been hit by [user] with [weapon]."))
 	return TRUE
 
-/mob/living/attackby(obj/item/I, mob/user)
+/mob/living/attackby(obj/item/used_item, mob/user)
 	if(!ismob(user))
 		return TRUE
-	if(can_operate(src,user) != OPERATE_DENY && I.do_surgery(src,user)) //Surgery
-		return TRUE
-	if(try_butcher_in_place(user, I))
-		return TRUE
-	return I.use_on_mob(src, user)
+	if(user.a_intent != I_HURT)
+		if(can_operate(src, user) != OPERATE_DENY && used_item.do_surgery(src,user)) //Surgery
+			return TRUE
+		if(try_butcher_in_place(user, used_item))
+			return TRUE
+	var/oldhealth = current_health
+	. = used_item.use_on_mob(src, user)
+	if(used_item.force && istype(ai) && current_health < oldhealth)
+		ai.retaliate(user)
 
-/mob/living/carbon/human/attackby(obj/item/I, mob/user)
+/mob/living/human/attackby(obj/item/I, mob/user)
 
 	. = ..()
 	if(.)
@@ -95,6 +101,11 @@ avoid code duplication. This includes items that may sometimes act as a standard
 
 //I would prefer to rename this attack_as_weapon(), but that would involve touching hundreds of files.
 /obj/item/proc/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
+
+	// TODO: revisit if this should be a silent failure/parent call instead, for mob-level storage interactions?
+	// like a horse with a saddlebag or something
+	if(!user_can_wield(user))
+		return TRUE // skip other interactions
 
 	if(squash_item())
 		return TRUE

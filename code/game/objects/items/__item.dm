@@ -97,6 +97,9 @@
 	var/paint_color
 	var/paint_verb = "painted"
 
+	/// What dexterity is required to attack with this item?
+	var/needs_attack_dexterity = DEXTERITY_WIELD_ITEM
+
 /obj/item/get_color()
 	if(paint_color)
 		return paint_color
@@ -172,6 +175,12 @@
 
 /obj/item/Destroy()
 
+	if(LAZYLEN(_item_effects))
+		_item_effects = null
+		SSitem_effects.queued_items -= src
+
+	global.listening_objects -= src
+
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(hidden_uplink)
 	QDEL_NULL(coating)
@@ -235,7 +244,7 @@
 	//would check is_broken() and is_malfunctioning() here too but is_malfunctioning()
 	//is probabilistic so we can't do that and it would be unfair to just check one.
 	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+		var/mob/living/human/H = M
 		var/obj/item/organ/external/hand = GET_EXTERNAL_ORGAN(H, M.get_empty_hand_slot())
 		if(istype(hand) && hand.is_usable())
 			return TRUE
@@ -352,7 +361,8 @@
 	if(user.client && istype(inv) && inv.slot_id && (over in user.client.screen))
 		// Remove the item from our bag if necessary.
 		if(istype(loc?.storage))
-			loc.storage.remove_from_storage(user, src)
+			if(!loc.storage.remove_from_storage(user, src))
+				return ..()
 			dropInto(get_turf(loc))
 		// Otherwise remove it from our inventory if necessary.
 		else if(ismob(loc))
@@ -459,9 +469,8 @@
 				else
 					dropInto(get_turf(user))
 				return TRUE
-			if(loc?.storage)
+			if(loc?.storage?.remove_from_storage(user, src))
 				visible_message(SPAN_NOTICE("\The [user] fumbles \the [src] out of \the [loc]."))
-				loc.storage.remove_from_storage(user, src)
 				dropInto(get_turf(loc))
 				return TRUE
 		to_chat(user, SPAN_WARNING("You are not dexterous enough to pick up \the [src]."))
@@ -505,29 +514,38 @@
 	if(R.hud_used)
 		R.hud_used.update_robot_modules_display()
 
-/obj/item/attackby(obj/item/W, mob/user)
-
+/obj/item/proc/try_slapcrafting(obj/item/W, mob/user)
 	if(SSfabrication.try_craft_with(src, W, user))
 		return TRUE
-
 	if(SSfabrication.try_craft_with(W, src, user))
 		return TRUE
+	return FALSE
 
-	if(W.storage?.use_to_pickup)
+/obj/item/proc/user_can_wield(mob/user, silent = FALSE)
+	return !needs_attack_dexterity || user.check_dexterity(needs_attack_dexterity, silent = silent)
+
+/obj/item/attackby(obj/item/used_item, mob/user)
+	// if can_wield is false we still need to call parent for storage objects to work properly
+	var/can_wield = user_can_wield(user, silent = TRUE)
+
+	if(can_wield && try_slapcrafting(used_item, user))
+		return TRUE
+
+	if(used_item.storage?.use_to_pickup)
 		//Mode is set to collect all items
-		if(W.storage.collection_mode && isturf(loc))
-			W.storage.gather_all(loc, user)
+		if(used_item.storage.collection_mode && isturf(loc))
+			used_item.storage.gather_all(loc, user)
 			return TRUE
-		if(W.storage.can_be_inserted(src, user))
-			W.storage.handle_item_insertion(user, src)
+		if(used_item.storage.can_be_inserted(src, user))
+			used_item.storage.handle_item_insertion(user, src)
 			return TRUE
 
-	if(has_extension(src, /datum/extension/loaded_cell))
+	if(can_wield && has_extension(src, /datum/extension/loaded_cell))
 		var/datum/extension/loaded_cell/cell_loaded = get_extension(src, /datum/extension/loaded_cell)
-		if(cell_loaded.has_tool_unload_interaction(W))
-			return cell_loaded.try_unload(user, W)
-		else if(istype(W, /obj/item/cell))
-			return cell_loaded.try_load(user, W)
+		if(cell_loaded.has_tool_unload_interaction(used_item))
+			return cell_loaded.try_unload(user, used_item)
+		else if(istype(used_item, /obj/item/cell))
+			return cell_loaded.try_load(user, used_item)
 
 	return ..()
 
@@ -698,11 +716,11 @@
 		if(default_parry_check(user, attacker, damage_source) && prob(parry_chance))
 			user.visible_message(SPAN_DANGER("\The [user] parries [attack_text] with \the [src]!"))
 			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
-			on_parry(damage_source)
+			on_parry(user, damage_source, attacker)
 			return 1
 	return 0
 
-/obj/item/proc/on_parry(damage_source)
+/obj/item/proc/on_parry(mob/user, damage_source, mob/attacker)
 	return
 
 /obj/item/proc/get_parry_chance(mob/user)
@@ -738,7 +756,7 @@
 	if(!istype(M))
 		return TRUE
 	if(!blood_data && ishuman(M))
-		var/mob/living/carbon/human/H = M
+		var/mob/living/human/H = M
 		blood_data = REAGENT_DATA(H.vessel, /decl/material/liquid/blood)
 	var/sample_dna = LAZYACCESS(blood_data, "blood_DNA")
 	if(sample_dna)
@@ -770,12 +788,12 @@ var/global/list/_item_blood_mask = icon('icons/effects/blood.dmi', "itemblood")
 /obj/item/proc/showoff(mob/user)
 	for(var/mob/M in view(user))
 		if(!user.is_invisible_to(M))
-			M.show_message("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>", 1)
+			M.show_message("[user] holds up [src]. <a HREF='byond://?src=\ref[M];lookitem=\ref[src]'>Take a closer look.</a>", 1)
 
 /*
 For zooming with scope or binoculars. This is called from
 modules/mob/mob_movement.dm if you move you will be zoomed out
-modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
+modules/mob/living/human/life.dm if you die, you will be zoomed out.
 */
 //Looking through a scope or binoculars should /not/ improve your periphereal vision. Still, increase viewsize a tiny bit so that sniping isn't as restricted to NSEW
 /obj/item/proc/zoom(mob/user, var/tileoffset = 14,var/viewsize = 9) //tileoffset is client view offset in the direction the user is facing. viewsize is how far out this thing zooms. 7 is normal view
@@ -786,7 +804,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	var/devicename = zoomdevicename || name
 
-	var/mob/living/carbon/human/H = user
+	var/mob/living/human/H = user
 	if(user.incapacitated(INCAPACITATION_DISABLED))
 		to_chat(user, SPAN_WARNING("You are unable to focus through the [devicename]."))
 		return
@@ -871,12 +889,17 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	. = "[html_icon(src)] [get_examine_name()]"
 	var/ID = GetIdCard()
 	if(ID)
-		. += " <a href='?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
+		. += " <a href='byond://?src=\ref[ID];look_at_id=1'>\[Look at ID\]</a>"
 
 /obj/item/proc/on_active_hand()
-
-/obj/item/proc/has_embedded()
 	return
+
+/obj/item/proc/has_embedded(mob/living/victim)
+	if(istype(victim))
+		LAZYDISTINCTADD(victim.embedded, src)
+		victim.verbs |= /mob/proc/yank_out_object
+		return TRUE
+	return FALSE
 
 /obj/item/proc/get_pressure_weakness(pressure,zone)
 	. = 1
@@ -1033,8 +1056,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 /obj/item/proc/setup_power_supply(loaded_cell_type, accepted_cell_type, power_supply_extension_type, charge_value)
 	SHOULD_CALL_PARENT(FALSE)
-	if(loaded_cell_type && accepted_cell_type)
-		set_extension(src, (power_supply_extension_type || /datum/extension/loaded_cell), accepted_cell_type, loaded_cell_type, charge_value)
+	if(loaded_cell_type || accepted_cell_type)
+		set_extension(src, (power_supply_extension_type || /datum/extension/loaded_cell), (accepted_cell_type || loaded_cell_type), loaded_cell_type, charge_value)
 
 /obj/item/proc/handle_loadout_equip_replacement(obj/item/old_item)
 	return
@@ -1048,6 +1071,17 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	// delay for 1ds to allow the rest of the call stack to resolve
 	if(!QDELETED(src) && !QDELETED(user) && user.get_equipped_slot_for_item(src) == slot)
 		try_burn_wearer(user, slot, 1)
+
+/obj/item/can_embed()
+	. = !anchored && !is_robot_module(src)
+	if(. && isliving(loc))
+		var/mob/living/holder = loc
+		// Terrible check for if the mob is being driven by an AI or not.
+		// AI can't retrieve the weapon currently so this is unfair.
+		if(holder.get_attack_telegraph_delay() > 0)
+			return FALSE
+		// Skill check to avoid getting it stuck.
+		return holder.skill_fail_prob(SKILL_COMBAT, 100, no_more_fail = SKILL_EXPERT)
 
 /obj/item/clear_matter()
 	..()

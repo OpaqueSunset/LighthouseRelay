@@ -32,19 +32,15 @@
 
 #define isEye(A) istype(A, /mob/observer/eye)
 
-#define ishuman(A) istype(A, /mob/living/carbon/human)
+#define ishuman(A) istype(A, /mob/living/human)
 
 #define isitem(A) istype(A, /obj/item)
 
 #define isliving(A) istype(A, /mob/living)
 
-#define isdeity(A) istype(A, /mob/living/deity)
-
 #define ismouse(A) istype(A, /mob/living/simple_animal/passive/mouse)
 
 #define islizard(A) istype(A, /mob/living/simple_animal/lizard)
-
-#define isconstruct(A) istype(A, /mob/living/simple_animal/construct)
 
 #define isnewplayer(A) istype(A, /mob/new_player)
 
@@ -96,7 +92,7 @@
 
 /proc/place_meta_charset(content)
 	if(istext(content))
-		content = "<meta charset=\"utf-8\">" + content
+		content = "<!DOCTYPE html><meta charset=\"utf-8\">" + content
 	return content
 
 #define to_chat(target, message)                            target << (message)
@@ -174,6 +170,7 @@
 #define SPAN_PINK(X)         SPAN_CLASS("font_pink",     X)
 #define SPAN_PALEPINK(X)     SPAN_CLASS("font_palepink", X)
 #define SPAN_SINISTER(X)     SPAN_CLASS("sinister",      X)
+#define SPAN_MODERATE(X)     SPAN_CLASS("moderate",      X)
 
 // placeholders
 #define SPAN_GOOD(X)     SPAN_GREEN(X)

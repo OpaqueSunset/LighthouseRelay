@@ -117,7 +117,7 @@
 
 /decl/hierarchy/outfit/corpse/slavers_base/slaver6
 	name = "Dead Slaver 6"
-	uniform = /obj/item/clothing/under/frontier
+	uniform = /obj/item/clothing/shirt/flannel/red/outfit
 	shoes = /obj/item/clothing/shoes/color/orange
 
 /obj/abstract/landmark/corpse/slavers_base/slave
@@ -133,20 +133,25 @@
 	name = "abolition extremist"
 	desc = "Vigiliant fighter against slavery."
 	icon = 'maps/away/slavers/icons/abolitionist.dmi'
-	speak_chance = 0
-	turns_per_move = 5
-	speed = 4
-	stop_automated_movement_when_pulled = 0
+
 	max_health = 100
 	natural_weapon = /obj/item/natural_weapon/punch
-	can_escape = TRUE
 	unsuitable_atmos_damage = 15
 	projectilesound = 'sound/weapons/laser.ogg'
-	ranged = 1
 	projectiletype = /obj/item/projectile/beam
 	faction = "extremist abolitionists"
+	ai = /datum/mob_controller/abolitionist
 	var/corpse = /obj/abstract/landmark/corpse/abolitionist
 	var/weapon = /obj/item/gun/energy/laser
+
+/mob/living/simple_animal/hostile/abolition_extremist/has_ranged_attack()
+	return TRUE
+
+/datum/mob_controller/abolitionist
+	speak_chance = 0
+	turns_per_wander = 10
+	stop_wander_when_pulled = 0
+	can_escape_buckles = TRUE
 
 /mob/living/simple_animal/hostile/abolition_extremist/death(gibbed)
 	. = ..()
@@ -163,11 +168,11 @@
 
 /decl/hierarchy/outfit/corpse/abolitionist
 	name = "Dead abolitionist"
-	uniform = /obj/item/clothing/under/abol_uniform
+	uniform = /obj/item/clothing/jumpsuit/abolitionist
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/merc
 
-/obj/item/clothing/under/abol_uniform
+/obj/item/clothing/jumpsuit/abolitionist
 	name = "abolitionist combat suit"
 	desc = "Lightly armored suit worn by abolition extremists during raids. It has green patches on the right sleeve and the chest. There is big green \"A\" on the back."
 	icon = 'maps/away/slavers/icons/uniform.dmi'

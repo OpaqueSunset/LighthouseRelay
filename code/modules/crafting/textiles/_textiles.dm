@@ -1,14 +1,16 @@
 /obj/structure/textiles
 
-	abstract_type = /obj/structure/textiles
-	icon_state = ICON_STATE_WORLD
-	anchored = TRUE
-	density = TRUE
-	material = /decl/material/solid/organic/wood
+	abstract_type       = /obj/structure/textiles
+	icon_state          = ICON_STATE_WORLD
+	anchored            = TRUE
+	density             = TRUE
+	material            = /decl/material/solid/organic/wood
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
+	obj_flags           = OBJ_FLAG_ANCHORABLE
+	throwpass           = TRUE // You can reach over these to things behind them.
 
-	var/tmp/working  = FALSE
-	var/work_skill   = SKILL_CONSTRUCTION
+	var/tmp/working     = FALSE
+	var/work_skill      = SKILL_CONSTRUCTION
 	var/product_type
 	var/datum/composite_sound/work_sound
 

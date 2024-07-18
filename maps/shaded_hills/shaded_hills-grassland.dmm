@@ -15,7 +15,7 @@
 /turf/floor/natural/grass,
 /area/shaded_hills/outside)
 "dB" = (
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/caves/unexplored)
 "ee" = (
 /turf/floor/natural/path/running_bond/basalt,
@@ -55,7 +55,7 @@
 /area/shaded_hills/outside/river)
 "iP" = (
 /obj/structure/fire_source/firepit/basalt,
-/obj/item/stack/material/log/mapped/ebony/ten,
+/obj/item/stack/material/log/mapped/walnut/ten,
 /turf/floor/natural/barren,
 /area/shaded_hills/outside)
 "jj" = (
@@ -71,7 +71,7 @@
 "kr" = (
 /obj/structure/closet/crate/chest,
 /obj/item/tool/pickaxe/iron,
-/obj/item/tool/axe/hatchet,
+/obj/item/tool/axe,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/woven,
 /area/shaded_hills/outside)
@@ -96,7 +96,7 @@
 /area/shaded_hills/caves)
 "mG" = (
 /obj/structure/bed/chair/bench/ebony,
-/obj/item/knife/utility,
+/obj/item/bladed/folding,
 /obj/abstract/landmark/start/shaded_hills/miner,
 /turf/floor/natural/barren,
 /area/shaded_hills/outside)
@@ -111,9 +111,9 @@
 /turf/floor/natural/barren,
 /area/shaded_hills/caves/entrance)
 "nl" = (
-/obj/structure/door/wood/ebony,
+/obj/structure/door/walnut,
 /obj/abstract/exterior_marker/inside,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside)
 "oo" = (
 /obj/item/stack/material/ore/handful/sand,
@@ -147,7 +147,7 @@
 /area/shaded_hills/caves/unexplored)
 "ul" = (
 /obj/abstract/exterior_marker/inside,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside)
 "vX" = (
 /turf/floor/natural/path/running_bond/basalt,
@@ -162,7 +162,7 @@
 /turf/floor/natural/dirt,
 /area/shaded_hills/outside)
 "xC" = (
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside)
 "yA" = (
 /obj/abstract/landmark/latejoin/observer,
@@ -191,7 +191,7 @@
 /turf/floor/woven,
 /area/shaded_hills/outside)
 "EE" = (
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside/river)
 "EL" = (
 /obj/abstract/exterior_marker/inside,
@@ -209,13 +209,13 @@
 /area/shaded_hills/outside)
 "ES" = (
 /obj/abstract/exterior_marker/inside,
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/outside)
 "EV" = (
 /turf/floor/natural/mud/water/deep,
 /area/shaded_hills/caves/river)
 "Fg" = (
-/obj/structure/door/wood/ebony,
+/obj/structure/door/walnut,
 /obj/abstract/exterior_marker/inside,
 /turf/floor/natural/path/basalt,
 /area/shaded_hills/outside)
@@ -262,7 +262,7 @@
 /turf/floor/natural/rock/basalt,
 /area/shaded_hills/outside)
 "JN" = (
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/outside/river)
 "Kd" = (
 /turf/floor/natural/mud,
@@ -308,6 +308,9 @@
 /obj/abstract/exterior_marker/inside,
 /turf/wall/brick/basalt,
 /area/shaded_hills/outside)
+"Qx" = (
+/turf/open,
+/area/shaded_hills/caves/unexplored/south)
 "Sm" = (
 /turf/floor/natural/path/basalt,
 /area/shaded_hills/outside)
@@ -351,6 +354,10 @@
 "Yf" = (
 /turf/unsimulated/dark_filler,
 /area/shaded_hills/caves/unexplored)
+"Yv" = (
+/obj/abstract/map_data/shaded_hills,
+/turf/wall/natural/basalt/shaded_hills,
+/area/shaded_hills/caves/river)
 "YB" = (
 /obj/structure/bed/chair/bench/ebony{
 	dir = 8
@@ -358,8 +365,11 @@
 /obj/abstract/landmark/start/shaded_hills/miner,
 /turf/floor/natural/dirt,
 /area/shaded_hills/outside)
+"Zf" = (
+/turf/floor/natural/rock/basalt,
+/area/shaded_hills/caves/unexplored/south)
 "ZV" = (
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/outside)
 
 (1,1,1) = {"
@@ -1871,7 +1881,7 @@ qy
 qy
 qy
 qy
-qy
+Yv
 qy
 qy
 mZ
@@ -4855,10 +4865,10 @@ te
 te
 te
 te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Zf
 te
 te
 te
@@ -5006,12 +5016,12 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 te
 te
 te
@@ -5157,14 +5167,14 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 te
 te
 te
@@ -5309,17 +5319,17 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Qx
+Qx
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 te
 te
 te
@@ -5461,19 +5471,19 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Qx
+Qx
+Qx
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 te
 te
 te
@@ -5614,19 +5624,19 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Qx
+Qx
+Qx
+Qx
+Qx
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 lU
 lU
 lU
@@ -5766,20 +5776,20 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Qx
+Qx
+Qx
+Qx
+Qx
+Zf
+Zf
+Zf
+Zf
+Zf
+Zf
 lU
 lU
 lU
@@ -5919,20 +5929,20 @@ te
 te
 te
 te
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Qx
+Qx
 lU
 lU
 lU
 lU
-te
-te
-te
-te
-te
+Zf
+Zf
+Zf
+Zf
+Zf
 lU
 lU
 lU
@@ -6072,18 +6082,18 @@ te
 te
 te
 te
-te
-te
-te
+Zf
+Zf
+Zf
 lU
 lU
 lU
 lU
 lU
 lU
-te
-te
-te
+Zf
+Zf
+Zf
 eR
 jj
 jj
@@ -6226,7 +6236,7 @@ te
 te
 te
 te
-te
+Zf
 lU
 lU
 lU
@@ -6234,9 +6244,9 @@ lU
 lU
 lU
 lU
-te
-te
-te
+Zf
+Zf
+Zf
 lU
 lU
 lU

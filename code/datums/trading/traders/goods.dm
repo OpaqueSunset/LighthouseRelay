@@ -132,7 +132,6 @@
 		/obj/item/clothing/pants                           = TRADER_SUBTYPES_ONLY,
 		/obj/item/clothing/pants/pj                        = TRADER_BLACKLIST,
 		/obj/item/clothing/pants/shorts                    = TRADER_BLACKLIST,
-		/obj/item/clothing/pants/casual/mustangjeans/monke = TRADER_BLACKLIST,
 		/obj/item/clothing/pants/chameleon                 = TRADER_BLACKLIST,
 		/obj/item/clothing/shirt                           = TRADER_SUBTYPES_ONLY,
 		/obj/item/clothing/shirt/chameleon                 = TRADER_BLACKLIST,
@@ -140,15 +139,14 @@
 		/obj/item/clothing/skirt                           = TRADER_SUBTYPES_ONLY,
 		/obj/item/clothing/dress                           = TRADER_SUBTYPES_ONLY,
 		/obj/item/clothing/dress/wedding                   = TRADER_BLACKLIST,
-		/obj/item/clothing/under                           = TRADER_SUBTYPES_ONLY,
+		/obj/item/clothing/shirt                           = TRADER_SUBTYPES_ONLY,
+		/obj/item/clothing/pants                           = TRADER_SUBTYPES_ONLY,
+		/obj/item/clothing/skirt                           = TRADER_SUBTYPES_ONLY,
+		/obj/item/clothing/jumpsuit                        = TRADER_SUBTYPES_ONLY,
 		/obj/item/clothing/jumpsuit/chameleon              = TRADER_BLACKLIST,
 		/obj/item/clothing/jumpsuit                        = TRADER_BLACKLIST,
-		/obj/item/clothing/under/gimmick                   = TRADER_BLACKLIST_ALL,
-		/obj/item/clothing/under/lawyer                    = TRADER_BLACKLIST,
-		/obj/item/clothing/under/mankini                   = TRADER_BLACKLIST_ALL,
-		/obj/item/clothing/under/syndicate                 = TRADER_BLACKLIST_ALL,
-		/obj/item/clothing/jumpsuit/tactical               = TRADER_BLACKLIST,
-		/obj/item/clothing/under/waiter/monke              = TRADER_BLACKLIST
+		/obj/item/clothing/pants/mankini                   = TRADER_BLACKLIST_ALL,
+		/obj/item/clothing/jumpsuit/tactical               = TRADER_BLACKLIST
 	)
 
 /datum/trader/ship/clothingshop/shoes
@@ -203,7 +201,6 @@
 		/obj/item/clothing/head/centhat               = TRADER_BLACKLIST,
 		/obj/item/clothing/head/chameleon             = TRADER_BLACKLIST,
 		/obj/item/clothing/head/collectable           = TRADER_BLACKLIST,
-		/obj/item/clothing/head/culthood              = TRADER_BLACKLIST_ALL,
 		/obj/item/clothing/head/helmet                = TRADER_BLACKLIST_ALL,
 		/obj/item/clothing/head/lightrig              = TRADER_BLACKLIST_ALL,
 		/obj/item/clothing/head/radiation             = TRADER_BLACKLIST,
@@ -345,9 +342,9 @@ Sells devices, odds and ends, and medical stuff
 		/mob/living/simple_animal/tindalos                        = TRADER_THIS_TYPE,
 		/mob/living/simple_animal/tomato                          = TRADER_THIS_TYPE,
 		/mob/living/simple_animal/yithian                         = TRADER_THIS_TYPE,
-		/mob/living/simple_animal/hostile/retaliate/beast/diyaab  = TRADER_THIS_TYPE,
-		/mob/living/simple_animal/hostile/retaliate/beast/shantak = TRADER_THIS_TYPE,
-		/mob/living/simple_animal/hostile/retaliate/beast/samak   = TRADER_THIS_TYPE,
+		/mob/living/simple_animal/hostile/beast/diyaab  = TRADER_THIS_TYPE,
+		/mob/living/simple_animal/hostile/beast/shantak = TRADER_THIS_TYPE,
+		/mob/living/simple_animal/hostile/beast/samak   = TRADER_THIS_TYPE,
 		/mob/living/simple_animal/hostile/carp                    = TRADER_THIS_TYPE
 	)
 	possible_trading_items = list(

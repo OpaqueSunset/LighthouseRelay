@@ -7,6 +7,7 @@
 	drop_sound        = null
 	equip_sound       = null
 	is_spawnable_type = FALSE
+	needs_attack_dexterity = DEXTERITY_GRAPPLE
 
 	var/atom/movable/affecting             // Atom being targeted by this grab.
 	var/mob/assailant                      // Mob that instantiated this grab.
@@ -41,7 +42,7 @@
 	if(affecting_mob)
 		affecting_mob.update_posture()
 		if(ishuman(affecting_mob))
-			var/mob/living/carbon/human/H = affecting_mob
+			var/mob/living/human/H = affecting_mob
 			var/obj/item/uniform = H.get_equipped_item(slot_w_uniform_str)
 			if(uniform)
 				uniform.add_fingerprint(assailant)
@@ -200,7 +201,7 @@
 
 /obj/item/grab/proc/action_used()
 	if(ishuman(assailant))
-		var/mob/living/carbon/human/H = assailant
+		var/mob/living/human/H = assailant
 		H.remove_cloaking_source(H.species)
 	last_action = world.time
 	leave_forensic_traces()
@@ -213,7 +214,7 @@
 
 /obj/item/grab/proc/leave_forensic_traces()
 	if(ishuman(affecting))
-		var/mob/living/carbon/human/affecting_mob = affecting
+		var/mob/living/human/affecting_mob = affecting
 		var/obj/item/clothing/C = affecting_mob.get_covering_equipped_item_by_zone(target_zone)
 		if(istype(C))
 			C.leave_evidence(assailant)

@@ -27,10 +27,21 @@
 	icon_state= "bolter"
 	damage = 50
 	damage_flags = DAM_BULLET | DAM_SHARP | DAM_EDGE
+	var/gyro_devastation = -1
+	var/gyro_heavy_impact = 0
+	var/gyro_light_impact = 2
 
 /obj/item/projectile/bullet/gyro/on_hit(var/atom/target, var/blocked = 0)
-	explosion(target, -1, 0, 2)
+	target = get_turf(target)
+	if(istype(target))
+		explosion(target, gyro_devastation, gyro_heavy_impact, gyro_light_impact)
 	return 1
+
+/obj/item/projectile/bullet/gyro/microrocket
+	name = "microrocket"
+	distance_falloff = 1.3
+	fire_sound = 'sound/effects/Explosion1.ogg'
+	gyro_light_impact = 1
 
 /obj/item/projectile/temp
 	name = "freeze beam"
@@ -93,15 +104,11 @@
 					SPAN_DANGER("\The [M] writhes in pain as [G.his] vacuoles boil."),
 					blind_message = SPAN_WARNING("You hear a crunching sound.")
 				)
-			if(ishuman(M))
-				var/mob/living/carbon/human/H = M
-				if(prob(35))
-					if(prob(80))
-						randmutb(H)
-						domutcheck(H,null)
-					else
-						randmutg(H)
-						domutcheck(H,null)
+			if(prob(35))
+				if(prob(80))
+					M.add_genetic_condition(pick(decls_repository.get_decls_of_type(/decl/genetic_condition/disability)))
+				else
+					M.add_genetic_condition(pick(decls_repository.get_decls_of_type(/decl/genetic_condition/superpower)))
 		else
 			M.heal_damage(BURN, rand(5,15))
 			M.show_message(SPAN_DANGER("The radiation beam singes you!"))
@@ -141,7 +148,7 @@
 
 /obj/item/projectile/beam/mindflayer/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
+		var/mob/living/human/M = target
 		ADJ_STATUS(M, STAT_CONFUSE, rand(5,8))
 
 /obj/item/projectile/chameleon

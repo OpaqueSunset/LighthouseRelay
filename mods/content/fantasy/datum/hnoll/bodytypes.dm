@@ -8,6 +8,7 @@
 	bandages_icon        = 'icons/mob/bandage.dmi'
 	eye_icon             = 'mods/content/fantasy/icons/hnoll/eyes.dmi'
 	cosmetics_icon       = 'mods/content/fantasy/icons/hnoll/cosmetics.dmi'
+	skeletal_icon        = 'mods/content/fantasy/icons/hnoll/skeleton.dmi'
 	health_hud_intensity = 1.75
 	bodytype_flag        = BODY_FLAG_HNOLL
 	appearance_flags     = HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
@@ -53,9 +54,25 @@
 	)
 
 /decl/bodytype/hnoll/Initialize()
-	equip_adjust = list(
-		slot_glasses_str =   list("[NORTH]" = list(0, 2), "[EAST]" = list(0, 2), "[SOUTH]" = list( 0, 2),  "[WEST]" = list( 0, 2)),
-		slot_wear_mask_str = list("[NORTH]" = list(0, 2), "[EAST]" = list(2, 2), "[SOUTH]" = list( 0, 2),  "[WEST]" = list(-2, 2)),
-		slot_head_str =      list("[NORTH]" = list(0, 2), "[EAST]" = list(0, 2), "[SOUTH]" = list( 0, 2),  "[WEST]" = list( 0, 2))
-	)
+	if(!equip_adjust)
+		equip_adjust = list(
+			slot_glasses_str = list(
+				"[NORTH]" = list( 0, 2),
+				"[EAST]"  = list( 0, 2),
+				"[SOUTH]" = list( 0, 2),
+				"[WEST]"  = list( 0, 2)
+			),
+			slot_wear_mask_str = list(
+				"[NORTH]" = list( 0, 2),
+				"[EAST]"  = list( 2, 2),
+				"[SOUTH]" = list( 0, 2),
+				"[WEST]"  = list(-2, 2)
+			),
+			slot_head_str = list(
+				"[NORTH]" = list( 0, 2),
+				"[EAST]"  = list( 0, 2),
+				"[SOUTH]" = list( 0, 2),
+				"[WEST]"  = list( 0, 2)
+			)
+		)
 	. = ..()
