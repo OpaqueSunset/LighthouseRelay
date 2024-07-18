@@ -45,10 +45,10 @@
 	QDEL_NULL_LIST(worn_underwear)
 	return ..(move)
 
-/mob/living/silicon/ai/AIize()
+/mob/living/silicon/ai/AIize(move=1)
 	return src
 
-/mob/living/AIize()
+/mob/living/AIize(move=1)
 	if (HAS_TRANSFORMATION_MOVEMENT_HANDLER(src))
 		return
 	for(var/t in get_external_organs())
