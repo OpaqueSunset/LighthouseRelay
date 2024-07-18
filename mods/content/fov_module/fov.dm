@@ -1,7 +1,7 @@
 /mob/proc/update_vision_cone()
 	return
 
-/mob/living/carbon/human/update_vision_cone()
+/mob/living/human/update_vision_cone()
 	if(!client)
 		return
 	check_fov()
@@ -14,17 +14,17 @@
 	fov.transform = scaling_matrix
 	fov_mask.transform = scaling_matrix
 
-/mob/living/carbon/human/reload_fullscreen()
+/mob/living/human/reload_fullscreen()
 	update_vision_cone()
 	return ..()
 
-/mob/living/carbon/human/proc/SetFov(var/show)
+/mob/living/human/proc/SetFov(var/show)
 	if(!show)
 		hide_cone()
 	else
 		show_cone()
 
-/mob/living/carbon/human/proc/check_fov()
+/mob/living/human/proc/check_fov()
 	if(!src.client)
 		return
 
@@ -40,13 +40,13 @@
 		hide_cone()
 
 //Making these generic procs so you can call them anywhere.
-/mob/living/carbon/human/proc/show_cone()
+/mob/living/human/proc/show_cone()
 	if(src.fov)
 		src.fov.alpha = 255
 		src.usefov = TRUE
 		src.fov_mask.alpha = 255
 
-/mob/living/carbon/human/proc/hide_cone()
+/mob/living/human/proc/hide_cone()
 	if(src.fov)
 		src.fov.alpha = 0
 		src.usefov = FALSE

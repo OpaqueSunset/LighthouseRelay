@@ -150,7 +150,7 @@
 						available_jobs[job.title] += alt_job
 	return available_jobs
 
-/obj/machinery/timeclock/proc/isOpenOnDutyJob(mob/living/carbon/human/user, department, datum/job/job)
+/obj/machinery/timeclock/proc/isOpenOnDutyJob(mob/living/human/user, department, datum/job/job)
 	var/decl/species/user_species = user.get_species()
 	return job \
 		   && job.is_position_available() \
@@ -224,7 +224,7 @@
 		return FALSE
 	return TRUE
 
-/obj/machinery/timeclock/proc/checkFace(mob/living/carbon/human/user)
+/obj/machinery/timeclock/proc/checkFace(mob/living/human/user)
 	if(!card)
 		to_chat(usr, SPAN_NOTICE("No ID is inserted."))
 		return FALSE

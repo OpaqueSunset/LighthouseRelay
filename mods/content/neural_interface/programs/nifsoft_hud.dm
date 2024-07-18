@@ -22,7 +22,7 @@
 	var/obj/item/organ/internal/augment/active/nif/holder = computer.holder
 	if(!istype(holder))
 		return FALSE
-	var/mob/living/carbon/human/owner = holder.owner
+	var/mob/living/human/owner = holder.owner
 	if(!owner)
 		return FALSE
 	process_hud(owner, computer.get_network())

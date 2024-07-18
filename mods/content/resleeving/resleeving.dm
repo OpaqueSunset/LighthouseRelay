@@ -24,7 +24,7 @@
 /datum/job
 	var/start_with_transcore_backup = TRUE
 
-/datum/controller/subsystem/jobs/equip_job_title(mob/living/carbon/human/worker, job_title, joined_late = FALSE)
+/datum/controller/subsystem/jobs/equip_job_title(mob/living/human/worker, job_title, joined_late = FALSE)
 	. = ..()
 	var/datum/job/job = get_by_title(job_title)
 	if(!job.start_with_transcore_backup)

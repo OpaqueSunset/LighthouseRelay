@@ -21,19 +21,19 @@
 
 /obj/item/clothing/costume/schoolgirl/red
 	name = "red schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_red.dmi'
+	icon = 'icons/clothing/uniform_schoolgirl_red.dmi'
 
 /obj/item/clothing/costume/schoolgirl/yellow
 	name = "yellow schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_yellow.dmi'
+	icon = 'icons/clothing/uniform_schoolgirl_yellow.dmi'
 
 /obj/item/clothing/costume/schoolgirl/green
 	name = "green schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_green.dmi'
+	icon = 'icons/clothing/uniform_schoolgirl_green.dmi'
 
 /obj/item/clothing/costume/schoolgirl/pink
 	name = "pink schoolgirl uniform"
-	icon = 'icons/clothing/under/uniform_schoolgirl_pink.dmi'
+	icon = 'icons/clothing/uniform_schoolgirl_pink.dmi'
 
 /obj/item/clothing/costume/sexyclown
 	name = "sexy clown costume"

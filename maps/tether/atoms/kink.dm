@@ -196,7 +196,7 @@
 		add_overlay("world_on")
 
 /obj/item/clothing/neck/collar/shock/attack_self(mob/user)
-	if(!istype(user, /mob/living/carbon/human))
+	if(!istype(user, /mob/living/human))
 		return
 	user.set_machine(src)
 	var/dat = {"<TT>

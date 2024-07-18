@@ -5,7 +5,7 @@
 	. = ..()
 	var/list/hud_elements = list()
 	if(ishuman(mymob))
-		var/mob/living/carbon/human/H = mymob
+		var/mob/living/human/H = mymob
 		H.fov = new /obj/screen/fov(null, mymob)
 		H.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
 		H.fov.icon_state = "combat"
@@ -67,12 +67,12 @@
 	. = ..()
 	update_vision_cone()
 
-/mob/living/carbon/human
+/mob/living/human
 	var/obj/screen/fov = null
 	var/obj/screen/fov_mask = null
 	var/usefov = TRUE
 
-/mob/living/carbon/human/update_equipment_vision()
+/mob/living/human/update_equipment_vision()
 	. = ..()
 	if(!client)
 		return

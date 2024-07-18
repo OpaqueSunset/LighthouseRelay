@@ -316,9 +316,9 @@
 /mob/living/simple_mob/animal/@SUBTYPES : /mob/living/simple_animal/@SUBTYPES{@OLD}
 /mob/living/simple_mob/vore/aggressive/@SUBTYPES : /mob/living/simple_animal/hostile/@SUBTYPES{@OLD}
 /mob/living/simple_mob/slime/xenobio/@SUBTYPES : /mob/living/simple_animal/slime/@SUBTYPES{@OLD}
-/mob/living/simple_animal/cat/runtime : /mob/living/simple_animal/cat/fluff/runtime{@OLD}
+/mob/living/simple_animal/cat/runtime : /mob/living/simple_animal/passive/cat/fluff/runtime{@OLD}
 # oh you think you're so clever don't you
-/mob/living/simple_animal/bird/parrot/polly : /mob/living/simple_animal/hostile/retaliate/parrot/Poly
+/mob/living/simple_animal/bird/parrot/polly : /mob/living/simple_animal/hostile/parrot/Poly
 
 /obj/effect/decal/remains/@SUBTYPES : /obj/item/remains/@SUBTYPES{@OLD}
 

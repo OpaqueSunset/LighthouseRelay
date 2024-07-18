@@ -22642,7 +22642,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/cat/fluff/runtime,
+/mob/living/simple_animal/passive/cat/fluff/runtime,
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "NB" = (

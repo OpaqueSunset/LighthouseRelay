@@ -79,6 +79,11 @@
 	desc = "Crisp white slacks. Very formal."
 	icon = 'icons/clothing/pants/slacks_white.dmi'
 
+/obj/item/clothing/pants/slacks/white/outfit
+	starting_accessories = list(
+		/obj/item/clothing/shirt/button
+	)
+
 /obj/item/clothing/pants/slacks/white/orderly
 	name = "orderly's slacks"
 	permeability_coefficient = 0.50
@@ -136,6 +141,13 @@
 		/obj/item/clothing/shirt/button,
 		/obj/item/clothing/neck/tie/black,
 		/obj/item/clothing/suit/jacket/checkered
+	)
+
+/obj/item/clothing/pants/slacks/black/outfit/waiter
+	starting_accessories = list(
+		/obj/item/clothing/shirt/button,
+		/obj/item/clothing/neck/tie/bow/color/red,
+		/obj/item/clothing/suit/jacket/vest/blue
 	)
 
 /obj/item/clothing/pants/slacks/purple

@@ -145,8 +145,8 @@
 /decl/material/solid/phoron/safe/touch_mob(mob/living/M, amount, datum/reagents/holder)
 	return
 
-/decl/material/solid/phoron/safe/affect_blood(mob/living/carbon/M, removed, datum/reagents/holder)
+/decl/material/solid/phoron/safe/affect_blood(mob/living/M, removed, datum/reagents/holder)
 	return
 
-/decl/material/solid/phoron/safe/affect_touch(mob/living/carbon/M, removed, datum/reagents/holder)
+/decl/material/solid/phoron/safe/affect_touch(mob/living/M, removed, datum/reagents/holder)
 	return

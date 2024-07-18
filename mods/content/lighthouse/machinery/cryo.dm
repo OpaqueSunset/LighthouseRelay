@@ -10,7 +10,7 @@
 
 	time_till_despawn = 600 //1 minute. We want to be much faster then normal cryo, since waiting in an elevator for half an hour is a special kind of hell.
 
-	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/carbon/human)
+	allow_occupant_types = list(/mob/living/silicon/robot,/mob/living/human)
 	disallow_occupant_types = list(/mob/living/silicon/robot/drone)
 
 /obj/machinery/cryopod/robot/door/dorms
@@ -73,7 +73,7 @@
 	// spawnpoint_type = /datum/spawnpoint/tram
 	/// A debounce variable to prevent the doors from opening multiple alerts in a row,
 	/// or multiple people entering the same one.
-	var/mob/living/carbon/human/in_choice = null
+	var/mob/living/human/in_choice = null
 
 /obj/machinery/door/airlock/external/glass/cryo // Does not autoset access.
 	autoset_access = FALSE
@@ -93,7 +93,7 @@
 	if(!ishuman(AM))
 		return
 
-	var/mob/living/carbon/human/user = AM
+	var/mob/living/human/user = AM
 
 	if(!in_choice)
 		in_choice = user

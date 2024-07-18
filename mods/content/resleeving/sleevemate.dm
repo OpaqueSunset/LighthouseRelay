@@ -42,7 +42,7 @@
 	scan_data = scan_mob(A, user)
 	to_chat(user, "<hr>[scan_data]</hr>")
 
-/obj/item/scanner/sleevemate/proc/scan_mob(mob/living/carbon/human/H, mob/living/user)
+/obj/item/scanner/sleevemate/proc/scan_mob(mob/living/human/H, mob/living/user)
 	. = "<br><br><span class='notice'><b>[src.name] Scan Results</b></span><br>"
 
 	//Mind name
@@ -144,7 +144,7 @@
 			to_chat(user, SPAN_WARNING("Target's neurology is unrecognized or incompatible."))
 			return
 
-		var/mob/living/carbon/human/human_target = target
+		var/mob/living/human/human_target = target
 		user.visible_message("[user] begins scanning [target]'s body.", SPAN_NOTICE("You begin scanning [target]'s body."))
 		scanning = TRUE
 		if(do_after(user, 8 SECONDS, target))

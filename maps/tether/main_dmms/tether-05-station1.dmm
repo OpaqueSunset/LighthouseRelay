@@ -22557,7 +22557,7 @@
 /turf/floor/tiled/techmaint,
 /area/tether/station/explorer_entry)
 "ufh" = (
-/mob/living/simple_animal/hostile/retaliate/parrot/Poly,
+/mob/living/simple_animal/hostile/parrot/Poly,
 /turf/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "ugd" = (

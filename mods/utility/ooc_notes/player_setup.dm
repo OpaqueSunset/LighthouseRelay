@@ -28,7 +28,7 @@
 
 	return ..()
 
-/datum/preferences/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
+/datum/preferences/copy_to(mob/living/human/character, is_preview_copy = FALSE)
 	..()
 	if(is_preview_copy)
 		return

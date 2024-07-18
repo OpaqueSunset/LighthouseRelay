@@ -40,7 +40,7 @@
 	for(var/atom/O in list) if(!O.InCone(center, dir)) list -= O
 	return list
 
-/mob/living/carbon/human/update_vision_cone()
+/mob/living/human/update_vision_cone()
 	. = ..()
 	if(!src.client) //Same as in module. Hate to look for this twice, but it's needed, short of mashing everything together.
 		return

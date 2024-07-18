@@ -17,7 +17,7 @@
 		return our_nif
 
 /datum/computer_file/program/nifsoft/proc/get_owner()
-	RETURN_TYPE(/mob/living/carbon/human)
+	RETURN_TYPE(/mob/living/human)
 	return get_nif()?.owner
 
 /datum/computer_file/program/nifsoft/proc/on_install()

@@ -32,7 +32,7 @@
 	install_default_hardware()
 
 // SSobj processing stops on install due to the organ decay system. We don't want that. Restart it.
-/obj/item/organ/internal/augment/active/nif/do_install(mob/living/carbon/human/target, obj/item/organ/external/affected, in_place, update_icon, detached)
+/obj/item/organ/internal/augment/active/nif/do_install(mob/living/human/target, obj/item/organ/external/affected, in_place, update_icon, detached)
 	if((. = ..()))
 		START_PROCESSING(SSobj, src)
 

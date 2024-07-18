@@ -1,5 +1,5 @@
 // TODO: REWRITE TO USE SPRITE ACCESSORY SYSTEM PROPERLY!
-/mob/living/carbon/human/get_tail_icon_for_organ(var/obj/item/organ/external/tail/tail_organ)
+/mob/living/human/get_tail_icon_for_organ(var/obj/item/organ/external/tail/tail_organ)
 	// No parent call. This is a replacement, not a side-override.
 	if(!istype(tail_organ))
 		return
