@@ -2,16 +2,16 @@
 #define CONTENT_PACK_EXTRADRINKS
 // BEGIN_INCLUDE
 #include "_extradrinks.dm"
-#include "reactions.dm"
 #include "cocktails.dm"
-#include "drinks\dispcarts.dm"
-#include "vending\vending.dm"
+#include "reactions.dm"
+#include "drinks\bottle.dm"
+#include "drinks\cans.dm"
+#include "drinks\cartridges_presets.dm"
 #include "drinks\chems_drinks.dm"
 #include "drinks\chems_ethanol.dm"
-#include "drinks\cartridges_presets.dm"
+#include "drinks\dispcarts.dm"
 #include "drinks\dispenser_presets.dm"
 #include "drinks\drinks.dm"
-#include "drinks\cans.dm"
-#include "drinks\bottle.dm"
-#endif
+#include "vending\vending.dm"
 // END_INCLUDE
+#endif

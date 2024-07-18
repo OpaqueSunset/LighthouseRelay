@@ -7,4 +7,5 @@
 #include "subtypes\maint.dm"
 #include "subtypes\stubs.dm"
 #include "subtypes\surface.dm"
+// END_INCLUDE
 #endif

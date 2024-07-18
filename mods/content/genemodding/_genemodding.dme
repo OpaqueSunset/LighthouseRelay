@@ -1,13 +1,16 @@
 #ifndef CONTENT_PACK_GENEMODDING
 #define CONTENT_PACK_GENEMODDING
-#include "genemodding.dm"
+// BEGIN_INCLUDE
+#include "_defines.dm"
 #include "cosmetics_selection.dm"
-#include "decl/ears.dm"
-#include "decl/marking.dm"
-#include "decl/tail.dm"
+#include "genemodding.dm"
 #include "head_overwrites.dm"
 #include "mob_overwrites.dm"
 #include "player_setup.dm"
 #include "tail_organ.dm"
 #include "update_icons.dm"
+#include "decl\ears.dm"
+#include "decl\marking.dm"
+#include "decl\tail.dm"
+// END_INCLUDE
 #endif

@@ -1,9 +1,13 @@
 #ifndef CONTENT_PACK_RESLEEVING
 #define CONTENT_PACK_RESLEEVING
-#include "resleeving.dm"
-#include "mind_record.dm"
+// BEGIN_INCLUDE
+#include "_defines.dm"
 #include "biomass.dm"
-#include "body_record.dm"
+#include "body_designer.dm"
 #include "body_printer.dm"
+#include "body_record.dm"
+#include "mind_record.dm"
+#include "resleeving.dm"
 #include "sleevemate.dm"
+// END_INCLUDE
 #endif
