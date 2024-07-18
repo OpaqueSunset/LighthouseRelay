@@ -527,8 +527,11 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	if(perfectcopy)
 		if((O) && (original))
 			for(var/V in original.vars)
-				if(!(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key")))
-					O.vars[V] = original.vars[V]
+				if(!issaved(original.vars[V]))
+					continue
+				if(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key"))
+					continue
+				O.vars[V] = original.vars[V]
 	return O
 
 
