@@ -31,7 +31,7 @@
 
 /obj/structure/closet/secure_closet/explorer/WillContain()
 	. = list(
-		/obj/item/clothing/under/explorer,
+		/obj/item/clothing/jumpsuit/explorer,
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
@@ -144,7 +144,7 @@
 
 /obj/structure/closet/secure_closet/pathfinder/WillContain()
 	. = list(
-		/obj/item/clothing/under/explorer,
+		/obj/item/clothing/jumpsuit/explorer,
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,

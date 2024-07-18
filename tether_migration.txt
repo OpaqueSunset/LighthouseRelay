@@ -570,6 +570,9 @@
 /obj/item/clothing/under/teshari/smock/@SUBTYPES : /obj/item/clothing/dress/avian_smock/@SUBTYPES{@OLD}
 /obj/item/clothing/dress/avian_smock/medical : /obj/item/clothing/dress/avian_smock/utility{@OLD}
 /obj/item/clothing/under/rank/@SUBTYPES : /obj/item/clothing/under/@SUBTYPES{@OLD}
+/obj/item/clothing/under/batter : /obj/item/clothing/costume/batter{@OLD}
+/obj/item/clothing/under/bathrobe : /obj/item/clothing/costume/bathrobe{@OLD}
+/obj/item/clothing/under/explorer : /obj/item/clothing/jumpsuit/explorer{@OLD}
 /obj/item/clothing/accessory/armor/armguards : /obj/item/clothing/gloves/armguards
 /obj/item/clothing/accessory/armor/legguards : /obj/item/clothing/shoes/legguards
 /obj/item/clothing/shoes/legguards/combat : /obj/item/clothing/shoes/legguards/riot{@OLD}

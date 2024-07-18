@@ -4449,7 +4449,7 @@
 /turf/floor/plating,
 /area/maintenance/lower/bar)
 "kn" = (
-/obj/item/clothing/under/batter,
+/obj/item/clothing/costume/batter,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /turf/floor/plating,
@@ -12317,8 +12317,7 @@
 /obj/machinery/disposal,
 /obj/machinery/network/requests_console{
 	department = "Janitorial";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6

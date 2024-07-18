@@ -328,21 +328,21 @@
 /obj/item/clothing/dress/maid
 	name = "maid costume"
 	desc = "Maid in China."
-	icon = 'maps/tether/icons/obj/clothing/costume/maid.dmi'
+	icon = 'maps/tether/icons/obj/clothing/costumes/maid.dmi'
 
 /obj/item/clothing/dress/maid/janitor
 	name = "maid uniform"
 	desc = "A simple maid uniform for housekeeping."
-	icon = 'maps/tether/icons/obj/clothing/costume/janitor_maid.dmi'
+	icon = 'maps/tether/icons/obj/clothing/costumes/janitor_maid.dmi'
 
 /obj/item/clothing/dress/maid/sexy
 	name = "sexy maid costume"
 	desc = "You must be a bit risque teasing all of them in a maid uniform!"
-	icon = 'maps/tether/icons/obj/clothing/costume/sexy_maid.dmi'
+	icon = 'maps/tether/icons/obj/clothing/costumes/sexy_maid.dmi'
 
 //KotetsuRedwood:Latex Maid Dresses, for everyone to 'enjoy'. :3c
 /obj/item/clothing/dress/maid/latex
 	name = "latex maid dress"
 	desc = "Squeak! A shiny outfit for cleaning, made by people with dirty minds."
-	icon = 'maps/tether/icons/obj/clothing/costume/latex_maid.dmi'
+	icon = 'maps/tether/icons/obj/clothing/costumes/latex_maid.dmi'
 	bodytype_equip_flags = BODY_FLAG_HUMANOID | BODY_FLAG_AVIAN
