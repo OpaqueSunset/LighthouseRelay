@@ -152,7 +152,7 @@
 	use_power = POWER_USE_ACTIVE
 
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram/powered()
-	return TRUE // Always be powered
+	return !!loc // Always be powered if we have a non-null loc
 
 //Chemistry 'chemavator'
 /obj/machinery/smartfridge/chemistry/chemvator
