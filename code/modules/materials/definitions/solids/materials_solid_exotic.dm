@@ -2,7 +2,6 @@
 	name = "metallic hydrogen"
 	uid = "solid_metallic_hydrogen"
 	lore_text = "When hydrogen is exposed to extremely high pressures and temperatures, such as at the core of gas giants like Jupiter, it can take on metallic properties and - more importantly - acts as a room temperature superconductor. Achieving solid metallic hydrogen at room temperature, though, has proven to be rather tricky."
-	name = "metallic hydrogen"
 	color = "#e6c5de"
 	stack_origin_tech = @'{"materials":6,"powerstorage":6,"magnets":5}'
 	heating_products = list(
@@ -94,7 +93,7 @@
 			target_tile.hotspot_expose(temperature, 400)
 	return round(totalPhoron/100)
 
-/decl/material/solid/phoron/affect_touch(mob/living/carbon/M, removed, datum/reagents/holder)
+/decl/material/solid/phoron/affect_touch(mob/living/M, removed, datum/reagents/holder)
 	M.take_organ_damage(0, removed * 0.1) //being splashed directly with phoron causes minor chemical burns
 	if(prob(10 * accelerant_value))
 		M.handle_contaminants()

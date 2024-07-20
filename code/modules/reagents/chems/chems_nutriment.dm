@@ -110,7 +110,7 @@
 	var/icon_cooked = "batter_cooked"
 	var/coated_adj = "battered"
 
-/decl/material/liquid/nutriment/batter/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
+/decl/material/liquid/nutriment/batter/affect_ingest(var/mob/living/M, var/alien, var/removed, var/datum/reagents/holder)
 	//We'll assume that the batter isnt going to be regurgitated and eaten by someone else. Only show this once
 	var/list/data = REAGENT_DATA(holder, type)
 	if (!data["cooked"])
@@ -118,7 +118,7 @@
 		if (prob(1))
 			to_chat(M, "This raw [name] tastes disgusting!")
 			if (ishuman(M))
-				var/mob/living/carbon/human/H = M
+				var/mob/living/human/H = M
 				H.vomit()
 	..()
 
@@ -159,7 +159,7 @@
 	taste_description = "beer batter"
 	uid = "chem_nutriment_beerbatter"
 
-/decl/material/liquid/nutriment/batter/beerbatter/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
+/decl/material/liquid/nutriment/batter/beerbatter/affect_ingest(var/mob/living/M, var/alien, var/removed, var/datum/reagents/holder)
 	..()
 	M.add_chemical_effect(CE_ALCOHOL, removed*0.02) //Very slightly alcoholic
 
@@ -217,7 +217,7 @@
 
 
 //Calculates a scaling factor for scalding damage, based on the temperature of the oil and creature's heat resistance
-/decl/material/liquid/nutriment/triglyceride/oil/proc/heatdamage(var/mob/living/carbon/M, var/datum/reagents/holder)
+/decl/material/liquid/nutriment/triglyceride/oil/proc/heatdamage(var/mob/living/M, var/datum/reagents/holder)
 	var/threshold = 360//Human heatdamage threshold
 	//Step = degrees above heat level 1 for 1.0 multiplier
 	var/damage_step = 60
@@ -236,7 +236,7 @@
 	. /= damage_step
 	. = min(., 2.5)//Cap multiplier at 2.5
 
-/decl/material/liquid/nutriment/triglyceride/oil/affect_touch(var/mob/living/carbon/M, var/alien, var/removed, var/datum/reagents/holder)
+/decl/material/liquid/nutriment/triglyceride/oil/affect_touch(var/mob/living/M, var/alien, var/removed, var/datum/reagents/holder)
 	var/dfactor = heatdamage(M)
 	if (dfactor)
 		var/data = REAGENT_DATA(holder, type)

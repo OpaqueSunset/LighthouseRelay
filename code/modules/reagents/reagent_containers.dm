@@ -79,10 +79,10 @@
 	desc = new_desc_list.Join("\n")
 
 /obj/item/chems/on_reagent_change()
-	..()
-	update_container_name()
-	update_container_desc()
-	update_icon()
+	if((. = ..()))
+		update_container_name()
+		update_container_desc()
+		update_icon()
 
 /obj/item/chems/verb/set_amount_per_transfer_from_this()
 	set name = "Set Transfer Amount"
@@ -97,27 +97,32 @@
 /obj/item/chems/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	return
 
-/obj/item/chems/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/chems/food))
-		var/obj/item/chems/food/dipped = W
-		. = dipped.attempt_apply_coating(src, user)
-		if(.)
-			return .
-	if(IS_PEN(W))
-		var/tmp_label = sanitize_safe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
-		if(length(tmp_label) > 10)
-			to_chat(user, SPAN_NOTICE("The label can be at most 10 characters long."))
-		else
-			to_chat(user, SPAN_NOTICE("You set the label to \"[tmp_label]\"."))
-			label_text = tmp_label
-			update_container_name()
-	else
-		return ..()
+/obj/item/chems/attackby(obj/item/used_item, mob/user)
+	if(used_item.user_can_wield(user, silent = TRUE))
+		if(istype(used_item, /obj/item/chems/food))
+			var/obj/item/chems/food/dipped = used_item
+			. = dipped.attempt_apply_coating(src, user)
+			if(.)
+				return .
+		if(IS_PEN(used_item))
+			var/tmp_label = sanitize_safe(input(user, "Enter a label for [name]", "Label", label_text), MAX_NAME_LEN)
+			if(length(tmp_label) > 10)
+				to_chat(user, SPAN_NOTICE("The label can be at most 10 characters long."))
+			else
+				to_chat(user, SPAN_NOTICE("You set the label to \"[tmp_label]\"."))
+				label_text = tmp_label
+				update_container_name()
+			return TRUE
+	return ..()
 
 /obj/item/chems/standard_pour_into(mob/user, atom/target, amount = 5)
-	return ..(user, target, amount_per_transfer_from_this)
+	amount = amount_per_transfer_from_this
+	// We'll be lenient: if you lack the dexterity for proper pouring you get a random amount.
+	if(!user_can_wield(user, silent = TRUE))
+		amount = rand(1, floor(amount_per_transfer_from_this * 1.5))
+	return ..(user, target, amount)
 
-/obj/item/chems/do_surgery(mob/living/carbon/M, mob/living/user)
+/obj/item/chems/do_surgery(mob/living/M, mob/living/user)
 	if(user.get_target_zone() != BP_MOUTH) //in case it is ever used as a surgery tool
 		return ..()
 

@@ -150,6 +150,10 @@
 	craft_verb = "weave"
 	craft_verbing = "weaving"
 
+// Hacky fix for grass crafting.
+/obj/item/stack/material/bundle/special_crafting_check()
+	return !dried_type || drying_wetness <= 0
+
 /obj/item/stack/material/strut
 	name = "struts"
 	singular_name = "strut"

@@ -6,11 +6,6 @@
 	credits_topics = list("RESLEEVING", "PLAYING GOD", "IMMORTALITY", "MIND FORKING", "TRANSHUMANISM")
 	credits_nouns = list("CUSTOM SLEEVES")
 
-// TODO: ADD REMOTE RECORD LOADING
-#define MF_ROLE_TRANSCORE "TRANSCORE REPOSITORY"
-#define OS_MIND_RECORDS_DIR "mind_records"
-#define OS_BODY_RECORDS_DIR "body_records"
-
 /hook/startup/proc/add_transcore_role()
 	global.all_mainframe_roles |= MF_ROLE_TRANSCORE
 	return TRUE
@@ -24,7 +19,7 @@
 /datum/job
 	var/start_with_transcore_backup = TRUE
 
-/datum/controller/subsystem/jobs/equip_job_title(mob/living/carbon/human/worker, job_title, joined_late = FALSE)
+/datum/controller/subsystem/jobs/equip_job_title(mob/living/human/worker, job_title, joined_late = FALSE)
 	. = ..()
 	var/datum/job/job = get_by_title(job_title)
 	if(!job.start_with_transcore_backup)

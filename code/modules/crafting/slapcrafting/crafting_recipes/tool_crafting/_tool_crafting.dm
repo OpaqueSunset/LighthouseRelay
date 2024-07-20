@@ -31,6 +31,10 @@ var/global/list/_tool_crafting_components = list(
 	/obj/item/tool/hammer/sledge = list(
 		/obj/item/tool_component/head/sledgehammer,
 		/obj/item/tool_component/handle/long
+	),
+	/obj/item/tool/axe = list(
+		/obj/item/tool_component/head/handaxe,
+		/obj/item/tool_component/handle/short
 	)
 )
 
@@ -87,7 +91,6 @@ var/global/list/_tool_crafting_components = list(
 	var/static/list/binding_materials = list(
 		/decl/material/solid/organic/plantmatter/grass/dry,
 		/decl/material/solid/organic/leather,
-		/decl/material/solid/organic/meat/gut,
 		/decl/material/solid/organic/cloth
 	)
 

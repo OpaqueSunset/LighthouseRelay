@@ -164,7 +164,7 @@
 	return
 
 /mob/living/bot/proc/GetInteractStatus()
-	. = "Status: <A href='?src=\ref[src];command=toggle'>[on ? "On" : "Off"]</A>"
+	. = "Status: <A href='byond://?src=\ref[src];command=toggle'>[on ? "On" : "Off"]</A>"
 	. += "<BR>Behaviour controls are [locked ? "locked" : "unlocked"]"
 	. += "<BR>Maintenance panel is [open ? "opened" : "closed"]"
 
@@ -209,9 +209,9 @@
 /mob/living/bot/emag_act(var/remaining_charges, var/mob/user)
 	return 0
 
-/mob/living/bot/handle_legacy_ai()
+/mob/living/bot/handle_living_non_stasis_processes()
 	. = ..()
-	if(on && !busy)
+	if(!key && on && !busy)
 		handle_async_ai()
 
 /mob/living/bot/proc/handle_async_ai()

@@ -283,6 +283,7 @@
 		hit_atom.hitby(src, TT)
 
 /atom/movable/proc/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, datum/callback/callback) //If this returns FALSE then callback will not be called.
+
 	. = TRUE
 	if (!target || speed <= 0 || QDELETED(src) || (target.z != src.z))
 		return FALSE
@@ -370,14 +371,12 @@
 		return TRUE
 
 /atom/movable/proc/buckle_mob(mob/living/M)
+
 	if(buckled_mob) //unless buckled_mob becomes a list this can cause problems
 		return FALSE
+
 	if(!istype(M) || (M.loc != loc) || M.buckled || LAZYLEN(M.pinned) || (buckle_require_restraints && !M.restrained()))
 		return FALSE
-	if(ismob(src))
-		var/mob/living/carbon/C = src //Don't wanna forget the xenos.
-		if(M != src && C.incapacitated())
-			return FALSE
 
 	M.buckled = src
 	M.facing_dir = null
@@ -491,6 +490,9 @@
 /atom/movable/proc/get_object_size()
 	return ITEM_SIZE_NORMAL
 
+/atom/movable/get_manual_heat_source_coefficient()
+	return ..() * (get_object_size() / ITEM_SIZE_NORMAL)
+
 // TODO: account for reagents and matter.
 /atom/movable/get_thermal_mass()
 	if(!simulated)
@@ -563,3 +565,8 @@
 
 /atom/movable/proc/end_throw()
 	throwing = null
+
+/atom/movable/proc/reset_movement_delay()
+	var/datum/movement_handler/delay/delay = locate() in movement_handlers
+	if(istype(delay))
+		delay.next_move = world.time

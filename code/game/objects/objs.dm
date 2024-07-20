@@ -10,6 +10,7 @@
 	current_health = null
 
 	var/obj_flags
+	var/datum/talking_atom/talking_atom
 	var/list/req_access
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
@@ -45,6 +46,7 @@
 	UNSETEMPTY(matter)
 
 /obj/Destroy()
+	QDEL_NULL(talking_atom)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -126,15 +128,21 @@
 		if(atom_damage_type == BURN)
 			. |= DAM_LASER
 
-/obj/attackby(obj/item/O, mob/user)
-	if((obj_flags & OBJ_FLAG_ANCHORABLE) && IS_WRENCH(O))
-		wrench_floor_bolts(user)
-		update_icon()
-		return TRUE
+/obj/attackby(obj/item/used_item, mob/user)
+	// We need to call parent even if we lack dexterity, so that storage can work.
+	if(used_item.user_can_wield(user))
+		if((obj_flags & OBJ_FLAG_ANCHORABLE) && (IS_WRENCH(used_item) || IS_HAMMER(used_item)))
+			wrench_floor_bolts(user, null, used_item)
+			update_icon()
+			return TRUE
 	return ..()
 
-/obj/proc/wrench_floor_bolts(mob/user, delay=20)
-	playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+/obj/proc/wrench_floor_bolts(mob/user, delay = 2 SECONDS, obj/item/tool)
+	if(!istype(tool) || IS_WRENCH(tool))
+		playsound(loc, 'sound/items/Ratchet.ogg', 100, 1)
+	else if(IS_HAMMER(tool))
+		playsound(loc, 'sound/weapons/Genhit.ogg', 100, 1)
+
 	if(anchored)
 		user.visible_message("\The [user] begins unsecuring \the [src] from the floor.", "You start unsecuring \the [src] from the floor.")
 	else
@@ -154,7 +162,7 @@
 	return ..() && w_class <= round(amt/20)
 
 /obj/proc/can_embed()
-	return is_sharp(src)
+	return FALSE
 
 /obj/examine(mob/user, distance, infix, suffix)
 	. = ..()

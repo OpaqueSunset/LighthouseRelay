@@ -11,14 +11,14 @@
 
 /datum/computer_file/program/nifsoft/rearview/on_startup(mob/living/user, datum/extension/interactive/os/new_host)
 	. = ..()
-	var/mob/living/carbon/human/owner = get_owner()
+	var/mob/living/human/owner = get_owner()
 	if(owner)
 		owner.SetFov(FALSE)
 		owner.update_vision_cone()
 
 /datum/computer_file/program/nifsoft/rearview/on_shutdown(forced = FALSE)
 	. = ..()
-	var/mob/living/carbon/human/owner = get_owner()
+	var/mob/living/human/owner = get_owner()
 	if(owner)
 		owner.SetFov(initial(owner.usefov))
 		owner.update_vision_cone()

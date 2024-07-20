@@ -127,27 +127,6 @@
 /obj/effect/step_trigger/lost_in_space/tram
 	deathmessage = "You fly down the tunnel of the tram at high speed for a few moments before impact kills you with sheer concussive force."
 
-
-// Invisible object that blocks z transfer to/from its turf and the turf above.
-/obj/effect/ceiling
-	invisibility = 101 // nope cant see this
-	anchored = TRUE
-
-/obj/effect/ceiling/Initialize(mapload)
-	. = ..()
-	var/turf/T = get_turf(src)
-	T.is_outside = OUTSIDE_NO
-
-/obj/effect/ceiling/CheckExit(atom/movable/O, turf/target)
-	if(target && target.z > src.z)
-		return FALSE // Block exit from our turf to above
-	return TRUE
-
-/obj/effect/ceiling/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	if(mover && mover.z > src.z)
-		return FALSE // Block entry from above to our turf
-	return TRUE
-
 // For mappers to make invisible borders. For best results, place out of view of the map edge.
 /obj/effect/blocker
 	desc = "You can't go there!"

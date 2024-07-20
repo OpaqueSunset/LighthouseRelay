@@ -3,8 +3,7 @@
 // BEGIN_INCLUDE
 #include "_fov_module.dm"
 #include "fov.dm"
-#include "overrides\human.dm"
-//#include "overrides\special.dm"
 #include "overrides\cone.dm"
+#include "overrides\human.dm"
 // END_INCLUDE
 #endif

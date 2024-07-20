@@ -31,7 +31,7 @@
 
 /obj/structure/closet/secure_closet/explorer/WillContain()
 	. = list(
-		/obj/item/clothing/under/explorer,
+		/obj/item/clothing/jumpsuit/explorer,
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,
@@ -126,8 +126,8 @@
 		// /obj/item/clothing/jumpsuit/captain/skirt_pleated,
 		/obj/item/clothing/dress/cap,
 		/obj/item/clothing/jumpsuit/captainformal,
-		/obj/item/clothing/under/gimmick/rank/captain/suit,
-		// /obj/item/clothing/under/gimmick/rank/captain/suit/skirt,
+		/obj/item/clothing/costume/captain_suit,
+		// /obj/item/clothing/costume/captain_suit/skirt,
 		// /obj/item/clothing/under/bodysuit/bodysuitcommand,
 		/obj/item/clothing/gloves/captain,
 		/obj/item/clothing/shoes/color/brown,
@@ -144,7 +144,7 @@
 
 /obj/structure/closet/secure_closet/pathfinder/WillContain()
 	. = list(
-		/obj/item/clothing/under/explorer,
+		/obj/item/clothing/jumpsuit/explorer,
 		/obj/item/clothing/suit/toggle/explorer,
 		/obj/item/clothing/mask/gas/explorer,
 		/obj/item/clothing/shoes/winterboots/explorer,

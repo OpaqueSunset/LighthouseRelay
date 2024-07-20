@@ -206,7 +206,7 @@
 	)
 	give_psionic_implant_on_join = FALSE
 
-/datum/job/counselor/equip_job(var/mob/living/carbon/human/H)
+/datum/job/counselor/equip_job(var/mob/living/human/H)
 	switch(H.mind.role_alt_title)
 		if("Counselor")
 			psi_faculties = list("[PSI_REDACTION]" = PSI_RANK_OPERANT)

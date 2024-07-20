@@ -103,10 +103,10 @@
 			return 1
 		toggle_throw_mode(FALSE)
 
-	var/obj/item/W = get_active_held_item()
+	var/obj/item/holding = get_active_held_item()
 
-	if(W == A) // Handle attack_self
-		W.attack_self(src)
+	if(holding == A) // Handle attack_self
+		holding.attack_self(src)
 		trigger_aiming(TARGET_CAN_CLICK)
 		usr.update_inhand_overlays(FALSE)
 		return 1
@@ -114,12 +114,17 @@
 	//Atoms on your person
 	// A is your location but is not a turf; or is on you (backpack); or is on something on you (box in backpack); sdepth is needed here because contents depth does not equate inventory storage depth.
 	var/sdepth = A.storage_depth(src)
-	var/can_wield_item = check_dexterity(DEXTERITY_WIELD_ITEM, silent = TRUE)
 	if((!isturf(A) && A == loc) || (sdepth != -1 && sdepth <= 1))
-		if(W && can_wield_item)
-			var/resolved = W.resolve_attackby(A, src, params)
-			if(!resolved && A && W)
-				W.afterattack(A, src, 1, params) // 1 indicates adjacency
+		if(holding)
+
+			// AI driven mobs have a melee telegraph that needs to be handled here.
+			if(a_intent == I_HURT && istype(A) && (!do_attack_windup_checking(A) || holding != get_active_held_item()))
+				return TRUE
+
+			var/resolved = holding.resolve_attackby(A, src, params)
+			if(!resolved && A && holding)
+				holding.afterattack(A, src, 1, params) // 1 indicates adjacency
+			setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		else
 			if(ismob(A)) // No instant mob attacking
 				setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -136,11 +141,17 @@
 	sdepth = A.storage_depth_turf()
 	if(isturf(A) || isturf(A.loc) || (sdepth != -1 && sdepth <= 1))
 		if(A.Adjacent(src)) // see adjacent.dm
-			if(W && can_wield_item)
+			if(holding)
+
+				// AI driven mobs have a melee telegraph that needs to be handled here.
+				if(a_intent == I_HURT && istype(A) && (!do_attack_windup_checking(A) || holding != get_active_held_item()))
+					return TRUE
+
 				// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
-				var/resolved = W.resolve_attackby(A,src, params)
-				if(!resolved && A && W)
-					W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
+				var/resolved = holding.resolve_attackby(A,src, params)
+				if(!resolved && A && holding)
+					holding.afterattack(A, src, 1, params) // 1: clicking something Adjacent
+				setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			else
 				if(ismob(A)) // No instant mob attacking
 					setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -149,8 +160,8 @@
 			trigger_aiming(TARGET_CAN_CLICK)
 			return
 		else // non-adjacent click
-			if(W)
-				W.afterattack(A, src, 0, params) // 0: not Adjacent
+			if(holding)
+				holding.afterattack(A, src, 0, params) // 0: not Adjacent
 			else
 				RangedAttack(A, params)
 
@@ -209,6 +220,10 @@
 	// Pick up items.
 	if(check_dexterity(DEXTERITY_HOLD_ITEM, silent = TRUE))
 		return A.attack_hand(src)
+
+	// AI driven mobs have a melee telegraph that needs to be handled here.
+	if(a_intent == I_HURT && istype(A) && !do_attack_windup_checking(A))
+		return TRUE
 
 	return FALSE
 

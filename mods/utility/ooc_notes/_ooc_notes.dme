@@ -1,6 +1,8 @@
 #ifndef MODPACK_OOC_NOTES
 #define MODPACK_OOC_NOTES
+// BEGIN_INCLUDE
 #include "mind_overwrites.dm"
 #include "mob_overwrites.dm"
 #include "player_setup.dm"
+// END_INCLUDE
 #endif

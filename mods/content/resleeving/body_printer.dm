@@ -66,7 +66,7 @@
 	var/obj/effect/print_head/ph
 
 	var/list/clone_mobs = list()
-	var/mob/living/carbon/human/clonemob
+	var/mob/living/human/clonemob
 	var/lid_open = FALSE
 
 /obj/machinery/bioprinter/get_contained_external_atoms()
@@ -239,7 +239,7 @@
 		I.color = COLOR_PURPLE
 		add_overlay(I)
 
-/obj/machinery/bioprinter/physical_attack_hand(var/mob/living/carbon/human/user)
+/obj/machinery/bioprinter/physical_attack_hand(var/mob/living/human/user)
 	. = ..()
 	if(stat & (NOPOWER|BROKEN)) //shitters clogged
 		return FALSE
@@ -502,7 +502,7 @@
 		buzz("\The [src] buzzes, \"Unrecoverable error in [technobabble] - manual intervention required!\"")
 	update_icon()
 
-/obj/machinery/bioprinter/proc/fulfill_interaction(var/mob/living/carbon/human/user, var/manual = FALSE)
+/obj/machinery/bioprinter/proc/fulfill_interaction(var/mob/living/human/user, var/manual = FALSE)
 	if(user && !user.skill_check(SKILL_MEDICAL, SKILL_ADEPT))
 		to_chat(user, SPAN_WARNING("You don't have the skill required to reset the bioprinter!"))
 		return

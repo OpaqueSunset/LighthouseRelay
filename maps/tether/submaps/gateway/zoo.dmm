@@ -2794,7 +2794,7 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ib" = (
-/mob/living/simple_animal/cat/kitten{
+/mob/living/simple_animal/passive/cat/kitten{
 	name = "Enola"
 	},
 /turf/floor/shuttle/darkred,
@@ -3972,7 +3972,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "kV" = (
-/mob/living/simple_animal/cat{
+/mob/living/simple_animal/passive/cat{
 	faction = "zoo"
 	},
 /turf/floor/wood,
@@ -5299,7 +5299,7 @@
 /area/awaymission/zoo)
 "oA" = (
 /obj/structure/flora/bush/lavendergrass,
-/mob/living/simple_animal/cat{
+/mob/living/simple_animal/passive/cat{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -5540,7 +5540,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "pg" = (
-/mob/living/carbon/human/sharkm{
+/mob/living/human/sharkm{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/water,
@@ -5580,7 +5580,7 @@
 	},
 /area/awaymission/zoo)
 "pm" = (
-/mob/living/simple_animal/cat{
+/mob/living/simple_animal/passive/cat{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -5695,7 +5695,7 @@
 	},
 /area/awaymission/zoo)
 "pE" = (
-/mob/living/simple_animal/cat{
+/mob/living/simple_animal/passive/cat{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -6127,7 +6127,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "qJ" = (
-/mob/living/carbon/human/sparram{
+/mob/living/human/sparram{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/grass,
@@ -6212,7 +6212,7 @@
 /turf/floor/holofloor/snow,
 /area/awaymission/zoo)
 "rb" = (
-/mob/living/carbon/human/neaera{
+/mob/living/human/neaera{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/grass{
@@ -7027,7 +7027,7 @@
 /turf/floor/holofloor/desert,
 /area/awaymission/zoo)
 "sJ" = (
-/mob/living/simple_animal/hostile/retaliate/parrot/Poly,
+/mob/living/simple_animal/hostile/parrot/Poly,
 /turf/floor/holofloor/grass,
 /area/awaymission/zoo)
 "sK" = (
@@ -7262,7 +7262,7 @@
 /area/awaymission/zoo)
 "tn" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/carbon/human/stok{
+/mob/living/human/stok{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/desert,
@@ -7282,7 +7282,7 @@
 	},
 /area/awaymission/zoo)
 "tq" = (
-/mob/living/carbon/human/farwa{
+/mob/living/human/farwa{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/snow,
@@ -7292,7 +7292,7 @@
 /turf/floor/cult,
 /area/awaymission/zoo)
 "ts" = (
-/mob/living/carbon/human/stok{
+/mob/living/human/stok{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/desert,
@@ -7760,7 +7760,7 @@
 /area/awaymission/zoo)
 "uz" = (
 /obj/effect/floor_decal/asteroid,
-/mob/living/carbon/human/sergallingm{
+/mob/living/human/sergallingm{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -7780,7 +7780,7 @@
 	},
 /area/awaymission/zoo)
 "uC" = (
-/mob/living/carbon/human/sergallingm{
+/mob/living/human/sergallingm{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -7837,7 +7837,7 @@
 	},
 /area/awaymission/zoo)
 "uL" = (
-/mob/living/carbon/human/sergallingm{
+/mob/living/human/sergallingm{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -7845,7 +7845,7 @@
 	},
 /area/awaymission/zoo)
 "uM" = (
-/mob/living/carbon/human/sergallingm{
+/mob/living/human/sergallingm{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -7968,7 +7968,7 @@
 /area/awaymission/zoo)
 "va" = (
 /obj/structure/flora/bush/fernybush,
-/mob/living/carbon/human/monkey{
+/mob/living/human/monkey{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -7996,7 +7996,7 @@
 /turf/floor/holofloor/beach/sand,
 /area/awaymission/zoo)
 "ve" = (
-/mob/living/carbon/human/monkey{
+/mob/living/human/monkey{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -8095,7 +8095,7 @@
 /turf/floor/holofloor/snow,
 /area/awaymission/zoo)
 "vo" = (
-/mob/living/carbon/human/monkey{
+/mob/living/human/monkey{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -8126,7 +8126,7 @@
 /turf/floor/holofloor/snow,
 /area/awaymission/zoo)
 "vs" = (
-/mob/living/carbon/human/monkey{
+/mob/living/human/monkey{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{
@@ -8135,7 +8135,7 @@
 /area/awaymission/zoo)
 "vt" = (
 /obj/structure/flora/bush/lavendergrass,
-/mob/living/carbon/human/monkey{
+/mob/living/human/monkey{
 	faction = "zoo"
 	},
 /turf/floor/holofloor/beach/sand{

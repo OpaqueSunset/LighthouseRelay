@@ -152,7 +152,7 @@
 	return capitalize(pretext) + nametext + subtext
 
 /mob/proc/custom_emote(var/m_type = VISIBLE_MESSAGE, var/message = null)
-
+	set waitfor = FALSE
 	if(!can_emote(m_type, src))
 		return
 
@@ -168,15 +168,16 @@
 	message = trim(html_encode(message))
 	message = filter_modify_message(message)
 	message = format_emote(src, message)
+	message = trim(html_decode(message))
 
 	if (message)
 		log_emote("[name]/[key] : [message]")
 	//do not show NPC animal emotes to ghosts, it turns into hellscape
 	var/check_ghosts = client ? /datum/client_preference/ghost_sight : null
 	if(m_type == VISIBLE_MESSAGE)
-		visible_message(message, checkghosts = check_ghosts)
+		visible_message(message, check_ghosts = check_ghosts)
 	else
-		audible_message(message, checkghosts = check_ghosts)
+		audible_message(message, check_ghosts = check_ghosts)
 
 // Specific mob type exceptions below.
 /mob/living/silicon/ai/emote(var/act, var/type, var/message)

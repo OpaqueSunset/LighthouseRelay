@@ -40,10 +40,10 @@
 	return FALSE
 
 
-/mob/living/carbon/human/RestrainedClickOn(var/atom/A)
+/mob/living/human/RestrainedClickOn(var/atom/A)
 	return
 
-/mob/living/carbon/human/RangedAttack(var/atom/A, var/params)
+/mob/living/human/RangedAttack(var/atom/A, var/params)
 	//Climbing up open spaces
 	if(isturf(loc) && bound_overlay && !is_physically_disabled() && istype(A) && A.can_climb_from_below(src))
 		return climb_up(A)
@@ -74,30 +74,16 @@
 	if(.)
 		return
 
-	setClickCooldown(attack_delay)
 	var/attacking_with = get_natural_weapon()
 	if(a_intent == I_HELP || !attacking_with)
 		return A.attack_animal(src)
 
-	var/decl/pronouns/G = get_pronouns()
-	face_atom(A)
-	if(attack_delay)
-		walk_to(src, 0) // Cancel any baked-in movement.
-		do_windup_animation(A, attack_delay, no_reset = TRUE)
-		if(!do_after(src, attack_delay, A) || !Adjacent(A))
-			visible_message(SPAN_NOTICE("\The [src] misses [G.his] attack on \the [A]!"))
-			animate(src, pixel_x = default_pixel_x, pixel_y = default_pixel_y, time = 2) // reset wherever the attack animation got us to.
-			MoveToTarget(TRUE) // Restart hostile mob tracking.
-			return TRUE
-		MoveToTarget(TRUE) // Restart hostile mob tracking.
-
-	if(ismob(A)) // Clientless mobs are too dum to move away, so they can be missed.
-		var/mob/mob = A
-		if(!mob.ckey && !prob(get_melee_accuracy()))
-			visible_message(SPAN_NOTICE("\The [src] misses [G.his] attack on \the [A]!"))
-			return TRUE
-
-	return A.attackby(attacking_with, src)
+	a_intent = I_HURT
+	. = A.attackby(attacking_with, src)
+	if(!.)
+		reset_offsets(anim_time = 2)
+	else if(isliving(A))
+		apply_attack_effects(A)
 
 // Attack hand but for simple animals
 /atom/proc/attack_animal(mob/user)

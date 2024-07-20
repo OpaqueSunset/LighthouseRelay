@@ -588,7 +588,7 @@
 	var/list/data
 	var/meat_name = butchery_data.meat_name
 	if(ishuman(victim))
-		var/mob/living/carbon/human/CH = victim
+		var/mob/living/human/CH = victim
 		meat_name = CH.species?.name ? "[CH.species?.name] meat" : meat_name
 	if(ispath(digest_product_type, /decl/material/solid/organic/meat))
 		data = list((meat_name) = reagent_amount)

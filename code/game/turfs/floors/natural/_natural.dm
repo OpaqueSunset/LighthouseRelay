@@ -6,7 +6,6 @@
 	desc = "Bare, barren sand."
 	icon_state = "0"
 	footstep_type = /decl/footsteps/asteroid
-	open_turf_type = /turf/open
 	turf_flags = TURF_FLAG_BACKGROUND | TURF_IS_HOLOMAP_PATH
 
 	base_name = "ground"
@@ -15,11 +14,15 @@
 	base_icon_state = "0"
 	base_color = null
 
+	can_engrave = FALSE
+
 	var/dirt_color = "#7c5e42"
 	var/possible_states = 0
 	var/icon_edge_layer = -1
 	var/icon_edge_states
 	var/icon_has_corners = FALSE
+	/// The type to use when determining if a turf is our neighbour. If null, defaults to src's type.
+	var/neighbour_type
 
 	///Overrides the level's strata for this turf.
 	var/strata_override
@@ -41,6 +44,8 @@
 
 	if(possible_states > 0)
 		icon_state = "[rand(0, possible_states)]"
+
+	neighbour_type ||= type
 
 	// TEMP: set these so putting tiles over natural turfs doesn't make green sand.
 	base_name       = name
@@ -72,7 +77,7 @@
 
 /turf/floor/natural/attackby(obj/item/W, mob/user)
 
-	if(istype(W, /obj/item/stack/material/ore) || istype(W, /obj/item/stack/material/lump))
+	if(!istype(flooring) && (istype(W, /obj/item/stack/material/ore) || istype(W, /obj/item/stack/material/lump)))
 
 		if(get_physical_height() >= 0)
 			to_chat(user, SPAN_WARNING("\The [src] is flush with ground level and cannot be backfilled."))
@@ -108,12 +113,15 @@
 	return ..()
 
 /turf/floor/natural/on_reagent_change()
-	. = ..()
+
+	if(!(. = ..()))
+		return
+
 	if(!QDELETED(src) && reagent_type && height < 0 && !QDELETED(reagents) && reagents.total_volume < abs(height))
 		add_to_reagents(reagent_type, abs(height) - reagents.total_volume)
 
-/turf/floor/natural/dismantle_turf(devastated, explode, no_product)
-	return !!switch_to_base_turf()
+/turf/floor/natural/dismantle_turf(devastated, explode, no_product, keep_air = TRUE)
+	return !!switch_to_base_turf(keep_air)
 
 /turf/floor/natural/get_soil_color()
 	return dirt_color

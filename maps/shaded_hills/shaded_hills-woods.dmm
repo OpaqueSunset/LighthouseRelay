@@ -1,15 +1,19 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"af" = (
+/obj/abstract/landmark/start/shaded_hills/traveller/learned,
+/turf/floor/natural/path/basalt,
+/area/shaded_hills/outside/woods)
 "bL" = (
 /obj/abstract/landmark/latejoin,
 /turf/floor/natural/path/running_bond/basalt,
 /area/shaded_hills/outside/woods)
 "cN" = (
 /obj/structure/table/woodentable/ebony,
-/obj/item/knife/kitchen,
-/turf/floor/wood/ebony,
+/obj/item/bladed/knife,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "dp" = (
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/outside/river/woods)
 "eJ" = (
 /obj/abstract/landmark/start/shaded_hills/forester,
@@ -38,7 +42,7 @@
 /turf/wall/natural/basalt/shaded_hills,
 /area/shaded_hills/caves/river/woods)
 "lb" = (
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "lC" = (
 /turf/unsimulated/dark_filler,
@@ -50,7 +54,7 @@
 /turf/floor/natural/mud/water,
 /area/shaded_hills/outside/river/lake)
 "mo" = (
-/obj/structure/door/ebony,
+/obj/structure/door/walnut,
 /turf/floor/natural/path/basalt,
 /area/shaded_hills/forester_hut)
 "nl" = (
@@ -77,12 +81,12 @@
 "vw" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/stack/material/bundle/grass/dry,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "wD" = (
 /obj/structure/table/woodentable/ebony,
 /obj/item/fishing_rod,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "xn" = (
 /turf/unsimulated/mask,
@@ -100,9 +104,13 @@
 /turf/unsimulated/dark_filler,
 /area/shaded_hills/caves/unexplored/woods)
 "AN" = (
-/obj/structure/railing/mapped/ebony,
-/turf/floor/wood/ebony,
+/obj/structure/railing/mapped/wooden/walnut,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside/river/woods)
+"Co" = (
+/obj/abstract/landmark/start/shaded_hills/traveller/learned,
+/turf/floor/natural/dirt,
+/area/shaded_hills/outside/woods)
 "DB" = (
 /obj/structure/drying_rack,
 /turf/floor/natural/dirt,
@@ -121,8 +129,8 @@
 /area/shaded_hills/caves/woods)
 "Fz" = (
 /obj/structure/fire_source/stove,
-/obj/item/stack/material/log/mapped/ebony/ten,
-/turf/floor/wood/ebony,
+/obj/item/stack/material/log/mapped/walnut/ten,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "HA" = (
 /turf/floor/natural/grass,
@@ -134,17 +142,17 @@
 /obj/structure/bed/simple/ebony,
 /obj/item/bedsheet/furs,
 /obj/abstract/landmark/start/shaded_hills/forester,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "JI" = (
-/obj/structure/railing/mapped/ebony{
+/obj/structure/railing/mapped/wooden/walnut{
 	dir = 1
 	},
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/outside/river/woods)
 "JJ" = (
 /obj/structure/meat_hook,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "LJ" = (
 /turf/floor/natural/path/running_bond/basalt,
@@ -154,21 +162,24 @@
 /area/shaded_hills/outside/river/lake)
 "MR" = (
 /obj/structure/wall_sconce/lantern,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
+/area/shaded_hills/forester_hut)
+"MU" = (
+/turf/wall/log/walnut/shutter,
 /area/shaded_hills/forester_hut)
 "Oi" = (
 /obj/structure/closet/crate/chest/ebony,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "PO" = (
 /turf/floor/natural/mud/water/deep,
 /area/shaded_hills/outside/river/woods)
 "SI" = (
-/turf/wall/log/ebony,
+/turf/wall/log/walnut,
 /area/shaded_hills/forester_hut)
 "TP" = (
 /obj/structure/table/woodentable/ebony,
-/turf/floor/wood/ebony,
+/turf/floor/wood/walnut,
 /area/shaded_hills/forester_hut)
 "VA" = (
 /obj/abstract/landmark/start/shaded_hills/traveller,
@@ -1881,7 +1892,7 @@ lC
 lC
 lC
 VA
-lU
+Co
 lU
 lU
 lU
@@ -2185,7 +2196,7 @@ lC
 lC
 lC
 VA
-Jd
+af
 LJ
 LJ
 LJ
@@ -19589,7 +19600,7 @@ YO
 YO
 YO
 ES
-SI
+MU
 TP
 lb
 lb
@@ -19899,7 +19910,7 @@ lb
 lb
 lb
 JJ
-SI
+MU
 kx
 kx
 ES
@@ -20199,7 +20210,7 @@ ES
 ES
 SI
 SI
-SI
+MU
 SI
 SI
 SI

@@ -5121,8 +5121,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/engineering/engine_monitoring)
@@ -5131,8 +5130,7 @@
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/recharger,
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/engineering/break_room)
@@ -14132,8 +14130,7 @@
 	announcementConsole = 1;
 	department = "Chief Engineer's Desk";
 	name = "Chief Engineer RC";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/crew_quarters/heads/chief)
@@ -14219,8 +14216,7 @@
 	dir = 1
 	},
 /obj/machinery/network/requests_console/preset/engineering{
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/engineering/engineering_monitoring)
@@ -17546,8 +17542,7 @@
 	announcementConsole = 1;
 	department = "Bridge";
 	name = "Bridge RC";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/crew_quarters/heads/hop)
@@ -17806,8 +17801,7 @@
 	announcementConsole = 1;
 	department = "Bridge";
 	name = "Bridge RC";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled/dark,
 /area/bridge)
@@ -22557,7 +22551,7 @@
 /turf/floor/tiled/techmaint,
 /area/tether/station/explorer_entry)
 "ufh" = (
-/mob/living/simple_animal/hostile/retaliate/parrot/Poly,
+/mob/living/simple_animal/hostile/parrot/Poly,
 /turf/floor/carpet/orange,
 /area/crew_quarters/heads/chief)
 "ugd" = (

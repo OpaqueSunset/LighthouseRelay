@@ -4,12 +4,12 @@
 
 /decl/hierarchy/outfit/job/service/bartender
 	name = "Job - Bartender"
-	uniform = /obj/item/clothing/under/bartender
+	uniform = /obj/item/clothing/pants/formal/black/outfit
 	id_type = /obj/item/card/id/civilian
 	pda_type = /obj/item/modular_computer/pda
 	backpack_contents = list(/obj/item/clothing/permit/gun/bar = 1)
 
-/decl/hierarchy/outfit/job/service/bartender/post_equip(mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/service/bartender/post_equip(mob/living/human/H)
 	. = ..()
 	var/obj/item/backpack = H.get_equipped_item(slot_back_str)
 	if(!istype(backpack))
@@ -23,7 +23,7 @@
 
 /decl/hierarchy/outfit/job/service/chef
 	name = "Job - Chef"
-	uniform = /obj/item/clothing/under/chef
+	uniform = /obj/item/clothing/pants/slacks/white/outfit
 	suit = /obj/item/clothing/suit/chef
 	head = /obj/item/clothing/head/chefhat
 	id_type = /obj/item/card/id/civilian
@@ -31,7 +31,7 @@
 
 /decl/hierarchy/outfit/job/service/server
 	name = "Job - Server"
-	uniform = /obj/item/clothing/under/waiter
+	uniform = /obj/item/clothing/pants/slacks/black/outfit/waiter
 
 /decl/hierarchy/outfit/job/service/gardener
 	name = "Job - Gardener"

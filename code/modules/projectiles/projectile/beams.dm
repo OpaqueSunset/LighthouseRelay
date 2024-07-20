@@ -19,6 +19,10 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/megabot
+	damage = 45
+	distance_falloff = 0.5
+
 /obj/item/projectile/beam/variable
 	muzzle_type = /obj/effect/projectile/muzzle/variable
 	tracer_type = /obj/effect/projectile/tracer/variable
@@ -148,7 +152,7 @@
 
 /obj/item/projectile/beam/lastertag/blue/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
+		var/mob/living/human/M = target
 		if(istype(M.get_equipped_item(slot_wear_suit_str), /obj/item/clothing/suit/redtag))
 			SET_STATUS_MAX(M, STAT_WEAK, 5)
 	return 1
@@ -163,7 +167,7 @@
 
 /obj/item/projectile/beam/lastertag/red/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
+		var/mob/living/human/M = target
 		if(istype(M.get_equipped_item(slot_wear_suit_str), /obj/item/clothing/suit/bluetag))
 			SET_STATUS_MAX(M, STAT_WEAK, 5)
 	return 1
@@ -181,7 +185,7 @@
 
 /obj/item/projectile/beam/lastertag/omni/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
-		var/mob/living/carbon/human/M = target
+		var/mob/living/human/M = target
 		var/obj/item/suit = M.get_equipped_item(slot_wear_suit_str)
 		if((istype(suit, /obj/item/clothing/suit/bluetag))||(istype(suit, /obj/item/clothing/suit/redtag)))
 			SET_STATUS_MAX(M, STAT_WEAK, 5)

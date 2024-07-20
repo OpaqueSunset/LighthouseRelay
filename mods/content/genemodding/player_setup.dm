@@ -45,9 +45,10 @@
 	pref.tail_color =		pref.tail_color			|| COLOR_BLACK
 	pref.tail_color_extra =	pref.tail_color_extra	|| COLOR_BLACK
 
-/mob/living/carbon/human/proc/sync_tail_to_style(update_icon = TRUE)
+/mob/living/human/proc/sync_tail_to_style(update_icon = TRUE)
 	var/obj/item/organ/external/tail/tail_organ = get_organ(BP_TAIL)
 	var/decl/bodytype/root_bodytype = get_bodytype()
+	var/datum/mob_snapshot/mob_appearance = new(src)
 	if(!tail_style)
 		if(!tail_organ || root_bodytype.is_default_limb(tail_organ))
 			return
@@ -57,11 +58,11 @@
 		var/tail_path = LAZYACCESS(tail_data, "path")
 		if(!tail_path)
 			return
-		tail_organ = new tail_path(src, null, dna, root_bodytype)
+		tail_organ = new tail_path(src, null, mob_appearance)
 		add_organ(tail_organ, TRUE, TRUE, FALSE, TRUE)
 		return
 	if(!tail_organ)
-		tail_organ = new(src, null, dna, root_bodytype)
+		tail_organ = new(src, null, mob_appearance)
 		add_organ(tail_organ)
 		// everything with adding the tail organ will be handled in its Initialize
 	tail_organ.tail_icon = tail_style.icon
@@ -82,7 +83,7 @@
 		tail_organ.tail_hair = null
 	update_tail_showing(update_icon)
 
-/datum/preferences/copy_to(mob/living/carbon/human/character, is_preview_copy = FALSE)
+/datum/preferences/copy_to(mob/living/human/character, is_preview_copy = FALSE)
 	. = ..() // must be after species and such are set
 	var/list/ear_styles = decls_repository.get_decls_of_subtype(/decl/sprite_accessory/ears)
 	var/list/tail_styles = decls_repository.get_decls_of_subtype(/decl/sprite_accessory/tail)
@@ -95,6 +96,6 @@
 	character.tail_color_extra = tail_color_extra
 	character.sync_tail_to_style(update_icon = TRUE)
 
-/decl/bodytype/create_missing_organs(mob/living/carbon/human/H, fully_replace)
+/decl/bodytype/create_missing_organs(mob/living/human/H, fully_replace)
 	. = ..()
 	H.sync_tail_to_style(update_icon = TRUE)

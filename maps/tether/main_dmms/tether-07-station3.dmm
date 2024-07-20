@@ -1927,8 +1927,9 @@
 	},
 /obj/machinery/network/requests_console{
 	department = "AI";
-	pixel_x = 30;
-	pixel_y = 32
+	pixel_x = 32;
+	pixel_y = 32;
+	dir = 1
 	},
 /obj/machinery/newscaster/security_unit{
 	pixel_x = -32;
@@ -5831,8 +5832,7 @@
 	announcementConsole = 1;
 	department = "Head of Security's Desk";
 	name = "Head of Security RC";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /obj/machinery/camera/network/security{
 	dir = 1
@@ -15493,7 +15493,8 @@
 /obj/machinery/network/requests_console{
 	department = "Cargo Bay";
 	pixel_x = 32;
-	pixel_y = 30
+	pixel_y = 32;
+	dir = 1
 	},
 /turf/floor/tiled,
 /area/quartermaster/qm)
@@ -17329,7 +17330,8 @@
 	announcementConsole = 1;
 	department = "Medical Department";
 	name = "Medical RC";
-	pixel_y = 30
+	pixel_y = 32;
+	dir = 1
 	},
 /turf/floor/tiled/white,
 /area/medical/chemistry)
@@ -20095,7 +20097,8 @@
 	announcementConsole = 1;
 	department = "Medical Department";
 	name = "Medical RC";
-	pixel_y = 30
+	pixel_y = 32;
+	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 4
@@ -20372,8 +20375,7 @@
 /obj/machinery/cell_charger,
 /obj/machinery/network/requests_console{
 	department = "Cargo Bay";
-	pixel_y = -32;
-	dir = 1
+	pixel_y = -32
 	},
 /turf/floor/tiled,
 /area/quartermaster/storage)
@@ -21905,7 +21907,8 @@
 	announcementConsole = 1;
 	department = "Chief Medical Officer's Desk";
 	name = "Chief Medical Officer RC";
-	pixel_y = 30
+	pixel_y = 32;
+	dir = 1
 	},
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
@@ -22642,7 +22645,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/mob/living/simple_animal/cat/fluff/runtime,
+/mob/living/simple_animal/passive/cat/fluff/runtime,
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "NB" = (

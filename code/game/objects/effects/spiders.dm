@@ -23,7 +23,7 @@
 		return TRUE
 	var/showed_msg = FALSE
 	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
+		var/mob/living/human/H = user
 		var/decl/natural_attack/attack = H.get_unarmed_attack(src)
 		if(istype(attack))
 			attack.show_attack(H, src, H.get_target_zone(), 1)
@@ -190,7 +190,7 @@
 	if(dormant)
 		events_repository.unregister(/decl/observ/moved, src, src, TYPE_PROC_REF(/obj/effect/spider, disturbed))
 	STOP_PROCESSING(SSobj, src)
-	walk(src, 0) // Because we might have called walk_to, we must stop the walk loop or BYOND keeps an internal reference to us forever.
+	stop_automove()
 	. = ..()
 
 /obj/effect/spider/spiderling/attackby(var/obj/item/W, var/mob/user)

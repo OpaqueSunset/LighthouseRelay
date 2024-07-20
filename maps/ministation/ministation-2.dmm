@@ -355,9 +355,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
-/obj/item/gun/launcher/crossbow,
-/obj/item/arrow,
-/obj/item/arrow,
+/obj/item/gun/launcher/bow/crossbow/powered,
+/obj/item/stack/material/bow_ammo/rod,
+/obj/item/stack/material/bow_ammo/rod,
 /obj/item/cell/crap,
 /obj/item/mollusc/clam,
 /turf/floor/wood/walnut,
@@ -2474,7 +2474,7 @@
 /turf/floor/tiled/white,
 /area/ministation/science)
 "kz" = (
-/mob/living/simple_animal/cat/fluff/ran,
+/mob/living/simple_animal/passive/cat/fluff/ran,
 /turf/floor/tiled/white,
 /area/ministation/science)
 "kG" = (
@@ -2600,7 +2600,10 @@
 /area/ministation/hall/n3)
 "lh" = (
 /obj/structure/closet,
-/obj/item/clothing/under/librarian,
+/obj/item/clothing/pants/slacks/red,
+/obj/item/clothing/shirt/button,
+/obj/item/clothing/neck/tie/navy,
+/obj/item/clothing/suit/jacket/charcoal,
 /obj/item/clothing/shoes/sandal,
 /obj/item/multitool,
 /turf/floor/wood/mahogany,

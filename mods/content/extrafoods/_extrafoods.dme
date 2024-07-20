@@ -1,5 +1,6 @@
 #ifndef CONTENT_PACK_EXTRAFOODS
 #define CONTENT_PACK_EXTRAFOODS
+// BEGIN_INCLUDE
 #include "chems.dm"
 #include "extrafoods.dm"
 #include "reactions.dm"
@@ -26,4 +27,5 @@
 #include "recipes\recipes_rice.dm"
 #include "recipes\recipes_soup.dm"
 #include "recipes\recipes_tortillas_chips.dm"
+// END_INCLUDE
 #endif

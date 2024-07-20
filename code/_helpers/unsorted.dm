@@ -491,8 +491,9 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	else return get_step(ref, base_dir)
 
-/area/proc/move_contents_to(var/area/A)
+/area/proc/move_contents_to(var/area/A, var/move_air)
 	//Takes: Area.
+	//       move_air - Boolean, whether or not air should be translated with the turfs.
 	//Returns: Nothing.
 	//Notes: Attempts to move the contents of one area to another area.
 	//       Movement based on lower left corner.
@@ -510,7 +511,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	if(src_origin && trg_origin)
 		var/translation = get_turf_translation(src_origin, trg_origin, turfs_src)
-		translate_turfs(translation, null)
+		translate_turfs(translation, null, translate_air = move_air)
 
 /proc/DuplicateObject(obj/original, var/perfectcopy = 0 , var/sameloc = 0)
 	if(!original)
@@ -526,8 +527,11 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	if(perfectcopy)
 		if((O) && (original))
 			for(var/V in original.vars)
-				if(!(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key")))
-					O.vars[V] = original.vars[V]
+				if(!issaved(original.vars[V]))
+					continue
+				if(V in list("type","loc","locs","vars", "parent", "parent_type","verbs","ckey","key"))
+					continue
+				O.vars[V] = original.vars[V]
 	return O
 
 

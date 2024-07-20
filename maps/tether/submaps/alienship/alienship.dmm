@@ -230,20 +230,20 @@
 /area/tether_away/alienship)
 "aT" = (
 /obj/structure/bed/alien,
-/obj/item/clothing/under/explorer,
+/obj/item/clothing/jumpsuit/explorer,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aU" = (
-/obj/item/clothing/under/explorer,
+/obj/item/clothing/jumpsuit/explorer,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aV" = (
-/obj/item/clothing/under/explorer,
+/obj/item/clothing/jumpsuit/explorer,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "aW" = (
 /obj/item/remains/xeno,
-/obj/item/clothing/under/explorer,
+/obj/item/clothing/jumpsuit/explorer,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aX" = (

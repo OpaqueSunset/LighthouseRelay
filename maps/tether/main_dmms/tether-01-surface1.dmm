@@ -6649,7 +6649,8 @@
 /obj/random/tech_supply,
 /obj/machinery/network/requests_console{
 	department = "Tool Storage";
-	pixel_y = 32
+	pixel_y = 32;
+	dir = 1
 	},
 /turf/floor/tiled,
 /area/storage/primary)
@@ -9132,7 +9133,8 @@
 /obj/machinery/network/requests_console{
 	department = "Atmospherics";
 	name = "Atmos RC";
-	pixel_y = 28
+	pixel_y = 32;
+	dir = 1
 	},
 /obj/item/wrench,
 /obj/item/t_scanner,
@@ -18525,7 +18527,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/bathrobe,
+/obj/item/clothing/costume/bathrobe,
 /turf/floor/tiled,
 /area/crew_quarters/showers)
 "aJG" = (
@@ -18712,7 +18714,7 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/bathrobe,
+/obj/item/clothing/costume/bathrobe,
 /turf/floor/tiled,
 /area/crew_quarters/showers)
 "aKe" = (
@@ -18849,7 +18851,7 @@
 	dir = 10
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/clothing/under/bathrobe,
+/obj/item/clothing/costume/bathrobe,
 /turf/floor/tiled,
 /area/crew_quarters/showers)
 "aKx" = (

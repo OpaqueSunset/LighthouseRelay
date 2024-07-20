@@ -1,10 +1,12 @@
 #ifndef CONTENT_PACK_LIGHTHOUSE
 #define CONTENT_PACK_LIGHTHOUSE
+// BEGIN_INCLUDE
 #include "lighthouse.dm"
-#include "machinery/cryo.dm"
-#include "timeclock/pto_client_overrides.dm"
-#include "timeclock/pto_id_overrides.dm"
-#include "timeclock/pto_job_overrides.dm"
-#include "timeclock/timeclock.dm"
-#include "timeclock/timeoff_subsystem.dm"
+#include "machinery\cryo.dm"
+#include "timeclock\pto_client_overrides.dm"
+#include "timeclock\pto_id_overrides.dm"
+#include "timeclock\pto_job_overrides.dm"
+#include "timeclock\timeclock.dm"
+#include "timeclock\timeoff_subsystem.dm"
+// END_INCLUDE
 #endif

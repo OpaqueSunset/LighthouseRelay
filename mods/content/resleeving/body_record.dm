@@ -1,4 +1,4 @@
-#define BODY_RECORD_FIELD_DNA "DNA"
+#define BODY_RECORD_FIELD_SNAPSHOT "SNAPSHOT"
 #define BODY_RECORD_FIELD_BODYTYPE "BODYTYPE"
 #define BODY_RECORD_FIELD_ASPECTS "ASPECTS"
 #define BODY_RECORD_FIELD_GENEMODS "GENEMODS"
@@ -12,17 +12,17 @@
 	read_only = TRUE
 	filetype = "BDY"
 
-/datum/computer_file/data/body_record/proc/get_dna()
-	return LAZYACCESS(metadata, BODY_RECORD_FIELD_DNA)
+/datum/computer_file/data/body_record/proc/get_snapshot()
+	return LAZYACCESS(metadata, BODY_RECORD_FIELD_SNAPSHOT)
 
 /datum/computer_file/data/body_record/proc/get_bodytype_string()
 	return LAZYACCESS(metadata, BODY_RECORD_FIELD_BODYTYPE)
 
 /datum/computer_file/data/body_record/proc/get_species()
-	var/datum/dna/our_dna = get_dna()
-	if(!our_dna)
+	var/datum/mob_snapshot/our_snapshot = get_snapshot()
+	if(!our_snapshot)
 		return null
-	return get_species_by_key(our_dna.species)
+	return get_species_by_key(our_snapshot.root_species)
 
 /datum/computer_file/data/body_record/proc/get_bodytype_decl()
 	var/decl/species/our_species = get_species()
@@ -31,31 +31,30 @@
 	return our_species.get_bodytype_by_name(get_bodytype_string())
 
 /datum/computer_file/data/body_record/generate_file_data(mob/user)
-	var/datum/dna/our_dna = get_dna()
+	var/datum/mob_snapshot/our_snapshot = get_snapshot()
 	return {"
 		<center>
 			<h2>TRANSCORE BODY RECORD</h1>
 			<h3>Open Genetic Record Format v1.1</h3>
 			<hr>
-			<p>[our_dna.real_name]</p>
-			<p>[our_dna.uni_identity]</p>
-			<p>[our_dna.struc_enzymes]</p>
-			<p>[our_dna.unique_enzymes]</p>
-			<p>[our_dna.species]</p>
+			<p>[our_snapshot.real_name]</p>
+			<p>[our_snapshot.fingerprint]</p>
+			<p>[md5(our_snapshot.genetic_conditions)]</p>
+			<p>[our_snapshot.unique_enzymes]</p>
+			<p>[our_snapshot.root_species]</p>
+			<p>[our_snapshot.root_bodytype]</p>
 			<p>[get_bodytype_string()]</p>
 		</center>"}
 
-/mob/living/carbon/human/proc/get_body_record_metadata()
+/mob/living/human/proc/get_body_record_metadata()
 	var/list/metadata = list()
-	metadata[BODY_RECORD_FIELD_DNA] = dna
+	metadata[BODY_RECORD_FIELD_SNAPSHOT] = new /datum/mob_snapshot(src)
 	var/bodytype_string = get_bodytype()?.name
 	if(bodytype_string)
 		metadata[BODY_RECORD_FIELD_BODYTYPE] = bodytype_string
 	return metadata
 
-/mob/living/carbon/human/proc/create_body_record(upload = TRUE)
-	if(!dna)
-		return
+/mob/living/human/proc/create_body_record(upload = TRUE)
 	// todo: implement BODY_RECORD_FIELD_ASPECTS for storing physical aspects, EXCLUDE things like prosthetics
 	var/datum/computer_file/data/body_record/body_record = new(get_body_record_metadata())
 	body_record.filename = "[replacetext(real_name, " ", "_")].BDY"
@@ -79,12 +78,12 @@
 	return list(/obj/item/disk/transcore = 7)
 
 /datum/computer_file/data/body_record/proc/create_human(location)
-	var/mob/living/carbon/human/our_human = new /mob/living/carbon/human(location, null, get_dna(), get_bodytype_decl())
+	var/mob/living/human/our_human = new /mob/living/human(location, null, get_snapshot())
 	our_human.update_hair(update_icons = TRUE)
 	return our_human
 
 #ifdef CONTENT_PACK_GENEMODDING
-/mob/living/carbon/human/get_body_record_metadata()
+/mob/living/human/get_body_record_metadata()
 	var/list/metadata = ..()
 	if(tail_style)
 		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
@@ -111,7 +110,7 @@
 	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_EARS)
 
 /datum/computer_file/data/body_record/create_human(location)
-	var/mob/living/carbon/human/our_human = ..()
+	var/mob/living/human/our_human = ..()
 	var/list/tail_data = get_tail_metadata()
 	if(tail_data?[BODY_RECORD_GENEMOD_STYLE])
 		our_human.tail_style = decls_repository.get_decl_by_id(tail_data[BODY_RECORD_GENEMOD_STYLE])

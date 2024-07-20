@@ -190,7 +190,7 @@
 
 ///Handle copying data from a previous level_data we're replacing.
 /datum/level_data/proc/copy_from(var/datum/level_data/old_level)
-	//#TODO: It's not really clear what should get moved over by default. But putting some time to reflect on this would be good..
+	//#TODO: It's not really clear what should get moved over by default. But putting some time to reflect on this would be good...
 	return
 
 ///Initialize the turfs on the z-level.
@@ -585,6 +585,8 @@ INITIALIZE_IMMEDIATE(/obj/abstract/level_data_spawner)
 // Level Data Implementations
 ////////////////////////////////////////////
 /datum/level_data/space
+	daycycle_id = "space_solars"
+	daycycle_type = /datum/daycycle/solars
 
 /datum/level_data/debug
 	name = "Debug Level"

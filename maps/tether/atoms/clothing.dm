@@ -9,15 +9,20 @@
 	body_parts_covered = SLOT_EYES
 	item_flags = ITEM_FLAG_AIRTIGHT | ITEM_FLAG_NO_CONTAMINATION
 
-/obj/item/clothing/under/bathrobe
+/obj/item/clothing/costume/bathrobe
 	name = "bathrobe"
 	desc = "A fluffy robe to keep you from showing off to the world."
-	icon = 'maps/tether/icons/obj/clothing/under/bathrobe.dmi'
+	icon = 'maps/tether/icons/obj/clothing/costumes/bathrobe.dmi'
 
-/obj/item/clothing/under/explorer
+/obj/item/clothing/costume/batter
+	name = "baseball uniform"
+	desc = "A plain white batter's jersey with no markings; the maker's tag says only: \"Panic in Ballville\". Durable and lightweight, it seems made to survive a dangerous mission rather than a game of baseball. Despite the exceptional purity of the fabric, the way the cloth makes no sound is unsettling. It makes you feel a little Off."
+	icon = 'maps/tether/icons/obj/clothing/costumes/batter.dmi'
+
+/obj/item/clothing/jumpsuit/explorer
 	name = "explorer's jumpsuit"
 	desc = "A green uniform for operating in hazardous environments."
-	icon = 'maps/tether/icons/obj/clothing/under/explorer.dmi'
+	icon = 'maps/tether/icons/obj/clothing/jumpsuits/explorer.dmi'
 
 /obj/item/clothing/mask/gas/explorer
 	name = "explorer gas mask"

@@ -10,7 +10,7 @@
 
 	var/structure_flags
 	var/last_damage_message
-	var/hitsound = 'sound/weapons/smash.ogg'
+	var/hitsound = 'sound/weapons/Genhit.ogg'
 	var/parts_type
 	var/parts_amount
 	var/footstep_type
@@ -61,7 +61,7 @@
 		reinf_material = GET_DECL(reinf_material)
 	. = ..()
 	update_materials()
-	if(lock)
+	if(lock && !istype(loc))
 		lock = new /datum/lock(src, lock)
 	if(!CanFluidPass())
 		fluid_update(TRUE)
@@ -121,7 +121,7 @@
 	set waitfor = FALSE
 	return FALSE
 
-/obj/structure/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0)
+/obj/structure/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent, do_update_health)
 	if(current_health == -1) // This object does not take damage.
 		return
 

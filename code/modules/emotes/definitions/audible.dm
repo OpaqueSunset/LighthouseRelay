@@ -33,7 +33,7 @@
 
 /decl/emote/audible/gnarl
 	key = "gnarl"
-	emote_message_3p = "$USER$ gnarls and shows its teeth.."
+	emote_message_3p = "$USER$ gnarls and shows its teeth."
 
 /decl/emote/audible/multichirp
 	key = "mchirp"
@@ -124,10 +124,6 @@
 /decl/emote/audible/giggle
 	key = "giggle"
 	emote_message_3p = "$USER$ giggles."
-
-/decl/emote/audible/scream
-	key = "scream"
-	emote_message_3p = "$USER$ screams!"
 
 /decl/emote/audible/grunt
 	key = "grunt"

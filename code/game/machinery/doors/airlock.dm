@@ -129,13 +129,11 @@ About the new airlock wires panel:
 					return
 			else /*if(src.justzap)*/
 				return
-		else if(prob(10) && src.operating == 0)
-			var/mob/living/carbon/C = user
-			if(istype(C) && C.hallucination_power > 25)
-				to_chat(user, SPAN_DANGER("You feel a powerful shock course through your body!"))
-				user.take_damage(10, PAIN)
-				SET_STATUS_MAX(user, STAT_STUN, 10)
-				return
+		else if(prob(10) && src.operating == 0 && user.hallucination_power > 25)
+			to_chat(user, SPAN_DANGER("You feel a powerful shock course through your body!"))
+			user.take_damage(10, PAIN)
+			SET_STATUS_MAX(user, STAT_STUN, 10)
+			return
 	..(user)
 
 /obj/machinery/door/airlock/bumpopen(mob/living/simple_animal/user)
@@ -815,20 +813,20 @@ About the new airlock wires panel:
 	else
 		return ..()
 
-/obj/machinery/door/airlock/bash(obj/item/I, mob/user)
-			//if door is unbroken, hit with fire axe using harm intent
-	if (istype(I, /obj/item/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT)
+/obj/machinery/door/airlock/bash(obj/item/weapon, mob/user)
+	//if door is unbroken, hit with fire axe using harm intent
+	if (istype(weapon, /obj/item/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT && weapon.user_can_wield(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		var/obj/item/twohanded/fireaxe/F = I
+		var/obj/item/twohanded/fireaxe/F = weapon
 		if (F.wielded)
 			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
 			current_health -= F.force_wielded * 2
 			if(current_health <= 0)
-				user.visible_message(SPAN_DANGER("[user] smashes \the [I] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [I] into the airlock's control panel! It explodes in a shower of sparks!"))
+				user.visible_message(SPAN_DANGER("[user] smashes \the [weapon] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [weapon] into the airlock's control panel! It explodes in a shower of sparks!"))
 				current_health = 0
 				set_broken(TRUE)
 			else
-				user.visible_message(SPAN_DANGER("[user] smashes \the [I] into the airlock's control panel!"))
+				user.visible_message(SPAN_DANGER("[user] smashes \the [weapon] into the airlock's control panel!"))
 			return TRUE
 	return ..()
 
@@ -1073,7 +1071,7 @@ About the new airlock wires panel:
 	return
 
 // Braces can act as an extra layer of armor - they will take damage first.
-/obj/machinery/door/airlock/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent = FALSE)
+/obj/machinery/door/airlock/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent, do_update_health)
 	if(brace)
 		brace.take_damage(damage)
 	else

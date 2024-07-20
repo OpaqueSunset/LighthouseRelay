@@ -48,6 +48,7 @@
 	drop_sound = 'sound/foley/drop1.ogg'
 	pickup_sound = 'sound/foley/pickup2.ogg'
 
+	var/fire_verb = "fire"
 	var/waterproof = FALSE
 	var/burst = 1
 	var/fire_delay = 6 	//delay after shooting before the gun can be used again. Cannot be less than [burst_delay+1]
@@ -197,7 +198,8 @@
 		if(prob(30))
 			toggle_safety()
 			return 1
-	if((MUTATION_CLUMSY in M.mutations) && prob(40)) //Clumsy handling
+
+	if(M.has_genetic_condition(GENE_COND_CLUMSY) && prob(40)) //Clumsy handling
 		var/obj/P = consume_next_projectile()
 		if(P)
 			var/pew_loc = pick(BP_L_FOOT, BP_R_FOOT)
@@ -359,12 +361,15 @@
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
 
 //called after successfully firing
+/obj/item/gun/proc/get_firing_name(obj/projectile)
+	return "\the [src]"
+
 /obj/item/gun/proc/handle_post_fire(atom/movable/firer, atom/target, var/pointblank=0, var/reflex=0, var/obj/projectile)
 	if(fire_anim)
 		flick(fire_anim, src)
 
 	if(!silenced && check_fire_message_spam("fire"))
-		var/user_message = SPAN_WARNING("You fire \the [src][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
+		var/user_message = SPAN_WARNING("You [fire_verb] [get_firing_name(projectile)][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
 		if (silenced)
 			to_chat(firer, user_message)
 		else
@@ -395,7 +400,7 @@
 			shake_camera(user, max(burst_delay*burst, fire_delay), screen_shake)
 
 		if(ishuman(user) && user.is_cloaked()) //shooting will disable a rig cloaking device
-			var/mob/living/carbon/human/H = user
+			var/mob/living/human/H = user
 			var/obj/item/rig/rig = H.get_rig()
 			if(rig)
 				for(var/obj/item/rig_module/stealth_field/S in rig.installed_modules)
@@ -506,7 +511,7 @@
 	//shooting while in shock
 	var/shock_dispersion = 0
 	if(ishuman(firer))
-		var/mob/living/carbon/human/mob = firer
+		var/mob/living/human/mob = firer
 		if(mob.shock_stage > 120)
 			shock_dispersion = rand(-4,4)
 		else if(mob.shock_stage > 70)
@@ -537,7 +542,7 @@
 /obj/item/gun/proc/handle_suicide(mob/living/user)
 	if(!ishuman(user))
 		return
-	var/mob/living/carbon/human/M = user
+	var/mob/living/human/M = user
 
 	mouthshoot = 1
 	admin_attacker_log(user, "is attempting to suicide with \a [src]")
@@ -644,6 +649,8 @@
 		. = 1
 
 /obj/item/gun/attack_self(mob/user)
+	if(!user.check_dexterity(DEXTERITY_WEAPONS))
+		return TRUE // prevent further interactions
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
 		new_mode = switch_firemodes()
@@ -651,6 +658,8 @@
 		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
 
 /obj/item/gun/proc/toggle_safety(var/mob/user)
+	if(user && !user.check_dexterity(DEXTERITY_WEAPONS))
+		return TRUE
 	if(!has_safety)
 		to_chat(user,SPAN_NOTICE("You can't find a safety on \the [src]!"))
 		return
@@ -735,6 +744,11 @@
 /decl/interaction_handler/toggle_safety
 	name = "Toggle Gun Safety"
 	expected_target_type = /obj/item/gun
+
+/decl/interaction_handler/toggle_safety/is_possible(atom/target, mob/user, obj/item/prop)
+	. = ..()
+	if(!user.check_dexterity(DEXTERITY_WEAPONS))
+		return FALSE
 
 /decl/interaction_handler/toggle_safety/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/item/gun/gun = target
