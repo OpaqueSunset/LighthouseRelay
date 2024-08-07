@@ -2,6 +2,7 @@
 	name = "eggs benedict"
 	desc = "Hey, there's only one egg in this!"
 	filling_color = "#ffdf78"
+	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "benedict"
 	nutriment_type = /decl/material/liquid/nutriment/bread
 	nutriment_amt = 2
@@ -17,6 +18,7 @@
 	name = "baked beans"
 	desc = "Musical fruit in a slightly less musical container."
 	filling_color = "#fc6f28"
+	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "bakedbeans"
 	bitesize = 2
 
@@ -24,6 +26,7 @@
 	name = "sugar cookie"
 	desc = "Just like your little sister used to make."
 	filling_color = "#dbc94f"
+	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "sugarcookie"
 	nutriment_type = /decl/material/liquid/nutriment/bread
 	nutriment_amt = 2
@@ -37,6 +40,7 @@
 /obj/item/chems/food/fruitsalad
 	name = "fruit salad"
 	desc = "Your standard fruit salad."
+	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "fruitsalad"
 	filling_color = "#ff3867"
 	nutriment_amt = 10
@@ -61,6 +65,7 @@
 /obj/item/chems/food/curryrice
 	name = "curry rice"
 	desc = "That's some dangerously spicy rice."
+	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "curryrice"
 	nutriment_type = /decl/material/liquid/nutriment/rice
 	nutriment_amt = 5
