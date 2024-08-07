@@ -23,8 +23,8 @@
 	)
 	override_limb_types  = list(BP_TAIL = /obj/item/organ/external/tail/avian)
 	default_sprite_accessories = list(
-		SAC_HAIR     = list(/decl/sprite_accessory/hair/avian    = "#252525"),
-		SAC_MARKINGS = list(/decl/sprite_accessory/marking/avian = "#454545")
+		SAC_HAIR     = list(/decl/sprite_accessory/hair/avian    = list(SAM_COLOR = "#252525")),
+		SAC_MARKINGS = list(/decl/sprite_accessory/marking/avian = list(SAM_COLOR = "#454545"))
 	)
 	age_descriptor = /datum/appearance_descriptor/age/neoavian
 	heat_discomfort_strings = list(
@@ -37,7 +37,7 @@
 	var/tail_blend =        ICON_MULTIPLY
 	var/tail_hair
 	var/tail_hair_blend
-	var/tail_states
+	var/tail_animation_states
 
 /decl/bodytype/avian/raptor
 	name                 = "raptor"
@@ -89,10 +89,10 @@
 		var/decl/bodytype/avian/bird_bod = bodytype
 		return bird_bod.tail_icon
 
-/obj/item/organ/external/tail/avian/get_tail_states()
+/obj/item/organ/external/tail/avian/get_tail_animation_states()
 	if(istype(bodytype, /decl/bodytype/avian))
 		var/decl/bodytype/avian/bird_bod = bodytype
-		return bird_bod.tail_states
+		return bird_bod.tail_animation_states
 
 /obj/item/organ/external/tail/avian/get_tail_blend()
 	if(istype(bodytype, /decl/bodytype/avian))

@@ -11,6 +11,15 @@
 	)
 	category                    = "structures"
 
+/decl/stack_recipe/bricks/cup
+	result_type                = /obj/item/chems/glass/handmade/cup
+
+/decl/stack_recipe/bricks/mug
+	result_type                = /obj/item/chems/glass/handmade/mug
+
+/decl/stack_recipe/bricks/bowl
+	result_type                = /obj/item/chems/glass/handmade/bowl
+
 /decl/stack_recipe/bricks/fire_source
 	abstract_type               = /decl/stack_recipe/bricks/fire_source
 	on_floor                    = TRUE
@@ -39,6 +48,10 @@
 	on_floor                   = TRUE
 	difficulty                 = MAT_VALUE_HARD_DIY
 	category                   = "furniture"
+
+/decl/stack_recipe/bricks/gravestone
+	result_type            = /obj/item/gravemarker/gravestone
+	difficulty             = MAT_VALUE_NORMAL_DIY
 
 /decl/stack_recipe/bricks/fountain
 	result_type                = /obj/structure/fountain/mundane

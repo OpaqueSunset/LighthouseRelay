@@ -17123,7 +17123,7 @@
 /obj/item/box/monkeycubes,
 /obj/item/box/monkeycubes,
 /obj/item/box/monkeycubes,
-/obj/item/chems/food/monkeycube/wrapped,
+/obj/item/food/monkeycube/wrapped,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},

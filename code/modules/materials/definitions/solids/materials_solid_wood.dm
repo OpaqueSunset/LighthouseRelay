@@ -11,6 +11,8 @@
 	wall_blend_icons = list(
 		'icons/turf/walls/solid.dmi' = TRUE,
 		'icons/turf/walls/stone.dmi' = TRUE,
+		'icons/turf/walls/brick.dmi' = TRUE,
+		'icons/turf/walls/log.dmi' = TRUE,
 		'icons/turf/walls/metal.dmi' = TRUE
 	)
 	table_icon_base = "wood"
@@ -40,12 +42,13 @@
 	default_solid_form = /obj/item/stack/material/plank
 	sound_manipulate = 'sound/foley/woodpickup1.ogg'
 	sound_dropped = 'sound/foley/wooddrop1.ogg'
+	compost_value = 0.2
 
 /decl/material/solid/organic/wood/fungal
 	name = "towercap"
 	uid = "solid_wood_fungal"
 	color = "#e6d8dd"
-	hardness = MAT_VALUE_FLEXIBLE + 1
+	hardness = MAT_VALUE_FLEXIBLE + 10
 
 /decl/material/solid/organic/wood/holographic
 	name = "holographic wood"

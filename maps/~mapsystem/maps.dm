@@ -81,7 +81,7 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	var/evac_controller_type = /datum/evacuation_controller
 	var/list/overmap_ids // Assoc list of overmap ID to overmap type, leave empty to disable overmap.
 
-	var/pray_reward_type = /obj/item/chems/food/cookie // What reward should be given by admin when a prayer is received?
+	var/pray_reward_type = /obj/item/food/cookie // What reward should be given by admin when a prayer is received?
 
 	// The list of lobby screen images to pick() from.
 	var/list/lobby_screens = list('icons/default_lobby.png')
@@ -167,6 +167,18 @@ var/global/const/MAP_HAS_RANK = 2		//Rank system, also togglable
 	/// Decl list of backpacks available to outfits and in character generation.
 	var/list/_available_backpacks
 	var/backpacks_setup = FALSE
+
+	var/list/char_preview_bgstate_options = list(
+		"000",
+		"midgrey",
+		"FFF",
+		"white",
+		"steel",
+		"techmaint",
+		"dark",
+		"plating",
+		"reinforced"
+	)
 
 /datum/map/proc/get_lobby_track(var/exclude)
 	var/lobby_track_type

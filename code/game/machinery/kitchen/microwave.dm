@@ -280,7 +280,7 @@
 
 /obj/machinery/microwave/proc/has_extra_item()
 	for(var/obj/O in get_contained_external_atoms())
-		if(!istype(O,/obj/item/chems/food))
+		if(!istype(O,/obj/item/food))
 			return TRUE
 	return FALSE
 
@@ -411,7 +411,7 @@
 		qdel(O)
 	reagents.clear_reagents()
 	SSnano.update_uis(src)
-	var/obj/item/chems/food/badrecipe/ffuu = new(src)
+	var/obj/item/food/badrecipe/ffuu = new(src)
 	ffuu.add_to_reagents(/decl/material/solid/carbon, amount)
 	ffuu.add_to_reagents(/decl/material/liquid/acrylamide, amount/10)
 	return ffuu

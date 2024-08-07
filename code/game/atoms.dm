@@ -57,6 +57,8 @@
 	/// (FLOAT) Theoretical maximum health value.
 	var/max_health
 
+	/// (BOOL) Does this atom respond to changes in local temperature via the `temperature` var?
+	var/temperature_sensitive = FALSE
 	/// (DATUM) /datum/storage instance to use for this obj. Set to a type for instantiation on init.
 	var/datum/storage/storage
 	/// (FLOAT) world.time of last on_reagent_update call, used to prevent recursion due to reagents updating reagents
@@ -956,3 +958,19 @@
 
 /atom/proc/spark_act(obj/effect/sparks/sparks)
 	return
+
+/atom/proc/get_affecting_weather()
+	return
+
+/atom/proc/is_outside()
+	var/turf/turf = get_turf(src)
+	return istype(turf) ? turf.is_outside() : OUTSIDE_UNCERTAIN
+
+/atom/proc/can_be_poured_into(atom/source)
+	return (reagents?.maximum_volume > 0) && ATOM_IS_OPEN_CONTAINER(src)
+
+/// This is whether it's physically possible to pour from this atom to the target atom, based on context like user intent and src being open, etc.
+/// This should not check things like whether there is actually anything in src to pour.
+/// It should also not check anything controlled by the target atom, because can_be_poured_into() already exists.
+/atom/proc/can_be_poured_from(mob/user, atom/target)
+	return (reagents?.maximum_volume > 0) && ATOM_IS_OPEN_CONTAINER(src)

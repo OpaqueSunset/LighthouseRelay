@@ -107,9 +107,9 @@
 	age_descriptor = /datum/appearance_descriptor/age/grafadreka
 	default_sprite_accessories = list(
 		SAC_MARKINGS = list(
-			/decl/sprite_accessory/marking/grafadreka                 = COLOR_BLUE_GRAY,
-			/decl/sprite_accessory/marking/grafadreka/bioluminescence = COLOR_CYAN,
-			/decl/sprite_accessory/marking/grafadreka/claws           = COLOR_SILVER
+			/decl/sprite_accessory/marking/grafadreka                 = list(SAM_COLOR = COLOR_BLUE_GRAY),
+			/decl/sprite_accessory/marking/grafadreka/bioluminescence = list(SAM_COLOR = COLOR_CYAN),
+			/decl/sprite_accessory/marking/grafadreka/claws           = list(SAM_COLOR = COLOR_SILVER)
 		)
 	)
 	z_flags = ZMM_WIDE_LOAD
@@ -268,9 +268,8 @@
 	)
 
 /obj/item/organ/external/tail/grafadreka
-	tail       = "tail"
-	tail_icon  = 'mods/species/drakes/icons/tail.dmi'
+	tail_icon  = 'mods/species/drakes/icons/body.dmi'
 	tail_blend = ICON_MULTIPLY
 
 /obj/item/organ/external/tail/grafadreka/hatchling
-	tail_icon  = 'mods/species/drakes/icons/hatchling_tail.dmi'
+	tail_icon  = 'mods/species/drakes/icons/hatchling_body.dmi'

@@ -30,6 +30,8 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	var/list/available_accessory_categories = list(
 		SAC_HAIR,
 		SAC_FACIAL_HAIR,
+		SAC_EARS,
+		SAC_TAIL,
 		SAC_COSMETICS,
 		SAC_MARKINGS
 	)
@@ -55,6 +57,8 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	var/flesh_color = "#ffc896"             // Pink.
 	var/blood_oxy = 1
 
+	// Preview in prefs positioning. If null, uses defaults set on a static list in preferences.dm.
+	var/list/preview_screen_locs
 
 	var/organs_icon		//species specific internal organs icons
 
@@ -772,3 +776,6 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	H.mob_swap_flags = swap_flags
 	H.mob_push_flags = push_flags
 	H.pass_flags = pass_flags
+
+/decl/species/proc/modify_preview_appearance(mob/living/human/dummy/mannequin)
+	return mannequin

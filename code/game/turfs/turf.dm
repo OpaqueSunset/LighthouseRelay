@@ -4,6 +4,7 @@
 	abstract_type = /turf
 	is_spawnable_type = TRUE
 	layer = TURF_LAYER
+	temperature_sensitive = TRUE
 
 	/// Will participate in ZAS, join zones, etc.
 	var/zone_membership_candidate = FALSE
@@ -279,9 +280,7 @@
 		return TRUE
 
 	if(reagents?.total_volume >= FLUID_PUDDLE)
-		// Must be open, but food items should not be filled from sources like this. They're open in order to add condiments, not to be poured into/out of.
-		// TODO: Rewrite open-container-ness or food to make this unnecessary!
-		if(ATOM_IS_OPEN_CONTAINER(W) && !istype(W, /obj/item/chems/food) && W.reagents)
+		if(ATOM_IS_OPEN_CONTAINER(W) && W.reagents)
 			var/taking = min(reagents.total_volume, REAGENTS_FREE_SPACE(W.reagents))
 			if(taking > 0)
 				to_chat(user, SPAN_NOTICE("You fill \the [W] with [reagents.get_primary_reagent_name()] from \the [src]."))
@@ -536,7 +535,7 @@
 
 	SSair.mark_for_update(src)
 
-/turf/proc/is_outside()
+/turf/is_outside()
 
 	// Can't rain inside or through solid walls.
 	// TODO: dense structures like full windows should probably also block weather.
@@ -763,9 +762,12 @@
 /turf/proc/get_soil_color()
 	return null
 
-/turf/proc/get_fishing_result(obj/item/chems/food/bait)
+/turf/proc/get_fishing_result(obj/item/food/bait)
 	var/area/A = get_area(src)
 	return A.get_fishing_result(src, bait)
+
+/turf/get_affecting_weather()
+	return weather
 
 /turf/get_alt_interactions(mob/user)
 	. = ..()

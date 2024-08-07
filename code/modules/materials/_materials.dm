@@ -73,6 +73,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/antag_text
 	var/default_solid_form = /obj/item/stack/material/sheet
 
+	var/soup_name
+	var/soup_hot_desc = "simmering"
+
 	var/affect_blood_on_ingest = TRUE
 	var/affect_blood_on_inhale = TRUE
 
@@ -307,8 +310,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/nutriment_factor     = 0 // Per removed amount each tick
 	var/hydration_factor     = 0 // Per removed amount each tick
 	var/injectable_nutrition = FALSE
-	var/soup_overlay
-	var/soup_base = "soup_base"
+	var/reagent_overlay
+	var/reagent_overlay_base = "reagent_base"
 
 // Placeholders for light tiles and rglass.
 /decl/material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack, var/use_sheets = 1)
@@ -346,11 +349,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		CRASH("Unnamed material /decl tried to initialize.")
 	// Default use_name to name if unset.
 	use_name       ||= name
-	// Default everything else to use_name, so that if it's overridden, we use that instead of base name.
+	// Default the other state names to use_name, so that if it's overridden, we use that instead of base name.
 	liquid_name    ||= use_name
 	solid_name     ||= use_name
 	gas_name       ||= use_name
-	adjective_name ||= use_name
+	// Use solid_name for adjective_name so that we get "ice bracelet" instead of "water bracelet" for things made of water below 0C.
+	adjective_name ||= solid_name
+	// Default soup_name to liquid_name if unset.
+	soup_name      ||= liquid_name
 
 	// Null/clear a bunch of physical vars as this material is fake.
 	if(holographic)
@@ -883,10 +889,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	// Sum our existing taste data with the incoming taste data.
 	var/total_taste = 0
+	var/new_fraction = amount / REAGENT_VOLUME(reagents, type) // the fraction of the total reagent volume that the new data is associated with
 	var/list/tastes = list()
 	var/list/newtastes = LAZYACCESS(newdata, "taste")
 	for(var/taste in newtastes)
-		var/newtaste   = newtastes[taste]
+		var/newtaste   = newtastes[taste] * new_fraction
 		tastes[taste] += newtaste
 		total_taste   += newtaste
 
@@ -895,14 +902,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	// with a taste list into honey for example won't completely mask the
 	// taste of honey.
 	var/list/oldtastes = LAZYACCESS(., "taste")
+	var/old_fraction = 1 - new_fraction
 	if(length(oldtastes))
 		for(var/taste in oldtastes)
-			var/oldtaste   = oldtastes[taste]
+			var/oldtaste   = oldtastes[taste] * old_fraction
 			tastes[taste] += oldtaste
 			total_taste   += oldtaste
-	else if(taste_description)
-		tastes[taste_description] += taste_mult
-		total_taste               += taste_mult
+	else if(length(tastes) && taste_description) // only add it to the list if we already have other tastes
+		tastes[taste_description] += taste_mult * old_fraction
+		total_taste               += taste_mult * old_fraction
 
 	// Cull all tastes below 10% of total
 	if(length(tastes))
@@ -1004,7 +1012,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			var/data_name = rdata["mask_name"]
 			if(data_name)
 				return data_name
-	return liquid_name
+	return soup_name
 
 /decl/material/proc/get_reagent_color(datum/reagents/holder)
 	if(istype(holder) && holder.reagent_data)

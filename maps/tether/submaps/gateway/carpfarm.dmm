@@ -572,13 +572,13 @@
 /turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bS" = (
-/obj/item/chems/food/cubancarp,
+/obj/item/food/cubancarp,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/glass,
 /turf/floor/tiled,
 /area/awaymission/carpfarm/base)
 "bT" = (
-/obj/item/chems/food/carpmeat,
+/obj/item/food/carpmeat,
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/glass,
 /turf/floor/tiled,

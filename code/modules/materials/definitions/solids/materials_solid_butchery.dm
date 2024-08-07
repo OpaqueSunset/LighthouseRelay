@@ -21,7 +21,7 @@
 	hitsound = 'sound/effects/squelch1.ogg'
 	fishing_bait_value = 1
 	nutriment_animal = TRUE
-	soup_overlay = "soup_chunks"
+	reagent_overlay = "soup_chunks"
 	nutriment_factor = 10
 
 /decl/material/solid/organic/meat/egg
@@ -32,7 +32,7 @@
 	uid = "solid_egg"
 	melting_point = 273
 	boiling_point = 373
-	soup_overlay = "soup_dumplings"
+	reagent_overlay = "soup_dumplings"
 
 /decl/material/solid/organic/meat/fish
 	name  = "fish meat"
@@ -63,7 +63,7 @@
 	hidden_from_codex = TRUE
 	construction_difficulty = MAT_VALUE_NORMAL_DIY
 	integrity = 50
-	hardness = MAT_VALUE_SOFT
+	hardness = MAT_VALUE_SOFT+5
 	weight = MAT_VALUE_EXTREMELY_LIGHT
 	explosion_resistance = 1
 	reflectiveness = MAT_VALUE_DULL

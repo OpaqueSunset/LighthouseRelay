@@ -156,8 +156,8 @@
 /area/awaymission/zoo/pirateship)
 "ax" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/butchery/meat,
-/obj/item/chems/food/butchery/meat,
+/obj/item/food/butchery/meat,
+/obj/item/food/butchery/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -165,7 +165,7 @@
 /area/awaymission/zoo/pirateship)
 "ay" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/butchery/meat,
+/obj/item/food/butchery/meat,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -476,11 +476,11 @@
 /obj/structure/table/reinforced,
 /obj/item/knife/kitchen/cleaver,
 /obj/item/chems/drinks/bottle/small/beer,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
 /obj/effect/floor_decal/corner/blue/diagonal,
 /turf/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
@@ -589,7 +589,7 @@
 /turf/space,
 /area/awaymission/zoo/tradeship)
 "bN" = (
-/obj/item/chems/food/hugemushroomslice,
+/obj/item/food/hugemushroomslice,
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
@@ -691,7 +691,7 @@
 /turf/space,
 /area/awaymission/zoo/tradeship)
 "cj" = (
-/obj/item/chems/food/hugemushroomslice,
+/obj/item/food/hugemushroomslice,
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "ck" = (
@@ -733,18 +733,18 @@
 /obj/structure/closet/secure_closet/freezer/meat{
 	opened = 1
 	},
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "cr" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/butchery/meat,
-/obj/item/chems/food/butchery/meat,
-/obj/item/chems/food/xenomeat,
+/obj/item/food/butchery/meat,
+/obj/item/food/butchery/meat,
+/obj/item/food/xenomeat,
 /turf/floor/tiled/white,
 /area/awaymission/zoo/pirateship)
 "cs" = (
@@ -917,7 +917,7 @@
 /turf/floor/tiled,
 /area/awaymission/zoo/pirateship)
 "cP" = (
-/obj/item/chems/food/butchery/meat,
+/obj/item/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "cQ" = (
@@ -1218,7 +1218,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "dI" = (
@@ -1332,7 +1332,7 @@
 /area/awaymission/zoo/pirateship)
 "dY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "dZ" = (
@@ -1448,7 +1448,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "ep" = (
@@ -1561,7 +1561,7 @@
 	dir = 4;
 	icon_state = "right"
 	},
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eD" = (
@@ -1571,7 +1571,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eE" = (
-/obj/item/chems/food/xenomeat,
+/obj/item/food/xenomeat,
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "eF" = (
@@ -1875,7 +1875,7 @@
 /area/awaymission/zoo/pirateship)
 "fA" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/butchery/meat,
+/obj/item/food/butchery/meat,
 /turf/floor/tiled/freezer,
 /area/awaymission/zoo/pirateship)
 "fB" = (
@@ -2654,10 +2654,10 @@
 /area/awaymission/zoo/syndieship)
 "hK" = (
 /obj/structure/closet,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -2665,10 +2665,10 @@
 /area/awaymission/zoo/syndieship)
 "hL" = (
 /obj/structure/closet,
-/obj/item/chems/food/tastybread,
-/obj/item/chems/food/tastybread,
-/obj/item/chems/food/tastybread,
-/obj/item/chems/food/tastybread,
+/obj/item/food/tastybread,
+/obj/item/food/tastybread,
+/obj/item/food/tastybread,
+/obj/item/food/tastybread,
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hM" = (

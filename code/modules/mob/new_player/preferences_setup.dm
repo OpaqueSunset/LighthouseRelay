@@ -9,15 +9,18 @@
 	gender = pronouns.name
 
 	for(var/acc_cat in sprite_accessories)
+
 		var/decl/sprite_accessory_category/accessory_category_decl = GET_DECL(acc_cat)
 		if(accessory_category_decl.single_selection)
 			var/list/available_styles = get_usable_sprite_accessories(H, current_species, current_bodytype, acc_cat, null)
 			if(length(available_styles))
-				sprite_accessories[acc_cat][1] = pick(available_styles)
-			sprite_accessories[acc_cat][sprite_accessories[acc_cat][1]] = get_random_colour()
+				var/decl/sprite_accessory/accessory = pick(available_styles)
+				sprite_accessories[acc_cat] = list(accessory.type = accessory.get_random_metadata())
 			continue
-		for(var/accessory in sprite_accessories[acc_cat])
-			sprite_accessories[acc_cat][accessory] = get_random_colour()
+
+		for(var/accessory_type in sprite_accessories[acc_cat])
+			var/decl/sprite_accessory/accessory = GET_DECL(accessory_type)
+			sprite_accessories[acc_cat][accessory_type] = accessory.get_random_metadata()
 
 	if(bodytype)
 		if(current_bodytype.appearance_flags & HAS_A_SKIN_TONE)
@@ -56,6 +59,9 @@
 	var/update_icon = FALSE
 	copy_to(mannequin, TRUE)
 
+	// Apply any species-specific preview modification.
+	mannequin = mannequin.species?.modify_preview_appearance(mannequin)
+
 	var/datum/job/previewJob
 	if(equip_preview_mob)
 		// Determine what job is marked as 'High' priority, and dress them up as such.
@@ -79,7 +85,7 @@
 	if((equip_preview_mob & EQUIP_PREVIEW_LOADOUT) && !(previewJob && (equip_preview_mob & EQUIP_PREVIEW_JOB) && previewJob.skip_loadout_preview))
 		// Equip custom gear loadout, replacing any job items
 		for(var/thing in Gear())
-			var/decl/loadout_option/G = global.gear_datums[thing]
+			var/decl/loadout_option/G = decls_repository.get_decl_by_id_or_var(thing, /decl/loadout_option)
 			if(G)
 				var/permitted = FALSE
 				if(G.allowed_roles && G.allowed_roles.len)
@@ -96,7 +102,7 @@
 				if(!permitted)
 					continue
 
-				if(G.slot && G.spawn_on_mob(mannequin, gear_list[gear_slot][G.name]))
+				if(G.slot && G.spawn_on_mob(mannequin, gear_list[gear_slot][G.uid]))
 					update_icon = TRUE
 
 	if(update_icon)

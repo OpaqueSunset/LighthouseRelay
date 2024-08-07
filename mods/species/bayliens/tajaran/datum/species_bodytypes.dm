@@ -30,8 +30,8 @@
 	)
 
 	default_sprite_accessories = list(
-		SAC_HAIR     = list(/decl/sprite_accessory/hair/taj/lynx        = "#46321c"),
-		SAC_MARKINGS = list(/decl/sprite_accessory/marking/tajaran/ears = "#ae7d32")
+		SAC_HAIR     = list(/decl/sprite_accessory/hair/taj/lynx        = list(SAM_COLOR = "#46321c")),
+		SAC_MARKINGS = list(/decl/sprite_accessory/marking/tajaran/ears = list(SAM_COLOR = "#ae7d32"))
 	)
 
 	cold_level_1 = 200
@@ -68,5 +68,5 @@
 
 /obj/item/organ/external/tail/cat
 	tail_icon  = 'mods/species/bayliens/tajaran/icons/tail.dmi'
-	tail       = "tajtail"
 	tail_blend = ICON_MULTIPLY
+	tail_animation_states = 1

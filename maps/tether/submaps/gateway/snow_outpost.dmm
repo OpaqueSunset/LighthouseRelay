@@ -1783,7 +1783,7 @@
 /area/awaymission/snow_outpost/outside)
 "gg" = (
 /obj/item/ammo_casing/a45,
-/obj/item/chems/food/xenomeat/spidermeat,
+/obj/item/food/xenomeat/spidermeat,
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gh" = (
@@ -1818,7 +1818,7 @@
 /turf/floor/natural/dirt,
 /area/awaymission/snow_outpost/outside)
 "go" = (
-/obj/item/chems/food/xenomeat/spidermeat,
+/obj/item/food/xenomeat/spidermeat,
 /turf/floor/snow/snow2,
 /area/awaymission/snow_outpost/outside)
 "gq" = (

@@ -61,6 +61,15 @@
 	difficulty             = MAT_VALUE_HARD_DIY
 	set_dir_on_spawn       = FALSE
 
+/decl/stack_recipe/planks/cup
+	result_type            = /obj/item/chems/glass/handmade/cup
+
+/decl/stack_recipe/planks/mug
+	result_type            = /obj/item/chems/glass/handmade/mug
+
+/decl/stack_recipe/planks/bowl
+	result_type            = /obj/item/chems/glass/handmade/bowl
+
 /decl/stack_recipe/planks/noticeboard/spawn_result(mob/user, location, amount, decl/material/mat, decl/material/reinf_mat, paint_color, spent_type, spent_amount = 1)
 	. = ..()
 	if(user)
@@ -181,3 +190,7 @@
 	result_type            = /obj/structure/table/frame
 	category               = "furniture"
 	difficulty             = MAT_VALUE_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/gravemarker
+	result_type            = /obj/item/gravemarker
+	difficulty             = MAT_VALUE_NORMAL_DIY

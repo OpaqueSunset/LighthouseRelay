@@ -12,6 +12,9 @@
 	else
 		add_to_living_mob_list()
 
+	if(weather_sensitive)
+		SSweather_atoms.weather_atoms += src
+
 /mob/living/get_ai_type()
 	var/decl/species/my_species = get_species()
 	if(ispath(my_species?.ai))
@@ -436,6 +439,17 @@ default behaviour is:
 		if(DI)
 			standing_image.overlays += DI
 	set_current_mob_overlay(HO_DAMAGE_LAYER, standing_image, update_icons)
+	update_bandages(update_icons)
+
+/mob/living/proc/update_bandages(var/update_icons=1)
+	var/list/bandage_overlays
+	var/bandage_icon = get_bodytype()?.get_bandages_icon(src)
+	if(bandage_icon)
+		for(var/obj/item/organ/external/O in get_external_organs())
+			var/bandage_level = O.bandage_level()
+			if(bandage_level)
+				LAZYADD(bandage_overlays, image(bandage_icon, "[O.icon_state][bandage_level]"))
+	set_current_mob_overlay(HO_BANDAGE_LAYER, bandage_overlays, update_icons)
 
 /mob/living/handle_grabs_after_move(var/turf/old_loc, var/direction)
 
@@ -725,6 +739,8 @@ default behaviour is:
 	// done in this order so that icon updates aren't triggered once all our organs are obliterated
 	delete_inventory(TRUE)
 	delete_organs()
+	if(weather_sensitive)
+		SSweather_atoms.weather_atoms -= src
 	return ..()
 
 /mob/living/proc/melee_accuracy_mods()
@@ -1558,8 +1574,59 @@ default behaviour is:
 
 	return TRUE
 
-/mob/living/proc/handle_footsteps()
-	return
+/mob/living/proc/get_footstep_sound(turf/step_turf)
+	return step_turf?.get_footstep_sound(src)
+
+/mob/living/proc/has_footsteps()
+	return FALSE
+
+/mob/living/handle_footsteps()
+
+	if(stat || buckled || current_posture?.prone || throwing || !has_footsteps())
+		return
+
+	step_count++
+	 //every other turf makes a sound
+	if((step_count % 2) && !MOVING_DELIBERATELY(src))
+		return
+
+	// don't need to step as often when you hop around
+	if((step_count % 3) && !has_gravity())
+		return
+
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+
+	var/footsound = get_footstep_sound(T)
+	if(!footsound)
+		return
+
+	var/range = world.view - 2
+	var/volume = 70
+	if(MOVING_DELIBERATELY(src))
+		volume -= 45
+		range -= 0.333
+
+	var/obj/item/clothing/shoes/shoes = get_equipped_item(slot_shoes_str)
+	volume = round(modify_footstep_volume(volume, shoes))
+	range  = round(modify_footstep_range(range, shoes))
+	if(volume > 0 && range > 0)
+		playsound(T, footsound, volume, 1, range)
+
+/mob/living/proc/modify_footstep_volume(volume, obj/item/clothing/shoes/shoes)
+	if(istype(shoes))
+		return volume * shoes.footstep_volume_mod
+	if(!shoes)
+		return volume - 60
+	return volume
+
+/mob/living/proc/modify_footstep_range(range, obj/item/clothing/shoes/shoes)
+	if(istype(shoes))
+		return range * shoes.footstep_range_mod
+	if(!shoes)
+		return range * range - 0.333
+	return range
 
 /mob/living/handle_flashed(var/obj/item/flash/flash, var/flash_strength)
 

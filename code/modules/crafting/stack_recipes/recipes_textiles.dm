@@ -77,7 +77,7 @@
 	category              = "bedding"
 
 /decl/stack_recipe/textiles/cloth/bandages
-	result_type           = /obj/item/stack/medical/bruise_pack/bandage
+	result_type           = /obj/item/stack/medical/bandage/crafted
 	category              = "medical"
 
 /decl/stack_recipe/textiles/fur
@@ -94,3 +94,6 @@
 	difficulty            = MAT_VALUE_HARD_DIY
 	category              = "medical"
 	available_to_map_tech_level = MAP_TECH_LEVEL_MEDIEVAL
+
+/decl/stack_recipe/textiles/rag
+	result_type = /obj/item/chems/glass/rag

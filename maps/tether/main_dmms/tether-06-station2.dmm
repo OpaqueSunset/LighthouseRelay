@@ -6322,8 +6322,8 @@
 /obj/effect/floor_decal/corner/brown/border,
 /obj/structure/table,
 /obj/item/pizzabox/meat,
-/obj/item/chems/food/popcorn,
-/obj/item/chems/food/popcorn{
+/obj/item/food/popcorn,
+/obj/item/food/popcorn{
 	pixel_x = 10;
 	pixel_y = 5
 	},

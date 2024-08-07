@@ -173,7 +173,7 @@ var/global/list/_cooking_recipe_cache = list()
 	if(length(container_contents) < length(fruit))
 		return FALSE
 	var/list/needed_fruits = fruit.Copy()
-	for(var/obj/item/chems/food/S in container_contents)
+	for(var/obj/item/food/S in container_contents)
 		var/use_tag = S.get_grown_tag()
 		if(!use_tag)
 			continue
@@ -188,7 +188,7 @@ var/global/list/_cooking_recipe_cache = list()
 	return TRUE
 
 //This is called on individual items within the container.
-/decl/recipe/proc/check_coating(var/obj/item/chems/food/S)
+/decl/recipe/proc/check_coating(var/obj/item/food/S)
 	if(!istype(S))
 		return TRUE//Only snacks can be battered
 
@@ -247,7 +247,14 @@ var/global/list/_cooking_recipe_cache = list()
 		return produced
 
 	if(ispath(result, /decl/material))
-		container.reagents?.add_reagent(result, result_quantity, get_result_data(container, used_ingredients))
+		var/created_volume = result_quantity
+		for(var/obj/item/ingredient in (used_ingredients["items"]|used_ingredients["fruits"]))
+			if(!ingredient.reagents?.total_volume)
+				continue
+			for(var/reagent_type in ingredient.reagents.reagent_volumes)
+				created_volume += ingredient.reagents.reagent_volumes[reagent_type]
+
+		container.reagents?.add_reagent(result, created_volume, get_result_data(container, used_ingredients))
 		return null
 
 // Create the actual result atom. Handled by a proc to allow for recipes to override it.
@@ -288,7 +295,7 @@ var/global/list/_cooking_recipe_cache = list()
 	// Find fruits that we need.
 	if(LAZYLEN(fruit))
 		var/list/checklist = fruit.Copy()
-		for(var/obj/item/chems/food/food in container_contents)
+		for(var/obj/item/food/food in container_contents)
 			var/check_grown_tag = food.get_grown_tag()
 			if(check_grown_tag && checklist[check_grown_tag] > 0)
 				//We found a thing we need
@@ -345,7 +352,7 @@ var/global/list/_cooking_recipe_cache = list()
 			container.reagents.remove_reagent(reagent_type, reagent_amount)
 
 	/// Set the appropriate flag on the food for stressor updates.
-	for(var/obj/item/chems/food/food in .)
+	for(var/obj/item/food/food in .)
 		food.cook()
 		if(!QDELETED(food.plate))
 			QDEL_NULL(food.plate) // crafted food should not have plates by default

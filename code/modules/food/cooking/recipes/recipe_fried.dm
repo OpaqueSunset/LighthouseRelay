@@ -12,17 +12,16 @@
 	fruit = list("chili" = 1)
 	coating = /decl/material/liquid/nutriment/batter
 	items = list(
-		/obj/item/chems/food/butchery/meat/fish
+		/obj/item/food/butchery/meat/fish
 	)
-	result = /obj/item/chems/food/cubancarp
+	result = /obj/item/food/cubancarp
 	completion_message = "The batter darkens to a rich golden brown as the fish is cooked through."
 
 /decl/recipe/fried/fishandchips
 	items = list(
-		/obj/item/chems/food/fries,
-		/obj/item/chems/food/butchery/meat/fish
+		/obj/item/food/fries,
+		/obj/item/food/butchery/meat/fish
 	)
-	reagent_mix = REAGENT_REPLACE // we don't want the fries to show up twice in taste data
 	result = /obj/item/chems/food/fishandchips
 	completion_message = "The batter darkens to a rich golden brown as the fish is cooked through."
 
@@ -38,14 +37,13 @@
 
 /decl/recipe/fried/onionrings
 	fruit = list("onion" = 1)
-	coating = /decl/material/liquid/nutriment/batter
+	reagents = list(/decl/material/liquid/nutriment/batter = 10)
 	result = /obj/item/chems/food/onionrings
 	completion_message = "The batter darkens to a rich golden brown as the onion rings are cooked through."
 
 /decl/recipe/fried/fries
 	display_name = "potato chips"
 	fruit = list("potato sticks" = 1)
-	reagent_mix = REAGENT_REPLACE // get the raw potato out of there
 	result = /obj/item/chems/food/fries
 	completion_message = "The potato sizzles as as the chips are cooked through."
 

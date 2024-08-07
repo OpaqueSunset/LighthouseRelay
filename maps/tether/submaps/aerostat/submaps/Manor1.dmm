@@ -368,8 +368,8 @@
 /area/submap/virgo2/Manor1)
 "bB" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/chems/food/stew,
-/obj/item/chems/food/stew,
+/obj/item/food/stew,
+/obj/item/food/stew,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bC" = (
@@ -399,8 +399,8 @@
 /area/submap/virgo2/Manor1)
 "bG" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/chems/food/sausage,
-/obj/item/chems/food/sausage,
+/obj/item/food/sausage,
+/obj/item/food/sausage,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bH" = (
