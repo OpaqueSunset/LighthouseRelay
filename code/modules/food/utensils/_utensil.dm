@@ -86,7 +86,7 @@
 		// This ensures we keep all food behavior, strings, sounds, etc.
 		utensil.loaded_food = new utensil_type(utensil)
 		utensil.loaded_food.trash = null
-		utensil.loaded_food.plate = null
+		QDEL_NULL(utensil.loaded_food.plate)
 		utensil.loaded_food.color = color
 		utensil.loaded_food.SetName("\proper some [utensil.loaded_food.name]")
 
