@@ -22,12 +22,6 @@
 		create_reagents(size*8 + 10)
 	update_icon()
 
-/obj/item/food/variable/update_container_name()
-	return
-
-/obj/item/food/variable/update_container_desc()
-	return
-
 /obj/item/food/variable/proc/update_prefix()
 	switch(scale)
 		if (0 to 0.8)
