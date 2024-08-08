@@ -149,13 +149,16 @@
 	. = ..()
 	if(cooked_food == FOOD_RAW)
 		name = "raw [name]"
+	if(ispath(plate))
+		plate = new plate(src)
+
+/obj/item/food/populate_reagents()
+	. = ..()
 	for(var/reagent_type in reagents.reagent_volumes)
 		if(ispath(reagent_type, /decl/material/liquid/nutriment/batter))
 			LAZYINITLIST(reagents.reagent_data)
 			// add a new reagent_data entry for each reagent type
 			LAZYSET(reagents.reagent_data[reagent_type], "cooked", TRUE) // batter starts cooked in compile-time foods
-	if(ispath(plate))
-		plate = new plate(src)
 
 /obj/item/food/Initialize(ml, material_key)
 	. = ..()

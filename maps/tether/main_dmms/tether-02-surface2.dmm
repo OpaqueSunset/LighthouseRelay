@@ -5207,7 +5207,7 @@
 /turf/floor/plating,
 /area/maintenance/lower/rnd)
 "lQ" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether/surfacebase/atrium_two)
 "lR" = (
 /obj/effect/floor_decal/borderfloor{
@@ -15966,7 +15966,7 @@
 "HZ" = (
 /obj/structure/table/steel,
 /obj/item/stack/tape_roll/barricade_tape,
-/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bandage,
 /obj/effect/decal/cleanable/dirt,
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
@@ -15976,7 +15976,7 @@
 /area/maintenance/lower/atmos)
 "Ib" = (
 /obj/structure/table/steel,
-/obj/item/stack/medical/splint/ghetto,
+/obj/item/stack/medical/splint/improvised,
 /obj/random/technology_scanner,
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)

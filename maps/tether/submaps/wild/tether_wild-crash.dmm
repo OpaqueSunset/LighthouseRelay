@@ -446,7 +446,7 @@
 /obj/item/cautery{
 	pixel_y = 4
 	},
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /obj/item/bonegel{
 	pixel_x = 4;
 	pixel_y = 3

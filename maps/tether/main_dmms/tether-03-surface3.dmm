@@ -10230,7 +10230,7 @@
 /turf/floor/plating,
 /area/rnd/breakroom)
 "ux" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/lower/third_south)
 "uy" = (
 /obj/effect/floor_decal/borderfloor{

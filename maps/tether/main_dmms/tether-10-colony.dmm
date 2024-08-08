@@ -6999,7 +6999,7 @@
 /area/centcom/medical)
 "nQ" = (
 /obj/structure/table,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /obj/item/retractor,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -8837,11 +8837,11 @@
 "rh" = (
 /obj/structure/table,
 /obj/item/scanner/health,
-/obj/item/stack/medical/bruise_pack{
+/obj/item/stack/medical/bandage{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/stack/medical/bruise_pack{
+/obj/item/stack/medical/bandage{
 	pixel_x = 10
 	},
 /obj/item/stack/medical/ointment{

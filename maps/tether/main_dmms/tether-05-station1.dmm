@@ -2284,7 +2284,7 @@
 /turf/floor/tiled,
 /area/hallway/station/atrium)
 "aeO" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/station/atrium)
 "aeP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -5991,7 +5991,7 @@
 /obj/item/t_scanner,
 /obj/item/box/lights/mixed,
 /obj/item/box/lights/mixed,
-/turf/floor/plating,
+/turf/floor/tiled/dark,
 /area/storage/emergency_storage/emergency4)
 "aoh" = (
 /obj/machinery/door/firedoor/glass,

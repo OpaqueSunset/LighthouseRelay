@@ -11515,7 +11515,7 @@
 /turf/floor/plating,
 /area/maintenance/station/elevator)
 "ui" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/station/upper)
 "uj" = (
 /obj/abstract/level_data_spawner/virgo3b/main/space,

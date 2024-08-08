@@ -1299,7 +1299,7 @@
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /obj/item/bonesetter,
 /obj/item/bonegel{
 	pixel_x = 4;
@@ -2526,9 +2526,9 @@
 /obj/item/stack/medical/splint,
 /obj/item/stack/medical/ointment,
 /obj/item/stack/medical/ointment,
-/obj/item/stack/medical/bruise_pack,
-/obj/item/stack/medical/bruise_pack,
-/obj/item/stack/medical/bruise_pack,
+/obj/item/stack/medical/bandage,
+/obj/item/stack/medical/bandage,
+/obj/item/stack/medical/bandage,
 /obj/item/belt/medical/emt,
 /obj/item/belt/medical/emt,
 /turf/floor/shuttle/darkred,
@@ -3242,7 +3242,7 @@
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "iW" = (
@@ -8323,7 +8323,7 @@
 	pixel_x = -6;
 	pixel_y = 1
 	},
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /obj/item/bonesetter,
 /obj/item/bonegel{
 	pixel_x = 4;

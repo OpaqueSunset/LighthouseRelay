@@ -171,7 +171,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 						swap_to = floor_type
 
 				if(checking.type != swap_to)
-					var/turf/wall/wall = checking.ChangeTurf(swap_to)
+					var/turf/wall/wall = checking.ChangeTurf(swap_to, keep_air = TRUE, update_open_turfs_above = FALSE)
 					if(istype(wall) && turf_id)
 						wall.unique_merge_identifier = turf_id
 						wall.queue_icon_update()
@@ -201,7 +201,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 					if(!(checking in floor_turfs))
 						internal = 0
 						if(checking.type != floor_type)
-							checking.ChangeTurf(floor_type)
+							checking.ChangeTurf(floor_type, keep_air = TRUE, update_open_turfs_above = FALSE)
 							checking = locate(tx,ty,cz)
 						for(var/atom/movable/thing in checking.contents)
 							if(thing.simulated)

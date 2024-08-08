@@ -6178,7 +6178,7 @@
 /turf/floor/plating,
 /area/maintenance/station/eng_upper)
 "lH" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/station/starboard)
 "lI" = (
 /obj/abstract/level_data_spawner/virgo3b/main/space,
@@ -11808,6 +11808,9 @@
 	},
 /turf/unsimulated/floor/techfloor_grid,
 /area/medical/morgue)
+"wb" = (
+/turf/floor/tiled/dark,
+/area/maintenance/station/sec_lower)
 "wc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -31074,7 +31077,7 @@ SI
 SI
 SI
 RT
-kk
+wb
 kY
 kY
 lH
