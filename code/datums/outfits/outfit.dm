@@ -1,29 +1,6 @@
-var/global/list/outfits_decls_
-var/global/list/outfits_decls_root_
-var/global/list/outfits_decls_by_type_
-
-/proc/outfit_by_type(var/outfit_type)
-	if(!outfits_decls_root_)
-		init_outfit_decls()
-	return outfits_decls_by_type_[outfit_type]
-
-/proc/outfits()
-	if(!outfits_decls_root_)
-		init_outfit_decls()
-	return outfits_decls_
-
-/proc/init_outfit_decls()
-	if(outfits_decls_root_)
-		return
-	outfits_decls_ = list()
-	outfits_decls_by_type_ = list()
-	outfits_decls_root_ = GET_DECL(/decl/hierarchy/outfit)
-
-/decl/hierarchy/outfit
-	name = "Naked"
-	abstract_type = /decl/hierarchy/outfit
-	expected_type = /decl/hierarchy/outfit
-
+/decl/outfit
+	abstract_type = /decl/outfit
+	var/name = "Naked"
 	var/uniform = null
 	var/suit = null
 	var/back = null
@@ -55,16 +32,35 @@ var/global/list/outfits_decls_by_type_
 	var/list/backpack_overrides
 	var/outfit_flags = OUTFIT_RESET_EQUIPMENT
 
-/decl/hierarchy/outfit/Initialize()
+/decl/outfit/Initialize()
 	. = ..()
 	backpack_overrides = backpack_overrides || list()
-	if(!INSTANCE_IS_ABSTRACT(src))
-		outfits_decls_by_type_[type] = src
-		dd_insertObjectList(outfits_decls_, src)
 
 // This proc is structured slightly strangely because I will be adding pants to it.
-/decl/hierarchy/outfit/validate()
+/decl/outfit/validate()
 	. = ..()
+
+	for(var/check_type in list(uniform, suit, back, belt, gloves, shoes, head, mask, l_ear, r_ear, glasses, id, l_pocket, r_pocket, suit_store, pda_type, id_type))
+		var/obj/item/thing = check_type
+		if(isnull(thing))
+			continue
+		if(TYPE_IS_ABSTRACT(thing))
+			. += "equipment includes abstract type '[thing]'"
+
+	for(var/check_type in hands)
+		var/obj/item/thing = check_type
+		if(isnull(thing))
+			continue
+		if(TYPE_IS_ABSTRACT(thing))
+			. += "hands includes abstract type '[thing]'"
+
+	for(var/check_type in backpack_contents)
+		var/obj/item/thing = check_type
+		if(isnull(thing))
+			continue
+		if(TYPE_IS_ABSTRACT(thing))
+			. += "backpack includes abstract type '[thing]'"
+
 	if(uniform && (outfit_flags & OUTFIT_HAS_VITALS_SENSOR))
 		if(!ispath(uniform, /obj/item/clothing))
 			. += "outfit is flagged for sensors, but uniform cannot take accessories"
@@ -79,11 +75,11 @@ var/global/list/outfits_decls_by_type_
 			. += "outfit is flagged for sensors, but uniform does not accept sensors"
 		qdel(sensor)
 
-/decl/hierarchy/outfit/proc/pre_equip(mob/living/human/H)
+/decl/outfit/proc/pre_equip(mob/living/human/H)
 	if(outfit_flags & OUTFIT_RESET_EQUIPMENT)
 		H.delete_inventory(TRUE)
 
-/decl/hierarchy/outfit/proc/post_equip(mob/living/human/H)
+/decl/outfit/proc/post_equip(mob/living/human/H)
 	if(outfit_flags & OUTFIT_HAS_JETPACK)
 		var/obj/item/tank/jetpack/J = locate(/obj/item/tank/jetpack) in H
 		if(!J)
@@ -91,7 +87,7 @@ var/global/list/outfits_decls_by_type_
 		J.toggle()
 		J.toggle_valve()
 
-/decl/hierarchy/outfit/proc/equip_outfit(mob/living/human/H, assignment, equip_adjustments, datum/job/job, datum/mil_rank/rank)
+/decl/outfit/proc/equip_outfit(mob/living/human/H, assignment, equip_adjustments, datum/job/job, datum/mil_rank/rank)
 	equip_base(H, equip_adjustments)
 	equip_id(H, assignment, equip_adjustments, job, rank)
 	for(var/path in backpack_contents)
@@ -114,7 +110,7 @@ var/global/list/outfits_decls_by_type_
 
 	return 1
 
-/decl/hierarchy/outfit/proc/equip_base(mob/living/human/H, var/equip_adjustments)
+/decl/outfit/proc/equip_base(mob/living/human/H, var/equip_adjustments)
 	set waitfor = FALSE
 	pre_equip(H)
 
@@ -195,7 +191,7 @@ var/global/list/outfits_decls_by_type_
 	if(H.client?.prefs?.give_passport)
 		global.using_map.create_passport(H)
 
-/decl/hierarchy/outfit/proc/equip_id(mob/living/human/H, assignment, equip_adjustments, datum/job/job, datum/mil_rank/rank)
+/decl/outfit/proc/equip_id(mob/living/human/H, assignment, equip_adjustments, datum/job/job, datum/mil_rank/rank)
 	if(!id_slot || !id_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
@@ -217,7 +213,7 @@ var/global/list/outfits_decls_by_type_
 	if(H.equip_to_slot_or_store_or_drop(W, id_slot))
 		return W
 
-/decl/hierarchy/outfit/proc/equip_pda(var/mob/living/human/H, var/assignment, var/equip_adjustments)
+/decl/outfit/proc/equip_pda(var/mob/living/human/H, var/assignment, var/equip_adjustments)
 	if(!pda_slot || !pda_type)
 		return
 	if(OUTFIT_ADJUSTMENT_SKIP_ID_PDA & equip_adjustments)
@@ -226,5 +222,5 @@ var/global/list/outfits_decls_by_type_
 	if(H.equip_to_slot_or_store_or_drop(pda, pda_slot))
 		return pda
 
-/decl/hierarchy/outfit/dd_SortValue()
+/decl/outfit/dd_SortValue()
 	return name

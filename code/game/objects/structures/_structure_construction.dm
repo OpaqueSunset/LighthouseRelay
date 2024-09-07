@@ -105,7 +105,7 @@
 /obj/structure/proc/handle_repair(mob/user, obj/item/tool)
 	var/current_max_health = get_max_health()
 	var/obj/item/stack/stack = tool
-	var/amount_needed = CEILING((current_max_health - current_health)/DOOR_REPAIR_AMOUNT)
+	var/amount_needed = ceil((current_max_health - current_health)/DOOR_REPAIR_AMOUNT)
 	var/used = min(amount_needed,stack.amount)
 	if(used)
 		to_chat(user, SPAN_NOTICE("You fit [stack.get_string_for_amount(used)] to damaged areas of \the [src]."))
@@ -114,11 +114,12 @@
 		current_health = clamp(current_health + used*DOOR_REPAIR_AMOUNT, current_health, current_max_health)
 
 /obj/structure/attackby(obj/item/used_item, mob/user)
-	if(used_item.user_can_wield(user, silent = TRUE))
-		if(used_item.force && user.a_intent == I_HURT)
+	if(used_item.user_can_attack_with(user, silent = TRUE))
+		var/force = used_item.get_attack_force(user)
+		if(force && user.a_intent == I_HURT)
 			attack_animation(user)
 			visible_message(SPAN_DANGER("\The [src] has been [pick(used_item.attack_verb)] with \the [used_item] by \the [user]!"))
-			take_damage(used_item.force, used_item.atom_damage_type)
+			take_damage(force, used_item.atom_damage_type)
 			. = TRUE
 
 		else if(IS_WRENCH(used_item))

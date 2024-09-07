@@ -1,4 +1,4 @@
-/decl/cultural_info/faction/nanotrasen
+/decl/background_detail/faction/nanotrasen
 	name = "NanoTrasen"
 	description = "NanoTrasen is a research and development company with a rapidly growing stranglehold on Frontier-based exploration. \
 	Its employees receive a privileged status at its facilities, with higher pay and more benefits than contractors. However, NanoTrasen's \

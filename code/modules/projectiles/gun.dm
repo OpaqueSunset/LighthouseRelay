@@ -30,23 +30,21 @@
 //Parent gun type. Guns are weapons that can be aimed at mobs and act over a distance
 /obj/item/gun
 	name = "gun"
-	desc = "Its a gun. It's pretty terrible, though."
+	desc = "It's a gun. It's pretty terrible, though."
 	icon_state = ICON_STATE_WORLD
 	icon = 'icons/obj/guns/pistol.dmi'
 	obj_flags =  OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_LOWER_BODY|SLOT_HOLSTER
 	material = /decl/material/solid/metal/steel
 	w_class = ITEM_SIZE_NORMAL
-	throwforce = 5
 	throw_speed = 4
 	throw_range = 5
-	force = 5
 	origin_tech = @'{"combat":1}'
 	attack_verb = list("struck", "hit", "bashed")
 	zoomdevicename = "scope"
-
 	drop_sound = 'sound/foley/drop1.ogg'
 	pickup_sound = 'sound/foley/pickup2.ogg'
+	can_be_twohanded = TRUE // also checks one_hand_penalty
 
 	var/fire_verb = "fire"
 	var/waterproof = FALSE
@@ -58,7 +56,7 @@
 	var/fire_anim = null
 	var/screen_shake = 0 //shouldn't be greater than 2 unless zoomed
 	var/space_recoil = 0 //knocks back in space
-	var/silenced = 0
+	var/silencer
 	var/accuracy = 0   //accuracy is measured in tiles. +1 accuracy means that everything is effectively one tile closer for the purpose of miss chance, -1 means the opposite. launchers are not supported, at the moment.
 	var/accuracy_power = 5  //increase of to-hit chance per 1 point of accuracy
 	var/bulk = 0			//how unwieldy this weapon for its size, affects accuracy when fired without aiming
@@ -109,6 +107,9 @@
 	autofiring_by = null
 	. = ..()
 
+/obj/item/gun/is_held_twohanded(mob/living/wielder)
+	return one_hand_penalty > 0 && ..()
+
 /obj/item/gun/preserve_in_cryopod(var/obj/machinery/cryopod/pod)
 	return TRUE
 
@@ -135,7 +136,7 @@
 		deltimer(autofiring_timer)
 		autofiring_timer = null
 
-/obj/item/gun/proc/handle_autofire(var/autoturn)
+/obj/item/gun/proc/handle_autofire(autoturn)
 	set waitfor = FALSE
 	. = TRUE
 	if(QDELETED(autofiring_at) || QDELETED(autofiring_by))
@@ -145,43 +146,46 @@
 	if(!.)
 		clear_autofire()
 	else if(can_autofire())
-		if(autoturn)
-			autofiring_by.set_dir(get_dir(src, autofiring_at))
-		Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE)
+		try_autofire(autoturn)
+
+/obj/item/gun/proc/try_autofire(autoturn)
+	if(autoturn)
+		autofiring_by.set_dir(get_dir(src, autofiring_at))
+	Fire(autofiring_at, autofiring_by, null, (get_dist(autofiring_at, autofiring_by) <= 1), FALSE, FALSE)
 
 /obj/item/gun/update_twohanding()
 	if(one_hand_penalty)
 		update_icon() // In case item_state is set somewhere else.
 	..()
 
+/obj/item/gun/proc/update_base_icon_state()
+	icon_state = get_world_inventory_state()
+
 /obj/item/gun/on_update_icon()
 	var/mob/living/M = loc
 	. = ..()
-	update_base_icon()
+	update_base_icon_state()
 	if(istype(M))
 		if(has_safety && M.skill_check(SKILL_WEAPONS,SKILL_BASIC))
 			add_overlay(image('icons/obj/guns/gui.dmi',"safety[safety()]"))
 		if(src in M.get_held_items())
 			M.update_inhand_overlays()
+
+	if(silencer)
+		var/silenced_state = "[icon_state]-silencer"
+		if(check_state_in_icon(silenced_state, icon))
+			add_overlay(mutable_appearance(icon, silenced_state))
+
 	if(safety_icon)
 		add_overlay(get_safety_indicator())
 
-/obj/item/gun/proc/update_base_icon()
-	return
+/obj/item/gun/get_on_belt_overlay()
+	if(silencer && check_state_in_icon("on_belt_silenced", icon))
+		return overlay_image(icon, "on_belt_silenced", color)
+	return ..()
 
 /obj/item/gun/proc/get_safety_indicator()
 	return mutable_appearance(icon, "[get_world_inventory_state()][safety_icon][safety()]")
-
-/obj/item/gun/adjust_mob_overlay(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
-	if(overlay && user_mob?.can_wield_item(src) && is_held_twohanded(user_mob))
-		var/wielded_state = "[overlay.icon_state]-wielded"
-		if(check_state_in_icon(wielded_state, overlay.icon))
-			overlay.icon_state = wielded_state
-	apply_gun_mob_overlays(user_mob, bodytype, overlay, slot, bodypart)
-	. = ..()
-
-/obj/item/gun/proc/apply_gun_mob_overlays(var/mob/living/user_mob, var/bodytype,  var/image/overlay, var/slot, var/bodypart)
-	return
 
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.
@@ -299,7 +303,7 @@
 
 	var/held_twohanded = TRUE // Assume a non-mob shooter won't suffer from accuracy penalties.
 	if(istype(user))
-		held_twohanded = user.can_wield_item(src) && is_held_twohanded(user)
+		held_twohanded = user.can_twohand_item(src) && is_held_twohanded(user)
 
 	//actually attempt to shoot
 	var/turf/targloc = get_turf(target) //cache this in case target gets deleted during shooting, e.g. if it was a securitron that got destroyed.
@@ -368,9 +372,9 @@
 	if(fire_anim)
 		flick(fire_anim, src)
 
-	if(!silenced && check_fire_message_spam("fire"))
+	if(check_fire_message_spam("fire"))
 		var/user_message = SPAN_WARNING("You [fire_verb] [get_firing_name(projectile)][pointblank ? " point blank":""] at \the [target][reflex ? " by reflex" : ""]!")
-		if (silenced)
+		if (silencer)
 			to_chat(firer, user_message)
 		else
 			firer.visible_message(
@@ -426,7 +430,7 @@
 					to_chat(user, SPAN_WARNING("You have trouble keeping \the [src] on target with just one hand."))
 				if(8 to INFINITY)
 					to_chat(user, SPAN_WARNING("You struggle to keep \the [src] on target with just one hand!"))
-		else if(!user.can_wield_item(src))
+		else if(!user.can_twohand_item(src))
 			switch(one_hand_penalty)
 				if(4 to 6)
 					if(prob(50))
@@ -532,7 +536,7 @@
 	if((istype(P) && P.fire_sound))
 		shot_sound = P.fire_sound
 		shot_sound_vol = P.fire_sound_vol
-	if(silenced)
+	if(silencer)
 		shot_sound_vol = 10
 
 	playsound(firer, shot_sound, shot_sound_vol, 1)
@@ -562,7 +566,7 @@
 	if (istype(in_chamber))
 		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
 		var/shot_sound = in_chamber.fire_sound? in_chamber.fire_sound : fire_sound
-		if(silenced)
+		if(silencer)
 			playsound(user, shot_sound, 10, 1)
 		else
 			playsound(user, shot_sound, 50, 1)
@@ -629,6 +633,16 @@
 		to_chat(user, "The safety is [safety() ? "on" : "off"].")
 	last_safety_check = world.time
 
+/obj/item/gun/proc/try_switch_firemodes(mob/user)
+	if(!istype(user) || length(firemodes) <= 1 || !user.check_dexterity(DEXTERITY_WEAPONS))
+		return FALSE
+	var/datum/firemode/new_mode = switch_firemodes()
+	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
+		new_mode = switch_firemodes()
+	if(new_mode)
+		to_chat(user, SPAN_NOTICE("\The [src] is now set to [new_mode.name]."))
+	return !!new_mode
+
 /obj/item/gun/proc/switch_firemodes(next_mode)
 	if(!next_mode)
 		next_mode = get_next_firemode()
@@ -649,13 +663,9 @@
 		. = 1
 
 /obj/item/gun/attack_self(mob/user)
-	if(!user.check_dexterity(DEXTERITY_WEAPONS))
-		return TRUE // prevent further interactions
-	var/datum/firemode/new_mode = switch_firemodes()
-	if(prob(20) && !user.skill_check(SKILL_WEAPONS, SKILL_BASIC))
-		new_mode = switch_firemodes()
-	if(new_mode)
-		to_chat(user, "<span class='notice'>\The [src] is now set to [new_mode.name].</span>")
+	if(try_switch_firemodes(user))
+		return TRUE
+	return ..()
 
 /obj/item/gun/proc/toggle_safety(var/mob/user)
 	if(user && !user.check_dexterity(DEXTERITY_WEAPONS))
@@ -705,7 +715,7 @@
 /obj/item/gun/proc/can_autofire()
 	return (autofire_enabled && world.time >= next_fire_time)
 
-/obj/item/gun/proc/check_accidents(mob/living/user, message = "[user] fumbles with the [src] and it goes off!",skill_path = SKILL_WEAPONS, fail_chance = 20, no_more_fail = SKILL_EXPERT, factor = 2)
+/obj/item/gun/proc/check_accidents(mob/living/user, message = "[user] fumbles with \the [src] and it goes off!",skill_path = SKILL_WEAPONS, fail_chance = 20, no_more_fail = SKILL_EXPERT, factor = 2)
 	if(istype(user) && !safety() && user.skill_fail_prob(skill_path, fail_chance, no_more_fail, factor) && special_check(user))
 		user.visible_message(SPAN_WARNING(message))
 		var/list/targets = list(user)
@@ -739,17 +749,24 @@
 
 /obj/item/gun/get_alt_interactions(mob/user)
 	. = ..()
-	LAZYADD(., /decl/interaction_handler/toggle_safety)
+	LAZYADD(., /decl/interaction_handler/gun/toggle_safety)
+	if(length(firemodes) > 1)
+		LAZYADD(., /decl/interaction_handler/gun/toggle_firemode)
 
-/decl/interaction_handler/toggle_safety
-	name = "Toggle Gun Safety"
+/decl/interaction_handler/gun
+	abstract_type = /decl/interaction_handler/gun
 	expected_target_type = /obj/item/gun
 
-/decl/interaction_handler/toggle_safety/is_possible(atom/target, mob/user, obj/item/prop)
-	. = ..()
-	if(!user.check_dexterity(DEXTERITY_WEAPONS))
-		return FALSE
+/decl/interaction_handler/gun/toggle_safety
+	name = "Toggle Safety"
 
-/decl/interaction_handler/toggle_safety/invoked(atom/target, mob/user, obj/item/prop)
+/decl/interaction_handler/gun/toggle_safety/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/item/gun/gun = target
 	gun.toggle_safety(user)
+
+/decl/interaction_handler/gun/toggle_firemode
+	name = "Change Firemode"
+
+/decl/interaction_handler/gun/toggle_firemode/invoked(atom/target, mob/user, obj/item/prop)
+	var/obj/item/gun/gun = target
+	gun.try_switch_firemodes(user)

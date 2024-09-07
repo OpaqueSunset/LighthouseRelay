@@ -85,8 +85,9 @@
 	icon_state = "NT"
 
 /obj/structure/sign/nanotrasen/get_codex_value()
-	var/decl/cultural_info/faction/nano = GET_DECL(/decl/cultural_info/faction/nanotrasen)
-	return "[nano.name] ([lowertext(nano.desc_type)])"
+	var/decl/background_detail/faction/nano = GET_DECL(/decl/background_detail/faction/nanotrasen)
+	var/decl/background_category/background_cat = GET_DECL(nano.category)
+	return "[nano.name] ([lowertext(background_cat.name)])"
 
 /obj/structure/sign/directions/elevator
 	name = "\improper Elevator"

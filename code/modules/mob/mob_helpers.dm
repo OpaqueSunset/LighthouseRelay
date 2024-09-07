@@ -8,11 +8,6 @@
 /proc/mob_size_difference(var/mob_size_A, var/mob_size_B)
 	return round(log(2, mob_size_A/mob_size_B), 1)
 
-/mob/proc/can_wield_item(obj/item/W)
-	if(W.w_class >= ITEM_SIZE_LARGE && issmall(src))
-		return FALSE //M is too small to wield this
-	return TRUE
-
 /mob/proc/isSynthetic()
 	return 0
 
@@ -261,7 +256,7 @@ var/global/list/global/organ_rel_size = list(
 		return
 	M.shakecamera = current_time + max(TICKS_PER_RECOIL_ANIM, duration)
 	strength = abs(strength)*PIXELS_PER_STRENGTH_VAL
-	var/steps = min(1, FLOOR(duration/TICKS_PER_RECOIL_ANIM))-1
+	var/steps = min(1, floor(duration/TICKS_PER_RECOIL_ANIM))-1
 	animate(M.client, pixel_x = rand(-(strength), strength), pixel_y = rand(-(strength), strength), time = TICKS_PER_RECOIL_ANIM, easing = JUMP_EASING|EASE_IN)
 	if(steps)
 		for(var/i = 1 to steps)
@@ -407,12 +402,6 @@ var/global/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 // Returns true if the mob has a client which has been active in the last given X minutes.
 /mob/proc/is_client_active(var/active = 1)
 	return client && client.inactivity < active MINUTES
-
-/mob/proc/can_eat()
-	return 1
-
-/mob/proc/can_force_feed()
-	return 1
 
 #define SAFE_PERP -50
 /mob/living/proc/assess_perp(var/obj/access_obj, var/check_access, var/auth_weapons, var/check_records, var/check_arrest, var/check_network)

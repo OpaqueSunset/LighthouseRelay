@@ -43,7 +43,7 @@
 	var/list/minimal_access = list()          // Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
 	var/list/access = list()                  // Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
 
-	//Minimum skills allowed for the job. List should contain skill (as in /decl/hierarchy/skill path), with values which are numbers.
+	//Minimum skills allowed for the job. List should contain skill (as in /decl/skill path), with values which are numbers.
 	var/min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT
 	)
@@ -68,7 +68,7 @@
 	if(type == /datum/job && global.using_map.default_job_type == type)
 		title = "Debug Job"
 		hud_icon = "hudblank"
-		outfit_type = /decl/hierarchy/outfit/job/generic/scientist
+		outfit_type = /decl/outfit/job/generic/scientist
 		autoset_department = TRUE
 
 	if(!length(department_types) && autoset_department)
@@ -96,7 +96,7 @@
 	else
 		H.set_default_language(/decl/language/human/common)
 
-	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
+	var/decl/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(outfit)
 		. = outfit.equip_outfit(H, alt_title || title, job = src, rank = grade)
 
@@ -120,8 +120,8 @@
 		. = allowed_branches[branch.type] || .
 	if(allowed_ranks && grade)
 		. = allowed_ranks[grade.type] || .
-	. = . || outfit_type
-	. = outfit_by_type(.)
+	. ||= outfit_type
+	return GET_DECL(.)
 
 /datum/job/proc/create_cash_on_hand(var/mob/living/human/H, var/datum/money_account/M)
 	if(!istype(M) || !H.client?.prefs?.starting_cash_choice)
@@ -132,17 +132,17 @@
 
 /datum/job/proc/get_total_starting_money(var/mob/living/human/H)
 	. = 4 * rand(75, 100) * economic_power
-	// Get an average economic power for our cultures.
-	var/culture_mod =   0
-	var/culture_count = 0
-	for(var/token in H.cultural_info)
-		var/decl/cultural_info/culture = H.get_cultural_value(token)
-		if(culture && !isnull(culture.economic_power))
-			culture_count++
-			culture_mod += culture.economic_power
-	if(culture_count)
-		culture_mod /= culture_count
-	. *= culture_mod
+	// Get an average economic power for our background.
+	var/background_mod =   0
+	var/background_count = 0
+	for(var/token in H.background_info)
+		var/decl/background_detail/background = GET_DECL(H.background_info[token])
+		if(istype(background) && !isnull(background.economic_power))
+			background_count++
+			background_mod += background.economic_power
+	if(background_count)
+		background_mod /= background_count
+	. *= background_mod
 	// Apply other mods.
 	. *= global.using_map.salary_modifier
 	. *= 1 + 2 * H.get_skill_value(SKILL_FINANCE)/(SKILL_MAX - SKILL_MIN)
@@ -181,7 +181,7 @@
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()
 /datum/job/proc/equip_preview(mob/living/human/H, var/alt_title, var/datum/mil_branch/branch, var/datum/mil_rank/grade, var/additional_skips)
-	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title, branch, grade)
+	var/decl/outfit/outfit = get_outfit(H, alt_title, branch, grade)
 	if(!outfit)
 		return FALSE
 	. = outfit.equip_outfit(H, alt_title || title, equip_adjustments = (OUTFIT_ADJUSTMENT_SKIP_POST_EQUIP|OUTFIT_ADJUSTMENT_SKIP_ID_PDA|additional_skips), job = src, rank = grade)

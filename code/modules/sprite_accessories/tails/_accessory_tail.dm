@@ -10,7 +10,8 @@
 	// Give us a tail if we need one.
 	var/decl/sprite_accessory/tail_data = GET_DECL(accessories[1])
 	if(tail_data?.draw_accessory && !character.get_organ(BP_TAIL))
-		character.add_organ(new /obj/item/organ/external/tail(null, character.get_mob_snapshot()), null, TRUE, FALSE, FALSE, TRUE)
+		var/obj/item/organ/external/tail/new_tail = new(null, null, character.get_mob_snapshot())
+		character.add_organ(new_tail, null, TRUE, FALSE, FALSE, TRUE)
 
 /decl/sprite_accessory/tail
 	abstract_type = /decl/sprite_accessory/tail
@@ -49,7 +50,7 @@
 	uid            = "acc_tail_hidden"
 	draw_accessory = TRUE
 
-/decl/sprite_accessory/tail/none/hide_tail/accessory_is_available(mob/owner, decl/species/species, decl/bodytype/bodytype)
+/decl/sprite_accessory/tail/none/hide_tail/accessory_is_available(mob/owner, decl/species/species, decl/bodytype/bodytype, list/traits)
 	. = ..() && (BP_TAIL in bodytype.has_limbs)
 
 /*

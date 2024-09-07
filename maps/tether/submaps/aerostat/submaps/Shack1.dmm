@@ -67,7 +67,7 @@
 "q" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/woodentable_reinforced,
-/obj/item/twohanded/fireaxe/scythe,
+/obj/item/bladed/axe/fire/scythe,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "r" = (

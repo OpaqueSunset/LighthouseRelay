@@ -9,11 +9,11 @@
 	icon_state = "soap"
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	w_class = ITEM_SIZE_SMALL
-	throwforce = 0
 	throw_speed = 4
 	throw_range = 20
 	material = /decl/material/liquid/cleaner/soap
 	max_health = 5
+	_base_attack_force = 0
 	var/key_data
 
 	var/list/valid_colors = list(COLOR_GREEN_GRAY, COLOR_RED_GRAY, COLOR_BLUE_GRAY, COLOR_BROWN, COLOR_PALE_PINK, COLOR_PALE_BTL_GREEN, COLOR_OFF_WHITE, COLOR_GRAY40, COLOR_GOLD)
@@ -54,13 +54,13 @@
 	update_icon()
 
 /obj/item/soap/proc/wet()
-	add_to_reagents(/decl/material/liquid/cleaner, SOAP_CLEANER_ON_WET)
+	add_to_reagents(/decl/material/liquid/cleaner/soap, SOAP_CLEANER_ON_WET)
 
 /obj/item/soap/Crossed(atom/movable/AM)
 	if(!isliving(AM))
 		return
 	var/mob/living/M = AM
-	M.slip("the [src.name]", 3)
+	M.slip("\the [src]", 3)
 
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	if(!proximity) return

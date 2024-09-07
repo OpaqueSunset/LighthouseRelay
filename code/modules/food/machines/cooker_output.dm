@@ -14,13 +14,13 @@
 	w_class = ITEM_SIZE_SMALL
 	var/prefix
 
-/obj/item/food/variable/Initialize()
+/obj/item/food/variable/Initialize(mapload, material_key, skip_plate = FALSE)
 	. = ..()
-	if (reagents)
-		reagents.maximum_volume = size*8 + 10
-	else
-		create_reagents(size*8 + 10)
 	update_icon()
+
+/obj/item/food/variable/initialize_reagents(populate)
+	volume = size * 8 + 10
+	return ..()
 
 /obj/item/food/variable/proc/update_prefix()
 	switch(scale)

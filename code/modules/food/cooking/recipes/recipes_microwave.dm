@@ -1,12 +1,8 @@
 /decl/recipe/popcorn
-	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_SAUCEPAN|RECIPE_CATEGORY_POT
+	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_SAUCEPAN|RECIPE_CATEGORY_POT|RECIPE_CATEGORY_SKILLET
 	reagents = list(/decl/material/solid/sodiumchloride = 5)
 	fruit = list("corn" = 1)
 	result = /obj/item/food/popcorn
-	container_categories = list(
-		RECIPE_CATEGORY_MICROWAVE,
-		RECIPE_CATEGORY_SKILLET
-	)
 
 /decl/recipe/donkpocket
 	container_categories = RECIPE_CATEGORY_OVEN | RECIPE_CATEGORY_MICROWAVE

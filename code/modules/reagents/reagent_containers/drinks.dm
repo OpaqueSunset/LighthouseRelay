@@ -18,8 +18,7 @@
 	var/base_icon = null // Base icon name for fill states
 
 /obj/item/chems/drinks/Initialize()
-	if(!base_name)
-		base_name = name
+	base_name ||= name
 	. = ..()
 
 /obj/item/chems/drinks/dragged_onto(var/mob/user)
@@ -103,13 +102,12 @@
 	icon_state = "golden_cup"
 	item_state = "" //nope :(
 	w_class = ITEM_SIZE_HUGE
-	force = 14
-	throwforce = 10
 	amount_per_transfer_from_this = 20
 	possible_transfer_amounts = null
 	volume = 150
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
+	_base_attack_force = 14
 
 ///////////////////////////////////////////////Drinks
 //Notes by Darem: Drinks are simply containers that start preloaded. Unlike condiments, the contents can be ingested directly
@@ -124,7 +122,7 @@
 	center_of_mass = @'{"x":16,"y":9}'
 
 /obj/item/chems/drinks/milk/populate_reagents()
-	add_to_reagents(/decl/material/liquid/drink/milk, reagents.maximum_volume)
+	add_to_reagents(/decl/material/liquid/drink/milk, reagents.maximum_volume, data = list("milk_donor" = "cow"))
 
 /obj/item/chems/drinks/soymilk
 	name = "soymilk carton"

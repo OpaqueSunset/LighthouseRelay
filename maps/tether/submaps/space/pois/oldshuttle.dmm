@@ -3,7 +3,7 @@
 /turf/space,
 /area/tether_away/debrisfield/explored)
 "ab" = (
-/obj/item/twohanded/spear,
+/obj/item/bladed/polearm/spear/improvised,
 /turf/space,
 /area/tether_away/debrisfield/explored)
 "ac" = (

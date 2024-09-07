@@ -15,7 +15,7 @@
 		access_chapel_office,
 		access_crematorium
 	)
-	outfit_type = /decl/hierarchy/outfit/job/chaplain
+	outfit_type = /decl/outfit/job/chaplain
 	is_holy = TRUE
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
@@ -37,8 +37,8 @@
 		access_kitchen
 	)
 	minimal_access = list(access_bar)
-	alt_titles = list("Barista" = /decl/hierarchy/outfit/job/service/bartender/barista)
-	outfit_type = /decl/hierarchy/outfit/job/service/bartender
+	alt_titles = list("Barista" = /decl/outfit/job/service/bartender/barista)
+	outfit_type = /decl/outfit/job/service/bartender
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
 		SKILL_COOKING   = SKILL_BASIC,
@@ -59,7 +59,7 @@
 	)
 	minimal_access = list(access_kitchen)
 	alt_titles = list("Cook")
-	outfit_type = /decl/hierarchy/outfit/job/service/chef
+	outfit_type = /decl/outfit/job/service/chef
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
 		SKILL_COOKING   = SKILL_ADEPT,
@@ -80,7 +80,7 @@
 	)
 	minimal_access = list(access_hydroponics)
 	alt_titles = list("Gardener")
-	outfit_type = /decl/hierarchy/outfit/job/service/gardener
+	outfit_type = /decl/outfit/job/service/gardener
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
 		SKILL_BOTANY    = SKILL_BASIC,
@@ -117,7 +117,7 @@
 	)
 	minimal_player_age = 3
 	ideal_character_age = 40
-	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
+	outfit_type = /decl/outfit/job/cargo/qm
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 	    SKILL_FINANCE  = SKILL_BASIC,
@@ -157,7 +157,7 @@
 		access_cargo_bot,
 		access_mailsorting
 	)
-	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
+	outfit_type = /decl/outfit/job/cargo/cargo_tech
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_FINANCE  = SKILL_BASIC,
@@ -198,7 +198,7 @@
 		"Drill Technician",
 		"Prospector"
 	)
-	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
+	outfit_type = /decl/outfit/job/cargo/mining
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_HAULING  = SKILL_ADEPT,
@@ -235,7 +235,7 @@
 		"Sanitation Technician",
 		"Maid"
 	)
-	outfit_type = /decl/hierarchy/outfit/job/service/janitor
+	outfit_type = /decl/outfit/job/service/janitor
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_HAULING  = SKILL_BASIC
@@ -255,7 +255,7 @@
 	)
 	minimal_access = list(access_library)
 	alt_titles = list("Journalist", "Historian", "Writer")
-	outfit_type = /decl/hierarchy/outfit/job/librarian
+	outfit_type = /decl/outfit/job/librarian
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_FINANCE  = SKILL_BASIC
@@ -282,7 +282,7 @@
 		access_bridge
 	)
 	minimal_player_age = 10
-	outfit_type = /decl/hierarchy/outfit/job/internal_affairs_agent
+	outfit_type = /decl/outfit/job/internal_affairs_agent
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_FINANCE  = SKILL_BASIC

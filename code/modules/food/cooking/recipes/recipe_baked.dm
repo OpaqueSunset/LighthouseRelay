@@ -7,7 +7,7 @@
 	fruit = list("tomato" = 1)
 	items = list(
 		/obj/item/food/sliceable/flatdough,
-		/obj/item/food/cheesewedge = 3,
+		/obj/item/food/dairy/cheese/wedge = 3,
 	)
 	result = /obj/item/food/sliceable/pizza/margherita
 
@@ -16,7 +16,7 @@
 	items = list(
 		/obj/item/food/sliceable/flatdough,
 		/obj/item/food/butchery/cutlet = 2,
-		/obj/item/food/cheesewedge
+		/obj/item/food/dairy/cheese/wedge
 	)
 	result = /obj/item/food/sliceable/pizza/meatpizza
 
@@ -24,7 +24,7 @@
 	fruit = list("mushroom" = 5, "tomato" = 1)
 	items = list(
 		/obj/item/food/sliceable/flatdough,
-		/obj/item/food/cheesewedge
+		/obj/item/food/dairy/cheese/wedge
 	)
 	result = /obj/item/food/sliceable/pizza/mushroompizza
 
@@ -32,7 +32,7 @@
 	fruit = list("eggplant" = 1, "carrot" = 1, "corn" = 1, "tomato" = 1)
 	items = list(
 		/obj/item/food/sliceable/flatdough,
-		/obj/item/food/cheesewedge
+		/obj/item/food/dairy/cheese/wedge
 	)
 	result = /obj/item/food/sliceable/pizza/vegetablepizza
 
@@ -69,7 +69,7 @@
 	items = list(
 		/obj/item/food/dough = 2,
 		/obj/item/food/butchery/cutlet = 2,
-		/obj/item/food/cheesewedge = 2,
+		/obj/item/food/dairy/cheese/wedge = 2,
 	)
 	result = /obj/item/food/sliceable/meatbread
 
@@ -77,7 +77,7 @@
 	items = list(
 		/obj/item/food/dough = 2,
 		/obj/item/food/xenomeat = 2,
-		/obj/item/food/cheesewedge = 2,
+		/obj/item/food/dairy/cheese/wedge = 2,
 	)
 	result = /obj/item/food/sliceable/xenomeatbread
 
@@ -108,7 +108,7 @@
 	items = list(
 		/obj/item/food/dough = 3,
 		/obj/item/food/tofu = 3,
-		/obj/item/food/cheesewedge = 3,
+		/obj/item/food/dairy/cheese/wedge = 3,
 	)
 	result = /obj/item/food/sliceable/tofubread
 
@@ -151,7 +151,7 @@
 /decl/recipe/baked/eggplantparm
 	fruit = list("eggplant" = 1)
 	items = list(
-		/obj/item/food/cheesewedge = 2
+		/obj/item/food/dairy/cheese/wedge = 2
 		)
 	result = /obj/item/food/eggplantparm
 
@@ -164,7 +164,7 @@
 /decl/recipe/baked/creamcheesebread
 	items = list(
 		/obj/item/food/dough = 2,
-		/obj/item/food/cheesewedge = 2,
+		/obj/item/food/dairy/cheese/wedge = 2,
 	)
 	result = /obj/item/food/sliceable/creamcheesebread
 
@@ -270,7 +270,7 @@
 
 /decl/recipe/baked/cake/cheese
 	items = list(
-		/obj/item/food/cheesewedge = 2
+		/obj/item/food/dairy/cheese/wedge = 2
 	)
 	result = /obj/item/food/sliceable/cheesecake
 

@@ -6,7 +6,6 @@
 	icon_state = ICON_STATE_WORLD
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
 	slot_flags = SLOT_LOWER_BODY
-	throwforce = 5
 	w_class = ITEM_SIZE_SMALL
 	throw_speed = 2
 	throw_range = 5
@@ -109,7 +108,7 @@
 	target.equip_to_slot(cuffs, slot_handcuffed_str)
 	return 1
 
-var/global/last_chew = 0 //#FIXME: Its funny how only one person in the world can chew their restraints every 2.6 seconds
+var/global/last_chew = 0 //#FIXME: It's funny how only one person in the world can chew their restraints every 2.6 seconds
 /mob/living/human/RestrainedClickOn(var/atom/A)
 	if (A != src) return ..()
 	if (last_chew + 26 > world.time) return

@@ -29,6 +29,6 @@
 	reagent_mix = REAGENT_REPLACE // no milk
 	items = list(
 		/obj/item/food/spagetti, // todo: different pasta types?
-		/obj/item/food/cheesewedge
+		/obj/item/food/dairy/cheese/wedge
 	)
 	result = /obj/item/food/macncheese

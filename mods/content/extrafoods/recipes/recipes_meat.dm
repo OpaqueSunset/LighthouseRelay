@@ -61,7 +61,7 @@
 	fruit = list("tomato" = 2)
 	items = list(
 		/obj/item/food/sliceable/flatdough = 1,
-		/obj/item/food/cheesewedge = 1,
+		/obj/item/food/dairy/cheese/wedge = 1,
 		/obj/item/food/bacon = 4
 	)
 	result = /obj/item/food/bacon_flatbread
@@ -169,7 +169,7 @@
 	container_categories = RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/food/meatball = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	fruit = list("cabbage" = 1)
 	result = /obj/item/food/stuffed_meatball
@@ -179,7 +179,7 @@
 	items = list(
 		/obj/item/food/sliceable/flatdough = 1,
 		/obj/item/food/meatball = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/meat_pocket
 	result_quantity = 2
@@ -223,7 +223,7 @@
 	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_SAUCEPAN
 	items = list(
 		/obj/item/food/sausage = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 
 	)
 	result = /obj/item/food/red_sun_special

@@ -147,8 +147,7 @@
 /obj/machinery/door/blast/attackby(obj/item/C, mob/user)
 	add_fingerprint(user, 0, C)
 	if(!panel_open) //Do this here so the door won't change state while prying out the circuit
-		var/obj/item/twohanded/zweihander = C
-		if(IS_CROWBAR(C) || (istype(C, /obj/item/twohanded/fireaxe) && zweihander.wielded))
+		if(IS_CROWBAR(C) || (istype(C, /obj/item/bladed/axe/fire) && C.is_held_twohanded()))
 			if(((stat & NOPOWER) || (stat & BROKEN)) && !( operating ))
 				to_chat(user, "<span class='notice'>You begin prying at \the [src]...</span>")
 				if(do_after(user, 2 SECONDS, src))
@@ -159,7 +158,7 @@
 				to_chat(user, "<span class='notice'>[src]'s motors resist your effort.</span>")
 			return
 	if(istype(C, /obj/item/stack/material) && C.get_material_type() == /decl/material/solid/metal/plasteel)
-		var/amt = CEILING((get_max_health() - current_health)/150)
+		var/amt = ceil((get_max_health() - current_health)/150)
 		if(!amt)
 			to_chat(user, "<span class='notice'>\The [src] is already fully functional.</span>")
 			return

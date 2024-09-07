@@ -2,10 +2,6 @@
 	abstract_type = /decl/recipe/grilled
 	container_categories = RECIPE_CATEGORY_MICROWAVE|RECIPE_CATEGORY_SKILLET
 	//cooking_heat_type = COOKING_HEAT_DIRECT
-	container_categories = list(
-		RECIPE_CATEGORY_MICROWAVE,
-		RECIPE_CATEGORY_SKILLET
-	)
 	completion_message = "The meat sizzles as it is cooked through."
 
 /decl/recipe/grilled/plainsteak
@@ -39,7 +35,7 @@
 /decl/recipe/grilled/grilledcheese
 	items = list(
 		/obj/item/food/slice/bread = 2,
-		/obj/item/food/cheesewedge,
+		/obj/item/food/dairy/cheese/wedge,
 	)
 	result = /obj/item/food/grilledcheese
 	completion_message = "The bread toasts and the cheese melts together."

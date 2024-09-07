@@ -29,3 +29,10 @@
 #include "recipes\recipes_tortillas_chips.dm"
 // END_INCLUDE
 #endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES

@@ -8,6 +8,7 @@
 	material_alteration           = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
 	storage                       = /datum/storage/hopper
 	material                      = /decl/material/solid/metal/stainlesssteel
+	color                         = /decl/material/solid/metal/stainlesssteel::color
 	amount_per_transfer_from_this = 15
 
 	var/cooking_category
@@ -34,7 +35,7 @@
 
 // Boilerplate from /obj/item/chems/glass. TODO generalize to a lower level.
 /obj/item/chems/cooking_vessel/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
-	if(force && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
+	if(get_attack_force() && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
 		return ..()
 	return FALSE
 
@@ -71,13 +72,18 @@
 		. += "\the [thing]"
 
 	if(reagents?.total_volume)
-		for(var/reagent_type in reagents.reagent_volumes)
-			var/decl/material/reagent = GET_DECL(reagent_type)
-			var/reagent_name = reagent.get_reagent_name(reagents)
+		for(var/solid_type in reagents.solid_volumes)
+			var/decl/material/reagent = GET_DECL(solid_type)
+			var/reagent_name = reagent.get_reagent_name(reagents, MAT_PHASE_SOLID)
+			. += "[reagents.solid_volumes[solid_type]]u of [reagent_name]"
+
+		for(var/liquid_type in reagents.liquid_volumes)
+			var/decl/material/reagent = GET_DECL(liquid_type)
+			var/reagent_name = reagent.get_reagent_name(reagents, MAT_PHASE_LIQUID)
 			if(!isnull(reagent.boiling_point) && temperature >= reagent.boiling_point && reagent.soup_hot_desc)
-				. += "[reagents.reagent_volumes[reagent_type]]u of [reagent.soup_hot_desc] [reagent_name]"
+				. += "[reagents.liquid_volumes[liquid_type]]u of [reagent.soup_hot_desc] [reagent_name]"
 			else
-				. += "[reagents.reagent_volumes[reagent_type]]u of [reagent_name]"
+				. += "[reagents.liquid_volumes[liquid_type]]u of [reagent_name]"
 
 /obj/item/chems/cooking_vessel/examine(mob/user, distance)
 	. = ..()
@@ -91,7 +97,6 @@
 			to_chat(user, SPAN_NOTICE("\The [src] is empty."))
 
 /obj/item/chems/cooking_vessel/Process()
-	. = ..()
 	var/decl/recipe/recipe = select_recipe(cooking_category, src, temperature)
 	if(!recipe) // Too hot, too cold, ingredients changed.
 		//TODO fail last recipe
@@ -102,8 +107,14 @@
 		started_cooking = world.time
 	else if((world.time - started_cooking) >= recipe.cooking_time)
 		recipe.produce_result(src)
-		started_cooking = null
-		last_recipe = null
+		recipe = select_recipe(cooking_category, src, temperature)
+		if(recipe && recipe == last_recipe && recipe.can_bulk_cook)
+			// Bulk cooking has benefits like reduced cook time
+			// we don't just do it instantly because there's messages each time
+			started_cooking = world.time + (recipe.cooking_time / 2)
+		else
+			started_cooking = null
+			last_recipe = null
 		return
 	last_recipe = recipe
 	update_icon()

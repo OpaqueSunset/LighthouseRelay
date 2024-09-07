@@ -552,16 +552,16 @@
 	return TRUE
 
 
-//Syncs cultural tokens to the currently set species, and may trigger a language update
-/mob/living/human/proc/apply_species_cultural_info()
+//Syncs background categories/values to the currently set species, and may trigger a language update
+/mob/living/human/proc/apply_species_background_info()
 	var/update_lang
-	for(var/token in ALL_CULTURAL_TAGS)
-		if(species.force_cultural_info && species.force_cultural_info[token])
+	for(var/cat_type in global.using_map.get_background_categories())
+		if(species.force_background_info && species.force_background_info[cat_type])
 			update_lang = TRUE
-			set_cultural_value(token, species.force_cultural_info[token], defer_language_update = TRUE)
-		else if(!cultural_info[token] || !(cultural_info[token] in species.available_cultural_info[token]))
+			set_background_value(cat_type, species.force_background_info[cat_type], defer_language_update = TRUE)
+		else if(!background_info[cat_type] || !(background_info[cat_type] in species.available_background_info[cat_type]))
 			update_lang = TRUE
-			set_cultural_value(token, species.default_cultural_info[token], defer_language_update = TRUE)
+			set_background_value(cat_type, species.default_background_info[cat_type], defer_language_update = TRUE)
 
 	if(update_lang)
 		update_languages()
@@ -634,15 +634,15 @@
 	reset_offsets()
 
 /mob/living/human/proc/update_languages()
-	if(!length(cultural_info))
-		log_warning("'[src]'([x], [y], [z]) doesn't have any cultural info set and is attempting to update its language!!")
+	if(!length(background_info))
+		log_warning("'[src]'([x], [y], [z]) doesn't have any background info set and is attempting to update its language!!")
 
 	var/list/permitted_languages = list()
 	var/list/free_languages =      list()
 	var/list/default_languages =   list()
 
-	for(var/thing in cultural_info)
-		var/decl/cultural_info/check = cultural_info[thing]
+	for(var/thing in background_info)
+		var/decl/background_detail/check = background_info[thing]
 		if(istype(check))
 			if(check.default_language)
 				free_languages    |= check.default_language
@@ -665,7 +665,7 @@
 			// Whitelisted languages are fine.
 			if((lang.flags & LANG_FLAG_WHITELISTED) && is_alien_whitelisted(src, lang))
 				continue
-			// Culture-granted languages are fine.
+			// Background-granted languages are fine.
 			if(lang.type in permitted_languages)
 				continue
 		// This language is Not Fine, remove it.
@@ -852,9 +852,9 @@
 //Get fluffy numbers
 /mob/living/human/proc/get_blood_pressure()
 	if(status_flags & FAKEDEATH)
-		return "[FLOOR(120+rand(-5,5))*0.25]/[FLOOR(80+rand(-5,5)*0.25)]"
+		return "[floor(120+rand(-5,5))*0.25]/[floor(80+rand(-5,5)*0.25)]"
 	var/blood_result = get_blood_circulation()
-	return "[FLOOR((120+rand(-5,5))*(blood_result/100))]/[FLOOR((80+rand(-5,5))*(blood_result/100))]"
+	return "[floor((120+rand(-5,5))*(blood_result/100))]/[floor((80+rand(-5,5))*(blood_result/100))]"
 
 //Point at which you dun breathe no more. Separate from asystole crit, which is heart-related.
 /mob/living/human/nervous_system_failure()
@@ -891,22 +891,29 @@
 	if(!QDELETED(src) && fluids?.total_volume)
 		species.fluid_act(src, fluids)
 
-/mob/living/human/proc/set_cultural_value(var/token, var/decl/cultural_info/_culture, var/defer_language_update)
-	if(ispath(_culture, /decl/cultural_info))
-		_culture = GET_DECL(_culture)
-	if(istype(_culture))
-		LAZYSET(cultural_info, token, _culture)
+/mob/living/human/proc/set_background_value(var/cat_type, var/decl/background_detail/_background, var/defer_language_update)
+	if(ispath(_background, /decl/background_detail))
+		_background = GET_DECL(_background)
+	if(istype(_background))
+		LAZYSET(background_info, cat_type, _background)
 		if(!defer_language_update)
 			update_languages()
 
-/mob/living/proc/get_cultural_value(var/token)
+/mob/living/proc/get_background_datum_by_flag(background_flag)
+	var/list/all_categories = global.using_map.get_background_categories()
+	for(var/cat_type in all_categories)
+		var/decl/background_category/background_cat = all_categories[cat_type]
+		if(background_cat.background_flags && (background_cat.background_flags & background_flag))
+			return get_background_datum(cat_type)
+
+/mob/living/proc/get_background_datum(cat_type)
 	return null
 
-/mob/living/human/get_cultural_value(var/token)
-	. = LAZYACCESS(cultural_info, token)
-	if(!istype(., /decl/cultural_info))
-		. = global.using_map.default_cultural_info[token]
-		PRINT_STACK_TRACE("get_cultural_value() tried to return a non-instance value for token '[token]' - full culture list: [json_encode(cultural_info)] default species culture list: [json_encode(global.using_map.default_cultural_info)]")
+/mob/living/human/get_background_datum(cat_type)
+	. = LAZYACCESS(background_info, cat_type)
+	if(!istype(., /decl/background_detail))
+		. = global.using_map.default_background_info[cat_type]
+		PRINT_STACK_TRACE("get_background_datum() tried to return a non-instance value for background category '[cat_type]' - full background list: [json_encode(background_info)] default species culture list: [json_encode(global.using_map.default_background_info)]")
 
 /mob/living/human/get_digestion_product()
 	return species.get_digestion_product(src)
@@ -1002,7 +1009,7 @@
 		try_generate_default_name()
 
 	species.handle_pre_spawn(src)
-	apply_species_cultural_info()
+	apply_species_background_info()
 	species.handle_post_spawn(src)
 
 	supplied_appearance?.apply_appearance_to(src)
@@ -1024,7 +1031,7 @@
 /mob/living/human/proc/post_setup(species_name, datum/mob_snapshot/supplied_appearance)
 	try_refresh_visible_overlays() //Do this exactly once per setup
 
-/mob/living/human/handle_flashed(var/obj/item/flash/flash, var/flash_strength)
+/mob/living/human/handle_flashed(var/flash_strength)
 	var/safety = eyecheck()
 	if(safety < FLASH_PROTECTION_MODERATE)
 		flash_strength = round(get_flash_mod() * flash_strength)

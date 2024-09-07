@@ -110,7 +110,7 @@
 	resistance = 10
 	construct_spells = list(/spell/aoe_turf/conjure/forcewall/lesser)
 	hud_used = /datum/hud/construct/juggernaut
-	base_movement_delay = 3
+	base_movement_delay = 2
 	ai = /datum/mob_controller/aggressive/construct_armoured
 
 /datum/mob_controller/aggressive/construct_armoured
@@ -121,7 +121,7 @@
 	gender = NEUTER
 	attack_verb = list("smashed", "demolished")
 	hitsound = 'sound/weapons/heavysmash.ogg'
-	force = 30
+	_base_attack_force = 30
 
 /mob/living/simple_animal/construct/armoured/handle_regular_status_updates()
 	set_status(STAT_WEAK, 0)
@@ -173,7 +173,7 @@
 	attack_verb = list("slashed", "tore into")
 	hitsound = 'sound/weapons/rapidslice.ogg'
 	edge = TRUE
-	force = 25
+	_base_attack_force = 25
 
 /mob/living/simple_animal/construct/wraith/mind_initialize()
 	..()
@@ -207,7 +207,6 @@
 /obj/item/natural_weapon/cult_builder
 	name = "heavy arms"
 	attack_verb = list("rammed")
-	force = 5
 
 
 /mob/living/simple_animal/construct/builder/mind_initialize()
@@ -232,11 +231,11 @@
 	resistance = 10
 	construct_spells = list(/spell/aoe_turf/conjure/forcewall/lesser)
 	hud_used = /datum/hud/construct/juggernaut
-	base_movement_delay = 5
+	base_movement_delay = 2
 	ai = /datum/mob_controller/aggressive/construct_armoured
 
 /obj/item/natural_weapon/juggernaut/behemoth
-	force = 50
+	_base_attack_force = 50
 
 ////////////////////////Harvester////////////////////////////////
 
@@ -260,7 +259,7 @@
 	attack_verb = list("violently stabbed", "ran through")
 	hitsound = 'sound/weapons/pierce.ogg'
 	sharp = TRUE
-	force = 25
+	_base_attack_force = 25
 
 ////////////////HUD//////////////////////
 /mob/living/simple_animal/construct/handle_regular_status_updates()

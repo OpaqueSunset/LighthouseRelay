@@ -41,7 +41,7 @@
 	items = list(
 		/obj/item/food/spreads = 1,
 		/obj/item/food/slice/bread = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	reagents = list(/decl/material/solid/spacespice = 1)
 	result = /obj/item/food/cheese_cracker

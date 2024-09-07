@@ -87,6 +87,7 @@ var/global/list/time_prefs_fixed = list()
 			load_data()
 			is_byond_member = client.IsByondMember()
 
+	load_preferences()
 	sanitize_preferences()
 	update_preview_icon()
 
@@ -259,8 +260,7 @@ var/global/list/time_prefs_fixed = list()
 		"8" = "character_preview_map:1:16,1:21"
 	)
 
-	var/decl/species/mannequin_species = mannequin.get_species()
-	var/list/preview_screen_locs = mannequin_species?.preview_screen_locs || default_preview_screen_locs
+	var/list/preview_screen_locs = mannequin?.get_preview_screen_locs() || default_preview_screen_locs
 	for(var/D in global.cardinal)
 		var/obj/screen/setup_preview/O = LAZYACCESS(char_render_holders, "[D]")
 		if(!O)
@@ -364,9 +364,9 @@ var/global/list/time_prefs_fixed = list()
 		character.change_species(species, new_bodytype)
 
 	if(be_random_name)
-		var/decl/cultural_info/culture = GET_DECL(cultural_info[TAG_CULTURE])
-		if(culture)
-			real_name = culture.get_random_name(gender)
+		var/decl/background_detail/background = get_background_datum_by_flag(BACKGROUND_FLAG_NAMING)
+		if(background)
+			real_name = background.get_random_name(gender)
 
 	if(get_config_value(/decl/config/toggle/humans_need_surnames))
 		var/firstspace = findtext(real_name, " ")
@@ -403,6 +403,10 @@ var/global/list/time_prefs_fixed = list()
 
 	character.backpack_setup = new(backpack, backpack_metadata["[backpack]"])
 
+	if(length(traits))
+		for(var/trait_type in traits)
+			character.set_trait(trait_type, (traits[trait_type] || TRAIT_LEVEL_EXISTS))
+
 	for(var/obj/item/organ/external/O in character.get_external_organs())
 		for(var/decl/sprite_accessory_category/sprite_category in O.get_sprite_accessory_categories())
 			if(!sprite_category.clear_in_pref_apply)
@@ -421,10 +425,6 @@ var/global/list/time_prefs_fixed = list()
 				if(O)
 					O.set_sprite_accessory(accessory, accessory_category, accessory_metadata, skip_update = TRUE)
 
-	if(length(traits))
-		for(var/trait_type in traits)
-			character.set_trait(trait_type, traits[trait_type] || TRAIT_LEVEL_EXISTS)
-
 	if(LAZYLEN(appearance_descriptors))
 		character.appearance_descriptors = appearance_descriptors.Copy()
 
@@ -439,8 +439,8 @@ var/global/list/time_prefs_fixed = list()
 	if(is_preview_copy)
 		return
 
-	for(var/token in cultural_info)
-		character.set_cultural_value(token, cultural_info[token], defer_language_update = TRUE)
+	for(var/token in background_info)
+		character.set_background_value(token, background_info[token], defer_language_update = TRUE)
 	character.update_languages()
 	for(var/lang in alternate_languages)
 		character.add_language(lang)

@@ -38,9 +38,8 @@
 			if(varName in trans.vars)
 				trans.vars[varName] = newVars[varName]
 		//Give them our languages
-		for(var/l in M.languages)
-			var/decl/language/L = l
-			trans.add_language(L.name)
+		for(var/decl/language/lang as anything in M.languages)
+			trans.add_language(lang.type)
 
 		trans.SetName("[trans.name] ([M])")
 		if(ishuman(M) && drop_items)
@@ -75,7 +74,7 @@
 	if(share_damage)
 		var/transformer_max_health = transformer.get_max_health()
 		var/damage = transformer.set_max_health(transformer_max_health-round(transformer_max_health*(transformer.get_health_ratio())))
-		for(var/i in 1 to CEILING(damage/10))
+		for(var/i in 1 to ceil(damage/10))
 			transformer.take_damage(10)
 	if(target.mind)
 		target.mind.transfer_to(transformer)

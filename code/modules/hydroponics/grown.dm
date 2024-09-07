@@ -23,7 +23,20 @@
 		else if(!seeds_extracted && seed.min_seed_extracted)
 			to_chat(user, SPAN_NOTICE("With a knife, you could extract at least [seed.min_seed_extracted] seed\s."))
 
-/obj/item/food/grown/Initialize(mapload, material_key, _seed)
+/obj/item/food/grown/update_name()
+	if(!seed)
+		return ..()
+	var/descriptor = list()
+	if(dry)
+		descriptor += "dried"
+	if(backyard_grilling_count > 0)
+		descriptor += "roasted"
+	if(length(descriptor))
+		SetName("[english_list(descriptor)] [seed.product_name]")
+	else
+		SetName("[seed.product_name]")
+
+/obj/item/food/grown/Initialize(mapload, material_key, skip_plate = FALSE, _seed)
 
 	if(isnull(seed) && _seed)
 		seed = _seed
@@ -38,6 +51,7 @@
 	filling_color = seed.get_trait(TRAIT_PRODUCT_COLOUR) || seed.get_trait(TRAIT_FLESH_COLOUR)
 	slice_path    = seed.slice_product
 	slice_num     = seed.slice_amount
+	w_class       = seed.product_w_class
 
 	if(!seed.chems && !(dry && seed.dried_chems) && !(backyard_grilling_count > 0 && seed.roasted_chems))
 		return INITIALIZE_HINT_QDEL // No reagent contents, no froot
@@ -45,15 +59,7 @@
 	if(seed.scannable_result)
 		set_extension(src, /datum/extension/scannable, seed.scannable_result)
 
-	var/descriptor = list()
-	if(dry)
-		descriptor += "dried"
-	if(backyard_grilling_count > 0)
-		descriptor += "roasted"
-	if(length(descriptor))
-		SetName("[english_list(descriptor)] [seed.product_name]")
-	else
-		SetName("[seed.product_name]")
+	update_name()
 	if(seed.product_material)
 		material = seed.product_material
 
@@ -65,7 +71,7 @@
 	if(!dried_type)
 		dried_type = type
 
-	. = ..(mapload) //Init reagents
+	. = ..(mapload, material_key, skip_plate) //Init reagents
 
 /obj/item/food/grown/initialize_reagents(populate)
 	if(reagents)
@@ -248,13 +254,7 @@ var/global/list/_wood_materials = list(
 				qdel(src)
 				return TRUE
 
-	var/static/list/rollable_types = list(
-		/obj/item/paper/cig,
-		/obj/item/paper,
-		/obj/item/teleportation_scroll
-	)
-
-	if(is_type_in_list(W, rollable_types))
+	if(istype(W, /obj/item/paper))
 
 		if(!dry)
 			to_chat(user, SPAN_WARNING("You need to dry \the [src] first!"))
@@ -287,7 +287,7 @@ var/global/list/_wood_materials = list(
 	. = dry ? "dried [seed.grown_tag]" : seed.grown_tag
 
 /obj/item/food/grown/create_slice()
-	return new slice_path(loc, material?.type, seed)
+	return new slice_path(loc, material?.type, TRUE, seed)
 
 /obj/item/food/grown/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
 	. = ..()
@@ -347,7 +347,7 @@ var/global/list/_wood_materials = list(
 
 /obj/item/food/grown/get_dried_product()
 	if(ispath(dried_type, /obj/item/food/grown))
-		return new dried_type(loc, null, seed.name)
+		return new dried_type(loc, null, TRUE, seed.name)
 	return ..()
 
 /obj/item/food/grown/get_drying_state(var/obj/rack)
@@ -359,7 +359,7 @@ var/global/list/_wood_materials = list(
 
 /obj/item/food/grown/get_grilled_product()
 	if(ispath(backyard_grilling_product, /obj/item/food/grown))
-		return new backyard_grilling_product(loc, null, seed.name)
+		return new backyard_grilling_product(loc, null, TRUE, seed.name)
 	return ..()
 
 /obj/item/food/grown/afterattack(atom/target, mob/user, flag)

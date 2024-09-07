@@ -15,7 +15,7 @@
 	slice_path                     = /obj/item/food/sashimi
 	slice_num                      = 3
 	meat_name                      = "fish"
-	ingredient_flags               = INGREDIENT_FLAG_MEAT | INGREDIENT_FLAG_FISH
+	ingredient_flags               = INGREDIENT_FLAG_FISH
 
 /obj/item/food/butchery/meat/fish/get_meat_icons()
 	var/static/list/meat_icons = list(
@@ -30,7 +30,7 @@
 			food.remove_from_reagents(/decl/material/liquid/carpotoxin, REAGENT_VOLUME(reagents, /decl/material/liquid/carpotoxin))
 
 /obj/item/food/butchery/meat/fish/create_slice()
-	return new slice_path(loc, material?.type, meat_name) // pass fish name to sashimi
+	return new slice_path(loc, material?.type, TRUE, meat_name) // pass fish name to sashimi
 
 /obj/item/food/butchery/meat/fish/grilled
 	desc                           = "A lightly grilled fish fillet."

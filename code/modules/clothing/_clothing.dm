@@ -7,7 +7,7 @@
 	replaced_in_loadout = TRUE
 	w_class = ITEM_SIZE_SMALL
 	icon_state = ICON_STATE_WORLD
-	force = 0
+	_base_attack_force = 3
 
 	var/wizard_garb = 0
 	var/flash_protection = FLASH_PROTECTION_NONE	  // Sets the item's level of flash protection.
@@ -40,6 +40,9 @@
 
 /obj/item/clothing/get_equipment_tint()
 	return tint
+
+/obj/item/clothing/get_matter_amount_modifier()
+	return ..() * 5 // clothes are complicated and have a high surface area. todo: a better way to do this?
 
 /obj/item/clothing/Initialize()
 
@@ -89,7 +92,7 @@
 	return TRUE
 
 // Sort of a placeholder for proper tailoring.
-#define RAG_COUNT(X) CEILING((LAZYACCESS(X.matter, /decl/material/solid/organic/cloth) * 0.65) / SHEET_MATERIAL_AMOUNT)
+#define RAG_COUNT(X) ceil((LAZYACCESS(X.matter, /decl/material/solid/organic/cloth) * 0.65) / SHEET_MATERIAL_AMOUNT)
 
 /obj/item/clothing/attackby(obj/item/I, mob/user)
 	var/rags = RAG_COUNT(src)

@@ -29,6 +29,7 @@
 /decl/bodytype/animal/crow
 	name = "crow"
 	bodytype_category = "crow body"
+	uid = "bodytype_animal_crow"
 
 /mob/living/simple_animal/crow/get_bodytype()
 	return GET_DECL(/decl/bodytype/animal/crow)
@@ -38,7 +39,7 @@
 	gender = PLURAL
 	attack_verb = list("clawed")
 	sharp = TRUE
-	force = 7
+	_base_attack_force = 7
 
 /mob/living/simple_animal/crow/Initialize()
 	. = ..()

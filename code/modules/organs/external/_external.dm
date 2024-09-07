@@ -81,6 +81,11 @@
 	var/image/hud_damage_image
 	var/fingerprint
 
+	// Extremely specific bool for washing hands to avoid drakes washing their entire head in the sink.
+	// The problem with adding shit like this is that now the question of whether or not feet/face should
+	// be washable comes up! There is no escape from the horrors of a detailed sim.
+	var/is_washable = FALSE
+
 /obj/item/organ/external/proc/set_fingerprint(value)
 	if((limb_flags & ORGAN_FLAG_FINGERPRINT) && !BP_IS_PROSTHETIC(src))
 		fingerprint = value
@@ -326,7 +331,7 @@
 	if(stage == 2 && (used_item.sharp || IS_HEMOSTAT(used_item) || IS_WIRECUTTER(used_item)))
 		var/list/radial_buttons = make_item_radial_menu_choices(get_contents_recursive())
 		if(LAZYLEN(radial_buttons))
-			var/obj/item/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = TRUE, check_locs = list(src))
+			var/obj/item/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = RADIAL_LABELS_OFFSET, check_locs = list(src))
 			if(removing)
 				if(istype(removing, /obj/item/organ))
 					var/obj/item/organ/removed_organ = removing
@@ -351,7 +356,7 @@
 		return
 
 	//Display radial menu
-	var/obj/item/organ/external/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = TRUE, check_locs = list(src))
+	var/obj/item/organ/external/removing = show_radial_menu(user, src, radial_buttons, radius = 42, require_near = TRUE, use_labels = RADIAL_LABELS_OFFSET, check_locs = list(src))
 	if(!istype(removing))
 		return TRUE
 
@@ -659,7 +664,7 @@ This function completely restores a damaged organ to perfect condition.
 		var/internal_damage
 		if(prob(damage) && sever_artery())
 			internal_damage = TRUE
-		if(prob(CEILING(damage/4)) && sever_tendon())
+		if(prob(ceil(damage/4)) && sever_tendon())
 			internal_damage = TRUE
 		if(internal_damage)
 			owner.custom_pain("You feel something rip in your [name]!", 50, affecting = src)
@@ -1487,8 +1492,8 @@ Note that amputating the affected organ does in fact remove the infection from t
 				. = SURGERY_ENCASED
 		else
 			var/total_health_coefficient = scale_max_damage_to_species_health ? (species.total_health / DEFAULT_SPECIES_HEALTH) : 1
-			var/smol_threshold = max(1, FLOOR(min_broken_damage * 0.4 * total_health_coefficient))
-			var/beeg_threshold = max(1, FLOOR(min_broken_damage * 0.6 * total_health_coefficient))
+			var/smol_threshold = max(1, floor(min_broken_damage * 0.4 * total_health_coefficient))
+			var/beeg_threshold = max(1, floor(min_broken_damage * 0.6 * total_health_coefficient))
 			if(!incision.autoheal_cutoff == 0) //not clean incision
 				smol_threshold *= 1.5
 				beeg_threshold = max(beeg_threshold, min(beeg_threshold * 1.5, incision.damage_list[1])) //wounds can't achieve bigger

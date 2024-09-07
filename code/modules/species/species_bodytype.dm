@@ -1,6 +1,8 @@
 var/global/list/bodytypes_by_category = list()
 
 /decl/bodytype
+	decl_flags = DECL_FLAG_MANDATORY_UID
+	abstract_type = /decl/bodytype
 	/// Name used in general.
 	var/name = "default"
 	/// Name used in preference bodytype selection. Defaults to name.
@@ -584,8 +586,9 @@ var/global/list/bodytypes_by_category = list()
 
 	//Clear invalid internal organs
 	if(H.has_internal_organs())
-		for(var/obj/item/organ/O in H.get_internal_organs())
+		for(var/obj/item/organ/internal/O in H.get_internal_organs())
 			if(!is_default_organ(O))
+				O.transfer_brainmob_with_organ = FALSE // To avoid ghosting us on set_species().
 				H.remove_organ(O, FALSE, FALSE, TRUE, TRUE, FALSE, skip_health_update = TRUE) //Remove them first so we don't trigger removal effects by just calling delete on them
 				qdel(O)
 
@@ -682,7 +685,7 @@ var/global/list/bodytypes_by_category = list()
 
 /decl/species/proc/customize_preview_mannequin(mob/living/human/dummy/mannequin/mannequin)
 	if(preview_outfit)
-		var/decl/hierarchy/outfit/outfit = outfit_by_type(preview_outfit)
+		var/decl/outfit/outfit = GET_DECL(preview_outfit)
 		outfit.equip_outfit(mannequin, equip_adjustments = (OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR|OUTFIT_ADJUSTMENT_SKIP_BACKPACK))
 		mannequin.update_icon()
 	mannequin.update_transform()

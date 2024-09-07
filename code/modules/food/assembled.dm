@@ -66,7 +66,27 @@
 
 	// TODO: move reagents/matter into produced food object.
 	if(ispath(create_type) && user.canUnEquip(src))
-		var/obj/item/food/result = new create_type()
+		var/obj/item/food/result
+		if(ispath(create_type, /obj/item/food))
+
+			// Create the food with no plate, and move over any existing plate.
+			result = new create_type(null, null, TRUE) // Skip plate creation.
+
+			if(istype(W, /obj/item/food))
+				var/obj/item/food/other_food = W
+				result.plate = other_food.plate
+				other_food.plate = null
+
+			if(!result.plate && plate)
+				result.plate = plate
+				plate = null
+
+			if(istype(result.plate) && result.plate.loc != result)
+				result.plate.forceMove(result)
+
+		else
+			result = new create_type
+
 		//If the snack was in your hands, the result will be too
 		if (src in user.get_held_item_slots())
 			user.drop_from_inventory(src)
@@ -101,8 +121,7 @@
 			product_string = english_list(names, and_text = " or ")
 		else
 			product_string = "\a [atom_info_repository.get_name_for(product)]"
-		var/other_name = istext(thing_type) ? thing_type : atom_info_repository.get_name_for(thing_type)
-		to_chat(user, SPAN_NOTICE("With this and \a [other_name], you could make [product_string]."))
+		to_chat(user, SPAN_NOTICE("With this and \a [ispath(thing_type) ? atom_info_repository.get_name_for(thing_type): thing_type], you could make [product_string]."))
 
 /obj/item/food/bun/get_combined_food_products()
 	var/static/list/combined_food_products = list(
@@ -142,20 +161,20 @@
 
 /obj/item/food/burger/get_combined_food_products()
 	var/static/list/combined_food_products = list(
-		/obj/item/food/cheesewedge = /obj/item/food/cheeseburger,
+		/obj/item/food/dairy/cheese/wedge = /obj/item/food/cheeseburger,
 		/obj/item/clothing/head/wizard   = /obj/item/food/spellburger
 	)
 	return combined_food_products
 
 /obj/item/food/hamburger/get_combined_food_products()
 	var/static/list/combined_food_products = list(
-		/obj/item/food/cheesewedge = /obj/item/food/cheeseburger
+		/obj/item/food/dairy/cheese/wedge = /obj/item/food/cheeseburger
 	)
 	return combined_food_products
 
 /obj/item/food/human/burger/get_combined_food_products()
 	var/static/list/combined_food_products = list(
-		/obj/item/food/cheesewedge = /obj/item/food/cheeseburger
+		/obj/item/food/dairy/cheese/wedge = /obj/item/food/cheeseburger
 	)
 	return combined_food_products
 
@@ -205,7 +224,7 @@
 	return combined_food_products
 
 // This one looks slightly weird but the attackby() proc should mirror it to the potato.
-/obj/item/food/cheesewedge/get_combined_food_products()
+/obj/item/food/dairy/cheese/wedge/get_combined_food_products()
 	var/static/list/combined_food_products = list(
 		"potato" = /obj/item/food/loadedbakedpotato/raw
 	)
@@ -213,7 +232,7 @@
 
 /obj/item/food/fries/get_combined_food_products()
 	var/static/list/combined_food_products = list(
-		/obj/item/food/cheesewedge = /obj/item/food/cheesyfries/uncooked
+		/obj/item/food/dairy/cheese/wedge = /obj/item/food/cheesyfries/uncooked
 	)
 	return combined_food_products
 

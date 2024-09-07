@@ -1112,7 +1112,7 @@ default behaviour is:
 				A.alert_on_fall(src)
 
 /mob/living/proc/apply_fall_damage(var/turf/landing)
-	take_damage(rand(max(1, CEILING(mob_size * 0.33)), max(1, CEILING(mob_size * 0.66))) * get_fall_height())
+	take_damage(rand(max(1, ceil(mob_size * 0.33)), max(1, ceil(mob_size * 0.66))) * get_fall_height())
 
 /mob/living/proc/get_toxin_resistance()
 	var/decl/species/species = get_species()
@@ -1328,6 +1328,7 @@ default behaviour is:
 				CRASH("synthetic get_default_temperature_threshold() called with invalid threshold value.")
 	return ..()
 
+// TODO: Generalize by looping over inventory slots/bodyparts/etc. and checking coverage.
 /mob/living/clean(clean_forensics = TRUE)
 
 	SHOULD_CALL_PARENT(FALSE)
@@ -1386,12 +1387,25 @@ default behaviour is:
 		var/obj/item/gloves = get_equipped_item(slot_gloves_str)
 		if(gloves)
 			gloves.clean()
-		else
+		else // can't clean your hands with gloves on
+			for(var/organ_tag in get_held_item_slots())
+				var/obj/item/organ/external/organ = get_organ(organ_tag)
+				if(organ)
+					organ.clean()
 			germ_level = 0
+			update_equipment_overlay(slot_gloves_str, FALSE) // clear bloody hands overlay
 
-	var/obj/item/shoes = get_equipped_item(slot_shoes_str)
-	if(shoes && washshoes)
-		shoes.clean()
+	if(washshoes)
+		var/obj/item/shoes = get_equipped_item(slot_shoes_str)
+		if(shoes)
+			shoes.clean()
+		else // no shoes, wash feet
+			var/static/list/clean_slots = list(BP_L_FOOT, BP_R_FOOT)
+			for(var/organ_tag in clean_slots)
+				var/obj/item/organ/external/organ = get_organ(organ_tag)
+				if(organ)
+					organ.clean()
+			update_equipment_overlay(slot_shoes_str, FALSE) // clear bloody feet overlay
 
 	if(mask && washmask)
 		mask.clean()
@@ -1412,26 +1426,6 @@ default behaviour is:
 	var/obj/item/belt = get_equipped_item(slot_belt_str)
 	if(belt)
 		belt.clean()
-
-	var/obj/item/gloves = get_equipped_item(slot_gloves_str)
-	if(gloves)
-		gloves.clean()
-		gloves.germ_level = 0
-		for(var/organ_tag in get_held_item_slots())
-			var/obj/item/organ/external/organ = get_organ(organ_tag)
-			if(organ)
-				organ.clean()
-	else
-		germ_level = 0
-	update_equipment_overlay(slot_gloves_str, FALSE)
-
-	if(!get_equipped_item(slot_shoes_str))
-		var/static/list/clean_slots = list(BP_L_FOOT, BP_R_FOOT)
-		for(var/organ_tag in clean_slots)
-			var/obj/item/organ/external/organ = get_organ(organ_tag)
-			if(organ)
-				organ.clean()
-	update_equipment_overlay(slot_shoes_str)
 
 	return TRUE
 
@@ -1481,15 +1475,6 @@ default behaviour is:
 
 /mob/living/can_buckle_mob(var/mob/living/dropping)
 	. = ..() && stat == CONSCIOUS && !buckled && dropping.mob_size <= mob_size
-
-/mob/living/refresh_buckled_mob()
-	..()
-	if(buckled_mob)
-		if(dir == SOUTH)
-			buckled_mob.layer = layer - 0.01
-		else
-			buckled_mob.layer = layer + 0.01
-		buckled_mob.plane = plane
 
 /mob/living/OnSimulatedTurfEntered(turf/T, old_loc)
 	T.add_dirt(0.5)
@@ -1628,7 +1613,7 @@ default behaviour is:
 		return range * range - 0.333
 	return range
 
-/mob/living/handle_flashed(var/obj/item/flash/flash, var/flash_strength)
+/mob/living/handle_flashed(var/flash_strength)
 
 	var/safety = eyecheck()
 	if(safety >= FLASH_PROTECTION_MODERATE || flash_strength <= 0) // May be modified by human proc.
@@ -1657,9 +1642,10 @@ default behaviour is:
 	user.set_special_ability_cooldown(5 SECONDS)
 	visible_message(SPAN_DANGER("You hear something rumbling inside [src]'s stomach..."))
 	var/obj/item/I = user.get_active_held_item()
-	if(!I?.force)
+	var/force = I?.get_attack_force(user)
+	if(!force)
 		return
-	var/d = rand(round(I.force / 4), I.force)
+	var/d = rand(round(force / 4), force)
 	visible_message(SPAN_DANGER("\The [user] attacks [src]'s stomach wall with \the [I]!"))
 	playsound(user.loc, 'sound/effects/attackblob.ogg', 50, 1)
 	var/obj/item/organ/external/organ = GET_EXTERNAL_ORGAN(src, BP_CHEST)
@@ -1680,7 +1666,7 @@ default behaviour is:
 		. += max(2 * stance_damage, 0) //damaged/missing feet or legs is slow
 
 /mob/living/proc/find_mob_supporting_object()
-	for(var/turf/T in RANGE_TURFS(src, 1))
+	for(var/turf/T as anything in RANGE_TURFS(src, 1))
 		if(T.density && T.simulated)
 			return TRUE
 	for(var/obj/O in orange(1, src))
@@ -1796,3 +1782,62 @@ default behaviour is:
 			return FALSE
 
 	return TRUE
+
+/mob/living/proc/prepare_for_despawn()
+	//Update any existing objectives involving this mob.
+	for(var/datum/objective/objective in global.all_objectives)
+		// We don't want revs to get objectives that aren't for heads of staff. Letting
+		// them win or lose based on cryo is silly so we remove the objective.
+		if(objective.target == mind)
+			if(objective.owner?.current)
+				to_chat(objective.owner.current, SPAN_DANGER("You get the feeling your target, [real_name], is no longer within your reach..."))
+			qdel(objective)
+	//Handle job slot/tater cleanup.
+	if(mind)
+		if(mind.assigned_job)
+			mind.assigned_job.clear_slot()
+		if(mind.objectives.len)
+			mind.objectives = null
+			mind.assigned_special_role = null
+	// Delete them from datacore.
+	var/datum/computer_file/report/crew_record/record = get_crewmember_record(sanitize(real_name))
+	if(record)
+		qdel(record)
+	return TRUE
+
+/mob/living/proc/get_preview_screen_locs()
+	for(var/obj/item/gear in get_equipped_items())
+		var/screen_locs = gear.get_preview_screen_locs()
+		if(screen_locs)
+			return screen_locs
+	var/decl/species/my_species = get_species()
+	return my_species?.character_preview_screen_locs
+
+/mob/living/can_twohand_item(obj/item/item)
+	if(!istype(item) || !item.can_be_twohanded)
+		return FALSE
+	if(incapacitated())
+		return FALSE
+	if(mob_size < item.minimum_size_to_twohand || (!isnull(item.maximum_size_to_twohand) && mob_size > item.maximum_size_to_twohand))
+		return FALSE
+	for(var/empty_hand in get_empty_hand_slots())
+		var/datum/inventory_slot/gripper/slot = get_inventory_slot_datum(empty_hand)
+		if(!istype(slot))
+			continue
+		if(slot.requires_organ_tag)
+			var/obj/item/organ/external/hand = GET_EXTERNAL_ORGAN(src, slot.requires_organ_tag)
+			if(istype(hand) && hand.is_usable() && (!item.needs_attack_dexterity || hand.get_manual_dexterity() >= item.needs_attack_dexterity))
+				return TRUE
+		else if(!item.needs_attack_dexterity || slot.dexterity >= item.needs_attack_dexterity)
+			return TRUE
+	return FALSE
+
+/mob/living/buckle_mob(mob/living/M)
+	. = ..()
+	reset_layer()
+	update_icon()
+
+/mob/living/unbuckle_mob()
+	. = ..()
+	reset_layer()
+	update_icon()

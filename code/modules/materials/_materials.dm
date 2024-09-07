@@ -1,3 +1,32 @@
+var/global/list/_descriptive_temperature_strings
+/proc/get_descriptive_temperature_strings(temperature)
+	if(!_descriptive_temperature_strings)
+		_descriptive_temperature_strings = list()
+
+		for(var/decl/material/material as anything in decls_repository.get_decls_of_subtype_unassociated(/decl/material))
+
+			if(material.type != material.temperature_burn_milestone_material)
+				continue
+
+			if(!isnull(material.bakes_into_at_temperature) && material.bakes_into_material)
+				var/decl/material/cook = GET_DECL(material.bakes_into_material)
+				global._descriptive_temperature_strings["bake [material.name] into [cook.name]"] = material.bakes_into_at_temperature
+				continue
+
+			switch(material.phase_at_temperature())
+				if(MAT_PHASE_SOLID)
+					if(!isnull(material.ignition_point))
+						global._descriptive_temperature_strings["ignite [material.name]"] = material.ignition_point
+					else if(!isnull(material.melting_point))
+						global._descriptive_temperature_strings["melt [material.name]"] = material.melting_point
+				if(MAT_PHASE_LIQUID)
+					if(!isnull(material.boiling_point))
+						global._descriptive_temperature_strings["boil [material.name]"] = material.boiling_point
+
+	for(var/burn_string in global._descriptive_temperature_strings)
+		if(temperature >= global._descriptive_temperature_strings[burn_string])
+			LAZYADD(., burn_string)
+
 var/global/list/materials_by_gas_symbol = list()
 
 /obj/effect/gas_overlay
@@ -64,6 +93,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/solid_name
 	var/gas_name
 	var/liquid_name
+	var/solution_name      // Name for the material in solution.
 	var/use_name
 	var/wall_name = "wall" // Name given to walls of this material
 	var/flags = 0          // Various status modifiers.
@@ -73,7 +103,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/antag_text
 	var/default_solid_form = /obj/item/stack/material/sheet
 
-	var/soup_name
 	var/soup_hot_desc = "simmering"
 
 	var/affect_blood_on_ingest = TRUE
@@ -159,10 +188,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/turf_touch_threshold = FLUID_QDEL_POINT
 
 	// Damage values.
-	var/hardness = MAT_VALUE_HARD            // Used for edge damage in weapons.
-	var/reflectiveness = MAT_VALUE_DULL
-	var/ferrous = FALSE                       // Can be used as a striker for firemaking.
-	var/weight = MAT_VALUE_NORMAL             // Determines blunt damage/throwforce for weapons.
+	var/hardness = MAT_VALUE_HARD       // Used for edge damage in weapons.
+	var/weight = MAT_VALUE_NORMAL       // Determines blunt damage/throw force for weapons.
+	var/reflectiveness = MAT_VALUE_DULL // How effective is this at reflecting light?
+	var/ferrous = FALSE                 // Can be used as a striker for firemaking.
 
 	// Noise when someone is faceplanted onto a table made of this material.
 	var/tableslam_noise = 'sound/weapons/tablehit1.ogg'
@@ -313,6 +342,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/reagent_overlay
 	var/reagent_overlay_base = "reagent_base"
 
+	/// Set to a type to indicate that a type with a matching milestone type should be used as a reference point for burn temperatures.
+	var/temperature_burn_milestone_material
+
 // Placeholders for light tiles and rglass.
 /decl/material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack, var/use_sheets = 1)
 	if(!used_stack.can_use(use_sheets))
@@ -321,7 +353,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	var/decl/material/reinf_mat = used_stack.get_material()
 	if(reinf_mat.integrity <= integrity || reinf_mat.is_brittle())
-		to_chat(user, SPAN_WARNING("The [reinf_mat.solid_name] is too structurally weak to reinforce the [name]."))
+		to_chat(user, SPAN_WARNING("The [reinf_mat.solid_name] is too structurally weak to reinforce \the [src]."))
 		return
 
 	if(!target_stack.can_use(use_sheets))
@@ -355,11 +387,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	gas_name       ||= use_name
 	// Use solid_name for adjective_name so that we get "ice bracelet" instead of "water bracelet" for things made of water below 0C.
 	adjective_name ||= solid_name
-	// Default soup_name to liquid_name if unset.
-	soup_name      ||= liquid_name
+	adjective_name ||= use_name
 
 	// Null/clear a bunch of physical vars as this material is fake.
 	if(holographic)
+		temperature_burn_milestone_material = null
 		shard_type                   = SHARD_NONE
 		conductive                   = 0
 		hidden_from_codex            = TRUE
@@ -386,9 +418,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		vapor_products               = null
 		compost_value                = 0
 	else if(isnull(temperature_damage_threshold))
-		for(var/value in list(ignition_point, melting_point, boiling_point, heating_point, bakes_into_at_temperature))
-			if(!isnull(value) && (isnull(temperature_damage_threshold) || temperature_damage_threshold > value))
-				temperature_damage_threshold = value
+		var/new_temperature_damage_threshold = max(melting_point, boiling_point, heating_point)
+		// Don't let the threshold be lower than the ignition point.
+		if(!isnull(new_temperature_damage_threshold) && (isnull(ignition_point) || (new_temperature_damage_threshold > ignition_point)))
+			temperature_damage_threshold = new_temperature_damage_threshold
 
 	if(!shard_icon)
 		shard_icon = shard_type
@@ -416,7 +449,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(!crafting_skill)
 		. += "no construction skill set"
 	else if(!isnull(construction_difficulty))
-		var/decl/hierarchy/skill/used_skill = GET_DECL(crafting_skill)
+		var/decl/skill/used_skill = GET_DECL(crafting_skill)
 		if(!istype(used_skill))
 			. += "invalid skill decl [used_skill]"
 		else if(length(used_skill.levels) < construction_difficulty)
@@ -426,10 +459,29 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		. += "no construction difficulty set"
 
 	if(!isnull(bakes_into_at_temperature))
-		if(!isnull(melting_point) && melting_point <= bakes_into_at_temperature)
-			. += "baking point is set but melting point is lower or equal to it"
-		if(!isnull(boiling_point) && boiling_point <= bakes_into_at_temperature)
-			. += "baking point is set but boiling point is lower or equal to it"
+		// all of these variables should be above our baking temperature, because we assume only solids not currently on fire can bake
+		// modify this if a material ever needs to bake while liquid or gaseous
+		var/list/temperatures = list("melting point" = melting_point, "boiling point" = boiling_point, "heating point" = heating_point, "ignition point" = ignition_point)
+		for(var/temperature in temperatures)
+			if(isnull(temperatures[temperature]))
+				continue
+			if(temperatures[temperature] <= bakes_into_at_temperature)
+				. += "baking point is set but [temperature] is lower or equal to it"
+
+	// this is a little overengineered for only two values...
+	// but requiring heating_point > boiling_point caused a bunch of issues
+	// at least it's easy to add more if we want to enforce order more
+	var/list/transition_temperatures_ascending = list("melting point" = melting_point, "boiling point" = boiling_point)
+	var/max_key // if not null, this is a key from the above list
+	for(var/temperature_key in transition_temperatures_ascending)
+		var/temperature = transition_temperatures_ascending[temperature_key]
+		if(isnull(temperature))
+			continue
+		if(!isnull(max_key) && temperature <= transition_temperatures_ascending[max_key])
+			var/expected_temp = transition_temperatures_ascending[max_key]
+			. += "transition temperature [temperature_key] ([temperature]K, [temperature - T0C]C) is colder than [max_key], expected >[expected_temp]K ([expected_temp - T0C]C)!"
+		else
+			max_key = temperature_key
 
 	if(accelerant_value > FUEL_VALUE_NONE && isnull(ignition_point))
 		. += "accelerant value larger than zero but null ignition point"
@@ -503,14 +555,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	temp_matter[type] = SHEET_MATERIAL_AMOUNT
 	return temp_matter
 
-// Weapons handle applying a divisor for this value locally.
-/decl/material/proc/get_blunt_damage()
-	return weight //todo
-
-// As above.
-/decl/material/proc/get_edge_damage()
-	return hardness //todo
-
 /decl/material/proc/get_attack_cooldown()
 	if(weight <= MAT_VALUE_LIGHT)
 		return FAST_WEAPON_COOLDOWN
@@ -521,7 +565,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 // Currently used for weapons and objects made of uranium to irradiate things.
 /decl/material/proc/products_need_process()
 	return (radioactivity>0) //todo
-
 
 //Clausius–Clapeyron relation
 /decl/material/proc/get_boiling_temp(var/pressure = ONE_ATMOSPHERE)
@@ -597,7 +640,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 // General wall debris product placement.
 // Not particularly necessary aside from snowflakey cult girders.
 /decl/material/proc/place_dismantled_product(var/turf/target, var/is_devastated, var/amount = 2, var/drop_type)
-	amount = is_devastated ? FLOOR(amount * 0.5) : amount
+	amount = is_devastated ? floor(amount * 0.5) : amount
 	if(amount > 0)
 		return create_object(target, amount, object_type = drop_type)
 
@@ -678,7 +721,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 // This doesn't apply to skin contact - this is for, e.g. extinguishers and sprays. The difference is that reagent is not directly on the mob's skin - it might just be on their clothing.
 /decl/material/proc/touch_mob(var/mob/living/M, var/amount, var/datum/reagents/holder)
 	if(accelerant_value != FUEL_VALUE_NONE && amount && istype(M))
-		M.fire_stacks += FLOOR((amount * accelerant_value)/FLAMMABLE_LIQUID_DIVISOR)
+		M.fire_stacks += floor((amount * accelerant_value)/FLAMMABLE_LIQUID_DIVISOR)
 #undef FLAMMABLE_LIQUID_DIVISOR
 
 /decl/material/proc/touch_turf(var/turf/T, var/amount, var/datum/reagents/holder) // Cleaner cleaning, lube lubbing, etc, all go here
@@ -1005,14 +1048,31 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(!isnull(boiling_point) && burn_temperature >= boiling_point)
 		LAZYSET(., type, amount)
 
-/decl/material/proc/get_reagent_name(datum/reagents/holder)
+/decl/material/proc/get_reagent_name(datum/reagents/holder, phase = MAT_PHASE_LIQUID)
+
 	if(istype(holder) && holder.reagent_data)
 		var/list/rdata = holder.reagent_data[type]
 		if(rdata)
 			var/data_name = rdata["mask_name"]
 			if(data_name)
 				return data_name
-	return soup_name
+
+	if(phase == MAT_PHASE_SOLID)
+		return solid_name
+
+	// Check if the material is in solution. This is a much simpler check than normal solubility.
+	if(phase == MAT_PHASE_LIQUID)
+		if(!istype(holder))
+			return liquid_name
+		var/atom/location = holder.get_reaction_loc()
+		var/temperature = location?.temperature || T20C
+
+		if(melting_point > temperature)
+			return solution_name
+		else
+			return liquid_name
+
+	return "something"
 
 /decl/material/proc/get_reagent_color(datum/reagents/holder)
 	if(istype(holder) && holder.reagent_data)
@@ -1022,3 +1082,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			if(data_color)
 				return data_color
 	return color
+
+/decl/material/proc/can_hold_sharpness()
+	return hardness > MAT_VALUE_FLEXIBLE
+
+/decl/material/proc/can_hold_edge()
+	return hardness > MAT_VALUE_FLEXIBLE

@@ -3,10 +3,6 @@
 	container_categories = RECIPE_CATEGORY_FRYER
 	//cooking_heat_type = COOKING_HEAT_DIRECT
 	//cooking_medium_type = /decl/material/liquid/oil
-	container_categories = list(
-		RECIPE_CATEGORY_MICROWAVE,
-		RECIPE_CATEGORY_SKILLET
-	)
 
 /decl/recipe/fried/cubancarp
 	fruit = list("chili" = 1)

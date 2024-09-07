@@ -1,10 +1,9 @@
 /datum/preferences
 	var/species
-	var/blood_type                           //blood type
-
+	var/blood_type
 	var/eye_colour = COLOR_BLACK
 	var/skin_colour = COLOR_BLACK
-	var/skin_tone = 0                    //Skin tone
+	var/skin_tone = -75
 	var/list/sprite_accessories = list()
 	var/list/appearance_descriptors = list()
 	var/equip_preview_mob = EQUIP_PREVIEW_ALL
@@ -23,6 +22,10 @@
 	pref.blood_type =             R.read("b_type")
 	pref.appearance_descriptors = R.read("appearance_descriptors")
 	pref.bgstate =                R.read("bgstate")
+
+	// Null skintone loaded from file -> initial skintone value.
+	if(isnull(pref.skin_tone))
+		pref.skin_tone = initial(pref.skin_tone)
 
 	// Load all of our saved accessories.
 	pref.sprite_accessories = list()
@@ -140,7 +143,7 @@
 		var/decl/sprite_accessory_category/accessory_category = GET_DECL(acc_cat)
 		for(var/acc in pref.sprite_accessories[acc_cat])
 			var/decl/sprite_accessory/accessory = GET_DECL(acc)
-			if(!istype(accessory, accessory_category.base_accessory_type) || !accessory.accessory_is_available(acc_mob, mob_species, mob_bodytype))
+			if(!istype(accessory, accessory_category.base_accessory_type) || !accessory.accessory_is_available(acc_mob, mob_species, mob_bodytype, pref.traits))
 				pref.sprite_accessories[acc_cat] -= acc
 			else
 				var/acc_data = pref.sprite_accessories[acc_cat][acc]
@@ -257,7 +260,7 @@
 				var/list/metadata_strings = list()
 				for(var/metadata_type in accessory_decl.accessory_metadata_types)
 					var/decl/sprite_accessory_metadata/sam = GET_DECL(metadata_type)
-					metadata_strings += sam.get_metadata_options_string(src, accessory_cat_decl, accessory_decl, accessory_metadata[metadata_type])
+					metadata_strings += sam.get_metadata_options_string(src, accessory_cat_decl, accessory_decl, LAZYACCESS(accessory_metadata, metadata_type))
 				var/acc_decl_ref = "\ref[accessory_decl]"
 				. += "<tr>"
 				. += "<td width = '100px'><b>[accessory_cat_decl.name]</b></td>"
@@ -471,6 +474,6 @@
 		if(accessory in existing_accessories)
 			continue
 		var/decl/sprite_accessory/accessory_decl = all_accessories[accessory]
-		if(istype(accessory_decl) && !is_type_in_list(accessory_decl, disallowed_accessories) && accessory_decl.accessory_is_available(acc_mob, mob_species, mob_bodytype))
+		if(istype(accessory_decl) && !is_type_in_list(accessory_decl, disallowed_accessories) && accessory_decl.accessory_is_available(acc_mob, mob_species, mob_bodytype, traits))
 			LAZYADD(., accessory_decl)
 	return sortTim(., /proc/cmp_name_asc)

@@ -3,11 +3,11 @@
 		return FALSE
 
 	if(!target.reagents || !target.reagents.total_volume)
-		to_chat(user, SPAN_NOTICE("[target] is empty."))
+		to_chat(user, SPAN_NOTICE("[target] is empty of reagents."))
 		return TRUE
 
 	if(reagents && !REAGENTS_FREE_SPACE(reagents))
-		to_chat(user, SPAN_NOTICE("[src] is full."))
+		to_chat(user, SPAN_NOTICE("[src] is full of reagents."))
 		return TRUE
 
 	var/trans = target.reagents.trans_to_obj(src, target.amount_dispensed)
@@ -23,11 +23,11 @@
 		return TRUE
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, SPAN_NOTICE("[src] is empty."))
+		to_chat(user, SPAN_NOTICE("[src] is empty of reagents."))
 		return TRUE
 
 	if(target.reagents && !REAGENTS_FREE_SPACE(target.reagents))
-		to_chat(user, SPAN_NOTICE("[target] is full."))
+		to_chat(user, SPAN_NOTICE("[target] is full of reagents."))
 		return TRUE
 
 	var/contained = REAGENT_LIST(src)
@@ -56,14 +56,19 @@
 		return TRUE // don't splash if we can't pour
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, SPAN_NOTICE("[src] is empty."))
+		to_chat(user, SPAN_NOTICE("[src] is empty of reagents."))
 		return TRUE
 
 	if(!REAGENTS_FREE_SPACE(target.reagents))
-		to_chat(user, SPAN_NOTICE("[target] is full."))
+		to_chat(user, SPAN_NOTICE("[target] is full of reagents."))
 		return TRUE
 
 	var/trans = reagents.trans_to(target, amount)
-	playsound(src, 'sound/effects/pour.ogg', 25, 1)
+
+	// Sounds more like pouring small pellets or dust.
+	if(!length(reagents.liquid_volumes))
+		playsound(src, 'sound/effects/refill.ogg', 25, 1)
+	else
+		playsound(src, 'sound/effects/pour.ogg', 25, 1)
 	to_chat(user, SPAN_NOTICE("You transfer [trans] unit\s of the solution to \the [target].  \The [src] now contains [src.reagents.total_volume] units."))
 	return TRUE

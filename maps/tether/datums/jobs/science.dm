@@ -61,7 +61,7 @@
 	)
 	minimal_player_age = 14
 	ideal_character_age = 50
-	outfit_type = /decl/hierarchy/outfit/job/science/rd
+	outfit_type = /decl/outfit/job/science/rd
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_COMPUTER = SKILL_BASIC,
@@ -114,7 +114,7 @@
 		"Circuit Designer"
 	)
 	minimal_player_age = 7
-	outfit_type = /decl/hierarchy/outfit/job/science/scientist
+	outfit_type = /decl/outfit/job/science/scientist
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_COMPUTER = SKILL_BASIC,
@@ -157,7 +157,7 @@
 		"Mechatronic Engineer"
 	)
 	minimal_player_age = 3
-	outfit_type = /decl/hierarchy/outfit/job/science/roboticist
+	outfit_type = /decl/outfit/job/science/roboticist
 	min_skill = list(
 		SKILL_LITERACY = SKILL_ADEPT,
 		SKILL_COMPUTER = SKILL_ADEPT,

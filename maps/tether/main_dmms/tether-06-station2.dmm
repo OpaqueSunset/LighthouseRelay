@@ -392,7 +392,7 @@
 /obj/structure/table/steel,
 /obj/item/deck/cards,
 /obj/item/toy/balloon/nanotrasen,
-/obj/item/twohanded/fireaxe/foam,
+/obj/item/bladed/axe/fire/foam,
 /turf/floor/tiled/dark,
 /area/security/recstorage)
 "aS" = (
@@ -897,7 +897,7 @@
 /obj/structure/table/steel,
 /obj/machinery/microwave,
 /obj/item/box/donkpockets,
-/obj/item/twohanded/fireaxe/foam,
+/obj/item/bladed/axe/fire/foam,
 /turf/floor/tiled,
 /area/security/brig)
 "bE" = (
@@ -13582,8 +13582,8 @@
 	name = "south bump";
 	pixel_y = -22
 	},
-/obj/item/cane,
-/obj/item/cane,
+/obj/item/cane/aluminium,
+/obj/item/cane/aluminium,
 /turf/floor/tiled,
 /area/medical/biostorage)
 "zh" = (

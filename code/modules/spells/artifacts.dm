@@ -7,11 +7,10 @@
 	icon_state = "bluespace"
 	throw_speed = 3
 	throw_range = 7
-	throwforce = 10
 	atom_damage_type =  BURN
-	force = 10
 	hitsound = 'sound/magic/forcewall.ogg'
 	max_health = ITEM_HEALTH_NO_DAMAGE
+	_base_attack_force = 10
 
 /obj/item/scrying/attack_self(mob/user)
 	var/decl/special_role/wizard/wizards = GET_DECL(/decl/special_role/wizard)
@@ -22,7 +21,7 @@
 	to_chat(user, "<span class='info'>You can see... everything!</span>") // This never actually happens.
 	visible_message("<span class='danger'>[user] stares into [src], their eyes glazing over.</span>")
 
-	user.teleop = user.ghostize(1)
+	user.teleop = user.ghostize()
 	announce_ghost_joinleave(user.teleop, 1, "You feel that they used a powerful artifact to [pick("invade","disturb","disrupt","infest","taint","spoil","blight")] this place with their presence.")
 	return
 

@@ -2,7 +2,7 @@
 	magazine_type = /obj/item/ammo_magazine/smg
 
 /obj/item/gun/pistol/holdout/silenced
-	silenced = new /obj/item/silencer
+	silencer = new /obj/item/silencer
 
 /obj/item/gun/energy/gun/small/reloadable
 	name = "reloadable small energy gun"

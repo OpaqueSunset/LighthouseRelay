@@ -19149,7 +19149,7 @@
 /area/tether/surfacebase/shuttle_pad)
 "Kj" = (
 /obj/machinery/constructable_frame/computerframe,
-/obj/item/twohanded/baseballbat{
+/obj/item/baseball_bat{
 	name = "Swatta"
 	},
 /turf/floor/tiled/techfloor,

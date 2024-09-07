@@ -1,7 +1,9 @@
 /obj/effect/decal/cleanable
 	density = FALSE
 	anchored = TRUE
+	abstract_type = /obj/effect/decal/cleanable
 
+	var/sweepable = FALSE
 	var/weather_sensitive = TRUE
 	var/persistent = FALSE
 	var/generic_filth = FALSE
@@ -64,7 +66,7 @@
 
 /obj/effect/decal/cleanable/fluid_act(var/datum/reagents/fluid)
 	SHOULD_CALL_PARENT(FALSE)
-	if(fluid?.total_volume && !QDELETED(src))
+	if(fluid?.total_liquid_volume && !QDELETED(src))
 		if(reagents?.total_volume)
 			reagents.trans_to(fluid, reagents.total_volume)
 		qdel(src)

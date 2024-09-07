@@ -15,14 +15,14 @@
 #define SMOOTH_WHITELIST 2	//Smooth with a whitelist of subtypes
 #define SMOOTH_BLACKLIST 3 //Smooth with all but a blacklist of subtypes
 
-#define RANGE_TURFS(CENTER, RADIUS) block(locate(max(CENTER.x-(RADIUS), 1), max(CENTER.y-(RADIUS),1), CENTER.z), locate(min(CENTER.x+(RADIUS), world.maxx), min(CENTER.y+(RADIUS), world.maxy), CENTER.z))
-#define BLOCK_TURFS(X1, Y1, X2, Y2, Z) block(locate(X1, Y1, Z), locate(X2, Y2, Z))
+#define RANGE_TURFS(CENTER, RADIUS) block(max(CENTER.x-(RADIUS), 1), max(CENTER.y-(RADIUS),1), CENTER.z, min(CENTER.x+(RADIUS), world.maxx), min(CENTER.y+(RADIUS), world.maxy), CENTER.z)
+#define Z_ALL_TURFS(Z) block(1, 1, Z, world.maxx, world.maxy)
 
 //Here are a few macros to help with people always forgetting to round the coordinates somewhere, and forgetting that not everything automatically rounds decimals.
 ///Helper macro for the x coordinate of the turf at the center of the world. Handles rounding.
-#define WORLD_CENTER_X CEILING((1 + world.maxx) / 2)
+#define WORLD_CENTER_X ceil((1 + world.maxx) / 2)
 ///Helper macro for the y coordinate of the turf at the center of the world. Handles rounding.
-#define WORLD_CENTER_Y CEILING((1 + world.maxy) / 2)
+#define WORLD_CENTER_Y ceil((1 + world.maxy) / 2)
 ///Helper macro for getting the center turf on a given z-level. Handles rounding.
 #define WORLD_CENTER_TURF(Z) locate(WORLD_CENTER_X, WORLD_CENTER_Y, Z)
 ///Helper macro to check if a position is within the world's bounds.

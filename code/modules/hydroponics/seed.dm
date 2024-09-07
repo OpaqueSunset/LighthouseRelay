@@ -31,6 +31,7 @@
 	var/base_seed_value = 5 // Used when generating price.
 	var/scannable_result
 	var/grown_is_seed = FALSE
+	var/product_w_class = ITEM_SIZE_SMALL
 
 	// Dissection values.
 	var/min_seed_extracted = 1
@@ -624,7 +625,11 @@
 				. += new product_type(get_turf(user), using_yield)
 		else
 			for(var/i = 1 to total_yield)
-				var/obj/item/product = new product_type(get_turf(user), null, src)
+				var/obj/item/product
+				if(ispath(product_type, /obj/item/food))
+					product = new product_type(get_turf(user), null, TRUE, src)
+				else
+					product = new product_type(get_turf(user), null, src)
 				. += product
 
 				if(get_trait(TRAIT_PRODUCT_COLOUR) && istype(product, /obj/item/food))

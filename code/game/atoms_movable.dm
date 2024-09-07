@@ -193,7 +193,7 @@
 		RAISE_EVENT(/decl/observ/moved, src, origin, null)
 
 	// freelook
-	if(opacity)
+	if(simulated && opacity)
 		updateVisibility(src)
 
 	// lighting
@@ -245,7 +245,7 @@
 			RAISE_EVENT(/decl/observ/moved, src, old_loc, null)
 
 		// freelook
-		if(opacity)
+		if(simulated && opacity)
 			updateVisibility(src)
 
 		// lighting
@@ -580,3 +580,8 @@
 	. = istype(actual_loc) && actual_loc.weather
 	if(!.) // If we're under or inside shelter, use the z-level rain (for ambience)
 		. = SSweather.weather_by_z[my_turf.z]
+
+/atom/movable/take_vaporized_reagent(reagent, amount)
+	if(ATOM_IS_OPEN_CONTAINER(src))
+		return loc?.take_vaporized_reagent(reagent, amount)
+	return null

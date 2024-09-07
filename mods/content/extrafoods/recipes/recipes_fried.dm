@@ -2,7 +2,7 @@
 	fruit = list("chili" = 4)
 	coating = /decl/material/liquid/nutriment/batter
 	items = list(
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/jalapeno_poppers
 	result_quantity = 4

@@ -154,8 +154,7 @@
 		/obj/item/stack/material/cardstock/mapped/cardboard/five,
 		/obj/item/poster,
 		/obj/item/newspaper,
-		/obj/item/paper/crumpled,
-		/obj/item/paper/crumpled/bloody,
+		/obj/item/paper/crumpled
 	)
 	return common_loot
 

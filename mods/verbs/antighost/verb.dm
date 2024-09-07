@@ -78,7 +78,7 @@ var/global/list/speech_toppings = list("|" = "i", "+" = "b", "_" = "u")
 		return
 
 	var/length = length(message)
-	var/posts = CEILING(length/MAX_MESSAGE_LEN)
+	var/posts = ceil(length/MAX_MESSAGE_LEN)
 	to_chat(user,message)
 	to_chat(user, SPAN_DANGER("^ This message was NOT SENT ^ -- It was [length] characters, and the limit is [MAX_MESSAGE_LEN]. It would fit in [posts] separate messages."))
 

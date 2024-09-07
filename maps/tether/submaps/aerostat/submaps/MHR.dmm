@@ -64,7 +64,7 @@
 "r" = (
 /obj/item/remains,
 /obj/item/clothing/mask/gas/explorer,
-/obj/item/twohanded/fireaxe,
+/obj/item/bladed/axe/fire,
 /turf/floor/natural/barren,
 /area/submap/virgo2/MHR)
 

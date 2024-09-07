@@ -78,7 +78,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 
 		if(NORTH)
 
-			int_panel_x = ux + FLOOR(lift_size_x/2)
+			int_panel_x = ux + floor(lift_size_x/2)
 			int_panel_y = uy + wall_offset
 			ext_panel_x = ux
 			ext_panel_y = ey + 2
@@ -95,7 +95,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 
 		if(SOUTH)
 
-			int_panel_x = ux + FLOOR(lift_size_x/2)
+			int_panel_x = ux + floor(lift_size_x/2)
 			int_panel_y = ey - wall_offset
 			ext_panel_x = ex
 			ext_panel_y = uy - 2
@@ -113,7 +113,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 		if(EAST)
 
 			int_panel_x = ux+wall_offset
-			int_panel_y = uy + FLOOR(lift_size_y/2)
+			int_panel_y = uy + floor(lift_size_y/2)
 			ext_panel_x = ex+2
 			ext_panel_y = ey
 
@@ -130,7 +130,7 @@ INITIALIZE_IMMEDIATE(/obj/abstract/turbolift_spawner)
 		if(WEST)
 
 			int_panel_x = ex-wall_offset
-			int_panel_y = uy + FLOOR(lift_size_y/2)
+			int_panel_y = uy + floor(lift_size_y/2)
 			ext_panel_x = ux-2
 			ext_panel_y = uy
 

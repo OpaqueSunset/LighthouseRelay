@@ -177,13 +177,12 @@ var/global/list/_test_storage_items = list()
 			to_chat(user, SPAN_WARNING("\The [W] is too big for \the [holder]."))
 		return 0
 
-	var/total_storage_space = W.get_storage_cost()
-	if(total_storage_space >= ITEM_SIZE_NO_CONTAINER)
+	if(W.obj_flags & OBJ_FLAG_NO_STORAGE)
 		if(!stop_messages)
 			to_chat(user, SPAN_WARNING("\The [W] cannot be placed in \the [holder]."))
 		return 0
 
-	total_storage_space += storage_space_used() //Adds up the combined w_classes which will be in the storage item if the item is added to it.
+	var/total_storage_space = W.get_storage_cost() + storage_space_used() //Adds up the combined w_classes which will be in the storage item if the item is added to it.
 	if(total_storage_space > max_storage_space)
 		if(!stop_messages)
 			to_chat(user, SPAN_WARNING("\The [holder] is too full, make some space."))
@@ -224,7 +223,8 @@ var/global/list/_test_storage_items = list()
 		if(!skip_update)
 			update_ui_after_item_insertion()
 	holder.storage_inserted()
-	holder.update_icon()
+	if(!skip_update)
+		holder.update_icon()
 	return 1
 
 /datum/storage/proc/consolidate_stacks()
@@ -294,6 +294,11 @@ var/global/list/_test_storage_items = list()
 	update_ui_after_item_removal()
 	holder?.queue_icon_update()
 
+//Run once after using handle_item_insertion with skip_update = 1
+/datum/storage/proc/finish_bulk_insertion()
+	update_ui_after_item_insertion()
+	holder?.queue_icon_update()
+
 /datum/storage/proc/gather_all(var/turf/T, var/mob/user)
 	var/success = 0
 	var/failure = 0
@@ -303,12 +308,12 @@ var/global/list/_test_storage_items = list()
 			continue
 		success = 1
 		handle_item_insertion(user, I, TRUE, TRUE) // First 1 is no messages, second 1 is no ui updates
-	if(success && !failure)
-		to_chat(user, SPAN_NOTICE("You put everything into \the [holder]."))
-		update_ui_after_item_insertion()
-	else if(success)
-		to_chat(user, SPAN_NOTICE("You put some things into \the [holder]."))
-		update_ui_after_item_insertion()
+	if(success)
+		if(failure)
+			to_chat(user, SPAN_NOTICE("You put some things into \the [holder]."))
+		else
+			to_chat(user, SPAN_NOTICE("You put everything into \the [holder]."))
+		finish_bulk_insertion()
 	else
 		to_chat(user, SPAN_NOTICE("You fail to pick anything up with \the [holder]."))
 

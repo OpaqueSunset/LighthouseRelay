@@ -9,10 +9,6 @@
 	reagents = list(
 		/decl/material/liquid/water = 10
 	)
-	container_categories = list(
-		RECIPE_CATEGORY_MICROWAVE,
-		RECIPE_CATEGORY_POT
-	)
 
 /decl/recipe/boiled/egg
 	items = list(/obj/item/food/egg)

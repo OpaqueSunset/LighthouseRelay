@@ -14,7 +14,6 @@
 	icon = 'icons/obj/food.dmi'
 	icon_state = null
 	randpixel = 6
-	obj_flags = OBJ_FLAG_HOLLOW
 	item_flags = null
 	material = /decl/material/liquid/nutriment
 	center_of_mass = @'{"x":16,"y":16}'
@@ -51,6 +50,10 @@
 	 * Used to stop deep-fried meat from looking like slightly tanned raw meat, and make it actually look cooked.
 	 */
 	var/cooked_icon = null
+	/// A type used when cloning this food item for utensils.
+	var/utensil_food_type
+	/// A set of utensil flags determining which utensil interactions are valid with this food.
+	var/utensil_flags = UTENSIL_FLAG_SCOOP | UTENSIL_FLAG_COLLECT
 
 
 //Code for dipping food in batter
@@ -145,13 +148,6 @@
 			LAZYINITLIST(reagents.reagent_data)
 			LAZYSET(reagents.reagent_data[r], "cooked", TRUE)
 
-/obj/item/food/Initialize()
-	. = ..()
-	if(cooked_food == FOOD_RAW)
-		name = "raw [name]"
-	if(ispath(plate))
-		plate = new plate(src)
-
 /obj/item/food/populate_reagents()
 	. = ..()
 	for(var/reagent_type in reagents.reagent_volumes)
@@ -160,9 +156,23 @@
 			// add a new reagent_data entry for each reagent type
 			LAZYSET(reagents.reagent_data[reagent_type], "cooked", TRUE) // batter starts cooked in compile-time foods
 
-/obj/item/food/Initialize(ml, material_key)
+/obj/item/food/Initialize(ml, material_key, skip_plate = FALSE)
 	. = ..()
+	if(cooked_food == FOOD_RAW)
+		name = "raw [name]"
+
+	if(skip_plate)
+		plate = null
+	else if(ispath(plate))
+		plate = new plate(src)
+	else if(!istype(plate))
+		plate = null
+
 	initialize_reagents()
+	if(isnull(utensil_food_type))
+		utensil_food_type = type
+	if(slice_path && slice_num)
+		utensil_flags |= UTENSIL_FLAG_SLICE
 
 /obj/item/food/initialize_reagents(populate = TRUE)
 	if(!reagents)
@@ -278,4 +288,13 @@
 			for(var/taste in nutriment_desc)
 				if(nutriment_desc[taste] <= 0)
 					nutriment_desc[taste] = 1
-		add_to_reagents(nutriment_type, nutriment_amt, list("taste" = nutriment_desc))
+		add_to_reagents(nutriment_type, nutriment_amt, get_nutriment_data())
+
+/obj/item/food/proc/get_nutriment_data()
+	if(nutriment_desc)
+		return list("taste" = nutriment_desc)
+
+/obj/item/food/proc/set_nutriment_data(list/newdata)
+	if(reagents?.total_volume && reagents.has_reagent(nutriment_type, 1))
+		LAZYINITLIST(reagents.reagent_data)
+		reagents.reagent_data[nutriment_type] = newdata

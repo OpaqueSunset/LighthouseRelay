@@ -16,7 +16,7 @@
 	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_MICROWAVE // melt the cheese!
 	items = list(
 		/obj/item/food/chipplate = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/chipplate/nachos
 
@@ -24,7 +24,7 @@
 	container_categories = RECIPE_CATEGORY_SKILLET | RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/food/fries = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/cheesyfries
 
@@ -32,7 +32,7 @@
 	container_categories = RECIPE_CATEGORY_MIX
 	items = list(
 		/obj/item/food/fries = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/cheesyfries/uncooked
 
@@ -58,7 +58,7 @@
 	fruit = list("chili" = 1, "tomato" = 1)
 	reagents = list(/decl/material/solid/spacespice = 1, /decl/material/solid/blackpepper = 1,/decl/material/solid/sodiumchloride = 1)
 	items = list(
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/dip
 	reagent_mix = REAGENT_REPLACE //Ingredients are mixed together.
@@ -98,7 +98,7 @@
 	container_categories = RECIPE_CATEGORY_MIX|RECIPE_CATEGORY_MICROWAVE
 	items = list(
 		/obj/item/food/burrito = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/burrito_cheese
 
@@ -107,7 +107,7 @@
 	fruit = list("chili" = 2)
 	items = list(
 		/obj/item/food/burrito = 1,
-		/obj/item/food/cheesewedge = 1
+		/obj/item/food/dairy/cheese/wedge = 1
 	)
 	result = /obj/item/food/burrito_cheese_spicy
 

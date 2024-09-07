@@ -4701,7 +4701,7 @@
 /turf/wall/natural,
 /area/maintenance/lower/bar)
 "kS" = (
-/obj/item/twohanded/baseballbat{
+/obj/item/baseball_bat{
 	desc = "This bat looks very off.";
 	max_health = 500
 	},
@@ -13891,7 +13891,7 @@
 /obj/item/clothing/pants{
 	desc = "Overdose"
 	},
-/obj/item/twohanded/baseballbat{
+/obj/item/baseball_bat{
 	desc = "Decadence";
 	max_health = 1989
 	},

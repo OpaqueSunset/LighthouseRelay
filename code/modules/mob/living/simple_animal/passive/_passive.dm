@@ -5,3 +5,8 @@
 	see_in_dark          = 6
 	minbodytemp          = 223
 	maxbodytemp          = 323
+	base_movement_delay  = -1
+
+/mob/living/simple_animal/passive/Initialize()
+	. = ..()
+	add_held_item_slot(new /datum/inventory_slot/gripper/mouth/simple)

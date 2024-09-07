@@ -6,7 +6,7 @@
 	economic_power = 1
 	access = list() // See /datum/job/visitor/get_access()
 	minimal_access = list()
-	outfit_type = /decl/hierarchy/outfit/job/generic/assistant
+	outfit_type = /decl/outfit/job/generic/assistant
 	department_types = list(/decl/department/civilian)
 	timeoff_factor = 0
 
@@ -28,10 +28,10 @@
 	department_types = list(/decl/department/civilian)
 	alt_titles = list(
 		"Assistant",
-		"Apprentice Engineer" = /decl/hierarchy/outfit/job/engineering/apprentice,
-		"Medical Intern" = /decl/hierarchy/outfit/job/medical/intern,
-		"Lab Assistant" = /decl/hierarchy/outfit/job/science/labassistant,
-		"Security Cadet" = /decl/hierarchy/outfit/job/generic/assistant/cadet,
-		"Jr. Cargo Tech" = /decl/hierarchy/outfit/job/cargo/assistant,
-		"Server" = /decl/hierarchy/outfit/job/service/server)
+		"Apprentice Engineer" = /decl/outfit/job/engineering/apprentice,
+		"Medical Intern" = /decl/outfit/job/medical/intern,
+		"Lab Assistant" = /decl/outfit/job/science/labassistant,
+		"Security Cadet" = /decl/outfit/job/generic/assistant/cadet,
+		"Jr. Cargo Tech" = /decl/outfit/job/cargo/assistant,
+		"Server" = /decl/outfit/job/service/server)
 	timeoff_factor = 0 // Interns, noh

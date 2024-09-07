@@ -2,6 +2,7 @@
 	abstract_type = /decl/recipe/soup
 	reagent_mix = REAGENT_REPLACE
 	container_categories = RECIPE_CATEGORY_POT
+	can_bulk_cook = TRUE
 	var/precursor_type
 
 /decl/recipe/soup/get_result_data(atom/container, list/used_ingredients)
@@ -67,6 +68,7 @@
 		/decl/material/liquid/water = 10
 	)
 	minimum_temperature = 100 CELSIUS
+	complexity = 10 // Setting high by default so it takes priority over simple soup.
 
 /decl/recipe/soup/stock/meat
 	display_name = "meat stock"
@@ -98,6 +100,7 @@
 	result_quantity = 10
 	completion_message = "A savoury smell rises from the soup as the ingredients release their flavour into the broth."
 	precursor_type = /decl/material/liquid/nutriment/soup/stock
+	complexity = 5 // Setting high by default so it takes priority over stew.
 
 /decl/recipe/soup/simple/meat
 	display_name = "simple meat soup"
@@ -119,6 +122,7 @@
 	)
 	result_quantity = 10
 	result = /decl/material/liquid/nutriment/soup/stew
+	complexity = 0 // Have to reset it because it inherits from soup.
 
 /decl/recipe/soup/simple/stew/mixed
 	display_name = "mixed stew"

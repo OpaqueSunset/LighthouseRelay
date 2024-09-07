@@ -31,7 +31,7 @@
 /decl/recipe/baked/quiche
 	container_categories = RECIPE_CATEGORY_OVEN
 	reagents = list(/decl/material/liquid/nutriment/batter = 15)
-	items = list(/obj/item/food/cheesewedge)
+	items = list(/obj/item/food/dairy/cheese/wedge)
 	result = /obj/item/food/sliceable/quiche
 	reagent_mix = REAGENT_REPLACE //No raw egg in finished product, protein after cooking causes magic meatballs otherwise
 

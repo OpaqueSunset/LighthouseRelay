@@ -261,8 +261,6 @@
 /// Returns the hex value of a number given a value assumed to be a base-ten value, padded to a supplied minimum length.
 #define num2hex_padded(num, len) num2text(num, len, 16)
 
-#define Z_ALL_TURFS(Z) block(locate(1, 1, Z), locate(world.maxx, world.maxy, Z))
-
 //NOTE: INTENT_HOTKEY_* defines are not actual intents!
 //they are here to support hotkeys
 #define INTENT_HOTKEY_LEFT  "left"
@@ -377,3 +375,7 @@
 
 /// Call by name proc reference, checks if the proc is an existing global proc
 #define GLOBAL_PROC_REF(X) (/proc/##X)
+
+#define RADIAL_LABELS_NONE     0
+#define RADIAL_LABELS_OFFSET   1
+#define RADIAL_LABELS_CENTERED 2
