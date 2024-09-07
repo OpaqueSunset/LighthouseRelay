@@ -17,6 +17,7 @@
 
 /decl/sprite_accessory/ears/none
 	name                        = "Default Ears"
+	icon                        = 'icons/mob/human_races/species/default_ears.dmi'
 	icon_state                  = "none"
 	uid                         = "acc_ears_none"
 	bodytypes_allowed           = null
@@ -35,6 +36,7 @@
 /decl/sprite_accessory/ears/debug
 	name = "Debug Two-Tone Ears"
 	uid = "acc_ears_debug"
+	icon = 'icons/mob/human_races/species/default_ears.dmi'
 	icon_state = "debug"
 	accessory_metadata_types = list(SAM_COLOR, SAM_COLOR_INNER)
 */
