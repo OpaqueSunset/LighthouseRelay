@@ -10854,7 +10854,7 @@
 /turf/floor/tiled,
 /area/rnd/anomaly_lab)
 "auF" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether/surfacebase/atrium_one)
 "auG" = (
 /obj/structure/closet/firecloset/chief,
@@ -12539,7 +12539,7 @@
 /obj/abstract/turbolift_spawner/tether{
 	dir = 4
 	},
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/tether/surfacebase/atrium_one)
 "axE" = (
 /obj/structure/catwalk,
@@ -17123,7 +17123,7 @@
 /obj/item/box/monkeycubes,
 /obj/item/box/monkeycubes,
 /obj/item/box/monkeycubes,
-/obj/item/chems/food/monkeycube/wrapped,
+/obj/item/food/monkeycube/wrapped,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},

@@ -13,10 +13,11 @@
 	base_eye_color    = "#d60093"
 	base_color        = "#526d29"
 	body_flags        = BODY_FLAG_NO_DNA
-	age_descriptor = /datum/appearance_descriptor/age/vox
-	cold_level_1 = 80
-	cold_level_2 = 50
-	cold_level_3 = -1
+	age_descriptor    = /datum/appearance_descriptor/age/vox
+	cold_level_1      = 80
+	cold_level_2      = 50
+	cold_level_3      = -1
+	uid               = "bodytype_vox"
 
 	appearance_descriptors = list(
 		/datum/appearance_descriptor/height =       0.75,
@@ -45,13 +46,13 @@
 	)
 	default_sprite_accessories = list(
 		SAC_HAIR = list(
-			/decl/sprite_accessory/hair/vox/short = "#160900"
+			/decl/sprite_accessory/hair/vox/short     = list(SAM_COLOR = "#160900")
 		),
 		SAC_MARKINGS = list(
-			/decl/sprite_accessory/marking/vox/beak   = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/scutes = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/crest  = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/claws  = "#a0a654"
+			/decl/sprite_accessory/marking/vox/beak   = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/scutes = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/crest  = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/claws  = list(SAM_COLOR = "#a0a654")
 		)
 	)
 
@@ -83,16 +84,17 @@
 	husk_icon           = 'mods/species/vox/icons/body/husk.dmi'
 	blood_overlays      = 'mods/species/vox/icons/body/blood_overlays.dmi'
 	eye_icon            = 'mods/species/vox/icons/body/servitor/eyes.dmi'
+	uid                 = "bodytype_vox_servitor"
 
 	default_sprite_accessories = list(
 		SAC_HAIR = list(
-			/decl/sprite_accessory/hair/vox/short/servitor = "#160900"
+			/decl/sprite_accessory/hair/vox/short/servitor     = list(SAM_COLOR = "#160900")
 		),
 		SAC_MARKINGS = list(
-			/decl/sprite_accessory/marking/vox/beak/servitor   = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/scutes/servitor = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/crest/servitor  = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/claws/servitor  = "#a0a654"
+			/decl/sprite_accessory/marking/vox/beak/servitor   = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/scutes/servitor = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/crest/servitor  = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/claws/servitor  = list(SAM_COLOR = "#a0a654")
 		)
 	)
 
@@ -109,15 +111,17 @@
 	icon_base           = 'mods/species/vox/icons/body/stanchion/body.dmi'
 	eye_icon            = 'mods/species/vox/icons/body/stanchion/eyes.dmi'
 	icon_template       = 'mods/species/vox/icons/body/stanchion/template.dmi'
+	uid                 = "bodytype_vox_stanchion"
+
 	default_sprite_accessories = list(
 		SAC_HAIR = list(
-			/decl/sprite_accessory/hair/vox/short/stanchion = "#160900"
+			/decl/sprite_accessory/hair/vox/short/stanchion     = list(SAM_COLOR = "#160900")
 		),
 		SAC_MARKINGS = list(
-			/decl/sprite_accessory/marking/vox/beak/stanchion   = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/scutes/stanchion = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/crest/stanchion  = "#bc7d3e",
-			/decl/sprite_accessory/marking/vox/claws/stanchion  = "#a0a654"
+			/decl/sprite_accessory/marking/vox/beak/stanchion   = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/scutes/stanchion = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/crest/stanchion  = list(SAM_COLOR = "#bc7d3e"),
+			/decl/sprite_accessory/marking/vox/claws/stanchion  = list(SAM_COLOR = "#a0a654")
 		)
 	)
 
@@ -131,14 +135,14 @@
 	name       = "alchemist voxform"
 	icon_base  = 'mods/species/vox/icons/body/servitor/body_alchemist.dmi'
 	eye_icon   = 'mods/species/vox/icons/body/servitor/eyes_alchemist.dmi'
+	uid        = "bodytype_vox_alchemist"
 
 /obj/item/organ/external/tail/vox
-	tail       = "voxtail"
-	tail_icon  = 'mods/species/vox/icons/body/soldier/tail.dmi'
+	tail_icon  = 'mods/species/vox/icons/body/soldier/body.dmi'
 	tail_blend = ICON_MULTIPLY
 
 /obj/item/organ/external/tail/vox/servitor
-	tail_icon  = 'mods/species/vox/icons/body/servitor/tail.dmi'
+	tail_icon  = 'mods/species/vox/icons/body/servitor/body.dmi'
 
 /obj/item/organ/external/tail/vox/stanchion
-	tail_icon  = 'mods/species/vox/icons/body/stanchion/tail.dmi'
+	tail_icon  = 'mods/species/vox/icons/body/stanchion/body.dmi'

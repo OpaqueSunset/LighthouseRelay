@@ -634,7 +634,7 @@
 				to_chat(usr, "Upgrade error!")
 
 	else
-		if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && W.force && user.a_intent != I_HELP)
+		if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && W.get_attack_force(user) && user.a_intent != I_HELP)
 			spark_at(src, 5, holder=src)
 		return ..()
 
@@ -679,7 +679,7 @@
 
 //Robots take half damage from basic attacks.
 /mob/living/silicon/robot/attack_generic(var/mob/user, var/damage, var/attack_message)
-	return ..(user,FLOOR(damage/2),attack_message)
+	return ..(user,floor(damage/2),attack_message)
 
 /mob/living/silicon/robot/get_req_access()
 	return req_access
@@ -1125,3 +1125,13 @@
 		to_chat(src, SPAN_WARNING("You have already grabbed something!"))
 		return FALSE
 	return TRUE
+
+/mob/living/silicon/robot/prepare_for_despawn()
+	clear_brain()
+	if(module)
+		for(var/obj/item/I in module) // the tools the borg has; metal, glass, guns etc
+			for(var/obj/item/O in I.get_contained_external_atoms()) // the things inside the tools, if anything; mainly for janiborg trash bags
+				O.forceMove(src)
+			qdel(I)
+		QDEL_NULL(module)
+	return ..()

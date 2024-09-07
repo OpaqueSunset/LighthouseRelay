@@ -171,7 +171,7 @@
 			continue
 		piece.canremove = 0
 		piece.SetName("[suit_type] [initial(piece.name)]")
-		piece.desc = "It seems to be part of a [src.name]."
+		piece.desc = "It seems to be part of \a [src]."
 		piece.min_cold_protection_temperature = min_cold_protection_temperature
 		piece.max_heat_protection_temperature = max_heat_protection_temperature
 		if(piece.siemens_coefficient > siemens_coefficient) //So that insulated gloves keep their insulation.
@@ -498,7 +498,7 @@
 
 	data["charge"] =       cell ? round(cell.charge,1) : 0
 	data["maxcharge"] =    cell ? cell.maxcharge : 0
-	data["chargestatus"] = cell ? FLOOR(cell.percent()/2) : 0
+	data["chargestatus"] = cell ? floor(cell.percent()/2) : 0
 
 	data["emagged"] =       subverted
 	data["coverlock"] =     locked

@@ -8,12 +8,12 @@
 	cooking_coeff = 1.0
 
 	output_options = list(
-		"Jawbreaker" = /obj/item/chems/food/variable/jawbreaker,
-		"Candy Bar" = /obj/item/chems/food/variable/candybar,
-		"Sucker" = /obj/item/chems/food/variable/sucker,
-		"Jelly" = /obj/item/chems/food/variable/jelly
+		"Jawbreaker" = /obj/item/food/variable/jawbreaker,
+		"Candy Bar" = /obj/item/food/variable/candybar,
+		"Sucker" = /obj/item/food/variable/sucker,
+		"Jelly" = /obj/item/food/variable/jelly
 		)
 
-/obj/machinery/appliance/mixer/candy/change_product_appearance(var/obj/item/chems/food/product)
+/obj/machinery/appliance/mixer/candy/change_product_appearance(var/obj/item/food/product)
 	food_color = get_random_colour(simple = TRUE)
 	. = ..()

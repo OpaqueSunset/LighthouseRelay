@@ -47,8 +47,8 @@
 		/obj/item/stack/flag = 3,
 		/obj/item/tool/machete,
 		/obj/item/clothing/webbing/holster/machete,
-		/obj/item/chems/food/liquidfood,
-		// /obj/item/chems/food/liquidprotein, // does not exist, no real interest in porting
+		/obj/item/food/liquidfood,
+		// /obj/item/food/liquidprotein, // does not exist, no real interest in porting
 		/obj/item/cataloguer)
 	if(prob(50))
 		. += /obj/item/backpack
@@ -170,8 +170,8 @@
 		// /obj/item/ammo_magazine/m57x28mm/ntles,
 		/obj/item/clothing/webbing/holster/machete,
 		/obj/item/clothing/webbing/holster/thigh,
-		/obj/item/chems/food/liquidfood,
-		// /obj/item/chems/food/liquidfood/protein,
+		/obj/item/food/liquidfood,
+		// /obj/item/food/liquidfood/protein,
 		/obj/item/disk/survey,
 		/obj/item/cataloguer
 	)

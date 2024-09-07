@@ -14,7 +14,6 @@
 	var/list/req_access
 	var/list/matter //Used to store information about the contents of the object.
 	var/w_class // Size of the object.
-	var/throwforce = 1
 	var/sharp = 0		// whether this object cuts
 	var/edge = 0		// whether this object is more likely to dismember
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
@@ -130,8 +129,8 @@
 
 /obj/attackby(obj/item/used_item, mob/user)
 	// We need to call parent even if we lack dexterity, so that storage can work.
-	if(used_item.user_can_wield(user))
-		if((obj_flags & OBJ_FLAG_ANCHORABLE) && (IS_WRENCH(used_item) || IS_HAMMER(used_item)))
+	if((obj_flags & OBJ_FLAG_ANCHORABLE) && (IS_WRENCH(used_item) || IS_HAMMER(used_item)))
+		if(used_item.user_can_attack_with(user))
 			wrench_floor_bolts(user, null, used_item)
 			update_icon()
 			return TRUE
@@ -149,7 +148,7 @@
 		user.visible_message("\The [user] begins securing \the [src] to the floor.", "You start securing \the [src] to the floor.")
 	if(do_after(user, delay, src))
 		if(!src) return
-		to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
+		to_chat(user, SPAN_NOTICE("You [anchored? "un" : ""]secured \the [src]!"))
 		anchored = !anchored
 	return 1
 
@@ -245,7 +244,7 @@
 		var/turf/reverse = get_step(get_turf(src), global.reverse_dir[dir])
 		//If we're wall mounted and don't have a wall either facing us, or in the opposite direction, don't apply the offset.
 		// This is mainly for things that can be both wall mounted and floor mounted. Like buttons, which mappers seem to really like putting on tables.
-		// Its sort of a hack for now. But objects don't handle being on a wall or not. (They don't change their flags, layer, etc when on a wall or anything)
+		// It's sort of a hack for now. But objects don't handle being on a wall or not. (They don't change their flags, layer, etc when on a wall or anything)
 		if(!forward?.is_wall() && !reverse?.is_wall())
 			return
 	return TRUE
@@ -282,7 +281,7 @@
 /**
  * Returns a list with the contents that may be spawned in this object.
  * This shouldn't include things that are necessary for the object to operate, like machine components.
- * Its mainly for populating storage and the like.
+ * It's mainly for populating storage and the like.
  */
 /obj/proc/WillContain()
 	return

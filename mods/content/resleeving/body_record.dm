@@ -1,12 +1,6 @@
 #define BODY_RECORD_FIELD_SNAPSHOT "SNAPSHOT"
 #define BODY_RECORD_FIELD_BODYTYPE "BODYTYPE"
 #define BODY_RECORD_FIELD_ASPECTS "ASPECTS"
-#define BODY_RECORD_FIELD_GENEMODS "GENEMODS"
-#define BODY_RECORD_GENEMOD_TAIL "TAIL"
-#define BODY_RECORD_GENEMOD_EARS "EARS"
-#define BODY_RECORD_GENEMOD_COLOR "COLOR"
-#define BODY_RECORD_GENEMOD_COLOR_EXTRA "COLOR_EXTRA"
-#define BODY_RECORD_GENEMOD_STYLE "STYLE"
 
 /datum/computer_file/data/body_record
 	read_only = TRUE
@@ -81,46 +75,3 @@
 	var/mob/living/human/our_human = new /mob/living/human(location, null, get_snapshot())
 	our_human.update_hair(update_icons = TRUE)
 	return our_human
-
-#ifdef CONTENT_PACK_GENEMODDING
-/mob/living/human/get_body_record_metadata()
-	var/list/metadata = ..()
-	if(tail_style)
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL])
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_STYLE, tail_style.uid)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR, tail_color)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_TAIL], BODY_RECORD_GENEMOD_COLOR_EXTRA, tail_color_extra)
-	if(ear_style)
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS])
-		LAZYINITLIST(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS])
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_STYLE, ear_style.uid)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR, ear_color)
-		LAZYSET(metadata[BODY_RECORD_FIELD_GENEMODS][BODY_RECORD_GENEMOD_EARS], BODY_RECORD_GENEMOD_COLOR_EXTRA, ear_color_extra)
-	return metadata
-
-/datum/computer_file/data/body_record/proc/get_tail_metadata()
-	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
-		return
-	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_TAIL)
-
-/datum/computer_file/data/body_record/proc/get_ears_metadata()
-	if(!LAZYACCESS(metadata, BODY_RECORD_FIELD_GENEMODS))
-		return
-	return LAZYACCESS(metadata[BODY_RECORD_FIELD_GENEMODS], BODY_RECORD_GENEMOD_EARS)
-
-/datum/computer_file/data/body_record/create_human(location)
-	var/mob/living/human/our_human = ..()
-	var/list/tail_data = get_tail_metadata()
-	if(tail_data?[BODY_RECORD_GENEMOD_STYLE])
-		our_human.tail_style = decls_repository.get_decl_by_id(tail_data[BODY_RECORD_GENEMOD_STYLE])
-		our_human.tail_color = tail_data[BODY_RECORD_GENEMOD_COLOR]
-		our_human.tail_color_extra = tail_data[BODY_RECORD_GENEMOD_COLOR_EXTRA]
-	our_human.sync_tail_to_style(update_icon = FALSE)
-	var/list/ear_data = get_ears_metadata()
-	if(ear_data?[BODY_RECORD_GENEMOD_STYLE])
-		our_human.ear_style = decls_repository.get_decl_by_id(ear_data[BODY_RECORD_GENEMOD_STYLE])
-		our_human.ear_color = ear_data[BODY_RECORD_GENEMOD_COLOR]
-		our_human.ear_color_extra = ear_data[BODY_RECORD_GENEMOD_COLOR_EXTRA]
-	return our_human
-#endif

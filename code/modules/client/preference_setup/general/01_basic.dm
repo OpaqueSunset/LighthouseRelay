@@ -19,9 +19,11 @@
 	name = "Basic"
 	sort_order = 1
 
-/datum/category_item/player_setup_item/physical/basic/load_character(datum/pref_record_reader/R)
+/datum/category_item/player_setup_item/physical/basic/preload_character(datum/pref_record_reader/R)
 	pref.gender =         R.read("gender")
 	pref.bodytype =       R.read("bodytype")
+
+/datum/category_item/player_setup_item/physical/basic/load_character(datum/pref_record_reader/R)
 	pref.real_name =      R.read("real_name")
 	pref.be_random_name = R.read("name_is_always_random")
 	var/decl/spawnpoint/loaded_spawnpoint = decls_repository.get_decl_by_id_or_var(R.read("spawnpoint"), /decl/spawnpoint)
@@ -83,11 +85,11 @@
 			. += "<a href='byond://?src=\ref[src];bodytype=\ref[B]'>[capitalize(B.pref_name)]</a>"
 
 	. += "<br><b>Pronouns:</b> "
-	for(var/decl/pronouns/G in S.available_pronouns)
-		if(G.name == pref.gender)
-			. += "<span class='linkOn'>[G.pronoun_string]</span>"
+	for(var/decl/pronouns/pronouns in S.available_pronouns)
+		if(pronouns.name == pref.gender)
+			. += "<span class='linkOn'>[pronouns.pronoun_string]</span>"
 		else
-			. += "<a href='byond://?src=\ref[src];gender=\ref[G]'>[G.pronoun_string]</a>"
+			. += "<a href='byond://?src=\ref[src];gender=\ref[pronouns]'>[pronouns.pronoun_string]</a>"
 
 	. += "<br><b>Spawnpoint</b>:"
 	var/decl/spawnpoint/spawnpoint = GET_DECL(pref.spawnpoint)
@@ -105,8 +107,11 @@
 		var/raw_name = input(user, "Choose your character's name:", "Character Name")  as text|null
 		if (!isnull(raw_name) && CanUseTopic(user))
 
-			var/decl/cultural_info/check = GET_DECL(pref.cultural_info[TAG_CULTURE])
-			var/new_name = check.sanitize_cultural_name(raw_name, pref.species)
+			var/decl/background_detail/check = pref.get_background_datum_by_flag(BACKGROUND_FLAG_NAMING)
+			if(!istype(check))
+				return TOPIC_NOACTION
+
+			var/new_name = check.sanitize_background_name(raw_name, pref.species)
 			if(filter_block_message(user, new_name))
 				return TOPIC_NOACTION
 

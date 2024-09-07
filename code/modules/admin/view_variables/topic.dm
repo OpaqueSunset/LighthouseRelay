@@ -29,7 +29,7 @@
 		if(!istype(victim))
 			to_chat(usr, "This can only be used on instances of type /mob/living/human")
 			return
-		var/decl/hierarchy/outfit/outfit = input("Select outfit.", "Select equipment.") as null|anything in outfits()
+		var/decl/outfit/outfit = input("Select outfit.", "Select equipment.") as null|anything in decls_repository.get_decls_of_subtype_unassociated(/decl/outfit)
 		if(!outfit)
 			return
 
@@ -354,7 +354,7 @@
 			return
 
 		if(victim.change_species(new_species))
-			to_chat(usr, SPAN_NOTICE("Set species of [victim] to [victim.species]."))
+			to_chat(usr, SPAN_NOTICE("Set species of \the [victim] to [victim.species]."))
 		else
 			to_chat(usr, SPAN_WARNING("Failed! Something went wrong."))
 
@@ -427,7 +427,7 @@
 			to_chat(usr, "Mob doesn't exist anymore")
 			return
 
-		if(victim.remove_language(rem_language.name))
+		if(victim.remove_language(rem_language.type))
 			to_chat(usr, "Removed [rem_language] from [victim].")
 		else
 			to_chat(usr, "Mob doesn't know that language.")
@@ -693,6 +693,6 @@
 	if(href_list["datumrefresh"])
 		var/datum/datum_to_refresh = locate(href_list["datumrefresh"])
 		if(istype(datum_to_refresh, /datum) || istype(datum_to_refresh, /client))
-			debug_variables(datum_to_refresh)
+			debug_variables_inner(datum_to_refresh, filter = href_list["filter"])
 
 	return

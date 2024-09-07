@@ -20,6 +20,9 @@
 /mob/living/human/get_external_organs()
 	return external_organs
 
+/mob/living/human/get_injured_organs()
+	return bad_external_organs
+
 /mob/living/human/get_internal_organs()
 	return internal_organs
 
@@ -203,7 +206,7 @@
 						W.germ_level += 1
 
 /mob/living/human/proc/Check_Proppable_Object()
-	for(var/turf/T in RANGE_TURFS(src, 1)) //we only care for non-space turfs
+	for(var/turf/T as anything in RANGE_TURFS(src, 1)) //we only care for non-space turfs
 		if(T.density && T.simulated)	//walls work
 			return 1
 

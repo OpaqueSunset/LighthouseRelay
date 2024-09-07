@@ -2284,7 +2284,7 @@
 /turf/floor/tiled,
 /area/hallway/station/atrium)
 "aeO" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/station/atrium)
 "aeP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2874,7 +2874,7 @@
 "afY" = (
 /obj/structure/table,
 /obj/effect/floor_decal/corner/grey/diagonal,
-/obj/item/chems/food/mint,
+/obj/item/food/mint,
 /obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
@@ -5991,7 +5991,7 @@
 /obj/item/t_scanner,
 /obj/item/box/lights/mixed,
 /obj/item/box/lights/mixed,
-/turf/floor/plating,
+/turf/floor/tiled/dark,
 /area/storage/emergency_storage/emergency4)
 "aoh" = (
 /obj/machinery/door/firedoor/glass,
@@ -7371,7 +7371,7 @@
 	dir = 8
 	},
 /obj/structure/table/woodentable,
-/obj/item/chems/food/chips,
+/obj/item/food/chips,
 /turf/floor/carpet,
 /area/engineering/break_room)
 "arO" = (

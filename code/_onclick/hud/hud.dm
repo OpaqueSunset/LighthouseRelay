@@ -63,7 +63,7 @@
 		var/stamina = mymob.get_stamina()
 		if(stamina < 100)
 			stamina_bar.set_invisibility(INVISIBILITY_NONE)
-			stamina_bar.icon_state = "prog_bar_[FLOOR(stamina/5)*5][(stamina >= 5) && (stamina <= 25) ? "_fail" : null]"
+			stamina_bar.icon_state = "prog_bar_[floor(stamina/5)*5][(stamina >= 5) && (stamina <= 25) ? "_fail" : null]"
 
 /datum/hud/proc/hide_inventory()
 	inventory_shown = FALSE
@@ -217,7 +217,8 @@
 			inv_box = sublist[2]
 			inv_box.screen_loc = "CENTER:[world.icon_size/2],BOTTOM:[hand_y_offset]"
 		hand_y_offset += world.icon_size
-	if(mymob.client && length(hand_hud_objects))
+
+	if(mymob.client && islist(hand_hud_objects) && length(hand_hud_objects))
 		mymob.client.screen |= hand_hud_objects
 
 	// Make sure all held items are on the screen and set to the correct screen loc.

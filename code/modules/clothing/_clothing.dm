@@ -7,7 +7,7 @@
 	replaced_in_loadout = TRUE
 	w_class = ITEM_SIZE_SMALL
 	icon_state = ICON_STATE_WORLD
-	force = 0
+	_base_attack_force = 3
 
 	var/wizard_garb = 0
 	var/flash_protection = FLASH_PROTECTION_NONE	  // Sets the item's level of flash protection.
@@ -40,6 +40,9 @@
 
 /obj/item/clothing/get_equipment_tint()
 	return tint
+
+/obj/item/clothing/get_matter_amount_modifier()
+	return ..() * 5 // clothes are complicated and have a high surface area. todo: a better way to do this?
 
 /obj/item/clothing/Initialize()
 
@@ -89,11 +92,11 @@
 	return TRUE
 
 // Sort of a placeholder for proper tailoring.
-#define RAG_COUNT(X) CEILING((LAZYACCESS(X.matter, /decl/material/solid/organic/cloth) * 0.65) / SHEET_MATERIAL_AMOUNT)
+#define RAG_COUNT(X) ceil((LAZYACCESS(X.matter, /decl/material/solid/organic/cloth) * 0.65) / SHEET_MATERIAL_AMOUNT)
 
 /obj/item/clothing/attackby(obj/item/I, mob/user)
 	var/rags = RAG_COUNT(src)
-	if(rags && (I.edge || I.sharp) && user.a_intent == I_HURT)
+	if(istype(material) && material.default_solid_form && rags && (I.edge || I.sharp) && user.a_intent == I_HURT)
 		if(length(accessories))
 			to_chat(user, SPAN_WARNING("You should remove the accessories attached to \the [src] first."))
 			return TRUE
@@ -104,12 +107,12 @@
 		playsound(loc, 'sound/weapons/cablecuff.ogg', 30, 1)
 		user.visible_message(SPAN_DANGER("\The [user] begins ripping apart \the [src] with \the [I]."))
 		if(do_after(user, 5 SECONDS, src))
-			user.visible_message(SPAN_DANGER("\The [user] tears \the [src] into rags with \the [I]."))
-			for(var/i = 1 to rags)
-				new /obj/item/chems/glass/rag(get_turf(src))
+			user.visible_message(SPAN_DANGER("\The [user] tears \the [src] apart with \the [I]."))
+			material.create_object(get_turf(src), rags)
 			if(loc == user)
 				user.drop_from_inventory(src)
-			LAZYREMOVE(matter, /decl/material/solid/organic/cloth)
+			LAZYREMOVE(matter, material.type)
+			material = null
 			physically_destroyed()
 		return TRUE
 	. = ..()
@@ -314,7 +317,7 @@
 
 	var/rags = RAG_COUNT(src)
 	if(rags)
-		to_chat(user, SPAN_SUBTLE("With a sharp object, you could cut \the [src] up into [rags] rag\s."))
+		to_chat(user, SPAN_SUBTLE("With a sharp object, you could cut \the [src] up into [rags] section\s."))
 
 	var/obj/item/clothing/sensor/vitals/sensor = locate() in accessories
 	if(sensor)

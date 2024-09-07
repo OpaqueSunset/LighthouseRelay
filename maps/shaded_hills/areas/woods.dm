@@ -14,6 +14,7 @@
 
 /area/shaded_hills/outside/woods
 	name = "Woodlands"
+	sound_env = FOREST
 
 /area/shaded_hills/outside/woods/poi
 	name = "Deep Woodlands"
@@ -29,5 +30,5 @@
 
 /area/shaded_hills/forester_hut
 	name = "\improper Foresters' Hut"
-	fishing_failure_prob = "100"
+	fishing_failure_prob = 100
 	fishing_results = list()

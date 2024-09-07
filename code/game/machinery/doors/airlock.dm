@@ -33,6 +33,10 @@
 	var/shockedby = list()              //Some sort of admin logging var
 	var/welded = null
 	var/locked = FALSE
+	/// If TRUE, when operating goes from TRUE to FALSE (i.e. door finishes closing/opening), the door will lock itself.
+	var/locking = FALSE
+	/// If TRUE, when operating goes from TRUE to FALSE (i.e. door finishes closing/opening), the door will unlock itself.
+	var/unlocking = FALSE
 	var/lock_cut_state = BOLTS_FINE
 	var/lights = 1 // Lights show by default
 	var/aiDisabledIdScanner = 0
@@ -291,9 +295,9 @@ About the new airlock wires panel:
 /obj/machinery/door/airlock/on_update_icon(state=0, override=0)
 
 	if(set_dir_on_update)
-		if(connections & (NORTH|SOUTH) == (NORTH|SOUTH))
+		if((connections & (NORTH|SOUTH)) == (NORTH|SOUTH))
 			set_dir(EAST)
-		else if (connections & (EAST|WEST) == (EAST|WEST))
+		else if ((connections & (EAST|WEST)) == (EAST|WEST))
 			set_dir(SOUTH)
 
 	switch(state)
@@ -653,12 +657,12 @@ About the new airlock wires panel:
 		cut_sound = 'sound/weapons/circsawhit.ogg'
 		cut_delay *= 1.5
 
-	else if(istype(item,/obj/item/twohanded/fireaxe))
+	else if(istype(item,/obj/item/bladed/axe/fire))
 		//special case - zero delay, different message
 		if (src.lock_cut_state == BOLTS_EXPOSED)
 			return FALSE //can't actually cut the bolts, go back to regular smashing
-		var/obj/item/twohanded/fireaxe/F = item
-		if (!F.wielded)
+		var/obj/item/bladed/axe/fire/F = item
+		if (!F.is_held_twohanded())
 			return FALSE
 		user.visible_message(
 			SPAN_DANGER("\The [user] smashes the bolt cover open!"),
@@ -778,8 +782,8 @@ About the new airlock wires panel:
 					close(1)
 			return TRUE
 
-	if(istype(C, /obj/item/twohanded/fireaxe) && !arePowerSystemsOn() && !(user.a_intent == I_HURT))
-		var/obj/item/twohanded/fireaxe/F = C
+	if(istype(C, /obj/item/bladed/axe/fire) && !arePowerSystemsOn() && !(user.a_intent == I_HURT))
+		var/obj/item/bladed/axe/fire/F = C
 		if(F.is_held_twohanded(user))
 			if(locked)
 				to_chat(user, SPAN_WARNING("The airlock's bolts prevent it from being forced."))
@@ -790,7 +794,7 @@ About the new airlock wires panel:
 					else
 						close(1)
 		else
-			if(user.can_wield_item(F))
+			if(user.can_twohand_item(F))
 				to_chat(user, SPAN_WARNING("You need to be holding \the [C] in both hands to do that!"))
 			else
 				to_chat(user, SPAN_WARNING("You are too small to lever \the [src] open with \the [C]!"))
@@ -800,7 +804,7 @@ About the new airlock wires panel:
 	else if((stat & (BROKEN|NOPOWER)) && isanimal(user))
 		var/mob/living/simple_animal/A = user
 		var/obj/item/I = A.get_natural_weapon()
-		if(I?.force >= 10)
+		if(I?.get_attack_force(user) >= 10)
 			if(density)
 				visible_message(SPAN_DANGER("\The [A] forces \the [src] open!"))
 				open(1)
@@ -815,12 +819,12 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/bash(obj/item/weapon, mob/user)
 	//if door is unbroken, hit with fire axe using harm intent
-	if (istype(weapon, /obj/item/twohanded/fireaxe) && !(stat & BROKEN) && user.a_intent == I_HURT && weapon.user_can_wield(user))
+	if (istype(weapon, /obj/item/bladed/axe/fire) && !(stat & BROKEN) && user.a_intent == I_HURT && weapon.user_can_attack_with(user))
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		var/obj/item/twohanded/fireaxe/F = weapon
-		if (F.wielded)
+		var/obj/item/bladed/axe/fire/F = weapon
+		if (F.is_held_twohanded())
 			playsound(src, 'sound/weapons/smash.ogg', 100, 1)
-			current_health -= F.force_wielded * 2
+			current_health -= F.get_attack_force(user) * 2
 			if(current_health <= 0)
 				user.visible_message(SPAN_DANGER("[user] smashes \the [weapon] into the airlock's control panel! It explodes in a shower of sparks!"), SPAN_DANGER("You smash \the [weapon] into the airlock's control panel! It explodes in a shower of sparks!"))
 				current_health = 0
@@ -885,7 +889,7 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/open(var/forced=0)
 	if(!can_open(forced))
-		return 0
+		return FALSE
 	use_power_oneoff(360)	//360 W seems much more appropriate for an actuator moving an industrial door capable of crushing people
 
 	//if the door is unpowered then it doesn't make sense to hear the woosh of a pneumatic actuator
@@ -894,7 +898,15 @@ About the new airlock wires panel:
 	else
 		playsound(src.loc, pick(open_sound_unpowered), 100, 1)
 
-	return ..()
+	. = ..()
+	if(.)
+		// lock and unlock handle updating for us, we don't want duplicate updates
+		if(locking)
+			lock()
+		else if(unlocking)
+			unlock()
+		else
+			toggle_input_toggle() // this sends an update to anything listening for our status, like docking/airlock controllers
 
 /obj/machinery/door/airlock/can_open(var/forced=0)
 	if(QDELETED(src) || brace)
@@ -921,7 +933,7 @@ About the new airlock wires panel:
 
 /obj/machinery/door/airlock/close(var/forced=0)
 	if(!can_close(forced))
-		return 0
+		return FALSE
 
 	if(safe)
 		for(var/turf/turf in locs)
@@ -931,7 +943,7 @@ About the new airlock wires panel:
 						playsound(src.loc, close_failure_blocked, 30, 0, -3)
 						next_beep_at = world.time + SecondsToTicks(10)
 					close_door_at = world.time + 6
-					return
+					return FALSE
 
 	for(var/turf/turf in locs)
 		for(var/atom/movable/AM in turf)
@@ -945,35 +957,54 @@ About the new airlock wires panel:
 	else
 		playsound(src.loc, pick(close_sound_unpowered), 100, 1)
 
-	..()
+	. = ..()
+	if(.)
+		// lock and unlock handle updating for us, we don't want duplicate updates
+		if(locking)
+			lock()
+		else if(unlocking)
+			unlock()
+		else
+			toggle_input_toggle() // this sends an update to anything listening for our status, like docking/airlock controllers
 
 /obj/machinery/door/airlock/proc/lock(var/forced=0)
 	if(locked)
-		return 0
+		return FALSE
 
-	if (operating && !forced) return 0
+	if (operating && !forced)
+		unlocking = FALSE
+		locking = TRUE
+		return FALSE
 
-	if (lock_cut_state == BOLTS_CUT) return 0 //what bolts?
+	if (lock_cut_state == BOLTS_CUT) return FALSE //what bolts?
 
 	src.locked = TRUE
 	playsound(src, bolts_dropping, 30, 0, -6)
 	audible_message("You hear a click from the bottom of the door.", hearing_distance = 1)
 	update_icon()
-	return 1
+	toggle_input_toggle() // this sends an update to anything listening for our status, like docking/airlock controllers
+	return TRUE
 
 /obj/machinery/door/airlock/proc/unlock(var/forced=0)
 	if(!src.locked)
-		return
+		return FALSE
 
 	if (!forced)
+		if(!src.arePowerSystemsOn() || isWireCut(AIRLOCK_WIRE_DOOR_BOLTS))
+			return FALSE
+		if(operating)
+			locking = FALSE
+			unlocking = TRUE
+			return FALSE
 		if(operating || !src.arePowerSystemsOn() || isWireCut(AIRLOCK_WIRE_DOOR_BOLTS))
-			return
+			return FALSE
 
 	src.locked = FALSE
 	playsound(src, bolts_rising, 30, 0, -6)
 	audible_message("You hear a click from the bottom of the door.", hearing_distance = 1)
 	update_icon()
-	return 1
+	toggle_input_toggle() // this sends an update to anything listening for our status, like docking/airlock controllers
+	return TRUE
 
 /obj/machinery/door/airlock/proc/toggle_lock(var/forced = 0)
 	return locked ? unlock() : lock()

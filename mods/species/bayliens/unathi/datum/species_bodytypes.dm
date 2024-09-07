@@ -17,12 +17,13 @@
 	eye_darksight_range     = 3
 	eye_flash_mod           = 1.2
 	nail_noun               = "claws"
+	uid                     = "bodytype_unathi_fem"
 
 	age_descriptor = /datum/appearance_descriptor/age/lizard
 
 	default_sprite_accessories = list(
 		SAC_FRILLS = list(
-			/decl/sprite_accessory/frills/lizard/frills_long = "#192e19"
+			/decl/sprite_accessory/frills/lizard/frills_long = list(SAM_COLOR = "#192e19")
 		)
 	)
 
@@ -74,7 +75,8 @@
 	icon_deformed         = 'mods/species/bayliens/unathi/icons/deformed_body_male.dmi'
 	associated_gender     = MALE
 	onmob_state_modifiers = null
+	uid                   = "bodytype_unathi_masc"
 
 /obj/item/organ/external/tail/lizard
-	tail_icon = 'mods/species/bayliens/unathi/icons/tail.dmi'
-	tail      = "sogtail"
+	tail_icon             = 'mods/species/bayliens/unathi/icons/tail.dmi'
+	tail_animation_states = 9

@@ -90,11 +90,11 @@
 #define COMPANY_ALIGNMENTS		list(COMPANY_LOYAL,COMPANY_SUPPORTATIVE,COMPANY_NEUTRAL,COMPANY_SKEPTICAL,COMPANY_OPPOSED)
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
-#define MOB_SIZE_LARGE     40
-#define MOB_SIZE_MEDIUM    20
-#define MOB_SIZE_SMALL     10
-#define MOB_SIZE_TINY      5
-#define MOB_SIZE_MINISCULE 1
+#define MOB_SIZE_LARGE     ITEM_SIZE_STRUCTURE * 2
+#define MOB_SIZE_MEDIUM    ITEM_SIZE_STRUCTURE
+#define MOB_SIZE_SMALL     ITEM_SIZE_NORMAL
+#define MOB_SIZE_TINY      ITEM_SIZE_SMALL
+#define MOB_SIZE_MINISCULE ITEM_SIZE_TINY
 
 #define MOB_SIZE_MIN       MOB_SIZE_MINISCULE
 #define MOB_SIZE_MAX       MOB_SIZE_LARGE
@@ -247,8 +247,9 @@
 #define SYNTH_HEAT_LEVEL_2 1000
 #define SYNTH_HEAT_LEVEL_3 2000
 
-#define CORPSE_CAN_REENTER 1
-#define CORPSE_CAN_REENTER_AND_RESPAWN 2
+#define CORPSE_CANNOT_REENTER          0
+#define CORPSE_CAN_REENTER             BITFLAG(0)
+#define CORPSE_CAN_RESPAWN             BITFLAG(1)
 
 #define SPECIES_HUMAN            "Human"
 #define SPECIES_MONKEY           "Monkey"
@@ -334,10 +335,11 @@ var/global/list/dexterity_levels = list(
 #define MOB_ICON_HAS_LIVING_STATE    BITFLAG(0)
 #define MOB_ICON_HAS_DEAD_STATE      BITFLAG(1)
 #define MOB_ICON_HAS_REST_STATE      BITFLAG(2)
-#define MOB_ICON_HAS_SLEEP_STATE     BITFLAG(3)
-#define MOB_ICON_HAS_GIB_STATE       BITFLAG(4)
-#define MOB_ICON_HAS_DUST_STATE      BITFLAG(5)
-#define MOB_ICON_HAS_PARALYZED_STATE BITFLAG(6)
+#define MOB_ICON_HAS_SITTING_STATE   BITFLAG(3)
+#define MOB_ICON_HAS_SLEEP_STATE     BITFLAG(4)
+#define MOB_ICON_HAS_GIB_STATE       BITFLAG(5)
+#define MOB_ICON_HAS_DUST_STATE      BITFLAG(6)
+#define MOB_ICON_HAS_PARALYZED_STATE BITFLAG(7)
 #define NEUTER_ANIMATE "animate singular neutral"
 
 // Equipment Overlays Indices //
@@ -345,29 +347,30 @@ var/global/list/dexterity_levels = list(
 #define HO_SKIN_LAYER       2
 #define HO_DAMAGE_LAYER     3
 #define HO_SURGERY_LAYER    4 //bs12 specific.
-#define HO_UNDERWEAR_LAYER  5
-#define HO_UNIFORM_LAYER    6
-#define HO_ID_LAYER         7
-#define HO_SHOES_LAYER      8
-#define HO_GLOVES_LAYER     9
-#define HO_BELT_LAYER       10
-#define HO_SUIT_LAYER       11
-#define HO_GLASSES_LAYER    12
-#define HO_BELT_LAYER_ALT   13
-#define HO_SUIT_STORE_LAYER 14
-#define HO_BACK_LAYER       15
-#define HO_TAIL_LAYER       16 //bs12 specific. this hack is probably gonna come back to haunt me
-#define HO_HAIR_LAYER       17 //TODO: make part of head layer?
-#define HO_GOGGLES_LAYER    18
-#define HO_L_EAR_LAYER      19
-#define HO_R_EAR_LAYER      20
-#define HO_FACEMASK_LAYER   21
-#define HO_HEAD_LAYER       22
-#define HO_COLLAR_LAYER     23
-#define HO_HANDCUFF_LAYER   24
-#define HO_INHAND_LAYER     25
-#define HO_FIRE_LAYER       26 //If you're on fire
-#define TOTAL_OVER_LAYERS   26
+#define HO_BANDAGE_LAYER    5
+#define HO_UNDERWEAR_LAYER  6
+#define HO_UNIFORM_LAYER    7
+#define HO_ID_LAYER         8
+#define HO_SHOES_LAYER      9
+#define HO_GLOVES_LAYER     10
+#define HO_BELT_LAYER       11
+#define HO_SUIT_LAYER       12
+#define HO_GLASSES_LAYER    13
+#define HO_BELT_LAYER_ALT   14
+#define HO_SUIT_STORE_LAYER 15
+#define HO_BACK_LAYER       16
+#define HO_TAIL_LAYER       17 //bs12 specific. this hack is probably gonna come back to haunt me
+#define HO_HAIR_LAYER       18 //TODO: make part of head layer?
+#define HO_GOGGLES_LAYER    19
+#define HO_L_EAR_LAYER      20
+#define HO_R_EAR_LAYER      21
+#define HO_FACEMASK_LAYER   22
+#define HO_HEAD_LAYER       23
+#define HO_COLLAR_LAYER     24
+#define HO_HANDCUFF_LAYER   25
+#define HO_INHAND_LAYER     26
+#define HO_FIRE_LAYER       27 //If you're on fire
+#define TOTAL_OVER_LAYERS   27
 //////////////////////////////////
 
 // Underlay defines; vestigal implementation currently.
@@ -383,24 +386,36 @@ var/global/list/dexterity_levels = list(
 #define EATING_METHOD_EAT   0
 #define EATING_METHOD_DRINK 1
 
+// Sprite accessory categories for shorter reference.
 #define SAC_HAIR        /decl/sprite_accessory_category/hair
 #define SAC_FACIAL_HAIR /decl/sprite_accessory_category/facial_hair
 #define SAC_COSMETICS   /decl/sprite_accessory_category/cosmetics
 #define SAC_MARKINGS    /decl/sprite_accessory_category/markings
+#define SAC_EARS        /decl/sprite_accessory_category/ears
 #define SAC_HORNS       /decl/sprite_accessory_category/horns
 #define SAC_FRILLS      /decl/sprite_accessory_category/frills
+#define SAC_TAIL        /decl/sprite_accessory_category/tail
+
+// Sprite accessory metadata types for shorter reference.
+#define SAM_COLOR       /decl/sprite_accessory_metadata/color
+#define SAM_COLOR_INNER /decl/sprite_accessory_metadata/color/alt
+#define SAM_GRADIENT    /decl/sprite_accessory_metadata/gradient
 
 // Helpers for setting mob appearance. They are extremely ugly, hence the helpers.
-#define SET_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE)          (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
-#define GET_HAIR_STYLE(TARGET)                              (TARGET.get_organ_sprite_accessory_by_category(SAC_HAIR, BP_HEAD))
-#define SET_HAIR_COLOUR(TARGET, COLOUR, SKIP_UPDATE)        (TARGET.set_organ_sprite_accessory_by_category(null, SAC_HAIR, (COLOUR), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
-#define GET_HAIR_COLOUR(TARGET)                             (TARGET.get_organ_sprite_accessory(GET_HAIR_STYLE(TARGET), BP_HEAD))
+#define SET_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE)        (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
+#define GET_HAIR_STYLE(TARGET)                            (TARGET.get_organ_sprite_accessory_by_category(SAC_HAIR, BP_HEAD))
+#define SET_HAIR_COLOR(TARGET, COLOR, SKIP_UPDATE)        (TARGET.set_organ_sprite_accessory_by_category(null, SAC_HAIR, list(SAM_COLOR = (COLOR)), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
+#define GET_HAIR_COLOR(TARGET)                            (TARGET.get_organ_sprite_accessory_metadata(GET_HAIR_STYLE(TARGET), BP_HEAD, SAM_COLOR))
 
-#define SET_FACIAL_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE)   (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_FACIAL_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
-#define GET_FACIAL_HAIR_STYLE(TARGET)                       (TARGET.get_organ_sprite_accessory_by_category(SAC_FACIAL_HAIR, BP_HEAD))
-#define SET_FACIAL_HAIR_COLOUR(TARGET, COLOUR, SKIP_UPDATE) (TARGET.set_organ_sprite_accessory_by_category(null, SAC_FACIAL_HAIR, (COLOUR), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
-#define GET_FACIAL_HAIR_COLOUR(TARGET)                      (TARGET.get_organ_sprite_accessory(GET_FACIAL_HAIR_STYLE(TARGET), BP_HEAD))
+#define SET_FACIAL_HAIR_STYLE(TARGET, STYLE, SKIP_UPDATE) (TARGET.set_organ_sprite_accessory_by_category((STYLE), SAC_FACIAL_HAIR, null, TRUE, FALSE, BP_HEAD, SKIP_UPDATE))
+#define GET_FACIAL_HAIR_STYLE(TARGET)                     (TARGET.get_organ_sprite_accessory_by_category(SAC_FACIAL_HAIR, BP_HEAD))
+#define SET_FACIAL_HAIR_COLOR(TARGET, COLOR, SKIP_UPDATE) (TARGET.set_organ_sprite_accessory_by_category(null, SAC_FACIAL_HAIR, list(SAM_COLOR = (COLOR)), FALSE, TRUE, BP_HEAD, SKIP_UPDATE))
+#define GET_FACIAL_HAIR_COLOR(TARGET)                     (TARGET.get_organ_sprite_accessory_metadata(GET_FACIAL_HAIR_STYLE(TARGET), BP_HEAD, SAM_COLOR))
 
 // Used in death() to skip message broadcast.
 #define SKIP_DEATH_MESSAGE "no message"
 
+// Used in organ stance calc.
+#define LIMB_UNUSABLE 2
+#define LIMB_DAMAGED  1
+#define LIMB_IMPAIRED 0.5

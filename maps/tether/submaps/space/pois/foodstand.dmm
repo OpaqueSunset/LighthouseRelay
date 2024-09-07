@@ -13,9 +13,9 @@
 /area/tether_away/debrisfield/explored)
 "e" = (
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/chems/food/carpmeat,
-/obj/item/chems/food/carpmeat,
-/obj/item/chems/food/carpmeat,
+/obj/item/food/carpmeat,
+/obj/item/food/carpmeat,
+/obj/item/food/carpmeat,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "f" = (
@@ -40,13 +40,13 @@
 /area/tether_away/debrisfield/explored)
 "j" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/chems/food/taco,
-/obj/item/chems/food/taco,
-/obj/item/chems/food/taco,
-/obj/item/chems/food/hotdog,
-/obj/item/chems/food/hotdog,
-/obj/item/chems/food/cheeseburrito,
-/obj/item/chems/food/cheeseburrito,
+/obj/item/food/taco,
+/obj/item/food/taco,
+/obj/item/food/taco,
+/obj/item/food/hotdog,
+/obj/item/food/hotdog,
+/obj/item/food/cheeseburrito,
+/obj/item/food/cheeseburrito,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "k" = (
@@ -55,7 +55,7 @@
 /area/tether_away/debrisfield/explored)
 "l" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/taco,
+/obj/item/food/taco,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "m" = (

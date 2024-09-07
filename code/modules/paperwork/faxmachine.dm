@@ -81,6 +81,7 @@ var/global/list/adminfaxes     = list()	//cache for faxes that have been sent to
 	var/obj/item/scanner_item                         //Item to fax
 	var/list/quick_dial                              //List of name tag to network ids for other fax machines that the user added as quick dial options
 	var/list/fax_history                             //List of the last 10 devices that sent us faxes, and when
+	var/tmp/init_network_tag                         //The network tag of this fax machine, set by mappers.
 
 	var/tmp/time_cooldown_end = 0
 	var/tmp/current_page      = "main"
@@ -90,7 +91,9 @@ var/global/list/adminfaxes     = list()	//cache for faxes that have been sent to
 	. = ..()
 	if(. != INITIALIZE_HINT_QDEL)
 		global.allfaxes += src
-		set_extension(src, /datum/extension/network_device/fax)
+		var/datum/extension/network_device/fax/netdevice = set_extension(src, /datum/extension/network_device/fax)
+		if(init_network_tag)
+			netdevice.set_network_tag(init_network_tag)
 		if(populate_parts && printer)
 			printer.make_full()
 
@@ -654,7 +657,7 @@ var/global/list/adminfaxes     = list()	//cache for faxes that have been sent to
 /decl/public_access/public_method/fax_receive_document
 	name = "Send Fax Message"
 	desc = "Sends the specified document over to the specified network tag."
-	call_proc = /obj/machinery/faxmachine/proc/receive_fax
+	call_proc = TYPE_PROC_REF(/obj/machinery/faxmachine, receive_fax)
 	forward_args = TRUE
 
 ////////////////////////////////////////////////////////////////////////////////////////

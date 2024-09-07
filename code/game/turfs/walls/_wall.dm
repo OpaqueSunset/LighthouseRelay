@@ -29,10 +29,7 @@ var/global/list/wall_fullblend_objects = list(
 	explosion_resistance = 10
 	color = COLOR_STEEL
 	turf_flags = TURF_IS_HOLOMAP_OBSTACLE
-	initial_gas = list(
-		/decl/material/gas/oxygen = MOLES_O2STANDARD,
-		/decl/material/gas/nitrogen = MOLES_N2STANDARD
-	)
+	initial_gas = GAS_STANDARD_AIRMIX
 	zone_membership_candidate = TRUE
 
 	/// If set, will prevent merges between walls with different IDs.
@@ -142,11 +139,10 @@ var/global/list/wall_fullblend_objects = list(
 
 	take_damage(damage)
 
-/turf/wall/hitby(AM, var/datum/thrownthing/TT)
+/turf/wall/hitby(atom/movable/AM, var/datum/thrownthing/TT)
 	. = ..()
 	if(. && density && !ismob(AM))
-		var/obj/O = AM
-		var/tforce = O.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
+		var/tforce = AM.get_thrown_attack_force() * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 		playsound(src, hitsound, tforce >= 15 ? 60 : 25, TRUE)
 		if(tforce > 0)
 			take_damage(tforce)

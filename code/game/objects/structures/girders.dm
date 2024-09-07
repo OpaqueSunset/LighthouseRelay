@@ -66,7 +66,7 @@
 		effective_cover *= 2
 	if(!anchored)
 		effective_cover *= 0.5
-	effective_cover = clamp(FLOOR(effective_cover), 0, 100)
+	effective_cover = clamp(floor(effective_cover), 0, 100)
 	if(Proj.original != src && !prob(effective_cover))
 		return PROJECTILE_CONTINUE
 	var/damage = Proj.get_structure_damage()
@@ -75,7 +75,7 @@
 	if(!istype(Proj, /obj/item/projectile/beam))
 		damage *= 0.4
 	if(reinf_material)
-		damage = FLOOR(damage * 0.75)
+		damage = floor(damage * 0.75)
 	..()
 	if(damage)
 		take_damage(damage, Proj.atom_damage_type)
@@ -110,8 +110,10 @@
 		return TRUE
 
 	if(IS_PICK(W))
-		if(W.get_tool_quality(TOOL_PICK) < TOOL_QUALITY_GOOD)
-			to_chat(user, SPAN_WARNING("\The [W] is not powerful enough to destroy \the [src]."))
+		if(W.material?.hardness < material.hardness)
+			to_chat(user, SPAN_WARNING("\The [W] is not hard enough to excavate [material.solid_name]."))
+		else if(W.get_tool_quality(TOOL_PICK) < TOOL_QUALITY_GOOD)
+			to_chat(user, SPAN_WARNING("\The [W] is not capable of destroying \the [src]."))
 		else if(W.do_tool_interaction(TOOL_PICK, user, src, (reinf_material ? 6 : 4) SECONDS, set_cooldown = TRUE))
 			dismantle_structure(user)
 		return TRUE

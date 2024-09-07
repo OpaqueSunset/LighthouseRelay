@@ -4,6 +4,7 @@
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "shards"
+	sweepable = TRUE
 
 /obj/effect/decal/cleanable/ash
 	name = "ashes"
@@ -11,6 +12,8 @@
 	gender = PLURAL
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
+	weather_sensitive = FALSE
+	sweepable = TRUE
 
 /obj/effect/decal/cleanable/ash/attackby(obj/item/I, mob/user)
 	if(ATOM_IS_OPEN_CONTAINER(I))
@@ -39,6 +42,7 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "flour"
 	persistent = TRUE
+	sweepable = TRUE
 
 /obj/effect/decal/cleanable/cobweb
 	name = "cobweb"
@@ -46,6 +50,8 @@
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "cobweb1"
+	weather_sensitive = FALSE
+	sweepable = TRUE
 
 /obj/effect/decal/cleanable/molten_item
 	name = "gooey grey mass"
@@ -54,6 +60,7 @@
 	icon_state = "molten"
 	persistent = TRUE
 	generic_filth = TRUE
+	weather_sensitive = FALSE
 
 /obj/effect/decal/cleanable/cobweb2
 	name = "cobweb"
@@ -61,6 +68,8 @@
 	layer = ABOVE_HUMAN_LAYER
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "cobweb2"
+	weather_sensitive = FALSE
+	sweepable = TRUE
 
 //Vomit (sorry)
 /obj/effect/decal/cleanable/vomit

@@ -99,11 +99,11 @@
 		var/atom/recipe_product = recipe.result
 		var/plural = recipe.result_quantity > 1
 		var/product_name = ispath(recipe.result, /atom) ? atom_info_repository.get_name_for(recipe.result) : initial(recipe_product.name)
-		mechanics_text += "<br>This recipe takes [CEILING(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [product_name][plural ? "s" : ""]."
+		mechanics_text += "<br>This recipe takes [ceil(recipe.cooking_time/10)] second\s to cook in [recipe.get_categories_string()] and creates [plural ? recipe.result_quantity : "a(n)"] [product_name][plural ? "s" : ""]."
 		var/lore_text = recipe.lore_text || initial(recipe_product.desc)
 
 		var/recipe_name = recipe.display_name || sanitize(initial(recipe_product.name))
-		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_categories_string()] for [CEILING(recipe.cooking_time/(1 SECOND))] second\s."
+		guide_html += "<h3>[capitalize(recipe_name)]</h3>Place [english_list(ingredients)] into [recipe.get_categories_string()] for [ceil(recipe.cooking_time/(1 SECOND))] second\s."
 
 		var/list/assoc_strings = list()
 		for(var/category in recipe.get_category_names())

@@ -136,7 +136,7 @@
 	if(close_door_at && world.time >= close_door_at)
 		if(autoclose)
 			close_door_at = next_close_time()
-			INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/machinery/door, close))
+			INVOKE_ASYNC(src, PROC_REF(close))
 		else
 			close_door_at = 0
 
@@ -235,14 +235,8 @@
 	. = ..()
 	if(.)
 		visible_message(SPAN_DANGER("\The [src] was hit by \the [AM]."))
-		var/tforce = 0
-		if(ismob(AM))
-			tforce = 3 * TT.speed
-		else if(isobj(AM))
-			var/obj/hitter_obj = AM
-			tforce = hitter_obj.throwforce * (TT.speed/THROWFORCE_SPEED_DIVISOR)
 		playsound(src.loc, hitsound, 100, 1)
-		take_damage(tforce)
+		take_damage(AM.get_thrown_attack_force() * (TT.speed/THROWFORCE_SPEED_DIVISOR))
 
 // This is legacy code that should be revisited, probably by moving the bulk of the logic into here.
 /obj/machinery/door/physical_attack_hand(user)
@@ -272,7 +266,7 @@
 
 		//figure out how much metal we need
 		var/amount_needed = (current_max_health - current_health) / DOOR_REPAIR_AMOUNT
-		amount_needed = CEILING(amount_needed)
+		amount_needed = ceil(amount_needed)
 
 		var/obj/item/stack/stack = I
 		var/transfer
@@ -333,7 +327,7 @@
 /obj/machinery/door/bash(obj/item/weapon, mob/user)
 	if(isliving(user) && user.a_intent != I_HURT)
 		return FALSE
-	if(!weapon.user_can_wield(user))
+	if(!weapon.user_can_attack_with(user))
 		return FALSE
 	if(weapon.item_flags & ITEM_FLAG_NO_BLUDGEON)
 		return FALSE
@@ -341,12 +335,13 @@
 		return FALSE
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
-	if(weapon.force < min_force)
+	var/force = weapon.get_attack_force(user)
+	if(force < min_force)
 		user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [weapon] with no visible effect.</span>")
 	else
 		user.visible_message("<span class='danger'>\The [user] forcefully strikes \the [src] with \the [weapon]!</span>")
 		playsound(src.loc, hitsound, 100, 1)
-		take_damage(weapon.force, weapon.atom_damage_type)
+		take_damage(force, weapon.atom_damage_type)
 	return TRUE
 
 /obj/machinery/door/take_damage(damage, damage_type = BRUTE, damage_flags, inflicter, armor_pen = 0, silent, do_update_health)
@@ -436,7 +431,7 @@
 
 /obj/machinery/door/proc/open(forced = FALSE)
 	if(!can_open(forced))
-		return
+		return FALSE
 
 	operating = 1
 
@@ -464,7 +459,7 @@
 
 /obj/machinery/door/proc/close(forced = FALSE)
 	if(!can_close(forced))
-		return
+		return FALSE
 
 	operating = 1
 
@@ -485,6 +480,7 @@
 	//I shall not add a check every x ticks if a door has closed over some fire.
 	var/obj/fire/fire = locate() in loc
 	qdel(fire)
+	return TRUE
 
 /obj/machinery/door/proc/toggle(to_open = density)
 	if(to_open)
@@ -608,20 +604,20 @@
 /decl/public_access/public_method/open_door
 	name = "open door"
 	desc = "Opens the door if possible."
-	call_proc = /obj/machinery/door/proc/open
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, open)
 
 /decl/public_access/public_method/toggle_door
 	name = "toggle door"
 	desc = "Toggles whether the door is open or not, if possible."
-	call_proc = /obj/machinery/door/proc/toggle
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, toggle)
 
 /decl/public_access/public_method/toggle_door_to
 	name = "toggle door to"
 	desc = "Toggles the door, depending on the supplied argument, to open (if 1) or closed (if 0)."
-	call_proc = /obj/machinery/door/proc/toggle
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, toggle)
 	forward_args = TRUE
 
 /decl/public_access/public_method/close_door
 	name = "close door"
 	desc = "Closes the door if possible."
-	call_proc = /obj/machinery/door/proc/close
+	call_proc = TYPE_PROC_REF(/obj/machinery/door, close)

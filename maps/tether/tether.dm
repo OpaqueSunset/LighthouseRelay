@@ -81,7 +81,6 @@
 	#include "atoms/decals.dm"
 	#include "atoms/effects.dm"
 	#include "atoms/flora.dm"
-	#include "atoms/fence.dm"
 	#include "atoms/kink.dm"
 	#include "atoms/permits.dm"
 	#include "atoms/props.dm"

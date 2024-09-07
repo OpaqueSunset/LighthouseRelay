@@ -10,7 +10,10 @@
 	var/retribution = TRUE
 
 /datum/mob_controller/aggressive/commanded/do_process(time_elapsed)
-	..()
+
+	if(!(. = ..()) || body.stat)
+		return
+
 	while(command_buffer.len > 1)
 		var/mob/speaker = command_buffer[1]
 		var/message = command_buffer[2]
@@ -19,6 +22,7 @@
 			var/substring = copytext(message,length(filtered_name)+1) //get rid of the name.
 			listen(speaker,substring)
 		command_buffer.Remove(command_buffer[1],command_buffer[2])
+
 	switch(stance)
 		if(STANCE_COMMANDED_FOLLOW)
 			follow_target()
@@ -49,7 +53,7 @@
 	set_target(null) //want me to attack something? Well I better forget my old target.
 	set_stance(STANCE_IDLE)
 	body.stop_automove()
-	if(message == "attack" || findtext(message,"everyone") || findtext(message,"anybody") || findtext(message, "somebody") || findtext(message, "someone")) //if its just 'attack' then just attack anybody, same for if they say 'everyone', somebody, anybody. Assuming non-pickiness.
+	if(message == "attack" || findtext(message,"everyone") || findtext(message,"anybody") || findtext(message, "somebody") || findtext(message, "someone")) //if it's just 'attack' then just attack anybody, same for if they say 'everyone', somebody, anybody. Assuming non-pickiness.
 		_allowed_targets = list("everyone")//everyone? EVERYONE
 		return 1
 	var/list/targets = get_targets_by_name(message)

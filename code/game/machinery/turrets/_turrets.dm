@@ -12,14 +12,14 @@
 	idle_power_usage = 500
 	active_power_usage = 10 KILOWATTS
 	interact_offline = TRUE
-
 	transform_animate_time = 0.2 SECONDS
 	uncreated_component_parts = list(/obj/item/stock_parts/power/apc)
+	abstract_type = /obj/machinery/turret
+
 	// Visuals.
 	var/image/turret_stand = null
 	var/image/turret_ray = null
 	var/ray_color = "#ffffffff" // Color of the ray, changed by the FSM when switching states.
-
 	var/image/transverse_left // Images for displaying the range of the turret's transverse
 	var/image/transverse_right
 
@@ -38,7 +38,7 @@
 
 	// Angles
 	// Remember that in BYOND, NORTH equals 0 absolute degrees, and not 90.
-	var/traverse = 180 // Determines how wide the turret can turn to shoot things, in degrees. The 'front' of the turret is determined by it's dir variable.
+	var/traverse = 180 // Determines how wide the turret can turn to shoot things, in degrees. The 'front' of the turret is determined by its dir variable.
 	var/leftmost_traverse = null // How far left or right the turret can turn. Set automatically using the above variable and the inital dir value.
 	var/rightmost_traverse = null
 	var/current_bearing = 0 // Current absolute angle the turret has, used to calculate if it needs to turn to try to shoot the target.

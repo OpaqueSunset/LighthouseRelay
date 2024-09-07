@@ -136,7 +136,7 @@
 	loaded_vial = null
 	if(user)
 		if (swap_mode != "swap") // if swapping vials, we will print a different message in another proc
-			to_chat(user, "You remove the vial from the [src].")
+			to_chat(user, "You remove the vial from \the [src].")
 	playsound(loc, 'sound/weapons/flipblade.ogg', 50, TRUE)
 	if(should_update_icon)
 		update_icon()
@@ -178,6 +178,7 @@
 	w_class = ITEM_SIZE_TINY
 	detail_state = "_band"
 	detail_color = COLOR_CYAN
+	abstract_type = /obj/item/chems/hypospray/autoinjector
 	var/autolabel = TRUE  		// if set, will add label with the name of the first initial reagent
 
 /obj/item/chems/hypospray/autoinjector/Initialize()
@@ -190,10 +191,6 @@
 	. = ..()
 	if(reagents?.total_volume > 0 && autolabel && !label_text) // don't override preset labels
 		label_text = "[reagents.get_primary_reagent_name()], [reagents.total_volume]u"
-
-/obj/item/chems/hypospray/autoinjector/stabilizer/populate_reagents()
-	add_to_reagents(/decl/material/liquid/adrenaline, reagents.maximum_volume)
-	. = ..()
 
 /obj/item/chems/hypospray/autoinjector/Initialize()
 	. = ..()
@@ -215,6 +212,20 @@
 		to_chat(user, SPAN_NOTICE("It is currently loaded."))
 	else
 		to_chat(user, SPAN_NOTICE("It is spent."))
+
+////////////////////////////////////////////////////////////////////////////////
+// Autoinjector - Stabilizer
+////////////////////////////////////////////////////////////////////////////////
+/obj/item/chems/hypospray/autoinjector/stabilizer/populate_reagents()
+	add_to_reagents(/decl/material/liquid/stabilizer, reagents.maximum_volume)
+	. = ..()
+
+////////////////////////////////////////////////////////////////////////////////
+// Autoinjector - Adrenaline
+////////////////////////////////////////////////////////////////////////////////
+/obj/item/chems/hypospray/autoinjector/adrenaline/populate_reagents()
+	add_to_reagents(/decl/material/liquid/adrenaline, reagents.maximum_volume)
+	. = ..()
 
 ////////////////////////////////////////////////////////////////////////////////
 // Autoinjector - Detox

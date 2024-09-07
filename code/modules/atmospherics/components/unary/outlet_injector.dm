@@ -1,6 +1,6 @@
 //Basically a one way passive valve. If the pressure inside is greater than the environment then gas will flow passively,
 //but it does not permit gas to flow back from the environment into the injector. Can be turned off to prevent any gas flow.
-//When it receives the "inject" signal, it will try to pump it's entire contents into the environment regardless of pressure, using power.
+//When it receives the "inject" signal, it will try to pump its entire contents into the environment regardless of pressure, using power.
 
 /obj/machinery/atmospherics/unary/outlet_injector
 	icon = 'icons/atmos/injector.dmi'
@@ -155,7 +155,7 @@
 /decl/public_access/public_method/inject
 	name = "inject"
 	desc = "Injects gas into its environment."
-	call_proc = /obj/machinery/atmospherics/unary/outlet_injector/proc/inject
+	call_proc = TYPE_PROC_REF(/obj/machinery/atmospherics/unary/outlet_injector, inject)
 
 /decl/stock_part_preset/radio/event_transmitter/outlet_injector
 	frequency = ATMOS_TANK_FREQ

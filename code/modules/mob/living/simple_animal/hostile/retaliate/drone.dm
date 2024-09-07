@@ -16,7 +16,7 @@
 	gene_damage = -1
 	butchery_data = /decl/butchery_data/synthetic
 	bleed_colour = SYNTH_BLOOD_COLOR
-	base_movement_delay = 8
+	base_movement_delay = 2
 	ai = /datum/mob_controller/aggressive/malf_drone
 
 	//Drones aren't affected by atmos.
@@ -106,7 +106,7 @@
 			set_stat(CONSCIOUS)
 			if(istype(ai))
 				ai.resume_wandering()
-				ai.speak_chance = 1.25
+				ai.speak_chance = initial(ai.speak_chance)
 
 	//repair a bit of damage
 	if(prob(1))

@@ -34,7 +34,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	level = LEVEL_BELOW_PLATING
 
 	/// The base cable stack that should be produced, not including color.
-	/// cable_type.stack_merge_type should equal cable_type, ideally
+	/// cable_type::stack_merge_type should equal cable_type, ideally
 	var/cable_type = /obj/item/stack/cable_coil
 	/// Whether this cable type can be (re)colored.
 	var/can_have_color = TRUE
@@ -136,6 +136,17 @@ By design, d1 is the smallest direction and d2 is the highest
 	icon_state = "[d1]-[d2]"
 	alpha = invisibility ? 127 : 255
 
+/obj/structure/cable/shuttle_rotate(angle)
+	// DON'T CALL PARENT, we never change our actual dir
+	if(d1 == 0)
+		d2 = turn(d2, angle)
+	else
+		var/nd1 = min(turn(d1, angle), turn(d2, angle))
+		var/nd2 = max(turn(d1, angle), turn(d2, angle))
+		d1 = nd1
+		d2 = nd2
+	update_icon()
+
 // returns the powernet this cable belongs to
 /obj/structure/cable/proc/get_powernet()			//TODO: remove this as it is obsolete
 	return powernet
@@ -172,7 +183,7 @@ By design, d1 is the smallest direction and d2 is the highest
 
 		var/delay_holder
 
-		if(W.force < 5)
+		if(W.get_attack_force(user) < 5)
 			visible_message(SPAN_WARNING("[user] starts sawing away roughly at \the [src] with \the [W]."))
 			delay_holder = 8 SECONDS
 		else
@@ -491,7 +502,6 @@ By design, d1 is the smallest direction and d2 is the highest
 	color = COLOR_MAROON
 	desc = "A coil of wiring, suitable for both delicate electronics and heavy duty power supply."
 	singular_name = "length"
-	throwforce = 0
 	w_class = ITEM_SIZE_NORMAL
 	throw_speed = 2
 	throw_range = 5
@@ -508,6 +518,8 @@ By design, d1 is the smallest direction and d2 is the highest
 	matter_multiplier = 0.15
 	/// Whether or not this cable coil can even have a color in the first place.
 	var/can_have_color = TRUE
+	/// The type of cable structure produced when laying down this cable.
+	/// src.cable_type::cable_type should equal stack_merge_type, ideally
 	var/cable_type = /obj/structure/cable
 
 /obj/item/stack/cable_coil/single
@@ -548,7 +560,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		if(BP_IS_BRITTLE(S))
 			to_chat(user, SPAN_WARNING("\The [H]'s [S.name] is hard and brittle - \the [src] cannot repair it."))
 			return TRUE
-		var/use_amt = min(src.amount, CEILING(S.burn_dam/3), 5)
+		var/use_amt = min(src.amount, ceil(S.burn_dam/3), 5)
 		if(can_use(use_amt))
 			if(S.robo_repair(3*use_amt, BURN, "some damaged wiring", src, user))
 				use(use_amt)
@@ -882,8 +894,8 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/item/stack/cable_coil/fabricator/get_amount()
 	var/obj/item/cell/cell = get_cell()
-	. = (cell ? FLOOR(cell.charge / cost_per_cable) : 0)
+	. = (cell ? floor(cell.charge / cost_per_cable) : 0)
 
 /obj/item/stack/cable_coil/fabricator/get_max_amount()
 	var/obj/item/cell/cell = get_cell()
-	. = (cell ? FLOOR(cell.maxcharge / cost_per_cable) : 0)
+	. = (cell ? floor(cell.maxcharge / cost_per_cable) : 0)

@@ -27,7 +27,10 @@
 			break
 
 /datum/mob_controller/passive/hunter/cat/do_process()
-	. = ..()
+
+	if(!(. = ..()))
+		return
+
 	if(!hunt_target && !flee_target && prob(1)) //spooky
 		var/mob/observer/ghost/spook = locate() in range(body, 5)
 		if(spook)
@@ -63,6 +66,9 @@
 /mob/living/simple_animal/passive/cat/get_bodytype()
 	return GET_DECL(/decl/bodytype/quadruped/animal/cat)
 
+/decl/bodytype/quadruped/animal/cat
+	uid = "bodytype_animal_cat"
+
 /decl/bodytype/quadruped/animal/cat/Initialize()
 	equip_adjust = list(
 		slot_head_str = list(
@@ -92,7 +98,8 @@
 
 /datum/mob_controller/passive/hunter/cat/friendly/do_process()
 
-	. = ..()
+	if(!(. = ..()))
+		return
 
 	// Get our friend.
 	var/list/friends = get_friends()
@@ -198,6 +205,9 @@
 
 /mob/living/simple_animal/passive/cat/kitten/get_bodytype()
 	return GET_DECL(/decl/bodytype/quadruped/animal/kitten)
+
+/decl/bodytype/quadruped/animal/kitten
+	uid = "bodytype_animal_kitten"
 
 /decl/bodytype/quadruped/animal/kitten/Initialize()
 	equip_adjust = list(

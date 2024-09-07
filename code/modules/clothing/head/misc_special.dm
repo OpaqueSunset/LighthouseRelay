@@ -52,14 +52,14 @@
 			flags_inv |= (HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
 			flash_protection = initial(flash_protection)
 			tint = initial(tint)
-			to_chat(usr, "You flip the [src] down to protect your eyes.")
+			to_chat(usr, "You flip \the [src] down to protect your eyes.")
 		else
 			src.up = !src.up
 			body_parts_covered &= ~(SLOT_EYES|SLOT_FACE)
 			flash_protection = FLASH_PROTECTION_NONE
 			tint = TINT_NONE
 			flags_inv &= ~(HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE)
-			to_chat(usr, "You push the [src] up out of your face.")
+			to_chat(usr, "You push \the [src] up out of your face.")
 		update_icon()
 		update_wearer_vision()
 		usr.update_action_buttons()
@@ -166,7 +166,7 @@
 				SPAN_NOTICE("You slice \the [src]!")
 			)
 		for(var/i = 1 to slice_amount)
-			new /obj/item/chems/food/processed_grown/chopped(loc, material?.type, plant)
+			new /obj/item/food/processed_grown/chopped(loc, null, TRUE, plant)
 		qdel(src)
 		return TRUE
 	return ..()
@@ -257,7 +257,7 @@
 			atom_damage_type = BURN
 			START_PROCESSING(SSobj, src)
 		else
-			force = null
+			set_base_attack_force(0)
 			atom_damage_type = BRUTE
 			STOP_PROCESSING(SSobj, src)
 		return TRUE

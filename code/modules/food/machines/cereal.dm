@@ -8,15 +8,15 @@
 	off_icon = "cereal_off"
 
 	output_options = list(
-		"Cereal" = /obj/item/chems/food/variable/cereal
+		"Cereal" = /obj/item/food/variable/cereal
 	)
 
 /*
-/obj/machinery/appliance/cereal/change_product_strings(var/obj/item/chems/food/product, var/datum/cooking_item/CI)
+/obj/machinery/appliance/cereal/change_product_strings(var/obj/item/food/product, var/datum/cooking_item/CI)
 	. = ..()
 	product.name = "box of [CI.object.name] cereal"
 
-/obj/machinery/appliance/cereal/change_product_appearance(var/obj/item/chems/food/product, var/datum/cooking_item/CI)
+/obj/machinery/appliance/cereal/change_product_appearance(var/obj/item/food/product, var/datum/cooking_item/CI)
 	product.icon = 'icons/obj/food.dmi'
 	product.icon_state = "cereal_box"
 	product.filling_color = CI.object.color
@@ -34,7 +34,7 @@
 	var/list/images = list()
 	var/num = 0
 	for (var/obj/item/I in CI.container)
-		if (istype(I, /obj/item/chems/food/variable/cereal))
+		if (istype(I, /obj/item/food/variable/cereal))
 			//Images of cereal boxes on cereal boxes is dumb
 			continue
 
@@ -54,7 +54,7 @@
 			continue
 
 
-	var/obj/item/chems/food/result = ..()
+	var/obj/item/food/result = ..()
 
 	result.color = result.filling_color
 	for (var/i in images)

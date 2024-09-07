@@ -184,7 +184,7 @@
 /area/submap/virgo2/DJOutpost1)
 "F" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/unajerky,
+/obj/item/food/unajerky,
 /obj/machinery/light{
 	icon_state = "tube1";
 	dir = 8

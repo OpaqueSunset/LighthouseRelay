@@ -2,14 +2,12 @@
 	name = "stick"
 	desc = "You feel the urge to poke someone with this."
 	icon = 'icons/obj/items/stick.dmi'
-	icon_state = "stick"
-	item_state = "stickmat"
-	material_force_multiplier = 0.1
-	thrown_material_force_multiplier = 0.1
+	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_NORMAL
 	material = /decl/material/solid/organic/wood
 	attack_verb = list("poked", "jabbed")
-	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME
+	material_alteration = MAT_FLAG_ALTERATION_ALL
+	lock_picking_level = 3
 
 /obj/item/stick/attack_self(mob/user)
 	user.visible_message("<span class='warning'>\The [user] snaps [src].</span>", "<span class='warning'>You snap [src].</span>")
@@ -21,7 +19,7 @@
 		user.visible_message("<span class='warning'>[user] sharpens [src] with [W].</span>", "<span class='warning'>You sharpen [src] using [W].</span>")
 		sharp = 1 //Sharpen stick
 		SetName("sharpened " + name)
-		update_force()
+		update_attack_force()
 		return TRUE
 
 	if(!sharp && (istype(W, /obj/item/stack/material/bolt) || istype(W, /obj/item/stack/material/bundle)))
@@ -35,7 +33,7 @@
 		var/atom/product_type
 		var/cloth_cost
 		if(choice == "Splint")
-			product_type = /obj/item/stack/medical/splint/simple
+			product_type = /obj/item/stack/medical/splint/crafted
 			cloth_cost = 5
 		else if(choice == "Torch")
 			product_type = /obj/item/flame/torch

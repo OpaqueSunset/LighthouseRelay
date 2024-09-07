@@ -321,18 +321,18 @@
 /area/centcom/specops)
 "aI" = (
 /obj/structure/closet/crate/medical,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -6999,7 +6999,7 @@
 /area/centcom/medical)
 "nQ" = (
 /obj/structure/table,
-/obj/item/stack/medical/advanced/bruise_pack,
+/obj/item/stack/medical/bandage/advanced,
 /obj/item/retractor,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -8837,11 +8837,11 @@
 "rh" = (
 /obj/structure/table,
 /obj/item/scanner/health,
-/obj/item/stack/medical/bruise_pack{
+/obj/item/stack/medical/bandage{
 	pixel_x = -4;
 	pixel_y = 3
 	},
-/obj/item/stack/medical/bruise_pack{
+/obj/item/stack/medical/bandage{
 	pixel_x = 10
 	},
 /obj/item/stack/medical/ointment{
@@ -11836,16 +11836,16 @@
 /area/centcom/restaurant)
 "xk" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/fries,
+/obj/item/food/fries,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xl" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/cheeseburger{
+/obj/item/food/cheeseburger{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/chems/food/cheeseburger,
+/obj/item/food/cheeseburger,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xm" = (
@@ -11856,12 +11856,12 @@
 /area/centcom/restaurant)
 "xn" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/grilledcheese,
+/obj/item/food/grilledcheese,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xo" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/meatballsoup,
+/obj/item/food/meatballsoup,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xp" = (
@@ -12145,8 +12145,8 @@
 /area/centcom/main_hall)
 "xJ" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/hotdog,
-/obj/item/chems/food/hotdog{
+/obj/item/food/hotdog,
+/obj/item/food/hotdog{
 	pixel_x = -5;
 	pixel_y = -3
 	},
@@ -12154,17 +12154,17 @@
 /area/centcom/restaurant)
 "xK" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/bigbiteburger,
+/obj/item/food/bigbiteburger,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xL" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/roastbeef,
+/obj/item/food/roastbeef,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xM" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/meatsteak,
+/obj/item/food/meatsteak,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xN" = (
@@ -12754,12 +12754,12 @@
 /area/centcom/restaurant)
 "yH" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/pastatomato,
+/obj/item/food/pastatomato,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "yI" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/meatballspagetti,
+/obj/item/food/meatballspagetti,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "yJ" = (
@@ -13071,12 +13071,12 @@
 /area/centcom/main_hall)
 "zf" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/kitsuneudon,
+/obj/item/food/kitsuneudon,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "zg" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/lasagna,
+/obj/item/food/lasagna,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "zh" = (
@@ -13536,7 +13536,7 @@
 /area/centcom/bar)
 "zZ" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/toastedsandwich{
+/obj/item/food/toastedsandwich{
 	pixel_y = 10
 	},
 /turf/unsimulated/floor/wood,

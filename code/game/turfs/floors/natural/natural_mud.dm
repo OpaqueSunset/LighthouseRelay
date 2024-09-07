@@ -32,11 +32,13 @@
 
 /turf/floor/natural/mud/drop_diggable_resources()
 	if(get_physical_height() > -(FLUID_DEEP) && prob(15))
-		new /obj/item/chems/food/worm(src)
+		new /obj/item/food/worm(src)
 	return ..()
 
 /turf/floor/natural/mud/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if(!reagents?.total_volume)
+	// scaling taken from /turf/floor/natural/grass/wild/fire_act
+	// smoothly scale between 1/5 chance to scorch at the boiling point of water and 100% chance to scorch at boiling point * 4
+	if(!reagents?.total_volume && temperature >= /decl/material/liquid/water::boiling_point && prob(20 + temperature * 80 / (/decl/material/liquid/water::boiling_point * 4)))
 		ChangeTurf(/turf/floor/natural/dry, keep_air = TRUE, keep_height = TRUE)
 		return
 	return ..()

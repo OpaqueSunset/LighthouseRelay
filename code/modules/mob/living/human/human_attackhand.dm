@@ -113,6 +113,10 @@
 		to_chat(user, SPAN_WARNING("You can't attack while incapacitated."))
 		return TRUE
 
+	// AI driven mobs have a melee telegraph that needs to be handled here.
+	if(user.a_intent == I_HURT && !user.do_attack_windup_checking(src))
+		return TRUE
+
 	if(!ishuman(user))
 		attack_generic(user, rand(1,3), "punched")
 		return TRUE
@@ -231,7 +235,7 @@
 	// Should this all be in Touch()?
 		var/mob/living/human/H = user
 		if(istype(H))
-			if(H != src && check_shields(0, null, H, H.get_target_zone(), H.name))
+			if(H != src && check_shields(0, null, H, H.get_target_zone(), H))
 				H.do_attack_animation(src)
 				return TRUE
 
@@ -404,7 +408,7 @@
 			var/image/radial_button = new
 			radial_button.name = capitalize(u_attack.name)
 			LAZYSET(choices, u_attack, radial_button)
-	var/decl/natural_attack/new_attack = show_radial_menu(src, (attack_selector || src), choices, radius = 42, use_labels = TRUE)
+	var/decl/natural_attack/new_attack = show_radial_menu(src, (attack_selector || src), choices, radius = 42, use_labels = RADIAL_LABELS_OFFSET)
 	if(QDELETED(src) || !istype(new_attack) || !(new_attack.type in get_natural_attacks()))
 		return
 	default_attack = new_attack
@@ -414,3 +418,12 @@
 		if(summary)
 			to_chat(src, SPAN_NOTICE(summary))
 	attack_selector?.update_icon()
+
+/mob/living/human/UnarmedAttack(atom/A, proximity_flag)
+	// Hackfix for humans trying to attack someone without hands.
+	// Dexterity ect. should be checked in these procs regardless,
+	// but unarmed attacks that don't require hands should still
+	// have the ability to be used.
+	if(!(. = ..()) && !get_active_held_item_slot() && a_intent == I_HURT && isliving(A))
+		var/mob/living/victim = A
+		return victim.default_hurt_interaction(src)

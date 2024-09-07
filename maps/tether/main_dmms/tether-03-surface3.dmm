@@ -6103,7 +6103,7 @@
 /area/tether/surfacebase/atrium_three)
 "mI" = (
 /obj/structure/table,
-/obj/item/chems/food/mint,
+/obj/item/food/mint,
 /obj/item/box/donkpockets{
 	pixel_x = 3;
 	pixel_y = 3
@@ -10230,7 +10230,7 @@
 /turf/floor/plating,
 /area/rnd/breakroom)
 "ux" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/lower/third_south)
 "uy" = (
 /obj/effect/floor_decal/borderfloor{
@@ -19149,7 +19149,7 @@
 /area/tether/surfacebase/shuttle_pad)
 "Kj" = (
 /obj/machinery/constructable_frame/computerframe,
-/obj/item/twohanded/baseballbat{
+/obj/item/baseball_bat{
 	name = "Swatta"
 	},
 /turf/floor/tiled/techfloor,

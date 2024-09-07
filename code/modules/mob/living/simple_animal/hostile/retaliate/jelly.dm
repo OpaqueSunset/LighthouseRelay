@@ -21,7 +21,7 @@
 /obj/item/natural_weapon/tentacles
 	name = "tentacles"
 	attack_verb = list("stung","slapped")
-	force = 10
+	_base_attack_force = 10
 	atom_damage_type =  BURN
 
 /mob/living/simple_animal/hostile/jelly/Initialize()
@@ -38,13 +38,13 @@
 	desc = "A gigantic jellyfish-like creature. Its bell wobbles about almost as if it's ready to burst."
 	max_health = 300
 	gets_random_color = FALSE
-	ai = /datum/mob_controller/hostile/megajelly
+	ai = /datum/mob_controller/aggressive/megajelly
 
 	var/jelly_scale = 3
 	var/split_type = /mob/living/simple_animal/hostile/jelly/mega/half
 	var/static/megajelly_color
 
-/datum/mob_controller/hostile/megajelly
+/datum/mob_controller/aggressive/megajelly
 	can_escape_buckles = TRUE
 
 /mob/living/simple_animal/hostile/jelly/mega/Initialize()
@@ -52,7 +52,7 @@
 	set_scale(jelly_scale)
 	var/obj/item/attacking_with = get_natural_weapon()
 	if(attacking_with)
-		attacking_with.force *= jelly_scale
+		attacking_with.set_base_attack_force(attacking_with.get_initial_base_attack_force() * jelly_scale)
 	if(!megajelly_color)
 		megajelly_color = color_matrix_rotate_hue(round(rand(0,360),20))
 	color = megajelly_color
@@ -87,7 +87,7 @@
 	max_health = 75
 	jelly_scale = 0.75
 	split_type = /mob/living/simple_animal/hostile/jelly/mega/fourth
-	ai = /datum/mob_controller/hostile
+	ai = /datum/mob_controller/aggressive
 
 /mob/living/simple_animal/hostile/jelly/mega/fourth
 	name = "zeqetta"

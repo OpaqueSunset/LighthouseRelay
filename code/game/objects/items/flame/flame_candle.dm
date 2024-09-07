@@ -9,11 +9,21 @@
 	sconce_can_hold       = TRUE
 	extinguish_on_dropped = FALSE
 
+// This is mostly just to change the scifi desc set above.
+/obj/item/flame/candle/handmade
+	desc = "A slender wax candle with a cotton wick."
+
 /obj/item/flame/candle/spent
 	_fuel           = 0
 
 /obj/item/flame/candle/red
 	paint_color = COLOR_RED
+
+/obj/item/flame/candle/white
+	paint_color = COLOR_WHITE
+
+/obj/item/flame/candle/black
+	paint_color = COLOR_GRAY15
 
 /obj/item/flame/candle/Initialize()
 

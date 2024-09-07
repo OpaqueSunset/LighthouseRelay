@@ -191,6 +191,8 @@
 		mob.moving = FALSE
 		return
 
+	mob.handle_footsteps()
+
 	// Sprinting uses up stamina and causes exertion effects.
 	if(MOVING_QUICKLY(mob))
 		mob.last_quick_move_time = world.time
@@ -205,7 +207,7 @@
 	mob.moving = FALSE
 
 /datum/movement_handler/mob/movement/MayMove(mob/mover, is_external)
-	return IS_SELF(mover) &&  mob.moving ? MOVEMENT_STOP : MOVEMENT_PROCEED
+	return IS_SELF(mover) && mob.moving ? MOVEMENT_STOP : MOVEMENT_PROCEED
 
 /mob/proc/get_stamina_used_per_step()
 	return 1

@@ -354,7 +354,7 @@
 			qdel(mind.objectives)
 			mind.assigned_special_role = null
 		clear_antag_roles(mind)
-	ghostize(0)
+	ghostize(CORPSE_CANNOT_REENTER)
 	qdel(src)
 
 /mob/living/silicon/flash_eyes(intensity = FLASH_PROTECTION_MODERATE, override_blindness_check = FALSE, affect_silicon = FALSE, visual = FALSE, type = /obj/screen/fullscreen/flash)
@@ -424,7 +424,7 @@
 	if(os)
 		os.Process()
 
-/mob/living/silicon/handle_flashed(var/obj/item/flash/flash, var/flash_strength)
+/mob/living/silicon/handle_flashed(var/flash_strength)
 	SET_STATUS_MAX(src, STAT_PARA, flash_strength)
 	SET_STATUS_MAX(src, STAT_WEAK, flash_strength)
 	return TRUE

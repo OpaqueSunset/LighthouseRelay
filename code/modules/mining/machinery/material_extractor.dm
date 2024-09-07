@@ -88,7 +88,7 @@
 			if(eating.reagents?.total_volume)
 				eating.reagents.trans_to_obj(src, eating.reagents.total_volume)
 			for(var/mtype in eating.matter)
-				add_to_reagents(mtype, FLOOR(eating.matter[mtype] * REAGENT_UNITS_PER_MATERIAL_UNIT))
+				add_to_reagents(mtype, floor(eating.matter[mtype] * REAGENT_UNITS_PER_MATERIAL_UNIT))
 			qdel(eating)
 			if(eaten >= MAX_INTAKE_ORE_PER_TICK)
 				break
@@ -143,7 +143,7 @@
 		if(MAT_PHASE_SOLID)
 			if(!can_process_material_name(mtype))
 				var/removing = REAGENT_VOLUME(reagents, mtype) || 0
-				var/sheets = FLOOR((removing / REAGENT_UNITS_PER_MATERIAL_UNIT) / SHEET_MATERIAL_AMOUNT)
+				var/sheets = floor((removing / REAGENT_UNITS_PER_MATERIAL_UNIT) / SHEET_MATERIAL_AMOUNT)
 				if(sheets > 0) // If we can't process any sheets at all, leave it for manual processing.
 					adjusted_reagents = TRUE
 					SSmaterials.create_object(mtype, output_turf, sheets)
@@ -244,6 +244,8 @@
 	for(var/mtype in reagents.reagent_volumes)
 		index += 1
 		var/decl/material/mat = GET_DECL(mtype)
+
+		// TODO: Must be revised once state changes are in. Reagent names might be a litle odd in the meantime.
 		var/is_liquid = mat.phase_at_temperature(temperature, ONE_ATMOSPHERE) == MAT_PHASE_LIQUID
 
 		data["reagents"] += list(list("label" = "[mat.liquid_name] ([reagents.reagent_volumes[mtype]] U)", "index" = index, "liquid" = is_liquid))

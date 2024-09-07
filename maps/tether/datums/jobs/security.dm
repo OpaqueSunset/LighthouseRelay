@@ -66,7 +66,7 @@
 	guestbanned = TRUE
 	must_fill = TRUE
 	not_random_selectable = TRUE
-	outfit_type = /decl/hierarchy/outfit/job/security/hos
+	outfit_type = /decl/outfit/job/security/hos
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
 		SKILL_EVA       = SKILL_BASIC,
@@ -122,7 +122,7 @@
 		access_external_airlocks
 	)
 	minimal_player_age = 7
-	outfit_type = /decl/hierarchy/outfit/job/security/warden
+	outfit_type = /decl/outfit/job/security/warden
 	guestbanned = TRUE
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
@@ -151,7 +151,7 @@
 	supervisors = "the head of security"
 	selection_color = "#601c1c"
 	alt_titles = list(
-		"Forensic Technician" = /decl/hierarchy/outfit/job/security/detective/forensic,
+		"Forensic Technician" = /decl/outfit/job/security/detective/forensic,
 		"Investigator"
 	)
 	economic_power = 5
@@ -170,7 +170,7 @@
 		access_maint_tunnels
 	)
 	minimal_player_age = 7
-	outfit_type = /decl/hierarchy/outfit/job/security/detective
+	outfit_type = /decl/outfit/job/security/detective
 	guestbanned = TRUE
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_ADEPT,
@@ -219,7 +219,7 @@
 		access_external_airlocks
 	)
 	minimal_player_age = 7
-	outfit_type = /decl/hierarchy/outfit/job/security/officer
+	outfit_type = /decl/outfit/job/security/officer
 	guestbanned = TRUE
 	min_skill = list(
 		SKILL_LITERACY  = SKILL_BASIC,

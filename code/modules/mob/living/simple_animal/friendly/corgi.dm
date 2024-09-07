@@ -38,6 +38,9 @@
 /mob/living/simple_animal/corgi/get_bodytype()
 	return GET_DECL(/decl/bodytype/quadruped/animal/corgi)
 
+/decl/bodytype/quadruped/animal/corgi
+	uid = "bodytype_animal_corgi"
+
 /decl/bodytype/quadruped/animal/corgi/Initialize()
 	equip_adjust = list(
 		slot_head_str = list(
@@ -98,8 +101,8 @@
 		body.custom_emote(VISIBLE_MESSAGE, "stares at the [movement_target] that [movement_target.loc] has with sad puppy eyes.")
 
 /datum/mob_controller/corgi/ian/do_process(time_elapsed)
-	. = ..()
-	if(body.stat || body.current_posture?.prone || body.buckled)
+
+	if(!(. = ..()) || body.stat || body.current_posture?.prone || body.buckled)
 		return
 
 	//Feeding, chasing food, FOOOOODDDD
@@ -112,7 +115,7 @@
 		if( !movement_target || !(movement_target.loc in oview(body, 3)) )
 			movement_target = null
 			resume_wandering()
-			for(var/obj/item/chems/food/S in oview(body, 3))
+			for(var/obj/item/food/S in oview(body, 3))
 				if(isturf(S.loc) || ishuman(S.loc))
 					movement_target = S
 					break
@@ -144,6 +147,9 @@
 
 /mob/living/simple_animal/corgi/puppy/get_bodytype()
 	return GET_DECL(/decl/bodytype/quadruped/animal/puppy)
+
+/decl/bodytype/quadruped/animal/puppy
+	uid = "bodytype_animal_puppy"
 
 /decl/bodytype/quadruped/animal/puppy/Initialize()
 	equip_adjust = list(
@@ -181,8 +187,8 @@
 	var/turns_since_scan = 0
 
 /datum/mob_controller/corgi/lisa/do_process(time_elapsed)
-	. = ..()
-	if(body.stat || body.current_posture?.prone || body.buckled)
+
+	if(!(. = ..()) || body.stat || body.current_posture?.prone || body.buckled)
 		return
 
 	turns_since_scan++

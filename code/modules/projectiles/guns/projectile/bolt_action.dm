@@ -4,7 +4,6 @@
 	icon = 'icons/obj/guns/bolt_action.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_HUGE
-	force = 5
 	slot_flags = SLOT_BACK
 	origin_tech = @'{"combat":4,"materials":2}'
 	caliber = CALIBER_RIFLE
@@ -70,14 +69,14 @@
 
 /obj/item/gun/projectile/bolt_action/unload_ammo(mob/user, var/allow_dump=1)
 	if(!bolt_open)
-		return
-	..()
+		return FALSE
+	return ..()
 
 /obj/item/gun/projectile/bolt_action/sniper
 	name = "anti-materiel rifle"
 	desc = "A portable anti-armour rifle fitted with a scope, the HI PTR-7 Rifle was originally designed to be used against armoured exosuits. It is capable of punching through windows and non-reinforced walls with ease."
 	icon = 'icons/obj/guns/heavysniper.dmi'
-	force = 10
+	_base_attack_force = 10
 	origin_tech = @'{"combat":7,"materials":2,"esoteric":8}'
 	caliber = CALIBER_ANTI_MATERIEL
 	screen_shake = 2 //extra kickback

@@ -85,7 +85,7 @@
 		/obj/item/stack/cable_coil,
 		/obj/item/stock_parts/circuitboard,
 		/obj/item/chems/glass,
-		/obj/item/chems/food/monkeycube,
+		/obj/item/food/monkeycube,
 		/obj/item/stock_parts/computer,
 		/obj/item/transfer_valve,
 		/obj/item/assembly/signaler,
@@ -111,7 +111,7 @@
 	desc = "A simple grasping tool used to perform tasks in the service sector, such as handling food, drinks, and seeds."
 	can_hold = list(
 		/obj/item/chems/glass,
-		/obj/item/chems/food,
+		/obj/item/food,
 		/obj/item/chems/drinks,
 		/obj/item/chems/condiment,
 		/obj/item/seeds,
@@ -190,8 +190,8 @@
 		wrapped.forceMove(user)
 
 		//The force of the wrapped obj gets set to zero during the use_on_mob() and afterattack().
-		var/force_holder = wrapped.force
-		wrapped.force = 0.0
+		var/force_holder = wrapped.get_base_attack_force()
+		wrapped.set_base_attack_force(0)
 
 		//Pass the attack on to the target. This might delete/relocate wrapped.
 		var/resolved = wrapped.resolve_attackby(target,user,params)
@@ -257,7 +257,7 @@
 		wrapped.afterattack(target, user, 1, params)
 
 	if(wrapped)
-		wrapped.force = force_holder
+		wrapped.set_base_attack_force(force_holder)
 
 	//If wrapped was neither deleted nor put into target, put it back into the gripper.
 	if(wrapped && user && !QDELETED(wrapped) && wrapped.loc == user)
@@ -388,7 +388,7 @@
 		else if(istype(W,/obj/item/shard))
 			if(glass)
 				glass.add_charge(1000)
-		else if(istype(W,/obj/item/chems/food/grown))
+		else if(istype(W,/obj/item/food/grown))
 			if(wood)
 				wood.add_charge(4000)
 		else if(istype(W,/obj/item/pipe))

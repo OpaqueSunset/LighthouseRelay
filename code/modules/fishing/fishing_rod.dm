@@ -11,7 +11,6 @@
 	icon = 'icons/obj/fishing_rod.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_LARGE
-	force = 5 // bonk
 
 	// Fishing minigame tracking vars.
 	var/turf/fishing_target
@@ -237,7 +236,7 @@
 	if(load_line(user, W))
 		return TRUE
 
-	if(istype(W, /obj/item/chems/food))
+	if(istype(W, /obj/item/food))
 
 		if(bait)
 			to_chat(user, SPAN_WARNING("\The [src] already has \a [bait] on the hook."))

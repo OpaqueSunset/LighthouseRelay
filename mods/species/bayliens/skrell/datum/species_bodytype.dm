@@ -8,13 +8,13 @@
 	eye_flash_mod        = 1.2
 	eye_icon             = 'mods/species/bayliens/skrell/icons/body/eyes.dmi'
 	apply_eye_colour     = FALSE
-
+	uid                  = "bodytype_skrell"
 	appearance_flags     = HAS_UNDERWEAR | HAS_SKIN_COLOR
 	base_color           = "#006666"
 
 	default_sprite_accessories = list(
 		SAC_HAIR = list(
-			/decl/sprite_accessory/hair/skrell/short = "#006666"
+			/decl/sprite_accessory/hair/skrell/short = list(SAM_COLOR = "#006666")
 		)
 	)
 	appearance_descriptors = list(

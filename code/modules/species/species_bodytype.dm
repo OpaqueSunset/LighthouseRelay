@@ -1,6 +1,8 @@
 var/global/list/bodytypes_by_category = list()
 
 /decl/bodytype
+	decl_flags = DECL_FLAG_MANDATORY_UID
+	abstract_type = /decl/bodytype
 	/// Name used in general.
 	var/name = "default"
 	/// Name used in preference bodytype selection. Defaults to name.
@@ -476,7 +478,8 @@ var/global/list/bodytypes_by_category = list()
 		if(!istype(acc_cat))
 			. += "invalid sprite accessory category entry: [accessory_category || "null"]"
 			continue
-		for(var/accessory in default_sprite_accessories[accessory_category])
+		var/accessories = default_sprite_accessories[accessory_category]
+		for(var/accessory in accessories)
 			var/decl/sprite_accessory/acc_decl = GET_DECL(accessory)
 			if(!istype(acc_decl))
 				. += "invalid sprite accessory in category [accessory_category]: [accessory || "null"]"
@@ -485,6 +488,8 @@ var/global/list/bodytypes_by_category = list()
 				. += "accessory category [acc_decl.accessory_category || "null"] does not match [acc_cat.type]"
 			if(!istype(acc_decl, acc_cat.base_accessory_type))
 				. += "accessory type [acc_decl.type] does not align with category base accessory: [acc_cat.base_accessory_type || "null"]"
+			if(!islist(accessories[accessory]))
+				. += "non-list default metadata for [acc_decl.type]: [accessories[accessory] || "NULL"]"
 
 	var/list/tail_data = has_limbs[BP_TAIL]
 	if(tail_data)
@@ -500,7 +505,20 @@ var/global/list/bodytypes_by_category = list()
 				var/tail_state = tail_organ.get_tail()
 				if(tail_icon && tail_state)
 					if(!check_state_in_icon(tail_state, tail_icon))
-						. += "tail state [tail_state] not present in icon [tail_icon], available states are: [json_encode(icon_states(tail_icon))]"
+						. += "base tail state '[tail_state]' not present in icon '[tail_icon]'"
+					var/tail_states = tail_organ.get_tail_animation_states()
+					if(tail_states)
+						var/static/list/animation_modifiers = list(
+							"_idle",
+							"_slow",
+							"_loop",
+							"_once"
+						)
+						for(var/modifier in animation_modifiers)
+							var/modified_state = "[tail_state][modifier]"
+							for(var/i = 1 to tail_states)
+								if(!check_state_in_icon("[modified_state][i]", tail_icon))
+									. += "animated tail state '[modified_state][i]' not present in icon '[tail_icon]'"
 				else
 					if(!tail_icon)
 						. += "missing tail icon"
@@ -568,8 +586,9 @@ var/global/list/bodytypes_by_category = list()
 
 	//Clear invalid internal organs
 	if(H.has_internal_organs())
-		for(var/obj/item/organ/O in H.get_internal_organs())
+		for(var/obj/item/organ/internal/O in H.get_internal_organs())
 			if(!is_default_organ(O))
+				O.transfer_brainmob_with_organ = FALSE // To avoid ghosting us on set_species().
 				H.remove_organ(O, FALSE, FALSE, TRUE, TRUE, FALSE, skip_health_update = TRUE) //Remove them first so we don't trigger removal effects by just calling delete on them
 				qdel(O)
 
@@ -648,11 +667,11 @@ var/global/list/bodytypes_by_category = list()
 	for(var/accessory_category in default_sprite_accessories)
 		for(var/accessory in default_sprite_accessories[accessory_category])
 			var/decl/sprite_accessory/accessory_decl = GET_DECL(accessory)
-			var/accessory_colour = default_sprite_accessories[accessory_category][accessory]
+			var/accessory_metadata = default_sprite_accessories[accessory_category][accessory]
 			for(var/bodypart in accessory_decl.body_parts)
 				var/obj/item/organ/external/O = GET_EXTERNAL_ORGAN(setting, bodypart)
 				if(O)
-					O.set_sprite_accessory(accessory, null, accessory_colour, skip_update = TRUE)
+					O.set_sprite_accessory(accessory, null, accessory_metadata, skip_update = TRUE)
 
 /decl/bodytype/proc/customize_preview_mannequin(mob/living/human/dummy/mannequin/mannequin)
 	set_default_sprite_accessories(mannequin)
@@ -666,7 +685,7 @@ var/global/list/bodytypes_by_category = list()
 
 /decl/species/proc/customize_preview_mannequin(mob/living/human/dummy/mannequin/mannequin)
 	if(preview_outfit)
-		var/decl/hierarchy/outfit/outfit = outfit_by_type(preview_outfit)
+		var/decl/outfit/outfit = GET_DECL(preview_outfit)
 		outfit.equip_outfit(mannequin, equip_adjustments = (OUTFIT_ADJUSTMENT_SKIP_SURVIVAL_GEAR|OUTFIT_ADJUSTMENT_SKIP_BACKPACK))
 		mannequin.update_icon()
 	mannequin.update_transform()

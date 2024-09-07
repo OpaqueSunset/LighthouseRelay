@@ -43,7 +43,7 @@
 		var/decl/material/main_reagent = loc_reagents?.get_primary_reagent_decl()
 		var/new_alpha
 		if(main_reagent) // TODO: weighted alpha from all reagents, not just primary
-			new_alpha = clamp(CEILING(255*(reagent_volume/FLUID_DEEP)) * main_reagent.opacity, main_reagent.min_fluid_opacity, main_reagent.max_fluid_opacity)
+			new_alpha = clamp(ceil(255*(reagent_volume/FLUID_DEEP)) * main_reagent.opacity, main_reagent.min_fluid_opacity, main_reagent.max_fluid_opacity)
 		else
 			new_alpha = FLUID_MIN_ALPHA
 		if(new_alpha != alpha)
@@ -98,7 +98,7 @@ var/global/list/_fluid_edge_mask_cache = list()
 	if(updating_edge_mask)
 		return
 	updating_edge_mask = TRUE
-	sleep(-1)
+	sleep(0)
 	updating_edge_mask = FALSE
 
 	if(loc?.reagents?.total_volume <= FLUID_PUDDLE)

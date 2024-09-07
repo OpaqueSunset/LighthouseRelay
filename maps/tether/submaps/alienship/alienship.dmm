@@ -183,8 +183,8 @@
 /obj/item/screwdriver,
 /obj/item/weldingtool,
 /obj/item/firstaid/regular,
-/obj/item/chems/food/liquidfood,
-/obj/item/chems/food/liquidfood,
+/obj/item/food/liquidfood,
+/obj/item/food/liquidfood,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "aM" = (
@@ -544,7 +544,7 @@
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "gG" = (
-/obj/item/chems/food/liquidfood,
+/obj/item/food/liquidfood,
 /turf/floor/shuttle/alienplating,
 /area/tether_away/alienship)
 "nr" = (
@@ -563,7 +563,7 @@
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "Rx" = (
-/obj/item/chems/food/liquidfood,
+/obj/item/food/liquidfood,
 /turf/floor/shuttle/alien,
 /area/tether_away/alienship)
 "YP" = (

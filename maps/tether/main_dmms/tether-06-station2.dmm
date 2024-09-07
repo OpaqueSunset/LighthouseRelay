@@ -392,7 +392,7 @@
 /obj/structure/table/steel,
 /obj/item/deck/cards,
 /obj/item/toy/balloon/nanotrasen,
-/obj/item/twohanded/fireaxe/foam,
+/obj/item/bladed/axe/fire/foam,
 /turf/floor/tiled/dark,
 /area/security/recstorage)
 "aS" = (
@@ -897,7 +897,7 @@
 /obj/structure/table/steel,
 /obj/machinery/microwave,
 /obj/item/box/donkpockets,
-/obj/item/twohanded/fireaxe/foam,
+/obj/item/bladed/axe/fire/foam,
 /turf/floor/tiled,
 /area/security/brig)
 "bE" = (
@@ -6178,7 +6178,7 @@
 /turf/floor/plating,
 /area/maintenance/station/eng_upper)
 "lH" = (
-/turf/floor/holofloor/tiled/dark,
+/turf/floor/tiled/dark,
 /area/hallway/station/starboard)
 "lI" = (
 /obj/abstract/level_data_spawner/virgo3b/main/space,
@@ -6322,8 +6322,8 @@
 /obj/effect/floor_decal/corner/brown/border,
 /obj/structure/table,
 /obj/item/pizzabox/meat,
-/obj/item/chems/food/popcorn,
-/obj/item/chems/food/popcorn{
+/obj/item/food/popcorn,
+/obj/item/food/popcorn{
 	pixel_x = 10;
 	pixel_y = 5
 	},
@@ -11808,6 +11808,9 @@
 	},
 /turf/unsimulated/floor/techfloor_grid,
 /area/medical/morgue)
+"wb" = (
+/turf/floor/tiled/dark,
+/area/maintenance/station/sec_lower)
 "wc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -13579,8 +13582,8 @@
 	name = "south bump";
 	pixel_y = -22
 	},
-/obj/item/cane,
-/obj/item/cane,
+/obj/item/cane/aluminium,
+/obj/item/cane/aluminium,
 /turf/floor/tiled,
 /area/medical/biostorage)
 "zh" = (
@@ -31074,7 +31077,7 @@ SI
 SI
 SI
 RT
-kk
+wb
 kY
 kY
 lH

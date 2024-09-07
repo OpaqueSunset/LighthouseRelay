@@ -30,6 +30,18 @@
 	var/eye_colour
 	var/allowed_eye_colours = list(COLOR_RED, COLOR_ORANGE, COLOR_YELLOW, COLOR_LIME, COLOR_DEEP_SKY_BLUE, COLOR_INDIGO, COLOR_VIOLET, COLOR_PINK)
 
+/mob/living/simple_animal/hostile/giant_spider/has_footsteps()
+	return TRUE
+
+/mob/living/simple_animal/hostile/giant_spider/get_footstep_sound(turf/step_turf)
+	return 'sound/effects/spider_loop.ogg'
+
+/mob/living/simple_animal/hostile/giant_spider/modify_footstep_volume(volume, obj/item/clothing/shoes/shoes)
+	return volume
+
+/mob/living/simple_animal/hostile/giant_spider/modify_footstep_range(range, obj/item/clothing/shoes/shoes)
+	return range
+
 /mob/living/simple_animal/hostile/giant_spider/get_pry_desc()
 	return "clawing"
 
@@ -56,7 +68,7 @@
 	if(current_health < get_max_health())
 		var/obj/item/attacking_with = get_natural_weapon()
 		if(attacking_with)
-			heal_overall_damage(0.2 * attacking_with.force) //heal a bit on hit
+			heal_overall_damage(0.2 * attacking_with.get_attack_force(src)) //heal a bit on hit
 	if(ishuman(target))
 		var/mob/living/human/H = target
 		var/obj/item/clothing/suit/space/S = H.get_covering_equipped_item_by_zone(BP_CHEST)

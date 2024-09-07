@@ -10,7 +10,7 @@
 	volume = 80//Maximum units of reagents
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_NO_REACT
 	var/list/insertable = list(
-		/obj/item/chems/food,
+		/obj/item/food,
 		/obj/item/holder,
 		/obj/item/paper,
 		/obj/item/flame/candle,
@@ -61,7 +61,7 @@
 	for(var/atom/thing as anything in get_contained_external_atoms())
 		numerical_contents[thing.name] += 1
 	for(var/atom/key as anything in numerical_contents)
-		string += "<li>[(numerical_contents[key] > 1) ? "[numerical_contents[key]]x [key.name]" : "\a [key.name]"]</li></br>"
+		string += "<li>[(numerical_contents[key] > 1) ? "[numerical_contents[key]]x [key]" : "\a [key]"]</li></br>"
 	string += "</ul>"
 	return string
 
@@ -199,7 +199,8 @@
 	name = "oven dish"
 	shortname = "shelf"
 	desc = "Put ingredients in this; designed for use with an oven. Warranty void if used."
-	icon_state = "ovendish"
+	icon = 'icons/obj/food/cooking_vessels/baking_dish.dmi'
+	icon_state = ICON_STATE_WORLD
 	max_space = 30
 	volume = 120
 	cooking_category = RECIPE_CATEGORY_OVEN
@@ -291,7 +292,7 @@
 		results += TR
 
 	for (var/r in results)
-		var/obj/item/chems/food/R = r
+		var/obj/item/food/R = r
 		R.forceMove(src) //Move everything from the buffer back to the container
 
 	QDEL_NULL(temp) //delete buffer object

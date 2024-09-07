@@ -1,4 +1,4 @@
-/obj/item/chems/food/redcurry
+/obj/item/food/redcurry
 	name = "red curry"
 	gender = PLURAL
 	desc = "A bowl of creamy red curry with meat and rice. This one looks savory."
@@ -10,13 +10,13 @@
 	nutriment_desc = list("savory meat" = 4)
 	bitesize = 3
 
-/obj/item/chems/food/redcurry/Initialize()
+/obj/item/food/redcurry/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/solid/organic/meat, 7)
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 
-/obj/item/chems/food/greencurry
+/obj/item/food/greencurry
 	name = "green curry"
 	gender = PLURAL
 	desc = "A bowl of creamy green curry with tofu, hot peppers and rice. This one looks spicy!"
@@ -28,13 +28,13 @@
 	nutriment_type = /decl/material/liquid/nutriment/rice
 	bitesize = 3
 
-/obj/item/chems/food/greencurry/Initialize()
+/obj/item/food/greencurry/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/plant_protein, 2)
 	add_to_reagents(/decl/material/liquid/capsaicin, 2)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 
-/obj/item/chems/food/yellowcurry
+/obj/item/food/yellowcurry
 	name = "yellow curry"
 	gender = PLURAL
 	desc = "A bowl of creamy yellow curry with potatoes, peanuts and rice. This one looks mild."
@@ -46,12 +46,12 @@
 	nutriment_desc = list("potatoes" = 3, "peanuts" = 2)
 	bitesize = 3
 
-/obj/item/chems/food/yellowcurry/Initialize()
+/obj/item/food/yellowcurry/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 
-/obj/item/chems/food/bibimbap
+/obj/item/food/bibimbap
 	name = "bibimbap bowl"
 	desc = "A traditional Korean meal of meat and mixed vegetables. It's served on a bed of rice, and topped with a fried egg."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
@@ -62,14 +62,14 @@
 	nutriment_desc = list("rice" = 2, "mushroom" = 2, "carrot" = 2)
 	bitesize = 4
 
-/obj/item/chems/food/bibimbap/Initialize()
+/obj/item/food/bibimbap/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/solid/organic/meat, 6)
 	add_to_reagents(/decl/material/liquid/eyedrops, 2)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 	add_to_reagents(/decl/material/solid/organic/meat/egg, 3)
 
-/obj/item/chems/food/friedrice
+/obj/item/food/friedrice
 	name = "fried rice"
 	gender = PLURAL
 	desc = "A less-boring dish of less-boring rice!"
@@ -81,13 +81,13 @@
 	nutriment_desc = list("soy" = 2, "cabbage" = 2)
 	bitesize = 2
 
-/obj/item/chems/food/friedrice/Initialize()
+/obj/item/food/friedrice/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 5)
 	add_to_reagents(/decl/material/liquid/drink/juice/carrot, 3)
 	add_to_reagents(/decl/material/liquid/eyedrops, 1)
 
-/obj/item/chems/food/riceball
+/obj/item/food/riceball
 	name = "rice ball"
 	desc = "A bundle of rice wrapped in seaweed. This one seems to have a fish flake filling inside."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
@@ -97,12 +97,12 @@
 	nutriment_amt = 1
 	nutriment_desc = list("seaweed" = 1)
 
-/obj/item/chems/food/riceball/Initialize()
+/obj/item/food/riceball/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 1)
 	add_to_reagents(/decl/material/liquid/nutriment/soysauce, 1)
 
-/obj/item/chems/food/riceball/on_update_icon()
+/obj/item/food/riceball/on_update_icon()
 	var/percent = round((reagents?.total_volume / 3) * 100)
 	switch(percent)
 		if(0 to 90)
@@ -110,7 +110,7 @@
 		if(91 to INFINITY)
 			icon_state = "riceball"
 
-/obj/item/chems/food/porkbowl
+/obj/item/food/porkbowl
 	name = "pork bowl"
 	desc = "A bowl of fried rice with cuts of meat."
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
@@ -121,11 +121,11 @@
 	nutriment_amt = 6
 	nutriment_type = /decl/material/liquid/nutriment/rice
 
-/obj/item/chems/food/porkbowl/Initialize()
+/obj/item/food/porkbowl/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/solid/organic/meat, 4)
 
-/obj/item/chems/food/ricepudding
+/obj/item/food/ricepudding
 	name = "rice pudding"
 	desc = "Where's the jam?"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
@@ -137,7 +137,7 @@
 	nutriment_type = /decl/material/liquid/nutriment/rice
 	bitesize = 2
 
-/obj/item/chems/food/risotto
+/obj/item/food/risotto
 	name = "risotto"
 	gender = PLURAL
 	desc = "A creamy, savory rice dish from southern Europe, typically cooked slowly with wine and broth. This one has bits of mushroom."
@@ -150,12 +150,12 @@
 	nutriment_desc = list("creamy mushroom" = 4)
 	bitesize = 2
 
-/obj/item/chems/food/risotto/Initialize()
+/obj/item/food/risotto/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 3)
 	add_to_reagents(/decl/material/solid/spacespice, 2)
 
-/obj/item/chems/food/risottoballs
+/obj/item/food/risottoballs
 	name = "risotto balls"
 	gender = PLURAL
 	desc = "Mushroom risotto that has been battered and deep fried. The best use of leftovers!"
@@ -168,13 +168,13 @@
 	nutriment_desc = list("spices" = 2, "mushroom" = 2)
 	bitesize = 3
 
-/obj/item/chems/food/risottoballs/Initialize()
+/obj/item/food/risottoballs/Initialize()
 	. = ..()
 	add_to_reagents(/decl/material/liquid/nutriment/rice, 4)
 	add_to_reagents(/decl/material/solid/sodiumchloride, 1)
 	add_to_reagents(/decl/material/solid/blackpepper, 1)
 
-/obj/item/chems/food/omurice
+/obj/item/food/omurice
 	name = "omelette rice"
 	desc = "Just like your Japanese animes!"
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
@@ -184,10 +184,10 @@
 	nutriment_desc = list("rice" = 4, "egg" = 4)
 	bitesize = 1
 
-/obj/item/chems/food/omurice/heart
+/obj/item/food/omurice/heart
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "omuriceheart"
 
-/obj/item/chems/food/omurice/face
+/obj/item/food/omurice/face
 	icon = 'mods/content/extrafoods/icons/obj/food.dmi'
 	icon_state = "omuriceface"

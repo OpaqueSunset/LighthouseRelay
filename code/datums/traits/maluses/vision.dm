@@ -2,12 +2,15 @@
 	name = "Poor Eyesight"
 	description = "Your vision is somewhat impaired, and you need prescription glasses to see clearly."
 	incompatible_with = list(/decl/trait/prosthetic_organ/eyes)
+	uid = "trait_vision_poor"
+	/// The typepath of the glasses to give the holder.
+	var/glasses_type = /obj/item/clothing/glasses/prescription
 
 /decl/trait/malus/impaired_vision/apply_trait(mob/living/holder)
 	. = ..()
 	if(.)
 		holder.add_genetic_condition(GENE_COND_NEARSIGHTED)
-		var/equipped = holder.equip_to_slot_or_del(new /obj/item/clothing/glasses/prescription(holder), slot_glasses_str)
+		var/equipped = holder.equip_to_slot_or_del(new glasses_type(holder), slot_glasses_str)
 		if(equipped)
 			var/obj/item/clothing/glasses/G = holder.get_equipped_item(slot_glasses_str)
 			if(istype(G))
@@ -22,6 +25,7 @@
 		/decl/trait/malus/colourblind/tritanopia,
 		/decl/trait/malus/colourblind/achromatopsia,
 	)
+	uid = "trait_vision_deuteranopia"
 	var/client_color = /datum/client_color/deuteranopia
 
 /decl/trait/malus/colourblind/apply_trait(mob/living/holder)
@@ -39,6 +43,7 @@
 		/decl/trait/malus/colourblind
 	)
 	client_color = /datum/client_color/protanopia
+	uid = "trait_vision_protanopia"
 
 /decl/trait/malus/colourblind/tritanopia
 	name = "Tritanopia"
@@ -50,6 +55,7 @@
 		/decl/trait/malus/colourblind
 	)
 	client_color = /datum/client_color/tritanopia
+	uid = "trait_vision_trianopia"
 
 /decl/trait/malus/colourblind/achromatopsia
 	name = "Achromatopsia"
@@ -61,3 +67,4 @@
 		/decl/trait/malus/colourblind
 	)
 	client_color = /datum/client_color/achromatopsia
+	uid = "trait_vision_achromatopsia"

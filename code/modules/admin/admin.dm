@@ -1347,7 +1347,7 @@ var/global/BSACooldown = 0
 	if (!frommob || !tomob) //make sure the mobs don't go away while we waited for a response
 		return 1
 	if(tomob.client) //No need to ghostize if there is no client
-		tomob.ghostize(0)
+		tomob.ghostize()
 	message_admins("<span class='adminnotice'>[key_name_admin(usr)] has put [frommob.ckey] in control of [tomob.name].</span>")
 	log_admin("[key_name(usr)] stuffed [frommob.ckey] into [tomob.name].")
 	SSstatistics.add_field_details("admin_verb","CGD")
@@ -1477,9 +1477,7 @@ var/global/BSACooldown = 0
 	P.desc = "This is a paper titled '" + P.name + "'."
 
 	if(P.sender || alert("Would you like the fax stamped?",, "Yes", "No") == "Yes")
-		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi', icon_state = "paper_stamp-boss", pixel_x = rand(-2, 0), pixel_y = rand(-2, 0))
-		stampoverlay.appearance_flags |= RESET_COLOR
-		P.apply_custom_stamp(stampoverlay, "by the [P.origin] Quantum Relay")
+		P.apply_custom_stamp('icons/obj/items/stamps/stamp_boss.dmi', "by the [P.origin] Quantum Relay")
 
 	if(P.sender || alert("Would you like the fax signed?",, "Yes", "No") == "Yes")
 		var/sig = input(src.owner, "Enter the name you wish to sign the paper with.", "Signature") as text|null

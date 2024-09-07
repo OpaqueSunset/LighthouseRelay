@@ -16,6 +16,7 @@
 		/datum/appearance_descriptor/height = 0.6,
 		/datum/appearance_descriptor/build =  0.6
 	)
+	uid = "bodytype_monkey"
 
 /decl/bodytype/monkey/Initialize()
 	equip_adjust = list(
@@ -28,5 +29,4 @@
 	. = ..()
 
 /obj/item/organ/external/tail/monkey
-	tail      = "chimptail"
-	tail_icon = 'icons/mob/human_races/species/monkey/monkey_tail.dmi'
+	tail_icon = 'icons/mob/human_races/species/monkey/monkey_body.dmi'

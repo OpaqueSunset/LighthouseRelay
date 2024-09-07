@@ -177,7 +177,7 @@
 				var/turf/other_neighbor = get_step_resolving_mimic(src, global.reverse_dir[stepdir])
 				if(istype(other_neighbor))
 					var/light_amt   = 255 * other_neighbor.get_lumcount()
-					if(light_amt > 0)
+					if(other_neighbor.lighting_overlay && light_amt > 0) // get_lumcount defaults to 0.5 if lighting_overlay is null
 						if(!new_light_dir || light_str < light_amt / 255)
 							new_light_dir = stepdir
 							light_str = light_amt / 255
@@ -214,8 +214,8 @@
 		return 1
 	else if(material && istype(W.material))
 		var/other_wall_icon = W.get_wall_icon()
-		if(material.wall_blend_icons[other_wall_icon])
-			return 2
 		if(get_wall_icon() == other_wall_icon)
 			return 1
+		if(material.wall_blend_icons[other_wall_icon])
+			return 2
 	return 0

@@ -134,14 +134,14 @@
 /area/tether_away/debrisfield/explored)
 "aC" = (
 /obj/structure/table/reinforced,
-/obj/item/chems/food/monkeycube,
-/obj/item/chems/food/monkeycube/farwacube,
-/obj/item/chems/food/monkeycube/neaeracube,
-/obj/item/chems/food/monkeycube/sarucube,
-/obj/item/chems/food/monkeycube/sobakacube,
-/obj/item/chems/food/monkeycube/sparracube,
-/obj/item/chems/food/monkeycube/stokcube,
-/obj/item/chems/food/monkeycube/wolpincube,
+/obj/item/food/monkeycube,
+/obj/item/food/monkeycube/farwacube,
+/obj/item/food/monkeycube/neaeracube,
+/obj/item/food/monkeycube/sarucube,
+/obj/item/food/monkeycube/sobakacube,
+/obj/item/food/monkeycube/sparracube,
+/obj/item/food/monkeycube/stokcube,
+/obj/item/food/monkeycube/wolpincube,
 /turf/floor/tiled/white/airless,
 /area/tether_away/debrisfield/explored)
 "aD" = (

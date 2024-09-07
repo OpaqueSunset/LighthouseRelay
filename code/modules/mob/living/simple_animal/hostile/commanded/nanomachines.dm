@@ -21,11 +21,14 @@
 /obj/item/natural_weapon/nanomachine
 	name = "decompilers"
 	attack_verb = list("swarmed")
-	force = 2
+	_base_attack_force = 2
 	sharp = TRUE
 
 /datum/mob_controller/aggressive/commanded/nanomachines/do_process(time_elapsed)
-	. = ..()
+
+	if(!(. = ..()) || body.stat)
+		return
+
 	switch(stance)
 		if(STANCE_COMMANDED_HEAL)
 			if(!get_target())

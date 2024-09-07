@@ -11,7 +11,7 @@
 	selection_color = "#9b633e"
 	access = list()
 	minimal_access = list()
-	outfit_type = /decl/hierarchy/outfit/job/generic/assistant
+	outfit_type = /decl/outfit/job/generic/assistant
 	description = "Off-duty crew has no responsibilities or authority and is just here to spend their \"well-deserved\" time off."
 
 /datum/job/offduty/get_access()

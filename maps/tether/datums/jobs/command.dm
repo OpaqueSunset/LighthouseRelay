@@ -11,7 +11,7 @@
 	minimal_player_age = 14
 	economic_power = 20
 	ideal_character_age = 70
-	outfit_type = /decl/hierarchy/outfit/job/captain
+	outfit_type = /decl/outfit/job/captain
 	head_position = TRUE
 	req_admin_notify = TRUE
 	disallow_jobhop = TRUE
@@ -141,7 +141,7 @@
 		"Crew Resources Officer",
 		"Underseer"
 	)
-	outfit_type = /decl/hierarchy/outfit/job/hop
+	outfit_type = /decl/outfit/job/hop
 	min_skill = list(
 		SKILL_LITERACY    = SKILL_ADEPT,
 		SKILL_COMPUTER    = SKILL_BASIC,
@@ -175,4 +175,4 @@
 	minimal_access = list(access_heads, access_keycard_auth)
 	alt_titles = list("Bridge Officer")
 
-	outfit_type = /decl/hierarchy/outfit/job/secretary
+	outfit_type = /decl/outfit/job/secretary

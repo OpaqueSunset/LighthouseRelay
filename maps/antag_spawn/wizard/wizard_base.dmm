@@ -90,7 +90,7 @@
 /area/map_template/wizard_station)
 "aq" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/chawanmushi,
+/obj/item/food/chawanmushi,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -294,7 +294,7 @@
 /obj/item/clothing/suit/wizrobe/red,
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/head/wizard/red,
-/obj/item/staff,
+/obj/item/staff/crystal/beacon,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -329,7 +329,7 @@
 /obj/structure/closet,
 /obj/item/clothing/suit/wizrobe/magusblue,
 /obj/item/clothing/head/wizard/magus,
-/obj/item/staff,
+/obj/item/staff/crystal,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
@@ -425,7 +425,7 @@
 /area/map_template/wizard_station)
 "bg" = (
 /obj/structure/table/woodentable,
-/obj/item/chems/food/milosoup,
+/obj/item/food/milosoup,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -455,7 +455,7 @@
 /obj/item/clothing/suit/jacket/vest/gray,
 /obj/item/clothing/suit/wizrobe/gentlecoat,
 /obj/item/clothing/head/wizard/cap,
-/obj/item/staff/gentcane,
+/obj/item/cane/fancy,
 /obj/item/radio/intercom/wizard{
 	dir = 1;
 	pixel_y = -30
@@ -468,7 +468,7 @@
 /obj/structure/closet,
 /obj/item/clothing/suit/wizrobe/magusred,
 /obj/item/clothing/head/wizard/magus,
-/obj/item/staff,
+/obj/item/staff/crystal/beacon,
 /turf/unsimulated/floor{
 	icon_state = "lino"
 	},
