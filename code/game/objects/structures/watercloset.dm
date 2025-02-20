@@ -49,12 +49,29 @@ var/global/list/hygiene_props = list()
 			if(clogged <= 0)
 				unclog()
 		return TRUE
+	//toilet paper interaction for clogging toilets and other facilities
+	if (istype(thing, /obj/item/stack/tape_roll/barricade_tape/toilet))
+		if (clogged == -1)
+			to_chat(user, SPAN_WARNING("Try as you might, you can not clog \the [src] with \the [thing]."))
+			return TRUE
+		if (clogged)
+			to_chat(user, SPAN_WARNING("\The [src] is already clogged."))
+			return TRUE
+		if (!do_after(user, 3 SECONDS, src))
+			to_chat(user, SPAN_WARNING("You must stay still to clog \the [src]."))
+			return TRUE
+		if (clogged || QDELETED(thing) || !user.try_unequip(thing))
+			return TRUE
+		to_chat(user, SPAN_NOTICE("You unceremoniously jam \the [src] with \the [thing]. What a rebel."))
+		clog(1)
+		qdel(thing)
+		return TRUE
 	. = ..()
 
-/obj/structure/hygiene/examine(mob/user)
+/obj/structure/hygiene/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(clogged > 0)
-		to_chat(user, SPAN_WARNING("It seems to be badly clogged."))
+		. += SPAN_WARNING("It seems to be badly clogged.")
 
 /obj/structure/hygiene/Process()
 	if(clogged <= 0)
@@ -482,34 +499,13 @@ var/global/list/hygiene_props = list()
 	. = ..()
 	icon_state = "puddle"
 
-//toilet paper interaction for clogging toilets and other facilities
-
-/obj/structure/hygiene/attackby(obj/item/I, mob/user)
-	if (!istype(I, /obj/item/stack/tape_roll/barricade_tape/toilet))
-		return ..()
-	if (clogged == -1)
-		to_chat(user, SPAN_WARNING("Try as you might, you can not clog \the [src] with \the [I]."))
-		return TRUE
-	if (clogged)
-		to_chat(user, SPAN_WARNING("\The [src] is already clogged."))
-		return TRUE
-	if (!do_after(user, 3 SECONDS, src))
-		to_chat(user, SPAN_WARNING("You must stay still to clog \the [src]."))
-		return TRUE
-	if (clogged || QDELETED(I) || !user.try_unequip(I))
-		return TRUE
-	to_chat(user, SPAN_NOTICE("You unceremoniously jam \the [src] with \the [I]. What a rebel."))
-	clog(1)
-	qdel(I)
-	return TRUE
-
 ////////////////////////////////////////////////////
 // Toilet Paper Roll
 ////////////////////////////////////////////////////
 /decl/barricade_tape_template/toilet
 	tape_kind         = "toilet paper"
 	tape_desc         = "A length of toilet paper. Seems like custodia is marking their territory again."
-	roll_desc         = "A unbranded roll of standard issue two ply toilet paper. Refined from carefully rendered down sea shells due to the government's 'Abuse Of The Trees Act'."
+	roll_desc         = "An unbranded roll of standard-issue two-ply toilet paper. Refined from carefully rendered-down seashells due to the government's 'Abuse Of The Trees Act'."
 	base_icon_state   = "stripetape"
 	tape_color        = COLOR_WHITE
 	detail_overlay    = "stripes"
@@ -542,7 +538,7 @@ var/global/list/hygiene_props = list()
 ////////////////////////////////////////////////////
 /obj/item/paper/crumpled/bog
 	name       = "sheet of toilet paper"
-	desc       = "A single sheet of toilet paper. Two ply."
+	desc       = "A single sheet of toilet paper. Two-ply."
 	icon       = 'icons/obj/items/paperwork/toilet_paper.dmi'
 
 /obj/structure/hygiene/faucet
@@ -594,6 +590,6 @@ var/global/list/hygiene_props = list()
 	if(open)
 		water_flow()
 
-/obj/structure/hygiene/faucet/examine(mob/user)
+/obj/structure/hygiene/faucet/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "It is turned [open ? "on" : "off"].")
+	. += "It is turned [open ? "on" : "off"]."

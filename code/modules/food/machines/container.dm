@@ -23,18 +23,18 @@
 	material_alteration = MAT_FLAG_ALTERATION_ALL
 	randpixel = FALSE
 
-/obj/item/chems/cooking_container/examine(var/mob/user)
+/obj/item/chems/cooking_container/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(length(contents))
-		to_chat(user, SPAN_NOTICE(get_content_info()))
+		. += SPAN_NOTICE(get_content_info())
 	if(reagents.total_volume)
-		to_chat(user, SPAN_NOTICE(get_reagent_info()))
+		. += SPAN_NOTICE(get_reagent_info())
 
 // So we can smack people with frying pans.
 /obj/item/chems/cooking_container/use_on_mob(var/mob/M, var/mob/user, var/def_zone)
 	if(can_operate(M) && do_surgery(M, user, src))
 		return
-	if(!reagents.total_volume && user.a_intent == I_HURT)
+	if(!reagents.total_volume && user.check_intent(I_FLAG_HARM))
 		return ..()
 
 /obj/item/chems/cooking_container/afterattack(var/obj/target, var/mob/user, var/proximity)
@@ -46,7 +46,7 @@
 		return TRUE
 	if(handle_eaten_by_mob(user, target) != EATEN_INVALID)
 		return TRUE
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		if(standard_splash_mob(user,target))
 			return TRUE
 		if(reagents?.total_volume)
@@ -87,7 +87,7 @@
 	closeToolTip(usr)
 
 /obj/item/chems/cooking_container/attackby(var/obj/item/I, var/mob/user)
-	if(is_type_in_list(I, insertable) && (user?.a_intent != I_HURT)) // for egg cracking
+	if(is_type_in_list(I, insertable) && user?.check_intent(I_FLAG_HARM)) // for egg cracking
 		if (!can_fit(I))
 			to_chat(user, SPAN_WARNING("There's no more space in [src] for that!"))
 			return FALSE

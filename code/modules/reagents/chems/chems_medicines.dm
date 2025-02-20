@@ -12,13 +12,11 @@
 
 /decl/material/liquid/eyedrops/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	. = ..()
-	if(ishuman(M))
-		var/mob/living/human/H = M
-		var/obj/item/organ/internal/E = GET_INTERNAL_ORGAN(H, BP_EYES)
-		if(E && istype(E) && !E.is_broken())
-			ADJ_STATUS(M, STAT_BLURRY, -5)
-			ADJ_STATUS(M, STAT_BLIND, -5)
-			E.damage = max(E.damage - 5 * removed, 0)
+	var/obj/item/organ/internal/eyes = GET_INTERNAL_ORGAN(M, BP_EYES)
+	if(istype(eyes) && !eyes.is_broken())
+		ADJ_STATUS(M, STAT_BLURRY, -5)
+		ADJ_STATUS(M, STAT_BLIND, -5)
+		eyes.adjust_organ_damage(-(5 * removed))
 
 /decl/material/liquid/antirads
 	name = "antirads"
@@ -298,7 +296,7 @@
 			var/mob/living/human/H = M
 			if(H.resuscitate())
 				var/obj/item/organ/internal/heart = GET_INTERNAL_ORGAN(H, BP_HEART)
-				heart.take_internal_damage(heart.max_damage * 0.15)
+				heart.take_damage(heart.max_damage * 0.15)
 
 /decl/material/liquid/stabilizer
 	name = "stabilizer"
@@ -381,15 +379,15 @@
 /decl/material/liquid/clotting_agent/affect_blood(mob/living/M, removed, datum/reagents/holder)
 	SET_STATUS_MAX(M, STAT_BLURRY, 30)
 	M.add_chemical_effect(CE_BLOCKAGE, (15 + REAGENT_VOLUME(holder, type))/100)
-	for(var/obj/item/organ/external/E in M.get_external_organs())
-		if(!(E.status & (ORGAN_ARTERY_CUT|ORGAN_BLEEDING)) || !prob(2 + REAGENT_VOLUME(holder, type)))
+	for(var/obj/item/organ/external/limb in M.get_external_organs())
+		if(!(limb.status & (ORGAN_ARTERY_CUT|ORGAN_BLEEDING)) || !prob(2 + REAGENT_VOLUME(holder, type)))
 			continue
-		if(E.status & ORGAN_ARTERY_CUT)
-			E.status &= ~ORGAN_ARTERY_CUT
+		if(limb.status & ORGAN_ARTERY_CUT)
+			limb.status &= ~ORGAN_ARTERY_CUT
 			break
-		if(E.status & ORGAN_BLEEDING)
+		if(limb.status & ORGAN_BLEEDING)
 			var/closed_wound = FALSE
-			for(var/datum/wound/W in E.wounds)
+			for(var/datum/wound/W in limb.wounds)
 				if(W.bleeding() && !W.clamped)
 					W.clamped = TRUE
 					closed_wound = TRUE
@@ -401,7 +399,7 @@
 /decl/material/liquid/clotting_agent/affect_overdose(mob/living/victim, total_dose)
 	var/obj/item/organ/internal/heart = GET_INTERNAL_ORGAN(victim, BP_HEART)
 	if(heart && prob(25))
-		heart.take_general_damage(rand(1,3))
+		heart.take_damage(rand(1,3))
 	return ..()
 
 #define DETOXIFIER_EFFECTIVENESS 6 // 6u of opiates removed per 1u of detoxifier; 5u is enough to remove 30u, i.e. an overdose

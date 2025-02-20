@@ -19,12 +19,13 @@
 	. = ..()
 
 /obj/item/mech_component/sensors/show_missing_parts(var/mob/user)
+	. = list()
 	if(!radio)
-		to_chat(user, SPAN_WARNING("It is missing a radio."))
+		. += SPAN_WARNING("It is missing a radio.")
 	if(!camera)
-		to_chat(user, SPAN_WARNING("It is missing a camera."))
+		. += SPAN_WARNING("It is missing a camera.")
 	if(!software)
-		to_chat(user, SPAN_WARNING("It is missing a software control module."))
+		. += SPAN_WARNING("It is missing a software control module.")
 
 /obj/item/mech_component/sensors/prebuild()
 	radio = new(src)
@@ -111,9 +112,9 @@
 	var/list/installed_software = list()
 	var/max_installed_software = 2
 
-/obj/item/mech_component/control_module/examine(mob/user)
+/obj/item/mech_component/control_module/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("It has [max_installed_software - LAZYLEN(installed_software)] empty slot\s remaining out of [max_installed_software]."))
+	. += SPAN_NOTICE("It has [max_installed_software - LAZYLEN(installed_software)] empty slot\s remaining out of [max_installed_software].")
 
 /obj/item/mech_component/control_module/attackby(var/obj/item/thing, var/mob/user)
 	if(istype(thing, /obj/item/stock_parts/circuitboard/exosystem))

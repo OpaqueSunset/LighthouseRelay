@@ -141,3 +141,7 @@
 
 /turf/space/black
 	icon_state = "black"
+
+// not how space works
+/turf/space/get_movable_alpha_mask_state(atom/movable/mover)
+	return null

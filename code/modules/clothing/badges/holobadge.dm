@@ -20,10 +20,10 @@
 	badge_number = random_id(type,1000,9999)
 	name = "[name] ([badge_number])"
 
-/obj/item/clothing/badge/holo/examine(user)
+/obj/item/clothing/badge/holo/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(badge_number)
-		to_chat(user,"The badge number is [badge_number].")
+		. += "The badge number is [badge_number]."
 
 /obj/item/clothing/badge/holo/attack_self(mob/user)
 	if(!stored_name)

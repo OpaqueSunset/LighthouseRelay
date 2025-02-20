@@ -70,7 +70,8 @@
 	var/lit = FIRE_OUT
 	/// How much fuel is left?
 	var/fuel = 0
-
+	/// Have we been fed by a bellows recently?
+	var/bellows_oxygenation = 0
 
 /obj/structure/fire_source/Initialize()
 	. = ..()
@@ -138,6 +139,7 @@
 
 /obj/structure/fire_source/proc/die()
 	if(lit == FIRE_LIT)
+		bellows_oxygenation = 0
 		lit = FIRE_DEAD
 		last_fuel_ignite_temperature = null
 		last_fuel_burn_temperature = T20C
@@ -184,21 +186,24 @@
 /obj/structure/fire_source/proc/get_removable_atoms()
 	return get_contained_external_atoms()
 
-/obj/structure/fire_source/examine(mob/user, distance)
+/obj/structure/fire_source/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		if(has_draught)
-			to_chat(user, "\The [src]'s draught is [draught_values[current_draught]].")
+			. += "\The [src]'s draught is [draught_values[current_draught]]."
 		var/list/burn_strings = get_descriptive_temperature_strings(get_effective_burn_temperature())
 		if(length(burn_strings))
-			to_chat(user, "\The [src] is burning hot enough to [english_list(burn_strings)].")
+			. += "\The [src] is burning hot enough to [english_list(burn_strings)]."
 		var/list/removable = get_removable_atoms()
 		if(length(removable))
-			to_chat(user, "Looking within \the [src], you see:")
+			. += "Looking within \the [src], you see:"
 			for(var/atom/thing in removable)
-				to_chat(user, "\icon[thing] \the [thing]")
+				. += "\icon[thing] \the [thing]"
 		else
-			to_chat(user, "\The [src] is empty.")
+			. += "\The [src] is empty."
+
+	if(check_rights(R_DEBUG, 0, user))
+		. += "\The [src] has a temperature of [temperature]K, an effective burn temperature of [get_effective_burn_temperature()]K and a fuel value of [fuel]."
 
 /obj/structure/fire_source/attack_hand(var/mob/user)
 
@@ -216,7 +221,7 @@
 		update_icon()
 		return TRUE
 
-	if(lit != FIRE_LIT && user.a_intent == I_HURT)
+	if(lit != FIRE_LIT && user.check_intent(I_FLAG_HARM))
 		to_chat(user, SPAN_DANGER("You start stomping on \the [src], trying to destroy it."))
 		if(do_after(user, 5 SECONDS, src))
 			visible_message(SPAN_DANGER("\The [user] stamps and kicks at \the [src] until it is completely destroyed."))
@@ -229,7 +234,7 @@
 	var/mob/living/victim = grab.get_affecting_mob()
 	if(!istype(victim))
 		return FALSE
-	if (user.a_intent != I_HURT)
+	if (!user.check_intent(I_FLAG_HARM))
 		return TRUE
 	if (!grab.force_danger())
 		to_chat(user, SPAN_WARNING("You need a better grip!"))
@@ -243,9 +248,6 @@
 
 /obj/structure/fire_source/isflamesource()
 	return (lit == FIRE_LIT)
-
-/obj/structure/fire_source/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
-	return ..() || (istype(mover) && mover.checkpass(PASS_FLAG_TABLE))
 
 /obj/structure/fire_source/proc/burn_material(var/decl/material/mat, var/amount)
 	var/effective_burn_temperature = get_effective_burn_temperature()
@@ -278,7 +280,7 @@
 /obj/structure/fire_source/attackby(var/obj/item/thing, var/mob/user)
 
 	// Gate a few interactions behind intent so they can be bypassed if needed.
-	if(user.a_intent != I_HURT)
+	if(!user.check_intent(I_FLAG_HARM))
 		// Put cooking items onto the fire source.
 		if(istype(thing, /obj/item/chems/cooking_vessel) && user.try_unequip(thing, get_turf(src)))
 			thing.reset_offsets()
@@ -298,7 +300,7 @@
 		try_light(thing.get_heat())
 		return TRUE
 
-	if((lit != FIRE_LIT || user.a_intent == I_HURT))
+	if((lit != FIRE_LIT || user.check_intent(I_FLAG_HARM)))
 		// Only drop in one log at a time.
 		if(istype(thing, /obj/item/stack))
 			var/obj/item/stack/stack = thing
@@ -311,7 +313,9 @@
 	return ..()
 
 /obj/structure/fire_source/proc/get_draught_multiplier()
-	return has_draught ? draught_values[draught_values[current_draught]] : 1
+	. = has_draught ? draught_values[draught_values[current_draught]] : 1
+	if(bellows_oxygenation)
+		. *= 1.25 // Burns 25% hotter while oxygenated.
 
 /obj/structure/fire_source/proc/process_fuel(ignition_temperature)
 	var/draught_mult = get_draught_multiplier()
@@ -416,6 +420,10 @@
 		die()
 		return
 
+	// Spend our bellows charge.
+	if(bellows_oxygenation > 0)
+		bellows_oxygenation--
+
 	fuel -= (FUEL_CONSUMPTION_CONSTANT * get_draught_multiplier())
 	if(!process_fuel())
 		die()
@@ -464,7 +472,7 @@
 
 	switch(lit)
 		if(FIRE_LIT)
-			if(fuel >= HIGH_FUEL)
+			if(bellows_oxygenation || fuel >= HIGH_FUEL)
 				var/image/I = image(icon, "[icon_state]_lit")
 				I.appearance_flags |= RESET_COLOR | RESET_ALPHA | KEEP_APART
 				add_overlay(I)
@@ -491,7 +499,7 @@
 	try_light(1000)
 
 /obj/structure/fire_source/CanPass(atom/movable/mover, turf/target, height, air_group)
-	. = ..()
+	. = ..() || mover?.checkpass(PASS_FLAG_TABLE)
 	if(. && lit && ismob(mover))
 		var/mob/M = mover
 		if(M.client && !M.current_posture?.prone && !MOVING_QUICKLY(M))
@@ -513,6 +521,7 @@
 /decl/interaction_handler/adjust_draught
 	name = "Adjust Draught"
 	expected_target_type = /obj/structure/fire_source
+	examine_desc = "adjust the draught"
 
 /decl/interaction_handler/adjust_draught/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/structure/fire_source/fire = target

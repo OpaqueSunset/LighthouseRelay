@@ -3,7 +3,7 @@
 	desc               = "A stretch of inlaid sections of flexible linoleum."
 	icon               = 'icons/turf/flooring/linoleum.dmi'
 	icon_base          = "lino"
-	can_paint          = 1
+	can_paint          = TRUE
 	build_type         = /obj/item/stack/tile/linoleum
 	flooring_flags     = TURF_REMOVE_SCREWDRIVER
 	footstep_type      = /decl/footsteps/tiles
@@ -75,8 +75,8 @@
 /decl/flooring/straw
 	name               = "straw floor"
 	desc               = "A thick layer of straw, suitable for livestock."
-	icon               = 'icons/turf/flooring/wildgrass.dmi' // temporary, replace with better icon at some point
-	icon_base          = "wildgrass"
+	icon               = 'icons/turf/flooring/straw.dmi'
+	icon_base          = "straw"
 	has_base_range     = null
 	icon_edge_layer    = FLOOR_EDGE_GRASS_WILD
 	damage_temperature = T0C+80

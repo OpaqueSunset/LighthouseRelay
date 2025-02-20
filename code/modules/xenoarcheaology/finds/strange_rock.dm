@@ -1,7 +1,7 @@
 
 /obj/item/strangerock
 	name        = "strange rock"
-	desc        = "Seems to have some unusal strata evident throughout it."
+	desc        = "Seems to have some unusual strata evident throughout it."
 	icon        = 'icons/obj/xenoarchaeology.dmi'
 	icon_state  = "strange"
 	origin_tech = @'{"materials":5}'

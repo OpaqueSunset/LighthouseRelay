@@ -4147,7 +4147,7 @@
 /turf/floor/tiled,
 /area/outpost/research/storage/surface_eva)
 "kJ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/folder/blue{
 	pixel_x = 4;
 	pixel_y = 4
@@ -4374,7 +4374,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	pixel_x = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/toy/plushie/fox/marble,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
@@ -4950,7 +4950,7 @@
 /turf/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
 "os" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	dir = 8
 	},
 /turf/floor/wood,
@@ -4986,7 +4986,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -5382,7 +5382,7 @@
 /area/outpost/research/longtermstorage)
 "re" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
 "rf" = (
@@ -5847,7 +5847,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	pixel_x = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/ashtray/glass,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
@@ -5939,7 +5939,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/box/donkpockets,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -6293,7 +6293,7 @@
 /turf/floor/tiled/white,
 /area/outpost/research/materials_lab)
 "vE" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_y = 9
 	},
@@ -6546,7 +6546,7 @@
 /turf/floor/plating,
 /area/outpost/research/engineering/eva_atmospherics)
 "xw" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
@@ -6817,7 +6817,7 @@
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
 "yW" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
@@ -6897,7 +6897,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_1)
@@ -6913,7 +6913,7 @@
 /turf/floor/plating,
 /area/outpost/research/atmospherics)
 "zm" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	dir = 4
 	},
 /obj/item/ashtray/glass,
@@ -7060,7 +7060,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "zV" = (
@@ -7568,7 +7568,7 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -7814,7 +7814,7 @@
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "DR" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
@@ -7963,7 +7963,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/box/donkpockets,
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
@@ -8545,7 +8545,7 @@
 /turf/floor/tiled/white,
 /area/outpost/research/crew_quarters/showers)
 "Jg" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	dir = 4
 	},
 /turf/floor/wood,
@@ -8554,7 +8554,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
 "Jk" = (
@@ -8678,7 +8678,7 @@
 /area/outpost/research/toxins_canister_icyhoot)
 "JV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
 "JX" = (
@@ -8909,7 +8909,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 9
 	},
-/obj/structure/bed/chair/comfy/purple,
+/obj/structure/chair/comfy/purple,
 /turf/floor/tiled,
 /area/outpost/research/hallway/resarch_outpost_western_hallway)
 "KS" = (
@@ -9123,7 +9123,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 10
 	},
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -9240,7 +9240,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "MB" = (
@@ -9739,7 +9739,7 @@
 /turf/floor/sif_growth,
 /area/tether/outpost/solars_outside)
 "Ps" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	dir = 8
 	},
 /obj/item/radio/intercom{
@@ -10348,7 +10348,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/box/donkpockets,
 /turf/floor/carpet/blue,
 /area/outpost/research/crew_quarters/sleep/Dorm_2)
@@ -10648,7 +10648,7 @@
 /area/outpost/research/materials_lab)
 "Vl" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/deck/cards{
 	pixel_x = 18;
 	pixel_y = -15
@@ -10777,7 +10777,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet/orange,
 /area/outpost/research/crew_quarters/sleep/Dorm_3)
 "Wm" = (
@@ -10983,7 +10983,7 @@
 /area/outpost/research/longtermstorage)
 "Xy" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/rnd/breakroom/outpost)
 "XB" = (

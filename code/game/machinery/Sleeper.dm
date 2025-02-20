@@ -42,6 +42,9 @@
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/antitoxins())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/oxy_meds())
 
+/obj/machinery/sleeper/get_cryogenic_power()
+	return stasis
+
 /obj/machinery/sleeper/Destroy()
 	QDEL_NULL(beaker)
 	QDEL_NULL_LIST(loaded_canisters)
@@ -106,21 +109,21 @@
 		beaker = new /obj/item/chems/glass/beaker/large(src)
 	update_icon()
 
-/obj/machinery/sleeper/examine(mob/user, distance)
+/obj/machinery/sleeper/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if (distance <= 1)
 		if(beaker)
-			to_chat(user, SPAN_NOTICE("It is loaded with a beaker."))
+			. += SPAN_NOTICE("It is loaded with \a [beaker].")
 		if(occupant)
-			occupant.examine(arglist(args))
+			. += occupant.get_examine_strings(user, distance, infix, suffix)
 		if(emagged && user.skill_check(SKILL_MEDICAL, SKILL_EXPERT))
-			to_chat(user, SPAN_NOTICE("The chemical input system looks like it has been tampered with."))
+			. += SPAN_NOTICE("The chemical input system looks like it has been tampered with.")
 		if(length(loaded_canisters))
-			to_chat(user, SPAN_NOTICE("There are [length(loaded_canisters)] chemical canister\s loaded:"))
+			. += SPAN_NOTICE("There are [length(loaded_canisters)] chemical canister\s loaded:")
 			for(var/thing in loaded_canisters)
-				to_chat(user, SPAN_NOTICE("- \The [thing]"))
+				. += SPAN_NOTICE("- \The [thing]")
 		else
-			to_chat(user, SPAN_NOTICE("There are no chemical canisters loaded."))
+			. += SPAN_NOTICE("There are no chemical canisters loaded.")
 
 /obj/machinery/sleeper/proc/has_room_in_beaker()
 	return beaker && beaker.reagents.total_volume < beaker.reagents.maximum_volume
@@ -168,7 +171,7 @@
 			toggle_lavage()
 
 	if(isliving(occupant) && stasis > 1)
-		occupant.set_stasis(stasis)
+		occupant.add_mob_modifier(/decl/mob_modifier/stasis, 2 SECONDS, source = src)
 
 /obj/machinery/sleeper/on_update_icon()
 	cut_overlays()
@@ -248,7 +251,7 @@
 
 /obj/machinery/sleeper/CanUseTopic(user)
 	if(user == occupant)
-		to_chat(usr, SPAN_WARNING("You can't reach the controls from the inside."))
+		to_chat(user, SPAN_WARNING("You can't reach the controls from the inside."))
 		return STATUS_CLOSE
 	. = ..()
 

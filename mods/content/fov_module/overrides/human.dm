@@ -1,28 +1,29 @@
 /obj/screen/fov
 	requires_ui_style = FALSE
 
-/datum/hud/human/FinalizeInstantiation()
+/datum/hud/human/finalize_instantiation(mob/_owner)
 	. = ..()
 	var/list/hud_elements = list()
+	var/mob/mymob = owner?.resolve()
 	if(ishuman(mymob))
-		var/mob/living/human/H = mymob
-		H.fov = new /obj/screen/fov(null, mymob)
-		H.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
-		H.fov.icon_state = "combat"
-		H.fov.name = " "
-		H.fov.screen_loc = "LEFT+50%,BOTTOM+50%"
-		H.fov.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
-		H.fov.plane = VISION_CONE_PLANE
-		hud_elements |= H.fov
+		var/mob/living/human/myhuman = mymob
+		myhuman.fov = new /obj/screen/fov(null, mymob)
+		myhuman.fov.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
+		myhuman.fov.icon_state = "combat"
+		myhuman.fov.name = " "
+		myhuman.fov.screen_loc = "LEFT+50%,BOTTOM+50%"
+		myhuman.fov.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
+		myhuman.fov.plane = VISION_CONE_PLANE
+		hud_elements |= myhuman.fov
 
-		H.fov_mask = new /obj/screen/fov(null, mymob)
-		H.fov_mask.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
-		H.fov_mask.icon_state = "combat_mask"
-		H.fov_mask.name = " "
-		H.fov_mask.screen_loc = "LEFT+50%,BOTTOM+50%"
-		H.fov_mask.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
-		H.fov_mask.plane = HIDDEN_SHIT_PLANE
-		hud_elements |= H.fov_mask
+		myhuman.fov_mask = new /obj/screen/fov(null, mymob)
+		myhuman.fov_mask.icon = 'mods/content/fov_module/icons/mob/hide.dmi'
+		myhuman.fov_mask.icon_state = "combat_mask"
+		myhuman.fov_mask.name = " "
+		myhuman.fov_mask.screen_loc = "LEFT+50%,BOTTOM+50%"
+		myhuman.fov_mask.mouse_opacity = MOUSE_OPACITY_UNCLICKABLE
+		myhuman.fov_mask.plane = HIDDEN_SHIT_PLANE
+		hud_elements |= myhuman.fov_mask
 
 		mymob.client.screen += hud_elements
 

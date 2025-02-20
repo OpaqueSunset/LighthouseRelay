@@ -21,7 +21,7 @@
 
 // Boilerplate from /obj/item/chems/glass. TODO generalize to a lower level.
 /obj/item/flame/fuelled/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
-	if(get_attack_force() && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
+	if(get_attack_force() && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.check_intent(I_FLAG_HARM))
 		. = ..()
 		if(reagents?.total_volume && !QDELETED(target))
 			target.visible_message(SPAN_DANGER("Some of the contents of \the [src] splash onto \the [target]."))
@@ -49,26 +49,26 @@
 
 // End boilerplate.
 
-/obj/item/flame/fuelled/examine(mob/user, distance)
+/obj/item/flame/fuelled/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1 && user)
 
 		var/decl/material/fuel_reagent = GET_DECL(fuel_type)
 		if(fuel_reagent)
-			to_chat(user, SPAN_NOTICE("\The [src] is designed to burn [fuel_reagent.liquid_name]."))
+			. += SPAN_NOTICE("\The [src] is designed to burn [fuel_reagent.liquid_name].")
 
 		if(reagents?.maximum_volume)
 			switch(reagents.total_volume / reagents.maximum_volume)
 				if(0 to 0.1)
-					to_chat(user, SPAN_WARNING("\The [src] is nearly empty."))
+					. += SPAN_WARNING("\The [src] is nearly empty.")
 				if(0.1 to 0.25)
-					to_chat(user, SPAN_NOTICE("\The [src] is one-quarter full."))
+					. += SPAN_NOTICE("\The [src] is one-quarter full.")
 				if(0.25 to 0.5)
-					to_chat(user, SPAN_NOTICE("\The [src] is half full."))
+					. += SPAN_NOTICE("\The [src] is half full.")
 				if(0.5 to 0.75)
-					to_chat(user, SPAN_NOTICE("\The [src] is three-quarters full."))
+					. += SPAN_NOTICE("\The [src] is three-quarters full.")
 				else
-					to_chat(user, SPAN_NOTICE("\The [src] is full."))
+					. += SPAN_NOTICE("\The [src] is full.")
 
 /obj/item/flame/fuelled/get_fuel()
 	return REAGENT_VOLUME(reagents, fuel_type)

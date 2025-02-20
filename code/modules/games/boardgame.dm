@@ -1,9 +1,9 @@
 /obj/item/board
 	name = "board"
-	desc = "A standard 16\" checkerboard. Well used." //Goddamn imperial system.
+	desc = "A standard 16\" checkerboard. Well-used." //Goddamn imperial system.
 	icon = 'icons/obj/pieces.dmi'
 	icon_state = "board"
-	material = /decl/material/solid/organic/wood
+	material = /decl/material/solid/organic/wood/oak
 
 	var/num = 0
 	var/board_icons = list()
@@ -20,7 +20,7 @@
 /obj/item/board/attack_hand(mob/M)
 	if(M.machine == src)
 		return ..()
-	M.examinate(src)
+	M.examine_verb(src)
 	return TRUE
 
 /obj/item/board/attackby(obj/item/I, mob/user)
@@ -101,7 +101,7 @@
 	if(selected >= 0 && !isobserver(user))
 		dat += "<br><A href='byond://?src=\ref[src];remove=0'>Remove Selected Piece</A>"
 	show_browser(user, jointext(dat, null), "window=boardgame;size=430x500") // 50px * 8 squares + 30 margin
-	onclose(usr, "boardgame")
+	onclose(user, "boardgame")
 
 /obj/item/board/Topic(href, href_list)
 	if(!usr.Adjacent(src))
@@ -236,7 +236,7 @@
 
 /obj/item/checker/bishop
 	name = "bishop"
-	desc = "What corruption occured, urging holy men to fight?"
+	desc = "What corruption occurred, urging holy men to fight?"
 
 /obj/item/checker/bishop/red
 	piece_color ="red"

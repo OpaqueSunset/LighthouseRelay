@@ -1,7 +1,7 @@
 /decl/language/machine
 	name = "Encoded Audio Language"
 	shorthand = "EAL"
-	desc = "A efficient language of encoded tones used by synthetics."
+	desc = "An efficient language of encoded tones used by synthetics."
 	speech_verb = "whistles"
 	ask_verb = "chirps"
 	exclaim_verb = "whistles loudly"

@@ -52,12 +52,12 @@
 
 	appearance = new_appearance
 
-/obj/item/chems/drinks/juicebox/examine(mob/user, distance)
+/obj/item/chems/drinks/juicebox/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(atom_flags & ATOM_FLAG_OPEN_CONTAINER)
-		to_chat(user, SPAN_NOTICE("It has a straw stuck through the foil seal on top."))
+		. += SPAN_NOTICE("It has a straw stuck through the foil seal on top.")
 	else
-		to_chat(user, SPAN_NOTICE("It has a straw stuck to the side and the foil seal is intact."))
+		. += SPAN_NOTICE("It has a straw stuck to the side and the foil seal is intact.")
 
 /obj/item/chems/drinks/juicebox/open(mob/user)
 	playsound(loc,'sound/effects/bonebreak1.ogg', rand(10,50), 1)

@@ -21,7 +21,8 @@
 		return TRUE
 	return ..()
 
-/obj/structure/memorial/examine(mob/user, distance)
+/obj/structure/memorial/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if (distance <= 2 && fallen.len)
-		to_chat(user, "<b>The fallen:</b> [jointext(fallen, "<br>")]")
+		. += "<b>The fallen:</b>"
+		. += fallen

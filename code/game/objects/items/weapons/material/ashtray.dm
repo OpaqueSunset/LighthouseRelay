@@ -5,17 +5,15 @@
 	icon_state = "ashtray"
 	randpixel = 5
 	material = /decl/material/solid/metal/bronze
-	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME
+	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
 	var/max_butts = 10
 
-/obj/item/ashtray/examine(mob/user)
+/obj/item/ashtray/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(material)
-		to_chat(user, "It's made of [material.solid_name].")
 	if(contents.len >= max_butts)
-		to_chat(user, "It's full.")
+		. += SPAN_WARNING("It's full.")
 	else if(contents.len)
-		to_chat(user, "It has [contents.len] cig butts in it.")
+		. += "It has [contents.len] cigarette butt\s in it."
 
 /obj/item/ashtray/on_update_icon()
 	. = ..()
@@ -34,7 +32,7 @@
 			var/obj/item/clothing/mask/smokable/cigarette/cig = W
 			if (cig.lit == 1)
 				visible_message(SPAN_NOTICE("\The [user] crushes \the [cig] in \the [src], putting it out."))
-				W = cig.extinguish(no_message = 1)
+				W = cig.extinguish_fire(no_message = TRUE)
 			else if (cig.lit == 0)
 				to_chat(user, SPAN_NOTICE("You place \the [cig] in \the [src] without even smoking it. Why would you do that?"))
 		else

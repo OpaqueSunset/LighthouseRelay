@@ -9,7 +9,7 @@
 
 /obj/machinery/washing_machine
 	name = "washing machine"
-	desc = "A commerical washing machine used to wash clothing items and linens. It requires detergent for efficient washing."
+	desc = "A commercial washing machine used to wash clothing items and linens. It requires detergent for efficient washing."
 	icon = 'icons/obj/machines/washing_machine.dmi'
 	icon_state = "wm_00"
 	density = TRUE
@@ -62,9 +62,9 @@
 	create_reagents(100)
 	. = ..()
 
-/obj/machinery/washing_machine/examine(mob/user)
+/obj/machinery/washing_machine/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("The detergent port is [atom_flags & ATOM_FLAG_OPEN_CONTAINER ? "open" : "closed"]."))
+	. += SPAN_NOTICE("The detergent port is [atom_flags & ATOM_FLAG_OPEN_CONTAINER ? "open" : "closed"].")
 
 /obj/machinery/washing_machine/proc/wash()
 	if(operable())
@@ -250,6 +250,7 @@
 /decl/interaction_handler/start_washer
 	name = "Start washer"
 	expected_target_type = /obj/machinery/washing_machine
+	examine_desc = "start a wash cycle"
 
 /decl/interaction_handler/start_washer/is_possible(obj/machinery/washing_machine/washer, mob/user)
 	. = ..()
@@ -263,6 +264,7 @@
 /decl/interaction_handler/toggle_open/washing_machine
 	name = "Toggle detergent port"
 	expected_target_type = /obj/machinery/washing_machine
+	examine_desc = "open the detergent port"
 
 /decl/interaction_handler/toggle_open/washing_machine/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/machinery/washing_machine/washer = target

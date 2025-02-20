@@ -79,12 +79,6 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 
 	// Combat vars.
 	var/total_health = DEFAULT_SPECIES_HEALTH  // Point at which the mob will enter crit.
-	var/list/unarmed_attacks = list(           // Possible unarmed attacks that the mob will use in combat,
-		/decl/natural_attack/stomp,
-		/decl/natural_attack/kick,
-		/decl/natural_attack/punch,
-		/decl/natural_attack/bite
-	)
 
 	var/brute_mod =      1                    // Physical damage multiplier.
 	var/burn_mod =       1                    // Burn damage multiplier.
@@ -183,9 +177,7 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	var/pass_flags = 0
 	var/breathing_sound = 'sound/voice/monkey.ogg'
 
-	var/list/base_auras
-
-	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job recieves.
+	var/job_skill_buffs = list()				// A list containing jobs (/datum/job), with values the extra points that job receives.
 
 	var/standing_jump_range = 2
 	var/list/maneuvers = list(/decl/maneuver/leap)
@@ -421,21 +413,6 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 /decl/species/proc/get_manual_dexterity(var/mob/living/human/H)
 	. = manual_dexterity
 
-/decl/species/proc/add_base_auras(var/mob/living/human/H)
-	if(base_auras)
-		for(var/type in base_auras)
-			H.add_aura(new type(H), skip_icon_update = TRUE)
-
-/decl/species/proc/remove_base_auras(var/mob/living/human/H)
-	if(base_auras)
-		var/list/bcopy = base_auras.Copy()
-		for(var/a in H.auras)
-			var/obj/aura/A = a
-			if(is_type_in_list(a, bcopy))
-				bcopy -= A.type
-				H.remove_aura(A)
-				qdel(A)
-
 /decl/species/proc/remove_inherent_verbs(var/mob/living/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
@@ -450,7 +427,6 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 
 /decl/species/proc/handle_post_spawn(var/mob/living/human/H) //Handles anything not already covered by basic species assignment.
 	add_inherent_verbs(H)
-	add_base_auras(H)
 	handle_movement_flags_setup(H)
 
 /decl/species/proc/handle_pre_spawn(var/mob/living/human/H)
@@ -496,23 +472,6 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	if(!H.is_physically_disabled())
 		return TRUE //We could tie it to stamina
 	return FALSE
-
-// Called when using the shredding behavior.
-/decl/species/proc/can_shred(var/mob/living/human/H, var/ignore_intent, var/ignore_antag)
-
-	if((!ignore_intent && H.a_intent != I_HURT) || H.pulling_punches)
-		return 0
-
-	if(!ignore_antag && H.mind && !player_is_antag(H.mind))
-		return 0
-
-	for(var/attack_type in unarmed_attacks)
-		var/decl/natural_attack/attack = GET_DECL(attack_type)
-		if(!istype(attack) || !attack.is_usable(H))
-			continue
-		if(attack.shredding)
-			return 1
-	return 0
 
 /decl/species/proc/handle_vision(var/mob/living/human/H)
 	var/list/vision = H.get_accumulated_vision_handlers()
@@ -625,7 +584,7 @@ var/global/const/DEFAULT_SPECIES_HEALTH = 200
 	var/skill_mod = 10 * attacker.get_skill_difference(SKILL_COMBAT, target)
 	var/state_mod = attacker.melee_accuracy_mods() - target.melee_accuracy_mods()
 	var/push_mod = min(max(1 + attacker.get_skill_difference(SKILL_COMBAT, target), 1), 3)
-	if(target.a_intent == I_HELP)
+	if(target.check_intent(I_FLAG_HELP))
 		state_mod -= 30
 	//Handle unintended consequences
 	for(var/obj/item/I in holding)

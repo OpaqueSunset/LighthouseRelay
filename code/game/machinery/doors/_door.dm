@@ -325,7 +325,7 @@
 		return 1
 
 /obj/machinery/door/bash(obj/item/weapon, mob/user)
-	if(isliving(user) && user.a_intent != I_HURT)
+	if(isliving(user) && !user.check_intent(I_FLAG_HARM))
 		return FALSE
 	if(!weapon.user_can_attack_with(user))
 		return FALSE
@@ -335,7 +335,7 @@
 		return FALSE
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.do_attack_animation(src)
-	var/force = weapon.get_attack_force(user)
+	var/force = weapon.expend_attack_force(user)
 	if(force < min_force)
 		user.visible_message("<span class='danger'>\The [user] hits \the [src] with \the [weapon] with no visible effect.</span>")
 	else
@@ -377,24 +377,24 @@
 		return 0
 	. = round((1 - current_health/current_max_health) * damage)
 
-/obj/machinery/door/examine(mob/user)
+/obj/machinery/door/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(current_health <= 0)
-		to_chat(user, "\The [src] is broken!")
+		. += SPAN_DANGER("\The [src] is broken!")
 	else
 		var/current_max_health = get_max_health()
 		if(current_health < current_max_health / 4)
-			to_chat(user, "\The [src] looks like it's about to break!")
+			. += SPAN_DANGER("\The [src] looks like it's about to break!")
 		else if(current_health < current_max_health / 2)
-			to_chat(user, "\The [src] looks seriously damaged!")
+			. += SPAN_DANGER("\The [src] looks seriously damaged!")
 		else if(current_health < current_max_health * 3/4)
-			to_chat(user, "\The [src] shows signs of damage!")
+			. += SPAN_WARNING("\The [src] shows signs of damage!")
 		else if(current_health < current_max_health && get_dist(src, user) <= 1)
-			to_chat(user, "\The [src] has some minor scuffing.")
+			. += SPAN_WARNING("\The [src] has some minor scuffing.")
 
 	var/mob/living/human/H = user
 	if (emagged && istype(H) && (H.skill_check(SKILL_COMPUTER, SKILL_ADEPT) || H.skill_check(SKILL_ELECTRICAL, SKILL_ADEPT)))
-		to_chat(user, SPAN_WARNING("\The [src]'s control panel looks fried."))
+		. += SPAN_WARNING("\The [src]'s control panel looks fried.")
 
 /obj/machinery/door/set_broken(new_state, cause)
 	. = ..()

@@ -1,4 +1,6 @@
 /obj/screen/inventory
+	use_supplied_ui_color = TRUE
+	use_supplied_ui_alpha = TRUE
 	var/slot_id	//The indentifier for the slot. It has nothing to do with ID cards.
 	var/weakref/mouse_over_atom_ref
 
@@ -40,34 +42,28 @@
 		mouse_over_atom_ref = null
 		update_icon()
 
-/obj/screen/inventory/on_update_icon()
+/obj/screen/inventory/rebuild_screen_overlays()
 
-	cut_overlays()
+	..()
 
 	// Validate our owner still exists.
 	var/mob/owner = owner_ref?.resolve()
 	if(!istype(owner) || QDELETED(owner) || !(src in owner.client?.screen))
 		return
 
-	// Mark our selected hand.
-	if(owner.get_active_held_item_slot() == slot_id)
-		add_overlay("hand_selected")
-
 	// Mark anything we're potentially trying to equip.
 	var/obj/item/mouse_over_atom = mouse_over_atom_ref?.resolve()
-	if(istype(mouse_over_atom) && !QDELETED(mouse_over_atom) && !usr.get_equipped_item(slot_id))
+	if(istype(mouse_over_atom) && !QDELETED(mouse_over_atom) && !owner.get_equipped_item(slot_id))
 		var/mutable_appearance/MA = new /mutable_appearance(mouse_over_atom)
 		MA.layer   = HUD_ABOVE_ITEM_LAYER
 		MA.plane   = HUD_PLANE
 		MA.alpha   = 80
 		MA.color   = mouse_over_atom.mob_can_equip(owner, slot_id, TRUE) ? COLOR_GREEN : COLOR_RED
-		MA.pixel_x = 0
-		MA.pixel_y = 0
-		MA.pixel_w = 0
-		MA.pixel_z = 0
+		MA.pixel_x = mouse_over_atom.default_pixel_x
+		MA.pixel_y = mouse_over_atom.default_pixel_y
+		MA.pixel_w = mouse_over_atom.default_pixel_w
+		MA.pixel_z = mouse_over_atom.default_pixel_z
+		MA.appearance_flags |= (KEEP_TOGETHER | RESET_COLOR)
 		add_overlay(MA)
 	else
 		mouse_over_atom_ref = null
-
-	// UI needs to be responsive so avoid the subsecond update delay.
-	compile_overlays()

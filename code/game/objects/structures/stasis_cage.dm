@@ -47,10 +47,10 @@
 	else
 		icon_state = initial(icon_state)
 
-/obj/structure/stasis_cage/examine(mob/user)
+/obj/structure/stasis_cage/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(contained)
-		to_chat(user, "\The [contained] is kept inside.")
+		. += "\The [contained] is kept inside."
 
 /obj/structure/stasis_cage/proc/contain(var/mob/living/simple_animal/animal)
 	if(contained || !istype(animal))

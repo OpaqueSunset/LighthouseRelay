@@ -88,7 +88,7 @@
 		dispose()
 		return
 	else if(dirty==100) // The microwave is all dirty so can't be used!
-		if(istype(O, /obj/item/chems/spray/cleaner) || istype(O, /obj/item/chems/glass/rag)) // If they're trying to clean it then let them
+		if(istype(O, /obj/item/chems/spray/cleaner) || istype(O, /obj/item/chems/rag)) // If they're trying to clean it then let them
 			user.visible_message(
 				SPAN_NOTICE("\The [user] starts to clean [src]."),
 				SPAN_NOTICE("You start to clean [src].")
@@ -416,20 +416,20 @@
 	ffuu.add_to_reagents(/decl/material/liquid/acrylamide, amount/10)
 	return ffuu
 
-/obj/machinery/microwave/OnTopic(href, href_list)
+/obj/machinery/microwave/OnTopic(mob/user, href_list)
 	switch(href_list["action"])
 		if ("cook")
 			cook()
 			return TOPIC_REFRESH
 
 		if ("dispose")
-			dispose(usr)
+			dispose(user)
 			return TOPIC_REFRESH
 
 		if ("ejectitem")
 			for(var/obj/O in get_contained_external_atoms())
 				if(strip_improper(O.name) == href_list["target"])
-					eject_item(usr, O)
+					eject_item(user, O)
 					break
 			return TOPIC_REFRESH
 
@@ -438,7 +438,7 @@
 			for(var/material_type in reagents.reagent_volumes)
 				mat = GET_DECL(material_type)
 				if(mat.name == href_list["target"])
-					eject_reagent(usr, material_type)
+					eject_reagent(user, material_type)
 					break
 			return TOPIC_REFRESH
 

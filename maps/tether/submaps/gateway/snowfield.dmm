@@ -339,7 +339,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 10
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/floor/tiled/white,
@@ -518,7 +518,7 @@
 /obj/effect/floor_decal/corner/green{
 	dir = 5
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/floor/tiled/white,
@@ -1001,7 +1001,7 @@
 /area/awaymission/snowfield/base)
 "cL" = (
 /obj/effect/floor_decal/corner/paleblue/diagonal,
-/obj/structure/bed/chair/comfy/beige{
+/obj/structure/chair/comfy/beige{
 	dir = 8
 	},
 /turf/floor/tiled/white,
@@ -1189,7 +1189,7 @@
 /turf/floor/tiled/dark,
 /area/awaymission/snowfield/base)
 "du" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/dark,
@@ -1265,13 +1265,13 @@
 /turf/floor/grass,
 /area/awaymission/snowfield/base)
 "dI" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/floor/holofloor/wood,
 /area/awaymission/snowfield/base)
 "dJ" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/floor/holofloor/wood,

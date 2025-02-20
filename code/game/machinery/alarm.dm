@@ -669,7 +669,7 @@
 			var/device_id = href_list["id_tag"]
 			switch(href_list["command"])
 				if("set_external_pressure")
-					var/input_pressure = input(user, "What pressure you like the system to mantain?", "Pressure Controls") as num|null
+					var/input_pressure = input(user, "What pressure you like the system to maintain?", "Pressure Controls") as num|null
 					if(isnum(input_pressure) && CanUseTopic(user, state))
 						send_signal(device_id, list(href_list["command"] = input_pressure))
 					return TOPIC_REFRESH
@@ -852,11 +852,11 @@ FIRE ALARM
 	var/sound_id
 	var/datum/sound_token/sound_token
 
-/obj/machinery/firealarm/examine(mob/user)
+/obj/machinery/firealarm/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(isContactLevel(loc.z))
 		var/decl/security_state/security_state = GET_DECL(global.using_map.security_state)
-		to_chat(user, "The current alert level is [security_state.current_security_level.name].")
+		. += "The current alert level is [security_state.current_security_level.name]."
 
 /obj/machinery/firealarm/on_update_icon()
 	cut_overlays()

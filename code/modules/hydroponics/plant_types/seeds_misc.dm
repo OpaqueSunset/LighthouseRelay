@@ -4,7 +4,7 @@
 	display_name = "cotton patch"
 	product_material = /decl/material/solid/organic/plantmatter/pith/husk
 	chems = list(
-		/decl/material/liquid/nutriment/plant_oil = list(3,10),
+		/decl/material/liquid/oil/plant = list(3,10),
 		/decl/material/solid/organic/cloth = list(10,1)
 	)
 	slice_product = null
@@ -28,7 +28,7 @@
 	display_name = "flax patch"
 	// Do we want linseed oil at some point?
 	chems = list(
-		/decl/material/liquid/nutriment/plant_oil = list(5,12),
+		/decl/material/liquid/oil/plant = list(5,12),
 		/decl/material/solid/organic/cloth/linen = list(8,1)
 	)
 
@@ -400,7 +400,7 @@
 	display_name = "hemp patch"
 	mutants = null
 	chems = list(
-		/decl/material/liquid/nutriment/plant_oil = list(3,10),
+		/decl/material/liquid/oil/plant = list(3,10),
 		/decl/material/solid/organic/cloth/hemp = list(8,1),
 		/decl/material/liquid/nutriment = list(1)
 	)
@@ -584,7 +584,7 @@
 	name = "towercap"
 	product_name = "dwarf towercap"
 	display_name = "dwarf towercap thicket"
-	chems = list(/decl/material/solid/organic/wood = list(10,1))
+	chems = list(/decl/material/solid/organic/wood/fungal = list(10,1))
 	mutants = null
 	product_type = /obj/item/stack/material/log/towercap
 
@@ -685,6 +685,7 @@
 	chems = list(/decl/material/liquid/nutriment = list(1,20))
 	slice_product = /obj/item/food/processed_grown/crushed
 	slice_amount = 3
+	produces_pollen = 1
 
 /datum/seed/flower/New()
 	..()
@@ -725,7 +726,7 @@
 	product_name = "sunflower"
 	display_name = "sunflower patch"
 	chems = list(
-		/decl/material/liquid/nutriment/plant_oil = list(10,10)
+		/decl/material/liquid/oil/plant = list(10,10)
 	)
 
 /datum/seed/flower/sunflower/New()
@@ -802,7 +803,7 @@
 	grown_tag = "peanut"
 	chems = list(
 		/decl/material/liquid/nutriment = list(1,10),
-		/decl/material/liquid/nutriment/plant_oil = list(1,10)
+		/decl/material/liquid/oil/plant = list(1,10)
 	)
 	slice_product = /obj/item/food/processed_grown/chopped
 	slice_amount = 3
@@ -892,7 +893,7 @@
 	name = "corn"
 	product_name = "corn"
 	display_name = "ears of corn"
-	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/nutriment/cornoil = list(1,10))
+	chems = list(/decl/material/liquid/nutriment = list(1,10), /decl/material/liquid/oil/plant/corn = list(1,10))
 	grown_tag = "corn"
 	trash_type = /obj/item/corncob
 	backyard_grilling_product = /obj/item/food/popcorn
@@ -989,7 +990,7 @@
 	display_name = "soybean patch"
 	chems = list(
 		/decl/material/liquid/nutriment = list(1,20),
-		/decl/material/liquid/nutriment/plant_oil = list(3,20),
+		/decl/material/liquid/oil/plant = list(3,20),
 		/decl/material/liquid/drink/milk/soymilk = list(7,20)
 	)
 	grown_tag = "soybeans"

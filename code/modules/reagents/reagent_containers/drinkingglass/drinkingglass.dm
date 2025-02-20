@@ -32,29 +32,18 @@ var/global/const/DRINK_ICON_NOISY = "noise"
 	var/custom_name
 	var/custom_desc
 
+/obj/item/chems/drinks/glass2/update_name()
+	if(custom_name)
+		SetName(custom_name)
+		return
+	return ..()
+
 // Reverse the matter effect of the hollow flag, keep the force effect.
 // Glasses are so tiny that their effective matter is ten times lower than forks/knives due to OBJ_FLAG_HOLLOW.
 /obj/item/chems/drinks/glass2/get_matter_amount_modifier()
 	. = ..()
 	if(obj_flags & OBJ_FLAG_HOLLOW)
 		. /= HOLLOW_OBJECT_MATTER_MULTIPLIER
-
-/obj/item/chems/drinks/glass2/examine(mob/M)
-	. = ..()
-
-	for(var/I in extras)
-		if(istype(I, /obj/item/glass_extra))
-			to_chat(M, "There is \a [I] in \the [src].")
-		else if(istype(I, /obj/item/food/processed_grown/slice))
-			to_chat(M, "There is \a [I] on the rim.")
-		else
-			to_chat(M, "There is \a [I] somewhere on the glass. Somehow.")
-
-	if(has_ice())
-		to_chat(M, "There is some ice floating in the drink.")
-
-	if(has_fizz())
-		to_chat(M, "It is fizzing slightly.")
 
 /obj/item/chems/drinks/glass2/proc/has_ice()
 	if(LAZYLEN(reagents.reagent_volumes))
@@ -111,9 +100,9 @@ var/global/const/DRINK_ICON_NOISY = "noise"
 		return FALSE
 	return TRUE
 
-/obj/item/chems/drinks/glass2/examine(mob/user, distance)
+/obj/item/chems/drinks/glass2/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(!istype(user) || distance > 1)
+	if(!istype(user))
 		return
 	var/list/extra_text
 	for(var/extra in extras)
@@ -122,9 +111,14 @@ var/global/const/DRINK_ICON_NOISY = "noise"
 			LAZYADD(extra_text, GE.glass_desc)
 		else if(istype(extra, /obj/item/food/processed_grown/slice))
 			LAZYADD(extra_text, "There is \a [extra] on the rim.")
+		else
+			. += "There is \a [extra] somewhere on the glass. Somehow."
 	if(length(extra_text))
-		to_chat(user, SPAN_NOTICE(jointext(extra_text," ")))
-
+		. += SPAN_NOTICE(jointext(extra_text," "))
+	if(has_ice())
+		. += "There is some ice floating in the drink."
+	if(has_fizz())
+		. += "It is fizzing slightly."
 
 /obj/item/chems/drinks/glass2/proc/get_filling_overlay(amount, overlay)
 	var/image/I = new()
@@ -207,7 +201,7 @@ var/global/const/DRINK_ICON_NOISY = "noise"
 
 /obj/item/chems/drinks/glass2/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/utensil/spoon))
-		if(user.a_intent == I_HURT)
+		if(user.check_intent(I_FLAG_HARM))
 			user.visible_message("<span class='warning'>[user] bashes \the [src] with a spoon, shattering it to pieces! What a rube.</span>")
 			playsound(src, "shatter", 30, 1)
 			if(reagents)

@@ -17,17 +17,16 @@
 		if(plate.try_plate_food(src, user))
 			return TRUE
 
-	if(user.a_intent == I_HELP)
+	if(user.check_intent(I_FLAG_HELP))
 		// Eating with forks
 		if(do_utensil_interaction(W, user))
 			return TRUE
-
 		// Creating food combinations.
 		if(try_create_combination(W, user))
 			return TRUE
 
 	// Hiding items inside larger food items.
-	if(user.a_intent != I_HURT && is_sliceable() && W.w_class < w_class && !is_robot_module(W) && !istype(W, /obj/item/chems/condiment))
+	if(!user.check_intent(I_FLAG_HARM) && is_sliceable() && W.w_class < w_class && !is_robot_module(W) && !istype(W, /obj/item/chems/condiment))
 		if(user.try_unequip(W, src))
 			to_chat(user, SPAN_NOTICE("You slip \the [W] inside \the [src]."))
 			add_fingerprint(user)
@@ -104,7 +103,7 @@
 		return food.try_create_combination(src, user)
 	return FALSE
 
-/obj/item/food/examine(mob/user, distance)
+/obj/item/food/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance > 1)
 		return
@@ -121,7 +120,7 @@
 			product_string = english_list(names, and_text = " or ")
 		else
 			product_string = "\a [atom_info_repository.get_name_for(product)]"
-		to_chat(user, SPAN_NOTICE("With this and \a [ispath(thing_type) ? atom_info_repository.get_name_for(thing_type): thing_type], you could make [product_string]."))
+		. += SPAN_NOTICE("With this and \a [ispath(thing_type) ? atom_info_repository.get_name_for(thing_type): thing_type], you could make [product_string].")
 
 /obj/item/food/bun/get_combined_food_products()
 	var/static/list/combined_food_products = list(

@@ -70,25 +70,25 @@
 		qdel(CI)
 	return ..()
 
-/obj/machinery/appliance/examine(var/mob/user)
+/obj/machinery/appliance/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(panel_open)
-		to_chat(user, "The service panel is open.")
-	if(Adjacent(user))
-		list_contents(user)
+		. += "The service panel is open."
+	if(distance <= 1)
+		. += list_contents(user)
 
 /obj/machinery/appliance/get_mechanics_info()
 	return "Control-click this to toggle its power."
 
+/// Returns a string describing the contents of the appliance.
 /obj/machinery/appliance/proc/list_contents(var/mob/user)
 	if (!length(cooking_objs))
-		to_chat(user, SPAN_NOTICE("It is empty."))
-		return
-	var/string = "Contains...<ul>"
+		return SPAN_NOTICE("It is empty.")
+	var/list/accumulator = list("Contains...<ul>")
 	for (var/datum/cooking_item/CI in cooking_objs)
-		string += "<li>\a [CI.container.label(null, CI.combine_target)], [report_progress(CI)]</li>"
-	string += "</ul>"
-	to_chat(user, string)
+		accumulator += "<li>\a [CI.container.label(null, CI.combine_target)], [report_progress(CI)]</li>"
+	accumulator += "</ul>"
+	return JOINTEXT(accumulator)
 
 /obj/machinery/appliance/proc/report_progress(var/datum/cooking_item/CI)
 	if (!CI || !CI.max_cookwork)

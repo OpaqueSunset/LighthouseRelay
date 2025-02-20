@@ -207,7 +207,7 @@
 /turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "aM" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -335,7 +335,7 @@
 /turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bk" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/floor/tiled,
 /area/submap/virgo2/Blackshuttledown)
 "bm" = (

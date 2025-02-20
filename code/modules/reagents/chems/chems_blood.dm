@@ -10,6 +10,7 @@
 	taste_mult = 1.3
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
+	coated_adjective = "bloody"
 	value = 2.5
 	opacity = TRUE
 	min_fluid_opacity = FLUID_MAX_ALPHA
@@ -72,7 +73,7 @@
 
 /decl/material/liquid/blood/get_reagent_color(datum/reagents/holder)
 	var/list/blood_data = REAGENT_DATA(holder, type)
-	return blood_data?["blood_color"] || ..()
+	return blood_data?[DATA_BLOOD_COLOR] || ..()
 
 /decl/material/liquid/coagulated_blood
 	name = "coagulated blood"

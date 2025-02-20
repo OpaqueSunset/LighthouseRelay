@@ -39,6 +39,10 @@
 		pixel_y = rand(-randpixel, randpixel)
 	. = ..()
 
+/obj/item/ammo_casing/Destroy()
+	QDEL_NULL(BB)
+	return ..()
+
 //removes the projectile from the ammo casing
 /obj/item/ammo_casing/proc/expend()
 	. = BB
@@ -123,12 +127,12 @@
 	if(!BB)
 		SetName("spent [name]")
 
-/obj/item/ammo_casing/examine(mob/user)
+/obj/item/ammo_casing/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(caliber)
-		to_chat(user, "Its caliber is [caliber].")
+		. += "Its caliber is [caliber]."
 	if (!BB)
-		to_chat(user, "This one is spent.")
+		. += "This one is spent."
 
 //An item that holds casings and can be used to put them inside guns
 /obj/item/ammo_magazine
@@ -254,10 +258,10 @@
 				break
 		icon_state = (new_state)? new_state : initial(icon_state)
 
-/obj/item/ammo_magazine/examine(mob/user)
+/obj/item/ammo_magazine/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/self_ammo_count = get_stored_ammo_count()
-	to_chat(user, "There [(self_ammo_count == 1)? "is" : "are"] [self_ammo_count] round\s left!")
+	. += "There [(self_ammo_count == 1)? "is" : "are"] [self_ammo_count] round\s left!"
 
 //magazine icon state caching
 var/global/list/magazine_icondata_keys = list()
@@ -274,10 +278,9 @@ var/global/list/magazine_icondata_states = list()
 /proc/magazine_icondata_cache_add(var/obj/item/ammo_magazine/M)
 	var/list/icon_keys = list()
 	var/list/ammo_states = list()
-	var/list/states = icon_states(M.icon)
 	for(var/i = 0, i <= M.max_ammo, i++)
 		var/ammo_state = "[M.icon_state]-[i]"
-		if(ammo_state in states)
+		if(check_state_in_icon(ammo_state, M.icon))
 			icon_keys += i
 			ammo_states += ammo_state
 

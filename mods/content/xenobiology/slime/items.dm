@@ -61,7 +61,7 @@
 
 /obj/effect/golemrune
 	anchored = TRUE
-	desc = "a strange rune used to create golems. It glows when it can be activated."
+	desc = "A strange rune used to create golems. It glows when it can be activated."
 	name = "rune"
 	icon = 'icons/obj/rune.dmi'
 	icon_state = "golem"

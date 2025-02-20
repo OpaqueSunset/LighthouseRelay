@@ -22,7 +22,7 @@
 /area/submap/virgo2/BoomBase)
 "ag" = (
 /obj/structure/girder,
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "ah" = (
@@ -176,7 +176,7 @@
 /turf/floor/plating/virgo2,
 /area/submap/virgo2/BoomBase)
 "ba" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/wall/virgo2,
 /area/submap/virgo2/BoomBase)
 

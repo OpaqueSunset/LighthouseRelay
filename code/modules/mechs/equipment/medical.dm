@@ -1,6 +1,6 @@
 /obj/item/mech_equipment/sleeper
 	name = "\improper exosuit sleeper"
-	desc = "An exosuit-mounted sleeper designed to mantain patients stabilized on their way to medical facilities."
+	desc = "An exosuit-mounted sleeper designed to maintain patients stabilized on their way to medical facilities."
 	icon_state = "mech_sleeper"
 	restricted_hardpoints = list(HARDPOINT_BACK)
 	restricted_software = list(MECH_SOFTWARE_MEDICAL)
@@ -22,7 +22,7 @@
 
 /obj/item/mech_equipment/sleeper/uninstalled()
 	. = ..()
-	sleeper.go_out()
+	sleeper?.go_out()
 
 /obj/item/mech_equipment/sleeper/attack_self(var/mob/user)
 	. = ..()
@@ -64,6 +64,9 @@
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/painkillers())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/antitoxins())
 	add_reagent_canister(null, new /obj/item/chems/chem_disp_cartridge/oxy_meds())
+
+/obj/machinery/sleeper/mounted/DefaultTopicState()
+	return global.mech_topic_state
 
 /obj/machinery/sleeper/mounted/ui_interact(var/mob/user, var/ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1, var/datum/topic_state/state = global.mech_topic_state)
 	. = ..()

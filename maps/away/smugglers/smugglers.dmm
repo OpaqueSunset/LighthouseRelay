@@ -611,7 +611,7 @@
 /turf/floor/tiled,
 /area/smugglers/office)
 "bD" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/laminate,
 /obj/item/paper,
 /obj/item/pen,
 /obj/item/flashlight/lamp,
@@ -665,7 +665,7 @@
 /turf/floor/tiled,
 /area/smugglers/office)
 "bK" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/laminate,
 /obj/random/coin{
 	pixel_x = -5;
 	pixel_y = -3
@@ -682,7 +682,7 @@
 /turf/floor/tiled,
 /area/smugglers/office)
 "bL" = (
-/obj/structure/bed/chair/comfy/red{
+/obj/structure/chair/comfy/red{
 	dir = 8
 	},
 /obj/machinery/light{
@@ -854,7 +854,7 @@
 /turf/floor,
 /area/smugglers/dorms)
 "cp" = (
-/obj/effect/decal/cleanable/vomit,
+/obj/effect/decal/cleanable/vomit/mapped,
 /obj/random/medical/lite,
 /turf/floor/plating/airless,
 /area/smugglers/dorms)
@@ -865,7 +865,7 @@
 /turf/floor/plating/airless,
 /area/smugglers/dorms)
 "cr" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/light,
@@ -889,7 +889,7 @@
 /turf/floor/tiled,
 /area/smugglers/dorms)
 "cu" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/light,

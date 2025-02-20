@@ -190,7 +190,7 @@ var/global/list/possible_say_verbs = list(
 			var/mob/living/human/H = holder
 			for(var/obj/item/organ/external/affecting in H.get_external_organs())
 				if(card in affecting.implants)
-					affecting.take_external_damage(rand(30,50))
+					affecting.take_damage(rand(30,50))
 					LAZYREMOVE(affecting.implants, card)
 					H.visible_message("<span class='danger'>\The [src] explodes out of \the [H]'s [affecting.name] in a shower of gore!</span>")
 					break
@@ -277,7 +277,7 @@ var/global/list/possible_say_verbs = list(
 //Overriding this will stop a number of headaches down the track.
 /mob/living/silicon/pai/attackby(obj/item/W, mob/user)
 	var/obj/item/card/id/card = W.GetIdCard()
-	if(card && user.a_intent == I_HELP)
+	if(card && user.check_intent(I_FLAG_HELP))
 		var/list/new_access = card.GetAccess()
 		idcard.access = new_access
 		visible_message("<span class='notice'>[user] slides [W] across [src].</span>")
@@ -287,7 +287,7 @@ var/global/list/possible_say_verbs = list(
 		return TRUE
 	if(try_stock_parts_removal(W, user))
 		return TRUE
-	var/force = W.get_attack_force(user)
+	var/force = W.expend_attack_force(user)
 	if(force)
 		visible_message(SPAN_DANGER("[user] attacks [src] with [W]!"))
 		take_damage(force)

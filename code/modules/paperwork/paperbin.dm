@@ -32,7 +32,7 @@
 	if(!CanPhysicallyInteract(user))
 		return FALSE
 
-	if(user.a_intent == I_HURT || !user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
+	if(user.check_intent(I_FLAG_HARM) || !user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		return ..()
 
 	if(LAZYLEN(papers) < 1 && amount < 1)
@@ -103,15 +103,15 @@
 		return TRUE
 	return ..()
 
-/obj/item/paper_bin/examine(mob/user, distance)
+/obj/item/paper_bin/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance > 1)
 		return
 	if(amount)
-		to_chat(user, SPAN_NOTICE("There [(amount > 1 ? "are [amount] papers" : "is one paper")] in the bin."))
+		. += SPAN_NOTICE("There [(amount > 1 ? "are [amount] papers" : "is one paper")] in the bin.")
 	else
-		to_chat(user, SPAN_NOTICE("There are no papers in the bin."))
-	to_chat(user, SPAN_NOTICE("It can contain at most [max_amount] papers."))
+		. += SPAN_NOTICE("There are no papers in the bin.")
+	. += SPAN_NOTICE("It can contain at most [max_amount] papers.")
 
 /obj/item/paper_bin/on_update_icon()
 	. = ..()
@@ -129,7 +129,7 @@
 	//Dump all stored papers too
 	for(var/i=1 to amount)
 		var/obj/item/paper/P = new /obj/item/paper(forced_loc)
-		P.merge_with_existing(forced_loc, usr)
+		P.merge_with_existing(forced_loc, user)
 	LAZYCLEARLIST(papers)
 
 /obj/item/paper_bin/proc/add_paper(var/obj/item/paper/P)
@@ -155,6 +155,7 @@
 /decl/interaction_handler/paper_bin_dump_contents
 	name                 = "Dump Contents"
 	expected_target_type = /obj/item/paper_bin
+	examine_desc         = "empty $TARGET_THEM$"
 
 /decl/interaction_handler/paper_bin_dump_contents/is_possible(var/obj/item/paper_bin/target, mob/user, obj/item/prop)
 	return ..() && target.amount > 0

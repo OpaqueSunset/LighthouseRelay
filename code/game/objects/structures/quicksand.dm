@@ -6,7 +6,7 @@
 	icon_state = "open"
 	density = FALSE
 	anchored = TRUE
-	can_buckle = 1
+	can_buckle = TRUE
 	buckle_dir = SOUTH
 	var/exposed = 0
 	var/busy
@@ -80,7 +80,7 @@
 	update_icon()
 
 /obj/effect/quicksand/attackby(obj/item/W, mob/user)
-	if(!exposed && W.get_attack_force(user))
+	if(!exposed && W.expend_attack_force(user))
 		expose()
 		return TRUE
 	else

@@ -1547,7 +1547,7 @@
 /turf/floor/tiled/dark,
 /area/security/warden)
 "cO" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
 /obj/machinery/button/blast_door{
@@ -1684,7 +1684,7 @@
 "da" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet,
 /area/crew_quarters/heads/hos)
 "db" = (
@@ -1759,7 +1759,7 @@
 /turf/floor/bluegrid,
 /area/ai)
 "dn" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/floor/tiled/dark,
@@ -1821,7 +1821,7 @@
 /turf/floor/wood,
 /area/crew_quarters/heads/hos)
 "du" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/newscaster/security_unit{
 	pixel_y = -32;
 	dir = 1
@@ -2029,7 +2029,7 @@
 /turf/floor/tiled,
 /area/security/hallwayaux)
 "dN" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/faxmachine,
 /obj/item/radio/intercom{
 	dir = 8;
@@ -2284,7 +2284,7 @@
 /turf/wall,
 /area/maintenance/station/ai)
 "en" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 7
@@ -2474,7 +2474,7 @@
 /turf/floor/carpet,
 /area/crew_quarters/heads/hos)
 "eF" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/clothing/permit/gun,
 /obj/item/clothing/permit/gun,
 /obj/item/clothing/permit/gun,
@@ -2494,7 +2494,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
@@ -2504,7 +2504,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/carpet,
@@ -3023,7 +3023,7 @@
 /turf/floor/tiled,
 /area/security/hallway)
 "fE" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor,
@@ -3295,17 +3295,17 @@
 /area/security/forensics)
 "gd" = (
 /obj/structure/closet/crate,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
-/obj/item/target,
+/obj/item/training_dummy,
+/obj/item/training_dummy,
+/obj/item/training_dummy,
+/obj/item/training_dummy,
+/obj/item/training_dummy,
+/obj/item/training_dummy,
 /turf/floor/tiled/dark,
 /area/security/range)
 "ge" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/target_stake,
+/obj/structure/target_stake/steel,
 /turf/floor/tiled/dark,
 /area/security/range)
 "gf" = (
@@ -4844,7 +4844,7 @@
 /turf/floor,
 /area/maintenance/substation/security)
 "iJ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor,
@@ -4959,7 +4959,7 @@
 /turf/floor,
 /area/maintenance/station/ai)
 "iX" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor,
@@ -5130,7 +5130,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/flask/barflask{
 	pixel_x = -4;
 	pixel_y = 8
@@ -5148,7 +5148,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/radio/off,
 /obj/item/megaphone,
 /obj/structure/cable/green{
@@ -5392,7 +5392,7 @@
 "jN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/computer/modular/preset/civilian{
 	dir = 4
 	},
@@ -5491,7 +5491,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/carpet,
@@ -5503,7 +5503,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/stamp/hos,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -4;
@@ -5815,7 +5815,7 @@
 /turf/floor/tiled,
 /area/security/observation)
 "kE" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -5824,7 +5824,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
@@ -6755,7 +6755,7 @@
 /turf/floor/tiled,
 /area/security/briefing_room)
 "mm" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -7088,7 +7088,7 @@
 /turf/floor/tiled,
 /area/security/briefing_room)
 "mO" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -7389,7 +7389,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -7500,14 +7500,14 @@
 /turf/floor,
 /area/security/breakroom)
 "nE" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/carpet,
 /area/security/breakroom)
 "nF" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/carpet,
 /area/security/breakroom)
 "nG" = (
@@ -7705,13 +7705,13 @@
 /turf/floor,
 /area/security/breakroom)
 "nX" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/carpet,
 /area/security/breakroom)
 "nY" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet,
 /area/security/breakroom)
 "nZ" = (
@@ -7865,7 +7865,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -7934,7 +7934,7 @@
 /turf/space,
 /area/space)
 "ou" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
@@ -7944,7 +7944,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -7955,7 +7955,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/carpet,
@@ -8254,7 +8254,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/carpet,
@@ -8266,7 +8266,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/carpet,
@@ -8508,7 +8508,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -8526,7 +8526,7 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/tiled,
@@ -9168,11 +9168,11 @@
 /turf/floor/lino,
 /area/security/detectives_office)
 "qE" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/lino,
 /area/security/detectives_office)
 "qF" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
@@ -10211,7 +10211,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "sh" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/pen/blue{
@@ -10221,7 +10221,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "si" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -10229,7 +10229,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "sj" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/handcuffs,
 /obj/item/box/fancy/cigarettes/dromedaryco,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -10241,7 +10241,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/pen/blue{
@@ -10524,7 +10524,7 @@
 /turf/floor/tiled,
 /area/quartermaster/office)
 "sK" = (
-/obj/structure/bed/chair/comfy/brown,
+/obj/structure/chair/comfy/brown,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
@@ -10590,7 +10590,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "sS" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -10599,14 +10599,14 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "sT" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet,
 /area/security/detectives_office)
 "sU" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /obj/abstract/landmark/start{
@@ -11274,7 +11274,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "tP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/taperecorder{
 	pixel_x = -4;
 	pixel_y = 2
@@ -11282,7 +11282,7 @@
 /turf/floor/carpet,
 /area/security/detectives_office)
 "tQ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/taperecorder{
 	pixel_x = -4;
 	pixel_y = 2
@@ -11642,7 +11642,7 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 9
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -11759,7 +11759,7 @@
 /turf/floor/tiled,
 /area/quartermaster/office)
 "uE" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -12038,7 +12038,7 @@
 /turf/floor/wood,
 /area/hallway/station/upper)
 "va" = (
-/obj/structure/bed/chair/comfy/brown,
+/obj/structure/chair/comfy/brown,
 /turf/floor/wood,
 /area/hallway/station/upper)
 "vb" = (
@@ -12128,7 +12128,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -12155,7 +12155,7 @@
 /turf/floor/tiled,
 /area/quartermaster/office)
 "vo" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -12402,7 +12402,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 10
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -12420,7 +12420,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled,
 /area/security/lobby)
 "vJ" = (
@@ -12498,11 +12498,11 @@
 /turf/floor/plating,
 /area/maintenance/station/elevator)
 "vP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/hallway/station/upper)
 "vQ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 22
@@ -12559,7 +12559,7 @@
 /turf/floor/tiled,
 /area/quartermaster/delivery)
 "vX" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/abstract/landmark/start{
 	name = "Cargo Technician"
 	},
@@ -12684,7 +12684,7 @@
 /turf/floor/tiled,
 /area/security/lobby)
 "wl" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -12792,7 +12792,7 @@
 /turf/floor/tiled,
 /area/hallway/station/upper)
 "wy" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/floor/wood,
@@ -12861,7 +12861,7 @@
 /obj/effect/floor_decal/steeldecal/steel_decals7{
 	dir = 5
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -13462,7 +13462,7 @@
 /turf/floor/tiled/dark,
 /area/lawoffice)
 "xz" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -13492,7 +13492,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/tiled/dark,
@@ -13513,7 +13513,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled/dark,
@@ -13534,7 +13534,7 @@
 /turf/floor/tiled/dark,
 /area/lawoffice)
 "xF" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /obj/abstract/landmark/start{
@@ -14043,7 +14043,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 8
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -14057,7 +14057,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -14568,8 +14568,6 @@
 /area/security/nuke_storage)
 "zg" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/item/clothing/suit/space/void/wizard,
-/obj/item/clothing/head/helmet/space/void/wizard,
 /obj/structure/rack,
 /obj/machinery/light{
 	dir = 1
@@ -15439,7 +15437,7 @@
 /turf/floor/plating,
 /area/medical/psych)
 "AB" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/plushie/ian{
 	dir = 8;
 	pixel_y = 6
@@ -15451,7 +15449,7 @@
 /turf/floor/wood,
 /area/medical/psych)
 "AC" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/toy/plushie/therapy/blue,
 /obj/item/secure_storage/safe{
 	pixel_x = 5;
@@ -16093,7 +16091,7 @@
 /turf/floor/tiled,
 /area/quartermaster/qm)
 "BM" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /obj/abstract/landmark/start{
@@ -16120,7 +16118,7 @@
 /turf/floor/tiled,
 /area/quartermaster/qm)
 "BO" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17267,7 +17265,7 @@
 	dir = 4;
 	pixel_x = 24
 	},
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /turf/floor/tiled/white,
 /area/medical/reception)
 "DV" = (
@@ -17336,7 +17334,7 @@
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "DZ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -17410,7 +17408,7 @@
 /turf/wall/r_wall,
 /area/medical/psych)
 "Eh" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_y = 4
 	},
@@ -17423,7 +17421,7 @@
 /turf/floor/carpet/blue,
 /area/medical/psych)
 "Ei" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/records,
 /turf/floor/carpet/blue,
 /area/medical/psych)
@@ -17648,11 +17646,11 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /turf/floor/wood/sif,
 /area/medical/reception)
 "EJ" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -17714,7 +17712,7 @@
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "ER" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/abstract/landmark/start{
@@ -17742,7 +17740,7 @@
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "EU" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/alarm{
@@ -17799,7 +17797,7 @@
 /turf/wall/r_wall,
 /area/medical/psych)
 "Fb" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/folder,
 /turf/floor/carpet/blue,
 /area/medical/psych)
@@ -17807,7 +17805,7 @@
 /obj/abstract/landmark/start{
 	name = "Psychiatrist"
 	},
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/floor/carpet/blue,
@@ -18010,7 +18008,7 @@
 /turf/floor/tiled/white,
 /area/medical/reception)
 "Fx" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -18108,7 +18106,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /obj/structure/sign/department/chemistry{
@@ -18184,7 +18182,7 @@
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "FK" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/camera/network/medbay{
@@ -18256,7 +18254,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/structure/cable/green{
 	icon_state = "1-8"
 	},
@@ -18310,7 +18308,7 @@
 /turf/wall/r_wall,
 /area/medical/psych)
 "FR" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/sign/poster{
 	pixel_y = -32
 	},
@@ -18523,7 +18521,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair/office/light,
+/obj/structure/chair/office/light,
 /turf/floor/tiled/white,
 /area/medical/reception)
 "Go" = (
@@ -18998,7 +18996,7 @@
 /turf/floor/tiled/white,
 /area/medical/chemistry)
 "He" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/floor/tiled/white,
@@ -19305,7 +19303,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -19319,7 +19317,7 @@
 "HQ" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /turf/floor/wood/sif,
@@ -21006,7 +21004,7 @@
 /turf/floor,
 /area/maintenance/station/medbay)
 "KZ" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -21207,7 +21205,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 6
 	},
-/obj/structure/bed/chair/wheelchair,
+/obj/structure/chair/wheelchair,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -21386,7 +21384,7 @@
 /turf/floor/tiled/white,
 /area/medical/sleeper)
 "LJ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite,
@@ -21399,7 +21397,7 @@
 /turf/floor/tiled/white,
 /area/medical/resleeving)
 "LK" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -21501,7 +21499,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/structure/bed/chair/wheelchair,
+/obj/structure/chair/wheelchair,
 /turf/floor/tiled/white,
 /area/medical/medbay_primary_storage)
 "LW" = (
@@ -22101,7 +22099,7 @@
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "MO" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -22146,7 +22144,7 @@
 /turf/floor/tiled/white,
 /area/crew_quarters/heads/cmo)
 "MQ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
@@ -22543,7 +22541,7 @@
 /obj/machinery/camera/network/medbay{
 	dir = 1
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/white,
@@ -22555,7 +22553,7 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/white,
@@ -23679,7 +23677,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/plushie/ian{
 	dir = 8;
 	pixel_y = 6
@@ -23700,7 +23698,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 5
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/toy/plushie/kitten,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
@@ -23874,7 +23872,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/floor/tiled/white,
@@ -23953,7 +23951,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/floor/wood,
@@ -23994,7 +23992,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_a)
 "PC" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24062,7 +24060,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_b)
 "PF" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24130,7 +24128,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_c)
 "PI" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24259,7 +24257,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 8
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/toy/plushie/therapy/orange,
 /turf/floor/wood,
 /area/medical/psych/inside)
@@ -24558,7 +24556,7 @@
 "Qr" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/pink/border,
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/abstract/landmark/start{
@@ -24599,7 +24597,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_a)
 "Qu" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite,
@@ -24645,7 +24643,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_b)
 "Qx" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite,
@@ -24691,7 +24689,7 @@
 /turf/floor/tiled/white,
 /area/medical/patient_c)
 "QA" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorwhite,
@@ -24750,7 +24748,7 @@
 /turf/floor/tiled/white,
 /area/medical/recoveryrestroom)
 "QH" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24811,7 +24809,7 @@
 /turf/floor/plating,
 /area/medical/recoveryrestroom)
 "QN" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -24851,7 +24849,7 @@
 	dir = 4;
 	pixel_x = -21
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/tiled/white,
 /area/medical/ward)
 "QQ" = (
@@ -24863,7 +24861,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 9
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/machinery/button/access{
@@ -25442,7 +25440,7 @@
 /turf/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "RY" = (
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /turf/floor/shuttle/blue/airless,
 /area/shuttle/belter/station)
 "Sa" = (
@@ -25541,7 +25539,7 @@
 /turf/floor/wood,
 /area/medical/psych)
 "Su" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/book/fluff/standard_operating_procedure,
 /turf/floor/carpet,
 /area/security/detectives_office)
@@ -25672,7 +25670,7 @@
 /turf/floor/tiled,
 /area/hallway/station/upper)
 "SP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
 	pixel_y = 4
@@ -26315,7 +26313,7 @@
 /turf/floor/tiled,
 /area/security/hallway)
 "Va" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /turf/floor/shuttle/blue/airless,
@@ -26382,7 +26380,7 @@
 /turf/floor/tiled,
 /area/quartermaster/belterdock)
 "Vn" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/abstract/landmark/start{
@@ -26673,7 +26671,7 @@
 /area/medical/psych_ward)
 "VY" = (
 /obj/machinery/light,
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /turf/floor/shuttle/blue/airless,
@@ -26850,7 +26848,7 @@
 /turf/floor/tiled,
 /area/quartermaster/belterdock)
 "WP" = (
-/obj/structure/bed/chair/comfy/brown,
+/obj/structure/chair/comfy/brown,
 /turf/floor/wood,
 /area/medical/psych)
 "WW" = (
@@ -26956,7 +26954,7 @@
 /turf/floor/tiled,
 /area/quartermaster/belterdock)
 "Xu" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 8
 	},
 /turf/floor/shuttle/blue/airless,
@@ -27002,7 +27000,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/medical/psych/inside)
 "XD" = (
@@ -27191,7 +27189,7 @@
 /turf/floor/wood,
 /area/medical/psych/inside)
 "Yn" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/structure/hygiene/shower{
@@ -27257,7 +27255,7 @@
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/borderfloorwhite/corner2,
 /obj/effect/floor_decal/corner/paleblue/bordercorner2,
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/white,
@@ -27294,7 +27292,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/brown,
+/obj/structure/chair/comfy/brown,
 /turf/floor/wood,
 /area/medical/psych/inside)
 "YB" = (
@@ -27426,7 +27424,7 @@
 /turf/floor/tiled/white,
 /area/medical/psych_ward)
 "YX" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/hygiene/shower{
@@ -27504,7 +27502,7 @@
 	pixel_x = 26;
 	pixel_y = 5
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/records{
 	dir = 8
 	},

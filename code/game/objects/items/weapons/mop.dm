@@ -7,7 +7,7 @@
 	throw_range = 10
 	w_class = ITEM_SIZE_NORMAL
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
-	material = /decl/material/solid/organic/wood
+	material = /decl/material/solid/organic/wood/oak
 	matter = list(
 		/decl/material/solid/organic/cloth = MATTER_AMOUNT_SECONDARY,
 	)
@@ -58,7 +58,7 @@
 		to_chat(user, SPAN_WARNING("\The [src] is dry!"))
 		return TRUE
 
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		user.visible_message(SPAN_DANGER("\The [user] begins to aggressively mop \the [moppable_turf]!"))
 	else
 		user.visible_message(SPAN_NOTICE("\The [user] begins to clean \the [moppable_turf]."))
@@ -109,9 +109,9 @@
 	if(reagents.total_volume < reagents.maximum_volume)
 		add_to_reagents(refill_reagent, refill_rate)
 
-/obj/item/mop/advanced/examine(mob/user)
+/obj/item/mop/advanced/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("The condenser switch is set to <b>[refill_enabled ? "ON" : "OFF"]</b>."))
+	. += SPAN_NOTICE("The condenser switch is set to <b>[refill_enabled ? "ON" : "OFF"]</b>.")
 
 /obj/item/mop/advanced/Destroy()
 	STOP_PROCESSING(SSobj, src)

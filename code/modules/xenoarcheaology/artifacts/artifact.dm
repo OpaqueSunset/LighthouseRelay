@@ -111,7 +111,7 @@
 		physically_destroyed()
 
 /obj/structure/artifact/Move()
-	..()
+	. = ..()
 	if(my_effect)
 		my_effect.UpdateMove()
 	if(secondary_effect)

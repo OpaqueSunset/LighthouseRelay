@@ -15,7 +15,7 @@
 	T = new /obj/item/stack/tile/floor(src)
 
 /obj/machinery/floorlayer/Move(new_turf,M_Dir)
-	..()
+	. = ..()
 
 	if(on)
 		if(mode["dismantle"])
@@ -41,7 +41,7 @@
 		var/m = input("Choose work mode", "Mode") as null|anything in mode
 		mode[m] = !mode[m]
 		var/O = mode[m]
-		user.visible_message("<span class='notice'>[usr] has set \the [src] [m] mode [!O?"off":"on"].</span>", "<span class='notice'>You set \the [src] [m] mode [!O?"off":"on"].</span>")
+		user.visible_message("<span class='notice'>[user] has set \the [src] [m] mode [!O?"off":"on"].</span>", "<span class='notice'>You set \the [src] [m] mode [!O?"off":"on"].</span>")
 		return TRUE
 
 	if(istype(W, /obj/item/stack/tile))
@@ -67,13 +67,12 @@
 		return TRUE
 	return ..()
 
-/obj/machinery/floorlayer/examine(mob/user)
+/obj/machinery/floorlayer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/dismantle = mode["dismantle"]
-	var/laying = mode["laying"]
-	var/collect = mode["collect"]
-	var/message = "<span class='notice'>\The [src] [!T?"don't ":""]has [!T?"":"[T.get_amount()] [T] "]tile\s, dismantle is [dismantle?"on":"off"], laying is [laying?"on":"off"], collect is [collect?"on":"off"].</span>"
-	to_chat(user, message)
+	var/laying    = mode["laying"]
+	var/collect   = mode["collect"]
+	. += SPAN_NOTICE("\The [src] [!T?"don't ":""]has [!T?"":"[T.get_amount()] [T] "]tile\s, dismantle is [dismantle?"on":"off"], laying is [laying?"on":"off"], collect is [collect?"on":"off"].")
 
 /obj/machinery/floorlayer/proc/reset()
 	on = 0
@@ -82,7 +81,7 @@
 	if(istype(new_turf, /turf/floor))
 		var/turf/floor/T = new_turf
 		if(!T.is_plating())
-			T.set_flooring(null, place_product = !T.is_floor_damaged())
+			T.clear_flooring(place_product = !T.is_floor_damaged())
 	return new_turf.is_plating()
 
 /obj/machinery/floorlayer/proc/TakeNewStack()

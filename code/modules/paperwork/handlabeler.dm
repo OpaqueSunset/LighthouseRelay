@@ -28,10 +28,10 @@
 	var/safety           = TRUE                  //Whether the safety is on or off. Set to FALSE to allow labeler to interact with things
 	var/mode             = HAND_LABELER_MODE_ADD //What operation the labeler is set to do
 
-/obj/item/hand_labeler/examine(mob/user, distance, infix, suffix)
+/obj/item/hand_labeler/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance < 1)
-		to_chat(user, safety? "Safety is on." : SPAN_WARNING("Safety is off!"))
+		. += safety? "Safety is on." : SPAN_WARNING("Safety is off!")
 		var/modename
 		switch(mode)
 			if(HAND_LABELER_MODE_ADD)
@@ -40,12 +40,12 @@
 				modename = HAND_LABELER_MODE_REM_NAME
 			if(HAND_LABELER_MODE_REMALL)
 				modename = HAND_LABELER_MODE_REMALL_NAME
-		to_chat(user, "It's set to '[SPAN_ITALIC(modename)]' mode.")
-		to_chat(user, "It has [get_labels_left()]/[max_labels] label(s).")
+		. += "It's set to '[SPAN_ITALIC(modename)]' mode."
+		. += "It has [get_labels_left()]/[max_labels] label(s)."
 		if(length(label))
-			to_chat(user, "Its label text reads '[SPAN_ITALIC(label)]'.")
+			. += "Its label text reads '[SPAN_ITALIC(label)]'."
 	else
-		to_chat(user, SPAN_NOTICE("You're too far away to tell much more."))
+		. += SPAN_NOTICE("You're too far away to tell much more.")
 
 /obj/item/hand_labeler/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 	return FALSE

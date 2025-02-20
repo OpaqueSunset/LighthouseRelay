@@ -23,8 +23,7 @@
 /obj/screen/zone_selector/exosuit
 	requires_ui_style = FALSE
 
-/mob/living/exosuit/InitializeHud()
-	zone_sel = new /obj/screen/zone_selector/exosuit(null, src)
+/mob/living/exosuit/initialize_hud()
 	if(!LAZYLEN(hud_elements))
 		var/i = 1
 		for(var/hardpoint in hardpoints)

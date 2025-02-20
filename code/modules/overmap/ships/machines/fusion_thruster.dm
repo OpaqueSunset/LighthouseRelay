@@ -1,6 +1,6 @@
 /obj/machinery/atmospherics/unary/engine/fusion
 	name = "fusion nozzle"
-	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship."
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propel the ship."
 
 	base_type = /obj/machinery/atmospherics/unary/engine/fusion
 	engine_extension = /datum/extension/ship_engine/gas/fusion

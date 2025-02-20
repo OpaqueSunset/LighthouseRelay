@@ -1,5 +1,5 @@
 var/global/list/_descriptive_temperature_strings
-/proc/get_descriptive_temperature_strings(temperature)
+/proc/get_descriptive_temperature_strings(temperature as num)
 	if(!_descriptive_temperature_strings)
 		_descriptive_temperature_strings = list()
 
@@ -41,7 +41,7 @@ var/global/list/materials_by_gas_symbol = list()
 
 INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
-/obj/effect/gas_overlay/proc/update_alpha_animation(var/new_alpha)
+/obj/effect/gas_overlay/proc/update_alpha_animation(var/new_alpha as num)
 	animate(src, alpha = new_alpha)
 	alpha = new_alpha
 	animate(src, alpha = 0.8 * new_alpha, time = 10, easing = SINE_EASING | EASE_OUT, loop = -1)
@@ -115,7 +115,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/can_backfill_floor_type
 
 	// Shards/tables/structures
-	var/shard_type = SHARD_SHRAPNEL       // Path of debris object.
+	var/shard_type = /obj/item/shard
+	var/shard_name = SHARD_SHRAPNEL as text // Path of debris object.
 	var/shard_icon                        // Related to above.
 	var/shard_can_repair = 1              // Can shards be turned into sheets with a welder?
 	var/list/recipes                      // Holder for all recipes usable with a sheet of this material.
@@ -125,6 +126,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	// Icons
 	var/icon_base = 'icons/turf/walls/solid.dmi'
 	var/icon_base_natural = 'icons/turf/walls/natural.dmi'
+	/// Either the icon used for reinforcement, or a list of icons to pick from.
 	var/icon_reinf = 'icons/turf/walls/reinforced_metal.dmi'
 	var/wall_flags = 0
 	var/list/wall_blend_icons = list() // Which wall icon types walls of this material type will consider blending with. Assoc list (icon path = TRUE/FALSE)
@@ -134,12 +136,21 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/table_icon_base = "metal"
 	var/table_icon_reinforced = "reinf_metal"
 
-	var/bench_icon = 'icons/obj/structures/benches.dmi'
-	var/pew_icon = 'icons/obj/structures/pews.dmi'
+	// TODO: Refactor these to just apply a generic material overlay (e.g. wood grain) instead of entirely-separate icon files?
+	// Alternatively, find some other way for icon variation based on material.
+	// You can't do it by having separate states in the base icons,
+	// because then modpacked materials can't add new states,
+	// and what if we really really want a special nullglass pew sprite or something?
+	var/bench_icon = 'icons/obj/structures/furniture/bench.dmi'
+	var/pew_icon = 'icons/obj/structures/furniture/pew.dmi'
+	var/slatted_seat_icon = 'icons/obj/structures/furniture/chair_slatted.dmi'
+	var/backed_chair_icon = 'icons/obj/structures/furniture/chair_backed.dmi'
 
 	var/list/stack_origin_tech = @'{"materials":1}' // Research level for stacks.
 
 	// Attributes
+	/// Does this material float to the top of liquids, allowing it to be skimmed off? Specific to cream at time of writing.
+	var/skimmable = FALSE
 	/// How rare is this material in exoplanet xenoflora?
 	var/exoplanet_rarity_plant = MAT_RARITY_MUNDANE
 	/// How rare is this material in exoplanet atmospheres?
@@ -190,6 +201,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	var/max_fluid_opacity = FLUID_MAX_ALPHA
 	/// Point at which the fluid will proc turf interaction logic. Workaround for mops being ruined forever by 1u of anything else being added.
 	var/turf_touch_threshold = FLUID_QDEL_POINT
+	/// Whether or not billets of this material will glow with heat.
+	var/glows_with_heat = FALSE
 
 	// Damage values.
 	var/hardness = MAT_VALUE_HARD       // Used for edge damage in weapons.
@@ -300,7 +313,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 	var/scent //refer to _scent.dm
 	var/scent_intensity = /decl/scent_intensity/normal
-	var/scent_descriptor = SCENT_DESC_SMELL
+	var/scent_descriptor = "smell"
 	var/scent_range = 1
 
 	var/list/neutron_interactions // Associative List of potential neutron interactions for the material to undergo, corresponding to the ideal
@@ -363,6 +376,17 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	/// If an item has a null paint_verb, it automatically sets it based on material.
 	var/paint_verb = "painted"
 
+	/// What word is used to describe an item covered in/stained by this by default?
+	/// Can be overridden by get_coated_adjective().
+	var/coated_adjective = "stained"
+
+	/// Chance of a natural wall made of this material dropping a gemstone, if the gemstone_types list is populated.
+	var/gemstone_chance = 5
+	/// Assoc weighted list of gemstone material types to weighting.
+	var/list/gemstone_types
+
+	var/forgable = FALSE // Can this material be forged in bar/billet form?
+
 // Placeholders for light tiles and rglass.
 /decl/material/proc/reinforce(var/mob/user, var/obj/item/stack/material/used_stack, var/obj/item/stack/material/target_stack, var/use_sheets = 1)
 	if(!used_stack.can_use(use_sheets))
@@ -411,7 +435,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(holographic)
 		temperature_burn_milestone_material = null
 		can_boil_to_gas              = FALSE
-		shard_type                   = SHARD_NONE
+		shard_name                   = SHARD_NONE
+		shard_type                   = null
 		conductive                   = 0
 		hidden_from_codex            = TRUE
 		value                        = 0
@@ -436,6 +461,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 		burn_product                 = null
 		vapor_products               = null
 		compost_value                = 0
+		forgable                     = FALSE
 	else if(isnull(temperature_damage_threshold))
 		var/new_temperature_damage_threshold = max(melting_point, boiling_point, heating_point)
 		// Don't let the threshold be lower than the ignition point.
@@ -445,7 +471,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			temperature_damage_threshold = new_temperature_damage_threshold
 
 	if(!shard_icon)
-		shard_icon = shard_type
+		shard_icon = shard_name
 	if(!burn_armor)
 		burn_armor = brute_armor
 	if(!gas_symbol)
@@ -560,13 +586,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 				. += "'[icon_base_natural]' - missing natural shine icon state 'shine[i]'"
 
 	if(icon_reinf)
-		if(use_reinf_state)
-			if(!check_state_in_icon(use_reinf_state, icon_reinf))
-				. += "'[icon_reinf]' - missing reinf icon state '[use_reinf_state]'"
-		else
-			for(var/i = 0 to 7)
-				if(!check_state_in_icon("[i]", icon_reinf))
-					. += "'[icon_reinf]' - missing directional reinf icon state '[i]'"
+		var/list/all_reinf_icons = islist(icon_reinf) ? icon_reinf : list(icon_reinf)
+		for(var/sub_icon in all_reinf_icons)
+			if(use_reinf_state)
+				if(!check_state_in_icon(use_reinf_state, sub_icon))
+					. += "'[sub_icon]' - missing reinf icon state '[use_reinf_state]'"
+			else
+				for(var/i = 0 to 7)
+					if(!check_state_in_icon(num2text(i), sub_icon))
+						. += "'[sub_icon]' - missing directional reinf icon state '[i]'"
 
 	if(length(color) != 7)
 		. += "invalid color (not #RRGGBB)"
@@ -668,7 +696,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 
 // As above.
 /decl/material/proc/place_shards(var/turf/target, var/amount = 1)
-	if(shard_type)
+	if(shard_name)
 		return create_object(target, amount, /obj/item/shard)
 
 /**Places downa as many shards as needed for the given amount of matter units. Returns a list of all the cuttings. */
@@ -729,12 +757,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	else
 		if(dirtiness <= DIRTINESS_DECONTAMINATE)
 			if(amount >= decontamination_dose && istype(O, /obj/item))
-				var/obj/item/I = O
-				if(I.contaminated)
-					I.decontaminate()
+				var/obj/item/thing = O
+				if(thing.contaminated)
+					thing.decontaminate()
 		if(dirtiness <= DIRTINESS_STERILE)
 			O.germ_level -= min(amount*20, O.germ_level)
-			O.was_bloodied = null
+			O.was_bloodied = FALSE
 		if(dirtiness <= DIRTINESS_CLEAN)
 			O.clean()
 
@@ -742,7 +770,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 // This doesn't apply to skin contact - this is for, e.g. extinguishers and sprays. The difference is that reagent is not directly on the mob's skin - it might just be on their clothing.
 /decl/material/proc/touch_mob(var/mob/living/M, var/amount, var/datum/reagents/holder)
 	if(accelerant_value != FUEL_VALUE_NONE && amount && istype(M))
-		M.fire_stacks += floor((amount * accelerant_value)/FLAMMABLE_LIQUID_DIVISOR)
+		M.adjust_fire_intensity(floor((amount * accelerant_value)/FLAMMABLE_LIQUID_DIVISOR))
 #undef FLAMMABLE_LIQUID_DIVISOR
 
 /decl/material/proc/touch_turf(var/turf/touching_turf, var/amount, var/datum/reagents/holder) // Cleaner cleaning, lube lubbing, etc, all go here
@@ -852,15 +880,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 			var/organ_damage = dam * M.get_toxin_resistance()
 			if(organ_damage > 0)
 				var/mob/living/human/H = M
-				var/obj/item/organ/internal/I = GET_INTERNAL_ORGAN(H, toxicity_targets_organ)
-				if(I)
-					var/can_damage = I.max_damage - I.damage
+				var/obj/item/organ/internal/organ = GET_INTERNAL_ORGAN(H, toxicity_targets_organ)
+				if(organ)
+					var/can_damage = organ.max_damage - organ.get_organ_damage()
 					if(can_damage > 0)
 						if(organ_damage > can_damage)
-							I.take_internal_damage(can_damage, silent=TRUE)
+							organ.take_damage(can_damage, silent=TRUE)
 							dam -= can_damage
 						else
-							I.take_internal_damage(organ_damage, silent=TRUE)
+							organ.take_damage(organ_damage, silent=TRUE)
 							dam = 0
 		if(dam > 0)
 			M.take_damage(toxicity_targets_organ ? (dam * 0.75) : dam, TOX)
@@ -952,7 +980,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 /decl/material/proc/affect_touch(var/mob/living/victim, var/removed, var/datum/reagents/holder)
 
 	SHOULD_CALL_PARENT(TRUE)
-
+	. = FALSE
 	if(!istype(victim))
 		return FALSE
 
@@ -963,9 +991,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 	if(dirtiness <= DIRTINESS_STERILE)
 		if(victim.germ_level < INFECTION_LEVEL_TWO) // rest and antibiotics is required to cure serious infections
 			victim.germ_level -= min(removed*20, victim.germ_level)
-		for(var/obj/item/I in victim.contents)
-			I.was_bloodied = null
-		victim.was_bloodied = null
+		for(var/obj/item/organ in victim.contents)
+			organ.was_bloodied = FALSE
+		victim.was_bloodied = FALSE
 		. = TRUE
 
 	// TODO: clean should add the gross reagents washed off to a holder to dump on the loc.
@@ -1192,3 +1220,40 @@ INITIALIZE_IMMEDIATE(/obj/effect/gas_overlay)
 // TODO: expand this to more than just Actual Poison.
 /decl/material/proc/is_unsafe_to_drink(mob/user)
 	return toxicity > 0
+
+/// Used for material-dependent effects on stain dry.
+/// Return TRUE to skip default drying handling.
+/decl/material/proc/handle_stain_dry(obj/effect/decal/cleanable/blood/stain)
+	return FALSE
+
+/// Returns (in deciseconds) how long until dry() will be called on this stain,
+/// or null to use the stain's default.
+/// If 0 is returned, it dries instantly.
+/// If any value below 0 is returned, it doesn't start processing.
+/decl/material/proc/get_time_to_dry_stain(obj/effect/decal/cleanable/blood/stain)
+	return initial(stain.time_to_dry)
+
+// TODO: Maybe make this use a strengths system like taste?
+/// Returns a string to describe an item coated with this reagent (and others).
+/// Receives the coating reagent holder as an argument, so coating.my_atom is accessible
+/// and it can also conditionally use a different string for primary/non-primary materials, or
+/// if another liquid is present, e.g. 'wet bloody muddy shoes'.
+/decl/material/proc/get_coated_adjective(datum/reagents/coating)
+	var/used_color = get_reagent_color(coating)
+	if(get_config_value(/decl/config/enum/colored_coating_names) == CONFIG_COATING_COLOR_COMPONENTS)
+		return FONT_COLORED(used_color, coated_adjective)
+	return coated_adjective
+
+/// Gets the name used to describe a coating with this material as its primary reagent.
+/// This is mostly for handling special cases like mud.
+/decl/material/proc/get_primary_coating_name(datum/reagents/coating)
+	// this should probably respect current phase/solution/etc better, but coating sure doesn't
+	return get_reagent_name(coating, phase_at_temperature())
+
+/// Builds a string to describe a coating made up of this reagent (and others).
+/// This reagent will never be the primary reagent, however; that's handled in get_primary_coating_name.
+/// Receives the coating as an argument like get_coated_adjective, but also receives the accumulator list
+/// for more complex behaviors like adding to the start. It can't reliably handle things like removing
+/// another entry because ordering is not guaranteed, so beware if you need something like that.
+/decl/material/proc/build_coated_name(datum/reagents/coating, list/accumulator)
+	accumulator |= get_coated_adjective(coating)

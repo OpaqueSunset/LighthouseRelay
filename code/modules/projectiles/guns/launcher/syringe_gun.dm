@@ -30,7 +30,7 @@
 			return TRUE
 		syringe = I
 		to_chat(user, "<span class='notice'>You carefully insert [syringe] into [src].</span>")
-		sharp = TRUE
+		set_sharp(TRUE)
 		name = "syringe dart"
 		update_icon()
 		return TRUE
@@ -41,7 +41,7 @@
 		to_chat(user, "<span class='notice'>You remove [syringe] from [src].</span>")
 		user.put_in_hands(syringe)
 		syringe = null
-		sharp = initial(sharp)
+		set_sharp(initial(sharp))
 		SetName(initial(name))
 		update_icon()
 
@@ -71,7 +71,7 @@
 
 /obj/item/gun/launcher/syringe
 	name = "syringe gun"
-	desc = "A spring loaded rifle designed to fit syringes, designed to incapacitate unruly patients from a distance."
+	desc = "A spring-loaded rifle designed to fit syringes, designed to incapacitate unruly patients from a distance."
 	icon = 'icons/obj/guns/launcher/syringe.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_LARGE
@@ -152,7 +152,7 @@
 
 /obj/item/gun/launcher/syringe/disguised
 	name = "deluxe electronic cigarette"
-	desc = "A premium model eGavana MK3 electronic cigarette, shaped like a cigar."
+	desc = "A premium model eHavana MK3 electronic cigarette, shaped like a cigar."
 	icon = 'icons/clothing/mask/smokables/cigarette_electronic_deluxe.dmi'
 	icon_state = ICON_STATE_WORLD
 	w_class = ITEM_SIZE_SMALL
@@ -164,7 +164,7 @@
 	. = ..()
 	add_overlay("[icon_state]-loaded")
 
-/obj/item/gun/launcher/syringe/disguised/examine(mob/user, distance)
+/obj/item/gun/launcher/syringe/disguised/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "The button is a little stiff.")
+		. += "The button is a little stiff."

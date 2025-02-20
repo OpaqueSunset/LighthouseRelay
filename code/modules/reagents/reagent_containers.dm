@@ -32,6 +32,8 @@
 	var/image/contents_overlay = get_reagents_overlay(use_single_icon ? icon_state : null)
 	if(contents_overlay)
 		add_overlay(contents_overlay)
+	if(detail_state)
+		add_overlay(overlay_image(icon, "[initial(icon_state)][detail_state]", detail_color || COLOR_WHITE, RESET_COLOR))
 
 /obj/item/chems/apply_additional_mob_overlays(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing)
 	var/image/reagents_overlay = get_reagents_overlay(overlay.icon_state)
@@ -45,10 +47,10 @@
 
 /obj/item/chems/proc/cannot_interact(mob/user)
 	if(!CanPhysicallyInteract(user))
-		to_chat(usr, SPAN_WARNING("You're in no condition to do that!"))
+		to_chat(user, SPAN_WARNING("You're in no condition to do that!"))
 		return TRUE
 	if(ismob(loc) && loc != user)
-		to_chat(usr, SPAN_WARNING("You can't set transfer amounts while \the [src] is being held by someone else."))
+		to_chat(user, SPAN_WARNING("You can't set transfer amounts while \the [src] is being held by someone else."))
 		return TRUE
 	return FALSE
 
@@ -97,6 +99,21 @@
 	return
 
 /obj/item/chems/attackby(obj/item/used_item, mob/user)
+
+	// Skimming off cream, repurposed from crucibles.
+	// TODO: potentially make this an alt interaction and unify with slag skimming.
+	if(istype(used_item, /obj/item/chems) && ATOM_IS_OPEN_CONTAINER(used_item) && used_item.reagents?.maximum_volume && reagents?.total_volume && length(reagents.reagent_volumes) > 1)
+		var/list/skimmable_reagents = reagents.get_skimmable_reagents()
+		if(length(skimmable_reagents))
+			var/removing = min(amount_per_transfer_from_this, REAGENTS_FREE_SPACE(used_item.reagents))
+			if(removing <= 0)
+				to_chat(user, SPAN_WARNING("\The [used_item] is full."))
+			else
+				var/old_amt = used_item.reagents.total_volume
+				reagents.trans_to_holder(used_item.reagents, removing, skip_reagents = (reagents.reagent_volumes - skimmable_reagents))
+				to_chat(user, SPAN_NOTICE("You skim [used_item.reagents.total_volume-old_amt] unit\s of [used_item.reagents.get_primary_reagent_name()] from the top of \the [reagents.get_primary_reagent_name()]."))
+			return TRUE
+
 	if(used_item.user_can_attack_with(user, silent = TRUE))
 		if(istype(used_item, /obj/item/food))
 			var/obj/item/food/dipped = used_item
@@ -125,15 +142,15 @@
 	if(user.get_target_zone() != BP_MOUTH) //in case it is ever used as a surgery tool
 		return ..()
 
-/obj/item/chems/examine(mob/user)
+/obj/item/chems/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(!reagents)
 		return
 	if(hasHUD(user, HUD_SCIENCE))
 		var/prec = user.skill_fail_chance(SKILL_CHEMISTRY, 10)
-		to_chat(user, SPAN_NOTICE("\The [src] contains: [reagents.get_reagents(precision = prec)]."))
+		. += SPAN_NOTICE("\The [src] contains: [reagents.get_reagents(precision = prec)].")
 	else if((loc == user) && user.skill_check(SKILL_CHEMISTRY, SKILL_EXPERT))
-		to_chat(user, SPAN_NOTICE("Using your chemistry knowledge, you identify the following reagents in \the [src]: [reagents.get_reagents(!user.skill_check(SKILL_CHEMISTRY, SKILL_PROF), 5)]."))
+		. += SPAN_NOTICE("Using your chemistry knowledge, you identify the following reagents in \the [src]: [reagents.get_reagents(!user.skill_check(SKILL_CHEMISTRY, SKILL_PROF), 5)].")
 
 /obj/item/chems/shatter(consumed)
 	//Skip splashing if we are in nullspace, since splash isn't null guarded
@@ -202,6 +219,7 @@
 
 /decl/interaction_handler/set_transfer/chems
 	expected_target_type = /obj/item/chems
+	examine_desc         = "set the transfer volume"
 
 /decl/interaction_handler/set_transfer/chems/is_possible(var/atom/target, var/mob/user)
 	. = ..()
@@ -218,6 +236,7 @@
 	name                 = "Empty On Floor"
 	expected_target_type = /obj/item/chems
 	interaction_flags    = INTERACTION_NEEDS_INVENTORY | INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc         = "empty $TARGET_THEM$ onto the floor"
 
 /decl/interaction_handler/empty/chems/invoked(atom/target, mob/user, obj/item/prop)
 	var/turf/T = get_turf(user)

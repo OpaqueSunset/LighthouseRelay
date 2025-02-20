@@ -49,15 +49,15 @@
 		else
 			icon_state = "[icon_state]-full"
 
-/obj/item/organ/internal/brain_interface/examine(mob/user, distance)
+/obj/item/organ/internal/brain_interface/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		var/mob/living/brain/brainmob = get_brainmob()
 		if(istype(brainmob))
 			if(brainmob.emp_damage)
-				to_chat(user, SPAN_WARNING("The neural interface socket is damaged."))
+				. += SPAN_WARNING("The neural interface socket is damaged.")
 			else
-				to_chat(user, SPAN_NOTICE("It is undamaged."))
+				. += SPAN_NOTICE("It is undamaged.")
 
 /obj/item/organ/internal/brain_interface/attackby(var/obj/item/O, var/mob/user)
 
@@ -83,7 +83,7 @@
 			to_chat(user, SPAN_WARNING("You don't need to put a robotic brain into an interface."))
 			return TRUE
 
-		if(inserting_brain.damage >= inserting_brain.max_damage)
+		if(inserting_brain.get_organ_damage() >= inserting_brain.max_damage)
 			to_chat(user, SPAN_WARNING("That brain is well and truly dead."))
 			return TRUE
 

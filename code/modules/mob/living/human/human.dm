@@ -5,14 +5,12 @@
 	icon_state = "body_m_s"
 	mob_sort_value = 6
 	max_health = 150
-
-	var/list/hud_list[10]
 	var/embedded_flag	  //To check if we've need to roll for damage on movement while an item is imbedded in us.
 
 /mob/living/human/Initialize(mapload, species_name, datum/mob_snapshot/supplied_appearance)
 
 	current_health = max_health
-	setup_hud_overlays()
+	reset_hud_overlays()
 	var/list/newargs = args.Copy(2)
 	setup_human(arglist(newargs))
 	global.human_mob_list |= src
@@ -32,18 +30,6 @@
 	if(. != INITIALIZE_HINT_QDEL)
 		post_setup(arglist(newargs))
 
-/mob/living/human/proc/setup_hud_overlays()
-	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud_med.dmi', src, "100")
-	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
-	hud_list[LIFE_HUD]	      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
-	hud_list[ID_HUD]          = new /image/hud_overlay(global.using_map.id_hud_icons, src, "hudunknown")
-	hud_list[WANTED_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[STATUS_HUD_OOC]  = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealthy")
-
 /mob/living/human/Destroy()
 	global.human_mob_list -= src
 	regenerate_body_icon = FALSE // don't bother regenerating if we happen to be queued to update icon
@@ -51,7 +37,6 @@
 
 	LAZYCLEARLIST(smell_cooldown)
 
-	QDEL_NULL(attack_selector)
 	QDEL_NULL(vessel)
 	QDEL_NULL(touching)
 
@@ -88,7 +73,7 @@
 		if(istype(gps))
 			stat("Coordinates:", "[gps.get_coordinates()]")
 
-		stat("Intent:", "[a_intent]")
+		stat("Intent:", "[get_intent().name]")
 		stat("Move Mode:", "[move_intent.name]")
 
 		if(SSevac.evacuation_controller)
@@ -144,13 +129,13 @@
 	if (href_list["lookitem"])
 		var/obj/item/I = locate(href_list["lookitem"])
 		if(I)
-			src.examinate(I)
+			src.examine_verb(I)
 			return TOPIC_HANDLED
 
 	if (href_list["lookmob"])
 		var/mob/M = locate(href_list["lookmob"])
 		if(M)
-			src.examinate(M)
+			src.examine_verb(M)
 			return TOPIC_HANDLED
 
 	return ..()
@@ -182,7 +167,7 @@
 			var/datum/computer_file/report/crew_record/R = network.get_crew_record_by_name(perpname)
 			if(R)
 				var/setcriminal = input(user, "Specify a new criminal status for this person.", "Security HUD", R.get_criminalStatus()) as null|anything in global.security_statuses
-				if(hasHUD(usr, HUD_SECURITY) && setcriminal)
+				if(hasHUD(user, HUD_SECURITY) && setcriminal)
 					R.set_criminalStatus(setcriminal)
 					modified = 1
 
@@ -196,11 +181,11 @@
 							U.handle_regular_hud_updates()
 
 			if(!modified)
-				to_chat(usr, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
+				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
 			return TOPIC_HANDLED
 
 	if (href_list["secrecord"])
-		if(hasHUD(usr, HUD_SECURITY))
+		if(hasHUD(user, HUD_SECURITY))
 			var/perpname = "wot"
 			var/read = 0
 
@@ -274,11 +259,11 @@
 			var/datum/computer_file/report/crew_record/E = network.get_crew_record_by_name(perpname)
 			if(E)
 				if(hasHUD(user, HUD_MEDICAL))
-					to_chat(usr, "<b>Name:</b> [E.get_name()]")
-					to_chat(usr, "<b>Gender:</b> [E.get_gender()]")
-					to_chat(usr, "<b>Species:</b> [E.get_species_name()]")
-					to_chat(usr, "<b>Blood Type:</b> [E.get_bloodtype()]")
-					to_chat(usr, "<b>Details:</b> [E.get_medical_record()]")
+					to_chat(user, "<b>Name:</b> [E.get_name()]")
+					to_chat(user, "<b>Gender:</b> [E.get_gender()]")
+					to_chat(user, "<b>Species:</b> [E.get_species_name()]")
+					to_chat(user, "<b>Blood Type:</b> [E.get_bloodtype()]")
+					to_chat(user, "<b>Details:</b> [E.get_medical_record()]")
 					read = 1
 			if(!read)
 				to_chat(user, "<span class='warning'>Unable to locate a data core entry for this person.</span>")
@@ -360,7 +345,7 @@
 			return
 		var/decl/pronouns/pronouns = get_pronouns()
 		visible_message(SPAN_DANGER("\The [src] starts sticking a finger down [pronouns.his] own throat. It looks like [pronouns.he] [pronouns.is] trying to throw up!"))
-		if(!do_after(src, 30))
+		if(!do_after(src, 3 SECONDS))
 			return
 		timevomit = max(timevomit, 5)
 
@@ -369,13 +354,22 @@
 
 	lastpuke = TRUE
 	to_chat(src, SPAN_WARNING("You feel nauseous..."))
+	var/finish_time = 35 SECONDS
 	if(level > 1)
-		sleep(150 / timevomit)	//15 seconds until second warning
-		to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
+		// 15 seconds until second warning
+		addtimer(CALLBACK(src, PROC_REF(vomit_second_warning_message)), 15 SECONDS / timevomit)
+		finish_time += 15 SECONDS / timevomit
 		if(level > 2)
-			sleep(100 / timevomit)	//and you have 10 more for mad dash to the bucket
-			empty_stomach()
-	sleep(350)	//wait 35 seconds before next volley
+			// and you have 10 more for mad dash to the bucket
+			// timer delay must include the time from the prior one also
+			addtimer(CALLBACK(src, PROC_REF(empty_stomach)), 25 SECONDS / timevomit)
+			finish_time += 10 SECONDS / timevomit
+	addtimer(CALLBACK(src, PROC_REF(reset_vomit_cooldown)), finish_time)
+
+/mob/living/human/proc/vomit_second_warning_message()
+	to_chat(src, SPAN_WARNING("You feel like you are about to throw up!"))
+
+/mob/living/human/proc/reset_vomit_cooldown()
 	lastpuke = FALSE
 
 /mob/living/human/proc/increase_germ_level(n)
@@ -439,7 +433,7 @@
 	var/obj/item/organ/internal/stomach/stomach = get_organ(BP_STOMACH, /obj/item/organ/internal/stomach)
 	if(stomach && stomach.contents.len)
 		for(var/obj/item/O in stomach.contents)
-			if((O.edge || O.sharp) && prob(5))
+			if((O.is_sharp() || O.has_edge()) && prob(5))
 				var/obj/item/organ/external/parent = GET_EXTERNAL_ORGAN(src, stomach.parent_organ)
 				if(prob(1) && can_feel_pain() && O.can_embed())
 					to_chat(src, SPAN_DANGER("You feel something rip out of your [stomach.name]!"))
@@ -459,7 +453,7 @@
 			SPAN_DANGER("Your movement jostles [O] in your [organ.name] painfully."),       \
 			SPAN_DANGER("Your movement jostles [O] in your [organ.name] painfully."))
 		custom_pain(msg,40,affecting = organ)
-	organ.take_external_damage(rand(1,3) + O.w_class, DAM_EDGE, 0)
+	organ.take_damage(rand(1,3) + O.w_class, damage_flags = DAM_EDGE)
 
 /mob/proc/set_bodytype(var/decl/bodytype/new_bodytype)
 	return
@@ -502,7 +496,6 @@
 
 	//Handle old species transition
 	if(species)
-		species.remove_base_auras(src)
 		species.remove_inherent_verbs(src)
 
 	//Update our species
@@ -920,7 +913,7 @@
 	..()
 	if(should_have_organ(BP_STOMACH))
 		var/obj/item/organ/internal/stomach = GET_INTERNAL_ORGAN(src, BP_STOMACH)
-		if(!stomach || stomach.is_broken() || (stomach.is_bruised() && prob(stomach.damage)))
+		if(!stomach || stomach.is_broken() || (stomach.is_bruised() && prob(stomach.get_organ_damage())))
 			if(should_have_organ(BP_HEART))
 				vessel.trans_to_obj(vomit, 5)
 			else
@@ -959,9 +952,6 @@
 
 /mob/living/human/get_admin_job_string()
 	return job || uppertext(species.name)
-
-/mob/living/human/can_change_intent()
-	return TRUE
 
 /mob/living/human/breathing_hole_covered()
 	. = ..()
@@ -1073,40 +1063,6 @@
 	var/decl/bodytype/bodytype = get_bodytype()
 	var/datum/appearance_descriptor/age = LAZYACCESS(bodytype.appearance_descriptors, "age")
 	LAZYSET(appearance_descriptors, "age", (age ? age.sanitize_value(val) : 30))
-
-/mob/living/human/HandleBloodTrail(turf/T, old_loc)
-	// Tracking blood
-	var/obj/item/source
-	var/obj/item/clothing/shoes/shoes = get_equipped_item(slot_shoes_str)
-	if(istype(shoes))
-		shoes.handle_movement(src, MOVING_QUICKLY(src))
-		if(shoes.coating && shoes.coating.total_volume > 1)
-			source = shoes
-	else
-		for(var/foot_tag in list(BP_L_FOOT, BP_R_FOOT))
-			var/obj/item/organ/external/stomper = GET_EXTERNAL_ORGAN(src, foot_tag)
-			if(stomper && stomper.coating && stomper.coating.total_volume > 1)
-				source = stomper
-	if(!source)
-		species.handle_trail(src, T, old_loc)
-		return
-
-	var/list/bloodDNA
-	var/bloodcolor
-	var/list/blood_data = REAGENT_DATA(source.coating, /decl/material/liquid/blood)
-	if(blood_data)
-		bloodDNA = list(blood_data[DATA_BLOOD_DNA] = blood_data[DATA_BLOOD_TYPE])
-	else
-		bloodDNA = list()
-	bloodcolor = source.coating.get_color()
-	source.remove_coating(1)
-	update_equipment_overlay(slot_shoes_str)
-
-	if(species.get_move_trail(src))
-		T.AddTracks(species.get_move_trail(src),bloodDNA, dir, 0, bloodcolor) // Coming
-		if(isturf(old_loc))
-			var/turf/old_turf = old_loc
-			old_turf.AddTracks(species.get_move_trail(src), bloodDNA, 0, dir, bloodcolor) // Going
 
 /mob/living/human/remove_implant(obj/item/implant, surgical_removal = FALSE, obj/item/organ/external/affected)
 	if((. = ..()) && !surgical_removal)

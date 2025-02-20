@@ -37,9 +37,9 @@
 /obj/machinery/atmospherics/binary/algae_farm/filled
 	stored_material = list(/decl/material/solid/organic/plantmatter/algae = 10000, /decl/material/solid/graphite = 0)
 
-/obj/machinery/atmospherics/binary/algae_farm/examine(mob/user)
+/obj/machinery/atmospherics/binary/algae_farm/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("Its output port is to the [dir2text(dir)]."))
+	. += SPAN_NOTICE("Its output port is to the [dir2text(dir)].")
 
 /obj/machinery/atmospherics/binary/algae_farm/Initialize()
 	. = ..()

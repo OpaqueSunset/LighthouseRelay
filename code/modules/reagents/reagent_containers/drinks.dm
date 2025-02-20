@@ -57,26 +57,26 @@
 		return
 	return ..()
 
-/obj/item/chems/drinks/standard_dispenser_refill(var/mob/user, var/obj/structure/reagent_dispensers/target, skip_container_check = FALSE)
+/obj/item/chems/drinks/standard_dispenser_refill(mob/user, obj/structure/reagent_dispensers/target, skip_container_check = FALSE)
 	return do_open_check(user) && ..()
 
 /obj/item/chems/drinks/standard_pour_into(var/mob/user, var/atom/target)
 	return do_open_check(user) && ..()
 
-/obj/item/chems/drinks/examine(mob/user, distance)
+/obj/item/chems/drinks/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance > 1)
 		return
 	if(!reagents || reagents.total_volume == 0)
-		to_chat(user, SPAN_NOTICE("\The [src] is empty!"))
+		. += SPAN_NOTICE("\The [src] is empty!")
 	else if (reagents.total_volume <= volume * 0.25)
-		to_chat(user, SPAN_NOTICE("\The [src] is almost empty!"))
+		. += SPAN_NOTICE("\The [src] is almost empty!")
 	else if (reagents.total_volume <= volume * 0.66)
-		to_chat(user, SPAN_NOTICE("\The [src] is half full!"))
+		. += SPAN_NOTICE("\The [src] is half full!")
 	else if (reagents.total_volume <= volume * 0.90)
-		to_chat(user, SPAN_NOTICE("\The [src] is almost full!"))
+		. += SPAN_NOTICE("\The [src] is almost full!")
 	else
-		to_chat(user, SPAN_NOTICE("\The [src] is full!"))
+		. += SPAN_NOTICE("\The [src] is full!")
 
 /obj/item/chems/drinks/proc/get_filling_state()
 	var/percent = round((reagents.total_volume / volume) * 100)

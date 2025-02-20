@@ -183,7 +183,7 @@
 	card.assignment = newassignment
 	fetch_record(card.registered_name)?.set_job(card.assignment)
 	card.last_job_switch = world.time
-	callHook("reassign_employee", list(card)) // FIXME: REPLACE WITH OBSERV
+	RAISE_EVENT(/decl/observ/employee_id_reassigned, card)
 	newjob.current_positions++
 	player.mind.assigned_role = card.position
 	player.mind.role_alt_title = card.assignment

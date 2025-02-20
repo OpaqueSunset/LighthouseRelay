@@ -108,7 +108,7 @@
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "ay" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/template_noop,
 /area/tether_away/debrisfield/explored)
 "az" = (
@@ -192,7 +192,7 @@
 /turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aQ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/shuttle/white/airless,
@@ -214,7 +214,7 @@
 /turf/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aU" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/shuttle/white/airless,
@@ -232,11 +232,11 @@
 /turf/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aX" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/shuttle/blue/airless,
 /area/tether_away/debrisfield/explored)
 "aY" = (
-/obj/structure/bed/chair/comfy/teal,
+/obj/structure/chair/comfy/teal,
 /turf/floor/shuttle/white/airless,
 /area/tether_away/debrisfield/explored)
 "aZ" = (

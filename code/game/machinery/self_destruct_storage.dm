@@ -1,6 +1,6 @@
 /obj/machinery/nuclear_cylinder_storage
 	name = "nuclear cylinder storage"
-	desc = "It's a secure, armored storage unit embeded into the floor for storing the nuclear cylinders."
+	desc = "It's a secure, armored storage unit embedded into the floor for storing the nuclear cylinders."
 	icon = 'icons/obj/machines/self_destruct_storage.dmi'
 	icon_state = "base"
 	anchored = TRUE

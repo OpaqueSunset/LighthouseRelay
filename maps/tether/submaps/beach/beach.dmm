@@ -22,7 +22,7 @@
 /turf/floor/tiled/asteroid_steel,
 /area/tether_away/beach)
 "ag" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/cell/apc,
 /turf/floor/wood,
 /area/tether_away/beach)
@@ -86,7 +86,7 @@
 "av" = (
 /obj/item/chems/drinks/bottle/wine,
 /obj/item/chems/drinks/bottle/rum,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aw" = (
@@ -192,22 +192,22 @@
 /turf/floor/wood,
 /area/tether_away/beach)
 "aM" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/book/manual/barman_recipes,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aN" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/shaker,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aO" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/bottle/small/beer,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/chems/drinks/bottle/small/beer,
 /turf/floor/wood,
@@ -231,16 +231,16 @@
 /turf/floor/wood,
 /area/tether_away/beach)
 "aU" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/bottle/small/ale,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aV" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/tether_away/beach)
 "aW" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/cans/waterbottle,
 /turf/floor/wood,
 /area/tether_away/beach)
@@ -260,7 +260,7 @@
 /turf/unsimulated/wall/planetary/normal,
 /area/tether_away/beach)
 "bb" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/rock/sand,
 /area/tether_away/beach)
 "bc" = (

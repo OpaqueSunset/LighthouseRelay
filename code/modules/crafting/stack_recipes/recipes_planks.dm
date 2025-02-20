@@ -10,13 +10,6 @@
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
 	category               = "weapons"
 
-/decl/stack_recipe/planks/beehive_assembly
-	result_type            = /obj/item/beehive_assembly
-	category               = "furniture"
-
-/decl/stack_recipe/planks/beehive_frame
-	result_type            = /obj/item/honey_frame
-
 /decl/stack_recipe/planks/zipgunframe
 	result_type            = /obj/item/zipgunframe
 	difficulty             = MAT_VALUE_VERY_HARD_DIY
@@ -77,6 +70,29 @@
 
 /decl/stack_recipe/planks/bowl
 	result_type            = /obj/item/chems/glass/handmade/bowl
+
+/decl/stack_recipe/planks/buckler
+	result_type            = /obj/item/shield_base/buckler
+
+/decl/stack_recipe/planks/fancy
+	abstract_type          = /decl/stack_recipe/planks/fancy
+	difficulty             = MAT_VALUE_VERY_HARD_DIY
+
+/decl/stack_recipe/planks/fancy/decanter
+	result_type            = /obj/item/chems/glass/handmade/fancy/decanter
+
+/decl/stack_recipe/planks/fancy/goblet
+	result_type            = /obj/item/chems/glass/handmade/fancy/goblet
+
+/decl/stack_recipe/planks/fancy/bowl
+	result_type            = /obj/item/chems/glass/handmade/fancy/bowl
+
+/decl/stack_recipe/planks/fancy/vase
+	result_type            = /obj/item/chems/glass/handmade/fancy/vase
+
+/decl/stack_recipe/planks/fancy/vase_fluted
+	name                   = "vase, fluted"
+	result_type            = /obj/item/chems/glass/handmade/fancy/vase/fluted
 
 /decl/stack_recipe/planks/noticeboard/spawn_result(mob/user, location, amount, decl/material/mat, decl/material/reinf_mat, paint_color, spent_type, spent_amount = 1)
 	. = ..()
@@ -164,11 +180,11 @@
 	result_type            = /obj/structure/bookcase/cart
 
 /decl/stack_recipe/planks/furniture/chair
-	result_type            = /obj/structure/bed/chair/wood
+	result_type            = /obj/structure/chair/wood
 	category               = "seating"
 
 /decl/stack_recipe/planks/furniture/chair/fancy
-	result_type            = /obj/structure/bed/chair/wood/wings
+	result_type            = /obj/structure/chair/wood/wings
 
 /decl/stack_recipe/planks/furniture/chest
 	result_type            = /obj/structure/closet/crate/chest
@@ -204,6 +220,16 @@
 	result_type            = /obj/structure/reagent_dispensers/barrel
 	difficulty             = MAT_VALUE_HARD_DIY
 
+/decl/stack_recipe/planks/furniture/barrel/cask
+	result_type            = /obj/structure/reagent_dispensers/barrel/cask
+
+/decl/stack_recipe/planks/furniture/barrel/cask_rack
+	result_type            = /obj/structure/cask_rack
+
+/decl/stack_recipe/planks/furniture/barrel/large_cask_rack
+	name                   = "cask rack, large"
+	result_type            = /obj/structure/cask_rack/large
+
 /decl/stack_recipe/planks/furniture/table_frame
 	result_type            = /obj/structure/table/frame
 	category               = "furniture"
@@ -211,4 +237,16 @@
 
 /decl/stack_recipe/planks/furniture/gravemarker
 	result_type            = /obj/item/gravemarker
+	difficulty             = MAT_VALUE_NORMAL_DIY
+
+/decl/stack_recipe/planks/furniture/divider
+	result_type            = /obj/structure/divider
+	difficulty             = MAT_VALUE_HARD_DIY
+
+/decl/stack_recipe/planks/furniture/armor_stand
+	result_type            = /obj/structure/armor_stand
+	difficulty             = MAT_VALUE_NORMAL_DIY
+
+/decl/stack_recipe/planks/furniture/target_stake
+	result_type            = /obj/structure/target_stake
 	difficulty             = MAT_VALUE_NORMAL_DIY

@@ -15,12 +15,12 @@
 /obj/item/card/id/guest/GetAccess()
 	return temp_access
 
-/obj/item/card/id/guest/examine(mob/user)
+/obj/item/card/id/guest/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if (!expired)
-		to_chat(user, SPAN_NOTICE("This pass expires at [worldtime2stationtime(expiration_time)]."))
+	if (expired)
+		. += SPAN_WARNING("It expired at [worldtime2stationtime(expiration_time)].")
 	else
-		to_chat(user, SPAN_WARNING("It expired at [worldtime2stationtime(expiration_time)]."))
+		. += SPAN_NOTICE("This pass expires at [worldtime2stationtime(expiration_time)].")
 
 /obj/item/card/id/guest/read()
 	if (expired)

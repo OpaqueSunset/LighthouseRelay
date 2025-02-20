@@ -122,16 +122,16 @@
 		I.appearance_flags |= RESET_COLOR
 		add_vis_contents(I)
 
-/obj/item/plate/tray/examine(mob/user) // So when you look at the tray you can see whats on it.
+/obj/item/plate/tray/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(.)
 		if(contents.len)
 			var/tray_examine = list()
 			for(var/obj/item/I in contents)
 				tray_examine += "\a [I.name]"
-			to_chat(user, "There is [english_list(tray_examine)] on the tray.")
+			. += "There is [english_list(tray_examine)] on the tray."
 		else
-			to_chat(user, "\The [src] is empty.")
+			. += "\The [src] is empty."
 
 /*
 -----------------------------------------------------------------
@@ -145,7 +145,7 @@ TRAY TYPES GO HERE
 
 /obj/item/plate/tray/wood
 	desc = "A wooden tray to serve food on."
-	material = /decl/material/solid/organic/wood
+	material = /decl/material/solid/organic/wood/oak
 
 /obj/item/plate/tray/metal
 	obj_flags = OBJ_FLAG_CONDUCTIBLE
@@ -157,10 +157,10 @@ TRAY TYPES GO HERE
 
 /obj/item/plate/tray/metal/silver
 	name = "platter"
-	desc = "You lazy bum."
+	desc = "The new generation is so lazy, they expect everything to be handed to them on this."
 	material = /decl/material/solid/metal/silver
 
 /obj/item/plate/tray/metal/gold
 	name = "platter"
-	desc = "A gold tray to serve food on. But oh sofancy."
+	desc = "A gold tray to serve food on. Heavy, but oh-so-fancy."
 	material = /decl/material/solid/metal/gold

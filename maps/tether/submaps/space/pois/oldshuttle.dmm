@@ -25,7 +25,7 @@
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ah" = (
-/obj/structure/bed/chair/comfy/blue{
+/obj/structure/chair/comfy/blue{
 	icon_state = "comfychair_preview";
 	dir = 1
 	},
@@ -91,7 +91,7 @@
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "aq" = (
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "ar" = (
@@ -123,7 +123,7 @@
 /turf/floor/shuttle/black/airless,
 /area/tether_away/debrisfield/explored)
 "av" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	icon_state = "shuttle_chair";
 	dir = 1
 	},

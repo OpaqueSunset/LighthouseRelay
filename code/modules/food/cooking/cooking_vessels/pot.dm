@@ -45,3 +45,16 @@
 	if(. == PROCESS_KILL)
 		last_boil_temp   = null
 		last_boil_status = null
+
+/obj/item/chems/cooking_vessel/cauldron
+	name     = "cauldron"
+	desc     = "A large round-bodied vessel for making large quantities of potion or soup."
+	material = /decl/material/solid/metal/iron
+	color    = /decl/material/solid/metal/iron::color
+	icon     = 'icons/obj/food/cooking_vessels/cauldron.dmi'
+	volume   = 1000
+	w_class  = ITEM_SIZE_STRUCTURE
+	density  = TRUE
+
+/obj/item/chems/cooking_vessel/cauldron/can_be_picked_up(mob/user)
+	return FALSE

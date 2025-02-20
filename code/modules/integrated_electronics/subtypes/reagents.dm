@@ -343,7 +343,7 @@
 
 /obj/item/integrated_circuit/reagent/storage/grinder
 	name = "reagent grinder"
-	desc = "This is a reagent grinder. It accepts a ref to something, and refines it into reagents. It cannot grind materials. It can store up to 100u."
+	desc = "This is a reagent grinder. It accepts a ref to something and refines it into reagents. It cannot grind materials and can store up to 100u."
 	icon_state = "blender"
 	extended_desc = ""
 	inputs = list(
@@ -516,7 +516,7 @@
 /obj/item/integrated_circuit/input/funnel/solvent_can_melt(var/solvent_power = MAT_SOLVENT_STRONG)
 	return FALSE
 
-/obj/item/integrated_circuit/input/funnel/attackby_react(obj/item/I, mob/user, intent)
+/obj/item/integrated_circuit/input/funnel/attackby_react(obj/item/I, mob/user, decl/intent/intent)
 	var/atom/movable/target = get_pin_data_as_type(IC_INPUT, 1, /atom/movable)
 	var/obj/item/chems/container = I
 

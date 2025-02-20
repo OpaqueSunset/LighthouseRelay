@@ -40,22 +40,22 @@
 	//The last time we were tipped/righted and said a voice line, to avoid spam
 	var/last_tipping_action_voice = 0
 
-/mob/living/bot/medbot/show_other_examine_strings(mob/user, distance, infix, suffix, hideflags, decl/pronouns/pronouns)
+/mob/living/bot/medbot/get_other_examine_strings(mob/user, distance, infix, suffix, hideflags, decl/pronouns/pronouns)
 	. = ..()
 	if(tipped_status == MEDBOT_PANIC_NONE)
 		return
 
 	switch(tipped_status)
 		if(MEDBOT_PANIC_NONE to MEDBOT_PANIC_LOW)
-			to_chat(user, "It appears to be tipped over, and is quietly waiting for someone to set it right.")
+			. += "It appears to be tipped over, and is quietly waiting for someone to set it right."
 		if(MEDBOT_PANIC_LOW to MEDBOT_PANIC_MED)
-			to_chat(user, "It is tipped over and requesting help.")
+			. += "It is tipped over and requesting help."
 		if(MEDBOT_PANIC_MED to MEDBOT_PANIC_HIGH)
-			to_chat(user, SPAN_WARNING("They are tipped over and appear visibly distressed.")) // now we humanize the medbot as a they, not an it
+			. += SPAN_WARNING("They are tipped over and appear visibly distressed.") // now we humanize the medbot as a they, not an it
 		if(MEDBOT_PANIC_HIGH to MEDBOT_PANIC_FUCK)
-			to_chat(user, SPAN_WARNING("They are tipped over and visibly panicking!"))
+			. += SPAN_WARNING("They are tipped over and visibly panicking!")
 		if(MEDBOT_PANIC_FUCK to INFINITY)
-			to_chat(user, SPAN_DANGER("They are freaking out from being tipped over!"))
+			. += SPAN_DANGER("They are freaking out from being tipped over!")
 
 /mob/living/bot/medbot/handleIdle()
 	if(vocal && prob(1))

@@ -90,10 +90,10 @@
 	mytape = null
 	update_icon()
 
-/obj/item/taperecorder/examine(mob/user, distance)
+/obj/item/taperecorder/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1 && maintenance)
-		to_chat(user, "<span class='notice'>The wires are exposed.</span>")
+		. += SPAN_NOTICE("The wires are exposed.")
 
 /obj/item/taperecorder/hear_talk(mob/living/M, msg, var/verb="says", decl/language/speaking=null)
 	if(mytape && recording)
@@ -380,13 +380,13 @@
 	var/list/timestamp = new/list()
 	var/ruined = 0
 	var/doctored = 0
+	/// Whether we draw the ruined ribbon overlay when ruined.
+	var/draw_ribbon_if_ruined = TRUE
 
-//draw_ribbon: Whether we draw the ruined ribbon overlay. Only used by quantum tape.
-//#FIXME: Probably should be handled better.
-/obj/item/magnetic_tape/on_update_icon(var/draw_ribbon = TRUE)
+/obj/item/magnetic_tape/on_update_icon()
 	. = ..()
 	icon_state = get_world_inventory_state()
-	if(draw_ribbon && ruined && max_capacity)
+	if(draw_ribbon_if_ruined && ruined && max_capacity)
 		add_overlay(overlay_image(icon, "[icon_state]_ribbonoverlay", flags = RESET_COLOR))
 
 /obj/item/magnetic_tape/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -524,19 +524,17 @@
 	desc = "Quantum-enriched self-repairing nanotape, used for magnetic storage of information."
 	icon = 'icons/obj/items/device/tape_recorder/tape_casette_loose.dmi'
 	ruined = TRUE
+	draw_ribbon_if_ruined = FALSE
 
 /obj/item/magnetic_tape/loose/fix()
 	return
 
-/obj/item/magnetic_tape/loose/on_update_icon()
-	. = ..(FALSE)
-
 /obj/item/magnetic_tape/loose/get_loose_tape()
 	return
 
-/obj/item/magnetic_tape/loose/examine(mob/user, distance)
+/obj/item/magnetic_tape/loose/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "<span class='notice'>It looks long enough to hold [max_capacity] seconds worth of recording.</span>")
+		. += SPAN_NOTICE("It looks long enough to hold [max_capacity] seconds worth of recording.")
 		if(doctored && user.skill_check(SKILL_FORENSICS, SKILL_PROF))
-			to_chat(user, "<span class='notice'>It has been tampered with...</span>")
+			. += SPAN_WARNING("It has been tampered with...")

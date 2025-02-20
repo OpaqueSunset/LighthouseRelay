@@ -11,10 +11,10 @@
 	can_drain = 1
 	var/welded
 
-/obj/structure/hygiene/drain/examine(mob/user)
+/obj/structure/hygiene/drain/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(welded)
-		to_chat(user, "It is welded shut.")
+		. += "It is welded shut."
 
 /obj/structure/hygiene/drain/attackby(var/obj/item/thing, var/mob/user)
 	if(IS_WELDER(thing))
@@ -85,9 +85,9 @@
 	else
 		icon_state = "[initial(icon_state)][closed ? "-closed" : ""]"
 
-/obj/structure/hygiene/drain/bath/examine(mob/user)
+/obj/structure/hygiene/drain/bath/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "It is [closed ? "closed" : "open"]")
+	. += "It is [closed ? "closed" : "open"]"
 
 /obj/structure/hygiene/drain/bath/Process()
 	if(closed)

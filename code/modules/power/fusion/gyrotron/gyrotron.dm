@@ -3,7 +3,7 @@
 /obj/machinery/emitter/gyrotron
 	name = "gyrotron"
 	icon = 'icons/obj/machines/power/fusion.dmi'
-	desc = "It is a heavy duty industrial gyrotron suited for powering fusion reactors."
+	desc = "It is a heavy-duty industrial gyrotron suited for powering fusion reactors."
 	icon_state = "emitter-off"
 	initial_access = list(access_engine)
 	use_power = POWER_USE_IDLE
@@ -46,9 +46,10 @@
 	return rate*10
 
 /obj/machinery/emitter/gyrotron/get_emitter_beam()
-	var/obj/item/projectile/beam/emitter/E = ..()
-	E.damage = mega_energy * 50
-	return E
+	var/obj/item/projectile/beam/emitter/beam = ..()
+	if(istype(beam))
+		beam.damage = mega_energy * 50
+	return beam
 
 /obj/machinery/emitter/gyrotron/on_update_icon()
 	if (active && (can_use_power_oneoff(active_power_usage) <= 0))

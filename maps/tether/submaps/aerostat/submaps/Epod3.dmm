@@ -24,7 +24,7 @@
 /turf/template_noop,
 /area/submap/virgo2/Epod3)
 "h" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/emergency_dispenser{
@@ -37,7 +37,7 @@
 /turf/floor/shuttle/blue,
 /area/submap/virgo2/Epod3)
 "i" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/vending/wallmed1{
@@ -54,7 +54,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 8
 	},

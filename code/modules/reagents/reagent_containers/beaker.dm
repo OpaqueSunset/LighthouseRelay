@@ -13,9 +13,9 @@
 /obj/item/chems/glass/beaker/get_lid_color()
 	return lid_color
 
-/obj/item/chems/glass/beaker/examine(mob/user, distance)
+/obj/item/chems/glass/beaker/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, " It can hold up to [volume] units.")
+	. += "It can hold up to [volume] units."
 
 /obj/item/chems/glass/beaker/on_picked_up(mob/user)
 	. = ..()
@@ -64,6 +64,7 @@
 	take_damage(rand(4,8))
 
 /obj/item/chems/glass/beaker/large
+	name_prefix = "large"
 	name = "beaker" // see update_name override below
 	desc = "A large beaker."
 	icon = 'icons/obj/items/chem/beakers/large.dmi'
@@ -72,10 +73,6 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = @"[5,10,15,25,30,60,120]"
 	w_class = ITEM_SIZE_LARGE
-
-/obj/item/chems/glass/beaker/large/update_name()
-	. = ..()
-	SetName("large [name]") // large glass beaker, not glass large beaker
 
 /obj/item/chems/glass/beaker/bowl
 	name = "mixing bowl"
@@ -169,7 +166,7 @@
 	material_alteration = MAT_FLAG_ALTERATION_NONE
 	lid_color = COLOR_GRAY40
 
-/obj/item/chems/glass/beaker/insulated/get_thermal_mass_coefficient()
+/obj/item/chems/glass/beaker/insulated/get_thermal_mass_coefficient(delta)
 	return 0.1
 
 // Hack around reagent temp changes.

@@ -50,7 +50,7 @@
 		to_chat(user, SPAN_WARNING("\The [target]'s [affecting.name] is flesh and blood, and cannot be repaired with \the [src]."))
 		return TRUE
 
-	if(affecting.damage >= 30 && affecting.hatch_state != HATCH_OPENED)
+	if((affecting.brute_dam + affecting.burn_dam) >= 30 && affecting.hatch_state != HATCH_OPENED)
 		to_chat(user, SPAN_WARNING("The damage to \the [affecting] is too severe to repair without an open maintenance hatch."))
 		return TRUE
 

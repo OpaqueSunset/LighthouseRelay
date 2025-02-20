@@ -45,7 +45,7 @@
 		add_overlay(stopper_overlay)
 
 /obj/item/chems/glass/waterskin/crafted
-	desc = "A long and rather unwieldly water-carrying vessel."
+	desc = "A long and rather unwieldy water-carrying vessel."
 	icon = 'icons/obj/items/waterskin_crafted.dmi'
 	material = /decl/material/solid/organic/leather
 	color = /decl/material/solid/organic/leather::color

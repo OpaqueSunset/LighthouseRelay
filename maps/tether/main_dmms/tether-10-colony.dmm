@@ -48,7 +48,7 @@
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "al" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "am" = (
@@ -56,7 +56,7 @@
 	pixel_x = 4;
 	pixel_y = 32
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "an" = (
@@ -71,7 +71,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "ao" = (
@@ -256,7 +256,7 @@
 	},
 /area/centcom/specops)
 "aB" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -450,13 +450,13 @@
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "aT" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/shuttle/blue,
 /area/shuttle/specops/centcom)
 "aU" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/machinery/light{
@@ -1422,12 +1422,12 @@
 	pixel_y = 3
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/stack/material/rods,
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
+/obj/item/stack/material/rods/mapped/steel,
 /obj/item/stack/material/pane/mapped/borosilicate,
 /obj/item/stack/material/pane/mapped/borosilicate,
-/obj/item/stack/material/rods,
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1915,7 +1915,7 @@
 	},
 /area/centcom/control)
 "dy" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/item/handcuffs,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -2295,7 +2295,7 @@
 	},
 /area/centcom/control)
 "ee" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
@@ -2409,7 +2409,7 @@
 	},
 /area/tdome/tdomeadmin)
 "eu" = (
-/obj/effect/forcefield{
+/obj/effect/blocker{
 	desc = "You can't get in. Heh.";
 	name = "Blocker"
 	},
@@ -2657,7 +2657,7 @@
 	},
 /area/tdome/tdomeobserve)
 "fc" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/abstract/landmark{
 	name = "tdomeobserve"
 	},
@@ -3456,7 +3456,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "gG" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -3475,7 +3475,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
 "gJ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
@@ -5082,7 +5082,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/recharger{
 	pixel_y = 4
 	},
@@ -5098,7 +5098,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/radio/off,
 /obj/item/megaphone,
 /obj/machinery/camera/network/crescent,
@@ -5114,7 +5114,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/box/handcuffs,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5276,7 +5276,7 @@
 "kz" = (
 /obj/effect/floor_decal/borderfloorwhite/corner,
 /obj/effect/floor_decal/corner/green/bordercorner,
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel{
@@ -5524,7 +5524,7 @@
 	},
 /area/centcom/command)
 "ld" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
@@ -5667,7 +5667,7 @@
 	},
 /area/centcom/medical)
 "lr" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -5696,7 +5696,7 @@
 	},
 /area/centcom/medical)
 "lt" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/machinery/button/blast_door{
 	desc = "A remote control switch for port-side blast doors.";
 	id_tag = "CentComPort";
@@ -5801,7 +5801,7 @@
 	},
 /area/centcom/command)
 "lz" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
 	pixel_x = 10;
 	pixel_y = 12
@@ -5815,7 +5815,7 @@
 	},
 /area/centcom/command)
 "lA" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/stamp/hos,
 /turf/unsimulated/floor{
 	dir = 5;
@@ -5823,7 +5823,7 @@
 	},
 /area/centcom/command)
 "lB" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/computer/modular/preset/civilian{
 	pixel_y = 4
 	},
@@ -5842,7 +5842,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	desc = "It's a table..it has some scratch marks 'the commander likes to fuck me here'."
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -6084,7 +6084,7 @@
 	},
 /area/centcom/command)
 "mh" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet,
@@ -6113,7 +6113,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 4
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 7
@@ -6246,7 +6246,7 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 6
 	},
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/flask/barflask{
 	pixel_x = -4;
 	pixel_y = 8
@@ -7370,7 +7370,7 @@
 	},
 /area/centcom/command)
 "ov" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /turf/unsimulated/floor{
@@ -7648,7 +7648,7 @@
 	},
 /area/centcom/medical)
 "oR" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -7662,7 +7662,7 @@
 	},
 /area/centcom/medical)
 "oT" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner_steel_grid{
@@ -7697,7 +7697,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "oW" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
@@ -7706,7 +7706,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "oY" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel,
@@ -7718,7 +7718,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "pa" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -7751,7 +7751,7 @@
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
-/obj/structure/bed/chair/comfy/teal,
+/obj/structure/chair/comfy/teal,
 /turf/unsimulated/floor{
 	icon_state = "carpet"
 	},
@@ -7946,7 +7946,7 @@
 /obj/effect/floor_decal/carpet{
 	dir = 8
 	},
-/obj/structure/bed/chair/comfy/teal{
+/obj/structure/chair/comfy/teal{
 	dir = 4
 	},
 /turf/unsimulated/floor{
@@ -7954,7 +7954,7 @@
 	},
 /area/centcom/command)
 "py" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /turf/unsimulated/floor{
@@ -7962,7 +7962,7 @@
 	},
 /area/centcom/command)
 "pz" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/folder/red,
@@ -7971,7 +7971,7 @@
 	},
 /area/centcom/command)
 "pA" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/paper_bin{
@@ -7983,7 +7983,7 @@
 	},
 /area/centcom/command)
 "pB" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/pen,
@@ -7992,7 +7992,7 @@
 	},
 /area/centcom/command)
 "pC" = (
-/obj/structure/bed/chair/comfy/teal{
+/obj/structure/chair/comfy/teal{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -8005,7 +8005,7 @@
 	},
 /area/centcom/command)
 "pE" = (
-/obj/structure/bed/chair/comfy/teal{
+/obj/structure/chair/comfy/teal{
 	dir = 4
 	},
 /turf/unsimulated/floor{
@@ -8013,7 +8013,7 @@
 	},
 /area/centcom/command)
 "pF" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/folder/blue,
@@ -8022,7 +8022,7 @@
 	},
 /area/centcom/command)
 "pH" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/megaphone,
@@ -8034,7 +8034,7 @@
 /obj/effect/floor_decal/carpet{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/teal{
+/obj/structure/chair/comfy/teal{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -8070,7 +8070,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/holding)
 "pN" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "pO" = (
@@ -8173,7 +8173,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "pZ" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -8209,7 +8209,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "qd" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/folder,
@@ -8218,7 +8218,7 @@
 	},
 /area/centcom/command)
 "qe" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/chems/drinks/glass2/coffeecup{
@@ -8230,7 +8230,7 @@
 	},
 /area/centcom/command)
 "qg" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/briefcase{
@@ -8242,7 +8242,7 @@
 	},
 /area/centcom/command)
 "qh" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/chems/drinks/glass2/coffeecup{
@@ -8253,7 +8253,7 @@
 	},
 /area/centcom/command)
 "qi" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/item/folder/yellow,
@@ -8480,7 +8480,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "qA" = (
-/obj/structure/bed/chair/office/light,
+/obj/structure/chair/office/light,
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "qB" = (
@@ -8507,7 +8507,7 @@
 /area/centcom/command)
 "qD" = (
 /obj/effect/floor_decal/carpet,
-/obj/structure/bed/chair/comfy/teal{
+/obj/structure/chair/comfy/teal{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -8572,7 +8572,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/holding)
 "qI" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -8583,7 +8583,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "qK" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
@@ -8967,7 +8967,7 @@
 /turf/unsimulated/wall,
 /area/centcom/security)
 "rB" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel,
@@ -9225,7 +9225,7 @@
 /turf/floor,
 /area/shuttle/tram)
 "sk" = (
-/obj/structure/table/woodentable{
+/obj/structure/table/wood{
 	dir = 5
 	},
 /obj/structure/flora/pottedplant{
@@ -9271,7 +9271,7 @@
 	},
 /area/centcom/medical)
 "so" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -9297,7 +9297,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "sr" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
@@ -9389,7 +9389,7 @@
 	},
 /obj/item/firstaid/fire,
 /obj/item/firstaid/toxin,
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
@@ -9400,13 +9400,13 @@
 	},
 /area/shuttle/tram)
 "sE" = (
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /turf/floor/shuttle/white{
 	color = "#cccccc"
 	},
 /area/shuttle/tram)
 "sF" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
@@ -9493,7 +9493,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "sN" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/newscaster{
@@ -9786,7 +9786,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "tl" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /turf/floor/shuttle/white{
@@ -9839,7 +9839,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "tr" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -9886,7 +9886,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "tv" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/machinery/button/blast_door{
 	desc = "A remote control switch for port-side blast doors.";
 	id_tag = "CentComPort";
@@ -9992,7 +9992,7 @@
 "tE" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel{
@@ -10182,7 +10182,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "ua" = (
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /obj/structure/emergency_dispenser{
 	pixel_x = -28;
 	dir = 4
@@ -10192,7 +10192,7 @@
 	},
 /area/shuttle/tram)
 "ub" = (
-/obj/structure/bed/chair/shuttle,
+/obj/structure/chair/shuttle,
 /obj/structure/emergency_dispenser{
 	pixel_x = 28;
 	dir = 8
@@ -10289,18 +10289,18 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "uq" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/effect/floor_decal/industrial/outline,
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "ur" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "us" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/machinery/status_display{
 	pixel_y = 29
 	},
@@ -10559,7 +10559,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/living)
 "uV" = (
-/obj/effect/forcefield{
+/obj/effect/blocker{
 	desc = "You can't get in. Heh.";
 	name = "Blocker"
 	},
@@ -10699,7 +10699,7 @@
 	},
 /area/centcom/living)
 "vk" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /obj/structure/emergency_dispenser{
@@ -10711,7 +10711,7 @@
 	},
 /area/shuttle/tram)
 "vl" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /obj/structure/emergency_dispenser{
@@ -10751,7 +10751,7 @@
 /turf/unsimulated/wall,
 /area/centcom/restaurant)
 "vr" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel,
@@ -10857,7 +10857,7 @@
 	},
 /area/centcom/security/arrivals)
 "vz" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "vA" = (
@@ -10957,7 +10957,7 @@
 	},
 /area/centcom/bathroom)
 "vP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/floor_decal/carpet{
 	dir = 8
 	},
@@ -10974,7 +10974,7 @@
 	},
 /area/centcom/restaurant)
 "vQ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
@@ -10985,7 +10985,7 @@
 	},
 /area/centcom/restaurant)
 "vR" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/floor_decal/carpet{
 	dir = 4
 	},
@@ -11251,7 +11251,7 @@
 	},
 /area/centcom/security/arrivals)
 "wi" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack/corner{
@@ -11272,7 +11272,7 @@
 	},
 /area/centcom/security/arrivals)
 "wj" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack/corner{
@@ -11360,7 +11360,7 @@
 /obj/effect/floor_decal/carpet{
 	dir = 8
 	},
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -11368,7 +11368,7 @@
 	},
 /area/centcom/restaurant)
 "wt" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -11379,7 +11379,7 @@
 /obj/effect/floor_decal/carpet{
 	dir = 4
 	},
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -11451,7 +11451,7 @@
 	},
 /area/centcom/security)
 "wz" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/machinery/button/blast_door{
@@ -11499,7 +11499,7 @@
 	},
 /area/centcom/security)
 "wC" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /obj/machinery/light,
@@ -11576,7 +11576,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "wL" = (
-/obj/structure/bed/chair/wood/wings,
+/obj/structure/chair/wood/wings,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "wM" = (
@@ -11645,7 +11645,7 @@
 	},
 /area/centcom/security)
 "wS" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/item/radio/intercom{
@@ -11677,7 +11677,7 @@
 	},
 /area/centcom/security)
 "wV" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 26
@@ -11707,7 +11707,7 @@
 	},
 /area/centcom/security)
 "wX" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
@@ -11750,7 +11750,7 @@
 	},
 /area/shuttle/tram)
 "xa" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 1
 	},
 /obj/random/soap,
@@ -11809,7 +11809,7 @@
 	},
 /area/centcom/security/arrivals)
 "xf" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -11823,24 +11823,24 @@
 /turf/floor/grass,
 /area/centcom/main_hall)
 "xi" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "xj" = (
-/obj/structure/bed/chair/wood/wings{
+/obj/structure/chair/wood/wings{
 	dir = 4
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xk" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/fries,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xl" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/cheeseburger{
 	pixel_x = 3;
 	pixel_y = 3
@@ -11849,18 +11849,18 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xm" = (
-/obj/structure/bed/chair/wood/wings{
+/obj/structure/chair/wood/wings{
 	dir = 8
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xn" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/grilledcheese,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xo" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/glass/bowl/mapped/meatball,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
@@ -12144,7 +12144,7 @@
 /turf/floor/grass,
 /area/centcom/main_hall)
 "xJ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/hotdog,
 /obj/item/food/hotdog{
 	pixel_x = -5;
@@ -12153,17 +12153,17 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xK" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/bigbiteburger,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xL" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/roastbeef,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xM" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/meatsteak,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
@@ -12188,7 +12188,7 @@
 	},
 /area/centcom/bathroom)
 "xP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/floor_decal/carpet{
 	dir = 8
 	},
@@ -12201,7 +12201,7 @@
 	},
 /area/centcom/restaurant)
 "xQ" = (
-/obj/structure/bed/chair/comfy/brown{
+/obj/structure/chair/comfy/brown{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -12288,7 +12288,7 @@
 	},
 /area/centcom/security/arrivals)
 "xX" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/camera/network/crescent{
@@ -12297,13 +12297,13 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/main_hall)
 "xY" = (
-/obj/structure/bed/chair/wood/wings{
+/obj/structure/chair/wood/wings{
 	dir = 1
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "xZ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/floor_decal/carpet{
 	dir = 8
 	},
@@ -12753,12 +12753,12 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "yH" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/pastatomato,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "yI" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/meatballspagetti,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
@@ -13035,7 +13035,7 @@
 	},
 /area/centcom/security)
 "zb" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/unsimulated/floor{
@@ -13051,7 +13051,7 @@
 	},
 /area/centcom/security)
 "zd" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -13070,12 +13070,12 @@
 /turf/floor/grass,
 /area/centcom/main_hall)
 "zf" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/kitsuneudon,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "zg" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/lasagna,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
@@ -13110,7 +13110,7 @@
 	},
 /area/centcom/security)
 "zk" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -13458,7 +13458,7 @@
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "zM" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/unsimulated/floor/wood,
 /area/centcom/restaurant)
 "zN" = (
@@ -13478,7 +13478,7 @@
 	},
 /area/centcom/security)
 "zP" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -13515,34 +13515,34 @@
 /turf/unsimulated/wall,
 /area/centcom/bar)
 "zV" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/bottle/grenadine,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "zW" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/bottle/cola,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "zX" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/cash_register/civilian,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "zY" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/bottle/space_mountain_wind,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "zZ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/toastedsandwich{
 	pixel_y = 10
 	},
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "Aa" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
 "Ab" = (
@@ -13578,7 +13578,7 @@
 	},
 /area/centcom/security)
 "Af" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -13615,7 +13615,7 @@
 	},
 /area/centcom/security)
 "Aj" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/unsimulated/floor{
@@ -13766,7 +13766,7 @@
 "AB" = (
 /obj/structure/table/reinforced,
 /obj/item/chems/drinks/flask/barflask,
-/obj/item/chems/glass/rag,
+/obj/item/chems/rag,
 /obj/item/chems/drinks/flask/vacuumflask,
 /turf/unsimulated/floor/wood,
 /area/centcom/bar)
@@ -13796,7 +13796,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
 "AG" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/unsimulated/floor/steel,
@@ -14013,7 +14013,7 @@
 	},
 /area/centcom/security)
 "Ba" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/unsimulated/floor{
@@ -14119,7 +14119,7 @@
 	},
 /area/centcom/security/residential)
 "Bk" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack/corner{
@@ -14278,7 +14278,7 @@
 	},
 /area/centcom/security/residential)
 "Bu" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/effect/floor_decal/borderfloorblack/corner{
 	dir = 8
 	},
@@ -14910,7 +14910,7 @@
 	},
 /area/centcom/security/residential)
 "CI" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -15128,7 +15128,7 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/command)
 "CX" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/unsimulated/floor/steel,

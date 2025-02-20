@@ -117,11 +117,6 @@ Buildable meters
 	. = ..()
 	set_extension(src, /datum/extension/parts_stash)
 
-/obj/item/machine_chassis/examine(mob/user, distance)
-	. = ..()
-	if(distance <= 2)
-		to_chat(user, "Use a wrench to secure \the [src] here.")
-
 /obj/item/machine_chassis/attackby(var/obj/item/W, var/mob/user)
 	if(!IS_WRENCH(W))
 		return ..()

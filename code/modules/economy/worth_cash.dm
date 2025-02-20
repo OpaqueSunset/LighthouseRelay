@@ -141,7 +141,7 @@
 	if(QDELETED(src) || get_worth() <= 1 || user.incapacitated() || loc != user)
 		return TRUE
 
-	var/amount = input(usr, "How many [cur.name] do you want to take? (0 to [get_worth() - 1])", "Take Money", 20) as num
+	var/amount = input(user, "How many [cur.name] do you want to take? (0 to [get_worth() - 1])", "Take Money", 20) as num
 	amount = round(clamp(amount, 0, floor(get_worth() - 1)))
 
 	if(!amount || QDELETED(src) || get_worth() <= 1 || user.incapacitated() || loc != user)
@@ -233,16 +233,16 @@
 		loaded_worth = 0
 	update_icon()
 
-/obj/item/charge_stick/examine(mob/user, distance)
+/obj/item/charge_stick/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..(user)
 	if(distance <= 2 || user == loc)
 		var/datum/extension/lockable/lock = get_extension(src, /datum/extension/lockable)
 		if(lock.locked)
-			to_chat(user, SPAN_WARNING("\The [src] is locked."))
+			. += SPAN_WARNING("\The [src] is locked.")
 		else
-			to_chat(user, SPAN_NOTICE("<b>Id:</b> [id]."))
 			var/decl/currency/cur = GET_DECL(currency)
-			to_chat(user, SPAN_NOTICE("<b>[capitalize(cur.name)]</b> remaining: [floor(loaded_worth / cur.absolute_value)]."))
+			. += SPAN_NOTICE("<b>Id:</b> [id].")
+			. += SPAN_NOTICE("<b>[capitalize(cur.name)]</b> remaining: [floor(loaded_worth / cur.absolute_value)].")
 
 /obj/item/charge_stick/get_base_value()
 	. = holographic ? 0 : loaded_worth

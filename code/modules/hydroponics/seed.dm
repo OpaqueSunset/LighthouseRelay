@@ -32,6 +32,7 @@
 	var/scannable_result
 	var/grown_is_seed = FALSE
 	var/product_w_class = ITEM_SIZE_SMALL
+	var/produces_pollen = 0
 
 	// Dissection values.
 	var/min_seed_extracted = 1
@@ -131,23 +132,23 @@
 		return
 
 	var/damage = 0
-	var/has_edge = 0
+	var/edged = 0
 	if(get_trait(TRAIT_CARNIVOROUS) >= 2)
 		if(affecting)
 			to_chat(target, "<span class='danger'>\The [fruit]'s thorns pierce your [affecting.name] greedily!</span>")
 		else
 			to_chat(target, "<span class='danger'>\The [fruit]'s thorns pierce your flesh greedily!</span>")
 		damage = max(5, round(15*get_trait(TRAIT_POTENCY)/100, 1))
-		has_edge = prob(get_trait(TRAIT_POTENCY)/2)
+		edged = prob(get_trait(TRAIT_POTENCY)/2)
 	else
 		if(affecting)
 			to_chat(target, "<span class='danger'>\The [fruit]'s thorns dig deeply into your [affecting.name]!</span>")
 		else
 			to_chat(target, "<span class='danger'>\The [fruit]'s thorns dig deeply into your flesh!</span>")
 		damage = max(1, round(5*get_trait(TRAIT_POTENCY)/100, 1))
-		has_edge = prob(get_trait(TRAIT_POTENCY)/5)
+		edged = prob(get_trait(TRAIT_POTENCY)/5)
 
-	var/damage_flags = DAM_SHARP|(has_edge? DAM_EDGE : 0)
+	var/damage_flags = DAM_SHARP|(edged? DAM_EDGE : 0)
 	target.apply_damage(damage, BRUTE, target_limb, damage_flags, used_weapon = "Thorns")
 
 // Adds reagents to a target.

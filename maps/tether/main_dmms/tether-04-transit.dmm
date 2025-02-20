@@ -90,7 +90,7 @@
 /turf/open/sky,
 /area/tether/transit)
 "an" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 4
 	},
 /turf/floor/carpet/blue,
@@ -116,7 +116,7 @@
 /turf/wall/r_wall,
 /area/maintenance/tether_midpoint)
 "at" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light,
 /obj/structure/flora/pottedplant/small,
 /turf/floor/carpet/blue,
@@ -128,7 +128,7 @@
 /turf/wall/r_wall,
 /area/tether/midpoint)
 "az" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aA" = (
@@ -148,7 +148,7 @@
 /turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aB" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /turf/floor/carpet/blue,
@@ -218,11 +218,11 @@
 /turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "aL" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
 "aM" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/dice/d20,
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
@@ -344,7 +344,7 @@
 /turf/floor/wood,
 /area/tether/midpoint)
 "bf" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -352,7 +352,7 @@
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
 "bg" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 8
 	},
 /turf/floor/carpet/blue,
@@ -374,7 +374,7 @@
 /turf/floor/plating,
 /area/maintenance/tether_midpoint)
 "bj" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/flora/pottedplant/flower,
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
@@ -404,7 +404,7 @@
 /turf/floor/wood,
 /area/tether/midpoint)
 "fD" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -445,7 +445,7 @@
 /turf/floor/plating,
 /area/tether/midpoint)
 "yq" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/camera/network/tether{
 	dir = 5
 	},
@@ -456,12 +456,12 @@
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
 "zF" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/flora/pottedplant/small,
 /turf/floor/carpet/blue,
 /area/tether/midpoint)
 "Bg" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},

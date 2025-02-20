@@ -249,36 +249,34 @@
 /obj/machinery/power/smes/batteryrack/outputting()
 	return
 
-/obj/machinery/power/smes/batteryrack/Topic(href, href_list)
+/obj/machinery/power/smes/batteryrack/OnTopic(mob/user, href_list)
 	// ..() would respond to those topic calls, but we don't want to use them at all.
 	// Calls to these shouldn't occur anyway, due to usage of different nanoUI, but
 	// it's here in case someone decides to try hrefhacking/modified templates.
 	if(href_list["input"] || href_list["output"])
-		return 1
-
-	if(..())
-		return 1
+		return TOPIC_HANDLED
+	if((. = ..()))
+		return
 	if( href_list["disable"] )
 		update_io(0)
-		return 1
+		return TOPIC_REFRESH
 	else if( href_list["enable"] )
 		update_io(clamp(text2num(href_list["enable"]), 1, 3))
-		return 1
+		return TOPIC_REFRESH
 	else if( href_list["equaliseon"] )
 		equalise = 1
-		return 1
+		return TOPIC_REFRESH
 	else if( href_list["equaliseoff"] )
 		equalise = 0
-		return 1
+		return TOPIC_REFRESH
 	else if( href_list["ejectcell"] )
 		var/slot_number = text2num(href_list["ejectcell"])
 		if(slot_number != clamp(round(slot_number), 1, length(internal_cells)))
-			return 1
+			return TOPIC_HANDLED
 		var/obj/item/cell/C = internal_cells[slot_number]
 
 		C.dropInto(loc)
 		internal_cells -= C
-		update_icon()
 		RefreshParts()
 		update_maxcharge()
-		return 1
+		return TOPIC_REFRESH

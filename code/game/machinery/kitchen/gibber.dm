@@ -54,9 +54,9 @@
 	src.startgibbing(user)
 	return TRUE
 
-/obj/machinery/gibber/examine(mob/user)
+/obj/machinery/gibber/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "The safety guard is [emagged ? SPAN_DANGER("disabled") : "enabled"].")
+	. += "The safety guard is [emagged ? SPAN_DANGER("disabled") : "enabled"]."
 
 /obj/machinery/gibber/emag_act(var/remaining_charges, var/mob/user)
 	emagged = !emagged

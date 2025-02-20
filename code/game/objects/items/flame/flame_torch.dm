@@ -13,10 +13,6 @@
 	var/head_material     = /decl/material/solid/organic/cloth
 	var/burnt             = FALSE
 
-/obj/item/flame/torch/Initialize()
-	. = ..()
-	set_color(null) // clear our scent color
-
 /obj/item/flame/torch/get_available_scents()
 	var/static/list/available_scents = list(
 		/decl/scent_type/woodsmoke
@@ -34,6 +30,7 @@
 
 /obj/item/flame/torch/Initialize(var/ml, var/material_key, var/_head_material)
 	. = ..()
+	set_color(null) // clear our scent color. TODO: allow flame items to disable scent color setting in the first place
 
 	if(_head_material)
 		head_material = _head_material
@@ -50,7 +47,7 @@
 
 	update_icon()
 
-/obj/item/flame/torch/extinguish(var/mob/user, var/no_message)
+/obj/item/flame/torch/snuff_out(mob/user, no_message = FALSE)
 	. = ..()
 	if(. && _fuel <= 0 && !burnt)
 		burnt = TRUE

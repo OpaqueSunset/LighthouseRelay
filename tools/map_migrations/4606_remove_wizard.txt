@@ -1,0 +1,38 @@
+/obj/item/clothing/head/helmet/space/void/wizard/@SUBTYPES : @DELETE
+/obj/item/clothing/suit/space/void/wizard/@SUBTYPES : @DELETE
+/obj/item/clothing/gloves/wizard/@SUBTYPES : @DELETE
+/obj/item/book/spell/@SUBTYPES : @DELETE
+/obj/item/summoning_stone : @DELETE
+/obj/structure/closet/wizard/@SUBTYPES : @DELETE
+/obj/item/contract/@SUBTYPES : @DELETE
+/obj/item/scrying/@SUBTYPES : @DELETE
+/obj/item/dice/d20/cursed/@SUBTYPES : @DELETE
+/obj/item/paper/scroll/teleportation/@SUBTYPES : @DELETE
+/obj/item/radio/intercom/wizard/@SUBTYPES : @DELETE
+/obj/structure/fake_pylon : @DELETE
+/obj/effect/gateway/active/spooky : @DELETE
+/obj/item/clothing/head/overseerhood : @DELETE
+/obj/item/clothing/suit/straight_jacket/overseercloak : @DELETE
+/obj/item/clothing/shoes/sandal/grimboots : @DELETE
+/obj/item/clothing/suit/infilsuit : @DELETE
+/obj/effect/forcefield : @DELETE
+/obj/item/clothing/head/infilhat : /obj/item/clothing/head/det/grey{@OLD}
+/obj/item/clothing/shoes/dress/infilshoes : /obj/item/clothing/shoes/dress{@OLD}
+/obj/item/clothing/head/infilhat/fem : /obj/item/clothing/head/maid{@OLD}
+/obj/item/clothing/suit/infilsuit/fem : /obj/item/clothing/costume/maid{@OLD}
+
+/mob/living/simple_animal/familiar/@SUBTYPES : @DELETE
+
+/obj/abstract/landmark/costume/fakewizard : /obj/abstract/landmark/costume/wizard{@OLD}
+/obj/item/clothing/head/wizard/fake : /obj/item/clothing/head/wizard/beard{@OLD}
+
+/obj/abstract/landmark/costume/marisawizard/fake : /obj/abstract/landmark/costume/marisawizard{@OLD}
+/obj/item/clothing/head/wizard/marisa/fake : /obj/item/clothing/head/wizard/marisa{@OLD}
+/obj/item/clothing/suit/wizrobe/marisa/fake : /obj/item/clothing/suit/wizrobe/marisa{@OLD}
+
+/obj/item/clothing/suit/wizrobe/magusblue : /obj/item/clothing/suit/wizrobe/magus{@OLD}
+/obj/item/clothing/suit/wizrobe/magusred : /obj/item/clothing/suit/wizrobe/magus/red{@OLD}
+
+/obj/item/clothing/suit/wizrobe/gentlecoat : /obj/item/clothing/suit/gentlecoat{@OLD}
+
+/obj/item/clothing/suit/wizrobe/psypurple : /obj/item/clothing/suit/paramount{@OLD}

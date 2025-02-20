@@ -41,7 +41,7 @@
 	name = "left arm"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	icon_state = "l_arm"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_L_ARM
 	material = /decl/material/solid/metal/steel
 
@@ -49,7 +49,7 @@
 	name = "right arm"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	icon_state = "r_arm"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_R_ARM
 	material = /decl/material/solid/metal/steel
 
@@ -57,7 +57,7 @@
 	name = "left leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	icon_state = "l_leg"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_L_LEG
 	material = /decl/material/solid/metal/steel
 
@@ -65,7 +65,7 @@
 	name = "right leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	icon_state = "r_leg"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_R_LEG
 	material = /decl/material/solid/metal/steel
 
@@ -73,7 +73,7 @@
 	name = "head"
 	desc = "A standard reinforced braincase, with spine-plugged neural socket and sensor gimbals."
 	icon_state = "head"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_HEAD
 	material = /decl/material/solid/metal/steel
 	var/obj/item/flash/flash1 = null
@@ -90,7 +90,7 @@
 	name = "torso"
 	desc = "A heavily reinforced case containing cyborg logic boards, with space for a standard power cell."
 	icon_state = "chest"
-	model_info = 1
+	model_info = TRUE
 	bp_tag = BP_CHEST
 	material = /decl/material/solid/metal/steel
 	var/wires = 0.0

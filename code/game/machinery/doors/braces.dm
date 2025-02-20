@@ -27,9 +27,9 @@
 	var/obj/item/stock_parts/circuitboard/airlock_electronics/brace/electronics
 
 
-/obj/item/airlock_brace/examine(mob/user)
+/obj/item/airlock_brace/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, examine_health())
+	. += examine_health()
 
 // This is also called from airlock's examine, so it's a different proc to prevent code copypaste.
 /obj/item/airlock_brace/proc/examine_health()

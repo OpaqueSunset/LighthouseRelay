@@ -69,7 +69,7 @@
 	if(O.anchored || !(O.movable_flags & MOVABLE_FLAG_WHEELED))
 		return
 
-	var/obj/structure/bed/chair/C = istype(O, /obj/structure/bed/chair)? O : null
+	var/obj/structure/chair/C = istype(O, /obj/structure/chair)? O : null
 	//#TODO: That could definitely be improved. Would suggest to use process_momentum but its only for thrownthing
 	var/list/move_speed = list(1, 1, 1, 2, 2, 3)
 	for(var/i in 1 to 6)

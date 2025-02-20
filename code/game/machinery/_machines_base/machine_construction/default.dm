@@ -35,7 +35,8 @@
 		var/obj/item/part_replacer/replacer = I
 		if(replacer.remote_interaction)
 			machine.part_replacement(user, replacer)
-		machine.display_parts(user)
+		for(var/line in machine.get_part_info_strings(user))
+			to_chat(user, line)
 		return TRUE
 	return FALSE
 

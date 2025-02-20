@@ -30,11 +30,11 @@
 	global.listening_objects += src
 	. = ..()
 
-/obj/item/camera/tvcamera/examine(mob/user)
+/obj/item/camera/tvcamera/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "Video feed is currently: [video_enabled ? "Online" : "Offline"]")
-	to_chat(user, "Audio feed is currently: [radio.broadcasting ? "Online" : "Offline"]")
-	to_chat(user, "Photography setting is currently: [turned_on ? "On" : "Off"]")
+	. += "Video feed is currently: [video_enabled ? "Online" : "Offline"]"
+	. += "Audio feed is currently: [radio.broadcasting ? "Online" : "Offline"]"
+	. += "Photography setting is currently: [turned_on ? "On" : "Off"]"
 
 /obj/item/camera/tvcamera/attack_self(mob/user)
 	add_fingerprint(user)
@@ -96,6 +96,7 @@
 	update_held_icon()
 
 /* Assembly by a roboticist */
+// TODO: Make this slapcrafting or remove tvcamera/tvassembly entirely
 /obj/item/robot_parts/head/attackby(var/obj/item/assembly/S, mob/user)
 	if (!istype(S, /obj/item/assembly/infra))
 		return ..()

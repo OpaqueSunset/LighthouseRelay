@@ -1,7 +1,7 @@
 /obj/item/chems/glass/retort
 	name       = "retort"
 	base_name  = "retort"
-	desc       = "A strangely-shaped vessel for seperating chemicals when heated."
+	desc       = "A strangely-shaped vessel for separating chemicals when heated."
 	icon       = 'icons/obj/items/retort.dmi'
 	icon_state = ICON_STATE_WORLD
 	volume     = 120

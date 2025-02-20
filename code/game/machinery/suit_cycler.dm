@@ -10,17 +10,17 @@
 
 	initial_access = list(list(access_captain, access_bridge))
 
-	var/active = 0          // PLEASE HOLD.
-	var/safeties = 1        // The cycler won't start with a living thing inside it unless safeties are off.
-	var/irradiating = 0     // If this is > 0, the cycler is decontaminating whatever is inside it.
+	var/active = FALSE      // PLEASE HOLD.
+	var/safeties = TRUE     //! The cycler won't start with a living thing inside it unless safeties are off.
+	var/irradiating = 0     //! The number of Process() ticks we should irradiate our contents for. If > 0, will irradiate contents. Decrements every Process().
 	var/radiation_level = 2 // 1 is removing germs, 2 is removing blood, 3 is removing contaminants.
-	var/model_text = ""     // Some flavour text for the topic box.
-	var/locked = 1          // If locked, nothing can be taken from or added to the cycler.
-	var/can_repair = 1      // If set, the cycler can repair voidsuits.
-	var/electrified = 0     // If set, will shock users.
+	var/model_text = ""     //! Some flavour text for the topic box.
+	var/locked = TRUE       //! If locked, nothing can be taken from or added to the cycler.
+	var/can_repair = TRUE   //! If TRUE, the cycler can repair voidsuits.
+	var/electrified = 0     //! The number of Process() ticks we should shock users for. If > 0, will shock users. Decrements every Process().
 
-	// Possible modifications to pick between
-	var/list/available_modifications = list(
+	/// Possible suit modifier decls to pick between
+	var/list/decl/item_modifier/space_suit/available_modifications = list(
 		/decl/item_modifier/space_suit/engineering,
 		/decl/item_modifier/space_suit/mining,
 		/decl/item_modifier/space_suit/medical,
@@ -31,7 +31,7 @@
 	)
 
 	// Extra modifications to add when emagged, duplicates won't be added
-	var/emagged_modifications = list(
+	var/list/decl/item_modifier/space_suit/emagged_modifications = list(
 		/decl/item_modifier/space_suit/engineering,
 		/decl/item_modifier/space_suit/mining,
 		/decl/item_modifier/space_suit/medical,
@@ -269,7 +269,7 @@
 	available_modifications |= additional_modifications
 
 	emagged = 1
-	safeties = 0
+	safeties = FALSE
 	req_access = list()
 	updateUsrDialog()
 	return 1
@@ -320,95 +320,98 @@
 	popup.set_content(JOINTEXT(dat))
 	popup.open()
 
-/obj/machinery/suit_cycler/Topic(href, href_list)
+/obj/machinery/suit_cycler/OnTopic(user, href_list)
 	if((. = ..()))
 		return
 
 	if(href_list["eject_suit"])
-		if(!suit) return
+		if(!suit) return TOPIC_NOACTION
 		suit.dropInto(loc)
 		set_suit(null)
 	else if(href_list["eject_helmet"])
-		if(!helmet) return
+		if(!helmet) return TOPIC_NOACTION
 		helmet.dropInto(loc)
 		set_helmet(null)
 	else if(href_list["eject_boots"])
-		if(!boots) return
+		if(!boots) return TOPIC_NOACTION
 		boots.dropInto(loc)
 		set_boots(null)
 	else if(href_list["select_department"])
-		var/choice = input("Please select the target department paintjob.", "Suit cycler", target_modification) as null|anything in available_modifications
-		if(choice && CanPhysicallyInteract(usr))
+		var/choice = input(user, "Please select the target department paintjob.", "Suit cycler", target_modification) as null|anything in available_modifications
+		. = TOPIC_HANDLED // no matter what, we've prompted for user input so we cancel any further behavior on subtypes
+		if(choice && CanPhysicallyInteract(user))
 			target_modification = choice
+			. = TOPIC_REFRESH
 	else if(href_list["select_bodytype"])
 		var/choice = input("Please select the target body configuration.","Suit cycler",null) as null|anything in available_bodytypes
-		if(choice && CanPhysicallyInteract(usr))
+		. = TOPIC_HANDLED
+		if(choice && CanPhysicallyInteract(user))
 			target_bodytype = choice
+			. = TOPIC_REFRESH
 	else if(href_list["select_rad_level"])
 		var/choices = list(1,2,3)
 		if(emagged)
 			choices = list(1,2,3,4,5)
 		var/choice = input("Please select the desired radiation level.","Suit cycler",null) as null|anything in choices
+		. = TOPIC_HANDLED
 		if(choice)
 			radiation_level = choice
+			. = TOPIC_REFRESH
 	else if(href_list["repair_suit"])
-
-		if(!suit || !can_repair) return
-		active = 1
-		spawn(100)
-			repair_suit()
-			finished_job()
+		if(!suit || !can_repair) return TOPIC_NOACTION
+		active = TRUE
+		addtimer(CALLBACK(src, PROC_REF(repair_suit)), 10 SECONDS)
+		. = TOPIC_REFRESH
 
 	else if(href_list["apply_paintjob"])
-
-		if(!suit && !helmet) return
-		active = 1
-		spawn(100)
-			apply_paintjob()
-			finished_job()
+		if(!suit && !helmet) return TOPIC_NOACTION
+		active = TRUE
+		addtimer(CALLBACK(src, PROC_REF(apply_paintjob)), 10 SECONDS)
+		. = TOPIC_REFRESH
 
 	else if(href_list["toggle_safties"])
 		safeties = !safeties
+		. = TOPIC_REFRESH
 
 	else if(href_list["toggle_lock"])
-
-		if(allowed(usr))
+		if(allowed(user))
 			locked = !locked
-			to_chat(usr, "You [locked ? "lock" : "unlock"] [src].")
+			to_chat(user, "You [locked ? "lock" : "unlock"] [src].")
+			. = TOPIC_REFRESH
 		else
-			to_chat(usr, FEEDBACK_ACCESS_DENIED)
+			to_chat(user, FEEDBACK_ACCESS_DENIED)
+			. = TOPIC_HANDLED
 
 	else if(href_list["begin_decontamination"])
-
 		if(safeties && occupant)
-			to_chat(usr, SPAN_DANGER("\The [src] has detected an occupant. Please remove the occupant before commencing the decontamination cycle."))
-			return
+			to_chat(user, SPAN_DANGER("\The [src] has detected an occupant. Please remove the occupant before commencing the decontamination cycle."))
+			return TOPIC_HANDLED
 
-		active = 1
+		active = TRUE
 		irradiating = 10
-		update_icon()
-		updateUsrDialog()
+		. = TOPIC_REFRESH
+		addtimer(CALLBACK(src, PROC_REF(finish_decontamination)), 1 SECOND)
+	update_icon()
 
-		sleep(10)
-
+/obj/machinery/suit_cycler/proc/finish_decontamination()
+	if(active && operable()) // doesn't currently use power when active, but maybe it should?
 		if(helmet)
 			if(radiation_level > 2)
 				helmet.decontaminate()
 			if(radiation_level > 1)
 				helmet.clean()
-
 		if(suit)
 			if(radiation_level > 2)
 				suit.decontaminate()
 			if(radiation_level > 1)
 				suit.clean()
-
 		if(boots)
 			if(radiation_level > 2)
 				boots.decontaminate()
 			if(radiation_level > 1)
 				boots.clean()
-
+	// maybe add a failure message if it's been interrupted by the time decontamination finishes?
+	// Update post-decontamination
 	update_icon()
 	updateUsrDialog()
 
@@ -420,7 +423,7 @@
 		return
 
 	if(active && stat & (BROKEN|NOPOWER))
-		active = 0
+		active = FALSE
 		irradiating = 0
 		electrified = 0
 		update_icon()
@@ -447,7 +450,7 @@
 /obj/machinery/suit_cycler/proc/finished_job()
 	var/turf/T = get_turf(src)
 	T.visible_message(SPAN_NOTICE("\The [src] pings loudly."))
-	active = 0
+	active = FALSE
 	updateUsrDialog()
 	update_icon()
 
@@ -457,6 +460,7 @@
 
 	suit.breaches = list()
 	suit.calc_breach_damage()
+	finished_job()
 
 /obj/machinery/suit_cycler/verb/leave()
 	set name = "Eject Cycler"
@@ -492,11 +496,9 @@
 	if(helmet)
 		target_modification.RefitItem(helmet)
 		helmet.refit_for_bodytype(target_bodytype)
-		helmet.SetName("refitted [helmet.name]")
 	if(suit)
 		target_modification.RefitItem(suit)
 		suit.refit_for_bodytype(target_bodytype)
-		suit.SetName("refitted [suit.name]")
 	if(boots)
 		boots.refit_for_bodytype(target_bodytype)
-		boots.SetName("refitted [initial(boots.name)]")
+	finished_job()

@@ -93,7 +93,7 @@
 
 /obj/item/clothing/costume/oldman
 	name = "old man's suit"
-	desc = "A classic suit for the older gentleman with built in back support."
+	desc = "A classic suit for the older gentleman with built-in back support."
 	icon = 'icons/clothing/costumes/uniform_lawyer_old.dmi'
 
 /obj/item/clothing/costume/lawyer
@@ -121,3 +121,8 @@
 	name = "rogue's uniform"
 	desc = "For the man who doesn't care because he's still free."
 	icon = 'icons/clothing/rogue_captain.dmi'
+
+/obj/item/clothing/costume/maid
+	name = "maid's uniform"
+	desc = "The uniform of someone you'd expect to see dusting off an antique display case."
+	icon = 'icons/clothing/costumes/maid.dmi'

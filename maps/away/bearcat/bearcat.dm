@@ -3,11 +3,11 @@
 #include "bearcat_access.dm"
 
 /obj/abstract/submap_landmark/joinable_submap/bearcat
-	name = "FTV Bearcat"
+	name      = "FTV Bearcat"
 	archetype = /decl/submap_archetype/derelict/bearcat
 
 /decl/submap_archetype/derelict/bearcat
-	descriptor = "derelict cargo vessel"
+	name      = "derelict cargo vessel"
 	crew_jobs = list(
 		/datum/job/submap/bearcat_captain,
 		/datum/job/submap/bearcat_crewman
@@ -113,7 +113,7 @@
 	if(!istype(corpse))
 		return
 	corpse.SetName("Captain")
-	var/obj/structure/bed/chair/C = locate() in loc
+	var/obj/structure/chair/C = locate() in loc
 	if(C)
 		C.buckle_mob(corpse)
 	qdel(src)

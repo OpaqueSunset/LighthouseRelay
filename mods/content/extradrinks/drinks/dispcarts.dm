@@ -1,3 +1,20 @@
+#define SEC_PACK(_tname, _type, _name, _cname, _access)\
+/decl/hierarchy/supply_pack/dispenser_cartridges/##_tname{\
+	name = _name ;\
+	containername = _cname ;\
+	containertype = /obj/structure/closet/crate/secure;\
+	access = list( _access );\
+	contains = list( _type , _type );\
+	}
+
+#define PACK(_tname, _type, _name, _cname)\
+/decl/hierarchy/supply_pack/dispenser_cartridges/##_tname{\
+	name = _name ;\
+	containername = _cname ;\
+	containertype = /obj/structure/closet/crate;\
+	contains = list( _type , _type );\
+	}
+
 SEC_PACK(baijiu,   /obj/item/chems/chem_disp_cartridge/baijiu,   "Reagent refill - Baijiu",   "baijiu reagent cartridge crate",   access_bar)
 SEC_PACK(mead,     /obj/item/chems/chem_disp_cartridge/ogogoro,  "Reagent refill - Ogogoro",  "ogogoro reagent cartridge crate",  access_bar)
 
@@ -11,3 +28,6 @@ PACK(afbeer,      /obj/item/chems/chem_disp_cartridge/afbeer,      "Reagent refi
 PACK(skrianhi,    /obj/item/chems/chem_disp_cartridge/skrianhi,    "Reagent refill - Skrianhi Tea",        "skrianhi reagent cartridge crate")
 
 PACK(syrup_affelerin, /obj/item/chems/chem_disp_cartridge/syrup_affelerin, "Reagent refill - Affelerin Syrup",     "affelerin syrup reagent cartridge crate")
+
+#undef SEC_PACK
+#undef PACK

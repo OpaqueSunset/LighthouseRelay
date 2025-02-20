@@ -1,6 +1,7 @@
-/*
-	This state only checks if user is conscious.
-*/
+/**
+	This state checks if src_object is held in the user's hands (or a cyborg gripper),
+	as well as the default NanoUI interaction.
+**/
 var/global/datum/topic_state/hands/hands_topic_state = new
 
 /datum/topic_state/hands/can_use_topic(src_object, mob/user)

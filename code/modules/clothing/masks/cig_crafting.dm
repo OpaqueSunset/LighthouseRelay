@@ -10,10 +10,10 @@
 /obj/item/clothing/mask/smokable/cigarette/rolled/populate_reagents()
 	return
 
-/obj/item/clothing/mask/smokable/cigarette/rolled/examine(mob/user)
+/obj/item/clothing/mask/smokable/cigarette/rolled/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(filter)
-		to_chat(user, "Capped off one end with a filter.")
+		. += "\The [src] is capped off at one end with a filter."
 
 /////////// //Ported Straight from TG. I am not sorry. - BloodyMan  //YOU SHOULD BE
 //ROLLING//
@@ -22,7 +22,6 @@
 	name = "rolling paper"
 	desc = "A thin piece of paper used to make smokeables."
 	icon = 'icons/obj/items/paperwork/cigarette_paper.dmi'
-
 	icon_state = "cig_paper"
 	w_class = ITEM_SIZE_TINY
 

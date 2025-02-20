@@ -1,0 +1,1 @@
+/obj/item/honey_frame/@SUBTYPES : /obj/item/hive_frame/crafted/@SUBTYPES{@OLD}

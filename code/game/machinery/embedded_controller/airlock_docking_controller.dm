@@ -69,7 +69,7 @@
 			disable_override()
 		else
 			enable_override()
-		return TRUE
+		return TOPIC_REFRESH
 
 	. = ..(command)
 	. = airlock_program.receive_user_command(command) || .	//pass along to subprograms; bypass shortcircuit
@@ -129,6 +129,7 @@
 /datum/computer/file/embedded_program/airlock/docking/receive_user_command(command)
 	if (master_prog.undocked() || master_prog.override_enabled)	//only allow the port to be used as an airlock if nothing is docked here or the override is enabled
 		return ..(command)
+	return TOPIC_NOACTION
 
 /datum/computer/file/embedded_program/airlock/docking/proc/open_doors()
 	toggleDoor(memory["interior_status"], tag_interior_door, memory["secure"], "open")

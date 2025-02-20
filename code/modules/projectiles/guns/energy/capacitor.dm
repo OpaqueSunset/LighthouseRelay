@@ -77,10 +77,10 @@ var/global/list/laser_wavelengths
 	power_supply_extension_type = power_supply_extension_type || /datum/extension/loaded_cell/secured
 	return ..(loaded_cell_type, accepted_cell_type, power_supply_extension_type, charge_value)
 
-/obj/item/gun/energy/capacitor/examine(mob/user, distance)
+/obj/item/gun/energy/capacitor/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(loc == user || distance <= 1)
-		to_chat(user, "The wavelength selector is dialled to [selected_wavelength.name].")
+		. += "The wavelength selector is dialled to [selected_wavelength.name]."
 
 /obj/item/gun/energy/capacitor/Destroy()
 	if(capacitors)
@@ -146,9 +146,6 @@ var/global/list/laser_wavelengths
 			to_chat(user, SPAN_NOTICE("You dial \the [src] wavelength to [selected_wavelength.name]."))
 			update_icon()
 	return TRUE
-
-/obj/item/gun/energy/capacitor/Process()
-	. = ..()
 
 /obj/item/gun/energy/capacitor/proc/charge(var/mob/user)
 	. = FALSE
@@ -259,7 +256,7 @@ var/global/list/laser_wavelengths
 // Subtypes.
 /obj/item/gun/energy/capacitor/rifle
 	name = "capacitor rifle"
-	desc = "A heavy, unwieldly directed energy weapon that uses a linear capacitor array to charge a powerful beam."
+	desc = "A heavy, unwieldy directed energy weapon that uses a linear capacitor array to charge a powerful beam."
 	max_capacitors = 4
 	icon = 'icons/obj/guns/capacitor_rifle.dmi'
 	slot_flags = SLOT_BACK

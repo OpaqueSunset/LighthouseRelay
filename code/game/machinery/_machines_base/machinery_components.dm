@@ -246,7 +246,7 @@ var/global/list/machine_path_to_circuit_type
 		to_chat(user, SPAN_WARNING("The insertion point for \the [component] is inaccessible!"))
 		return 0
 	for(var/path in maximum_component_parts)
-		if(istype(component, path) && (number_of_components(path) == maximum_component_parts[path]))
+		if(istype(component, path) && (number_of_components(path) >= maximum_component_parts[path]))
 			to_chat(user, SPAN_WARNING("There are too many parts of this type installed in \the [src] already!"))
 			return 0
 	return 1
@@ -335,6 +335,7 @@ Standard helpers for users interacting with machinery parts.
 			return TRUE
 		remove_part_and_give_to_user(path, user)
 		return TRUE
+	return FALSE
 
 /obj/machinery/proc/remove_part_and_give_to_user(var/path, mob/user)
 	var/obj/item/stock_parts/part = uninstall_component(get_component_of_type(path, TRUE))
@@ -352,3 +353,12 @@ Standard helpers for users interacting with machinery parts.
 			var/present = number_of_components(required_type, only_functional)
 			if(present < needed)
 				LAZYSET(., required_type, needed - present)
+
+/obj/machinery/get_alt_interactions(mob/user)
+	. = ..()
+	for(var/obj/item/stock_parts/component in component_parts)
+		if(!components_are_accessible(component.type))
+			continue
+		var/list/machine_alt_interactions = component.get_machine_alt_interactions(user)
+		if(LAZYLEN(machine_alt_interactions))
+			LAZYADD(., machine_alt_interactions)

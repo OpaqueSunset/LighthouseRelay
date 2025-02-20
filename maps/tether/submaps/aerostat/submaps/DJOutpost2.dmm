@@ -9,10 +9,9 @@
 /obj/structure/grille/broken,
 /obj/item/shard,
 /obj/item/shard{
-	 = None;
 	icon_state = "shardmedium"
 	},
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "d" = (
@@ -51,7 +50,7 @@
 /turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "l" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/structure/cable/yellow{
@@ -65,7 +64,7 @@
 /turf/floor/dirt,
 /area/submap/virgo2/DJOutpost1)
 "n" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/template_noop,
 /area/template_noop)
 "o" = (
@@ -97,7 +96,6 @@
 "w" = (
 /obj/structure/grille/broken,
 /obj/item/shard{
-	 = None;
 	icon_state = "shardmedium"
 	},
 /turf/floor,
@@ -115,7 +113,7 @@
 /turf/floor/dirt,
 /area/submap/virgo2/DJOutpost1)
 "A" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/dirt,
 /area/submap/virgo2/DJOutpost1)
 "B" = (
@@ -134,7 +132,6 @@
 /area/submap/virgo2/DJOutpost1)
 "D" = (
 /obj/item/shard{
-	 = None;
 	icon_state = "shardmedium"
 	},
 /turf/template_noop,
@@ -181,12 +178,12 @@
 /obj/item/shard{
 	icon_state = "medium"
 	},
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "N" = (
 /obj/structure/grille/broken,
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor,
 /area/submap/virgo2/DJOutpost1)
 "O" = (

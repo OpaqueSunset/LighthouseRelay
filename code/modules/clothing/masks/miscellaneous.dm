@@ -93,11 +93,15 @@
 	w_class = ITEM_SIZE_SMALL
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/mask/horsehead/Initialize()
-	. = ..()
-	// The horse mask doesn't cause voice changes by default, the wizard spell changes the flag as necessary
+/obj/item/clothing/mask/horsehead/cursed
+	voicechange = TRUE
 	say_messages = list("NEEIIGGGHHHH!", "NEEEIIIIGHH!", "NEIIIGGHH!", "HAAWWWWW!", "HAAAWWW!")
 	say_verbs = list("whinnies", "neighs", "says")
+
+/obj/item/clothing/mask/horsehead/cursed/equipped(mob/user, slot)
+	. = ..()
+	if(slot == slot_wear_mask_str)
+		canremove = FALSE
 
 /obj/item/clothing/mask/ai
 	name = "camera MIU"
@@ -142,7 +146,7 @@
 
 /obj/item/clothing/mask/rubber/barros
 	name = "Amaya Barros mask"
-	desc = "Current Secretary-General of Sol Cental Government. Not that the real thing would visit this pigsty."
+	desc = "Current Secretary-General of Sol Central Government. Not that the real thing would visit this pigsty."
 	icon = 'icons/clothing/mask/barros.dmi'
 	visible_name = "Amaya Barros"
 

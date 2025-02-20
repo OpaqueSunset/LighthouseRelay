@@ -31,9 +31,9 @@
 
 	update_icon()
 
-/obj/structure/tank_rack/examine(mob/user, distance)
+/obj/structure/tank_rack/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("It is holding [LAZYLEN(oxygen_tanks)] air tank\s and [LAZYLEN(hydrogen_tanks)] hydrogen tank\s."))
+	. += SPAN_NOTICE("It is holding [LAZYLEN(oxygen_tanks)] air tank\s and [LAZYLEN(hydrogen_tanks)] hydrogen tank\s.")
 
 /obj/structure/tank_rack/Destroy()
 	QDEL_NULL_LIST(hydrogen_tanks)

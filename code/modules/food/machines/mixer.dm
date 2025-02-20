@@ -18,9 +18,9 @@ fundamental differences
 	idle_power_usage = 50
 	cooking_category = 0
 
-/obj/machinery/appliance/mixer/examine(var/mob/user)
+/obj/machinery/appliance/mixer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("It is currently set to make a [selected_option]"))
+	. += SPAN_NOTICE("It is currently set to make a [selected_option].")
 
 /obj/machinery/appliance/mixer/Initialize()
 	. = ..()

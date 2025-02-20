@@ -1,6 +1,7 @@
 /decl/interaction_handler/dip_item
 	name = "Dip Into"
 	interaction_flags = INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc = "dip an item into $TARGET_THEM$"
 
 /decl/interaction_handler/dip_item/is_possible(atom/target, mob/user, obj/item/prop)
 	return ..() && target != prop && target.reagents?.total_volume >= FLUID_MINIMUM_TRANSFER && istype(prop) && target.can_be_poured_from(user, prop)
@@ -19,6 +20,7 @@
 /decl/interaction_handler/fill_from
 	name = "Fill From"
 	interaction_flags = INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc = "fill a held item from $TARGET_THEM$"
 
 /decl/interaction_handler/fill_from/is_possible(atom/target, mob/user, obj/item/prop)
 	if(!(. = ..()))
@@ -41,6 +43,7 @@
 /decl/interaction_handler/empty_into
 	name = "Pour Into"
 	interaction_flags = INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc = "pour a held item into $TARGET_THEM$"
 
 /decl/interaction_handler/empty_into/is_possible(atom/target, mob/user, obj/item/prop)
 	if(!(. = ..()))
@@ -57,6 +60,7 @@
 	name = "Wash Hands"
 	expected_target_type = /atom
 	interaction_flags = INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc = "wash your hands in $TARGET_THEM$"
 
 /decl/interaction_handler/wash_hands/is_possible(atom/target, mob/user, obj/item/prop)
 	. = ..() && !istype(prop) && target?.reagents?.has_reagent(/decl/material/liquid/water, 150)
@@ -105,6 +109,7 @@
 	name = "Drink"
 	expected_target_type = /atom
 	interaction_flags = INTERACTION_NEEDS_PHYSICAL_INTERACTION | INTERACTION_NEVER_AUTOMATIC
+	examine_desc = "drink from $TARGET_THEM$"
 
 /decl/interaction_handler/drink/is_possible(atom/target, mob/user, obj/item/prop)
 	return ..() && !istype(prop) && target.can_drink_from(user)

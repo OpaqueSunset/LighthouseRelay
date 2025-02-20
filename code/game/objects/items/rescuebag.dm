@@ -2,12 +2,13 @@
 /obj/item/bodybag/rescue
 	name = "rescue bag"
 	desc = "A folded, reusable bag designed to prevent additional damage to an occupant, especially useful if short on time or in \
-	a hostile enviroment."
+	a hostile environment."
 	icon = 'icons/obj/closets/rescuebag.dmi'
 	icon_state = "folded"
 	origin_tech = @'{"biotech":2}'
 	material = /decl/material/solid/organic/plastic
 	matter = list(/decl/material/solid/silicon = MATTER_AMOUNT_SECONDARY)
+	bag_type = /obj/structure/closet/body_bag/rescue
 	var/obj/item/tank/airtank
 
 /obj/item/bodybag/rescue/loaded
@@ -23,13 +24,12 @@
 	QDEL_NULL(airtank)
 	return ..()
 
-/obj/item/bodybag/rescue/attack_self(mob/user)
-	var/obj/structure/closet/body_bag/rescue/R = new /obj/structure/closet/body_bag/rescue(user.loc)
-	R.add_fingerprint(user)
-	if(airtank)
-		R.set_tank(airtank)
+/obj/item/bodybag/rescue/create_bag_structure(mob/user)
+	var/obj/structure/closet/body_bag/rescue/bag = ..()
+	if(istype(bag) && airtank)
+		bag.set_tank(airtank)
 		airtank = null
-	qdel(src)
+	return bag
 
 /obj/item/bodybag/rescue/attackby(obj/item/W, mob/user, var/click_params)
 	if(istype(W,/obj/item/tank))
@@ -49,18 +49,18 @@
 	else
 		return ..()
 
-/obj/item/bodybag/rescue/examine(mob/user)
+/obj/item/bodybag/rescue/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(airtank)
-		to_chat(user,"The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'.")
-		to_chat(user,"The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'.")
+		. += "The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'."
+		. += "The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'."
 	else
-		to_chat(user, "<span class='warning'>The air tank is missing.</span>")
+		. += SPAN_WARNING("The air tank is missing.")
 
 /obj/structure/closet/body_bag/rescue
 	name = "rescue bag"
 	desc = "A reusable plastic bag designed to prevent additional damage to an occupant, especially useful if short on time or in \
-	a hostile enviroment."
+	a hostile environment."
 	icon = 'icons/obj/closets/rescuebag.dmi'
 	item_path = /obj/item/bodybag/rescue
 	storage_types = CLOSET_STORAGE_MOBS
@@ -126,15 +126,19 @@
 /obj/structure/closet/body_bag/rescue/return_air() //Used to make stasis bags protect from vacuum.
 	return atmo
 
-/obj/structure/closet/body_bag/rescue/examine(mob/user)
+/obj/structure/closet/body_bag/rescue/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(airtank)
-		to_chat(user,"The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'.")
-		to_chat(user,"The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'.")
+		. += "The pressure meter on \the [airtank] shows '[airtank.air_contents.return_pressure()] kPa'."
+		. += "The distribution valve on \the [airtank] is set to '[airtank.distribute_pressure] kPa'."
 	else
-		to_chat(user, "<span class='warning'>The air tank is missing.</span>")
-	to_chat(user,"The pressure meter on [src] shows '[atmo.return_pressure()] kPa'.")
+		. += SPAN_WARNING("The air tank is missing.")
+	. += "The pressure meter on [src] shows '[atmo.return_pressure()] kPa'."
+
+/obj/structure/closet/body_bag/rescue/examined_by(mob/user, distance, infix, suffix)
+	. = ..()
 	if(Adjacent(user)) //The bag's rather thick and opaque from a distance.
-		to_chat(user, "<span class='info'>You peer into \the [src].</span>")
-		for(var/mob/living/L in contents)
-			L.examine(arglist(args))
+		to_chat(user, SPAN_INFO("You peer into \the [src]."))
+		for(var/mob/living/patient in contents)
+			patient.examined_by(user, distance, infix, suffix)
+	return TRUE

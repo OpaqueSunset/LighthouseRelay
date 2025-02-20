@@ -18,7 +18,7 @@
 	},
 /area/submap/virgo2/Shack1)
 "f" = (
-/obj/structure/table/woodentable_reinforced,
+/obj/structure/table/wood/reinforced,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "g" = (
@@ -60,13 +60,13 @@
 /area/submap/virgo2/Shack1)
 "p" = (
 /obj/effect/decal/cleanable/dirt/visible,
-/obj/structure/table/woodentable_reinforced,
+/obj/structure/table/wood/reinforced,
 /obj/item/toolbox,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
 "q" = (
 /obj/effect/decal/cleanable/dirt/visible,
-/obj/structure/table/woodentable_reinforced,
+/obj/structure/table/wood/reinforced,
 /obj/item/bladed/axe/fire/scythe,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)
@@ -81,7 +81,7 @@
 /area/submap/virgo2/Shack1)
 "t" = (
 /obj/effect/decal/cleanable/dirt/visible,
-/obj/structure/table/woodentable_reinforced,
+/obj/structure/table/wood/reinforced,
 /obj/item/flashlight/lamp,
 /turf/floor/wood,
 /area/submap/virgo2/Shack1)

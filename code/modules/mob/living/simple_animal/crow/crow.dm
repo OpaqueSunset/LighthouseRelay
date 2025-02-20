@@ -57,14 +57,14 @@
 
 // Let people interact with the Bird Storage.
 /mob/living/simple_animal/crow/attack_hand(mob/user)
-	if(user.a_intent == I_HELP)
+	if(user.check_intent(I_FLAG_HELP))
 		var/obj/item/backpack = get_equipped_item(slot_back_str)
 		if(backpack)
 			return backpack.attack_hand(user)
 	return ..()
 
 /mob/living/simple_animal/crow/attackby(obj/item/I, mob/user)
-	if(user.a_intent == I_HELP)
+	if(user.check_intent(I_FLAG_HELP))
 		var/obj/item/backpack = get_equipped_item(slot_back_str)
 		if(backpack)
 			return backpack.attackby(I, user)
@@ -80,7 +80,7 @@
 
 /mob/living/simple_animal/crow/cyber
 	name = "cybercrow"
-	desc = "A large cybercrow. k4w k4w."
+	desc = "A large cybercrow. K4w k4w."
 	speak_emote = list("beeps")
 
 /mob/living/simple_animal/crow/cyber/on_update_icon()

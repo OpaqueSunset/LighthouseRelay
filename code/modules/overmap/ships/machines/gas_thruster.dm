@@ -1,6 +1,6 @@
 /obj/machinery/atmospherics/unary/engine
 	name = "rocket nozzle"
-	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propell the ship."
+	desc = "Simple rocket nozzle, expelling gas at hypersonic velocities to propel the ship."
 	icon = 'icons/obj/ship_engine.dmi'
 	icon_state = "nozzle"
 	layer = STRUCTURE_LAYER

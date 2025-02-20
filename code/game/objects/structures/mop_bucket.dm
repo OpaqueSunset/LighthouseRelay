@@ -12,10 +12,10 @@
 	. = ..()
 	create_reagents(180)
 
-/obj/structure/mopbucket/examine(mob/user, distance)
+/obj/structure/mopbucket/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "[src] [html_icon(src)] contains [reagents.total_volume] unit\s of water!")
+		. += "\The [src] [html_icon(src)] contains [reagents.total_volume] unit\s of water!"
 
 /obj/structure/mopbucket/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/mop))

@@ -19,12 +19,12 @@ LINEN BINS
 	material = /decl/material/solid/organic/cloth
 
 /obj/item/bedsheet/attackby(obj/item/I, mob/user)
-	if(is_sharp(I))
+	if(I.is_sharp() || I.has_edge())
 		user.visible_message("<span class='notice'>\The [user] begins cutting up \the [src] with \a [I].</span>", "<span class='notice'>You begin cutting up \the [src] with \the [I].</span>")
 		if(do_after(user, 50, src))
 			to_chat(user, "<span class='notice'>You cut \the [src] into pieces!</span>")
 			for(var/i in 1 to rand(2,5))
-				new /obj/item/chems/glass/rag(get_turf(src))
+				new /obj/item/chems/rag(get_turf(src))
 			qdel(src)
 		return TRUE
 	return ..()
@@ -116,16 +116,16 @@ LINEN BINS
 /obj/structure/bedsheetbin/proc/get_amount()
 	return stored + LAZYLEN(sheets)
 
-/obj/structure/bedsheetbin/examine(mob/user)
+/obj/structure/bedsheetbin/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/curamount = get_amount()
 	if(curamount < 1)
-		to_chat(user, "There are no bed sheets in the bin.")
+		. += "There are no bed sheets in the bin."
 		return
 	if(curamount == 1)
-		to_chat(user, "There is one bed sheet in the bin.")
+		. += "There is one bed sheet in the bin."
 		return
-	to_chat(user, "There are [curamount] bed sheets in the bin.")
+	. += "There are [curamount] bed sheets in the bin."
 
 /obj/structure/bedsheetbin/on_update_icon()
 	..()

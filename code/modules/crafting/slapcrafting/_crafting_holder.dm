@@ -6,7 +6,7 @@
 	var/decl/crafting_stage/current_crafting_stage
 	var/label_name
 
-/obj/item/crafting_holder/examine(mob/user, distance)
+/obj/item/crafting_holder/get_examine_hints(mob/user, distance, infix, suffix)
 	. = ..()
 	if(current_crafting_stage)
 		var/list/next_steps = list()
@@ -22,9 +22,9 @@
 
 		if(length(next_products))
 			for(var/thing in next_products)
-				to_chat(user, SPAN_NOTICE("With <b>[thing]</b>, you could finish building <b>[next_products[thing]]</b>."))
+				LAZYADD(., SPAN_NOTICE("With <b>[thing]</b>, you could finish building <b>[next_products[thing]]</b>."))
 		if(length(next_steps))
-			to_chat(user, SPAN_NOTICE("You could continue to work on this with <b>[english_list(next_steps, and_text = " or ")]</b>."))
+			LAZYADD(., SPAN_NOTICE("You could continue to work on this with <b>[english_list(next_steps, and_text = " or ")]</b>."))
 
 /obj/item/crafting_holder/Initialize(var/ml, var/decl/crafting_stage/initial_stage, var/obj/item/target, var/obj/item/tool, var/mob/user)
 

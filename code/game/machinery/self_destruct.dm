@@ -1,6 +1,6 @@
 /obj/machinery/self_destruct
 	name = "\improper Nuclear Cylinder Inserter"
-	desc = "A hollow space used to insert nuclear cylinders for arming the self destruct."
+	desc = "A hollow space used to insert nuclear cylinders for arming the self-destruct mechanism."
 	icon = 'icons/obj/machines/self_destruct.dmi'
 	icon_state = "empty"
 	density = FALSE
@@ -14,7 +14,7 @@
 		if(!damaged)
 			return FALSE
 		user.visible_message("[user] begins to repair [src].", "You begin repairing [src].")
-		if(do_after(usr, 100, src))
+		if(do_after(user, 100, src))
 			var/obj/item/weldingtool/w = W
 			if(w.weld(10))
 				damaged = 0
@@ -48,10 +48,10 @@
 				return
 			var/obj/machinery/nuclearbomb/nuke = locate(/obj/machinery/nuclearbomb/station) in get_area(src)
 			if(!nuke)
-				to_chat(user, "<span class='warning'>Unable to interface with the self destruct terminal, unable to disarm.</span>")
+				to_chat(user, "<span class='warning'>Unable to interface with the self-destruct terminal, unable to disarm.</span>")
 				return
 			if(nuke.timing)
-				to_chat(user, "<span class='warning'>The self destruct sequence is in progress, unable to disarm.</span>")
+				to_chat(user, "<span class='warning'>The self-destruct sequence is in progress, unable to disarm.</span>")
 				return
 			user.visible_message("[user] begins extracting [cylinder].", "You begin extracting [cylinder].")
 			if(do_after(user, 40, src))
@@ -101,16 +101,16 @@
 		visible_message(SPAN_DANGER("\The [src] dents and chars."))
 		damaged = 1
 
-/obj/machinery/self_destruct/examine(mob/user)
+/obj/machinery/self_destruct/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(damaged)
-		to_chat(user, "<span class='warning'>[src] is damaged, it needs repairs.</span>")
+		. += SPAN_WARNING("\The [src] is damaged and needs to be repaired.")
 		return
 	if(armed)
-		to_chat(user, "[src] is armed and ready.")
+		. += SPAN_DANGER("\The [src] is armed and ready.")
 		return
 	if(cylinder)
-		to_chat(user, "[src] is loaded and ready to be armed.")
+		. += "\the [src] is loaded and ready to be armed."
 
 /obj/machinery/self_destruct/on_update_icon()
 	if(armed)

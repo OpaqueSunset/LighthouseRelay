@@ -40,6 +40,9 @@
 	var/force_update           // Set this to bypass the cycle time check.
 	var/obj/temp_chem_holder   // Something to hold reagents during process_reagents()
 
+	// Counter used by bees.
+	var/pollen = 0
+
 	// Seed details/line data.
 	var/datum/seed/seed = null // The currently planted seed
 
@@ -433,7 +436,7 @@
 			to_chat(user, SPAN_WARNING("There is no plant in \the [src] to remove."))
 		return TRUE
 
-	if(user.a_intent != I_HURT)
+	if(!user.check_intent(I_FLAG_HARM))
 		var/decl/interaction_handler/sample_interaction = GET_DECL(/decl/interaction_handler/hydroponics/sample)
 		if(sample_interaction.is_possible(src, user, used_item))
 			sample_interaction.invoked(src, user, used_item)
@@ -494,15 +497,16 @@
 		to_chat(user, "You [anchored ? "wrench" : "unwrench"] \the [src].")
 		return TRUE
 
-	var/force = used_item.get_attack_force(user)
-	if(force && seed)
-		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-		user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [used_item]!</span>")
-		playsound(get_turf(src), used_item.hitsound, 100, 1)
-		if(!dead)
-			plant_health -= force
-			check_plant_health()
-		return TRUE
+	if(seed)
+		var/force = used_item.expend_attack_force(user)
+		if(force)
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+			user.visible_message("<span class='danger'>\The [seed.display_name] has been attacked by [user] with \the [used_item]!</span>")
+			playsound(get_turf(src), used_item.hitsound, 100, 1)
+			if(!dead)
+				plant_health -= force
+				check_plant_health()
+			return TRUE
 
 	if(mechanical)
 		return component_attackby(used_item, user)
@@ -573,24 +577,24 @@
 		return TRUE
 	return FALSE
 
-/obj/machinery/portable_atmospherics/hydroponics/examine(mob/user)
-	. = ..(user)
+/obj/machinery/portable_atmospherics/hydroponics/get_examine_strings(mob/user, distance, infix, suffix)
+	. = ..()
 	if(!seed)
-		to_chat(user, "\The [src] is empty.")
+		. += "\The [src] is empty."
 		return
 
-	to_chat(user, SPAN_NOTICE("\A [seed.display_name] is growing here."))
+	. += SPAN_NOTICE("\A [seed.display_name] is growing here.")
 
 	if(user.skill_check(SKILL_BOTANY, SKILL_BASIC))
 		if(weedlevel >= 5)
-			to_chat(user, "\The [src] is <span class='danger'>infested with weeds</span>!")
+			. += "\The [src] is <span class='danger'>infested with weeds</span>!"
 		if(pestlevel >= 5)
-			to_chat(user, "\The [src] is <span class='danger'>infested with tiny worms</span>!")
+			. += "\The [src] is <span class='danger'>infested with tiny worms</span>!"
 
 		if(dead)
-			to_chat(user, "<span class='danger'>The [seed.display_name] is dead.</span>")
+			. += "<span class='danger'>The [seed.display_name] is dead.</span>"
 		else if(plant_health <= (seed.get_trait(TRAIT_ENDURANCE)/ 2))
-			to_chat(user, "The [seed.display_name] looks <span class='danger'>unhealthy</span>.")
+			. += "The [seed.display_name] looks <span class='danger'>unhealthy</span>."
 
 	if(!Adjacent(user))
 		return
@@ -616,14 +620,14 @@
 			var/light_available = T.get_lumcount() * 5
 			light_string = "a light level of [light_available] lumens"
 
-		to_chat(user, "Water: [round(waterlevel,0.1)]/100")
-		to_chat(user, "Nutrient: [round(nutrilevel,0.1)]/10")
-		to_chat(user, "The tray's sensor suite is reporting [light_string] and a temperature of [environment.temperature]K.")
+		. += "Water: [round(waterlevel,0.1)]/100"
+		. += "Nutrient: [round(nutrilevel,0.1)]/10"
+		. += "The tray's sensor suite is reporting [light_string] and a temperature of [environment.temperature]K."
 	else
 		if(waterlevel < 20)
-			to_chat(user, SPAN_WARNING("The [seed.display_name] is dry."))
+			. += SPAN_WARNING("The [seed.display_name] is dry.")
 		if(nutrilevel < 2)
-			to_chat(user, SPAN_WARNING("The [seed.display_name]'s growth is stunted due to a lack of nutrients."))
+			. += SPAN_WARNING("The [seed.display_name]'s growth is stunted due to a lack of nutrients.")
 
 /obj/machinery/portable_atmospherics/hydroponics/verb/close_lid_verb()
 	set name = "Toggle Tray Lid"
@@ -670,6 +674,7 @@
 
 /decl/interaction_handler/hydroponics/close_lid
 	name = "Open/Close Lid"
+	examine_desc = "open or close the lid"
 
 /decl/interaction_handler/hydroponics/close_lid/is_possible(atom/target, mob/user, obj/item/prop)
 	var/obj/machinery/portable_atmospherics/hydroponics/tray = target
@@ -681,9 +686,10 @@
 
 /decl/interaction_handler/hydroponics/sample
 	name = "Sample Plant"
+	examine_desc = "take a sample"
 
 /decl/interaction_handler/hydroponics/sample/is_possible(atom/target, mob/user, obj/item/prop)
-	return ..() && istype(prop) && prop.edge && prop.w_class < ITEM_SIZE_NORMAL
+	return ..() && istype(prop) && prop.has_edge() && prop.w_class < ITEM_SIZE_NORMAL
 
 /decl/interaction_handler/hydroponics/sample/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/machinery/portable_atmospherics/hydroponics/tray = target

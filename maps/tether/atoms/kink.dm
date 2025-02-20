@@ -186,7 +186,7 @@
 		spark_at(spark_loc, 3, cardinal_only = TRUE, holder = victim)
 		if(victim)
 			to_chat(victim, SPAN_DANGER("You feel a sharp shock!"))
-			victim.set_status(STAT_WEAK, 5 SECONDS)
+			victim.set_status_condition(STAT_WEAK, 5 SECONDS)
 	return
 
 /obj/item/clothing/neck/collar/shock/on_update_icon()

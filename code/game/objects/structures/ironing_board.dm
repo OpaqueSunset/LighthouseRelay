@@ -35,17 +35,18 @@
 
 // make a screeching noise to drive people mad
 /obj/structure/bed/roller/ironingboard/Move()
+	. = ..()
+	if(!.)
+		return
 	var/turf/T = get_turf(src)
 	if(isspaceturf(T) || istype(T, /turf/floor/carpet))
-		return
+		return FALSE
 	playsound(T, pick(move_sounds), 75, 1)
 
-	. = ..()
-
-/obj/structure/bed/roller/ironingboard/examine(mob/user)
+/obj/structure/bed/roller/ironingboard/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(cloth)
-		to_chat(user, "<span class='notice'>\The [html_icon(cloth)] [cloth] lies on it.</span>")
+		. += SPAN_NOTICE("\The [html_icon(cloth)] [cloth] lies on it.")
 
 /obj/structure/bed/roller/ironingboard/on_update_icon()
 	if(density)
@@ -94,7 +95,7 @@
 			visible_message("<span class='danger'>[user] irons [src.buckled_mob]'s [parsed]!</span>", "<span class='danger'>You iron [buckled_mob]'s [parsed]!</span>")
 
 			var/obj/item/organ/external/affecting = GET_EXTERNAL_ORGAN(H, zone)
-			affecting.take_external_damage(0, 15, used_weapon = "Hot metal")
+			affecting.take_damage(15, BURN, inflicter = "Hot metal")
 
 			return TRUE
 

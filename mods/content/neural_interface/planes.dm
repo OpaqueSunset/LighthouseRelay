@@ -3,7 +3,7 @@
 	/// AR images and AR-only (observer-like) mobs are on this plane.
 	var/obj/screen/ar_plane_master/ar_master
 
-/mob/InitializeHud()
+/mob/initialize_hud()
 	..()
 	refresh_ar_master()
 

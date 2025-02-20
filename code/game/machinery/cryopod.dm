@@ -295,16 +295,19 @@
 
 	return TRUE
 
-/obj/machinery/cryopod/examine(mob/user)
+/obj/machinery/cryopod/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if (occupant && user.Adjacent(src))
-		occupant.examine(arglist(args))
+		. += occupant.get_examine_strings(user, distance, infix, suffix)
+
+/obj/machinery/cryopod/get_cryogenic_power()
+	return applies_stasis ? 1 : 0
 
 //Lifted from Unity stasis.dm and refactored.
 /obj/machinery/cryopod/Process()
 	if(occupant)
 		if(applies_stasis && (world.time > time_entered + 20 SECONDS))
-			occupant.set_stasis(2)
+			occupant.add_mob_modifier(/decl/mob_modifier/stasis, 2 SECONDS, source = src)
 
 		//Allow a ten minute gap between entering the pod and actually despawning.
 		// Only provide the gap if the occupant hasn't ghosted

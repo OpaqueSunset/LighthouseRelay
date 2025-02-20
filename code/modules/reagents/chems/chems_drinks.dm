@@ -319,6 +319,7 @@
 	taste_description = "creamy milk"
 	color = "#dfd7af"
 	uid = "chem_drink_cream"
+	skimmable = TRUE
 
 	glass_name = "cream"
 	glass_desc = "Ewwww..."
@@ -558,7 +559,7 @@
 	SET_STATUS_MAX(M, STAT_DIZZY,  20)
 	ADJ_STATUS(M, STAT_DIZZY, 2)
 	ADJ_STATUS(M, STAT_JITTER, 2)
-	M.set_status(STAT_DROWSY, 0)
+	M.set_status_condition(STAT_DROWSY, 0)
 
 /decl/material/liquid/drink/grenadine
 	name = "grenadine syrup"
@@ -588,6 +589,11 @@
 	glass_desc = "A glass of refreshing cola."
 	glass_special = list(DRINK_FIZZ)
 	allergen_flags = ALLERGEN_CAFFEINE | ALLERGEN_STIMULANT
+
+/decl/material/liquid/drink/cola/build_presentation_name_from_reagents(var/obj/item/prop, var/supplied)
+	if(prop.reagents.has_reagent(/decl/material/liquid/drink/milk))
+		supplied = "pilk"
+	. = ..()
 
 /decl/material/liquid/drink/citrussoda
 	name = "citrus soda"
@@ -727,9 +733,9 @@
 
 /decl/material/liquid/drink/tea/black/build_presentation_name_from_reagents(var/obj/item/prop, var/supplied)
 	if(prop.reagents.has_reagent(/decl/material/liquid/drink/juice/orange))
-		if(prop.reagents.has_reagent(/decl/material/liquid/drink/milk))
+		if(prop.reagents.has_reagent(/decl/material/liquid/drink/milk) && prop.reagents.has_reagent(/decl/material/liquid/drink/syrup/vanilla)) //real london fogs need vanilla syrup
 			. = "London Fog"
-		else if(prop.reagents.has_reagent(/decl/material/liquid/drink/milk/soymilk))
+		else if(prop.reagents.has_reagent(/decl/material/liquid/drink/milk/soymilk) && prop.reagents.has_reagent(/decl/material/liquid/drink/syrup/vanilla))
 			. = "soy London Fog"
 		else
 			. = "Baron Grey"
@@ -861,6 +867,19 @@
 	glass_name = "pumpkin spice syrup"
 	glass_desc = "Thick spiced pumpkin syrup used to flavor drinks."
 
+/decl/material/liquid/drink/syrup/lavender
+	name = "lavender syrup"
+	lore_text = "Thick lavender syrup used to flavor drinks."
+	taste_description = "lavender"
+	color = "#c38be7"
+	coffee_priority = 1
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
+	uid = "chem_drink_lavendersyrup"
+
+	glass_name = "lavender syrup"
+	glass_desc = "Thick lavender syrup used to flavor drinks."
+
 /decl/material/liquid/drink/gingerbeer
 	name = "ginger beer"
 	lore_text = "A hearty, non-alcoholic beverage brewed from ginger."
@@ -918,3 +937,15 @@
 	glass_name = "Compote"
 	glass_desc = "Traditional dessert drink made from fruits or berries. Grandma would be proud."
 	allergen_flags = ALLERGEN_FRUIT
+
+/decl/material/liquid/drink/horchata
+	name = "horchata"
+	lore_text = "A traditional Mexican drink made from rice, milk, vanilla, and cinnamon."
+	taste_description = "refreshing vanilla and cinnamon"
+	color = "#d6c9be"
+	exoplanet_rarity_plant = MAT_RARITY_NOWHERE
+	exoplanet_rarity_gas = MAT_RARITY_NOWHERE
+	uid = "chem_drink_horchata"
+
+	glass_name = "Horchata"
+	glass_desc = "A traditional Mexican drink made from rice, milk, vanilla, and cinnamon."

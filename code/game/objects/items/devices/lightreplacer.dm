@@ -57,10 +57,10 @@
 	var/emagged = 0
 	var/charge = 0
 
-/obj/item/lightreplacer/examine(mob/user, distance)
+/obj/item/lightreplacer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 2)
-		to_chat(user, "It has [uses] light\s remaining.")
+		. += "It has [uses] light\s remaining."
 
 /obj/item/lightreplacer/resolve_attackby(var/atom/A, mob/user)
 
@@ -110,7 +110,7 @@
 				if(!user.try_unequip(L))
 					return TRUE
 				AddUses(1)
-				to_chat(user, "You insert \the [L.name] into \the [src]. You have [uses] light\s remaining.")
+				to_chat(user, "You insert \the [L] into \the [src]. You have [uses] light\s remaining.")
 				qdel(L)
 				return TRUE
 		else

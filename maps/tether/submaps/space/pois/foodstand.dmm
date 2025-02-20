@@ -19,7 +19,7 @@
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "f" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/condiment/coldsauce,
 /obj/item/chems/condiment/ketchup,
 /obj/item/chems/condiment/hotsauce,
@@ -27,7 +27,7 @@
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "g" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
@@ -50,16 +50,16 @@
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "k" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "l" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/food/taco,
 /turf/floor/wood,
 /area/tether_away/debrisfield/explored)
 "m" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/cash_register{
 	dir = 1
 	},

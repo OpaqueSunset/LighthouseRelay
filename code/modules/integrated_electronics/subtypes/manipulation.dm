@@ -537,7 +537,7 @@
 /obj/item/integrated_circuit/manipulation/wormhole
 	name = "wormhole generator"
 	desc = "This powerful circuit can open micro-length wormholes between two points in space."
-	extended_desc = "If a valid teleporter console is supplied as input then its selected teleporter beacon will be used as destination point, \
+	extended_desc = "If a valid teleporter console is supplied as input then its selected teleporter beacon will be used as the destination point, \
 					and if not an undefined destination point is selected. \
 					Rift direction is a cardinal value determening in which direction the rift will be opened, relative the local north. \
 					A direction value of 0 will open the rift on top of the assembly, and any other non-cardinal values will open the rift in the assembly's current facing."
@@ -593,7 +593,7 @@
 
 /obj/item/integrated_circuit/manipulation/ai
 	name = "integrated intelligence control circuit"
-	desc = "Similar in structure to a intellicard, this circuit allows the AI to pulse four different activators for control of a circuit."
+	desc = "Similar in structure to a intelliCard, this circuit allows the AI to pulse four different activators for control of a circuit."
 	extended_desc = "Loading an AI is easy, all that is required is to insert the container into the device's slot. Unloading is a similar process, simply press\
 					down on the device in question and the device/card should pop out (if applicable)."
 	icon_state = "ai"

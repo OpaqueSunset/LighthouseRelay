@@ -33,7 +33,7 @@
 
 /obj/item/clothing/head/that
 	name = "top-hat"
-	desc = "It's an amish looking hat."
+	desc = "It's an Amish-looking hat."
 	icon = 'icons/clothing/head/tophat.dmi'
 	siemens_coefficient = 0.9
 
@@ -78,7 +78,7 @@
 
 /obj/item/clothing/head/rabbitears
 	name = "rabbit ears"
-	desc = "Wearing these makes you looks useless, and only good for your sex appeal."
+	desc = "Wearing these makes you look useless, and only good for your sex appeal."
 	icon = 'icons/clothing/head/bunny.dmi'
 	body_parts_covered = 0
 	flags_inv = 0
@@ -109,6 +109,7 @@
 	name = "green bandana"
 	desc = "It's a green bandana with some fine nanotech lining."
 	icon = 'icons/clothing/head/bandana/green.dmi'
+
 /obj/item/clothing/head/bandana/orange //themij: Taryn Kifer
 	name = "orange bandana"
 	desc = "An orange piece of cloth, worn on the head."
@@ -220,7 +221,7 @@
 
 /obj/item/clothing/head/tank
 	name = "padded cap"
-	desc = "A padded skullcup for those prone to bumping their heads against hard surfaces."
+	desc = "A padded skullcap for those prone to bumping their head against hard surfaces."
 	icon = 'icons/clothing/head/tank.dmi'
 	flags_inv = BLOCK_HEAD_HAIR
 	color = "#5f5f5f"
@@ -268,3 +269,9 @@
 	material = /decl/material/solid/organic/cloth
 	material_alteration = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
 	accessory_slot = null // cannot be equipped on top of helmets
+
+/obj/item/clothing/head/maid
+	name = "maid's headband"
+	desc = "This dainty, frilled thing is apparently meant to go on your head."
+	icon = 'icons/clothing/head/maid.dmi'
+	markings_state_modifier = null

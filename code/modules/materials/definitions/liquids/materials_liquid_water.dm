@@ -31,6 +31,28 @@
 	)
 	temperature_burn_milestone_material = /decl/material/liquid/water
 	can_boil_to_gas = TRUE
+	coated_adjective = "wet"
+
+/decl/material/liquid/water/build_coated_name(datum/reagents/coating, list/accumulator)
+	if(length(coating.reagent_volumes) > 1)
+		accumulator.Insert(1, "dilute") // dilute always comes first! also this is intentionally not colored in component color mode
+		return // don't insert 'wet'
+	..()
+
+// make salty water named saltwater
+/decl/material/liquid/water/get_reagent_name(datum/reagents/holder, phase = MAT_PHASE_LIQUID)
+	if(phase == MAT_PHASE_LIQUID && holder?.get_primary_reagent_decl() == src)
+		if(REAGENT_VOLUME(holder, /decl/material/solid/sodiumchloride))
+			return "saltwater"
+	return ..() // just use the default handling
+
+// make pure water named fresh water
+/decl/material/liquid/water/get_reagent_name(datum/reagents/holder, phase = MAT_PHASE_LIQUID)
+	. = ..()
+	// length == 1 implies primary reagent, so checking both is redundant
+	if(phase == MAT_PHASE_LIQUID && length(holder?.reagent_volumes) == 1)
+		return "fresh [.]"
+	return
 
 /decl/material/liquid/water/affect_blood(var/mob/living/M, var/removed, var/datum/reagents/holder)
 	..()
@@ -88,11 +110,11 @@
 /decl/material/liquid/water/touch_mob(var/mob/living/M, var/amount, var/datum/reagents/holder)
 	..()
 	if(istype(M))
-		var/needed = M.fire_stacks * 10
+		var/needed = M.get_fire_intensity() * 10
 		if(amount > needed)
-			M.fire_stacks = 0
-			M.ExtinguishMob()
+			M.set_fire_intensity(0)
+			M.extinguish_fire()
 			holder.remove_reagent(type, needed)
 		else
-			M.adjust_fire_stacks(-(amount / 10))
+			M.adjust_fire_intensity(-(amount / 10))
 			holder.remove_reagent(type, amount)

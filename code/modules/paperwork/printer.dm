@@ -5,7 +5,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 /obj/item/stock_parts/printer
 	name       = "printer"
-	desc       = "A full fledged laser printer. This one is meant to be installed inside another machine. Comes with its own paper feeder and toner slot."
+	desc       = "A full-fledged laser printer. This one is meant to be installed inside another machine. Comes with its own paper feeder and toner slot."
 	icon       = 'icons/obj/items/stock_parts/modular_components.dmi'
 	icon_state = "printer"
 	randpixel  = 5
@@ -423,6 +423,7 @@
 /decl/interaction_handler/empty/stock_parts_printer
 	name = "Empty Paper Bin"
 	expected_target_type = /obj/item/stock_parts/printer
+	examine_desc         = "empty $TARGET_THEM$"
 
 /decl/interaction_handler/empty/stock_parts_printer/is_possible(obj/item/stock_parts/printer/target, mob/user, obj/item/prop)
 	return (target.get_amount_paper() > 0) && ..()

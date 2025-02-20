@@ -18,10 +18,10 @@
 	. = ..()
 	create_reagents(180)
 
-/obj/structure/janitorialcart/examine(mob/user, distance)
+/obj/structure/janitorialcart/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "[src] [html_icon(src)] contains [reagents.total_volume] unit\s of liquid!")
+		. += "\The [src] [html_icon(src)] contains [reagents.total_volume] unit\s of liquid!"
 
 
 /obj/structure/janitorialcart/attackby(obj/item/I, mob/user)
@@ -111,49 +111,50 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/structure/janitorialcart/Topic(href, href_list)
-	if(!in_range(src, usr))
-		return
-	if(!isliving(usr))
-		return
-	var/mob/living/user = usr
-
-	if(href_list["take"])
-		switch(href_list["take"])
-			if("garbage")
-				if(mybag)
-					user.put_in_hands(mybag)
-					to_chat(user, "<span class='notice'>You take [mybag] from [src].</span>")
-					mybag = null
-			if("mop")
-				if(mymop)
-					user.put_in_hands(mymop)
-					to_chat(user, "<span class='notice'>You take [mymop] from [src].</span>")
-					mymop = null
-			if("spray")
-				if(myspray)
-					user.put_in_hands(myspray)
-					to_chat(user, "<span class='notice'>You take [myspray] from [src].</span>")
-					myspray = null
-			if("replacer")
-				if(myreplacer)
-					user.put_in_hands(myreplacer)
-					to_chat(user, "<span class='notice'>You take [myreplacer] from [src].</span>")
-					myreplacer = null
-			if("sign")
-				if(signs)
-					var/obj/item/caution/Sign = locate() in src
-					if(Sign)
-						user.put_in_hands(Sign)
-						to_chat(user, "<span class='notice'>You take \a [Sign] from [src].</span>")
-						signs--
-					else
-						warning("[src] signs ([signs]) didn't match contents")
-						signs = 0
-
-	update_icon()
-	updateUsrDialog()
-
+/obj/structure/janitorialcart/OnTopic(mob/user, href_list)
+	switch(href_list["take"])
+		if("garbage")
+			if(mybag)
+				user.put_in_hands(mybag)
+				to_chat(user, "<span class='notice'>You take [mybag] from [src].</span>")
+				mybag = null
+				return TOPIC_REFRESH
+			return TOPIC_HANDLED
+		if("mop")
+			if(mymop)
+				user.put_in_hands(mymop)
+				to_chat(user, "<span class='notice'>You take [mymop] from [src].</span>")
+				mymop = null
+				return TOPIC_REFRESH
+			return TOPIC_HANDLED
+		if("spray")
+			if(myspray)
+				user.put_in_hands(myspray)
+				to_chat(user, "<span class='notice'>You take [myspray] from [src].</span>")
+				myspray = null
+				return TOPIC_REFRESH
+			return TOPIC_HANDLED
+		if("replacer")
+			if(myreplacer)
+				user.put_in_hands(myreplacer)
+				to_chat(user, "<span class='notice'>You take [myreplacer] from [src].</span>")
+				myreplacer = null
+				return TOPIC_REFRESH
+			return TOPIC_HANDLED
+		if("sign")
+			if(signs)
+				var/obj/item/caution/Sign = locate() in src
+				if(Sign)
+					user.put_in_hands(Sign)
+					to_chat(user, "<span class='notice'>You take \a [Sign] from [src].</span>")
+					signs--
+				else
+					warning("[src] signs ([signs]) didn't match contents")
+					signs = 0
+				return TOPIC_REFRESH
+			return TOPIC_HANDLED
+		else
+			return TOPIC_NOACTION
 
 /obj/structure/janitorialcart/on_update_icon()
 	..()
@@ -171,32 +172,34 @@
 /datum/movement_handler/move_relay_self/janicart/MayMove(mob/mover, is_external)
 	. = ..()
 	if(. == MOVEMENT_PROCEED && !is_external && !(locate(/obj/item/janicart_key) in mover.get_held_items()))
-		var/obj/structure/bed/chair/janicart/janicart = host
+		var/obj/structure/janicart/janicart = host
 		to_chat(mover, SPAN_WARNING("You'll need the keys in one of your hands to drive this [istype(janicart) ? janicart.callme : host.name]."))
 		return MOVEMENT_STOP
 
 //old style cart
-/obj/structure/bed/chair/janicart
+/obj/structure/janicart
 	name = "janicart"
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "pussywagon"
-	base_icon = "pussywagon"
+	can_buckle = TRUE
+	buckle_lying = FALSE // force people to sit up when buckled to it
+	buckle_sound = 'sound/effects/buckle.ogg'
+	buckle_layer_above = TRUE
+	buckle_movable = TRUE
+	color = null
 	anchored = FALSE
 	density =  TRUE
 	material_alteration = MAT_FLAG_ALTERATION_NONE
 	atom_flags = ATOM_FLAG_OPEN_CONTAINER
-	buckle_layer_above = TRUE
-	buckle_movable = TRUE
 	movement_handlers = list(
 		/datum/movement_handler/deny_multiz,
 		/datum/movement_handler/delay = list(1),
 		/datum/movement_handler/move_relay_self/janicart
 	)
-
 	var/obj/item/bag/trash/mybag = null
 	var/callme = "pimpin' ride"	//how do people refer to it?
 
-/obj/structure/bed/chair/janicart/Initialize()
+/obj/structure/janicart/Initialize()
 	// Handled in init due to dirs needing to be stringified
 	buckle_pixel_shift = list(
 		"[NORTH]" = list("x" =   0, "y" = 4, "z" = 0),
@@ -207,14 +210,14 @@
 	. = ..()
 	create_reagents(100)
 
-/obj/structure/bed/chair/janicart/examine(mob/user, distance)
+/obj/structure/janicart/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "[html_icon(src)] This [callme] contains [reagents.total_volume] unit\s of water!")
+		. += "[html_icon(src)] This [callme] contains [reagents.total_volume] unit\s of water!"
 		if(mybag)
-			to_chat(user, "\A [mybag] is hanging on the [callme].")
+			. += "\A [mybag] is hanging on the [callme]."
 
-/obj/structure/bed/chair/janicart/attackby(obj/item/I, mob/user)
+/obj/structure/janicart/attackby(obj/item/I, mob/user)
 
 	if(istype(I, /obj/item/mop))
 		if(reagents.total_volume > 1)
@@ -238,27 +241,27 @@
 
 	. = ..()
 
-/obj/structure/bed/chair/janicart/attack_hand(mob/user)
+/obj/structure/janicart/attack_hand(mob/user)
 	if(!mybag || !user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		return ..()
 	user.put_in_hands(mybag)
 	mybag = null
 	return TRUE
 
-/obj/structure/bed/chair/janicart/handle_buckled_relaymove(var/datum/movement_handler/mh, var/mob/mob, var/direction, var/mover)
+/obj/structure/janicart/handle_buckled_relaymove(var/datum/movement_handler/mh, var/mob/mob, var/direction, var/mover)
 	if(isspaceturf(loc))
 		return
 	. = MOVEMENT_HANDLED
 	DoMove(mob.AdjustMovementDirection(direction, mover), mob)
 
-/obj/structure/bed/chair/janicart/relaymove(mob/user, direction)
+/obj/structure/janicart/relaymove(mob/user, direction)
 	if(user.incapacitated(INCAPACITATION_DISRUPTED))
 		unbuckle_mob()
 	user.glide_size = glide_size
 	step(src, direction)
 	set_dir(direction)
 
-/obj/structure/bed/chair/janicart/bullet_act(var/obj/item/projectile/Proj)
+/obj/structure/janicart/bullet_act(var/obj/item/projectile/Proj)
 	if(buckled_mob)
 		if(prob(85))
 			return buckled_mob.bullet_act(Proj)

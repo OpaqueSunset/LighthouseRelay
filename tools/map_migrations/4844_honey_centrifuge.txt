@@ -1,0 +1,1 @@
+/obj/machinery/honey_extractor : /obj/machinery/centrifuge/mapped{@OLD}

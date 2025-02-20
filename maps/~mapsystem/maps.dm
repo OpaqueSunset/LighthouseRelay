@@ -2,10 +2,10 @@ var/global/datum/map/using_map  = new USING_MAP_DATUM
 var/global/list/all_maps        = list()
 var/global/list/votable_maps    = list()
 
-var/global/const/MAP_HAS_BRANCH = 1	//Branch system for occupations, togglable
-var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
+var/global/const/MAP_HAS_BRANCH = 1	//Branch system for occupations, toggleable
+var/global/const/MAP_HAS_RANK   = 2		//Rank system, also toggleable
 
-/hook/startup/proc/initialise_map_list()
+/proc/initialise_map_list()
 	for(var/map_type in subtypesof(/datum/map))
 
 		var/datum/map/map_instance = map_type
@@ -113,7 +113,9 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
 	var/default_law_type = /datum/ai_laws/asimov  // The default lawset use by synth units, if not overriden by their laws var.
 	var/security_state = /decl/security_state/default // The default security state system to use.
 
-	var/id_hud_icons = 'icons/mob/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
+	var/hud_icons         = 'icons/screen/hud.dmi' // Used by the ID HUD (primarily sechud) overlay.
+	var/implant_hud_icons = 'icons/screen/hud_implants.dmi'
+	var/med_hud_icons     = 'icons/screen/hud_med.dmi'
 
 	var/num_exoplanets = 0
 	var/force_exoplanet_type // Used to override exoplanet weighting and always pick the same exoplanet.
@@ -194,6 +196,12 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
 	var/background_categories_generated = FALSE
 	var/list/_background_categories
 
+	var/default_ui_style
+
+/datum/map/New()
+	..()
+	default_ui_style ||= DEFAULT_UI_STYLE
+
 /datum/map/proc/get_background_categories()
 	if(!background_categories_generated)
 		if(isnull(_background_categories))
@@ -268,10 +276,9 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
 
 	if(!allowed_jobs)
 		allowed_jobs = list()
-		for(var/jtype in subtypesof(/datum/job))
-			var/datum/job/job = jtype
-			if(initial(job.available_by_default))
-				allowed_jobs += jtype
+		for(var/datum/job/job as anything in subtypesof(/datum/job))
+			if(!TYPE_IS_ABSTRACT(job) && job::available_by_default)
+				allowed_jobs += job
 
 	if(ispath(default_job_type, /datum/job))
 		var/datum/job/J = default_job_type
@@ -557,3 +564,7 @@ var/global/const/MAP_HAS_RANK   = 2		//Rank system, also togglable
 	if(!length(SSmapping.contact_levels))
 		log_error("[name] has no contact levels!")
 		. = FALSE
+
+/datum/map/proc/get_available_submap_archetypes()
+	return decls_repository.get_decls_of_subtype_unassociated(/decl/submap_archetype)
+

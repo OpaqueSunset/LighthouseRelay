@@ -75,7 +75,7 @@
 /turf/floor/tiled,
 /area/submap/virgo2/DoomP)
 "ay" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -173,7 +173,7 @@
 /turf/floor/rock,
 /area/submap/virgo2/DoomP)
 "aM" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloor{

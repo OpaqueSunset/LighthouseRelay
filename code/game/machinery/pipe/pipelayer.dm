@@ -22,7 +22,7 @@
 	W = new(src)
 
 /obj/machinery/pipelayer/Move(new_turf,M_Dir)
-	..()
+	. = ..()
 
 	if(on && a_dis)
 		dismantle_floor(old_turf)
@@ -79,9 +79,9 @@
 		return TRUE
 	return ..()
 
-/obj/machinery/pipelayer/examine(mob/user)
+/obj/machinery/pipelayer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "\The [src] has [metal] sheet\s, is set to produce [P_type_t], and auto-dismantling is [!a_dis?"de":""]activated.")
+	. += "\The [src] has [metal] sheet\s, is set to produce [P_type_t], and auto-dismantling is [!a_dis?"de":""]activated."
 
 /obj/machinery/pipelayer/proc/reset()
 	on=0
@@ -111,7 +111,7 @@
 	if(istype(new_turf, /turf/floor))
 		var/turf/floor/T = new_turf
 		if(!T.is_plating())
-			T.set_flooring(null, place_product = !T.is_floor_damaged())
+			T.clear_flooring(place_product = !T.is_floor_damaged())
 	return new_turf.is_plating()
 
 /obj/machinery/pipelayer/proc/layPipe(var/turf/w_turf,var/M_Dir,var/old_dir)

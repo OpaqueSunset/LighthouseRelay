@@ -1,4 +1,4 @@
-/obj/item/proc/standard_dispenser_refill(var/mob/user, var/obj/structure/reagent_dispensers/target, skip_container_check = FALSE) // This goes into afterattack
+/obj/item/proc/standard_dispenser_refill(mob/user, obj/structure/reagent_dispensers/target, skip_container_check = FALSE) // This goes into afterattack
 	if(!istype(target) || (!skip_container_check && (target.atom_flags & ATOM_FLAG_OPEN_CONTAINER)))
 		return FALSE
 
@@ -18,7 +18,7 @@
 	if(!istype(target))
 		return FALSE
 
-	if(user.a_intent == I_HELP)
+	if(user.check_intent(I_FLAG_HELP))
 		to_chat(user, SPAN_NOTICE("You can't splash people on help intent."))
 		return TRUE
 

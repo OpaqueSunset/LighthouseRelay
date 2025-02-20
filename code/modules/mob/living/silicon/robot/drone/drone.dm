@@ -15,7 +15,7 @@
 	integrated_light_power = 0.4
 	integrated_light_range = 3
 	local_transmit = 1
-	possession_candidate = 1
+	possession_candidate = TRUE
 	speed = -1
 
 	can_pull_size = ITEM_SIZE_NORMAL
@@ -117,7 +117,7 @@
 	uid = "bodytype_drone_construction"
 
 /decl/bodytype/drone/construction/Initialize()
-	equip_adjust = list(
+	_equip_adjust = list(
 		slot_head_str = list(
 			"[NORTH]" = list(1, -12),
 			"[SOUTH]" = list(1, -12),
@@ -170,7 +170,7 @@
 	if(istype(W, /obj/item/borg/upgrade))
 		to_chat(user, "<span class='danger'>\The [src] is not compatible with \the [W].</span>")
 		return TRUE
-	else if(IS_CROWBAR(W) && user.a_intent != I_HURT)
+	else if(IS_CROWBAR(W) && !user.check_intent(I_FLAG_HARM))
 		to_chat(user, "<span class='danger'>\The [src] is hermetically sealed. You can't open the case.</span>")
 		return TRUE
 	else if (istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
@@ -178,7 +178,7 @@
 			if(!get_config_value(/decl/config/toggle/on/allow_drone_spawn) || emagged || should_be_dead()) //It's dead, Dave.
 				to_chat(user, "<span class='danger'>The interface is fried, and a distressing burned smell wafts from the robot's interior. You're not rebooting this one.</span>")
 				return TRUE
-			if(!allowed(usr))
+			if(!allowed(user))
 				to_chat(user, "<span class='danger'>Access denied.</span>")
 				return TRUE
 			var/decl/pronouns/pronouns = user.get_pronouns()
@@ -193,7 +193,7 @@
 			SPAN_DANGER("\The [user] swipes [pronouns.his] ID card through \the [src], attempting to shut it down."), \
 			SPAN_DANGER("You swipe your ID card through \the [src], attempting to shut it down."))
 		if(!emagged)
-			if(allowed(usr))
+			if(allowed(user))
 				shut_down()
 			else
 				to_chat(user, SPAN_DANGER("Access denied."))
@@ -351,13 +351,13 @@
 	uid = "bodytype_drone"
 
 /decl/bodytype/drone/Initialize()
-	if(!length(equip_adjust))
-		equip_adjust = list(
-			slot_head_str = list(
+	if(!length(_equip_adjust))
+		_equip_adjust = list(
+			(slot_head_str) = list(
 				"[NORTH]" = list(0, -13),
 				"[SOUTH]" = list(0, -13),
-				"[EAST]" =  list(0, -13),
-				"[WEST]" =  list(0, -13)
+				"[EAST]"  = list(0, -13),
+				"[WEST]"  = list(0, -13)
 			)
 		)
 	. = ..()

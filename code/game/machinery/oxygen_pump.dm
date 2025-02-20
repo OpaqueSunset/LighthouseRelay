@@ -90,8 +90,7 @@
 		visible_message(SPAN_NOTICE("\The [user] detaches \the [contained] and it rapidly retracts back into \the [src]!"))
 	else
 		visible_message(SPAN_NOTICE("\The [contained] rapidly retracts back into \the [src]!"))
-	if(breather.internals)
-		breather.internals.icon_state = "internal0"
+	breather.refresh_hud_element(HUD_INTERNALS)
 	breather = null
 	update_use_power(POWER_USE_IDLE)
 
@@ -160,12 +159,12 @@
 		return TRUE
 	return FALSE // TODO: should this be a parent call? do we want this to be (de)constructable?
 
-/obj/machinery/oxygen_pump/examine(mob/user)
+/obj/machinery/oxygen_pump/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(tank)
-		to_chat(user, "The meter shows [round(tank.air_contents.return_pressure())].")
+		. += "The meter shows [round(tank.air_contents.return_pressure())]."
 	else
-		to_chat(user, SPAN_WARNING("It is missing a tank!"))
+		. += SPAN_WARNING("It is missing a tank!")
 
 /obj/machinery/oxygen_pump/Process()
 	if(istype(breather))
@@ -185,7 +184,7 @@
 /obj/machinery/oxygen_pump/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	var/data[0]
 	if(!tank)
-		to_chat(usr, SPAN_WARNING("It is missing a tank!"))
+		to_chat(user, SPAN_WARNING("It is missing a tank!"))
 		data["tankPressure"] = 0
 		data["releasePressure"] = 0
 		data["defaultReleasePressure"] = 0
@@ -220,9 +219,9 @@
 		// auto update every Master Controller tick
 		ui.set_auto_update(1)
 
-/obj/machinery/oxygen_pump/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/oxygen_pump/OnTopic(mob/user, href_list, datum/topic_state/state)
+	if((. = ..()))
+		return
 
 	if (href_list["dist_p"])
 		if (href_list["dist_p"] == "reset")
@@ -233,4 +232,4 @@
 			var/cp = text2num(href_list["dist_p"])
 			tank.distribute_pressure += cp
 		tank.distribute_pressure = min(max(round(tank.distribute_pressure), 0), TANK_MAX_RELEASE_PRESSURE)
-		return 1
+		. = TOPIC_REFRESH // Refreshing is handled in machinery/Topic

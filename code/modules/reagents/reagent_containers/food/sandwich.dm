@@ -83,10 +83,10 @@
 		qdel(O)
 	return ..()
 
-/obj/item/food/csandwich/examine(mob/user)
+/obj/item/food/csandwich/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..(user)
 	var/obj/item/O = pick(contents)
-	to_chat(user, "<span class='warning'>You think you can see [O.name] in there.</span>")
+	. += SPAN_WARNING("You think you can see [O.name] in there.")
 
 /obj/item/food/csandwich/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
 	var/obj/item/shard = locate() in get_contained_external_atoms() // grab early in case of qdele

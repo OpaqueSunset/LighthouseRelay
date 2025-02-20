@@ -63,12 +63,6 @@
 	else
 		return ..()
 
-/obj/item/food/butchery/get_dried_product()
-	. = ..()
-	if(meat_name && istype(., /obj/item/food/jerky))
-		var/obj/item/food/jerky/jerk = .
-		jerk.set_meat_name(meat_name)
-
 /obj/item/food/butchery/get_drying_state(var/obj/rack)
 	return "meat"
 
@@ -134,7 +128,7 @@
 
 /obj/item/food/butchery/offal
 	name                = "offal"
-	desc                = "An assortmant of organs and lumps of unidentified gristle. Packed with nutrients and bile."
+	desc                = "An assortment of organs and lumps of unidentified gristle. Packed with nutrients and bile."
 	icon                = 'icons/obj/food/butchery/offal.dmi'
 	material            = /decl/material/solid/organic/meat/gut
 	nutriment_amt       = 15
@@ -143,15 +137,15 @@
 	var/_cleaned        = FALSE
 	var/work_skill      = SKILL_CONSTRUCTION
 
-/obj/item/food/butchery/offal/examine(mob/user, distance)
+/obj/item/food/butchery/offal/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1 && user.skill_check(work_skill, SKILL_BASIC) && !dry)
 		if(_cleaned && drying_wetness)
-			to_chat(user, "\The [src] can be hung on a drying rack to dry it in preparation for being twisted into thread.")
+			. += "\The [src] can be hung on a drying rack to dry it in preparation for being twisted into thread."
 		else if(!_cleaned)
-			to_chat(user, "\The [src] can be scraped clean with a sharp object like a knife.")
+			. += "\The [src] can be scraped clean with a sharp object like a knife."
 		else if(!drying_wetness)
-			to_chat(user, "\The [src] can be soaked in water to prepare it for drying.")
+			. += "\The [src] can be soaked in water to prepare it for drying."
 
 /obj/item/food/butchery/offal/attackby(obj/item/W, mob/user)
 	if(IS_KNIFE(W) && !_cleaned && !dry)

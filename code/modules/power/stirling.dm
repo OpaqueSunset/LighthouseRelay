@@ -133,14 +133,13 @@
 	last_genlev = genlev
 	update_networks()
 
-/obj/machinery/atmospherics/binary/stirling/examine(mob/user, distance)
+/obj/machinery/atmospherics/binary/stirling/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(distance > 1)
-		return
-	if(active)
-		to_chat(user, "\The [src] is generating [round(last_gen/1000, 0.1)] kW")
-	if(!inserted_cylinder)
-		to_chat(user, "There is no piston cylinder inserted into \the [src].")
+	if(distance <= 1)
+		if(active)
+			. += "\The [src] is generating [round(last_gen/1000, 0.1)] kW"
+		if(!inserted_cylinder)
+			. += "There is no piston cylinder inserted into \the [src]."
 
 /obj/machinery/atmospherics/binary/stirling/attackby(var/obj/item/W, var/mob/user)
 	if((istype(W, /obj/item/tank/stirling)))

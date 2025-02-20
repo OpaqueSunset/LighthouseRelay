@@ -14,103 +14,103 @@
 	// HOLOFLOOR DOES NOT GIVE A FUCK
 
 /turf/floor/holofloor/carpet
-	name = "brown carpet"
-	icon = 'icons/turf/flooring/carpet.dmi'
-	icon_state = "brown"
-	_flooring = /decl/flooring/carpet
+	name          = "brown carpet"
+	icon          = 'icons/turf/flooring/carpet.dmi'
+	icon_state    = "brown"
+	_flooring     = /decl/flooring/carpet
 
 /turf/floor/holofloor/concrete
-	name = "brown carpet"
-	icon = 'icons/turf/flooring/carpet.dmi'
-	icon_state = "brown"
-	_flooring = /decl/flooring/carpet
+	name          = "brown carpet"
+	icon          = 'icons/turf/flooring/carpet.dmi'
+	icon_state    = "brown"
+	_flooring     = /decl/flooring/carpet
 
 /turf/floor/holofloor/concrete
-	name = "floor"
-	icon = 'icons/turf/flooring/misc.dmi'
-	icon_state = "concrete"
-	_flooring = null
+	name          = "floor"
+	icon          = 'icons/turf/flooring/misc.dmi'
+	icon_state    = "concrete"
+	_flooring     = null
 
 /turf/floor/holofloor/tiled
-	name = "floor"
-	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "steel"
-	_flooring = /decl/flooring/tiling
+	name          = "floor"
+	icon          = 'icons/turf/flooring/tiles.dmi'
+	icon_state    = "steel"
+	_flooring     = /decl/flooring/tiling
 
 /turf/floor/holofloor/tiled/dark
-	name = "dark floor"
-	icon_state = "dark"
-	_flooring = /decl/flooring/tiling/dark
+	name          = "dark floor"
+	icon_state    = "dark"
+	_flooring     = /decl/flooring/tiling/dark
 
 /turf/floor/holofloor/tiled/stone
-	name = "stone floor"
-	icon_state = "stone"
-	_flooring = /decl/flooring/tiling/stone
+	name          = "stone floor"
+	icon_state    = "stone"
+	_flooring     = /decl/flooring/tiling/stone
 
 /turf/floor/holofloor/lino
-	name = "lino"
-	icon = 'icons/turf/flooring/linoleum.dmi'
-	icon_state = "lino"
-	_flooring = /decl/flooring/linoleum
+	name          = "lino"
+	icon          = 'icons/turf/flooring/linoleum.dmi'
+	icon_state    = "lino"
+	_flooring     = /decl/flooring/linoleum
 
 /turf/floor/holofloor/wood
-	name = "wooden floor"
-	icon = 'icons/turf/flooring/wood.dmi'
-	icon_state = "wood0"
-	color = WOOD_COLOR_CHOCOLATE
-	_flooring = /decl/flooring/wood
+	name          = "wooden floor"
+	icon          = 'icons/turf/flooring/wood.dmi'
+	icon_state    = "wood0"
+	color         = WOOD_COLOR_CHOCOLATE
+	_flooring     = /decl/flooring/wood
 
 /turf/floor/holofloor/grass
-	name = "lush grass"
-	icon = 'icons/turf/flooring/fakegrass.dmi'
-	icon_state = "grass0"
-	_flooring = /decl/flooring/grass/fake
+	name          = "lush grass"
+	icon          = 'icons/turf/flooring/fakegrass.dmi'
+	icon_state    = "grass0"
+	_flooring     = /decl/flooring/grass/fake
 
 /turf/floor/holofloor/snow
-	name = "snow"
-	icon = 'icons/turf/flooring/snow.dmi'
-	icon_state = "snow0"
-	_flooring = /decl/flooring/snow/fake
+	name          = "snow"
+	icon          = 'icons/turf/flooring/snow.dmi'
+	icon_state    = "snow0"
+	_flooring     = /decl/flooring/snow/fake
 
 /turf/floor/holofloor/space
-	name = "\proper space"
-	icon = 'icons/turf/flooring/fake_space.dmi'
-	icon_state = "space0"
-	_flooring = /decl/flooring/fake_space
+	name          = "\proper space"
+	icon          = 'icons/turf/flooring/fake_space.dmi'
+	icon_state    = "space0"
+	_flooring     = /decl/flooring/fake_space
 
 /turf/floor/holofloor/reinforced
-	icon = 'icons/turf/flooring/tiles.dmi'
-	_flooring = /decl/flooring/reinforced
-	name = "reinforced holofloor"
-	icon_state = "reinforced"
+	name          = "reinforced holofloor"
+	icon          = 'icons/turf/flooring/tiles.dmi'
+	_flooring     = /decl/flooring/reinforced
+	icon_state    = "reinforced"
 
 /turf/floor/holofloor/beach
-	desc = "Uncomfortably gritty for a hologram."
-	icon = 'icons/misc/beach.dmi'
-	_flooring = /decl/flooring/sand/fake
+	desc          = "Uncomfortably gritty for a hologram."
+	icon          = 'icons/misc/beach.dmi'
+	_flooring     = /decl/flooring/sand/fake
 	abstract_type = /turf/floor/holofloor/beach
 
 /turf/floor/holofloor/beach/sand
-	name = "sand"
-	icon_state = "desert0"
+	name          = "sand"
+	icon_state    = "desert0"
 
 /turf/floor/holofloor/beach/coastline
-	name = "coastline"
-	icon = 'icons/misc/beach2.dmi'
-	icon_state = "sandwater"
-	_flooring = /decl/flooring/sand/fake
+	name          = "coastline"
+	icon          = 'icons/misc/beach2.dmi'
+	icon_state    = "sandwater"
+	_flooring     = /decl/flooring/sand/fake
 
 /turf/floor/holofloor/beach/water
-	name = "water"
-	icon_state = "seashallow"
-	_flooring = /decl/flooring/fake_water
+	name          = "water"
+	icon_state    = "seashallow"
+	_flooring     = /decl/flooring/fake_water
 
 /turf/floor/holofloor/desert
-	name = "desert sand"
-	desc = "Uncomfortably gritty for a hologram."
-	icon_state = "barren"
-	icon = 'icons/turf/flooring/barren.dmi'
-	_flooring = /decl/flooring/sand/fake
+	name          = "desert sand"
+	desc          = "Uncomfortably gritty for a hologram."
+	icon          = 'icons/turf/flooring/barren.dmi'
+	icon_state    = "barren"
+	_flooring     = /decl/flooring/sand/fake
 
 /turf/floor/holofloor/desert/Initialize(var/ml)
 	. = ..()
@@ -118,19 +118,19 @@
 		LAZYADD(decals, image('icons/turf/flooring/decals.dmi', "asteroid[rand(0,9)]"))
 
 /obj/structure/holostool
-	name = "stool"
-	desc = "Apply butt."
-	icon = 'icons/obj/furniture.dmi'
-	icon_state = "stool_padded_preview"
-	anchored = TRUE
+	name          = "stool"
+	desc          = "Apply butt."
+	icon          = 'icons/obj/furniture.dmi'
+	icon_state    = "stool_padded_preview"
+	anchored      = TRUE
 
 /obj/item/clothing/gloves/boxing/hologlove
-	name = "boxing gloves"
-	desc = "Because you really needed another excuse to punch your crewmates."
+	name          = "boxing gloves"
+	desc          = "Because you really needed another excuse to punch your crewmates."
 
 /obj/structure/window/reinforced/holowindow/full
-	dir = NORTHEAST
-	icon_state = "rwindow_full"
+	dir           = NORTHEAST
+	icon_state    = "rwindow_full"
 
 /obj/structure/window/reinforced/holowindow/attackby(obj/item/weapon, mob/user)
 	if(IS_SCREWDRIVER(weapon) || IS_CROWBAR(weapon) || IS_WRENCH(weapon))
@@ -157,7 +157,7 @@
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
 		visible_message("<span class='danger'>\The [src] was hit by \the [I].</span>")
 		if(I.atom_damage_type == BRUTE || I.atom_damage_type == BURN)
-			take_damage(I.get_attack_force(user))
+			take_damage(I.expend_attack_force(user))
 		return TRUE
 
 	src.add_fingerprint(user)
@@ -186,7 +186,7 @@
 	holographic = TRUE
 	material = /decl/material/solid/metal/aluminium/holographic
 
-/obj/structure/bed/chair/holochair
+/obj/structure/chair/holochair
 	tool_interaction_flags = 0
 	holographic = TRUE
 	material = /decl/material/solid/metal/aluminium/holographic

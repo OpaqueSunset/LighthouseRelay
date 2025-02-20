@@ -187,8 +187,8 @@
 /obj/item/duct_tape/attackby(obj/item/W, mob/user)
 	return stuck? stuck.attackby(W, user) : ..()
 
-/obj/item/duct_tape/examine()
-	return stuck ? stuck.examine(arglist(args)) : ..()
+/obj/item/duct_tape/examined_by(mob/user, distance, infix, suffix)
+	return stuck ? stuck.examined_by(user, distance, infix, suffix) : ..()
 
 /obj/item/duct_tape/proc/attach(var/obj/item/W)
 	stuck      = W

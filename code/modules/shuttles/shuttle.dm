@@ -12,7 +12,7 @@
 	var/arrive_time = 0	//the time at which the shuttle arrives when long jumping
 	var/flags = 0
 	var/process_state = IDLE_STATE //Used with SHUTTLE_FLAGS_PROCESS, as well as to store current state.
-	var/category = /datum/shuttle
+	abstract_type = /datum/shuttle
 	var/multiz = 0	//how many multiz levels, starts at 0
 
 	var/ceiling_type = /turf/floor/shuttle_ceiling
@@ -116,7 +116,7 @@
 		if (moving_status == SHUTTLE_IDLE)
 			return	//someone cancelled the launch
 
-		if(!fuel_check()) //fuel error (probably out of fuel) occured, so cancel the launch
+		if(!fuel_check()) //fuel error (probably out of fuel) occurred, so cancel the launch
 			var/datum/shuttle/autodock/S = src
 			if(istype(S))
 				S.cancel_launch(null)
@@ -138,7 +138,7 @@
 		if(moving_status == SHUTTLE_IDLE)
 			return	//someone cancelled the launch
 
-		if(!fuel_check()) //fuel error (probably out of fuel) occured, so cancel the launch
+		if(!fuel_check()) //fuel error (probably out of fuel) occurred, so cancel the launch
 			var/datum/shuttle/autodock/S = src
 			if(istype(S))
 				S.cancel_launch(null)

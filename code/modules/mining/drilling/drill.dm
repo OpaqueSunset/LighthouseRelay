@@ -80,6 +80,8 @@
 		playsound(src, "button", 60)
 		to_chat(user, SPAN_NOTICE("You turn \the [src] [use_power ? "on" : "off"]."))
 		state_machine.evaluate()
+		return TRUE
+	return FALSE
 
 /obj/machinery/mining_drill/on_update_icon()
 	icon_state = "mining_drill_[use_power == POWER_USE_ACTIVE ? "on" : "off"]"

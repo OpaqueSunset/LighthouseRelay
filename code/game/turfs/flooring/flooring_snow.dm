@@ -8,6 +8,9 @@
 	footstep_type   = /decl/footsteps/snow
 	has_base_range  = 13
 	force_material  = /decl/material/solid/ice/snow
+	can_collect     = TRUE
+	print_type      = /obj/effect/footprints
+	drop_material_on_remove = TRUE
 
 /decl/flooring/snow/get_movement_delay(var/travel_dir, var/mob/mover)
 	. = ..()
@@ -23,10 +26,23 @@
 /decl/flooring/snow/fire_act(turf/floor/target, datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(!target.reagents?.total_volume)
 		if(target.get_topmost_flooring() == src)
-			target.set_flooring(/decl/flooring/permafrost)
+			target.remove_flooring(src)
 		else if(target.get_base_flooring() == src)
 			target.set_base_flooring(/decl/flooring/permafrost)
 		return
+	return ..()
+
+/decl/flooring/snow/turf_crossed(atom/movable/crosser)
+	if(!isliving(crosser))
+		return
+	var/mob/living/walker = crosser
+	// at some point this might even be able to use the height
+	// of the snow flooring layer, so deep snow gives you more coating
+	walker.add_walking_contaminant(force_material.type, rand(1, 2))
+
+/decl/flooring/snow/can_show_coating_footprints(turf/target, decl/material/contaminant)
+	if(force_material.type == contaminant) // So we don't end up covered in a million footsteps that we provided.
+		return FALSE
 	return ..()
 
 /decl/flooring/permafrost

@@ -111,10 +111,10 @@
 		return TRUE
 	return ..()
 
-/obj/item/cataloguer/examine(mob/user, distance, infix, suffix)
+/obj/item/cataloguer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(loaded_disk)
-		to_chat(user, "It has \a [loaded_disk] slotted into the storage port. The display indicates it currently holds [loaded_disk.data] good explorer point\s.")
+		. += "It has \a [loaded_disk] slotted into the storage port. The display indicates it currently holds [loaded_disk.data] good explorer point\s."
 
 /obj/item/cataloguer/proc/stop_scan(var/interrupted = TRUE, var/mob/user, var/fade_out = 0)
 

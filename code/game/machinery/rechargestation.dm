@@ -1,6 +1,6 @@
 /obj/machinery/recharge_station
 	name = "robot recharging station"
-	desc = "A heavy duty rapid charging system, designed to quickly recharge autonomous system power reserves."
+	desc = "A heavy-duty rapid charging system, designed to quickly recharge autonomous system power reserves."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "borgcharger0"
 	density = TRUE
@@ -95,13 +95,13 @@
 		var/charge_used = diff - use_power_oneoff(diff / CELLRATE, LOCAL) * CELLRATE
 		target.give(charge_used)
 
-/obj/machinery/recharge_station/examine(mob/user)
+/obj/machinery/recharge_station/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/obj/item/cell/cell = get_cell()
 	if(cell)
-		to_chat(user, "The charge meter reads: [cell.percent()]%.")
+		. += "The charge meter reads: [cell.percent()]%."
 	else
-		to_chat(user, "The indicator shows that the cell is missing.")
+		. += "The indicator shows that the cell is missing."
 
 /obj/machinery/recharge_station/relaymove(mob/user)
 	if(user.stat)

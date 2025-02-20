@@ -6,7 +6,7 @@ var/global/list/all_apcs = list()
 // Requires a wire connection to a power network through a terminal
 // Generates a terminal based on the direction of the APC on spawn
 
-// There are three different power channels, lighting, equipment, and enviroment
+// There are three different power channels, lighting, equipment, and environment
 // Each may have one of the following states
 
 // Power channels set to Auto change when power levels rise or drop below a threshold
@@ -246,18 +246,18 @@ var/global/list/all_apcs = list()
 	if(term && (!functional_only || term.is_functional()))
 		return term.terminal
 
-/obj/machinery/power/apc/examine(mob/user, distance)
+/obj/machinery/power/apc/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		if(stat & BROKEN)
-			to_chat(user, "Looks broken.")
+			. += "Looks broken."
 			return
 		var/terminal = terminal()
-		to_chat(user, "\The [src] is [terminal ? "" : "not "]connected to external power.")
+		. += "\The [src] is [terminal ? "" : "not "]connected to external power."
 		if(!panel_open)
-			to_chat(user, "The cover is closed.")
+			. += "The cover is closed."
 		else
-			to_chat(user, "The cover is [cover_removed ? "removed" : "open"] and the power cell is [ get_cell(FALSE) ? "installed" : "missing"].")
+			. += "The cover is [cover_removed ? "removed" : "open"] and the power cell is [ get_cell(FALSE) ? "installed" : "missing"]."
 //  Broken/missing board should be shown by parent.
 
 // update the APC icon to show the three base states
@@ -445,7 +445,7 @@ var/global/list/all_apcs = list()
 	return ..()
 
 /obj/machinery/power/apc/bash(obj/item/used_item, mob/user)
-	if (!(user.a_intent == I_HURT) || (used_item.item_flags & ITEM_FLAG_NO_BLUDGEON))
+	if (!(user.check_intent(I_FLAG_HARM)) || (used_item.item_flags & ITEM_FLAG_NO_BLUDGEON))
 		return FALSE
 
 	if(!used_item.user_can_attack_with(user))
@@ -491,21 +491,20 @@ var/global/list/all_apcs = list()
 
 /obj/machinery/power/apc/physical_attack_hand(mob/user)
 	//Human mob special interaction goes here.
-	if(ishuman(user))
-		var/mob/living/human/H = user
-
-		if(H.species.can_shred(H))
-			user.visible_message("<span class='warning'>\The [user] slashes at \the [src]!</span>", "<span class='notice'>You slash at \the [src]!</span>")
-			playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
-
-			var/allcut = wires.IsAllCut()
-			if(beenhit >= pick(3, 4) && allcut == 0)
-				wires.CutAll()
-				src.update_icon()
-				src.visible_message("<span class='warning'>\The [src]'s wires are shredded!</span>")
-			else
-				beenhit += 1
-			return TRUE
+	if(user.can_shred())
+		user.visible_message(
+			SPAN_DANGER("\The [user] slashes at \the [src]!"),
+			SPAN_DANGER("You slash at \the [src]!")
+		)
+		playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
+		var/allcut = wires.IsAllCut()
+		if(beenhit >= pick(3, 4) && allcut == 0)
+			wires.CutAll()
+			update_icon()
+			visible_message(SPAN_DANGER("\The [src]'s wires are shredded!"))
+		else
+			beenhit += 1
+		return TRUE
 	return FALSE
 
 /obj/machinery/power/apc/interface_interact(mob/user)

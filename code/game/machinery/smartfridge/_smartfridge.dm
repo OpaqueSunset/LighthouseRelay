@@ -201,35 +201,30 @@
 		ui.set_initial_data(data)
 		ui.open()
 
-/obj/machinery/smartfridge/Topic(href, href_list)
-	if(..()) return 0
-
-	var/mob/user = usr
-	var/datum/nanoui/ui = SSnano.get_open_ui(user, src, "main")
+/obj/machinery/smartfridge/OnTopic(mob/user, href_list)
+	if((. = ..()))
+		return
 
 	if(href_list["close"])
-		user.unset_machine()
-		ui.close()
-		return 0
+		return TOPIC_CLOSE
 
 	if(href_list["vend"])
 		var/index = text2num(href_list["vend"])
-		var/amount = text2num(href_list["amount"])
 		var/datum/stored_items/I = item_records[index]
 		var/count = I.get_amount()
+		var/amount = clamp(text2num(href_list["amount"]), 0, count)
 
 		// Sanity check, there are probably ways to press the button when it shouldn't be possible.
-		if(count > 0)
-			if((count - amount) < 0)
-				amount = count
-			for(var/i = 1 to amount)
-				I.get_product(get_turf(src))
-				update_icon()
-				var/vend_state = "[icon_state]-vend"
-				if (check_state_in_icon(vend_state, icon)) //Show the vending animation if needed
-					flick(vend_state, src)
-		return 1
-	return 0
+		if(amount <= 0)
+			return TOPIC_REFRESH // you must be confused, we have none of that here!
+		for(var/i = 1 to amount)
+			I.get_product(get_turf(src))
+			update_icon()
+			var/vend_state = "[icon_state]-vend"
+			if (check_state_in_icon(vend_state, icon)) //Show the vending animation if needed
+				flick(vend_state, src)
+		return TOPIC_REFRESH
+	return TOPIC_NOACTION
 
 /obj/machinery/smartfridge/proc/throw_item()
 	var/obj/throw_item = null

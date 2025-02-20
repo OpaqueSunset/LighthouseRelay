@@ -236,7 +236,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo/pirateship)
 "aJ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/cash/c500,
 /obj/item/cash/c100,
 /obj/item/chems/drinks/bottle/small/beer,
@@ -669,7 +669,7 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "ce" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "cf" = (
@@ -799,7 +799,7 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "cB" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/carpet,
@@ -983,7 +983,7 @@
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "cY" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/carpet,
@@ -994,7 +994,7 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "da" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/computer/modular/preset/civilian,
@@ -1316,7 +1316,7 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/pirateship)
 "dV" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /turf/floor/carpet,
@@ -1637,7 +1637,7 @@
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "eO" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /turf/floor/shuttle/black,
@@ -1681,7 +1681,7 @@
 /turf/floor,
 /area/awaymission/zoo/tradeship)
 "eV" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/shuttle/black,
@@ -1996,11 +1996,11 @@
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fX" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /turf/floor/shuttle/black,
 /area/awaymission/zoo/tradeship)
 "fY" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "fZ" = (
@@ -2057,7 +2057,7 @@
 /turf/floor,
 /area/awaymission/zoo/tradeship)
 "gh" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin{
 	pixel_x = -3;
 	pixel_y = 8
@@ -2068,11 +2068,11 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "gi" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "gj" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset,
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
@@ -2198,7 +2198,7 @@
 /turf/floor/carpet,
 /area/awaymission/zoo/tradeship)
 "gz" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /turf/floor/carpet,
@@ -2272,7 +2272,7 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gO" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/shuttle/darkred,
@@ -2338,7 +2338,7 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "gZ" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/shuttle/darkred,
@@ -2504,7 +2504,7 @@
 /turf/floor/tiled,
 /area/awaymission/zoo)
 "hp" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled,
 /area/awaymission/zoo)
 "hq" = (
@@ -2534,13 +2534,13 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hu" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hv" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/light{
@@ -2591,13 +2591,13 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "hD" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/tiled,
 /area/awaymission/zoo)
 "hE" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/tiled,
@@ -2610,10 +2610,10 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "hG" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/shuttle/darkred,
@@ -2782,7 +2782,7 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ia" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/button/flasher{
@@ -2847,7 +2847,7 @@
 /turf/floor/shuttle/darkred,
 /area/awaymission/zoo/syndieship)
 "ih" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -3597,7 +3597,7 @@
 /turf/floor/grass,
 /area/awaymission/zoo)
 "jO" = (
-/obj/structure/bed/chair/wood,
+/obj/structure/chair/wood,
 /turf/floor/wood,
 /area/awaymission/zoo)
 "jP" = (
@@ -3704,17 +3704,17 @@
 /turf/floor/grass,
 /area/awaymission/zoo)
 "kc" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/floor/wood,
 /area/awaymission/zoo)
 "kd" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/awaymission/zoo)
 "ke" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/floor/wood,
@@ -3952,7 +3952,7 @@
 /turf/floor/tiled/white,
 /area/awaymission/zoo)
 "kT" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/floor/wood,
@@ -4865,7 +4865,7 @@
 /turf/floor/lino,
 /area/awaymission/zoo)
 "nq" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/structure/showcase{
 	name = "Statue";
 	desc = "It looks almost lifelike.";
@@ -5331,7 +5331,7 @@
 	},
 /area/awaymission/zoo)
 "oE" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/lino,
 /area/awaymission/zoo)
 "oF" = (
@@ -8224,7 +8224,7 @@
 /turf/floor/tiled/dark,
 /area/awaymission/zoo)
 "vJ" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled/white,
 /area/awaymission/zoo)
 "vK" = (
@@ -8480,7 +8480,7 @@
 /turf/floor/tiled,
 /area/awaymission/zoo)
 "wv" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /turf/floor/tiled/dark,
@@ -8510,7 +8510,7 @@
 /turf/floor/tiled/red,
 /area/awaymission/zoo)
 "wD" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/tiled/white,
@@ -8592,7 +8592,7 @@
 /turf/floor/plating,
 /area/awaymission/zoo)
 "wU" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/white,

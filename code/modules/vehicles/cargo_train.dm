@@ -1,6 +1,6 @@
 /obj/vehicle/train/cargo/engine
 	name = "cargo train tug"
-	desc = "A ridable electric car designed for pulling cargo trolleys."
+	desc = "A rideable electric car designed for pulling cargo trolleys."
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "cargo_engine"
 	on = 0
@@ -187,17 +187,11 @@
 	else
 		return ..()
 
-/obj/vehicle/train/cargo/engine/examine(mob/user, distance)
+/obj/vehicle/train/cargo/engine/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-
-	if(distance > 1)
-		return
-
-	if(!ishuman(usr))
-		return
-
-	to_chat(user, "The power light is [on ? "on" : "off"].\nThere are[key ? "" : " no"] keys in the ignition.")
-	to_chat(user, "The charge meter reads [cell? round(cell.percent(), 0.01) : 0]%")
+	if(distance <= 1)
+		. += "The power light is [on ? "on" : "off"].\nThere are[key ? "" : " no"] keys in the ignition."
+		. += "The charge meter reads [cell? round(cell.percent(), 0.01) : 0]%"
 
 /obj/vehicle/train/cargo/engine/verb/start_engine()
 	set name = "Start engine"

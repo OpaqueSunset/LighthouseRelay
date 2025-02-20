@@ -87,16 +87,16 @@
 	if(loaded)
 		to_chat(user, "<span class='notice'>It has \a [loaded] loaded.</span>")
 
-/obj/item/gun/magnetic/examine(mob/user)
+/obj/item/gun/magnetic/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(!get_cell() || !capacitor)
-		to_chat(user, "<span class='notice'>The capacitor charge indicator is blinking [SPAN_RED("red")]. Maybe you should check the cell or capacitor.</span>")
+		. += SPAN_NOTICE("The capacitor charge indicator is blinking [SPAN_RED("red")]. Maybe you should check the cell or capacitor.")
 	else
-		to_chat(user, "<span class='notice'>The installed [capacitor.name] has a charge level of [round((capacitor.charge/capacitor.max_charge)*100)]%.</span>")
+		. += SPAN_NOTICE("The installed [capacitor.name] has a charge level of [round((capacitor.charge/capacitor.max_charge)*100)]%.")
 		if(capacitor.charge < power_cost)
-			to_chat(user, "<span class='notice'>The capacitor charge indicator is [SPAN_ORANGE("amber")].</span>")
+			. += SPAN_NOTICE("The capacitor charge indicator is [SPAN_ORANGE("amber")].")
 		else
-			to_chat(user, "<span class='notice'>The capacitor charge indicator is [SPAN_GREEN("green")].</span>")
+			. += SPAN_NOTICE("The capacitor charge indicator is [SPAN_GREEN("green")].")
 
 /obj/item/gun/magnetic/attackby(var/obj/item/thing, var/mob/user)
 

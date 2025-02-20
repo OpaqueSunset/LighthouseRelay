@@ -395,7 +395,7 @@
 		return
 
 	var/t = ""
-	t += "<h3>[global.using_map.station_name] Supply Requisition Reciept</h3><hr>"
+	t += "<h3>[global.using_map.station_name] Supply Requisition Receipt</h3><hr>"
 	t += "INDEX: #[O.ordernum]<br>"
 	t += "REQUESTED BY: [O.orderedby]<br>"
 	t += "ASSIGNMENT: [O.orderedrank]<br>"

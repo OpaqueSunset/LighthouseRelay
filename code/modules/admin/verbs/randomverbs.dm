@@ -195,7 +195,7 @@
 	M.visible_message(result[1], result[1], narrate = TRUE)
 	log_and_message_admins(" - VisibleNarrate [result[2]]/[result[3]] on [A]: [result[4]]")
 
-// Visible narrate, it's as if it's a audible message
+// Visible narrate, it's as if it's an audible message
 /client/proc/cmd_admin_audible_narrate(var/atom/A)
 	set category = "Special Verbs"
 	set name = "Audible Narrate"

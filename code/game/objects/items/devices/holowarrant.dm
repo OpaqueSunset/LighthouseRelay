@@ -24,14 +24,14 @@
 	set_extension(src, /datum/extension/network_device/lazy)
 
 //look at it
-/obj/item/holowarrant/examine(mob/user, distance)
+/obj/item/holowarrant/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(active)
-		to_chat(user, "It's a holographic warrant for '[active.fields["namewarrant"]]'.")
+		. += "It's a holographic warrant for '[active.fields["namewarrant"]]'."
 	if(distance <= 1)
-		show_content(user)
+		show_content(user) // opens a browser
 	else
-		to_chat(user, "<span class='notice'>You have to be closer if you want to read it.</span>")
+		. += SPAN_WARNING("You have to be closer if you want to read it.")
 
 //hit yourself with it
 /obj/item/holowarrant/attack_self(mob/user)
@@ -103,7 +103,7 @@
 		SPAN_NOTICE("\The [user] holds up a warrant projector and shows the contents to \the [target]."),
 		SPAN_NOTICE("You show the warrant to \the [target].")
 	)
-	target.examinate(src)
+	target.examine_verb(src)
 	return TRUE
 
 /obj/item/holowarrant/on_update_icon()

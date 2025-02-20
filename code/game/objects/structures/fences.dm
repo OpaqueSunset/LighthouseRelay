@@ -31,17 +31,18 @@
 	update_cut_status()
 	return ..()
 
-/obj/structure/fence/examine(mob/user, dist)
+/obj/structure/fence/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-
 	switch(hole_size)
 		if(MEDIUM_HOLE)
-			to_chat(user, "There is a large hole in \the [src].")
+			. += SPAN_DANGER("There is a large hole in \the [src].")
 		if(LARGE_HOLE)
-			to_chat(user, "\The [src] has been completely cut through.")
+			. += SPAN_DANGER("\The [src] has been completely cut through.")
 
+/obj/structure/fence/get_examine_hints(mob/user, distance, infix, suffix)
+	. = ..()
 	if(cuttable && hole_size < MAX_HOLE_SIZE)
-		to_chat(user, "Use wirecutters to [hole_size > NO_HOLE ? "expand the":"cut a"] hole into the fence, allowing passage.")
+		LAZYADD(., SPAN_SUBTLE("Use wirecutters to [hole_size > NO_HOLE ? "expand the":"cut a"] hole into the fence, allowing passage."))
 
 /obj/structure/fence/end
 	icon_state = "end"

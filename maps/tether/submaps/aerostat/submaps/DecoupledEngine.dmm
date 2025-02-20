@@ -299,7 +299,7 @@
 /turf/floor/rock,
 /area/submap/virgo2/DecoupledEngine)
 "ba" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/rock,
 /area/submap/virgo2/DecoupledEngine)
 "bb" = (

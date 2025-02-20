@@ -10,7 +10,7 @@
 
 /obj/item/rig_module
 	name = "hardsuit upgrade"
-	desc = "It looks pretty sciency."
+	desc = "It looks pretty science-y."
 	icon = 'icons/obj/rig_modules.dmi'
 	icon_state = "module"
 	material = /decl/material/solid/metal/steel
@@ -59,15 +59,15 @@
 
 	var/list/stat_rig_module/stat_modules = new()
 
-/obj/item/rig_module/examine(mob/user)
+/obj/item/rig_module/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	switch(damage)
 		if(0)
-			to_chat(user, "It is undamaged.")
+			. += "It is undamaged."
 		if(1)
-			to_chat(user, "It is badly damaged.")
+			. += "It is badly damaged."
 		if(2)
-			to_chat(user, "It is almost completely destroyed.")
+			. += "It is almost completely destroyed."
 
 /obj/item/rig_module/attackby(obj/item/W, mob/user)
 

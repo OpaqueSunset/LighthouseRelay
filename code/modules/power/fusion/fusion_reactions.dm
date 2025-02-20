@@ -101,8 +101,8 @@
 	minimum_reaction_temperature = 8000
 
 // VERY UNIDEAL REACTIONS.
-/decl/fusion_reaction/phoron_supermatter
-	p_react = /decl/material/solid/supermatter
+/decl/fusion_reaction/phoron_exotic_matter
+	p_react = /decl/material/solid/exotic_matter
 	s_react = /decl/material/solid/phoron
 	energy_consumption = 0
 	energy_production =  5 * FUSION_PROCESSING_TIME_MULT
@@ -110,7 +110,7 @@
 	instability =       20 * FUSION_PROCESSING_TIME_MULT
 	hidden_from_codex = TRUE
 
-/decl/fusion_reaction/phoron_supermatter/handle_reaction_special(var/obj/effect/fusion_em_field/holder)
+/decl/fusion_reaction/phoron_exotic_matter/handle_reaction_special(var/obj/effect/fusion_em_field/holder)
 	set waitfor = FALSE
 	. = 1
 	var/datum/event/wormholes/WM = new /datum/event/wormholes(new /datum/event_meta(EVENT_LEVEL_MAJOR))
@@ -121,8 +121,7 @@
 	qdel(holder)
 	var/radiation_level = rand(100, 200)
 
-	// Copied from the SM for proof of concept. //Not any more --Cirra //Use the whole z proc --Leshana
-	SSradiation.z_radiate(locate(1, 1, holder.z), radiation_level, 1)
+	SSradiation.z_radiate(origin, radiation_level, respect_maint = TRUE)
 
 	for(var/mob/living/human/H in global.living_mob_list_)
 		var/turf/T = get_turf(H)
@@ -130,10 +129,10 @@
 			H.set_hallucination(rand(100,150), 51)
 
 	for(var/obj/machinery/fusion_fuel_injector/I in range(world.view, origin))
-		if(I.cur_assembly && I.cur_assembly.material && I.cur_assembly.material.type == /decl/material/solid/supermatter)
+		if(I.cur_assembly && I.cur_assembly.material && I.cur_assembly.material.type == p_react)
 			explosion(get_turf(I), 1, 2, 3)
 			if(!QDELETED(I))
-				QDEL_IN(I, 5)
+				addtimer(CALLBACK(I, TYPE_PROC_REF(/atom, physically_destroyed)), 0.5 SECONDS)
 
 	sleep(5)
 	explosion(origin, 1, 2, 5)

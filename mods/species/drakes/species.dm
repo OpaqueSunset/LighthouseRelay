@@ -20,10 +20,7 @@
 		/decl/pronouns/male,
 		/decl/pronouns/female
 	)
-	unarmed_attacks = list(
-		/decl/natural_attack/bite/sharp/drake,
-		/decl/natural_attack/claws/strong/drake
-	)
+
 	available_background_info = list(
 		/decl/background_category/heritage   = list(/decl/background_detail/heritage/grafadreka),
 		/decl/background_category/homeworld = list(/decl/background_detail/location/grafadreka),
@@ -43,6 +40,7 @@
 	traits = list(
 		/decl/trait/sivian_biochemistry = TRAIT_LEVEL_EXISTS
 	)
+	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
 	// Drakes must be whitelisted for jobs to be able to join as them, see maps.dm.
 	job_blacklist_by_default = TRUE
@@ -62,9 +60,6 @@
 	else
 		pain_emotes_with_pain_level = adult_pain_emotes_with_pain_level
 	return ..()
-
-/decl/species/grafadreka/get_surgery_overlay_icon(var/mob/living/human/H)
-	return null // todo: 'mods/species/drakes/icons/surgery.dmi'
 
 // Stub for muscle memory of the Sit verb on Polaris.
 /mob/living/human/proc/drake_sit()

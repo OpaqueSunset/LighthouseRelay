@@ -22,10 +22,10 @@ RSF
 		/decl/material/solid/metal/silver = MATTER_AMOUNT_TRACE
 	)
 
-/obj/item/rsf/examine(mob/user, distance)
+/obj/item/rsf/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(distance <= 0)
-		to_chat(user, "It currently holds [stored_matter]/30 fabrication-units.")
+	if(distance <= 1)
+		. += "It currently holds [stored_matter]/30 fabrication-units."
 
 /obj/item/rsf/attackby(obj/item/W, mob/user)
 	if (istype(W, /obj/item/rcd_ammo))

@@ -99,7 +99,7 @@
 
 	var/modifiers = params2list(params)
 	if(modifiers["shift"])
-		user.examinate(A)
+		user.examine_verb(A)
 		return
 
 	if(modifiers["ctrl"] && selected_system == A)
@@ -133,11 +133,9 @@
 
 	// User is not necessarily the exosuit, or the same person, so update intent.
 	if(user != src)
-		a_intent = user.a_intent
-		if(user.zone_sel)
-			zone_sel.set_selected_zone(user.get_target_zone())
-		else
-			zone_sel.set_selected_zone(BP_CHEST)
+		set_intent(user.get_intent())
+		set_target_zone(user.get_target_zone())
+
 	// You may attack the target with your exosuit FIST if you're malfunctioning.
 	var/atom/movable/AM = A
 	var/fail_prob = (user != src && istype(AM) && AM.loc != src) ? (user.skill_check(SKILL_MECH, HAS_PERK) ? 0: 15 ) : 0
@@ -314,7 +312,7 @@
 			if(!silent)
 				to_chat(user, SPAN_WARNING("The [body.hatch_descriptor] is locked."))
 			return
-		hud_open.toggled()
+		hud_open.toggled(user)
 		if(!silent)
 			to_chat(user, SPAN_NOTICE("You open the hatch and climb out of \the [src]."))
 	else
@@ -328,7 +326,7 @@
 		user.client.screen -= hud_elements
 		user.client.eye = user
 	if(user in pilots)
-		a_intent = I_HURT
+		set_intent(I_FLAG_HARM)
 		LAZYREMOVE(pilots, user)
 		UNSETEMPTY(pilots)
 		update_pilots()
@@ -337,7 +335,7 @@
 /mob/living/exosuit/attackby(var/obj/item/thing, var/mob/user)
 
 	// Install equipment.
-	if(user.a_intent != I_HURT && istype(thing, /obj/item/mech_equipment))
+	if(!user.check_intent(I_FLAG_HARM) && istype(thing, /obj/item/mech_equipment))
 		if(hardpoints_locked)
 			to_chat(user, SPAN_WARNING("Hardpoint system access is disabled."))
 			return TRUE
@@ -380,7 +378,7 @@
 		return TRUE
 
 	// Various tool and construction interactions.
-	if(user.a_intent != I_HURT)
+	if(!user.check_intent(I_FLAG_HARM))
 
 		// Removing systems from hardpoints.
 		if(IS_MULTITOOL(thing))
@@ -506,7 +504,7 @@
 			to_chat(user, SPAN_WARNING("The [body.hatch_descriptor] is locked."))
 			return TRUE
 		if(hud_open)
-			hud_open.toggled()
+			hud_open.toggled(user)
 			return TRUE
 
 /mob/living/exosuit/default_hurt_interaction(var/mob/user)

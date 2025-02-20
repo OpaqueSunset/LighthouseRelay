@@ -482,7 +482,7 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "br" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 4
 	},
 /turf/floor/shuttle/yellow,
@@ -574,7 +574,7 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "bH" = (
-/obj/structure/bed/chair/shuttle{
+/obj/structure/chair/shuttle{
 	dir = 8
 	},
 /turf/floor/shuttle/yellow,
@@ -659,11 +659,11 @@
 /turf/floor/plating/virgo2,
 /area/tether_away/aerostat/inside)
 "bV" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "bW" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled/techfloor/virgo2,
@@ -801,7 +801,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "cs" = (
@@ -809,7 +809,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/tether_away/aerostat/inside)
 "ct" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs,
@@ -1287,7 +1287,7 @@
 /area/tether_away/aerostat/solars)
 "dE" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/plating/virgo2,

@@ -142,6 +142,11 @@
 #define CONFIG_SERVER_JOIN_WHITELIST    3
 #define CONFIG_SERVER_CONNECT_WHITELIST 4
 
+// Coating name color config enums
+#define CONFIG_COATING_COLOR_NONE       1
+#define CONFIG_COATING_COLOR_MIXTURE    2
+#define CONFIG_COATING_COLOR_COMPONENTS 3
+
 // Location for server whitelist file to load from.
 #define CONFIG_SERVER_WHITELIST_FILE "config/server_whitelist.txt"
 
@@ -252,6 +257,7 @@
 
 //Inserts 'a' or 'an' before X in ways \a doesn't allow
 #define ADD_ARTICLE(X) "[(lowertext(X[1]) in global.vowels) ? "an" : "a"] [X]"
+#define ADD_ARTICLE_GENDER(X, GENDER) (GENDER == PLURAL ? "some [X]" : ADD_ARTICLE(X))
 
 //Request Console Department Types
 #define RC_ASSIST 1		//Request Assistance
@@ -269,11 +275,6 @@
 #define num2hex(num) num2text(num, 2, 16)
 /// Returns the hex value of a number given a value assumed to be a base-ten value, padded to a supplied minimum length.
 #define num2hex_padded(num, len) num2text(num, len, 16)
-
-//NOTE: INTENT_HOTKEY_* defines are not actual intents!
-//they are here to support hotkeys
-#define INTENT_HOTKEY_LEFT  "left"
-#define INTENT_HOTKEY_RIGHT "right"
 
 //Turf/area values for 'this space is outside' checks
 #define OUTSIDE_AREA null
@@ -398,3 +399,18 @@
 #define SPACE_MOVE_SUPPORTED (-1)
 #define SPACE_MOVE_FORBIDDEN   0
 #define SPACE_MOVE_PERMITTED   1
+
+// Default UI style applied to client prefs.
+#define DEFAULT_UI_STYLE /decl/ui_style/midnight
+
+// Indicates a modifier will never expire.
+#define MOB_MODIFIER_INDEFINITE (-1)
+
+// Indicators for attack checking proc.
+#define MM_ATTACK_TYPE_WEAPON      0
+#define MM_ATTACK_TYPE_THROWN      1
+#define MM_ATTACK_TYPE_PROJECTILE  2
+
+#define MM_ATTACK_RESULT_NONE      0
+#define MM_ATTACK_RESULT_DEFLECTED BITFLAG(0)
+#define MM_ATTACK_RESULT_BLOCKED   BITFLAG(1)

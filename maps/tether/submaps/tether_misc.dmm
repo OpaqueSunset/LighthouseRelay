@@ -212,7 +212,7 @@
 /turf/floor/holofloor/tiled,
 /area/holodeck/source_courtroom)
 "bt" = (
-/obj/structure/bed/chair/holochair,
+/obj/structure/chair/holochair,
 /turf/floor/holofloor/wood,
 /area/holodeck/source_courtroom)
 "bu" = (
@@ -336,7 +336,7 @@
 	dir = 1;
 	name = "Court Reporter's Box"
 	},
-/obj/structure/bed/chair/holochair,
+/obj/structure/chair/holochair,
 /turf/floor/holofloor/wood,
 /area/holodeck/source_courtroom)
 "bJ" = (
@@ -368,7 +368,7 @@
 	icon_state = "right";
 	name = "Witness Box"
 	},
-/obj/structure/bed/chair/holochair,
+/obj/structure/chair/holochair,
 /turf/floor/holofloor/wood,
 /area/holodeck/source_courtroom)
 "bN" = (
@@ -379,7 +379,7 @@
 /turf/floor/holofloor/wood,
 /area/holodeck/source_courtroom)
 "bO" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -394,7 +394,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "bP" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -514,7 +514,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "cd" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -523,7 +523,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "ce" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -626,7 +626,7 @@
 /turf/floor/holofloor/grass,
 /area/holodeck/source_picnicarea)
 "cS" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet{
@@ -635,13 +635,13 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "cT" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "cU" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet{
@@ -752,7 +752,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_theatre)
 "dn" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -765,7 +765,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "do" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -799,7 +799,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_theatre)
 "ds" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet{
@@ -812,14 +812,14 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "dt" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet,
 /turf/floor/holofloor/carpet,
 /area/holodeck/source_courtroom)
 "du" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet{
@@ -1507,7 +1507,7 @@
 /turf/floor/holofloor/wood,
 /area/holodeck/holodorm/source_basic)
 "gb" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 4
 	},
 /turf/floor/holofloor/wood,
@@ -1517,7 +1517,7 @@
 /turf/floor/holofloor/wood,
 /area/holodeck/holodorm/source_basic)
 "gd" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /turf/floor/holofloor/wood,
@@ -1667,7 +1667,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/holodorm/source_seating)
 "hz" = (
-/obj/structure/bed/chair/holochair,
+/obj/structure/chair/holochair,
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
@@ -1718,7 +1718,7 @@
 /turf/unsimulated/floor/techfloor_grid,
 /area/centcom/ferry)
 "hJ" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 4
 	},
 /obj/effect/floor_decal/carpet{
@@ -1731,7 +1731,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/holodorm/source_seating)
 "hL" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 8
 	},
 /obj/effect/floor_decal/carpet{
@@ -1750,7 +1750,7 @@
 /turf/floor/holofloor/carpet,
 /area/holodeck/holodorm/source_seating)
 "hP" = (
-/obj/structure/bed/chair/holochair{
+/obj/structure/chair/holochair{
 	dir = 1
 	},
 /obj/effect/floor_decal/carpet,

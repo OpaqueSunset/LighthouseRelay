@@ -60,7 +60,7 @@
 /turf/floor,
 /area/awaymission/listeningpost)
 "n" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /mob/living/simple_mob/humanoid/merc{

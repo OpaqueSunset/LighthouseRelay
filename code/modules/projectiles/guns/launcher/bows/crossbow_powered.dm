@@ -151,6 +151,6 @@
 		ratio = max(round(ratio, 0.25) * 100, 25)
 	add_overlay("[get_world_inventory_state()][ratio]")
 
-/obj/item/gun/launcher/bow/crossbow/powered/rapidcrossbowdevice/examine(mob/user)
+/obj/item/gun/launcher/bow/crossbow/powered/rapidcrossbowdevice/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "It currently holds [stored_matter]/[max_stored_matter] matter-units.")
+	. += "It currently holds [stored_matter]/[max_stored_matter] matter-units."

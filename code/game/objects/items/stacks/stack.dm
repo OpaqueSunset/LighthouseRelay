@@ -53,7 +53,6 @@
 	update_name()
 
 /obj/item/stack/update_name()
-	. = ..()
 	if(amount == 1)
 		gender = NEUTER
 		SetName(singular_name)
@@ -77,13 +76,13 @@
 		return TRUE
 	return FALSE
 
-/obj/item/stack/examine(mob/user, distance)
+/obj/item/stack/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		if(!uses_charge)
-			to_chat(user, "There [src.amount == 1 ? "is" : "are"] [src.amount] [src.singular_name]\s in the stack.")
+		if(uses_charge)
+			. += "There is enough charge for [get_amount()]."
 		else
-			to_chat(user, "There is enough charge for [get_amount()].")
+			. += "There [src.amount == 1 ? "is" : "are"] [src.amount] [src.singular_name]\s in the stack."
 
 /obj/item/stack/on_update_icon()
 	. = ..()

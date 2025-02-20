@@ -143,10 +143,10 @@
 		/obj/item/stack/material
 	)
 
-/obj/item/gripper/examine(mob/user)
+/obj/item/gripper/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(wrapped)
-		to_chat(user, "It is holding \a [wrapped].")
+		. += "It is holding \a [wrapped]."
 
 /obj/item/gripper/attack_self(mob/user)
 	if(wrapped)

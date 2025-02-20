@@ -99,15 +99,15 @@
 	storage.remove_from_storage((ismob(firer) ? firer : null), launched, src)
 	return launched
 
-/obj/item/gun/launcher/pneumatic/examine(mob/user, distance)
+/obj/item/gun/launcher/pneumatic/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance > 2)
 		return
-	to_chat(user, "The valve is dialed to [pressure_setting]%.")
+	. += "The valve is dialed to [pressure_setting]%."
 	if(tank)
-		to_chat(user, "The tank dial reads [tank.air_contents.return_pressure()] kPa.")
+		. += "The tank dial reads [tank.air_contents.return_pressure()] kPa."
 	else
-		to_chat(user, "Nothing is attached to the tank valve!")
+		. += "Nothing is attached to the tank valve!"
 
 /obj/item/gun/launcher/pneumatic/update_release_force(obj/item/projectile)
 	if(tank)

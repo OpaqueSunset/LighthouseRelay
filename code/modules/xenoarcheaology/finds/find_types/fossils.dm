@@ -75,12 +75,12 @@
 	. = ..()
 	required_bones = rand(6)+3
 
-/obj/structure/skeleton/examine(mob/user, distance)
+/obj/structure/skeleton/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(bone_count < required_bones)
-		to_chat(user, "It's incomplete, looks like it could use [required_bones - bone_count] more bones.")
-	if(.)
-		to_chat(user, "The plaque reads \'[plaque_contents]\'.")
+		. += "It's incomplete, looks like it could use [required_bones - bone_count] more bones."
+	if(distance <= 1)
+		. += "The plaque reads \'[plaque_contents]\'."
 
 /obj/structure/skeleton/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/fossil/animal))

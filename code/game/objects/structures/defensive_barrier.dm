@@ -7,7 +7,7 @@
 	throwpass =  TRUE
 	anchored =   TRUE
 	atom_flags = ATOM_FLAG_CLIMBABLE | ATOM_FLAG_CHECKS_BORDER
-	can_buckle = TRUE
+	can_buckle = TRUE // TODO: Is it actually... intended that you can buckle stuff to this?
 	material =   /decl/material/solid/metal/steel
 	material_alteration = MAT_FLAG_ALTERATION_DESC | MAT_FLAG_ALTERATION_NAME
 	max_health = 200
@@ -105,13 +105,12 @@
 	if(!user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE))
 		return ..()
 
-	var/decl/species/species = user.get_species()
-	if(ishuman(user) && species?.can_shred(user) && user.a_intent == I_HURT)
+	if(user.can_shred() && user.check_intent(I_FLAG_HARM))
 		take_damage(20)
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return TRUE
 
-	if(user.a_intent == I_GRAB)
+	if(user.check_intent(I_FLAG_GRAB))
 		try_pack_up(user)
 		return TRUE
 

@@ -24,7 +24,7 @@
 	var/hidden_item_max_w_class = ITEM_SIZE_SMALL
 	var/obj/item/hidden_item = null
 	var/shine = -1 // if material should apply shine overlay. Set to -1 for it to not do that
-
+	var/footprint_icon = 'icons/mob/footprints/footprints.dmi'
 	/// A multiplier applied to footstep volume.
 	var/footstep_volume_mod = 1
 	/// A multiplier applied to footstep range.
@@ -39,15 +39,15 @@
 	if (attached_cuffs)
 		QDEL_NULL(attached_cuffs)
 
-/obj/item/clothing/shoes/examine(mob/user)
+/obj/item/clothing/shoes/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if (attached_cuffs)
-		to_chat(user, SPAN_WARNING("They are connected by \the [attached_cuffs]."))
+		. += SPAN_WARNING("They are connected by \the [attached_cuffs].")
 	if (hidden_item)
 		if (loc == user)
-			to_chat(user, SPAN_ITALIC("\An [hidden_item] is inside."))
+			. += SPAN_ITALIC("\An [hidden_item] is inside.")
 		else if (get_dist(src, user) == 1)
-			to_chat(user, SPAN_ITALIC("Something is hidden inside."))
+			. += SPAN_ITALIC("Something is hidden inside.")
 
 /obj/item/clothing/shoes/attack_hand(var/mob/user)
 	if(user.check_dexterity(DEXTERITY_HOLD_ITEM, TRUE) && remove_hidden(user))
@@ -78,7 +78,7 @@
 			return
 		user.visible_message(SPAN_ITALIC("\The [user] attaches \the [cuffs] to \the [src]."), range = 2)
 		verbs |= /obj/item/clothing/shoes/proc/try_remove_cuffs
-		LAZYINITLIST(slowdown_per_slot[slot_shoes_str])
+		LAZYINITLIST(slowdown_per_slot)
 		slowdown_per_slot[slot_shoes_str] += cuffs.elastic ? 10 : 15
 		attached_cuffs = cuffs
 
@@ -104,7 +104,7 @@
 		return
 	user.visible_message(SPAN_ITALIC("\The [user] removes \the [attached_cuffs] from \the [src]."), range = 2)
 	attached_cuffs.add_fingerprint(user)
-	LAZYINITLIST(slowdown_per_slot[slot_shoes_str])
+	LAZYINITLIST(slowdown_per_slot)
 	slowdown_per_slot[slot_shoes_str] -= attached_cuffs.elastic ? 10 : 15
 	verbs -= /obj/item/clothing/shoes/proc/try_remove_cuffs
 	attached_cuffs = null

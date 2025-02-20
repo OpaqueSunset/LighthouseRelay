@@ -56,17 +56,15 @@
 			connection.connect(port)
 
 
-/obj/machinery/material_processing/extractor/examine(mob/user)
+/obj/machinery/material_processing/extractor/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-
 	var/datum/extension/atmospherics_connection/connection = get_extension(src, /datum/extension/atmospherics_connection)
 	if(connection.connected_port)
-		to_chat(user, SPAN_NOTICE("It is connected to \the [connection.connected_port]."))
+		. += SPAN_NOTICE("It is connected to \the [connection.connected_port].")
 	else
-		to_chat(user, SPAN_NOTICE("It may be connected to an atmospherics connector port with a wrench."))
-
+		. += SPAN_NOTICE("It may be connected to an atmospherics connector port with a wrench.")
 	if(output_container)
-		to_chat(user, SPAN_NOTICE("It has \a [output_container] inserted."))
+		. += SPAN_NOTICE("It has \a [output_container] inserted.")
 
 /obj/machinery/material_processing/extractor/Process()
 	if(!use_power || (stat & (BROKEN|NOPOWER)))

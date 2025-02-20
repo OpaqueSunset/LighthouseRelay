@@ -14,19 +14,20 @@
 	cooking_coeff = 0
 	cooking_power = 0
 	atom_flags = null
-	var/starts_with = list()
+	var/list/starts_with = list()
 
-/obj/machinery/appliance/cooker/examine(var/mob/user)
+/obj/machinery/appliance/cooker/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if (.)	//no need to duplicate adjacency check
-		if (use_power == POWER_USE_OFF)
-			to_chat(user, SPAN_WARNING("It is switched off."))
+	if (distance > 1)
+		return
+	if (use_power == POWER_USE_OFF)
+		. += SPAN_WARNING("It is switched off.")
+	else
+		if (temperature < min_temp)
+			. += SPAN_WARNING("[src] is still heating up and is too cold to cook anything yet.")
 		else
-			if (temperature < min_temp)
-				to_chat(user, SPAN_WARNING("[src] is still heating up and is too cold to cook anything yet."))
-			else
-				to_chat(user, SPAN_NOTICE("It is running at [round(get_efficiency(), 0.1)]% efficiency!"))
-			to_chat(user, "Temperature: [round(temperature - T0C, 0.1)]C / [round(optimal_temp - T0C, 0.1)]C")
+			. += SPAN_NOTICE("It is running at [round(get_efficiency(), 0.1)]% efficiency!")
+		. += "Temperature: [round(temperature - T0C, 0.1)]C / [round(optimal_temp - T0C, 0.1)]C"
 
 /obj/machinery/appliance/cooker/MouseEntered(location, control, params)
 	. = ..()

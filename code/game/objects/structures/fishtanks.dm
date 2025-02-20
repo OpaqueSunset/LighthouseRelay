@@ -37,11 +37,13 @@ var/global/list/fishtank_cache = list()
 	fill_type = /decl/material/liquid/water
 	fill_amt = 300
 
-/obj/structure/glass_tank/Initialize()
+/obj/structure/glass_tank/Initialize(mapload)
 	tank_overlay = new(loc, src)
 	initialize_reagents()
 	. = ..()
-	update_icon(TRUE)
+	update_icon()
+	if(!mapload)
+		update_nearby_tiles()
 
 /obj/structure/glass_tank/Destroy()
 	if(!QDELETED(tank_overlay))
@@ -63,13 +65,13 @@ var/global/list/fishtank_cache = list()
 	add_to_reagents(fill_type, reagents.maximum_volume)
 
 /obj/structure/glass_tank/attack_hand(var/mob/user)
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		return ..()
 	visible_message(SPAN_NOTICE("\The [user] taps on \the [src]."))
 	return TRUE
 
 /obj/structure/glass_tank/attackby(var/obj/item/W, var/mob/user)
-	if(W.get_attack_force(user) < 5 || user.a_intent != I_HURT)
+	if(W.get_attack_force(user) < 5 || !user.check_intent(I_FLAG_HARM))
 		attack_animation(user)
 		visible_message(SPAN_NOTICE("\The [user] taps \the [src] with \the [W]."))
 	else
@@ -107,11 +109,19 @@ var/global/list/global/aquarium_states_and_layers = list(
 	"z" = FLY_LAYER + 0.01
 )
 
-/obj/structure/glass_tank/on_update_icon(propagate = 0)
+/obj/structure/glass_tank/update_nearby_tiles(need_rebuild)
+	. = ..()
+	for(var/obj/structure/glass_tank/tank in orange(1, src))
+		if(tank.type != type)
+			continue
+		tank.update_icon()
+
+/obj/structure/glass_tank/on_update_icon()
 	var/list/connect_dirs = list()
-	for(var/obj/structure/glass_tank/A in orange(1, src))
-		if(A.type == type)
-			connect_dirs |= get_dir(src, A)
+	for(var/obj/structure/glass_tank/tank in orange(1, src))
+		if(tank.type != type)
+			continue
+		connect_dirs |= get_dir(src, tank)
 	var/list/c_states = dirs_to_unified_corner_states(connect_dirs)
 
 	if(tank_overlay)
@@ -129,16 +139,13 @@ var/global/list/global/aquarium_states_and_layers = list(
 				tank_overlay.add_overlay(global.fishtank_cache[cache_key])
 
 	// Update overlays with contents.
+	// TODO: Can this just use vis_contents...?
+	// Or add its contents to vis_contents on some sort of helper atom,
+	// which has the VIS_UNDERLAY flag so it shows up under the transparent part?
 	icon_state = "base"
 	..()
-	for(var/atom/movable/AM in contents)
-		if(AM.simulated)
-			add_overlay(AM)
-
-	if(propagate)
-		for(var/obj/structure/glass_tank/A in orange(1, src))
-			if(A.type == type)
-				A.update_icon()
+	for(var/atom/movable/AM in get_contained_external_atoms())
+		add_overlay(AM)
 
 /obj/structure/glass_tank/can_climb(var/mob/living/user, post_climb_check=0)
 	if (!user.can_touch(src) || !(atom_flags & ATOM_FLAG_CLIMBABLE) || (!post_climb_check && (user in climbers)))
@@ -191,13 +198,13 @@ var/global/list/global/aquarium_states_and_layers = list(
 		return
 	if(!Adjacent(target))
 		return
-	usr.visible_message(SPAN_WARNING("\The [user] starts climbing out of \the [src]!"))
+	user.visible_message(SPAN_WARNING("\The [user] starts climbing out of \the [src]!"))
 	if(!do_after(user,50))
 		return
 	if (!Adjacent(target))
 		return
-	usr.forceMove(target)
-	usr.visible_message(SPAN_WARNING("\The [user] climbs out of \the [src]!"))
+	user.forceMove(target)
+	user.visible_message(SPAN_WARNING("\The [user] climbs out of \the [src]!"))
 
 /obj/structure/glass_tank/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	. = locate(/obj/structure/glass_tank) in (target == loc) ? (mover && mover.loc) : target

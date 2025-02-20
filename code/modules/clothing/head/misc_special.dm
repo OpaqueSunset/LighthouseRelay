@@ -84,7 +84,7 @@
 
 /obj/item/clothing/head/welding/knight
 	name = "knightly welding helmet"
-	desc = "A painted welding helmet, this one looks like a knights helmet."
+	desc = "A painted welding helmet, this one looks like a knight's helmet."
 	icon = 'icons/clothing/head/welding/knight.dmi'
 
 /obj/item/clothing/head/welding/fancy
@@ -153,7 +153,7 @@
 
 // Duplicated from growns for now. TODO: move sliceability down to other objects like clay.
 /obj/item/clothing/head/pumpkinhead/attackby(obj/item/W, mob/user)
-	if(IS_KNIFE(W) && user.a_intent != I_HURT)
+	if(IS_KNIFE(W) && !user.check_intent(I_FLAG_HARM))
 		var/datum/seed/plant = SSplants.seeds[plant_type]
 		if(!plant)
 			return ..()
@@ -204,7 +204,7 @@
 	icon = 'icons/clothing/head/cakehat.dmi'
 	body_parts_covered = SLOT_HEAD
 	item_flags = null
-	var/is_on_fire = FALSE
+	VAR_PRIVATE/_on_fire = FALSE
 
 /obj/item/clothing/head/cakehat/equipped(mob/user, slot)
 	. = ..()
@@ -214,23 +214,23 @@
 	. = ..()
 	update_icon()
 
-/obj/item/clothing/head/cakehat/on_update_icon(mob/user)
+/obj/item/clothing/head/cakehat/on_update_icon()
 	. = ..()
 	z_flags &= ~ZMM_MANGLE_PLANES
-	if(is_on_fire && check_state_in_icon("[icon_state]-flame", icon))
+	if(is_on_fire() && check_state_in_icon("[icon_state]-flame", icon))
 		if(plane == HUD_PLANE)
 			add_overlay("[icon_state]-flame")
 		else
 			add_overlay(emissive_overlay(icon, "[icon_state]-flame"))
 			z_flags |= ZMM_MANGLE_PLANES
 
-// Overidable so species with limited headspace in the sprite bounding area can offset it (scavs)
+// Overrideable so species with limited headspace in the sprite bounding area can offset it (scavs)
 /obj/item/clothing/head/cakehat/proc/get_mob_flame_overlay(var/image/overlay, var/bodytype)
 	if(overlay && check_state_in_icon("[overlay.icon_state]-flame", overlay.icon))
 		return emissive_overlay(overlay.icon, "[overlay.icon_state]-flame")
 
 /obj/item/clothing/head/cakehat/apply_additional_mob_overlays(mob/living/user_mob, bodytype, image/overlay, slot, bodypart, use_fallback_if_icon_missing = TRUE)
-	if(overlay && is_on_fire)
+	if(overlay && is_on_fire())
 		var/image/I = get_mob_flame_overlay(overlay, bodytype)
 		if(I)
 			overlay.overlays += I
@@ -241,7 +241,7 @@
 	return ..()
 
 /obj/item/clothing/head/cakehat/Process()
-	if(!is_on_fire)
+	if(!is_on_fire())
 		STOP_PROCESSING(SSobj, src)
 		return
 	var/turf/location = loc
@@ -255,9 +255,9 @@
 /obj/item/clothing/head/cakehat/attack_self(mob/user)
 	. = ..()
 	if(!.)
-		is_on_fire = !is_on_fire
+		_on_fire = !_on_fire
 		update_icon()
-		if(is_on_fire)
+		if(is_on_fire())
 			atom_damage_type = BURN
 			START_PROCESSING(SSobj, src)
 		else

@@ -40,6 +40,9 @@
 	// Marker for alpha mask update process. null == never update, TRUE == currently updating, FALSE == finished updating.
 	var/updating_turf_alpha_mask = null
 
+	// Damage type from using or throwing this atom.
+	var/atom_damage_type = BRUTE
+
 // This proc determines if the instance is preserved when the process() despawn of crypods occurs.
 /atom/movable/proc/preserve_in_cryopod(var/obj/machinery/cryopod/pod)
 	return FALSE
@@ -262,7 +265,7 @@
 
 		if(isturf(loc))
 			var/turf/T = loc
-			if(T.reagents)
+			if(T.reagents?.total_volume && submerged())
 				fluid_act(T.reagents)
 
 		for(var/mob/viewer in storage?.storage_ui?.is_seeing)
@@ -492,7 +495,7 @@
 		return 0
 	return max(ITEM_SIZE_MIN, get_object_size()) * THERMAL_MASS_CONSTANT
 
-/atom/movable/get_thermal_mass_coefficient()
+/atom/movable/get_thermal_mass_coefficient(delta)
 	if(!simulated)
 		return 0
 	return (max(ITEM_SIZE_MIN, MOB_SIZE_MIN) * THERMAL_MASS_CONSTANT) / get_thermal_mass()
@@ -540,7 +543,7 @@
 	var/burn_damage = rand(my_size, round(my_size * 1.5))
 	var/obj/item/organ/external/organ = check_organ && holder.get_organ(check_organ)
 	if(istype(organ))
-		organ.take_external_damage(0, burn_damage)
+		organ.take_damage(burn_damage, BURN)
 	else
 		holder.take_damage(burn_damage, BURN)
 	if(held_slot in holder.get_held_item_slots())
@@ -556,7 +559,7 @@
 		appearance_flags &= ~remove_flags
 	return old_appearance != appearance_flags
 
-/atom/movable/proc/end_throw()
+/atom/movable/proc/end_throw(datum/thrownthing/TT)
 	throwing = null
 
 /atom/movable/proc/reset_movement_delay()
@@ -574,13 +577,24 @@
 	if(!.) // If we're under or inside shelter, use the z-level rain (for ambience)
 		. = SSweather.weather_by_z[my_turf.z]
 
+/atom/movable/proc/handle_post_automoved(atom/old_loc)
+	return
+
 /atom/movable/take_vaporized_reagent(reagent, amount)
 	if(ATOM_IS_OPEN_CONTAINER(src))
 		return loc?.take_vaporized_reagent(reagent, amount)
 	return null
 
 /atom/movable/immune_to_floor_hazards()
-	return ..() || throwing
+	return ..() || !!throwing
+
+// TODO: make everything use this.
+/atom/movable/proc/set_anchored(new_anchored)
+	SHOULD_CALL_PARENT(TRUE)
+	if(anchored != new_anchored)
+		anchored = new_anchored
+		return TRUE
+	return FALSE
 
 // updates pixel offsets, triggers fluids, etc.
 /atom/movable/proc/on_turf_height_change(new_height)
@@ -588,3 +602,6 @@
 		reset_offsets()
 		return TRUE
 	return FALSE
+
+/atom/movable/proc/get_cryogenic_power()
+	return 0

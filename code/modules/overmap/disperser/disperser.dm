@@ -7,10 +7,10 @@
 	anchored = TRUE
 	construct_state = /decl/machine_construction/default/panel_closed
 
-/obj/machinery/disperser/examine(mob/user)
+/obj/machinery/disperser/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(panel_open)
-		to_chat(user, "The maintenance panel is open.")
+		. += "The maintenance panel is open."
 
 /obj/machinery/disperser/attackby(obj/item/I, mob/user)
 	if(IS_WRENCH(I))

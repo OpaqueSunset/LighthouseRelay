@@ -17,10 +17,10 @@
 	return ..()
 
 /turf/floor/cult
-	name = "engraved floor"
-	icon = 'icons/turf/flooring/cult.dmi'
-	icon_state = "cult"
-	_flooring = /decl/flooring/reinforced/cult
+	name           = "engraved floor"
+	icon           = 'icons/turf/flooring/cult.dmi'
+	icon_state     = "cult"
+	_flooring      = /decl/flooring/reinforced/cult
 
 /turf/wall/on_defilement()
 	var/new_material
@@ -38,12 +38,12 @@
 
 //Cult wall
 /turf/wall/cult
-	icon_state = "cult"
-	color = COLOR_RED_GRAY
-	material = /decl/material/solid/stone/cult
+	icon_state     = "cult"
+	color          = COLOR_RED_GRAY
+	material       = /decl/material/solid/stone/cult
 
 /turf/wall/cult/reinf
-	icon_state = "reinforced_cult"
+	icon_state     = "reinforced_cult"
 	reinf_material = /decl/material/solid/stone/cult/reinforced
 
 /turf/wall/cult/dismantle_turf(devastated, explode, no_product, keep_air = TRUE)

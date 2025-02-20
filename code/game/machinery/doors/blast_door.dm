@@ -57,10 +57,10 @@
 	implicit_material = GET_DECL(/decl/material/solid/metal/plasteel)
 	. = ..()
 
-/obj/machinery/door/blast/examine(mob/user)
+/obj/machinery/door/blast/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if((stat & BROKEN))
-		to_chat(user, "It's broken.")
+		. += SPAN_DANGER("It's broken.")
 
 // Proc: Bumped()
 // Parameters: 1 (AM - Atom that tried to walk through this object)

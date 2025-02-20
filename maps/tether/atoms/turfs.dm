@@ -44,7 +44,7 @@
 	icon_edge_layer = FLOOR_EDGE_GRASS_WILD
 	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 	growth_value = 1.5
-	harvest_type = /decl/flooring/grass/sif_growth
+	harvestable = TRUE
 
 /decl/flooring/grass/sif_growth/thick/get_movable_alpha_mask_state(atom/movable/mover)
 	. = ..() || "mask_grass"
@@ -60,7 +60,10 @@
 	name = "thick growth"
 	icon = 'maps/tether/icons/sif_grass_thick.dmi'
 	icon_state = "sif_grass0"
-	_flooring = /decl/flooring/grass/sif_growth/thick
+	_flooring = list(
+		/decl/flooring/grass/sif_growth,
+		/decl/flooring/grass/sif_growth/thick
+	)
 	_base_flooring = /decl/flooring/dirt
 
 // Voidcraft Shuttle Walls

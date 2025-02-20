@@ -76,7 +76,7 @@
 /obj/machinery/atmospherics/unary/outlet_injector/OnTopic(mob/user, href_list, datum/topic_state/state)
 	if((. = ..()))
 		return
-	if(href_list["toggle_power"])
+	if(href_list["toggle_power"]) // todo: this could easily be refhacked if you don't have a multitool
 		update_use_power(!use_power)
 		to_chat(user, "<span class='notice'>The multitool emits a short beep confirming the change.</span>")
 		return TOPIC_REFRESH

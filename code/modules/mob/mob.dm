@@ -17,8 +17,6 @@
 		QDEL_NULL(hud_used)
 	if(active_storage)
 		active_storage.close(src)
-	if(istype(ability_master))
-		QDEL_NULL(ability_master)
 	if(istype(skillset))
 		QDEL_NULL(skillset)
 	QDEL_NULL_LIST(grabbed_by)
@@ -26,7 +24,6 @@
 	if(istype(ai))
 		QDEL_NULL(ai)
 	QDEL_NULL(lighting_master)
-	remove_screen_obj_references()
 	if(client)
 		for(var/atom/movable/AM in client.screen)
 			var/obj/screen/screenobj = AM
@@ -39,27 +36,6 @@
 	ghostize()
 	return ..()
 
-/mob/proc/remove_screen_obj_references()
-	QDEL_NULL_SCREEN(internals)
-	QDEL_NULL_SCREEN(oxygen)
-	QDEL_NULL_SCREEN(toxin)
-	QDEL_NULL_SCREEN(fire)
-	QDEL_NULL_SCREEN(bodytemp)
-	QDEL_NULL_SCREEN(healths)
-	QDEL_NULL_SCREEN(throw_icon)
-	QDEL_NULL_SCREEN(maneuver_icon)
-	QDEL_NULL_SCREEN(nutrition_icon)
-	QDEL_NULL_SCREEN(hydration_icon)
-	QDEL_NULL_SCREEN(pressure)
-	QDEL_NULL_SCREEN(pain)
-	QDEL_NULL_SCREEN(up_hint)
-	QDEL_NULL_SCREEN(item_use_icon)
-	QDEL_NULL_SCREEN(radio_use_icon)
-	QDEL_NULL_SCREEN(gun_move_icon)
-	QDEL_NULL_SCREEN(gun_setting_icon)
-	QDEL_NULL_SCREEN(ability_master)
-	QDEL_NULL_SCREEN(zone_sel)
-
 /mob/Initialize()
 	if(ispath(skillset))
 		skillset = new skillset(src)
@@ -68,7 +44,6 @@
 	if(!istype(move_intent))
 		move_intent = GET_DECL(move_intent)
 	. = ..()
-	ability_master = new(null, src)
 	refresh_ai_handler()
 	START_PROCESSING(SSmobs, src)
 
@@ -242,8 +217,6 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	if(QDELETED(src))
 		return PROCESS_KILL
-	if(ability_master)
-		ability_master.update_spells(0)
 
 #define UNBUCKLED 0
 #define PARTIALLY_BUCKLED 1
@@ -404,8 +377,8 @@
 /mob/proc/get_additional_stripping_options()
 	return
 
-//mob verbs are faster than object verbs. See http://www.byond.com/forum/?post=1326139&page=2#comment8198716 for why this isn't atom/verb/examine()
-/mob/verb/examinate(atom/A as mob|obj|turf in view())
+//mob verbs are faster than object verbs. See http://www.byond.com/forum/?post=1326139&page=2#comment8198716
+/mob/verb/examine_verb(atom/A as mob|obj|turf in view())
 	set name = "Examine"
 	set category = "IC"
 
@@ -445,8 +418,8 @@
 
 	RAISE_EVENT(/decl/observ/mob_examining, src, A)
 
-	if(!A.examine(src, distance))
-		PRINT_STACK_TRACE("Improper /examine() override: [log_info_line(A)]")
+	if(!A.examined_by(src, distance))
+		PRINT_STACK_TRACE("Improper /examined_by() override: [log_info_line(A)]")
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
 	set name = "Point To"
@@ -561,10 +534,10 @@
 		update_flavor_text(href_list["flavor_change"])
 		return TOPIC_HANDLED
 
-// If usr != src, or if usr == src but the Topic call was not resolved, this is called next.
 /mob/proc/get_comments_record()
 	return
 
+// If usr != src, or if usr == src but the Topic call was not resolved, this is called next.
 /mob/OnTopic(mob/user, href_list, datum/topic_state/state)
 
 	if(href_list["refresh"])
@@ -626,9 +599,6 @@
 		return TRUE
 	. = ..()
 
-/mob/proc/is_active()
-	return (0 >= usr.stat)
-
 /mob/proc/can_touch(var/atom/touching)
 	if(!touching.Adjacent(src) || incapacitated())
 		return FALSE
@@ -638,16 +608,6 @@
 	if (buckled)
 		to_chat(src, SPAN_WARNING("You are buckled down."))
 	return TRUE
-
-/mob/proc/see(message)
-	if(!is_active())
-		return 0
-	to_chat(src, message)
-	return 1
-
-/mob/proc/show_viewers(message)
-	for(var/mob/M in viewers())
-		M.see(message)
 
 /mob/Stat()
 	..()
@@ -799,19 +759,17 @@
 	usr.setClickCooldown(20)
 
 	if(usr.stat == UNCONSCIOUS)
-		to_chat(usr, "You are unconcious and cannot do that!")
+		to_chat(usr, "You are unconscious and cannot do that!")
 		return
 
 	if(usr.restrained())
 		to_chat(usr, "You are restrained and cannot do that!")
 		return
 
-	var/mob/S = src
-	var/mob/U = usr
 	var/list/valid_objects = list()
 	var/self = null
 
-	if(S == U)
+	if(src == usr)
 		self = 1 // Removing object from yourself.
 
 	valid_objects = get_visible_implants(0)
@@ -819,16 +777,16 @@
 		if(self)
 			to_chat(src, "You have nothing stuck in your body that is large enough to remove.")
 		else
-			to_chat(U, "[src] has nothing stuck in their wounds that is large enough to remove.")
+			to_chat(usr, "[src] has nothing stuck in their wounds that is large enough to remove.")
 		return
 	var/obj/item/selection = input("What do you want to yank out?", "Embedded objects") in valid_objects
 	if(self)
 		to_chat(src, "<span class='warning'>You attempt to get a good grip on [selection] in your body.</span>")
 	else
-		to_chat(U, "<span class='warning'>You attempt to get a good grip on [selection] in [S]'s body.</span>")
-	if(!do_mob(U, S, 30, incapacitation_flags = INCAPACITATION_DEFAULT & (~INCAPACITATION_FORCELYING))) //let people pinned to stuff yank it out, otherwise they're stuck... forever!!!
+		to_chat(usr, "<span class='warning'>You attempt to get a good grip on [selection] in [src]'s body.</span>")
+	if(!do_mob(usr, src, 30, incapacitation_flags = INCAPACITATION_DEFAULT & (~INCAPACITATION_FORCELYING))) //let people pinned to stuff yank it out, otherwise they're stuck... forever!!!
 		return
-	if(!selection || !S || !U)
+	if(QDELETED(selection) || QDELETED(src) || QDELETED(usr))
 		return
 
 	if(self)
@@ -837,10 +795,10 @@
 		visible_message("<span class='warning'><b>[usr] rips [selection] out of [src]'s body.</b></span>","<span class='warning'><b>[usr] rips [selection] out of your body.</b></span>")
 	remove_implant(selection)
 	selection.forceMove(get_turf(src))
-	if(U.get_empty_hand_slot())
-		U.put_in_hands(selection)
-	if(ishuman(U))
-		var/mob/living/human/human_user = U
+	if(usr.get_empty_hand_slot())
+		usr.put_in_hands(selection)
+	if(ishuman(usr))
+		var/mob/living/human/human_user = usr
 		human_user.bloody_hands(src)
 	return 1
 
@@ -911,7 +869,7 @@
 
 /mob/proc/toggle_throw_mode(force_set)
 	in_throw_mode = isnull(force_set) ? !in_throw_mode : force_set
-	throw_icon?.icon_state = "act_throw_[in_throw_mode ? "on" : "off"]"
+	refresh_hud_element(HUD_THROW)
 
 /mob/proc/toggle_antag_pool()
 	set name = "Toggle Add-Antag Candidacy"
@@ -929,11 +887,9 @@
 			to_chat(usr, "The game is not currently looking for antags.")
 	else
 		to_chat(usr, "You must be observing or in the lobby to join the antag pool.")
+
 /mob/proc/is_invisible_to(var/mob/viewer)
 	return (!alpha || !mouse_opacity || viewer.see_invisible < invisibility)
-
-/client/proc/check_has_body_select()
-	return mob && mob.hud_used && istype(mob.zone_sel, /obj/screen/zone_selector)
 
 /client/verb/body_toggle_head()
 	set name = "body-toggle-head"
@@ -971,10 +927,7 @@
 	toggle_zone_sel(list(BP_L_LEG,BP_L_FOOT))
 
 /client/proc/toggle_zone_sel(list/zones)
-	if(!check_has_body_select())
-		return
-	var/obj/screen/zone_selector/selector = mob.zone_sel
-	selector.set_selected_zone(next_in_list(mob.get_target_zone(), zones))
+	mob.set_target_zone(next_in_list(mob.get_target_zone(), zones))
 
 /mob/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)
@@ -1125,21 +1078,28 @@
 /mob/proc/get_bodytype()
 	RETURN_TYPE(/decl/bodytype)
 
+// Bit of a stub for now, but should return the bodytype specific
+// to the slot and organ being checked in the future instead of
+// always using the mob root bodytype.
+/mob/proc/get_equipment_bodytype(slot, bodypart)
+	RETURN_TYPE(/decl/bodytype)
+	var/decl/bodytype/root_bodytype = get_bodytype()
+	return root_bodytype?.resolve_to_equipment_bodytype(src)
+
 /mob/proc/has_body_flag(flag, default = FALSE)
 	var/decl/bodytype/root_bodytype = get_bodytype()
 	if(istype(root_bodytype))
-		return root_bodytype.body_flags & flag
+		return (root_bodytype.body_flags & flag)
 	return default
 
 /// Update the mouse pointer of the attached client in this mob.
 /mob/proc/update_mouse_pointer()
 	if(!client)
 		return
-
-	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-
-	if(examine_cursor_icon && client.keys_held["Shift"])
-		client.mouse_pointer_icon = examine_cursor_icon
+	if(client.keys_held["Shift"])
+		client.add_mouse_pointer(/decl/mouse_pointer/examine)
+	else
+		client.remove_mouse_pointer(/decl/mouse_pointer/examine)
 
 /mob/keybind_face_direction(direction)
 	facedir(direction)
@@ -1265,12 +1225,16 @@
 	return
 
 /mob/proc/set_target_zone(new_zone)
-	if(zone_sel)
-		return zone_sel?.set_selected_zone(new_zone)
-	return FALSE
+	if(new_zone == selected_zone)
+		return
+	var/old_zone = selected_zone
+	selected_zone = new_zone
+	var/obj/screen/zone_selector/selector = get_hud_element(HUD_ZONE_SELECT)
+	if(selector)
+		selector.set_selected_zone(new_zone, old_zone)
 
 /mob/proc/get_target_zone()
-	return zone_sel?.selecting || BP_CHEST
+	return selected_zone
 
 /mob/proc/get_default_temperature_threshold(threshold)
 	switch(threshold)
@@ -1312,11 +1276,6 @@
 
 /mob/proc/get_blood_type()
 	return
-
-// Gets the ID card of a mob, but will not check types in the exceptions list
-/mob/GetIdCard(exceptions = null)
-	RETURN_TYPE(/obj/item/card/id)
-	return LAZYACCESS(GetIdCards(exceptions), 1)
 
 /mob/get_overhead_text_x_offset()
 	return offset_overhead_text_x
@@ -1395,6 +1354,11 @@
 // Stub proc; implemented on /mob/living
 /mob/proc/handle_footsteps()
 	return
+
+//gets name from ID or PDA itself, ID inside PDA doesn't matter
+//Useful when player is being seen by other mobs
+/mob/proc/get_id_name(if_no_id = "Unknown")
+	return GetIdCard(exceptions = list(/obj/item/holder))?.registered_name || if_no_id
 
 /mob/proc/can_twohand_item(obj/item/item)
 	return FALSE
@@ -1489,5 +1453,31 @@
 	var/obj/item/shoes = get_equipped_item(slot_shoes_str)
 	return istype(shoes) && (shoes.item_flags & ITEM_FLAG_MAGNETISED)
 
+// Called when using the shredding behavior.
+/mob/proc/can_shred(var/mob/living/human/H, var/ignore_intent, var/ignore_antag)
+	if((!ignore_intent && !check_intent(I_FLAG_HARM)) || pulling_punches)
+		return FALSE
+	if(!ignore_antag && mind && !player_is_antag(mind))
+		return FALSE
+	if(get_equipped_item(slot_handcuffed_str) || buckled)
+		return FALSE
+	for(var/decl/natural_attack/attack as anything in get_mob_natural_attacks())
+		if(attack.is_usable(src) && attack.shredding)
+			return TRUE
+	return FALSE
+
+/mob/proc/get_mob_natural_attacks()
+	for(var/obj/item/organ/external/limb in get_external_organs())
+		if(!limb.is_usable())
+			continue
+		var/list/limb_unarmed_attacks = limb.get_natural_attacks()
+		if(istype(limb_unarmed_attacks, /decl/natural_attack) || (islist(limb_unarmed_attacks) && length(limb_unarmed_attacks)))
+			LAZYDISTINCTADD(., limb_unarmed_attacks)
+
 /mob/proc/isSynthetic()
 	return FALSE
+
+// Returns true if the mob is cloaked, otherwise false
+/mob/proc/is_cloaked()
+	return FALSE
+

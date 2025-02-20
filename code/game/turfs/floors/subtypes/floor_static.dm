@@ -2,12 +2,12 @@
 // Use this to bypass the flooring system entirely ie. event areas, holodeck, etc.
 
 /turf/floor/fixed
-	name = "floor"
-	icon = 'icons/turf/flooring/tiles.dmi'
-	icon_state = "steel"
-	_flooring = null
+	name          = "floor"
+	icon          = 'icons/turf/flooring/tiles.dmi'
+	icon_state    = "steel"
+	_flooring     = null
 	footstep_type = /decl/footsteps/plating
-	is_outside = OUTSIDE_AREA
+	is_outside    = OUTSIDE_AREA
 
 /turf/floor/fixed/attackby(var/obj/item/C, var/mob/user)
 	if(istype(C, /obj/item/stack) && !IS_COIL(C))
@@ -24,10 +24,10 @@
 	return
 
 /turf/floor/fixed/alium
-	name = "alien plating"
-	desc = "This obviously wasn't made for your feet."
-	icon = 'icons/turf/flooring/alium.dmi'
-	icon_state = "jaggy"
+	name          = "alien plating"
+	desc          = "This obviously wasn't made for your feet."
+	icon          = 'icons/turf/flooring/alium.dmi'
+	icon_state    = "jaggy"
 
 /turf/floor/fixed/alium/attackby(var/obj/item/C, var/mob/user)
 	if(IS_CROWBAR(C))
@@ -45,8 +45,8 @@
 	icon_state = "[style][(x*y) % 7]"
 
 /turf/floor/fixed/alium/airless
-	initial_gas = null
-	temperature = TCMB
+	initial_gas   = null
+	temperature   = TCMB
 
 /turf/floor/fixed/alium/explosion_act(severity)
 	SHOULD_CALL_PARENT(FALSE)

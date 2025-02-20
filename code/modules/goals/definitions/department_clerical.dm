@@ -120,13 +120,13 @@
 	. = ..()
 	icon_state = "[icon_state][length(has_signed) || ""]"
 
-/obj/item/paperwork/examine(mob/user, distance)
+/obj/item/paperwork/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		if(length(needs_signed))
-			to_chat(user, SPAN_WARNING("It needs [length(needs_signed)] more signature\s before it can be filed: [english_list(needs_signed)]."))
+			. += SPAN_WARNING("It needs [length(needs_signed)] more signature\s before it can be filed: [english_list(needs_signed)].")
 		if(length(has_signed))
-			to_chat(user, SPAN_NOTICE("It has been signed by: [english_list(has_signed)]."))
+			. += SPAN_NOTICE("It has been signed by: [english_list(has_signed)].")
 
 /obj/item/paperwork/attackby(obj/item/W, mob/user)
 	if(IS_PEN(W))

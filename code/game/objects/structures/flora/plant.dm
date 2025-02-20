@@ -26,12 +26,12 @@
 	// update icon/harvestability as appropriate
 */
 
-/obj/structure/flora/plant/examine(mob/user, distance)
+/obj/structure/flora/plant/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(dead)
-		to_chat(user, SPAN_OCCULT("It is dead."))
+		. += SPAN_OCCULT("It is dead.")
 	else if(harvestable)
-		to_chat(user, SPAN_NOTICE("You can see [harvestable] harvestable fruit\s."))
+		. += SPAN_NOTICE("You can see [harvestable] harvestable fruit\s.")
 
 /obj/structure/flora/plant/dismantle_structure(mob/user)
 	if(plant)
@@ -81,7 +81,7 @@
 		return TRUE
 
 	// Hydrotray boilerplate for taking samples.
-	if(O.edge && O.w_class < ITEM_SIZE_NORMAL && user.a_intent != I_HURT)
+	if(O.has_edge() && O.w_class < ITEM_SIZE_NORMAL && !user.check_intent(I_FLAG_HARM))
 		if(sampled)
 			to_chat(user, SPAN_WARNING("There's no bits that can be used for a sampling left."))
 			return TRUE

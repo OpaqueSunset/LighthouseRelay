@@ -43,15 +43,16 @@
 		else
 			owned_field.handle_tick()
 
-/obj/machinery/fusion_core/Topic(href, href_list)
-	if(..())
-		return 1
+/obj/machinery/fusion_core/OnTopic(mob/user, href_list)
+	if((. = ..()))
+		return
 	if(href_list["str"])
 		var/dif = text2num(href_list["str"])
 		field_strength = min(max(field_strength + dif, MIN_FIELD_STR), MAX_FIELD_STR)
 		change_power_consumption(500 * field_strength, POWER_USE_ACTIVE)
 		if(owned_field)
 			owned_field.ChangeFieldStrength(field_strength)
+		return TOPIC_REFRESH
 
 /obj/machinery/fusion_core/update_use_power(new_use_power)
 	. = ..()

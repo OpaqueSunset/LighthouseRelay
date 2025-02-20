@@ -10,7 +10,7 @@
 
 /obj/machinery/door/firedoor
 	name = "emergency shutter"
-	desc = "Emergency air-tight shutters, capable of sealing off breached areas."
+	desc = "Emergency airtight shutters, capable of sealing off breached areas."
 	icon = 'icons/obj/doors/hazard/door.dmi'
 	var/panel_file = 'icons/obj/doors/hazard/panel.dmi'
 	var/welded_file = 'icons/obj/doors/hazard/welded.dmi'
@@ -95,8 +95,8 @@
 		LAZYADD(areas_added, A)
 
 /obj/machinery/door/firedoor/proc/unregister_area(area/A)
-		LAZYREMOVE(A.all_doors, src)
-		LAZYREMOVE(areas_added, A)
+	LAZYREMOVE(A.all_doors, src)
+	LAZYREMOVE(areas_added, A)
 
 /obj/machinery/door/firedoor/proc/update_area_registrations()
 	var/list/new_areas = list()
@@ -117,42 +117,43 @@
 	RETURN_TYPE(/decl/material)
 	return GET_DECL(/decl/material/solid/metal/steel)
 
-/obj/machinery/door/firedoor/examine(mob/user, distance)
+/obj/machinery/door/firedoor/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance > 1 || !density)
 		return
 
 	if(pdiff >= FIREDOOR_MAX_PRESSURE_DIFF)
-		to_chat(user, "<span class='warning'>WARNING: Current pressure differential is [pdiff]kPa! Opening door may result in injury!</span>")
-	to_chat(user, "<b>Sensor readings:</b>")
+		. += SPAN_DANGER("WARNING: Current pressure differential is [pdiff]kPa! Opening door may result in injury!")
+
+	. += "<b>Sensor readings:</b>"
 	for(var/index = 1; index <= tile_info.len; index++)
-		var/o = "&nbsp;&nbsp;"
+		var/list/direction_strings = list("&nbsp;&nbsp;")
 		switch(index)
 			if(1)
-				o += "NORTH: "
+				direction_strings += "NORTH: "
 			if(2)
-				o += "SOUTH: "
+				direction_strings += "SOUTH: "
 			if(3)
-				o += "EAST: "
+				direction_strings += "EAST: "
 			if(4)
-				o += "WEST: "
+				direction_strings += "WEST: "
 		if(tile_info[index] == null)
-			o += "<span class='warning'>DATA UNAVAILABLE</span>"
-			to_chat(user, o)
+			direction_strings += "<span class='warning'>DATA UNAVAILABLE</span>"
+			. += JOINTEXT(direction_strings)
 			continue
 		var/celsius = convert_k2c(tile_info[index][1])
 		var/pressure = tile_info[index][2]
-		o += "<span class='[(dir_alerts[index] & (FIREDOOR_ALERT_HOT|FIREDOOR_ALERT_COLD)) ? "warning" : "color:blue"]'>"
-		o += "[celsius]&deg;C</span> "
-		o += "<span style='color:blue'>"
-		o += "[pressure]kPa</span></li>"
-		to_chat(user, o)
+		direction_strings += "<span class='[(dir_alerts[index] & (FIREDOOR_ALERT_HOT|FIREDOOR_ALERT_COLD)) ? "warning" : "color:blue"]'>"
+		direction_strings += "[celsius]&deg;C</span> "
+		direction_strings += "<span style='color:blue'>"
+		direction_strings += "[pressure]kPa</span></li>"
+		. += JOINTEXT(direction_strings)
 	if(islist(users_to_open) && users_to_open.len)
 		var/users_to_open_string = users_to_open[1]
 		if(users_to_open.len >= 2)
 			for(var/i = 2 to users_to_open.len)
 				users_to_open_string += ", [users_to_open[i]]"
-		to_chat(user, "These people have opened \the [src] during an alert: [users_to_open_string].")
+		. += "These people have opened \the [src] during an alert: [users_to_open_string]."
 
 /obj/machinery/door/firedoor/Bumped(atom/AM)
 	if(panel_open || operating)

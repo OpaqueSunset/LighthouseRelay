@@ -91,7 +91,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aq" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ar" = (
@@ -128,7 +128,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "ax" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/shuttle/black/virgo3b,
@@ -173,7 +173,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "aE" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/machinery/computer/modular/preset/civilian,
@@ -649,7 +649,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "bP" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 8
 	},
 /turf/floor/shuttle/black/virgo3b,
@@ -663,7 +663,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/outside/wilderness)
 "bR" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/gibspawner/human,
@@ -859,14 +859,14 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cy" = (
-/obj/structure/bed/chair/comfy/black,
+/obj/structure/chair/comfy/black,
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cz" = (
 /turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cA" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cB" = (
@@ -889,7 +889,7 @@
 /turf/floor/shuttle/black/virgo3b,
 /area/tether/surfacebase/crash)
 "cE" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cF" = (
@@ -943,7 +943,7 @@
 /turf/floor/carpet,
 /area/tether/surfacebase/crash)
 "cM" = (
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 1
 	},
 /turf/floor/carpet,

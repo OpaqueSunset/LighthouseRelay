@@ -1,6 +1,6 @@
 /obj/machinery/disposal/deliveryChute
 	name = "delivery chute"
-	desc = "A chute for big and small packages alike!"
+	desc = "A chute to put things into a disposal network. Takes big and small packages alike!"
 	density = TRUE
 	icon = 'icons/obj/pipes/disposal_chute.dmi'
 	icon_state = "chute"
@@ -65,7 +65,7 @@
 
 			var/obj/item/organ/external/E = pick(crush)
 
-			E.take_external_damage(45, used_weapon = "Blunt Trauma")
+			E.take_damage(45, inflicter = "Blunt Trauma")
 			to_chat(L, "\The [src]'s mechanisms crush your [E.name]!")
 
 	H.init(src)	// copy the contents of disposer to holder

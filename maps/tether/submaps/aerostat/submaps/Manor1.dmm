@@ -10,19 +10,19 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "ad" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 4
 	},
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "ae" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/cans/waterbottle,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "af" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 8
 	},
@@ -40,7 +40,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aj" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/clothing/mask/smokable/cigarette/cigar,
 /obj/item/ashtray/glass,
 /turf/floor/holofloor/wood,
@@ -51,11 +51,11 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "al" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "am" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -77,7 +77,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "at" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /obj/effect/decal/cleanable/blood/gibs/robot,
 /turf/floor/holofloor/wood,
@@ -93,7 +93,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aw" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/mop,
 /obj/item/chems/glass/bucket,
 /turf/floor/holofloor/wood,
@@ -107,7 +107,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "az" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/trash/candle,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -117,12 +117,12 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aC" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/maglight,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aD" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -135,17 +135,17 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aF" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/decal/cleanable/cobweb,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aG" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aH" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/pen,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -172,7 +172,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aP" = (
-/obj/structure/bed/chair/wood,
+/obj/structure/chair/wood,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aQ" = (
@@ -197,7 +197,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "aV" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/utensil/fork,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -254,12 +254,12 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bg" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/paper_bin,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bh" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 1
 	},
@@ -304,7 +304,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "br" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	icon_state = "comfychair_preview";
 	dir = 4
 	},
@@ -317,7 +317,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bt" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 4
 	},
@@ -325,7 +325,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bu" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 8
 	},
@@ -342,7 +342,7 @@
 /turf/floor/carpet/blue,
 /area/submap/virgo2/Manor1)
 "bx" = (
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	icon_state = "comfychair_preview";
 	dir = 4
 	},
@@ -356,7 +356,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bz" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/visible,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -377,7 +377,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bD" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 1
 	},
@@ -425,7 +425,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bL" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/candle_box,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -451,7 +451,7 @@
 /area/submap/virgo2/Manor1)
 "bR" = (
 /obj/effect/decal/cleanable/cobweb,
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bS" = (
@@ -476,7 +476,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "bX" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/bedsheetbin,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/floor/holofloor/wood,
@@ -492,7 +492,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "ca" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/umbrella/random,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -509,7 +509,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cd" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -520,7 +520,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
 "cf" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/wallet/random,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)
@@ -556,7 +556,7 @@
 /area/submap/virgo2/Manor1)
 "cm" = (
 /obj/effect/decal/cleanable/blood,
-/obj/structure/bed/chair/comfy/purple{
+/obj/structure/chair/comfy/purple{
 	icon_state = "comfychair_preview";
 	dir = 4
 	},
@@ -695,7 +695,7 @@
 /turf/floor/tiled/hydro,
 /area/submap/virgo2/Manor1)
 "cM" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/floor/holofloor/wood,
 /area/submap/virgo2/Manor1)

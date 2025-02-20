@@ -21,10 +21,10 @@
 	global.registered_weapons -= src
 	. = ..()
 
-/obj/item/gun/examine(mob/user, distance)
+/obj/item/gun/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 0 && is_secure_gun())
-		to_chat(user, "The registration screen shows, \"" + (registered_owner ? "[registered_owner]" : "unregistered") + "\".")
+		. += "The registration screen shows, \"" + (registered_owner ? "[registered_owner]" : "unregistered") + "\"."
 
 /obj/item/gun/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/card/id) && is_secure_gun())
@@ -98,14 +98,6 @@
 /obj/item/gun/proc/free_fire()
 	var/decl/security_state/security_state = GET_DECL(global.using_map.security_state)
 	return security_state.current_security_level_is_same_or_higher_than(security_state.high_security_level)
-
-/obj/item/gun/special_check()
-	if(is_secure_gun() && !free_fire() && (!authorized_modes[sel_mode] || !registered_owner))
-		audible_message(SPAN_WARNING("\The [src] buzzes, refusing to fire."), hearing_distance = 3)
-		playsound(loc, 'sound/machines/buzz-sigh.ogg', 10, 0)
-		return 0
-
-	. = ..()
 
 /obj/item/gun/get_next_firemode()
 	if(!is_secure_gun())

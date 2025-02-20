@@ -30,11 +30,11 @@
 		. += "[poultice_reagent_requirements[reagent]] unit\s of [reagent_decl.liquid_name]"
 	. = english_list(.)
 
-/obj/item/stack/medical/bandage/examine(mob/user, distance)
+/obj/item/stack/medical/bandage/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/poultice_requirement_string = get_poultice_requirement_string()
 	if(poultice_requirement_string)
-		to_chat(user, SPAN_NOTICE("With a mixture of [poultice_requirement_string], you could use a bandage to make a herbal poultice."))
+		. += SPAN_NOTICE("With a mixture of [poultice_requirement_string], you could use a bandage to make a herbal poultice.")
 
 /obj/item/stack/medical/bandage/attackby(obj/item/used_item, mob/living/user)
 

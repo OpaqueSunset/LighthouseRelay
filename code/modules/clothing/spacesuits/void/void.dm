@@ -84,21 +84,21 @@ else if(##equipment_var) {\
 	QDEL_NULL(helmet)
 	QDEL_NULL(tank)
 
-/obj/item/clothing/suit/space/void/examine(user,distance)
+/obj/item/clothing/suit/space/void/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	var/list/part_list = new
+	var/list/part_list = list()
 	for(var/obj/item/I in list(helmet,boots,tank))
 		part_list += "\a [I]"
-	to_chat(user, "\The [src] has [english_list(part_list)] installed.")
+	. += "\The [src] has [english_list(part_list)] installed."
 	if(tank && distance <= 1)
-		to_chat(user, "<span class='notice'>The wrist-mounted pressure gauge reads [max(round(tank.air_contents.return_pressure()),0)] kPa remaining in \the [tank].</span>")
+		. += SPAN_NOTICE("The wrist-mounted pressure gauge reads [max(round(tank.air_contents.return_pressure()),0)] kPa remaining in \the [tank].")
 
-/obj/item/clothing/suit/space/void/refit_for_bodytype(var/target_bodytype)
+/obj/item/clothing/suit/space/void/refit_for_bodytype(target_bodytype, skip_rename = FALSE)
 	..()
 	if(istype(helmet))
-		helmet.refit_for_bodytype(target_bodytype)
+		helmet.refit_for_bodytype(target_bodytype, skip_rename)
 	if(istype(boots))
-		boots.refit_for_bodytype(target_bodytype)
+		boots.refit_for_bodytype(target_bodytype, skip_rename)
 
 /obj/item/clothing/suit/space/void/equipped(mob/M)
 	..()

@@ -72,14 +72,14 @@
 		var/image/I = image('icons/obj/items/storage/deliverypackage.dmi', "delivery_label", pixel_x = off_x, pixel_y = off_y)
 		add_overlay(I)
 
-/obj/item/parcel/examine(mob/user, distance)
+/obj/item/parcel/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance < 3)
 		var/datum/extension/sorting_tag/S = get_extension(src, /datum/extension/sorting_tag)
 		if(S)
-			to_chat(user, S.tag_description())
+			. += S.tag_description()
 		if(length(attached_note))
-			to_chat(user, "It has a note attached, which reads:'[attached_note]'.")
+			. += "It has a note attached, which reads:'[attached_note]'."
 
 /obj/item/parcel/get_mechanics_info()
 	. = ..()
@@ -195,7 +195,7 @@
 			update_icon()
 		return TRUE
 
-	else if(W.sharp && user.a_intent == I_HELP)
+	else if(W.is_sharp() && user.check_intent(I_FLAG_HELP))
 		//You can alternative cut the wrapper off with a sharp item
 		unwrap(user)
 		return TRUE

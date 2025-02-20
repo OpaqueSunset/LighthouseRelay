@@ -148,7 +148,7 @@
 	var/obj/item/organ/internal/eyes = GET_INTERNAL_ORGAN(target, BP_EYES)
 	var/decl/pronouns/pronouns = user.get_pronouns()
 	if(eyes)
-		eyes.take_internal_damage(rand(3,4), 1)
+		eyes.take_damage(rand(3,4), 1)
 		user.visible_message(SPAN_DANGER("\The [user] jams [pronouns.his] [eye_attack_text] into \the [target]'s [eyes.name]!"))
 		if(eyes.can_feel_pain())
 			to_chat(target, SPAN_DANGER("You experience immense pain as [eye_attack_text_victim] are jammed into your [eyes.name]!"))
@@ -159,7 +159,7 @@
 		user.visible_message(SPAN_DANGER("\The [user] attempts to press [pronouns.his] [eye_attack_text] into \the [target]'s eyes, but [target_gender.he] [target_gender.does]n't have any!"))
 
 /decl/natural_attack/proc/damage_flags()
-	return (src.sharp? DAM_SHARP : 0)|(src.edge? DAM_EDGE : 0)
+	return (sharp ? DAM_SHARP : 0) | (edge ? DAM_EDGE : 0)
 
 /decl/natural_attack/bite
 	name                = "bite"
@@ -169,14 +169,14 @@
 	attack_sound        = 'sound/weapons/bite.ogg'
 	shredding           = 0
 	damage              = 5
-	sharp               = 0
-	edge                = 0
+	sharp               = FALSE
+	edge                = FALSE
 	usable_with_limbs   = list(BP_HEAD)
 
 /decl/natural_attack/bite/sharp
 	attack_verb = list("bit", "chomped")
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 
 /decl/natural_attack/bite/is_usable(var/mob/living/human/user, var/mob/living/human/target, var/zone)
 
@@ -210,7 +210,8 @@
 	attack_damage = clamp(attack_damage, 1, 5) // We expect damage input of 1 to 5 for this proc. But we leave this check juuust in case.
 
 	if(target == user)
-		user.visible_message("<span class='danger'>[user] [pick(attack_verb)] \himself in \the [affecting]!</span>")
+		var/decl/pronouns/pronouns = user.get_pronouns()
+		user.visible_message(SPAN_DANGER("\The [user] [pick(attack_verb)] [pronouns.self] in \the [affecting]!"))
 		return 0
 
 	target.update_personal_goal(/datum/goal/achievement/fistfight, TRUE)
@@ -272,7 +273,7 @@
 	var/obj/item/clothing/shoes = user.get_equipped_item(slot_shoes_str)
 	if(!istype(shoes))
 		return damage
-	return damage + (shoes ? shoes.get_attack_force(user) : 0)
+	return damage + (shoes ? shoes.expend_attack_force(user) : 0)
 
 /decl/natural_attack/kick/show_attack(var/mob/living/human/user, var/mob/living/human/target, var/zone, var/attack_damage)
 
@@ -308,7 +309,7 @@
 
 /decl/natural_attack/stomp/get_unarmed_damage(mob/living/user, mob/living/victim)
 	var/obj/item/clothing/shoes = user.get_equipped_item(slot_shoes_str)
-	return damage + (shoes ? shoes.get_attack_force(user) : 0)
+	return damage + (shoes ? shoes.expend_attack_force(user) : 0)
 
 /decl/natural_attack/stomp/show_attack(var/mob/living/human/user, var/mob/living/human/target, var/zone, var/attack_damage)
 
@@ -342,8 +343,8 @@
 	attack_verb = list("tapped", "lightly struck")
 	shredding = 0
 	damage = 0
-	sharp = 0
-	edge = 0
+	sharp = FALSE
+	edge = FALSE
 	attack_sound = "light_strike"
 
 /decl/natural_attack/light_strike/punch
@@ -370,8 +371,8 @@
 	attack_noun = list("forelimb")
 	damage = 8
 	shredding = 1
-	sharp = 1
-	edge = 1
+	sharp = TRUE
+	edge = TRUE
 	delay = 20
 	eye_attack_text = "a forelimb"
 	eye_attack_text_victim = "a forelimb"

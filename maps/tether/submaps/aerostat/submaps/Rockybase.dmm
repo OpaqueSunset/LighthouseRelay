@@ -82,11 +82,11 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aq" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ar" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -104,7 +104,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "au" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -222,7 +222,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "aP" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/tiled/techfloor/virgo2,
@@ -367,7 +367,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bp" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /obj/structure/girder,
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -528,7 +528,7 @@
 /turf/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "bS" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /obj/effect/decal/cleanable/dirt/visible,
 /obj/effect/decal/cleanable/dirt/visible,
 /turf/floor/tiled/techfloor/virgo2,

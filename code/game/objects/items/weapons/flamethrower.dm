@@ -33,17 +33,17 @@
 
 	update_icon()
 
-/obj/item/flamethrower/examine(mob/user, distance)
+/obj/item/flamethrower/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		if(tank)
-			to_chat(user, SPAN_NOTICE("Release pressure is set to [throw_amount] kPa. The tank has about [round(tank.air_contents.return_pressure(), 10)] kPa left in it."))
+			. += SPAN_NOTICE("Release pressure is set to [throw_amount] kPa. The tank has about [round(tank.air_contents.return_pressure(), 10)] kPa left in it.")
 		else
-			to_chat(user, SPAN_WARNING("It has no tank installed."))
+			. += SPAN_WARNING("It has no tank installed.")
 		if(igniter)
-			to_chat(user, SPAN_NOTICE("It has \an [igniter] installed."))
+			. += SPAN_NOTICE("It has \an [igniter] installed.")
 		else
-			to_chat(user, SPAN_WARNING("It has no igniter installed."))
+			. += SPAN_WARNING("It has no igniter installed.")
 
 /obj/item/flamethrower/Destroy()
 	QDEL_NULL(welding_tool)
@@ -94,7 +94,7 @@
 
 	// Make sure our user is still holding us
 	if(user && user.get_active_held_item() == src)
-		if(user.a_intent == I_HELP) //don't shoot if we're on help intent
+		if(user.check_intent(I_FLAG_HELP)) //don't shoot if we're on help intent
 			to_chat(user, SPAN_WARNING("You refrain from firing \the [src] as your intent is set to help."))
 			return
 
@@ -296,7 +296,7 @@
 	target.create_fire(tank.air_contents.temperature * 2 + 400)
 	target.hotspot_expose(1000, 100)
 	for(var/mob/living/M in target)
-		M.IgniteMob(1)
+		M.ignite_fire()
 
 // slightly weird looking initialize cuz it has to do some stuff first
 /obj/item/flamethrower/full/Initialize()

@@ -17,7 +17,7 @@
 /turf/floor,
 /area/submap/virgo2/Epod4)
 "k" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},
@@ -30,7 +30,7 @@
 /turf/floor/barren,
 /area/submap/virgo2/Epod4)
 "m" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},
@@ -51,7 +51,7 @@
 /turf/floor/barren,
 /area/submap/virgo2/Epod4)
 "n" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},

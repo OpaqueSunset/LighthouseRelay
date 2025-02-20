@@ -174,7 +174,7 @@
 		else if(task == "permissions")
 			if(!D)	return
 			var/list/permissionlist = list()
-			for(var/i=1, i<=R_MAXPERMISSION, i<<=1)		//that <<= is shorthand for i = i << 1. Which is a left BITSHIFT_LEFT
+			for(var/i=1, i<=R_MAXPERMISSION, i = BITSHIFT_LEFT(i, 1))
 				permissionlist[rights2text(i)] = i
 			var/new_permission = input("Select a permission to turn on/off", "Permission toggle", null, null) as null|anything in permissionlist
 			if(!new_permission)	return
@@ -979,8 +979,7 @@
 		var/obj/effect/stop/S
 		S = new /obj/effect/stop(M.loc)
 		S.victim = M
-		spawn(20)
-			qdel(S)
+		QDEL_IN(S, 2 SECONDS)
 
 		var/turf/floor/T = get_turf(M)
 		if(istype(T))
@@ -993,7 +992,7 @@
 			M.take_damage(min(99, M.current_health - 1))
 			SET_STATUS_MAX(M, STAT_STUN, 20)
 			SET_STATUS_MAX(M, STAT_WEAK, 20)
-			M.set_status(STAT_STUTTER, 20)
+			M.set_status_condition(STAT_STUTTER, 20)
 
 	else if(href_list["CentcommReply"])
 		var/mob/living/L = locate(href_list["CentcommReply"])

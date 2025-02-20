@@ -16,7 +16,7 @@
 
 /obj/item/mech_component/manipulators/show_missing_parts(var/mob/user)
 	if(!motivator)
-		to_chat(user, SPAN_WARNING("It is missing an actuator."))
+		return list(SPAN_WARNING("It is missing an actuator."))
 
 /obj/item/mech_component/manipulators/ready_to_install()
 	return motivator

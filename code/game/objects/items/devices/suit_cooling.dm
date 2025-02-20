@@ -156,18 +156,15 @@
 		if(-INFINITY to 17)
 			add_overlay("[icon_state]-battery-5")
 
-/obj/item/suit_cooling_unit/examine(mob/user, distance)
+/obj/item/suit_cooling_unit/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(distance >= 1)
+	if(distance > 1)
 		return
-
 	if (on)
-		to_chat(user, "It's switched on and running.")
+		. += "It's switched on and running."
 	else
-		to_chat(user, "It is switched off.")
-
+		. += "It is switched off."
 	if (cover_open)
-		to_chat(user, "The panel is open.")
-
+		. += "The panel is open."
 	if (cell)
-		to_chat(user, "The charge meter reads [round(cell.percent())]%.")
+		. += "The charge meter reads [round(cell.percent())]%."

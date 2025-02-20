@@ -19,10 +19,10 @@
 	if(!sealed)
 		unseal()
 
-/obj/item/food/can/examine(mob/user)
+/obj/item/food/can/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "It is [!ATOM_IS_OPEN_CONTAINER(src) ? "" : "un"]sealed.")
-	to_chat(user, "It looks [open_complexity ? "hard" : "easy "] to open.")
+	. += "It is [!ATOM_IS_OPEN_CONTAINER(src) ? "" : "un"]sealed."
+	. += "It looks [open_complexity ? "hard" : "easy "] to open."
 
 /obj/item/food/can/proc/unseal(mob/user)
 	playsound(src, 'sound/effects/canopen.ogg', rand(10, 50), 1)
@@ -82,7 +82,7 @@
 /obj/item/food/can/beans
 	name = "baked beans"
 	icon_state = "beans"
-	desc = "Carefully synthethized from soy."
+	desc = "Carefully synthesized from soy."
 	trash = /obj/item/trash/beans
 	filling_color = "#ff6633"
 	nutriment_desc = list("beans" = 1)

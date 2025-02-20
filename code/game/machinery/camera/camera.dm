@@ -46,10 +46,10 @@
 
 	var/affected_by_emp_until = 0
 
-/obj/machinery/camera/examine(mob/user)
+/obj/machinery/camera/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(stat & BROKEN)
-		to_chat(user, SPAN_WARNING("It is completely demolished."))
+		. += SPAN_WARNING("It is completely demolished.")
 
 /obj/machinery/camera/apply_visual(mob/living/human/M)
 	if(!M.client || !istype(M))
@@ -86,7 +86,7 @@
 	set_extension(src, /datum/extension/network_device/camera, null, null, null, TRUE, preset_channels, c_tag, cameranet_enabled, requires_connection)
 
 /obj/machinery/camera/Destroy()
-	set_status(0) //kick anyone viewing out
+	set_camera_status(0) //kick anyone viewing out
 	return ..()
 
 /obj/machinery/camera/Process()
@@ -187,7 +187,7 @@
 /obj/machinery/camera/physical_attack_hand(mob/living/human/user)
 	if(!istype(user))
 		return TRUE
-	if(user.species.can_shred(user))
+	if(user.can_shred())
 		user.do_attack_animation(src)
 		visible_message(SPAN_WARNING("\The [user] slashes at [src]!"))
 		playsound(src.loc, 'sound/weapons/slash.ogg', 100, 1)
@@ -227,7 +227,7 @@
 		//sparks
 		spark_at(loc, amount=5)
 
-/obj/machinery/camera/proc/set_status(var/newstatus, var/mob/user)
+/obj/machinery/camera/proc/set_camera_status(var/newstatus, var/mob/user)
 	if (status != newstatus && (!cut_power || status == TRUE))
 		status = newstatus
 		// The only way for AI to reactivate cameras are malf abilities, this gives them different messages.
@@ -337,7 +337,7 @@
 	)
 
 /obj/machinery/camera/proc/toggle_status()
-	set_status(!status)
+	set_camera_status(!status)
 
 /decl/public_access/public_method/toggle_camera
 	name = "toggle camera"

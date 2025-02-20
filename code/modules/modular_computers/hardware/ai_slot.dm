@@ -1,7 +1,7 @@
-// A wrapper that allows the computer to contain an inteliCard.
+// A wrapper that allows the computer to contain an intelliCard.
 /obj/item/stock_parts/computer/ai_slot
-	name = "inteliCard slot"
-	desc = "An IIS interlink with connection uplinks that allow the device to interface with most common inteliCard models. Too large to fit into tablets. Uses a lot of power when active."
+	name = "intelliCard slot"
+	desc = "An IIS interlink with connection uplinks that allow the device to interface with most common intelliCard models. Too large to fit into tablets. Uses a lot of power when active."
 	icon_state = "aislot"
 	hardware_size = 1
 	critical = 0
@@ -58,7 +58,7 @@
 		device = locate() in src
 
 	if(!device.stored_card)
-		to_chat(user, "There is no intellicard connected to \the [src].")
+		to_chat(user, "There is no intelliCard connected to \the [src].")
 		return
 
 	device.do_eject_ai(user)

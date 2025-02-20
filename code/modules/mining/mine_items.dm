@@ -29,7 +29,7 @@
 // Flags.
 /obj/item/stack/flag
 	name = "beacon"
-	desc = "Some deployable high-visibilty beacons."
+	desc = "Some deployable high-visibility beacons."
 	singular_name = "beacon"
 	icon_state = "folded"
 	amount = 10

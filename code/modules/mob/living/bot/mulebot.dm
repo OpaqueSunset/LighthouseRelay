@@ -183,7 +183,7 @@
 
 /mob/living/bot/mulebot/calcTargetPath()
 	..()
-	if(!target_path.len && target != home) // I presume that target is not null
+	if(!length(target_path) && target != home) // I presume that target is not null
 		resetTarget()
 		target = home
 		targetName = "Home"

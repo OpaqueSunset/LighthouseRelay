@@ -116,12 +116,12 @@
 	else
 		..()
 
-/obj/item/gun/projectile/automatic/assault_rifle/grenade/examine(mob/user)
+/obj/item/gun/projectile/automatic/assault_rifle/grenade/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(launcher.chambered)
-		to_chat(user, "\The [launcher] has \a [launcher.chambered] loaded.")
+		. += "\The [launcher] has \a [launcher.chambered] loaded."
 	else
-		to_chat(user, "\The [launcher] is empty.")
+		. += "\The [launcher] is empty."
 
 /obj/item/gun/projectile/automatic/assault_rifle/grenade/toggle_safety(mob/user)
 	. = ..()

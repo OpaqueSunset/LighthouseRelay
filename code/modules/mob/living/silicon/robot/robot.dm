@@ -35,13 +35,13 @@
 	/// If icon selection has been completed yet
 	var/icon_selected = TRUE
 	/// Hud stuff
-	var/obj/screen/robot_module/one/inv1
-	var/obj/screen/robot_module/two/inv2
-	var/obj/screen/robot_module/three/inv3
-	var/obj/screen/robot_drop_grab/ui_drop_grab
+	var/obj/screen/robot/module/one/inv1
+	var/obj/screen/robot/module/two/inv2
+	var/obj/screen/robot/module/three/inv3
+
 	/// Used to determine whether they have the module menu shown or not
 	var/shown_robot_modules = 0
-	var/obj/screen/robot_modules_background/robot_modules_background
+	var/obj/screen/robot/modules_background/robot_modules_background
 	/// 3 Modules can be activated at any one time.
 	var/obj/item/robot_module/module = null
 	var/obj/item/module_active
@@ -88,6 +88,9 @@
 	)
 
 /mob/living/silicon/robot/Initialize()
+
+	reset_hud_overlays()
+
 	. = ..()
 
 	add_language(/decl/language/binary, 1)
@@ -125,16 +128,6 @@
 
 	// Disables lay down verb for robots due they're can't lay down and it cause some movement, vision issues.
 	verbs -= /mob/living/verb/lay_down
-
-	hud_list[HEALTH_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[STATUS_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealth100")
-	hud_list[LIFE_HUD]        = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudhealth100")
-	hud_list[ID_HUD]          = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[WANTED_HUD]      = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPLOYAL_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPCHEM_HUD]     = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[IMPTRACK_HUD]    = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
-	hud_list[SPECIALROLE_HUD] = new /image/hud_overlay('icons/mob/hud.dmi', src, "hudblank")
 
 	AddMovementHandler(/datum/movement_handler/robot/use_power, /datum/movement_handler/mob/space)
 
@@ -206,8 +199,7 @@
 	if(shown_robot_modules)
 		hud_used.toggle_show_robot_modules()
 	modtype = initial(modtype)
-	if(hands)
-		hands.icon_state = initial(hands.icon_state)
+	refresh_hud_element(HUD_ROBOT_MODULE)
 	// If the robot had a module and this wasn't an uncertified change, let the AI know.
 	if(module)
 		if (!suppress_alert)
@@ -243,9 +235,7 @@
 		return
 
 	new module_type(src)
-
-	if(hands)
-		hands.icon_state = lowertext(modtype)
+	refresh_hud_element(HUD_ROBOT_MODULE)
 	SSstatistics.add_field("cyborg_[lowertext(modtype)]",1)
 	updatename()
 	recalculate_synth_capacities()
@@ -461,7 +451,7 @@
 		if(try_stock_parts_install(W, user))
 			return TRUE
 
-	if(IS_WELDER(W) && user.a_intent != I_HURT)
+	if(IS_WELDER(W) && !user.check_intent(I_FLAG_HARM))
 		if (src == user)
 			to_chat(user, "<span class='warning'>You lack the reach to be able to repair yourself.</span>")
 			return TRUE
@@ -489,7 +479,7 @@
 			user.visible_message(SPAN_NOTICE("\The [user] has fixed some of the burnt wires on \the [src]!"))
 		return TRUE
 
-	else if(IS_CROWBAR(W) && user.a_intent != I_HURT)	// crowbar means open or close the cover - we all know what a crowbar is by now
+	else if(IS_CROWBAR(W) && !user.check_intent(I_FLAG_HARM))	// crowbar means open or close the cover - we all know what a crowbar is by now
 		if(opened)
 			if(cell)
 				user.visible_message(
@@ -626,7 +616,7 @@
 			else
 				to_chat(user, "Upgrade error!")
 		return TRUE
-	if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && W.get_attack_force(user) && user.a_intent != I_HELP)
+	if(!(istype(W, /obj/item/robotanalyzer) || istype(W, /obj/item/scanner/health)) && !user.check_intent(I_FLAG_HELP) && W.expend_attack_force(user))
 		spark_at(src, 5, holder=src)
 	return ..()
 
@@ -642,15 +632,14 @@
 	return user?.attempt_hug(src)
 
 /mob/living/silicon/robot/default_hurt_interaction(mob/user)
-	var/decl/species/user_species = user.get_species()
-	if(user_species?.can_shred(user))
+	if(user.can_shred())
 		attack_generic(user, rand(30,50), "slashed")
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 		return TRUE
 	. = ..()
 
 /mob/living/silicon/robot/default_interaction(mob/user)
-	if(user.a_intent != I_GRAB && opened && !wiresexposed && (!issilicon(user)))
+	if(!user.check_intent(I_FLAG_GRAB) && opened && !wiresexposed && (!issilicon(user)))
 		var/datum/robot_component/cell_component = components["power cell"]
 		if(cell)
 			cell.update_icon()
@@ -815,17 +804,11 @@
 
 /mob/living/silicon/robot/Move(a, b, flag)
 	. = ..()
-	if(.)
-
-		if(module && isturf(loc))
-			var/obj/item/ore/orebag = locate() in list(module_state_1, module_state_2, module_state_3)
-			if(orebag)
-				loc.attackby(orebag, src)
-			module.handle_turf(loc, src)
-
-		if(client)
-			var/turf/above = GetAbove(src)
-			up_hint.icon_state = "uphint[!!(above && TURF_IS_MIMICKING(above))]"
+	if(. && module && isturf(loc))
+		var/obj/item/ore/orebag = locate() in list(module_state_1, module_state_2, module_state_3)
+		if(orebag)
+			loc.attackby(orebag, src)
+		module.handle_turf(loc, src)
 
 /mob/living/silicon/robot/proc/UnlinkSelf()
 	disconnect_from_ai()
@@ -1013,7 +996,7 @@
 					sleep(5)
 					to_chat(src, "<span class='danger'>Would you like to send a report to the vendor? Y/N</span>")
 					sleep(10)
-					to_chat(src, "<span class='danger'>> N</span>")
+					to_chat(src, "<span class='danger'>\> N</span>")
 					sleep(20)
 					to_chat(src, "<span class='danger'>ERRORERRORERROR</span>")
 					to_chat(src, "<b>Obey these laws:</b>")
@@ -1084,8 +1067,7 @@
 	animation.icon_state = "blank"
 	animation.icon = 'icons/mob/mob.dmi'
 	flick("blspell", animation)
-	sleep(5)
-	qdel(animation)
+	QDEL_IN(animation, 0.5 SECONDS)
 
 /mob/living/silicon/robot/proc/handle_radio_transmission()
 	if(!is_component_functioning("radio"))

@@ -295,7 +295,7 @@ var/global/list/time_prefs_fixed = list()
 		return
 	if(href_list["preference"] == "open_whitelist_forum")
 		if(get_config_value(/decl/config/text/forumurl))
-			direct_output(user, link(get_config_value(/decl/config/text/forumurl)))
+			open_link(user, get_config_value(/decl/config/text/forumurl))
 		else
 			to_chat(user, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 			return

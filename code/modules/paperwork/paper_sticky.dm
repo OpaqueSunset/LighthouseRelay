@@ -50,17 +50,20 @@
 		return .
 	return ..()
 
-/obj/item/sticky_pad/examine(mob/user)
+/obj/item/sticky_pad/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, SPAN_NOTICE("It has [papers] sticky note\s left."))
-	to_chat(user, SPAN_NOTICE("You can click it on grab intent to pick it up."))
+	. += SPAN_NOTICE("It has [papers] sticky note\s left.")
+
+/obj/item/sticky_pad/get_examine_hints(mob/user, distance, infix, suffix)
+	. = ..()
+	LAZYADD(., SPAN_NOTICE("You can click it on grab intent to pick it up."))
 
 /obj/item/sticky_pad/dragged_onto(mob/user)
 	user.put_in_hands(top)
 	. = ..()
 
 /obj/item/sticky_pad/attack_hand(var/mob/user)
-	if(user.a_intent == I_GRAB)
+	if(user.check_intent(I_FLAG_GRAB))
 		return ..()
 	if(!top)
 		return TRUE

@@ -53,12 +53,12 @@
 	update_icon()
 	return TRUE
 
-/obj/structure/coatrack/examine(mob/user, distance)
+/obj/structure/coatrack/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(length(contents))
-		to_chat(user, SPAN_NOTICE("It has the following [length(contents) == 1 ? "article" : "articles"] hanging on it:"))
+		. += SPAN_NOTICE("It has the following [length(contents) == 1 ? "article" : "articles"] hanging on it:")
 		for(var/obj/item/thing in contents)
-			to_chat(user, "- \icon[thing] \The [thing].")
+			. += "- \icon[thing] \The [thing]."
 
 /obj/structure/coatrack/proc/can_hang(var/obj/item/thing)
 	if(!istype(thing))

@@ -189,10 +189,10 @@
 
 	qdel(src)
 
-/obj/item/grenade/chem_grenade/examine(mob/user)
+/obj/item/grenade/chem_grenade/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(detonator)
-		to_chat(user, "With attached [detonator.name]")
+		. += "It has \a [detonator] attached."
 
 /obj/item/grenade/chem_grenade/large
 	name = "large chem grenade"

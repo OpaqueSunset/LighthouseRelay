@@ -271,12 +271,49 @@
 		return 1 //already unequipped, so success
 	return I.mob_can_unequip(src, slot)
 
+/// Gets the inventory slot string ID for the mob whose contents we're in, if any.
+/// Checks both equipped and held item slots.
+/obj/item/proc/get_any_equipped_slot()
+	if(!ismob(loc))
+		return null
+	var/mob/mob = loc
+	return mob.get_any_equipped_slot_for_item(src)
+
+/// Gets the inventory slot string ID for an item that may be in our inventory.
+/// Checks both equipped and held item slots.
+/mob/proc/get_any_equipped_slot_for_item(obj/item/I)
+	var/list/slots = get_inventory_slots() + get_held_item_slots()
+	if(!length(slots))
+		return
+	for(var/slot_str in slots)
+		if(get_equipped_item(slot_str) == I) // slots[slot]._holding == I
+			return slot_str
+
+/// A counterpart to get_any_equipped_slot_for_item that returns the slot datum rather than the slot name.
+/// Checks both equipped and held item slots.
+/obj/item/proc/get_any_equipped_slot_datum()
+	if(!ismob(loc))
+		return null
+	var/mob/mob = loc
+	return mob.get_inventory_slot_datum(mob.get_any_equipped_slot_for_item(src))
+
+/// Gets the equipment (worn) slot string ID for the mob whose contents we're in, if any. Does not include held slots.
 /obj/item/proc/get_equipped_slot()
 	if(!ismob(loc))
 		return null
 	var/mob/mob = loc
 	return mob.get_equipped_slot_for_item(src)
 
+/// A helper that returns the slot datum rather than the slot name.
+/// Does not include held slots.
+/// Saves unnecessary duplicate ismob checks and loc casts.
+/obj/item/proc/get_equipped_slot_datum()
+	if(!ismob(loc))
+		return null
+	var/mob/mob = loc
+	return mob.get_inventory_slot_datum(mob.get_equipped_slot_for_item(src))
+
+/// Gets the equipment (worn) slot string ID for an item we may be wearing. Does not include held slots.
 /mob/proc/get_equipped_slot_for_item(obj/item/I)
 	var/list/slots = get_inventory_slots()
 	if(!length(slots))
@@ -285,6 +322,14 @@
 		if(get_equipped_item(slot_str) == I) // slots[slot]._holding == I
 			return slot_str
 
+/// Gets the held item slot string ID for the mob whose contents we're in, if any. Does not include worn slots.
+/obj/item/proc/get_held_slot()
+	if(!ismob(loc))
+		return null
+	var/mob/mob = loc
+	return mob.get_held_slot_for_item(src)
+
+/// Gets the held item slot string ID for an item we may be holding. Does not include worn slots.
 /mob/proc/get_held_slot_for_item(obj/item/I)
 	var/list/slots = get_held_item_slots()
 	if(!length(slots))
@@ -406,7 +451,7 @@
 /mob/proc/item_should_have_screen_presence(obj/item/item, slot)
 	if(!slot || !istype(hud_used))
 		return FALSE
-	if(hud_used.inventory_shown)
+	if(hud_used.is_inventory_shown())
 		return TRUE
 	var/datum/inventory_slot/inv_slot = get_inventory_slot_datum(slot)
 	return !(inv_slot?.can_be_hidden)
@@ -421,7 +466,8 @@
 	return
 
 /mob/proc/select_held_item_slot(var/slot)
-	return
+	SHOULD_CALL_PARENT(TRUE)
+	clear_available_intents()
 
 /mob/proc/get_inventory_slots()
 	return

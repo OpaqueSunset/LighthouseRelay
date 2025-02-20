@@ -12,7 +12,7 @@ var/global/const/COMPOST_WORM_HUNGER_FACTOR = MINIMUM_CHEMICAL_VOLUME
 	density                   = TRUE
 	atom_flags                = ATOM_FLAG_CLIMBABLE
 	matter                    = null
-	material                  = /decl/material/solid/organic/wood
+	material                  = /decl/material/solid/organic/wood/oak
 	material_alteration       = MAT_FLAG_ALTERATION_COLOR | MAT_FLAG_ALTERATION_NAME | MAT_FLAG_ALTERATION_DESC
 	wrenchable                = FALSE
 	possible_transfer_amounts = @"[10,25,50,100]"
@@ -47,7 +47,7 @@ var/global/const/COMPOST_WORM_HUNGER_FACTOR = MINIMUM_CHEMICAL_VOLUME
 	else
 		add_overlay(overlay_image(icon, "[icon_state]-hinges", null, RESET_COLOR))
 
-/obj/structure/reagent_dispensers/compost_bin/examine(mob/user, distance)
+/obj/structure/reagent_dispensers/compost_bin/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 
@@ -57,15 +57,15 @@ var/global/const/COMPOST_WORM_HUNGER_FACTOR = MINIMUM_CHEMICAL_VOLUME
 
 		switch(worms)
 			if(0)
-				to_chat(user, SPAN_WARNING("There are no worms in \the [src]."))
+				. += SPAN_WARNING("There are no worms in \the [src].")
 			if(1)
-				to_chat(user, SPAN_NOTICE("A lonely worm wiggles around in \the [src]."))
+				. += SPAN_NOTICE("A lonely worm wiggles around in \the [src].")
 			if(2 to 3)
-				to_chat(user, SPAN_NOTICE("A few worms wiggle around in \the [src]."))
+				. += SPAN_NOTICE("A few worms wiggle around in \the [src].")
 			if(4 to 6)
-				to_chat(user, SPAN_NOTICE("A healthy number of worms wiggle around in \the [src]."))
+				. += SPAN_NOTICE("A healthy number of worms wiggle around in \the [src].")
 			else
-				to_chat(user, SPAN_NOTICE("A thriving worm colony wiggles around in \the [src]."))
+				. += SPAN_NOTICE("A thriving worm colony wiggles around in \the [src].")
 
 		var/list/composting = list()
 		for(var/thing in get_stored_inventory())
@@ -73,9 +73,9 @@ var/global/const/COMPOST_WORM_HUNGER_FACTOR = MINIMUM_CHEMICAL_VOLUME
 				composting += thing
 
 		if(length(composting))
-			to_chat(user, SPAN_NOTICE("[capitalize(english_list(composting, summarize = TRUE))] [length(composting) == 1 ? "is" : "are"] composting inside \the [src]."))
+			. += SPAN_NOTICE("[capitalize(english_list(composting, summarize = TRUE))] [length(composting) == 1 ? "is" : "are"] composting inside \the [src].")
 		else
-			to_chat(user, SPAN_NOTICE("Nothing is composting within \the [src]."))
+			. += SPAN_NOTICE("Nothing is composting within \the [src].")
 
 /obj/structure/reagent_dispensers/compost_bin/Entered(var/atom/movable/AM, atom/old_loc)
 	. = ..()
@@ -90,7 +90,7 @@ var/global/const/COMPOST_WORM_HUNGER_FACTOR = MINIMUM_CHEMICAL_VOLUME
 
 /obj/structure/reagent_dispensers/compost_bin/attackby(obj/item/W, mob/user)
 
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		return ..()
 
 	if(W.storage)

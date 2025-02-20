@@ -15,13 +15,25 @@
 	var/seeds_extracted = FALSE
 	var/datum/seed/seed
 
-/obj/item/food/grown/examine(mob/user, distance)
+// This is sort of pointless while food is a valid input on the ChemMaster but maybe
+// in the future there will be some more interesting ways to process growns/food.
+/obj/item/food/grown/handle_centrifuge_process(obj/machinery/centrifuge/centrifuge)
+	if(!(. = ..()))
+		return
+	if(reagents?.total_volume)
+		reagents.trans_to_holder(centrifuge.loaded_beaker.reagents, reagents.total_volume)
+	for(var/obj/item/thing in contents)
+		thing.dropInto(centrifuge.loc)
+	for(var/atom/movable/thing in convert_matter_to_lumps())
+		thing.dropInto(centrifuge.loc)
+
+/obj/item/food/grown/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(user && distance <= 1 && seed && user.skill_check(work_skill, SKILL_BASIC))
 		if(seed.grown_is_seed)
-			to_chat(user, SPAN_NOTICE("\The [src] can be planted directly, without having to extract any seeds."))
+			. += SPAN_NOTICE("\The [src] can be planted directly, without having to extract any seeds.")
 		else if(!seeds_extracted && seed.min_seed_extracted)
-			to_chat(user, SPAN_NOTICE("With a knife, you could extract at least [seed.min_seed_extracted] seed\s."))
+			. += SPAN_NOTICE("With a knife, you could extract at least [seed.min_seed_extracted] seed\s.")
 
 /obj/item/food/grown/update_name()
 	if(!seed)
@@ -202,7 +214,7 @@
 		seed.thrown_at(src,hit_atom)
 
 var/global/list/_wood_materials = list(
-	/decl/material/solid/organic/wood,
+	/decl/material/solid/organic/wood/oak,
 	/decl/material/solid/organic/wood/mahogany,
 	/decl/material/solid/organic/wood/maple,
 	/decl/material/solid/organic/wood/ebony,
@@ -221,7 +233,7 @@ var/global/list/_wood_materials = list(
 
 /obj/item/food/grown/attackby(var/obj/item/W, var/mob/user)
 
-	if(!seed || user.a_intent == I_HURT)
+	if(!seed || user.check_intent(I_FLAG_HARM))
 		return ..()
 
 	if(seed.get_trait(TRAIT_PRODUCES_POWER) && IS_COIL(W))
@@ -307,7 +319,7 @@ var/global/list/_wood_materials = list(
 /obj/item/food/grown/attack_self(mob/user)
 
 	if(seed)
-		if(user.a_intent == I_HURT)
+		if(user.check_intent(I_FLAG_HARM))
 			user.visible_message(SPAN_DANGER("\The [user] squashes \the [src]!"))
 			seed.thrown_at(src,user)
 			sleep(-1)

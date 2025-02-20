@@ -5,7 +5,7 @@
 		drop_from_inventory(W)
 	try_refresh_visible_overlays()
 	ADD_TRANSFORMATION_MOVEMENT_HANDLER(src)
-	set_status(STAT_STUN, 1)
+	set_status_condition(STAT_STUN, 1)
 	icon = null
 	set_invisibility(INVISIBILITY_ABSTRACT)
 	for(var/t in get_external_organs())
@@ -18,7 +18,7 @@
 	//animation = null
 
 	DEL_TRANSFORMATION_MOVEMENT_HANDLER(src)
-	set_status(STAT_STUN, 0)
+	set_status_condition(STAT_STUN, 0)
 	update_posture()
 	set_invisibility(initial(invisibility))
 
@@ -70,7 +70,6 @@
 	O.aiRestorePowerRoutine = 0
 	if(mind)
 		mind.transfer_to(O)
-		O.mind.original = O
 	else
 		O.key = key
 
@@ -99,8 +98,7 @@
 	O.add_ai_verbs()
 
 	O.rename_self("ai",1)
-	spawn(0)	// Mobs still instantly del themselves, thus we need to spawn or O will never be returned
-		qdel(src)
+	qdel(src)
 	return O
 
 //human -> robot
@@ -128,7 +126,6 @@
 	mind.active = TRUE
 	mind.transfer_to(O)
 	if(O.mind && O.mind.assigned_role == ASSIGNMENT_ROBOT)
-		O.mind.original = O
 		var/mmi_type = SSrobots.get_brain_type_by_title(O.mind.role_alt_title ? O.mind.role_alt_title : O.mind.assigned_role)
 		if(mmi_type)
 			O.central_processor = new mmi_type(O)
@@ -138,7 +135,7 @@
 	RAISE_EVENT(/decl/observ/cyborg_created, O)
 	O.Namepick()
 
-	qdel(src) // Queues us for a hard delete
+	qdel(src)
 	return O
 
 /mob/living/human/proc/corgize()
@@ -154,7 +151,7 @@
 		qdel(t)
 
 	var/mob/living/simple_animal/corgi/new_corgi = new /mob/living/simple_animal/corgi (loc)
-	new_corgi.a_intent = I_HURT
+	new_corgi.set_intent(get_intent())
 	new_corgi.key = key
 
 	to_chat(new_corgi, "<B>You are now a Corgi. Yap Yap!</B>")
@@ -186,12 +183,11 @@
 	var/mob/new_mob = new mobpath(src.loc)
 
 	new_mob.key = key
-	new_mob.a_intent = I_HURT
+	new_mob.set_intent(get_intent())
 
 
 	to_chat(new_mob, "You suddenly feel more... animalistic.")
-	spawn()
-		qdel(src)
+	qdel(src)
 	return
 
 /mob/proc/Animalize()
@@ -206,7 +202,7 @@
 	var/mob/new_mob = new mobpath(src.loc)
 
 	new_mob.key = key
-	new_mob.a_intent = I_HURT
+	new_mob.set_intent(get_intent())
 	to_chat(new_mob, "You feel more... animalistic.")
 
 	qdel(src)

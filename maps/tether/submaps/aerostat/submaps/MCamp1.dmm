@@ -13,7 +13,7 @@
 /turf/floor/barren,
 /area/submap/virgo2/MilitaryCamp1)
 "f" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/barren,
 /area/submap/virgo2/MilitaryCamp1)
 "g" = (

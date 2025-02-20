@@ -18,7 +18,7 @@
 	tool_interaction_flags = (TOOL_INTERACTION_ANCHOR | TOOL_INTERACTION_DECONSTRUCT)
 	max_health = 40
 	parts_amount = 2
-	parts_type = /obj/item/stack/material/strut
+	parts_type = /obj/item/stack/material/rods
 	var/stripe_color
 	var/list/connections
 	var/list/other_connections
@@ -41,10 +41,10 @@
 	update_connections(1)
 	update_icon()
 
-/obj/structure/wall_frame/examine(mob/user)
+/obj/structure/wall_frame/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(paint_color)
-		to_chat(user, SPAN_NOTICE("It has a smooth coat of paint applied."))
+		. += SPAN_NOTICE("It has a smooth coat of paint applied.")
 
 /obj/structure/wall_frame/get_examined_damage_string()
 	if(!can_take_damage())

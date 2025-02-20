@@ -37,13 +37,13 @@
 	if(!QDELETED(AM))
 		AM.fall()
 
-/turf/open/examine(mob/user, distance, infix, suffix)
+/turf/open/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 2)
 		var/depth = 1
 		for(var/turf/T = GetBelow(src); (istype(T) && T.is_open()); T = GetBelow(T))
 			depth += 1
-		to_chat(user, "It is about [depth] level\s deep.")
+		. += "It is about [depth] level\s deep."
 
 /turf/open/is_open()
 	return TRUE

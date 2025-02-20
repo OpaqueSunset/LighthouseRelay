@@ -58,15 +58,12 @@
 		queue_hand_rebuild()
 
 /mob/living/select_held_item_slot(var/slot)
+	. = ..()
 	var/last_slot = get_active_held_item_slot()
 	if(slot != last_slot && (slot in get_held_item_slots()))
 		_held_item_slot_selected = slot
 		if(istype(hud_used))
-			for(var/obj/screen/inventory/hand in hud_used.hand_hud_objects)
-				hand.cut_overlay("hand_selected")
-				if(hand.slot_id == slot)
-					hand.add_overlay("hand_selected")
-				hand.compile_overlays()
+			hud_used.update_hand_elements()
 		var/obj/item/I = get_active_held_item()
 		if(istype(I))
 			I.on_active_hand()

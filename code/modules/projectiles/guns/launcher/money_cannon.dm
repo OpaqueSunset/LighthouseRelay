@@ -130,19 +130,16 @@
 	else
 		return ..()
 
-/obj/item/gun/launcher/money/examine(mob/user)
+/obj/item/gun/launcher/money/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..(user)
 	var/decl/currency/cur = GET_DECL(global.using_map.default_currency)
-	to_chat(user, "It is configured to dispense [dispensing] [cur.name_singular] at a time.")
-
+	. += "It is configured to dispense [dispensing] [cur.name_singular] at a time."
 	if(receptacle_value >= 1)
-		to_chat(user, "The receptacle is loaded with [receptacle_value] [cur.name_singular].")
-
+		. += "The receptacle is loaded with [receptacle_value] [cur.name_singular]."
 	else
-		to_chat(user, "The receptacle is empty.")
-
+		. += "The receptacle is empty."
 	if(emagged)
-		to_chat(user, "<span class='notice'>Its motors are severely overloaded.</span>")
+		. += SPAN_NOTICE("Its motors are severely overloaded.")
 
 /obj/item/gun/launcher/money/handle_suicide(mob/living/user)
 	if(!ishuman(user))

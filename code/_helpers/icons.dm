@@ -163,7 +163,7 @@ mob
 			// Send the icon to src's local cache
 			send_rsc(src, getFlatIcon(src), iconName)
 			// Display the icon in their browser
-			direct_output(src, browse("<body bgcolor='#000000'><p><img src='[iconName]'></p></body>"))
+			show_browser(src, "<body bgcolor='#000000'><p><img src='[iconName]'></p></body>")
 
 		Output_Icon()
 			set name = "2. Output Icon"
@@ -271,8 +271,8 @@ world
 
 // make this icon fully opaque--transparent pixels become black
 /icon/proc/Opaque(background = "#000000")
-		SwapColor(null, background)
-		MapColors(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,0, 0,0,0,1)
+	SwapColor(null, background)
+	MapColors(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,0, 0,0,0,1)
 
 // Change a grayscale icon into a white icon where the original color becomes the alpha
 // I.e., black -> transparent, gray -> translucent white, white -> solid white

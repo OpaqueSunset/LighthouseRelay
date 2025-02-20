@@ -14,7 +14,7 @@
 /turf/floor/plating,
 /area/submap/spa)
 "ad" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flame/candle/everburn,
 /turf/floor/wood,
 /area/submap/spa)
@@ -33,7 +33,7 @@
 /turf/floor/plating,
 /area/submap/spa)
 "ah" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/towel,
 /obj/item/towel,
 /obj/item/towel,
@@ -187,14 +187,14 @@
 /turf/floor/wood,
 /area/submap/spa)
 "aF" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 4
 	},
 /turf/floor/wood,
 /area/submap/spa)
 "aG" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 8
 	},
@@ -224,20 +224,20 @@
 /turf/floor/wood,
 /area/submap/spa)
 "aN" = (
-/obj/structure/bed/chair/wood,
+/obj/structure/chair/wood,
 /turf/floor/wood,
 /area/submap/spa)
 "aO" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/wood,
 /area/submap/spa)
 "aP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flame/candle,
 /turf/floor/wood,
 /area/submap/spa)
 "aQ" = (
-/obj/structure/bed/chair/wood{
+/obj/structure/chair/wood{
 	icon_state = "wooden_chair";
 	dir = 1
 	},
@@ -262,7 +262,7 @@
 /turf/floor/carpet/blue,
 /area/submap/spa)
 "aV" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -318,7 +318,7 @@
 /turf/floor/reinforced,
 /area/submap/spa)
 "bf" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -407,7 +407,7 @@
 /turf/floor/carpet/blue,
 /area/submap/spa)
 "bs" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -456,22 +456,22 @@
 /turf/floor/grass,
 /area/submap/spa)
 "bz" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/random/drinkbottle,
 /turf/floor/wood,
 /area/submap/spa)
 "bA" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/random/toy,
 /turf/floor/wood,
 /area/submap/spa)
 "bB" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/random/action_figure,
 /turf/floor/wood,
 /area/submap/spa)
 "bC" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -553,7 +553,7 @@
 /turf/floor/holofloor/wood,
 /area/submap/spa)
 "bP" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	name = "door bolt control";
@@ -563,7 +563,7 @@
 /turf/floor/carpet/blue,
 /area/submap/spa)
 "bQ" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	name = "door bolt control";
@@ -573,7 +573,7 @@
 /turf/floor/carpet/blue,
 /area/submap/spa)
 "bR" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/button/alternate/door/bolts{
 	dir = 8;
 	name = "door bolt control";
@@ -583,7 +583,7 @@
 /turf/floor/carpet/blue,
 /area/submap/spa)
 "bS" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/machinery/button/alternate/door/bolts{
 	dir = 4;
 	name = "door bolt control";

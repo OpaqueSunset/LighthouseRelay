@@ -44,6 +44,12 @@
 	result_type                 = /obj/item/stack/material/brick
 	test_result_type            = /obj/item/stack/material/brick/clay
 
+/decl/stack_recipe/soft/bar
+	name                        = "bar"
+	name_plural                 = "bars"
+	result_type                 = /obj/item/stack/material/bar
+	test_result_type            = /obj/item/stack/material/bar/wax
+
 /decl/stack_recipe/soft/stack/spawn_result(mob/user, location, amount, decl/material/mat, decl/material/reinf_mat, paint_color, spent_type, spent_amount = 1)
 	var/obj/item/stack/S = ..()
 	if(istype(S))
@@ -89,3 +95,20 @@
 /decl/stack_recipe/soft/mould/ingot
 	name = "mould, ingot"
 	result_type = /obj/item/chems/mould/ingot
+
+/decl/stack_recipe/soft/sculpture
+	abstract_type               = /decl/stack_recipe/soft/sculpture
+	one_per_turf                = TRUE
+	on_floor                    = TRUE
+	category                    = "sculptures"
+
+/decl/stack_recipe/soft/sculpture/snowman
+	result_type                 = /obj/structure/snowman
+
+/decl/stack_recipe/soft/sculpture/snowspider
+	result_type                 = /obj/structure/snowman/spider
+	difficulty                  = MAT_VALUE_HARD_DIY
+
+/decl/stack_recipe/soft/sculpture/snowbot
+	result_type                 = /obj/structure/snowman/bot
+	available_to_map_tech_level = MAP_TECH_LEVEL_SPACE

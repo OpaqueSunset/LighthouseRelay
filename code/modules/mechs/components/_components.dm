@@ -29,12 +29,14 @@
 	for(var/obj/item/thing in contents)
 		thing.emp_act(severity)
 
-/obj/item/mech_component/examine(mob/user)
+/obj/item/mech_component/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(ready_to_install())
-		to_chat(user, SPAN_NOTICE("It is ready for installation."))
+		. += SPAN_NOTICE("It is ready for installation.")
 	else
-		show_missing_parts(user)
+		var/list/missing_parts = show_missing_parts(user)
+		if(length(missing_parts))
+			. += missing_parts
 
 //These icons have multiple directions but before they're attached we only want south.
 /obj/item/mech_component/set_dir()

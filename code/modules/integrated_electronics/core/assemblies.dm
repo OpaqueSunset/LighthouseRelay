@@ -47,7 +47,7 @@
 		COLOR_ASSEMBLY_PURPLE
 		)
 
-/obj/item/electronic_assembly/examine(mob/user)
+/obj/item/electronic_assembly/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(obj_flags & OBJ_FLAG_ANCHORABLE)
 		to_chat(user, "<span class='notice'>The anchoring bolts [anchored ? "are" : "can be"] <b>wrenched</b> in place and the maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place.</span>")
@@ -61,6 +61,16 @@
 
 	if((isobserver(user) && ckeys_allowed_to_scan[user.ckey]) || check_rights(R_ADMIN, 0, user))
 		to_chat(user, "You can <a href='byond://?src=\ref[src];ghostscan=1'>scan</a> this circuit.");
+
+/obj/item/electronic_assembly/examined_by(mob/user, distance, infix, suffix)
+	. = ..()
+	for(var/I in assembly_components)
+		var/obj/item/integrated_circuit/IC = I
+		IC.external_examine(user)
+		if(opened)
+			IC.internal_examine(user)
+	if(opened)
+		interact(user)
 
 /obj/item/electronic_assembly/check_health(lastdamage, lastdamtype, lastdamflags, consumed)
 	if(!can_take_damage())
@@ -294,16 +304,6 @@
 		return
 	add_overlay(overlay_image('icons/obj/assemblies/electronic_setups.dmi', "[icon_state]-color", detail_color))
 
-/obj/item/electronic_assembly/examine(mob/user)
-	. = ..()
-	for(var/I in assembly_components)
-		var/obj/item/integrated_circuit/IC = I
-		IC.external_examine(user)
-		if(opened)
-			IC.internal_examine(user)
-	if(opened)
-		interact(user)
-
 //This only happens when this EA is loaded via the printer
 /obj/item/electronic_assembly/proc/post_load()
 	for(var/I in assembly_components)
@@ -414,7 +414,7 @@
 			return TRUE
 		else
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
-				S.attackby_react(I,user,user.a_intent)
+				S.attackby_react(I, user, user.get_intent())
 			return ..()
 	else if(IS_MULTITOOL(I) || istype(I, /obj/item/integrated_electronics/wirer) || istype(I, /obj/item/integrated_electronics/debugger))
 		if(opened)
@@ -423,18 +423,18 @@
 		else
 			to_chat(user, "<span class='warning'>[src]'s hatch is closed, so you can't fiddle with the internal components.</span>")
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
-				S.attackby_react(I,user,user.a_intent)
+				S.attackby_react(I, user, user.get_intent())
 			return ..()
 	else if(istype(I, /obj/item/cell))
 		if(!opened)
 			to_chat(user, "<span class='warning'>[src]'s hatch is closed, so you can't access \the [src]'s power supplier.</span>")
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
-				S.attackby_react(I,user,user.a_intent)
+				S.attackby_react(I, user, user.get_intent())
 			return ..()
 		if(battery)
 			to_chat(user, "<span class='warning'>[src] already has \a [battery] installed. Remove it first if you want to replace it.</span>")
 			for(var/obj/item/integrated_circuit/input/S in assembly_components)
-				S.attackby_react(I,user,user.a_intent)
+				S.attackby_react(I, user, user.get_intent())
 			return ..()
 		var/obj/item/cell/cell = I
 		if(user.try_unequip(I,loc))
@@ -474,9 +474,9 @@
 			current_health = min(get_max_health(), current_health + 5)
 		return TRUE
 
-	else if(user.a_intent != I_HURT)
+	else if(!user.check_intent(I_FLAG_HARM))
 		for(var/obj/item/integrated_circuit/input/S in assembly_components)
-			S.attackby_react(I,user,user.a_intent)
+			S.attackby_react(I, user, user.get_intent())
 		return TRUE
 
 	return ..() //Handle weapon attacks and etc

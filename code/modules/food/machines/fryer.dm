@@ -1,6 +1,6 @@
 /obj/machinery/appliance/cooker/fryer
 	name = "deep fryer"
-	desc = "Deep fried <i>everything</i>."
+	desc = "Deep-fried <i>everything</i>."
 	icon_state = "fryer_off"
 	can_cook_mobs = 1
 	cook_type = "deep fried"
@@ -30,10 +30,10 @@
 	QDEL_NULL(fry_loop)
 	return ..()
 
-/obj/machinery/appliance/cooker/fryer/examine(var/mob/user)
+/obj/machinery/appliance/cooker/fryer/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if (.)//no need to duplicate adjacency check
-		to_chat(user, "Oil Level: [reagents.total_volume]/[optimal_oil]")
+	if (distance <= 1)
+		. += "Oil Level: [reagents.total_volume]/[optimal_oil]"
 
 /obj/machinery/appliance/cooker/fryer/Initialize()
 	. = ..()
@@ -162,9 +162,9 @@
 
 	var/obj/item/organ/external/E
 	var/nopain
-	if(ishuman(victim) && user.zone_sel.selecting != BP_GROIN && user.zone_sel.selecting != BP_CHEST)
+	if(ishuman(victim) && user.get_target_zone() != BP_GROIN && user.get_target_zone() != BP_CHEST)
 		var/mob/living/human/H = victim
-		E = H.get_organ(user.zone_sel.selecting)
+		E = H.get_organ(user.get_target_zone())
 		if(!E || !H.can_feel_pain())
 			nopain = 2
 		else if(BP_IS_PROSTHETIC(E))
@@ -180,12 +180,12 @@
 					var/obj/item/organ/external/child = C
 					if(nopain && nopain < 2 && !BP_IS_PROSTHETIC(child))
 						nopain = 0
-					child.take_external_damage(0, damage, used_weapon = "hot oil")
+					child.take_damage(damage, BURN, inflicter = "hot oil")
 					damage -= (damage*0.5)//IF someone's arm is plunged in, the hand should take most of it
 
-			E.take_external_damage(0, damage, used_weapon = "hot oil")
+			E.take_damage(damage, BURN, inflicter = "hot oil")
 		else
-			victim.apply_damage(damage, BURN, user.zone_sel.selecting)
+			victim.apply_damage(damage, BURN, user.get_target_zone())
 
 		if(!nopain)
 			var/arrows_var1 = E ? E.name : "flesh"

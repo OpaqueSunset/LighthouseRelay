@@ -37,21 +37,21 @@
 	QDEL_NULL(shade)
 	return ..()
 
-/obj/item/soulstone/examine(mob/user)
+/obj/item/soulstone/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(full == SOULSTONE_EMPTY)
-		to_chat(user, "The shard still flickers with a fraction of the full artifact's power, but it needs to be filled with the essence of someone's life before it can be used.")
+		. += "The shard still flickers with a fraction of the full artifact's power, but it needs to be filled with the essence of someone's life before it can be used."
 	if(full == SOULSTONE_ESSENCE)
-		to_chat(user,"The shard has gone transparent, a seeming window into a dimension of unspeakable horror.")
+		. += "The shard has gone transparent, a seeming window into a dimension of unspeakable horror."
 	if(full == SOULSTONE_CRACKED)
-		to_chat(user, "This one is cracked and useless.")
+		. += "This one is cracked and useless."
 
 /obj/item/soulstone/attackby(var/obj/item/I, var/mob/user)
 	if(is_evil && istype(I, /obj/item/nullrod))
 		to_chat(user, SPAN_NOTICE("You cleanse \the [src] of taint, purging its shackles to its creator."))
 		is_evil = FALSE
 		return TRUE
-	else if(I.get_attack_force(user) >= 5)
+	else if(I.expend_attack_force(user) >= 5)
 		if(full != SOULSTONE_CRACKED)
 			user.visible_message(
 				SPAN_WARNING("\The [user] hits \the [src] with \the [I], and it breaks.[shade.client ? " You hear a terrible scream!" : ""]"),
@@ -107,6 +107,33 @@
 	full = f
 	update_icon()
 
+// Soulstone synthesis recipe.
+/decl/chemical_reaction/synthesis/soulstone
+	name = "Soulstone"
+	result = null
+	required_reagents = list(/decl/material/liquid/blood = 15, /decl/material/liquid/crystal_agent = 1)
+	result_amount = 1
+	hidden_from_codex = TRUE // This shouldn't show up in search. Maybe it should be linked in a 'guide to cult' or something?
+
+/decl/chemical_reaction/synthesis/soulstone/send_data(datum/reagents/holder, reaction_limit)
+	return REAGENT_DATA(holder, /decl/material/liquid/blood) // allow on_reaction to get donor data
+
+/// Whether or not the reaction should produce a soulstone or a normal crystal.
+/// The donor mob parameter may either be /mob/living or null.
+/decl/chemical_reaction/synthesis/soulstone/proc/donor_is_magic(mob/living/donor)
+	return FALSE // By default, no one is magic! This is for modpacks to override.
+
+/decl/chemical_reaction/synthesis/soulstone/on_reaction(datum/reagents/holder, created_volume, list/reaction_data)
+	var/location = get_turf(holder.get_reaction_loc(chemical_reaction_flags))
+	var/weakref/donor_ref = LAZYACCESS(reaction_data, DATA_BLOOD_DONOR)
+	if(donor_is_magic(donor_ref?.resolve()))
+		for(var/i = 1, i <= created_volume, i++)
+			new /obj/item/soulstone(location)
+	else // waste it and produce useless crystal shards
+		for(var/i = 1, i <= created_volume*2, i++)
+			new /obj/item/shard(location, /decl/material/solid/gemstone/crystal)
+
+// Construct shells. These accept soulstones.
 /obj/structure/constructshell
 	name = "empty shell"
 	icon = 'icons/obj/structures/construct.dmi'

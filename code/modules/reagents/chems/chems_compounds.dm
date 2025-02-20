@@ -60,6 +60,14 @@
 	value = 0.5
 	uid = "chem_spacespice"
 
+/decl/material/solid/cinnamon
+	name = "cinnamon"
+	lore_text = "A powder used to flavor food and drinks. Unpleasant to eat a full spoonful of."
+	taste_description = "cinnamon"
+	color = "#a34b0d"
+	value = 0.2
+	uid = "chem_cinnamon"
+
 /decl/material/liquid/enzyme
 	name = "universal enzyme"
 	uid = "chem_enzyme"
@@ -184,17 +192,17 @@
 	var/effective_strength = 5
 
 	for(var/slot in global.standard_headgear_slots)
-		var/obj/item/I = M.get_equipped_item(slot)
-		if(istype(I))
-			if(I.body_parts_covered & SLOT_EYES)
+		var/obj/item/thing = M.get_equipped_item(slot)
+		if(istype(thing))
+			if(thing.body_parts_covered & SLOT_EYES)
 				eyes_covered = 1
-				eye_protection = I.name
-			if((I.body_parts_covered & SLOT_FACE) && !(I.item_flags & ITEM_FLAG_FLEXIBLEMATERIAL))
+				eye_protection = thing.name
+			if((thing.body_parts_covered & SLOT_FACE) && !(thing.item_flags & ITEM_FLAG_FLEXIBLEMATERIAL))
 				mouth_covered = 1
-				face_protection = I.name
-			else if(I.body_parts_covered & SLOT_FACE)
+				face_protection = thing.name
+			else if(thing.body_parts_covered & SLOT_FACE)
 				partial_mouth_covered = 1
-				partial_face_protection = I.name
+				partial_face_protection = thing.name
 
 	if(eyes_covered)
 		if(!mouth_covered)
@@ -326,7 +334,7 @@
 	color = "#684b3c"
 	scannable = 1
 	scent = "cigarette smoke"
-	scent_descriptor = SCENT_DESC_ODOR
+	scent_descriptor = "odour"
 	scent_range = 4
 	hidden_from_codex = TRUE
 	uid = "chem_tobacco"
@@ -342,7 +350,7 @@
 	taste_description = "fine tobacco"
 	value = 1.5
 	scent = "fine tobacco smoke"
-	scent_descriptor = SCENT_DESC_FRAGRANCE
+	scent_descriptor = "fragrance"
 	uid = "chem_tobacco_fine"
 
 /decl/material/solid/tobacco/bad
@@ -351,7 +359,7 @@
 	value = 0.5
 	scent = "acrid tobacco smoke"
 	scent_intensity = /decl/scent_intensity/strong
-	scent_descriptor = SCENT_DESC_ODOR
+	scent_descriptor = "odour"
 	uid = "chem_tobacco_terrible"
 
 /decl/material/solid/tobacco/liquid
@@ -404,9 +412,9 @@
 		M.heal_organ_damage(30 * removed, 30 * removed, affect_robo = 1)
 		if(ishuman(M))
 			var/mob/living/human/H = M
-			for(var/obj/item/organ/internal/I in H.get_internal_organs())
-				if(BP_IS_PROSTHETIC(I))
-					I.heal_damage(20*removed)
+			for(var/obj/item/organ/internal/organ in H.get_internal_organs())
+				if(BP_IS_PROSTHETIC(organ))
+					organ.heal_damage(20*removed)
 
 /decl/material/liquid/antiseptic
 	name = "antiseptic"
@@ -458,19 +466,19 @@
 						new /obj/item/shard(get_turf(E), result_mat)
 					E.dismember(0, DISMEMBER_METHOD_BLUNT)
 				else
-					E.take_external_damage(rand(20,30), 0)
+					E.take_damage(rand(20,30))
 					BP_SET_CRYSTAL(E)
 					E.status |= ORGAN_BRITTLE
 				break
 
 		var/list/internal_organs = H.get_internal_organs()
 		var/list/shuffled_organs = LAZYLEN(internal_organs) ? shuffle(internal_organs.Copy()) : null
-		for(var/obj/item/organ/internal/I in shuffled_organs)
-			if(BP_IS_PROSTHETIC(I) || !BP_IS_CRYSTAL(I) || I.damage <= 0 || I.organ_tag == BP_BRAIN)
+		for(var/obj/item/organ/internal/organ in shuffled_organs)
+			if(BP_IS_PROSTHETIC(organ) || !BP_IS_CRYSTAL(organ) || organ.get_organ_damage() <= 0 || organ.organ_tag == BP_BRAIN)
 				continue
 			if(prob(35))
-				to_chat(M, SPAN_NOTICE("You feel a deep, sharp tugging sensation as your [I.name] is mended."))
-			I.heal_damage(rand(1,3))
+				to_chat(M, SPAN_NOTICE("You feel a deep, sharp tugging sensation as your [organ.name] is mended."))
+			organ.heal_damage(rand(1,3))
 			break
 	else
 		to_chat(M, SPAN_DANGER("Your flesh is being lacerated from within!"))

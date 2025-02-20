@@ -28,13 +28,13 @@
 			return
 		req_access = A.req_access.Copy()
 
-/obj/structure/displaycase/examine(mob/user, distance)
+/obj/structure/displaycase/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(contents.len)
-		to_chat(user, "Inside you see [english_list(contents)].")
+		. += "Inside you see [english_list(contents)]."
 
 	if(distance <= 1)
-		to_chat(user, "It looks [locked ? "locked. You can open it with your ID card" : "unlocked"].")
+		. += "It looks [locked ? "locked. You can open it with your ID card" : "unlocked"]."
 
 /obj/structure/displaycase/explosion_act(severity)
 	..()
@@ -133,7 +133,7 @@
 		update_icon()
 		return TRUE
 
-	else if(!destroyed && user.a_intent == I_HURT)
+	else if(!destroyed && user.check_intent(I_FLAG_HARM))
 		visible_message(SPAN_WARNING("[user] kicks \the [src]."), SPAN_WARNING("You kick \the [src]."))
 		take_damage(2)
 		return TRUE

@@ -59,6 +59,7 @@
 
 /mob/Login()
 
+	client.clear_mouse_pointers() // in case we are transferring mobs.
 	global.player_list |= src
 	update_Login_details()
 	world.update_status()
@@ -102,7 +103,7 @@
 		client.images = null	//remove the images such as AIs being unable to see runes
 		client.screen = list()	//remove hud items just in case
 		client.set_right_click_menu_mode(shift_to_open_context_menu)
-		InitializeHud()
+		initialize_hud()
 	else
 		refresh_lighting_master()
 
@@ -111,11 +112,6 @@
 	add_click_catcher()
 	update_action_buttons()
 	update_mouse_pointer()
-
-	if(ability_master)
-		ability_master.update_abilities(TRUE, src)
-		ability_master.toggle_open(1)
-		ability_master.synch_spells_to_mind(mind)
 
 	if(get_preference_value(/datum/client_preference/show_status_markers) == PREF_SHOW)
 		if(status_markers?.mob_image_personal)

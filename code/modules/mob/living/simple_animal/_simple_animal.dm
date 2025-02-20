@@ -12,6 +12,8 @@
 	icon_state = ICON_STATE_WORLD
 	buckle_pixel_shift = @"{'x':0,'y':0,'z':8}"
 
+	hud_used = /datum/hud/animal
+
 	move_intents = list(
 		/decl/move_intent/walk/animal,
 		/decl/move_intent/run/animal
@@ -168,16 +170,23 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 			mob_icon_state_flags |= MOB_ICON_HAS_PARALYZED_STATE
 		global.simplemob_icon_bitflag_cache[type] = mob_icon_state_flags
 
+/mob/living/simple_animal/proc/add_additional_visible_overlays(list/accumulator)
+	return
+
 /mob/living/simple_animal/refresh_visible_overlays()
 
+	var/list/add_overlays = list()
 	if(length(draw_visible_overlays))
-		var/list/add_overlays = list()
 		for(var/overlay_state in draw_visible_overlays)
 			var/overlay_color = draw_visible_overlays[overlay_state]
 			if(overlay_state == "base")
 				add_overlays += overlay_image(icon, icon_state, overlay_color, RESET_COLOR)
 			else
 				add_overlays += overlay_image(icon, "[icon_state]-[overlay_state]", overlay_color, RESET_COLOR)
+
+	add_additional_visible_overlays(add_overlays)
+
+	if(length(add_overlays))
 		set_current_mob_overlay(HO_SKIN_LAYER, add_overlays)
 	else
 		set_current_mob_overlay(HO_SKIN_LAYER, null)
@@ -271,13 +280,13 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 			bodytemperature += ((environment.temperature - bodytemperature) / 5)
 
 	if(bodytemperature < minbodytemp)
-		SET_HUD_ALERT(src, /decl/hud_element/condition/fire, 2)
+		SET_HUD_ALERT(src, HUD_FIRE, 2)
 		take_damage(cold_damage_per_tick, BURN)
 	else if(bodytemperature > maxbodytemp)
-		SET_HUD_ALERT(src, /decl/hud_element/condition/fire, 1)
+		SET_HUD_ALERT(src, HUD_FIRE, 1)
 		take_damage(heat_damage_per_tick, BURN)
 	else
-		SET_HUD_ALERT(src, /decl/hud_element/condition/fire, 0)
+		SET_HUD_ALERT(src, HUD_FIRE, 0)
 
 	if(!atmos_suitable)
 		take_damage(unsuitable_atmos_damage)
@@ -427,7 +436,7 @@ var/global/list/simplemob_icon_bitflag_cache = list()
 	return /decl/material/liquid/nutriment
 
 /mob/living/simple_animal/proc/reflect_unarmed_damage(var/mob/living/human/attacker, var/damage_type, var/description)
-	if(attacker.a_intent == I_HURT)
+	if(attacker.check_intent(I_FLAG_HARM))
 		attacker.apply_damage(rand(return_damage_min, return_damage_max), damage_type, attacker.get_active_held_item_slot(), used_weapon = description)
 		if(rand(25))
 			to_chat(attacker, SPAN_WARNING("Your attack has no obvious effect on \the [src]'s [description]!"))

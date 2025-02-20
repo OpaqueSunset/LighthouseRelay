@@ -186,24 +186,20 @@
 	mode = !mode
 	to_chat(usr, "The IV drip is now [mode ? "injecting" : "taking blood"].")
 
-/obj/structure/iv_drip/examine(mob/user, distance)
+/obj/structure/iv_drip/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-
 	if (distance >= 2)
 		return
-
-	to_chat(user, "The IV drip is [mode ? "injecting" : "taking blood"].")
-	to_chat(user, "It is set to transfer [transfer_amount]u of chemicals per cycle.")
-
+	. += "The IV drip is [mode ? "injecting" : "taking blood"]."
+	. += "It is set to transfer [transfer_amount]u of chemicals per cycle."
 	if(beaker)
 		if(beaker.reagents && beaker.reagents.total_volume)
-			to_chat(usr, SPAN_NOTICE("Attached is \a [beaker] with [beaker.reagents.total_volume] units of liquid."))
+			. += SPAN_NOTICE("Attached is \a [beaker] with [beaker.reagents.total_volume] units of liquid.")
 		else
-			to_chat(usr, SPAN_NOTICE("Attached is an empty [beaker]."))
+			. += SPAN_NOTICE("Attached is an empty [beaker].")
 	else
-		to_chat(usr, SPAN_NOTICE("No chemicals are attached."))
-
-	to_chat(usr, SPAN_NOTICE("[attached ? attached : "No one"] is hooked up to it."))
+		. += SPAN_NOTICE("No chemicals are attached.")
+	. += SPAN_NOTICE("[attached ? attached : "No one"] is hooked up to it.")
 
 /obj/structure/iv_drip/proc/rip_out()
 	visible_message("The needle is ripped out of [src.attached], doesn't that hurt?")

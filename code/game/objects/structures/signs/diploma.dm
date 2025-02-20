@@ -70,10 +70,10 @@
 /obj/structure/sign/plaque/diploma/update_description()
 	desc = details.get_description_string()
 
-/obj/structure/sign/plaque/diploma/examine(mob/user, distance, infix, suffix)
+/obj/structure/sign/plaque/diploma/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 2)
-		to_chat(user, details.get_examine_string())
+		. += details.get_examine_string()
 
 ////////////////////////////////////////////////////////
 // Diploma Item
@@ -120,10 +120,10 @@
 /obj/item/sign/diploma/proc/update_description()
 	desc = details.get_description_string()
 
-/obj/item/sign/diploma/examine(mob/user, distance, infix, suffix)
+/obj/item/sign/diploma/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 2)
-		to_chat(user, details.get_examine_string())
+		. += details.get_examine_string()
 
 /obj/item/sign/diploma/attackby(obj/item/pen/W, mob/user)
 	if(IS_PEN(W))

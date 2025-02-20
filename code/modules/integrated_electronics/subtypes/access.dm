@@ -1,6 +1,6 @@
 /obj/item/integrated_circuit/input/card_reader
 	name = "ID card reader" //To differentiate it from the data card reader
-	desc = "A circuit that can read the registred name, assignment, and PassKey string from an ID card."
+	desc = "A circuit that can read the registered name, assignment, and PassKey string from an ID card."
 	icon_state = "card_reader"
 
 	complexity = 4
@@ -18,7 +18,7 @@
 	name = "card reader"
 	spawn_flags = 0
 
-/obj/item/integrated_circuit/input/card_reader/attackby_react(obj/item/I, mob/user, intent)
+/obj/item/integrated_circuit/input/card_reader/attackby_react(obj/item/I, mob/user, decl/intent/intent)
 	var/obj/item/card/id/card = I.GetIdCard()
 	var/list/access = I.GetAccess()
 	var/json_access = json_encode(access)
@@ -43,7 +43,7 @@
 
 /obj/item/integrated_circuit/output/access_displayer
 	name = "access circuit"
-	desc = "broadcasts access for your assembly via a passkey."
+	desc = "A circuit that broadcasts access for your assembly via a passkey."
 	extended_desc = "Useful for moving drones through airlocks."
 
 	complexity = 4
@@ -65,7 +65,7 @@
 	// check if the signature is valid
 	if(!check_data_signature(signature, result))
 		return FALSE
-	
+
 	if(length(result) > 1)
 		result = cached_json_decode(result)
 	else

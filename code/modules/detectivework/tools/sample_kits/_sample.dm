@@ -19,10 +19,10 @@
 	. = ..()
 	QDEL_NULL_LIST(evidence)
 
-/obj/item/forensics/sample/examine(mob/user, distance)
+/obj/item/forensics/sample/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1 && object)
-		to_chat(user, "The label says: '[object]'.")
+		. += "The label says: '[object]'."
 
 /obj/item/forensics/sample/proc/copy_evidence(var/atom/supplied)
 	var/datum/extension/forensic_evidence/forensics = get_extension(supplied, /datum/extension/forensic_evidence)

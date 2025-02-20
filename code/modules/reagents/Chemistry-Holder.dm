@@ -186,7 +186,7 @@ var/global/datum/reagents/sink/infinite_reagent_sink = new
 	if((check_flags & ATOM_FLAG_NO_REACT) && (check_flags & ATOM_FLAG_NO_PHASE_CHANGE) && (check_flags & ATOM_FLAG_NO_DISSOLVE))
 		return 0
 
-	var/reaction_occured = FALSE
+	var/reaction_occurred = FALSE
 	var/list/eligible_reactions = list()
 
 	var/temperature = location?.temperature || T20C
@@ -228,7 +228,7 @@ var/global/datum/reagents/sink/infinite_reagent_sink = new
 			clear_reagent(R.type)
 			for(var/product in replace_self_with)
 				add_reagent(product, replace_self_with[product] * replace_amount)
-			reaction_occured = TRUE
+			reaction_occurred = TRUE
 
 			if(location)
 				if(replace_message)
@@ -245,7 +245,7 @@ var/global/datum/reagents/sink/infinite_reagent_sink = new
 		for(var/decl/chemical_reaction/reaction in eligible_reactions)
 			if(reaction.can_happen(src))
 				active_reactions[reaction] = 1 // The number is going to be 1/(fraction of remaining reagents we are allowed to use), computed below
-				reaction_occured = 1
+				reaction_occurred = 1
 
 		var/list/used_reagents = list()
 		// if two reactions share a reagent, each is allocated half of it, so we compute this here
@@ -273,10 +273,10 @@ var/global/datum/reagents/sink/infinite_reagent_sink = new
 
 	update_total()
 
-	if(reaction_occured)
+	if(reaction_occurred)
 		HANDLE_REACTIONS(src) // Check again in case the new reagents can react again
 
-	return reaction_occured
+	return reaction_occurred
 
 /* Holder-to-chemical */
 /datum/reagents/proc/handle_update(var/safety)
@@ -925,8 +925,60 @@ var/global/datum/reagents/sink/infinite_reagent_sink = new
 
 	return trans_to_holder(target.reagents, amount, multiplier, copy, defer_update = defer_update, transferred_phases = transferred_phases)
 
-/* Atom reagent creation - use it all the time */
+/datum/reagents/proc/get_skimmable_reagents()
+	for(var/mat in reagent_volumes)
+		var/decl/material/reagent = GET_DECL(mat)
+		if(reagent.skimmable)
+			LAZYADD(., mat)
 
+/// Used to return strings like "dilute blood" for use in phrases like "It's covered in dilute oily slimy bloody mud!"
+/// This is explicitly inspired by Caves of Qud, by the way.
+/datum/reagents/proc/get_coated_name()
+	/// arbitrary number, number of words that will be included in the name. will always have primary in addition
+	var/const/MAX_COATING_NAMES = 4
+	if(!total_volume)
+		return null
+	// sort reagents from low to high, so largest reagent comes last (feels most impactful? idk, it's arbitrary)
+	var/list/volumes_temp = sortTim(reagent_volumes.Copy(), /proc/cmp_numeric_asc, associative = TRUE)
+	var/list/accumulator = list()
+	var/decl/material/primary_reagent_decl = get_primary_reagent_decl() // this also sets src.primary_reagent to the typepath
+	for(var/reagent_type in volumes_temp)
+		if(reagent_type == primary_reagent)
+			continue // added later
+		var/decl/material/reagent = GET_DECL(reagent_type)
+		reagent.build_coated_name(src, accumulator)
+		if(length(accumulator) >= MAX_COATING_NAMES)
+			break
+	var/primary_name = primary_reagent_decl.get_primary_coating_name(src)
+	if(get_config_value(/decl/config/enum/colored_coating_names) == CONFIG_COATING_COLOR_COMPONENTS)
+		var/primary_color = primary_reagent_decl.get_reagent_color(src)
+		primary_name = FONT_COLORED(primary_color, primary_name)
+	accumulator += primary_name // add primary to the end
+	. = jointext(accumulator, " ") // dilute oily slimy bloody mud
+	if(get_config_value(/decl/config/enum/colored_coating_names) == CONFIG_COATING_COLOR_MIXTURE)
+		. = FONT_COLORED(get_color(), .)
+
+/// Used to return strings like "inky bloody muddy snowy oily wet" for use in phrases like "You are wearing some inky bloody muddy snowy oily wet leather boots."
+/// This is explicitly inspired by Caves of Qud, by the way.
+/datum/reagents/proc/get_coated_adjectives()
+	var/const/MAX_COATING_ADJECTIVES = 5 // arbitrary number, limit how many reagents will show up in the name on examine
+	if(!total_volume)
+		return null
+	// sort reagents from low to high, so primary reagent comes last (feels most impactful? idk, it's arbitrary)
+	// todo: maybe at some point we could make staining have some kind of priority to sort by?
+	var/list/volumes_temp = sortTim(reagent_volumes.Copy(), /proc/cmp_numeric_asc, associative = TRUE)
+	var/list/accumulator = list()
+	for(var/reagent_type in volumes_temp)
+		var/decl/material/reagent = GET_DECL(reagent_type)
+		var/coated_name = reagent.get_coated_adjective(src)
+		accumulator |= coated_name
+		if(length(accumulator) >= MAX_COATING_ADJECTIVES)
+			break
+	. = jointext(accumulator, " ") // bloody muddy inky slimy wet
+	if(get_config_value(/decl/config/enum/colored_coating_names) == CONFIG_COATING_COLOR_MIXTURE)
+		. = FONT_COLORED(get_color(), .)
+
+/* Atom reagent creation - use it all the time */
 /atom/proc/create_reagents(var/max_vol)
 	if(reagents)
 		log_debug("Attempted to create a new reagents holder when already referencing one: [log_info_line(src)]")

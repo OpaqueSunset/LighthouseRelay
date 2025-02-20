@@ -23,12 +23,6 @@
 /obj/item/organ/external/chest/proc/get_current_skin()
 	return
 
-/obj/item/organ/external/get_scan_results()
-	. = ..()
-	var/obj/item/organ/internal/lungs/L = locate() in src
-	if( L && L.is_bruised())
-		. += "Lung ruptured"
-
 /obj/item/organ/external/chest/die()
 	//Special handling for synthetics
 	if(BP_IS_PROSTHETIC(src) || BP_IS_CRYSTAL(src))
@@ -119,6 +113,13 @@
 	limb_flags = ORGAN_FLAG_CAN_AMPUTATE | ORGAN_FLAG_CAN_STAND | ORGAN_FLAG_HAS_TENDON | ORGAN_FLAG_CAN_BREAK | ORGAN_FLAG_CAN_DISLOCATE
 	organ_category = ORGAN_CATEGORY_STANCE
 
+/obj/item/organ/external/foot/get_natural_attacks()
+	var/static/list/unarmed_attacks = list(
+		GET_DECL(/decl/natural_attack/stomp),
+		GET_DECL(/decl/natural_attack/kick)
+	)
+	return unarmed_attacks
+
 /obj/item/organ/external/foot/right
 	organ_tag = BP_R_FOOT
 	name = "right foot"
@@ -145,6 +146,10 @@
 	is_washable = TRUE
 	var/gripper_type = /datum/inventory_slot/gripper/left_hand
 
+/obj/item/organ/external/hand/get_natural_attacks()
+	var/static/unarmed_attack = GET_DECL(/decl/natural_attack/punch)
+	return unarmed_attack
+
 /obj/item/organ/external/hand/do_install(mob/living/human/target, affected, in_place, update_icon, detached)
 	. = ..()
 	if(. && owner && gripper_type)
@@ -164,3 +169,11 @@
 	joint = "right wrist"
 	amputation_point = "right wrist"
 	gripper_type = /datum/inventory_slot/gripper/right_hand
+
+/obj/item/organ/external/hand/clawed/get_natural_attacks()
+	var/static/unarmed_attack = GET_DECL(/decl/natural_attack/claws)
+	return unarmed_attack
+
+/obj/item/organ/external/hand/right/clawed/get_natural_attacks()
+	var/static/unarmed_attack = GET_DECL(/decl/natural_attack/claws)
+	return unarmed_attack

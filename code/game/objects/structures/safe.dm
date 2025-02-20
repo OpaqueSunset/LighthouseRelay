@@ -85,22 +85,20 @@ FLOOR SAFES
 	show_browser(user, "<html><head><title>[name]</title></head><body>[dat]</body></html>", "window=safe;size=350x300")
 	return TRUE
 
-/obj/structure/safe/Topic(href, href_list)
-	if(!ishuman(usr))	return
-	var/mob/living/human/user = usr
+/obj/structure/safe/DefaultTopicState()
+	return global.physical_no_access_topic_state
 
+/obj/structure/safe/OnTopic(mob/user, href_list, state)
 	if(href_list["open"])
 		if(check_unlocked())
 			to_chat(user, "<span class='notice'>You [open ? "close" : "open"] [src].</span>")
 			open = !open
-			update_icon()
-			updateUsrDialog()
-			return
+			return TOPIC_REFRESH
 		else
 			to_chat(user, "<span class='notice'>You can't [open ? "close" : "open"] [src], the lock is engaged!</span>")
-			return
+			return TOPIC_HANDLED
 
-	var/canhear = locate(/obj/item/clothing/neck/stethoscope) in usr.get_held_items()
+	var/canhear = locate(/obj/item/clothing/neck/stethoscope) in user.get_held_items()
 	if(href_list["decrement"])
 		dial = decrement(dial)
 		if(dial == tumbler_1_pos + 1 || dial == tumbler_1_pos - 71)
@@ -112,8 +110,7 @@ FLOOR SAFES
 				if(canhear)
 					to_chat(user, "<span class='notice'>You hear a [pick("click", "chink", "clink")] from [src].</span>")
 			check_unlocked(user, canhear)
-		updateUsrDialog()
-		return
+		return TOPIC_REFRESH
 
 	if(href_list["increment"])
 		dial = increment(dial)
@@ -126,17 +123,15 @@ FLOOR SAFES
 				if(canhear)
 					to_chat(user, "<span class='notice'>You hear a [pick("click", "chink", "clink")] from [src].</span>")
 			check_unlocked(user, canhear)
-		updateUsrDialog()
-		return
+		return TOPIC_REFRESH
 
 	if(href_list["retrieve"])
-		close_browser(user, "window=safe") // Close the menu
-
+		if(!open)
+			return TOPIC_CLOSE // Close the menu
 		var/obj/item/P = locate(href_list["retrieve"]) in src
-		if(open)
-			if(P && in_range(src, user))
-				user.put_in_hands(P)
-				updateUsrDialog()
+		if(P && CanPhysicallyInteract(user))
+			user.put_in_hands(P)
+		return TOPIC_REFRESH
 
 
 /obj/structure/safe/attackby(obj/item/I, mob/user)

@@ -43,10 +43,10 @@
 		drying.update_icon()
 	update_icon()
 
-/obj/structure/drying_rack/examine(mob/user, distance, infix, suffix)
+/obj/structure/drying_rack/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(drying)
-		to_chat(user, "\The [drying] is [drying.get_dryness_text()].")
+		. += "\The [drying] is [drying.get_dryness_text()]."
 
 /obj/structure/drying_rack/on_update_icon()
 	..()

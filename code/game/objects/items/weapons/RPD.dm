@@ -150,11 +150,11 @@ var/global/list/rpd_pipe_selection_skilled = list()
 		if(prob(20))
 			spark_at(src, amount = 5, holder = src)
 
-/obj/item/rpd/examine(var/mob/user, distance)
+/obj/item/rpd/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		if(user.skill_check(SKILL_ATMOS,SKILL_BASIC))
-			to_chat(user, "<span class='notice'>Current selection reads:</span> [P]")
+			. += "[SPAN_NOTICE("Current selection reads:")] [P]"
 		else
 			to_chat(user, SPAN_WARNING("The readout is flashing some atmospheric jargon, you can't understand."))
 

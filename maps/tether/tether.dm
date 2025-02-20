@@ -10,28 +10,29 @@
 	#include "../../mods/gamemodes/revolution/_revolution.dme"
 	#include "../../mods/gamemodes/traitor/_traitor.dme"
 	#include "../../mods/gamemodes/spyvspy/_spyvspy.dme"
-	#include "../../mods/gamemodes/mixed/_mixed.dme"
+	#include "../../mods/gamemodes/mixed.dm"
 
 	#include "../random_ruins/exoplanet_ruins/playablecolony/playablecolony.dm"
 
-	#include "../../mods/content/mundane.dm"
-	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/baychems/_baychems.dme"
+	#include "../../mods/content/bigpharma/_bigpharma.dme"
 	#include "../../mods/content/corporate/_corporate.dme"
-	#include "../../mods/content/dungeon_loot/_dungeon_loot.dme"
-	#include "../../mods/content/extrafoods/_extrafoods.dme"
-	#include "../../mods/content/extradrinks/_extradrinks.dme"
 	#include "../../mods/content/cyberplants/cyberplants.dm"
+	#include "../../mods/content/dungeon_loot/_dungeon_loot.dme"
+	#include "../../mods/content/extradrinks/_extradrinks.dme"
+	#include "../../mods/content/extrafoods/_extrafoods.dme"
+	#include "../../mods/content/fov_module/_fov_module.dme"
 	#include "../../mods/content/genemodding/_genemodding.dme"
 	#include "../../mods/content/government/_government.dme"
+	#include "../../mods/content/matchmaking/_matchmaking.dme"
 	#include "../../mods/content/modern_earth/_modern_earth.dme"
 	#include "../../mods/content/mouse_highlights/_mouse_highlight.dme"
+	#include "../../mods/content/mundane.dm"
+	#include "../../mods/content/neural_interface/_neural_interface.dme"
+	#include "../../mods/content/pheromones/_pheromones.dme"
+	#include "../../mods/content/psionics/_psionics.dme"
 	#include "../../mods/content/scaling_descriptors.dm"
 	#include "../../mods/content/xenobiology/_xenobiology.dme"
-	#include "../../mods/content/matchmaking/_matchmaking.dme"
-	#include "../../mods/content/neural_interface/_neural_interface.dme"
-
-	#include "../../mods/content/fov_module/_fov_module.dme"
 
 	#include "../../mods/utility/centcomdb/_centcomdb.dme"
 	#include "../../mods/verbs/antighost/_subtle_antighost.dme"
@@ -39,16 +40,15 @@
 	#include "../../mods/mobs/dionaea/_dionaea.dme"
 	#include "../../mods/mobs/borers/_borers.dme"
 
-	// Has to come after borers for compatibility.
-	#include "../../mods/content/psionics/_psionics.dme"
-
-	#include "../../mods/content/pheromones/_pheromones.dme"
-
+	#include "../../mods/species/adherent/_adherent.dme"
 	#include "../../mods/species/ascent/_ascent.dme"
-	#include "../../mods/species/serpentid/_serpentid.dme"
-	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/neoavians/_neoavians.dme"
-	#include "../../mods/species/bayliens/_bayliens.dme"
+	#include "../../mods/species/serpentid/_serpentid.dme"
+	#include "../../mods/species/skrell/_skrell.dme"
+	#include "../../mods/species/tajaran/_tajaran.dme"
+	#include "../../mods/species/tritonian/_tritonian.dme"
+	#include "../../mods/species/unathi/_unathi.dme"
+	#include "../../mods/species/utility_frames/_utility_frames.dme"
 	#include "../../mods/species/vox/_vox.dme"
 
 	#include "../away/bearcat/bearcat.dm"
@@ -60,12 +60,12 @@
 	#include "../away/mining/mining.dm"
 	#include "../away/mobius_rift/mobius_rift.dm"
 	#include "../away/smugglers/smugglers.dm"
-	#include "../away/slavers/slavers_base.dm"
 	#include "../away/unishi/unishi.dm"
 	#include "../away/yacht/yacht.dm"
 	#include "../away/liberia/liberia.dm"
 
 	// Loaded after other modpacks to override everything where needed.
+	// TODO: CONVERT THESE TO USE THE COMPATIBILITY SYSTEM FOR OVERRIDES?
 	#include "../../mods/content/lighthouse/_lighthouse.dme"
 	#include "../../mods/content/resleeving/_resleeving.dme"
 

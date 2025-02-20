@@ -52,12 +52,12 @@
 	else
 		add_overlay("[icon_state]-nocell")
 
-/obj/item/defibrillator/examine(mob/user)
+/obj/item/defibrillator/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(bcell)
-		to_chat(user, "The charge meter is showing [bcell.percent()]% charge left.")
+		. += "The charge meter is showing [bcell.percent()]% charge left."
 	else
-		to_chat(user, "There is no cell inside.")
+		. += SPAN_WARNING("There is no cell inside.")
 
 /obj/item/defibrillator/ui_action_click()
 	toggle_paddles()
@@ -283,7 +283,7 @@
 	return 0
 
 /obj/item/shockpaddles/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
-	if(!ishuman(target) || user.a_intent == I_HURT)
+	if(!ishuman(target) || user.check_intent(I_FLAG_HARM))
 		return ..() //Do a regular attack. Harm intent shocking happens as a hit effect
 	var/mob/living/human/H = target
 	if(can_use(user, H))
@@ -465,7 +465,7 @@
 
 /obj/item/shockpaddles/robot
 	name = "defibrillator paddles"
-	desc = "A pair of advanced shockpaddles powered by a robot's internal power cell, able to penetrate thick clothing."
+	desc = "A pair of advanced shock paddles powered by a robot's internal power cell, able to penetrate thick clothing."
 	chargecost = 50
 	combat = 1
 	cooldowntime = (3 SECONDS)
@@ -542,7 +542,7 @@
 */
 
 /obj/item/shockpaddles/standalone
-	desc = "A pair of shockpaddles powered by an experimental miniaturized reactor" //Inspired by the advanced e-gun
+	desc = "A pair of shock paddles powered by an experimental miniaturized reactor" //Inspired by the advanced e-gun
 	var/fail_counter = 0
 
 /obj/item/shockpaddles/standalone/Destroy()

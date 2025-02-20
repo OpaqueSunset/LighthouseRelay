@@ -11,8 +11,8 @@
 	icon = 'icons/atmos/vent_pump.dmi'
 	icon_state = "map_vent"
 
-	name = "Air Vent"
-	desc = "Has a valve and pump attached to it."
+	name = "air vent"
+	desc = "A vent that moves air into or out of the attached pipe system, and uses a valve and pump to prevent backflow."
 	use_power = POWER_USE_OFF
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 15000			// 15000 W ~ 20 HP
@@ -160,6 +160,7 @@
 
 /obj/machinery/atmospherics/unary/vent_pump/high_volume
 	name = "large air vent"
+	desc = "A high-volume vent that moves lots of air into or out of the attached pipe system, and uses a valve and pump to prevent backflow."
 	power_channel = EQUIP
 	power_rating = 45000
 	base_type = /obj/machinery/atmospherics/unary/vent_pump/high_volume/buildable
@@ -319,14 +320,14 @@
 
 	return ..()
 
-/obj/machinery/atmospherics/unary/vent_pump/examine(mob/user, distance)
+/obj/machinery/atmospherics/unary/vent_pump/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
-		to_chat(user, "A small gauge in the corner reads [round(last_flow_rate, 0.1)] L/s; [round(last_power_draw)] W.")
+		. += "A small gauge in the corner reads [round(last_flow_rate, 0.1)] L/s; [round(last_power_draw)] W."
 	else
-		to_chat(user, "You are too far away to read the gauge.")
+		. += "You are too far away to read the gauge."
 	if(welded)
-		to_chat(user, "It seems welded shut.")
+		. += "It seems welded shut."
 
 /obj/machinery/atmospherics/unary/vent_pump/cannot_transition_to(state_path, mob/user)
 	if(state_path == /decl/machine_construction/default/deconstructed)
@@ -356,7 +357,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/OnTopic(mob/user, href_list, datum/topic_state/state)
 	if((. = ..()))
 		return
-	if(href_list["switchMode"])
+	if(href_list["switchMode"]) // todo: this could easily be refhacked if you don't have a multitool
 		toggle_pump_dir()
 		to_chat(user, "<span class='notice'>The multitool emits a short beep confirming the change.</span>")
 		return TOPIC_REFRESH

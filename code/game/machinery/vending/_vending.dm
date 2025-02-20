@@ -141,7 +141,7 @@
 		return 1
 
 /obj/machinery/vending/receive_mouse_drop(atom/dropping, mob/user, params)
-	if(!(. = ..()) && isitem(dropping) && istype(user) && user.a_intent == I_HELP && CanPhysicallyInteract(user))
+	if(!(. = ..()) && isitem(dropping) && istype(user) && user.check_intent(I_FLAG_HELP) && CanPhysicallyInteract(user))
 		return attempt_to_stock(dropping, user)
 
 /obj/machinery/vending/attackby(obj/item/W, mob/user)
@@ -183,7 +183,7 @@
 	if((. = component_attackby(W, user)))
 		return
 
-	if((user.a_intent == I_HELP) && attempt_to_stock(W, user))
+	if((user.check_intent(I_FLAG_HELP)) && attempt_to_stock(W, user))
 		return TRUE
 
 	if((obj_flags & OBJ_FLAG_ANCHORABLE) && (IS_WRENCH(W) || IS_HAMMER(W)))
@@ -194,11 +194,6 @@
 /obj/machinery/vending/state_transition(decl/machine_construction/new_state)
 	. = ..()
 	SSnano.update_uis(src)
-
-/obj/machinery/vending/receive_mouse_drop(atom/dropping, mob/user, params)
-	. = ..()
-	if(!. && dropping.loc == user && attempt_to_stock(dropping, user))
-		return TRUE
 
 /obj/machinery/vending/proc/attempt_to_stock(var/obj/item/I, var/mob/user)
 	for(var/datum/stored_items/vending_products/R in product_records)
@@ -314,10 +309,8 @@
 
 	if (href_list["vend"] && !currently_vending)
 		var/key = text2num(href_list["vend"])
-		if(!is_valid_index(key, product_records))
-			return TOPIC_REFRESH
-		var/datum/stored_items/vending_products/R = product_records[key]
-		if(!istype(R))
+		var/datum/stored_items/vending_products/R = LAZYACCESS(product_records, key)
+		if(!R)
 			return TOPIC_REFRESH
 
 		// This should not happen unless the request from NanoUI was bad

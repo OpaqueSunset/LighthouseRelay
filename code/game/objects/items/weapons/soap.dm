@@ -85,9 +85,9 @@
 			return TRUE
 		to_chat(user, SPAN_NOTICE("You scrub \the [target] clean."))
 	else if(istype(target,/obj/effect/decal/cleanable))
-		to_chat(user, SPAN_NOTICE("You scrub \the [target.name] out."))
+		to_chat(user, SPAN_NOTICE("You scrub \the [target] out."))
 	else
-		to_chat(user, SPAN_NOTICE("You clean \the [target.name]."))
+		to_chat(user, SPAN_NOTICE("You clean \the [target]."))
 
 	reagents.touch_atom(target)
 	reagents.remove_any(1)
@@ -96,7 +96,7 @@
 
 //attack_as_weapon
 /obj/item/soap/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
-	if(ishuman(target) && user?.a_intent != I_HURT)
+	if(ishuman(target) && !user?.check_intent(I_FLAG_HARM))
 		var/mob/living/human/victim = target
 		if(user.get_target_zone() == BP_MOUTH && victim.check_has_mouth())
 			user.visible_message(SPAN_DANGER("\The [user] washes \the [target]'s mouth out with soap!"))

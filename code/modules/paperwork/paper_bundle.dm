@@ -40,7 +40,7 @@
 
 	// merging bundles
 	else if(istype(W, /obj/item/paper_bundle) && merge(W, user, cur_page))
-		to_chat(user, SPAN_NOTICE("You add \the [W.name] to \the [name]."))
+		to_chat(user, SPAN_NOTICE("You add \the [W] to \the [name]."))
 		return TRUE
 
 	// burning
@@ -187,7 +187,7 @@
 		"<span class='[span_class]'>You hold \the [P] up to \the [src], burning it slowly.</span>")
 	addtimer(CALLBACK(src, PROC_REF(burn_callback), P, user, span_class), 2 SECONDS)
 
-/obj/item/paper_bundle/examine(mob/user, distance)
+/obj/item/paper_bundle/examined_by(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1)
 		interact(user)
@@ -517,6 +517,7 @@
 /decl/interaction_handler/rename/paper_bundle
 	name = "Rename Bundle"
 	expected_target_type = /obj/item/paper_bundle
+	examine_desc = "rename $TARGET_THEM$"
 
 /decl/interaction_handler/rename/paper_bundle/invoked(atom/target, mob/user, obj/item/prop)
 	var/obj/item/paper_bundle/bundle = target

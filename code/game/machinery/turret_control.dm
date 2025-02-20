@@ -89,7 +89,7 @@
 		return FALSE
 
 	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/modular_computer))
-		if(src.allowed(usr))
+		if(src.allowed(user))
 			if(emagged)
 				to_chat(user, "<span class='notice'>The turret control is unresponsive.</span>")
 			else
@@ -136,10 +136,9 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/turretid/Topic(href, href_list)
-	if(..())
-		return 1
-
+/obj/machinery/turretid/OnTopic(mob/user, href_list)
+	if((. = ..()))
+		return
 
 	if(href_list["command"] && href_list["value"])
 		var/log_action = null
@@ -167,10 +166,10 @@
 			check_anomalies = value
 
 		if(!isnull(log_action))
-			log_and_message_admins("has [log_action]", usr, loc)
+			log_and_message_admins("has [log_action]", user, loc)
 
 		updateTurrets()
-		return 1
+		return TOPIC_REFRESH
 
 /obj/machinery/turretid/proc/updateTurrets()
 	var/datum/turret_checks/TC = new

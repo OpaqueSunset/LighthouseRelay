@@ -29,15 +29,15 @@
 	var/mob/living/cameraFollow = null
 	var/list/datum/action/actions = list()
 
-	var/on_fire = 0 //The "Are we on fire?" var
-	var/fire_stacks
+	/// The "Are we on fire?" var. Use of is_on_fire() is preferred instead.
+	VAR_PRIVATE/_on_fire = FALSE
+	VAR_PRIVATE/_fire_intensity
 
 	var/ticks_since_last_successful_breath = 0 //if we failed to breathe last tick
-	var/failed_last_breath = 0 //This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
-	var/possession_candidate // Can be possessed by ghosts if unplayed.
+	var/failed_last_breath = FALSE //This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
+	var/possession_candidate = FALSE // Can be possessed by ghosts if unplayed.
 
 	var/job = null//Living
-	var/list/obj/aura/auras = null //Basically a catch-all aura/force-field thing.
 
 	var/last_resist = 0
 	var/admin_paralyzed = FALSE
@@ -55,8 +55,6 @@
 	var/list/stressors
 
 	var/life_tick
-	var/list/stasis_sources
-	var/stasis_value
 
 	var/nutrition = 400
 	var/hydration = 400
@@ -91,7 +89,7 @@
 	var/weather_sensitive = FALSE
 
 	/// Var used to track current step for footsteps sounds.
-	var/tmp/step_count
+	var/tmp/step_count = 0
 
 	/// Has this mob -ever- had a gripper? Used to skip hand checks in some cases.
 	var/has_had_gripper = FALSE

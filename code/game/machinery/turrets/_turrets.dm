@@ -368,8 +368,7 @@
 					return TRUE
 				if(!is_valid_target(target?.resolve()) && proj_gun.ammo_magazine.get_stored_ammo_count() != proj_gun.ammo_magazine.max_ammo)
 					return TRUE
-		else
-			return FALSE
+	return FALSE
 
 /obj/machinery/turret/emag_act(remaining_charges, mob/user, emag_source)
 	if(!emagged)
@@ -386,7 +385,7 @@
 	state_machine.evaluate()
 
 /obj/machinery/turret/power_change()
-	..()
+	. = ..()
 	state_machine.evaluate()
 
 /obj/machinery/turret/on_component_failure()

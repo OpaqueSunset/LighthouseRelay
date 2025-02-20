@@ -23,8 +23,8 @@
 	if(istype(A) && A.checkpass(PASS_FLAG_GLASS))
 		return prob(60)
 
-	var/obj/structure/bed/B = A
-	if (istype(A, /obj/structure/bed) && B.buckled_mob)//if it's a bed/chair and someone is buckled, it will not pass
+	var/atom/movable/moving_movable = A
+	if (ismovable(A) && moving_movable.buckled_mob)//if someone is buckled, it will not pass
 		return 0
 
 	if(istype(A, /obj/vehicle))	//no vehicles
@@ -32,7 +32,7 @@
 
 	var/mob/living/M = A
 	if(istype(M))
-		if(M.current_posture.prone)
+		if(M.current_posture.prone && !M.buckled)
 			return ..()
 		for(var/mob_type in mobs_can_pass)
 			if(istype(A, mob_type))

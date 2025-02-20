@@ -42,7 +42,7 @@
 	if(!is_floor_burned() && prob(5))
 		burn_tile(exposed_temperature)
 	else if(temp_destroy && exposed_temperature >= (temp_destroy + 100) && prob(1) && has_flooring())
-		set_flooring(null) //destroy the tile, exposing plating
+		remove_flooring(get_topmost_flooring()) //destroy the tile, exposing plating
 		burn_tile(exposed_temperature)
 	return ..()
 

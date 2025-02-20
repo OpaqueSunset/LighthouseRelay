@@ -301,7 +301,7 @@ var/global/list/all_conveyor_switches = list()
 
 /obj/item/conveyor_switch_construct/oneway
 	name = "one-way conveyor switch assembly"
-	desc = "An one-way conveyor control switch assembly."
+	desc = "A one-way conveyor control switch assembly."
 
 /obj/item/conveyor_switch_construct/oneway/afterattack(atom/A, mob/user, proximity)
 	if(!proximity || !istype(A, /turf/floor) || user.incapacitated())

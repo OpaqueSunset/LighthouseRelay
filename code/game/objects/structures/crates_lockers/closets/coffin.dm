@@ -7,10 +7,10 @@
 
 	var/screwdriver_time_needed = 7.5 SECONDS
 
-/obj/structure/closet/coffin/examine(mob/user, distance)
+/obj/structure/closet/coffin/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(distance <= 1 && !opened)
-		to_chat(user, "The lid is [locked ? "tightly secured with screws." : "unsecured and can be opened."]")
+		. += "The lid is [locked ? "tightly secured with screws." : "unsecured and can be opened."]"
 
 /obj/structure/closet/coffin/can_open(mob/user)
 	. =  ..()

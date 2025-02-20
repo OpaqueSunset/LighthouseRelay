@@ -71,14 +71,14 @@
 		return STATUS_CLOSE
 	return ..()
 
-/obj/machinery/port_gen/examine(mob/user, distance)
+/obj/machinery/port_gen/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(distance > 1)
-		return
-	if(active)
-		to_chat(usr, "<span class='notice'>The generator is on.</span>")
-	else
-		to_chat(usr, "<span class='notice'>The generator is off.</span>")
+	if(distance <= 1)
+		if(active)
+			. += SPAN_NOTICE("The generator is on.")
+		else
+			. += SPAN_NOTICE("The generator is off.")
+
 /obj/machinery/port_gen/emp_act(severity)
 	if(!active)
 		return
@@ -139,21 +139,21 @@
 	var/overheating = 0		//if this gets high enough the generator explodes
 	var/max_overheat = 150
 
-/obj/machinery/port_gen/pacman/examine(mob/user)
+/obj/machinery/port_gen/pacman/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(active)
-		to_chat(user, "\The [src] appears to be producing [power_gen*power_output] W.")
+		. += "\The [src] appears to be producing [power_gen*power_output] W."
 	else
-		to_chat(user, "\The [src] is turned off.")
+		. += "\The [src] is turned off."
 	if(IsBroken())
-		to_chat(user, SPAN_WARNING("\The [src] seems to have broken down."))
+		. += SPAN_WARNING("\The [src] seems to have broken down.")
 	if(overheating)
-		to_chat(user, SPAN_DANGER("\The [src] is overheating!"))
+		. += SPAN_DANGER("\The [src] is overheating!")
 	if(sheet_path && sheet_material)
 		var/decl/material/mat = GET_DECL(sheet_material)
 		var/obj/item/stack/material/sheet = sheet_path
-		to_chat(user, "There [sheets == 1 ? "is" : "are"] [sheets] [sheets == 1 ? initial(sheet.singular_name) : initial(sheet.plural_name)] left in the hopper.")
-		to_chat(user, SPAN_SUBTLE("\The [src] uses [mat.solid_name] [initial(sheet.plural_name)] as fuel to produce power."))
+		. += "There [sheets == 1 ? "is" : "are"] [sheets] [sheets == 1 ? initial(sheet.singular_name) : initial(sheet.plural_name)] left in the hopper."
+		. += SPAN_SUBTLE("\The [src] uses [mat.solid_name] [initial(sheet.plural_name)] as fuel to produce power.")
 
 /obj/machinery/port_gen/pacman/Initialize()
 	. = ..()
@@ -377,33 +377,35 @@
 		ui.open()
 		ui.set_auto_update(1)
 
-/obj/machinery/port_gen/pacman/Topic(href, href_list)
-	if(..())
+/obj/machinery/port_gen/pacman/OnTopic(mob/user, href_list)
+	if((. = ..()))
 		return
 
-	src.add_fingerprint(usr)
 	if(href_list["action"])
 		if(href_list["action"] == "enable")
 			if(!active && HasFuel() && !IsBroken())
-				active = 1
-				update_icon()
+				active = TRUE
+				. = TOPIC_REFRESH
 		if(href_list["action"] == "disable")
 			if (active)
-				active = 0
-				update_icon()
+				active = FALSE
+				. = TOPIC_REFRESH
 		if(href_list["action"] == "eject")
 			if(!active)
 				DropFuel()
+				. = TOPIC_REFRESH
 		if(href_list["action"] == "lower_power")
 			if (power_output > 1)
 				power_output--
+				. = TOPIC_REFRESH
 		if (href_list["action"] == "higher_power")
 			if (power_output < max_power_output || (emagged && power_output < round(max_power_output*2.5)))
 				power_output++
+				. = TOPIC_REFRESH
 
 /obj/machinery/port_gen/pacman/super
 	name = "portable fission generator"
-	desc = "A power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard portabke generators. Rated for 80 kW max safe output."
+	desc = "A power generator that utilizes uranium sheets as fuel. Can run for much longer than the standard portable generators. Rated for 80 kW max safe output."
 	icon_state = "portgen1"
 	sheet_path = /obj/item/stack/material/puck
 	sheet_material = /decl/material/solid/metal/uranium
@@ -461,9 +463,9 @@
 	create_reagents(120)
 	. = ..()
 
-/obj/machinery/port_gen/pacman/super/potato/examine(mob/user)
+/obj/machinery/port_gen/pacman/super/potato/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	to_chat(user, "Auxilary tank shows [reagents.total_volume]u of liquid in it.")
+	. += "Auxilary tank shows [reagents.total_volume]u of liquid in it."
 
 /obj/machinery/port_gen/pacman/super/potato/UseFuel()
 	if(reagents.has_reagent(/decl/material/liquid/alcohol/vodka))

@@ -147,7 +147,7 @@
 /turf/floor/barren,
 /area/tether_away/debrisfield/explored)
 "G" = (
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/barren,
 /area/tether_away/debrisfield/explored)
 "H" = (
@@ -157,7 +157,7 @@
 /area/tether_away/debrisfield/explored)
 "I" = (
 /obj/effect/decal/cleanable/dirt/visible,
-/obj/item/stack/material/rods,
+/obj/item/stack/material/rods/mapped/steel,
 /turf/floor/plating/airless,
 /area/tether_away/debrisfield/explored)
 "J" = (

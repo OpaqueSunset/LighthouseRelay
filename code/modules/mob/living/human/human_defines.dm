@@ -14,7 +14,6 @@
 	var/damage_multiplier = 1
 	var/list/worn_underwear = list()
 	var/list/background_info = list()
-	var/obj/screen/default_attack_selector/attack_selector
 	var/icon/stand_icon = null
 	/// Instead of new say code calling GetVoice() over and over and over, we're just going to ask this variable, which gets updated in Life()
 	var/voice = ""
@@ -23,8 +22,6 @@
 	var/mob/remoteview_target = null
 	var/hand_blood_color
 	var/list/flavor_texts = list()
-	/// Are you trying not to hurt your opponent?
-	var/pulling_punches
 	/// We are a robutt.
 	var/full_prosthetic
 	/// Number of robot limbs.

@@ -35,7 +35,6 @@ var/global/list/global/tank_gauge_cache = list()
 
 	var/gauge_icon = "indicator_tank"
 	var/gauge_cap = 6
-	var/previous_gauge_pressure = null
 
 	var/datum/gas_mixture/air_contents = null
 	var/distribute_pressure = ONE_ATMOSPHERE
@@ -63,7 +62,7 @@ var/global/list/global/tank_gauge_cache = list()
 	air_contents.update_values()
 
 	START_PROCESSING(SSobj, src)
-	update_icon(TRUE)
+	update_icon()
 
 /obj/item/tank/Destroy()
 	QDEL_NULL(air_contents)
@@ -86,7 +85,7 @@ var/global/list/global/tank_gauge_cache = list()
 		. += gas_data.get_value() * air_contents.gas[gas] * GAS_WORTH_MULTIPLIER
 	. = max(1, round(.))
 
-/obj/item/tank/examine(mob/user)
+/obj/item/tank/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	var/descriptive
 	if(!air_contents)
@@ -108,13 +107,12 @@ var/global/list/global/tank_gauge_cache = list()
 				descriptive = "cold"
 			else
 				descriptive = "bitterly cold"
-	to_chat(user, "<span class='notice'>\The [src] feels [descriptive].</span>")
+	. += SPAN_NOTICE("\The [src] feels [descriptive].")
 
 	if(proxyassembly.assembly || wired)
-		to_chat(user, "<span class='warning'>It seems to have [wired? "some wires ": ""][wired && proxyassembly.assembly? "and ":""][proxyassembly.assembly ? "some sort of assembly ":""]attached to it.</span>")
+		. += SPAN_WARNING("It seems to have [wired? "some wires ": ""][wired && proxyassembly.assembly? "and ":""][proxyassembly.assembly ? "some sort of assembly ":""]attached to it.")
 	if(valve_welded)
-		to_chat(user, "<span class='warning'>\The [src] emergency relief valve has been welded shut!</span>")
-
+		. += SPAN_WARNING("\The [src] emergency relief valve has been welded shut!")
 
 /obj/item/tank/attackby(var/obj/item/W, var/mob/user)
 	if (istype(loc, /obj/item/assembly))
@@ -134,7 +132,7 @@ var/global/list/global/tank_gauge_cache = list()
 		if(C.use(1))
 			wired = 1
 			to_chat(user, "<span class='notice'>You attach the wires to the tank.</span>")
-			update_icon(TRUE)
+			update_icon()
 		return TRUE
 
 	if(IS_WIRECUTTER(W))
@@ -147,17 +145,17 @@ var/global/list/global/tank_gauge_cache = list()
 
 				var/obj/item/assembly_holder/assy = proxyassembly.assembly
 				if(assy.a_left && assy.a_right)
-					assy.dropInto(usr.loc)
+					assy.dropInto(user.loc)
 					assy.master = null
 					proxyassembly.assembly = null
 				else
 					if(!proxyassembly.assembly.a_left)
-						assy.a_right.dropInto(usr.loc)
+						assy.a_right.dropInto(user.loc)
 						assy.a_right.holder = null
 						assy.a_right = null
 						proxyassembly.assembly = null
 						qdel(assy)
-				update_icon(TRUE)
+				update_icon()
 
 			else
 				to_chat(user, "<span class='danger'>You slip and bump the igniter!</span>")
@@ -169,7 +167,7 @@ var/global/list/global/tank_gauge_cache = list()
 			if(do_after(user, 10, src))
 				to_chat(user, "<span class='notice'>You quickly clip the wire from the tank.</span>")
 				wired = 0
-				update_icon(TRUE)
+				update_icon()
 
 		else
 			to_chat(user, "<span class='notice'>There are no wires to cut!</span>")
@@ -283,8 +281,8 @@ var/global/list/global/tank_gauge_cache = list()
 		// auto update every Master Controller tick
 		ui.set_auto_update(1)
 
-/obj/item/tank/Topic(user, href_list, state = global.inventory_topic_state)
-	..()
+/obj/item/tank/DefaultTopicState()
+	return global.inventory_topic_state
 
 /obj/item/tank/OnTopic(user, href_list)
 	if (href_list["dist_p"])
@@ -299,7 +297,7 @@ var/global/list/global/tank_gauge_cache = list()
 		return TOPIC_REFRESH
 
 	if (href_list["stat"])
-		toggle_valve(usr)
+		toggle_valve(user)
 		return TOPIC_REFRESH
 
 /obj/item/tank/proc/toggle_valve(var/mob/user)
@@ -378,17 +376,17 @@ var/global/list/global/tank_gauge_cache = list()
 	air_contents.react()
 	check_status()
 
-/obj/item/tank/on_update_icon(var/override)
+// TODO: Check if this works without the override argument. Everything in tank code seems to call it, so...
+/obj/item/tank/on_update_icon()
 	. = ..()
-	var/list/overlays_to_add
-	if(override && (proxyassembly.assembly || wired))
-		LAZYADD(overlays_to_add, overlay_image('icons/obj/items/tanks/tank_components.dmi', "bomb_assembly"))
+	if(proxyassembly?.assembly || wired)
+		add_overlay(overlay_image('icons/obj/items/tanks/tank_components.dmi', "bomb_assembly"))
 		if(proxyassembly.assembly)
 			var/mutable_appearance/bombthing = new(proxyassembly.assembly)
 			bombthing.appearance_flags = RESET_COLOR
 			bombthing.pixel_y = -1
 			bombthing.pixel_x = -3
-			LAZYADD(overlays_to_add, bombthing)
+			add_overlay(bombthing)
 
 	if(gauge_icon)
 		var/gauge_pressure = 0
@@ -398,13 +396,10 @@ var/global/list/global/tank_gauge_cache = list()
 				gauge_pressure = -1
 			else
 				gauge_pressure = round((gauge_pressure/TANK_IDEAL_PRESSURE)*gauge_cap)
-		if(override || (previous_gauge_pressure != gauge_pressure))
-			var/indicator = "[gauge_icon][(gauge_pressure == -1) ? "overload" : gauge_pressure]"
-			if(!tank_gauge_cache[indicator])
-				tank_gauge_cache[indicator] = image('icons/obj/items/tanks/tank_indicators.dmi', indicator)
-			LAZYADD(overlays_to_add, tank_gauge_cache[indicator])
-		previous_gauge_pressure = gauge_pressure
-	add_overlay(overlays_to_add)
+		var/indicator = "[gauge_icon][(gauge_pressure == -1) ? "overload" : gauge_pressure]"
+		if(!tank_gauge_cache[indicator])
+			tank_gauge_cache[indicator] = image('icons/obj/items/tanks/tank_indicators.dmi', indicator)
+		add_overlay(tank_gauge_cache[indicator])
 
 //Handle exploding, leaking, and rupturing of the tank
 /obj/item/tank/proc/check_status()
@@ -534,7 +529,7 @@ var/global/list/global/tank_gauge_cache = list()
 	proxyassembly.assembly = new /obj/item/assembly_holder(src)
 	proxyassembly.assembly.master = proxyassembly
 	proxyassembly.assembly.update_icon()
-	update_icon(TRUE)
+	update_icon()
 
 /////////////////////////////////
 ///Pulled from rewritten bomb.dm
@@ -553,7 +548,7 @@ var/global/list/global/tank_gauge_cache = list()
 	return ..()
 
 /obj/item/tankassemblyproxy/receive_signal()	//This is mainly called by the sensor through sense() to the holder, and from the holder to here.
-	tank.ignite()	//boom (or not boom if you made shijwtty mix)
+	tank.cause_explosion()	//boom (or not boom if you made shijwtty mix)
 
 /obj/item/tank/proc/assemble_bomb(W,user)	//Bomb assembly proc. This turns assembly+tank into a bomb
 	var/obj/item/assembly_holder/S = W
@@ -571,9 +566,9 @@ var/global/list/global/tank_gauge_cache = list()
 	S.master = proxyassembly	//Tell the assembly about its new owner
 	S.forceMove(src)			//Move the assembly
 
-	update_icon(TRUE)
+	update_icon()
 
-/obj/item/tank/proc/ignite()	//This happens when a bomb is told to explode
+/obj/item/tank/proc/cause_explosion()	//This happens when a bomb is told to explode
 	var/obj/item/assembly_holder/assy = proxyassembly.assembly
 	var/ign = assy.a_right
 	var/obj/item/other = assy.a_left
@@ -588,7 +583,7 @@ var/global/list/global/tank_gauge_cache = list()
 	assy.master = null
 	proxyassembly.assembly = null
 	qdel(assy)
-	update_icon(TRUE)
+	update_icon()
 
 	air_contents.add_thermal_energy(15000)
 

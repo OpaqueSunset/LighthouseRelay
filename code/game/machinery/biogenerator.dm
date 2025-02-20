@@ -168,7 +168,7 @@
 /obj/machinery/biogenerator/OnTopic(user, href_list)
 	switch (href_list["action"])
 		if("activate")
-			activate()
+			activate(user)
 		if("detach")
 			if(beaker)
 				beaker.dropInto(src.loc)
@@ -194,8 +194,8 @@
 	ui_interact(user)
 	return TRUE
 
-/obj/machinery/biogenerator/proc/activate()
-	if (usr.stat)
+/obj/machinery/biogenerator/proc/activate(mob/user)
+	if (user.incapacitated())
 		return
 	if (stat) //NOPOWER etc
 		return

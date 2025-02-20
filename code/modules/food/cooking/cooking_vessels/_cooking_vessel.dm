@@ -18,7 +18,7 @@
 // TODO: ladle
 /obj/item/chems/cooking_vessel/attackby(obj/item/W, mob/user)
 
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		return ..()
 
 	// Fill or take from the vessel.
@@ -35,7 +35,7 @@
 
 // Boilerplate from /obj/item/chems/glass. TODO generalize to a lower level.
 /obj/item/chems/cooking_vessel/use_on_mob(mob/living/target, mob/living/user, animate = TRUE)
-	if(get_attack_force() && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.a_intent == I_HURT)
+	if(get_attack_force() && !(item_flags & ITEM_FLAG_NO_BLUDGEON) && user.check_intent(I_FLAG_HARM))
 		return ..()
 	return FALSE
 
@@ -52,7 +52,7 @@
 		return TRUE
 	if(handle_eaten_by_mob(user, target) != EATEN_INVALID)
 		return TRUE
-	if(user.a_intent == I_HURT)
+	if(user.check_intent(I_FLAG_HARM))
 		if(standard_splash_mob(user,target))
 			return TRUE
 		if(reagents && reagents.total_volume)
@@ -87,16 +87,16 @@
 			else
 				. += "[reagents.liquid_volumes[liquid_type]]u of [reagent_name]"
 
-/obj/item/chems/cooking_vessel/examine(mob/user, distance)
+/obj/item/chems/cooking_vessel/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
 	if(user && distance <= 1)
 		var/list/contents_strings = get_cooking_contents_strings()
 		if(length(contents_strings))
-			to_chat(user, SPAN_NOTICE("\The [src] contains:"))
+			. += SPAN_NOTICE("\The [src] contains:")
 			for(var/content_string in contents_strings)
-				to_chat(user, SPAN_NOTICE("- [content_string]"))
+				. += SPAN_NOTICE("- [content_string]")
 		else
-			to_chat(user, SPAN_NOTICE("\The [src] is empty."))
+			. += SPAN_NOTICE("\The [src] is empty.")
 
 /obj/item/chems/cooking_vessel/Process()
 	var/decl/recipe/recipe = select_recipe(cooking_category, src, temperature)

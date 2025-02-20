@@ -109,18 +109,15 @@
 	else
 		icon_state = icon_state_idle
 
-/obj/machinery/recharger/examine(mob/user)
+/obj/machinery/recharger/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-	if(isnull(charging))
-		return
-
-	var/obj/item/cell/C = charging.get_cell()
-	if(!isnull(C))
-		to_chat(user, "Item's charge at [round(C.percent())]%.")
+	var/obj/item/cell/cell = charging?.get_cell()
+	if(cell)
+		. += "\The [charging] is charged to [round(cell.percent())]%."
 
 /obj/machinery/recharger/wallcharger
 	name = "wall recharger"
-	desc = "A heavy duty wall recharger specialized for energy weaponry."
+	desc = "A heavy-duty wall recharger specialized for energy weaponry."
 	icon = 'icons/obj/machines/recharger_wall.dmi'
 	icon_state = "wrecharger0"
 	active_power_usage = 50 KILOWATTS	//It's more specialized than the standalone recharger (guns and batons only) so make it more powerful

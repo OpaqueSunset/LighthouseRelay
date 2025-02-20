@@ -109,10 +109,10 @@
 		return TRUE
 	. = ..()
 
-/obj/item/chems/inhaler/examine(mob/user, distance)
+/obj/item/chems/inhaler/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..(user)
 	if(distance <= 1)
 		if(reagents.total_volume > 0)
-			to_chat(user, SPAN_NOTICE("It is currently loaded."))
+			. += SPAN_NOTICE("It is currently loaded.")
 		else
-			to_chat(user, SPAN_WARNING("It is spent."))
+			. += SPAN_WARNING("It is spent.")

@@ -4,7 +4,7 @@ var/global/list/areas = list()
 
 /area
 
-	level = null
+	level = 0
 	name = "Unknown"
 	icon = 'icons/turf/areas.dmi'
 	icon_state = "unknown"
@@ -20,8 +20,10 @@ var/global/list/areas = list()
 	var/interior_ambient_light_modifier
 	// If set, will apply ambient light of this colour to turfs under a ceiling.
 
-	var/proper_name /// Automatically set by SetName and Initialize; cached result of strip_improper(name).
-	var/holomap_color	// Color of this area on the holomap. Must be a hex color (as string) or null.
+	/// Automatically set by SetName and Initialize; cached result of strip_improper(name).
+	var/tmp/proper_name
+	/// Color of this area on the holomap. Must be a hex color (as string) or null.
+	var/holomap_color
 
 	var/fire
 	var/party
@@ -92,7 +94,15 @@ var/global/list/areas = list()
 		area_blurb_category = type
 	..()
 
+/area/proc/get_additional_fishing_results()
+	return
+
 /area/Initialize()
+	var/list/additional_fishing_results = get_additional_fishing_results()
+	if(LAZYLEN(additional_fishing_results))
+		LAZYINITLIST(fishing_results)
+		for(var/fish in additional_fishing_results)
+			fishing_results[fish] = additional_fishing_results[fish]
 	. = ..()
 	global.areas += src
 	if(!requires_power || !apc)

@@ -10,7 +10,6 @@
 	var/list/stating_laws = list()// Channels laws are currently being stated on
 	var/obj/item/radio/silicon_radio
 
-	var/list/hud_list[10]
 	var/list/speech_synthesizer_langs = list()	//which languages can be vocalized by the speech synthesizer
 
 	//Used in say.dm.
@@ -40,6 +39,7 @@
 	#define MED_HUD 2 //Medical HUD mode
 
 /mob/living/silicon/Initialize()
+	reset_hud_overlays()
 	global.silicon_mob_list += src
 	. = ..()
 
@@ -67,9 +67,6 @@
 		AH.unregister_alarm(src)
 	QDEL_NULL_LIST(stock_parts)
 	return ..()
-
-/mob/living/silicon/get_dexterity(silent)
-	return dexterity
 
 /mob/living/silicon/fully_replace_character_name(new_name)
 	..()
@@ -370,11 +367,11 @@
 	if(istype(W) && user.try_unequip(W))
 		W.forceMove(src)
 		stock_parts += W
-		to_chat(usr, "<span class='notice'>You install the [W.name].</span>")
+		to_chat(user, "<span class='notice'>You install the [W.name].</span>")
 		return TRUE
 
 /mob/living/silicon/proc/try_stock_parts_removal(obj/item/W, mob/user)
-	if(!IS_CROWBAR(W) || user.a_intent == I_HURT)
+	if(!IS_CROWBAR(W) || user.check_intent(I_FLAG_HARM))
 		return
 	if(!length(stock_parts))
 		to_chat(user, SPAN_WARNING("There are no parts in \the [src] left to remove."))

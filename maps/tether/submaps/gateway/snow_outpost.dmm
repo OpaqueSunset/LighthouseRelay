@@ -692,7 +692,7 @@
 /turf/floor/plating/external,
 /area/awaymission/snow_outpost/outside)
 "cB" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/snow/snow2,
@@ -1322,7 +1322,7 @@
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "eI" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -1605,7 +1605,7 @@
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fB" = (
-/obj/structure/bed/chair/office/dark,
+/obj/structure/chair/office/dark,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -1726,7 +1726,7 @@
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "fT" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/random/projectile,
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
@@ -1891,7 +1891,7 @@
 /turf/floor,
 /area/awaymission/snow_outpost/outside)
 "gF" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor,
 /area/awaymission/snow_outpost/outside)
 "gG" = (
@@ -2034,7 +2034,7 @@
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hc" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/pill/happy{
 	name = "pill"
 	},
@@ -2060,14 +2060,14 @@
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hi" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/pill/methylphenidate{
 	name = "pill"
 	},
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hj" = (
-/obj/structure/bed/chair/comfy/beige{
+/obj/structure/chair/comfy/beige{
 	icon_state = "armchair_preview";
 	dir = 1
 	},
@@ -2089,17 +2089,17 @@
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hn" = (
-/obj/structure/bed/chair/comfy/beige,
+/obj/structure/chair/comfy/beige,
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "ho" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /obj/item/chems/syringe/drugs,
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hp" = (
-/obj/structure/bed/chair/comfy/beige,
+/obj/structure/chair/comfy/beige,
 /obj/item/chems/pill/citalopram{
 	name = "pill"
 	},
@@ -2193,7 +2193,7 @@
 /turf/floor,
 /area/awaymission/snow_outpost/outside)
 "hG" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/pill/strong_painkillers{
 	name = "pill"
 	},
@@ -2212,12 +2212,12 @@
 /turf/floor,
 /area/awaymission/snow_outpost/outside)
 "hK" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/flashlight/lamp,
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
 "hL" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/syringe/drugs,
 /turf/floor/carpet,
 /area/awaymission/snow_outpost/outside)
@@ -2308,7 +2308,7 @@
 /turf/floor/dirt,
 /area/awaymission/snow_outpost/outside)
 "ii" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},
@@ -2321,7 +2321,7 @@
 /turf/floor/water,
 /area/awaymission/snow_outpost/outside)
 "ij" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},
@@ -2342,7 +2342,7 @@
 /turf/floor/water,
 /area/awaymission/snow_outpost/outside)
 "ik" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 1
 	},
@@ -2414,7 +2414,7 @@
 /turf/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "ix" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/emergency_dispenser{
@@ -2427,7 +2427,7 @@
 /turf/floor/shuttle/blue,
 /area/awaymission/snow_outpost/outside)
 "iy" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/machinery/vending/wallmed1{
@@ -2444,7 +2444,7 @@
 	pixel_x = 0;
 	pixel_y = -32
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	icon_state = "chair_preview";
 	dir = 8
 	},
@@ -2548,7 +2548,7 @@
 /turf/floor/tiled/white,
 /area/awaymission/snow_outpost/outpost)
 "iS" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/tiled,
 /area/awaymission/snow_outpost/restricted)
 "iT" = (

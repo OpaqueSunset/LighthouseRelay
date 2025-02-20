@@ -9,8 +9,17 @@
 		return FALSE
 	return ..()
 
+/decl/stack_recipe/woven/rug
+	result_type                = /obj/structure/rug/crafted
+	one_per_turf               = TRUE
+	on_floor                   = TRUE
+	category                   = "furniture"
+
 /decl/stack_recipe/woven/basket
 	result_type       = /obj/item/basket
+
+/decl/stack_recipe/woven/large_basket
+	result_type       = /obj/item/basket/large
 
 /decl/stack_recipe/woven/banner
 	result_type       = /obj/item/banner/woven
@@ -34,3 +43,6 @@
 		/obj/item/stack/material/bundle,
 		/obj/item/stack/material/thread
 	)
+
+/decl/stack_recipe/woven/dummy
+	result_type = /obj/item/training_dummy/straw

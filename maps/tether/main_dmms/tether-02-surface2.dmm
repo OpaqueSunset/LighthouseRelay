@@ -667,7 +667,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
-/obj/structure/bed/chair/comfy/black{
+/obj/structure/chair/comfy/black{
 	dir = 4
 	},
 /turf/floor/tiled/techfloor,
@@ -5056,7 +5056,7 @@
 /turf/floor/tiled,
 /area/rnd/rdoffice)
 "lF" = (
-/obj/structure/bed/chair/office/light,
+/obj/structure/chair/office/light,
 /obj/machinery/button/windowtint{
 	id_tag = "rd_office";
 	pixel_x = -24;
@@ -5950,7 +5950,7 @@
 /turf/floor/tiled,
 /area/rnd/rdoffice)
 "nl" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -6039,7 +6039,7 @@
 /turf/floor/tiled,
 /area/rnd/rdoffice)
 "nu" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -6621,7 +6621,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 5
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/tiled,
 /area/engineering/lower/lobby)
 "oC" = (
@@ -6634,7 +6634,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 1
 	},
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -6895,7 +6895,7 @@
 /turf/floor/tiled/techfloor,
 /area/server)
 "pd" = (
-/obj/structure/bed/chair/office/light,
+/obj/structure/chair/office/light,
 /turf/floor/tiled/techfloor,
 /area/server)
 "pe" = (
@@ -7121,14 +7121,14 @@
 /turf/floor/wood,
 /area/engineering/lower/breakroom)
 "px" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/abstract/landmark/start{
 	name = "Atmospheric Technician"
 	},
 /turf/floor/carpet,
 /area/engineering/lower/breakroom)
 "py" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/carpet,
 /area/engineering/lower/breakroom)
 "pz" = (
@@ -7701,7 +7701,7 @@
 /turf/open,
 /area/rnd/hallway)
 "qA" = (
-/obj/structure/bed/chair/comfy,
+/obj/structure/chair/comfy,
 /obj/machinery/camera/network/research{
 	dir = 4
 	},
@@ -7887,7 +7887,7 @@
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "qX" = (
-/obj/structure/bed/chair/comfy{
+/obj/structure/chair/comfy{
 	dir = 8
 	},
 /turf/floor/wood,
@@ -7938,7 +7938,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 10
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -7953,7 +7953,7 @@
 /obj/effect/floor_decal/corner/yellow{
 	dir = 8
 	},
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/machinery/light,
@@ -8026,7 +8026,7 @@
 /turf/floor/wood,
 /area/rnd/breakroom)
 "rm" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -8039,7 +8039,7 @@
 /turf/floor/wood,
 /area/rnd/breakroom)
 "ro" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 8
 	},
 /turf/floor/wood,
@@ -8056,7 +8056,7 @@
 /turf/floor/tiled,
 /area/rnd/hallway)
 "rs" = (
-/obj/structure/bed/chair/comfy{
+/obj/structure/chair/comfy{
 	dir = 1
 	},
 /obj/machinery/network/requests_console{
@@ -8077,7 +8077,7 @@
 /turf/floor/wood,
 /area/rnd/breakroom)
 "ru" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /turf/floor/wood,
@@ -8125,7 +8125,7 @@
 /turf/floor/tiled,
 /area/engineering/lower/lobby)
 "rA" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment{
@@ -8203,7 +8203,7 @@
 /turf/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
 "rK" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 1
 	},
 /turf/floor/carpet,
@@ -8466,7 +8466,7 @@
 /turf/floor/wood,
 /area/rnd/breakroom)
 "sh" = (
-/obj/structure/bed/chair{
+/obj/structure/chair{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -12388,7 +12388,7 @@
 /turf/floor/tiled,
 /area/engineering/atmos/monitoring)
 "zG" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 8
 	},
 /turf/floor/tiled,
@@ -12430,7 +12430,7 @@
 /turf/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "zK" = (
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 4
 	},
 /turf/floor/tiled,
@@ -12891,7 +12891,7 @@
 /turf/floor/tiled,
 /area/engineering/atmos/monitoring)
 "AK" = (
-/obj/structure/bed/chair/office/light,
+/obj/structure/chair/office/light,
 /obj/abstract/landmark/start{
 	name = "Atmospheric Technician"
 	},
@@ -14002,7 +14002,7 @@
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "DB" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /turf/floor/holofloor/desert,
 /area/tether/surfacebase/fishing_garden)
 "DC" = (
@@ -14388,7 +14388,7 @@
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
 "Eq" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/item/chems/drinks/teapot,
 /turf/floor/wood,
 /area/maintenance/lower/atmos)
@@ -14687,7 +14687,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -14696,7 +14696,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/bed/chair/office/light{
+/obj/structure/chair/office/light{
 	dir = 1
 	},
 /turf/floor/tiled,
@@ -16025,7 +16025,7 @@
 /turf/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
 "Ij" = (
-/obj/structure/bed/chair/office/dark{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/visible,
@@ -16339,17 +16339,17 @@
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
 "Ji" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/effect/decal/cleanable/dirt/visible,
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
 "Jj" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/random/junk,
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
 "Jk" = (
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/effect/floor_decal/rust,
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
@@ -16470,12 +16470,12 @@
 /area/maintenance/lower/atmos)
 "JB" = (
 /obj/structure/catwalk,
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
 "JC" = (
 /obj/structure/catwalk,
-/obj/structure/bed/chair,
+/obj/structure/chair,
 /obj/effect/decal/cleanable/dirt/visible,
 /turf/floor/plating,
 /area/maintenance/lower/atmos)
@@ -16807,7 +16807,7 @@
 /turf/floor/fake_grass,
 /area/tether/surfacebase/fishing_garden)
 "Kr" = (
-/obj/structure/table/woodentable,
+/obj/structure/table/wood,
 /obj/structure/flora/pottedplant/flower,
 /turf/floor/holofloor/desert,
 /area/tether/surfacebase/fishing_garden)

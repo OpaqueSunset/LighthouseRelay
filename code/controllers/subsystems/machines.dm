@@ -7,7 +7,7 @@
 if (Datum.is_processing) {\
 	if(Datum.is_processing != "SSmachines.[#List]")\
 	{\
-		PRINT_STACK_TRACE("Failed to start processing. [log_info_line(Datum)] is already being processed by [Datum.is_processing] but queue attempt occured on SSmachines.[#List]."); \
+		PRINT_STACK_TRACE("Failed to start processing. [log_info_line(Datum)] is already being processed by [Datum.is_processing] but queue attempt occurred on SSmachines.[#List]."); \
 	}\
 } else {\
 	Datum.is_processing = "SSmachines.[#List]";\
@@ -81,6 +81,12 @@ if(current_step == this_step || (check_resumed && !resumed)) {\
 	INTERNAL_PROCESS_STEP(SSMACHINES_POWER_OBJECTS,FALSE,process_power_objects,cost_power_objects,SSMACHINES_PIPENETS)
 
 #undef INTERNAL_PROCESS_STEP
+
+/datum/controller/subsystem/machines/StartLoadingMap()
+	suspend()
+
+/datum/controller/subsystem/machines/StopLoadingMap()
+	wake()
 
 // rebuild all power networks from scratch - only called at world creation or by the admin verb
 // The above is a lie. Turbolifts also call this proc.

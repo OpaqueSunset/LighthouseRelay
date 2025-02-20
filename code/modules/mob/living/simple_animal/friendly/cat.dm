@@ -54,7 +54,7 @@
 	maxbodytemp = 323	//Above 50 Degrees Celsius
 	holder_type = /obj/item/holder
 	mob_size = MOB_SIZE_SMALL
-	possession_candidate = 1
+	possession_candidate = TRUE
 	pass_flags = PASS_FLAG_TABLE
 	butchery_data = /decl/butchery_data/animal/cat
 	base_animal_type = /mob/living/simple_animal/passive/cat
@@ -70,12 +70,12 @@
 	uid = "bodytype_animal_cat"
 
 /decl/bodytype/quadruped/animal/cat/Initialize()
-	equip_adjust = list(
-		slot_head_str = list(
+	_equip_adjust = list(
+		(slot_head_str) = list(
 			"[NORTH]" = list( 1,  -9),
 			"[SOUTH]" = list( 1, -12),
-			"[EAST]" =  list( 7, -10),
-			"[WEST]" =  list(-7, -10)
+			"[EAST]"  = list( 7, -10),
+			"[WEST]"  = list(-7, -10)
 		)
 	)
 	. = ..()
@@ -210,12 +210,12 @@
 	uid = "bodytype_animal_kitten"
 
 /decl/bodytype/quadruped/animal/kitten/Initialize()
-	equip_adjust = list(
-		slot_head_str = list(
+	_equip_adjust = list(
+		(slot_head_str) = list(
 			"[NORTH]" = list( 1, -14),
 			"[SOUTH]" = list( 1, -14),
-			"[EAST]" =  list( 5, -14),
-			"[WEST]" =  list(-5, -14)
+			"[EAST]"  = list( 5, -14),
+			"[WEST]"  = list(-5, -14)
 		)
 	)
 	. = ..()

@@ -47,6 +47,7 @@ var/global/list/default_blend_typecache = zebra_typecacheof(list(/obj/machinery/
 
 	var/list/dirs
 	var/list/other_dirs
+	// TODO: Allow structures to limit dirs?
 	for(var/direction in global.alldirs)
 		var/turf/T = get_step(src, direction)
 		if(T)

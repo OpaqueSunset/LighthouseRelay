@@ -216,26 +216,22 @@
 /obj/item/food/dragged_onto(var/mob/user)
 	return attack_self(user)
 
-/obj/item/food/examine(mob/user, distance)
+/obj/item/food/get_examine_strings(mob/user, distance, infix, suffix)
 	. = ..()
-
 	if(distance > 1)
 		return
-
 	if(backyard_grilling_rawness > 0 && backyard_grilling_rawness != initial(backyard_grilling_rawness))
-		to_chat(user, "\The [src] is [get_backyard_grilling_text()].")
-
+		. += "\The [src] is [get_backyard_grilling_text()]."
 	if(plate)
-		to_chat(user, SPAN_NOTICE("\The [src] has been arranged on \a [plate]."))
-
+		. += SPAN_NOTICE("\The [src] has been arranged on \a [plate].")
 	if (bitecount==0)
 		return
 	else if (bitecount==1)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten by someone!"))
+		. += SPAN_NOTICE("\The [src] was bitten by someone!")
 	else if (bitecount<=3)
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten [bitecount] time\s!"))
+		. += SPAN_NOTICE("\The [src] was bitten [bitecount] time\s!")
 	else
-		to_chat(user, SPAN_NOTICE("\The [src] was bitten multiple times!"))
+		. += SPAN_NOTICE("\The [src] was bitten multiple times!")
 
 /obj/item/food/proc/is_sliceable()
 	return (slice_num && slice_path && slice_num > 0)
@@ -253,7 +249,7 @@
 /obj/item/food/Destroy()
 	QDEL_NULL(plate)
 	trash = null
-	if(contents)
+	if(length(contents))
 		for(var/atom/movable/something in contents)
 			something.dropInto(loc)
 	. = ..()
